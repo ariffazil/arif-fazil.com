@@ -19,9 +19,18 @@ API = "https://arif-fazil.com/wealth/{asset}/api/snapshot"
 # Live + dist + public sources (first existing wins for each asset, all existing updated)
 ROOTS = [
     Path("/var/www/html"),  # live commodity apps: /oil /gold /gas
-    Path("/var/www/html/arif"),  # SPA-mirrored copies
+    Path("/var/www/html/arif"),  # SPA-mirrored copies (root/asset/)
+    Path(
+        "/var/www/html/arif/world/economics"
+    ),  # main site canonical: /world/economics/{asset}/
     Path("/root/arif-fazil.com/sites/arif-fazil.com/dist"),
+    Path(
+        "/root/arif-fazil.com/sites/arif-fazil.com/dist/world/economics"
+    ),  # dist mirror
     Path("/root/arif-fazil.com/sites/arif-fazil.com/public"),
+    Path(
+        "/root/arif-fazil.com/sites/arif-fazil.com/public/world/economics"
+    ),  # public mirror
 ]
 PACKET_RE = re.compile(
     r'(<script[^>]*id=["\']wealth-reality-packet["\'][^>]*>)(.*?)(</script>)',

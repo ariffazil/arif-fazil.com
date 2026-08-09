@@ -552,8 +552,11 @@ def _reachable_in_3(url: str, timeout: int = 8) -> bool:
                     continue
                 seen.add(aurl)
                 acode, abody, _ = fetch(aurl, timeout=timeout, max_bytes=6_000_000)
-                if acode == 200 and target_str and target_str in abody:
-                    return True
+                if acode == 200:
+                    # match full host form OR path-only route string (bundles store "/organs/")
+                    path_only = "/" + target_str.split("/", 1)[-1] if "/" in target_str else target_str
+                    if (target_str and target_str in abody) or (path_only and path_only in abody):
+                        return True
             for m in re.finditer(r'href="([^"#]+)"', body):
                 link = m.group(1)
                 if link.startswith("http"):
@@ -624,8 +627,31 @@ def cmd_audit(args: argparse.Namespace) -> Report:
             r.add(f"visual.{name}", False, f"{url} {code}", "C·VIS")
             r.meta.setdefault("fail_lane", "FAIL_VISUAL")
             continue
+        # redirect stubs (data-plane=redirect / meta-refresh) → judge the destination
+        rm = re.search(
+            r'<meta\s+http-equiv=["\']refresh["\'][^>]*content=["\'][^"\']*url=([^"\' >]+)',
+            body, re.I,
+        )
+        if rm:
+            dest = rm.group(1)
+            if dest.startswith("/"):
+                dest = "https://arif-fazil.com" + dest
+            dcode, dbody, _ = fetch(dest, timeout=args.timeout, max_bytes=1_500_000)
+            if dcode == 200:
+                body = dbody
+                code = dcode
         h1 = bool(re.search(r"<h1", body))
-        nav = bool(re.search(r"<nav|role=.?navigation", body))
+        nav = bool(re.search(r"<nav|role=.?navigation|unified-header-loader", body))
+        # SPA-aware: nav/h1 may live in the JS bundle, not the HTML shell
+        if not nav:
+            for am in re.finditer(r'(?:src|href)="(/assets/[^"]+)"', body):
+                aurl = "https://arif-fazil.com" + am.group(1)
+                acode, abody, _ = fetch(aurl, timeout=args.timeout, max_bytes=6_000_000)
+                if acode == 200 and re.search(
+                    r'<nav|role=.?navigation|jsx\("nav"|"nav",\{', abody
+                ):
+                    nav = True
+                    break
         mass = len(re.sub(r"<[^>]+>", " ", body).strip()) > 400
         ok = h1 and nav and mass
         r.add(

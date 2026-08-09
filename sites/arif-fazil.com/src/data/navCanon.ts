@@ -63,12 +63,6 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
-    "label": "Organs",
-    "href": "/organs/",
-    "mode": "static",
-    "external": false
-  },
-  {
     "label": "PETRONAS",
     "href": "/propa/",
     "mode": "static",
@@ -89,6 +83,12 @@ export const secondaryNav: NavItem[] = [
   {
     "label": "Signal",
     "href": "/connect/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Organs",
+    "href": "/organs/",
     "mode": "static",
     "external": false
   }

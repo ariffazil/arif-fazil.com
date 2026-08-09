@@ -20,6 +20,28 @@
  * ================================================================================
  */
 
+/* ─── Domain Accent Canons (2026-08-09 — per-domain contrast colors) ──
+ * Five doors, five accents. Each main domain page carries ONE contrast
+ * color for kickers, quote borders, badges, notes, hovers — following the
+ * MakcikGPT article template (single accent + bordered badge highlight).
+ * HOME=gold · EARTH=cyan · WORDS=amber · WORLD=ember · WORK=green
+ * Set --domain-accent on <body> or <html> per page (default: ember).
+ */
+:root {
+  --accent-home:  #C9A227;  /* sovereign gold  — identity, trust, clock   */
+  --accent-earth: #4FC3F7;  /* cyan            — geology, globe, seismic  */
+  --accent-words: #D4A24C;  /* amber           — compass, doctrine, law   */
+  --accent-world: #E4572E;  /* ember           — civic, MakcikGPT, markets */
+  --accent-work:  #3DDC97;  /* green           — vitality, seal, missions */
+  --domain-accent: var(--accent-world);  /* default = ember */
+  /* Legacy aliases (earth page inline styles) */
+  --accent-cyan:  #4FC3F7;
+  --accent-gold:  #C9A227;
+  --accent-rust:  #E4572E;
+  --accent-ember: #E4572E;
+}
+
+
 /* ================================================================================
  * I. CSS CUSTOM PROPERTIES (Design Constitution)
  * ================================================================================ */

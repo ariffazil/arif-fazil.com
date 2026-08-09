@@ -108,9 +108,13 @@ help:
 	@echo "arif-fazil.com Deploy"
 	@echo "===================="
 	@echo ""
+	@echo "  ⚠️  AGENTS: Read SITE_CONSTITUTION.md before any mutation."
+	@echo "     Makefile = the HOW. Constitution = the WHY. Do not deploy"
+	@echo "     without understanding what is sacred."
+	@echo ""
 	@echo "  make deploy       Full deploy: verify → sync-aaa → build → verify-pages → reload"
 	@echo "  make dry-run      Verify only, no mutation"
-	@echo "  make verify       Pre-deploy surface truth + Caddy check"
+	@echo "  make verify       Pre-deploy surface truth + Caddy check + content gates"
 	@echo "  make sync-aaa     Sync AAA dist/ into arif-fazil.com dist/aaa/"
 	@echo "  make build        Build React SPA + regenerate catalogs"
 	@echo "  make verify-pages Page inventory gate — curl every dist/ page, assert 200"
@@ -119,8 +123,8 @@ help:
 	@echo "  make commit       Stage all changes for git commit"
 	@echo "  make deploy-full  Full rsync-based deploy (deploy-vps.sh)"
 	@echo ""
-	@echo "  Single command:   make deploy"
-	@echo "  Runbook:          cat DEPLOY.md"
+	@echo "  Agent entry:      cat SITE_CONSTITUTION.md → make verify → make deploy"
+	@echo "  Human runbook:    cat DEPLOY.md"
 
 # ── Page inventory gate ─────────────────────────────────────────────
 # 2026-08-03: Structural fix. Scans every dist/*/index.html → curls

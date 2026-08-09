@@ -12,7 +12,7 @@ derives_from: "canon/sites.yaml"
 derives_from_version: "3.0.0"
 derives_from_seal: "999_SEAL 2026-08-01"
 relation: "OVERLAY — does not supersede. Trinity scopes remain canonical for chrome."
-status: "DRAFT — awaiting F13 ratification"
+status: "ACTIVE — Phase A shipped 2026-08-06 · PENDING F13 ratification"
 
 doctrine: |
   The Trinity IA (5 scopes) defines the STRUCTURE of arif-fazil.com — accent families,

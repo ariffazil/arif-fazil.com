@@ -59,7 +59,7 @@ function Hero() {
 
         {/* 3. Short Mission Line */}
         <p className="mt-4 max-w-[46ch] font-body text-[22px] sm:text-[28px] leading-[1.3] text-slate-200 font-light">
-          Reading the earth, pricing risk, and teaching machines to tell the truth.
+          Builds constitutionally-governed AI systems. Same discipline that makes oil wells flow, applied to making AI trustworthy.
         </p>
 
         {/* 4. Proof strip — strongest credibility signals, first viewport */}
@@ -185,12 +185,32 @@ function Person() {
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Muhammad Arif bin Fazil',
+              alternateName: 'Arif Fazil',
               birthDate: '1990-05-22',
               birthPlace: 'Penang, Malaysia',
-              jobTitle: 'Exploration geoscientist; author of arifOS',
-              alumniOf: 'University of Wisconsin–Madison',
+              jobTitle: 'Exploration Geoscientist',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'PETRONAS Carigali',
+                url: 'https://www.petronas.com'
+              },
+              alumniOf: {
+                '@type': 'CollegeOrUniversity',
+                name: 'University of Wisconsin–Madison'
+              },
+              knowsAbout: [
+                'Geoscience',
+                'Seismic Interpretation',
+                'Basin Analysis',
+                'AI Governance',
+                'Constitutional AI',
+                'MCP Protocol'
+              ],
               url: 'https://arif-fazil.com/',
-              sameAs: ['https://github.com/ariffazil', 'https://t.me/ariffazil'],
+              sameAs: [
+                'https://github.com/ariffazil',
+                'https://t.me/ariffazil'
+              ],
             }),
           }}
         />
@@ -239,7 +259,7 @@ const RECORD_STATS = [
   { n: 13, label: 'YEARS AT PETRONAS', href: '/earth', note: 'Corporate exploration record' },
   { n: 4, label: 'EXPLORATION WELLS LED', href: '/earth', note: '4/4 flowed — success band OBS' },
   { n: 13, label: 'CONSTITUTIONAL FLOORS', href: '/doctrine', note: 'F1–F13 public floors' },
-  { n: 8, label: 'CANONICAL MCP TOOLS', href: '/missions', note: 'Kernel Canonical 8' },
+  { n: 8, label: 'CANONICAL MCP TOOLS', href: '/work', note: 'Kernel Canonical 8' },
 ] as const
 
 function StatCell({

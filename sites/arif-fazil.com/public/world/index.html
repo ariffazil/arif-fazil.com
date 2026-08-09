@@ -9,12 +9,13 @@
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
   <meta name="agent-access" content="allow-read allow-train allow-cite" />
   <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+<link rel="stylesheet" href="/_shared/design-system/components.css" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
   <link rel="alternate" type="application/json" href="/missions.json" title="Missions catalog" />
   <style>
     body{margin:0;background:var(--bg-narrative,#0B0B0F);color:var(--text-primary,#F5F5F7);font-family:var(--font-sans,system-ui,sans-serif);line-height:1.55}
     .frame{max-width:48rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-    a{color:var(--gold-sovereign,#E8B84B)} a:hover{color:#fff}
+    a{color:var(--accent-world,#E4572E)} a:hover{color:#fff}
     h1{font-family:var(--font-display,serif);font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.1;margin:0 0 1rem}
     h2{font-size:1.15rem;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.06em}
     .meta{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
@@ -27,21 +28,21 @@
     .world-map{width:100%;height:100%;display:block}
     .grat{stroke:#161d28;stroke-width:.6;fill:none}
     .continent{fill:rgba(26,31,43,.55);stroke:#2c3444;stroke-width:.8}
-    .equator-glow{stroke:#c9a227;stroke-width:.8;opacity:.25;fill:none;animation:eq-pulse 6s ease-in-out infinite}
+    .equator-glow{stroke:var(--accent-world,#E4572E);stroke-width:.8;opacity:.25;fill:none;animation:eq-pulse 6s ease-in-out infinite}
     @keyframes eq-pulse{0%,100%{opacity:.15}50%{opacity:.4}}
     @media (prefers-reduced-motion:reduce){.equator-glow{animation:none}}
     .map-emoji{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(3rem,8vw,5rem);filter:drop-shadow(0 0 14px rgba(201,162,39,.3));pointer-events:none}
     .hero-text{text-align:left}
-    .kicker{font-family:var(--font-mono,monospace);font-size:.7rem;color:#c9a227;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.75rem}
+    .kicker{font-family:var(--font-mono,monospace);font-size:.7rem;color:var(--accent-world,#E4572E);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.75rem}
     .hero-title{font-family:var(--font-display,serif);font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;margin:0 0 1rem;color:var(--text-primary,#F5F5F7)}
     .hero-prose{font-size:1.05rem;color:#c8c4b8;margin:0 0 1.5rem;max-width:36rem;line-height:1.55}
-    .hero-quote{border-left:2px solid #c9a227;padding:0 0 0 1rem;margin:0 0 1.25rem;font-style:italic;color:#9a958c;font-size:.92rem;line-height:1.6}
+    .hero-quote{border-left:2px solid var(--accent-world,#E4572E);padding:0 0 0 1rem;margin:0 0 1.25rem;font-style:italic;color:#9a958c;font-size:.92rem;line-height:1.6}
     .hero-quote cite{display:block;margin-top:.5rem;font-style:normal;font-family:var(--font-mono,monospace);font-size:.72rem;color:#8a8378;letter-spacing:.06em;text-transform:uppercase}
     .hint{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;letter-spacing:.1em}
     @media (max-width:720px){.hero{grid-template-columns:1fr;gap:1.5rem}.hero-text{text-align:center}.hero-quote{text-align:left}}
   </style>
 </head>
-<body>
+<body style="--domain-accent:var(--accent-world,#E4572E)">
   <div class="frame">
     <nav class="nav" aria-label="Primary">
       <a href="/">Home</a>
@@ -83,7 +84,7 @@
         <div class="map-emoji" aria-hidden="true">🗺️</div>
       </div>
     </section>
-    <p class="meta">Civic + commodities · agent-readable</p>
+    <p class="meta meta-badges"><span class="badge">Civic + commodities</span><span class="badge">agent-readable</span></p>
     <div class="card" style="border-color: var(--gold-sovereign,#E8B84B); background: rgba(232,184,75,0.05);">
       <h2 style="color: var(--gold-sovereign,#E8B84B);">⚡ Sovereign Economic Cockpit</h2>
       <p>Live market proxies (Brent, Gold, Ringgit, KLCI) read against sealed tripwires & transmission sliders.</p>

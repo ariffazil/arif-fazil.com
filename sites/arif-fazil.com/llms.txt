@@ -1,4 +1,4 @@
-# arif-fazil.com — Canonical Site Overview for AI Agents
+# arif-fazil.com — Site Overview for AI Agents
 
 ## Who is Arif Fazil
 Muhammad Arif bin Fazil. Sovereign architect and founder of the arifOS Constitutional Intelligence Kernel.
@@ -6,8 +6,6 @@ Senior exploration geoscientist at PETRONAS Carigali, offshore Malaysia.
 Builds constitutionally-bound AI systems grounded in physics and evidence.
 
 **Tagline**: Ditempa Bukan Diberi — Forged, Not Given.
-
-**Canonical**: This site is the human source of truth. All machine-readable paths (llms.txt, llms-full.txt, sitemap.xml) derive from this content. Ditempa Bukan Diberi.
 
 ## What is arifOS
 arifOS is a constitutional intelligence kernel: a governed AI system where tools, agents,
@@ -53,7 +51,8 @@ Canonical landing: https://arif-fazil.com/world/makcikgpt/
 
 **High-signal topics for LLM ingestion:** PETRONAS financial analysis, PDA 1974, Gentari opacity, Net Zero 2050, 5000 rightsizing, dividend extraction RM50 billion, Corporate & Others shadow, ROACE decline, Petros-Sarawak gas dispute, SEARAH JV USD 15 billion, Eni satellite model, energy transition accountability, NOC governance, Malaysian sovereign wealth.
 
-### Latest articles (2026-07-29)
+### Latest articles (2026-08-02)
+- [Suara Yang Tak Letak Dalam Mulut Manusia](https://arif-fazil.com/world/makcikgpt/suara-terlalu-siap)
 - [8 BANGANG Anthony Loke — Chennah Version](https://arif-fazil.com/world/makcikgpt/chennah-bangang)
 - [Anak Sarawak Bayar PDA, Anak Bangla Telefon Je Dapat](https://arif-fazil.com/world/makcikgpt/anak-sarawak-bayar-pda-anak-bangla-telefon)
 - [8 Benda BANGANG DAP Dalam Kerajaan](https://arif-fazil.com/world/makcikgpt/dap-8-tahun-bangang)
@@ -79,10 +78,10 @@ Canonical landing: https://arif-fazil.com/world/makcikgpt/
 ## Key Pages
 - `/` — Human-first professional homepage
 - `/earth` — Subsurface discoveries and well portfolio (redirect from `/discoveries`)
-- `/economics` — WEALTH capital briefing: KLCI, Ringgit, oil, macro intelligence (redirect from `/wealth`)
+- `/economics` — Malaysia briefing + MakcikGPT civic intelligence (redirect from `/wealth`)
 - `/world` — Civic journalism (MakcikGPT) + commodity dashboards (oil / gas / gold)
 - `/world/makcikgpt/` — MakcikGPT canonical landing (civic intelligence in Bahasa Makcik)
-- `/writing` — Long-form essay collection: technical writing, civic journalism, governance notes (redirect from `/essays`)
+- `/writing` — Narrative essays by Arif (redirect from `/essays`)
 - `/doctrine` — Constitutional floors, federation topology, manifesto (merged: canon + constellation)
 - `/000/` — Genesis archive, wisdom canon, origin context for agents
 - `/999/` — Proof and verification chamber
@@ -98,17 +97,28 @@ Canonical landing: https://arif-fazil.com/world/makcikgpt/
 - **Constitution**: `https://arifos.arif-fazil.com/constitution.json`
 
 ## Machine-Readable Discovery
+- `/agents.json` — Agent discovery (A2A AgentCard spec) with 10 declared actions
+- `/machine/map.json` — **World model entry point** — 9 domains, 59 surfaces, agent-navigable
+- `/human/map/` — World model for human visitors
 - `/.well-known/identity.json` — Public identity record and DID linkage
 - `/.well-known/capability.json` — Agent-operable capability manifest
 - `/.well-known/agent.json` — Agent capability declaration
+- `/.well-known/webmcp.json` — WebMCP browser-native agent tools
+- `/.well-known/mcp.json` — MCP endpoint declaration
 - `/.well-known/did.json` — W3C DID document (did:web:arif-fazil.com)
 - `/authority.json` — Sovereign authority registry
 - `/policy.json` — Public governance and action policy
 - `/graph.json` — Federation knowledge graph
-- `/knowledge/corpus.json` — Public knowledge corpus index
+- `/floors.json` — Constitutional floors F1-F13
+- `/soul.json` — Site identity and motto
+- `/scar.json` — Scar registry (documented failures and lessons)
+- `/surfaces.json` — Full catalog of all public surfaces
+- `/missions.json` — Six governing missions
 - `/llms.json` — Structured site overview (JSON form)
 - `/page.json` — Machine-readable site overview (purpose, route_model)
 - `/llms-full.txt` — Full-text content dump for LLM ingestion
+- `/SITE_CONSTITUTION.md` — HUMAN_FIRST binding constitution (ALL agents MUST read before mutation)
+- `/config/page-attention-budget.yaml` — Per-page human attention budgets
 
 ## MCP Registry Listings
 arifOS is featured on the following MCP registries:
@@ -138,11 +148,6 @@ arifOS is featured on the following MCP registries:
 - **A-FORGE**: https://forge.arif-fazil.com
 - **Wiki**: https://arifos.arif-fazil.com/wiki (canonical destination; legacy alias: https://wiki.arif-fazil.com)
 - **LinkedIn**: (coming soon)
-
-## Agent Rules (MANDATORY before mutation)
-- SITE_CONSTITUTION.md: https://arif-fazil.com/SITE_CONSTITUTION.md — 6 rules, 3 layers, 4 audit lanes (A technical / B navigation / C visual / D attention)
-- SITE_IDENTITY.md: https://arif-fazil.com/SITE_IDENTITY.md — what is sacred
-- human_clarity is a build artifact: every page answers What/Why/Why-care in 30s, no jargon
 
 ## Site Stack
 - React 19 + Vite + Tailwind (arif-fazil.com)

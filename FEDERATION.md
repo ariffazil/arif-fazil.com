@@ -1,1 +1,1 @@
-/root/FEDERATION_CONTRACT.md
+canon/federation.json

@@ -97,14 +97,23 @@ Canonical landing: https://arif-fazil.com/world/makcikgpt/
 - **Constitution**: `https://arifos.arif-fazil.com/constitution.json`
 
 ## Machine-Readable Discovery
+- `/agents.json` — Agent discovery (A2A AgentCard spec) with 10 declared actions
+- `/machine/map.json` — **World model entry point** — 9 domains, 59 surfaces, agent-navigable
+- `/human/map/` — World model for human visitors
 - `/.well-known/identity.json` — Public identity record and DID linkage
 - `/.well-known/capability.json` — Agent-operable capability manifest
 - `/.well-known/agent.json` — Agent capability declaration
+- `/.well-known/webmcp.json` — WebMCP browser-native agent tools
+- `/.well-known/mcp.json` — MCP endpoint declaration
 - `/.well-known/did.json` — W3C DID document (did:web:arif-fazil.com)
 - `/authority.json` — Sovereign authority registry
 - `/policy.json` — Public governance and action policy
 - `/graph.json` — Federation knowledge graph
-- `/knowledge/corpus.json` — Public knowledge corpus index
+- `/floors.json` — Constitutional floors F1-F13
+- `/soul.json` — Site identity and motto
+- `/scar.json` — Scar registry (documented failures and lessons)
+- `/surfaces.json` — Full catalog of all public surfaces
+- `/missions.json` — Six governing missions
 - `/llms.json` — Structured site overview (JSON form)
 - `/page.json` — Machine-readable site overview (purpose, route_model)
 - `/llms-full.txt` — Full-text content dump for LLM ingestion

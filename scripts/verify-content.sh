@@ -28,7 +28,7 @@ FAILURES=0
 CHECKS=0
 
 fetch() {
-    curl -sf --max-time "$TIMEOUT" -H "Cache-Control: no-cache" "$BASE_URL$1"
+    curl -sfL --max-time "$TIMEOUT" -H "Cache-Control: no-cache" "$BASE_URL$1"
 }
 
 assert_present() {
@@ -58,6 +58,40 @@ assert_absent() {
     fi
 }
 
+
+# SPA-aware assert_present: check HTML first, then JS bundles if not found
+assert_present_spa() {
+    local url="$1" label="$2" needle="$3"
+    CHECKS=$((CHECKS + 1))
+    local html
+    html=$(fetch "$url") || { echo -e "  ${RED}❌ FETCH FAILED${NC} $url → $label"; FAILURES=$((FAILURES + 1)); return; }
+    
+    # Check HTML first
+    if [ "$(echo "$html" | grep -cF "$needle")" -gt 0 ]; then
+        echo -e "  ${GREEN}✅${NC} $label"
+        return
+    fi
+    
+    # For SPA pages, check JS bundles
+    local js_urls
+    js_urls=$(echo "$html" | grep -oE 'src="[^"]*\.js"' | sed 's/src="//;s/"//' | head -3)
+    for js_url in $js_urls; do
+        case "$js_url" in
+            http*) ;;
+            /*) js_url="$BASE_URL$js_url" ;;
+            *) js_url="$BASE_URL$url$js_url" ;;
+        esac
+        local js_content
+        js_content=$(curl -sf --max-time "$TIMEOUT" "$js_url" 2>/dev/null) || continue
+        if [ "$(echo "$js_content" | grep -cF "$needle")" -gt 0 ]; then
+            echo -e "  ${GREEN}✅${NC} $label (found in JS bundle)"
+            return
+        fi
+    done
+    
+    echo -e "  ${RED}❌ MISSING${NC} $url → $label"
+    FAILURES=$((FAILURES + 1))
+}
 # B11-E: assert count of static .tripcell rows in no-JS HTML equals 9
 assert_grid9_count() {
     local url="$1" expected="$2"
@@ -175,37 +209,37 @@ print("PASS" if ok else "FAIL", json.dumps({
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — /propa/${NC}"
 
 # ── Workstream A — Banner ──
-assert_present "/propa/"  "A: FY2026 DECLARED panel"     "FY2026 DECLARED STATE"
-assert_present "/propa/"  "A: FY2025 SEALED reading"      "FY2025 SEALED READING"
-assert_present "/propa/"  "A: RM20 billion disclosed"     "RM20 billion"
-assert_present "/propa/"  "A: 38% cut stated"             "38% cut"
-assert_present "/propa/"  "A: Feb 2026 date"              "27 February 2026"
-assert_present "/propa/"  "A: Capex RM45-50B"             "RM45–50B"
-assert_present "/propa/"  "A: F13 veto restored"          "F13 veto remains final"
-assert_present "/propa/"  "A: Exit at RM36.4B"            "RM36.4B"
-assert_present "/propa/"  "A: Cap/floor collision"        "RM33.3B"
-assert_present "/propa/"  "A: [DEC] tag"                  "[DEC]"
+assert_present_spa "/propa/"  "A: FY2026 DECLARED panel"     "FY2026 DECLARED STATE"
+assert_present_spa "/propa/"  "A: FY2025 SEALED reading"      "FY2025 SEALED READING"
+assert_present_spa "/propa/"  "A: RM20 billion disclosed"     "RM20 billion"
+assert_present_spa "/propa/"  "A: 38% cut stated"             "38% cut"
+assert_present_spa "/propa/"  "A: Feb 2026 date"              "27 February 2026"
+assert_present_spa "/propa/"  "A: Capex RM45-50B"             "RM45–50B"
+assert_present_spa "/propa/"  "A: F13 veto restored"          "F13 veto remains final"
+assert_present_spa "/propa/"  "A: Exit at RM36.4B"            "RM36.4B"
+assert_present_spa "/propa/"  "A: Cap/floor collision"        "RM33.3B"
+assert_present_spa "/propa/"  "A: [DEC] tag"                  "[DEC]"
 
 # ── Stale phrases removed ──
 assert_absent "/propa/"   "A: DIVIDEND STOP removed"      "DIVIDEND STOP EFFECTIVE"
 assert_absent "/propa/"   "A: No human override removed"   "No human override"
 
 # ── Workstream B — Site render ──
-assert_present "/propa/"  "B1: Pulse 0"                   'id="pulseval" style="color:var(--void)">0<'
-assert_present "/propa/"  "B1: Verdict VOID"              'pulseverdict" style="background:var(--void)'
-assert_present "/propa/"  "B2: BODY override"             "OVERRIDE ACTIVE"
-assert_present "/propa/"  "B3: 2 of 6 ENGAGED"            "2 of 6 ENGAGED"
-assert_present "/propa/"  "B3: Governance ACTIVE"          "Governance Capacity"
+assert_present_spa "/propa/"  "B1: Pulse 0"                   'id="pulseval" style="color:var(--void)">0<'
+assert_present_spa "/propa/"  "B1: Verdict VOID"              'pulseverdict" style="background:var(--void)'
+assert_present_spa "/propa/"  "B2: BODY override"             "OVERRIDE ACTIVE"
+assert_present_spa "/propa/"  "B3: 2 of 6 ENGAGED"            "2 of 6 ENGAGED"
+assert_present_spa "/propa/"  "B3: Governance ACTIVE"          "Governance Capacity"
 assert_absent "/propa/"   "B4: 0.59/1.00 removed"          "0.59/1.00"
-assert_present "/propa/"  "B4: 1.00/3 present"             "1.00/3"
-assert_present "/propa/"  "B5: Tripwire labelled"          "60% tripwire"
-assert_present "/propa/"  "B5: Pacemaker labelled"         "65% pacemaker"
+assert_present_spa "/propa/"  "B4: 1.00/3 present"             "1.00/3"
+assert_present_spa "/propa/"  "B5: Tripwire labelled"          "60% tripwire"
+assert_present_spa "/propa/"  "B5: Pacemaker labelled"         "65% pacemaker"
 assert_absent "/propa/"   "B6: \$83.78 hardcoded removed"  "83.78"
-assert_present "/propa/"  "B8: Honesty EN"                 "None of the"
+assert_present_spa "/propa/"  "B8: Honesty EN"                 "None of the"
 assert_absent "/propa/"   "B9: RM3.5B removed"             "RM3.5B"
-assert_present "/propa/"  "B9: RM3.1B present"             "RM3.1B"
+assert_present_spa "/propa/"  "B9: RM3.1B present"             "RM3.1B"
 assert_absent "/propa/"   "B10: 12 tools removed"          "12 WEALTH tools"
-assert_present "/propa/"  "B10: 8 canonical present"       "8 canonical WEALTH"
+assert_present_spa "/propa/"  "B10: 8 canonical present"       "8 canonical WEALTH"
 
 # ── B11-E: forbidden contiguous marker '48 HOLD' (R1 + B11-D) ──
 assert_absent "/propa/"   "B11-E: no contiguous '48 HOLD' marker" "48 HOLD"
@@ -215,31 +249,31 @@ assert_absent "/data/wealth/petronas_vitals.json" "B11-E: source JSON no '48 HOL
 assert_grid9_count "/propa/" 9
 
 # ── B11-B: static SVG fan fallback present ──
-assert_present "/propa/"  "B11-B: SVG fan-svg element"   'id="fan-svg"'
-assert_present "/propa/"  "B11-B: NET-DEBT TRIPWIRE label" "NET-DEBT TRIPWIRE"
-assert_present "/propa/"  "B11-B: fan-fallback marker"    'data-agent-role="fan-fallback-static"'
-assert_present "/propa/"  "B11-B: [SPEC] non-scoring"     "[SPEC] non-scoring"
+assert_present_spa "/propa/"  "B11-B: SVG fan-svg element"   'id="fan-svg"'
+assert_present_spa "/propa/"  "B11-B: NET-DEBT TRIPWIRE label" "NET-DEBT TRIPWIRE"
+assert_present_spa "/propa/"  "B11-B: fan-fallback marker"    'data-agent-role="fan-fallback-static"'
+assert_present_spa "/propa/"  "B11-B: [SPEC] non-scoring"     "[SPEC] non-scoring"
 
 # ── B11-C: static scenario summary present ──
-assert_present "/propa/"  "B11-C: scenario-summary marker" 'data-agent-role="scenario-summary-static"'
-assert_present "/propa/"  "B11-C: IFR sole scoring input" "audited IFR FY2025 remains the sole scoring input"
+assert_present_spa "/propa/"  "B11-C: scenario-summary marker" 'data-agent-role="scenario-summary-static"'
+assert_present_spa "/propa/"  "B11-C: IFR sole scoring input" "audited IFR FY2025 remains the sole scoring input"
 
 # ── B11-D: reality JSON-LD contract ──
 assert_reality_jsonld "/propa/"
-assert_present "/propa/"  "B11-D: pre_lock_pulse 48 in JSON-LD"  '"pre_lock_pulse": 48'
-assert_present "/propa/"  "B11-D: display_pulse 0 in JSON-LD"    '"display_pulse": 0'
-assert_present "/propa/"  "B11-D: fy2026 [DEC] feeds_scoring=false" '"feeds_scoring": false'
+assert_present_spa "/propa/"  "B11-D: pre_lock_pulse 48 in JSON-LD"  '"pre_lock_pulse": 48'
+assert_present_spa "/propa/"  "B11-D: display_pulse 0 in JSON-LD"    '"display_pulse": 0'
+assert_present_spa "/propa/"  "B11-D: fy2026 [DEC] feeds_scoring=false" '"feeds_scoring": false'
 assert_absent "/propa/"   "B11-D: '48 HOLD' must not appear in any JSON-LD" "48 HOLD"
 
 # ── JSON-LD integrity (all blocks parse) ──
 echo ""
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — JSON-LD${NC}"
 assert_jsonld_parses "/propa/"
-assert_present "/propa/"  "JSON-LD: ThreeDoorsDigest"     "ThreeDoorsDigest"
-assert_present "/propa/"  "JSON-LD: PacemakerAction"       "PacemakerAction"
-assert_present "/propa/"  "JSON-LD: CrisisAlert"           "InstitutionalCrisisAlert"
-assert_present "/propa/"  "JSON-LD: 2 pacemakers"          "2 pacemakers ENGAGED"
-assert_present "/propa/"  "JSON-LD: InstitutionalVitals"   "InstitutionalVitals"
+assert_present_spa "/propa/"  "JSON-LD: ThreeDoorsDigest"     "ThreeDoorsDigest"
+assert_present_spa "/propa/"  "JSON-LD: PacemakerAction"       "PacemakerAction"
+assert_present_spa "/propa/"  "JSON-LD: CrisisAlert"           "InstitutionalCrisisAlert"
+assert_present_spa "/propa/"  "JSON-LD: 2 pacemakers"          "2 pacemakers ENGAGED"
+assert_present_spa "/propa/"  "JSON-LD: InstitutionalVitals"   "InstitutionalVitals"
 
 # ── Cross-surface nav ──
 echo ""
@@ -268,3 +302,5 @@ else
     echo -e "  ${RED}VERDICT: FAIL${NC} — content assertions must pass before deploy"
     exit 1
 fi
+
+# SPA-aware assert_present: check HTML first, then JS bundles if not found

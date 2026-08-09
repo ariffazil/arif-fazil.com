@@ -1,0 +1,103 @@
+{
+  "$schema": "https://agents.json.dev/schema.json",
+  "name": "arif-fazil.com",
+  "description": "Constitutional intelligence site for Arif Fazil — exploration geoscientist, AI governance architect. Serves human readers and AI agents as first-class audiences.",
+  "url": "https://arif-fazil.com",
+  "provider": {
+    "organization": "arif-fazil.com",
+    "url": "https://arifos.arif-fazil.com",
+    "contact": "arifbfazil@gmail.com"
+  },
+  "authentication": {
+    "type": "none",
+    "description": "Public site. No authentication required for reading. MCP endpoints require session tokens for mutations."
+  },
+  "actions": [
+    {
+      "name": "get_site_overview",
+      "description": "Machine-readable site overview — who is Arif, what is arifOS, what the site contains",
+      "url": "https://arif-fazil.com/page.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_surfaces",
+      "description": "Full catalog of all public surfaces on the site with metadata",
+      "url": "https://arif-fazil.com/surfaces.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_world_model",
+      "description": "World model map — 9 domains, 59 surfaces, agent-navigable",
+      "url": "https://arif-fazil.com/machine/map.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_missions",
+      "description": "Six governing missions of the federation",
+      "url": "https://arif-fazil.com/missions.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_floors",
+      "description": "Constitutional floors F1-F13 governing the federation",
+      "url": "https://arif-fazil.com/floors.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_soul",
+      "description": "Site soul — identity, motto, doctrine",
+      "url": "https://arif-fazil.com/soul.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_graph",
+      "description": "Knowledge graph — entities and relationships on the site",
+      "url": "https://arif-fazil.com/graph.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_scars",
+      "description": "Scar registry — documented failures and lessons",
+      "url": "https://arif-fazil.com/scar.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_authority",
+      "description": "Sovereign authority registry",
+      "url": "https://arif-fazil.com/authority.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    },
+    {
+      "name": "get_policy",
+      "description": "Public governance and action policy",
+      "url": "https://arif-fazil.com/policy.json",
+      "httpMethod": "GET",
+      "contentType": "application/json"
+    }
+  ],
+  "capabilities": {
+    "a2a": false,
+    "mcp": true,
+    "webmcp": true,
+    "verification": true
+  },
+  "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
+  "well_known": {
+    "agent": "https://arif-fazil.com/.well-known/agent.json",
+    "webmcp": "https://arif-fazil.com/.well-known/webmcp.json",
+    "mcp": "https://arif-fazil.com/.well-known/mcp.json"
+  },
+  "feeds": {
+    "rss": "https://arif-fazil.com/feed.xml",
+    "sitemap": "https://arif-fazil.com/sitemap.xml"
+  }
+}

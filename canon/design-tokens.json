@@ -1,59 +1,59 @@
 {
   "$schema": "./public-state.schema.json",
   "schema": "canon/design-tokens/v2026.08",
-  "version": "PRIMER-1.0",
-  "primer": "PRIMER-1",
+  "version": "ARROW-2.0",
+  "primer": "ARROW-DARK",
   "ratified_by": "sovereign (F13)",
   "ratified_at": "2026-08-01",
-  "doctrine": "One canon, two renderings. Every human token has a machine twin. Design is the F4 Clarity floor made visible. Red is rationed - maruah is scarce by definition.",
+  "updated_at": "2026-08-09",
+  "doctrine": "One canon, two renderings. Every human token has a machine twin. Design is the F4 Clarity floor made visible. Red is rationed - maruah is scarce by definition. DARK basalt unified with GEOX.",
+  "note": "PRIMER-1 light palette retired 2026-08-09. Arrow Dark is the live system. Update tailwind.config.js and index.css to match these tokens.",
   "color": {
     "human": {
       "family": "yellow",
-      "rationale": "Warmth. Yellow is the human-body color: sun, fire, light, life. Universal human warmth signal.",
-      "100": { "hex": "#FBF3D9", "name": "paper-sand", "use": "backgrounds" },
-      "300": { "hex": "#F2D98C", "name": "soft amber", "use": "cards, fills" },
-      "500": { "hex": "#D9A62E", "name": "primary amber", "use": "actions, brand" },
-      "700": { "hex": "#8A6410", "name": "deep honey", "use": "text on light" },
-      "900": { "hex": "#4A3608", "name": "umber", "use": "headlines" }
+      "rationale": "Warmth. Gold accent on dark basalt — geological, restrained.",
+      "500": { "hex": "#C9A227", "name": "gold", "use": "brand accent, quotes, gold family" },
+      "700": { "hex": "#B08D3E", "name": "brass", "use": "editorial accent" },
+      "900": { "hex": "#4A3608", "name": "umber", "use": "deep accent" }
     },
     "institution": {
       "family": "blue",
-      "rationale": "Law. Blue is the institution color: banks, courts, constitutions, corporate trust.",
-      "100": { "hex": "#E4EBF2", "name": "mist", "use": "backgrounds" },
-      "300": { "hex": "#9DB8CE", "name": "steel", "use": "cards, borders" },
-      "500": { "hex": "#2E5F8A", "name": "marine", "use": "actions, brand" },
-      "700": { "hex": "#1B3A57", "name": "deep marine", "use": "text" },
-      "900": { "hex": "#0C1F31", "name": "abyss", "use": "headlines" }
+      "rationale": "Law. Muted blue on dark — institutional trust without brightness.",
+      "300": { "hex": "#7DD3FC", "name": "cold", "use": "data highlights" },
+      "500": { "hex": "#31c48d", "name": "forge-green", "use": "seal/live status" },
+      "700": { "hex": "#1B3A57", "name": "deep marine", "use": "text on accent" }
     },
     "earth": {
       "family": "green-blue",
-      "rationale": "Geologic. Green-blue honestly mixed (teal to viridian to basin), not the 'Earth = green' cliche.",
-      "100": { "hex": "#DFF0EA", "name": "shallow", "use": "backgrounds" },
-      "300": { "hex": "#8CC3B2", "name": "reef", "use": "cards" },
-      "500": { "hex": "#2A705E", "name": "viridian", "use": "actions, brand" },
-      "700": { "hex": "#17584A", "name": "basin", "use": "text" },
-      "900": { "hex": "#0A2E27", "name": "trench", "use": "headlines" }
+      "rationale": "Geologic. Teal to viridian — basin green on dark.",
+      "500": { "hex": "#FF9F1C", "name": "earth-orange", "use": "earth family accent" },
+      "700": { "hex": "#17584A", "name": "basin", "use": "text on accent" },
+      "900": { "hex": "#0A2E27", "name": "trench", "use": "deep accent" }
     },
     "sovereign": {
       "family": "red",
-      "rationale": "Rationed. Red appears only where sovereignty or judgment is present: /arif strip, verdict chips (888_HOLD, VOID), seal marks (999). If red is everywhere, it means nothing.",
+      "rationale": "Rationed. Red appears only where sovereignty or judgment is present. If red is everywhere, it means nothing.",
       "300": { "hex": "#D97B6C", "name": "clay", "use": "seal backgrounds only" },
-      "500": { "hex": "#B3362B", "name": "signal", "use": "verdicts, 888, warnings" },
+      "500": { "hex": "#f0506e", "name": "signal", "use": "verdicts, 888, warnings, void/hazard" },
       "700": { "hex": "#7A1F18", "name": "maroon", "use": "sovereign text/strip" },
       "900": { "hex": "#3D0E0A", "name": "deep scar", "use": "VOID state" }
     },
     "neutral": {
       "family": "neutral",
-      "rationale": "Bedrock. Warm paper (human side) and carbon (agent side).",
-      "paper": { "hex": "#FAF7F0", "name": "human-side canvas", "use": "warm, low saturation" },
-      "ink": { "hex": "#1A1712", "name": "human-side body text", "use": "text" },
-      "carbon": { "hex": "#101216", "name": "agent-side canvas", "use": "background" },
-      "bone": { "hex": "#E8E6DF", "name": "agent-side primary text", "use": "text" }
+      "rationale": "Bedrock. Dark basalt canvas with warm ink text.",
+      "paper": { "hex": "#0A0B0D", "name": "basalt canvas", "use": "primary background (dark)" },
+      "paper-dark": { "hex": "#111318", "name": "steel surface", "use": "cards, elevated surfaces" },
+      "ink": { "hex": "#EDEAE2", "name": "warm ink", "use": "primary text" },
+      "ink-soft": { "hex": "#9AA0A8", "name": "dim ink", "use": "secondary text" },
+      "carbon": { "hex": "#0A0C10", "name": "forge carbon", "use": "forge palette base" },
+      "bone": { "hex": "#E6EDF3", "name": "bone text", "use": "forge palette primary text" },
+      "border": { "hex": "#1f2733", "name": "hairline", "use": "borders" }
     }
   },
   "font": {
-    "family": "IBM Plex",
-    "voices": { "human": "Sans", "doctrine": "Serif", "machine": "Mono" },
+    "family": "Arrow-Type",
+    "voices": { "display": "Fraunces", "body": "Newsreader", "machine": "IBM Plex Mono" },
+    "note": "Satoshi/Cabinet Grotesk loaded but unused — remove from index.html to save 200KB+ download.",
     "scale_ratio": 1.414,
     "base_px": 16.8,
     "scale": {

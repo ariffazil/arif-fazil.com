@@ -27,9 +27,11 @@ function NavItemLink({
   // Territory color system (matches Home FOUR TERRITORIES underlines)
   const territoryAccent: Record<string, string> = {
     '/earth': 'decoration-[#E4572E]',
-    '/economics': 'decoration-[#C9A227]',
     '/world': 'decoration-[#EDEAE2]',
-    '/doctrine': 'decoration-[#9AA0A8]',
+    '/words': 'decoration-[#C9A227]',
+    '/writing': 'decoration-[#C9A227]',
+    '/work': 'decoration-[#9AA0A8]',
+    '/missions': 'decoration-[#9AA0A8]',
   }
   const hrefNorm = item.href.replace(/\/$/, '')
   const accent = territoryAccent[hrefNorm] || 'decoration-ember'

@@ -35,49 +35,74 @@
     "creed": "Forged, not given."
   },
   "primary_links": {
-    "description": "Primary nav — World Model vocabulary overlay on Arrow Hybrid URLs. 7 domains.",
-    "rule": "Max 7. Labels = World Model domains. URLs = Arrow Hybrid (unchanged).",
+    "description": "Primary nav — 5 items, labels match URLs. Law + Proof moved to secondary.",
+    "rule": "Max 5. Labels must match URL paths. No name/URL mismatch.",
     "items": [
+      {
+        "label": "Home",
+        "href": "/",
+        "role": "primary",
+        "mode": "spa",
+        "domain": "origin",
+        "question": "Who is Arif Fazil?"
+      },
       {
         "label": "Earth",
         "href": "/earth",
         "role": "primary",
-        "mode": "spa",
+        "mode": "static",
         "domain": "earth",
         "question": "What's under our feet?"
       },
       {
-        "label": "Capital",
-        "href": "/economics",
-        "role": "primary",
-        "mode": "spa",
-        "domain": "capital",
-        "question": "What's it worth?"
-      },
-      {
-        "label": "Voice",
+        "label": "World",
         "href": "/world",
         "role": "primary",
-        "mode": "spa",
-        "domain": "voice",
-        "question": "What do I think?"
+        "mode": "static",
+        "domain": "voice+capital",
+        "question": "What's happening?"
       },
       {
-        "label": "Essays",
-        "href": "/writing",
+        "label": "Writing",
+        "href": "/words",
         "role": "primary",
         "mode": "spa",
         "domain": "voice",
         "question": "What do I think?",
         "aliases": [
+          "/writing",
           "/read",
           "/essays"
         ]
       },
       {
+        "label": "Work",
+        "href": "/work",
+        "role": "primary",
+        "mode": "spa",
+        "domain": "work",
+        "question": "What am I building?",
+        "aliases": [
+          "/missions"
+        ]
+      }
+    ]
+  },
+  "secondary_links": {
+    "description": "Footer secondary — Law, Proof, and supporting pages.",
+    "items": [
+      {
+        "label": "Origin",
+        "href": "/000/",
+        "role": "secondary",
+        "mode": "static",
+        "domain": "origin",
+        "question": "Where did this start?"
+      },
+      {
         "label": "Law",
         "href": "/doctrine",
-        "role": "primary",
+        "role": "secondary",
         "mode": "spa",
         "domain": "law",
         "question": "What are the rules?",
@@ -87,33 +112,12 @@
         ]
       },
       {
-        "label": "Work",
-        "href": "/missions",
-        "role": "primary",
-        "mode": "spa",
-        "domain": "work",
-        "question": "What am I building?"
-      },
-      {
         "label": "Proof",
         "href": "/999/",
-        "role": "primary",
+        "role": "secondary",
         "mode": "static",
         "domain": "proof",
         "question": "Is this true?"
-      }
-    ]
-  },
-  "secondary_links": {
-    "description": "Footer secondary — World Model domains not in primary strip.",
-    "items": [
-      {
-        "label": "Origin",
-        "href": "/000/",
-        "role": "secondary",
-        "mode": "static",
-        "domain": "origin",
-        "question": "Where did this start?"
       },
       {
         "label": "Map",

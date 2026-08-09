@@ -59,7 +59,7 @@ build:
 	@echo "[build] Building propa page (PETRONAS dashboard, canonical /propa/)..."
 	cd sites/arif-fazil.com && node scripts/render-propa.cjs
 	@echo "[build] Injecting live market data into propa..."
-	cp sites/arif-fazil.com/public/data/wealth/petronas_vitals.json sites/arif-fazil.com/dist/propa/petronas_vitals.json
+	cp sites/arif-fazil.com/public/data/wealth/petronas_vitals.json sites/arif-fazil.com/dist/world/propa/petronas_vitals.json
 	@echo "[build] Injecting WEALTH institutional health panel..."
 	cd sites/arif-fazil.com && python3 scripts/inject-institutional-panel.py
 	@echo "[build] Regenerating discovery catalogs..."

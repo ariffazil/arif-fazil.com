@@ -11,14 +11,14 @@ if not inst:
     print("  [build] Institutional panel: no data returned, skipping")
     sys.exit(0)
 
-with open('dist/propa/index.html', 'r') as f:
+with open('dist/world/propa/index.html', 'r') as f:
     html = f.read()
 
 marker = '<!-- B11-E: RECENT EVENTS PANEL'
 if marker in html:
     html = html.replace(marker, inst + '\n\n' + marker)
-    with open('dist/propa/index.html', 'w') as f:
+    with open('dist/world/propa/index.html', 'w') as f:
         f.write(html)
     print(f'  [build] Institutional panel injected ({len(html)} bytes)')
 else:
-    print(f'  [build] Institutional panel: marker not found in dist/propa/index.html, skipping')
+    print(f'  [build] Institutional panel: marker not found in dist/world/propa/index.html, skipping')

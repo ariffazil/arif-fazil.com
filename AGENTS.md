@@ -3,6 +3,11 @@
 > **Canonical:** /root/AGENTS.md
 > **SOT:** 2026-08-03 | **seal_seq:** SEAL-8a8e064d1fe34443
 > This file is a pointer, not a constitution. Load /root/AGENTS.md for full doctrine.
+>
+> **⛔ BEFORE ANY MUTATION OF THIS SITE, READ:**
+> - `/root/arif-fazil.com/SITE_CONSTITUTION.md` — 6 rules, 3 layers, 4 audit lanes
+> - `/root/arif-fazil.com/SITE_IDENTITY.md` — what is sacred
+> Both ratified by F13 SOVEREIGN (Arif) 2026-08-09. Violation = drift scar.
 
 ## ⛔ SITE DEPLOY GATE — NON-BYPASSABLE (2026-08-03)
 

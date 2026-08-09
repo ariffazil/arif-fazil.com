@@ -46,7 +46,10 @@ mkdir -p $HTML_ROOT/arif/wealth/makcikgpt/
 cp $SITES_ROOT/arif-fazil.com/public/makcikgpt-md/*.md $HTML_ROOT/arif/wealth/makcikgpt/ 2>/dev/null || true
 
 rsync -avz --delete $SITES_ROOT/arif-fazil.com/public/000/ $HTML_ROOT/arif/000/
-rsync -avz --delete $SITES_ROOT/arif-fazil.com/public/999/ $HTML_ROOT/arif/999/
+# 999 canonical source moved from public/999 to site-root 999/ (commit a819ea6)
+rsync -avz --delete $SITES_ROOT/arif-fazil.com/999/ $HTML_ROOT/arif/999/
+# claims.json is built into dist/work/proof; 999 page links /999/claims.json
+cp $SITES_ROOT/arif-fazil.com/dist/work/proof/claims.json $HTML_ROOT/arif/999/claims.json 2>/dev/null || true
 
 # mcp.arif-fazil.com — gateway landing + proof surface (no --delete: .well-known live assets preserved)
 rsync -avz $SITES_ROOT/mcp.arif-fazil.com/ $HTML_ROOT/mcp/
@@ -104,6 +107,9 @@ caddy reload --config /etc/caddy/Caddyfile
 
 # 7. Truth Verification Gate
 echo "[8/8] Running Truth Verification Suite..."
+# HUMAN CLARITY GATE (SEAL 2026-08-09): Lane B nav / C visual / D attention
+python3 /root/arif-fazil.com/scripts/web-zen/web_zen.py audit --no-receipt || {
+  echo "  ⛔ HUMAN CLARITY GATE FAILED — read SITE_CONSTITUTION.md RULE 1-6"; exit 1; }
 python3 /root/scripts/check_constellation_truth.py
 
 echo "DEPLOYMENT COMPLETE. Constellation is Live."

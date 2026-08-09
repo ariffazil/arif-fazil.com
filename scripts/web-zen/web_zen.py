@@ -641,7 +641,12 @@ def cmd_audit(args: argparse.Namespace) -> Report:
                 body = dbody
                 code = dcode
         h1 = bool(re.search(r"<h1", body))
-        nav = bool(re.search(r"<nav|role=.?navigation|unified-header-loader", body))
+        nav = bool(
+            re.search(
+                r"<nav|role=.?navigation|unified-header-loader|trinity-nav\.js",
+                body,
+            )
+        )
         # SPA-aware: nav/h1 may live in the JS bundle, not the HTML shell
         if not nav:
             for am in re.finditer(r'(?:src|href)="(/assets/[^"]+)"', body):

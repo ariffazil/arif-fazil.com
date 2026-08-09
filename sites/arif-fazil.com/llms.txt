@@ -139,6 +139,11 @@ arifOS is featured on the following MCP registries:
 - **Wiki**: https://arifos.arif-fazil.com/wiki (canonical destination; legacy alias: https://wiki.arif-fazil.com)
 - **LinkedIn**: (coming soon)
 
+## Agent Rules (MANDATORY before mutation)
+- SITE_CONSTITUTION.md: https://arif-fazil.com/SITE_CONSTITUTION.md — 6 rules, 3 layers, 4 audit lanes (A technical / B navigation / C visual / D attention)
+- SITE_IDENTITY.md: https://arif-fazil.com/SITE_IDENTITY.md — what is sacred
+- human_clarity is a build artifact: every page answers What/Why/Why-care in 30s, no jargon
+
 ## Site Stack
 - React 19 + Vite + Tailwind (arif-fazil.com)
 - Constitutional kernel: Python 3.12+ / FastMCP

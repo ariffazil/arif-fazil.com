@@ -65,7 +65,7 @@ TRUTH_MARKERS: dict[str, list[str]] = {
         "PETRONAS",
     ],
     "https://mcp.arif-fazil.com/explorer.html": ["Engine room", "missions"],
-    "https://arif-fazil.com/000/": ["000", "genesis"],
+    "https://arif-fazil.com/000/": ["000", "BLAKE3", "Identity Hash"],
     "https://arif-fazil.com/999/": ["999", "proof", "seal"],
     "https://arif-fazil.com/gold/api/proxies": ["brent", "timestamp"],
     "https://arif-fazil.com/economics": [
@@ -503,6 +503,167 @@ def cmd_doctor(args: argparse.Namespace) -> Report:
     return r
 
 
+
+# ── LANE B/C/D — SITE CONSTITUTION AUDIT (SEAL 2026-08-09) ──────────────────
+# Lane B: Navigation · Lane C: Visual · Lane D: Attention. Lane A = doctor/verify.
+NAV_QUESTIONS = {
+    "landing": "https://arif-fazil.com/",
+    "canon": "https://arif-fazil.com/000/",
+    "trust": "https://arif-fazil.com/999/",
+    "observatory": "https://arifos.arif-fazil.com/",
+    "doctrine": "https://arif-fazil.com/doctrine",
+    "organs": "https://arif-fazil.com/organs/",
+}
+HUMAN_MARKERS = [
+    "who", "what", "why", "problem", "solve", "Ditempa", "geoscientist", "field",
+    "constitution", "governed", "30 second",
+]
+JARGON = [
+    "MCP", "JSON", "schema", "protocol", "endpoint", "A2A", "REST", "API",
+    "tool registry", "agent card", "governance API", "webhook", "OAuth",
+]
+
+
+def _reachable_in_3(url: str, timeout: int = 8) -> bool:
+    """Lane B: BFS ≤3 hops from landing to target (same-origin links only)."""
+    import urllib.parse
+    seen: set[str] = set()
+    frontier = ["https://arif-fazil.com/"]
+    for _hop in range(3):
+        nxt: list[str] = []
+        for u in frontier:
+            if u in seen:
+                continue
+            seen.add(u)
+            code, body, _ = fetch(u, timeout=timeout, max_bytes=1_500_000)
+            if code != 200:
+                continue
+            if u.split("#")[0] == url.split("#")[0]:
+                return True
+            # SPA-aware: React routes/links live in the JS bundle, not raw HTML.
+            target_str = url.replace("https://", "").replace("http://", "").rstrip("/")
+            if target_str and target_str in body:
+                return True
+            # Bundle-aware: fetch local JS assets once and search route strings inside.
+            for m in re.finditer(r'(?:src|href)="(/assets/[^"]+)"', body):
+                asset = m.group(1)
+                aurl = "https://arif-fazil.com" + asset
+                if aurl in seen:
+                    continue
+                seen.add(aurl)
+                acode, abody, _ = fetch(aurl, timeout=timeout, max_bytes=6_000_000)
+                if acode == 200 and target_str and target_str in abody:
+                    return True
+            for m in re.finditer(r'href="([^"#]+)"', body):
+                link = m.group(1)
+                if link.startswith("http"):
+                    if "arif-fazil.com" in link:
+                        nxt.append(link)
+                elif link.startswith("/"):
+                    nxt.append("https://arif-fazil.com" + link)
+        frontier = nxt[:25]
+    return False
+
+
+def _attention_score(url: str, timeout: int = 8) -> tuple[float, list[str]]:
+    """Lane D: proxy for 'how fast does a human get it'. Higher = clearer."""
+    code, body, _ = fetch(url, timeout=timeout, max_bytes=1_500_000)
+    if code != 200:
+        return 0.0, ["non-200"]
+    # Redirect stub (data-plane=redirect / meta-refresh): humans land on the target — score IT.
+    m = re.search(
+        r'<meta\s+http-equiv=["\']refresh["\'][^>]*content=["\'][^"\']*url=([^"\' >]+)',
+        body, re.I,
+    )
+    if m:
+        dest = m.group(1)
+        if dest.startswith("/"):
+            dest = "https://arif-fazil.com" + dest
+        dcode, dbody, _ = fetch(dest, timeout=timeout, max_bytes=1_500_000)
+        if dcode == 200:
+            body = dbody
+        notes0 = ["redirect-stub→" + dest.replace("https://arif-fazil.com", "")]
+        code, body = dcode, dbody
+        if dcode != 200:
+            return 0.0, ["redirect target non-200"]
+        text = re.sub(r"<[^>]+>", " ", body).lower()
+        found = [mm for mm in HUMAN_MARKERS if mm.lower() in text]
+        jargon_hits = [j for j in JARGON if j.lower() in text]
+        score = min(1.0, len(found) / 4.0)
+        notes = list(notes0)
+        if len(found) < 3:
+            notes.append(f"human markers {len(found)}/7")
+        if len(jargon_hits) > 6:
+            notes.append(f"jargon-heavy ({len(jargon_hits)} terms)")
+        return score, notes
+    text = re.sub(r"<[^>]+>", " ", body).lower()
+    found = [m for m in HUMAN_MARKERS if m.lower() in text]
+    jargon_hits = [j for j in JARGON if j.lower() in text]
+    score = min(1.0, len(found) / 4.0)
+    notes = []
+    if len(found) < 3:
+        notes.append(f"human markers {len(found)}/7")
+    if len(jargon_hits) > 6:
+        notes.append(f"jargon-heavy ({len(jargon_hits)} terms)")
+    return score, notes
+
+
+def cmd_audit(args: argparse.Namespace) -> Report:
+    r = Report(mode="audit", ts=utc_now(), ok=True)
+    r.meta["constitution"] = "SITE_CONSTITUTION.md · RULE 1-6 · lanes B/C/D"
+    # Lane B — navigation
+    for name, url in NAV_QUESTIONS.items():
+        ok = _reachable_in_3(url, timeout=args.timeout)
+        r.add(f"nav.{name}", ok, f"{url} reachable ≤3 clicks from landing", "B·NAV")
+        if not ok:
+            r.meta["fail_lane"] = "FAIL_NAVIGATION"
+    # Lane C — visual surface checks (structural first pass: h1, nav, content mass)
+    for name, url in NAV_QUESTIONS.items():
+        code, body, _ = fetch(url, timeout=args.timeout, max_bytes=1_500_000)
+        if code != 200:
+            r.add(f"visual.{name}", False, f"{url} {code}", "C·VIS")
+            r.meta.setdefault("fail_lane", "FAIL_VISUAL")
+            continue
+        h1 = bool(re.search(r"<h1", body))
+        nav = bool(re.search(r"<nav|role=.?navigation", body))
+        mass = len(re.sub(r"<[^>]+>", " ", body).strip()) > 400
+        ok = h1 and nav and mass
+        r.add(
+            f"visual.{name}",
+            ok,
+            f"{url} h1={h1} nav={nav} content_mass={mass}",
+            "C·VIS",
+        )
+        if not ok:
+            r.meta.setdefault("fail_lane", "FAIL_VISUAL")
+    # Lane D — attention cost
+    for name, url in NAV_QUESTIONS.items():
+        score, notes = _attention_score(url, timeout=args.timeout)
+        ok = score >= 0.5
+        r.add(
+            f"attention.{name}",
+            ok,
+            f"{url} score={score:.2f} {'; '.join(notes) if notes else 'clear'}",
+            "D·ATTN",
+        )
+        if not ok:
+            r.meta["fail_lane"] = "HALT"  # attention failure = halt
+    # Constitution presence (agents must read before mutation)
+    for doc in ("SITE_CONSTITUTION.md", "SITE_IDENTITY.md"):
+        exists = Path("/root/arif-fazil.com") / doc
+        ok = exists.is_file()
+        r.add(f"constitution.{doc}", ok, str(exists), "GREEN")
+        if not ok:
+            r.meta["fail_lane"] = "FAIL_CONSTITUTION_MISSING"
+    if not r.meta.get("fail_lane"):
+        r.meta["fail_lane"] = "PASS"
+    r.meta["agent_next"] = (
+        "Lane A=doctor. B=FAIL_NAVIGATION → fix nav/Caddy. C=FAIL_VISUAL → fix hierarchy. "
+        "D=HALT → page needs What/Why/Care in plain language. Read SITE_CONSTITUTION.md before mutating."
+    )
+    return r
+
+
 def cmd_caddy_hint(_args: argparse.Namespace) -> Report:
     r = Report(mode="caddy-reload-hint", ts=utc_now(), ok=True)
     r.add(
@@ -609,6 +770,12 @@ def main(argv: list[str] | None = None) -> int:
         "caddy-reload-hint", parents=[common], help="safe reload path (no mutation)"
     )
     c.set_defaults(func=cmd_caddy_hint)
+
+    a = sub.add_parser(
+        "audit", parents=[common], help="SITE CONSTITUTION lanes B/C/D (nav/visual/attention)"
+    )
+    a.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT)
+    a.set_defaults(func=cmd_audit)
 
     args = p.parse_args(argv)
     report: Report = args.func(args)

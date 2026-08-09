@@ -63,6 +63,12 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
+    "label": "Organs",
+    "href": "/organs/",
+    "mode": "static",
+    "external": false
+  },
+  {
     "label": "PETRONAS",
     "href": "/propa/",
     "mode": "static",

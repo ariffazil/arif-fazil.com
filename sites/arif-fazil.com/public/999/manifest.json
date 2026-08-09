@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "name": "Ψ-PRIVATE /999/ Manifest",
+  "encryption": "X25519 + AES-GCM",
+  "authentication": "Ed25519 (ROOTKEY)",
+  "structure": {
+    "scars": "/scars",
+    "genesis": "/genesis",
+    "abah_check": "/abah-check",
+    "veto": "/veto",
+    "memory": "/memory",
+    "vault": "/vault",
+    "floors": "/floors"
+  },
+  "seals": []
+}

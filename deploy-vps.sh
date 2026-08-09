@@ -46,7 +46,7 @@ mkdir -p $HTML_ROOT/arif/wealth/makcikgpt/
 cp $SITES_ROOT/arif-fazil.com/public/makcikgpt-md/*.md $HTML_ROOT/arif/wealth/makcikgpt/ 2>/dev/null || true
 
 rsync -avz --delete $SITES_ROOT/arif-fazil.com/public/000/ $HTML_ROOT/arif/000/
-rsync -avz --delete $SITES_ROOT/arif-fazil.com/999/ $HTML_ROOT/arif/999/
+rsync -avz --delete $SITES_ROOT/arif-fazil.com/public/999/ $HTML_ROOT/arif/999/
 
 # mcp.arif-fazil.com — gateway landing + proof surface (no --delete: .well-known live assets preserved)
 rsync -avz $SITES_ROOT/mcp.arif-fazil.com/ $HTML_ROOT/mcp/

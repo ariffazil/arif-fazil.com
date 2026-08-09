@@ -1,0 +1,71 @@
+{
+  "version": "4.0",
+  "name": "Vault999",
+  "status": "SEALED",
+  "signature": "pending_rootkey_signature",
+  "seals": [
+    {
+      "id": "SCAR_000",
+      "name": "Genesis",
+      "category": "core",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_001",
+      "name": "Miskin",
+      "category": "memory",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_002",
+      "name": "Institutional",
+      "category": "memory",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_003",
+      "name": "Invisibility",
+      "category": "memory",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_004",
+      "name": "Anak Sulung",
+      "category": "memory",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_005",
+      "name": "Zero Dry Wells",
+      "category": "professional",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_006",
+      "name": "Abah Passing",
+      "category": "memory",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_007",
+      "name": "Living Between Worlds",
+      "category": "reserved",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    },
+    {
+      "id": "SCAR_008",
+      "name": "Duty vs Self",
+      "category": "reserved",
+      "hash": "pending_sha256",
+      "timestamp": "2026-04-14T00:00:00Z"
+    }
+  ]
+}

@@ -31,6 +31,8 @@ verify: sync-aaa
 	bash scripts/verify-pages.sh https://arif-fazil.com /root/arif-fazil.com/sites/arif-fazil.com/dist
 	@echo "[verify] Running Content Assertion Gate..."
 	bash scripts/verify-content.sh https://arif-fazil.com
+	@echo "[verify] Running Content Authority Gate (G1 receipt, G2 epistemic)..."
+	python3 scripts/verify-content-gates.py || (echo "HOLD: Content authority violations found." && exit 1)
 	@echo "[verify] Checking Caddy config..."
 	caddy validate --config /etc/caddy/Caddyfile > /dev/null 2>&1 && echo "[verify] Caddy config: VALID"
 	@echo "[verify] M3 fix 2026-08-01: scanning dist for dev-only entry points..."

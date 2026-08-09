@@ -53,6 +53,11 @@ canon:
   "canon/geometry.json":          { state: CANON, owner: WEB_ATLAS, allowed_mutators: [A-FORGE, ARIF] }
   "canon/file-authority.yaml":    { state: CANON, owner: ARIF, allowed_mutators: [A-FORGE, ARIF] }
 
+  # Site constitution — F13 ratified 2026-08-09
+  "SITE_CONSTITUTION.md":           { state: CANON, owner: ARIF, allowed_mutators: [A-FORGE, ARIF] }
+  "SITE_IDENTITY.md":               { state: CANON, owner: ARIF, allowed_mutators: [A-FORGE, ARIF] }
+  "config/page-attention-budget.yaml": { state: CANON, owner: ARIF, allowed_mutators: [A-FORGE, ARIF] }
+
   # Atlas long-form docs
   "atlas/WEB_ATLAS.md":                   { state: CANON, owner: ARIF, allowed_mutators: [A-FORGE, ARIF] }
   "atlas/INVARIANTS_OF_AGENTIC_SITES.md": { state: CANON, owner: ARIF, allowed_mutators: [A-FORGE, ARIF] }

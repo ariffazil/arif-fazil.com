@@ -268,7 +268,7 @@ export function Proof() {
           >
             ←
           </motion.span>
-          Return to the ticking clock
+          Return home
         </Link>
       </section>
     </div>

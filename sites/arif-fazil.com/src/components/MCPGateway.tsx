@@ -16,26 +16,24 @@ const organs: Array<{ label: string; desc: string; href: string; color: string; 
 
 export default function MCPGateway() {
   return (
-    <section className="border-t" style={{ borderColor: 'rgb(237 234 226 / 0.1)' }}>
-      <div className="mx-auto max-w-[1280px] px-6 py-14">
-        <div className="mb-6 flex items-center gap-3">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-ember" aria-hidden />
-          <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-ink-soft">Agent Access — MCP Gateway</p>
+    <section className="border-t border-slate-800 bg-[#08090b] text-slate-400">
+      <div className="mx-auto max-w-[1280px] px-6 py-12">
+        <div className="mb-4 flex items-center gap-3">
+          <span className="inline-block h-2 w-2 rounded-full bg-ember" aria-hidden />
+          <h3 className="font-mono text-[12px] uppercase tracking-[0.14em] text-slate-300 font-bold">
+            Machine Surfaces — MCP Gateway
+          </h3>
         </div>
-        <p className="mb-6 max-w-[48ch] font-body text-[15px] leading-[1.6] text-ink-soft/70">
-          Federation organs expose governed MCP surfaces. Each organ computes evidence.
-          arifOS judges. Arif decides. <span className="text-ember">DITEMPA BUKAN DIBERI.</span>
+        <p className="mb-6 max-w-[54ch] font-body text-[14px] leading-[1.6] text-slate-400">
+          Federation organs expose governed Model Context Protocol endpoints. Each organ computes evidence; arifOS judges; human sovereign decides. <span className="text-ember font-semibold">DITEMPA BUKAN DIBERI.</span>
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {organs.map((o) => (
             o.internal ? (
               <a
                 key={o.label}
                 href={o.href}
-                className="inline-flex items-center gap-2 rounded-sm border px-4 py-2.5 font-mono text-[12px] uppercase tracking-[0.04em] transition-all duration-200"
-                style={{ borderColor: 'rgb(237 234 226 / 0.12)', color: '#7A7880' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = o.color; e.currentTarget.style.color = o.color; e.currentTarget.style.boxShadow = `0 0 12px ${o.ring}` }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgb(237 234 226 / 0.12)'; e.currentTarget.style.color = '#7A7880'; e.currentTarget.style.boxShadow = 'none' }}
+                className="inline-flex items-center gap-2 rounded border border-slate-800 bg-slate-900/60 px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.06em] text-slate-300 transition-all duration-200 hover:border-slate-600 hover:text-slate-100"
                 title={o.desc}
               >
                 <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: o.color }} />
@@ -47,10 +45,7 @@ export default function MCPGateway() {
                 href={o.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-sm border px-4 py-2.5 font-mono text-[12px] uppercase tracking-[0.04em] transition-all duration-200"
-                style={{ borderColor: 'rgb(237 234 226 / 0.12)', color: '#7A7880' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = o.color; e.currentTarget.style.color = o.color; e.currentTarget.style.boxShadow = `0 0 12px ${o.ring}` }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgb(237 234 226 / 0.12)'; e.currentTarget.style.color = '#7A7880'; e.currentTarget.style.boxShadow = 'none' }}
+                className="inline-flex items-center gap-2 rounded border border-slate-800 bg-slate-900/60 px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.06em] text-slate-300 transition-all duration-200 hover:border-slate-600 hover:text-slate-100"
                 title={o.desc}
               >
                 <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: o.color }} />
@@ -59,8 +54,8 @@ export default function MCPGateway() {
             )
           ))}
         </div>
-        <p className="mt-4 font-mono text-[10px] text-ink-soft/40">
-          arifOS 8 canonical verbs: arif_init → arif_observe → arif_think → arif_route → arif_memory → arif_judge → arif_forge → arif_seal
+        <p className="mt-6 font-mono text-[11px] text-slate-500">
+          Canonical Kernel Verbs: arif_init → arif_observe → arif_think → arif_route → arif_memory → arif_judge → arif_forge → arif_seal
         </p>
       </div>
     </section>

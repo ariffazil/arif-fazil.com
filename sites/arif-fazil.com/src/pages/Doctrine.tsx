@@ -251,7 +251,60 @@ export function Doctrine() {
         </motion.div>
       </section>
 
-      {/* 5 — FOR HUMANS / FOR AGENTS */}
+      {/* 5 — THE ZEN OF THE AGENTIC WEB */}
+      <section className="mx-auto max-w-[1280px] px-6 py-24">
+        <div className="flex items-center gap-4">
+          <span className="eyebrow text-[#F0F6FC]">05</span>
+          <span aria-hidden className="h-px flex-1 bg-[#7DD3FC]/20" />
+          <span className="eyebrow text-[#9DB4C8]">THE ZEN OF THE AGENTIC WEB</span>
+        </div>
+        <p className="mt-6 max-w-[66ch] font-body text-[18px] leading-[1.65] text-[#9DB4C8]">
+          Human clarity first. Machines second. Human attention is the scarce resource; agent capability is abundant.
+        </p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="border border-green-500/30 bg-[#0A1118] p-6">
+            <p className="font-mono text-[12px] uppercase tracking-widest text-green-400 font-bold mb-2">Wajib (Mandatory)</p>
+            <ul className="font-mono text-[12px] leading-relaxed text-slate-300 space-y-2">
+              <li>• Human Clarity First</li>
+              <li>• Single Source of Truth</li>
+              <li>• Progressive Disclosure</li>
+              <li>• Explicit Trust Tiers</li>
+              <li>• Reversibility First</li>
+            </ul>
+          </div>
+          <div className="border border-blue-500/30 bg-[#0A1118] p-6">
+            <p className="font-mono text-[12px] uppercase tracking-widest text-blue-400 font-bold mb-2">Sunat (Recommended)</p>
+            <ul className="font-mono text-[12px] leading-relaxed text-slate-300 space-y-2">
+              <li>• Standard llms.txt Index</li>
+              <li>• /.well-known/agent-card.json</li>
+              <li>• Canonical Machine Manifest</li>
+              <li>• Capability Classing</li>
+              <li>• Sovereign Relay Gating</li>
+            </ul>
+          </div>
+          <div className="border border-yellow-500/30 bg-[#0A1118] p-6">
+            <p className="font-mono text-[12px] uppercase tracking-widest text-yellow-400 font-bold mb-2">Makruh (Discouraged)</p>
+            <ul className="font-mono text-[12px] leading-relaxed text-slate-300 space-y-2">
+              <li>• Telemetry Above Content</li>
+              <li>• Hero MCP Tool Menus</li>
+              <li>• Exposing Jargon First</li>
+              <li>• Parallel Truth Sources</li>
+            </ul>
+          </div>
+          <div className="border border-red-500/30 bg-[#0A1118] p-6">
+            <p className="font-mono text-[12px] uppercase tracking-widest text-red-400 font-bold mb-2">Haram (Forbidden)</p>
+            <ul className="font-mono text-[12px] leading-relaxed text-slate-300 space-y-2">
+              <li>• Execution Without Visibility</li>
+              <li>• Dark Automation / Auto-Submit</li>
+              <li>• Human Attention Theft</li>
+              <li>• Machine-First Homepage</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 — FOR HUMANS / FOR AGENTS */}
       <section className="mx-auto max-w-[1280px] px-6 py-24">
         <div className="grid gap-4 lg:grid-cols-[3fr_2fr]">
           <motion.div

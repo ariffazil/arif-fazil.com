@@ -240,6 +240,42 @@ export function ShadowBoard() {
         </div>
       </section>
 
+      {/* MANDATE — WHY THIS EXISTS (moved above board grid per human-first audit) */}
+      <section className="py-10 border-b border-forge-iron">
+        <div className="site-frame">
+          <div className="section-label">MANDATE · KENAPA INI WUJUD</div>
+          <h2 className="text-2xl font-black uppercase italic mb-4 tracking-tight">
+            Why a Shadow Board Exists
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="border border-forge-iron rounded-lg p-5 bg-[#111118]">
+              <div className="font-mono text-xs text-amber-400 uppercase tracking-widest mb-2">The Problem</div>
+              <p className="font-body text-sm text-forge-dim leading-relaxed">
+                Malaysia has no formal mechanism for institutional memory between governments.
+                When power changes, the machine has to be rebuilt from scratch — or from personal networks.
+              </p>
+            </div>
+            <div className="border border-forge-iron rounded-lg p-5 bg-[#111118]">
+              <div className="font-mono text-xs text-amber-400 uppercase tracking-widest mb-2">The Hypothesis</div>
+              <p className="font-body text-sm text-forge-dim leading-relaxed">
+                A shadow board is a research instrument, not a parallel government.
+                Each seat is a dossier: an analysis of a leader's record, their shadow, the gap between stated principles and actual outcomes.
+              </p>
+            </div>
+            <div className="border border-forge-iron rounded-lg p-5 bg-[#111118]">
+              <div className="font-mono text-xs text-amber-400 uppercase tracking-widest mb-2">The Limit</div>
+              <p className="font-body text-sm text-forge-dim leading-relaxed">
+                This is analysis, not opposition. Each dossier is evidence-labelled [OBS], [DER], [INT], [SPEC].
+                It is a map of what has been, not a manifesto for what should be.
+              </p>
+            </div>
+          </div>
+          <p className="font-mono text-xs text-forge-dim/60 uppercase tracking-widest">
+            [INT] Instrument design. [SPEC] Political hypothesis — confidence 0.40. This is not journalism, not activism, not propaganda.
+          </p>
+        </div>
+      </section>
+
       {/* BOARD SEATS GRID */}
       <section className="py-16">
         <div className="site-frame">

@@ -41,10 +41,13 @@
 <style>
 /* ── PAGE-SPECIFIC: Globe, Hero, Deck, Veil, Pipes, Unit Panel ── */
 
+.earth-nav-btn{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:4px;border:1px solid rgba(237,234,226,.15);color:#9AA0A8;text-decoration:none;transition:all .2s}
+.earth-nav-btn:hover{border-color:var(--earth-gold);color:var(--earth-gold)}
+
 /* hero / globe */
 .hero{position:relative;height:100vh;min-height:640px}
 #globeViz{position:absolute;inset:0;cursor:crosshair}
-.hero-title{position:absolute;top:6.5rem;left:2rem;z-index:10;max-width:520px;pointer-events:none}
+.hero-title{position:absolute;top:8.5rem;left:2rem;z-index:10;max-width:520px;pointer-events:none}
 .hero-title .kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:3px;color:var(--accent-cyan);margin-bottom:.6rem}
 .hero-title h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;line-height:1.05;
   background:linear-gradient(135deg,#fff 30%,var(--accent-gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -56,7 +59,7 @@
 .hero-quote cite{display:block;font-style:normal;font-size:.72rem;color:var(--accent-gold,#D4A853);margin-top:.3rem;font-weight:600}
 
 /* control deck */
-.deck{position:absolute;top:6.5rem;right:2rem;z-index:10;width:230px;background:rgba(16,16,24,.88);border:1px solid var(--border-dim);
+.deck{position:absolute;top:8.5rem;right:2rem;z-index:10;width:230px;background:rgba(16,16,24,.88);border:1px solid var(--border-dim);
   border-radius:var(--radius-md);padding:1rem 1.1rem;backdrop-filter:blur(10px)}
 .deck h4{font-family:var(--mono);font-size:.62rem;letter-spacing:2px;color:var(--text-secondary);margin-bottom:.7rem;text-transform:uppercase}
 .deck label{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:var(--text-primary);padding:.28rem 0;cursor:pointer;user-select:none}
@@ -182,38 +185,21 @@
 </head>
 <body>
 
- <nav class="earth-site-nav" aria-label="Site">
-   <a class="brand" href="/">ARIF FAZIL</a>
-   <div style="display:flex;flex-wrap:wrap;gap:0.75rem 1.1rem">
-     <a href="/">Home</a>
-     <a class="accent-earth" href="/earth">Earth</a>
-     <a href="/world">World</a>
-     <a href="/words">Words</a>
-     <a href="/work">Work</a>
-     <a href="/llms.txt">llms.txt</a>
+ <nav class="earth-site-nav" aria-label="Site Navigation">
+   <a class="brand" href="/">ARIF FAZIL <small style="color:var(--earth-gold);font-size:0.68rem;letter-spacing:0.1em;margin-left:6px;">· EARTH INTELLIGENCE</small></a>
+   <div style="display:flex;flex-wrap:wrap;gap:0.5rem 0.8rem;align-items:center;">
+     <a href="/" class="earth-nav-btn">Home</a>
+     <a href="/earth" class="earth-nav-btn active" style="border-color:var(--earth-gold);color:var(--earth-gold);background:rgba(201,162,39,0.1);">Earth</a>
+     <a href="/world" class="earth-nav-btn">World</a>
+     <a href="/words" class="earth-nav-btn">Words</a>
+     <a href="/work" class="earth-nav-btn">Work</a>
    </div>
  </nav>
 
-
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<!-- ══ HEADER · human verbs first, organ links secondary ══ -->
-<header class="earth-header">
-  <div class="earth-brand">arif-fazil.com<b>/ EARTH</b></div>
-  <nav class="earth-nav" aria-label="Earth navigation">
-    <a href="#top" class="active">◈ Globe</a>
-    <a href="#dossiers">Read</a>
-    <a href="#deeptime">See</a>
-    <a href="#geox">Tools</a>
-    <a href="/map/">Map</a>
-    <span class="nav-sep" aria-hidden="true"></span>
-    <a href="https://geox.arif-fazil.com" class="nav-organ" title="GEOX organ — agent tools">GEOX</a>
-    <a href="https://arif-fazil.com" class="nav-organ" title="arif-fazil.com home">Home</a>
-  </nav>
-</header>
-
-<!-- ══ STICKY EARTH TOC · mirrors header verbs ══ -->
-<nav class="earth-toc" aria-label="On this page" id="earthToc">
+<!-- ══ STICKY EARTH SUBNAV (Pill format) ══ -->
+<nav class="earth-toc" aria-label="On this page" id="earthToc" style="top:52px;background:rgba(10,11,13,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.08);padding:6px 20px;">
   <a href="#top" class="nav-globe active">◈ Globe</a>
   <a href="#what">What Can I Do</a>
   <a href="#real">Why Real</a>
@@ -223,7 +209,6 @@
   <a href="#dossiers">Dossiers</a>
   <a href="#geox">Cockpits</a>
   <a href="#studies">Studies</a>
-  <a href="/map/">Map</a>
 </nav>
 
 <main id="main-content">

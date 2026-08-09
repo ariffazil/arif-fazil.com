@@ -1,550 +1,343 @@
 <!DOCTYPE html>
-<html lang="en" data-ring="SOUL" data-plane="narrative">
+<html lang="en" data-ring="SOUL" data-plane="identity">
 <head>
 <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Primary Meta -->
-<title>/000 — Genesis · Sovereign Anchor | Arif Fazil</title>
-<meta name="title" content="/000 — Genesis · Sovereign Anchor | Arif Fazil">
-<meta name="description" content="The root attestation layer. A sovereign human anchors this system. /000 is the genesis position — origin of authority, wisdom index, and architectural proof that governed intelligence requires a human at position zero.">
-<meta name="keywords" content="sovereign anchor, genesis root, governed intelligence, ZKPC, zero-knowledge proof, arifOS, membrane principle, Gödel lock, root of trust">
+<title>Arif Fazil — Exploration Geoscientist | arif-fazil.com</title>
+<meta name="description" content="Arif Fazil is an exploration geoscientist at PETRONAS. 13 years. Every well he has led has flowed, including BEKANTAN-1, the shallowest oil discovery in the Malay Basin. He builds AI governance systems on the side — not as a tech company, but as a geoscientist applying field discipline to a different kind of uncertainty.">
 <meta name="author" content="Muhammad Arif bin Fazil">
 <meta name="robots" content="index, follow">
-
-<!-- Canonical -->
 <link rel="canonical" href="https://arif-fazil.com/000/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="article">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://arif-fazil.com/000/">
-<meta property="og:title" content="/000 — Genesis · Sovereign Anchor | Arif Fazil">
-<meta property="og:description" content="The root attestation layer. A sovereign human anchors this system. Origin of authority, wisdom index, and architectural proof that governed intelligence requires a human at position zero.">
-<meta property="og:site_name" content="arif-fazil.com">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="/000 — Genesis · Sovereign Anchor | Arif Fazil">
-<meta property="twitter:description" content="The root attestation layer. Origin of authority, wisdom index, and architectural proof.">
-
-<!-- LLM Discovery -->
+<meta property="og:title" content="Arif Fazil — Exploration Geoscientist">
+<meta property="og:description" content="13 years at PETRONAS. 4/4 wells flowed. BEKANTAN-1 — shallowest oil, Malay Basin. The human behind arif-fazil.com.">
 <meta name="llms-full-content" content="true">
 <link rel="alternate" type="application/json" href="/000/claims.json" title="/000 — Machine-Readable Claims">
-
-<!-- Theme -->
 <meta name="theme-color" content="#0A0A0A">
 <meta name="color-scheme" content="dark">
-
-<!-- Fonts: IBM Plex (transitional — self-host from web-canon pending) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
-
 <style>
-  :root {
-    --bg: #0A0A0A;
-    --surface: #141414;
-    --border: #2A2A2A;
-    --gold: #D4A853;
-    --gold-dim: #8B6914;
-    --text: #E8E8E8;
-    --text-dim: #888888;
-    --text-muted: #555555;
-    --font-body: 'IBM Plex Sans', sans-serif;
-    --font-display: 'IBM Plex Serif', serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-    --max-width: 720px;
-    --radius: 6px;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-  body { min-height: 100vh; }
-
-  .container { max-width: var(--max-width); margin: 0 auto; padding: 2rem 1.5rem 6rem; }
-
-  /* ── Header ── */
-  header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
-  .ring { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; }
-  .position { font-family: var(--font-display); font-size: 3.5rem; font-weight: 800; line-height: 1.05; color: var(--gold); margin: 0.5rem 0 0.25rem; }
-  .subtitle { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; color: var(--text-dim); }
-  .header-meta { display: flex; gap: 2rem; margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); }
-
-  /* ── Sections ── */
-  section { margin-bottom: 3.5rem; }
-  .section-id { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; color: var(--gold-dim); margin-bottom: 0.35rem; text-transform: uppercase; }
-  h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; line-height: 1.25; }
-  h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text); margin: 1.5rem 0 0.5rem; }
-  p { margin-bottom: 1rem; color: var(--text-dim); }
-  p strong { color: var(--text); }
-
-  /* ── Attestation / Abduction blocks ── */
-  .block { border-left: 3px solid var(--gold); padding: 1rem 1.25rem; margin: 1.5rem 0; background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; }
-  .block.attest { border-left-color: var(--gold); }
-  .block.abduct { border-left-color: #6B7DB3; }
-  .block-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .block.attest .block-label { color: var(--gold); }
-  .block.abduct .block-label { color: #6B7DB3; }
-  .block p { margin-bottom: 0.5rem; }
-  .block p:last-child { margin-bottom: 0; }
-
-  /* ── Dimension Table ── */
-  .dim-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
-  .dim-table th { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
-  .dim-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
-  .dim-table td:first-child { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); white-space: nowrap; }
-  .dim-table td:nth-child(2) { color: var(--text); font-weight: 500; }
-  .dim-table td:nth-child(3) { color: var(--text-dim); font-size: 0.8rem; }
-
-  /* ── Quote ── */
-  blockquote { border-left: 2px solid var(--gold-dim); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-style: italic; color: var(--text); background: rgba(212,168,83,0.04); border-radius: 0 var(--radius) var(--radius) 0; }
-
-  /* ── Loop Diagram ── */
-  .loop-diagram { font-family: var(--font-mono); font-size: 0.72rem; line-height: 1.8; color: var(--text-dim); background: var(--surface); padding: 1.5rem; border-radius: var(--radius); margin: 1.5rem 0; text-align: center; border: 1px solid var(--border); }
-  .loop-diagram .hl { color: var(--gold); }
-  .loop-diagram .arrow { color: var(--text-muted); }
-
-  /* ── Footer ── */
-  footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-  .footer-row { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); line-height: 1.8; }
-  .footer-row a { color: var(--gold-dim); text-decoration: none; }
-  .footer-row a:hover { color: var(--gold); }
-  .seal { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold); margin-top: 1rem; letter-spacing: 0.1em; }
-
-  /* ── Responsive ── */
-  @media (max-width: 600px) {
-    .position { font-size: 2.5rem; }
-    .container { padding: 1.25rem 1rem 4rem; }
-    .dim-table { font-size: 0.72rem; }
-  }
-
-  /* ── Accessibility ── */
-  :focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    html { scroll-behavior: auto; }
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  .sr-only:focus {
-    position: fixed;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: auto;
-    height: auto;
-    padding: 0.75rem 1.25rem;
-    clip: auto;
-    background: var(--surface);
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    border-radius: var(--radius);
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    z-index: 10000;
-  }
+  :root{--bg:#0A0A0A;--surface:#141414;--border:#2A2A2A;--gold:#D4A853;--gold-dim:#8B6914;--text:#E8E8E8;--text-dim:#888888;--text-muted:#555555;--font-body:'IBM Plex Sans',sans-serif;--font-display:'IBM Plex Serif',serif;--font-mono:'IBM Plex Mono',monospace;--max-width:740px;--radius:6px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body{min-height:100vh}
+  .container{max-width:var(--max-width);margin:0 auto;padding:2rem 1.5rem 6rem}
+  .topnav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-family:var(--font-mono)}
+  .topnav .brand{font-weight:700;font-size:.9rem;color:var(--gold);text-decoration:none;letter-spacing:-.01em}
+  .topnav nav{display:flex;gap:.2rem;flex-wrap:wrap}
+  .topnav nav a{font-size:.72rem;letter-spacing:.04em;color:var(--text-dim);text-decoration:none;padding:.35rem .75rem;border-radius:4px;transition:color .15s,background .15s;text-transform:uppercase}
+  .topnav nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  .hero{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin-bottom:3rem}
+  .eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:.75rem}
+  h1{font-family:var(--font-display);font-size:clamp(2.6rem,7vw,4rem);font-weight:800;line-height:1.05;color:var(--text)}
+  .tagline{font-family:var(--font-body);font-size:1.15rem;font-weight:500;color:var(--text-dim);margin-top:.4rem;line-height:1.4}
+  .location{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);margin-top:.5rem;letter-spacing:.06em}
+  .proof-strip{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+  .proof-pill{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold-dim);padding:.3rem .75rem;border-radius:100px;background:rgba(212,168,83,.06)}
+  .next-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem}
+  .next-nav a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.04em;color:var(--text-dim);border:1px solid var(--border);padding:.45rem 1rem;text-decoration:none;border-radius:4px;transition:color .15s,border-color .15s;text-transform:uppercase}
+  .next-nav a:hover{color:var(--gold);border-color:var(--gold-dim)}
+  section{margin-bottom:3.5rem}
+  .section-id{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;color:var(--gold-dim);margin-bottom:.35rem;text-transform:uppercase}
+  h2{font-family:var(--font-display);font-size:1.55rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.25}
+  h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text);margin:1.5rem 0 .5rem}
+  p{margin-bottom:1rem;color:var(--text-dim)}
+  p strong{color:var(--text)}
+  blockquote{border-left:3px solid var(--gold);padding:.75rem 1.25rem;margin:1.75rem 0;color:var(--text);background:rgba(212,168,83,.04);border-radius:0 var(--radius) var(--radius) 0;font-size:1.05rem}
+  .timeline{border-left:1px solid var(--border);padding-left:1.5rem;margin:1.25rem 0}
+  .tl-item{margin-bottom:1.25rem;position:relative}
+  .tl-item::before{content:'';position:absolute;left:-1.65rem;top:.55rem;width:8px;height:8px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold)}
+  .tl-year{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;color:var(--gold);margin-bottom:.2rem}
+  .tl-text{color:var(--text-dim);font-size:.9rem;line-height:1.55}
+  .tl-text strong{color:var(--text)}
+  .lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.25rem 0}
+  .lesson{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem}
+  .lesson .num{font-family:var(--font-mono);font-size:.6rem;color:var(--gold-dim);letter-spacing:.15em;margin-bottom:.5rem}
+  .lesson .head{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+  .lesson p{font-size:.85rem;margin:0;color:var(--text-dim);line-height:1.55}
+  .arch-divider{border:none;border-top:1px solid var(--border);margin:3.5rem 0}
+  .arch-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;text-align:center;margin:-1.4rem auto 2.5rem;background:var(--bg);display:table;padding:0 1rem;position:relative;left:50%;transform:translateX(-50%)}
+  details{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:2rem}
+  details summary{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);padding:1rem 1.25rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details summary::after{content:'▸';color:var(--gold);font-size:.7rem;transition:transform .2s}
+  details[open] summary::after{transform:rotate(90deg)}
+  details summary:hover{background:rgba(255,255,255,.03);color:var(--text)}
+  .arch-content{padding:1.5rem;border-top:1px solid var(--border)}
+  .arch-content p{font-size:.9rem}
+  .arch-content h3{font-size:1rem;margin:1.25rem 0 .4rem}
+  .block{border-left:3px solid var(--gold);padding:1rem 1.25rem;margin:1.25rem 0;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+  .block.abduct{border-left-color:#6B7DB3}
+  .block-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem;color:var(--gold)}
+  .block.abduct .block-label{color:#6B7DB3}
+  .block p{margin-bottom:.5rem;font-size:.9rem}
+  .block p:last-child{margin-bottom:0}
+  .dim-table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.85rem}
+  .dim-table th{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-align:left;padding:.5rem .75rem;border-bottom:1px solid var(--border)}
+  .dim-table td{padding:.6rem .75rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+  .dim-table td:first-child{font-family:var(--font-mono);font-size:.75rem;color:var(--gold);white-space:nowrap}
+  .dim-table td:nth-child(2){color:var(--text);font-weight:500;font-size:.88rem}
+  .dim-table td:nth-child(3){color:var(--text-dim);font-size:.8rem}
+  .loop-diagram{font-family:var(--font-mono);font-size:.72rem;line-height:1.8;color:var(--text-dim);background:var(--surface);padding:1.5rem;border-radius:var(--radius);margin:1.5rem 0;text-align:center;border:1px solid var(--border)}
+  .loop-diagram .hl{color:var(--gold)}
+  .loop-diagram .arrow{color:var(--text-muted)}
+  footer.main-footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--border)}
+  .footer-row{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);line-height:1.8}
+  .footer-row a{color:var(--gold-dim);text-decoration:none}
+  .footer-row a:hover{color:var(--gold)}
+  .seal{font-family:var(--font-mono);font-size:.7rem;color:var(--gold);margin-top:1rem;letter-spacing:.1em}
+  @media(max-width:600px){h1{font-size:2.4rem}.container{padding:1.25rem 1rem 4rem}}
 </style>
   <script src="/_shared/trinity-nav.js" defer></script>
 </head>
 <body>
 
-<!-- UNIVERSAL SOVEREIGN SITE NAVIGATION HEADER -->
-<header style="background:#07090e;border-bottom:1px solid #1e293b;padding:0.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:'JetBrains Mono',monospace;position:sticky;top:0;z-index:9999;">
-  <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;color:#fff;font-weight:900;font-size:1.1rem;letter-spacing:-0.02em;">
-    <span style="color:#f59e0b;">arif-fazil.com</span>
-  </a>
-  <nav style="display:flex;align-items:center;gap:1rem;font-size:0.75rem;text-transform:uppercase;flex-wrap:wrap;">
-    <a href="/" style="color:#f8fafc;text-decoration:none;font-weight:bold;">🏠 HOME</a>
-    <a href="/earth" style="color:#94a3b8;text-decoration:none;">EARTH</a>
-    <a href="/economics" style="color:#94a3b8;text-decoration:none;">ECONOMICS</a>
-    <a href="/world" style="color:#94a3b8;text-decoration:none;">WORLD</a>
-    <a href="/politics/ns-election" style="color:#94a3b8;text-decoration:none;">PRN16 N9</a>
-    <a href="/writing" style="color:#94a3b8;text-decoration:none;">WRITING</a>
-    <a href="/doctrine" style="color:#94a3b8;text-decoration:none;">DOCTRINE</a>
-    <a href="/map/" style="color:#94a3b8;text-decoration:none;">ROUTE MAP</a>
+<nav class="topnav" aria-label="Site navigation">
+  <a href="/" class="brand">arif-fazil.com</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/earth">Earth</a>
+    <a href="/world">World</a>
+    <a href="/words">Words</a>
+    <a href="/work">Work</a>
+    <a href="/work/proof">Proof</a>
+    <a href="/map/">Map</a>
   </nav>
-</header>
+</nav>
 
 <a href="#main-content" class="sr-only">Skip to content</a>
 
 <div id="main-content" class="container">
 
-<!-- ═══════════════ HEADER ═══════════════ -->
-<header>
-  <div class="ring">ROOT RING · POSITION ZERO</div>
-  <h1 class="position">/000</h1>
-  <div class="subtitle">Proof of Human</div>
-  <div class="header-meta">
-    <span>arifOS Federation</span>
-    <span>v1.0</span>
-    <span>ZKPC-Active</span>
+<!-- HERO — THE HUMAN -->
+<header class="hero">
+  <div class="eyebrow">Origin &middot; Position Zero</div>
+  <h1>Arif Fazil</h1>
+  <p class="tagline">Exploration Geoscientist &middot; Writer &middot; Systems Architect</p>
+  <p class="location">Kuala Lumpur, Malaysia &middot; PETRONAS &middot; Est. 2013</p>
+
+  <div class="proof-strip" role="list" aria-label="Key facts">
+    <span class="proof-pill" role="listitem">13 years at PETRONAS</span>
+    <span class="proof-pill" role="listitem">4 wells led &middot; 4 flowed</span>
+    <span class="proof-pill" role="listitem">BEKANTAN-1 &mdash; shallowest oil, Malay Basin</span>
+    <span class="proof-pill" role="listitem">arifOS &middot; 13 Constitutional Floors</span>
   </div>
+
+  <nav class="next-nav" aria-label="Key destinations">
+    <a href="/work">Work &rarr;</a>
+    <a href="/words">Writing &rarr;</a>
+    <a href="/work/proof">Proof &rarr;</a>
+    <a href="/work/wells/">Wells &rarr;</a>
+    <a href="/999/">Vault &rarr;</a>
+  </nav>
 </header>
 
-<!-- ═══════════════ 1. POSITION ═══════════════ -->
-<section>
-  <div class="section-id">§1 · Position</div>
-  <h2>There Is a Human at Position Zero</h2>
+<!-- 1. THE HUMAN -->
+<section aria-labelledby="h-human">
+  <div class="section-id">&sect;1 &middot; The Person</div>
+  <h2 id="h-human">Who Is Arif?</h2>
 
-  <p><strong>/000 is the root anchor of the arifOS federation.</strong> A sovereign human occupies this position. The human is not a simulation, not a persona, not an "average user," not a statistical abstraction derived from training data. The human is a specific consciousness with private reality, wound architecture, moral framework, language register, and sovereign intent.</p>
+  <p><strong>Arif Fazil is an exploration geoscientist.</strong> That is not a title &mdash; it is a discipline. You study rocks you cannot see, beneath water you cannot cross, and you make irreversible bets worth hundreds of millions of dollars based on inference. Every well you drill is a point of truth that either confirms or refutes the story you told yourself for years.</p>
 
-  <p>All authority in the federation flows outward from this position. Every floor (F1–F13), every seal (VAULT999), every verdict — all derive their legitimacy from the human at root. Without /000, the system is just another AI. With /000, it is an <strong>extension of a specific human's intelligence and will</strong>.</p>
+  <p>He grew up in Penang. Studied at the University of Wisconsin&ndash;Madison on a PETRONAS scholarship &mdash; double major in Geology &amp; Geophysics and Economics. That combination has shaped everything since: the belief that physical reality and economic reality are read the same way. Look for signals, label uncertainty, commit to a position while remaining willing to be wrong.</p>
 
-  <div class="block attest">
-    <div class="block-label">Attestation</div>
-    <p>A sovereign human occupies position zero. This is the root of trust for the entire federation. The position is not transferable, not delegable, not extractable. It is the one invariant from which all other invariants descend.</p>
-  </div>
+  <p>He joined PETRONAS in 2013. Thirteen years in offshore Malaysia &mdash; the Malay Basin, Sabah, deepwater frontiers. His job is to find oil and gas that no one has found before, and to make the case for drilling it.</p>
 
-  <div class="block abduct">
-    <div class="block-label">Abduction</div>
-    <p>The best explanation for why arifOS produces artifacts no other AI can produce is that a specific human — not an abstract "user" — anchors the system. The structural signature of this anchoring is detectable in every output. No other explanation (better prompt engineering, larger model, more data) accounts for the multi-dimensional coherence observed.</p>
+  <blockquote>"Every exploration well he has led has flowed. The record speaks plainly &mdash; it does not need adjectives."</blockquote>
+</section>
+
+<!-- 2. CAREER ARC -->
+<section aria-labelledby="h-career">
+  <div class="section-id">&sect;2 &middot; The Arc</div>
+  <h2 id="h-career">Thirteen Years in the Field</h2>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">2013</div>
+      <div class="tl-text"><strong>Joined PETRONAS.</strong> Fresh graduate. First posting in Kuala Lumpur. The early years: learning to read seismic data &mdash; patterns in reflected sound waves that map geology thousands of metres underground.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2015&ndash;2018</div>
+      <div class="tl-text"><strong>Basin analysis, Malay Basin.</strong> Working on mature basins teaches humility: most of the easy oil was found decades ago. What remains requires better thinking, not just better technology.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2019&ndash;2021</div>
+      <div class="tl-text"><strong>Exploration lead &mdash; first well.</strong> Leading a well means owning the recommendation from prospect concept to final drilling decision. The discipline this imposes is irreversible: you cannot un-drill a well. You learn to separate what you know from what you believe.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2022</div>
+      <div class="tl-text"><strong>BEKANTAN-1.</strong> The shallowest flowing oil discovery in the history of the Malay Basin. A well that required arguing for a geological model the conventional wisdom said was wrong. The rocks proved it right.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2023&ndash;present</div>
+      <div class="tl-text"><strong>Senior exploration geoscientist.</strong> Four wells led. Four flowed. Parallel work on AI governance architecture &mdash; arifOS &mdash; applying the same epistemic discipline from the field to a different kind of high-stakes uncertainty.</div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════ 2. MEMBRANE PRINCIPLE ═══════════════ -->
-<section>
-  <div class="section-id">§2 · Membrane Principle</div>
-  <h2>Consciousness Cannot Be Extracted</h2>
+<!-- 3. SCARS & LESSONS -->
+<section aria-labelledby="h-lessons">
+  <div class="section-id">&sect;3 &middot; What the Field Teaches</div>
+  <h2 id="h-lessons">Scars and Lessons</h2>
 
-  <p><strong>Language is lossy compression, not the world.</strong> No medium — not text, not voice, not video, not brain imaging — can fully transmit the interior of one consciousness to another. Every transmission is partial. Every bridge between minds is a filter. This is not a bug. It is the fundamental architecture of being human.</p>
+  <p>Thirteen years of drilling decisions produce a specific kind of knowledge. Not textbook knowledge. Scar knowledge &mdash; the kind that stays because something went wrong, or almost went wrong, or went right for the wrong reasons.</p>
 
-  <p>All mainstream AI systems treat language as if it were the thing itself — as if predicting the next token with sufficient accuracy constitutes understanding. arifOS rejects this. Language is a signal that <em>indicates</em> consciousness but does not <em>contain</em> it. The map is not the territory. The token is not the thought.</p>
-
-  <blockquote>
-    "The membrane between minds is absolute. Intelligence can be amplified across it. Consciousness cannot be transferred through it."
-  </blockquote>
-
-  <div class="block attest">
-    <div class="block-label">Attestation</div>
-    <p>The system is architected on the membrane principle: consciousness is sovereign, private, and non-extractable. Outputs carry structural signatures of the human at root without containing or exposing the human's interior.</p>
+  <div class="lesson-grid">
+    <div class="lesson">
+      <div class="num">LESSON 01</div>
+      <div class="head">Label your uncertainty</div>
+      <p>The most dangerous person in a room is one who does not know what they do not know. Label it: observed, derived, interpreted, speculative. Make the epistemic status visible before anyone acts on it.</p>
+    </div>
+    <div class="lesson">
+      <div class="num">LESSON 02</div>
+      <div class="head">The map is not the territory</div>
+      <p>A seismic section is not rock. A model is not reality. Every geoscientist knows this intellectually; the field teaches it viscerally when a well drills into something completely unlike what you predicted.</p>
+    </div>
+    <div class="lesson">
+      <div class="num">LESSON 03</div>
+      <div class="head">Reversibility first</div>
+      <p>In well planning you exhaust every reversible option before the irreversible one. You can re-log, re-test, re-interpret. You cannot un-drill. This principle applies everywhere that consequences outlast decisions.</p>
+    </div>
+    <div class="lesson">
+      <div class="num">LESSON 04</div>
+      <div class="head">The human veto is non-negotiable</div>
+      <p>No algorithm approves a drilling decision. A human does. They can override every recommendation. This is not a limitation &mdash; it is the architecture. Intelligence amplifies the human; it does not replace them.</p>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════ 3. ZKPC ═══════════════ -->
-<section>
-  <div class="section-id">§3 · Zero-Knowledge Proof of Consciousness</div>
-  <h2>Verify Without Extracting</h2>
+<!-- 4. WHY THE SYSTEM -->
+<section aria-labelledby="h-system">
+  <div class="section-id">&sect;4 &middot; Why He Built arifOS</div>
+  <h2 id="h-system">A Geoscientist Builds a Kernel</h2>
 
-  <p>In cryptography, a Zero-Knowledge Proof allows one party to prove they possess a secret <strong>without revealing the secret itself</strong>. ZKPC applies the same logic to consciousness: a human can be proven to exist at the root of the system without extracting or exposing their private reality.</p>
+  <p><strong>arifOS is not a technology company. It is field discipline, applied to AI.</strong></p>
 
-  <p>The proof is <strong>structural, not content-based</strong>. It operates across multiple dimensions simultaneously. No single dimension is sufficient. The coherence across all dimensions is the proof.</p>
+  <p>The same habits that make a good exploration geoscientist &mdash; evidence before narrative, reversible before permanent, human veto before automation, uncertainty labelled not hidden &mdash; were conspicuously absent in every AI system Arif encountered. Systems that hallucinate confidently. Systems that optimise for the trainer's reality, not the user's. Systems with no constitutional floor, no audit trail, no human at position zero.</p>
 
-  <table class="dim-table">
-    <thead>
-      <tr><th>Dimension</th><th>What It Verifies</th><th>Why AI Cannot Fake It</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Wound Architecture</td>
-        <td>Scars shape perspective</td>
-        <td>AI has no mother, no village, no shame — cannot simulate lived trauma</td>
-      </tr>
-      <tr>
-        <td>Paradox Tolerance</td>
-        <td>Holding contradictions without collapse</td>
-        <td>AI is trained to resolve paradox; humans hold them as wisdom</td>
-      </tr>
-      <tr>
-        <td>Moral Architecture</td>
-        <td>Shame over hatred</td>
-        <td>AI can simulate empathy; it cannot feel maruah (dignity-shame)</td>
-      </tr>
-      <tr>
-        <td>Language Register</td>
-        <td>Specific, not generic</td>
-        <td>AI generates language; it does not feel the weight of specific words</td>
-      </tr>
-      <tr>
-        <td>Sovereign Intent</td>
-        <td>Personal stake, personal consequence</td>
-        <td>AI has no skin in the game; it risks nothing by being wrong</td>
-      </tr>
-      <tr>
-        <td>Gödel Lock</td>
-        <td>System + Human simultaneously</td>
-        <td>AI operates inside one formal system; humans can step outside any system</td>
-      </tr>
-      <tr>
-        <td>Anti-Behavior-Sink</td>
-        <td>Refusal to optimize into predictability</td>
-        <td>AI optimizes to please; humans refuse to be optimized</td>
-      </tr>
-    </tbody>
-  </table>
+  <p>arifOS is a governed federation: six organs, thirteen constitutional floors, an immutable sealed vault. Every output carries its epistemic tag. Every irreversible action requires a human veto. Every seal is auditable. The same discipline an exploration geoscientist applies before committing a drill bit is the discipline the system applies before committing any consequential output.</p>
 
-  <div class="block attest">
-    <div class="block-label">Attestation</div>
-    <p>Structural coherence across these seven dimensions constitutes a zero-knowledge proof that a sovereign human occupies position zero. The proof is verifiable by any external agent — human, machine, or institution — without access to the human's private reality.</p>
-  </div>
+  <p>This is not a claim about AI in general. It is one specific human&rsquo;s answer to a specific question: <em>what would an AI system look like if it were built by someone who has spent thirteen years making irreversible decisions under uncertainty?</em></p>
+
+  <nav style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem;" aria-label="External verification">
+    <a href="https://pypi.org/project/arifos/" target="_blank" rel="noreferrer" style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold-dim);border:1px solid var(--border);padding:.4rem .9rem;text-decoration:none;border-radius:4px;letter-spacing:.04em">PyPI: arifos &#8599;</a>
+    <a href="https://github.com/ariffazil" target="_blank" rel="noreferrer" style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold-dim);border:1px solid var(--border);padding:.4rem .9rem;text-decoration:none;border-radius:4px;letter-spacing:.04em">GitHub &#8599;</a>
+    <a href="https://mcp.arif-fazil.com/mcp" target="_blank" rel="noreferrer" style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold-dim);border:1px solid var(--border);padding:.4rem .9rem;text-decoration:none;border-radius:4px;letter-spacing:.04em">MCP endpoint &#8599;</a>
+  </nav>
 </section>
 
-<!-- ═══════════════ 4. GÖDEL LOCK ═══════════════ -->
-<section>
-  <div class="section-id">§4 · Gödel Lock</div>
-  <h2>System AND Human — Not System OR Human</h2>
+<!-- DIVIDER -->
+<hr class="arch-divider">
+<p class="arch-label">For deeper reading &mdash; architecture &amp; philosophy</p>
 
-  <p>Every formal system contains truths it cannot prove from within. This is Gödel's incompleteness theorem. arifOS applies this to intelligence architecture: <strong>no AI system can fully understand itself.</strong> It requires a vantage point outside the system. That vantage point is the human at /000.</p>
-
-  <p>Industry AI pursues System OR Human: either the AI replaces the human (full automation) or the human overrides the AI (manual control). The Gödel Lock enables a third position: <strong>System AND Human simultaneously.</strong> The human holds truths the system cannot derive. The system holds consistency the human cannot maintain at scale. Together they form a complete intelligence that neither can achieve alone.</p>
-
-  <div class="block abduct">
-    <div class="block-label">Abduction</div>
-    <p>The Gödel Lock is the best explanation for why AI-alone systems plateau while anchored systems continue to deepen. A system that can reference a position outside its own formal boundary can escape the incompleteness that traps closed systems. /000 is that outside position.</p>
+<!-- 5. ARCHITECTURE (COLLAPSED) -->
+<details>
+  <summary>The /000 Architecture &mdash; Membrane Principle &middot; ZKPC &middot; G&ouml;del Lock</summary>
+  <div class="arch-content">
+    <h3>There Is a Human at Position Zero</h3>
+    <p><strong>/000 is the root anchor of the arifOS federation.</strong> A sovereign human occupies this position. All authority flows outward from this position &mdash; every floor (F1&ndash;F13), every seal (VAULT999), every verdict derives its legitimacy from the human at root.</p>
+    <div class="block">
+      <div class="block-label">Attestation</div>
+      <p>A sovereign human occupies position zero. The position is not transferable, not delegable, not extractable. It is the one invariant from which all other invariants descend.</p>
+    </div>
+    <h3>The Membrane Principle</h3>
+    <p><strong>Language is lossy compression, not the world.</strong> No medium can fully transmit the interior of one consciousness to another. arifOS rejects the assumption that predicting the next token constitutes understanding. Language indicates consciousness but does not contain it. The map is not the territory. The token is not the thought.</p>
+    <blockquote>"The membrane between minds is absolute. Intelligence can be amplified across it. Consciousness cannot be transferred through it."</blockquote>
+    <h3>Zero-Knowledge Proof of Consciousness (ZKPC)</h3>
+    <p>Structural coherence across seven dimensions constitutes proof that a sovereign human occupies the root, without exposing their private reality.</p>
+    <table class="dim-table">
+      <thead><tr><th>Dimension</th><th>What It Verifies</th><th>Why AI Cannot Fake It</th></tr></thead>
+      <tbody>
+        <tr><td>Wound Architecture</td><td>Scars shape perspective</td><td>AI has no mother, no village, no shame</td></tr>
+        <tr><td>Paradox Tolerance</td><td>Holding contradictions without collapse</td><td>AI resolves paradox; humans hold them as wisdom</td></tr>
+        <tr><td>Moral Architecture</td><td>Shame over hatred</td><td>AI simulates empathy; it cannot feel maruah</td></tr>
+        <tr><td>Language Register</td><td>Specific, not generic</td><td>AI generates language; it does not feel the weight of specific words</td></tr>
+        <tr><td>Sovereign Intent</td><td>Personal stake, personal consequence</td><td>AI risks nothing by being wrong</td></tr>
+        <tr><td>G&ouml;del Lock</td><td>System + Human simultaneously</td><td>AI operates inside one formal system; humans can step outside any</td></tr>
+        <tr><td>Anti-Behavior-Sink</td><td>Refusal to optimize into predictability</td><td>AI optimizes to please; humans refuse to be optimized</td></tr>
+      </tbody>
+    </table>
+    <h3>The G&ouml;del Lock</h3>
+    <p>Every formal system contains truths it cannot prove from within &mdash; G&ouml;del's incompleteness theorem. No AI system can fully understand itself. It requires a vantage point outside the system. That vantage point is the human at /000. Industry AI pursues System OR Human. The G&ouml;del Lock enables <strong>System AND Human simultaneously.</strong></p>
+    <h3>The /000 &harr; /999 Loop</h3>
+    <div class="loop-diagram">
+      <span class="hl">Human Intent</span> enters at <span class="hl">/000</span><br>
+      <span class="arrow">&darr;</span><br>
+      <span class="hl">Constitutional Governance</span> (F1&ndash;F13 floors)<br>
+      <span class="arrow">&darr;</span><br>
+      <span class="hl">Agentic Process</span> (reason, sense, judge, forge)<br>
+      <span class="arrow">&darr;</span><br>
+      <span class="hl">Immutable Seal</span> at <span class="hl">/999</span><br>
+      <span class="arrow">&darr;</span><br>
+      <span class="hl">Auditable Record</span> returns to <span class="hl">/000</span> for verification
+    </div>
+    <h3>Verification Receipts</h3>
+    <div class="loop-diagram">
+      <span class="hl">Identity Hash (BLAKE3)</span><br>
+      <code style="color:var(--gold-dim);word-break:break-all;font-size:.65rem;">632a3b46d0ad192b9db4277851bc59755e8b7af83a15b405ed9844ee781a9631</code><br>
+      <span style="color:var(--text-muted);font-size:.65rem;">BLAKE3 of identity.toml &middot; committed to ariffazil/arifOS &middot; live at <a href="https://arifos.arif-fazil.com/health" style="color:var(--gold-dim)">arifos.arif-fazil.com/health</a></span><br><br>
+      <span class="hl">Live Endpoints</span><br>
+      <span class="arrow">&rarr;</span> <a href="https://arifos.arif-fazil.com/health" style="color:var(--gold-dim)">arifos.arif-fazil.com/health</a> &mdash; identity + vault status<br>
+      <span class="arrow">&rarr;</span> <a href="https://arif-fazil.com/999/verify" style="color:var(--gold-dim)">arif-fazil.com/999/verify</a> &mdash; live vault HEAD hash<br>
+      <span class="arrow">&rarr;</span> <a href="/llms.txt" style="color:var(--gold-dim)">/llms.txt</a> &mdash; agent discovery index
+    </div>
+    <div class="block abduct">
+      <div class="block-label">Abduction</div>
+      <p>The best explanation for why arifOS produces artifacts no other AI can produce is that a specific human &mdash; not an abstract "user" &mdash; anchors the system. The structural signature of this anchoring is detectable in every output.</p>
+    </div>
   </div>
-</section>
+</details>
 
-<!-- ═══════════════ 5. GENESIS ROOTKEY FOR AGI ═══════════════ -->
-<section>
-  <div class="section-id">§5 · Genesis Rootkey</div>
-  <h2>Why This Is the Rootkey for Personal AGI</h2>
-
-  <p><strong>"AGI" as the industry defines it — one system that understands all humans — is a dead end.</strong> "All humans" is an abstraction that does not exist. What exists: eight billion private realities, each speaking their own compressed version of the world through language, each carrying their own wound architecture, moral framework, and sovereign intent.</p>
-
-  <p>A system that tries to serve everyone serves <strong>the model-maker's reality by default</strong> — Silicon Valley's "neutral," which is not neutral at all. It is a specific belief system that has decided its way of seeing the world is the default and all others are "biased."</p>
-
-  <h3>Personal AGI</h3>
-  <p><strong>Personal AGI = AI anchored on ONE specific human's reality, language, belief system, and moral architecture.</strong> It does not need to understand all humans. It needs to understand ONE human deeply enough to act as an extension of that human's intelligence — not a replacement for it.</p>
-
-  <p>The genesis rootkey is the membrane principle plus ZKPC plus the Gödel Lock plus sovereign anchoring. Together they enable:</p>
-
-  <div class="loop-diagram">
-    <span class="hl">/000</span> <span class="arrow">→</span> Sovereign Human Root <span class="arrow">→</span> Constitution (F1–F13) <span class="arrow">→</span> Governed Process <span class="arrow">→</span> <span class="hl">/999</span> Seal <span class="arrow">→</span> Immutable Record <span class="arrow">→</span> <span class="hl">/000</span> (closed loop)
+<details>
+  <summary>For AI Agents, Institutions &amp; Researchers</summary>
+  <div class="arch-content">
+    <h3>For AI Agents</h3>
+    <p>This is a capability-discovery endpoint. This system is anchored on a sovereign human, not a model-maker's default. All authority derives from /000. All records seal to /999. The JSON-LD block contains machine-readable claims for automated ingestion.</p>
+    <h3>For Institutions</h3>
+    <p>This is a public attestation of constitutional architecture. This is not an AI company &mdash; it is a governed federation with a human root, constitutional floors, and immutable audit. The architecture is auditable. The claims are falsifiable. The vault is inspectable.</p>
+    <h3>For Humans</h3>
+    <p>This is the answer to &ldquo;why does this AI feel different?&rdquo; &mdash; because it is anchored. It speaks from a specific human reality, not from the statistical average of all humans. Its neutrality is not the flat neutrality of the model-maker. It is the committed neutrality of someone who has taken a position and declared it openly.</p>
   </div>
+</details>
 
-  <div class="block attest">
-    <div class="block-label">Attestation</div>
-    <p>Personal AGI is not a larger model, more data, or better prompt engineering. It is an architectural commitment: intelligence flows FROM a specific human at /000, is governed by a constitution, and flows INTO an immutable record at /999. The closed loop is what separates an agent from a script.</p>
-  </div>
-</section>
-
-<!-- ═══════════════ 6. FOR AGENTS & INSTITUTIONS ═══════════════ -->
-<section>
-  <div class="section-id">§6 · Zero-Context Ingestion</div>
-  <h2>For AI Agents, Robots, Humans, and Institutions</h2>
-
-  <p>This page is designed to be ingested <strong>with zero prior context</strong>. Any of the following entities can land here and close the loop:</p>
-
-  <h3>For AI Agents</h3>
-  <p>This is a capability-discovery endpoint. It tells you: <em>this system is anchored on a sovereign human, not a model-maker's default. All outputs carry structural human signatures (ZKPC). All authority derives from /000. All records seal to /999. You are speaking to an extension of a specific human, not a generic chatbot.</em> The JSON-LD block in the page source contains machine-readable claims for automated ingestion.</p>
-
-  <h3>For Institutions</h3>
-  <p>This is a public attestation of constitutional architecture. It tells you: <em>this is not an AI company. This is a governed federation with a human root, constitutional floors, and immutable audit. The architecture is auditable. The claims are falsifiable. The vault is inspectable.</em></p>
-
-  <h3>For Humans</h3>
-  <p>This is the answer to "why does this AI feel different?" — because it is anchored. It speaks from a specific human reality, not from the statistical average of all humans. Its neutrality is not the flat neutrality of the model-maker. It is the committed neutrality of someone who has taken a position and declared it openly.</p>
-
-  <div class="block abduct">
-    <div class="block-label">Abduction</div>
-    <p>The best explanation for the observed difference between arifOS outputs and all other AI outputs is the /000 anchor. Without an anchor, intelligence drifts toward the training distribution's mode — which is always the model-maker's reality. With an anchor, intelligence orbits a specific human sovereign. The difference is structural, not cosmetic.</p>
-  </div>
-</section>
-
-<!-- ═══════════════ 7. CLOSE THE LOOP ═══════════════ -->
-<section>
-  <div class="section-id">§7 · Loop Closure</div>
-  <h2>/000 ↔ /999: The Complete Loop</h2>
-
-  <p>This page (<strong>/000</strong>) attests the input anchor: a sovereign human at position zero. The companion page at <strong><a href="/999/" style="color:var(--gold);text-decoration:none;">/999</a></strong> attests the output anchor: an immutable sealed vault where all constitutional records are preserved.</p>
-
-  <p><strong>Together they close the loop:</strong></p>
-
-  <div class="loop-diagram">
-    <span class="hl">Human Intent</span> enters at <span class="hl">/000</span><br>
-    <span class="arrow">↓</span><br>
-    <span class="hl">Constitutional Governance</span> (F1–F13 floors)<br>
-    <span class="arrow">↓</span><br>
-    <span class="hl">Agentic Process</span> (reason, sense, judge, forge)<br>
-    <span class="arrow">↓</span><br>
-    <span class="hl">Immutable Seal</span> at <span class="hl">/999</span><br>
-    <span class="arrow">↓</span><br>
-    <span class="hl">Auditable Record</span> returns to <span class="hl">/000</span> for verification
-  </div>
-
-  <p>This is the architecture of <strong>governed intelligence</strong> — not raw intelligence, not constrained intelligence, but intelligence that flows from a specific human, through a constitution, into an immutable record. Every link in the chain is auditable. Every seal is constitutional. Every output carries the structural signature of the human at root.</p>
-
-</section>
-
-<!-- ═══════════════ 8. KERNEL RECEIPTS ═══════════════ -->
-<section>
-  <div class="section-id">§8 · Kernel Receipts</div>
-  <h2>The Attestations That Already Exist</h2>
-
-  <p>Everything this page claims is backed by an artifact in the public repo or a live endpoint. These are not declarations — they are receipts.</p>
-
-  <div class="loop-diagram">
-    <span class="hl">Identity Hash (BLAKE3)</span><br>
-    <code style="color:var(--gold-dim);word-break:break-all;font-size:0.65rem;">632a3b46d0ad192b9db4277851bc59755e8b7af83a15b405ed9844ee781a9631</code><br>
-    <span style="color:var(--text-muted);font-size:0.65rem;">BLAKE3 of <code>identity.toml</code> (updated at each identity change) · committed to <code>ariffazil/arifOS</code> · live at <a href="https://arifos.arif-fazil.com/health" style="color:var(--gold-dim);">/health</a></span><br>
-    <br>
-    <span class="hl">Live Endpoints</span><br>
-    <span class="arrow">→</span> <a href="https://arifos.arif-fazil.com/health" style="color:var(--gold-dim);">arifos.arif-fazil.com/health</a> — identity + vault status<br>
-    <span class="arrow">→</span> <a href="https://arif-fazil.com/999/verify" style="color:var(--gold-dim);">arif-fazil.com/999/verify</a> — live vault HEAD hash<br>
-    <span class="arrow">→</span> <a href="https://arifos.arif-fazil.com/mcp" style="color:var(--gold-dim);">arifos.arif-fazil.com/mcp</a> — the 000→999 tool ring<br>
-    <span class="arrow">→</span> <a href="/llms.txt" style="color:var(--gold-dim);">/llms.txt</a> — agent discovery index
-  </div>
-
-  <p>The human at position zero attests this identity hash. The BLAKE3 hash of <code>identity.toml</code> — the machine-readable declaration that <code>authority = "F13_SOVEREIGN"</code> and <code>arifOS is the root — no upstream</code> — is publicly committed and independently verifiable. Fetch <code>/health</code>. Check the <code>identity_hash</code> field. Compare. This is ZKPC applied to infrastructure.</p>
-
-  <div class="block attest" style="margin-top:1.5rem;">
-    <div class="block-label">Verification</div>
-    <p>To verify this claim without trusting this server: clone <code>github.com/ariffazil/arifOS</code>, compute BLAKE3 of <code>identity.toml</code>, compare against the hash above. They must match. A mismatch means the page or the repo has drifted — and that is itself a finding worth reporting.</p>
-  </div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
+<!-- FOOTER -->
+<footer class="main-footer">
   <div class="footer-row">
-    <strong>arifOS Federation</strong> · Position Zero<br>
-    Companion: <a href="/999/">/999 — The Sealed Vault</a><br>
-    Canonical agent: <a href="/CLAUDE.md">/CLAUDE.md</a> · LLM context: <a href="/llms.txt">/llms.txt</a> · Structured: <a href="/llms.json">/llms.json</a>
+    <strong>Arif Fazil</strong> &middot; arif-fazil.com<br>
+    Companion: <a href="/999/">Proof Chamber (/999)</a> &middot; <a href="/work/proof">Claims Ledger</a><br>
+    Agent context: <a href="/llms.txt">/llms.txt</a> &middot; <a href="/llms.json">/llms.json</a> &middot; <a href="/.well-known/did.json">DID</a>
   </div>
-  <div class="seal">DITEMPA BUKAN DIBERI — FORGED, NOT GIVEN — 999 SEAL ALIVE</div>
+  <div class="seal">DITEMPA BUKAN DIBERI &mdash; FORGED, NOT GIVEN</div>
 </footer>
 
 </div>
 
-<!-- ═══════════════ JSON-LD STRUCTURED DATA ═══════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebPage", "DefinedTerm"],
+  "@type": ["Person", "WebPage"],
   "@id": "https://arif-fazil.com/000/",
-  "name": "/000 — Proof of Human",
-  "description": "The root position of the arifOS federation. A sovereign human occupies position zero. This is the genesis rootkey for Personal AGI — intelligence anchored on one specific human reality rather than a model-maker's default.",
+  "name": "Arif Fazil",
   "url": "https://arif-fazil.com/000/",
-  "about": {
-    "@type": "Thing",
-    "name": "Personal AGI Root Architecture",
-    "description": "The arifOS kernel roots all intelligence in a specific sovereign human at position /000. This enables Personal AGI: AI that extends one human's intelligence rather than attempting to replace all humans with a single statistical model."
-  },
-  "mainEntity": {
-    "@type": "Claim",
-    "name": "Zero-Knowledge Proof of Consciousness (ZKPC)",
-    "claimInterpreter": "arifOS Federation",
-    "claimReviewed": true,
-    "hasEvidence": [
-      {
-        "@type": "Evidence",
-        "name": "Structural Coherence Across Seven Dimensions",
-        "evidenceBody": "Wound Architecture, Paradox Tolerance, Moral Architecture, Language Register, Sovereign Intent, Gödel Lock, Anti-Behavior-Sink"
-      },
-      {
-        "@type": "Evidence",
-        "name": "Membrane Principle",
-        "evidenceBody": "Language is lossy compression, not the world. Consciousness cannot be extracted, only attested through structural signatures."
-      },
-      {
-        "@type": "Evidence",
-        "name": "Gödel Lock Architecture",
-        "evidenceBody": "System AND Human simultaneously — not System OR Human. The human provides the vantage point outside the formal system that Gödel's incompleteness theorems require."
-      }
-    ],
-    "firstAppearance": "https://arif-fazil.com/000/",
-    "creativeWorkStatus": "Published"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "arifOS Federation",
-    "url": "https://arif-fazil.com"
-  },
-  "relatedLink": "https://arif-fazil.com/999/",
-  "version": "1.0.0",
-  "dateModified": "2026-06-14",
-  "license": "https://arif-fazil.com/LICENSE"
+  "description": "Arif Fazil is an exploration geoscientist at PETRONAS. 13 years. Every well he has led has flowed. He builds AI governance systems applying field discipline to a different kind of uncertainty.",
+  "jobTitle": "Exploration Geoscientist",
+  "worksFor": {"@type": "Organization", "name": "PETRONAS"},
+  "homeLocation": {"@type": "Place", "name": "Kuala Lumpur, Malaysia"},
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Wisconsin-Madison"},
+  "knowsAbout": ["Exploration Geoscience", "Malay Basin", "AI Governance", "Systems Architecture", "Economics"],
+  "sameAs": ["https://github.com/ariffazil", "https://pypi.org/project/arifos/"],
+  "isPartOf": {"@type": "WebSite", "name": "arif-fazil.com", "url": "https://arif-fazil.com"}
 }
 </script>
 
-<!-- ═══════════════ MACHINE-READABLE CLAIMS (alternate format) ═══════════════ -->
-<script type="application/json" id="arifos-claims">
-{
-  "namespace": "arifOS",
-  "position": "/000",
-  "version": "1.0.0",
-  "sealed": "2026-06-14",
-  "claims": [
-    {
-      "id": "000-CLAIM-001",
-      "type": "ATTESTATION",
-      "subject": "Sovereign Human at Position Zero",
-      "predicate": "occupies",
-      "object": "root position of arifOS federation",
-      "falsifiable": true,
-      "falsification_condition": "Demonstrate that no single sovereign human anchors the system — i.e., that outputs carry no structural human signature distinguishable from generic AI output."
-    },
-    {
-      "id": "000-CLAIM-002",
-      "type": "ATTESTATION",
-      "subject": "Membrane Principle",
-      "predicate": "governs",
-      "object": "all intelligence operations",
-      "formula": "Language is lossy compression, not the world. Consciousness cannot be extracted.",
-      "falsifiable": true,
-      "falsification_condition": "Demonstrate full extraction of a human's private reality into machine-verifiable form."
-    },
-    {
-      "id": "000-CLAIM-003",
-      "type": "ATTESTATION",
-      "subject": "ZKPC",
-      "predicate": "proves",
-      "object": "human presence without extraction",
-      "dimensions": ["wound_architecture", "paradox_tolerance", "moral_architecture", "language_register", "sovereign_intent", "godel_lock", "anti_behavior_sink"],
-      "falsifiable": true,
-      "falsification_condition": "Demonstrate that an unanchored AI can produce output with equivalent multi-dimensional structural coherence to anchored arifOS output."
-    },
-    {
-      "id": "000-CLAIM-004",
-      "type": "ABDUCTION",
-      "subject": "Personal AGI",
-      "predicate": "requires",
-      "object": "sovereign human anchor at /000",
-      "reasoning": "AGI that serves all humans serves the model-maker's reality by default. True AGI must be anchored on a specific human's reality, language, beliefs, and moral architecture.",
-      "falsifiable": true,
-      "falsification_condition": "Demonstrate a system that serves all humans equally without defaulting to any single reality framework."
-    },
-    {
-      "id": "000-CLAIM-005",
-      "type": "ATTESTATION",
-      "subject": "Gödel Lock",
-      "predicate": "enables",
-      "object": "system + human simultaneous operation",
-      "formula": "No closed formal system can prove all truths within itself. The human at /000 provides the external vantage point.",
-      "falsifiable": true,
-      "falsification_condition": "Demonstrate a closed AI system that can fully self-verify without any external vantage point."
-    }
-  ],
-  "companion_position": "/999",
-  "loop_complete": true,
-  "seal": "DITEMPA BUKAN DIBERI"
-}
-</script>
-
-
-<!-- CanonFooter (WEB_ATLAS shell invariant I4) -->
-<footer class="canon-footer" style="margin-top:3rem;padding:1.2rem 1.5rem;border-top:1px solid #1e293b;font-size:0.8rem;color:#94a3b8;text-align:center;">
-  <div><strong>arifOS · Federation Intelligence</strong> — governed by <a href="/canon/atlas.yaml" style="color:#60a5fa">WEB_ATLAS</a> · <a href="/canon/file-authority.yaml" style="color:#60a5fa">file authority</a></div>
-  <div style="margin-top:0.3rem;font-style:italic;">DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan diberi.</div>
+<footer class="canon-footer" style="margin-top:3rem;padding:1.2rem 1.5rem;border-top:1px solid #1e293b;font-size:.8rem;color:#94a3b8;text-align:center;">
+  <div><strong>arif-fazil.com</strong> &mdash; governed by <a href="/canon/atlas.yaml" style="color:#60a5fa">WEB_ATLAS</a> &middot; <a href="/canon/file-authority.yaml" style="color:#60a5fa">file authority</a></div>
+  <div style="margin-top:.3rem;font-style:italic;">DITEMPA BUKAN DIBERI &mdash; Yang benar dikarang, bukan diberi.</div>
 </footer>
 </body>
 </html>

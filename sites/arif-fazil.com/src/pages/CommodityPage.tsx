@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { TradingViewWidget } from '@/components/TradingViewWidget';
 
 type CommodityDef = {
   slug: string;
@@ -216,12 +217,21 @@ export function CommodityPage({ slug }: { slug: string }) {
             </div>
 
             {/* KEY LEVELS */}
-            <div className="mt-6 flex flex-wrap items-center gap-3 font-mono text-xs">
+            <div className="mt-6 flex flex-wrap items-center gap-3 font-mono text-xs mb-6">
               <span className="text-slate-400 uppercase">Key Levels:</span>
               <span className="px-2.5 py-1 rounded bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">S1: {commodity.s1}</span>
               <span className="px-2.5 py-1 rounded bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">S2: {commodity.s2}</span>
               <span className="px-2.5 py-1 rounded bg-rose-950/60 border border-rose-500/30 text-rose-300">R1: {commodity.r1}</span>
               <span className="px-2.5 py-1 rounded bg-rose-950/60 border border-rose-500/30 text-rose-300">R2: {commodity.r2}</span>
+            </div>
+
+            {/* LIVE TRADINGVIEW CHART */}
+            <div className="mt-6">
+              <div className="font-mono text-xs text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>Live Interactive TradingView Chart · {commodity.symbol}</span>
+                <span className="text-emerald-400">● REALTIME STREAM</span>
+              </div>
+              <TradingViewWidget symbol={commodity.symbol === 'BZ=F' ? 'TVC:UKOIL' : commodity.symbol === 'NG=F' ? 'TVC:USNG' : commodity.symbol === 'USDMYR=X' ? 'FX_IDC:USDMYR' : commodity.symbol === '^KLSE' ? 'BURSA:KLCI' : 'OANDA:XAUUSD'} height={480} />
             </div>
           </div>
 

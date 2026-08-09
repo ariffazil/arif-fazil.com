@@ -1,0 +1,162 @@
+# PAGE ATTENTION BUDGET — arif-fazil.com
+# =========================================
+# DITEMPA BUKAN DIBERI · Forged 2026-08-09
+# Agent reference: Setiap page ada budget kefahaman.
+# Jika page melebihi budget → agent GAGAL deploy.
+
+version: "1.0.0"
+doctrine: |
+  Perhatian manusia adalah sumber paling mahal dalam sistem agent-manusia.
+  Setiap halaman direka untuk difahami dalam masa tertentu. Agent yang
+  melanggar budget ini mencuri perhatian — bukan mengurangkan entropi.
+
+pages:
+  "/":
+    title: "Home — Sovereign Identity"
+    understand_in_s: 15
+    max_scrolls: 2
+    max_clicks_from_home: 0
+    primary_question: "Siapa Arif Fazil?"
+    fail_if: "Jargon teknikal, JSON, MCP endpoint pada homepage"
+    domain: voice
+
+  "/doctrine/":
+    title: "Doctrine — Constitution & Federation"
+    understand_in_s: 45
+    max_scrolls: 3
+    max_clicks_from_home: 1
+    primary_question: "Apa peraturan sistem ini?"
+    fail_if: "Tidak menyebut F1-F13, tidak link ke Canon"
+    domain: law
+
+  "/earth/":
+    title: "Earth — Dynamic Planet"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 1
+    primary_question: "Apa di bawah kaki kita?"
+    fail_if: "Globe tak interactive, tiada data geologi"
+    domain: earth
+
+  "/world/":
+    title: "World — Civic Journalism & Commodities"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 1
+    primary_question: "Apa yang berlaku di dunia?"
+    fail_if: "MakcikGPT tak accessible dari sini"
+    domain: voice
+
+  "/economics/":
+    title: "Economics — Malaysia Briefing"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 1
+    primary_question: "Apa nasib ekonomi Malaysia?"
+    fail_if: "Dashboard kosong, data stale >24h"
+    domain: capital
+
+  "/words/":
+    title: "Words — Essays & Writing"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 1
+    primary_question: "Apa yang Arif tulis?"
+    fail_if: "Esei tak tersenarai, link mati"
+    domain: voice
+
+  "/work/":
+    title: "Work — Missions & Proof"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 1
+    primary_question: "Apa yang Arif bina?"
+    fail_if: "Misi tak accessible, proof chamber kosong"
+    domain: work
+
+  "/000/":
+    title: "000 — Genesis Archive"
+    understand_in_s: 60
+    max_scrolls: 4
+    max_clicks_from_home: 1
+    primary_question: "Dari mana ini bermula?"
+    fail_if: "Archive tak tersenarai, wisdom canon hilang"
+    domain: origin
+
+  "/999/":
+    title: "999 — Proof Chamber"
+    understand_in_s: 60
+    max_scrolls: 4
+    max_clicks_from_home: 1
+    primary_question: "Adakah ini benar?"
+    fail_if: "VAULT999 receipts tak verify, hash chain putus"
+    domain: proof
+
+  "/world/makcikgpt/":
+    title: "MakcikGPT — Civic Intelligence"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 2
+    primary_question: "Apa MakcikGPT perjuangkan?"
+    fail_if: "Artikel tak tersenarai, 999 Meterai hilang"
+    domain: voice
+
+  "/world/makcikgpt/:slug":
+    title: "MakcikGPT Article"
+    understand_in_s: 120
+    max_scrolls: null
+    max_clicks_from_home: 2
+    primary_question: "Apa isu yang dibongkar?"
+    fail_if: "Meterai tak hadir, tarikh tiada, sumber tiada"
+    domain: voice
+
+  "/writing/:slug":
+    title: "Essay"
+    understand_in_s: 180
+    max_scrolls: null
+    max_clicks_from_home: 2
+    primary_question: "Apa argumen esei ini?"
+    fail_if: "Tiada abstrak, tiada epistemic labels"
+    domain: voice
+
+  "/oil/":
+  "/gas/":
+  "/gold/":
+    title: "Commodity Dashboard"
+    understand_in_s: 30
+    max_scrolls: 3
+    max_clicks_from_home: 2
+    primary_question: "Apa harga semasa?"
+    fail_if: "Data stale >1h, chart kosong"
+    domain: capital
+
+machine_surfaces:
+  "/llms.txt":
+    purpose: "Agent site overview — curated link index"
+    max_age_days: 7
+  "/surfaces.json":
+    purpose: "Canonical surface catalog — machine readable"
+    max_age_days: 1
+  "/sitemap.xml":
+    purpose: "Search engine sitemap"
+    max_age_days: 7
+  "/feed.xml":
+    purpose: "RSS feed — MakcikGPT articles"
+    max_age_days: 1
+  "/machine/manifest.json":
+    purpose: "Single agent entrypoint"
+    max_age_days: 1
+
+regression_checks:
+  visual_diff:
+    required: true
+    tolerance_pct: 5
+    baseline_dir: "visual-baseline/"
+  navigation:
+    required: true
+    max_click_depth: 3
+    fail_if_increased: true
+  attention:
+    required: true
+    max_understand_time_s: 180
+    fail_if_increased: true

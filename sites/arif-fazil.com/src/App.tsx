@@ -56,6 +56,8 @@ function App() {
             <Route path="/world" element={<World />} />
             <Route path="/world/" element={<World />} />
             {/* World → MakcikGPT */}
+            <Route path="/world/vitals" element={<Navigate to="/world/vitals/" replace />} />
+            <Route path="/world/vitals/" element={null} />
             <Route path="/world/makcikgpt" element={<MakcikGPTAlias />} />
             <Route path="/world/makcikgpt/" element={<MakcikGPTAlias />} />
             <Route path="/world/makcikgpt/index" element={<Navigate to="/world/makcikgpt/" replace />} />
@@ -132,8 +134,9 @@ function App() {
             <Route path="/politics/shadow/derita" element={<DeritaMap />} />
             <Route path="/politics/shadow/derita/" element={<DeritaMap />} />
 
-            {/* Legacy World → PROPA */}
-            <Route path="/vitals" element={<Navigate to="/world/propa/" replace />} />
+            {/* World → VITALS */}
+            <Route path="/vitals" element={<Navigate to="/world/vitals/" replace />} />
+            <Route path="/vitals/" element={<Navigate to="/world/vitals/" replace />} />
             <Route path="/propa" element={<Navigate to="/world/propa/" replace />} />
             <Route path="/propa/" element={<Navigate to="/world/propa/" replace />} />
 

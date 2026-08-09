@@ -108,6 +108,8 @@ Canonical landing: https://arif-fazil.com/world/makcikgpt/
 - `/llms.json` — Structured site overview (JSON form)
 - `/page.json` — Machine-readable site overview (purpose, route_model)
 - `/llms-full.txt` — Full-text content dump for LLM ingestion
+- `/SITE_CONSTITUTION.md` — HUMAN_FIRST binding constitution (ALL agents MUST read before mutation)
+- `/config/page-attention-budget.yaml` — Per-page human attention budgets
 
 ## MCP Registry Listings
 arifOS is featured on the following MCP registries:

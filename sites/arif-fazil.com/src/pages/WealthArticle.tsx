@@ -23,7 +23,7 @@ export function WealthArticle() {
       >
         <section className="py-24">
           <div className="site-frame text-center">
-            <h1 className="text-4xl font-black uppercase mb-4">Article Not Found</h1>
+            <h2 className="text-4xl font-black uppercase mb-4">Article Not Found</h2>
             <Link to="/economics" className="text-forge-gold hover:underline font-mono">
               ← Back to WEALTH
             </Link>

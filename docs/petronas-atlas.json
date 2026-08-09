@@ -1,0 +1,521 @@
+{
+  "atlas": "PETRONAS Knowledge Atlas",
+  "version": "1.0.0",
+  "forged": "2026-08-09",
+  "description": "Canonical index of all PETRONAS-related intelligence on arifOS federation VPS",
+  "stats": {
+    "total_canonical_files": 31,
+    "total_archived_duplicates": 170,
+    "categories": 8,
+    "last_updated": "2026-08-09T08:30:00+08:00"
+  },
+  "categories": {
+    "LETTERS_PUBLIC": {
+      "label": "Surat Terbuka / Public Letters",
+      "icon": "✉️",
+      "files": [
+        {
+          "id": "surat-terbuka-v2",
+          "title": "Surat Terbuka: Derita Rakyat, Kejatuhan Petronas",
+          "path": "/root/arif-fazil.com/docs/Surat_Terbuka_Petronas_20260809.pdf",
+          "web": "/docs/Surat_Terbuka_Petronas_20260809.pdf",
+          "type": "pdf",
+          "size": "53KB",
+          "date": "2026-08-09",
+          "status": "PUBLISHED",
+          "related": ["surat-terbuka-html", "petronas-dna-pdf"],
+          "description": "Open letter to Malaysian MPs — CEO extension, Gentari losses, pipeline explosion, F1 sponsorship"
+        },
+        {
+          "id": "surat-terbuka-html",
+          "title": "Surat Terbuka (HTML source)",
+          "path": "/tmp/surat-terbuka-v2.html",
+          "type": "html",
+          "date": "2026-08-09",
+          "related": ["surat-terbuka-v2"],
+          "description": "HTML source for the open letter PDF"
+        }
+      ]
+    },
+    "REPORTS_ANALYSIS": {
+      "label": "Intelligence Reports & Analysis",
+      "icon": "📊",
+      "files": [
+        {
+          "id": "gentari-v4",
+          "title": "Gentari Intelligence Artifact v4",
+          "path": "/root/forge_work/gentari-v4/out/PETRONAS_Gentari_Intelligence_Artifact_v4_2026-08-06.pdf",
+          "type": "pdf",
+          "size": "1.9MB",
+          "date": "2026-08-06",
+          "status": "LATEST",
+          "related": ["gentari-v3", "petronas-collapse-analysis", "petronas-vitals"],
+          "description": "Deep research on Gentari — green energy arm, RM1.9B losses, EV/hydrogen/solar"
+        },
+        {
+          "id": "petronas-collapse-analysis",
+          "title": "PETRONAS Collapse Analysis",
+          "path": "/root/forge_work/petronas-collapse-2026/PETRONAS_Collapse_Analysis.pdf",
+          "type": "pdf",
+          "size": "994KB",
+          "date": "2026-08-06",
+          "status": "CANONICAL",
+          "related": ["petronas-collapse-human", "petronas-ledger-speaks", "third-axis-collapse"],
+          "description": "Full collapse trajectory analysis with probability assessment"
+        },
+        {
+          "id": "petronas-ledger-speaks",
+          "title": "When the Ledger Speaks",
+          "path": "/root/forge_work/petronas-collapse-2026/out/PETRONAS_When_the_Ledger_Speaks_Aug2026.pdf",
+          "type": "pdf",
+          "size": "1.5MB",
+          "date": "2026-08-06",
+          "status": "CANONICAL",
+          "related": ["petronas-collapse-analysis", "petronas-v1-v2-contrast"],
+          "description": "Financial forensic analysis — ledger-level evidence of decay"
+        },
+        {
+          "id": "petronas-v1-v2-contrast",
+          "title": "Malaysia v1 vs v2 Contrast Analysis",
+          "path": "/root/forge_work/petronas-collapse-2026/out/PETRONAS_Malaysia_v1_v2_Contrast_Analysis_Aug2026.pdf",
+          "type": "pdf",
+          "size": "870KB",
+          "date": "2026-08-06",
+          "status": "CANONICAL",
+          "related": ["petronas-collapse-analysis"],
+          "description": "Comparative analysis of Malaysia's NOC trajectory"
+        },
+        {
+          "id": "petronas-brasil-v2",
+          "title": "Petronas Brasil Total Sunk Cost v2",
+          "path": "/root/forge_work/petronas-brasil-sunk-cost/Petronas_Brasil_Total_Sunk_Cost_v2_Aug2026.pdf",
+          "type": "pdf",
+          "size": "77KB",
+          "date": "2026-08-06",
+          "status": "CANONICAL",
+          "related": ["petronas-brasil-dashboard", "petronas-brasil-txt"],
+          "description": "Brazil operations sunk cost analysis — 23 years of losses"
+        },
+        {
+          "id": "petronas-brasil-dashboard",
+          "title": "Petronas Brasil Dashboard",
+          "path": "/root/forge_work/petronas-brasil-sunk-cost/Petronas_Brasil_Dashboard_Aug2026.pdf",
+          "type": "pdf",
+          "size": "57KB",
+          "date": "2026-08-06",
+          "status": "CANONICAL",
+          "related": ["petronas-brasil-v2"],
+          "description": "Visual dashboard for Brazil operations"
+        },
+        {
+          "id": "jcorp-analysis",
+          "title": "PETRONAS vs JCorp Comparative Analysis",
+          "path": "/root/arif-fazil.com/docs/PETRONAS_vs_JCORP_Analysis.pdf",
+          "type": "pdf",
+          "size": "58KB",
+          "date": "2026-08-09",
+          "status": "PUBLISHED",
+          "related": ["jcorp-report-py"],
+          "description": "Comparative governance analysis — Petronas vs JCorp (Sultan Johor)"
+        },
+        {
+          "id": "petronas-dna-pdf",
+          "title": "PETRONAS DNA (MakcikGPT)",
+          "path": "/root/.openclaw/workspace/petronas-dna.pdf",
+          "type": "pdf",
+          "size": "623KB",
+          "date": "2026-08-07",
+          "status": "CANONICAL",
+          "related": ["petronas-dna-html", "petronas-dna-md"],
+          "description": "DNA analysis of Petronas governance structure"
+        },
+        {
+          "id": "twin-play-agi",
+          "title": "PETRONAS Twin Play AGI",
+          "path": "/root/.openclaw/media/outbound/PETRONAS_TWIN_PLAY_AGI_v1.pdf",
+          "type": "pdf",
+          "size": "88KB",
+          "date": "2026-07",
+          "status": "ARCHIVED",
+          "related": [],
+          "description": "Twin play analysis — parent vs group structure"
+        }
+      ]
+    },
+    "MAKCIKGPT_ARTICLES": {
+      "label": "MakcikGPT Articles (Civic Intelligence)",
+      "icon": "📰",
+      "files": [
+        {
+          "id": "petronas-dna-html",
+          "title": "PETRONAS DNA — ATM Kerajaan",
+          "path": "/root/arif-fazil.com/sites/arif-fazil.com/dist/makcikgpt-md/petronas-dna.html",
+          "web": "/makcikgpt-md/petronas-dna.html",
+          "type": "html",
+          "status": "LIVE",
+          "related": ["petronas-dna-pdf", "petronas-atm-kerajaan"],
+          "description": "Civic intelligence article — Petronas as government ATM"
+        },
+        {
+          "id": "petronas-atm-kerajaan",
+          "title": "ATM Kerajaan",
+          "path": "/root/arif-fazil.com/sites/arif-fazil.com/dist/makcikgpt-md/petronas-atm-kerajaan.html",
+          "web": "/makcikgpt-md/petronas-atm-kerajaan.html",
+          "type": "html",
+          "status": "LIVE",
+          "related": ["petronas-dna-html"],
+          "description": "Government ATM analysis"
+        },
+        {
+          "id": "petronas-hive-sale",
+          "title": "Hive Sale — Harta Rakyat Dijual",
+          "path": "/root/arif-fazil.com/sites/arif-fazil.com/dist/makcikgpt-md/petronas-hive-sale.html",
+          "web": "/makcikgpt-md/petronas-hive-sale.html",
+          "type": "html",
+          "status": "LIVE",
+          "related": ["searah-analysis"],
+          "description": "Asset sale analysis — SEARAH/EnQuest/Eni"
+        },
+        {
+          "id": "petronas-visi-misi",
+          "title": "Visi Misi — Apa Jadi?",
+          "path": "/root/arif-fazil.com/sites/arif-fazil.com/dist/makcikgpt-md/petronas-visi-misi.html",
+          "web": "/makcikgpt-md/petronas-visi-misi.html",
+          "type": "html",
+          "status": "LIVE",
+          "related": [],
+          "description": "Vision and mission analysis"
+        },
+        {
+          "id": "petronas-amanah-dikhianati",
+          "title": "Bila Amanah PETRONAS Dikhianati",
+          "path": "/root/.openclaw/workspace/memory/makcikgpt/Bila-Amanah-PETRONAS-Dikhianati-MakcikGPT-Bersuara.pdf",
+          "type": "pdf",
+          "size": "76KB",
+          "status": "CANONICAL",
+          "related": ["petronas-harakah-pchem"],
+          "description": "When Petronas trust was betrayed"
+        },
+        {
+          "id": "petronas-harakah-pchem",
+          "title": "Harakah PChem — Dulu Permata, Bursa Kini",
+          "path": "/root/.openclaw/workspace/memory/makcikgpt/MakcikGPT-Harakah-PChem-Petronas-Dulu-Permata-Bursa-Kini.pdf",
+          "type": "pdf",
+          "size": "98KB",
+          "status": "CANONICAL",
+          "related": ["petronas-amanah-dikhianati"],
+          "description": "PChem — once a gem, now a market failure"
+        }
+      ]
+    },
+    "GENESIS_LAW": {
+      "label": "Constitutional Genesis (arifOS Law)",
+      "icon": "⚖️",
+      "files": [
+        {
+          "id": "genesis-petronas-paradox",
+          "title": "006_PETRONAS_PARADOX",
+          "path": "/root/arifOS/GENESIS/006_PETRONAS_PARADOX.md",
+          "type": "genesis",
+          "status": "LAW",
+          "related": ["genesis-sovereign-energy"],
+          "description": "Constitutional paradox: Petronas as both sovereign entity and commercial enterprise"
+        },
+        {
+          "id": "genesis-sovereign-energy",
+          "title": "024_PETRONAS_SOVEREIGN_ENERGY_INTELLIGENCE",
+          "path": "/root/arifOS/GENESIS/024_PETRONAS_SOVEREIGN_ENERGY_INTELLIGENCE.md",
+          "type": "genesis",
+          "status": "LAW",
+          "related": ["genesis-petronas-paradox"],
+          "description": "Sovereign energy intelligence doctrine"
+        }
+      ]
+    },
+    "MEMORY_INTEL": {
+      "label": "Intelligence Memory (Research & Deep Analysis)",
+      "icon": "🧠",
+      "files": [
+        {
+          "id": "third-axis-collapse",
+          "title": "Deep Research: Petronas Third Axis Collapse",
+          "path": "/root/AAA/memory/deep-research-petronas-third-axis.md",
+          "type": "research",
+          "date": "2026-06",
+          "status": "CANONICAL",
+          "related": ["crisis-map", "petronas-collapse-analysis", "third-axis-entity"],
+          "description": "Third axis analysis — revenue/capex/dividend convergence"
+        },
+        {
+          "id": "crisis-map",
+          "title": "Petronas Crisis Map",
+          "path": "/root/AAA/memory/2026-06-07-petronas-crisis-map.md",
+          "type": "research",
+          "date": "2026-06-07",
+          "status": "CANONICAL",
+          "related": ["insider-crisis-map", "third-axis-collapse"],
+          "description": "Visual crisis mapping — multiple failure vectors"
+        },
+        {
+          "id": "insider-crisis-map",
+          "title": "PETRONAS Insider Crisis Map",
+          "path": "/root/.openclaw/workspace/witnesses/PETRONAS-INSIDER-CRISIS-MAP-2026-06-07.md",
+          "type": "witness",
+          "size": "24KB",
+          "date": "2026-06-07",
+          "status": "CANONICAL",
+          "related": ["crisis-map"],
+          "description": "Insider testimony and crisis mapping"
+        },
+        {
+          "id": "institutional-decay",
+          "title": "PETRONAS Institutional Decay",
+          "path": "/root/WEALTH/forge_work/faisal_dossier/PETRONAS_INSTITUTIONAL_DECAY_2026-06-25.md",
+          "type": "analysis",
+          "date": "2026-06-25",
+          "status": "CANONICAL",
+          "related": ["third-axis-collapse"],
+          "description": "Institutional decay analysis — governance failure patterns"
+        },
+        {
+          "id": "strategic-brief",
+          "title": "Tengku Taufik Strategic Brief",
+          "path": "/root/.local/share/arifos/vault999/briefings_backup/briefings/Tengku_Taufik_PETRONAS_Strategic_Brief.md",
+          "type": "briefing",
+          "status": "CANONICAL",
+          "related": ["institutional-decay"],
+          "description": "CEO strategic assessment"
+        },
+        {
+          "id": "escalation",
+          "title": "PETRONAS Escalation",
+          "path": "/root/forge_work/wealth-zen-2026-08-03/PETRONAS_ESCALATION.md",
+          "type": "alert",
+          "date": "2026-08-03",
+          "status": "CANONICAL",
+          "related": ["third-axis-collapse", "crisis-map"],
+          "description": "Escalation triggers and alert thresholds"
+        },
+        {
+          "id": "essay-23-years",
+          "title": "23 Years in Brazil — Essay Draft",
+          "path": "/root/forge_work/proposals/aaa-hermes/vitals-news-2026-08-06/B-new-essay-petronas-23-years.md",
+          "type": "essay",
+          "date": "2026-08-06",
+          "status": "DRAFT",
+          "related": ["petronas-brasil-v2"],
+          "description": "Essay draft — 23 years of Petronas in Brazil"
+        },
+        {
+          "id": "third-axis-entity",
+          "title": "Third Axis Collapse Entity (arifOS memory)",
+          "path": "/root/arifOS/memory/entities/PETRONASThirdAxisCollapse2026.json",
+          "type": "entity",
+          "status": "CANONICAL",
+          "related": ["third-axis-collapse", "collapse-trajectory-entity"],
+          "description": "Structured entity — third axis collapse data"
+        },
+        {
+          "id": "collapse-trajectory-entity",
+          "title": "Collapse Trajectory v3 Entity",
+          "path": "/root/arifOS/memory/entities/PETRONAS_Collapse_Trajectory_v3_2026.json",
+          "type": "entity",
+          "status": "CANONICAL",
+          "related": ["third-axis-entity", "collapse-trajectory-human"],
+          "description": "Structured entity — collapse trajectory data"
+        },
+        {
+          "id": "collapse-trajectory-human",
+          "title": "Collapse Trajectory v3 (Human Readable)",
+          "path": "/root/arifOS/memory/entities/PETRONAS_Collapse_Trajectory_v3_2026_HUMAN_READABLE.md",
+          "type": "analysis",
+          "status": "CANONICAL",
+          "related": ["collapse-trajectory-entity", "petronas-collapse-analysis"],
+          "description": "Human-readable collapse trajectory"
+        }
+      ]
+    },
+    "DATA_CODE": {
+      "label": "Data & Code (Vitals, Scripts)",
+      "icon": "⚙️",
+      "files": [
+        {
+          "id": "petronas-vitals",
+          "title": "PETRONAS Vitals (Live Data)",
+          "path": "/root/arif-fazil.com/sites/arif-fazil.com/dist/data/wealth/petronas_vitals.json",
+          "type": "json",
+          "status": "LIVE",
+          "related": ["petronas-vitals-py", "petronas-noc-panel"],
+          "description": "Live financial vitals — revenue, capex, dividend, reserves"
+        },
+        {
+          "id": "petronas-vitals-py",
+          "title": "Petronas Vitals Engine",
+          "path": "/root/WEALTH/wealth_core/petronas_vitals.py",
+          "type": "python",
+          "status": "CANONICAL",
+          "related": ["petronas-vitals"],
+          "description": "Python engine for computing Petronas financial vitals"
+        },
+        {
+          "id": "petronas-noc-panel",
+          "title": "NOC Panel Test Cases",
+          "path": "/root/WEALTH/tests/cases/petronas_noc_panel.json",
+          "type": "json",
+          "status": "TEST",
+          "related": ["petronas-vitals"],
+          "description": "Test cases for NOC panel diagnostics"
+        },
+        {
+          "id": "jcorp-report-py",
+          "title": "JCorp Report Generator",
+          "path": "/root/arif-fazil.com/docs/petronas-vs-jcorp-pdf.py",
+          "type": "python",
+          "status": "CANONICAL",
+          "related": ["jcorp-analysis"],
+          "description": "Python script to generate PETRONAS vs JCorp comparison PDF"
+        }
+      ]
+    },
+    "SKILLS_REFS": {
+      "label": "Skills & Reference Knowledge",
+      "icon": "📚",
+      "files": [
+        {
+          "id": "makcikgpt-institutional-knowledge",
+          "title": "Petronas Institutional Knowledge (MakcikGPT)",
+          "path": "/root/HERMES/skills/creative/makcikgpt-article-forging/references/petronas-institutional-knowledge.md",
+          "type": "reference",
+          "status": "CANONICAL",
+          "related": ["petronas-gentari-knowledge", "petronas-clip-values"],
+          "description": "Core institutional knowledge base for MakcikGPT articles"
+        },
+        {
+          "id": "petronas-gentari-knowledge",
+          "title": "Gentari Institutional Knowledge",
+          "path": "/root/HERMES/skills/creative/makcikgpt-article-forging/references/petronas-gentari-institutional-knowledge.md",
+          "type": "reference",
+          "status": "CANONICAL",
+          "related": ["makcikgpt-institutional-knowledge", "gentari-v4"],
+          "description": "Gentari-specific knowledge base"
+        },
+        {
+          "id": "petronas-clip-values",
+          "title": "Petronas Clip Values",
+          "path": "/root/HERMES/skills/creative/makcikgpt-article-forging/references/petronas-clip-values.md",
+          "type": "reference",
+          "status": "CANONICAL",
+          "related": ["makcikgpt-institutional-knowledge"],
+          "description": "Key value metrics for clipping"
+        },
+        {
+          "id": "epistemic-cadence",
+          "title": "Cadence Monitor Findings",
+          "path": "/root/AAA/skills/institutional-epistemic-sink-forensics/references/petronas-cadence-monitor-findings.md",
+          "type": "reference",
+          "status": "CANONICAL",
+          "related": ["collapse-scan-blind-spot", "exploration-audit"],
+          "description": "Cadence monitoring — irregular patterns detected"
+        },
+        {
+          "id": "collapse-scan-blind-spot",
+          "title": "Collapse Scan Blind Spot",
+          "path": "/root/AAA/skills/institutional-epistemic-sink-forensics/references/petronas-collapse-scan-blind-spot-2026-07-07.md",
+          "type": "reference",
+          "date": "2026-07-07",
+          "status": "CANONICAL",
+          "related": ["epistemic-cadence", "petronas-collapse-analysis"],
+          "description": "Blind spots in collapse scanning"
+        },
+        {
+          "id": "exploration-audit",
+          "title": "Exploration Audit",
+          "path": "/root/AAA/skills/institutional-epistemic-sink-forensics/references/petronas-exploration-audit-2026-07-03.md",
+          "type": "reference",
+          "date": "2026-07-03",
+          "status": "CANONICAL",
+          "related": ["epistemic-cadence"],
+          "description": "Exploration and upstream audit findings"
+        },
+        {
+          "id": "petros-shell-case",
+          "title": "Petronas-Petros Shell Case",
+          "path": "/root/HERMES/skills/research/institutional-forensic-analysis/references/petronas-petros-shell-case.md",
+          "type": "reference",
+          "status": "CANONICAL",
+          "related": ["legal-case-dossier"],
+          "description": "Legal case analysis — Petronas-Petros-Shell dispute"
+        },
+        {
+          "id": "legal-case-dossier",
+          "title": "Legal Case Dossier (Petros 2024)",
+          "path": "/root/HERMES/skills/research/legal-case-dossier-from-news/references/example-petronas-petros-2024.md",
+          "type": "reference",
+          "status": "CANONICAL",
+          "related": ["petros-shell-case"],
+          "description": "Legal dossier from news sources"
+        },
+        {
+          "id": "fiscal-intel",
+          "title": "Fiscal Intelligence Brief",
+          "path": "/root/HERMES/skills/federation/federation-intelligence-pipeline/references/petronas-fiscal-intel-20260729.md",
+          "type": "reference",
+          "date": "2026-07-29",
+          "status": "CANONICAL",
+          "related": ["petronas-vitals"],
+          "description": "Fiscal intelligence pipeline output"
+        }
+      ]
+    }
+  },
+  "link_graph": {
+    "description": "Relationships between PETRONAS knowledge artifacts",
+    "edges": [
+      {"from": "surat-terbuka-v2", "to": "petronas-collapse-analysis", "type": "cites"},
+      {"from": "surat-terbuka-v2", "to": "gentari-v4", "type": "cites"},
+      {"from": "surat-terbuka-v2", "to": "petronas-brasil-v2", "type": "cites"},
+      {"from": "surat-terbuka-v2", "to": "petronas-vitals", "type": "uses_data"},
+      {"from": "gentari-v4", "to": "petronas-gentari-knowledge", "type": "sources"},
+      {"from": "gentari-v4", "to": "petronas-vitals", "type": "uses_data"},
+      {"from": "petronas-collapse-analysis", "to": "third-axis-collapse", "type": "sources"},
+      {"from": "petronas-collapse-analysis", "to": "crisis-map", "type": "sources"},
+      {"from": "petronas-collapse-analysis", "to": "petronas-vitals", "type": "uses_data"},
+      {"from": "petronas-collapse-analysis", "to": "genesis-petronas-paradox", "type": "governed_by"},
+      {"from": "third-axis-collapse", "to": "third-axis-entity", "type": "structured_as"},
+      {"from": "third-axis-collapse", "to": "collapse-trajectory-entity", "type": "leads_to"},
+      {"from": "crisis-map", "to": "insider-crisis-map", "type": "detailed_by"},
+      {"from": "petronas-dna-html", "to": "petronas-dna-pdf", "type": "rendered_to"},
+      {"from": "petronas-dna-html", "to": "makcikgpt-institutional-knowledge", "type": "sources"},
+      {"from": "petronas-hive-sale", "to": "searah-analysis", "type": "about"},
+      {"from": "petronas-brasil-v2", "to": "essay-23-years", "type": "feeds"},
+      {"from": "genesis-petronas-paradox", "to": "genesis-sovereign-energy", "type": "pairs_with"},
+      {"from": "petronas-vitals", "to": "petronas-vitals-py", "type": "generated_by"},
+      {"from": "jcorp-analysis", "to": "jcorp-report-py", "type": "generated_by"},
+      {"from": "jcorp-analysis", "to": "petronas-vitals", "type": "uses_data"},
+      {"from": "petros-shell-case", "to": "legal-case-dossier", "type": "references"},
+      {"from": "epistemic-cadence", "to": "collapse-scan-blind-spot", "type": "feeds"},
+      {"from": "institutional-decay", "to": "third-axis-collapse", "type": "supports"},
+      {"from": "strategic-brief", "to": "institutional-decay", "type": "contextualizes"},
+      {"from": "escalation", "to": "crisis-map", "type": "triggers"},
+      {"from": "makcikgpt-institutional-knowledge", "to": "petronas-gentari-knowledge", "type": "contains"},
+      {"from": "makcikgpt-institutional-knowledge", "to": "petronas-clip-values", "type": "contains"}
+    ]
+  },
+  "timeline": [
+    {"date": "2026-05-16", "event": "UNIVERSE25-PETRONAS analysis", "artifact": "crisis-map"},
+    {"date": "2026-06-07", "event": "Crisis map + insider testimony", "artifact": "insider-crisis-map"},
+    {"date": "2026-06-11", "event": "PETRONAS 2026 Analysis (OpenClaw)", "artifact": "petronas-collapse-analysis"},
+    {"date": "2026-06-12", "event": "Collapse V3 Final", "artifact": "petronas-collapse-analysis"},
+    {"date": "2026-06-20", "event": "Petronas leaflet artifact", "artifact": "petronas-leaflet"},
+    {"date": "2026-06-24", "event": "Third axis collapse analysis", "artifact": "third-axis-collapse"},
+    {"date": "2026-06-25", "event": "Institutional decay analysis", "artifact": "institutional-decay"},
+    {"date": "2026-06-26", "event": "WEALTH signal pack", "artifact": "petronas-vitals"},
+    {"date": "2026-07-03", "event": "Exploration audit", "artifact": "exploration-audit"},
+    {"date": "2026-07-07", "event": "Collapse scan blind spot", "artifact": "collapse-scan-blind-spot"},
+    {"date": "2026-07-29", "event": "Fiscal intelligence brief", "artifact": "fiscal-intel"},
+    {"date": "2026-08-03", "event": "Escalation triggers", "artifact": "escalation"},
+    {"date": "2026-08-06", "event": "Gentari v4 + Collapse reports + Brasil analysis", "artifact": "gentari-v4"},
+    {"date": "2026-08-07", "event": "DNA + MakcikGPT articles deployed", "artifact": "petronas-dna-html"},
+    {"date": "2026-08-09", "event": "Surat Terbuka + JCorp analysis + Atlas", "artifact": "surat-terbuka-v2"}
+  ]
+}

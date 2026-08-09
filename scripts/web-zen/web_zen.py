@@ -59,7 +59,7 @@ TRUTH_MARKERS: dict[str, list[str]] = {
         "Ditempa Bukan Diberi",
         "Organs",
     ],
-    "https://arif-fazil.com/wealth/vitals/": [
+    "https://arif-fazil.com/world/vitals/": [
         "tripwire",
         "Sovereign extraction",
         "PETRONAS",

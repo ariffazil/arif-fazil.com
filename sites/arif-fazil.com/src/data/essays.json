@@ -1,3 +1,4 @@
+// essays.json — MakcikGPT article registry
 [
   {
     "id": "s4-4",
@@ -21,7 +22,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/i-didnt-invent-a-token-i-invented-a-question"
+      "path": "/words/writing/i-didnt-invent-a-token-i-invented-a-question"
     },
     "seal": null
   },
@@ -45,7 +46,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/the-third-axis-of-failure-what-acemoglu-missed"
+      "path": "/words/writing/the-third-axis-of-failure-what-acemoglu-missed"
     },
     "seal": null
   },
@@ -70,7 +71,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens"
+      "path": "/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens"
     },
     "seal": null
   },
@@ -95,7 +96,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/the-agi-paradox-why-bigger-models-wont-save-us"
+      "path": "/words/writing/the-agi-paradox-why-bigger-models-wont-save-us"
     },
     "seal": null
   },
@@ -238,7 +239,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/agentic-intelligence-big-bang"
+      "path": "/words/writing/agentic-intelligence-big-bang"
     },
     "seal": null
   },
@@ -258,7 +259,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/tool-is-the-thought"
+      "path": "/words/writing/the-tool-is-the-thought"
     },
     "seal": null
   },
@@ -278,7 +279,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/survival-fittest-tools"
+      "path": "/words/writing/survival-of-the-fittest-tools"
     },
     "seal": null
   },
@@ -298,7 +299,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/three-timelines-one-boundary"
+      "path": "/words/writing/three-timelines-one-boundary"
     },
     "seal": null
   },
@@ -319,7 +320,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/agentic-intelligence-big-bang"
+      "path": "/words/writing/agentic-intelligence-big-bang"
     },
     "seal": null
   },
@@ -546,7 +547,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/mind-is-not-model"
+      "path": "/words/writing/the-mind-is-not-the-model-6-axis-constitutional-coordinate-system"
     },
     "seal": null
   },
@@ -590,7 +591,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/contrast-governed-anomaly-detection"
+      "path": "/words/writing/contrast-governed-anomaly-detection-formal-bridge-avo-attention"
     },
     "seal": null
   },
@@ -612,7 +613,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/physics-constrained-attention"
+      "path": "/words/writing/physics-constrained-attention-zoeppritz-constitutional-floor"
     },
     "seal": null
   },
@@ -633,7 +634,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/writing/contrast-primitive-derivation"
+      "path": "/words/writing/contrast-primitive-derivation-avo-fluid-factor-attention-residual"
     },
     "seal": null
   },
@@ -1324,6 +1325,32 @@
     "seal": "999"
   },
   {
+    "id": "m2-9",
+    "title": "Syaitan yang Ingat Dirinya Malaikat",
+    "date": "2026-08-09",
+    "lang": "bm",
+    "series": {
+      "id": "M2",
+      "n": 9
+    },
+    "tags": [
+      "petronas",
+      "amanah",
+      "ceo",
+      "kontrak",
+      "dividen",
+      "capex",
+      "rightsizing",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/syaitan-ingat-dirinya-malaikat"
+    },
+    "seal": "999"
+  },
+  {
     "id": "m2-8",
     "title": "Suara Yang Tak Letak Dalam Mulut Manusia",
     "date": "2026-08-02",
@@ -1350,5 +1377,34 @@
       "path": "/world/makcikgpt/suara-terlalu-siap"
     },
     "seal": "999"
+  },
+  {
+    "slug": "13-sebab-taufik-kena-berhenti",
+    "title": "13 Sebab Tengku Taufik Kena Berhenti Sekarang",
+    "date": "2026-08-09",
+    "categories": [
+      "PETRONAS",
+      "CEO",
+      "Amanah"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/13-sebab-taufik-kena-berhenti"
+    },
+    "series": {
+      "id": "M1",
+      "n": 7
+    },
+    "seal": "999",
+    "lang": "bm",
+    "tags": [
+      "petronas",
+      "amanah",
+      "ceo",
+      "kontrak",
+      "dividen",
+      "capex"
+    ],
+    "id": "m1-7"
   }
 ]

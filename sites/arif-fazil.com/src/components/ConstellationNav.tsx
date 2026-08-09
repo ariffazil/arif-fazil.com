@@ -28,9 +28,9 @@ export function ConstellationNav() {
           title="/"
           onClick={() => setOpen(false)}
         >
-          <div className="w-7 h-7 rounded border border-forge-iron flex items-center justify-center font-mono text-[0.6rem] text-forge-white group-hover:border-forge-orange/60 group-hover:text-forge-orange transition-colors">
-            AF
-          </div>
+          <span className="font-display font-bold text-[0.85rem] text-forge-white group-hover:text-forge-orange tracking-[-0.01em] transition-colors">
+            ARIF FAZIL
+          </span>
         </Link>
 
         {/* Desktop nav — ONE LINE, no redundancy (canon/navigation.json primary_links) */}

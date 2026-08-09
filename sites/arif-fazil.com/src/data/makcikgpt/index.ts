@@ -22,6 +22,8 @@ import chennahBangang from './chennah-bangang';
 import anakSarawakBayarPdaAnakBanglaTelefon from './anak-sarawak-bayar-pda-anak-bangla-telefon';
 import anwarJungShadow from './anwar-jung-shadow';
 import searahBernamaLewat from './searah-bernama-lewat';
+import thirteenSebabTaufikKenaBerhenti from "./13-sebab-taufik-kena-berhenti";
+import syaitanIngatDirinyaMalaikat from "./syaitan-ingat-dirinya-malaikat";
 import suaraTerlaluSiap from './suara-terlalu-siap';
 export const makcikArticleModules: ArticleContent[] = [
   suaraTerlaluSiap,
@@ -46,6 +48,8 @@ export const makcikArticleModules: ArticleContent[] = [
   ilmuBbb,
   ytlMonopoli,
   searahFollowup,
+  syaitanIngatDirinyaMalaikat,
+  thirteenSebabTaufikKenaBerhenti,
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
@@ -363,6 +367,30 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     excerpt: 'SEARAH dah mula 1 Julai. Sementara tu, bekas manager PETRONAS dibicaralah bocor Q1 2024 upstream performance — termasuk jumlah pengeluaran, penemuan baru, jualan aset Sudan — kepada CEO dan CFO PETROS. Kes sambung 7 Julai.',
     tags: ['searah', 'petronas', 'petros', 'bocor', 'mahkamah', 'sarawak', 'gas', 'malaysia'],
     seal: '999',
+  },
+  {
+    slug: '13-sebab-taufik-kena-berhenti',
+    title: '13 Sebab Tengku Taufik Kena Berhenti Sekarang',
+    subtitle: 'Tengku Muhammad Taufik baru dapat perpanjangan kontrak kali ketiga sebagai CEO PETRONAS. Tapi ni bukan prestasi. Ini politik.',
+    date: '2026-08-09',
+    domain: 'MAKCIKGPT × PETRONAS × AMANAH',
+    language: 'ms',
+    excerpt: '13 sebab kenapa Tengku Taufik patut berhenti sebagai CEO PETRONAS. Makcik kampung pun tahu bila kedai rugi, tutup la!',
+    tags: ['petronas', 'amanah', 'ceo', 'kontrak', 'dividen', 'capex', 'rightsizing', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+  },
+  {
+    slug: 'syaitan-ingat-dirinya-malaikat',
+    title: 'Syaitan yang Ingat Dirinya Malaikat',
+    subtitle: 'CEO PETRONAS dapat perpanjangan kontrak kali kedua. Tapi syarikat makin kurus — revenue turun, CAPEX runtuh, dividen 70.5%. Siapa yang sebenarnya dilindungi?',
+    date: '2026-08-09',
+    domain: 'MAKCIKGPT × PETRONAS × AMANAH',
+    language: 'ms',
+    excerpt: 'Makcik nak cerita pasal amanah. Bila ketua dapat kontrak kali kedua tapi syarikat makin kurus — siapa yang dia jaga? Syarikat? Atau dirinya sendiri? Nombor dari PETRONAS sendiri: revenue -17%, CAPEX -72%, dividen 70.5%.',
+    tags: ['petronas', 'amanah', 'ceo', 'kontrak', 'dividen', 'capex', 'rightsizing', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
   },
 ];
 

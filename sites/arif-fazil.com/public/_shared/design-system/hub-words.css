@@ -1,0 +1,46 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * HUB: Words — Compass / Constitutional Register
+ * Extracted 2026-08-07 by 333-AGI from inline <style> in /words/index.html
+ * Forged under F4 CLARITY: ΔS ≤ 0 — external CSS caches, reduces HTML weight
+ * ═══════════════════════════════════════════════════════════════════ */
+
+body{margin:0;background:#0A0B0D;color:#EDEAE2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;line-height:1.6}
+.frame{max-width:48rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+a{color:#EDEAE2;text-decoration:none;transition:color .15s ease} a:hover{color:#E4572E;text-decoration:underline}
+h1{font-family:serif;font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;margin:0 0 1rem;color:#EDEAE2;font-weight:800;letter-spacing:-0.02em}
+h2{font-size:1.15rem;margin:2.5rem 0 .75rem;text-transform:uppercase;letter-spacing:.08em;color:#A09D96;font-family:monospace}
+.meta{font-family:monospace;font-size:.7rem;color:#8A8578;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.card{border:1px solid #1E232A;border-radius:6px;padding:1.25rem;margin:.85rem 0;background:#111318;transition:border-color .2s ease}
+.card:hover{border-color:#3A404A}
+.card h3{margin:0 0 .4rem;font-size:1.1rem;font-weight:700}
+.card h3 a{color:#EDEAE2} .card h3 a:hover{color:#E4572E}
+.card p{margin:0;color:#A09D96;font-size:.92rem;line-height:1.55}
+.nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1.5rem 0;font-family:monospace;font-size:.75rem;text-transform:uppercase}
+.nav a{color:#A09D96;text-decoration:none} .nav a.here, .nav a:hover{color:#EDEAE2;font-weight:bold}
+ul{padding-left:1.2rem} li{margin:.35rem 0}
+.note{font-size:.85rem;color:#8A8578;border-left:3px solid #E4572E;padding-left:.85rem;margin-top:2.5rem;font-family:monospace;line-height:1.6}
+
+/* HERO CORE — ARROW OF TIME / COMPASS */
+.hero-core{text-align:center;margin:1.5rem 0 2rem}
+.hero-core .symbol{font-size:clamp(4rem,12vw,7rem);line-height:1;display:block;margin:0 0 .25rem 0}
+.hero-core .glyph{font-family:monospace;font-size:clamp(1.5rem,4vw,2.5rem);color:#E4572E;letter-spacing:.18em;text-transform:uppercase;margin:0 0 .5rem 0}
+.hero-core .sub{font-size:.9rem;color:#A09D96;max-width:32rem;margin:0 auto;line-height:1.55}
+.hero{display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,1.4fr);gap:2.5rem;align-items:center;margin:1.5rem 0 2.5rem;padding:1.5rem 0;border-bottom:1px solid #1E232A}
+.compass-wrap{position:relative;width:100%;max-width:340px;aspect-ratio:1;margin:0 auto}
+.compass-rose{width:100%;height:100%;animation:compass-spin 60s linear infinite;transform-origin:50% 50%}
+@keyframes compass-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.compass-rose{animation:none}}
+.ring{fill:none;stroke:#1E232A;stroke-width:1}
+.ring-outer{stroke:#3A404A}
+.star-cardinal path{fill:rgba(228,87,46,.14);stroke:#E4572E;stroke-width:1;filter:drop-shadow(0 0 6px rgba(228,87,46,.45))}
+.star-inter path{fill:rgba(228,87,46,.06);stroke:rgba(228,87,46,.45);stroke-width:.8}
+.cardinal-letter{font-family:monospace;font-size:18px;fill:#E4572E;opacity:.85}
+.compass-emoji{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(3rem,8vw,5rem);filter:drop-shadow(0 0 14px rgba(228,87,46,.35));pointer-events:none}
+.hero-text{text-align:left}
+.kicker{font-family:monospace;font-size:.72rem;color:#E4572E;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.75rem;font-weight:bold}
+.hero-title{font-family:serif;font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;margin:0 0 1rem;color:#EDEAE2}
+.hero-prose{font-size:1.05rem;color:#A09D96;margin:0 0 1.5rem;max-width:36rem;line-height:1.6}
+.hero-quote{border-left:3px solid #E4572E;padding:0 0 0 1rem;margin:0 0 1.25rem;font-style:italic;color:#EDEAE2;font-size:.95rem;line-height:1.6}
+.hero-quote cite{display:block;margin-top:.5rem;font-style:normal;font-family:monospace;font-size:.72rem;color:#8A8578;letter-spacing:.06em;text-transform:uppercase}
+.hint{font-family:monospace;font-size:.7rem;color:#8A8578;letter-spacing:.1em}
+@media (max-width:720px){.hero{grid-template-columns:1fr;gap:1.5rem}.hero-text{text-align:center}.hero-quote{text-align:left}}

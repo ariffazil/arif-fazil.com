@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PETRONAS Knowledge Atlas — arifOS</title>
+<style>
+:root { --navy: #0e1a2b; --gold: #c9a227; --red: #c0392b; --green: #27ae60; --blue: #2c7be5; --grey: #f4f4f4; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--navy); color: #e0e0e0; min-height: 100vh; }
+.hero { padding: 40px 30px 30px; background: linear-gradient(135deg, #0a1628 0%, #162d50 100%); border-bottom: 2px solid var(--gold); }
+.hero h1 { font-size: 28px; color: white; margin-bottom: 8px; }
+.hero .kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 12px; }
+.hero .stats { display: flex; gap: 20px; margin-top: 15px; }
+.hero .stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px 16px; border-radius: 6px; }
+.hero .stat .num { font-size: 22px; font-weight: bold; color: var(--gold); }
+.hero .stat .label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+.section { margin-bottom: 30px; }
+.section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.section-header .icon { font-size: 24px; }
+.section-header h2 { font-size: 18px; color: white; }
+.section-header .count { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 10px; }
+.file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+.file-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px 16px; transition: all 0.2s; cursor: default; }
+.file-card:hover { border-color: var(--gold); background: rgba(201,162,39,0.05); }
+.file-card .title { font-size: 14px; font-weight: 600; color: white; margin-bottom: 6px; }
+.file-card .desc { font-size: 12px; color: #999; line-height: 1.5; margin-bottom: 8px; }
+.file-card .meta { display: flex; gap: 12px; font-size: 11px; color: #666; }
+.file-card .meta .badge { padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+.badge-live { background: rgba(39,174,96,0.2); color: var(--green); }
+.badge-canonical { background: rgba(44,123,229,0.2); color: var(--blue); }
+.badge-published { background: rgba(201,162,39,0.2); color: var(--gold); }
+.badge-draft { background: rgba(255,255,255,0.1); color: #888; }
+.badge-law { background: rgba(192,57,43,0.2); color: var(--red); }
+.badge-test { background: rgba(155,89,182,0.2); color: #9b59b6; }
+.badge-latest { background: rgba(201,162,39,0.3); color: var(--gold); }
+.file-card a { color: var(--gold); text-decoration: none; }
+.file-card a:hover { text-decoration: underline; }
+.timeline { position: relative; padding-left: 20px; }
+.timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: rgba(201,162,39,0.3); }
+.timeline-item { position: relative; margin-bottom: 16px; padding-left: 20px; }
+.timeline-item::before { content: ''; position: absolute; left: -17px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--navy); }
+.timeline-item .date { font-size: 11px; color: var(--gold); font-weight: bold; }
+.timeline-item .event { font-size: 13px; color: #ccc; }
+.footer { text-align: center; padding: 30px; color: #555; font-size: 11px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">arifOS Federation · Knowledge Atlas</div>
+  <h1>🛢️ PETRONAS Knowledge Atlas</h1>
+  <p style="color:#999; font-size: 13px; margin-top: 4px;">Canonical index of all PETRONAS intelligence — reports, articles, data, law, memory</p>
+  <div class="stats">
+    <div class="stat"><div class="num">31</div><div class="label">Canonical Files</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">Categories</div></div>
+    <div class="stat"><div class="num">26</div><div class="label">Link Edges</div></div>
+    <div class="stat"><div class="num">15</div><div class="label">Timeline Events</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- LETTERS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">✉️</span>
+      <h2>Surat Terbuka / Public Letters</h2>
+      <span class="count">2</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">Surat Terbuka: Derita Rakyat, Kejatuhan Petronas</div>
+        <div class="desc">Open letter to Malaysian MPs — CEO extension, Gentari losses, pipeline explosion, F1 sponsorship, BoD governance</div>
+        <div class="meta"><span class="badge badge-published">PUBLISHED</span><span>53KB · 2026-08-09</span><a href="/docs/Surat_Terbuka_Petronas_20260809.pdf">→ PDF</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📊</span>
+      <h2>Intelligence Reports & Analysis</h2>
+      <span class="count">9</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">Gentari Intelligence Artifact v4</div>
+        <div class="desc">Deep research on Gentari — green energy arm, RM1.9B losses, EV/hydrogen/solar claims vs reality</div>
+        <div class="meta"><span class="badge badge-latest">LATEST</span><span>1.9MB · 2026-08-06</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">PETRONAS Collapse Analysis</div>
+        <div class="desc">Full collapse trajectory analysis with probability assessment — revenue, capex, dividend convergence</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>994KB · 2026-08-06</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">When the Ledger Speaks</div>
+        <div class="desc">Financial forensic analysis — ledger-level evidence of institutional decay</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>1.5MB · 2026-08-06</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Malaysia v1 vs v2 Contrast</div>
+        <div class="desc">Comparative analysis of Malaysia's NOC trajectory</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>870KB · 2026-08-06</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Petronas Brasil Total Sunk Cost v2</div>
+        <div class="desc">Brazil operations sunk cost — 23 years of losses, US$billions evaporated</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>77KB · 2026-08-06</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">PETRONAS vs JCorp Analysis</div>
+        <div class="desc">Comparative governance — Sultan Johor's JCorp (answerable, profitable) vs Petronas (not)</div>
+        <div class="meta"><span class="badge badge-published">PUBLISHED</span><span>58KB · 2026-08-09</span><a href="/docs/PETRONAS_vs_JCORP_Analysis.pdf">→ PDF</a></div>
+      </div>
+      <div class="file-card">
+        <div class="title">PETRONAS DNA (MakcikGPT)</div>
+        <div class="desc">DNA analysis of Petronas governance structure — the anatomy of institutional failure</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>623KB</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAKCIKGPT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📰</span>
+      <h2>MakcikGPT Articles (Civic Intelligence)</h2>
+      <span class="count">6</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">PETRONAS DNA — ATM Kerajaan</div>
+        <div class="desc">Petronas as government ATM — dividends extracted, nothing reinvested</div>
+        <div class="meta"><span class="badge badge-live">LIVE</span><a href="/makcikgpt-md/petronas-dna.html">→ Read</a></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Hive Sale — Harta Rakyat Dijual</div>
+        <div class="desc">Asset sale analysis — SEARAH, EnQuest, Eni deals</div>
+        <div class="meta"><span class="badge badge-live">LIVE</span><a href="/makcikgpt-md/petronas-hive-sale.html">→ Read</a></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Visi Misi — Apa Jadi?</div>
+        <div class="desc">Vision and mission analysis — promises vs reality</div>
+        <div class="meta"><span class="badge badge-live">LIVE</span><a href="/makcikgpt-md/petronas-visi-misi.html">→ Read</a></div>
+      </div>
+      <div class="file-card">
+        <div class="title">ATM Kerajaan</div>
+        <div class="desc">Government ATM deep dive</div>
+        <div class="meta"><span class="badge badge-live">LIVE</span><a href="/makcikgpt-md/petronas-atm-kerajaan.html">→ Read</a></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Bila Amanah Dikhianati</div>
+        <div class="desc">When Petronas trust was betrayed</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>76KB</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Harakah PChem — Dulu Permata</div>
+        <div class="desc">PChem — once a gem, now a market failure</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span><span>98KB</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENESIS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">⚖️</span>
+      <h2>Constitutional Genesis (arifOS Law)</h2>
+      <span class="count">2</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">006_PETRONAS_PARADOX</div>
+        <div class="desc">Constitutional paradox: Petronas as both sovereign entity and commercial enterprise</div>
+        <div class="meta"><span class="badge badge-law">LAW</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">024_PETRONAS_SOVEREIGN_ENERGY_INTELLIGENCE</div>
+        <div class="desc">Sovereign energy intelligence doctrine</div>
+        <div class="meta"><span class="badge badge-law">LAW</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEMORY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🧠</span>
+      <h2>Intelligence Memory</h2>
+      <span class="count">10</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">Third Axis Collapse (Deep Research)</div>
+        <div class="desc">Revenue/capex/dividend convergence — the third axis that kills</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Petronas Crisis Map</div>
+        <div class="desc">Visual crisis mapping — multiple failure vectors converging</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Insider Crisis Map (24KB)</div>
+        <div class="desc">Insider testimony and crisis mapping — the full picture</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Institutional Decay</div>
+        <div class="desc">Governance failure patterns — rubber stamp boards, no challenge</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Escalation Triggers</div>
+        <div class="desc">Alert thresholds and escalation patterns</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Collapse Trajectory v3 Entity</div>
+        <div class="desc">Structured data — collapse trajectory with probability</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">23 Years in Brazil (Essay Draft)</div>
+        <div class="desc">Essay draft — Petronas's 23-year Brazil adventure and its costs</div>
+        <div class="meta"><span class="badge badge-draft">DRAFT</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">⚙️</span>
+      <h2>Data & Code</h2>
+      <span class="count">4</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">PETRONAS Vitals (Live JSON)</div>
+        <div class="desc">Live financial vitals — revenue, capex, dividend, reserves</div>
+        <div class="meta"><span class="badge badge-live">LIVE</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Petronas Vitals Engine (Python)</div>
+        <div class="desc">Python engine for computing financial vitals from raw data</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">JCorp Report Generator</div>
+        <div class="desc">Python script to generate PETRONAS vs JCorp comparison PDF</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📚</span>
+      <h2>Skills & Reference Knowledge</h2>
+      <span class="count">9</span>
+    </div>
+    <div class="file-grid">
+      <div class="file-card">
+        <div class="title">Institutional Knowledge Base</div>
+        <div class="desc">Core institutional knowledge for all MakcikGPT articles</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Gentari Knowledge Base</div>
+        <div class="desc">Gentari-specific knowledge — claims vs reality data</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Petronas-Petros Shell Case</div>
+        <div class="desc">Legal case analysis — the Sarawak gas dispute</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Cadence Monitor Findings</div>
+        <div class="desc">Irregular patterns detected in reporting cadence</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+      <div class="file-card">
+        <div class="title">Fiscal Intelligence Brief</div>
+        <div class="desc">Fiscal intelligence pipeline output — latest data</div>
+        <div class="meta"><span class="badge badge-canonical">CANONICAL</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📅</span>
+      <h2>Timeline</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="date">2026-05-16</div><div class="event">UNIVERSE25-PETRONAS analysis — first crisis signals</div></div>
+      <div class="timeline-item"><div class="date">2026-06-07</div><div class="event">Crisis map + insider testimony — full picture emerges</div></div>
+      <div class="timeline-item"><div class="date">2026-06-11</div><div class="event">PETRONAS 2026 Analysis — OpenClaw deep dive</div></div>
+      <div class="timeline-item"><div class="date">2026-06-24</div><div class="event">Third axis collapse analysis — convergence point identified</div></div>
+      <div class="timeline-item"><div class="date">2026-07-03</div><div class="event">Exploration audit — upstream decay confirmed</div></div>
+      <div class="timeline-item"><div class="date">2026-07-29</div><div class="event">Fiscal intelligence brief — financial data pipeline</div></div>
+      <div class="timeline-item"><div class="date">2026-08-03</div><div class="event">Escalation triggers — alert thresholds set</div></div>
+      <div class="timeline-item"><div class="date">2026-08-06</div><div class="event">Gentari v4 + Collapse reports + Brasil analysis — bulk of intelligence</div></div>
+      <div class="timeline-item"><div class="date">2026-08-07</div><div class="event">DNA + MakcikGPT articles deployed to arif-fazil.com</div></div>
+      <div class="timeline-item"><div class="date">2026-08-09</div><div class="event">Surat Terbuka + JCorp analysis + Knowledge Atlas</div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>PETRONAS Knowledge Atlas v1.0 — arifOS Federation · Forged 2026-08-09</p>
+  <p>31 canonical files · 8 categories · 26 link edges · 15 timeline events</p>
+  <p style="margin-top: 8px; color: var(--gold);">DITEMPA BUKAN DIBERI</p>
+</div>
+
+</body>
+</html>

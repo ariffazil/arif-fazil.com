@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ms" data-ring="ORGAN" data-organ="wealth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITALS · Sovereign Economic Cockpit — arif-fazil.com</title>
+<meta name="description" content="Sovereign economic cockpit: Malaysia, Oil, Gas, Gold, USD/MYR and world economics — live proxies against sealed tripwires. WEALTH computes · arifOS frames · Human decides.">
+<link rel="canonical" href="https://arif-fazil.com/world/vitals/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "VITALS — Sovereign Economic Cockpit",
+  "creator": {"@type": "Person", "name": "Muhammad Arif bin Fazil"},
+  "dateModified": "2026-08-06",
+  "license": "https://arif-fazil.com/verify/",
+  "variableMeasured": ["Brent","HenryHub","JKM","Gold","USDMYR","DXY","KLCI","OPR","PETRONAS-Extraction","PETRONAS-Gearing","PETRONAS-CFFO"],
+  "epistemicKey": {"OBS":"audited/exchange arithmetic","DER":"derived from audited inputs","INT":"engine interpretation","SPEC":"model construction — parameters, not facts"}
+}
+</script>
+<style>
+:root{
+  --bg:#07090d; --bg2:#0b0f16; --panel:#0e141d; --line:#1c2634; --line2:#263244;
+  --ink:#d7e0ec; --dim:#7c8b9e; --faint:#4a586a;
+  --gold:#e8b64c; --gold2:#f5d07a; --teal:#4ecdc4; --red:#ff5d5d; --red2:#ff8a8a;
+  --amber:#ffb84d; --green:#57d98e; --blue:#6aa8ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(232,182,76,.05),transparent),
+  repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(28,38,52,.25) 40px)}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold2)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* ============ TOP BAR ============ */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(7,9,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;gap:18px;padding:12px 20px;max-width:1240px;margin:0 auto}
+.brand{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--gold)}
+.brand small{color:var(--dim);font-weight:400;letter-spacing:.05em}
+.nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nav a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--dim);padding:6px 10px;border-radius:4px}
+.nav a:hover{color:var(--gold);background:rgba(232,182,76,.08)}
+.clock{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal);white-space:nowrap}
+
+/* ============ HERO ============ */
+.hero{padding:40px 0 32px;border-bottom:1px solid var(--line)}
+.canon{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--faint);margin-bottom:14px}
+h1{font-size:clamp(30px,4.5vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+h1 .gold{color:var(--gold)}
+.hero-sub{color:var(--dim);max-width:760px;margin-top:14px;font-size:16px}
+.pulse-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;border-radius:8px;overflow:hidden}
+.pulse-cell{background:var(--panel);padding:16px 18px}
+.pulse-cell .lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+.pulse-cell .val{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:700;margin-top:4px}
+.pulse-cell .sub{font-size:11px;color:var(--dim);margin-top:2px}
+.v-void{color:var(--red)} .v-hold{color:var(--amber)} .v-sabar{color:var(--teal)} .v-seal{color:var(--green)} .v-live{color:var(--gold)}
+
+/* ============ BUCKET STRIP INTEGRATION ============ */
+.bucket-bar{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.bucket-btn{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:4px;border:1px solid var(--line2);color:var(--dim)}
+.bucket-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(232,182,76,.1)}
+
+/* ============ SECTIONS ============ */
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);letter-spacing:.2em}
+h2{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.sec-sub{color:var(--dim);font-size:13px;max-width:820px;margin-bottom:24px}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.08em;padding:2px 6px;border-radius:3px;vertical-align:middle;margin-left:6px}
+.tag-obs{background:rgba(87,217,142,.12);color:var(--green);border:1px solid rgba(87,217,142,.3)}
+.tag-der{background:rgba(106,168,255,.12);color:var(--blue);border:1px solid rgba(106,168,255,.3)}
+.tag-int{background:rgba(255,184,77,.12);color:var(--amber);border:1px solid rgba(255,184,77,.3)}
+.tag-spec{background:rgba(255,93,93,.12);color:var(--red2);border:1px solid rgba(255,93,93,.3)}
+.tag-live{background:rgba(78,205,196,.12);color:var(--teal);border:1px solid rgba(78,205,196,.3)}
+
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;position:relative;transition:border-color .2s}
+.card:hover{border-color:var(--line2)}
+.card .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+.card .big{font-family:'IBM Plex Mono',monospace;font-size:30px;font-weight:700;margin:6px 0 2px}
+.card .unit{font-size:13px;color:var(--dim);font-weight:400}
+.card .meta{font-size:12px;color:var(--dim);margin-top:6px}
+.card .note{font-size:11px;color:var(--faint);margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+.up{color:var(--green)} .dn{color:var(--red2)}
+.spark{position:absolute;top:14px;right:14px;width:76px;height:26px;opacity:.85}
+.badge{position:absolute;top:14px;right:14px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;padding:3px 8px;border-radius:3px;font-weight:700}
+.b-void{background:rgba(255,93,93,.15);color:var(--red);border:1px solid rgba(255,93,93,.4)}
+.b-hold{background:rgba(255,184,77,.15);color:var(--amber);border:1px solid rgba(255,184,77,.4)}
+.b-sabar{background:rgba(78,205,196,.15);color:var(--teal);border:1px solid rgba(78,205,196,.4)}
+.b-ok{background:rgba(87,217,142,.15);color:var(--green);border:1px solid rgba(87,217,142,.4)}
+
+/* gauge bar */
+.gauge{height:6px;background:var(--line);border-radius:3px;margin-top:10px;position:relative;overflow:hidden}
+.gauge i{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.g-trip{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--red)}
+
+/* dual language doors */
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-top:18px}
+.door{background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 18px}
+.door h4{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--gold);margin-bottom:8px}
+.door p{font-size:13.5px;color:var(--ink)}
+.door p+p{margin-top:8px}
+.door .dim{font-size:12px;color:var(--dim)}
+
+/* transmission engine */
+.engine{background:var(--bg2);border:1px solid var(--line2);border-radius:10px;padding:24px;margin-top:20px}
+.sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:20px}
+.sl label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--dim);display:flex;justify-content:space-between;margin-bottom:6px}
+.sl label b{color:var(--gold)}
+.sl input[type=range]{width:100%;accent-color:var(--gold);height:4px}
+.outputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.out{background:var(--panel);padding:14px;text-align:center}
+.out .k{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+.out .v{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:700;margin-top:4px}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}
+th{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--faint);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line2);text-transform:uppercase}
+td{padding:9px 10px;border-bottom:1px solid var(--line);color:var(--ink)}
+td.mono{color:var(--gold)}
+tr:hover td{background:rgba(232,182,76,.03)}
+
+/* pacemaker */
+.pace{font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:#0a0d13;border:1px solid var(--line2);border-radius:8px;padding:20px;overflow-x:auto;white-space:pre;color:var(--dim);line-height:1.75;margin-top:16px}
+.pace .act{color:var(--red2)} .pace .stb{color:var(--teal)} .pace .hd{color:var(--gold);font-weight:700}
+
+/* honesty */
+.honest{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.h-real{border-left:3px solid var(--green)} .h-model{border-left:3px solid var(--red)}
+.h-real,.h-model{background:var(--bg2);border:1px solid var(--line);border-radius:0 8px 8px 0;padding:16px 18px}
+.h-real h4{color:var(--green)} .h-model h4{color:var(--red2)}
+.h-real h4,.h-model h4{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;margin-bottom:10px}
+.h-real li,.h-model li{font-size:13px;margin-left:18px;margin-bottom:6px;color:var(--ink)}
+
+footer{padding:36px 0 60px;text-align:center}
+footer .moto{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px}
+footer .dim{font-size:11px;color:var(--faint)}
+.flash{animation:fl .6s ease}
+@keyframes fl{0%{background:rgba(232,182,76,.25)}100%{background:transparent}}
+@media(max-width:640px){.nav{display:none}}
+
+/* ═══ LIVE CHARTS — collapsible widgets (2026-08-07) ═══ */
+.chart-widget{margin-top:18px}
+.chart-widget summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--gold);padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-radius:6px;list-style:none;display:flex;align-items:center;gap:8px}
+.chart-widget summary::-webkit-details-marker{display:none}
+.chart-widget summary::before{content:'▶';font-size:9px;transition:transform .2s;color:var(--teal)}
+.chart-widget[open] summary::before{transform:rotate(90deg)}
+.chart-widget summary:hover{border-color:var(--gold);background:rgba(232,182,76,.06)}
+.chart-widget summary .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;margin-left:auto}
+.chart-widget .chart-body{background:var(--panel);border:1px solid var(--line);border-top:none;border-radius:0 0 6px 6px;padding:0}
+.chart-widget .chart-toolbar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.chart-widget .chart-toolbar .tf-pills,.chart-widget .chart-toolbar .ema-toggles{display:flex;gap:3px}
+.chart-widget .chart-toolbar .pill{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 8px;border-radius:12px;border:1px solid var(--line2);background:transparent;color:var(--dim);cursor:pointer;transition:all .15s}
+.chart-widget .chart-toolbar .pill.active{border-color:var(--gold);color:var(--gold);background:rgba(232,182,76,.1)}
+.chart-widget .chart-toolbar .pill:hover:not(.active){border-color:#444;color:#ccc}
+.chart-widget .chart-canvas{height:340px}
+.chart-widget .price-strip{display:flex;align-items:baseline;gap:12px;padding:10px 14px;font-family:'IBM Plex Mono',monospace}
+.chart-widget .price-strip .big{font-size:26px;font-weight:700;color:#fff}
+.chart-widget .price-strip .delta{font-size:14px;font-weight:600}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a href="/" class="brand">ARIF FAZIL <small>· WORLD / VITALS</small></a>
+    <nav class="nav">
+      <a href="#malaysia">🇲🇾 MALAYSIA</a><a href="#oil">🛢 OIL</a><a href="#gas">🔥 GAS</a>
+      <a href="#gold">🥇 GOLD</a><a href="#fx">💱 USD/MYR</a><a href="#world">🌍 WORLD</a>
+      <a href="#engine">⚙ ENGINE</a><a href="#honesty">⚖ HONESTY</a>
+    </nav>
+    <div class="clock" id="myt">— MYT</div>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero"><div class="wrap">
+  <div class="bucket-bar">
+    <a href="/" class="bucket-btn">⌂ Home</a>
+    <a href="/earth/" class="bucket-btn">🌍 Earth</a>
+    <a href="/world/" class="bucket-btn active">📰 World</a>
+    <a href="/words/" class="bucket-btn">✎ Words</a>
+    <a href="/work/" class="bucket-btn">⚒ Work</a>
+  </div>
+
+  <div class="canon">CANON DAY 58 · 16% Y1 · THURSDAY 6 AUGUST 2026 · DITEMPA BUKAN DIBERI</div>
+  <h1>VITALS <span class="gold">· Sovereign Economic Cockpit</span></h1>
+  <p class="hero-sub">Satu kokpit untuk Malaysia dan dunia: minyak, gas, emas, ringgit, pasaran — dibaca melalui tripwire yang dimeterai, bukan sentimen. <b>One cockpit for Malaysia and the world — live market proxies read against sealed tripwires, never against vibes.</b> The engine reports; the human decides.</p>
+  
+  <div style="margin-top: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--dim);">
+    RELATED SURFACES: <a href="/world/malaysia/" style="margin-right: 12px;">🇲🇾 /world/malaysia (Politik & Polisi) →</a>
+    <a href="/world/propa/">📊 /world/propa (PETRONAS Capacity) →</a>
+    <a href="/world/economics">📈 /world/economics (Essays & Lenses) →</a>
+  </div>
+
+  <div class="pulse-strip">
+    <div class="pulse-cell"><div class="lbl">PETRONAS φ · Pulse</div><div class="val v-void">0 VOID</div><div class="sub">AMEND-2026-08-03-001 · extraction 70.5% PAT <span class="tag tag-obs">OBS</span></div></div>
+    <div class="pulse-cell"><div class="lbl">Malaysia · Ringgit</div><div class="val v-sabar" id="p-fx">4.0900</div><div class="sub">USD/MYR · firmer from 4.14 in Jun <span class="tag tag-obs">OBS</span></div></div>
+    <div class="pulse-cell"><div class="lbl">Oil · Brent</div><div class="val v-live" id="p-brent">$87.38</div><div class="sub">+25% YoY · above $71.60 FCF-zero line <span class="tag tag-obs">OBS</span></div></div>
+    <div class="pulse-cell"><div class="lbl">Gold · XAU</div><div class="val v-live" id="p-gold">$4,244</div><div class="sub">+26% YoY · off Jan ATH $5,608 <span class="tag tag-obs">OBS</span></div></div>
+    <div class="pulse-cell"><div class="lbl">World · IMF WEO</div><div class="val v-hold">3.8%</div><div class="sub">global inflation 2026f, declining <span class="tag tag-der">DER</span></div></div>
+    <div class="pulse-cell"><div class="lbl">Epistemic State</div><div class="val v-sabar">Ω₀≈0.04</div><div class="sub">uncertainty band [0.03, 0.05] held</div></div>
+  </div>
+
+  <!-- TODAY AT A GLANCE — orientation card: answers "what should I take away?" -->
+  <div style="margin-top:24px;background:rgba(232,182,76,0.05);border:1px solid rgba(232,182,76,0.2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:18px 20px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">Today at a glance</div>
+    <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 10px;">
+      <strong>Ringgit is firm.</strong> Oil is supportive. PETRONAS remains solvent — net cash RM82.8B, gearing 20.7%. 
+      But dividend extraction stands at <strong>70.5% of profit after tax</strong>: above the 65% tripwire. 
+      That is the one number to watch. Everything else is stable.
+    </p>
+    <p style="font-size:13px;color:var(--dim);margin:0;">The engine reports. The human decides. <a href="#malaysia" style="color:var(--gold)">Read the full reading &darr;</a></p>
+  </div>
+
+  <!-- STATUS GLOSSARY — plain language for first-time visitors -->
+  <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;">
+    <span title="Capital-allocation risk threshold breached. Requires attention." style="background:rgba(255,93,93,.12);color:var(--red);border:1px solid rgba(255,93,93,.35);padding:4px 10px;border-radius:4px;cursor:help;">VOID — threshold breached</span>
+    <span title="Approaching a risk threshold. Watch closely." style="background:rgba(255,184,77,.12);color:var(--amber);border:1px solid rgba(255,184,77,.35);padding:4px 10px;border-radius:4px;cursor:help;">HOLD — watch closely</span>
+    <span title="Within safe range. No action needed." style="background:rgba(78,205,196,.12);color:var(--teal);border:1px solid rgba(78,205,196,.35);padding:4px 10px;border-radius:4px;cursor:help;">SABAR — within safe range</span>
+    <span title="Healthy. All indicators green." style="background:rgba(87,217,142,.12);color:var(--green);border:1px solid rgba(87,217,142,.35);padding:4px 10px;border-radius:4px;cursor:help;">SEAL — healthy</span>
+    <span title="OBS: observed. DER: derived. INT: interpreted. SPEC: speculative." style="background:rgba(106,168,255,.08);color:var(--blue);border:1px solid rgba(106,168,255,.25);padding:4px 10px;border-radius:4px;cursor:help;">OBS·DER·INT·SPEC — how certain is the data?</span>
+  </div>
+
+</div></header>
+
+
+<!-- ================= L1 MALAYSIA ================= -->
+<section id="malaysia"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 1</span><h2>🇲🇾 Malaysia Core</h2><span class="tag tag-live">LIVE PROXY</span></div>
+  <p class="sec-sub">Nadi ekonomi negara. Setiap nombor dibaca jaraknya kepada tripwire — bukan sekadar besarannya. <i>The nation's pulse, read as distance-to-tripwire, not raw size.</i></p>
+  <div class="grid g3">
+    <div class="card"><span class="badge b-sabar">SABAR</span><div class="k">KLCI · Bursa Malaysia</div><div class="big" id="c-klci">1,748.17</div><div class="meta"><span class="up">▲ +0.90%</span> · close 5 Aug 2026 <span class="tag tag-obs">OBS</span></div>
+      <div class="note">Recovered above 1,725 support. Breadth still mixed — 609 decliners vs 490 gainers on 3 Aug.</div></div>
+    <div class="card"><span class="badge b-sabar">FIRM</span><div class="k">USD/MYR · Ringgit</div><div class="big" id="c-fx">4.0900</div><div class="meta"><span class="up">▲ MYR strengthening</span> from 4.14 (Jun) <span class="tag tag-obs">OBS</span></div>
+      <div class="gauge"><i style="width:55%;background:var(--teal)"></i><div class="g-trip" style="left:80%"></div></div>
+      <div class="note">Tripwire: 4.50 (fiscal stress zone). Current buffer ≈ 9%. Range Jul–Aug: 4.05–4.10.</div></div>
+    <div class="card"><span class="badge b-ok">ANCHOR</span><div class="k">BNM OPR · Policy Rate</div><div class="big">2.75<span class="unit">%</span></div><div class="meta">held since Jul 2025 cut <span class="tag tag-der">DER</span></div>
+      <div class="note">Ringgit firm + inflation anchored → BNM has room to hold. Watch Nov MPC.</div></div>
+    <div class="card"><span class="badge b-void">VOID</span><div class="k">PETRONAS · Sovereign Extraction</div><div class="big v-void">70.5<span class="unit">% PAT</span></div><div class="meta">RM32.0B div / RM45.4B PAT <span class="tag tag-obs">OBS</span></div>
+      <div class="gauge"><i style="width:70.5%;background:var(--red)"></i><div class="g-trip" style="left:65%"></div></div>
+      <div class="note">Pacemaker 65% breached → dividend capped 60% PAT. FY2026 board action: RM20B (−38%). Exit needs &lt;55% × 2 audits.</div></div>
+    <div class="card"><span class="badge b-sabar">SOLVENT</span><div class="k">PETRONAS · Net Cash</div><div class="big">RM82.8<span class="unit">B</span></div><div class="meta">gearing 20.7% · CFFO RM85.2B <span class="tag tag-obs">OBS</span></div>
+      <div class="note">Solvency intact. The diagnosis is slow sterility — extraction, not collapse.</div></div>
+    <div class="card"><span class="badge b-hold">HOLD</span><div class="k">Capex Guidance</div><div class="big">RM45–50<span class="unit">B/yr</span></div><div class="meta">5-yr guidance · up from RM41.6B <span class="tag tag-obs">OBS</span></div>
+      <div class="note">Reinvestment rising while dividends cut — the corrective the pacemaker demands, taken by the board itself.</div></div>
+  </div>
+  <div class="doors">
+    <div class="door"><h4>UNTUK RAKYAT · APA MAKSUDNYA</h4>
+      <p>Ringgit kukuh (RM4.09/USD) bermakna barang import tak naik mendadak. Minyak Brent $87 — subsidi & fiskal kerajaan mampu tampung. PETRONAS masih kaya (tunai RM82.8B), tapi 70 sen setiap ringgit untung dah keluar sebagai dividen — lembaga dah potong ke RM20B. Itu langkah betul.</p>
+      <p class="dim">Bukan krisis. Tapi kebun getah mesti ditanam semula — bukan dituai sampai gondol. [INT]</p></div>
+    <div class="door"><h4>FOR CITIZENS · WHAT IT MEANS</h4>
+      <p>A firm ringgit (4.09/USD) keeps import prices tame. Brent at $87 keeps the fiscal math workable. PETRONAS remains rich (RM82.8B net cash), but 70 sen of every ringgit of profit left as dividend — the board has cut it to RM20B. That is the right move.</p>
+      <p class="dim">Not a crisis. But the rubber estate must be replanted — not tapped bare. [INT]</p></div>
+  </div>
+</div></section>
+
+<!-- ================= L2 OIL ================= -->
+<section id="oil"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 2A</span><h2>🛢 Oil · The Master Variable</h2><span class="tag tag-live">LIVE PROXY</span></div>
+  <p class="sec-sub">Brent ialah pembolehubah induk CFFO PETRONAS. Setiap ±$10 ≈ ±RM6.0B FCF/CFFO. <i>Brent is the master variable — ±$10 moves PETRONAS cash flow by ~RM6B.</i></p>
+  <div class="grid g3">
+    <div class="card"><span class="badge b-sabar">ABOVE FCF LINE</span><div class="k">Brent Crude</div><div class="big" id="c-brent">$87.38<span class="unit">/bbl</span></div><div class="meta"><span class="up">▲ +25.1% YoY</span> · +20.9% 1M <span class="tag tag-obs">OBS</span></div>
+      <svg class="spark" viewBox="0 0 76 26"><polyline points="0,20 15,18 30,14 45,16 60,8 76,4" fill="none" stroke="#57d98e" stroke-width="1.5"/></svg>
+      <div class="gauge"><i style="width:78%;background:var(--teal)"></i><div class="g-trip" style="left:64%"></div></div>
+      <div class="note">FCF-zero at Brent ≈ <b>$71.60</b>. Current buffer: +$15.78. CFFO tripwire (RM60B) needs Brent &lt; $47.40. [DER]</div></div>
+    <div class="card"><span class="badge b-ok">CONTEXT</span><div class="k">1-Year Trajectory</div><div class="big">$69.9 → $87.4</div><div class="meta">Aug 2025 → Aug 2026 <span class="tag tag-obs">OBS</span></div>
+      <div class="note">A $17.50 rise over 12 months. MoF Budget 2026 assumed $60–65 — reality is running $20+ above the budget anchor. Windfall, but don't budget the windfall. [INT]</div></div>
+    <div class="card"><span class="badge b-hold">WATCH</span><div class="k">PETRONAS Production</div><div class="big">355<span class="unit">kbpd MY liquids</span></div><div class="meta">trip &lt;300 · safe 500 · 28/100 <span class="tag tag-obs">OBS</span></div>
+      <div class="gauge"><i style="width:28%;background:var(--amber)"></i><div class="g-trip" style="left:25%"></div></div>
+       <div class="note">Target ~2 MMboe/d domestic (all products) sustained 3 yrs; international upstream +60% over 10 yrs. Reserve replacement 1.2× — razor-thin. [DER]</div></div>
+  </div>
+
+  <!-- LIVE CHART: Brent Crude -->
+  <details class="chart-widget" id="chart-oil">
+    <summary><span class="live-dot"></span>📈 Live Chart · Brent Crude · XBRENT</summary>
+    <div class="chart-body">
+      <div class="price-strip"><span class="big" id="co-price">---</span><span class="delta" id="co-delta">---</span></div>
+      <div class="chart-toolbar">
+        <span style="font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace">TF:</span>
+        <div class="tf-pills"><button class="pill" data-tf="1h" data-chart="oil">1H</button><button class="pill active" data-tf="4h" data-chart="oil">4H</button><button class="pill" data-tf="1d" data-chart="oil">1D</button><button class="pill" data-tf="1w" data-chart="oil">1W</button></div>
+        <span style="font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-left:8px">EMA:</span>
+        <div class="ema-toggles"><button class="pill active" data-e="20" data-chart="oil">20</button><button class="pill active" data-e="50" data-chart="oil">50</button></div>
+      </div>
+      <div class="chart-canvas" id="chart-oil-canvas"></div>
+    </div>
+  </details>
+</div></section>
+
+<!-- ================= L2B GAS ================= -->
+<section id="gas"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 2B</span><h2>🔥 Gas · The Asian Margin</h2><span class="tag tag-live">LIVE PROXY</span></div>
+  <p class="sec-sub">Malaysia ialah pengeksport LNG utama — premium JKM ke atas Henry Hub ialah margin MLNG. <i>Malaysia is a top LNG exporter; the JKM–HH spread is the Bintulu margin.</i></p>
+  <div class="grid g3">
+    <div class="card"><span class="badge b-sabar">SOFT</span><div class="k">Henry Hub · US Gas</div><div class="big" id="c-hh">$2.68<span class="unit">/MMBtu</span></div><div class="meta">−17.3% recent trend <span class="tag tag-obs">OBS</span></div>
+      <div class="note">Cheap US feedgas keeps global LNG supply long. Bear case in scenario engine: $2.00.</div></div>
+    <div class="card"><span class="badge b-hold">SPREAD</span><div class="k">JKM · Asia LNG Spot</div><div class="big">~$12–14<span class="unit">/MMBtu</span></div><div class="meta">Platts Asia LNG band <span class="tag tag-der">DER</span></div>
+      <div class="note">JKM–HH premium ≈ $9–11 supports MLNG margin. Model anchor: $14 base / $20 bull / $8 bear. [SPEC]</div></div>
+    <div class="card"><span class="badge b-ok">CAPACITY</span><div class="k">MLNG Export</div><div class="big">27<span class="unit">mtpa base</span></div><div class="meta">band 24–30 mtpa <span class="tag tag-der">DER</span></div>
+       <div class="note">Bintulu remains one of the world's largest LNG complexes. Gas sensitivity in engine: (HH−3) × 10 × RM0.20B. [SPEC]</div></div>
+  </div>
+
+  <!-- LIVE CHART: Natural Gas -->
+  <details class="chart-widget" id="chart-gas">
+    <summary><span class="live-dot"></span>📈 Live Chart · Natural Gas · XNATGAS</summary>
+    <div class="chart-body">
+      <div class="price-strip"><span class="big" id="cg-price">---</span><span class="delta" id="cg-delta">---</span></div>
+      <div class="chart-toolbar">
+        <span style="font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace">TF:</span>
+        <div class="tf-pills"><button class="pill" data-tf="1h" data-chart="gas">1H</button><button class="pill active" data-tf="4h" data-chart="gas">4H</button><button class="pill" data-tf="1d" data-chart="gas">1D</button><button class="pill" data-tf="1w" data-chart="gas">1W</button></div>
+        <span style="font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-left:8px">EMA:</span>
+        <div class="ema-toggles"><button class="pill active" data-e="20" data-chart="gas">20</button><button class="pill active" data-e="50" data-chart="gas">50</button></div>
+      </div>
+      <div class="chart-canvas" id="chart-gas-canvas"></div>
+    </div>
+  </details>
+</div></section>
+
+<!-- ================= L3 GOLD ================= -->
+<section id="gold"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 3</span><h2>🥇 Gold · Hard Money Gauge</h2><span class="tag tag-live">LIVE PROXY</span></div>
+  <p class="sec-sub">Emas ialah termometer kepercayaan dunia terhadap fiat. Untuk rakyat Malaysia, harga dalam ringgit yang penting. <i>Gold is the world's fiat-confidence thermometer — for Malaysians, the ringgit price is what matters.</i></p>
+  <div class="grid g3">
+    <div class="card"><span class="badge b-ok">STRONG</span><div class="k">Gold · XAU/USD</div><div class="big" id="c-gold">$4,244<span class="unit">/oz</span></div><div class="meta"><span class="up">▲ +26.0% YoY</span> · +4.1% on 5 Aug <span class="tag tag-obs">OBS</span></div>
+      <svg class="spark" viewBox="0 0 76 26"><polyline points="0,18 20,15 35,8 55,12 76,5" fill="none" stroke="#e8b64c" stroke-width="1.5"/></svg>
+      <div class="note">All-time high $5,608 (Jan 2026). Now consolidating ~24% below peak. TE 12-mo model: ~$4,421. [DER]</div></div>
+    <div class="card"><span class="badge b-live">DERIVED</span><div class="k">Gold · Ringgit per gram</div><div class="big" id="c-goldrm">RM558<span class="unit">/g</span></div><div class="meta">= XAU × USDMYR ÷ 31.1035 <span class="tag tag-der">DER</span></div>
+      <div class="note">Live-recomputed in the engine below when USD/MYR or gold moves. Ini harga sebenar untuk penyimpan emas Malaysia.</div></div>
+    <div class="card"><span class="badge b-sabar">SOFT USD</span><div class="k">DXY · Dollar Index</div><div class="big" id="c-dxy">99.68</div><div class="meta">▼ from 101.5 (late Jul) <span class="tag tag-obs">OBS</span></div>
+       <div class="note">Soft dollar + firm gold + firm ringgit = the classic hard-asset regime. Gold/DXY inverse correlation holding. [INT]</div></div>
+  </div>
+
+  <!-- LIVE CHART: Gold -->
+  <details class="chart-widget" id="chart-gold">
+    <summary><span class="live-dot"></span>📈 Live Chart · Gold · XAU/USD</summary>
+    <div class="chart-body">
+      <div class="price-strip"><span class="big" id="cau-price">---</span><span class="delta" id="cau-delta">---</span></div>
+      <div class="chart-toolbar">
+        <span style="font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace">TF:</span>
+        <div class="tf-pills"><button class="pill" data-tf="1h" data-chart="gold">1H</button><button class="pill active" data-tf="4h" data-chart="gold">4H</button><button class="pill" data-tf="1d" data-chart="gold">1D</button><button class="pill" data-tf="1w" data-chart="gold">1W</button></div>
+        <span style="font-size:10px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-left:8px">EMA:</span>
+        <div class="ema-toggles"><button class="pill active" data-e="20" data-chart="gold">20</button><button class="pill active" data-e="50" data-chart="gold">50</button><button class="pill active" data-e="200" data-chart="gold">200</button></div>
+      </div>
+      <div class="chart-canvas" id="chart-gold-canvas"></div>
+    </div>
+  </details>
+</div></section>
+
+<!-- ================= FX ================= -->
+<section id="fx"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 3B</span><h2>💱 USD/MYR · The Sovereign Exchange</h2><span class="tag tag-live">LIVE PROXY</span></div>
+  <p class="sec-sub">Ringgit mengukur kedaulatan fiskal dalam satu nombor. <i>The ringgit compresses fiscal sovereignty into a single number.</i></p>
+  <div class="grid g4">
+    <div class="card"><div class="k">Spot</div><div class="big" id="c-fx2">4.0900</div><div class="meta">5 Aug 2026 close <span class="tag tag-obs">OBS</span></div></div>
+    <div class="card"><div class="k">1-Mo Range</div><div class="big">4.05–4.14</div><div class="meta">Jul–Aug band <span class="tag tag-obs">OBS</span></div></div>
+    <div class="card"><div class="k">Scenario Anchor</div><div class="big">4.10 / 4.30</div><div class="meta">base / bear · BNM benchmark <span class="tag tag-spec">SPEC</span></div></div>
+    <div class="card"><div class="k">Stress Tripwire</div><div class="big v-hold">4.50</div><div class="meta">fiscal stress zone [INT]</div><div class="gauge"><i style="width:55%;background:var(--teal)"></i><div class="g-trip" style="left:90%"></div></div></div>
+  </div>
+</div></section>
+
+<!-- ================= WORLD ================= -->
+<section id="world"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 4</span><h2>🌍 World Economics · The Tide</h2><span class="tag tag-der">DER</span></div>
+  <p class="sec-sub">Malaysia berenang dalam arus global. IMF WEO Julai 2026: inflasi global 4.7% (2026f), pertumbuhan 3.0%. <i>Malaysia swims in the global tide — IMF WEO July 2026: headline inflation 4.7% (2026f) easing to 3.9% (2027f), global growth 3.0%.</i></p>
+  <div class="grid g4">
+    <div class="card"><div class="k">Global Inflation 2026f</div><div class="big">4.7<span class="unit">%</span></div><div class="meta">→ 3.9% in 2027 · IMF WEO Jul 2026 <span class="tag tag-der">DER</span></div></div>
+    <div class="card"><div class="k">China GDP 2026f</div><div class="big">4.6<span class="unit">%</span></div><div class="meta">IMF WEO Jul 2026 <span class="tag tag-der">DER</span></div></div>
+    <div class="card"><div class="k">Global GDP Growth</div><div class="big">3.0<span class="unit">%</span></div><div class="meta">→ 3.4% in 2027 · IMF WEO <span class="tag tag-der">DER</span></div></div>
+    <div class="card"><div class="k">Euro Area Inflation</div><div class="big">~2<span class="unit">%</span></div><div class="meta">hovering at target <span class="tag tag-der">DER</span></div></div>
+  </div>
+  <table>
+    <tr><th>Bloc</th><th>State 2026</th><th>Signal to Malaysia</th><th>Tag</th></tr>
+    <tr><td><b>United States</b></td><td class="mono">disinflation, DXY softening 101.5→99.7</td><td>Soft USD = firmer ringgit + gold support</td><td><span class="tag tag-der">DER</span></td></tr>
+    <tr><td><b>China</b></td><td class="mono">4.6% growth, low inflation</td><td>Top LNG/oil buyer — JKM floor support</td><td><span class="tag tag-der">DER</span></td></tr>
+    <tr><td><b>Euro Area</b></td><td class="mono">~2% inflation at target</td><td>Stable demand baseline</td><td><span class="tag tag-der">DER</span></td></tr>
+    <tr><td><b>ASEAN / Malaysia</b></td><td class="mono">ringgit firm, KLCI 1,748, OPR 2.75%</td><td>Domestic anchor holds while commodities rally</td><td><span class="tag tag-int">INT</span></td></tr>
+  </table>
+</div></section>
+
+<!-- ================= ENGINE ================= -->
+<section id="engine"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 5</span><h2>⚙ Transmission Engine · Tarik Slider</h2><span class="tag tag-spec">SPEC</span></div>
+  <p class="sec-sub">Gelongsor langsung: lihat bagaimana Brent, ringgit dan emas menjalar ke PAT, CFFO, FCF dan harga emas RM/gram. <i>Drag the sliders — watch Brent, the ringgit and gold transmit into PAT, CFFO, FCF and RM/gram.</i> Model construction — parameters, not facts. Audited IFR FY2025 remains the sole scoring input.</p>
+  <div class="engine">
+    <div class="sliders">
+      <div class="sl"><label>BRENT (USD/bbl) <b id="v-brent">87.4</b></label><input type="range" id="s-brent" min="40" max="120" step="0.5" value="87.4"></div>
+      <div class="sl"><label>JKM LNG (USD/MMBtu) <b id="v-jkm">14</b></label><input type="range" id="s-jkm" min="6" max="25" step="0.5" value="14"></div>
+      <div class="sl"><label>USD/MYR <b id="v-fx">4.09</b></label><input type="range" id="s-fx" min="3.80" max="4.60" step="0.01" value="4.09"></div>
+      <div class="sl"><label>GOLD (USD/oz) <b id="v-gold">4244</b></label><input type="range" id="s-gold" min="3000" max="5800" step="10" value="4244"></div>
+    </div>
+    <div class="outputs">
+      <div class="out"><div class="k">PAT est. (RM B)</div><div class="v" id="o-pat" style="color:var(--gold)">–</div></div>
+      <div class="out"><div class="k">CFFO est. (RM B)</div><div class="v" id="o-cffo" style="color:var(--teal)">–</div></div>
+      <div class="out"><div class="k">FCF est. (RM B)</div><div class="v" id="o-fcf" style="color:var(--blue)">–</div></div>
+      <div class="out"><div class="k">Dividend @60% cap</div><div class="v" id="o-div" style="color:var(--amber)">–</div></div>
+      <div class="out"><div class="k">Gold (RM/gram)</div><div class="v" id="o-goldrm" style="color:var(--gold)">–</div></div>
+      <div class="out"><div class="k">FCF-zero distance</div><div class="v" id="o-dist" style="color:var(--green)">–</div></div>
+    </div>
+    <p style="font-size:11px;color:var(--faint);margin-top:14px" class="mono">MODEL: PAT = 45.4 + (Brent−85)×0.6 + (JKM−14)×0.6 · Brent coefficient calibrated to sealed transmission ±$10 ≈ ±RM6.0B (v-ab6ba51 audit, AMEND-2026-08-06-002) · CFFO ≈ PAT×1.88 (FY25 ratio) · capex RM46B · dividend capped 60% PAT, floor RM20B (MoF) · Gold RM/g = XAU×FX÷31.1035 · [SPEC] non-scoring, modeled on ExxonMobil IR sensitivities</p>
+  </div>
+</div></section>
+
+<!-- ================= PACEMAKER ================= -->
+<section id="pacemaker"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 6</span><h2>⚡ Pacemaker Panel · Live State</h2><span class="tag tag-obs">OBS</span></div>
+  <p class="sec-sub">2 of 6 engaged · sealed 2026-08-03 · AMEND-2026-08-03-001 · F13 veto final.</p>
+  <div class="pace"><span class="hd">[ PACEMAKER PANEL · 6 Aug 2026 · HARD LOCK ENGAGED · AMEND-2026-08-03-001 ]</span>
+
+<span class="act">■ ACTIVE · HARD LOCK   Sovereign Extraction   70.5% PAT &gt; 65% pacemaker   → DIVIDEND CAP 60% PAT · F13 VETO FINAL</span>
+<span class="act">■ ACTIVE · QUORUM      Governance Capacity   1.00/3 ≤ 0.50 floor (0 indep NED) → 100% INDEP NED QUORUM on capital authority</span>
+<span class="stb">○ STANDBY   CFFO → RM60B floor    RM85.2B · buffer RM25.2B   → ALGORITHMIC CAP on breach</span>
+<span class="stb">○ STANDBY   Brent &lt; $70 / 2Q      last: $87.38 · +$17.38 buffer → PAYOUT FREEZE on breach</span>
+<span class="stb">○ STANDBY   Reserve Replacement   1.2× · razor-thin          → RECYCLING OVERRIDE on breach</span>
+<span class="stb">○ STANDBY   Simulative-Neutral ∇$  pending scan              → AUDIT LOCK regardless</span></div>
+</div></section>
+
+<!-- ================= HONESTY ================= -->
+<section id="honesty"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">LAYER 7</span><h2>⚖ Honesty Block · Apa Real, Apa Model</h2></div>
+  <div class="honest">
+    <div class="h-real"><h4>✅ APA YANG REAL [OBS]</h4>
+      <ul>
+        <li>Brent $87.38, Gold $4,244/oz, USD/MYR 4.0900, KLCI 1,748, DXY 99.68 — pasaran 5 Ogos 2026</li>
+        <li>Dividen RM32.0B / PAT RM45.4B = 70.5% — aritmetik IFR diaudit FY2025</li>
+        <li>CFFO RM85.2B · gearing 20.7% · tunai bersih RM82.8B — penyata diaudit</li>
+        <li>Dividen FY2026 RM20B (−38%) · capex RM45–50B/yr — pengumuman lembaga 27 Feb 2026</li>
+        <li>IMF WEO (Julai 2026): inflasi global 4.7% 2026f (→3.9% 2027f) · China 4.6% 2026f</li>
+      </ul></div>
+    <div class="h-model"><h4>⚠ APA YANG MODEL [SPEC]</h4>
+      <ul>
+        <li>Enjin slider PAT/CFFO/FCF — parameter sensitiviti, bukan unjuran forensic</li>
+        <li>65% pacemaker threshold — enjin binaan, bukan undang-undang</li>
+        <li>JKM band ~$12–14 — anggaran pasaran, bukan sebut harga dimeterai</li>
+        <li>FCF-zero di Brent $71.60 — kesimpulan model daripada nisbah FY25</li>
+      </ul>
+      <p style="font-size:12px;color:var(--dim);margin-top:10px">BM: Tiada satu pun klaim [SPEC] adalah fakta. Kau yang tentukan mana nak percaya. Mesin hanya memancarkan struktur.<br>EN: No [SPEC] claim is fact. You decide what to believe. The engine only broadcasts structure.</p></div>
+  </div>
+  <p class="mono" style="margin-top:18px;font-size:11px;color:var(--faint)">Epistemic key: [OBS] audited/exchange arithmetic · [DER] derived from audited inputs · [INT] engine interpretation (accept or reject) · [SPEC] model construction (parameters, not facts)</p>
+</div></section>
+
+<footer>
+  <div class="moto">DITEMPA BUKAN DIBERI</div>
+  <div class="dim">WEALTH computes · arifOS frames · Human (Arif) decides · Yang benar dikarang, bukan diberi.<br>arifOS · Federation Intelligence — governed by WEB_ATLAS · Ω₀ ≈ 0.04 · 6 August 2026 MYT</div>
+</footer>
+
+<script>
+// ---- MYT clock ----
+function tick(){const d=new Date(Date.now()+(8*60+new Date().getTimezoneOffset())*60000);
+document.getElementById('myt').textContent=d.toLocaleTimeString('en-GB')+' MYT · '+d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});}
+tick();setInterval(tick,1000);
+
+// ---- Transmission engine ----
+const $=id=>document.getElementById(id);
+function engine(){
+  const b=+$('s-brent').value, j=+$('s-jkm').value, fx=+$('s-fx').value, g=+$('s-gold').value;
+  $('v-brent').textContent=b.toFixed(1); $('v-jkm').textContent=j.toFixed(1);
+  $('v-fx').textContent=fx.toFixed(2); $('v-gold').textContent=g.toFixed(0);
+  const pat=45.4+(b-85)*0.6+(j-14)*0.6;
+  const cffo=pat*1.88;
+  const div=Math.max(Math.min(0.6*pat,pat),Math.min(20,0.6*pat)); // 60% cap, MoF floor RM20B where affordable
+  const capex=46, fcf=cffo-capex-div;
+  $('o-pat').textContent=pat.toFixed(1);
+  $('o-cffo').textContent=cffo.toFixed(1);
+  $('o-fcf').textContent=fcf.toFixed(1);
+  $('o-fcf').style.color=fcf<0?'var(--red)':'var(--blue)';
+  $('o-div').textContent=div.toFixed(1);
+  $('o-goldrm').textContent='RM'+Math.round(g*fx/31.1035).toLocaleString();
+  const dist=b-71.6;
+  $('o-dist').textContent=(dist>=0?'+':'')+dist.toFixed(1)+'$';
+  $('o-dist').style.color=dist<5?'var(--red)':dist<12?'var(--amber)':'var(--green)';
+}
+['s-brent','s-jkm','s-fx','s-gold'].forEach(i=>$(i).addEventListener('input',engine));
+engine();
+
+// ---- Optional live refresh (graceful fallback to seeded [OBS] values) ----
+fetch('https://open.er-api.com/v6/latest/USD').then(r=>r.json()).then(d=>{
+  if(d&&d.rates&&d.rates.MYR){const fx=d.rates.MYR;
+    ['p-fx','c-fx','c-fx2'].forEach(i=>{const e=$(i);if(e){e.textContent=fx.toFixed(4);e.parentElement.classList.add('flash');}});
+    $('s-fx').value=fx; engine();}
+}).catch(()=>{/* seeded values stand — engine reports, never asserts */});
+</script>
+
+<script>
+// ═══ LIVE CHARTS — Oil, Gas, Gold (lightweight-charts) ═══
+// Forged 2026-08-07 by 333-AGI · sovereign data pipeline
+const CHART_CFG = {
+  oil:   { symbol:'XBRENT',   api:'/oil/api/history',   ticker:'/oil/api/ticker',   color:'#57d98e', prefix:'co' },
+  gas:   { symbol:'XNATGAS',  api:'/gas/api/history',   ticker:'/gas/api/ticker',   color:'#4ecdc4', prefix:'cg' },
+  gold:  { symbol:'XAU/USD',  api:'/gold/api/history',  ticker:'/gold/api/ticker',  color:'#e8b64c', prefix:'cau' }
+};
+const tfMap = {'1h':'1h','4h':'4h','1d':'1d','1w':'1wk'};
+const periodMap = {'1h':'7d','4h':'30d','1d':'3mo','1w':'6mo'};
+const charts = {};
+
+function initChart(id) {
+  if (charts[id]) return charts[id];
+  const el = document.getElementById('chart-'+id+'-canvas');
+  if (!el) return null;
+  const c = LightweightCharts.createChart(el, {
+    height: 340,
+    layout: { background:{color:'#0e141d'}, textColor:'#7c8b9e' },
+    grid: { vertLines:{color:'#1c2634'}, horzLines:{color:'#1c2634'} },
+    crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+    timeScale: { borderColor:'#1c2634', timeVisible:true },
+    rightPriceScale: { borderColor:'#1c2634' }
+  });
+  const cfg = CHART_CFG[id];
+  const cs = c.addCandlestickSeries({ upColor:'#57d98e', downColor:'#ff5d5d', borderUpColor:'#57d98e', borderDownColor:'#ff5d5d', wickUpColor:'#57d98e', wickDownColor:'#ff5d5d' });
+  const e20 = c.addLineSeries({ color:'#6aa8ff', lineWidth:1.5, visible:true });
+  const e50 = c.addLineSeries({ color:'#ffb84d', lineWidth:1.5, visible:true });
+  const e200 = (id==='gold') ? c.addLineSeries({ color:'#ff5d5d', lineWidth:1.5, visible:true }) : null;
+  charts[id] = { chart:c, candle:cs, ema:{'20':e20,'50':e50}, ema200:e200 };
+  new ResizeObserver(()=>{ try { c.applyOptions({width:el.clientWidth}); } catch(_){} }).observe(el);
+  return charts[id];
+}
+
+async function loadChartData(id, tf) {
+  const cfg = CHART_CFG[id];
+  const interval = tfMap[tf]||'4h', period = periodMap[tf]||'30d';
+  let ohlc = null;
+  // Sovereign API
+  try {
+    const r = await fetch(cfg.api+'?interval='+interval+'&period='+period);
+    if (r.ok) {
+      const j = await r.json();
+      if (j&&j.candles&&j.candles.length) {
+        ohlc = j.candles.map(c => ({ time: typeof c.time==='number'?c.time:Math.floor(new Date(c.time+'Z').getTime()/1000), open:+c.open, high:+c.high, low:+c.low, close:+c.close }));
+        // EMAs from API
+        const norm = arr => arr.map(e => ({ time: typeof e.time==='number'?e.time:Math.floor(new Date(e.time+'Z').getTime()/1000), value:e.value }));
+        const ch = charts[id]; if (!ch) return;
+        if (j.ema20) ch.ema['20'].setData(norm(j.ema20));
+        if (j.ema50) ch.ema['50'].setData(norm(j.ema50));
+        if (j.ema200 && ch.ema200) ch.ema200.setData(norm(j.ema200));
+      }
+    }
+  } catch(_){}
+  if (!ohlc) {
+    // Compute local EMA if API didn't return candles
+    try {
+      const r2 = await fetch(cfg.api+'?interval=1h&period=7d');
+      if (r2.ok) {
+        const j2 = await r2.json();
+        if (j2&&j2.candles&&j2.candles.length) {
+          ohlc = j2.candles.map(c => ({ time: typeof c.time==='number'?c.time:Math.floor(new Date(c.time+'Z').getTime()/1000), open:+c.open, high:+c.high, low:+c.low, close:+c.close }));
+        }
+      }
+    } catch(_){}
+  }
+  if (ohlc && charts[id]) {
+    charts[id].candle.setData(ohlc);
+    charts[id].chart.timeScale().fitContent();
+    // Compute local EMAs
+    const closes = ohlc.map(d=>d.close);
+    const computeEma = (data, p) => { const k=2/(p+1); let e=data[0]; return data.map((v,i)=>i===0?e:(e=v*k+e*(1-k))); };
+    charts[id].ema['20'].setData(ohlc.map((d,i)=>i>=19?{time:d.time,value:computeEma(closes,20)[i]}:null).filter(Boolean));
+    charts[id].ema['50'].setData(ohlc.map((d,i)=>i>=49?{time:d.time,value:computeEma(closes,50)[i]}:null).filter(Boolean));
+  }
+}
+
+async function tickPrice(id) {
+  const cfg = CHART_CFG[id];
+  try {
+    const r = await fetch(cfg.ticker);
+    if (!r.ok) return;
+    const d = await r.json();
+    const elP = document.getElementById(cfg.prefix+'-price');
+    const elD = document.getElementById(cfg.prefix+'-delta');
+    if (elP && d.price) {
+      const sym = id==='gold'?'$':'$';
+      elP.textContent = sym + Number(d.price).toFixed(id==='gas'?2:1);
+    }
+    if (elD && d.change !== undefined) {
+      const ch = Number(d.change), pct = Number(d.changePct||0);
+      elD.textContent = (ch>=0?'+':'')+(id==='gas'?ch.toFixed(2):ch.toFixed(1))+' ('+(ch>=0?'+':'')+pct.toFixed(1)+'%)';
+      elD.style.color = ch>=0 ? 'var(--green)' : 'var(--red2)';
+    }
+    // Update main pulse cells
+    if (id==='oil' && d.price) { const e=document.getElementById('p-brent'); if(e) e.textContent='$'+Number(d.price).toFixed(1); }
+    if (id==='gold' && d.price) { const e=document.getElementById('p-gold'); if(e) e.textContent='$'+Number(d.price).toFixed(1); const ce=document.getElementById('c-gold'); if(ce) ce.textContent='$'+Number(d.price).toFixed(1); }
+  } catch(_){}
+}
+
+// ── Wire up all three chart widgets ──
+document.querySelectorAll('.chart-widget').forEach(w => {
+  w.addEventListener('toggle', function() {
+    if (!this.open) return;
+    const id = this.id.replace('chart-','');
+    initChart(id);
+    const activeTF = this.querySelector('.pill.active[data-tf]')?.dataset?.tf || '4h';
+    loadChartData(id, activeTF);
+    tickPrice(id);
+  });
+  // Pill click handlers
+  w.querySelectorAll('.pill[data-tf]').forEach(b => b.addEventListener('click', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    const id = this.dataset.chart;
+    const w2 = document.getElementById('chart-'+id);
+    w2.querySelectorAll('.pill[data-tf]').forEach(p=>p.classList.remove('active'));
+    this.classList.add('active');
+    initChart(id);
+    loadChartData(id, this.dataset.tf);
+  }));
+  w.querySelectorAll('.pill[data-e]').forEach(b => b.addEventListener('click', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    this.classList.toggle('active');
+    const id = this.dataset.chart, ema = this.dataset.e;
+    if (charts[id]) {
+      const s = charts[id].ema[ema] || (ema==='200'?charts[id].ema200:null);
+      if (s) s.applyOptions({visible:this.classList.contains('active')});
+    }
+  }));
+});
+
+// ── Auto-tick price every 30s ──
+setInterval(() => {
+  ['oil','gas','gold'].forEach(id => {
+    if (document.getElementById('chart-'+id)?.open) tickPrice(id);
+  });
+}, 30000);
+
+// ── Initial tick (price only, chart lazy-loads on open) ──
+['oil','gas','gold'].forEach(id => tickPrice(id));
+</script>
+</body>
+</html>

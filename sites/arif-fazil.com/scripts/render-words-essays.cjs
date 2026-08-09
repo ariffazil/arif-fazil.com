@@ -97,34 +97,34 @@ function buildIndexHtml(items) {
 <meta name="description" content="Sovereign reading room — long-form essays by Muhammad Arif bin Fazil on AI governance, institutions, and the path to AGI.">
 <link rel="canonical" href="${SITE_BASE}/words/writing/">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; max-width: 740px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.65; background: #0d1117; color: #c9d1d9; }
-  h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; font-size: 1.85rem; }
-  h2 { color: #58a6ff; border-bottom: 1px solid #21262d; padding-bottom: 0.4rem; margin-top: 2.5rem; font-size: 1.3rem; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; max-width: 780px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.65; background: #0A0B0D; color: #EDEAE2; }
+  h1 { color: #EDEAE2; border-bottom: 1px solid #1E232A; padding-bottom: 0.5rem; font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em; }
+  h2 { color: #EDEAE2; border-bottom: 1px solid #1E232A; padding-bottom: 0.4rem; margin-top: 2.5rem; font-size: 1.3rem; }
 
-  .zen-pulse { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0.75rem; margin: 1rem 0; background: #161b22; border: 1px solid #30363d; border-radius: 8px; font-size: 0.85rem; }
+  .zen-pulse { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0.85rem; margin: 1.25rem 0; background: #111318; border: 1px solid #1E232A; border-radius: 6px; font-size: 0.85rem; }
   .zen-pulse .zp-item { display: flex; flex-direction: column; gap: 0.15rem; min-width: 180px; flex: 1 1 180px; }
-  .zen-pulse .zp-ask { color: #6e7681; text-transform: uppercase; letter-spacing: 1px; font-size: 0.65rem; }
-  .zen-pulse .zp-val { color: #c9d1d9; }
-  .zen-pulse .zp-val.gold { color: #ffd700; }
+  .zen-pulse .zp-ask { color: #8A8578; text-transform: uppercase; letter-spacing: 1px; font-size: 0.65rem; font-family: monospace; }
+  .zen-pulse .zp-val { color: #EDEAE2; }
+  .zen-pulse .zp-val.gold { color: #E4572E; font-weight: 600; }
 
-  .zen-reveal { margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: #0d1117; border-left: 2px solid #30363d; border-radius: 4px; }
-  .zen-reveal summary { cursor: pointer; color: #c9d1d9; padding: 0.25rem 0; }
-  .zen-reveal summary:hover { color: #58a6ff; }
+  .zen-reveal { margin: 1rem 0; padding: 0.75rem 1rem; background: #111318; border-left: 3px solid #E4572E; border-radius: 4px; border-top: 1px solid #1E232A; border-right: 1px solid #1E232A; border-bottom: 1px solid #1E232A; }
+  .zen-reveal summary { cursor: pointer; color: #EDEAE2; padding: 0.25rem 0; font-weight: 600; }
+  .zen-reveal summary:hover { color: #E4572E; }
   .series-emoji { font-size: 1.05rem; margin-right: 0.25rem; }
-  .series-count { color: #6e7681; font-size: 0.8rem; font-weight: normal; }
-  .series-topic { color: #8b949e; font-size: 0.85rem; font-style: italic; margin: 0.5rem 0 0.25rem; }
-  .essay-list { list-style: none; padding: 0; margin: 0.25rem 0 0; }
-  .essay-list li { margin: 0.4rem 0; padding: 0.25rem 0; border-bottom: 1px solid #21262d; font-size: 0.92rem; }
+  .series-count { color: #8A8578; font-size: 0.8rem; font-weight: normal; font-family: monospace; }
+  .series-topic { color: #A09D96; font-size: 0.85rem; font-style: italic; margin: 0.5rem 0 0.5rem; }
+  .essay-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+  .essay-list li { margin: 0.5rem 0; padding: 0.4rem 0; border-bottom: 1px solid #1E232A; font-size: 0.95rem; }
 
-  a { color: #58a6ff; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .date { color: #8b949e; font-size: 0.85rem; }
-  .meta { color: #6e7681; font-size: 0.8rem; margin-top: 2rem; }
+  a { color: #EDEAE2; text-decoration: none; font-weight: 500; transition: color 0.15s ease; }
+  a:hover { color: #E4572E; text-decoration: underline; }
+  .date { color: #8A8578; font-size: 0.82rem; font-family: monospace; }
+  .meta { color: #8A8578; font-size: 0.8rem; margin-top: 2rem; font-family: monospace; }
 
   /* Thesis epigraph — keystone of the trilogy */
-  .epigraph { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 3px solid #ffd700; background: #161b22; border-radius: 8px; }
-  .epigraph p { margin: 0 0 0.5rem; color: #e6edf3; font-size: 1.05rem; font-style: italic; line-height: 1.55; }
-  .epigraph cite { display: block; color: #8b949e; font-size: 0.78rem; font-style: normal; }
+  .epigraph { margin: 1.5rem 0; padding: 1.25rem; border-left: 3px solid #E4572E; background: #111318; border-radius: 6px; border-top: 1px solid #1E232A; border-right: 1px solid #1E232A; border-bottom: 1px solid #1E232A; }
+  .epigraph p { margin: 0 0 0.5rem; color: #EDEAE2; font-size: 1.05rem; font-style: italic; line-height: 1.6; }
+  .epigraph cite { display: block; color: #8A8578; font-size: 0.8rem; font-style: normal; font-family: monospace; }
 
   .flat-list { display: none; }
 </style>

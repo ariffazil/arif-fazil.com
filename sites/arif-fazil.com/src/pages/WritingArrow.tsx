@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeader from '@/components/SectionHeader'
 import BucketStrip from '@/components/BucketStrip'
-import MCPGateway from '@/components/MCPGateway'
 import FactTag from '@/components/FactTag'
 import type { FactKind } from '@/components/FactTag'
 
@@ -139,7 +138,7 @@ export function Writing() {
           <BucketStrip current="Words" />
         </div>
         <SectionHeader number="01" title="WORDS" />
-        <h1 className="mt-10 font-display text-[52px] leading-[0.95] tracking-[-0.02em] text-[#3E3A30] md:text-[72px]">
+        <h1 className="mt-10 font-display text-[52px] leading-[0.95] tracking-[-0.02em] text-[#EDEAE2] md:text-[72px]">
           {'Essays, in no hurry.'.split(' ').map((w, i) => (
             <motion.span
               key={i}
@@ -153,7 +152,7 @@ export function Writing() {
           ))}
         </h1>
         <motion.p
-          className="mt-8 max-w-[62ch] font-body text-[19px] leading-[1.65] text-[#5C5546]"
+          className="mt-8 max-w-[62ch] font-body text-[19px] leading-[1.65] text-[#A09D96]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
@@ -162,7 +161,7 @@ export function Writing() {
           people. Drafts included — thinking in public means showing the pencil marks.
         </motion.p>
         <motion.p
-          className="eyebrow mt-8 text-[#5C5546]/70"
+          className="eyebrow mt-8 text-[#A09D96]/80"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
@@ -182,10 +181,10 @@ export function Writing() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.04em] transition-colors ${
+              className={`border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.04em] transition-colors ${
                 filter === f
-                  ? 'border-ember bg-ember text-[#0A0B0D]'
-                  : 'border-[#5C5546]/30 text-[#5C5546] hover:border-[#5C5546]'
+                  ? 'border-ember bg-ember text-[#0A0B0D] font-bold'
+                  : 'border-slate-800 bg-slate-900/60 text-slate-300 hover:border-slate-600 hover:text-slate-100'
               }`}
             >
               {f}
@@ -193,7 +192,7 @@ export function Writing() {
           ))}
         </div>
 
-        <motion.div layout="position" className="mt-8 border-t border-[#5C5546]/20">
+        <motion.div layout="position" className="mt-8 border-t border-slate-800">
           <AnimatePresence mode="popLayout">
             {essays.map((e, i) => (
               <motion.article
@@ -203,24 +202,24 @@ export function Writing() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ delay: i * 0.04, duration: 0.35 }}
-                className="group border-b border-[#5C5546]/20 py-6"
+                className="group border-b border-slate-800 py-6"
               >
                 <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
-                  <span className="font-mono text-[13px] tabular-nums tracking-[0.04em] text-[#5C5546]/70">
+                  <span className="font-mono text-[13px] tabular-nums tracking-[0.04em] text-slate-400">
                     {e.date}
                   </span>
-                  <h3 className="font-display text-[26px] leading-tight tracking-[-0.01em] text-[#3E3A30] transition-transform duration-200 group-hover:translate-x-2 md:text-[30px]">
-                    <span className="mr-2 inline-block opacity-0 transition-opacity group-hover:opacity-100">
+                  <h3 className="font-display text-[26px] leading-tight tracking-[-0.01em] text-[#EDEAE2] transition-transform duration-200 group-hover:translate-x-2 md:text-[30px]">
+                    <span className="mr-2 inline-block opacity-0 transition-opacity group-hover:opacity-100 text-ember">
                       ✎
                     </span>
                     {e.title}
                   </h3>
                 </div>
                 <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-1 md:pl-[7.5rem]">
-                  <p className="max-w-[60ch] font-body text-[16px] leading-[1.6] text-[#5C5546]">
+                  <p className="max-w-[60ch] font-body text-[16px] leading-[1.6] text-slate-300">
                     {e.abstract}
                   </p>
-                  <span className="font-mono text-[12px] uppercase tracking-[0.04em] text-[#5C5546]/60">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.04em] text-slate-400">
                     {e.minutes} min · {e.domain.toLowerCase()}
                   </span>
                   {e.tag && <FactTag kind={e.tag} />}
@@ -255,9 +254,8 @@ export function Writing() {
             000 — The Genesis Archive.
           </h2>
           <p className="mt-5 max-w-[60ch] font-body text-[18px] leading-[1.65] text-[#5C5546]">
-            Where the earliest drafts, founding documents, and first principles of arifOS
-            live — the raw ore before the forging. Everything on this site started as a
-            pencil mark in here.
+            The origin documents, founding principles, and earliest thinking behind everything on this site.
+            Where the ideas were first written down, before they were tested.
           </p>
           <a
             href="/000/"
@@ -303,14 +301,13 @@ export function Writing() {
         </motion.p>
         <motion.div {...fadeUp} transition={{ delay: 0.15 }}>
           <Link
-            to="/doctrine"
+            to="/words/doctrine"
             className="mt-4 inline-block font-mono text-[13px] uppercase tracking-[0.04em] text-[#38BDF8] underline decoration-[#38BDF8]/40 underline-offset-8 hover:decoration-[#38BDF8]"
           >
             Continue to Doctrine →
           </Link>
         </motion.div>
       </section>
-      <MCPGateway />
     </div>
   )
 }

@@ -190,22 +190,45 @@ export function PoliticsHub() {
       animate={{ opacity: 1 }}
       className="bg-[#05070c] min-h-screen text-slate-100 font-sans"
     >
-      {/* TOP STATUS BAR */}
-      <div className="bg-[#020408] border-b border-slate-800/80 px-6 py-2 text-xs font-mono text-slate-400 flex flex-wrap justify-between items-center gap-4">
+      {/* TOP BUCKET STRIP NAVIGATION */}
+      <div className="bg-[#020408] border-b border-slate-800 px-6 py-3">
+        <div className="mx-auto max-w-[1280px] flex items-center justify-between gap-4 flex-wrap">
+          <div className="flex items-center gap-3">
+            <span className="font-display font-bold text-amber-400 text-sm tracking-tight">
+              ARIF FAZIL
+            </span>
+            <span className="text-slate-600">|</span>
+            <span className="font-mono text-xs text-cyan-400 font-bold tracking-wider">
+              WORLD · GEOPOLITICS HUB
+            </span>
+          </div>
+          <div className="flex items-center gap-2 font-mono text-xs">
+            <Link to="/" className="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">HOME</Link>
+            <Link to="/earth" className="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">EARTH</Link>
+            <Link to="/world" className="px-2.5 py-1 rounded bg-amber-400/10 border border-amber-400 text-amber-400 font-bold">WORLD</Link>
+            <Link to="/writing" className="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">WORDS</Link>
+            <Link to="/work" className="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">WORK</Link>
+          </div>
+        </div>
+      </div>
+
+      {/* SUB STATUS BAR */}
+      <div className="bg-[#04060a] border-b border-slate-800/80 px-6 py-2 text-xs font-mono text-slate-400 flex flex-wrap justify-between items-center gap-4">
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5 text-cyan-400 font-bold">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            SOVEREIGN POLITICS HUB
+            7 POWER VECTORS × NUSANTARA PIVOT
           </span>
-          <span className="text-slate-600">|</span>
-          <span className="text-slate-300">7 POWER VECTORS × NUSANTARA PIVOT</span>
         </div>
         <div className="flex items-center gap-4 text-[11px]">
+          <Link to="/world/vitals/" className="text-emerald-400 hover:text-emerald-300 transition-colors font-bold">
+            ⚡ VITALS COCKPIT →
+          </Link>
           <Link to="/politics/ns-election" className="text-blue-400 hover:text-blue-300 transition-colors font-bold">
             🇲🇾 NS PRN16 MATRIX →
           </Link>
           <Link to="/politics/shadow" className="text-amber-400 hover:text-amber-300 transition-colors font-bold">
-            🏛 PM BAYANG (SHADOW PMs) →
+            🏛 SHADOW PMs →
           </Link>
         </div>
       </div>

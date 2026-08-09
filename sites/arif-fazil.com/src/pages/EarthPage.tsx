@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import BucketStrip from '@/components/BucketStrip'
-import MCPGateway from '@/components/MCPGateway'
 import SectionHeader from '@/components/SectionHeader'
 
 const earthSubnav = [
@@ -191,7 +190,6 @@ export default function EarthPage() {
           </a>
         </div>
       </section>
-      <MCPGateway />
     </div>
   )
 }

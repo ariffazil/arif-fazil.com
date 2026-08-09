@@ -1,0 +1,33 @@
+# /words/ — arif-fazil.com Words · Doctrine · Essays · Law
+
+## What this is
+The **Words** lane of the arifOS federation: the sovereign reading room.
+Houses the constitutional essays, doctrine, law (F1–F13 floors), the
+canonical governance files, and the MakcikGPT civic-journalism corpus.
+This is where the person behind the federation thinks in public.
+
+## Key pages
+- Writing index: https://arif-fazil.com/words/writing/
+- Essays (direct publications): https://arif-fazil.com/words/writing/<slug>/
+- MakcikGPT (Bahasa Malaysia civic journalism): https://arif-fazil.com/world/makcikgpt/
+- Genesis / sovereign anchor: https://arif-fazil.com/000/
+- Canon (governance files): https://arif-fazil.com/canon/
+
+## Essays — machine-readable path
+- `/words/writing/` index lists 15+ direct publications (S4 Governance Canon,
+  S6 EUREKA Trilogy, S8 The Forge).
+- Each essay has a static shell + markdown mirror for text-only crawlers:
+  `https://arif-fazil.com/words/writing/<slug>/index.md`
+- llms.txt for the writing sub-surface: https://arif-fazil.com/words/writing/llms.txt
+
+## Register / voice
+- English essays: intellectual, direct register. **"stupid" is correct English;
+  "BANGANG" belongs only to the Makcik register.**
+- MakcikGPT: village-auntie voice, Bahasa Malaysia, kampung analogies.
+  Persona travels; the author's name does not appear in the articles.
+- Content is the sovereign's words, verbatim. No invented quotes, no
+  fabricated citations.
+
+## Constitutional floors
+The Words lane is governed by F1–F13 (see https://arif-fazil.com/000/ and
+the canonical floor table in the arifOS kernel docs).

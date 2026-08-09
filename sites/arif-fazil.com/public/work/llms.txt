@@ -1,0 +1,31 @@
+# /work/ — arif-fazil.com Work · Wells · Missions · Proof
+
+## What this is
+The **Work** lane of the arifOS federation: the WELL organ's human surface —
+exploration wells, missions, resume, and the proof chamber. Where the
+record of doing is kept.
+
+## Key pages
+- Work hub: https://arif-fazil.com/work/
+- Wells: https://arif-fazil.com/work/wells/
+- Missions: https://arif-fazil.com/work/missions/
+- Proof: https://arif-fazil.com/work/proof/
+- Resume: https://arif-fazil.com/work/resume/
+- Sealed vault (Proof chamber): https://arif-fazil.com/999/
+
+## The record
+- Exploration record: 13 years at PETRONAS Carigali, offshore Malaysia.
+  4 exploration wells led — all flowed (under team risk process; the record
+  states facts, not adjectives).
+- Epistemic discipline: every claim carries OBS/DER/INT/SPEC labels.
+  "The record speaks plainly; it doesn't need adjectives."
+
+## Machine-readable surfaces
+- `/999/verify` — live kernel attestation (reverse-proxied to the arifOS
+  kernel at :8088; always fresh, never static)
+- `/999/manifest.json` — sealed-vault manifest
+- `/work/proof/` — sealed receipts, hash chains, DID status
+
+## Constitutional note
+`/999/` is a constitutional artifact (Proof · Sealed Vault), not an ordinary
+page. Never break it: no cleanup may delete its routes or source.

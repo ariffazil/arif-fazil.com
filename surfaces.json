@@ -609,6 +609,32 @@
       "verb": "555_interpret"
     },
     {
+      "path": "/SITE_CONSTITUTION.md",
+      "title": "SITE_CONSTITUTION.md — HUMAN_FIRST Binding Constitution",
+      "mission": "decide",
+      "status": "live",
+      "type": "machine",
+      "format": "text/markdown",
+      "priority": 1.0,
+      "changefreq": "monthly",
+      "description": "Binding constitution for ALL agents touching arif-fazil.com. Priority stack: Human > Navigation > Visual > Agent > Protocol. 4-audit onboarding gate. F13 ratified 2026-08-09.",
+      "domain": "law",
+      "verb": "333_judge"
+    },
+    {
+      "path": "/config/page-attention-budget.yaml",
+      "title": "page-attention-budget.yaml — Human Attention Budget",
+      "mission": "decide",
+      "status": "live",
+      "type": "machine",
+      "format": "application/x-yaml",
+      "priority": 0.9,
+      "changefreq": "monthly",
+      "description": "Per-page human attention budgets with understand-in time, scroll burden, and click depth limits. Machine-readable companion to SITE_CONSTITUTION.md.",
+      "domain": "law",
+      "verb": "333_judge"
+    },
+    {
       "path": "/surfaces.json",
       "title": "surfaces.json — Canonical Surface Catalog",
       "status": "live",

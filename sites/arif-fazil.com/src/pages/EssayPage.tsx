@@ -150,9 +150,9 @@ export function EssayPage() {
         <section className="py-24">
           <div className="site-frame text-center">
             <div className="section-label text-forge-orange mb-3">404 · VOID</div>
-            <h1 className="text-4xl md:text-5xl font-black italic uppercase leading-[0.9] tracking-tighter mb-6">
+            <h2 className="text-4xl md:text-5xl font-black italic uppercase leading-[0.9] tracking-tighter mb-6">
               Essay Not Found
-            </h1>
+            </h2>
             <p className="text-forge-dim mb-8 max-w-md mx-auto">
               No essay matches slug <code className="px-2 py-0.5 bg-forge-steel border border-forge-iron font-mono text-forge-orange">{slug}</code>. The vault has nothing here.
             </p>

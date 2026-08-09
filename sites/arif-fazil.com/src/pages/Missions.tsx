@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import BucketStrip from '@/components/BucketStrip';
-import MCPGateway from '@/components/MCPGateway';
+
 import { MISSIONS, MISSION_DOCTRINE } from '@/data/missions';
 
 /**
@@ -143,7 +143,7 @@ export function Missions() {
           </p>
         </div>
       </section>
-      <MCPGateway />
+
     </motion.div>
   );
 }

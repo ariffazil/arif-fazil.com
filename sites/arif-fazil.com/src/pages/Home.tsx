@@ -1,271 +1,101 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import SectionHeader from '@/components/SectionHeader'
 import BucketStrip from '@/components/BucketStrip'
-import MCPGateway from '@/components/MCPGateway'
-import { useNow, formatKL, secondsSinceBirth } from '@/hooks/useNow'
+import { useNow } from '@/hooks/useNow'
 
 /* ------------------------------------------------------------------ */
-/* Hero: the live clock — "The Arrow of Time"                          */
+/* Ambient Live Clock — small, right-aligned, not co-hero             */
 /* ------------------------------------------------------------------ */
 
-function useClockHands() {
-  const hourRef = useRef<HTMLDivElement>(null)
-  const minuteRef = useRef<HTMLDivElement>(null)
-  const secondRef = useRef<HTMLDivElement>(null)
-  const glowRef = useRef<HTMLDivElement>(null)
+function AmbientClock() {
+  const now = useNow()
+  const kl = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kuala_Lumpur' }))
+  const hrs = String(kl.getHours()).padStart(2, '0')
+  const mins = String(kl.getMinutes()).padStart(2, '0')
+  const secs = String(kl.getSeconds()).padStart(2, '0')
 
-  useEffect(() => {
-    let raf = 0
-    // second-hand spring state
-    let angle = 0
-    let vel = 0
-    let target = 0
-    let lastSecond = -1
-
-    const tick = () => {
-      const now = new Date()
-      // KL time parts
-      const kl = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kuala_Lumpur' }))
-      const s = kl.getSeconds()
-      const m = kl.getMinutes()
-      const h = kl.getHours() % 12
-
-      if (s !== lastSecond) {
-        lastSecond = s
-        // mechanical stepped target: 6° per second + 2° overshoot handled by spring
-        target = s * 6
-        // ember glow pulse each tick
-        if (glowRef.current) {
-          glowRef.current.style.opacity = '0.55'
-        }
-      }
-
-      // spring toward target (overshoot-and-settle)
-      const stiffness = 0.22
-      const damping = 0.72
-      vel += (target - angle) * stiffness
-      vel *= damping
-      angle += vel
-
-      const secondDeg = angle + (2 * Math.max(0, vel)) // subtle overshoot bias
-      const minuteDeg = (m + s / 60) * 6
-      const hourDeg = (h + m / 60) * 30
-
-      if (secondRef.current) secondRef.current.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`
-      if (minuteRef.current) minuteRef.current.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`
-      if (hourRef.current) hourRef.current.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`
-      if (glowRef.current) {
-        const cur = parseFloat(glowRef.current.style.opacity || '0')
-        glowRef.current.style.opacity = String(Math.max(0, cur - 0.02))
-      }
-
-      raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [])
-
-  return { hourRef, minuteRef, secondRef, glowRef }
-}
-
-function GhostHour() {
-  // huge ghostly numeral of the current hour, drifting 2px per minute
-  const [, force] = useState(0)
-  useEffect(() => {
-    const id = setInterval(() => force((n) => n + 1), 30000)
-    return () => clearInterval(id)
-  }, [])
-  const kl = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kuala_Lumpur' }))
-  const h = kl.getHours() % 12 || 12
-  const drift = kl.getMinutes() * 2
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute left-1/2 top-1/2 select-none font-display font-black"
-      style={{
-        fontSize: '40vh',
-        lineHeight: 1,
-        opacity: 0.04,
-        transform: `translate(calc(-50% + ${drift}px), calc(-50% - ${drift}px))`,
-      }}
-    >
-      {h}
-    </div>
+    <span className="font-mono text-[13px] tabular-nums text-slate-400 tracking-[0.04em]">
+      <span className="text-ember">{hrs}</span>
+      <span className="text-slate-600 animate-pulse">:</span>
+      <span>{mins}</span>
+      <span className="text-slate-600 animate-pulse">:</span>
+      <span>{secs}</span>
+      <span className="ml-1.5 text-slate-500 text-[11px]">MYT</span>
+    </span>
   )
 }
+
+/* ------------------------------------------------------------------ */
+/* Section 1 — Hero: Identity first, proof second, machines in footer  */
+/* ------------------------------------------------------------------ */
 
 function Hero() {
-  const now = useNow()
-  const { hourRef, minuteRef, secondRef, glowRef } = useClockHands()
-  const wrapRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: wrapRef, offset: ['start start', 'end start'] })
-  const clockScale = useTransform(scrollYProgress, [0, 1], [1, 1.25])
-  const clockOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0])
-
-  const headline = 'The arrow of time only flies forward.'.split(' ')
-  const secs = secondsSinceBirth(now)
-  const telemetry = {
-    epoch: '1990-05-22T00:00:00+08:00',
-    as_of: now.toISOString(),
-    dS: -0.12,
-    peace2: 1.03,
-    kappa_r: 0.87,
-    psi_le: 'Basin analysis + constitutional AI',
-    verdict: 'OPEN',
-    seconds_since_epoch: secs,
-  }
-
   return (
-    <div ref={wrapRef} className="relative min-h-[100dvh] md:h-[120vh]">
-      <section className="sticky top-16 flex min-h-[calc(100dvh-4rem)] flex-col overflow-hidden md:h-[calc(100dvh-4rem)]">
-        {/* faint radial grain backdrop */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(circle at 50% 45%, rgba(228,87,46,0.06), transparent 55%), radial-gradient(circle at 50% 50%, rgba(20,17,12,0.05), transparent 70%)',
-          }}
-        />
-        <GhostHour />
+    <section className="relative min-h-[85vh] flex flex-col justify-between py-10 md:py-16 border-b border-slate-800 bg-[#0a0b0d]">
+      {/* High contrast radial backdrop */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 20%, rgba(228,87,46,0.08), transparent 70%)',
+        }}
+      />
 
-        {/* top row: machine-time + canon telemetry legend */}
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pt-5">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div className="font-mono text-[12px] tracking-[0.04em] sm:text-[13px]">
-              <div className="text-ink-soft">MACHINE TIME &amp; CANON TELEMETRY</div>
-              <div className="mt-0.5 max-w-[36ch] text-[11px] leading-snug text-ink-soft/70">
-                Telemetry surface for human–machine constitutions and missions.
-              </div>
-              <div className="mt-2 text-ink-soft">KUALA LUMPUR — UTC+8</div>
-              <div className="mt-0.5 text-[15px] tabular-nums text-ink">{formatKL(now)}</div>
-            </div>
-            <div className="text-right font-mono text-[12px] tracking-[0.04em] sm:text-[13px]">
-              <div className="text-ink-soft">SECONDS SINCE 22.05.1990</div>
-              <div className="mt-1 text-[15px] tabular-nums text-ember">
-                {secs.toLocaleString('en-US')}
-              </div>
-            </div>
-          </div>
-          {/* Canonical telemetry line — machine-readable example on the landing page */}
-          <pre
-            className="mt-4 max-w-full overflow-x-auto font-mono text-[10px] leading-relaxed tracking-[0.02em] text-ink-soft/80 sm:text-[11px]"
-            aria-label="Canon telemetry snapshot"
-          >
-            {JSON.stringify(telemetry)}
-          </pre>
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 my-auto">
+        {/* 1. Eyebrow: location + ambient live clock */}
+        <div className="font-mono text-[12px] uppercase tracking-[0.22em] text-ember font-bold mb-3 flex items-center justify-between gap-4 max-w-[46ch]">
+          <span>KUALA LUMPUR · UTC+8</span>
+          <AmbientClock />
         </div>
 
-        {/* the clock */}
-        <motion.div
-          style={{ scale: clockScale, opacity: clockOpacity }}
-          className="relative z-10 flex flex-1 items-center justify-center"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className="relative"
-            style={{ width: 'min(58vh, 560px)', height: 'min(58vh, 560px)' }}
-          >
-            {/* ember glow pulse */}
-            <div
-              ref={glowRef}
-              aria-hidden
-              className="absolute inset-[-12%] rounded-full"
-              style={{
-                opacity: 0,
-                background: 'radial-gradient(circle, rgba(228,87,46,0.18), transparent 60%)',
-              }}
-            />
-            <img
-              src="/clock-face.svg"
-              alt="Clock dial"
-              className="absolute inset-0 h-full w-full"
-              draggable={false}
-            />
-            {/* hour hand */}
-            <div
-              ref={hourRef}
-              className="absolute bottom-1/2 left-1/2 origin-bottom"
-              style={{ width: 8, height: '24%', marginBottom: 0, background: '#EDEAE2', borderRadius: 4 }}
-            />
-            {/* minute hand */}
-            <div
-              ref={minuteRef}
-              className="absolute bottom-1/2 left-1/2 origin-bottom"
-              style={{ width: 5, height: '36%', background: '#EDEAE2', borderRadius: 3 }}
-            />
-            {/* second hand: ember, extra-long, counterweight tail */}
-            <div
-              ref={secondRef}
-              className="absolute bottom-1/2 left-1/2 origin-bottom"
-              style={{ width: 2.5, height: '44%', background: '#E4572E' }}
-            >
-              <div
-                className="absolute left-1/2 top-full -translate-x-1/2"
-                style={{ width: 10, height: '22%', background: '#E4572E', borderRadius: 5 }}
-              />
-            </div>
-            {/* center cap */}
-            <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper bg-ember" />
-          </motion.div>
-        </motion.div>
+        {/* 2. Main Headline */}
+        <h1 className="font-display text-[clamp(56px,12vw,120px)] font-black leading-[0.85] tracking-[-0.04em] text-slate-50">
+          ARIF FAZIL.
+        </h1>
 
-        {/* bottom: hierarchy — function first, arrow second, scroll third */}
-        <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-7 pt-2">
-          <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-ember sm:text-[13px]">
-            Basin analysis &amp; constitutional AI
-          </p>
-          <h1 className="mt-2 max-w-[18ch] font-display text-[32px] leading-[1.02] tracking-[-0.02em] sm:text-[40px] md:max-w-[14ch] md:text-[52px] lg:text-[64px]">
-            {headline.map((w, i) => (
-              <motion.span
-                key={i}
-                className="inline-block"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  delay: 0.35 + i * 0.06,
-                  duration: 0.55,
-                  ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-                }}
-              >
-                {w}&nbsp;
-              </motion.span>
-            ))}
-          </h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.7 }}
-            className="mt-3 max-w-[48ch] font-body text-[17px] leading-[1.6] text-ink-soft md:text-[19px]"
-          >
-            I&apos;m Arif Fazil. I spend mine reading the earth, pricing risk, and teaching machines to
-            tell the truth.
-          </motion.p>
+        {/* 3. Short Mission Line */}
+        <p className="mt-4 max-w-[46ch] font-body text-[22px] sm:text-[28px] leading-[1.3] text-slate-200 font-light">
+          Reading the earth, pricing risk, and teaching machines to tell the truth.
+        </p>
 
+        {/* 4. Proof strip — strongest credibility signals, first viewport */}
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          <div className="flex items-baseline gap-2">
+            <span className="font-mono text-[32px] font-bold text-slate-100 leading-none">13</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-slate-400">yrs exploration geoscience · PETRONAS</span>
+          </div>
+          <div className="flex items-baseline gap-2">
+            <span className="font-mono text-[32px] font-bold text-ember leading-none">4/4</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-slate-400">wells led have flowed</span>
+          </div>
+        </div>
+
+        {/* 5. Action Buttons */}
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <Link
+            to="/words"
+            className="px-6 py-3.5 rounded bg-ember text-black font-mono text-[13px] font-bold uppercase tracking-[0.1em] hover:bg-amber-400 transition-colors shadow-lg shadow-ember/20"
+          >
+            Read Writing →
+          </Link>
           <a
             href="#person"
-            className="mt-6 inline-flex items-center gap-3 rounded-sm border border-ink/20 px-4 py-3 transition-colors hairline hover:border-ember/50 hover:bg-ink/5"
+            className="px-6 py-3.5 rounded border border-slate-700 bg-slate-900/60 font-mono text-[13px] font-semibold uppercase tracking-[0.1em] text-slate-200 hover:bg-slate-800 hover:border-ember/50 transition-colors"
           >
-            <div className="relative h-10 w-px overflow-hidden bg-ink/25">
-              <div
-                className="absolute left-0 top-0 h-2 w-px bg-ember"
-                style={{ animation: 'scroll-cue-descend 1.6s steps(12) infinite' }}
-              />
-            </div>
-            <span className="eyebrow text-ink">Scroll ↓ 01 THE PERSON</span>
+            The Person ↓
           </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 
 /* ------------------------------------------------------------------ */
-/* Section 2 — The Person                                              */
+/* Section 2 — The Person (Clean layout without AF card duplication)   */
 /* ------------------------------------------------------------------ */
 
 function Person() {
@@ -276,128 +106,115 @@ function Person() {
     'Exploration geoscientist — basin risk, wells, uncertainty',
     'Architect of public MCP / WebMCP surfaces under arif-fazil.com',
   ]
-  return (
-    <section id="person" ref={ref} className="mx-auto max-w-[1280px] scroll-mt-24 px-6 py-20 md:py-24">
-      <SectionHeader number="01" title="THE PERSON" />
-      <div className="mt-12 grid gap-12 md:grid-cols-[42%_58%]">
-        <motion.div
-          initial={{ clipPath: 'inset(100% 0 0 0)' }}
-          animate={inView ? { clipPath: 'inset(0% 0 0 0)' } : {}}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-          className="border p-3 hairline"
-        >
-          <div className="flex aspect-[9/11] w-full flex-col items-center justify-center border hairline">
-            <span className="font-display text-[clamp(72px,12vw,160px)] leading-none tracking-[-0.08em] text-ember">AF</span>
-            <span className="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-soft">Identity mark · text only</span>
-          </div>
-          <div className="mt-3 font-mono text-[12px] tracking-[0.04em] text-ink-soft">
-            PENANG, 1990 —
-          </div>
-        </motion.div>
 
-        <div>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="font-display text-[36px] leading-none tracking-[-0.02em] md:text-5xl"
-          >
-            Forged, not given.
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.15, duration: 0.6 }}
-            className="mt-4 max-w-[48ch] font-mono text-[13px] uppercase tracking-[0.06em] text-ember"
-          >
-            Current mission — constitutional AI kernels for earth, markets, and civic systems.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.25, duration: 0.6 }}
-            className="mt-6 max-w-[52ch] font-body text-[18px] leading-[1.65] text-ink md:text-[19px]"
-          >
-            Muhammad Arif bin Fazil. Born in Penang on 22 May 1990. PETRONAS scholar. Double major in
-            Geology &amp; Geophysics and Economics (University of Wisconsin–Madison). Corporate
-            record: ~13 years exploration geoscience at PETRONAS. Sovereign work (parallel): author of
-            arifOS — a constitution for machines.
-          </motion.p>
-          <ul className="mt-6 max-w-[48ch] space-y-2 font-body text-[16px] text-ink-soft">
-            {roles.map((r) => (
-              <li key={r} className="flex gap-2">
-                <span className="text-ember" aria-hidden>
-                  ·
-                </span>
-                <span>{r}</span>
-              </li>
-            ))}
-          </ul>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="relative mt-6 max-w-[48ch] font-body text-[18px] italic leading-[1.65] text-ink-soft md:text-[19px]"
-          >
-            <span className="relative inline-block">
-              Ditempa bukan diberi — forged, not given. Heat, pressure, time. It is how oil forms, and
-              how people do.
-              <motion.span
-                aria-hidden
-                initial={{ scaleX: 0 }}
-                animate={inView ? { scaleX: 1 } : {}}
-                transition={{ delay: 0.7, duration: 0.9, ease: 'easeOut' }}
-                className="absolute -bottom-1 left-0 h-[2px] w-full origin-left bg-ember"
-              />
-            </span>
-          </motion.p>
-          <p className="mt-6 max-w-[48ch] font-mono text-[11px] leading-relaxed text-ink-soft/80">
-            Personal site — not an official PETRONAS publication.{' '}
-            <a href="/machines/" className="underline decoration-ink/30 underline-offset-2 hover:text-ink">
-              Legal / agent ops
-            </a>
-            .
-          </p>
-          {/* Structured identity for machines */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'Person',
-                name: 'Muhammad Arif bin Fazil',
-                birthDate: '1990-05-22',
-                birthPlace: 'Penang, Malaysia',
-                jobTitle: 'Exploration geoscientist; author of arifOS',
-                alumniOf: 'University of Wisconsin–Madison',
-                url: 'https://arif-fazil.com/',
-                sameAs: ['https://github.com/ariffazil', 'https://t.me/ariffazil'],
-              }),
-            }}
-          />
-        </div>
+  return (
+    <section id="person" ref={ref} className="mx-auto max-w-[1280px] scroll-mt-24 px-6 py-16 md:py-24">
+      <SectionHeader number="01" title="THE PERSON" />
+      <div className="mt-10 max-w-[68ch]">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="font-display text-[36px] leading-none tracking-[-0.02em] md:text-5xl text-slate-100 font-extrabold"
+        >
+          Forged, not given.
+        </motion.h2>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.15, duration: 0.6 }}
+          className="mt-4 font-mono text-[13px] uppercase tracking-[0.08em] text-ember font-semibold"
+        >
+          Current mission — constitutional AI kernels for earth, markets, and civic systems.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.25, duration: 0.6 }}
+          className="mt-6 font-body text-[19px] leading-[1.65] text-slate-200"
+        >
+          Muhammad Arif bin Fazil. Born in Penang on 22 May 1990. PETRONAS scholar. Double major in
+          Geology &amp; Geophysics and Economics (University of Wisconsin–Madison). Corporate
+          record: ~13 years exploration geoscience at PETRONAS. Sovereign work (parallel): author of
+          arifOS — a constitution for machines.
+        </motion.p>
+
+        <ul className="mt-6 space-y-2 font-body text-[17px] text-slate-300">
+          {roles.map((r) => (
+            <li key={r} className="flex gap-2.5 items-start">
+              <span className="text-ember mt-1" aria-hidden>▸</span>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="relative mt-8 font-body text-[20px] italic leading-[1.6] text-slate-300"
+        >
+          <span className="relative inline-block">
+            Ditempa bukan diberi — forged, not given. Heat, pressure, time. It is how oil forms, and
+            how people do.
+            <motion.span
+              aria-hidden
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.7, duration: 0.9, ease: 'easeOut' }}
+              className="absolute -bottom-1 left-0 h-[2px] w-full origin-left bg-ember"
+            />
+          </span>
+        </motion.p>
+
+        <p className="mt-8 font-mono text-[12px] leading-relaxed text-slate-400">
+          Personal site — not an official PETRONAS publication.{' '}
+          <a href="/machines/" className="underline decoration-slate-600 underline-offset-4 hover:text-slate-100">
+            Legal / agent ops
+          </a>
+          .
+        </p>
+
+        {/* Structured identity for machines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Muhammad Arif bin Fazil',
+              birthDate: '1990-05-22',
+              birthPlace: 'Penang, Malaysia',
+              jobTitle: 'Exploration geoscientist; author of arifOS',
+              alumniOf: 'University of Wisconsin–Madison',
+              url: 'https://arif-fazil.com/',
+              sameAs: ['https://github.com/ariffazil', 'https://t.me/ariffazil'],
+            }),
+          }}
+        />
       </div>
     </section>
   )
 }
 
 /* ------------------------------------------------------------------ */
-/* Section 3 — Three Domains                                           */
+/* Section 3 — Five Doors Navigation                                  */
 /* ------------------------------------------------------------------ */
 
-/* ── 5-BUCKET NAVIGATION STRIP ── */
 function BucketsSection() {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-20% 0px' })
   return (
-    <section ref={ref} className="border-y hairline">
+    <section ref={ref} className="border-y border-slate-800 bg-[#0a0b0d]">
       <div className="mx-auto max-w-[1280px] px-6 py-14 md:py-18">
         <SectionHeader number="02" title="NAVIGATE" className="mb-6" />
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="mb-8 max-w-[48ch] font-body text-[16px] leading-[1.6] text-ink-soft"
+          className="mb-8 max-w-[48ch] font-body text-[17px] leading-[1.6] text-slate-300"
         >
           Five doors. Every artifact on this site belongs to exactly one bucket. 
           Click any door to enter — from anywhere on the site.
@@ -418,7 +235,6 @@ function BucketsSection() {
 /* Section 4 — The Record                                              */
 /* ------------------------------------------------------------------ */
 
-/** Source-backed record — never animate from 0 (P0 trust section). */
 const RECORD_STATS = [
   { n: 13, label: 'YEARS AT PETRONAS', href: '/earth', note: 'Corporate exploration record' },
   { n: 4, label: 'EXPLORATION WELLS LED', href: '/earth', note: '4/4 flowed — success band OBS' },
@@ -437,28 +253,26 @@ function StatCell({
   href: string
   note: string
 }) {
-  // Static render only. Count-up / inView races previously painted false zeros
-  // on the apex trust section — HARAM for THE RECORD.
   return (
     <Link
       to={href}
-      className="block border-l px-5 py-8 transition-colors hairline first:border-l-0 hover:bg-ink/[0.03] md:px-6"
+      className="block border-l border-slate-800 px-5 py-8 transition-colors first:border-l-0 hover:bg-slate-800/40 md:px-6"
       title={note}
       data-record-stat={label}
       data-record-value={n}
     >
       <div
-        className="font-mono text-5xl tabular-nums tracking-[-0.02em] md:text-6xl"
+        className="font-mono text-5xl tabular-nums tracking-[-0.02em] md:text-6xl text-slate-100 font-bold"
         aria-label={`${n} ${label}`}
       >
         {n}
       </div>
-      <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.04em] text-ink-soft md:text-[12px]">
+      <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.04em] text-slate-400 md:text-[12px]">
         {label}
       </div>
       <span
         title="Observed — directly verified fact (not interactive)"
-        className="mt-3 inline-block rounded-sm border border-ink/30 px-1.5 py-0.5 font-mono text-[10px] tracking-[0.04em] text-ink-soft"
+        className="mt-3 inline-block rounded-sm border border-slate-700 px-1.5 py-0.5 font-mono text-[10px] tracking-[0.04em] text-slate-400"
       >
         [OBS · source]
       </span>
@@ -475,16 +289,16 @@ function Record() {
       aria-label="The Record — source-backed career and constitutional facts"
     >
       <SectionHeader number="03" title="THE RECORD" />
-      <div className="mt-12 grid grid-cols-2 border-y hairline md:grid-cols-4">
+      <div className="mt-12 grid grid-cols-2 border-y border-slate-800 md:grid-cols-4">
         {RECORD_STATS.map((s) => (
           <StatCell key={s.label} n={s.n} label={s.label} href={s.href} note={s.note} />
         ))}
       </div>
-      <p className="mt-6 max-w-[56ch] font-body text-[16px] leading-[1.6] text-ink-soft">
-        Exploration success band: <strong className="text-ink">4/4 wells flowed</strong> under team
+      <p className="mt-6 max-w-[56ch] font-body text-[16px] leading-[1.6] text-slate-300">
+        Exploration success band: <strong className="text-slate-100">4/4 wells flowed</strong> under team
         risk process — not a solo miracle; the record still needs context.
       </p>
-      <p className="mt-4 max-w-[56ch] font-body text-[18px] italic leading-[1.65] text-ink-soft">
+      <p className="mt-4 max-w-[56ch] font-body text-[18px] italic leading-[1.65] text-slate-400">
         &quot;Every exploration well he has led has flowed. The record speaks plainly; it doesn&apos;t
         need adjectives.&quot;
       </p>
@@ -502,17 +316,17 @@ const posts = [
     date: '2026-01-14',
     tag: 'WRITING',
     lang: 'EN',
-    band: 'CLAIM',
+    band: 'OBS',
     excerpt:
       'Fourteen months of planning, three weeks of drilling, and one moment when the mud logger goes quiet. Patience is not passive — it is pressure, held.',
-    to: '/writing',
+    to: '/words',
   },
   {
     title: 'Harga minyak, harga nasi: satu ekonomi, dua meja',
     date: '2026-01-06',
     tag: 'MAKCIKGPT',
     lang: 'BM',
-    band: 'CLAIM',
+    band: 'OBS',
     excerpt:
       'Makcik explains fuel subsidies at the pasar table: who pays, who saves, and why the ringgit in your purse is an energy question.',
     to: '/world',
@@ -522,10 +336,10 @@ const posts = [
     date: '2025-12-20',
     tag: 'DOCTRINE',
     lang: 'EN',
-    band: 'CLAIM',
+    band: 'OBS',
     excerpt:
       'Why arifOS holds its verdicts until the evidence settles — F2 TRUTH is not a feature flag; it is a cooling tower for hot claims.',
-    to: '/doctrine',
+    to: '/words/doctrine',
   },
 ]
 
@@ -536,11 +350,11 @@ function LatestWords() {
     <section ref={ref} className="mx-auto max-w-[1280px] px-6 py-20 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <SectionHeader number="04" title="LATEST WORDS" className="flex-1" />
-        <div className="flex flex-wrap gap-4 font-mono text-[12px] uppercase tracking-[0.04em] text-ink-soft">
-          <a href="/writing/index.json" className="hover:text-ink">
+        <div className="flex flex-wrap gap-4 font-mono text-[12px] uppercase tracking-[0.04em] text-slate-400">
+          <a href="/writing/index.json" className="hover:text-slate-100">
             For agents · index.json
           </a>
-          <Link to="/writing" className="hover:text-ink">
+          <Link to="/words" className="hover:text-slate-100">
             All writing →
           </Link>
         </div>
@@ -555,20 +369,20 @@ function LatestWords() {
           >
             <Link
               to={p.to}
-              className="group block border-t px-4 py-8 transition-colors hairline last:border-b hover:bg-paper-dark"
+              className="group block border-t border-slate-800 px-4 py-8 transition-colors last:border-b hover:bg-slate-900/60"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <h3 className="font-display text-[26px] tracking-[-0.02em] md:text-[32px]">
+                <h3 className="font-display text-[26px] tracking-[-0.02em] md:text-[32px] text-slate-100">
                   <span className="mr-2 inline-block text-ember opacity-0 transition-opacity group-hover:opacity-100">
                     ▸
                   </span>
                   {p.title}
                 </h3>
-                <div className="font-mono text-[11px] uppercase tracking-[0.04em] text-ink-soft md:text-[12px]">
+                <div className="font-mono text-[11px] uppercase tracking-[0.04em] text-slate-400 md:text-[12px]">
                   {p.date} · {p.tag} · {p.lang} · {p.band}
                 </div>
               </div>
-              <p className="mt-3 line-clamp-2 max-w-[65ch] font-body text-[17px] leading-[1.65] text-ink-soft">
+              <p className="mt-3 line-clamp-2 max-w-[65ch] font-body text-[17px] leading-[1.65] text-slate-300">
                 {p.excerpt}
               </p>
             </Link>
@@ -591,7 +405,7 @@ function Closing() {
     <section ref={ref} className="mx-auto max-w-[1280px] px-6 pb-28 pt-8 text-center">
       <motion.p
         style={{ letterSpacing: tracking }}
-        className="mx-auto max-w-[26ch] font-display text-[30px] leading-[1.15] tracking-[-0.02em] md:text-[40px]"
+        className="mx-auto max-w-[26ch] font-display text-[30px] leading-[1.15] tracking-[-0.02em] md:text-[40px] text-slate-200"
       >
         This site is written for people. Machines are welcome too — politely, and in the footer.
       </motion.p>
@@ -601,14 +415,13 @@ function Closing() {
 
 export function Home() {
   return (
-    <div className="grain">
+    <div className="grain bg-[#0a0b0d] text-slate-100 min-h-screen">
       <Hero />
       <Person />
       <BucketsSection />
       <Record />
       <LatestWords />
       <Closing />
-      <MCPGateway />
     </div>
   )
 }

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+  <!-- thin outer ring -->
+  <circle cx="256" cy="256" r="248"/>
+  <circle cx="256" cy="256" r="238" stroke-opacity="0.5"/>
+  <!-- faceted hexagonal stamp -->
+  <polygon points="256,44 439,150 439,362 256,468 73,362 73,150"/>
+  <polygon points="256,72 421,167 421,345 256,440 91,345 91,167" stroke-opacity="0.55"/>
+  <!-- inner facet spokes -->
+  <line x1="256" y1="44" x2="256" y2="132" stroke-opacity="0.7"/>
+  <line x1="439" y1="150" x2="361" y2="195" stroke-opacity="0.7"/>
+  <line x1="439" y1="362" x2="361" y2="317" stroke-opacity="0.7"/>
+  <line x1="256" y1="468" x2="256" y2="380" stroke-opacity="0.7"/>
+  <line x1="73" y1="362" x2="151" y2="317" stroke-opacity="0.7"/>
+  <line x1="73" y1="150" x2="151" y2="195" stroke-opacity="0.7"/>
+  <!-- abstract oil-drop / flame, sharp geometric facets -->
+  <polygon points="256,132 322,232 322,300 256,352 190,300 190,232"/>
+  <polygon points="256,132 322,232 256,268 190,232" stroke-opacity="0.85"/>
+  <polygon points="256,268 322,232 322,300" stroke-opacity="0.85"/>
+  <polygon points="256,268 322,300 256,352" stroke-opacity="0.85"/>
+  <polygon points="256,268 256,352 190,300" stroke-opacity="0.85"/>
+  <polygon points="256,268 190,300 190,232" stroke-opacity="0.85"/>
+  <!-- inner flame facet -->
+  <polygon points="256,196 292,246 256,304 220,246"/>
+  <line x1="256" y1="196" x2="256" y2="304" stroke-opacity="0.6"/>
+  <line x1="220" y1="246" x2="292" y2="246" stroke-opacity="0.6"/>
+  <!-- base ticks -->
+  <line x1="176" y1="392" x2="336" y2="392" stroke-opacity="0.8"/>
+  <line x1="196" y1="404" x2="316" y2="404" stroke-opacity="0.5"/>
+  <line x1="176" y1="120" x2="336" y2="120" stroke-opacity="0.5"/>
+</svg>

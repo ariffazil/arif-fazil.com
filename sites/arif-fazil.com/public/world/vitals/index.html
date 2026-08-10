@@ -169,6 +169,25 @@ footer .dim{font-size:11px;color:var(--faint)}
 .chart-widget .price-strip .big{font-size:26px;font-weight:700;color:#fff}
 .chart-widget .price-strip .delta{font-size:14px;font-weight:600}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ============ STICKY PRICE TICKER ============ */
+.ticker{position:sticky;top:44px;z-index:49;background:rgba(7,9,13,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);overflow:hidden}
+.ticker-in{display:flex;align-items:center;gap:0;max-width:1240px;margin:0 auto;padding:6px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;white-space:nowrap;overflow-x:auto}
+.ticker-item{display:inline-flex;align-items:center;gap:6px;padding:0 14px;border-right:1px solid var(--line2);flex-shrink:0}
+.ticker-item:last-child{border-right:none}
+.ticker-lbl{color:var(--faint);letter-spacing:.08em;text-transform:uppercase;font-size:9px}
+.ticker-val{color:var(--gold);font-weight:600}
+.ticker-chg{font-size:10px;font-weight:500}
+.ticker-up{color:var(--green)}.ticker-dn{color:var(--red2)}
+.ticker-flash{animation:tfl .8s ease}
+@keyframes tfl{0%{background:rgba(232,182,76,.2)}100%{background:transparent}}
+
+/* ============ PETRONAS PULSE BADGE ============ */
+.pulse-ring{position:relative;display:inline-block}
+.pulse-ring::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--red);opacity:0;animation:pring 2s ease-out infinite}
+@keyframes pring{0%{transform:scale(.7);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+.pulse-ring.paused::before{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.pulse-ring::before{animation:none}}
 </style>
 </head>
 <body>
@@ -182,6 +201,18 @@ footer .dim{font-size:11px;color:var(--faint)}
       <a href="#engine">⚙ ENGINE</a><a href="#honesty">⚖ HONESTY</a>
     </nav>
     <div class="clock" id="myt">— MYT</div>
+  </div>
+</div>
+
+<!-- ================= PRICE TICKER ================= -->
+<div class="ticker" aria-label="Live commodity prices">
+  <div class="ticker-in" id="ticker-strip">
+    <div class="ticker-item"><span class="ticker-lbl">Brent</span><span class="ticker-val" id="tk-brent">$87.38</span><span class="ticker-chg" id="tk-brent-chg"></span></div>
+    <div class="ticker-item"><span class="ticker-lbl">Gold</span><span class="ticker-val" id="tk-gold">$4,244</span><span class="ticker-chg" id="tk-gold-chg"></span></div>
+    <div class="ticker-item"><span class="ticker-lbl">USD/MYR</span><span class="ticker-val" id="tk-fx">4.090</span><span class="ticker-chg" id="tk-fx-chg"></span></div>
+    <div class="ticker-item"><span class="ticker-lbl">KLCI</span><span class="ticker-val" id="tk-klci">1,748</span><span class="ticker-chg" id="tk-klci-chg"></span></div>
+    <div class="ticker-item"><span class="ticker-lbl">DXY</span><span class="ticker-val" id="tk-dxy">99.68</span><span class="ticker-chg" id="tk-dxy-chg"></span></div>
+    <div class="ticker-item" style="margin-left:auto;border:none"><span class="ticker-lbl" id="tk-ts" style="color:var(--faint)">—</span></div>
   </div>
 </div>
 
@@ -206,7 +237,7 @@ footer .dim{font-size:11px;color:var(--faint)}
   </div>
 
   <div class="pulse-strip">
-    <div class="pulse-cell"><div class="lbl">PETRONAS φ · Pulse</div><div class="val v-void">0 VOID</div><div class="sub">AMEND-2026-08-03-001 · extraction 70.5% PAT <span class="tag tag-obs">OBS</span></div></div>
+    <div class="pulse-cell" style="position:relative;overflow:visible"><div class="lbl">PETRONAS φ · Pulse</div><div class="val v-void"><span class="pulse-ring">0 VOID</span></div><div class="sub">AMEND-2026-08-03-001 · extraction 70.5% PAT <span class="tag tag-obs">OBS</span></div></div>
     <div class="pulse-cell"><div class="lbl">Malaysia · Ringgit</div><div class="val v-sabar" id="p-fx">4.0900</div><div class="sub">USD/MYR · firmer from 4.14 in Jun <span class="tag tag-obs">OBS</span></div></div>
     <div class="pulse-cell"><div class="lbl">Oil · Brent</div><div class="val v-live" id="p-brent">$87.38</div><div class="sub">+25% YoY · above $71.60 FCF-zero line <span class="tag tag-obs">OBS</span></div></div>
     <div class="pulse-cell"><div class="lbl">Gold · XAU</div><div class="val v-live" id="p-gold">$4,244</div><div class="sub">+26% YoY · off Jan ATH $5,608 <span class="tag tag-obs">OBS</span></div></div>
@@ -483,6 +514,40 @@ function engine(){
 }
 ['s-brent','s-jkm','s-fx','s-gold'].forEach(i=>$(i).addEventListener('input',engine));
 engine();
+
+// ---- PRICE TICKER — Stooq CSV polling every 60s ----
+const TK_SOURCES = [
+  { id:'brent', url:'https://stooq.com/q/l/?s=brent.usd&f=sd2t2ohlcv&e=csv', fmt:v=>'$'+Number(v).toFixed(1) },
+  { id:'gold',  url:'https://stooq.com/q/l/?s=xauusd&f=sd2t2ohlcv&e=csv',  fmt:v=>'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}) },
+  { id:'fx',    url:'https://stooq.com/q/l/?s=usdmyr&f=sd2t2ohlcv&e=csv',  fmt:v=>Number(v).toFixed(3) },
+  { id:'klci',  url:'https://stooq.com/q/l/?s=klci.my&f=sd2t2ohlcv&e=csv', fmt:v=>Number(v).toLocaleString('en-US',{maximumFractionDigits:2}) },
+  { id:'dxy',   url:'https://stooq.com/q/l/?s=dx.f&f=sd2t2ohlcv&e=csv',    fmt:v=>Number(v).toFixed(2) }
+];
+async function tickTicker(){
+  const ts=document.getElementById('tk-ts');
+  for(const src of TK_SOURCES){
+    try{
+      const r=await fetch(src.url,{cache:'no-store'});
+      const txt=await r.text();
+      const lines=txt.trim().split('\n');
+      if(lines.length<2)continue;
+      const cols=lines[1].split(',');
+      const close=parseFloat(cols[5]);
+      const open=parseFloat(cols[1]);
+      if(isNaN(close))continue;
+      const el=document.getElementById('tk-'+src.id);
+      const chgEl=document.getElementById('tk-'+src.id+'-chg');
+      if(el){el.textContent=src.fmt(close);el.classList.add('ticker-flash');setTimeout(()=>el.classList.remove('ticker-flash'),800);}
+      if(chgEl&&open>0){
+        const pct=((close-open)/open*100);
+        chgEl.textContent=(pct>=0?'+':'')+pct.toFixed(1)+'%';
+        chgEl.className='ticker-chg '+(pct>=0?'ticker-up':'ticker-dn');
+      }
+    }catch(_){}
+  }
+  if(ts)ts.textContent=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})+' MYT';
+}
+tickTicker();setInterval(tickTicker,60000);
 
 // ---- Optional live refresh (graceful fallback to seeded [OBS] values) ----
 fetch('https://open.er-api.com/v6/latest/USD').then(r=>r.json()).then(d=>{

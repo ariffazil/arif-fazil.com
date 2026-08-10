@@ -40,6 +40,17 @@
     .hero-quote cite{display:block;margin-top:.5rem;font-style:normal;font-family:var(--font-mono,monospace);font-size:.72rem;color:#8a8378;letter-spacing:.06em;text-transform:uppercase}
     .hint{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;letter-spacing:.1em}
     @media (max-width:720px){.hero{grid-template-columns:1fr;gap:1.5rem}.hero-text{text-align:center}.hero-quote{text-align:left}}
+    .live-strip{display:flex;align-items:center;gap:0;border:1px solid #2a2a3a;border-radius:8px;overflow:hidden;margin:1.5rem 0;background:rgba(255,255,255,.02);font-family:var(--font-mono,monospace)}
+    .ls-item{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-right:1px solid #1a1a2a;white-space:nowrap}
+    .ls-item:last-child{border-right:none}
+    .ls-lbl{font-size:.62rem;color:#6a6560;letter-spacing:.1em;text-transform:uppercase}
+    .ls-val{font-size:.85rem;font-weight:600;color:#e8b64c}
+    .ls-chg{font-size:.7rem;font-weight:500}
+    .ls-up{color:#57d98e}.ls-dn{color:#ff8a8a}
+    .ls-ts{margin-left:auto;padding-right:16px;font-size:.62rem;color:#6a6560;letter-spacing:.06em}
+    .ls-flash{animation:lsfl .6s ease}
+    @keyframes lsfl{0%{background:rgba(232,182,75,.15)}100%{background:transparent}}
+    @media (max-width:600px){.live-strip{flex-wrap:wrap}.ls-ts{width:100%;text-align:right;padding:4px 16px 8px}}
   </style>
 </head>
 <body style="--domain-accent:var(--accent-world,#E4572E)">
@@ -84,6 +95,16 @@
         <div class="map-emoji" aria-hidden="true">🗺️</div>
       </div>
     </section>
+
+    <!-- LIVE PRICE STRIP — Stooq CSV, 60s refresh -->
+    <div class="live-strip" aria-label="Live commodity prices">
+      <div class="ls-item"><span class="ls-lbl">Brent</span><span class="ls-val" id="w-brent">—</span><span class="ls-chg" id="w-brent-c"></span></div>
+      <div class="ls-item"><span class="ls-lbl">Gold</span><span class="ls-val" id="w-gold">—</span><span class="ls-chg" id="w-gold-c"></span></div>
+      <div class="ls-item"><span class="ls-lbl">USD/MYR</span><span class="ls-val" id="w-fx">—</span><span class="ls-chg" id="w-fx-c"></span></div>
+      <div class="ls-item"><span class="ls-lbl">KLCI</span><span class="ls-val" id="w-klci">—</span><span class="ls-chg" id="w-klci-c"></span></div>
+      <span class="ls-ts" id="w-ts">—</span>
+    </div>
+
     <p class="meta meta-badges"><span class="badge">Civic + commodities</span><span class="badge">agent-readable</span></p>
     <div class="card" style="border-color: var(--gold-sovereign,#E8B84B); background: rgba(232,184,75,0.05);">
       <h2 style="color: var(--gold-sovereign,#E8B84B);">⚡ Sovereign Economic Cockpit</h2>
@@ -115,5 +136,30 @@
     </div>
     <p class="note">Content-first surface for humans and agents (no JavaScript required). Machine catalog: <a href="/missions.json">/missions.json</a> · Overview: <a href="/llms.txt">/llms.txt</a> · MCP: <a href="https://mcp.arif-fazil.com/mcp">mcp.arif-fazil.com/mcp</a>. Training and citation permitted with attribution (see <a href="/rsl.xml">/rsl.xml</a>).</p>
   </div>
+<script>
+(function(){
+  var S=[
+    {id:'brent',url:'https://stooq.com/q/l/?s=brent.usd&f=sd2t2ohlcv&e=csv',fmt:function(v){return'$'+Number(v).toFixed(1)}},
+    {id:'gold',url:'https://stooq.com/q/l/?s=xauusd&f=sd2t2ohlcv&e=csv',fmt:function(v){return'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0})}},
+    {id:'fx',url:'https://stooq.com/q/l/?s=usdmyr&f=sd2t2ohlcv&e=csv',fmt:function(v){return Number(v).toFixed(3)}},
+    {id:'klci',url:'https://stooq.com/q/l/?s=klci.my&f=sd2t2ohlcv&e=csv',fmt:function(v){return Number(v).toLocaleString('en-US',{maximumFractionDigits:2})}}
+  ];
+  function tick(){
+    S.forEach(function(s){
+      fetch(s.url,{cache:'no-store'}).then(function(r){return r.text()}).then(function(t){
+        var lines=t.trim().split('\n');if(lines.length<2)return;
+        var c=lines[1].split(','),close=parseFloat(c[5]),open=parseFloat(c[1]);
+        if(isNaN(close))return;
+        var el=document.getElementById('w-'+s.id),chg=document.getElementById('w-'+s.id+'-c');
+        if(el){el.textContent=s.fmt(close);el.classList.add('ls-flash');setTimeout(function(){el.classList.remove('ls-flash')},600)}
+        if(chg&&open>0){var p=(close-open)/open*100;chg.textContent=(p>=0?'+':'')+p.toFixed(1)+'%';chg.className='ls-chg '+(p>=0?'ls-up':'ls-dn')}
+      })['catch'](function(){});
+    });
+    var ts=document.getElementById('w-ts');
+    if(ts)ts.textContent=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})+' MYT';
+  }
+  tick();setInterval(tick,60000);
+})();
+</script>
 </body>
 </html>

@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../wealth.css">
 
-<!-- TradingView Lightweight Charts -->
-<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+<!-- TradingView Advanced Chart Widget -->
+<script src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async></script>
 
 <style>
 /* ═══════════════════════════════════════════════════════════════
@@ -304,21 +304,34 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   2. MAIN CHART SECTION — Clean, central, scannable
-   ═══════════════════════════════════════════════════════════════ */
-.chart-section {
-  margin-top: var(--gap-lg);
-  margin-bottom: var(--gap-lg);
-}
-
-.chart-header {
+    2. BREATHING HERO — Identity anchor + live clock
+    ═══════════════════════════════════════════════════════════════ */
+.hero-breathing {
+  margin-top: var(--gap-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--gap-md);
+  flex-wrap: wrap;
+  gap: var(--gap-lg);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.chart-title {
+.hero-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   color: var(--gold-dim);
@@ -326,63 +339,77 @@ body::before {
   letter-spacing: 0.2em;
 }
 
-/* Timeframe pills */
-.tf-pills {
-  display: flex;
-  gap: 4px;
-}
-
-.tf-pill {
+.hero-ditempa {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 3px;
-  border: 1px solid var(--border);
-  background: transparent;
+  font-size: 0.55rem;
   color: var(--text-dim);
-  cursor: pointer;
-  transition: all 0.15s;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15em;
+  margin-top: 0.3rem;
 }
 
-.tf-pill:hover {
-  border-color: var(--gold-dim);
-  color: var(--text-mid);
+/* Breathing clock */
+.breathing-clock {
+  text-align: right;
+  font-family: var(--font-mono);
 }
 
-.tf-pill.active {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: var(--gold-bg);
+.clock-time {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--gold-bright);
+  letter-spacing: 0.05em;
+  animation: breathe 1.5s ease-in-out infinite;
 }
 
-/* EMA toggles */
-.ema-toggles {
+.clock-meta {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    3. LIVE CHART HERO — TradingView full-width
+    ═══════════════════════════════════════════════════════════════ */
+.chart-section {
+  margin-top: 0;
+  margin-bottom: var(--gap-lg);
+}
+
+.chart-header {
   display: flex;
-  gap: var(--gap-sm);
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gap-sm);
+  padding: var(--gap-sm) 0;
 }
 
-.ema-toggle {
+.chart-title {
   font-family: var(--font-mono);
   font-size: 0.6rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  border: 1px solid var(--border);
-  background: transparent;
   color: var(--text-dim);
-  cursor: pointer;
-  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
-.ema-toggle.active {
-  border-color: var(--amber);
-  color: var(--amber);
-  background: var(--amber-dim);
+.chart-live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse-live 1.5s ease-in-out infinite;
+  margin-right: 0.4rem;
+  vertical-align: middle;
 }
 
-/* Chart container */
 .chart-container {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -391,50 +418,13 @@ body::before {
   position: relative;
 }
 
-#mainChart {
+#tradingviewChart {
   width: 100%;
-  height: 420px;
-}
-
-/* S/R zone overlays (positioned via JS) */
-.sr-zone {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  border-top: 1px dashed;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.sr-zone .sr-label {
-  position: absolute;
-  right: 8px;
-  top: -14px;
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  padding: 1px 4px;
-  border-radius: 2px;
-}
-
-.sr-zone.support {
-  border-color: rgba(34,197,94,0.4);
-}
-.sr-zone.support .sr-label {
-  color: var(--green);
-  background: var(--green-dim);
-}
-
-.sr-zone.resistance {
-  border-color: rgba(239,68,68,0.4);
-}
-.sr-zone.resistance .sr-label {
-  color: var(--red);
-  background: var(--red-dim);
+  height: 520px;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   3. DUAL SIGNAL COLUMNS — Technical Forge + World Context
+    4. DUAL SIGNAL COLUMNS — Technical Forge + World Context
    ═══════════════════════════════════════════════════════════════ */
 .signals-grid {
   display: grid;
@@ -942,7 +932,7 @@ body::before {
   }
   .pulse-price { font-size: 1.6rem; }
   .pulse-driver { max-width: 100%; }
-  #mainChart { height: 320px; }
+  #tradingviewChart { height: 320px; }
   .trade-metrics { grid-template-columns: 1fr; gap: var(--gap-sm); }
   .action-stance { flex-wrap: wrap; }
   .dash-footer { flex-direction: column; align-items: flex-start; }
@@ -951,7 +941,7 @@ body::before {
 @media (max-width: 600px) {
   .shell { padding: 0 1rem; }
   .pulse-price { font-size: 1.4rem; }
-  #mainChart { height: 260px; }
+  #tradingviewChart { height: 260px; }
   .synthesis-band { padding: var(--gap-md); }
   .tf-pills { flex-wrap: wrap; }
 }
@@ -1042,34 +1032,39 @@ body::before {
   </header>
 
   <!-- ═══════════════════════════════════════════════════════════
-       2. MAIN CHART — Clean candlesticks, minimal overlays
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="chart-section" aria-label="Gold price chart">
-    <div class="chart-header">
-      <div style="display:flex; align-items:center; gap:1.5rem;">
-        <span class="chart-title">XAU/USD — Price Action</span>
-        <div class="ema-toggles">
-          <button class="ema-toggle active" data-ema="20" onclick="toggleEMA(this)">EMA20</button>
-          <button class="ema-toggle active" data-ema="50" onclick="toggleEMA(this)">EMA50</button>
-          <button class="ema-toggle" data-ema="200" onclick="toggleEMA(this)">EMA200</button>
-        </div>
-      </div>
-      <div class="tf-pills" role="tablist" aria-label="Timeframe selector">
-        <button class="tf-pill" data-tf="1H" onclick="selectTF(this)">1H</button>
-        <button class="tf-pill active" data-tf="4H" onclick="selectTF(this)">4H</button>
-        <button class="tf-pill" data-tf="1D" onclick="selectTF(this)">1D</button>
-        <button class="tf-pill" data-tf="1W" onclick="selectTF(this)">1W</button>
-      </div>
+        2. BREATHING HERO — Identity + clock
+        ═══════════════════════════════════════════════════════════ -->
+  <section class="hero-breathing" aria-label="Identity anchor">
+    <div class="hero-identity">
+      <h1 class="hero-name">ARIF FAZIL</h1>
+      <div class="hero-subtitle">Cognitive Clarity · WEALTH Organ</div>
+      <div class="hero-ditempa">DITEMPA BUKAN DIBERI</div>
     </div>
-
-    <div class="chart-container">
-      <div id="mainChart"></div>
-      <!-- S/R zones rendered by JS -->
+    <div class="breathing-clock">
+      <div class="clock-time" id="breathingClock">--:--:--</div>
+      <div class="clock-meta">
+        <span id="canonDay">CANON Day --</span> · MYT · Gold Surface
+      </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       3. DUAL SIGNAL COLUMNS
+        3. LIVE CHART HERO — TradingView Advanced Chart
+        ═══════════════════════════════════════════════════════════ -->
+  <section class="chart-section" aria-label="Live gold price chart">
+    <div class="chart-header">
+      <span class="chart-title"><span class="chart-live-dot"></span>XAU/USD · Live Interactive Chart · OANDA:XAUUSD</span>
+      <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--green);">● REALTIME STREAM</span>
+    </div>
+    <div class="chart-container">
+      <div id="tradingviewChart">
+        <div class="tradingview-widget-container__widget"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+        4. DUAL SIGNAL COLUMNS
        Left: Technical Forge | Right: World Context
        ═══════════════════════════════════════════════════════════ -->
   <section class="signals-grid" aria-label="Trading signals">
@@ -1248,7 +1243,7 @@ body::before {
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       4. SYNTHESIS & GATE BAND — Human decides
+        5. SYNTHESIS & GATE BAND — Human decides
        ═══════════════════════════════════════════════════════════ -->
   <section class="synthesis-band" aria-label="Synthesis and decision gate">
     <div class="synthesis-header">
@@ -1294,7 +1289,7 @@ body::before {
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       5. FOOTER — Compact federation nav + seal
+        6. FOOTER — Compact federation nav + seal
        ═══════════════════════════════════════════════════════════ -->
   <footer class="dash-footer">
     <div class="footer-brand-cluster">
@@ -1318,432 +1313,94 @@ body::before {
 
 </div>
 
+
 <!-- ═══════════════════════════════════════════════════════════════
-     JAVASCRIPT — Chart, data hooks, interactivity
+     JAVASCRIPT — Breathing clock + TradingView chart init
      ═══════════════════════════════════════════════════════════════ -->
 <script>
 (function() {
   'use strict';
 
-  // ── Configuration ──
-  const CONFIG = {
-    // MCP endpoints for live data (placeholders)
-    MCP_WEALTH: 'https://wealth.arif-fazil.com/mcp',
-    MCP_ARIFOS: 'https://arifos.arif-fazil.com/mcp',
-    REFRESH_INTERVAL: 60000, // 1 minute
-    TIMEZONE: 'Asia/Kuala_Lumpur',
-  };
-
-  // ── Mock data generator (replace with MCP hooks) ──
-  function generateMockCandles(count, basePrice) {
-    const candles = [];
-    let price = basePrice;
-    const now = Math.floor(Date.now() / 1000);
-    const interval = 4 * 3600; // 4H candles
-
-    for (let i = count; i >= 0; i--) {
-      const time = now - (i * interval);
-      const volatility = 8 + Math.random() * 12;
-      const direction = Math.random() > 0.48 ? 1 : -1;
-      const open = price;
-      const close = price + (direction * volatility * Math.random());
-      const high = Math.max(open, close) + Math.random() * 5;
-      const low = Math.min(open, close) - Math.random() * 5;
-
-      candles.push({
-        time,
-        open: +open.toFixed(2),
-        high: +high.toFixed(2),
-        low: +low.toFixed(2),
-        close: +close.toFixed(2),
-      });
-
-      price = close;
-    }
-    return candles;
-  }
-
-  function calculateEMA(candles, period) {
-    const k = 2 / (period + 1);
-    const emaData = [];
-    let ema = candles[0].close;
-
-    for (let i = 0; i < candles.length; i++) {
-      if (i < period - 1) {
-        ema = candles.slice(0, i + 1).reduce((s, c) => s + c.close, 0) / (i + 1);
-      } else {
-        ema = candles[i].close * k + ema * (1 - k);
-      }
-      emaData.push({
-        time: candles[i].time,
-        value: +ema.toFixed(2),
-      });
-    }
-    return emaData;
-  }
-
-  // ── Chart initialization ──
-  const chartContainer = document.getElementById('mainChart');
-  const chart = LightweightCharts.createChart(chartContainer, {
-    layout: {
-      background: { type: 'solid', color: '#0d0d1a' },
-      textColor: '#6a6050',
-      fontFamily: "'IBM Plex Mono', monospace",
-      fontSize: 11,
-    },
-    grid: {
-      vertLines: { color: 'rgba(30,30,50,0.5)' },
-      horzLines: { color: 'rgba(30,30,50,0.5)' },
-    },
-    crosshair: {
-      mode: LightweightCharts.CrosshairMode.Normal,
-      vertLine: {
-        color: 'rgba(201,168,76,0.3)',
-        width: 1,
-        style: LightweightCharts.LineStyle.Dashed,
-      },
-      horzLine: {
-        color: 'rgba(201,168,76,0.3)',
-        width: 1,
-        style: LightweightCharts.LineStyle.Dashed,
-      },
-    },
-    rightPriceScale: {
-      borderColor: '#1e1e32',
-      scaleMargins: { top: 0.1, bottom: 0.1 },
-    },
-    timeScale: {
-      borderColor: '#1e1e32',
-      timeVisible: true,
-      secondsVisible: false,
-    },
-    handleScroll: { vertTouchDrag: false },
-  });
-
-  // ── Candlestick series ──
-  const candleSeries = chart.addCandlestickSeries({
-    upColor: '#22c55e',
-    downColor: '#ef4444',
-    borderUpColor: '#22c55e',
-    borderDownColor: '#ef4444',
-    wickUpColor: '#22c55e',
-    wickDownColor: '#ef4444',
-  });
-
-  // ── Generate and set data (base near live price from WEALTH MCP) ──
-  const candles = generateMockCandles(120, 4040);
-  candleSeries.setData(candles);
-
-  // ── EMA lines ──
-  const ema20Data = calculateEMA(candles, 20);
-  const ema50Data = calculateEMA(candles, 50);
-  const ema200Data = calculateEMA(candles, 100); // Using 100 as proxy for 200 with limited data
-
-  const ema20Series = chart.addLineSeries({
-    color: '#f59e0b',
-    lineWidth: 1,
-    crosshairMarkerVisible: false,
-    priceLineVisible: false,
-    lastValueVisible: false,
-  });
-  ema20Series.setData(ema20Data);
-
-  const ema50Series = chart.addLineSeries({
-    color: '#3b82f6',
-    lineWidth: 1,
-    crosshairMarkerVisible: false,
-    priceLineVisible: false,
-    lastValueVisible: false,
-  });
-  ema50Series.setData(ema50Data);
-
-  const ema200Series = chart.addLineSeries({
-    color: '#a855f7',
-    lineWidth: 1,
-    lineStyle: LightweightCharts.LineStyle.Dashed,
-    crosshairMarkerVisible: false,
-    priceLineVisible: false,
-    lastValueVisible: false,
-    visible: false,
-  });
-  ema200Series.setData(ema200Data);
-
-  // ── S/R levels (price lines — near current gold price) ──
-  const srLevels = [
-    { price: 4020, color: '#22c55e', title: 'S1', style: LightweightCharts.LineStyle.Dashed },
-    { price: 3980, color: '#22c55e', title: 'S2', style: LightweightCharts.LineStyle.Dotted },
-    { price: 4100, color: '#ef4444', title: 'R1', style: LightweightCharts.LineStyle.Dashed },
-    { price: 4150, color: '#ef4444', title: 'R2', style: LightweightCharts.LineStyle.Dotted },
-  ];
-
-  srLevels.forEach(sr => {
-    candleSeries.createPriceLine({
-      price: sr.price,
-      color: sr.color,
-      lineWidth: 1,
-      lineStyle: sr.style,
-      axisLabelVisible: true,
-      title: sr.title,
-    });
-  });
-
-  // ── Fit content ──
-  chart.timeScale().fitContent();
-
-  // ── Resize handler ──
-  const resizeObserver = new ResizeObserver(entries => {
-    for (const entry of entries) {
-      const { width, height } = entry.contentRect;
-      chart.applyOptions({ width, height });
-    }
-  });
-  resizeObserver.observe(chartContainer);
-
-  // ── EMA toggle ──
-  window.toggleEMA = function(btn) {
-    const period = btn.dataset.ema;
-    btn.classList.toggle('active');
-    const isActive = btn.classList.contains('active');
-
-    if (period === '20') ema20Series.applyOptions({ visible: isActive });
-    if (period === '50') ema50Series.applyOptions({ visible: isActive });
-    if (period === '200') ema200Series.applyOptions({ visible: isActive });
-  };
-
-  // ── Timeframe selector ──
-  window.selectTF = function(btn) {
-    document.querySelectorAll('.tf-pill').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    // In production: fetch new data for selected timeframe
-    // For now: regenerate mock data with different volatility
-    const tf = btn.dataset.tf;
-    const volMap = { '1H': 4, '4H': 8, '1D': 16, '1W': 30 };
-    const vol = volMap[tf] || 8;
-    const newCandles = generateMockCandles(120, candles[candles.length - 1].close);
-    candleSeries.setData(newCandles);
-    chart.timeScale().fitContent();
-  };
-
-  // ── Stance buttons ──
-  document.querySelectorAll('.stance-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.stance-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-
-  // ── Timestamp updater ──
-  function updateTimestamp() {
+  // ── BREATHING CLOCK ──
+  function updateClock() {
     const now = new Date();
-    const formatted = now.toLocaleString('en-MY', {
-      timeZone: CONFIG.TIMEZONE,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
+    const timeStr = now.toLocaleTimeString('en-MY', {
+      timeZone: 'Asia/Kuala_Lumpur',
       hour: '2-digit',
       minute: '2-digit',
-      hour12: false,
+      second: '2-digit',
+      hour12: false
     });
-    document.getElementById('pulseTimestamp').textContent = formatted + ' MYT';
+    const el = document.getElementById('breathingClock');
+    if (el) el.textContent = timeStr;
+
+    // CANON Day: days since 2026-06-10 (CANON Day 1)
+    const canonEpoch = new Date('2026-06-10T00:00:00+08:00');
+    const canonDay = Math.floor((now - canonEpoch) / (1000 * 60 * 60 * 24)) + 1;
+    const canonEl = document.getElementById('canonDay');
+    if (canonEl) canonEl.textContent = 'CANON Day ' + canonDay + ' · Y' + (now.getFullYear() - 2025);
   }
-  updateTimestamp();
-  setInterval(updateTimestamp, 30000);
+  updateClock();
+  setInterval(updateClock, 1000);
 
-  // ═══════════════════════════════════════════════════════════════
-  // LIVE MCP DATA HOOKS — Active integration with WEALTH organ
-  // Calls: capital_market(mode="gold") via WEALTH MCP endpoint
-  // ═══════════════════════════════════════════════════════════════
-
-  let mcpRequestId = 1;
-  let lastGoldData = null;
-
-  /**
-   * Call WEALTH MCP tool via streamable-http transport.
-   * @param {string} toolName - MCP tool name
-   * @param {object} args - Tool arguments
-   * @returns {Promise<object>} Tool result
-   */
-  async function callWealthMCP(toolName, args) {
-    const resp = await fetch(CONFIG.MCP_WEALTH, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify({
-        jsonrpc: '2.0',
-        method: 'tools/call',
-        params: { name: toolName, arguments: args },
-        id: mcpRequestId++,
-      }),
-    });
-    if (!resp.ok) throw new Error(`MCP ${resp.status}: ${resp.statusText}`);
-    const data = await resp.json();
-    if (data.error) throw new Error(data.error.message || JSON.stringify(data.error));
-    return data.result;
-  }
-
-  /**
-   * Fetch gold snapshot from WEALTH capital_market tool.
-   * Falls back to cached data on failure (F7: surface uncertainty).
-   *
-   * WEALTH MCP response structure:
-   *   { result: { content: [{ type: "text", text: "<JSON string>" }] } }
-   * The JSON string contains the full envelope with .result.snapshot, .result.signals, etc.
-   */
-  async function fetchGoldSnapshot() {
-    try {
-      const mcpResult = await callWealthMCP('capital_market', {
-        mode: 'gold',
-        commodity: 'snapshot',
+  // ── TRADINGVIEW ADVANCED CHART ──
+  const tvContainer = document.getElementById('tradingviewChart');
+  if (tvContainer) {
+    const widgetDiv = tvContainer.querySelector('.tradingview-widget-container__widget');
+    if (widgetDiv) {
+      const script = document.createElement('script');
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+      script.type = 'text/javascript';
+      script.async = true;
+      script.innerHTML = JSON.stringify({
+        autosize: true,
+        symbol: 'OANDA:XAUUSD',
+        interval: '60',
+        timezone: 'Asia/Kuala_Lumpur',
+        theme: 'dark',
+        style: '1',
+        locale: 'en',
+        enable_publishing: false,
+        allow_symbol_change: true,
+        calendar: false,
+        support_host: 'https://www.tradingview.com',
+        backgroundColor: '#0d0d1a',
+        gridColor: 'rgba(30,30,50,0.5)',
+        hide_top_toolbar: false,
+        hide_legend: false,
+        save_image: false,
+        details: true,
+        hotlist: true,
       });
-      // MCP content array → text → parse
-      if (mcpResult && mcpResult.content && mcpResult.content.length > 0) {
-        const textContent = mcpResult.content.find(c => c.type === 'text');
-        if (textContent && textContent.text) {
-          const envelope = JSON.parse(textContent.text);
-          // The envelope has .result which contains the gold data
-          lastGoldData = envelope;
-          return envelope;
-        }
-      }
-      // Fallback: try structuredContent directly
-      if (mcpResult && mcpResult.structuredContent) {
-        lastGoldData = mcpResult.structuredContent;
-        return mcpResult.structuredContent;
-      }
-      return lastGoldData;
-    } catch (err) {
-      console.warn('[Gold Dashboard] MCP fetch failed, using cached:', err.message);
-      document.querySelector('.pulse-meta .live-dot').style.background = 'var(--red)';
-      return lastGoldData;
+      widgetDiv.appendChild(script);
     }
   }
 
-  /**
-   * Update pulse bar with live gold data.
-   * Maps WEALTH capital_market(gold,snapshot) response to dashboard elements.
-   *
-   * Response structure from WEALTH MCP:
-   *   result.content[0].text → JSON string with:
-   *     .result.snapshot.XAU_USD.value  = price in USD/oz
-   *     .result.snapshot.XAU_MYR_GRAM   = MYR per gram
-   *     .result.signals[]               = signal array
-   *     .result.snapshot.XAU_USD.source = data source
-   */
-  function updatePulseBar(data) {
-    if (!data) return;
-
-    // Navigate the WEALTH MCP envelope
-    const r = data.result || data;
-    const snap = r.snapshot || {};
-    const xauUsd = snap.XAU_USD || {};
-    const price = xauUsd.value || r.price;
-
-    // Extract daily_move signal for change data
-    const signals = r.signals || [];
-    const dailyMove = signals.find(s => s.signal_type === 'daily_move');
-    const changePct = dailyMove ? dailyMove.value : null;
-
-    if (price) {
-      document.getElementById('pulsePrice').textContent = '$' + Number(price).toLocaleString('en-US', {
-        minimumFractionDigits: 2, maximumFractionDigits: 2
-      });
-
-      // Compute approximate change from percentage if available
-      if (changePct !== null) {
-        const change = price * (changePct / 100);
+  // ── PULSE BAR — Live price from snapshot API ──
+  function updatePulse() {
+    fetch('/gold/api/snapshot')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data || !data.asset) return;
+        const a = data.asset;
+        const priceEl = document.getElementById('pulsePrice');
         const deltaEl = document.getElementById('pulseDelta');
-        const pctEl = document.getElementById('pulsePct');
-        const isUp = change >= 0;
-        deltaEl.textContent = (isUp ? '+' : '') + Number(change).toFixed(2);
-        deltaEl.className = 'pulse-delta ' + (isUp ? 'up' : 'down');
-        pctEl.textContent = '(' + (isUp ? '+' : '') + Number(changePct).toFixed(2) + '%)';
-      }
-    }
-
-    // Source attribution (F2 Truth)
-    const source = xauUsd.source || 'WEALTH MCP';
-    const observedAt = xauUsd.observed_at;
-    const metaEl = document.getElementById('pulseTimestamp');
-    if (observedAt) {
-      const obsDate = new Date(observedAt);
-      const formatted = obsDate.toLocaleString('en-MY', {
-        timeZone: CONFIG.TIMEZONE, year: 'numeric', month: '2-digit',
-        day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false,
-      });
-      metaEl.textContent = formatted + ' MYT · ' + source;
-    }
+        const biasEl = document.getElementById('pulseBias');
+        if (priceEl && a.price) priceEl.textContent = '$' + Number(a.price).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+        if (deltaEl && a.change != null) {
+          const dir = a.change >= 0 ? 'up' : 'down';
+          const sign = a.change >= 0 ? '+' : '';
+          deltaEl.textContent = sign + Number(a.change).toFixed(2);
+          deltaEl.className = 'pulse-delta ' + dir;
+        }
+        if (biasEl && a.bias) biasEl.textContent = a.bias;
+      })
+      .catch(() => {});
   }
+  updatePulse();
+  setInterval(updatePulse, 60000);
 
-  /**
-   * Update synthesis section from gold data.
-   * Uses WEALTH MCP epistemic metadata for calibrated confidence.
-   */
-  function updateSynthesis(data) {
-    if (!data) return;
-    const r = data.result || data;
-
-    // Derive bias from signals
-    const signals = r.signals || [];
-    const dailyMove = signals.find(s => s.signal_type === 'daily_move');
-    const severity = dailyMove ? dailyMove.severity : null;
-    const regimeLabel = dailyMove ? dailyMove.regime_label : null;
-
-    // Map severity to bias
-    if (severity === 'caution' || severity === 'warning') {
-      const biasEl = document.getElementById('biasPill');
-      biasEl.textContent = regimeLabel === 'active' ? 'Caution — Active' : 'Caution';
-      biasEl.className = 'bias-pill neutral';
-    }
-
-    // Use evidence_quality from epistemic metadata for confluence
-    const eq = r.evidence_quality || 'MODERATE';
-    const confMap = { 'STRONG': 85, 'MODERATE': 65, 'WEAK': 40, 'OBSERVED': 70 };
-    const confPct = confMap[eq] || 55;
-
-    document.getElementById('confluenceScore').textContent = confPct + '%';
-    document.getElementById('confluenceBar').style.width = confPct + '%';
-    document.getElementById('confluenceBar').className = 'confluence-bar-fill ' + (confPct >= 65 ? 'high' : confPct >= 40 ? 'med' : 'low');
-    document.getElementById('biasConfluence').textContent = confPct + '% Confluence · ' + eq;
-
-    // Update XAU/MYR in the world driver if available
-    const snap = r.snapshot || {};
-    if (snap.XAU_MYR_GRAM) {
-      const myrGram = snap.XAU_MYR_GRAM;
-      const driverEl = document.getElementById('pulseDriver');
-      driverEl.innerHTML = '<strong>XAU/MYR:</strong> RM ' + Number(myrGram.value).toFixed(2) + '/gram · Source: ' + (myrGram.source || 'WEALTH');
-    }
-  }
-
-  /**
-   * Main refresh cycle — fetch gold data and update dashboard.
-   */
-  async function refreshDashboard() {
-    const liveDot = document.querySelector('.pulse-meta .live-dot');
-    if (liveDot) liveDot.style.background = 'var(--amber)'; // fetching indicator
-
-    const data = await fetchGoldSnapshot();
-
-    if (data) {
-      updatePulseBar(data);
-      updateSynthesis(data);
-      console.log('[Gold Dashboard] Live data refreshed from WEALTH MCP.');
-    } else {
-      console.log('[Gold Dashboard] Using default data — MCP not yet responsive.');
-    }
-
-    if (liveDot) liveDot.style.background = 'var(--green)'; // back to live
-  }
-
-  // Initial fetch
-  refreshDashboard();
-
-  // Auto-refresh every 5 minutes (gold doesn't need sub-minute)
-  setInterval(refreshDashboard, CONFIG.REFRESH_INTERVAL);
-
-  console.log('[Gold Dashboard] LIVE — MCP hooks active.');
-  console.log('[Gold Dashboard] Endpoint:', CONFIG.MCP_WEALTH);
+  console.log('[Gold Dashboard] LIVE — TradingView Advanced Chart + Breathing Clock.');
   console.log('[Gold Dashboard] 999 SEAL ALIVE — Ditempa Bukan Diberi');
 
 })();

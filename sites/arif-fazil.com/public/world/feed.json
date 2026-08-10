@@ -1,0 +1,107 @@
+{
+  "schema": "arifOS-world-feed-v1",
+  "epoch": "2026-08-10T19:15:00+08:00",
+  "generated_by": "WEALTH organ · arif-fazil.com/world/feed.json",
+  "source": "Stooq CSV + Open Exchange Rates + seeded [OBS] values",
+  "epistemic_key": {
+    "OBS": "observed from live exchange or audited source",
+    "DER": "derived from OBS inputs",
+    "INT": "engine interpretation",
+    "SPEC": "model construction — parameters, not facts"
+  },
+  "signals": [
+    {
+      "id": "brent-crude",
+      "type": "commodity",
+      "name": "Brent Crude",
+      "symbol": "BRENT.USD",
+      "price_usd": 87.38,
+      "epistemic": "OBS",
+      "my_relevance": "DIRECT",
+      "source": "Stooq / exchange",
+      "note": "Master variable for PETRONAS CFFO. ±$10 ≈ ±RM6.0B FCF."
+    },
+    {
+      "id": "gold-xau",
+      "type": "commodity",
+      "name": "Gold",
+      "symbol": "XAUUSD",
+      "price_usd": 4244,
+      "epistemic": "OBS",
+      "my_relevance": "DIRECT",
+      "source": "Stooq / exchange",
+      "note": "Fiat-confidence thermometer. +26% YoY."
+    },
+    {
+      "id": "usd-myr",
+      "type": "fx",
+      "name": "USD/MYR",
+      "symbol": "USDMYR",
+      "price": 4.0900,
+      "epistemic": "OBS",
+      "my_relevance": "DIRECT",
+      "source": "Open Exchange Rates",
+      "note": "Sovereign exchange. Tripwire: 4.50 (fiscal stress)."
+    },
+    {
+      "id": "klci",
+      "type": "index",
+      "name": "FBM KLCI",
+      "symbol": "KLSE:KLSE",
+      "price": 1748.17,
+      "epistemic": "OBS",
+      "my_relevance": "DIRECT",
+      "source": "Stooq / BURSA",
+      "note": "Malaysian equity benchmark. Support: 1,725."
+    },
+    {
+      "id": "dxy",
+      "type": "index",
+      "name": "US Dollar Index",
+      "symbol": "DXY",
+      "price": 99.68,
+      "epistemic": "OBS",
+      "my_relevance": "INDIRECT",
+      "source": "Stooq / exchange",
+      "note": "Soft USD = firmer ringgit + gold support."
+    },
+    {
+      "id": "petronas-extraction",
+      "type": "institutional",
+      "name": "PETRONAS Sovereign Extraction",
+      "value_pct": 70.5,
+      "epistemic": "OBS",
+      "my_relevance": "DIRECT",
+      "source": "FY2025 audited IFR",
+      "note": "Dividend RM32.0B / PAT RM45.4B. 65% pacemaker breached. AMEND-2026-08-03-001 active."
+    },
+    {
+      "id": "petronas-net-cash",
+      "type": "institutional",
+      "name": "PETRONAS Net Cash",
+      "value_rm_b": 82.8,
+      "epistemic": "OBS",
+      "my_relevance": "DIRECT",
+      "source": "FY2025 audited IFR",
+      "note": "Solvency intact. Gearing 20.7%."
+    },
+    {
+      "id": "imf-global-inflation",
+      "type": "macro",
+      "name": "Global Inflation 2026f",
+      "value_pct": 4.7,
+      "epistemic": "DER",
+      "my_relevance": "INDIRECT",
+      "source": "IMF WEO July 2026",
+      "note": "Declining to 3.9% in 2027f."
+    }
+  ],
+  "tripwires": {
+    "brent_fcf_zero": 71.60,
+    "brent_cffo_floor": 47.40,
+    "usdmyr_stress": 4.50,
+    "petronas_extraction_pacemaker": 65.0,
+    "petronas_extraction_exit": 55.0
+  },
+  "updated_at": "2026-08-10T19:15:00+08:00"
+}

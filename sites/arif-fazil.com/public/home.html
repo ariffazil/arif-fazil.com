@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-ring="SOUL" data-surface="home" data-zen="breathing">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARIF FAZIL — The Arrow of Time</title>
+<meta name="theme-color" content="#0A0B0D">
+<meta name="description" content="Arif Fazil — geoscientist, economist, and AI governance architect. The arrow of time only flies forward. Ditempa bukan diberi.">
+<meta name="author" content="Muhammad Arif bin Fazil">
+<link rel="canonical" href="https://arif-fazil.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,700,800&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ψ</text></svg>">
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="mcp" href="https://mcp.arif-fazil.com/mcp" type="application/json">
+<link rel="agent" href="/.well-known/agent.json" type="application/json">
+<link rel="identity" href="/.well-known/identity.json" type="application/json">
+<link rel="alternate" type="application/rss+xml" title="MakcikGPT — Civic Intelligence" href="/feed.xml">
+
+<meta property="og:title" content="ARIF FAZIL — The Arrow of Time">
+<meta property="og:description" content="Basin analysis, seismic interpretation, prospect evaluation under real uncertainty. Builder of arifOS — a constitutional AI governance kernel. Based in Malaysia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arif-fazil.com">
+<meta property="og:image" content="https://arif-fazil.com/og-identity.svg">
+<meta property="og:image:alt" content="arif-fazil.com identity mark (AF monogram — no portrait)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ARIF FAZIL — The Arrow of Time">
+<meta name="twitter:description" content="Basin analysis, seismic interpretation, and prospect evaluation. Builder of arifOS. Based in Malaysia.">
+<meta name="twitter:image" content="https://arif-fazil.com/og-identity.svg">
+
+<style>
+  /* ═══════════════ ZEN VARIABLES — ΔS ≤ 0 ═══════════════ */
+  :root {
+    --bg: #0A0B0D;
+    --bg-card: #111318;
+    --bg-card-hover: #161920;
+    --ink: #E8E6E1;
+    --ink-dim: #8A8578;
+    --gold: #C9A227;
+    --gold-dim: #8B7420;
+    --ember: #E4572E;
+    --teal: #4FC3F7;
+    --violet: #9B72CF;
+    --line: #1E232A;
+    --line-hover: #2A2F38;
+    --font-display: 'DM Serif Display', 'Fraunces', Georgia, serif;
+    --font-body: 'Cabinet Grotesk', 'Satoshi', 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+    --breath-inhale: 4s;
+    --breath-exhale: 4s;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ═══════════════ NAV ═══════════════ */
+  .nav {
+    position: sticky; top:0; z-index:100;
+    display:flex; align-items:center; gap:1.5rem;
+    padding:0.75rem 1.5rem;
+    background:rgba(10,11,13,0.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .nav-brand { font-family:var(--font-display); font-size:15px; color:var(--ink); letter-spacing:0.02em; text-transform:none; margin-right:auto; }
+  .nav a:not(.nav-brand) { color:var(--ink-dim); transition:color 0.2s; }
+  .nav a:not(.nav-brand):hover { color:var(--gold); text-decoration:none; }
+  .nav a.here { color:var(--gold); }
+
+  /* ═══════════════ BREATHING HERO ═══════════════ */
+  .hero {
+    min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:2rem 1.5rem 3rem;
+    max-width:960px; margin:0 auto;
+    position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 30%, rgba(228,87,46,0.06), transparent 65%);
+    pointer-events:none;
+  }
+  .clock-surface {
+    font-family:var(--font-mono);
+    display:flex; align-items:baseline; gap:0.6rem;
+    margin-bottom:0.5rem;
+    position:relative; z-index:1;
+  }
+  .clock-time {
+    font-size:clamp(2.5rem, 8vw, 6rem);
+    font-weight:300; letter-spacing:-0.02em;
+    color:var(--ink); line-height:1;
+    animation: clock-breathe var(--breath-inhale) ease-in-out infinite alternate;
+  }
+  @keyframes clock-breathe {
+    0%   { text-shadow:0 0 0px rgba(228,87,46,0); }
+    100% { text-shadow:0 0 18px rgba(228,87,46,0.12); }
+  }
+  .clock-tz {
+    font-size:clamp(0.7rem, 1.8vw, 1rem);
+    font-weight:400; color:var(--ember);
+    letter-spacing:0.12em; text-transform:uppercase;
+    animation: tz-fade 5s ease-in-out infinite;
+  }
+  @keyframes tz-fade {
+    0%,100% { opacity:1; } 50% { opacity:0.5; }
+  }
+  .clock-sep { animation: sep-pulse 1s step-end infinite; color:var(--ember); font-weight:300; }
+  @keyframes sep-pulse { 0%,100%{opacity:1} 50%{opacity:0.15} }
+
+  .identity-anchor { position:relative; z-index:1; margin-top:1rem; }
+  .identity-name {
+    font-family:var(--font-display);
+    font-size:clamp(3rem, 10vw, 7rem);
+    font-weight:400; line-height:0.9; letter-spacing:-0.03em;
+    color:var(--ink);
+    animation: name-breathe var(--breath-inhale) ease-in-out infinite alternate;
+    animation-delay:0.3s;
+  }
+  @keyframes name-breathe { 0%{transform:translateY(0)} 100%{transform:translateY(-2px)} }
+  .identity-mission {
+    margin-top:1rem; max-width:52ch;
+    font-size:clamp(1rem, 2.5vw, 1.35rem);
+    line-height:1.4; color:#C4C2BD; font-weight:300;
+    position:relative; z-index:1;
+  }
+  .identity-mission strong { color:var(--ink); font-weight:500; }
+
+  .fed-strip {
+    display:flex; flex-wrap:wrap; gap:0.4rem 1.2rem;
+    margin-top:2rem;
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.06em;
+    position:relative; z-index:1;
+  }
+  .fed-strip a { color:var(--ink-dim); transition:color 0.2s; }
+  .fed-strip a:hover { color:var(--gold); text-decoration:none; }
+  .fed-sep { color:var(--line-hover); user-select:none; }
+
+  .proof {
+    display:flex; flex-wrap:wrap; gap:2.5rem;
+    margin-top:1.5rem; padding-top:1.5rem;
+    border-top:1px solid var(--line);
+    position:relative; z-index:1;
+  }
+  .proof-item { display:flex; align-items:baseline; gap:0.5rem; }
+  .proof-num { font-family:var(--font-mono); font-size:2rem; font-weight:700; line-height:1; color:var(--ink); }
+  .proof-num.ember { color:var(--ember); }
+  .proof-label { font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-dim); }
+
+  .pull-quote {
+    max-width:960px; margin:0 auto;
+    padding:1.5rem 1.5rem 2.5rem;
+    border-left:3px solid var(--gold); padding-left:1.5rem;
+  }
+  .pull-quote p { font-family:var(--font-display); font-style:italic; font-size:clamp(1rem,2vw,1.25rem); color:#A8A5A0; line-height:1.5; }
+  .pull-quote cite { display:block; margin-top:0.5rem; font-family:var(--font-mono); font-style:normal; font-size:11px; color:var(--ink-dim); letter-spacing:0.04em; }
+
+  /* ═══════════════ HUBS ═══════════════ */
+  .hubs { max-width:960px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .hubs-label { font-family:var(--font-mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:1.5rem; }
+  .hub-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .hub-card { background:var(--bg-card); padding:1.5rem; transition:background 0.2s; display:flex; flex-direction:column; gap:0.5rem; }
+  .hub-card:hover { background:var(--bg-card-hover); text-decoration:none; }
+  .hub-kicker { font-family:var(--font-mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); }
+  .hub-title { font-family:var(--font-display); font-size:1.4rem; color:var(--ink); line-height:1.2; }
+  .hub-desc { font-size:0.85rem; color:var(--ink-dim); line-height:1.5; }
+  .hub-arrow { font-family:var(--font-mono); font-size:12px; color:var(--gold-dim); margin-top:auto; padding-top:0.5rem; }
+  .hub-card:hover .hub-arrow { color:var(--gold); }
+
+  .disco { max-width:960px; margin:0 auto; padding:0 1.5rem 2rem; }
+  .disco-row { display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; font-family:var(--font-mono); font-size:12px; margin-top:1rem; }
+  .disco-row:first-child { margin-top:0; }
+  .disco-label { color:var(--ink-dim); letter-spacing:0.08em; text-transform:uppercase; width:100%; margin-bottom:0.25rem; }
+
+  .zen-pulse { max-width:960px; margin:0 auto; padding:0 1.5rem 3rem; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  .zen-col h3 { font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
+  .zen-col p { font-size:0.82rem; color:var(--ink-dim); line-height:1.5; }
+
+  footer {
+    max-width:960px; margin:0 auto;
+    padding:2rem 1.5rem 3rem;
+    border-top:1px solid var(--line);
+    font-family:var(--font-mono); font-size:11px; color:var(--ink-dim);
+    letter-spacing:0.04em;
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem;
+  }
+  footer a { color:var(--ink-dim); }
+  footer a:hover { color:var(--gold); }
+
+  @media (max-width:720px) {
+    .nav { gap:0.75rem; flex-wrap:wrap; }
+    .hub-grid { grid-template-columns:1fr; }
+    .zen-pulse { grid-template-columns:1fr; }
+    .proof { flex-direction:column; gap:1rem; }
+    .fed-strip { gap:0.3rem 0.8rem; font-size:11px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    *,*::before,*::after { animation:none!important; transition:none!important; }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="sr-only" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <a href="/" class="nav-brand">ARIF FAZIL</a>
+  <a href="/earth/">Earth</a>
+  <a href="/words/">Words</a>
+  <a href="/world/">World</a>
+  <a href="/work/">Work</a>
+  <a href="/999/">Proof</a>
+  <a href="/aaa/cockpit/">Cockpit</a>
+  <a href="/connect/">Connect</a>
+</nav>
+
+<main id="main-content">
+  <!-- ══════════ BREATHING HERO ══════════ -->
+  <section class="hero">
+    <div>
+      <div class="clock-surface" aria-live="polite" aria-label="Current time in Kuala Lumpur">
+        <span class="clock-time" id="clock-h">--</span>
+        <span class="clock-sep clock-time" id="clock-s1">:</span>
+        <span class="clock-time" id="clock-m">--</span>
+        <span class="clock-sep clock-time" id="clock-s2">:</span>
+        <span class="clock-time" id="clock-s">--</span>
+        <span class="clock-tz">MYT</span>
+      </div>
+
+      <div class="identity-anchor">
+        <h1 class="identity-name">ARIF FAZIL.</h1>
+        <p class="identity-mission">
+          <strong>Builds constitutionally-governed AI systems.</strong>
+          Same discipline that makes oil wells flow, applied to making AI trustworthy.
+        </p>
+      </div>
+
+      <div class="fed-strip">
+        <a href="/earth/">⛰ Earth</a><span class="fed-sep">·</span>
+        <a href="/words/">☴ Words</a><span class="fed-sep">·</span>
+        <a href="/world/">◎ World</a><span class="fed-sep">·</span>
+        <a href="/work/">⚒ Work</a><span class="fed-sep">·</span>
+        <a href="/999/">Ψ Proof</a><span class="fed-sep">·</span>
+        <a href="/aaa/cockpit/">◈ Cockpit</a><span class="fed-sep">·</span>
+        <a href="/arifos/">Δ arifOS</a>
+      </div>
+
+      <div class="proof">
+        <div class="proof-item">
+          <span class="proof-num">13</span>
+          <span class="proof-label">yrs exploration geoscience · PETRONAS</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-num ember">4/4</span>
+          <span class="proof-label">wells led have flowed</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-num">13</span>
+          <span class="proof-label">constitutional floors · F1–F13</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pull-quote">
+    <p>"The arrow of time only flies forward. The question is whether we fly with it."</p>
+    <cite>T. S. Eliot, adapted</cite>
+  </div>
+
+  <section class="hubs">
+    <div class="hubs-label">Five surfaces · one federation</div>
+    <div class="hub-grid">
+      <a href="/earth/" class="hub-card">
+        <span class="hub-kicker">GEOX · Earth Intelligence</span>
+        <span class="hub-title">The Dynamic Earth</span>
+        <span class="hub-desc">Live geological intelligence. Macrostrat globe, basin analysis, seismic interpretation across offshore Malaysia.</span>
+        <span class="hub-arrow">→ /earth/ · /earth/malay-basin/ · /geox/apps/</span>
+      </a>
+      <a href="/words/" class="hub-card">
+        <span class="hub-kicker">arifOS · Doctrine</span>
+        <span class="hub-title">The Words</span>
+        <span class="hub-desc">Doctrine, constitution, and essays. 13 floors of governed intelligence. The law that binds every agent.</span>
+        <span class="hub-arrow">→ /words/ · /words/writing/ · /words/doctrine/</span>
+      </a>
+      <a href="/world/" class="hub-card">
+        <span class="hub-kicker">WEALTH · Capital Intelligence</span>
+        <span class="hub-title">The Live Map</span>
+        <span class="hub-desc">Capital intelligence. Oil, gold, gas, Ringgit, KLCI. Real-time sovereign economic cockpit.</span>
+        <span class="hub-arrow">→ /world/ · /world/economics/oil/ · /wealth/gold/</span>
+      </a>
+      <a href="/work/" class="hub-card">
+        <span class="hub-kicker">WELL · Human Vitality</span>
+        <span class="hub-title">The Work</span>
+        <span class="hub-desc">13 years exploration geoscience. 4/4 wells flowed. Resume, missions, and field proof.</span>
+        <span class="hub-arrow">→ /work/ · /work/resume/ · /work/wells/</span>
+      </a>
+      <a href="/999/" class="hub-card">
+        <span class="hub-kicker">VAULT999 · Immutable Proof</span>
+        <span class="hub-title">The Proof</span>
+        <span class="hub-desc">Live kernel attestation. Sealed receipts, organ health, constitutional verification. Reality, not claims.</span>
+        <span class="hub-arrow">→ /999/ · /999/verify · /999/vault/ · /999/floors/</span>
+      </a>
+      <a href="/aaa/cockpit/" class="hub-card">
+        <span class="hub-kicker">AAA · Control Plane</span>
+        <span class="hub-title">The Cockpit</span>
+        <span class="hub-desc">Federation command centre. Agent registry, live observatory, judge interface, and A2A gateway.</span>
+        <span class="hub-arrow">→ /aaa/cockpit/ · /aaa/apps/ · /aaa/agents/</span>
+      </a>
+      <a href="/arifos/" class="hub-card">
+        <span class="hub-kicker">arifOS · Constitutional Kernel</span>
+        <span class="hub-title">The OS</span>
+        <span class="hub-desc">13-floor constitutional AI kernel. Findings, organ pages, and verified release attestations.</span>
+        <span class="hub-arrow">→ /arifos/ · /arifos/findings/ · /arifos/organs/</span>
+      </a>
+      <a href="/world/makcikgpt/" class="hub-card">
+        <span class="hub-kicker">MakcikGPT · Civic Intel</span>
+        <span class="hub-title">MakcikGPT</span>
+        <span class="hub-desc">Civic intelligence for Malaysia — politics, propaganda, and shadow analysis. Unfiltered signal.</span>
+        <span class="hub-arrow">→ /world/makcikgpt/ · /world/politics/ · /world/propa/</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="disco">
+    <div class="disco-row"><span class="disco-label">GEOX / Earth</span><a href="/earth/">Earth Hub</a> · <a href="/earth/malay-basin/">Malay Basin</a> · <a href="/earth/kinabalu-basin/">Kinabalu Basin</a> · <a href="/geox/apps/">GEOX Apps</a> · <a href="/geox/apps/ac-risk/">AC Risk</a> · <a href="/geox/apps/seismic-review/">Seismic Review</a></div>
+    <div class="disco-row"><span class="disco-label">Words / Writing / Doctrine</span><a href="/words/">Words Hub</a> · <a href="/words/writing/">All Essays</a> · <a href="/words/doctrine/">Doctrine</a> · <a href="/words/constitution/">Constitution</a> · <a href="/words/essays/">Essays</a></div>
+    <div class="disco-row"><span class="disco-label">World / Markets / Capital</span><a href="/world/">World Hub</a> · <a href="/world/economics/oil/">Oil</a> · <a href="/world/economics/gas/">Gas</a> · <a href="/world/economics/gold/">Gold</a> · <a href="/world/economics/klci/">KLCI</a> · <a href="/world/economics/usdmyr/">USDMYR</a> · <a href="/world/vitals/">Vitals</a> · <a href="/wealth/">WEALTH</a> · <a href="/wealth/gold/">WEALTH Gold</a></div>
+    <div class="disco-row"><span class="disco-label">Work / Resume</span><a href="/work/">Work Hub</a> · <a href="/work/resume/">Resume</a> · <a href="/work/wells/">Wells</a> · <a href="/work/missions/">Missions</a> · <a href="/work/proof/">Work Proof</a></div>
+    <div class="disco-row"><span class="disco-label">Proof / Vault / 999</span><a href="/999/">999 Hub</a> · <a href="/999/verify">Verify</a> · <a href="/999/vault/">Vault</a> · <a href="/999/floors/">Floors</a> · <a href="/999/genesis/">Genesis</a> · <a href="/999/memory/">Memory</a> · <a href="/proof/">Proof</a> · <a href="/audit/">Audit</a></div>
+    <div class="disco-row"><span class="disco-label">AAA / Cockpit / Apps</span><a href="/aaa/">AAA</a> · <a href="/aaa/cockpit/">Cockpit</a> · <a href="/aaa/apps/">Apps</a> · <a href="/aaa/apps/observatory/">Observatory</a> · <a href="/aaa/apps/judge/">Judge</a> · <a href="/aaa/apps/forge/">Forge</a> · <a href="/aaa/agents/">Agents</a> · <a href="/aaa/briefings/">Briefings</a> · <a href="/aaa/mcp/">MCP</a></div>
+    <div class="disco-row"><span class="disco-label">arifOS / System</span><a href="/arifos/">arifOS</a> · <a href="/arifos/findings/">Findings</a> · <a href="/arifos/organs/geox/">GEOX Organ</a> · <a href="/arifos/organs/wealth/">WEALTH Organ</a> · <a href="/arifos/organs/well/">WELL Organ</a> · <a href="/arifos/verify/release/">Release Attestation</a></div>
+    <div class="disco-row"><span class="disco-label">Federation / Connect / Machine</span><a href="/federation/">Federation</a> · <a href="/connect/">Connect</a> · <a href="/governance/">Governance</a> · <a href="/canon/">Canon</a> · <a href="/charter/">Charter</a> · <a href="/pulse/">Pulse</a> · <a href="/vitals/">Vitals</a> · <a href="/read/">Read</a> · <a href="/wiki/">Wiki</a> · <a href="/000/">000</a> · <a href="/for-machines/">For Machines</a> · <a href="/llms.txt">llms.txt</a></div>
+  </section>
+
+  <div class="zen-pulse">
+    <div class="zen-col"><h3>Where am I?</h3><p>The landing page of a federation. Five organs, one constitution, zero BS. Start wherever the work pulls you.</p></div>
+    <div class="zen-col"><h3>Why care?</h3><p>Because F1–F13 are not blog posts. They are enforced constraints. The proof is at /999/.</p></div>
+    <div class="zen-col"><h3>What next?</h3><p>Read the <a href="/words/doctrine/">doctrine</a>. Watch the <a href="/earth">earth</a>. Track the <a href="/world">markets</a>. Verify the <a href="/999/verify">proof</a>.</p></div>
+  </div>
+</main>
+
+<footer>
+  <span>DITEMPA BUKAN DIBERI ⚒️ · <a href="/sitemap.xml">Sitemap</a></span>
+  <span><a href="/earth/">Earth</a> · <a href="/words/">Words</a> · <a href="/world/">World</a> · <a href="/work/">Work</a> · <a href="/999/">Proof</a> · <a href="/aaa/cockpit/">Cockpit</a> · <a href="/arifos/">arifOS</a> · <a href="/connect/">Connect</a> · <a href="/llms.txt">llms.txt</a> · <a href="/feed.xml">Feed</a> · <a href="/999/verify">/999/verify</a></span>
+</footer>
+
+<!-- ══════════ BREATHING CLOCK ══════════ -->
+<script>
+(function(){
+  var h=document.getElementById('clock-h');
+  var m=document.getElementById('clock-m');
+  var s=document.getElementById('clock-s');
+  var s1=document.getElementById('clock-s1');
+  var s2=document.getElementById('clock-s2');
+  if(!h||!m||!s) return;
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var now=new Date();
+    var kl=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Kuala_Lumpur'}));
+    var hh=kl.getHours(), mm=kl.getMinutes(), ss=kl.getSeconds();
+    if(h.textContent!==pad(hh)) h.textContent=pad(hh);
+    if(m.textContent!==pad(mm)) m.textContent=pad(mm);
+    if(s.textContent!==pad(ss)) s.textContent=pad(ss);
+    var blink=ss%2===0;
+    if(s1) s1.style.opacity=blink?'1':'0.15';
+    if(s2) s2.style.opacity=blink?'1':'0.15';
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>

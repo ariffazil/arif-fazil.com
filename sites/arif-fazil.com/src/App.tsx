@@ -62,8 +62,8 @@ function App() {
             <Route path="/world/makcikgpt/index" element={<Navigate to="/world/makcikgpt/" replace />} />
             <Route path="/world/makcikgpt/:slug" element={<MakcikGptArticle />} />
             {/* World → Commodities */}
-            <Route path="/world/oil" element={<CommodityPageOil />} />
-            <Route path="/world/gas" element={<CommodityPageGas />} />
+            <Route path="/world/oil" element={<Navigate to="/oil/" replace />} />
+            <Route path="/world/gas" element={<Navigate to="/gas/" replace />} />
             <Route path="/world/gold" element={<Navigate to="/wealth/gold/" replace />} />
             <Route path="/world/klci" element={<CommodityPageKlci />} />
             <Route path="/world/usdmyr" element={<CommodityPageUsdmyr />} />

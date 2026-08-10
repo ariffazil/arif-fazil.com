@@ -80,14 +80,21 @@
       "id": "F6",
       "name": "MARUAH",
       "name_alt": "EMPATHY",
+      "name_internal": "MARUAH",
+      "name_public": "EMPATHY",
       "type": "SOFT",
-      "status": "PENDING_F13",
-      "one_liner": "Dignity first, ASEAN/MY context",
+      "status": "SEALED_SOVEREIGN",
+      "one_liner": "Protect weakest stakeholder; preserve dignity (maruah)",
       "metric": "κᵣ ≥ 0.10 (OPS), κᵣ ≥ 0.70 (HUMAN)",
       "scale": "CONTINUOUS",
       "violation": "CAUTION — dignity breach",
-      "f13_question": "Doctrine page says MARUAH (dignity). Old canon (999_COMPLETE_LOOP) says EMPATHY — transposition correction F4/F6. Proposal: one floor seen from two directions — empathy is the kernel's inward sense; maruah is its outward law. SEAL as F6 MARUAH (Empathy kernel) → drift becomes feature: one name internal, one external, explicitly bound so there is never 'two F6' again.",
-      "f13_options": ["SEAL as MARUAH (Empathy kernel)", "SEAL as EMPATHY (Maruah law)", "SEAL as MARUAH-EMPATHY (dual-named)"]
+      "bridge": {
+        "pattern": "dual-registry, lossless",
+        "operational_layer": "kernel, logs, receipts, internal seams (MARUAH)",
+        "public_layer": "UI chips, prose, public-facing pages, chat (EMPATHY)",
+        "rendering_rule": "kernel + audit surfaces emit MARUAH; public surfaces render EMPATHY. Both names are valid in their layer.",
+        "sealed_by": "F13 SOVEREIGN 2026-07-24"
+      }
     },
     {
       "id": "F7",

@@ -1,21 +1,21 @@
 {
   "meta": {
-    "date": "2026-08-09",
-    "generated_at": "2026-08-09T15:00:02.126187+08:00",
-    "observed_at": "2026-08-09T07:01:03.012731+00:00",
+    "date": "2026-08-10",
+    "generated_at": "2026-08-10T15:00:03.693563+08:00",
+    "observed_at": "2026-08-10T07:02:46.793515+00:00",
     "source": "arifOS WEALTH \u2014 yfinance + FLAME (free-tier LLM)",
     "model_note": "Synth via FLAME free-tier mesh. Market data from yfinance."
   },
   "bursa": {
-    "klci_close": 1735.75,
-    "klci_change_pct": -0.08,
+    "klci_close": 1735.5400390625,
+    "klci_change_pct": -0.01,
     "most_active": null,
     "top_gainers_search": [],
     "source_urls": []
   },
   "ringgit": {
-    "usd_myr": 4.086999893188477,
-    "trend": "1 USD = 4.0870 MYR",
+    "usd_myr": 4.088500022888184,
+    "trend": "1 USD = 4.0885 MYR",
     "sources": []
   },
   "economy": {
@@ -32,7 +32,7 @@
     "youth_career": []
   },
   "oil_energy": {
-    "brent_price": 83.55000305175781,
+    "brent_price": 83.54000091552734,
     "malaysia_oil": [],
     "energy_transition": []
   },

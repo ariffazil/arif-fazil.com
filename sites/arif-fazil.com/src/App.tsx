@@ -30,7 +30,6 @@ import { PoliticsHub } from '@/pages/PoliticsHub';
 import { Missions } from '@/pages/Missions';
 function CommodityPageOil() { return <CommodityPage slug="oil" />; }
 function CommodityPageGas() { return <CommodityPage slug="gas" />; }
-function CommodityPageGold() { return <CommodityPage slug="gold" />; }
 function CommodityPageKlci() { return <CommodityPage slug="klci" />; }
 function CommodityPageUsdmyr() { return <CommodityPage slug="usdmyr" />; }
 
@@ -65,7 +64,7 @@ function App() {
             {/* World → Commodities */}
             <Route path="/world/oil" element={<CommodityPageOil />} />
             <Route path="/world/gas" element={<CommodityPageGas />} />
-            <Route path="/world/gold" element={<CommodityPageGold />} />
+            <Route path="/world/gold" element={<Navigate to="/wealth/gold/" replace />} />
             <Route path="/world/klci" element={<CommodityPageKlci />} />
             <Route path="/world/usdmyr" element={<CommodityPageUsdmyr />} />
             {/* World → Politics (legacy root-level kept for backcompat) */}
@@ -145,8 +144,8 @@ function App() {
             <Route path="/oil/" element={<CommodityPageOil />} />
             <Route path="/gas" element={<CommodityPageGas />} />
             <Route path="/gas/" element={<CommodityPageGas />} />
-            <Route path="/gold" element={<CommodityPageGold />} />
-            <Route path="/gold/" element={<CommodityPageGold />} />
+            <Route path="/gold" element={<Navigate to="/wealth/gold/" replace />} />
+            <Route path="/gold/" element={<Navigate to="/wealth/gold/" replace />} />
             <Route path="/klci" element={<CommodityPageKlci />} />
             <Route path="/klci/" element={<CommodityPageKlci />} />
             <Route path="/usdmyr" element={<CommodityPageUsdmyr />} />

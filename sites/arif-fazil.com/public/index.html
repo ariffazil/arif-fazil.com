@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-ring="SOUL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIF FAZIL — The Arrow of Time</title>
+    <meta name="theme-color" content="#0A0B0D" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,700,800&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ψ</text></svg>" />
+    <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+    <meta name="description" content="Arif Fazil — geoscientist, economist, and AI governance architect. The arrow of time only flies forward. Ditempa bukan diberi." />
+    <meta name="author" content="Muhammad Arif bin Fazil" />
+    <link rel="canonical" href="https://arif-fazil.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ARIF FAZIL — The Arrow of Time" />
+    <meta property="og:description" content="Basin analysis, seismic interpretation, and prospect evaluation under real uncertainty. Builder of arifOS — a constitutional AI governance kernel. Based in Malaysia." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arif-fazil.com" />
+    <meta property="og:image" content="https://arif-fazil.com/og-identity.svg" />
+    <meta property="og:image:alt" content="arif-fazil.com identity mark (AF monogram — no portrait)" />
+    <meta property="og:site_name" content="arif-fazil.com" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ARIF FAZIL — The Arrow of Time" />
+    <meta name="twitter:description" content="Basin analysis, seismic interpretation, and prospect evaluation. Builder of arifOS. Based in Malaysia." />
+    <meta name="twitter:image" content="https://arif-fazil.com/og-identity.svg" />
+    <meta name="twitter:image:alt" content="arif-fazil.com identity mark (AF monogram — no portrait)" />
+
+    <!-- Agent Discovery -->
+    <link rel="mcp" href="https://mcp.arif-fazil.com/mcp" type="application/json" />
+    <link rel="agent" href="/.well-known/agent.json" type="application/json" />
+    <link rel="identity" href="/.well-known/identity.json" type="application/json" />
+    <link rel="capability" href="/.well-known/capability.json" type="application/json" />
+    <link rel="policy" href="/policy.json" type="application/json" />
+    <link rel="knowledge" href="/knowledge/corpus.json" type="application/json" />
+    <link rel="webmcp" href="/.well-known/webmcp.json" type="application/json" />
+    <link rel="alternate" type="application/rss+xml" title="MakcikGPT — Civic Intelligence" href="/feed.xml" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Muhammad Arif bin Fazil",
+          "alternateName": "Arif Fazil",
+          "jobTitle": "Exploration Geoscientist",
+          "description": "Exploration geoscientist specializing in basin analysis, seismic interpretation, and prospect evaluation across offshore Malaysia. Builder of arifOS, a constitutional AI governance system.",
+          "url": "https://arif-fazil.com",
+          "sameAs": [
+            "https://github.com/ariffazil",
+            "https://arifos.arif-fazil.com",
+            "https://aaa.arif-fazil.com",
+            "https://geox.arif-fazil.com"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "arif-fazil.com",
+          "url": "https://arif-fazil.com",
+          "description": "Professional homepage of Muhammad Arif bin Fazil — exploration geoscientist, offshore Malaysia. Includes work portfolio, writing, and systems built."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "arifOS",
+          "applicationCategory": "AIApplication",
+          "description": "Constitutional AI governance kernel with 13 floors enforcing truth, reversibility, and bounded action.",
+          "url": "https://arifos.arif-fazil.com",
+          "author": {
+            "@type": "Person",
+            "name": "Muhammad Arif bin Fazil"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      :root {
+        --bg: #0A0B0D;
+        --bg-card: #111318;
+        --bg-card-hover: #161920;
+        --ink: #E8E6E1;
+        --ink-dim: #8A8578;
+        --gold: #C9A227;
+        --gold-dim: #8B7420;
+        --ember: #E4572E;
+        --teal: #4FC3F7;
+        --violet: #9B72CF;
+        --line: #1E232A;
+        --line-hover: #2A2F38;
+        --font-display: 'DM Serif Display', 'Fraunces', Georgia, serif;
+        --font-body: 'Cabinet Grotesk', 'Satoshi', 'IBM Plex Sans', system-ui, sans-serif;
+        --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: var(--gold); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* Nav */
+      .nav {
+        position: sticky; top: 0; z-index: 100;
+        display: flex; align-items: center; gap: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(10,11,13,0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .nav-brand {
+        font-family: var(--font-display);
+        font-size: 15px;
+        color: var(--ink);
+        letter-spacing: 0.02em;
+        text-transform: none;
+        margin-right: auto;
+      }
+      .nav a:not(.nav-brand) { color: var(--ink-dim); transition: color 0.2s; }
+      .nav a:not(.nav-brand):hover { color: var(--gold); text-decoration: none; }
+      .nav a.here { color: var(--gold); }
+
+      /* Hero */
+      .hero {
+        min-height: 85vh;
+        display: flex; flex-direction: column; justify-content: flex-end;
+        padding: 4rem 1.5rem 3rem;
+        max-width: 960px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .hero::before {
+        content: '';
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at 50% 20%, rgba(228,87,46,0.06), transparent 70%);
+        pointer-events: none;
+      }
+      .hero-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ember);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 10vw, 7rem);
+        font-weight: 400;
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+      }
+      .hero-prose {
+        margin-top: 1.25rem;
+        max-width: 52ch;
+        font-size: clamp(1rem, 2.5vw, 1.35rem);
+        line-height: 1.4;
+        color: #C4C2BD;
+        font-weight: 300;
+      }
+
+      /* Proof strip */
+      .proof {
+        display: flex; flex-wrap: wrap; gap: 2.5rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+      }
+      .proof-item {
+        display: flex; align-items: baseline; gap: 0.5rem;
+      }
+      .proof-num {
+        font-family: var(--font-mono);
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--ink);
+      }
+      .proof-num.ember { color: var(--ember); }
+      .proof-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ink-dim);
+      }
+
+      /* Hub cards */
+      .hubs {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
+      .hubs-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-dim);
+        margin-bottom: 1.5rem;
+      }
+      .hub-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .hub-card {
+        background: var(--bg-card);
+        padding: 1.5rem;
+        transition: background 0.2s;
+        display: flex; flex-direction: column; gap: 0.5rem;
+      }
+      .hub-card:hover { background: var(--bg-card-hover); text-decoration: none; }
+      .hub-kicker {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .hub-title {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--ink);
+        line-height: 1.2;
+      }
+      .hub-desc {
+        font-size: 0.85rem;
+        color: var(--ink-dim);
+        line-height: 1.5;
+      }
+      .hub-arrow {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--gold-dim);
+        margin-top: auto;
+        padding-top: 0.5rem;
+      }
+      .hub-card:hover .hub-arrow { color: var(--gold); }
+
+      /* Pull quote */
+      .pull-quote {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+        border-left: 3px solid var(--gold);
+        padding-left: 1.5rem;
+      }
+      .pull-quote p {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: #A8A5A0;
+        line-height: 1.5;
+      }
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.5rem;
+        font-family: var(--font-mono);
+        font-style: normal;
+        font-size: 11px;
+        color: var(--ink-dim);
+        letter-spacing: 0.04em;
+      }
+
+      /* Footer */
+      footer {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+        border-top: 1px solid var(--line);
+        font-family: var(--font-mono);
+        font-size: 11px;
+        color: var(--ink-dim);
+        letter-spacing: 0.04em;
+        display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+      }
+      footer a { color: var(--ink-dim); }
+      footer a:hover { color: var(--gold); }
+
+      /* Zen pulse */
+      .zen-pulse {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .zen-col h3 {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .zen-col p {
+        font-size: 0.82rem;
+        color: var(--ink-dim);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 720px) {
+        .nav { gap: 0.75rem; flex-wrap: wrap; }
+        .hub-grid { grid-template-columns: 1fr; }
+        .zen-pulse { grid-template-columns: 1fr; }
+        .proof { flex-direction: column; gap: 1rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="sr-only" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="/" class="nav-brand">ARIF FAZIL</a>
+      <a href="/earth">Earth</a>
+      <a href="/words" class="here">Words</a>
+      <a href="/world">World</a>
+      <a href="/work">Work</a>
+    </nav>
+
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-eyebrow">KUALA LUMPUR · UTC+8</div>
+        <h1>ARIF FAZIL.</h1>
+        <p class="hero-prose">Builds constitutionally-governed AI systems. Same discipline that makes oil wells flow, applied to making AI trustworthy.</p>
+        <div class="proof">
+          <div class="proof-item">
+            <span class="proof-num">13</span>
+            <span class="proof-label">yrs exploration geoscience · PETRONAS</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-num ember">4/4</span>
+            <span class="proof-label">wells led have flowed</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-num">13</span>
+            <span class="proof-label">constitutional floors · F1–F13</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pull quote -->
+      <div class="pull-quote">
+        <p>"The arrow of time only flies forward. The question is whether we fly with it."</p>
+        <cite>T. S. Eliot, adapted</cite>
+      </div>
+
+      <!-- Hub cards -->
+      <section class="hubs">
+        <div class="hubs-label">Five surfaces · one federation</div>
+        <div class="hub-grid">
+          <a href="/earth" class="hub-card">
+            <span class="hub-kicker">GEOX</span>
+            <span class="hub-title">The Dynamic Earth</span>
+            <span class="hub-desc">Live geological intelligence. Macrostrat globe, basin analysis, seismic interpretation across offshore Malaysia.</span>
+            <span class="hub-arrow">→ /earth</span>
+          </a>
+          <a href="/words" class="hub-card">
+            <span class="hub-kicker">arifOS</span>
+            <span class="hub-title">The Words</span>
+            <span class="hub-desc">Doctrine, constitution, and essays. 13 floors of governed intelligence. The law that binds every agent.</span>
+            <span class="hub-arrow">→ /words</span>
+          </a>
+          <a href="/world" class="hub-card">
+            <span class="hub-kicker">WEALTH</span>
+            <span class="hub-title">The Live Map</span>
+            <span class="hub-desc">Capital intelligence. Oil, gold, gas, Ringgit, KLCI. Real-time sovereign economic cockpit.</span>
+            <span class="hub-arrow">→ /world</span>
+          </a>
+          <a href="/work" class="hub-card">
+            <span class="hub-kicker">WELL</span>
+            <span class="hub-title">The Work</span>
+            <span class="hub-desc">Human readiness. What it means to build systems that serve the person, not the institution.</span>
+            <span class="hub-arrow">→ /work</span>
+          </a>
+          <a href="/999/" class="hub-card">
+            <span class="hub-kicker">VAULT</span>
+            <span class="hub-title">The Proof</span>
+            <span class="hub-desc">Live kernel attestation. Sealed receipts, organ health, constitutional verification. Reality, not claims.</span>
+            <span class="hub-arrow">→ /999/verify</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Zen pulse -->
+      <div class="zen-pulse">
+        <div class="zen-col">
+          <h3>Where am I?</h3>
+          <p>The landing page of a federation. Five organs, one constitution, zero BS. Start wherever the work pulls you.</p>
+        </div>
+        <div class="zen-col">
+          <h3>Why care?</h3>
+          <p>Because F1–F13 are not blog posts. They are enforced constraints. The proof is at /999/.</p>
+        </div>
+        <div class="zen-col">
+          <h3>What next?</h3>
+          <p>Read the <a href="/words/doctrine/">doctrine</a>. Watch the <a href="/earth">earth</a>. Track the <a href="/world">markets</a>. Verify the <a href="/999/verify">proof</a>.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>DITEMPA BUKAN DIBERI ⚒️</span>
+      <span>
+        <a href="/words/doctrine/">Doctrine</a> ·
+        <a href="/llms.txt">llms.txt</a> ·
+        <a href="/feed.xml">Feed</a> ·
+        <a href="/999/verify">/999/verify</a>
+      </span>
+    </footer>
+  </body>
+</html>

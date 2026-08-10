@@ -280,6 +280,86 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- LIVE ENFORCEMENT STATUS — the doctrine, observed (T3)      -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="d-section" id="live-enforcement">
+    <div class="d-section-head">
+      <h2>Live Enforcement — Observed</h2>
+      <span class="d-pill" style="background:rgba(79,207,126,0.12);color:#4FCF7E;border:1px solid rgba(79,207,126,0.25);" id="enforce-live-badge">● PROBING</span>
+    </div>
+    <div class="d-card" style="border-left:3px solid #4FCF7E;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#1E232A;border:1px solid #1E232A;border-radius:6px;overflow:hidden;">
+        <div style="background:#111318;padding:1rem;">
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#8B949E;margin-bottom:0.4rem;">FQ Pulse · arifFlow</div>
+          <div id="enforce-fq" style="font-family:var(--font-mono);font-size:1.8rem;font-weight:600;color:#4FCF7E;">—</div>
+          <div id="enforce-fq-verdict" style="font-family:var(--font-mono);font-size:11px;color:#8B949E;">probing…</div>
+        </div>
+        <div style="background:#111318;padding:1rem;">
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#8B949E;margin-bottom:0.4rem;">Kernel · arifOS</div>
+          <div id="enforce-kernel" style="font-family:var(--font-mono);font-size:1.8rem;font-weight:600;color:#4FCF7E;">—</div>
+          <div id="enforce-drift" style="font-family:var(--font-mono);font-size:11px;color:#8B949E;">probing…</div>
+        </div>
+        <div style="background:#111318;padding:1rem;">
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#8B949E;margin-bottom:0.4rem;">VAULT999</div>
+          <div id="enforce-vault" style="font-family:var(--font-mono);font-size:1.8rem;font-weight:600;color:#4FCF7E;">—</div>
+          <div id="enforce-seals" style="font-family:var(--font-mono);font-size:11px;color:#8B949E;">probing…</div>
+        </div>
+        <div style="background:#111318;padding:1rem;grid-column:span 2;">
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#8B949E;margin-bottom:0.4rem;">Commit</div>
+          <div id="enforce-commit" style="font-family:var(--font-mono);font-size:1rem;font-weight:600;color:#D4A853;word-break:break-all;">—</div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:#8B949E;margin-top:0.3rem;">release tag</div>
+        </div>
+      </div>
+      <div style="margin-top:0.75rem;font-size:0.8rem;line-height:1.5;color:#8B949E;">
+        This doctrine is <em>enforced</em>, not merely stated. The numbers above are live from the kernel — re-probed every 30s. When FQ drops below 0.5, execution HOLDs. When the vault seals, receipts append here. The law is observable.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function probe() {
+        var badge = document.getElementById('enforce-live-badge');
+        // FQ from arifFlow
+        fetch('/999/flow').then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+          .then(function (d) {
+            var fq = d.fq || {};
+            var q = fq.quotient || 0;
+            var el = document.getElementById('enforce-fq');
+            el.textContent = q.toFixed(2);
+            el.style.color = q >= 1.0 ? '#4FCF7E' : q >= 0.5 ? '#D49D53' : '#D4536B';
+            document.getElementById('enforce-fq-verdict').textContent = (fq.verdict || 'UNKNOWN') + ' · ' + (d.invariants ? d.invariants.cycle_count + ' cycles' : '');
+          }).catch(function () {
+            document.getElementById('enforce-fq').textContent = 'OFFLINE';
+            document.getElementById('enforce-fq').style.color = '#D4536B';
+          });
+        // Kernel from arifOS
+        fetch('/999/health').then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+          .then(function (d) {
+            var ok = d.status === 'healthy';
+            document.getElementById('enforce-kernel').textContent = ok ? 'HEALTHY' : (d.status || '?');
+            document.getElementById('enforce-kernel').style.color = ok ? '#4FCF7E' : '#D4536B';
+            document.getElementById('enforce-drift').textContent = 'drift: ' + (d.deployment_drift_status || '?') + ' · ' + (d.tools_loaded || 0) + ' tools';
+            document.getElementById('enforce-commit').textContent = (d.git_commit || '?') + ' · ' + (d.release_tag || '');
+            document.getElementById('enforce-vault').textContent = (d.vault999_health || '?').toUpperCase();
+            document.getElementById('enforce-vault').style.color = d.vault999_health === 'healthy' ? '#4FCF7E' : '#D4536B';
+            document.getElementById('enforce-seals').textContent = 'floors: ' + (d.floors_active || 0) + ' active';
+            if (badge) {
+              badge.textContent = '● LIVE · 30s';
+              badge.style.color = '#4FCF7E';
+              badge.style.borderColor = 'rgba(79,207,126,0.25)';
+            }
+          }).catch(function () {
+            document.getElementById('enforce-kernel').textContent = 'OFFLINE';
+            document.getElementById('enforce-kernel').style.color = '#D4536B';
+          });
+      }
+      probe();
+      setInterval(probe, 30000);
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <!-- HARD FLOORS                                                -->
   <!-- ═══════════════════════════════════════════════════════════ -->
   <div class="d-section">

@@ -1,0 +1,75 @@
+{
+  "receipts": [
+    {
+      "ts": "2026-08-10T05:49:27.611884+00:00",
+      "event": "tool_call",
+      "actor": "unknown",
+      "tool": "arif_observe",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T05:50:30.454400+00:00",
+      "event": "tool_call",
+      "actor": "arif",
+      "tool": "arif_init",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T05:54:28.511263+00:00",
+      "event": "tool_call",
+      "actor": "unknown",
+      "tool": "arif_observe",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T05:55:53.349807+00:00",
+      "event": "tool_call",
+      "actor": "f006-edge-probe",
+      "tool": "arif_init",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T05:55:53.575931+00:00",
+      "event": "tool_call",
+      "actor": "f006-edge-probe",
+      "tool": "arif_init",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T05:55:53.837529+00:00",
+      "event": "tool_call",
+      "actor": "f006-edge-probe",
+      "tool": "arif_init",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T05:59:33.008525+00:00",
+      "event": "tool_call",
+      "actor": "unknown",
+      "tool": "arif_observe",
+      "session": "unknown"
+    },
+    {
+      "ts": "2026-08-10T06:00:02.030785+00:00",
+      "event": "tool_call",
+      "actor": "wealth-mcp",
+      "tool": "arif_judge",
+      "session": "_default"
+    },
+    {
+      "ts": "2026-08-10T06:00:02.967186+00:00",
+      "event": "tool_call",
+      "actor": "wealth-mcp",
+      "tool": "arif_judge",
+      "session": "_default"
+    },
+    {
+      "ts": "2026-08-10T06:00:03.870227+00:00",
+      "event": "tool_call",
+      "actor": "ariffazil",
+      "tool": "arif_init",
+      "session": "unknown"
+    }
+  ],
+  "count": 10
+}

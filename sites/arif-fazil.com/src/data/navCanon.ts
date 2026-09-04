@@ -24,6 +24,12 @@ export const primaryNav: NavItem[] = [
     "external": false
   },
   {
+    "label": "About",
+    "href": "/about",
+    "mode": "spa",
+    "external": false
+  },
+  {
     "label": "Earth",
     "href": "/earth",
     "mode": "spa",

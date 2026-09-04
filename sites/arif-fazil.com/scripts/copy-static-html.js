@@ -17,6 +17,7 @@ const SKIP_DIRS = new Set([
 // SPA canonical routes that MUST use the React SPA bundle (dist/index.html)
 const SPA_ROUTES = [
   "home",
+  "about",
   "words",
   "world",
   "work",

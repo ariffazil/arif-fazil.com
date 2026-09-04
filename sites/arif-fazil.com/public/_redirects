@@ -6,6 +6,7 @@
 /data/*   /data/:splat   200
 
 # Fix clean URLs for subdirectory index.html pages (SPA mode fallback fix)
+/about         /about/index.html         200
 /canon         /canon/index.html         200
 /999           /999/index.html           200
 /000           /000/index.html           200

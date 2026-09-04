@@ -18,6 +18,7 @@ export const agenticMirrors = [
 // Purpose: a first-time visitor gets a plain-language hint for 999/000/AAA/words/work without diluting identity.
 const navHints: Record<string, string> = {
   '/': 'Home — sovereign surface',
+  '/about': 'About — who is Arif Fazil',
   '/earth': 'Earth — live geology globe, wells & basins',
   '/world': 'World — economics & civic intelligence',
   '/words': 'Words — essays & analysis',

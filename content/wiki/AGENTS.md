@@ -1,1 +1,0 @@
-/root/arif-sites/arif-fazil-wiki/AGENTS.md

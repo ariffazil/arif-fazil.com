@@ -26,6 +26,7 @@ import { ShadowBoard } from '@/pages/ShadowBoard';
 import { DeritaMap } from '@/pages/DeritaMap';
 import { PoliticsHub } from '@/pages/PoliticsHub';
 import { CommodityPage } from '@/pages/CommodityPage';
+import { About } from '@/pages/About';
 
 export function App() {
   return (
@@ -35,6 +36,12 @@ export function App() {
         <ArrowNavbar />
         <main className="flex-1">
           <Routes>
+            {/* 0. /about — Human-readable bio & on-ramp */}
+            <Route path="/about" element={<About />} />
+            <Route path="/about/" element={<About />} />
+            <Route path="/bio" element={<Navigate to="/about" replace />} />
+            <Route path="/bio/" element={<Navigate to="/about" replace />} />
+
             {/* 1. /home & / */}
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />

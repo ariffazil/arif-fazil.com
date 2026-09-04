@@ -109,11 +109,11 @@ export const ElectionCartographyMap: React.FC<ElectionCartographyMapProps> = ({
       zoomControl: true,
     });
 
-    // Dark Matter Map Tiles (OpenStreetMap Carto Dark)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    // Dark Canvas Map Tiles (Esri World Dark Gray)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri',
+      maxNativeZoom: 16,
       maxZoom: 18,
-      subdomains: 'abcd',
     }).addTo(map);
 
     mapInstanceRef.current = map;

@@ -218,11 +218,11 @@ export function RealWorldAtlasMap({ selectedHotspot, onSelectHotspot }: RealWorl
     // Custom Zoom control at bottom right
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    // Initial Tile Layer: CartoDB Dark Matter
+    // Initial Tile Layer: Esri World Dark Gray Base
     const tileLayer = L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
       {
-        subdomains: 'abcd',
+        maxNativeZoom: 16,
         maxZoom: 19,
       }
     ).addTo(map);
@@ -288,7 +288,7 @@ export function RealWorldAtlasMap({ selectedHotspot, onSelectHotspot }: RealWorl
 
     map.removeLayer(tileLayerRef.current);
 
-    let url = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+    let url = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}';
     let attribution = '';
 
     if (mapLayer === 'satellite') {
@@ -297,7 +297,7 @@ export function RealWorldAtlasMap({ selectedHotspot, onSelectHotspot }: RealWorl
       url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     }
 
-    const newTile = L.tileLayer(url, { maxZoom: 19, attribution }).addTo(map);
+    const newTile = L.tileLayer(url, { maxNativeZoom: mapLayer === 'satellite' ? 18 : 16, maxZoom: 19, attribution }).addTo(map);
     tileLayerRef.current = newTile;
   }, [mapLayer]);
 

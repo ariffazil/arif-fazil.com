@@ -60,12 +60,13 @@ export function PalantirWorldIntelMap({
     // Custom bottom-right zoom controls
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    // Default CartoDB Dark Matter
+    // Default Esri World Dark Gray Base (clean, unwatermarked tactical basemap)
     const tileLayer = L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
       {
-        subdomains: 'abcd',
+        maxNativeZoom: 16,
         maxZoom: 19,
+        attribution: '&copy; Esri',
       }
     ).addTo(map);
 
@@ -93,8 +94,8 @@ export function PalantirWorldIntelMap({
 
     mapInstanceRef.current.removeLayer(tileLayerRef.current);
 
-    let newUrl = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
-    let subdomains = 'abcd';
+    let newUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+    let subdomains: string | string[] = 'abc';
 
     if (mapLayer === 'satellite') {
       newUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
@@ -103,7 +104,8 @@ export function PalantirWorldIntelMap({
 
     const newTileLayer = L.tileLayer(newUrl, {
       subdomains,
-      maxZoom: 18,
+      maxNativeZoom: mapLayer === 'satellite' ? 18 : 16,
+      maxZoom: 19,
     }).addTo(mapInstanceRef.current);
 
     // Keep tiles beneath markers

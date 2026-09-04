@@ -37,18 +37,26 @@ const SOURCE_JSON = path.join(ROOT, 'public/data/wealth/petronas_vitals.json');
 const SOURCE_HTML = path.join(ROOT, 'public/vitals/index.html');
 const DIST_HTML = path.join(ROOT, 'dist/vitals/index.html');
 
+let resolvedJson = SOURCE_JSON;
+if (!fs.existsSync(resolvedJson)) {
+  const vpsLive = '/var/www/html/data/wealth/petronas_vitals.json';
+  if (fs.existsSync(vpsLive)) {
+    resolvedJson = vpsLive;
+  }
+}
+
 // CI runners have no cron-generated wealth data (gitignored). The vitals page
 // ships its committed static template; the renderer is VPS-only enrichment.
-if (!fs.existsSync(SOURCE_JSON)) {
+if (!fs.existsSync(resolvedJson)) {
   if (process.env.CI) {
     console.log('ℹ render-vitals: petronas_vitals.json not present in CI — shipping static template');
     process.exit(0);
   }
-  console.error(`✗ render-vitals: petronas_vitals.json missing on VPS: ${SOURCE_JSON}`);
+  console.error(`✗ render-vitals: petronas_vitals.json missing on VPS: ${resolvedJson}`);
   process.exit(1);
 }
 
-const data = JSON.parse(fs.readFileSync(SOURCE_JSON, 'utf8'));
+const data = JSON.parse(fs.readFileSync(resolvedJson, 'utf8'));
 let html = fs.readFileSync(SOURCE_HTML, 'utf8');
 
 // ──────────────────────────── helpers ────────────────────────────

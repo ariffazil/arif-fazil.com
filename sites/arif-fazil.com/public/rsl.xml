@@ -46,4 +46,168 @@
       <url>https://arif-fazil.com</url>
     </contact>
   </license>
+  <!-- LEDGER-GENERATED — jangan sunting tangan; jana semula dengan gen-rsl-ledger.py -->
+  <resources count="27">
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/ai-johor-rakyat-2026.md</url>
+      <hash algo="sha256">99bcc176412fedbb63c13285c8cec46c0146a51f5a3644fea3cd785994e08593</hash>
+      <merkle_leaf>d81cdaa7338f8bee4ee7ffffb7d1694bf0c7f574f1d6f365b93005b25af340ce</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/anak-sarawak-bayar-pda-anak-bangla-telefon.md</url>
+      <hash algo="sha256">1c19745b5a529d97a4dd1a14f79f65dab8fdc19730d9891430afd6e6d5429d89</hash>
+      <merkle_leaf>77681e8c2c67e49ab192cf0635bf22d1a68e316c91a1d182adc4d7d84e9d9c4c</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/anwar-jung-shadow.md</url>
+      <hash algo="sha256">8fd096c720f897a2ab50ec462b6bdb1853741c309f5b3e4c3c85dd8b9d03befa</hash>
+      <merkle_leaf>36325c33276e3ce6aa38f3c96c2117cc48752e2df0a907581d308b853bbbeea5</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/cerita-makcik.md</url>
+      <hash algo="sha256">f65b8eb55cf28c244355bd97cd150f8b6f4e639cdc4388c768f6007e0e0fdca1</hash>
+      <merkle_leaf>1cb2cd76f8cce9d8116e8141f81b58f1ee8fe5ac376b04295f7feaeb5fb6b285</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/chennah-bangang.md</url>
+      <hash algo="sha256">9637d4949e47611b8039b3bbf35765a7e4f4c5ba189638f172e0f54126595ce6</hash>
+      <merkle_leaf>8711a551169bd15157e5e5dc3937d852c476f2aa0bea7ec1c5f46563ea3316e9</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/daily-2026-07-01.md</url>
+      <hash algo="sha256">6e8ece76250749d31bbba78db53a7c0e571e9f92355c10f51ecde067777a6800</hash>
+      <merkle_leaf>cd76e9c33dbadda57512177304c187e23a7cbf2e1dd3b26c29b8c7e9331c331c</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/dap-8-tahun-bangang.md</url>
+      <hash algo="sha256">dd0ab1cc97c5c8be2209fec43767b73274bcb8fcc78492206661de6edf808f2c</hash>
+      <merkle_leaf>6edc36126f2516adc8b1eaf73a054a6f5ae65049097fc0a66ac61f5527e8da7b</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/ilmu-bbb.md</url>
+      <hash algo="sha256">08ac43d3449efd9f0963082e31a1bb5937d3c4dafc565cc4dfdc3780d1a43eb1</hash>
+      <merkle_leaf>a5d9a5193b10e9fa49e4027b11ef7f189b753ec5e61b01ee60c68c3fdd2e961e</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/iran-hormuz.md</url>
+      <hash algo="sha256">a05f77691e930419bf26deaf60fe6188d3a3fe06a1cd97f6f695e0f928b0969d</hash>
+      <merkle_leaf>083a0c0eace454dd7e2da9606ae8caf87e087bcf200ef06e59a048b0c78fdbc3</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/mykad-rm75-billion.md</url>
+      <hash algo="sha256">af0d0d8d451ed6dbca982e04739a64c7677bc5147bb16f31054c70548fded776</hash>
+      <merkle_leaf>08840ff0ea198f4e9a56338eff701ac163c01dad00e40aab8e873de361a8ebad</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/nusantara-ai-paradox.md</url>
+      <hash algo="sha256">b4b9689bfe2051484fc49ffa1de95c667c9b93e062e715000f40559be5ee91dd</hash>
+      <merkle_leaf>bf25a35fb0e7f932ab2ba7074769acf0a112a0ce048981486c9e8708e99225c1</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/petronas-atm-kerajaan.md</url>
+      <hash algo="sha256">5e0ba789b4dccddcda1d466fc4337bb7bd52c30a9ca6140b6cb099de42fe4189</hash>
+      <merkle_leaf>7bb648e21ac48667605f9b7a4db6ee28b53a44c85d1ec0d18c282685b56a588f</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/petronas-dna.md</url>
+      <hash algo="sha256">fc0173646bd4a7aa402ba8338f5967d810fbc7e40168de47891e24ea6e0555b3</hash>
+      <merkle_leaf>4ad86e051186cfbf3c363388102803834d86bff9bc4524192e5c3c2b68ec5a18</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/petronas-hive-sale.md</url>
+      <hash algo="sha256">b0b046f012f4bca218bbc4e47aac71a8c1a060791c5f10863025420cbaf147f4</hash>
+      <merkle_leaf>e86cdb1dd6cae5499074bd387c7ca7367a4ba76b8eabc45b1f271854974e7425</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/petronas-visi-misi.md</url>
+      <hash algo="sha256">f67f6f30871579e12a3f189a0dd502530c6eaa843cffb95e327755c6e7f114e6</hash>
+      <merkle_leaf>5e21d45a52d5815e4bfb0d81c28a89a83ea32c33e2365d54a306aa94e95521a5</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/sam-altman-elon-musk-anwar-akal.md</url>
+      <hash algo="sha256">a2440445f48be5526824800cbaad40ecfca76f90b5c10f54eb7979e481309e40</hash>
+      <merkle_leaf>373cc422d2cbe3af8d2a10f29f070bc6843fea3b1c74ab7053156c3bfc7a6e3e</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/searah-bernama-lewat.md</url>
+      <hash algo="sha256">80d557b62b5dae372631d44105cb2b2ce37912d1871004fb53577b2ddb87b2bb</hash>
+      <merkle_leaf>4e262c7b4cd53927af01ebf4994c3d7a0d5748e6bf31bc7c44fbc27012ec7834</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/searah-followup.md</url>
+      <hash algo="sha256">b57ba5b5705c3ad5ab49defbd9d42e881f34bb5e268da2951d4702aff3da7348</hash>
+      <merkle_leaf>6562c898c2051aae27749338b923165931b3d66c5280ecc8adc5b9b910391781</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/searah-kekal-milik-penuh.md</url>
+      <hash algo="sha256">126568cddca3bf8ae06581e0b22e323c687231f0cb1973683e38e90e988cce38</hash>
+      <merkle_leaf>4009a2c87b89d7020da88cf8f43abc5ee67142dfd381985df43005ca89b5af30</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/searah-senyum-media-suap.md</url>
+      <hash algo="sha256">4ac545765a5303c833ccabcb2b110b5b19fbaa265329ea7c4dc27d6a153415b2</hash>
+      <merkle_leaf>e3b15244401f082a0a8469a244a11824c5f7d0ab6092e095efe678234511b242</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/siasatan-harakah.md</url>
+      <hash algo="sha256">aee51cc05f6631e133eb609400f87f55a1b4c72f2c64e2f2402384fead826008</hash>
+      <merkle_leaf>fb07737760450d654761447b672dbf3176581ad76cc1d28e05988845787d09b3</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/soul.md</url>
+      <hash algo="sha256">a45f5f52c600168fd35f15df9a9247f05d4ff15f9c48f8a623bca1ed2dc19b2e</hash>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/suara-terlalu-siap.md</url>
+      <hash algo="sha256">ff6d14ac2c8be08ab853c2d44462687470aa550f9fac474a4a9f72bfc1332281</hash>
+      <merkle_leaf>7d72630f7cc91eb723d613e2f21902356229b2e0453345ac15fffd9293b1b419</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/suriname-exxon-cabut.md</url>
+      <hash algo="sha256">85237eecdff04c03276df5ef106e8f328e927c05fe36ded8fd3386a67a51eb8c</hash>
+      <merkle_leaf>a1962b8baca2ce991b74a0baae4488e61e25d793f65561b697bf81ded959d320</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/syaitan-ingat-dirinya-malaikat.md</url>
+      <hash algo="sha256">5ffa1901b449ff10b54bd83c2b0986f6b4e27b1488e7d8989c18ae036decc829</hash>
+      <merkle_leaf>7ea6db5d97af53ddc32ff89feb38131b53d93fd98d580b725e8d707a6ccf6774</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/taufik-klcc-ceo-petronas.md</url>
+      <hash algo="sha256">f26137ed1a20627a1a55afb66b2b48895657eb532cb31d9a26b2475794c6212f</hash>
+      <merkle_leaf>fec5a24ab3e232f3f852ab059d34f28e43c23cecaf15479b6c5508072eec7f71</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+    <resource>
+      <url>https://arif-fazil.com/world/makcikgpt/ytl-monopoli.md</url>
+      <hash algo="sha256">9ee4c5b721b4db905ceb8c31db563a345a12f7b4e9038388b522f04abcb919e9</hash>
+      <merkle_leaf>5aecf2c33e3b93ef50bd552043cae776ecedbf51e40ae0b4b4b4b456a4991dd5</merkle_leaf>
+      <lastmod>2026-09-04T18:27:29Z</lastmod>
+    </resource>
+  </resources>
 </rsl>

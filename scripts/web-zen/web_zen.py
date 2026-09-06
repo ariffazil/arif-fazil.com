@@ -59,9 +59,11 @@ TRUTH_MARKERS: dict[str, list[str]] = {
         "Ditempa Bukan Diberi",
         "Organs",
     ],
-    "https://arif-fazil.com/propa/": [
+    # 2026-09-07 FI-008: /propa → /vitals canonical redirect (_redirects Patch 4, 2026-08-26).
+    # Markers follow the live vitals page.
+    "https://arif-fazil.com/vitals/": [
         "PETRONAS",
-        "Shadow Chairman",
+        "NexG",
     ],
     "https://mcp.arif-fazil.com/": ["mcp", "arifOS"],
     "https://arif-fazil.com/000/": ["000", "genesis"],

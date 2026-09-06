@@ -1,0 +1,113 @@
+{
+  "$schema": "https://arif-fazil.com/schemas/territories.schema.json",
+  "version": "1.0.0",
+  "as_of": "2026-09-07",
+  "doctrine": "SOVEREIGN_DECREES \u00a704 \u00b7 Komda Color Law \u00b7 Bounded Organ Territories",
+  "canonical_root": "https://arif-fazil.com",
+  "territories": [
+    {
+      "id": "makcikgpt",
+      "name": "MakcikGPT",
+      "plane": "exhaust_translation",
+      "role": "Civic Translation & Anti-Gaslight Membrane",
+      "description": "Exhaust translation subsystem in the EMD Stack. Converts corporate PR, high-entropy noise, and complex economic/geological data into folksy, common-sense civic truth.",
+      "public_url": "https://arif-fazil.com/world/makcikgpt/",
+      "markdown_mirror": "https://arif-fazil.com/makcikgpt-md/",
+      "color_family": "warning_yellow_stark_black",
+      "primary_vectors": [
+        "corporate_pr_neutralization",
+        "consequence_gap_articulation",
+        "sovereign_validator"
+      ]
+    },
+    {
+      "id": "wealth",
+      "name": "WEALTH",
+      "plane": "capital_thermodynamics",
+      "role": "Capital Allocation & Institutional Entropy Engine",
+      "description": "Tracks GLIC/GLC patronage networks, consequence gaps, macroeconomic indicators, and market ledgers. Computes capital entropy; never moralizes.",
+      "public_url": "https://wealth.arif-fazil.com",
+      "port": 18082,
+      "color_family": "emerald_green",
+      "primary_vectors": [
+        "capital_entropy",
+        "power_consequence_map",
+        "market_telemetry"
+      ]
+    },
+    {
+      "id": "geox",
+      "name": "GEOX",
+      "plane": "earth_subsurface",
+      "role": "Earth & Basin Intelligence Engine",
+      "description": "Subsurface geomechanics, basin dynamics, seismic interpretation, and deep-time crustal modeling. Enforces the Topographic Reality Compilation (TRC) isomorphism.",
+      "public_url": "https://geox.arif-fazil.com",
+      "port": 8081,
+      "color_family": "earth_amber_terracotta",
+      "primary_vectors": [
+        "basin_profile",
+        "seismic_interpret",
+        "prospect_screen"
+      ]
+    },
+    {
+      "id": "arifos",
+      "name": "arifOS",
+      "plane": "court_of_truth",
+      "role": "Constitutional Kernel & Immutable Truth Core",
+      "description": "Enforces constitutional floors F1-F13, manages admission control, and maintains the immutable VAULT999 ledger.",
+      "public_url": "https://arifos.arif-fazil.com",
+      "port": 8088,
+      "color_family": "deep_indigo_navy",
+      "primary_vectors": [
+        "constitutional_judgment",
+        "vault999_ledger",
+        "session_ignition"
+      ]
+    },
+    {
+      "id": "well",
+      "name": "WELL",
+      "plane": "somatic_substrate",
+      "role": "Human Substrate & Dignity Floor Engine",
+      "description": "Monitors human vital telemetry, somatic stress, and physiological state. Protects human dignity and grounds the system in biological reality.",
+      "public_url": "https://well.arif-fazil.com",
+      "port": 18083,
+      "color_family": "crimson_rose",
+      "primary_vectors": [
+        "homeostasis_assessment",
+        "biometric_guard",
+        "dignity_audit"
+      ]
+    },
+    {
+      "id": "frame",
+      "name": "FRAME",
+      "plane": "independent_observer",
+      "role": "Tri-Witness Sensory Observer",
+      "description": "Independent observer plane. Measures drift and records mutations across the federation without judicial interference.",
+      "port": 18085,
+      "color_family": "neutral_slate",
+      "primary_vectors": [
+        "drift_observation",
+        "witness_snapshot",
+        "triadic_attestation"
+      ]
+    },
+    {
+      "id": "aaa",
+      "name": "AAA",
+      "plane": "agentic_federation",
+      "role": "Agentic Architecture & Citizen Mesh",
+      "description": "Governed harness for machine citizens (333-AGI, 555-ASI, 888-APEX, Kimi, Qwen, Claude, OpenCode). Enforces the Meta-Mesa doctrine.",
+      "public_url": "https://aaa.arif-fazil.com",
+      "port": 7071,
+      "color_family": "cyan_steel",
+      "primary_vectors": [
+        "capability_routing",
+        "agent_cards",
+        "skill_registry"
+      ]
+    }
+  ]
+}

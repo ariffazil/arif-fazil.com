@@ -1,0 +1,113 @@
+{
+  "$schema": "https://arif-fazil.com/schemas/world-state-v1.json",
+  "version": "1.1.0",
+  "organ": "wealth",
+  "territory": "world",
+  "timestamp": "2026-09-06T21:22:00Z",
+  "status": "LIVE_ORGAN_SYNC_PENDING_SEAL",
+  "authority": "READ_ONLY_F2_EMPIRICAL",
+  "epistemic_grade": "F2_LAYERED",
+  "section_grades": {
+    "macro_thermodynamics": "ORGAN_LIVE_RECEIPTED (WEALTH capital_market, 2026-09-06T21:19Z)",
+    "consequence_gaps": "STATIC_ANALYSIS_OBSERVED (no organ receipt; statutory basis cited in text)",
+    "glic_patronage_nexus": "STATIC_ANALYSIS_UNVERIFIED (public filings; awaiting primary-source refresh)"
+  },
+  "macro_thermodynamics": {
+    "brent_crude_usd": 96.28,
+    "usd_myr": 4.04,
+    "dxy": 99.16,
+    "vix": 14.53,
+    "us10y_yield_pct": 4.784,
+    "silver_usd": 66.75,
+    "klci_rsi_14d": 42.56,
+    "gdp_growth_pct": 5.17,
+    "inflation_pct": 1.38,
+    "overnight_policy_rate_pct": 3.0,
+    "monetary_stance": "Neutral / Accommodative",
+    "reserve_adequacy_months": 5.4,
+    "external_debt_to_gdp_pct": 64.2
+  },
+  "consequence_gaps": {
+    "subsidy_rationalization": {
+      "consequence_gap_score": 0.584,
+      "power_concentration": 0.81,
+      "metric": "Policy narrative vs empirical household purchasing power",
+      "observation": "Diesel and targeted electricity rationalization contracts federal fiscal deficit by 1.2% GDP while creating real purchasing power degradation in M40/B40 segments.",
+      "governance_status": "OBSERVED_NOT_JUDGED"
+    },
+    "borneo_fiscal_arbitrage": {
+      "ma63_special_grant_delta_pct": 450.0,
+      "gas_aggregator_veto_concentration": 1.0,
+      "metric": "Sarawak / Sabah statutory leverage over federal federation",
+      "observation": "Petros statutory control as sole natural gas aggregator under DGO 2016 establishes a unilateral veto over upstream gas allocations, redirecting rent from federal consolidated fund to state reserves.",
+      "governance_status": "STATUTORY_BASIS_OBSERVED (DGO 2016 is public statute; outcome metrics pending primary data)"
+    }
+  },
+  "glic_patronage_nexus": {
+    "total_institutional_aum_myr_trillion": 1.95,
+    "institutions": [
+      {
+        "code": "KHAZANAH",
+        "name": "Khazanah Nasional Berhad",
+        "mandate": "Sovereign Wealth & Commercial Catalyst",
+        "aum_myr_billion": 142.5,
+        "core_holdings": ["Tenaga Nasional", "IHH Healthcare", "Axiata Group", "CIMB Group", "Malaysia Aviation Group"],
+        "patronage_nexus": "Prime Minister & MoF Inc appointment authority; high-entropy political turnover vs sovereign continuity."
+      },
+      {
+        "code": "EPF_KWSP",
+        "name": "Employees Provident Fund (KWSP)",
+        "mandate": "Private Sector Retirement Capital Anchor",
+        "aum_myr_billion": 1190.0,
+        "core_holdings": ["Public Bank", "Malayan Banking", "RHB Bank", "Gamuda", "Tenaga Nasional"],
+        "patronage_nexus": "Domestic debt absorption anchor; underwriting mega-infrastructure and sovereign bond stability."
+      },
+      {
+        "code": "PNB",
+        "name": "Permodalan Nasional Berhad",
+        "mandate": "Bumiputera Unit Trust & Strategic Equity",
+        "aum_myr_billion": 340.0,
+        "core_holdings": ["Maybank", "Sime Darby", "Petronas Gas", "UMW Holdings", "SP Setia"],
+        "patronage_nexus": "Corporate control architecture; defense of equity targets and domestic blue-chip ownership."
+      },
+      {
+        "code": "KWAP",
+        "name": "Kumpulan Wang Persaraan (Diperbadankan)",
+        "mandate": "Civil Service Pension Liability Funding",
+        "aum_myr_billion": 170.0,
+        "core_holdings": ["Malaysian Government Securities", "Equities", "Prime Real Estate"],
+        "patronage_nexus": "Stabilization mechanism for sovereign debt yield curve and public sector pension deficits."
+      },
+      {
+        "code": "LTH",
+        "name": "Lembaga Tabung Haji",
+        "mandate": "Hajj Pilgrimage Savings & Islamic Finance",
+        "aum_myr_billion": 92.0,
+        "core_holdings": ["Bank Islam Malaysia", "TH Plantations", "Islamic Sukuk"],
+        "patronage_nexus": "Socio-religious legitimacy anchor; Islamic capital allocation and restructuring oversight."
+      },
+      {
+        "code": "LTAT",
+        "name": "Lembaga Tabung Angkatan Tentera",
+        "mandate": "Armed Forces Social Security & Defense Equity",
+        "aum_myr_billion": 11.5,
+        "core_holdings": ["Boustead Holdings", "Pharmaniaga", "Affin Bank"],
+        "patronage_nexus": "Defense procurement lifecycle, pharmaceutical distribution, and military welfare capital."
+      }
+    ]
+  },
+  "provenance_witness": {
+    "previous_block_note": "vault999_consensus (v1.0.0) with hash SEAL-VAULT999-2026-09-07-KVM8-b55f0185d, w3 0.985, human witness 'Arif Fazil', MERKLE_ROOT_LOCKED — removed 2026-09-06: no VAULT999 receipt existed for this file; git SHA misused as seal; no human was in the witness loop; w3 value uncorroborated. Free-text self-seal is constitutionally void.",
+    "organ_receipts": [
+      "4a35c5f1-8631-4cc8-8f01-d37326924b29 (brent+macro, 2026-09-06T21:19:37Z, VAULT999/wealth/receipts.jsonl)",
+      "ff2aa60e-de60-43ad-ba71-37a71e238f0a (KLCI RSI, 2026-09-06T21:05:41Z)",
+      "a5d89f37-89e2-46e2-a3ab-4ec5860c6e2d (XAUUSD RSI, 2026-09-06T21:00:31Z)"
+    ],
+    "witness_status": "INCOMPLETE — present: AI; missing: human, earth (W0 honest)",
+    "w3_telemetry_observed": 0.744,
+    "w3_telemetry_note": "arifFlow vector dimension, observed telemetry 2026-09-06T21:0xZ — NOT a consensus of this file",
+    "cross_witness": "SINGLE_SOURCE (wealth_core.commodity_engines, LIVE feed) — second independent source required before any seal",
+    "seal_status": "PENDING — cryptographic seal requires Lane A key (888 sovereign). Integrity meanwhile: sha256 of this file published in /world/ footer; mismatch = tampered.",
+    "actor": "kimi-code/FI-008, session SEAL-4d802caf55cf4875"
+  }
+}

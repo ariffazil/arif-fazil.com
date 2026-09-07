@@ -505,6 +505,51 @@ def cmd_doctor(args: argparse.Namespace) -> Report:
     return r
 
 
+def cmd_preflight(_args: argparse.Namespace) -> Report:
+    """Agentic-web pre-deploy gate (EUREKA-4 hardcode, 2026-09-07). Engine-level, not prompt-level.
+
+    FATAL: AGENTIC_WEB_VIOLATION when any sovereign machine-discovery surface is
+    missing from the SOURCE tree, or the integrity binding (sha256(world-state.json)
+    ↔ /world/ footer) diverges. deploy-vps.sh calls this BEFORE any webroot
+    mutation or Caddy reload. Fix source — never bypass the gate.
+    """
+    r = Report(mode="preflight", ts=datetime.now(timezone.utc).isoformat(timespec="seconds"), ok=True)
+    P = SITE_PUBLIC
+
+    def need(rel: str, markers: list[str]) -> None:
+        p = P / rel
+        if not p.is_file():
+            r.add(f"preflight.{rel}", False, "FATAL: AGENTIC_WEB_VIOLATION — missing in source tree", "RED")
+            return
+        body = p.read_text(encoding="utf-8", errors="replace")
+        missing = [m for m in markers if m not in body]
+        if missing:
+            r.add(f"preflight.{rel}", False, f"FATAL: AGENTIC_WEB_VIOLATION — missing markers {missing}", "RED")
+        else:
+            r.add(f"preflight.{rel}", True, f"present ({len(body)}B)")
+
+    # a) Canonical machine-discovery surfaces at root (agents read these first)
+    need("llms.txt", ["arifOS", "Ditempa"])
+    need("robots.txt", ["User-agent", "Allow: /"])
+    need("missions.json", ["Investigate"])
+    need("rsl.xml", ["<resource>", "sha256"])  # ledger required, license-only fails
+    # b) Machine state + semantic anchors + integrity binding
+    need("world-state.json", ["provenance_witness", "brent_crude_usd", "seal_status"])
+    need("world/index.html", ["integrity", "sha256:", "<data value"])
+    ws, idx = P / "world-state.json", P / "world" / "index.html"
+    if ws.is_file() and idx.is_file():
+        sha = hashlib.sha256(ws.read_bytes()).hexdigest()
+        bound = sha in idx.read_text(encoding="utf-8", errors="replace")
+        r.add("preflight.integrity-binding", bound,
+              (f"sha256(world-state.json) [{sha[:12]}…] bound in /world/ footer"
+               if bound else "FATAL: AGENTIC_WEB_VIOLATION — /world/ footer hash does not bind world-state.json"),
+              "GREEN" if bound else "RED")
+
+    r.meta["agent_next"] = ("Deploy allowed only when preflight OK. Any RED = "
+                            "FATAL: AGENTIC_WEB_VIOLATION — fix source, never bypass.")
+    return r
+
+
 def cmd_caddy_hint(_args: argparse.Namespace) -> Report:
     r = Report(mode="caddy-reload-hint", ts=utc_now(), ok=True)
     r.add(
@@ -611,6 +656,13 @@ def main(argv: list[str] | None = None) -> int:
         "caddy-reload-hint", parents=[common], help="safe reload path (no mutation)"
     )
     c.set_defaults(func=cmd_caddy_hint)
+
+    pf = sub.add_parser(
+        "preflight",
+        parents=[common],
+        help="agentic-web pre-deploy gate (FATAL on missing discovery surfaces)",
+    )
+    pf.set_defaults(func=cmd_preflight)
 
     args = p.parse_args(argv)
     report: Report = args.func(args)

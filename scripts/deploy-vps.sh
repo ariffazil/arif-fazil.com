@@ -58,6 +58,18 @@ cd /root/arif-fazil.com
 SHORT_SHA=$(git rev-parse --short HEAD)
 log_info "Deploying arif-sites commit: $SHORT_SHA"
 
+# ── 1.5. AGENTIC-WEB PREFLIGHT GATE (EUREKA-4 hardcode, 2026-09-07) ──────────
+#         Engine-level, not prompt-level. A deploy that would strip the machine
+#         discovery surfaces (llms.txt / rsl.xml ledger / world-state integrity
+#         binding) fails HERE — before any webroot mutation or Caddy reload.
+log_info "Agentic-web preflight gate..."
+if ! python3 "$SCRIPT_DIR/web-zen/web_zen.py" preflight --no-receipt >/tmp/agentic-preflight.log 2>&1; then
+    log_error "FATAL: AGENTIC_WEB_VIOLATION — deploy aborted before any mutation"
+    cat /tmp/agentic-preflight.log
+    exit 1
+fi
+log_info "  ✅ agentic-web preflight OK (llms.txt · rsl.xml ledger · world-state integrity)"
+
 # ── 2. Deploy function ───────────────────────────────────────────────────────
 deploy_site() {
     local site="$1"

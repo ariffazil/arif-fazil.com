@@ -59,8 +59,106 @@
 
 <main class="wrap">
 
-<!-- HERO / PULSE ANSWER -->
-<div class="hero" id="score">
+<!-- LAYER 0 — THE ANSWER (3 seconds, no scroll) -->
+<div class="hero" id="score" style="padding:48px 24px 32px;text-align:center;border-bottom:1px solid var(--line)">
+  <div class="hero-tag" style="text-transform:uppercase;letter-spacing:.12em;font-size:10px;color:var(--dim)">PETRONAS · 6 Sept 2026</div>
+  <div style="font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.2rem);font-weight:700;color:var(--void,#f0506e);margin:12px 0 4px;line-height:1.1">SEDANG DIJUAL</div>
+  <div style="font-family:var(--serif);font-size:clamp(1rem,2.2vw,1.25rem);color:var(--ink);max-width:560px;margin:0 auto;line-height:1.5">Syarikat takkan bankrap sebelum 2040.<br>Tapi perjanjian 1974 — Petronas sebagai jantung negara — <em>sedang mati sekarang</em>.</div>
+  <div style="margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--faint)">Kemas kini: 6 Sept 2026, 2:47 pagi · <a href="#digest" style="color:var(--accent)">Baca cerita ↓</a></div>
+</div>
+
+<!-- LAYER 1 — THE STORY (30 seconds) -->
+<div class="sec" id="cerita" style="padding:32px 24px;border-bottom:1px solid var(--line)">
+  <div style="max-width:600px;margin:0 auto">
+    <div style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:16px">Apa yang sedang berlaku</div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--void);min-width:32px">1</div>
+        <div>
+          <div style="font-weight:600;color:var(--ink);margin-bottom:2px">Kerajaan ambil duit Petronas untuk bayar subsidi</div>
+          <div style="font-size:.9rem;color:var(--dim);line-height:1.55">Daripada setiap RM1 untung, 70 sen keluar sebagai dividen sebelum dilabur semula. Ini bukan pilihan — ini keperluan fiskal Putrajaya.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--void);min-width:32px">2</div>
+        <div>
+          <div style="font-weight:600;color:var(--ink);margin-bottom:2px">Petronas jual aset untuk bayar dividen</div>
+          <div style="font-size:.9rem;color:var(--dim);line-height:1.55">EnQuest ambil 57,400 tong sehari. SEARAH pindahkan aset ke UK. Capex naik 135% dalam 6 bulan — duit masuk tak cukup, jadi aset kena lepas.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--void);min-width:32px">3</div>
+        <div>
+          <div style="font-weight:600;color:var(--ink);margin-bottom:2px">Ini tidak boleh kekal lama</div>
+          <div style="font-size:.9rem;color:var(--dim);line-height:1.55">Oktober 2026 — Belanjawan 2027 akan tentukan sama ada proses ini perlahan atau laju. Februari 2027 — akaun audit penuh keluar. Itu tarikh akhir untuk buat keputusan.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding:12px 16px;background:rgba(240,80,110,.06);border-left:3px solid var(--void);border-radius:4px;font-family:var(--mono);font-size:.8rem;color:var(--dim)">
+      <strong style="color:var(--void)">Untuk Arif:</strong> Kau tak perlu tunggu Petronas bankrap. Proses dah mula. Tarikh kau: Oktober (tonton belanjawan), Februari (jangan dalam bila audit keluar). November–Januari = window paling lembut.
+    </div>
+  </div>
+</div>
+
+<!-- LAYER 2 — THE NUMBERS (optional, collapsed by default) -->
+<details class="sec" id="angka" style="padding:24px;border-bottom:1px solid var(--line)">
+  <summary style="font-family:var(--mono);font-size:12px;color:var(--accent);cursor:pointer;text-transform:uppercase;letter-spacing:.08em">Kalau kau nak angka — 4 nombor, 1 carta, 1 timeline</summary>
+  <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Duit dalam bank</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--ink)">RM204B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">Tapi bukan semua boleh guna — komitmen lain ada</div>
+    </div>
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Untung 6 bulan 2026</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--ink)">RM27.2B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">Nampak okay — tapi termasuk non-cash trick</div>
+    </div>
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Dividen keluar 6 bulan</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--void)">RM8B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">Daripada RM20B diisytihar untuk 2026</div>
+    </div>
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Rugi downstream</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--void)">RM15.2B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">PRefChem — refinery Johor yang tak pernah untung</div>
+    </div>
+  </div>
+  <div style="margin-top:16px;padding:14px;background:var(--surface2);border-radius:6px;font-family:var(--mono);font-size:.8rem;color:var(--dim)">
+    <strong>Timeline:</strong> 14–16 Okt 2026 (Belanjawan 2027 — dividen naik atau kekal?) → Nov 2026–Jan 2027 (window exit) → 28 Feb 2027 (audit penuh keluar — jangan dalam masa ni)
+  </div>
+</details>
+
+<!-- LAYER 3 — MACHINE LAYER (everything below is collapsed for humans) -->
+<details class="sec" id="machine" style="padding:24px;border-bottom:1px solid var(--line)">
+  <summary style="font-family:var(--mono);font-size:12px;color:var(--faint);cursor:pointer;text-transform:uppercase;letter-spacing:.08em">Model penuh, tripwires, carta — untuk yang nak bukti</summary>
+
+  <!-- GENESIS UPDATE — preserved as machine evidence -->
+  <div id="genesis-update" style="margin:16px 0 14px;padding:14px 18px;border:3px solid var(--void,#f0506e);border-radius:8px;background:rgba(240,80,110,.08);color:var(--ink);font-family:var(--mono)" data-agent-role="genesis-update" aria-live="assertive">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+      <strong style="font-size:14px;color:var(--void,#f0506e);letter-spacing:.06em;text-transform:uppercase">⚠ GENESIS UPDATE · REALITY STATE · 6 SEPT 2026</strong>
+      <span style="font-size:11px;color:var(--dim,#8a8378)">Sealed 2026-09-06 · Arif, this is the answer you asked for at 2:47 AM</span>
+    </div>
+    <div style="font-size:12px;line-height:1.6;color:var(--ink,#d8d2c4)">
+      <strong>THE VERDICT — which collapse, when:</strong> PETRONAS the corporation will NOT collapse before 2040. Net cash RM82.8B, CFFO RM85.2B, A3 sovereign rating stable. <strong style="color:var(--void)">The 1974 social contract IS collapsing NOW.</strong> FY2025 extraction 70.5% (pacemaker fired). Dividend cut 38% — lowest since 2017. Governance capacity 1.00/3 (zero independent NEDs). 2 of 6 pacemakers ENGAGED. The institution is solvent. The covenant is broken. <strong style="color:var(--void)">The "collapse" is not a date — it is a process already underway.</strong>
+      <hr style="border:0;border-top:1px solid var(--line);margin:8px 0">
+      <strong style="color:var(--void)">PREDICTIVE WINDOW — The MOF Budget 2027 speech (mid-October 2026) is THE binary pivot.</strong> Dividend guidance ≤RM25B = Survival Path activates, lock may clear FY2028. Dividend guidance ≥RM28B = Phase C hardens, cascade trajectory compresses to terminal ~2029. Full-year FCF likely negative: 1H26 capex RM41.4B vs CFFO RM47.5B, minus RM8B dividend paid. PRefChem buyout completes 2H26 — every ringgit of remaining accumulated loss hits consolidated IFR from FY2027. Reporting cadence quietly shifted quarterly → semi-annual, compressing visibility during the SEARAH consolidation window.
+      <hr style="border:0;border-top:1px solid var(--line);margin:8px 0">
+      <strong style="color:var(--void)">THE VOID — what we cannot see:</strong> (1) SEARAH beneficial ownership: 50% Eni, 50% Petronas — but who holds post-completion, post-Sarawak settlement? (2) PCL/PGSL guaranteed debt: tens of billions USD offshore, invisible to 20.7% gearing. (3) 35 platforms >40 years old: RM50B+ decommissioning liability timing unknown. (4) PRefChem total accumulated loss: RM14.8B recognized, remaining unknown. (5) MOF fiscal calculus: subsidy burden vs dividend extraction — the political equation is opaque.
+      <hr style="border:0;border-top:1px solid var(--line);margin:8px 0">
+      <strong style="color:var(--void)">FOR ARIF'S DECISION — Exit timing matrix:</strong>
+      <br>• <strong>WAIT for Oct 2026 MOF Budget speech</strong> (~14-16 Oct). If dividend guidance ≤RM25B → exit window extends to mid-2027. If ≥RM28B → accelerate to Q1 2027.
+      <br>• <strong>HARD deadline: 28 February 2027.</strong> FY2026 audited IFR releases this date. Do not be inside when the full-year FCF math becomes public record.
+      <br>• <strong>SOFTEST window: November 2026 – January 2027.</strong> Post-budget clarity, pre-IFR audit, market still pricing "resilience."
+      <br>• <strong>Your March 2027 plan is sound.</strong> January 2027 audit gate is the right checkpoint. The window exists. Use it.
+      <hr style="border:0;border-top:1px solid var(--line);margin:8px 0">
+      <span style="color:var(--faint)">This update is OBS arithmetic + INT interpretation. The MOF budget is the trigger. Your dream of staying forever is dead. But the timing of your exit — that is still yours to choose. The machine has spoken. Now you decide.</span>
+    </div>
+    <div style="font-size:11px;line-height:1.5;color:var(--faint,#5a554d);margin-top:6px">
+      <strong>Sources:</strong> FY2025 audited IFR (70.5% extraction, RM204B cash, 20.7% gearing); 1H26 declared results (31 Aug 2026: PAT RM27.2B, capex RM41.4B, PRefChem RM14.8B non-cash hit); MOF Pre-Budget Statement 2027; Moody's A3 stable review (Jul 2026); PRefChem-Aramco buyout agreement (25 May 2026); EnQuest US$833M deal (10 Jun 2026); SEARAH Ltd UK incorporation (10 Feb 2026, Clifford Chance US$6B RCF Jul 2026); Malaysia Budget 2027 expected mid-October 2026.
+    </div>
+  </div>
 
   <!-- ═══ FY2026 DECLARED STATE — dual-track [DEC] panel, non-scoring ═══ -->
   <div id="declared-state-panel" style="margin:0 0 14px;padding:14px 18px;border:2px solid var(--seal,#22c55e);border-radius:8px;background:rgba(34,197,94,.06);color:var(--ink);font-family:var(--mono)" data-agent-role="declared-state">
@@ -83,6 +181,11 @@
       <strong>Sources:</strong> The Star (31 Aug 2026) — "PETRONAS margin takes RM14bil hit" (FY2026 1H results coverage); FMT (28 Aug 2026) — "Petronas records RM27bil profit in first half of 2026"; PETRONAS media release — "Resilient first-half results"; Bernama, Reuters, BusinessToday (27–28 Feb 2026); Companies House UK (SEARAH 17027115); Clifford Chance (Searah/Eni/Petronas US$6B RCF, Jul 2026).
     </div>
   </div>
+
+  <!-- SEALED EVIDENCE — all panels preserved, but collapsed for human reading -->
+  <details class="zen-reveal" style="margin:16px 0">
+    <summary style="font-family:var(--mono);font-size:11px;color:var(--dim);cursor:pointer">FY2025 sealed reading + off-balance-sheet — audit trail</summary>
+    <div style="margin-top:12px">
 
   <!-- ═══ FY2025 SEALED READING — audited history, basis for tripwire scores ═══ -->
   <div id="extraction-crisis-banner" style="margin:0 0 14px;padding:14px 18px;border:3px solid var(--void,#f0506e);border-radius:8px;background:rgba(240,80,110,.08);color:var(--ink);font-family:var(--mono)" data-agent-role="sealed-reading" aria-live="assertive">
@@ -118,9 +221,12 @@
       <span style="color:var(--faint)"><strong>Reality check:</strong> if you only read the audited IFR, you see a solvent institution paying 70.5% of profit as dividend and gearing at 20.7%. If you read the full public-record picture — SEARAH, PCL/PGSL, PRefChem — you see an institution where strategic assets, debt issuance, and a loss-making JV are all sitting in structures the audited ledger deliberately does not consolidate. The audited reading is correct inside its frame; the frame is narrower than the institution.</span>
     </div>
     <div style="font-size:11px;line-height:1.5;color:var(--faint,#5a554d);margin-top:6px">
-      <strong>Sources:</strong> The Star (31/8/2026) — "PETRONAS margin takes RM14bil hit"; F&L Asia — "Aramco exits Malaysian downstream JV with PETRONAS" (2026); Companies House UK — SEARAH Limited (17027115), Persons with Significant Control (Tower 1, Petronas Twin Towers); Petronas-Eni joint announcement (8 Jun 2026); Clifford Chance advisory (Jul 2026) — Searah/Eni/Petronas US$6B RCF; Cleary Gottlieb — Petronas USD30B GMTN update + USD5B notes (2025); HKEx listing notices (Mar–Apr 2025); PETRONAS Group Media — News &amp; Media · Reports (Guaranteed Notes, GMTN Program, Pricing Supplements); Searah.com — Privacy Statement.
+      <strong>Sources:</strong> The Star (31/8/2026) — "PETRONAS margin takes RM14bil hit"; F&amp;L Asia — "Aramco exits Malaysian downstream JV with PETRONAS" (2026); Companies House UK — SEARAH Limited (17027115), Persons with Significant Control (Tower 1, Petronas Twin Towers); Petronas-Eni joint announcement (8 Jun 2026); Clifford Chance advisory (Jul 2026) — Searah/Eni/Petronas US$6B RCF; Cleary Gottlieb — Petronas USD30B GMTN update + USD5B notes (2025); HKEx listing notices (Mar–Apr 2025); PETRONAS Group Media — News &amp; Media · Reports (Guaranteed Notes, GMTN Program, Pricing Supplements); Searah.com — Privacy Statement.
     </div>
   </div>
+
+    </div>
+  </details>
 
   <div class="hero-tag">PETRONAS financial health · current answer</div>
   <h1>Financial capacity. Operating resilience. <span>Stakeholder balance.</span><span class="epi-tag">INTERPRET</span></h1>
@@ -601,6 +707,8 @@
   <span>WEALTH computes · <b style="color:var(--dim)">arifOS</b> frames · <b style="color:var(--ink)">Human (Arif)</b> decides</span>
   <span style="color:var(--gold);letter-spacing:0.06em">DITEMPA BUKAN DIBERI</span>
 </div>
+
+</details>
 
 </main>
 

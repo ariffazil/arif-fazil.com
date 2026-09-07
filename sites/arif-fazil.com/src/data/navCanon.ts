@@ -24,20 +24,8 @@ export const primaryNav: NavItem[] = [
     "external": false
   },
   {
-    "label": "About",
-    "href": "/about",
-    "mode": "spa",
-    "external": false
-  },
-  {
     "label": "Earth",
     "href": "/earth",
-    "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "World",
-    "href": "/world",
     "mode": "spa",
     "external": false
   },
@@ -48,26 +36,14 @@ export const primaryNav: NavItem[] = [
     "external": false
   },
   {
+    "label": "World",
+    "href": "/world",
+    "mode": "static",
+    "external": false
+  },
+  {
     "label": "Work",
     "href": "/work",
-    "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "999",
-    "href": "/999/",
-    "mode": "static",
-    "external": false
-  },
-  {
-    "label": "000",
-    "href": "/000/",
-    "mode": "static",
-    "external": false
-  },
-  {
-    "label": "AAA",
-    "href": "/AAA",
     "mode": "spa",
     "external": false
   }

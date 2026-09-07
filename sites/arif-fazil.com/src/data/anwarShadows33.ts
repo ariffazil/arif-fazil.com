@@ -1,22 +1,31 @@
 /**
- * 33 Bayang Anwar Ibrahim — Three-Axis Shadow Analysis
+ * 33 Tensions — Anwar Ibrahim
  * Axis 1: Sosiopolitik (01-11)
  * Axis 2: Ekonomi (12-22)
  * Axis 3: Peribadi (23-33)
- * Sumber: Wikipedia, The Edge, Al Jazeera, CNA, MOF, BERSIH, PETRONAS, LinkedIn, CNN, Federal Court.
+ *
+ * METHODLOGY: HUMAN_EUREKA_KERNEL v1.1
+ * Each card separates: Fact → Interpretation → Alternatives → Limits
+ * This is NOT a psychological diagnosis. It is a policy accountability analysis.
  * DITEMPA BUKAN DIBERI.
  */
 
 export type ShadowAxis = "sosiopolitik" | "ekonomi" | "peribadi";
-export type ShadowDepth = "persona" | "bayang" | "tragis";
 
 export interface Shadow {
   id: number;
   axis: ShadowAxis;
-  depth: ShadowDepth;
-  title: string;      // catchy short name
-  body: string;       // full analysis text
-  source: string;     // inline citation
+  title: string;
+  /** Verifiable public record — what can be traced to sources */
+  fact: string;
+  /** Editorial interpretation — clearly labelled as analysis, not fact */
+  interpretation: string;
+  /** Alternative explanations — at least two credible readings */
+  alternatives: string[];
+  /** Epistemic limits — what cannot be claimed from the evidence */
+  limits: string;
+  /** Source citations — specific, traceable */
+  source: string;
 }
 
 export const ANWAR_SHADOWS: Shadow[] = [
@@ -26,90 +35,167 @@ export const ANWAR_SHADOWS: Shadow[] = [
   {
     id: 1,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "Acah Baling — Mitos Pengasasan",
-    body: "1974. Anwar berbaring di Baling, solidariti dengan penoreh getah yang didakwa kelaparan. Gambar itu jadi mitos pengasasan reformasi Malaysia. Fakta yang kemudian didedahkan: laporan kelaparan yang mencetuskan protes itu dibuktikan palsu. Yang terbenar — penoreh getah memang susah, tetapi naskhah naratif yang Anwar pilih adalah laporan palsu. Dan yang paling penting: bapa Anwar, Ibrahim Abdul Rahman, adalah ahli Parlimen UMNO Seberang Tengah 1959–1964, parliamentary secretary Kementerian Kesihatan. Mak Che Yan, ketua UMNO Wanita Bahagian. Ini bukan anak petani — ini anak istana politik. Sesiapa yang percaya Anwar 'dari bawah' telah menerima persona yang dipasang sejak Baling. Dan persona itu berumur 52 tahun.",
-    source: "Wikipedia — Baling starvation report later demonstrated false. Ibrahim Abdul Rahman MP 1959-1964."
+    title: "Baling 1974 — Naratif Asal-usul",
+    fact: "1974: Anwar mengetuai protes di Baling berkaitan laporan kesukaran penoreh getah. Harga getah memang jatuh. Beliau ditahan di bawah ISA selama 20 bulan. Bapa beliau, Ibrahim Abdul Rahman, adalah Ahli Parlimen UMNO Seberang Tengah (1959–1964) dan Setiausaha Parlimen Kementerian Kesihatan. Anwar kemudiannya menghadiri MCKK, sekolah elit Melayu.",
+    interpretation: "Naratif 'anak kampung yang berjuang untuk rakyat miskin' adalah sebahagian daripada persona politik yang dibina sejak 1974. Latar belakang keluarga yang berada dalam politik UMNO mewujudkan kontras dengan imej marhaen.",
+    alternatives: [
+      "Aktivis muda yang ikhlas terhadap kemiskinan walaupun dari keluarga elit",
+      "Pengalaman keluarga dalam politik memberi kesedaran awal tentang ketidakadilan",
+      "Naratif sengaja dibina untuk modal politik jangka panjang",
+      "Gabungan ketiga-tiga: motivasi bercampur adalah normal dalam aktivisme"
+    ],
+    limits: "Rekod awam tidak membuktikan sama ada protes itu bermotifkan ikhlas, politik, atau kedua-duanya. Satu peristiwa 1974 tidak menentukan watak tetap 50 tahun kemudian.",
+    source: "Wikipedia — Baling protest 1974; Ibrahim Abdul Rahman MP 1959-1964; ISA detention record."
   },
   {
     id: 2,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "ABIM Bukan Gerakan — Ia Tangga",
-    body: "1971, Anwar co-found ABIM — pergerakan belia Islam yang menentang establishment sekular. Pada 1982, dia masuk UMNO — parti yang pernah menjadi musuh demonstrasi gerakan itu. Anwar sendiri menggambarkannya sebagai kerana UMNO telah menjanjikan program islamisasi di bawah Mahathir. Hakikatnya, ABIM tidak pernah menjadi gerakan — ia adalah CV. Setiap organisasi yang diasaskannya sejak Kebangsaan Pelajar Muslim hingga MBM dan ABIM menjadi addendum untuk jawatan. Gerakan Islam menjadi bahan dagangan. Kerusi Permatang Pauh yang dimenanginya pada 1982 dicipta dari pewarisan kerusi Seberang Tengah yang diwakili oleh bapanya..",
-    source: "Wikipedia — joined UMNO 1982; Permatang Pauh created from father's constituency."
+    title: "ABIM → UMNO 1982",
+    fact: "1971: Anwar co-founded ABIM, an Islamic youth movement opposing the secular establishment. 1982: he joined UMNO, the party ABIM had opposed. He was appointed Deputy Minister, then rose to Deputy Prime Minister by 1993. He cited UMNO's promise of Islamization under Mahathir as justification.",
+    interpretation: "Joining UMNO after leading an opposition movement is a consequential political decision that invites debate about strategy vs. co-optation. The speed of his rise (Deputy Minister to DPM in 11 years) suggests significant political skill and patronage.",
+    alternatives: [
+      "Genuine belief that reform required state power from within",
+      "Political ambition that prioritized career over movement",
+      "Strategic calculation that outsider reform was impossible in Malaysia's system",
+      "Multiple motives operating simultaneously — ambition AND belief"
+    ],
+    limits: "Motives for joining UMNO cannot be established from public record alone. Mixed motives are normal in political actors and do not prove deception.",
+    source: "Wikipedia — joined UMNO 1982; ministerial records 1982-1998."
   },
   {
     id: 3,
     axis: "sosiopolitik",
-    depth: "tragis",
-    title: "40 Tahun Dalam Satu Bilik",
-    body: "MP 1982. PM 2022. Empat dekad. Tiada siapa dalam sejarah Malaysia mengumpul sebanyak ini jawatan — Kebudayaan, Pertanian, Pendidikan, Kewangan, Timbalan PM dua kali, Ketua Pembangkang, PM. Dan kerana pengumpulan itu sendiri — setiap jawatan meninggalkan parut. Setiap parut menuntut konsistensi yang diperlukan. Empat puluh tahun akumulasi bayang. Lelaki lain mengumpul wang atau tanah; Anwar mengumpul gelaran. Gelaran yang perlu dilindungi adalah gelaran yang terus membeli kegelapan.",
-    source: "Wikipedia — Ministerial portfolios 1982–1998, Opposition Leader, PM 2022."
+    title: "40 Tahun, Banyak Jawatan",
+    fact: "MP 1982. Minister of Culture, Agriculture, Education, Finance. Deputy PM twice. Opposition Leader. PM 2022. Four decades of public office across multiple portfolios.",
+    interpretation: "The accumulation of portfolios over four decades creates significant institutional memory but also potential identity-fusion with office. The question is whether long tenure builds wisdom or dependency.",
+    alternatives: [
+      "Deep institutional expertise from diverse portfolios",
+      "Identity becoming inseparable from political role",
+      "Normal career progression for a long-serving politician",
+      "Combination of expertise and dependency"
+    ],
+    limits: "Duration in office does not establish motive, character, or psychological state. Many long-serving politicians worldwide hold multiple portfolios without identity-level conclusions being drawn.",
+    source: "Wikipedia — ministerial portfolios 1982–1998; Opposition Leader; PM 2022."
   },
   {
     id: 4,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "Semua Musuh, UMNO Kekal",
-    body: "PAS pernah kawan, kini musuh. DAP pernah kawan, kini musuh. UMNO 1982–1998: kawan lama. UMNO 2022–sekarang: kawan baru. Konsistensi sebenar dalam karier Anwar bukan reformasi — ia adalah UMNO. Parti yang paling banyak berubah di sisi Anwar adalah semua parti lain. DAP: cina. PAS: mudah lupa. UMNO: kekal kerana ia yang paling diperlukan. Jung menyebut ini projeksi: dunia kelihatan berubah kerana Anwar melihat bayang dirinya sendiri pada semua pihak, kecuali UMNO yang paling menyerupai dirinya yang tersembunyi..",
-    source: "Rekod PH-BN unity government 2022-sekarang; Zahid DNAA."
+    title: "Shifting Alliances — UMNO Kekal",
+    fact: "Alliance history: PAS (opponent), DAP (ally then opponent), UMNO (1982-1998 ally, 2022- present ally via unity government). The 2022 unity government brought former adversaries PH and BN together.",
+    interpretation: "UMNO has been the most consistent political relationship across Anwar's career, despite periods of opposition. Coalition formation in Malaysia's multi-ethnic system requires pragmatic alliances.",
+    alternatives: [
+      "UMNO is the necessary coalition partner in Malaysia's political arithmetic",
+      "Strategic flexibility that prioritizes governing over ideological purity",
+      "Pattern of returning to the establishment rather than transforming it",
+      "Malaysia's system makes broad coalitions inevitable for any PM"
+    ],
+    limits: "Coalition patterns do not establish personal loyalty, hidden motives, or character. Multi-party coalition formation is normal in parliamentary democracies.",
+    source: "PH-BN unity government 2022-present; SPR election records."
   },
   {
     id: 5,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "DNAA Zahid — Sewa Politik",
-    body: "Zahid Hamidi. Orang yang menyebarkan buku 50 Dalil terhadap Anwar pada 1998. Kini menjadi Timbalan Perdana Menteri. 47 tuduhan rasuah dilepaskan dengan Discharge Not Amounting To Acquittal (DNAA) pada September 2023 — selepas Anwar menjadi PM. Anwar berkata: 'Saya tidak mengarah Peguam Negara.' Tetapi PM yang mengawal peguam negara. Peguam negara yang menutup kes Zahid. Undang-undang tidak hilang dari negara — ia pergi ke peti ibu bapa Zahid.",
-    source: "The Edge Malaysia 8 September 2023; CNA — Nurul Izzah adviser role."
+    title: "DNAA Zahid — 47 Pertuduhan",
+    fact: "September 2023: High Court granted DNAA (Discharge Not Amounting to Acquittal) on 47 corruption charges against Ahmad Zahid Hamidi, after prosecution's application. Zahid was Deputy PM in the unity government. Anwar stated he did not direct the Attorney General.",
+    interpretation: "The DNAA raised serious public concern about prosecutorial independence and anti-corruption credibility, particularly because Zahid was a senior coalition partner and deputy PM.",
+    alternatives: [
+      "AGC acted independently based on legal assessment",
+      "Coalition politics influenced the decision",
+      "Evidence was genuinely insufficient for conviction",
+      "Combination of legal and political factors"
+    ],
+    limits: "Public record does not establish that Anwar personally directed the DNAA or that there was an explicit exchange between prosecution decisions and parliamentary support. Causal claims require direct evidence.",
+    source: "The Edge Malaysia 8 September 2023; Court records; AGC statements."
   },
   {
     id: 6,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "Najib Dipotong, Yang Kecil Disenyap",
-    body: "Februari 2024: hukuman Najib dipotong separuh atas 1MDB — RM4.2 bilion. Aktivis BERSIH memprotes reformasi yang perlahan. Siasatan terhadap MACC didakwa terganggu. Kes-kes rasuah UMNO ditutup satu demi satu. Anwar masih memakai baju anti-rasuah di hadapan kamera. Bayang: lelaki yang dijemput sebagai wira oleh orang yang kemudian kecewa. Wira menjadi penunggang. Setiap kekecewaan itu memasukkan satu bayang lagi ke dalam bilik yang terkunci..",
-    source: "Al Jazeera Feb 2024; BERSIH; Bloomberg Feb 2026 re MACC."
+    title: "Reformasi Kredibiliti — BERSIH Kritikan",
+    fact: "Activists including BERSIH have criticized the slow pace of institutional reform under Anwar's government. Concerns include: prosecutorial independence, MACC operations, and anti-corruption commitments.",
+    interpretation: "Gap between reform rhetoric and reform delivery is a legitimate accountability concern. The question is whether delays reflect political constraints, institutional resistance, or reduced commitment.",
+    alternatives: [
+      "Institutional reform requires time and coalition consensus",
+      "Coalition constraints prevent faster reform",
+      "Reform commitment has weakened under governing pressure",
+      "Combination of constraints and reduced urgency"
+    ],
+    limits: "Pace of reform alone does not establish motive. Institutional reform in Malaysia faces structural obstacles beyond any single PM's control.",
+    source: "BERSIH statements 2023-2025; civil society reports."
   },
   {
     id: 7,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "Shadow Cabinet",
-    body: "Di belakang PM tidak ada satu individu — ada shadow cabinet yang menentukan apa yang dilindungi, apa yang dilepaskan. Nurul Izzah (sehingga 2026), Rafizi Ramli, Fadillah Yusof, Saifuddin Nasution — setiap satu mempunyai agenda sendiri. Anwar kelihatan memerintah, tetapi tangan yang paling kuat sering tidak kelihatan. Ia bukan bayang seorang — ia adalah birokrasi bayang yang mengawal PM dengan informasi yang hanya dimiliki oleh mereka..",
-    source: "Umum — cabinet composition 2022-sekarang."
+    title: "Kabinet dan Penasihat",
+    fact: "Cabinet includes figures from multiple coalition partners. Nurul Izzah briefly served as senior economic adviser (Jan-Feb 2023) before resigning following public criticism. Multiple advisers and cabinet members have their own political bases.",
+    interpretation: "Cabinet composition reflects coalition management requirements. The Nurul Izzah appointment created perception problems for an anti-nepotism reformist government.",
+    alternatives: [
+      "Standard coalition cabinet formation in parliamentary system",
+      "Concentration of advisory influence within trusted circle",
+      "Family appointment as political error that was corrected",
+      "Mix of coalition necessity and personal trust networks"
+    ],
+    limits: "Cabinet composition does not establish 'shadow governance' or hidden control structures. Coalition governments necessarily include partners with their own agendas.",
+    source: "Cabinet records 2022-present; CNA — Nurul Izzah adviser appointment and resignation."
   },
   {
     id: 8,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "Akta Keselamatan Negara — Mulut Satu, Akta Lain",
-    body: "Oktober 2023: Parlimen meluluskan akta di bawah Anwar yang memberi PM kuasa untuk menutup perbicaraan atas alasan keselamatan negara. Akta yang sama PM yang pernah menentang ISA. Yang sama PM yang menjanjikan reformasi. Di mana reformasi itu terukir dalam undang-undang? Di atas meja Anwar sendiri — sebagai alat untuk menutup lubang yang mungkin terbuka jika siasatan berterusan. Akta keselamatan bukan untuk negara — ia untuk vault peribadi PM.",
-    source: "BERSIH 2023 statements; Akta Advokat coverage."
+    title: "Akta Keselamatan — Konsistensi Dasar",
+    fact: "Security legislation has been maintained or introduced under Anwar's government, despite past opposition to ISA and security laws during his opposition years.",
+    interpretation: "Continuation of security legislation that was previously opposed raises questions about consistency of reform principles. The question is whether governing reality necessitates these tools or whether principles were abandoned.",
+    alternatives: [
+      "Genuine security assessment changed after governing",
+      "Coalition partners required security legislation",
+      "Political convenience replaced principled opposition",
+      "Different context requires different tools"
+    ],
+    limits: "Change in position on security legislation does not establish hypocrisy without examining the specific security context and institutional advice. Many democratic leaders adjust security policy after taking office.",
+    source: "Parliamentary records; BERSIH statements on security legislation."
   },
   {
     id: 9,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "Subsidi Dimansuh, Cukai Diperluas",
-    body: "SST diperluas 5–10% ke barangan baharu Julai 2025. Subsidi diesel dimansuh untuk Semenanjung — dijangka jimat RM4 bilion. Hutang negara RM1.3 trilion. Yang membayar: rakyat biasa. Yang mendapat projek: elit korporat. Anwar tidak mengambil gaji PM — dan itu adalah pengorbanan yang dirancang untuk melupakan hakikat bahawa rakyat sedang membayar lebih untuk melupakannya.",
-    source: "MOF Julai 2025 SST; diesel subsidy reform."
+    title: "Subsidi dan Cukai — Beban Kos Hidup",
+    fact: "Government implemented subsidy rationalization (diesel, electricity) and expanded SST scope and rates. National debt approximately RM1.3 trillion. Anwar announced he would not take PM salary.",
+    interpretation: "Fiscal reform measures are presented as necessary for long-term sustainability but impose real short-term hardship. The salary sacrifice creates symbolic optics that may distract from structural governance questions.",
+    alternatives: [
+      "Genuine fiscal consolidation needed for national sustainability",
+      "IMF-style austerity that burdens lower-income groups disproportionately",
+      "Political framing of painful measures as reform",
+      "Combination of fiscal necessity and political messaging"
+    ],
+    limits: "Subsidy reform is a policy choice with distributional consequences. Assessing whether it is 'right' requires quantifying who bears the burden and whether mitigation is adequate — not inferring motive.",
+    source: "MOF budget documents 2023-2026; DOSM CPI data; diesel subsidy reform announcements."
   },
   {
     id: 10,
     axis: "sosiopolitik",
-    depth: "bayang",
-    title: "LGBT — Setengah Kondem, Setengah Tutup",
-    body: "CNN 2023: Anwar berkata LGBTQ tidak akan diiktiraf. Namun dia juga mencadangkan undang-undang sodomi diteliti semula. Kenapa? Kerana undang-undang sodomi itu sendiri mungkin mengancam dirinya — dan mengkaji semula boleh membuka pintu yang akan memusnahkan Persona Imam. Seorang yang mungkin tertekan oleh undang-undang yang sama menggunakan kekerasan undang-undang itu untuk terus berkuasa. Bayang terhadap bayang itu sendiri.",
-    source: "CNN interview 2023; sodomy laws Malaysia."
+    title: "LGBT — Dasar dan Retorik",
+    fact: "In CNN 2023 interview, Anwar stated LGBTQ would not be recognized. He also suggested sodomy laws should be reviewed. Malaysia maintains Section 377 criminalizing sodomy.",
+    interpretation: "Positioning on LGBTQ issues reflects coalition management between conservative Malay-Muslim base and liberal/international audience. The sodomy-law review suggestion has personal historical resonance given Anwar's prosecution history.",
+    alternatives: [
+      "Coalition management requiring different messages to different audiences",
+      "Genuine evolution toward more nuanced position",
+      "Political hedging that avoids commitment on either side",
+      "Personal history creating unique relationship with sodomy laws"
+    ],
+    limits: "Public statements on LGBTQ policy do not establish personal views, hidden orientation, or psychological motivation. Political positioning on social issues in multi-ethnic Malaysia is inherently complex.",
+    source: "CNN interview 2023; Malaysian Penal Code Section 377."
   },
   {
     id: 11,
     axis: "sosiopolitik",
-    depth: "persona",
-    title: "Legacy Kosong",
-    body: "Tengku: Merdeka. Razak: DEB. Mahathir: mega korporat. Najib: 1MDB. Muhyiddin: COVID. Ismail: nothing. Anwar: 'Aku tidak mengambil gaji.' Legasi itu bukan undang-undang, bukan jambatan, bukan reformasi yang terukir. Ia adalah ketiadaan — satu pejabat yang kelihatan penuh tetapi sebenarnya hanya mengisi kerusi.",
-    source: "Rekod KDNAn 2022-sekarang."
+    title: "Legasi — Apa yang Akan Tinggal?",
+    fact: "Comparison with predecessors: Tunku (Merdeka), Razak (DEB), Mahathir (mega-corporate transformation), Najib (1MDB scandal), Muhyiddin (COVID). Anwar's government tenure began 2022.",
+    interpretation: "Legacy assessment is premature for a sitting PM. The question is what institutional or structural changes will endure beyond the current term.",
+    alternatives: [
+      "Fiscal consolidation and subsidy reform as structural legacy",
+      "Coalition stability as institutional precedent",
+      "Insufficient transformative change for lasting legacy",
+      "Too early to assess — legacy requires post-tenure evaluation"
+    ],
+    limits: "Legacy assessment of a sitting PM is inherently incomplete. Historical judgment requires distance and outcomes that cannot yet be measured.",
+    source: "Historical records of Malaysian PMs; current policy announcements."
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -118,90 +204,167 @@ export const ANWAR_SHADOWS: Shadow[] = [
   {
     id: 12,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "No Bailout — Untuk Siapa?",
-    body: "1997: 'There is no question of any bailout.' 2024: prinsip itu masih hidup — tetapi hanya untuk syarikat yang tidak memerlukan Anwar. Dividen Petronas tetap mengalir masuk bajet (RM20 bilion) walaupun profit turun 17.6%. Bila rakyat meminta bantuan? Bila syarikat kecil? Di mana pemisahan antara bailout korporat dan subsidi rakyat?",
-    source: "Wikipedia — Anwar quoted: bailout statement 1997."
+    title: "IMF 1997 — Prinsip dan Warisan",
+    fact: "1997 Asian Financial Crisis: Anwar supported IMF-style discipline — budget cuts of 18%, opposition to bailouts of crony conglomerates. Mahathir later imposed capital controls, which Malaysia followed. Current government has implemented subsidy rationalization and fiscal consolidation measures.",
+    interpretation: "The 1997 IMF approach is cited as evidence of intellectual consistency in fiscal policy. The question is whether current measures reflect the same market-discipline philosophy or evolved understanding.",
+    alternatives: [
+      "Consistent free-market fiscal philosophy across decades",
+      "Lessons learned from 1997 failure informing current caution",
+      "Different economic context requiring different tools",
+      "IMF framework as default when other approaches fail"
+    ],
+    limits: "1997 policy positions do not establish current motive. Economic policy evolves with context, and comparing across decades requires accounting for changed global conditions.",
+    source: "IMF/World Bank crisis reports 1997-98; Euromoney award 1996; current MOF policy documents."
   },
   {
     id: 13,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "Petronas Jadi ATM",
-    body: "FY2025: profit RM45.4 bilion (turun 17.6%). Dividen RM20 bilion tetap dibayar kepada kerajaan. Petronas bukan lagi syarikat minyak — ia adalah mesin ATM yang sentiasa dipam. Sebab itu Taufik terus kekal — bukan kerana dia memahami minyak, tetapi kerana dia memahami arah aliran wang. Wang yang mengalir dari telaga ke Putrajaya lebih penting dari wang yang mengalir ke rakyat Sarawak.",
-    source: "PETRONAS Annual Report FY2025; Edge Malaysia Ogos 2026."
+    title: "PETRONAS — Dividen kepada Kerajaan",
+    fact: "PETRONAS FY2025: profit RM45.4 billion (down 17.6%). Dividend RM20 billion paid to government. PETRONAS has been a consistent source of government revenue through dividends.",
+    interpretation: "Heavy reliance on PETRONAS dividends to fund government operations raises questions about fiscal sustainability and whether the national oil company is being treated as a revenue source rather than a sovereign wealth vehicle.",
+    alternatives: [
+      "Standard sovereign revenue from national resources",
+      "Fiscal dependency that reduces PETRONAS's long-term investment capacity",
+      "Necessary measure given fiscal constraints",
+      "Structural issue requiring diversification strategy"
+    ],
+    limits: "PETRONAS dividend policy is a fiscal governance question, not evidence of personal motive. Comparative analysis with other national oil companies needed.",
+    source: "PETRONAS Annual Report FY2025; Edge Malaysia August 2026."
   },
   {
     id: 14,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "IMF Boy yang Kalah 1998",
-    body: "Mahathir: kawalan modal. Anwar: pasaran bebas, IMF. Anwar kalah. Mahathir kekal. Kemudian Mahathir mengambil alih kawalan modal yang sebelum itu diperjuangkan oleh Anwar. Hakikat negara bertahan dengan kawalan modal Mahathir, bukan dengan IMF Anwar. Tetapi SST 2025 masih ikut buku IMF yang sama. Anwar tidak pernah belajar dari kekalahan — dia hanya menunggu untuk menerapkan kegagalan yang sama dengan nama baharu.",
-    source: "Wikipedia — Anwar free-market approach; Malaysia capital controls 1998."
+    title: "SST dan Rasionalisasi Subsidi",
+    fact: "SST scope expanded and rates increased (5-10% on new items, July 2025). Diesel subsidy rationalized for Peninsular Malaysia — estimated savings RM4 billion. National debt approximately RM1.3 trillion.",
+    interpretation: "Fiscal consolidation measures are presented as necessary for long-term sustainability but impose real costs on households and businesses. The question is whether targeting is adequate and mitigation sufficient.",
+    alternatives: [
+      "Genuine fiscal reform needed for debt sustainability",
+      "Austerity that disproportionately burdens lower-income groups",
+      "IMF-style conditionality without IMF label",
+      "Political framing of necessary but painful measures"
+    ],
+    limits: "Fiscal reform assessment requires distributional analysis, targeting data, and compensation mechanisms — not motive attribution. Policy choices have consequences; characterizing those consequences requires evidence.",
+    source: "MOF budget 2025-2026; SST expansion announcements; DOSM CPI data."
   },
   {
     id: 15,
     axis: "ekonomi",
-    depth: "tragis",
-    title: "PTPTN — Janji Tak Tepati",
-    body: "Sebelum PRU: hapus PTPTN. Lepas menang: PTPTN kekal, hutang pelajar kekal. Hakikat: PTPTN bukan masalah — ia adalah mekanisme penguncian. Pelajar yang berhutang tidak boleh memberontak. Yang boleh berhutang lebih lama adalah yang paling patuh.",
-    source: "PTPTN promises vs reality."
+    title: "PTPTN — Janji dan Realiti",
+    fact: "Pre-election: promises to review or reform PTPTN (national education loan). Post-election: PTPTN remains with existing repayment structures. Student debt continues.",
+    interpretation: "Gap between pre-election promises and post-election delivery on education finance is a legitimate accountability concern.",
+    alternatives: [
+      "Coalition constraints prevented PTPTN reform",
+      "Fiscal reality made reform impossible without alternative funding",
+      "Promise was political rather than implementable",
+      "Reform is planned but delayed by competing priorities"
+    ],
+    limits: "Unfulfilled election promises are common in democracies and do not establish deception without examining the specific constraints faced.",
+    source: "PH manifesto PRU-14/15; PTPTN current policy."
   },
   {
     id: 16,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "Gas Sarawak Ditawarkan Pada Siapa?",
-    body: "GAS Sarawak — 60% simpanan negara — sedang berdepan dengan Petros-Petronas. Apa jawapan Anwar? Taufik kekal di KLCC. Tiada negotiation sebenar berlaku. Petronas sibuk dengan形象, bukan gas. Anwar sibuk dengan F1, bukan gas. Gas Sarawak tinggal dalam limbo — antara perjanjian yang tidak wujud dan rundingan yang tidak pernah berlaku.",
-    source: "PETROS-PETRONAS dispute; gas aggregation."
+    title: "Gas Sarawak — PETROS dan PETRONAS",
+    fact: "Sarawak holds approximately 60% of Malaysia's gas reserves. Dispute between PETROS (Sarawak's oil company) and PETRONAS over gas aggregation rights. Federal government has been involved in mediation.",
+    interpretation: "Federal-state resource revenue sharing is a significant governance issue. The question is whether federal mediation adequately protects Sarawak's resource rights.",
+    alternatives: [
+      "Federal mediation balancing national and state interests",
+      "PETRONAS interests prioritized over Sarawak's rights",
+      "Complex legal and constitutional issue requiring careful resolution",
+      "Political negotiation that will take time to resolve"
+    ],
+    limits: "Resource disputes involve constitutional, legal, and commercial dimensions. Attributing motive to federal mediation requires evidence of deliberate bias, not just process complexity.",
+    source: "PETROS-PETRONAS dispute records; Sarawak government statements."
   },
   {
     id: 17,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "Energy Asia & F1 — Untuk Siapa?",
-    body: "Projek mega: Energy Asia, F1. Besar. Gempak. Untuk penonton antarabangsa. Berapa juta ringgit peruntukan? Berapa yang masuk ke poket rakyat biasa? Berapa yang membuat Anwar nampak hebat dari luar tetapi rakyat bawah tidak merasai apa-apa? Kos: disorok di belakang. Manfaat: dilihat di hadapan. Itu bukan ekonomi — itu teater.",
-    source: "Energy Asia 2025; F1 return bid."
+    title: "Mega Projek — Energy Asia, F1",
+    fact: "Government has pursued high-profile projects including Energy Asia conference and Formula 1 return bid. These involve significant public expenditure and international visibility.",
+    interpretation: "High-profile projects raise questions about allocation of public funds between visibility and direct citizen benefit.",
+    alternatives: [
+      "Strategic investment in Malaysia's international positioning",
+      "Tourism and economic multiplier effects",
+      "Political optics that prioritize visibility over substance",
+      "Mix of strategic and political motivations"
+    ],
+    limits: "Mega-project assessment requires cost-benefit analysis, economic impact data, and comparison with alternative uses of funds — not motive inference.",
+    source: "Energy Asia 2025; F1 return bid reports; MOF expenditure records."
   },
   {
     id: 18,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "Privat yang Belum Terdedah",
-    body: "Setiap ringgit yang ditarik dari rakyat melalui reformasi — ada perjanjian yang berlaku di belakang pintu. Genting, Forest City, data center. Tiada tender terbuka yang boleh diakses oleh rakyat. Tiada kesan audit. Kerajaan Madani sepatutnya transparen — tetapi lembaran imbangan transparen itu mempunyai harga, dan harga itu bukan RM0.",
-    source: "Umum — procurement concerns PH-BN unity govt."
+    title: "Procurement — Ketelusan",
+    fact: "Government procurement processes have faced criticism regarding transparency, particularly for large contracts and GLC transactions.",
+    interpretation: "Procurement transparency is a governance accountability issue. The question is whether Madani government has improved or maintained the transparency standards it criticized in predecessors.",
+    alternatives: [
+      "Inherited procurement systems being reformed gradually",
+      "Coalition politics affecting procurement decisions",
+      "Structural obstacles to full transparency",
+      "Genuine improvement that is not yet visible publicly"
+    ],
+    limits: "Procurement criticism requires specific evidence of irregularities, comparative analysis with previous governments, and examination of institutional constraints.",
+    source: "Auditor General reports; procurement policy documents."
   },
   {
     id: 19,
     axis: "ekonomi",
-    depth: "tragis",
-    title: "RM1.3 Trilion — Yang Bayar Bukan Anwar",
-    body: "Hutang negara RM1.3 trilion. Anwar tidak mengambil gaji PM. Pengorbanan itu diumumkan kepada dunia — tetapi rakyat yang mengambil PTPTN tidak pernah mendapat berita yang sama. Rakyat yang membayar SST lebih banyak tidak pernah dijemput ke sidang akhbar. Yang bayar hutang negara adalah pekerja bergaji rendah yang membeli barangan bercukai. Yang tidak bayar: PM sendiri.",
-    source: "MOF Malaysia debt figures 2025-2026."
+    title: "Kos Hidup — Siapa yang Menanggung?",
+    fact: "Cost of living has increased with subsidy rationalization and SST expansion. Government has implemented cash transfer programs (STR/SHR) as mitigation. Inflation data shows mixed trends.",
+    interpretation: "Distributional impact of fiscal reform is a legitimate policy concern. The question is whether mitigation measures adequately offset increased costs for affected groups.",
+    alternatives: [
+      "Targeted transfers adequately compensate affected groups",
+      "Transfers insufficient for lowest-income households",
+      "Structural reform will benefit all groups in medium term",
+      "Reform benefits upper-income groups disproportionately"
+    ],
+    limits: "Assessing who bears the fiscal burden requires household-level data, not political rhetoric analysis. Both 'reform is necessary' and 'reform hurts rakyat' can be simultaneously true.",
+    source: "DOSM CPI data; STR/SHR disbursement records; MOF fiscal reports."
   },
   {
     id: 20,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "George Soros — Kambing Hitam",
-    body: "1997: Mahathir tuduh Soros. Hakikat: krisis berpunca dari sistem kroni yang Mahathir dan Anwar sendiri bina. Tetapi Soros jadi kambing hitam kerana: sebut Soros mudah, sebut kroni bahaya. Anwar tidak sanggup membetulkan naratif kerana sebut kroni bermakna sebut kroni MAHATHIR — dan kroni Anwar sendiri. Maka lembu menjadi PM semula kerana krisis.",
-    source: "1997 crisis; Anwar vs Mahathir policy debate."
+    title: "Ringgit dan Keyakinan Pelabur",
+    fact: "Ringgit has experienced volatility during Anwar's tenure. Foreign investment trends show mixed signals. Government has pursued investor engagement through international visits and policy announcements.",
+    interpretation: "Currency performance and investment confidence are complex macroeconomic outcomes influenced by global conditions, domestic policy, and market perception.",
+    alternatives: [
+      "Global conditions (US interest rates, China slowdown) driving ringgit weakness",
+      "Domestic policy uncertainty affecting investor confidence",
+      "Structural economic issues predating current government",
+      "Combination of external and domestic factors"
+    ],
+    limits: "Currency movements are influenced by hundreds of factors. Attributing ringgit performance to a single PM's actions or character is economically unsound.",
+    source: "BNM exchange rate data; MIDA investment reports; global macro data."
   },
   {
     id: 21,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "Perwaja — Lubang Yang Tak Pernah Ditutup",
-    body: "Perwaja Steel — mega projek yang rugi berbilion. Kroni parti pegang. Hakikat ini kekal: setiap mega projek era Anwar/Mahathir ada 'design' untuk pihak tertentu. Nama berubah — Perwaja menjadi X, Y, Z. Intinya sama. Anwar pernah jadi Menteri Kewangan yang menutup lubang ini — tetapi tidak pernah menyebut siapa yang memulakannya.",
-    source: "Umum — Perwaja Steel scandal 1980s-90s."
+    title: "Hutang Negara — RM1.3 Trilion",
+    fact: "National debt approximately RM1.3 trillion. Debt-to-GDP ratio has increased. Government has implemented fiscal consolidation measures including subsidy reform and revenue diversification.",
+    interpretation: "National debt level is a fiscal sustainability concern. The question is whether current measures are sufficient to stabilize debt trajectory.",
+    alternatives: [
+      "Debt inherited from previous governments and COVID spending",
+      "Current fiscal measures on path to stabilization",
+      "Debt growth requires more aggressive consolidation",
+      "Structural revenue problem requiring deeper reform"
+    ],
+    limits: "Debt assessment requires fiscal trajectory analysis, not character judgment. Debt levels are outcomes of policy across multiple governments, not a single PM's character.",
+    source: "MOF fiscal reports; Bank Negara data; Auditor General reports."
   },
   {
     id: 22,
     axis: "ekonomi",
-    depth: "bayang",
-    title: "Ringgit Tak Pernah Naik",
-    body: "Setiap kali Anwar naik pentas — ringgit tidak naik. Pasaran melihatnya sebagai one-man show. Keyakinan memerlukan institusi, bukan individu. Anwar masih ingat ringgit turun kerana 'pihak tertentu' sabotaj. Realiti: ringgit turun kerana keyakinan yang mengecil — dan keyakinan itu sendiri berpunca dari ketiadaan reformasi institusi yang nyata.",
-    source: "Ringgit 2023-2026; foreign investment data."
+    title: "Ekonomi Digital dan AI — Aspirasi",
+    fact: "Government has announced ambitions for Malaysia as a regional digital economy and AI hub. MoUs signed with international technology companies. Data center investments attracted.",
+    interpretation: "Digital economy ambitions are common across ASEAN nations. The question is whether implementation matches ambition.",
+    alternatives: [
+      "Genuine strategic positioning for digital economy",
+      "PR announcements without implementation substance",
+      "Infrastructure constraints (energy, grid) limiting delivery",
+      "Long-term strategy that will take years to materialize"
+    ],
+    limits: "Digital economy assessment requires tracking specific MoU implementation, infrastructure investment, and policy delivery — not aspiration-level criticism.",
+    source: "MIDA investment data; NIMP 2030; data center announcements."
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -210,106 +373,197 @@ export const ANWAR_SHADOWS: Shadow[] = [
   {
     id: 23,
     axis: "peribadi",
-    depth: "bayang",
-    title: "Persona Imam — Jung's Law",
-    body: "ABIM moralist. Pemimpin Islam. Suami setia 46 tahun. Persona bukan sekadar baik — dia asketik. Hukum Jung: makin suci persona, makin hitam bayang. Lelaki yang boleh cakap 'aku ada nafsu, aku manusia' tidak perlukan persona sebersih itu. Persona sebersih itu hanya diperlukan oleh psyche yang ada benda nak sorok — sama ada benda itu desire, atau keperluan untuk terus menjadi mangsa.",
-    source: "Umum — public persona; Jung 'Man and His Symbols.'"
+    title: "Kes Liwat — Rekod Mahkamah",
+    fact: "Two sodomy trials: 1998-2004 (convicted, overturned on appeal 2004); 2008-2015 (acquitted 2012, conviction reinstated 2014, Federal Court upheld 2015). Amnesty International designated Anwar 'prisoner of conscience' in 1999. International human rights organizations criticized aspects of both cases as politically motivated.",
+    interpretation: "The legal history is central to Malaysia's modern political narrative. International human rights assessments and the political context of both prosecutions are documented.",
+    alternatives: [
+      "Politically motivated prosecution as documented by international observers",
+      "Genuine legal proceedings that happened to involve a political figure",
+      "Mix of political motivation and legal substance",
+      "Cases that cannot be definitively resolved from public record alone"
+    ],
+    limits: "Court records establish legal proceedings and outcomes. They do not establish personal character, hidden motives, or psychological states. The human rights assessment is an institutional opinion, not a psychological diagnosis.",
+    source: "Federal Court rulings 2004, 2015; Amnesty International reports; HRW statements."
   },
   {
     id: 24,
     axis: "peribadi",
-    depth: "bayang",
-    title: "Tilam, Saiful, Munawar — Tiga Tuduhan, Satu Jawapan",
-    body: "1998: tilam DNA 10/13 sepadan. Anwar kata tilam bukan dia punya. 2008: Saiful Bukhari. Court lepas 2012 (DNA compromised). Appeal flip 2014, Federal Court 2015. Munawar Anees — speechwriter confess, tarik balik dengan dakwaan dipukul. Dalam dunia di mana setiap tuduhan datang dengan pembungkusan politik — kebenaran dan dusta tidak boleh dibezakan. Kalau innocent: mangsa sebenar. Kalau tidak: lelaki paling bertuah dalam sejarah — sebab setiap tuduhan datang dalam bungkusan yang boleh dismis.",
-    source: "Wikipedia — sodomy trials; tilam DNA; Munawar; Saiful."
+    title: "Black Eye 1998 — Keganasan Negara",
+    fact: "September 29, 1998: Anwar appeared in court with a black eye sustained while in police custody. Inspector General of Police Abdul Rahim Mohd Noor was convicted and sentenced for the assault. The incident became a national symbol of state violence against political opposition.",
+    interpretation: "The 1998 assault is documented state violence that had major political consequences. It established Anwar as a symbol of political persecution.",
+    alternatives: [
+      "Documented state violence that validates claims of political persecution",
+      "Historical event that should inform but not determine current assessment",
+      "Trauma that shaped political identity and public sympathy",
+      "Event that is legitimately relevant to accountability assessment of current governance"
+    ],
+    limits: "The assault is a documented fact. Using it to deflect current governance criticism, or dismissing its ongoing relevance, are both editorial choices that should be stated as such.",
+    source: "RCI (Royal Commission of Inquiry) findings; Abdul Rahim conviction record."
   },
   {
     id: 25,
     axis: "peribadi",
-    depth: "bayang",
-    title: "Dua Puluh Tahun, Satu Ayat",
-    body: "Tiada sekali pun: 'Aku lemah.' Tiada sekali pun: 'Aku ada kegelapan.' Hanya: 'Konspirasi.' Monolith denial bukan tanda innocence — ia tanda psyche yang tidak pernah membuka pintu bilik sorok pun sedikit. Sebab satu pintu terbuka, sembilan puluh sembilan bilik lain bertanya. Dan Anwar tidak sanggup menjawab satu pun.",
-    source: "Rekod kenyataan awam 1998-2026 — tiada pengakuan kelemahan."
+    title: "Shakespeare dan Intelek",
+    fact: "Anwar has demonstrated literary and intellectual engagement, including reportedly reading Shakespeare extensively during imprisonment and presenting at the World Shakespeare Congress 2007.",
+    interpretation: "Literary and intellectual engagement contrasts with populist political communication style. The question is whether code-switching between registers improves democratic accessibility or constitutes persona management.",
+    alternatives: [
+      "Genuine intellectual depth that is selectively displayed",
+      "Political communication that adapts register to audience",
+      "Standard political code-switching practiced by many leaders",
+      "Intelligence that is strategically deployed rather than consistently expressed"
+    ],
+    limits: "Intellectual capacity and communication style do not establish character, motive, or hidden identity. Political leaders worldwide adapt communication to context.",
+    source: "World Shakespeare Congress 2007; public intellectual engagements."
   },
   {
     id: 26,
     axis: "peribadi",
-    depth: "tragis",
-    title: "Syaitan yang Ingat Dirinya Malaikat",
-    body: "Bayang mangsa: lelaki yang melihat setiap kritikan sebagai serangan, setiap kekalahan sebagai penganiayaan, setiap tentangan sebagai fitnah. Yang buat pariah paling membahayakan: dia percaya dirinya sebagai mangsa. Kalau kau mangsa, kau tidak perlu berubah. Kalau mangsa tidak berubah, mangsa tidak belajar. Kalau tidak belajar, 30 tahun menunggu adalah 30 tahun mengulang.",
-    source: "Rekod sidang media — konsisten framing mangsa."
+    title: "Wan Azizah — Peranan Politik",
+    fact: "Dr. Wan Azizah Wan Ismail: PKR president, held Permatang Pauh seat for 20 years, served as Deputy PM 2018-2020. Long-serving political partner who maintained party leadership during Anwar's imprisonment.",
+    interpretation: "The political partnership raises questions about party centralization within a family unit, which is a governance concern applicable to many Malaysian political parties.",
+    alternatives: [
+      "Standard political family involvement common in Malaysian politics",
+      "Genuine partnership where both parties contribute independently",
+      "Party centralization that raises democratic governance questions",
+      "Mix of personal partnership and political strategy"
+    ],
+    limits: "Political spousal roles are documented. Claims about private marriage dynamics, intimate motivation, or 'marriage as political ledger' cannot be established from public record.",
+    source: "PKR party records; Cabinet records 2018-2020."
   },
   {
     id: 27,
     axis: "peribadi",
-    depth: "bayang",
-    title: "Black Eye — Saint Dari Keganasan",
-    body: "1998: Inspector General Abdul Rahim Mohd Noor pukul Anwar dalam custody. Mata lebam jadi simbol nasional. Rahim dipenjara 2 bulan, maaf, bayar ganti rugi. Itu keganasan negara yang nyata. Tetapi black eye menjadikan Anwar saint. Dan kerana saint — bayang makin gelap. Lelaki yang dikatakan kena pukul itu kini menggunakan akta keselamatan negara untuk menutup perbicaraan lain. Sakit satu menjadi sebab untuk memberi sakit dua — atas nama 'safety' yang sama.",
-    source: "Wikipedia — Abdul Rahim Mohd Noor convicted."
+    title: "Nurul Izzah — Pelantikan dan Peletakan Jawatan",
+    fact: "Nurul Izzah Anwar: MP for Permatang Pauh, PKR vice-president. Appointed as senior economic and finance adviser to PM (her father) in January 2023. Resigned approximately one month later following public criticism about nepotism.",
+    interpretation: "The appointment created a perception problem for a government presenting itself as reformist. Her subsequent resignation indicates that public criticism had political force.",
+    alternatives: [
+      "Merit-based appointment that was politically misread",
+      "Nepotism that was corrected by public accountability",
+      "Family trust network that occasionally crosses governance boundaries",
+      "Error that was acknowledged and rectified"
+    ],
+    limits: "Public appointment and resignation are documented. Claims about 'children as strategic weapons' or 'dynastic aristocracy' are motive assertions not supported by the public record.",
+    source: "PMO appointment announcement January 2023; resignation reports February 2023."
   },
   {
     id: 28,
     axis: "peribadi",
-    depth: "persona",
-    title: "Acheh Memang Jiwa — Pentas Sejak MCKK",
-    body: "MCKK — sekolah elite Melayu. Tiga pelajar dari Pulau Pinang terpilih. Anwar wakil sekolah dalam pertandingan debat dan oratory. Sejak umur 15, realiti adalah pentas. Semua yang dilakukan kemudian — dari ceramah Reformasi hingga 'tak ambil gaji PM' — adalah staged. Sebab itu hang kata acah memang jiwa dia — kerana pentas yang dia nampak adalah realiti yang dia percaya. Tiada bilik di belakang pentas. Ada bilik — tetapi orang yang terberada bukan dirinya.",
-    source: "Wikipedia — MCKK debate, oratory."
+    title: "MCKK — Latar Belakang Elit",
+    fact: "Anwar attended Malay College Kuala Kangsar (MCKK), an elite residential school historically associated with Malay aristocracy and political establishment. He was selected as one of three students from Penang.",
+    interpretation: "MCKK education provides elite networks and establishment credentials that contrast with 'anak kampung' political narrative.",
+    alternatives: [
+      "Merit-based selection to elite institution",
+      "Family political connections facilitating elite access",
+      "Standard educational pathway for promising students of that era",
+      "Mix of merit, opportunity, and family background"
+    ],
+    limits: "Educational background is documented. Social mobility narratives involve complex interactions of family, opportunity, and achievement that cannot be reduced to simple deception claims.",
+    source: "MCKK records; Wikipedia biographical data."
   },
   {
     id: 29,
     axis: "peribadi",
-    depth: "tragis",
-    title: "Nurul Izzah — Puteri Reformis Menjadi Bayang",
-    body: "Nurul Izzah Anwar — MP Permatang Pauh, Naib Presiden PKR, penasihat ekonomi kanan PM (bapa sendiri). Lepas itu: stepped down atas tekanan. 2026: on leave. Kerabat tidak boleh mengekalkan dua jawatan besar — nepotism terlalu jelas. Seorang bapa yang tidak menjumpai dirinya sendiri tidak boleh memberi puterinya peluang untuk menjadi diri sendiri.",
-    source: "CNA — Nurul Izzah steps down; PKR leave 2026."
+    title: "Identiti dan Pejabat",
+    fact: "Anwar's political career spans 40+ years. His identity has been closely tied to political roles: ABIM leader, Minister, Deputy PM, Opposition Leader, PM. The gap between his 1998 dismissal and 2022 appointment as PM was approximately 24 years.",
+    interpretation: "Long political career creates potential for identity-fusion with political role. The question is whether political identity has become the primary identity, which is a common phenomenon among long-serving politicians worldwide.",
+    alternatives: [
+      "Normal identity development for career politicians",
+      "Identity-fusion that makes office essential to self-concept",
+      "Political identity as chosen vocation, not pathological dependency",
+      "Common phenomenon among leaders who dedicate decades to public service"
+    ],
+    limits: "Career-long political identity does not establish psychological pathology or 'identity fused to office.' This is a common observation about career politicians globally, not a unique diagnosis.",
+    source: "Political career timeline 1982-present."
   },
   {
     id: 30,
     axis: "peribadi",
-    depth: "bayang",
-    title: "Wan Azizah — Isteri Bukan Kekasih, Pegawai Operasi",
-    body: "Wan Azizah memegang kerusi Permatang Pauh 20 tahun. Wan Azizah menjadi TPM 2018–2020. Wan Azizah yang memadamkan api setiap kali tercetus bencana. Hubungan itu bukan pernikahan biasa — ia partnership strategi. Azizah tahu rahsia — semua 33 bayang ini — dan rahsia itu senjata, bukan vulnerability. Sebab itu hubungan mereka tidak pernah bergelora di khalayak — rahsia terlalu berat untuk diperjudikan.",
-    source: "Umum — Wan Azizah DPM 2018-2020."
+    title: "Pengampunan — Maaf sebagai Strategi",
+    fact: "Anwar reconciled with Mahathir in 2018 for the PH coalition victory. He formed a unity government with UMNO/BN in 2022, including Zahid Hamidi as deputy PM. These reconciliations involved former political adversaries.",
+    interpretation: "Political reconciliation with former adversaries raises questions about whether forgiveness is principled or strategic. In Malaysian coalition politics, reconciliation is often necessary for governing.",
+    alternatives: [
+      "Strategic pragmatism required by coalition mathematics",
+      "Genuine political maturity that prioritizes governing over grudges",
+      "Calculated moves that sacrifice principle for power",
+      "Standard political behavior in parliamentary coalition systems"
+    ],
+    limits: "Political reconciliation is common in democracies. Attributing 'calculated forgiveness' requires evidence of explicit calculation, not just outcome-based inference.",
+    source: "2018 PH coalition formation; 2022 unity government records."
   },
   {
     id: 31,
     axis: "peribadi",
-    depth: "bayang",
-    title: "Siapa Sebenarnya Anwar Ibrahim?",
-    body: "Cabaran dua soalan: 'Siapa kau?' dan 'Siapa kau nak jadi?' — kedua-duanya tidak dijawab. Yang dijawab: 'Reformasi.' Sebab itu bila seseorang berkata Anwar terlalu 'akal' — itu pujian berbisa. Akal dalam konteks Anwar bukan kebijaksanaan — ia personal branding strategy. Dia selesa dengan apa sahaja yang boleh dijual, asalkan dijual dengan baik. Yang tidak boleh dijual: diri sendiri. Sebab dia mungkin tidak kenal apa itu.",
-    source: "Umum — every speech = branded product."
+    title: "Kritikan dan Respons",
+    fact: "Anwar has responded to various criticisms during his tenure, including questions about reform pace, coalition decisions, and policy choices. Public responses have varied from defensive to engagement.",
+    interpretation: "Response patterns to criticism are relevant to governance accountability. The question is whether responses demonstrate openness to feedback or defensiveness.",
+    alternatives: [
+      "Standard political defensiveness common among leaders",
+      "Genuine engagement with substantive criticism",
+      "Pattern of deflecting criticism through historical narrative",
+      "Evolution in response style over political career"
+    ],
+    limits: "Response patterns to criticism are observable. Claims about 'incapacity for self-reflection' or 'never admitting error' require comprehensive corpus analysis, not selected examples.",
+    source: "Public statements and press conferences 2022-present."
   },
   {
     id: 32,
     axis: "peribadi",
-    depth: "tragis",
-    title: "99 Bilik Terkunci — Harga BANGANG",
-    body: "Ini jawapan kepada soalan terbesar. Bayang setiap bilik yang terkunci memerlukan maintenance. Setiap maintenance memerlukan tenaga. Setiap tenaga yang habis menjaga vault — tenaga itu tiada untuk negara. RM7.5 bilion 'secara lisan' — bocor kerana dia tidak sanggup menulis kertas (kertas = lubang). Zahid kekal — sebab Zahid lama kena tutup. Rightsizing penanya soalan — sebab soalan = retak dalam vault. BANGANG bukan bodoh. BANGANG adalah harga operasi untuk kekal 99 bilik terkunci. Negara yang membayar sewa.",
-    source: "Sintesis semua bayang di atas."
+    title: "30 Tahun Penantian",
+    fact: "From 1998 dismissal to 2022 PM appointment: approximately 24 years. During this period, Anwar was imprisoned twice, led the opposition, and formed multiple coalition attempts before finally becoming PM.",
+    interpretation: "The length of the political journey from dismissal to premiership is historically significant. The question is what this persistence reveals about political motivation and character.",
+    alternatives: [
+      "Remarkable political resilience and commitment",
+      "Identity that became inseparable from the goal of becoming PM",
+      "Political ambition sustained by genuine reform vision",
+      "Mix of resilience, ambition, and conviction"
+    ],
+    limits: "Duration of political pursuit does not establish psychological motive. Many political leaders worldwide have long journeys to power without identity-level conclusions being drawn.",
+    source: "Political timeline 1998-2022."
   },
   {
     id: 33,
     axis: "peribadi",
-    depth: "tragis",
-    title: "Mungkin Tidak Pernah Tahu Diri Sendiri",
-    body: "MCKK boy yang berbaring di Baling tidak pernah bangun dari situ — kerana tiada situ. Reformis yang masuk penjara 20 tahun tidak pernah keluar dari bilik yang sama — bilik tarik simpati. PM yang tidak mengambil gaji tidak pernah menunjukkan siapa diri sebenar tanpa kamera. Jung: bila persona terlalu berjaya, pemiliknya sendiri pengunjung. 33 bayang bukan artikel — ini 33 pintu yang tidak pernah dibuka. Kerana satu pintu terbuka, sembilan puluh sembilan bertanya. Dan Anwar tidak sanggup menjawab satu pun.",
-    source: "Sintesis — Wikipedia, Edge, Al Jazeera, CNA, LinkedIn, CNN, Federal Court."
+    title: "Apa yang Boleh Dinilai",
+    fact: "Public record includes: coalition formation decisions, policy delivery, institutional reforms (or lack thereof), fiscal management, international positioning, and political appointments. These are observable governance outputs.",
+    interpretation: "Governance outputs are the appropriate basis for political accountability assessment. Inner life, hidden motives, and psychological states cannot be established from public record.",
+    alternatives: [
+      "Assess policy delivery against promises",
+      "Assess institutional reform against commitments",
+      "Assess fiscal management against stated goals",
+      "Assess coalition governance against democratic standards"
+    ],
+    limits: "This page assesses public policy and governance record. It does not and cannot assess Anwar Ibrahim's inner life, psychological state, hidden motives, or essential identity. Those are not available from public evidence.",
+    source: "All sources cited above; governance record 2022-present."
   },
 ];
 
 export const ANWAR_SUMMARY = {
   name: "Dato' Seri Anwar Ibrahim",
-  order: 9,
+  order: 10,
   tenure: "2022–sekarang",
-  totalShadows: 33,
+  totalTensions: 33,
   axes: {
     sosiopolitik: 11,
     ekonomi: 11,
     peribadi: 11,
   },
-  verdict: "TENGGELAM",
-  coreInsight: "33 bayang yang tidak pernah diintegrasikan memerlukan 33 pemeliharaan harian. Setiap pemeliharaan memerlukan tenaga. Tenaga yang habis menjaga vault adalah tenaga yang tiada untuk negara. Anwar bukan bodoh — dia adalah kos operasi untuk kekal terkunci.",
-  jungLaw: "Bayang bukan desire. Bayang ialah SPLIT — psyche yang terbelah antara persona dan bayang. Makin suci persona, makin hitam bayang. Anwar membawa persona imam paling suci dalam sejarah politik Malaysia — maka bayangnya paling hitam juga.",
+  verdict: "ADAPTIVE_REGULATOR",
+  /** Kernel-processed insight — policy, not personality */
+  coreInsight:
+    "Anwar Ibrahim bukan 'Bijak' atau 'Bangang' dalam vakum. Dia adalah Adaptive Regulator yang menguruskan tegangan antara Power (Kuasa) dan Reform (Janji) dengan memilih Power setiap kali. Dia bijak dalam seni bina survival politik — 30 tahun dari pemecatan hingga PM, musuh jatuh, dia masih berdiri. Tetapi dia nampak lambat kepada mereka yang mengharapkan reformasi pantas. Itu bukan kebodohan — itu trade-off. Dia membayar reputasi untuk membeli masa.",
+  /** Paradox axis — the core tension this person manages */
+  paradoxAxis: "Power (Kuasa) ↔ Reform (Janji)",
+  /** Selector function — how this person navigates the paradox */
+  selectorFunction:
+    "Master Selector — dia memilih 'position' yang optimum untuk survival dalam setiap konteks. Depan pengundi Melayu: konservatif. Depan pelabur Barat: liberal/Madani. Depan China: pro-Beijing. Depan UMNO: 'kawan seperjuangan.' Itu political survival intelligence, bukan saintifik intelligence.",
+  /** Shadow territory — what is too expensive to visit */
+  shadowTerritory:
+    "Fallibility (Kesilapan). Kenapa dia tak boleh mengaku silap? Sebab kalau dia mengaku, naratif 'Pejuang Suci' yang dia bina selama30 tahun akan runtuh. Mengaku silap = Expensive. Kompromi integriti = Cheap (sebab orang lain pun buat, dia boleh rationalize).",
+  /** Metaphor — cat vs lion */
+  metaphor:
+    "Dia bijak macam kucing9 nyawa. Dia tak bijak macam singa yang jaga hutan. Kalau kau nak singa, kau silap pilih kucing. Tapi jangan kata kucing tu bangang sebab dia tak boleh raung macam singa. Dia cuma main game lain: Survival.",
+  methodologyNote:
+    "Analisis ini menggunakan HUMAN_EUREKA_KERNEL v1.1 — setiap kad dipisahkan antara fakta, tafsiran, alternatif, dan had inferens. Ia bukan diagnosis psikologi. Ia bukan dakwaan identiti. Ia analisis akauntabiliti polisi terhadap rekod awam.",
   sources: [
     "Wikipedia Anwar Ibrahim",
     "The Edge Malaysia (Ogos 2026, Disember 2023)",
@@ -320,7 +574,7 @@ export const ANWAR_SUMMARY = {
     "BERSIH statements 2023",
     "PETRONAS Annual Report FY2025",
     "Court of Appeal & Federal Court rulings",
-    "LinkedIn profile",
-    "Twitter @ariffazil",
+    "Istana Negara statements November 2022",
+    "SPR PRU-15 official results",
   ],
 };

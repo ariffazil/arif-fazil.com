@@ -27,6 +27,7 @@ import { DeritaMap } from '@/pages/DeritaMap';
 import { PoliticsHub } from '@/pages/PoliticsHub';
 import { CommodityPage } from '@/pages/CommodityPage';
 import { About } from '@/pages/About';
+import { Sanctuary } from '@/pages/Sanctuary';
 
 export function App() {
   return (
@@ -41,6 +42,10 @@ export function App() {
             <Route path="/about/" element={<About />} />
             <Route path="/bio" element={<Navigate to="/about" replace />} />
             <Route path="/bio/" element={<Navigate to="/about" replace />} />
+
+            {/* 0b. /sanctuary — Human-facing introduction to arifOS */}
+            <Route path="/sanctuary" element={<Sanctuary />} />
+            <Route path="/sanctuary/" element={<Sanctuary />} />
 
             {/* 1. /home & / */}
             <Route path="/" element={<Home />} />

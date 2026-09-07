@@ -28,6 +28,7 @@ const SPA_ROUTES = [
   "world/makcikgpt",
   "missions",
   "economics",
+  "sanctuary",
 ];
 
 const SKIP_FILES = new Set([

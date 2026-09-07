@@ -23,12 +23,13 @@ const SPA_ROUTES = [
   "work",
   "AAA",
   "aaa",
-  "000",
-  "999",
   "world/makcikgpt",
   "missions",
   "economics",
-  "sanctuary",
+  // "000" removed — /000 uses static combined HTML (Sanctuary + Genesis)
+  // "999" removed — /999 uses static HTML (Proof Chamber)
+  // "sanctuary" removed — /sanctuary uses static HTML (Sanctuary duplicate)
+  // These routes use static HTML from public/ that survives the build
 ];
 
 const SKIP_FILES = new Set([

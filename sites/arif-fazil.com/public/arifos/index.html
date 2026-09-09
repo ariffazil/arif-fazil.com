@@ -33,6 +33,7 @@ html[data-organ="arifos"] .observatory-empty{grid-column:1/-1;text-align:center;
 html[data-organ="arifos"] .status--healthy{background:rgba(61,220,151,.12);color:var(--color-verdict-seal)}
 html[data-organ="arifos"] .status--degraded{background:rgba(244,183,64,.12);color:var(--color-verdict-partial)}
 html[data-organ="arifos"] .status--down{background:rgba(229,72,77,.12);color:var(--color-verdict-void)}
+html[data-organ="arifos"] .status--live{background:rgba(56,204,132,.12);color:#38cc84}
 html[data-organ="arifos"] .status--unknown{background:rgba(136,146,166,.10);color:var(--color-verdict-sabar)}
 html[data-organ="arifos"] .organ-card--grey,html[data-organ="arifos"] .floor-cell--grey{border-color:rgba(136,146,166,.3)}
 html[data-organ="arifos"] .organ-signals{display:grid;gap:.4rem;margin-top:.35rem}
@@ -259,8 +260,8 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
      <tr data-phase="P1-3" data-source="declared-fallback"><td><code>P1-3</code></td><td>TypeScript client</td><td><span class="status status--healthy">SEALED</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
      <tr data-phase="P1-B" data-source="declared-fallback"><td><code>P1-B</code></td><td>PAI ↔ arifFLOW bridge</td><td><span class="status status--healthy">SEALED</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
      <tr data-phase="P1-4" data-source="declared-fallback"><td><code>P1-4</code></td><td>AAA emitReceipt wiring</td><td><span class="status status--healthy">SEALED LIVE</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
-     <tr data-phase="P1-5" data-source="declared-fallback"><td><code>P1-5</code></td><td>A-FORGE receipt wiring</td><td><span class="status status--down">HOLD / planned</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
-     <tr data-phase="P1-6" data-source="declared-fallback"><td><code>P1-6</code></td><td>telemetry wiring · AF-1 canary</td><td><span class="status status--degraded">NEXT / AF-1 canary</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
+     <tr data-phase="P1-5" data-source="declared-fallback"><td><code>P1-5</code></td><td>A-FORGE receipt wiring</td><td><span class="status status--live">CANARY LIVE</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
+     <tr data-phase="P1-6" data-source="declared-fallback"><td><code>P1-6</code></td><td>telemetry wiring · AF-1 canary</td><td><span class="status status--live">CANARY LIVE</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
      <tr data-phase="P1-7" data-source="declared-fallback"><td><code>P1-7</code></td><td>deprecation flags</td><td><span class="status status--degraded">pending</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
     </tbody>
    </table></div>
@@ -311,9 +312,9 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
   <div class="card" id="next-mutation-gate">
    <div class="mutation-grid">
     <div class="mutation-item"><span class="observatory-label">gate</span><span class="mutation-value" id="mutation-status"><span class="status status--down">HOLD</span></span></div>
-    <div class="mutation-item"><span class="observatory-label">authority</span><span class="mutation-value" id="mutation-authority">ARIF GO required</span></div>
-    <div class="mutation-item"><span class="observatory-label">canary</span><span class="mutation-value" id="mutation-canary">P1-6 AF-1 telemetry.ts logEvent() canary</span></div>
-    <div class="mutation-item"><span class="observatory-label">follow-up</span><span class="mutation-value" id="mutation-follow-up">P1-5f Executor receipt canary</span></div>
+    <div class="mutation-item"><span class="observatory-label">authority</span><span class="mutation-value" id="mutation-authority">ARIF GO required (next: executor full hook + P1-7)</span></div>
+    <div class="mutation-item"><span class="observatory-label">canary</span><span class="mutation-value" id="mutation-canary">P1-5f + P1-6 canaries PASSED 2026-09-09</span></div>
+    <div class="mutation-item"><span class="observatory-label">follow-up</span><span class="mutation-value" id="mutation-follow-up">executor full receipt hook + P1-7 deprecation flags</span></div>
     <div class="mutation-item"><span class="observatory-label">fallback</span><span class="mutation-value" id="mutation-fallback">local fallback preserved</span></div>
     <div class="mutation-item"><span class="observatory-label">risk</span><span class="mutation-value" id="mutation-risk">low, additive-only</span></div>
    </div>

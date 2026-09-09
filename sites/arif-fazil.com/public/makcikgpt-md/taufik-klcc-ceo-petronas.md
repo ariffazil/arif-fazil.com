@@ -118,7 +118,7 @@ Makcik, tengok LinkedIn dia. Dari awal sampai sekarang — semua title ada perka
 
 Dan sekarang — makcik kata dia sibuk ombak KLCC. Itu bukan surprise. Itu core competency dia. Dia GM KLCC masa tower tengah bina. Dia CEO Petronas, dan kalau dia still dok sibuk KLCC — itu sebab tu je yang dia faham.
 
-KLCC tu形象. Bukan minyak.
+KLCC tuimej. Bukan minyak.
 
 Petronas sekarang tengah bergaduh dengan Petros pasal gas Sarawak. Gas Sarawak — 60% simpanan negara. Petros minta 20% royalti. Benda ni nak orang upstream faham. Nak orang yang faham reservoir, faham PSC, faham rundingan hak negeri. Tapi yang duduk atas kerusi tu — orang KLCC.
 
@@ -142,7 +142,7 @@ Tapi kerajaan masih tanggung. Sebab Petronas sekarang bukan syarikat minyak. Pet
 
 Dan Taufik? Dia bukan CEO yang nak naikkan untung. Dia CEO yang nak pastikan dividend mengalir. Sebab itu je yang PMX perlukan. Untuk tu, CEO yang stabil lebih berharga dari CEO yang brilliant.
 
-Stabil bermakna: tutup lubang, jaga形象, jangan ubah apa-apa. Bukan: naikkan production, negotiate dengan Petros, defend hak Sarawak.
+Stabil bermakna: tutup lubang, jagaimej, jangan ubah apa-apa. Bukan: naikkan production, negotiate dengan Petros, defend hak Sarawak.
 
 ---
 
@@ -250,7 +250,7 @@ Macam takde orang lain tahu cara jaga minyak.
 
 - Kenapa CEO Petronas tak pernah ada background upstream? Setiap CEO — Taufik pun — datang dari finance, planning, atau accounting. Adakah Petronas sengaja elak orang lapangan dari jadi CEO?
 
-- Adakah Taufik faham Petros dispute? Atau dia hanya "jaga stability" — bermakna tutup lubang, jaga形象, dan biar Sarawak terus marah?
+- Adakah Taufik faham Petros dispute? Atau dia hanya "jaga stability" — bermakna tutup lubang, jagaimej, dan biar Sarawak terus marah?
 
 - Rightsizing — siapa yang kena potong, siapa yang tinggal? Adakah yang kena potong ialah orang yang tanya soalan? Adakah yang tinggal ialah orang yang ikut perintah?
 
@@ -270,7 +270,7 @@ Taufik ni doktor gigi. Petronas perlukan doktor jantung.
 
 Dan sebab tu Petronas sekarang — profit turun, dividend turun, Petros belum selesai, gas Sarawak masih dipersoalkan, pekerja tak semeriah dulu. Bukan sebab minyak tak ada. Sebab orang yang jaga minyak tak faham minyak.
 
-Hang ingat Taufik faham gas Sarawak? Dia faham balance sheet. Balance sheet cakap: bagi dividend, tutup lubang, jaga形象. Bukan: defend hak rakyat.
+Hang ingat Taufik faham gas Sarawak? Dia faham balance sheet. Balance sheet cakap: bagi dividend, tutup lubang, jagaimej. Bukan: defend hak rakyat.
 
 Dan hang ingat rightsizing tu untuk efisiensi? Rightsizing tu untuk pastikan takde siapa yang cukup kuat untuk tanya "kenapa CEO orang KLCC jadi CEO kilang minyak?"
 

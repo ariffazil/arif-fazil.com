@@ -1,5 +1,176 @@
 [
   {
+    "id": "m6-3",
+    "title": "Pengecut Tak Berani Confront \u2014 Edisi Khas",
+    "date": "2026-09-09",
+    "lang": "bm",
+    "series": {
+      "id": "M6",
+      "n": 3
+    },
+    "tags": [
+      "petronas",
+      "taufik",
+      "kingtime",
+      "petros",
+      "sarawak",
+      "mahkamah",
+      "federal-court",
+      "pda",
+      "kontrak",
+      "pengecut",
+      "makcikgpt",
+      "malaysia",
+      "bangang"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/taufik-pengecut-dengan-title"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "KGT-C1",
+        "text": "Paten Kingtime (struktur wellhead boleh tanggalkan pada MOPU lapangan Sepat, blok PM 313) \u2014 Petrofac E&C didapati infringe, muktamad sejak 2020.",
+        "tag": "OBS",
+        "source_id": "src2",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C2",
+        "text": "Court of Appeal (Nov 2025): paten Kingtime sah dan telah diinfringe oleh Petronas Carigali; kes dikembalikan ke High Court untuk penilaian ganti rugi.",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C3",
+        "text": "Federal Court menolak leave-to-appeal Petronas Carigali pada 4 Mei 2026 \u2014 keputusan muktamad.",
+        "tag": "OBS",
+        "source_id": "src3",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C4",
+        "text": "Kingtime dilaporkan menawar global settlement tanpa admission of liability; litigasi tetap diteruskan hingga Federal Court.",
+        "tag": "OBS",
+        "source_id": "src3",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C5",
+        "text": "Dua surat Kingtime kepada PM9 Ismail Sabri (24 Ogos 2021, 20 Jun 2022) dengan minit tulisan tangan yang kononnya mengarahkan pengurusan Petronas menyelesaikan pertikaian \u2014 didedahkan The Corporate Secret bersama dokumen bergambar.",
+        "tag": "OBS",
+        "source_id": "src3",
+        "confidence_basis": "dokumen didedahkan penerbit; TCS sendiri menasihatkan ia tidak membuktikan ingkaran secara konklusif",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C6",
+        "text": "Angka melebihi RM1 bilion ialah anggaran pendedahan berdasarkan dokumen Kingtime (dilaporkan), bukan quantum yang ditetapkan mahkamah; jurucakap Kingtime menyatakan quantum dijangka 'beberapa juta dolar AS' bersama faedah 5% setahun.",
+        "tag": "OBS",
+        "source_id": "src2",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C7",
+        "text": "Profit selepas cukai Petronas: RM55.1 bilion (2024) ke RM45.4 bilion (2025), turun tiga tahun berturut-turut; hasil RM320 bilion ke RM266.1 bilion; dividen kerajaan RM32 bilion ke RM20 bilion; ~5,000 jawatan digugurkan.",
+        "tag": "OBS",
+        "source_id": "src4",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C8",
+        "text": "Extension kontrak CEO kali kedua (penggal ketiga keseluruhan, sejak 2020) dilaporkan The Edge, tempoh dilaporkan sekurang-kurangnya dua tahun; Petronas tidak komen secara rasmi.",
+        "tag": "OBS",
+        "source_id": "src5",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C9",
+        "text": "Timeline 'Januari 2026 Petronas file Federal Court / Februari 2026 Sarawak challenge PDA tiga akta' seperti dinyatakan penulis \u2014 pertikaian Petronas-Sarawak disahkan wujud (TCS, The Edge) tetapi tarikh bulan spesifik belum disahkan secara bebas.",
+        "tag": "DER",
+        "source_id": "src3",
+        "confidence_basis": "pertikaian PDA/Petros 2025-2026 disahkan berlaku; tarikh bulan daripada draf penulis",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C10",
+        "text": "Petrofac memasuki administration di England pada 27 Oktober 2025 \u2014 nilai praktikal indemnity Article 39 (yang Carigali invoke 2012) terhadap Petrofac berkemungkinan besar lupus.",
+        "tag": "DER",
+        "source_id": "src2",
+        "confidence_basis": "fakta administration (OBS) + implikasi indemnity (DER)",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "KGT-C11",
+        "text": "Thesis editorial 'pengecut dengan title' \u2014 tafsiran satira pengarang (MakcikGPT) ke atas corak fakta awam di atas; bukan tuduhan jenayah atau kesalahan undang-undang terhadap individu.",
+        "tag": "INT",
+        "maruah_review": "not_applicable"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "src1",
+        "type": "court_record",
+        "title": "Lexology \u2014 Case Closed: Finality in Patent Litigation (13 Mei 2026) + laporan CoA Nov 2025 (Upstream Online, Chambers)",
+        "url": "https://www.lexology.com/library/detail.aspx?g=865286a3-293c-4fe6-a5b5-93ff94548d8d",
+        "retrieved_at": "2026-09-09"
+      },
+      {
+        "source_id": "src2",
+        "type": "news",
+        "title": "The Edge Malaysia Weekly \u2014 Questions emerge from PETRONAS' failed patent appeal (9 Jun 2026)",
+        "url": "https://theedgemalaysia.com/node/805836",
+        "retrieved_at": "2026-09-09"
+      },
+      {
+        "source_id": "src3",
+        "type": "news",
+        "title": "The Corporate Secret \u2014 Petrofac-Kingtime Scandal (10 Ogos 2026) + dokumen surat PM9 (17 Julai 2026)",
+        "url": "https://thecorporatesecret.com/blog/2026/08/10/petrofac-kingtime-scandal-why-is-the-government-keeping-tengku-taufik-at-petronas-as-it-faces-potential-damages-exceeding-rm1-billion/",
+        "retrieved_at": "2026-09-09"
+      },
+      {
+        "source_id": "src4",
+        "type": "document",
+        "title": "PETRONAS Annual Report FY2025 + canon siri MakcikGPT m6-2 (sealed 21 Ogos 2026)",
+        "url": "https://arif-fazil.com/world/makcikgpt/taufik-klcc-ceo-petronas",
+        "retrieved_at": "2026-09-09"
+      },
+      {
+        "source_id": "src5",
+        "type": "news",
+        "title": "The Edge (via TCS, Ogos 2026) \u2014 laporan extension kontrak; FMT (8 Ogos 2026, canon m6-2 src2)",
+        "url": "https://thecorporatesecret.com/blog/2026/08/10/petrofac-kingtime-scandal-why-is-the-government-keeping-tengku-taufik-at-petronas-as-it-faces-potential-damages-exceeding-rm1-billion/",
+        "retrieved_at": "2026-09-09"
+      }
+    ],
+    "counter_evidence": [
+      {
+        "source_id": "src2",
+        "summary": "Kingtime sendiri menyatakan quantum dijangka 'beberapa juta dolar AS' + faedah 5% \u2014 lebih rendah daripada anggaran RM1 bilion+ yang dilaporkan.",
+        "disposition": "Dimasukkan dalam artikel sebagai fact-box 'Berapa Sebenarnya RM1 Bilion Tu?' \u2014 kedua-dua angka dirujuk, mahkamah belum tetapkan."
+      },
+      {
+        "source_id": "src3",
+        "summary": "TCS menasihatkan kewujudan surat PM9 tidak membuktikan secara konklusif bahawa pengurusan Petronas ingkar arahan.",
+        "disposition": "Dimasukkan sebagai nota jujur dalam fact-box 'Surat PM9'."
+      },
+      {
+        "source_id": "src3",
+        "summary": "Kemerosotan profit Petronas turut dipengaruhi harga minyak dan keadaan industri global, bukan semata-mata keputusan pengurusan.",
+        "disposition": "Diakui dalam source ledger; artikel berfokus pada pola keputusan (penolakan settlement, litigasi) yang dalam kawalan pengurusan."
+      }
+    ],
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-09-09",
+      "last_updated": "2026-09-09"
+    }
+  },
+  {
     "id": "m2-10",
     "title": "RM7.5 Bilion Beli Kilang MyKad Hang \u2014 Makcik Tanya: Untuk Siapa?",
     "date": "2026-08-21",

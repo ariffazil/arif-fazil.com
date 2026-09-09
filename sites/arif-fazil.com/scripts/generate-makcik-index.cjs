@@ -49,6 +49,7 @@ const SERIES_META = {
   M3: { label: "Tech & Sovereignty", emoji: "🛡", topic: "YTL, ILMU, AI, monopoli" },
   M4: { label: "Economy",            emoji: "📈", topic: "Johor, daily prices, rakyat" },
   M5: { label: "Politics",           emoji: "🗳", topic: "DAP, Anwar, Loke, Sam Altman" },
+  M6: { label: "PETRONAS",           emoji: "🛢️", topic: "Taufik, Kingtime, Sarawak, kontrak" },
 };
 
 function buildIndexHtml(pieces) {

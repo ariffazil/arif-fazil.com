@@ -181,7 +181,11 @@ if [ -d "$PUBLIC_MD_DIR" ]; then
 fi
 
 # 5b: Sync dist to webroot
-rsync -av --delete "$SITE_DIR/dist/" "$WEBROOT/" && pass "dist synced to webroot" || { fail "dist sync failed"; exit 1; }
+# 2026-09-09 (F1): protect live-only aaa/** from --delete. Those files are owned
+# by the AAA pipeline (synced to webroot out-of-band, e.g. 2026-09-04 agent.json,
+# 999/claims.json, a2a/*). Makcik deploys must not prune surfaces they do not own.
+# Scar prevention: 71 live agentic-web files were 1 flag away from deletion.
+rsync -av --delete --filter='P aaa/**' "$SITE_DIR/dist/" "$WEBROOT/" && pass "dist synced to webroot (aaa/** delete-protected)" || { fail "dist sync failed"; exit 1; }
 
 # 5c: Caddy reload
 if sudo caddy reload --config "$CADDYFILE" 2>&1; then

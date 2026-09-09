@@ -220,7 +220,7 @@ export function World() {
                   to="/world/makcikgpt"
                   className="inline-flex items-center gap-2 rounded-xl bg-[#00E5FF] px-5 py-2.5 font-mono text-xs font-bold text-[#0A0C10] uppercase tracking-wider hover:bg-[#38BDF8] transition-colors shadow-lg shadow-[#00E5FF]/10"
                 >
-                  <span>Buka Semua 26 Siri Broadsheet</span>
+                  <span>Buka Semua 27 Siri Broadsheet</span>
                   <span>→</span>
                 </Link>
               </div>

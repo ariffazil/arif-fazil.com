@@ -187,7 +187,13 @@ fi
 # Scar prevention: 71 live agentic-web files were 1 flag away from deletion.
 rsync -av --delete --filter='P aaa/**' "$SITE_DIR/dist/" "$WEBROOT/" && pass "dist synced to webroot (aaa/** delete-protected)" || { fail "dist sync failed"; exit 1; }
 
-# 5c: Caddy reload
+# 5c: Sync root-static serving roots (llms.txt, sitemap.xml, feed.xml, page.json…)
+# 2026-09-09: Caddy @root_static serves these from /var/www/html top-level, NOT
+# from arif/. Without this step deploys report success while discovery surfaces
+# serve stale bytes (proven 2026-08-25, recurred 2026-09-09 until this fix).
+bash /root/arif-fazil.com/scripts/sync-serving-roots.sh "$SITE_DIR/dist" && pass "serving roots aligned" || warn "split-roots had issues — check llms.txt/sitemap live"
+
+# 5d: Caddy reload
 if sudo caddy reload --config "$CADDYFILE" 2>&1; then
   pass "Caddy reloaded"
 else

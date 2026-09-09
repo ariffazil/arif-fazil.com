@@ -65,12 +65,12 @@ const worldIntelWebMCPTools = [
 const MAKCIK_PICKS = [
   {
     id: 'm1',
-    series: 'Siri M1 · PETRONAS DNA',
-    date: '2026-08-02',
-    title: 'Suara Yang Tak Letak Dalam Mulut Manusia',
-    snippet: 'Taufik, Bakke Salleh, Anwar — bahasa korporat yang terlalu licin selalunya menyorok sesuatu. Bila profesor tak nampak, telinga kampung dengar.',
+    series: 'Siri M6 · PETRONAS',
+    date: '2026-09-09',
+    title: 'Pengecut Tak Berani Confront',
+    snippet: 'Kingtime offer settlement tanpa admission — dia reject, fight sampai Federal Court kalah. Surat PM9 arahkan settle — senyap. Pengecut bukan lari: dia suruh mahkamah jadi kambing hitam, dan rakyat yang bayar harga.',
     seal: 'SEAL 999',
-    slug: 'taufik-klcc-ceo-petronas',
+    slug: 'taufik-pengecut-dengan-title',
   },
   {
     id: 'm2',

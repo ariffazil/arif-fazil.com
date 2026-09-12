@@ -167,7 +167,9 @@ async function main() {
     results.push({ path: s.path, status, ok, expected: familyLabel });
 
     // DTI gate — only on type=page and type=document that returned 200.
-    const isHtmlSurface = (s.type === "page" || s.type === "document") && ok && status >= 200 && status < 300;
+    // Skip binary files (.pdf, .jpg, .png, etc.) — no HTML body to verify.
+    const isBinary = /\.(pdf|jpe?g|png|gif|svg|webp|ico|woff2?|ttf|otf|mp4|mp3|zip|tar|gz)(\?|$)/i.test(s.path);
+    const isHtmlSurface = !isBinary && (s.type === "page" || s.type === "document") && ok && status >= 200 && status < 300;
     if (isHtmlSurface) {
       const { body, error: bodyErr } = await fetchBody(url);
       if (bodyErr) {

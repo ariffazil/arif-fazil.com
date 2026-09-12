@@ -1,8 +1,10 @@
 {
   "namespace": "arifOS",
   "position": "/000",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sealed": "2026-06-14",
+  "manifest_updated": "2026-09-12",
+  "canonical_seal_state": "UNCHANGED",
   "claims": [
     {
       "id": "000-CLAIM-001",
@@ -11,7 +13,7 @@
       "predicate": "occupies",
       "object": "root position of arifOS federation",
       "falsifiable": true,
-      "falsification_condition": "Demonstrate that no single sovereign human anchors the system \u2014 i.e., that outputs carry no structural human signature distinguishable from generic AI output."
+      "falsification_condition": "Demonstrate that no single sovereign human anchors the system — i.e., that outputs carry no structural human signature distinguishable from generic AI output."
     },
     {
       "id": "000-CLAIM-002",
@@ -54,12 +56,23 @@
     {
       "id": "000-CLAIM-005",
       "type": "ATTESTATION",
-      "subject": "G\u00f6del Lock",
+      "subject": "Gödel Lock",
       "predicate": "enables",
       "object": "system + human simultaneous operation",
       "formula": "No closed formal system can prove all truths within itself. The human at /000 provides the external vantage point.",
       "falsifiable": true,
       "falsification_condition": "Demonstrate a closed AI system that can fully self-verify without any external vantage point."
+    },
+    {
+      "id": "000-CLAIM-006",
+      "type": "ATTESTATION",
+      "subject": "Ownership Governance",
+      "predicate": "governs",
+      "object": "mutation and resolution across the federation",
+      "formula": "Ownership governs resolution. Mutation governance protects ownership. Witness must occur in the serving reality. Authority is earned, not assumed.",
+      "evidence": "Observed in a 9-session fi-003-qwen generation chain: the child agent inherited declared ownership constraints and emitted a receipt that identified open loops. This is an implementation witness, not yet a controlled causal proof.",
+      "falsifiable": true,
+      "falsification_condition": "Demonstrate that a child agent operating under ownership constraints produces identical behavior to one operating without them."
     }
   ],
   "companion_position": "/999",

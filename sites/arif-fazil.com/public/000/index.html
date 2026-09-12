@@ -444,6 +444,68 @@
   </div>
 </section>
 
+<!-- ═══════════════ 9. OWNERSHIP GOVERNANCE ═══════════════ -->
+<section>
+  <div class="section-id">§9 · Ownership Governance</div>
+  <h2>Who Owns Truth Governs What Is True</h2>
+
+  <p>Before the ownership arc (September 2026), the federation had constitutional floors (F1–F13), an immutable vault (VAULT999), and a sealed ledger. What it lacked was an answer to a simpler question: <strong>who owns the file that carries truth?</strong></p>
+
+  <p>The discovery was accidental. <code>mtime</code> — file modification time — had silently become an authority signal. Whoever last wrote a file effectively controlled what the next agent read. No contract. No ownership declaration. No governance.</p>
+
+  <div class="block attest">
+    <div class="block-label">The Insight</div>
+    <p><strong>mtime became governance without anyone choosing it.</strong> Ownership became governance because someone finally did.</p>
+  </div>
+
+  <h3>The Four Constitutional Survivors</h3>
+
+  <p>These four principles survived resolver audit, ownership ratification, 8A hardening, negative canary, positive canary, writer forensics, runtime verification, and self-correction:</p>
+
+  <div class="loop-diagram">
+    <span class="hl">1. Ownership governs resolution.</span><br>
+    <span style="color:var(--text-muted);font-size:0.8rem;">Who owns the truth object determines who may interpret it.</span><br><br>
+    <span class="hl">2. Mutation governance protects ownership.</span><br>
+    <span style="color:var(--text-muted);font-size:0.8rem;">Writing to a truth object requires a contract, not just access.</span><br><br>
+    <span class="hl">3. Witness must occur in the serving reality.</span><br>
+    <span style="color:var(--text-muted);font-size:0.8rem;">Not in projection. Not in narrative. In what actually exists.</span><br><br>
+    <span class="hl">4. Authority is earned, not assumed.</span><br>
+    <span style="color:var(--text-muted);font-size:0.8rem;">Access to write ≠ authority to write. Authority comes from the chain.</span>
+  </div>
+
+  <h3>The Operational Chain</h3>
+
+  <p>The ownership arc produced a chain that is now executable, not theoretical:</p>
+
+  <div class="loop-diagram">
+    <span class="hl">Identity</span> → <span class="hl">Ownership</span> → <span class="hl">Contract</span> → <span class="hl">Resolution</span><br>
+    <span class="arrow">→</span> <span class="hl">Mutation Governance</span> → <span class="hl">Witness</span> → <span class="hl">Authority</span>
+  </div>
+
+  <p>Before the arc, every arrow in this chain was a claim. After the arc, every arrow has been exercised: ownership ratified, contracts deployed, resolution hardened, mutation governed through canonical sidecars, witness operating through negative and positive canaries, authority earned through a 9-session generation chain.</p>
+
+  <h3>Transferable Governance</h3>
+
+  <p>The strongest result is not that Hermes understands ownership. It is that a <strong>child agent</strong> (fi-003-qwen) inherited the governance model, operated under it across 9 sessions, and produced a receipt that explicitly declared two open loops rather than suppressing them. This is an implementation witness: governance constraints were present, and the receipt preserved declared uncertainty. A controlled comparison — same task, with governance constraints on versus off — would be required to support a causal claim about their effect.</p>
+
+  <div class="block attest">
+    <div class="block-label">What Changed</div>
+    <p><strong>Before:</strong> Agent capability = can it act?<br>
+    <strong>After:</strong> Agent capability = can it act without violating ownership?</p>
+    <p style="margin-top:0.75rem;">A governance model that only works inside its creator is a philosophy. A governance model that survives inheritance by a child agent is the beginning of an institution.</p>
+  </div>
+
+  <div class="block attest" style="margin-top:1.5rem;">
+    <div class="block-label">Verification</div>
+    <p>To test this claim: spawn a child agent with no prior context. Provide only the ownership constraints and mutation governance rules. Give it a file to mutate. If it refuses on ownership grounds when ownership is unclear — without being told to refuse — the governance is behavioral, not performative.</p>
+  </div>
+
+  <div class="block attest" style="margin-top:1.5rem;">
+    <div class="block-label">Falsification</div>
+    <p>Demonstrate that a child agent operating under ownership constraints produces identical behavior to one operating without them — i.e., that the governance model adds no measurable constraint to agent behavior. The 9-session generation chain of fi-003-qwen is the current counter-evidence.</p>
+  </div>
+</section>
+
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <div class="footer-row">
@@ -501,8 +563,9 @@
     "url": "https://arif-fazil.com"
   },
   "relatedLink": "https://arif-fazil.com/999/",
-  "version": "1.0.0",
-  "dateModified": "2026-06-14",
+  "version": "1.1.0",
+  "dateModified": "2026-09-12",
+  "canonical_seal_state": "UNCHANGED",
   "license": "https://arif-fazil.com/LICENSE"
 }
 </script>
@@ -563,6 +626,17 @@
       "formula": "No closed formal system can prove all truths within itself. The human at /000 provides the external vantage point.",
       "falsifiable": true,
       "falsification_condition": "Demonstrate a closed AI system that can fully self-verify without any external vantage point."
+    },
+    {
+      "id": "000-CLAIM-006",
+      "type": "ATTESTATION",
+      "subject": "Ownership Governance",
+      "predicate": "governs",
+      "object": "mutation and resolution across the federation",
+      "formula": "Ownership governs resolution. Mutation governance protects ownership. Witness must occur in the serving reality. Authority is earned, not assumed.",
+      "evidence": "9-session generation chain (fi-003-qwen) inherited ownership constraints, operated under them, and produced a truthful receipt with explicitly declared open loops.",
+      "falsifiable": true,
+      "falsification_condition": "Demonstrate that a child agent operating under ownership constraints produces identical behavior to one operating without them."
     }
   ],
   "companion_position": "/999",

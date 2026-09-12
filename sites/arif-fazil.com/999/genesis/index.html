@@ -28,33 +28,28 @@
     <div class="seal-icon" style="font-size:3rem;margin:1rem 0">⚡</div>
     <h3 class="seal-name">The Moment Before 000</h3>
     <p class="seal-subtitle">The political breach of Amanah that started arifOS</p>
-    <p class="seal-desc" style="margin-top:1rem;color:#c5c5cd;line-height:1.7">
-      The Genesis artifact lives encrypted in VAULT999.<br>
-      It is the birth certificate of the sovereign kernel.<br>
-      ROOTKEY required to decrypt.
-    </p>
-    <button class="seal-read" onclick="decryptGenesis()" id="genesis_btn">
-      🔓 Decrypt Genesis
-    </button>
-    <div id="genesis_content" style="display:none;margin-top:1.5rem;text-align:left"></div>
-  </div>
 
-  <script>
-    async function decryptGenesis() {
-      if (!VaultUI.isSessionOpen()) {
-        alert('Verify ROOTKEY first at /999/');
-        return;
-      }
-      const btn = document.getElementById('genesis_btn');
-      const content = document.getElementById('genesis_content');
-      btn.disabled = true; btn.textContent = 'Decrypting...';
-      // In production: fetch .enc file, decrypt with session key
-      // For now: placeholder
-      content.style.display = 'block';
-      content.innerHTML = '<p style="color:#6a6a75;font-style:italic">Genesis content loads here, decrypted with ROOTKEY session key.</p>';
-      btn.textContent = '✓ Decrypted';
-    }
-  </script>
+    <p class="seal-desc" style="margin-top:1rem;color:#c5c5cd;line-height:1.7">
+      GENESIS-001 is a sealed constitutional record.<br>
+      This surface is a public witness, not the record itself.<br>
+      ROOTKEY-gated authorized access is the intended access model.<br>
+    </p>
+
+    <div style="border:1px solid #3a3a3a;border-radius:6px;padding:1rem 1.25rem;margin:1.5rem 0;background:#111">
+      <p style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:0.5rem">Genesis Access Status</p>
+      <p style="color:#6a6a75;font-size:0.85rem;line-height:1.6;margin-bottom:0">
+        <span style="color:#E4572E;font-weight:700">Cryptographic decrypt boundary: NOT YET IMPLEMENTED.</span><br>
+        The intended lifecycle is:<br>
+        SEALED → ROOTKEY REQUIRED → SESSION VERIFIED → MANIFEST VERIFIED →
+        CIPHERTEXT VERIFIED → DECRYPTED IN MEMORY → AUTO-LOCKED<br><br>
+        When implemented, plaintext renders only in memory and clears on lock, timeout, or navigation.
+      </p>
+    </div>
+
+    <button type="button" disabled aria-disabled="true" style="background:#1a1a1a;color:#555;border:1px solid #2a2a2a;padding:12px 24px;border-radius:6px;font-family:monospace;font-size:0.75rem;letter-spacing:0.08em;cursor:not-allowed;margin-top:0.5rem">
+      🔒 Cryptographic access not yet implemented
+    </button>
+  </div>
   <script src="../ui/crypto.js"></script>
   <script src="../ui/seals.js"></script>
 </body>

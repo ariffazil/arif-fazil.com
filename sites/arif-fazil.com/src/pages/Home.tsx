@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { LiveClock } from '@/components/LiveClock'
 import { LiveClockHero } from '@/components/LiveClockHero'
@@ -5,100 +6,84 @@ import { discoveries } from '@/data/discoveries'
 import { agenticMirrors } from '@/components/ArrowNavbar'
 
 /**
- * Home — ARIF FAZIL sovereign surface.
+ * Home — public routing surface.
  *
- * Sequence (SITE_CONSTITUTION RULE 1 · 30-second comprehension):
- *   Hero (who/what/why) → Decisions under noise (governing idea)
- *   → Wells record (real-world grounding FIRST) → Systems (forged from that work)
- *   → Proof (bounded, not absolute) → Disclaimer.
- *
- * Sacred preserved (SITE_IDENTITY): the human, the motto, the system line,
- * the dark geological visual identity, the organs, /000 and /999.
- * Review fix 2026-08-17 (Copilot external audit): hero-first, canonical
- * discoveries data, bounded claims, original voice (no external quote),
- * personal-site disclaimer, provenance note on wells.
+ * First screen = GitHub three-link offer, in human language:
+ *   Arif (who) · GEOX (earth; computes, does not adjudicate) · arifOS (judge before execute)
+ * Not a doctrine dump. Not six organ brands. Not port numbers.
  */
 
-interface SystemCard {
+type DoorKind = 'spa' | 'static'
+
+interface Door {
   name: string
-  sigil: string
-  accent: string
-  badge: string
+  kicker: string
   blurb: string
-  to: string
-  toLabel: string
-  mirror: string
-  mirrorLabel: string
+  href: string
+  kind: DoorKind
+  label: string
+  github: string
+  githubLabel: string
 }
 
-const SYSTEMS: SystemCard[] = [
+const DOORS: Door[] = [
   {
-    name: 'arifOS',
-    sigil: 'Ψ',
-    accent: '#E4572E',
-    badge: 'PORT 8088 · KERNEL',
-    blurb: 'Governance with a human veto. Thirteen hard floors (F1–F13) that every consequential call must pass — humans decide.',
-    to: '/AAA',
-    toLabel: 'Read Doctrine',
-    mirror: 'https://arifos.arif-fazil.com',
-    mirrorLabel: 'Mirror :8088',
+    name: 'Arif',
+    kicker: 'Who',
+    blurb:
+      'Exploration geoscientist. I read incomplete ground and refuse fake certainty.',
+    href: '/about',
+    kind: 'spa',
+    label: 'About Arif',
+    github: 'https://github.com/ariffazil',
+    githubLabel: 'github.com/ariffazil',
   },
   {
     name: 'GEOX',
-    sigil: 'G',
-    accent: '#E4572E',
-    badge: 'PORT 7072 · EARTH',
-    blurb: 'Earth evidence, checked before trust. Rocks, wells, seismic and basin models — verified against public records before any number is minted.',
-    to: '/earth',
-    toLabel: 'View Earth',
-    mirror: 'https://geox.arif-fazil.com',
-    mirrorLabel: 'Mirror GEOX',
+    kicker: 'Earth',
+    blurb:
+      'Seismic, wells, basins. Physics-grounded evidence with uncertainty. Computes. Does not adjudicate.',
+    href: '/earth',
+    kind: 'static',
+    label: 'Enter Earth',
+    github: 'https://github.com/ariffazil/GEOX',
+    githubLabel: 'GEOX on GitHub',
   },
   {
-    name: 'WEALTH',
-    sigil: 'W',
-    accent: '#C9A227',
-    badge: 'PORT 7074 · CAPITAL',
-    blurb: 'Market reality, computed — oil, gas, gold and macro signals on a claims registry. It computes; it never allocates.',
-    to: '/world',
-    toLabel: 'View World',
-    mirror: 'https://wealth.arif-fazil.com',
-    mirrorLabel: 'Mirror WEALTH',
-  },
-  {
-    name: 'WELL',
-    sigil: '◉',
-    accent: '#31C48D',
-    badge: 'PORT 7075 · VITALITY',
-    blurb: 'The human mirror. Vitality, fatigue and dignity monitoring — the machine watches the operator, not just itself.',
-    to: '/work',
-    toLabel: 'View Substrate',
-    mirror: 'https://well.arif-fazil.com',
-    mirrorLabel: 'Mirror WELL',
-  },
-  {
-    name: 'A-FORGE',
-    sigil: 'F',
-    accent: '#E4572E',
-    badge: 'PORT 7071 · EXECUTION',
-    blurb: 'The hands. Controlled build, canary and rollback — execution only after governance clears it.',
-    to: '/work',
-    toLabel: 'View Executions',
-    mirror: 'https://forge.arif-fazil.com',
-    mirrorLabel: 'Mirror FORGE',
-  },
-  {
-    name: 'AAA',
-    sigil: 'A',
-    accent: '#91B0F2',
-    badge: 'AGENCY & SKILLS',
-    blurb: 'The ledger of agents. Cards, skills and identity for the federation — display and route only, never judge.',
-    to: '/AAA',
-    toLabel: 'View Canon',
-    mirror: 'https://aaa.arif-fazil.com',
-    mirrorLabel: 'Mirror AAA',
+    name: 'arifOS',
+    kicker: 'Governance',
+    blurb:
+      'Independent policy kernel for agents: judge before execute. Not a model. Not a chatbot.',
+    href: '/arifos/',
+    kind: 'static',
+    label: 'Enter arifOS',
+    github: 'https://github.com/ariffazil/arifOS',
+    githubLabel: 'arifOS on GitHub',
   },
 ]
+
+function DoorLink({
+  door,
+  className,
+  children,
+}: {
+  door: Door
+  className: string
+  children: ReactNode
+}) {
+  if (door.kind === 'spa') {
+    return (
+      <Link to={door.href} className={className}>
+        {children}
+      </Link>
+    )
+  }
+  return (
+    <a href={door.href} className={className}>
+      {children}
+    </a>
+  )
+}
 
 export function Home() {
   return (
@@ -118,7 +103,7 @@ export function Home() {
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#1F2733]">
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8]">
               <span className="w-2 h-2 rounded-full bg-[#E4572E]" />
-              <span>SOVEREIGN SURFACE · ARIF FAZIL</span>
+              <span>ARIF FAZIL</span>
             </div>
             <LiveClock withDate className="text-[#9AA0A8]" />
           </div>
@@ -141,47 +126,63 @@ export function Home() {
                 Both are the same work: reading what the ground actually says — not what the model wants it to say.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/work"
-                  className="inline-flex items-center justify-center px-5 min-h-[44px] rounded bg-[#E4572E] text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-[#E4572E]/90 transition-colors"
-                >
-                  Explore the Work →
-                </Link>
-                <Link
-                  to="/earth"
-                  className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#1F2733] bg-transparent text-[#9AA0A8] font-mono text-xs uppercase tracking-wider hover:text-[#EDEAE2] hover:border-[#EDEAE2]/30 transition-colors"
-                >
-                  See the Wells
-                </Link>
+              <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
+                Three doors
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {DOORS.map((d) => (
+                  <DoorLink
+                    key={d.name}
+                    door={d}
+                    className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#1F2733] bg-[#11151C] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider hover:border-[#E4572E]/60 hover:text-[#EDEAE2] transition-colors"
+                  >
+                    {d.label} →
+                  </DoorLink>
+                ))}
               </div>
             </div>
 
-            {/* Right: Live Dynamic Clock Hero */}
+            {/* Right: Live clock — always-current, never a stale stamp */}
             <div className="lg:col-span-5 lg:border-l lg:border-[#1F2733] lg:pl-8 space-y-6">
               <LiveClockHero />
-
-              <div className="rounded-lg border border-[#1F2733] bg-[#11151C]/80 p-4 space-y-2.5">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] flex items-center justify-between">
-                  <span>Operating Constitution</span>
-                  <span className="text-[#C9A227]">F1 — F13</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-mono text-[11px] uppercase">
-                  <div className="flex items-center gap-2 text-[#EDEAE2]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#31C48D]" />
-                    <span>Evidence 1st</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[#EDEAE2]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A227]" />
-                    <span>Humans Rule</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[#EDEAE2]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E4572E]" />
-                    <span>Ditempa</span>
-                  </div>
-                </div>
-              </div>
             </div>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {DOORS.map((d) => (
+              <article
+                key={d.name}
+                className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
+              >
+                <div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E] mb-2">
+                    {d.kicker}
+                  </div>
+                  <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-3">
+                    {d.name}
+                  </h2>
+                  <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-6">
+                    {d.blurb}
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#1F2733] flex flex-wrap items-center justify-between gap-3">
+                  <DoorLink
+                    door={d}
+                    className="inline-flex items-center min-h-[44px] font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider"
+                  >
+                    {d.label} →
+                  </DoorLink>
+                  <a
+                    href={d.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center min-h-[44px] font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider"
+                  >
+                    {d.githubLabel} ↗
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -216,9 +217,9 @@ export function Home() {
                 The Wells Record
               </h2>
             </div>
-            <Link to="/earth" className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider">
+            <a href="/earth" className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider">
               Explore 3D Basin & Earth Maps →
-            </Link>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -282,62 +283,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── SYSTEMS — forged from that work ─────────────────────────── */}
-      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0E1116]" id="systems">
-        <div className="mx-auto max-w-[1360px] px-6">
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
-            <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-2">
-                Governed Architecture
-              </div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight text-[#EDEAE2]">
-                Systems forged from real work
-              </h2>
-            </div>
-            <p className="font-sans text-sm text-[#9AA0A8] max-w-md">
-              Every system began as a practical problem met in the field. AI computes. Evidence constrains. Humans decide.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SYSTEMS.map((s) => (
-              <div
-                key={s.name}
-                className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className="flex items-center justify-center w-9 h-9 rounded border font-mono text-sm font-bold"
-                      style={{ color: s.accent, borderColor: `${s.accent}40`, background: `${s.accent}0d` }}
-                    >
-                      {s.sigil}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] px-2 py-0.5 rounded border border-[#1F2733] bg-[#0A0B0D]">
-                      {s.badge}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-xl font-bold uppercase text-[#EDEAE2] mb-2 group-hover:text-[#E4572E] transition-colors">
-                    {s.name}
-                  </h3>
-                  <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">
-                    {s.blurb}
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-[#1F2733] flex items-center justify-between">
-                  <Link to={s.to} className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">
-                    {s.toLabel} →
-                  </Link>
-                  <a href={s.mirror} target="_blank" rel="noreferrer" className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider">
-                    {s.mirrorLabel} ↗
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── PROOF — bounded, not absolute ───────────────────────────── */}
       <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0B0D]" id="proof">
         <div className="mx-auto max-w-[1360px] px-6">
@@ -373,7 +318,7 @@ export function Home() {
           {/* Agentic mirror (organs) */}
           <div className="rounded-lg border border-[#1F2733] bg-[#0E1116] p-5 mb-10">
             <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-3">
-              Agentic Web — Federation Organs
+              Other doors — for agents
             </div>
             <div className="flex flex-wrap gap-2">
               {agenticMirrors.map((m) => (

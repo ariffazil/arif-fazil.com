@@ -3,6 +3,7 @@
 > Personal public site of Muhammad Arif bin Fazil: exploration geoscience, evidence-first Earth intelligence, and governed agent-system architecture.
 
 This file is a curated map, not a sitemap and not a permission grant. Convention: llmstxt.org (not a ratified standard). Full dump: /llms-full.txt.
+Ditempa Bukan Diberi — forged, not given.
 
 ## Start Here
 - [About](https://arif-fazil.com/about): Who Arif is.

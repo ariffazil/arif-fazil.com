@@ -248,18 +248,31 @@ def cmd_sense(args: argparse.Namespace) -> Report:
     else:
         r.add("caddyfile", False, f"missing {CADDYFILE}", "ORANGE")
 
-    # Commodity APIs (vitals proxies depend on gold :3456)
+    # Commodity APIs: unit-up ≠ compute. Inventory 2026-09-13: oil/gas
+    # systemd active, /health 200, /api/{name}/apex spawn ENOENT /root/venv/bin/python3.
+    # Do not recommend systemctl start when the unit is already up.
     for port, name in [(3456, "gold"), (3457, "oil"), (3458, "gas")]:
-        code, body, err = fetch(f"http://127.0.0.1:{port}/api/ticker", timeout=5)
-        ok = code == 200 and bool(body)
-        r.add(
-            f"commodity.{name}:{port}",
-            ok,
-            f"HTTP {code}"
-            if ok
-            else f"DOWN {err or code} — systemctl start {name}-api",
-            "YELLOW" if not ok else "GREEN",
-        )
+        h_code, h_body, _ = fetch(f"http://127.0.0.1:{port}/health", timeout=5)
+        a_code, a_body, err = fetch(f"http://127.0.0.1:{port}/api/{name}/apex", timeout=5)
+        unit_up = h_code == 200
+        compute_ok = a_code == 200 and "ENOENT" not in (a_body or "")
+        if compute_ok:
+            r.add(f"commodity.{name}:{port}", True, f"unit UP compute HTTP {a_code}")
+        elif unit_up:
+            snippet = (a_body or err or str(a_code)).replace("\n", " ")[:90]
+            r.add(
+                f"commodity.{name}:{port}",
+                False,
+                f"unit UP, compute HTTP {a_code} ({snippet}) — not systemctl start; PYTHON_PATH",
+                "YELLOW",
+            )
+        else:
+            r.add(
+                f"commodity.{name}:{port}",
+                False,
+                f"unit DOWN health={h_code} — systemctl start {name}-api",
+                "YELLOW",
+            )
 
     # Mission contract
     mj = LIVE_ROOT / "missions.json"
@@ -543,7 +556,7 @@ def cmd_doctor(args: argparse.Namespace) -> Report:
     # One-line agent instruction
     r.meta["agent_next"] = (
         "If doctor OK: use missions not tool explorer. "
-        "If commodity DOWN: systemctl start gold-api oil-api gas-api. "
+        "If oil/gas compute ENOENT: PYTHON_PATH (/root/venv missing); units may already be active — do not systemctl start. "
         "If missions 404: check Caddy @spa_routes + caddy reload (in-process if systemd NAMESPACE fails). "
         "Never rsync --delete without: python3 scripts/web-zen/web_zen.py orphan --src ... --dest ..."
     )

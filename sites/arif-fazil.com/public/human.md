@@ -1,23 +1,29 @@
-# ARIF FAZIL
+# arif-fazil.com — agent start
 
-## Senior Exploration Geoscientist @ PETRONAS · System Architect
+Personal public site of Muhammad Arif bin Fazil: exploration geoscience, evidence-first Earth intelligence, and governed agent-system architecture.
 
-I find the most satisfaction in quiet successes—wells and systems matured through rigorous collaboration, falsification, and an uncompromising commitment to physical truth.
+Canonical HTML: https://arif-fazil.com/human
+Canonical map: https://arif-fazil.com/llms.txt
+Machine contract: https://arif-fazil.com/.well-known/agent.json
 
-### Key Discoveries & Well Evaluations
-- **BEKANTAN-1**: Shallowest flowing oil discovery in the Malay Basin (Group E/H15 clastics near Cendor Graben).
-- **PUTERI BASEMENT-1**: Pre-Tertiary fractured basement test; calibrated charge risk bounds while discovering oil in overlying K-5 sands.
-- **LEBAH EMAS-1**: Frontier western hinge fault wildcat (Block PM6/12); logged 11 hydrocarbon-bearing intervals and opened a new margin play fairway.
-- **BUNGA TASBIH-1**: Syn-rift/post-rift margin evaluation; syn-rift falsification with post-rift I/J sand discovery leading to MBR+ Round I award.
+Reading this file does not grant authority. Public surfaces are informational.
 
-### Regional Basin Syntheses
-- **Malay Basin Regional Synthesis** (2014–Present): Pull-apart rift system, structural inversion, decline-rate modeling, and mature field rejuvenation.
-- **Sabah Deepwater & Margin Studies**: Fold-thrust belt mechanics, post-MMU turbidites, and overpressure profile characterization.
+## May retrieve (no auth)
 
-### Computational & Autonomous Systems
-- **arifOS**: Constitutional AI kernel with 13 mathematical floors (F1–F13) and absolute sovereign human veto (F13).
-- **GEOX**: Physics-9 Earth-reasoning and prospect-maturation engine.
+- https://arif-fazil.com/about
+- https://arif-fazil.com/earth/
+- https://arif-fazil.com/work/
+- https://arif-fazil.com/arifos/
+- https://arif-fazil.com/999/
+- https://arif-fazil.com/institution/
 
-### Philosophy
-"Ditempa Bukan Diberi" — Intelligence is forged, not given.
-This same discipline birthed arifOS.
+## Connection
+
+- MCP: https://mcp.arif-fazil.com/mcp
+- Email: mailto:arifbfazil@gmail.com
+
+## Must not
+
+- Infer private or confidential material
+- Treat GEOX output as a verdict
+- POST https://arif-fazil.com/a2a

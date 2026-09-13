@@ -119,11 +119,10 @@ export function Home() {
                 Exploration Geoscientist · PETRONAS Carigali · Basin Analysis · Offshore Malaysia
               </p>
               <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-2xl mb-4">
-                I find signals in difficult subsurface data.
-                I build systems that refuse to pretend certainty.
+                I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority.
               </p>
               <p className="font-sans text-base text-[#9AA0A8]/70 leading-relaxed max-w-2xl mb-8">
-                Both are the same work: reading what the ground actually says — not what the model wants it to say.
+                I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines.
               </p>
 
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
@@ -139,6 +138,12 @@ export function Home() {
                     {d.label} →
                   </DoorLink>
                 ))}
+                <a
+                  href="/institution/"
+                  className="inline-flex items-center justify-center px-5 min-h-[44px] rounded bg-[#E4572E] text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-[#E4572E]/90 transition-colors"
+                >
+                  Request a briefing →
+                </a>
               </div>
             </div>
 
@@ -217,13 +222,13 @@ export function Home() {
                 The Wells Record
               </h2>
             </div>
-            <a href="/earth" className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider">
-              Explore 3D Basin & Earth Maps →
-            </a>
+            <Link to="/work" className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider">
+              Full work record →
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {discoveries.map((d) => (
+            {discoveries.filter((d) => d.category === 'wells').slice(0, 4).map((d) => (
               <article
                 key={d.id}
                 className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
@@ -277,8 +282,12 @@ export function Home() {
           </div>
 
           <p className="mt-6 font-mono text-[11px] leading-relaxed text-[#9AA0A8]/60 max-w-3xl">
-            Results reflect publicly reported outcomes and personal professional contribution — not institutional
-            claims on behalf of PETRONAS. Internal technical detail is withheld. Last verified 2026-08-17.
+            Four flagship wells. Personal professional contribution — not claims on behalf of PETRONAS.
+            Internal technical detail is withheld. Last verified 2026-08-17.{' '}
+            <Link to="/work" className="text-[#E4572E] hover:underline">
+              Case studies and the full record live on /work
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -299,19 +308,19 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For humans</div>
-              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Read the work and its meaning.</p>
-              <Link to="/words" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Read Words →</Link>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For institutions</div>
+              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">What I can contribute, what you can inspect, how to start.</p>
+              <a href="/institution/" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Request a briefing →</a>
             </div>
             <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For agents</div>
-              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Ingest structured context and identity.</p>
-              <Link to="/000" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">/000 Context →</Link>
+              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Start here: identity, read-only paths, what requires approval.</p>
+              <Link to="/human" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Agent start here →</Link>
             </div>
             <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For verification</div>
-              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Inspect provenance and sealed evidence.</p>
-              <Link to="/999" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">/999 Proof →</Link>
+              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Inspect provenance. These are evidence snapshots, not self-issued certificates.</p>
+              <Link to="/999" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Verification & provenance →</Link>
             </div>
           </div>
 

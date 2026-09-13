@@ -7,13 +7,17 @@ const territoryLinks = [
   { label: 'World', href: '/world', desc: 'Economics & commodities' },
   { label: 'Words', href: '/words', desc: '63+ essays & analysis' },
   { label: 'Work', href: '/work', desc: 'Systems & wells record' },
+  { label: 'Briefing', href: '/institution/', desc: 'Institutional engagement' },
+  { label: 'Agents', href: '/human', desc: 'Start here for machines' },
   { label: '999', href: '/999/', desc: 'Proof & sealed evidence' },
   { label: '000', href: '/000/', desc: 'Genesis & origin' },
   { label: 'AAA', href: '/AAA', desc: 'Canon & federation' },
 ]
 
 const connectLinks = [
-  { label: 'Email', href: 'mailto:arifos@arif-fazil.com', icon: '✉' },
+  { label: 'Briefing', href: '/institution/', icon: '→' },
+  { label: 'Agents', href: '/human', icon: '→' },
+  { label: 'Email', href: 'mailto:arifbfazil@gmail.com', icon: '✉' },
   { label: 'GitHub', href: 'https://github.com/ariffazil', icon: '⌘' },
   { label: 'Telegram', href: 'https://t.me/ariffazil', icon: '✈' },
 ]

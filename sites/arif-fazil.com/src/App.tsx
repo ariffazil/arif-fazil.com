@@ -28,6 +28,7 @@ import { PoliticsHub } from '@/pages/PoliticsHub';
 import { CommodityPage } from '@/pages/CommodityPage';
 import { About } from '@/pages/About';
 import { Sanctuary } from '@/pages/Sanctuary';
+import { Human } from '@/pages/Human';
 
 export function App() {
   return (
@@ -46,6 +47,10 @@ export function App() {
             {/* 0b. /sanctuary — Human-facing introduction to arifOS */}
             <Route path="/sanctuary" element={<Sanctuary />} />
             <Route path="/sanctuary/" element={<Sanctuary />} />
+
+            {/* 0c. /human — canonical agent start-here (public /agent is Caddy 404 HOLD) */}
+            <Route path="/human" element={<Human />} />
+            <Route path="/human/" element={<Human />} />
 
             {/* 1. /home & / */}
             <Route path="/" element={<Home />} />

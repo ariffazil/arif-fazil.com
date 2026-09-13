@@ -18,8 +18,8 @@ export function Work() {
             The Work & The Record
           </h1>
           <p className="font-sans text-lg text-[#9AA0A8] max-w-3xl leading-relaxed mb-8">
-            Thirteen years of offshore petroleum drilling decisions and the computational architecture built to govern autonomous intelligence.
-            Every well flowed. Systems are built to leave an audit trail.
+            Thirteen years of offshore decisions under incomplete data, and the systems built so machines cannot pretend certainty.
+            Each well below follows the same template: context, uncertainty, evidence, role, outcome, what remains withheld.
           </p>
 
           {/* Hero Visual: Interactive Seismic Amplitude Canvas Map */}
@@ -50,6 +50,8 @@ export function Work() {
                 </div>
                 <div className="grid grid-cols-1 gap-1 font-mono text-xs text-[#9AA0A8] mb-3 pb-3 border-b border-[#1F2733]">
                   <div>Location: <span className="text-[#EDEAE2]">{d.location}</span></div>
+                  <div>Role: <span className="text-[#EDEAE2]">{d.role}</span></div>
+                  <div>Limits: <span className="text-[#EDEAE2]">{d.limits ?? 'Internal technical detail withheld.'}</span></div>
                 </div>
                 <p className="font-sans text-xs text-[#9AA0A8] leading-relaxed mb-3">
                   {d.summary}

@@ -49,11 +49,47 @@ FORGE_WORK = Path("/root/forge_work")
 EPHEMERAL_ROOT = FORGE_WORK / "ephemeral"
 DEFAULT_TIMEOUT = 12
 
+
+def _writable_ephemeral_root() -> Path:
+    """A-FORGE MCP often has /root/forge_work as EROFS. Doctor must not crash."""
+    candidates = [
+        EPHEMERAL_ROOT,
+        Path(tempfile.gettempdir()) / "arif-web-zen-ephemeral",
+    ]
+    last_err: OSError | None = None
+    for cand in candidates:
+        try:
+            cand.mkdir(parents=True, exist_ok=True)
+            probe = cand / ".write-probe"
+            probe.write_text("ok", encoding="utf-8")
+            probe.unlink(missing_ok=True)
+            return cand
+        except OSError as e:
+            last_err = e
+            continue
+    raise OSError(f"no writable ephemeral root ({last_err})")
+
 # Content-truth markers: 200 alone is a soft-404 lie (F2)
 # SPA routes: shell HTML will not contain React text — markers checked in JS bundle.
 TRUTH_MARKERS: dict[str, list[str]] = {
     "https://arif-fazil.com/missions": ["Mission", "Investigate", "cockpit"],
     "https://arif-fazil.com/missions.json": ['"schema"', "investigate", "Six missions"],
+    "https://arif-fazil.com/": [
+        "uncertain Earth data",
+        "Request a briefing",
+    ],
+    "https://arif-fazil.com/human": [
+        "does not grant authority",
+        "Public A2A",
+    ],
+    "https://arif-fazil.com/human/": [
+        "does not grant authority",
+        "Public A2A",
+    ],
+    "https://arif-fazil.com/institution/": [
+        "Work together, inspect first",
+        "No confidential PETRONAS",
+    ],
     "https://arif-fazil.com/llms.txt": [
         "Start Here",
         "Ditempa Bukan Diberi",
@@ -356,9 +392,9 @@ def cmd_ephemeral(args: argparse.Namespace) -> Report:
         ok=True,
         meta={"band": "GREEN", "authority": "NONE"},
     )
-    EPHEMERAL_ROOT.mkdir(parents=True, exist_ok=True)
+    root = _writable_ephemeral_root()
     eid = hashlib.sha256(f"{time.time()}:{args.task}".encode()).hexdigest()[:12]
-    work = EPHEMERAL_ROOT / f"ephem-{eid}"
+    work = root / f"ephem-{eid}"
     work.mkdir(parents=True, exist_ok=False)
     r.meta["work"] = str(work)
     r.meta["task"] = args.task
@@ -488,12 +524,21 @@ def cmd_doctor(args: argparse.Namespace) -> Report:
         keep=False,
         timeout=min(args.timeout, 20),
     )
-    ep = cmd_ephemeral(eargs)
-    for c in ep.checks:
-        r.checks.append(Check(f"doctor.{c.name}", c.ok, c.detail, c.band))
-        if not c.ok:
-            r.ok = False
-    r.meta["ephemeral"] = ep.meta
+    try:
+        ep = cmd_ephemeral(eargs)
+        for c in ep.checks:
+            r.checks.append(Check(f"doctor.{c.name}", c.ok, c.detail, c.band))
+            if not c.ok:
+                r.ok = False
+        r.meta["ephemeral"] = ep.meta
+    except OSError as e:
+        r.add(
+            "doctor.ephemeral",
+            True,
+            f"sandbox skipped (unwritable: {e}) — not a site failure",
+            "YELLOW",
+        )
+        r.meta["ephemeral"] = {"skipped": True, "reason": str(e)}
 
     # One-line agent instruction
     r.meta["agent_next"] = (

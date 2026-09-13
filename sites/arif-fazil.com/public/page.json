@@ -1,6 +1,6 @@
 {
   "name": "arif-fazil.com",
-  "purpose": "Professional homepage for Arif Fazil, with canonical deeper layers for genesis, proof, and civic intelligence.",
+  "purpose": "Public site of Muhammad Arif bin Fazil. Uncertain Earth data into defensible decisions. AI bounded by evidence and human authority.",
   "audience": [
     "humans",
     "collaborators",
@@ -9,10 +9,14 @@
   ],
   "canonical_url": "https://arif-fazil.com/",
   "route_model": {
-    "/": "present human homepage",
+    "/": "human L1 — three doors + briefing",
+    "/about": "who",
+    "/human": "agent start-here",
+    "/institution/": "institutional briefing",
+    "/earth/": "GEOX human globe",
     "/000/": "genesis and wisdom archive",
     "/999/": "trust and proof chamber",
-    "/world/makcikgpt/": "MakcikGPT civic intelligence canonical landing"
+    "/world/makcikgpt/": "MakcikGPT civic intelligence (editorial, optional)"
   },
   "content_scope": {
     "includes": [

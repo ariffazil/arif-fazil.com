@@ -53,6 +53,22 @@ if [ -d "$DIST/_shared" ]; then
   echo "$LOG_PREFIX synced _shared/ ($(find "$TOP/_shared" -type f | wc -l) files)"
 fi
 
+# ── 1c. trinity static tops (Caddy handle /human/* and /institution/*
+#     root at /var/www/html, NOT /var/www/html/arif). Without this copy,
+#     @spa_routes try_files falls through /human to the SPA shell (2026-09-13).
+#     No --delete: inspect before purge.
+for d in human institution; do
+  if [ -d "$DIST/$d" ]; then
+    mkdir -p "$BK"
+    [ -d "$TOP/$d" ] && cp -a "$TOP/$d" "$BK/$d"
+    mkdir -p "$TOP/$d"
+    rsync -a "$DIST/$d/" "$TOP/$d/"
+    echo "$LOG_PREFIX synced $d/ ($(find "$TOP/$d" -type f | wc -l) files)"
+  else
+    echo "$LOG_PREFIX WARN: no $d/ in dist — skipping" >&2
+  fi
+done
+
 # ── 2. root-static files (@root_static handler) ────────────────────────────
 synced=0
 for f in "${ROOT_STATIC_FILES[@]}"; do
@@ -80,6 +96,9 @@ probe_local() { # path marker label
 probe_local "$TOP/surfaces.json" "kinabalu" "surfaces.json carries earth dossiers"
 probe_local "$TOP/earth/index.html" "/map/#earth" "earth page links to canonical /map/#earth"
 probe_local "$TOP/llms.json" "arif-fazil.com" "llms.json serves"
+probe_local "$TOP/llms.txt" "Does not adjudicate" "llms.txt is the compact professional map"
+probe_local "$TOP/human/index.html" "does not grant authority" "human/ is agent start-here, not SPA shell"
+probe_local "$TOP/institution/index.html" "Work together, inspect first" "institution/ is briefing, not organ dump"
 
 if [ "$fail" -ne 0 ]; then
   echo "$LOG_PREFIX FAILED local verification — rollback: cp -a $BK/* $TOP/" >&2

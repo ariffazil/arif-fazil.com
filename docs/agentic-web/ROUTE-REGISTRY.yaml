@@ -6,8 +6,8 @@ spa_bundle_example: /assets/index-lNdBmlba.js
 canonical:
   /: { kind: spa, job: L1_human }
   /about: { kind: spa, job: who }
-  /human: { kind: spa, job: agent_start }
-  /institution/: { kind: static_top, root: /var/www/html/institution, job: briefing }
+  /human: { kind: static_top, root: /var/www/html/human, also: /var/www/html/arif/human, job: agent_start }
+  /institution/: { kind: static_top, root: /var/www/html/institution, also: /var/www/html/arif/institution, job: briefing }
   /earth: { kind: static_top, root: /var/www/html/earth, job: geox_human }
   /work: { kind: spa, job: case_studies }
   /arifos/: { kind: static, job: governance_layer }

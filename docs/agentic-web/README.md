@@ -39,7 +39,7 @@ Do **not** invent `/engage` or `/agent` until Caddy is named. Those paths are ex
 | GEOX | `/earth` |
 | arifOS | `/arifos/` |
 | Briefing / institution | `/institution/` |
-| Agent start-here | `/human` |
+| Agent start-here | `/human` (static HTML + `/human.md`; not the SPA shell) |
 | Machine map | `/llms.txt` |
 | Agent JSON | `/.well-known/agent.json` |
 | Public A2A | `/a2a` **HOLD 404** |

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Start here — agents</title>
+<meta name="description" content="Canonical agent entry for arif-fazil.com: identity, read-only resources, MCP, and what requires human approval."/>
+<link rel="canonical" href="https://arif-fazil.com/human"/>
+<link rel="alternate" type="text/markdown" href="/human.md" title="Agent contract (markdown)"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0B0D;color:#EDEAE2;font-family:IBM Plex Sans,system-ui,sans-serif;line-height:1.65;max-width:52rem;margin:0 auto;padding:2.5rem 1.5rem}
+h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-0.03em;text-transform:uppercase;margin:0.5rem 0 1rem}
+h2{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#E4572E;margin:2.25rem 0 0.75rem}
+p,li,td,th{color:#9AA0A8;margin-bottom:0.75rem}
+ul{padding-left:1.1rem;margin-bottom:1rem}
+a{color:#E4572E}
+.kicker{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#9AA0A8}
+table{width:100%;border-collapse:collapse;font-family:IBM Plex Mono,ui-monospace,monospace;font-size:11px;margin:1rem 0}
+th,td{border:1px solid #1F2733;padding:0.55rem 0.65rem;text-align:left;vertical-align:top}
+th{color:#9AA0A8;background:#11151C;text-transform:uppercase;letter-spacing:0.06em}
+td:first-child{color:#EDEAE2}
+.card{border:1px solid #1F2733;background:#11151C;padding:1.1rem 1.2rem;margin:0.75rem 0;border-radius:8px}
+nav{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid #1F2733;font-size:0.85rem}
+nav a{margin-right:1.25rem;color:#9AA0A8}
+</style>
+</head>
+<body>
+<p class="kicker">Agent start here</p>
+<h1>Read first.<br/>Then retrieve.</h1>
+<p>This site is the public home of Muhammad Arif bin Fazil: exploration geoscience, evidence-linked Earth computation, and governed agent architecture. Reading these pages does not grant authority. Public surfaces are informational unless a capability file explicitly says otherwise.</p>
+
+<h2>Start here</h2>
+<ul>
+  <li><a href="/llms.txt">/llms.txt</a> — short content map (canonical)</li>
+  <li><a href="/.well-known/agent.json">/.well-known/agent.json</a> — machine contract</li>
+  <li><a href="/policy.json">/policy.json</a> — public limits</li>
+  <li><a href="/about">/about</a> — who Arif is</li>
+  <li><a href="/institution/">/institution/</a> — human briefing / engagement</li>
+  <li><a href="/human.md">/human.md</a> — this contract as markdown</li>
+</ul>
+
+<h2>Capability matrix</h2>
+<p>Compatibility is not an open invitation. State-changing work requires authenticated authorization and explicit human approval.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th><th>Discover</th><th>Read</th><th>Write</th><th>Auth</th><th>Human approval</th><th>Audit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Site documents, llms.txt, identity</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>Access logs</td></tr>
+    <tr><td>Earth public globe / dossiers</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>Source + time on page</td></tr>
+    <tr><td>MCP diagnostics (mcp.arif-fazil.com)</td><td>Yes</td><td>Limited</td><td>No</td><td>Optional</td><td>No</td><td>Trace ID</td></tr>
+    <tr><td>Work requests / briefing</td><td>Yes</td><td>Limited</td><td>Email only</td><td>Yes</td><td>Required</td><td>Mailbox + reply</td></tr>
+    <tr><td>Deploy / execution</td><td>No</td><td>Limited</td><td>Yes</td><td>Strong</td><td>Required</td><td>Git + deploy receipt</td></tr>
+    <tr><td>Public A2A POST /a2a</td><td>No</td><td>No</td><td>No</td><td>—</td><td>HOLD</td><td>Explicit 404</td></tr>
+  </tbody>
+</table>
+
+<h2>Trust zones</h2>
+<div class="card">
+  <p><strong style="color:#EDEAE2">Public</strong> — this site, /earth, /llms.txt, GitHub. Informational. No mutation.</p>
+  <p><strong style="color:#EDEAE2">Authenticated</strong> — MCP tools that require a session. Still read-mostly. No deploy.</p>
+  <p><strong style="color:#EDEAE2">Privileged</strong> — governed execution (A-FORGE) after a policy check. Human veto holds.</p>
+  <p><strong style="color:#EDEAE2">Private</strong> — confidential subsurface, medical, keys, Caddy. Not on this site.</p>
+</div>
+
+<h2>Safety boundaries</h2>
+<ul>
+  <li>No authority is delegated by reading this site.</li>
+  <li>GEOX computes. It does not adjudicate.</li>
+  <li>Do not infer private, confidential, or employer information from public pages.</li>
+  <li>Public A2A on this host is not offered. Do not treat a 404 as an invitation to retry.</li>
+  <li>Civic commentary (MakcikGPT) is editorial, not the professional identity contract. See /llms.txt Optional.</li>
+</ul>
+<p>MCP: <a href="https://mcp.arif-fazil.com/mcp">mcp.arif-fazil.com/mcp</a> · Email: <a href="mailto:arifbfazil@gmail.com">arifbfazil@gmail.com</a></p>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/earth">Earth</a>
+  <a href="/institution/">Briefing</a>
+  <a href="/llms.txt">llms.txt</a>
+  <a href="https://github.com/ariffazil">GitHub</a>
+</nav>
+</body>
+</html>

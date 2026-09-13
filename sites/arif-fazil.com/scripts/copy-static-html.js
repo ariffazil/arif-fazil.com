@@ -51,6 +51,8 @@ const SKIP_FILES = new Set([
 const STATIC_INDEX_ALLOWLIST = new Set([
   "world/politics/shadow/index.html",
   "world/politics/shadow/anwar-ibrahim/index.html",
+  "institution/index.html",
+  "human/index.html",
 ]);
 
 function shouldSkip(relativePath, isDir) {

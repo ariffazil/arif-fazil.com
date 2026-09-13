@@ -1,11 +1,15 @@
 {
   "site_name": "arif-fazil.com",
   "domain": "arif-fazil.com",
-  "role": "human homepage with genesis, proof, capital briefing, and civic intelligence subroutes",
+  "role": "public home of Muhammad Arif bin Fazil: geoscience, Earth computation, governed agents",
   "canonical": "https://arif-fazil.com/llms.txt",
   "repository": "https://github.com/ariffazil/arif-sites",
   "route_roles": {
-    "/": "professional human entry — portfolio, wells, systems overview",
+    "/": "professional human entry — three doors (Arif / GEOX / arifOS) plus briefing",
+    "/about": "who Arif is",
+    "/human": "agent start-here contract — retrieve vs approval",
+    "/institution/": "human / institutional briefing and engagement path",
+    "/earth/": "live source-linked Earth model; computes, does not adjudicate",
     "/000/": "genesis and wisdom archive — origin context for agents",
     "/999/": "trust and proof chamber — verification artifacts",
     "/wealth/": "WEALTH daily briefing — Bursa, Ringgit, oil, macro intelligence",

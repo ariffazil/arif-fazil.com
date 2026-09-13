@@ -2,12 +2,12 @@
 /**
  * generate-discovery.cjs — Single source of truth for sitemap + llms parity.
  *
- * Reads src/data/essays.json and regenerates the four discovery surfaces
- * so they all carry the same canonical MakcikGPT article set:
+ * Reads src/data/essays.json and regenerates discovery surfaces:
  *   - public/sitemap.xml  (under /world/makcikgpt/, NOT /wealth/makcikgpt/)
- *   - public/llms.txt     (links list under "MakcikGPT — Civic Intelligence")
+ *   - public/llms.txt     (compact professional map; MakcikGPT is Optional pointer)
  *   - public/llms.json    (route_roles + related_sites + machine_surfaces)
  *   - public/page.json    (machine-readable site overview)
+ * Article headlines belong in feed.xml / llms-full.txt, not the start-here map.
  *
  * Single Source of Truth rule (F4 CLARITY):
  *   - essays.json → scripts/lib/makcik-source.cjs → page (React) + feed.xml
@@ -41,7 +41,10 @@ function todayISO() {
 // ── sitemap.xml ─────────────────────────────────────────────────────────
 function buildSitemap(pieces) {
   const urls = [
-    { loc: `${SITE_BASE}/`, priority: 1.0, changefreq: "monthly", lastmod: "2026-07-19" },
+    { loc: `${SITE_BASE}/`, priority: 1.0, changefreq: "monthly", lastmod: "2026-09-13" },
+    { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/human`, priority: 0.85, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/earth`, priority: 0.8, changefreq: "monthly" },
     { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
     { loc: `${SITE_BASE}/klci/`, priority: 0.85, changefreq: "daily" },
@@ -90,13 +93,11 @@ ${urls
 `;
 }
 
-// ── llms.txt (append/refresh the MakcikGPT section + sitemap link) ─────
-function buildLlmsTxt(pieces) {
-  // Section: "MakcikGPT — Civic Intelligence" with link list under
-  // /world/makcikgpt/<slug> (the canonical landing path).
-  const linkLines = pieces
-    .map((p) => `- [${p.title}](${SITE_BASE}${p.dest.path})`)
-    .join("\n");
+// ── llms.txt (compact professional map; civic index is Optional pointer) ─────
+function buildLlmsTxt(_pieces) {
+  // Canonical llms.txt is a map, not a civic encyclopedia.
+  // MakcikGPT articles live in feed.xml + /llms-full.txt + /world/makcikgpt/.
+  // Re-injecting 27 headlines here hijacks the professional identity contract.
   return `# arif-fazil.com
 
 > Personal public site of Muhammad Arif bin Fazil: exploration geoscience, evidence-first Earth intelligence, and governed agent-system architecture.
@@ -139,9 +140,7 @@ Ditempa Bukan Diberi — forged, not given.
 Civic commentary (MakcikGPT) is editorial, not the professional identity contract.
 Canonical landing: ${CANONICAL_LANDING}
 Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
-
-### Latest articles (${pieces[0]?.date || todayISO()})
-${linkLines}
+Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml
@@ -154,7 +153,11 @@ ${linkLines}
 // ── llms.json ───────────────────────────────────────────────────────────
 function buildLlmsJson(pieces) {
   const routeRoles = {
-    "/": "professional human entry — portfolio, wells, systems overview",
+    "/": "professional human entry — three doors (Arif / GEOX / arifOS) plus briefing",
+    "/about": "who Arif is",
+    "/human": "agent start-here contract — retrieve vs approval",
+    "/institution/": "human / institutional briefing and engagement path",
+    "/earth/": "live source-linked Earth model; computes, does not adjudicate",
     "/000/": "genesis and wisdom archive — origin context for agents",
     "/999/": "trust and proof chamber — verification artifacts",
     "/wealth/": "WEALTH daily briefing — Bursa, Ringgit, oil, macro intelligence",
@@ -174,7 +177,7 @@ function buildLlmsJson(pieces) {
   return {
     site_name: "arif-fazil.com",
     domain: "arif-fazil.com",
-    role: "human homepage with genesis, proof, capital briefing, and civic intelligence subroutes",
+    role: "public home of Muhammad Arif bin Fazil: geoscience, Earth computation, governed agents",
     canonical: LLMS_TXT_PATH,
     repository: "https://github.com/ariffazil/arif-sites",
     route_roles: routeRoles,
@@ -222,14 +225,18 @@ function buildPageJson() {
   return {
     name: "arif-fazil.com",
     purpose:
-      "Professional homepage for Arif Fazil, with canonical deeper layers for genesis, proof, and civic intelligence.",
+      "Public site of Muhammad Arif bin Fazil. Uncertain Earth data into defensible decisions. AI bounded by evidence and human authority.",
     audience: ["humans", "collaborators", "agents", "verifiers"],
     canonical_url: "https://arif-fazil.com/",
     route_model: {
-      "/": "present human homepage",
+      "/": "human L1 — three doors + briefing",
+      "/about": "who",
+      "/human": "agent start-here",
+      "/institution/": "institutional briefing",
+      "/earth/": "GEOX human globe",
       "/000/": "genesis and wisdom archive",
       "/999/": "trust and proof chamber",
-      "/world/makcikgpt/": "MakcikGPT civic intelligence canonical landing",
+      "/world/makcikgpt/": "MakcikGPT civic intelligence (editorial, optional)",
     },
     content_scope: {
       includes: [

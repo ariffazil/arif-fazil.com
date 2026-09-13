@@ -35,7 +35,7 @@ tier_B_local_reversible:
     - git branch + commit (not force-push)
     - npm run build / tsc
     - rsync WITHOUT --delete to /var/www/html/arif after orphan preview
-    - copy static top-level files (institution/, earth/index.html, llms.txt)
+    - copy static top-level files (institution/, human/, earth/index.html, llms.txt)
   forbidden:
     - rsync --delete without orphan.ok
     - hand-edit /var/www/html without source twin

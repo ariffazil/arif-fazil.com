@@ -1,6 +1,9 @@
-# arifOS Federation — LLMs Context
-# Location: https://arif-fazil.com/llms.txt
-# Version: v2.0.0 — WEB UNIFICATION
+# NOT the public machine map.
+# Live /llms.txt is generated from sites/arif-fazil.com/public/llms.txt
+# (compact professional map). Do not copy this federation orientation
+# over the public file. 2026-09-13.
+
+# arifOS Federation — LLMs Context (repo orientation only)
 # Authority: Muhammad Arif bin Fazil (F13 SOVEREIGN)
 # Doctrine: Satu domain. Satu web surface. Banyak organ, tetap bersempadan.
 

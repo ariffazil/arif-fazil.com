@@ -22,6 +22,11 @@ Upgrade `https://arif-fazil.com` so humans, agents, and institutions can enter t
 
 This is **not** another A2A doctrine pass. Public A2A `POST /a2a` 405 stays HOLD.
 
+## Fabric
+
+Load `AGI-agentic-web-delivery` + `FORGE-agentic-web-builder`.
+SOT: `docs/agentic-web/README.md`.
+
 ## Always first
 
 ```

@@ -1,0 +1,71 @@
+# Map proposed skill IDs → existing AAA catalog.
+# Do not mint SKILLS.json. Do not duplicate a skill that already works.
+schema: aaa.agentic_web.skill_fabric.v1
+as_of: 2026-09-13
+catalog: /root/AAA/skills
+rule: load existing skill; only create a new SKILL.md when this table says GAP
+
+umbrella:
+  - FORGE-agentic-web-builder   # doctor, orphan, deploy law, site scars
+  - AGI-agentic-web-delivery    # this fabric: roles, MCP tiers, mission graph
+  - AGI-agentic-web             # fetch/search authority ladder (external web)
+  - ASI-agent-invariants
+  - forge-route-least-power
+
+foundation:
+  web-mission-intake: { skill: AGI-agentic-web-delivery, section: phase-000 }
+  repo-orientation: { skill: FORGE-agentic-web-builder, extra: AUDIT-repo-reality }
+  information-architecture: { skill: FORGE-design-intelligence }
+  human-attention-design: { skill: FORGE-design-intelligence, extra: human-state-estimation }
+  content-truthfulness: { skill: WISDOM-reader, extra: ASI-fabrication-prevention }
+  component-engineering: { skill: FORGE-react-spa-discipline, extra: FORGE-tailwind-tokens }
+  responsive-ui-validation: { skill: browser-playwright-runner }
+  seo-structured-data: { skill: AGI-web-optimization }
+  agent-readiness: { skill: AGI-web-optimization, extra: AGI-agentic-web-delivery }
+  web-observability: { skill: federation-health }
+  web-release-engineering: { skill: FORGE-agentic-web-builder, extra: federation-release-attestation }
+
+browser_multimodal:
+  browser-journey-test: { skill: browser-playwright-runner }
+  visual-regression: { skill: FORGE-visual-qa-w3 }
+  aria-tree-audit: { skill: browser-playwright-runner }
+  a11y-automation: { skill: browser-playwright-runner, note: "Playwright + axe if present; else ARIA snapshot" }
+  performance-budgeting: { skill: AGI-web-optimization, note: "Lighthouse 13.4.1 available via npx" }
+  network-and-console-audit: { skill: browser-playwright-runner }
+  content-visual-coherence: { skill: FORGE-visual-qa-w3, extra: FORGE-komda-color-law }
+  webgl-map-resilience: { skill: geox-production-cockpit, extra: geox-grounding }
+
+agent_surface:
+  llms-curation: { skill: AGI-web-optimization }
+  markdown-twins: { skill: AGI-web-optimization }
+  agent-capability-contract: { skill: AGI-agentic-web-delivery }
+  mcp-surface-documentation: { skill: mcp-ops, extra: FORGE-fastmcp }
+  webmcp-progressive-enhancement: { skill: FORGE-mcp-gui, status: HOLD_public_write }
+  agent-provenance: { skill: WISDOM-reader }
+  machine-human-parity: { skill: AGI-agentic-web-delivery }
+  agent-boundary-testing: { skill: mcp-testing }
+
+safety:
+  prompt-injection-resistance: { skill: ASI-agent-invariants }
+  mcp-tool-vetting: { skill: mcp-ops }
+  tool-schema-validation: { skill: mcp-testing }
+  secret-hygiene: { skill: FORGE-secret-hygiene }
+  least-privilege-routing: { skill: forge-route-least-power }
+  human-approval-gate: { skill: apex-gate-evaluator, extra: verify-gate }
+  supply-chain-control: { skill: security-audit }
+  rollback-discipline: { skill: FORGE-agentic-web-builder }
+  audit-ledger: { skill: forge-vault999-witness }
+  privacy-and-classification: { skill: sanctuary-boundary-enforcer }
+
+organs:
+  AAA-Web-Director: AGI-agentic-web-delivery
+  HERMES-Experience: FORGE-design-intelligence
+  A-FORGE-Frontend: FORGE-agentic-web-builder
+  A-FORGE-Agent-Surface: AGI-web-optimization
+  Browser-Reality: browser-playwright-runner
+  Accessibility: browser-playwright-runner
+  Performance: AGI-web-optimization
+  Security: security-audit
+  Evidence: WISDOM-reader
+  GEOX-Witness: geox-grounding
+  Release-Custodian: FORGE-agentic-web-builder

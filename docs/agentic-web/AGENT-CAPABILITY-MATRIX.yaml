@@ -1,0 +1,60 @@
+schema: aaa.agentic_web.capability_matrix.v1
+site: https://arif-fazil.com
+human_authority: required_for_state_change
+default_permission: deny
+as_of: 2026-09-13
+start_here: https://arif-fazil.com/human
+llms_txt: https://arif-fazil.com/llms.txt
+agent_json: https://arif-fazil.com/.well-known/agent.json
+
+capabilities:
+  - id: site.documents
+    discover: yes
+    read: yes
+    write: no
+    auth: none
+    human_approval: none
+    audit: access_logs
+  - id: earth.public_globe
+    discover: yes
+    read: yes
+    write: no
+    auth: none
+    human_approval: none
+    audit: source_and_time_on_page
+    limitation: computes_does_not_adjudicate
+  - id: mcp.diagnostics
+    discover: yes
+    read: limited
+    write: no
+    auth: optional
+    human_approval: none
+    endpoint: https://mcp.arif-fazil.com/mcp
+  - id: briefing.request
+    discover: yes
+    read: limited
+    write: email_only
+    auth: yes
+    human_approval: required
+    route: https://arif-fazil.com/institution/
+  - id: deploy.execution
+    discover: no
+    read: limited
+    write: yes
+    auth: strong
+    human_approval: required
+    audit: git_plus_deploy_receipt
+  - id: public.a2a
+    discover: no
+    read: no
+    write: no
+    human_approval: HOLD
+    live: HTTP_404_17_byte
+
+prohibited:
+  - unauthenticated_write
+  - credential_access
+  - infrastructure_mutation
+  - autonomous_deployment
+  - public_webmcp_write
+  - inferring_confidential_employer_data

@@ -1,0 +1,71 @@
+# Live MCP / adapter registry for agentic-web work on this VPS.
+# Pin what exists. Do not assume Playwright MCP is connected.
+schema: aaa.agentic_web.mcp_registry.v1
+as_of: 2026-09-13
+observed_harness: grok-build/FI-007
+mcp_spec_federation: "2025-11-25 streamable-http preferred; arifOS also dual-era 2026-07-28"
+
+tier_A_read_only:
+  description: Generally safe for inspect missions
+  servers:
+    arifos:
+      tools: [arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge]
+      note: "arif_forge/arif_seal are not Tier A"
+    aforge:
+      tools: [forge_web_zen, forge_probe_site]
+      note: "forge_web_zen modes: sense, verify, orphan, ephemeral, doctor, caddy-reload-hint — no audit CLI"
+    geox: { use: "Earth claim witness only" }
+    wealth: { use: "Capital compute; does not authorize" }
+    well: { use: "H/M/G/C vitality mirror; HOLD if sensors stale" }
+    arifflow: { use: "Metabolic FQ; do not treat as deploy authority" }
+    fed: { use: "Federation probe" }
+    github: { use: "Read issues/PRs/files; write is Tier C" }
+  local_adapters:
+    filesystem_read: harness
+    git_status_diff_log: harness
+    curl_https: harness
+    playwright_python: "local sync_playwright — NOT a connected MCP in this session"
+    lighthouse_npx: "npx lighthouse 13.4.1"
+    web_zen_cli: /root/arif-fazil.com/scripts/web-zen/web_zen.py
+
+tier_B_local_reversible:
+  description: Worktree/source mutation; no production infra
+  adapters:
+    - filesystem write in /root/arif-fazil.com
+    - git branch + commit (not force-push)
+    - npm run build / tsc
+    - rsync WITHOUT --delete to /var/www/html/arif after orphan preview
+    - copy static top-level files (institution/, earth/index.html, llms.txt)
+  forbidden:
+    - rsync --delete without orphan.ok
+    - hand-edit /var/www/html without source twin
+    - npm install new dep without announce
+
+tier_C_external_write_human_bound:
+  description: Needs explicit Arif/mission bind
+  adapters:
+    - git push origin main
+    - github.create_pull_request
+    - make deploy  # BLOCKED: Makefile reload target is Caddy T3
+    - email/telegram send
+  condition: exact commit + exact command shown first
+
+tier_D_privileged:
+  description: Unavailable to general agents
+  adapters:
+    - systemctl reload caddy / caddy reload
+    - DNS, firewall, secret rotate
+    - public /a2a matcher
+    - MCP registry modify
+    - production DB write
+  status: 888_HOLD unless Arif names the action
+
+failed_this_session:
+  - firecrawl  # handshake failed
+  - openrouter # auth required
+  - sentry     # auth required
+
+not_connected_do_not_pretend:
+  - playwright MCP (@playwright/mcp) — use local Playwright Python
+  - lighthouse MCP — use npx lighthouse
+  - public WebMCP write tools

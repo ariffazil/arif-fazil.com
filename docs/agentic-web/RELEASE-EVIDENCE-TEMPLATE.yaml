@@ -1,0 +1,28 @@
+# Fill after tests. External name: release evidence / deploy receipt.
+# Do not call this a kernel SEAL.
+release_candidate:
+  commit: "<full SHA>"
+  branch: main
+  environment: production_public_html
+  changed_routes: []
+  public_effect: []
+  tests:
+    doctor_before: ""
+    doctor_after: ""
+    doctor_fail_set_delta: ""
+    build: ""
+    playwright_home: ""
+    playwright_human: ""
+    playwright_institution: ""
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: ""
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: /root/backups/www-html-arif-<ts>-pre-<reason>
+    git: "git revert <SHA>"
+  requested_action: "none | rsync | named Caddy reload"
+  approver: "<empty until Arif>"

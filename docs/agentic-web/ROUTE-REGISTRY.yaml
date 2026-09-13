@@ -1,0 +1,32 @@
+schema: aaa.agentic_web.route_registry.v1
+as_of: 2026-09-13
+canonical_host: https://arif-fazil.com
+spa_bundle_example: /assets/index-lNdBmlba.js
+
+canonical:
+  /: { kind: spa, job: L1_human }
+  /about: { kind: spa, job: who }
+  /human: { kind: spa, job: agent_start }
+  /institution/: { kind: static_top, root: /var/www/html/institution, job: briefing }
+  /earth: { kind: static_top, root: /var/www/html/earth, job: geox_human }
+  /work: { kind: spa, job: case_studies }
+  /arifos/: { kind: static, job: governance_layer }
+  /llms.txt: { kind: root_static, job: agent_map }
+  /.well-known/agent.json: { kind: well_known, job: machine_contract }
+  /999/: { kind: static, job: verification_not_certificate }
+  /000/: { kind: static, job: genesis }
+
+aliases_ok:
+  /missions: { to: /work/missions/ }
+  /doctrine: { to: /words/doctrine/ }
+  /propa/: { to: /vitals/ }
+
+hold_404_do_not_add_without_caddy_named:
+  /a2a: { bytes: 17, reason: public_A2A_HOLD }
+  /engage: { bytes: 17, reason: use_/institution/ }
+  /agent: { bytes: 17, reason: use_/human }
+  /architecture: { bytes: 17, reason: use_/human_trust_zones }
+
+caddy_note: |
+  @spa_routes is an allowlist. New first-class paths 404 until a matcher exists.
+  Matcher change requires Caddy reload = T3 888_HOLD unless Arif names it.

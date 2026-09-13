@@ -1,9 +1,10 @@
 <!-- SOT-MANIFEST
-federation_release: v2026.08.25
-last_verified: 2026-08-25T12:13:00Z
-live_commit: ad0e18a54fd35babba1b8d49b75cfe9cf57d61c9
+federation_release: v2026.09.13
+last_verified: 2026-09-13T06:32:00Z
+live_commit: b091f33
 scope: /root/arif-fazil.com → ariffazil/arif-fazil.com
 epistemic_status: OBS
+apex_zen: A2A delegates ⊥ MCP equips ⊥ ACT mutates ⊥ arifOS governs ⊥ F13 decides
 truth_rule: live git push + Cloudflare deploy beat any static count in prose
 doctrine: Satu domain. Satu web surface. Banyak organ, tetap bersempadan.
 -->

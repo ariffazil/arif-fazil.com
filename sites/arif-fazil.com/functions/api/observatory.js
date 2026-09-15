@@ -5,8 +5,8 @@
 // is unreachable, return a DEGRADED state with the reason.
 
 const FALLBACK_SNAPSHOT = {
-  snapshot_id: "observatory-static-2026-07-27",
-  observed_at: "2026-07-27T00:00:00Z",
+  snapshot_id: "observatory-static-2026-09-16",
+  observed_at: "2026-09-16T00:00:00Z",
   probe_version: "observatory.v1",
   sovereign: "ARIF",
   domain: "arif-fazil.com",
@@ -43,6 +43,7 @@ const FALLBACK_SNAPSHOT = {
     "This snapshot is a curated institution-facing mirror.",
     "For live runtime state, query /api/federation-probe directly.",
     "All receipts in /999/ are hash-chained and immutable.",
+    "Observability: sovereign Postgres backend active (2026-09-16). arifFlow + FRAME + Kabarkan live. Trace propagation fix in progress.",
   ],
 };
 

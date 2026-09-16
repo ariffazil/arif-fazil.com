@@ -1,5 +1,5 @@
 {
-  "version": "2026-08-25",
+  "version": "2026-09-17",
   "domain": "arif-fazil.com",
   "doctrine": {
     "title": "Single canonical surface catalog. All machine catalogs are generated views of this file.",
@@ -462,7 +462,7 @@
       "type": "page",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Public PETRONAS VITALS on apex (not system health cosplay). Canonical soft path /vitals/; /wealth/vitals/ 308s here. Distinct organ-style chrome is intentional for capital dashboard."
+      "description": "Public PETRONAS VITALS on apex (not system health cosplay). Canonical soft path /vitals/; /wealth/vitals/ 308s here. Distinct organ-style chrome is intentional for capital dashboard. Post-audit-fix (2026-09-17): VITALS_* namespaced score bands (BUFFERED/WATCH/STRESSED/CRITICAL — distinct from arifOS constitutional verdicts); Tripwire #1 renamed to Post-Dividend Residual Cash (PDRC) with audited FCF def = RM43.6B framing; Tripwire #8 WITHHELD_PENDING with primary-sourced governance citation at /makcikgpt/petronas-bod-evolution/; 5-tier epistemic taxonomy (OBS/DER/HYP/INT/SPEC); 4 counter-hypotheses ledger; dual-clock drift overlay (sealed FY2025 audited vs 1H26 declared-not-audited); AUTO-ESCALATE/REVIEW REQUIRED replaces AUTO-INTERVENTION framing; PacemakerAction JSON-LD action 'DIVIDEND_STOP_PUBLIC_ADVISORY_ESCALATION'; AMEND-2026-08-03-001 preserved verbatim; audit baseline canon/vitals_audit_baseline.json."
     },
     {
       "path": "/malaysia/",

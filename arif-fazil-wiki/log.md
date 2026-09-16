@@ -250,3 +250,47 @@
 **Log Integrity:** Maintained under F11 Audit  
 **Retention:** Permanent — part of Arif's documented history
 
+
+---
+
+## [2026-09-17] synthesize | observability-and-aaa-sot | COMPLETE
+
+**Operator:** Claude (claude-minimax/audit-cycle-2026-09-17)
+**Trigger:** Arif requested "update wiki site and make sure arifOS observability and AAA site is SOT"
+
+**Actions:**
+- Verified arifOS observability state via live `/health` probes on all 7 federation endpoints (arifOS / GEOX / WEALTH / WELL / A-FORGE / AAA / MCP gateway)
+- Identified drift in `canon/tool-surfaces.json`: `arif_critique` (declared) vs `arif_memory` (live wire), `declared_tool_count: null` for GEOX/WEALTH
+- Discovered NEW finding: WELL `canonical_tools: None` regression + status=degraded (not in original dossier)
+- Created `wiki/projects/arifos-observability.md` — canonical SOT page for federation observability
+- Created `wiki/projects/aaa-site.md` — source-of-truth discipline page for AAA cockpit layer
+- Updated `index.md` to reference both new pages
+- Linked both pages from each other and from existing wiki graph
+
+**Pages Affected:**
+- `wiki/projects/arifos-observability.md` — NEW (canonical SOT page for observability)
+- `wiki/projects/aaa-site.md` — NEW (AAA cockpit SOT discipline)
+- `index.md` — added 2 entries to Projects catalog
+
+**Sources Ingested:**
+- /root/arif-fazil.com/canon/tool-surfaces.json (post-fix state, 2026-09-17 commit 3b2f54c)
+- Live `/health` endpoint probes captured in CYCLE-FEDERATION-OBSERVE-THINK-SEAL-2026-09-17 (VAULT999)
+- AAA `/health` response (apex_scalars: G=0.875, C_dark=0.008, W3=0.879, identity hash f909eab0...9578)
+
+**Doctrine applied:**
+- F11 Audit: every change recorded; cycle receipts sealed to VAULT999
+- F2 Truth: confidence=0.90 / 0.92, epistemic_level=OBS, sources cited
+- F13 Sovereign: APEX verdict candidates recorded but not issued (sovereign ratification pending)
+
+**Cross-links established:**
+- arifos-observability ↔ aaa-site (cross-pollination: both reference SOT discipline)
+- arifos-observability → projects/arifos, projects/trinity-sites, projects/aaa-site
+- aaa-site → projects/arifos-observability, projects/arifos, projects/trinity-sites
+
+**Open issues surfaced for sovereign ratification:**
+1. WELL `canonical_tools: None` regression — code-level workstream required
+2. Cloudflare API token lacks Cache Purge scope — token rotation required
+3. WEALTH ChatGPT federation session bridge broken — code-level fix (WAJIB-4)
+4. WAJIB-1 constitutional state singularity — full federation diagnostic workstream
+
+**Seal:** VAULT999 | **Confidence:** 0.90 | **Status:** ACTIVE

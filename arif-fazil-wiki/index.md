@@ -33,10 +33,12 @@
 | Page | Type | Description | Status |
 |------|------|-------------|--------|
 | [[projects/arifos]] | Entity | Constitutional AI runtime (F1-F13) | ✅ Active |
+| [[projects/arifos-observability]] | Reference | **arifOS observability SOT** — live `/health` endpoints, canonical tool-surfaces.json, federation state. **The canonical reference for observers.** | ✅ Active |
 | [[projects/arifos-v2-hardening]] | Reference | V2.0.0 Architectural Hardening Report | ✅ Active |
 | [[projects/geox]] | Entity | Earth knowledge system (GEOX) | ✅ Active |
 | [[projects/A-FORGE]] | Entity | Agent workbench and forge | ✅ Active |
 | [[projects/vault999]] | Entity | Final seal and attestation system | ✅ Active |
+| [[projects/aaa-site]] | Entity | **AAA site — cockpit / identity / A2A authority layer.** Source-of-truth discipline for AAA display vs canon/tool-surfaces.json. | ✅ Active |
 | [[projects/trinity-sites]] | Reference | arif-fazil.com sites architecture | ✅ Active |
 | [[projects/arifos-mcp-migration]] | Reference | Universal naming migration (Phase A/B/C) | ✅ Active |
 | [[projects/trinity-architecture]] | Concept | ΔΩΨ paradigm (Soul/Mind/Body) | ✅ Active |

@@ -287,6 +287,16 @@ Verify F2 (grounded) → Check F7 (confidence) → Seek 999_SEAL → Output
 
 ---
 
+## See Also
+
+- [[projects/arifos-observability]] — **Canonical SOT for live federation state** (organ `/health` endpoints, `canon/tool-surfaces.json`, drift ledger)
+- [[projects/aaa-site]] — **AAA cockpit SOT discipline** (display vs adjudication)
+- [[projects/arifos-v2-hardening]] — V2.0.0 hardening report
+- [[projects/trinity-sites]] — Federation topology
+- [[projects/vault999]] — Sealing and attestation
+
+---
+
 ## Metadata
 
 ```yaml

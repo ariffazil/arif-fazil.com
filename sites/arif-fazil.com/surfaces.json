@@ -216,11 +216,23 @@
       "path": "/writing/",
       "title": "Writing — Essays & Analysis",
       "mission": "interpret",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
       "priority": 0.8,
       "changefreq": "weekly",
-      "description": "Narrative essays by Arif on AI governance, thermodynamics, geological reasoning"
+      "description": "Legacy alias. Canonical path is /words/writing/ — see catalog entry. Added 2026-09-17 to close catalog/reality drift.",
+      "redirects_to": "/words/writing/"
+    },
+    {
+      "path": "/words/writing/",
+      "title": "Writing — Essays & Analysis",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "Canonical essays home. Long-form writing by Arif on AI governance, thermodynamics, geological reasoning. Promoted from /writing/ 2026-09-17 to close catalog/reality drift."
     },
     {
       "path": "/writing/:slug",
@@ -236,11 +248,23 @@
       "path": "/doctrine/",
       "title": "Doctrine — Constitution, Federation Topology, Manifesto",
       "mission": "decide",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
       "priority": 0.9,
       "changefreq": "monthly",
-      "description": "Constitutional floors (F1-F13), authority chain, organ topology, federation manifesto"
+      "description": "Legacy alias. Canonical path is /words/doctrine/ — see catalog entry. Added 2026-09-17 to close catalog/reality drift.",
+      "redirects_to": "/words/doctrine/"
+    },
+    {
+      "path": "/words/doctrine/",
+      "title": "Doctrine — Constitution, Federation Topology, Manifesto",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.95,
+      "changefreq": "monthly",
+      "description": "Canonical doctrine home. Constitutional floors (F1-F13), authority chain, organ topology, federation manifesto. Promoted from /doctrine/ 2026-09-17 to close catalog/reality drift."
     },
     {
       "path": "/000/",
@@ -336,13 +360,15 @@
     },
     {
       "path": "/wealth/",
-      "title": "Wealth Capital — Market & Investment Terminal",
+      "title": "Wealth Capital (redirect → /vitals/)",
       "mission": "interpret",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
       "priority": 0.8,
       "changefreq": "daily",
-      "description": "Wealth capital terminal and market intelligence"
+      "description": "Legacy alias. /wealth/ now redirects to /vitals/ — the canonical PETRONAS institutional vitals. Article paths /wealth/article/:slug already redirect to /economics/article/:slug. Added 2026-09-17 to close catalog/reality drift.",
+      "redirects_to": "/vitals/"
     },
     {
       "path": "/wealth/article/:slug",
@@ -492,9 +518,9 @@
       "type": "redirect",
       "priority": 0.6,
       "changefreq": "monthly",
-      "description": "A-FORGE lives at forge.arif-fazil.com only. Apex /forge/ redirects.",
+      "description": "A-FORGE subdomain redirects to arifOS MCP gateway (forge.arif-fazil.com itself 301s to mcp.arif-fazil.com). Added 2026-09-17: redirects_to updated to actual live target.",
       "code": 301,
-      "redirects_to": "https://forge.arif-fazil.com/"
+      "redirects_to": "https://mcp.arif-fazil.com/"
     },
     {
       "path": "/world/politics/shadow/",
@@ -698,6 +724,7 @@
   ],
   "external_refs": {
     "github": "https://github.com/ariffazil",
+    "huggingface": "https://huggingface.co/ariffazil",
     "mcp_registry_glama_arifos": "https://glama.ai/mcp/servers/ariffazil/arifos",
     "mcp_registry_glama_arifosmcp": "https://glama.ai/mcp/servers/ariffazil/arifosmcp",
     "pypi": "https://pypi.org/project/arifos/",

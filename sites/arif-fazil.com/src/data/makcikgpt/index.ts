@@ -28,7 +28,9 @@ import nusantaraAiParadox from './nusantara-ai-paradox';
 import mykadRm75Billion from './mykad-rm75-billion';
 import taufikKlccCeoPetronas from './taufik-klcc-ceo-petronas';
 import taufikPengecutDenganTitle from './taufik-pengecut-dengan-title';
+import petronasBodEvolution from './petronas-bod-evolution';
 export const makcikArticleModules: ArticleContent[] = [
+  petronasBodEvolution,
   taufikPengecutDenganTitle,
   mykadRm75Billion,
   taufikKlccCeoPetronas,
@@ -59,6 +61,145 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'petronas-bod-evolution',
+    title: 'BOD PETRONAS: Tadak Minyak, Tadak AGM, Tadak Siapa Boleh Tanya',
+    subtitle: 'Syarikat minyak terbesar negara. Board penuh orang finance. Satu-satunya engineer baru masuk semalam. Dan rakyat tak boleh tanya apa-apa.',
+    date: '2026-09-14',
+    domain: 'MAKCIKGPT × PETRONAS × BOD × GOVERNANCE',
+    language: 'ms',
+    excerpt: 'Board 8 orang, 7 finance. Jukris — satu-satunya engineer — baru masuk board antara Julai-Sep 2026. Tiada AGM. MoF Inc pemilik tunggal. Bakke lari dari 1MDB, sekarang duduk dalam struktur yang sama. Ibrahim Baki keluar dari board untuk jadi general Sarawak lawan PETRONAS. War Council — bukan Board of Directors. Siapa colonize siapa?',
+    tags: ['petronas', 'bod', 'governance', 'bakke-salleh', '1mdb', 'jukris', 'mof-inc', 'dividen', 'rightsizing', 'gentari', 'sarawak', 'petros', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-09-14',
+      last_updated: '2026-09-14',
+    },
+    source_ledger: [
+      {
+        source_id: 'SRC-001',
+        type: 'official_statement',
+        title: 'PETRONAS IR2025 — Board Composition & Skills Matrix',
+        url: 'https://www.petronas.com/integrated-report-2025/',
+        retrieved_at: '2026-09-14T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-002',
+        type: 'official_statement',
+        title: 'petronas.com/about-us/our-leaders (live scrape 14 Sept 2026)',
+        url: 'https://www.petronas.com/about-us/our-leaders',
+        retrieved_at: '2026-09-14T05:26:00Z',
+        content_hash: 'a17ea8b15dfdb26c1cead3a3ceaeb706e1ccfd27c5881d77d2829b22c8091653',
+      },
+      {
+        source_id: 'SRC-003',
+        type: 'court_record',
+        title: '1MDB-Tanore Trial — Bakke Salleh testimony (The Edge, Malay Mail, The Star)',
+        url: '',
+        retrieved_at: '2022-05-19T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-004',
+        type: 'official_statement',
+        title: 'BERNAMA — MoF Inc sole shareholder confirmation (15 Aug 2025)',
+        url: 'https://www.bernama.com/',
+        retrieved_at: '2025-08-15T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-005',
+        type: 'news',
+        title: 'Bloomberg — Taufik contract extension (Aug 8, 2026)',
+        url: 'https://www.bloomberg.com/',
+        retrieved_at: '2026-08-08T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-006',
+        type: 'news',
+        title: 'Reuters — PETRONAS dividend RM20B lowest in 9 years',
+        url: 'https://www.reuters.com/',
+        retrieved_at: '2025-10-01T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-007',
+        type: 'news',
+        title: 'SCMP — Sarawak challenges constitutional validity of federal petroleum laws',
+        url: 'https://www.scmp.com/',
+        retrieved_at: '2026-02-24T00:00:00Z',
+      },
+    ],
+    claim_register: [
+      {
+        claim_id: 'C001',
+        text: 'BOD PETRONAS terdiri daripada 8 orang, 7 mempunyai latar belakang finance/audit, hanya 1 engineer (Jukris).',
+        tag: 'OBS',
+        source_id: 'SRC-001',
+        confidence_basis: 'PETRONAS IR2025 skills matrix + petronas.com live scrape',
+      },
+      {
+        claim_id: 'C002',
+        text: 'Jukris masuk board antara 15 Julai dan 14 Sept 2026 — bukan dengan COO appointment Feb 2026.',
+        tag: 'OBS',
+        source_id: 'SRC-002',
+        confidence_basis: 'Wayback Machine snapshots (Sep 2025 – Jul 2026) vs live petronas.com',
+      },
+      {
+        claim_id: 'C003',
+        text: 'MoF Inc ialah pemilik tunggal 100% PETRONAS. Tiada AGM.',
+        tag: 'OBS',
+        source_id: 'SRC-004',
+        confidence_basis: 'BERNAMA (15 Aug 2025) — Menteri Azalina confirmed',
+      },
+      {
+        claim_id: 'C004',
+        text: 'Abdul Rasheed Ghaffour = Gabenor Bank Negara Malaysia, duduk sebagai Independent NED PETRONAS.',
+        tag: 'OBS',
+        source_id: 'SRC-001',
+        confidence_basis: 'PETRONAS IR2025 + bnm.gov.my',
+      },
+      {
+        claim_id: 'C005',
+        text: 'Bakke Salleh letak jawatan dari 1MDB (7 minggu) sebagai protes. Sri Ram: "It was like complaining of the loss of sheep to the wolf."',
+        tag: 'OBS',
+        source_id: 'SRC-003',
+        confidence_basis: 'Court testimony 19 Mei 2022 — 5 sumber bebas',
+      },
+      {
+        claim_id: 'C006',
+        text: 'Dividen PETRONAS: RM54B (2021 rekod) → RM20B (2025-2026, terendah 9 tahun). Profit collapse ~55% dalam 3 tahun.',
+        tag: 'OBS',
+        source_id: 'SRC-006',
+        confidence_basis: 'PETRONAS press releases, Reuters, FMT, The Edge',
+      },
+      {
+        claim_id: 'C007',
+        text: '5,000 pekerja kena potong (Jun 2025). Hiring dibekukan sehingga Disember 2026.',
+        tag: 'OBS',
+        source_id: 'SRC-005',
+        confidence_basis: 'Bloomberg, Reuters, Malay Mail (5 Jun 2025)',
+      },
+      {
+        claim_id: 'C008',
+        text: 'Sarawak fail petition cabar Perlembagaan 3 undang-undang petroleum persekutuan (Feb 2026).',
+        tag: 'OBS',
+        source_id: 'SRC-007',
+        confidence_basis: 'SCMP, FULCRUM/ISEAS, Bloomberg',
+      },
+      {
+        claim_id: 'C009',
+        text: 'Struktur PETRONAS (MoF Inc, PM=MoF, tiada AGM) adalah sama dengan struktur 1MDB.',
+        tag: 'INT',
+        confidence_basis: 'Perbandingan struktur — HRMARS, SSRN, Transparency International Malaysia',
+      },
+      {
+        claim_id: 'C010',
+        text: 'Bakke dilabel "Independent" selepas 6 tahun dilantik oleh PM — independence dari si?',
+        tag: 'INT',
+        confidence_basis: 'PIR2022 (Non-Independent) vs petronas.com 2026 (Independent)',
+      },
+    ],
+  },
   {
     slug: 'taufik-pengecut-dengan-title',
     title: 'Pengecut Tak Berani Confront — Edisi Khas',

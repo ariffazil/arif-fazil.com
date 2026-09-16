@@ -657,6 +657,16 @@
       "type": "page",
       "title": "For Machines — Ops guide",
       "description": "Human-readable agent contracts, AUP, disclaimer"
+    },
+    {
+      "path": "/pilot/",
+      "title": "Supervised AI Action Control — 4-Week Design Partner Pilot",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "Measurable action control for AI-agent workflows: evidence per action, human approval on consequential steps, tamper-evident receipt chain, eight weekly-measured criteria. Engineer-to-engineer. Band RM20k-50k."
     }
   ],
   "federation_subdomains": [

@@ -42,6 +42,7 @@ function todayISO() {
 function buildSitemap(pieces) {
   const urls = [
     { loc: `${SITE_BASE}/`, priority: 1.0, changefreq: "monthly", lastmod: "2026-09-13" },
+    { loc: `${SITE_BASE}/pilot/`, priority: 0.9, changefreq: "weekly" },
     { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/human`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
@@ -109,6 +110,7 @@ Ditempa Bukan Diberi — forged, not given.
 - [About](https://arif-fazil.com/about): Who Arif is.
 - [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
+- [Design Partner Pilot](https://arif-fazil.com/pilot/): 4-week supervised AI action control around your agent workflow — eight measurable criteria, receipt chain. Band RM20k-50k.
 - [Policy](https://arif-fazil.com/policy.json): Public limits.
 - [Identity](https://arif-fazil.com/.well-known/identity.json): Person record + DID.
 

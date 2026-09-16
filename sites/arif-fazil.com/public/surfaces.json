@@ -724,6 +724,7 @@
   ],
   "external_refs": {
     "github": "https://github.com/ariffazil",
+    "huggingface": "https://huggingface.co/ariffazil",
     "mcp_registry_glama_arifos": "https://glama.ai/mcp/servers/ariffazil/arifos",
     "mcp_registry_glama_arifosmcp": "https://glama.ai/mcp/servers/ariffazil/arifosmcp",
     "pypi": "https://pypi.org/project/arifos/",

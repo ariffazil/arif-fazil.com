@@ -350,6 +350,39 @@ const jsonLd = {
 const jsonLdBlock = `<script type="application/ld+json" data-agent-role="institutional-vitals-reality">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
 html = replaceMarker(html, 'B11-D:JSONLD-MARKER', jsonLdBlock);
 
+// ─────────────── NAMED-ENTITY CLAIM GATE (P1 2026-09-16) ───────────────
+// Public-surface rule: named-institution claims may be presented as
+// externally verified only with external source URIs. The engine's own
+// output is not a source. Machine report always; visible banner when
+// unbound. Entity registry SOT: /root/WEALTH/wealth_contracts/named_entities.json
+let NE_ENTITIES = ['PETRONAS','Petronas','Gentari','SEARAH','Searah','PRefChem','Pengerang','Aramco','Saudi Aramco','EnQuest','Eni','PETROS','MoF','Kementerian Kewangan','Ministry of Finance',"Moody's",'Fitch','S&P','Bank Negara','MLNG','Carigali','Kasawari','PDB','PGB','PCG','MISC'];
+try {
+  const neReg = JSON.parse(fs.readFileSync('/root/WEALTH/wealth_contracts/named_entities.json', 'utf8'));
+  NE_ENTITIES = [...new Set([...(neReg.institutions || []), ...(neReg.persons || [])])];
+} catch { /* embedded fallback above */ }
+const neEscape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const neFound = NE_ENTITIES.filter((e) => new RegExp(`(?<![A-Za-z])${neEscape(e)}(?![A-Za-z])`).test(html));
+const neUris = html.match(/https?:\/\/[^\s"'<>]+/g) || [];
+const neState = neFound.length === 0 ? 'NO_NAMED_ENTITIES' : (neUris.length > 0 ? 'EVIDENCE_BOUND' : 'UNBOUND_EXTERNAL_EVIDENCE');
+const claimGateReport = {
+  generated_at: new Date().toISOString(),
+  gate: 'named_entity_claim_gate',
+  surface: 'arif-fazil.com/vitals',
+  entities_detected: neFound,
+  external_uri_count: neUris.length,
+  external_uris: neUris.slice(0, 20),
+  state: neState,
+  publication_eligibility: neState === 'UNBOUND_EXTERNAL_EVIDENCE' ? 'BLOCKED_AS_EXTERNALLY_VERIFIED' : (neState === 'EVIDENCE_BOUND' ? 'ELIGIBLE_PENDING_CONTRADICTION_CHECK' : 'NOT_APPLICABLE'),
+  rule: 'Named-institution claims may be published as externally verified only with an external source URI. Engine output is not a source for named-entity claims.',
+  origin: '0-independent-NEDs public-page incident, 2026-09-16',
+};
+fs.writeFileSync(path.join(path.dirname(DIST_HTML), 'claim-gate-report.json'), JSON.stringify(claimGateReport, null, 2), 'utf8');
+console.log(`claim-gate: ${neState} — ${neFound.length} entities, ${neUris.length} external URIs -> claim-gate-report.json`);
+if (neFound.length > 0 && neUris.length === 0) {
+  const banner = `\n<div id="claim-gate-banner" style="margin:12px 24px 0;padding:12px 16px;border:1px solid #f0506e;border-radius:6px;background:rgba(240,80,110,.06);font-family:var(--mono);font-size:.72rem;line-height:1.6;color:var(--dim)">\n<strong style="color:var(--void,#f0506e)">⚠ NAMED-ENTITY CLAIM GATE — UNBOUND.</strong> This page references ${neFound.length} real-named institutions (${neFound.slice(0, 6).join(', ')}${neFound.length > 6 ? ', …' : ''}) but carries <strong>zero external source URIs</strong>. Every institutional claim herein is internally derived until externally bound — treat nothing on this page as externally verified. Machine report: <code>/vitals/claim-gate-report.json</code>.\n</div>\n`;
+  html = html.replace(/(<body[^>]*>)/i, `$1${banner}`);
+}
+
 // ──────────────────────────── write dist ────────────────────────────
 fs.mkdirSync(path.dirname(DIST_HTML), { recursive: true });
 fs.writeFileSync(DIST_HTML, html, 'utf8');

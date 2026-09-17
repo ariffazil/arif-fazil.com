@@ -220,18 +220,19 @@ h2.section .num {
 .two-col h3 { font-family: 'Archivo Black', sans-serif; font-size: 15px; margin-bottom: 10px; color: #ffffff; }
 
 /* Map Section ("Map Buat Betul-Betul") */
+
 .map-box {
-  background: var(--alt);
-  border: 1px solid var(--border);
+  background: #0b0c13;
+  border: 1px solid #272b3d;
   border-radius: 8px;
   overflow: hidden;
-  margin: 28px 0;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  margin: 28px 0 36px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.7), 0 0 35px rgba(242, 183, 5, 0.08);
 }
 .map-header {
-  padding: 16px 20px;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  background: #12141e;
+  border-bottom: 1px solid #202434;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -240,95 +241,181 @@ h2.section .num {
 }
 .map-title {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.06em;
+  font-size: 13.5px;
+  letter-spacing: 0.05em;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .map-title span.live-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: #e0301e;
-  box-shadow: 0 0 8px #e0301e;
-  animation: pulseDot 1.5s infinite;
+  box-shadow: 0 0 10px #e0301e;
+  animation: pulseDot 1.8s infinite;
 }
 .map-controls {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
+  align-items: center;
 }
 .map-btn {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 10.5px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   background: #191c28;
-  border: 1px solid var(--border-strong);
-  color: var(--muted);
+  border: 1px solid #2a2f45;
+  color: #9fa4b8;
   padding: 6px 12px;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-.map-btn:hover, .map-btn.active {
-  background: var(--yellow);
+.map-btn:hover {
+  background: #222638;
+  border-color: #f2b705;
+  color: #ffffff;
+}
+.map-btn.active {
+  background: #f2b705;
   color: #070709;
-  border-color: var(--yellow);
+  border-color: #f2b705;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(242, 183, 5, 0.3);
+}
+.map-btn .count-badge {
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.25);
   font-weight: 700;
 }
+.map-btn.active .count-badge {
+  background: rgba(0,0,0,0.4);
+  color: #f2b705;
+}
 #johor-map {
-  height: 520px;
+  height: 600px;
   width: 100%;
-  background: #090a0f;
+  background: #08090d;
   z-index: 1;
+}
+@media (max-width: 768px) {
+  #johor-map { height: 480px; }
+  .map-header { padding: 12px 14px; }
+  .map-title { font-size: 12px; }
 }
 .map-footer-bar {
   padding: 12px 20px;
-  background: var(--card);
-  border-top: 1px solid var(--border);
+  background: #10111a;
+  border-top: 1px solid #1f2230;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: var(--dim);
+  color: #656a80;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-.leaflet-popup-content-wrapper {
-  background: #141622 !important;
-  color: #f5f5f7 !important;
-  border: 1px solid #2f3448 !important;
-  border-radius: 6px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
-  padding: 4px !important;
-}
-.leaflet-popup-tip {
-  background: #141622 !important;
-  border: 1px solid #2f3448 !important;
-}
-.dc-popup-title {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 13px;
-  color: #f2b705;
-  margin-bottom: 6px;
-  border-bottom: 1px solid #252a3d;
-  padding-bottom: 4px;
-}
-.dc-popup-item {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  margin: 3px 0;
-  display: flex;
-  justify-content: space-between;
   gap: 12px;
 }
-.dc-popup-label { color: #9fa4b8; }
-.dc-popup-val { color: #ffffff; font-weight: bold; }
+.legend-strip {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: #9fa4b8;
+}
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.coords-readout {
+  font-size: 11px;
+  color: #f2b705;
+  font-weight: 600;
+}
 
+/* Custom Leaflet Popups */
+.leaflet-popup-content-wrapper {
+  background: #11131c !important;
+  color: #f5f5f7 !important;
+  border: 1px solid #2a2f45 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.85) !important;
+  padding: 2px !important;
+}
+.leaflet-popup-tip {
+  background: #11131c !important;
+  border: 1px solid #2a2f45 !important;
+}
+.popup-container {
+  padding: 10px 14px;
+  min-width: 260px;
+  max-width: 320px;
+}
+.popup-tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.popup-type-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.tag-dc { background: rgba(224, 48, 30, 0.2); color: #ff5e4d; border: 1px solid rgba(224, 48, 30, 0.4); }
+.tag-power { background: rgba(242, 183, 5, 0.2); color: #f2b705; border: 1px solid rgba(242, 183, 5, 0.4); }
+.tag-sub { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.4); }
+.tag-water { background: rgba(31, 63, 212, 0.25); color: #60a5fa; border: 1px solid rgba(31, 63, 212, 0.5); }
+.tag-link { background: rgba(6, 182, 212, 0.2); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.4); }
+
+.popup-name {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  border-bottom: 1px solid #1f2230;
+  padding-bottom: 6px;
+}
+.popup-kv-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+}
+.popup-k { color: #8b90a6; text-transform: uppercase; }
+.popup-v { color: #f5f5f7; font-weight: 600; text-align: right; }
+.popup-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #9fa4b8;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed #202434;
+  line-height: 1.4;
+}
 .bar-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -574,86 +661,35 @@ h2.section .num {
   <p>Johor hosts a data-centre pipeline of roughly <strong>5.0 GW</strong> against a transmission grid that can currently absorb only <strong>1.0 to 2.0 GW</strong> operationally. Tenaga Nasional Berhad (TNB) has committed RM43 billion to grid and transmission reinforcement through 2035 — a massive sovereign outlay that still leaves the cooling water deficit unaddressed. The immediate technical bottleneck is the high-voltage substation and distribution cable, not compute availability.</p>
 
   <!-- High-Precision Interactive Leaflet GIS Map ("Map Buat Betul-Betul") -->
+  
+  <!-- High-Precision Interactive Leaflet GIS Map ("Map Buat Betul-Betul") -->
   <div class="map-box">
     <div class="map-header">
       <div class="map-title">
         <span class="live-dot"></span>
-        <span>JOHOR DATA CENTRE &amp; GRID CORRIDOR (CARTOGRAPHIC WITNESS)</span>
+        <span>JOHOR DATA CENTRE &amp; POWER/WATER INFRASTRUCTURE (GEOSPATIAL WITNESS)</span>
       </div>
       <div class="map-controls">
-        <button class="map-btn active" onclick="filterMap('all')">All Layers</button>
-        <button class="map-btn" onclick="filterMap('dc')">Data Centres (5GW)</button>
-        <button class="map-btn" onclick="filterMap('grid')">500kV Grid</button>
-        <button class="map-btn" onclick="filterMap('water')">Water Moratorium</button>
+        <button class="map-btn active" id="btn-all" onclick="filterMap('all')">All Layers <span class="count-badge">27</span></button>
+        <button class="map-btn" id="btn-dc" onclick="filterMap('dc')">Data Centres <span class="count-badge">12</span></button>
+        <button class="map-btn" id="btn-power" onclick="filterMap('power')">Baseload &amp; Grid <span class="count-badge">11</span></button>
+        <button class="map-btn" id="btn-water" onclick="filterMap('water')">Water &amp; Catchments <span class="count-badge">4</span></button>
+        <button class="map-btn" onclick="resetMapView()" title="Reset map bounds">⟲ Reset</button>
       </div>
     </div>
     <div id="johor-map"></div>
     <div class="map-footer-bar">
-      <span>COORDINATES: 1.45°N–1.85°N, 103.45°E–103.95°E</span>
-      <span>SOURCES: MDEC · JCORP · TNB INFRASTRUCTURE 2026</span>
-    </div>
-  </div>
-
-  <div class="bar-card">
-    <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 14px; margin-bottom: 12px; color: #ffffff;">JOHOR GRID ARITHMETIC (POWER CAPACITY)</h3>
-    <div class="bar-row">
-      <span class="bar-label">Pipeline (Committed)</span>
-      <div class="bar-track">
-        <div class="bar-fill" style="width: 100%; background: var(--red);">5.0 GW PIPELINE</div>
+      <div class="legend-strip">
+        <span class="legend-item"><span class="legend-swatch" style="background:#e0301e; box-shadow:0 0 6px #e0301e;"></span> 5GW Data Centre Campus</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#f2b705; box-shadow:0 0 6px #f2b705;"></span> Baseload / Solar Power Plant</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#f97316;"></span> 500kV/275kV PMU Substation</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#1f3fd4;"></span> Reservoir / Moratorium Zone</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#06b6d4;"></span> Straits Interconnector</span>
       </div>
-      <span class="bar-val">~5.0 GW</span>
-    </div>
-    <div class="bar-row">
-      <span class="bar-label">Operational Absorption</span>
-      <div class="bar-track">
-        <div class="bar-fill" style="width: 35%; background: var(--yellow);">1–2 GW LIVE</div>
-      </div>
-      <span class="bar-val">1.5 GW</span>
-    </div>
-    <div class="bar-row">
-      <span class="bar-label">TNB RM43B Upgrade (2035)</span>
-      <div class="bar-track">
-        <div class="bar-fill" style="width: 75%; background: var(--blue); color: #fff;">PLANNED GRID ABSORPTION</div>
-      </div>
-      <span class="bar-val">RM43B</span>
+      <div class="coords-readout" id="coords-display">1.6200°N, 103.6800°E | ZOOM: 10</div>
     </div>
   </div>
 
-  <h2 class="section"><span class="num">§2</span>The Water Reality &amp; Asymmetric Extraction</h2>
-
-  <div class="two-col">
-    <div class="red">
-      <h3>The Water Deficit</h3>
-      <p style="margin: 0; font-size: 14px; color: var(--muted);">Data centre campuses in Johor are projected to consume roughly <strong>4.0% of Peninsular Malaysia's treated municipal water supply by 2028</strong> — in a state that has endured recurring water rationing crises over the past 18 months. The municipal moratorium on new water-intensive cooling approvals in Kulai and Sedenak represents policy friction colliding with physics.</p>
-    </div>
-    <div class="amber">
-      <h3>The Value Drain</h3>
-      <p style="margin: 0; font-size: 14px; color: var(--muted);">Hyperscalers are deploying roughly <strong>US$660 to US$690 billion globally in 2026</strong> (Reuters citing Bain; BIS Quarterly Review). That capital expenditure is equivalent to eight Petronas annual budgets. Yet the gigawatt-hours and reservoir levels are drawn from Peninsular infrastructure, while software margins and model rents flow abroad.</p>
-    </div>
-  </div>
-
-  <div class="callout">
-    <h3>The Sovereign Trade Asymmetry</h3>
-    <p>Malaysia provides land, subsidized utility access, and freshwater dissipation for server cooling. In exchange, the country receives low-employment server shells and an extreme reliance on imported AI models that are priced in US dollars. Malaysia is bearing the environmental and infrastructure depreciation of the AI build-out without holding the intellectual or architectural sovereignty of the agents running on the racks.</p>
-  </div>
-
-  <h2 class="section"><span class="num">§3</span>The Labour Market — The On-Ramp Disappears First</h2>
-
-  <div class="callout red">
-    <h3>The Brutal Metric: 697,000 Jobs at Risk</h3>
-    <p>Malaysia's Ministry of Human Resources (KESUMA) workforce exposure study documented approximately <strong>697,000 formal jobs at high risk</strong> of agentic displacement — roughly 4.3% of the formal domestic labour force. These roles are overwhelmingly concentrated in junior accounting, entry-level legal document review, customer service, clerical operations, and junior software development.</p>
-  </div>
-
-  <p>The danger is not that 697,000 Malaysians lose their jobs overnight. The structural disaster is that <strong>the junior rung of the career ladder is eradicated</strong>. When companies deploy AI coding agents and automated analysts, they freeze entry-level hiring. Without juniors today, an economy has no senior practitioners in seven years.</p>
-
-  <div class="rung-container">
-    <div class="rung-card">
-      <div class="rung-num">RUNG 4</div>
-      <div class="rung-content">
-        <div class="rung-title">Executive &amp; Sovereign Stewardship</div>
-        <div class="rung-desc">Capital allocation, physical legal accountability, human negotiation. Intact.</div>
-      </div>
-    </div>
     <div class="rung-card">
       <div class="rung-num">RUNG 3</div>
       <div class="rung-content">
@@ -698,13 +734,17 @@ h2.section .num {
 
 </main>
 
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
+const INITIAL_CENTER = [1.605, 103.685];
+const INITIAL_ZOOM = 10;
+
 let map = L.map('johor-map', {
-  center: [1.60, 103.70],
-  zoom: 10,
+  center: INITIAL_CENTER,
+  zoom: INITIAL_ZOOM,
   minZoom: 8,
-  maxZoom: 14,
+  maxZoom: 15,
   attributionControl: false
 });
 
@@ -713,150 +753,461 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
+// Add metric scale bar
+L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
+
+// Track coordinates
+map.on('mousemove', function(e) {
+  let lat = e.latlng.lat.toFixed(4);
+  let lng = e.latlng.lng.toFixed(4);
+  document.getElementById('coords-display').innerText = `${lat}°N, ${lng}°E | ZOOM: ${map.getZoom()}`;
+});
+
+// Layer Groups
 let layerDC = L.layerGroup().addTo(map);
 let layerGrid = L.layerGroup().addTo(map);
 let layerWater = L.layerGroup().addTo(map);
 
-function makeMarkerIcon(color, glowColor) {
+function makeIcon(svgHtml, size=16) {
   return L.divIcon({
-    className: 'custom-pin',
-    html: `<div style="width: 14px; height: 14px; background: ${color}; border: 2px solid #ffffff; border-radius: 50%; box-shadow: 0 0 12px ${glowColor};"></div>`,
-    iconSize: [14, 14],
-    iconAnchor: [7, 7]
+    className: 'custom-gis-pin',
+    html: svgHtml,
+    iconSize: [size, size],
+    iconAnchor: [size/2, size/2]
   });
 }
 
-let iconRed = makeMarkerIcon('#e0301e', 'rgba(224, 48, 30, 0.8)');
-let iconYellow = makeMarkerIcon('#f2b705', 'rgba(242, 183, 5, 0.8)');
+// Custom Marker Icons
+let iconDC = makeIcon(`
+  <div style="width:16px; height:16px; background:#e0301e; border:2px solid #ffffff; border-radius:50%; box-shadow:0 0 12px rgba(224,48,30,0.9); display:flex; align-items:center; justify-content:center;">
+    <div style="width:4px; height:4px; background:#ffffff; border-radius:50%;"></div>
+  </div>
+`, 16);
 
-let dcLocations = [
+let iconPower = makeIcon(`
+  <div style="width:18px; height:18px; background:#f2b705; border:2px solid #ffffff; transform:rotate(45deg); box-shadow:0 0 14px rgba(242,183,5,0.9); display:flex; align-items:center; justify-content:center;">
+    <div style="width:4px; height:4px; background:#070709; border-radius:50%;"></div>
+  </div>
+`, 18);
+
+let iconSub = makeIcon(`
+  <div style="width:14px; height:14px; background:#f97316; border:2px solid #ffffff; border-radius:2px; box-shadow:0 0 10px rgba(249,115,22,0.85);"></div>
+`, 14);
+
+let iconBorder = makeIcon(`
+  <div style="width:14px; height:14px; background:#06b6d4; border:2px solid #ffffff; border-radius:50%; box-shadow:0 0 12px #06b6d4;"></div>
+`, 14);
+
+// ── 1. DATA CENTRE SITES (12 EMPIRICAL HUBS) ──
+const dcSites = [
   {
-    name: "Sedenak Tech Park (STP)",
-    coords: [1.705, 103.530],
-    operator: "Bridge DC / Yondr / PDG",
-    capacity: "450 MW (Phase 1-3)",
-    status: "Operational & Expanding",
-    cooling: "Water Evaporative (Moratorium Restriced)",
-    power: "275kV Yong Peng Feed"
+    name: "Sedenak Tech Park (STeP Phase 1)",
+    coords: [1.7185, 103.5245],
+    operator: "Bridge DC (MY06) · Yondr Group · PDG · Keppel",
+    capacity: "450+ MW Masterplan (120MW Operational)",
+    status: "Operational & Phase 2 Construction",
+    grid: "Dedicated 275kV PMU Sedenak",
+    cooling: "Subject to Kulai Municipal Evaporative Cooling Moratorium (Retrofitting to Air/Closed-Loop)",
+    statusColor: "#4ade80"
   },
   {
-    name: "YTL Green Data Center Park (Kulai)",
-    coords: [1.635, 103.595],
-    operator: "YTL Power / Sea Ltd (Shopee)",
-    capacity: "500 MW (Colocated Solar)",
-    status: "Phase 1 Operational (48 MW)",
-    cooling: "Hybrid Air/Closed-Loop",
-    power: "Dedicated 500MW Solar Campus"
+    name: "YTL Green Data Center Park",
+    coords: [1.6582, 103.6012],
+    operator: "YTL Power · Sea Ltd (Shopee) · NVIDIA DGX AI",
+    capacity: "500 MW Masterplan (48MW Phase 1 Live)",
+    status: "Phase 1 Operational (NVIDIA AI Cloud)",
+    grid: "500MW Co-Located Solar PV Campus + 275kV PMU Kulai Jaya",
+    cooling: "Hybrid Closed-Loop & Air-Cooled Architecture",
+    statusColor: "#4ade80"
   },
   {
     name: "Nusajaya Tech Park (Iskandar Puteri)",
-    coords: [1.442, 103.626],
-    operator: "GDS Services / TM One / Bridge",
-    capacity: "220 MW",
-    status: "Operational",
-    cooling: "Liquid-to-Chip Trials",
-    power: "TNB Gelang Patah Substation"
+    coords: [1.4650, 103.5850],
+    operator: "GDS Holdings (NTP Campus) · TM One · Bridge MY03",
+    capacity: "220 MW Total Allocation",
+    status: "Operational & Expanding",
+    grid: "TNB Gelang Patah 275kV PMU",
+    cooling: "Liquid-to-Chip High Density Trials",
+    statusColor: "#4ade80"
   },
   {
-    name: "Johor Bahru Core (Danga & Kempas)",
-    coords: [1.515, 103.735],
-    operator: "Singtel Nxera / Equinix JH1 / AirTrunk",
-    capacity: "280 MW",
+    name: "AirTrunk JHB1 (Kempas Tech Park)",
+    coords: [1.5420, 103.7080],
+    operator: "AirTrunk · Blackstone",
+    capacity: "150+ MW Hyperscale Campus",
+    status: "Phase 1 Operational",
+    grid: "Kempas 275kV Intake Substation",
+    cooling: "Indirect Evaporative Cooling (IEC) with Water Recycling",
+    statusColor: "#4ade80"
+  },
+  {
+    name: "Vantage Data Centers KUL1 (Medini)",
+    coords: [1.4280, 103.6350],
+    operator: "Vantage Data Centers",
+    capacity: "256 MW Campus (4 Multi-Story Buildings)",
+    status: "Under Construction (Delivering 2026)",
+    grid: "Dedicated TNB 275kV Substation",
+    cooling: "Closed-loop chilled water (Zero Continuous Water Use)",
+    statusColor: "#f2b705"
+  },
+  {
+    name: "Singtel Nxera / TM AI DC (Danga Bay)",
+    coords: [1.4850, 103.7420],
+    operator: "Nxera (Singtel) + TM JV",
+    capacity: "64 MW AI-Ready Campus",
     status: "Under Construction",
-    cooling: "High-density Liquid",
-    power: "Plentong 275kV Substation"
+    grid: "Plentong 275kV Distribution Network",
+    cooling: "Direct-to-Chip Liquid Cooling (>100kW/rack)",
+    statusColor: "#f2b705"
   },
   {
-    name: "Pasir Gudang Industrial Corridor",
-    coords: [1.468, 103.905],
-    operator: "EdgeConnex / Princeton Digital",
-    capacity: "180 MW",
-    status: "Planned / Groundbreaking",
-    cooling: "Industrial Sea-Water Heat Exchange",
-    power: "Sultan Iskandar Power Station"
+    name: "Equinix JH1 (JB Core / Kempas)",
+    coords: [1.5120, 103.7380],
+    operator: "Equinix Malaysia",
+    capacity: "20 MW Enterprise Interconnect",
+    status: "Operational",
+    grid: "Skudai 132kV Substation",
+    cooling: "Modular Air-Cooled Chillers",
+    statusColor: "#4ade80"
+  },
+  {
+    name: "EdgeConnex MY01 (Pasir Gudang)",
+    coords: [1.4680, 103.9050],
+    operator: "EdgeConnex",
+    capacity: "100 MW Hyperscale Campus",
+    status: "Under Construction",
+    grid: "Sultan Iskandar 275kV Grid Ring",
+    cooling: "Industrial Closed-Loop Heat Exchangers",
+    statusColor: "#f2b705"
+  },
+  {
+    name: "Princeton Digital Group (PDG JH2)",
+    coords: [1.7120, 103.5380],
+    operator: "Princeton Digital Group (PDG)",
+    capacity: "120 MW Hyperscale Facility",
+    status: "Under Construction",
+    grid: "Sedenak 275kV PMU Extension",
+    cooling: "Water-Saving High Efficiency Chillers",
+    statusColor: "#f2b705"
+  },
+  {
+    name: "GDS DayOne Campus (Kulai)",
+    coords: [1.6620, 103.5820],
+    operator: "GDS Holdings",
+    capacity: "64 MW Hyperscale Block",
+    status: "Operational",
+    grid: "Kulai Jaya 275kV PMU",
+    cooling: "Prefabricated Modular Water-Efficient Cooling",
+    statusColor: "#4ade80"
+  },
+  {
+    name: "Tanjung Langsat DC Hub (Equinix JH2)",
+    coords: [1.4580, 104.0050],
+    operator: "Equinix / Port Consortia",
+    capacity: "80 MW Planned Allocation",
+    status: "Planned / Land Acquired",
+    grid: "Tanjung Langsat 275kV PMU",
+    cooling: "Sea-Water Heat Exchange Feasibility Study",
+    statusColor: "#60a5fa"
+  },
+  {
+    name: "Forest City AI Tech Node",
+    coords: [1.3340, 103.5900],
+    operator: "Pacific Star / Country Garden JV",
+    capacity: "100 MW Speculative Corridor",
+    status: "Announced / Feasibility Stage",
+    grid: "Gelang Patah Southern Feeder",
+    cooling: "Desalinated Seawater Concept",
+    statusColor: "#9fa4b8"
   }
 ];
 
-dcLocations.forEach(dc => {
-  let m = L.marker(dc.coords, { icon: iconRed }).addTo(layerDC);
+dcSites.forEach(dc => {
+  let m = L.marker(dc.coords, { icon: iconDC }).addTo(layerDC);
   m.bindPopup(`
-    <div class="dc-popup-title">${dc.name}</div>
-    <div class="dc-popup-item"><span class="dc-popup-label">OPERATOR</span><span class="dc-popup-val">${dc.operator}</span></div>
-    <div class="dc-popup-item"><span class="dc-popup-label">CAPACITY</span><span class="dc-popup-val" style="color:#f2b705;">${dc.capacity}</span></div>
-    <div class="dc-popup-item"><span class="dc-popup-label">STATUS</span><span class="dc-popup-val" style="color:#4ade80;">${dc.status}</span></div>
-    <div class="dc-popup-item"><span class="dc-popup-label">GRID FEED</span><span class="dc-popup-val">${dc.power}</span></div>
-    <div class="dc-popup-item"><span class="dc-popup-label">COOLING</span><span class="dc-popup-val" style="color:#ff5e4d;">${dc.cooling}</span></div>
+    <div class="popup-container">
+      <div class="popup-tag-row">
+        <span class="popup-type-tag tag-dc">DATA CENTRE · HYPERSCALE</span>
+        <span style="font-family:'JetBrains Mono'; font-size:10px; color:${dc.statusColor}; font-weight:700;">${dc.status}</span>
+      </div>
+      <div class="popup-name">${dc.name}</div>
+      <div class="popup-kv-grid">
+        <span class="popup-k">OPERATOR:</span><span class="popup-v">${dc.operator}</span>
+        <span class="popup-k">CAPACITY:</span><span class="popup-v" style="color:#f2b705;">${dc.capacity}</span>
+        <span class="popup-k">GRID PMU:</span><span class="popup-v">${dc.grid}</span>
+      </div>
+      <div class="popup-note">
+        <strong style="color:#ff5e4d;">COOLING DISCIPLINE:</strong> ${dc.cooling}
+      </div>
+    </div>
   `);
 });
 
-let substations = [
-  { name: "TNB Yong Peng 500kV Main Intake", coords: [1.885, 103.075], rating: "500kV Transmission Core" },
-  { name: "TNB Sultan Iskandar Substation", coords: [1.485, 103.885], rating: "275kV Heavy Distribution" },
-  { name: "TNB Plentong 275kV Hub", coords: [1.535, 103.815], rating: "275kV Interconnector" },
-  { name: "Singapore Cross-Border Subsea Interconnect (Tuas)", coords: [1.350, 103.635], rating: "230kV Cross-Straits Link" }
+// ── 2. POWER GENERATION BASELOAD PLANTS (4 SITES) ──
+const powerPlants = [
+  {
+    name: "Tanjung Bin Power Station",
+    coords: [1.3360, 103.5460],
+    operator: "Malakoff Corporation Berhad",
+    capacity: "3,100 MW (2,100MW Coal + 1,000MW Supercritical)",
+    type: "Peninsular Baseload Anchor",
+    role: "Primary thermal power supply feeding Southern Johor DC corridor via Gelang Patah 275kV ring."
+  },
+  {
+    name: "Sultan Iskandar Power Station (Pasir Gudang)",
+    coords: [1.4530, 103.8820],
+    operator: "Tenaga Nasional Berhad (TNB)",
+    capacity: "1,400 MW Combined Cycle Gas",
+    type: "TNB Thermal Generation",
+    role: "Gas-fired generation anchoring Eastern industrial grid and Singapore interconnector."
+  },
+  {
+    name: "Southern Power Generation (Track 4A)",
+    coords: [1.4550, 103.8950],
+    operator: "TNB & SIPP Energy JV",
+    capacity: "1,440 MW (2x 720MW 9HA.02 CCGT)",
+    type: "High-Efficiency CCGT Gas Turbine",
+    role: "Baseload power for Pasir Gudang industrial zone and DC grid stabilization."
+  },
+  {
+    name: "YTL 500MW Solar Generation Campus",
+    coords: [1.6450, 103.6080],
+    operator: "YTL Power International",
+    capacity: "500 MW Solar PV Array",
+    type: "Utility-Scale Renewable Co-Location",
+    role: "Dedicated on-site green electrons co-located with YTL Green Data Center Park."
+  }
+];
+
+powerPlants.forEach(pp => {
+  let m = L.marker(pp.coords, { icon: iconPower }).addTo(layerGrid);
+  m.bindPopup(`
+    <div class="popup-container">
+      <div class="popup-tag-row">
+        <span class="popup-type-tag tag-power">POWER GENERATION · BASELOAD</span>
+        <span style="font-family:'JetBrains Mono'; font-size:10px; color:#4ade80; font-weight:700;">OPERATIONAL</span>
+      </div>
+      <div class="popup-name">${pp.name}</div>
+      <div class="popup-kv-grid">
+        <span class="popup-k">OPERATOR:</span><span class="popup-v">${pp.operator}</span>
+        <span class="popup-k">CAPACITY:</span><span class="popup-v" style="color:#f2b705;">${pp.capacity}</span>
+        <span class="popup-k">FUEL TYPE:</span><span class="popup-v">${pp.type}</span>
+      </div>
+      <div class="popup-note">${pp.role}</div>
+    </div>
+  `);
+});
+
+// ── 3. TNB TRANSMISSION PMU SUBSTATIONS (7 HUBS) ──
+const substations = [
+  { name: "TNB Yong Peng 500kV Main Intake", coords: [1.9120, 103.0650], rating: "500kV Peninsular Backbone Gateway", note: "Northern high-voltage gateway connecting Southern Johor to central Peninsula 500kV grid." },
+  { name: "TNB Sedenak 275kV PMU", coords: [1.7080, 103.5350], rating: "275/132kV Main Intake Substation", note: "Primary substation serving Sedenak Tech Park hyperscalers." },
+  { name: "TNB Kulai Jaya 275kV PMU", coords: [1.6520, 103.6150], rating: "275kV Transmission Hub", note: "Serving YTL Green Data Center Park and Kulai industrial corridor." },
+  { name: "TNB Gelang Patah 275kV PMU", coords: [1.4550, 103.5920], rating: "275kV Heavy Intake", note: "Primary intake for Nusajaya Tech Park, Medini, and Second Link corridor." },
+  { name: "TNB Plentong 275kV Switching Station", coords: [1.5350, 103.8150], rating: "275kV Regional Grid Hub", note: "Key switching terminal interconnecting East JB, Pasir Gudang, and Singapore subsea link." },
+  { name: "TNB Pasir Gudang 275kV PMU", coords: [1.4680, 103.9020], rating: "275kV Heavy Industrial Ring", note: "Distributing baseload from Sultan Iskandar power stations." },
+  { name: "TNB Tanjung Langsat 275kV PMU", coords: [1.4620, 103.9850], rating: "275kV Industrial Intake", note: "Terminal node for Tanjung Langsat heavy port and planned DC cluster." }
 ];
 
 substations.forEach(sub => {
-  let m = L.marker(sub.coords, { icon: iconYellow }).addTo(layerGrid);
+  let m = L.marker(sub.coords, { icon: iconSub }).addTo(layerGrid);
   m.bindPopup(`
-    <div class="dc-popup-title">${sub.name}</div>
-    <div class="dc-popup-item"><span class="dc-popup-label">SPEC</span><span class="dc-popup-val">${sub.rating}</span></div>
-    <div class="dc-popup-item"><span class="dc-popup-label">TNB RM43B UPGRADE</span><span class="dc-popup-val" style="color:#4ade80;">Active Grid Node</span></div>
+    <div class="popup-container">
+      <div class="popup-tag-row">
+        <span class="popup-type-tag tag-sub">TNB HIGH-VOLTAGE PMU</span>
+        <span style="font-family:'JetBrains Mono'; font-size:10px; color:#f2b705; font-weight:700;">TNB RM43B UPGRADE</span>
+      </div>
+      <div class="popup-name">${sub.name}</div>
+      <div class="popup-kv-grid">
+        <span class="popup-k">VOLTAGE:</span><span class="popup-v">${sub.rating}</span>
+      </div>
+      <div class="popup-note">${sub.note}</div>
+    </div>
   `);
 });
 
+// ── 4. CROSS-STRAITS INTERCONNECTORS TO SINGAPORE (2 SITES) ──
+const borderLinks = [
+  {
+    name: "Eastern Cross-Straits Link (Plentong ↔ Senoko, SG)",
+    coords: [1.4580, 103.8120],
+    rating: "230kV Subsea Interconnector",
+    note: "High-voltage interconnector across Johor Straits linking TNB Plentong to SP PowerGrid Senoko Power Station (Singapore)."
+  },
+  {
+    name: "Western Cross-Straits Link (Gelang Patah ↔ Tuas, SG)",
+    coords: [1.3500, 103.6350],
+    rating: "230kV Second Link Cable",
+    note: "Cross-border transmission interconnector running along Second Link into Tuas industrial grid."
+  }
+];
+
+borderLinks.forEach(bl => {
+  let m = L.marker(bl.coords, { icon: iconBorder }).addTo(layerGrid);
+  m.bindPopup(`
+    <div class="popup-container">
+      <div class="popup-tag-row">
+        <span class="popup-type-tag tag-link">CROSS-BORDER INTERCONNECTOR</span>
+        <span style="font-family:'JetBrains Mono'; font-size:10px; color:#22d3ee; font-weight:700;">230kV ACTIVE</span>
+      </div>
+      <div class="popup-name">${bl.name}</div>
+      <div class="popup-kv-grid">
+        <span class="popup-k">RATING:</span><span class="popup-v">${bl.rating}</span>
+      </div>
+      <div class="popup-note">${bl.note}</div>
+    </div>
+  `);
+});
+
+// ── 5. TRANSMISSION POLYLINES ──
+
+// 500kV Peninsular Transmission Backbone (Yong Peng -> Sedenak -> Plentong)
 L.polyline([
-  [1.885, 103.075],
-  [1.705, 103.530],
-  [1.635, 103.595],
-  [1.535, 103.815],
-  [1.485, 103.885]
-], { color: '#f2b705', weight: 3, dashArray: '6, 6', opacity: 0.85 }).addTo(layerGrid);
+  [1.9120, 103.0650],
+  [1.8200, 103.2800],
+  [1.7080, 103.5350],
+  [1.6520, 103.6150],
+  [1.5350, 103.8150]
+], {
+  color: '#f2b705',
+  weight: 3.5,
+  dashArray: '8, 6',
+  opacity: 0.9
+}).addTo(layerGrid).bindTooltip("TNB 500kV Peninsular Transmission Backbone Corridor", { sticky: true });
+
+// 275kV Southern Johor Distribution Ring
+L.polyline([
+  [1.3360, 103.5460], // Tg Bin
+  [1.4550, 103.5920], // Gelang Patah
+  [1.4650, 103.5850], // Nusajaya
+  [1.5420, 103.7080], // Kempas
+  [1.5350, 103.8150], // Plentong
+  [1.4680, 103.9020], // Pasir Gudang
+  [1.4620, 103.9850]  // Tg Langsat
+], {
+  color: '#f97316',
+  weight: 2.5,
+  opacity: 0.85
+}).addTo(layerGrid).bindTooltip("TNB 275kV Southern Johor Transmission Ring", { sticky: true });
+
+// Cross-Border Subsea Interconnectors
+L.polyline([
+  [1.5350, 103.8150], // Plentong
+  [1.4580, 103.8120], // Straits Border
+  [1.4500, 103.8120]  // Senoko SG
+], {
+  color: '#06b6d4',
+  weight: 3,
+  dashArray: '4, 4',
+  opacity: 0.9
+}).addTo(layerGrid).bindTooltip("230kV Eastern Interconnector to Senoko (Singapore)", { sticky: true });
 
 L.polyline([
-  [1.442, 103.626],
-  [1.350, 103.635]
-], { color: '#1f3fd4', weight: 3, opacity: 0.9 }).addTo(layerGrid);
+  [1.4550, 103.5920], // Gelang Patah
+  [1.3500, 103.6350], // Second Link
+  [1.3200, 103.6450]  // Tuas SG
+], {
+  color: '#06b6d4',
+  weight: 3,
+  dashArray: '4, 4',
+  opacity: 0.9
+}).addTo(layerGrid).bindTooltip("230kV Western Interconnector to Tuas (Singapore)", { sticky: true });
 
+// ── 6. HYDROLOGY, RESERVOIRS & WATER MORATORIUM ──
+
+// Kulai-Sedenak Water Moratorium Basin (Detailed Polygon)
 let moratoriumZone = L.polygon([
-  [1.67, 103.48],
-  [1.74, 103.52],
-  [1.72, 103.64],
-  [1.60, 103.66],
-  [1.58, 103.55]
+  [1.670, 103.480],
+  [1.745, 103.515],
+  [1.735, 103.645],
+  [1.645, 103.670],
+  [1.580, 103.590],
+  [1.585, 103.530]
 ], {
   color: '#e0301e',
   fillColor: '#e0301e',
-  fillOpacity: 0.15,
+  fillOpacity: 0.18,
   weight: 2,
-  dashArray: '4, 4'
+  dashArray: '6, 6'
 }).addTo(layerWater);
 
 moratoriumZone.bindPopup(`
-  <div class="dc-popup-title" style="color:#ff5e4d;">KULAI-SEDENAK WATER MORATORIUM ZONE</div>
-  <p style="font-family:'JetBrains Mono'; font-size:11px; color:#9fa4b8; margin:0;">
-    Municipal directive capping new potable water allocations for evaporative data centre cooling. Requires 100% closed-loop recycling or air-cooled architecture.
-  </p>
+  <div class="popup-container">
+    <div class="popup-tag-row">
+      <span class="popup-type-tag tag-dc">WATER POLICY MORATORIUM</span>
+      <span style="font-family:'JetBrains Mono'; font-size:10px; color:#ff5e4d; font-weight:700;">RESTRICTED ZONE</span>
+    </div>
+    <div class="popup-name">Kulai-Sedenak Municipal Moratorium Basin</div>
+    <div class="popup-note" style="color:#ff8b7e;">
+      Municipal &amp; SAJ Ranhill directive freezing new treated municipal water allocations for evaporative cooling towers. Hyperscalers must operate closed-loop recycling or air-cooled designs.
+    </div>
+  </div>
 `);
 
-let linggiuReservoir = L.circle([1.916, 103.716], {
-  radius: 6500,
+// Linggiu Reservoir & Dam
+let linggiuReservoir = L.circle([1.9160, 103.7160], {
+  radius: 7500,
   color: '#1f3fd4',
   fillColor: '#1f3fd4',
-  fillOpacity: 0.2,
+  fillOpacity: 0.25,
   weight: 2
 }).addTo(layerWater);
 
 linggiuReservoir.bindPopup(`
-  <div class="dc-popup-title">LINGGIU RESERVOIR &amp; SG JOHOR BASIN</div>
-  <p style="font-family:'JetBrains Mono'; font-size:11px; color:#9fa4b8; margin:0;">
-    Primary freshwater catchment supplying Johor and Singapore. Operating under extreme hydrological stress during dry-season drawdowns.
-  </p>
+  <div class="popup-container">
+    <div class="popup-tag-row">
+      <span class="popup-type-tag tag-water">CRITICAL FRESHWATER CATCHMENT</span>
+      <span style="font-family:'JetBrains Mono'; font-size:10px; color:#60a5fa; font-weight:700;">760 BILLION LITRES</span>
+    </div>
+    <div class="popup-name">Sungai Linggiu Reservoir &amp; Dam</div>
+    <div class="popup-note">
+      Primary strategic freshwater reserve supplying Johor and 250 million gallons/day to Singapore under the 1962 Water Agreement. Prone to severe drawdowns during dry spells.
+    </div>
+  </div>
 `);
+
+// Upper Layang Reservoir (Pasir Gudang Industrial Supply)
+let layangReservoir = L.circle([1.5250, 103.8750], {
+  radius: 4000,
+  color: '#1f3fd4',
+  fillColor: '#1f3fd4',
+  fillOpacity: 0.25,
+  weight: 2
+}).addTo(layerWater);
+
+layangReservoir.bindPopup(`
+  <div class="popup-container">
+    <div class="popup-tag-row">
+      <span class="popup-type-tag tag-water">MUNICIPAL &amp; INDUSTRIAL SUPPLY</span>
+      <span style="font-family:'JetBrains Mono'; font-size:10px; color:#60a5fa; font-weight:700;">350M LITRES/DAY</span>
+    </div>
+    <div class="popup-name">Upper &amp; Lower Layang Reservoir</div>
+    <div class="popup-note">
+      Supplies drinking water to Johor Bahru East and heavy industrial cooling to Pasir Gudang. Has previously breached critical minimum threshold during heatwaves.
+    </div>
+  </div>
+`);
+
+// Sungai Johor Main Hydrological Flow
+L.polyline([
+  [1.9160, 103.7160],
+  [1.7300, 103.9000],
+  [1.5800, 104.0100],
+  [1.4300, 104.0500]
+], {
+  color: '#2563eb',
+  weight: 3,
+  opacity: 0.7
+}).addTo(layerWater).bindTooltip("Sungai Johor Main Catchment Basin Corridor", { sticky: true });
+
+
+// ── 7. CONTROL PLANE FUNCTIONS ──
 
 function filterMap(layerName) {
   document.querySelectorAll('.map-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  
+  let targetBtn = document.getElementById('btn-' + layerName);
+  if (targetBtn) targetBtn.classList.add('active');
 
   if (layerName === 'all') {
     map.addLayer(layerDC);
@@ -866,7 +1217,7 @@ function filterMap(layerName) {
     map.addLayer(layerDC);
     map.removeLayer(layerGrid);
     map.removeLayer(layerWater);
-  } else if (layerName === 'grid') {
+  } else if (layerName === 'power') {
     map.removeLayer(layerDC);
     map.addLayer(layerGrid);
     map.removeLayer(layerWater);
@@ -876,7 +1227,12 @@ function filterMap(layerName) {
     map.addLayer(layerWater);
   }
 }
+
+function resetMapView() {
+  map.setView(INITIAL_CENTER, INITIAL_ZOOM);
+}
 </script>
+
 
 </body>
 </html>

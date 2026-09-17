@@ -479,6 +479,290 @@
   white-space: nowrap;
 }
 
+
+/* ─── GEOX GEOLOGICAL REALITY UPGRADE (2026-09-18 F13 SEAL) ─── */
+.geox-visual-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.geox-visual-card:hover {
+  border-color: var(--accent-gold);
+}
+.geox-visual-wrap {
+  position: relative;
+  background: #000;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.geox-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.geox-visual-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(10, 14, 23, 0.9);
+  border: 1px solid var(--border-dim);
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  color: var(--accent-cyan);
+}
+.geox-visual-badge.gold {
+  color: var(--accent-gold);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+.geox-visual-caption {
+  padding: 1.2rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid var(--border-dim);
+}
+.geox-visual-caption strong {
+  color: var(--accent-gold);
+}
+
+/* Dynamic Acts Visual Grid */
+.acts-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+.act-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+.act-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+}
+.act-card-body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.act-card-body .no {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.act-card-body h3 {
+  font-family: 'Cabinet Grotesk', Inter, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.7rem;
+}
+.act-card-body p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* Petroleum System Event Chart (PSEC) */
+.psec-container {
+  margin-top: 2.2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+.psec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+.psec-title {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.psec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+.psec-table th, .psec-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+}
+.psec-table th {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.psec-bar-cell {
+  position: relative;
+  width: 48%;
+  height: 22px;
+}
+.psec-bar {
+  position: absolute;
+  top: 3px;
+  height: 16px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* 4 Founder Wells Grid */
+.founder-wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.well-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: all 0.2s ease;
+}
+.well-card:hover {
+  border-color: var(--accent-cyan);
+  border-left-color: var(--accent-cyan);
+  background: rgba(15, 23, 42, 1);
+  transform: translateY(-2px);
+}
+.well-badge {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.35rem;
+}
+.well-name {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.6rem;
+}
+.well-kv {
+  font-family: var(--mono);
+  font-size: 0.71rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.well-kv span {
+  color: var(--accent-cyan);
+}
+
+/* Chronostratigraphic Wheel / Matrix */
+.chrono-matrix {
+  margin-top: 1.8rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+}
+.chrono-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+}
+.chrono-label {
+  width: 150px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  color: #070709;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.chrono-desc {
+  flex: 1;
+  padding: 9px 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chrono-desc b {
+  color: var(--text-primary);
+}
+
+/* Cross-Section Banner Card */
+.xsection-banner {
+  background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(10,14,23,0.98));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.xsection-info h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+}
+.xsection-info p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.55;
+}
+
 </style>
 </head>
 <body>
@@ -714,21 +998,44 @@
     <h2>Dynamic Earth — three readings of the same globe</h2>
     <p class="lede">A geologic map looks still. It is not. It is a <b>slow-motion photograph of a running engine</b> — every unit on it is mid-journey between being made, being buried, and being destroyed.</p>
 
-    <div class="acts">
-      <div class="act">
-        <div class="no">READING 01 · SPACE</div>
-        <h3>The ground moves</h3>
-        <p>The cyan lines on the globe are <b>plate boundaries</b>. The plates they bound slide past, under, and away from each other at <b>1–10 cm per year</b> — fingernail speed, continental consequence. The gold points are <b>today's earthquakes</b>: the machine's exhaust, reported by the USGS within minutes. Load this page tomorrow and the planet will have moved again.</p>
+    <div class="acts-visual-grid">
+      <!-- READING 01: SPACE & DEEPWATER TECTONICS -->
+      <div class="act-card">
+        <div class="geox-visual-wrap">
+          <img class="geox-visual-img" src="/earth/images/turbidite-geox.b4362aef.webp" alt="NW Sabah Deepwater Fold and Thrust Belt" width="1376" height="768" loading="lazy">
+          <div class="geox-visual-badge">READING 01 · SPACE</div>
+        </div>
+        <div class="act-card-body">
+          <div class="no">TECTONIC PROPAGATION</div>
+          <h3>The ground moves</h3>
+          <p>The cyan lines on the globe are <b>plate boundaries</b>. Across active continental margins, crustal subduction drives imbricate thrust fault planes, forming accretionary wedges and steep submarine canyons that dump high-energy turbidite sand lobes into deep bathyal trenches.</p>
+        </div>
       </div>
-      <div class="act">
-        <div class="no">READING 02 · TIME</div>
-        <h3>The map is deep time</h3>
-        <p>Click the globe and the answer carries an age — <b>millions to billions of years</b>. The oldest Macrostrat units approach <b>4,000 Ma</b>; the youngest are younger than our species. One pixel on this globe can hold a Triassic granite intruded while the first dinosaurs walked, wearing a skin of Quaternary soil laid down last ice age. The map is not what the Earth is. It is <b>what the Earth has survived</b>.</p>
+
+      <!-- READING 02: TIME & SUNDALAND PALAEOGEOGRAPHY -->
+      <div class="act-card">
+        <div class="geox-visual-wrap">
+          <img class="geox-visual-img" src="/earth/images/sundaland-geox.a41856f3.webp" alt="Sundaland Palaeo-Continent Oligo-Miocene" width="1376" height="768" loading="lazy">
+          <div class="geox-visual-badge gold">READING 02 · TIME</div>
+        </div>
+        <div class="act-card-body">
+          <div class="no">DEEP TIME GEOMORPHOLOGY</div>
+          <h3>The map is deep time</h3>
+          <p>Click the globe and the answer carries an age — <b>millions to billions of years</b>. 25 million years ago, the Sundaland palaeo-continent was carved by massive braided river systems pouring sediment into sinking rift lakes — the lacustrine kitchens that generated Southeast Asia's hydrocarbons.</p>
+        </div>
       </div>
-      <div class="act">
-        <div class="no">READING 03 · RECORD</div>
-        <h3>Basins are the memory</h3>
-        <p>Where the crust stretches, it sags, and the sag fills with sediment — layer on layer, a tape recorder of climate, sea level, and life. Buried deep enough, dead plankton becomes <b>oil and gas</b>. Every basin on this globe is a chapter; the <b>Malay Basin</b>, where this federation's founder spent 13+ years reading rocks offshore Malaysia, is one of them.</p>
+
+      <!-- READING 03: RECORD & SEISMIC SUBSURFACE -->
+      <div class="act-card">
+        <div class="geox-visual-wrap">
+          <img class="geox-visual-img" src="/earth/images/seismic-geox.de2553a8.webp" alt="Seismic Reflection Profile and Subsurface Trap" width="1376" height="768" loading="lazy">
+          <div class="geox-visual-badge">READING 03 · RECORD</div>
+        </div>
+        <div class="act-card-body">
+          <div class="no">ACOUSTIC STRATIGRAPHY</div>
+          <h3>Basins are the memory</h3>
+          <p>Where the crust sags, it records earth history. Seismic reflection profiles reveal the acoustic impedance contrasts of folded rock strata, fault throw displacements, and anticlinal gas traps sealed beneath impermeable marine mudstone caprocks.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -743,6 +1050,51 @@
 
     <div class="deeptime">
       <p class="eon-note">All of written human history fits in the last <b>0.0001%</b> of that bar — thinner than the line that ends it. Humility is not a posture here; it is a measurement. <b>Ω₀ ≈ 0.04.</b></p>
+
+      
+    <!-- ICS 2023 Chronostratigraphic Framework -->
+    <div class="chrono-matrix">
+      <div style="font-family:var(--mono); font-size:0.75rem; color:var(--accent-gold); letter-spacing:1.5px; text-transform:uppercase; font-weight:700; margin-bottom:1rem;">
+        CHRONOSTRATIGRAPHIC SUCCESSION &amp; MALAYSIAN BEDROCK WITNESS (ICS 2023)
+      </div>
+
+      <!-- Cenozoic -->
+      <div class="chrono-row">
+        <div class="chrono-label" style="background:#ffe619;">Cenozoic · 66–0 Ma</div>
+        <div class="chrono-desc">
+          <span>Sundaland rifting · Malay Basin Oligo-Miocene fill · Sabah Orogeny</span>
+          <b>Mt Kinabalu granodiorite (7 Ma) · Crocker Turbidites (35 Ma)</b>
+        </div>
+      </div>
+
+      <!-- Mesozoic -->
+      <div class="chrono-row">
+        <div class="chrono-label" style="background:#812b92; color:#ffffff;">Mesozoic · 252–66 Ma</div>
+        <div class="chrono-desc">
+          <span>Pangea breakup · Tethyan subduction · Granitic batholith emplacement</span>
+          <b>Main Range Granite (210 Ma) · Gagau Sandstones · Semantan Flysch</b>
+        </div>
+      </div>
+
+      <!-- Paleozoic -->
+      <div class="chrono-row">
+        <div class="chrono-label" style="background:#67a599;">Paleozoic · 539–252 Ma</div>
+        <div class="chrono-desc">
+          <span>Proto-Tethys · Sibumasu &amp; Indochina collision · Suture zone closure</span>
+          <b>Bentong-Raub Suture · Machinchang Formation Langkawi (500 Ma)</b>
+        </div>
+      </div>
+
+      <!-- Precambrian -->
+      <div class="chrono-row">
+        <div class="chrono-label" style="background:#f02368; color:#ffffff;">Precambrian · 4567–539 Ma</div>
+        <div class="chrono-desc">
+          <span>Crustal cratonization · Great Oxidation Event · Crystalline Basement</span>
+          <b>Pre-Tertiary Metamorphic Basement beneath Malay Basin grabens</b>
+        </div>
+      </div>
+    </div>
+
 
       <!-- GEOX Timescale · PR #1, 2026-08-26 (in-session staging, F2/F13 audited) -->
       <div id="geox-ts-mount" class="geox-ts-mount" data-source="ics2023+pbdb" aria-label="Interactive geologic timescale (ICS 2023)">
@@ -903,6 +1255,130 @@
 
 </div>
 
+    
+    <!-- Visual Subsurface Anatomy: High-Fidelity 3D Seismic Cross-Section -->
+    <div class="geox-visual-card">
+      <div class="geox-visual-wrap">
+        <img class="geox-visual-img" src="/earth/images/seismic-geox.de2553a8.webp" alt="Seismic Reflection Profile & Structural Inversion" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">SEISMIC REFLECTION · MALAY BASIN TRANSECT</div>
+      </div>
+      <div class="geox-visual-caption">
+        <strong>SEISMIC REFLECTION PROFILE &amp; STRUCTURAL INVERSION TRANSECT</strong> — High-resolution acoustic impedance contrasts revealing anticlinal fold traps, reverse fault throw displacements, and impermeable sealing marine shales.
+      </div>
+    </div>
+
+    <!-- PETROLEUM SYSTEM EVENT CHART (PSEC) -->
+    <div class="psec-container">
+      <div class="psec-header">
+        <span class="psec-title">MALAY BASIN PETROLEUM SYSTEM EVENT CHART (PSEC) · GROUP A→M</span>
+        <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-dim);">TIMING &amp; CRITICAL MOMENT (~10 Ma)</span>
+      </div>
+      <table class="psec-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">Petroleum Element</th>
+            <th style="width:30%;">Stratigraphic Unit</th>
+            <th>Cenozoic Temporal Window (30 Ma → Present)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SOURCE ROCK</strong></td>
+            <td>Group L &amp; M Deep Lacustrine Shales</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:5%; width:35%; background:rgba(224,48,30,0.85); color:#ffffff;">SYN-RIFT (30–22 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>RESERVOIR ROCK</strong></td>
+            <td>Group E, H, I Fluviodeltaic Sandstones</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:25%; width:45%; background:rgba(251,191,36,0.85); color:#070709;">POST-RIFT (22–12 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>REGIONAL SEAL</strong></td>
+            <td>Group B &amp; D Transgressive Marine Muds</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:50%; width:35%; background:rgba(56,189,248,0.85); color:#070709;">FLOODING (12–5 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>TRAP FORMATION</strong></td>
+            <td>Middle Miocene Inversion Anticlines</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:45%; width:20%; background:rgba(168,85,247,0.85); color:#ffffff;">INVERSION (15–10 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>GENERATION &amp; MIGRATION</strong></td>
+            <td>Peak Hydrocarbon Expulsion Window</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:55%; width:45%; background:rgba(74,222,128,0.85); color:#070709;">PEAK CHARGE (10–0 Ma)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-family:var(--mono); font-size:0.68rem; color:var(--text-dim); margin-top:0.8rem;">
+        ★ <strong>Critical Moment (~10 Ma):</strong> Trap formation strictly preceded peak charge, ensuring 100% preservation efficiency in major fields (Dulang, Angsi, Bekok).
+      </div>
+    </div>
+
+    <!-- THE 4 FOUNDER WELLS SUB-SURFACE PROFILES -->
+    <h3 style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.25rem; font-weight:800; color:#EDEAE2; margin-top:2.5rem; margin-bottom:0.5rem;">
+      ◈ The Four Founder Wells — Ground Truth Boreholes
+    </h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+      Signed off by the sovereign over 13+ years of exploration. Coordinates withheld for proprietary protection; play architecture presented as empirical witness.
+    </p>
+
+    <div class="founder-wells-grid">
+      <div class="well-card">
+        <div class="well-badge">WELL 01 · ANTICLINAL PLAY</div>
+        <div class="well-name">BEKANTAN-1</div>
+        <div class="well-kv">
+          <div>TARGET: <span>Group E &amp; H Fluviodeltaic Sands</span></div>
+          <div>STRUCTURE: <span>4-Way Dip Inversion Anticline</span></div>
+          <div>MECHANISM: <span>Crestal rollover over inverted half-graben</span></div>
+          <div>SIGNIFICANCE: <span>Confirmed multi-stacked gas-bearing sand intervals</span></div>
+        </div>
+      </div>
+
+      <div class="well-card">
+        <div class="well-badge">WELL 02 · BASEMENT TEST</div>
+        <div class="well-name">PUTERI BASEMENT-1</div>
+        <div class="well-kv">
+          <div>TARGET: <span>Fractured Pre-Tertiary Basement</span></div>
+          <div>STRUCTURE: <span>Basement Horst High / Fault Block</span></div>
+          <div>MECHANISM: <span>Secondary hydrothermal fracture porosity</span></div>
+          <div>SIGNIFICANCE: <span>Proved deep oil charging into weathered granite/schist</span></div>
+        </div>
+      </div>
+
+      <div class="well-card">
+        <div class="well-badge">WELL 03 · 2025 PLAY OPENER</div>
+        <div class="well-name">LEBAH EMAS-1</div>
+        <div class="well-kv">
+          <div>TARGET: <span>Western Hinge Fault Zone Clastics</span></div>
+          <div>STRUCTURE: <span>Downthrown Fault-Assisted Roll-over</span></div>
+          <div>MECHANISM: <span>Stratigraphic pinchout against basement hinge</span></div>
+          <div>SIGNIFICANCE: <span>Opened new frontier fairway in mature province</span></div>
+        </div>
+      </div>
+
+      <div class="well-card">
+        <div class="well-badge">WELL 04 · PINCHOUT TEST</div>
+        <div class="well-name">BUNGA TASBIH-1</div>
+        <div class="well-kv">
+          <div>TARGET: <span>Syn-Rift Group L Lacustrine Sandstone</span></div>
+          <div>STRUCTURE: <span>Stratigraphic / Structural Trap Combination</span></div>
+          <div>MECHANISM: <span>Direct lateral charging from syn-rift source</span></div>
+          <div>SIGNIFICANCE: <span>Demonstrated continuous gas saturation in deep graben</span></div>
+        </div>
+      </div>
+    </div>
+
+
     <nav class="crumbs" style="margin-top:2rem" aria-label="Basin navigation">
       <a class="crumb now" href="/earth/malay-basin/">◈ Malay Basin Dossier — full 6-section report</a>
       <span class="sep">|</span>
@@ -929,7 +1405,21 @@
         <span class="badge">SUBMARINE CANYONS · ACCRETIONARY PRISM · SRTM DRAPED</span>
       </div>
     </div>
-<div class="dossier-grid">
+
+    <!-- REGIONAL CROSS-SECTION SHOWCASE -->
+    <div class="xsection-banner">
+      <div class="xsection-info">
+        <h3>◈ Geological-Grade Regional Cross-Sections</h3>
+        <p>Direct subsurface transects compiled with USGS-standard lithology patterns, SRTM topography, structural fault symbols, and biostratigraphic control. Rendered as interactive vector profiles.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="arrow" href="/earth/malay-basin-cross-section.html" style="background:var(--accent-gold); color:#070709; padding:0.65rem 1.3rem; border-radius:6px; font-family:var(--mono); font-size:0.75rem; text-decoration:none; font-weight:700;">▸ MALAY BASIN TRANSECT</a>
+        <a class="arrow" href="/earth/kinabalu-cross-section.html" style="border:1px solid var(--accent-cyan); color:var(--accent-cyan); padding:0.65rem 1.3rem; border-radius:6px; font-family:var(--mono); font-size:0.75rem; text-decoration:none; font-weight:700;">▸ NW SABAH TRANSECT</a>
+      </div>
+    </div>
+
+
+    <div class="dossier-grid">
       <!-- KINABALU BASIN -->
       <div class="dossier-card">
         <div class="dossier-head">

@@ -291,6 +291,194 @@
   .fed-navbar .nav-links { display: none; }
   .earth-zen-dock { top: 4.2rem; }
 }
+
+/* ── GEOLOGICAL VISUALS & SUBSURFACE REALITY (2026-09-18) ── */
+.geo-visual-card {
+  background: #0f121d;
+  border: 1px solid #22293d;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 30px rgba(242, 183, 5, 0.05);
+}
+.geo-visual-card .img-wrap {
+  position: relative;
+  background: #05070a;
+}
+.geo-visual-card img.geo-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.geo-visual-caption {
+  padding: 1rem 1.4rem;
+  background: #141724;
+  border-top: 1px solid #22293d;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #9aa4b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.geo-visual-caption strong { color: #f2b705; font-weight: 700; letter-spacing: 0.05em; }
+.geo-visual-caption .badge {
+  background: rgba(242, 183, 5, 0.12);
+  color: #f2b705;
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+/* 4 Founder Wells Matrix */
+.founder-wells-box {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.6rem;
+  background: #0c0f18;
+  border: 1px solid #1f273b;
+  border-radius: 12px;
+}
+.founder-wells-header {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #1f273b;
+  padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.founder-wells-header h3 {
+  font-family: 'Archivo Black', Inter, sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.founder-wells-header .sovereign-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #f2b705;
+  background: rgba(242, 183, 5, 0.1);
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.well-card {
+  background: #131722;
+  border: 1px solid #20273a;
+  border-radius: 8px;
+  padding: 1.1rem;
+  transition: all 0.2s;
+  border-left: 3px solid #20273a;
+}
+.well-card:hover {
+  border-color: #2f3b56;
+  border-left-color: #f2b705;
+  background: #171d2c;
+  transform: translateY(-2px);
+}
+.well-card.play-opener { border-left-color: #e0301e; }
+.well-card.basement { border-left-color: #38bdf8; }
+.well-card.stratigraphic { border-left-color: #22c55e; }
+
+.well-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.well-role {
+  font-size: 0.65rem;
+  color: #f2b705;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.well-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  margin: 3px 0;
+  color: #9aa4b8;
+}
+.well-spec-row span.val { color: #f5f5f7; font-weight: 600; }
+.well-desc {
+  font-size: 0.75rem;
+  color: #8b95a8;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #20273a;
+  line-height: 1.45;
+}
+
+/* Petroleum Systems Event Chart (PSEC) */
+.psec-container {
+  margin: 2rem 0;
+  background: #0d101a;
+  border: 1px solid #1f273b;
+  border-radius: 10px;
+  padding: 1.4rem;
+}
+.psec-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.95rem;
+  color: #f2b705;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.psec-desc {
+  font-size: 0.78rem;
+  color: #9aa4b8;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.psec-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  align-items: center;
+}
+.psec-row-k { color: #cbd5e1; font-weight: 600; text-transform: uppercase; }
+.psec-track {
+  position: relative;
+  background: #171c2a;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.psec-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #070709;
+  white-space: nowrap;
+}
+
 </style>
 </head>
 <body>
@@ -612,7 +800,108 @@
         <div><span>today</span> · mature gas province, offshore MY/TH/VN margin</div>
         <div><span>founder wells</span> · BEKANTAN-1 · PUTERI BASEMENT-1 · LEBAH EMAS-1 · BUNGA TASBIH-1</div>
       </div>
+    
+    <!-- Visual Subsurface Anatomy: High-Fidelity 3D Seismic Cross-Section -->
+    <div class="geo-visual-card">
+      <div class="img-wrap">
+        <img src="/earth/images/seismic-geology.de2553a8.webp" alt="Subsurface Seismic Reflection Profile & Inversion Anticline Cross-Section" class="geo-hero-img" width="1376" height="768" loading="lazy">
+      </div>
+      <div class="geo-visual-caption">
+        <div><strong>SEISMIC REFLECTION PROFILE &amp; STRUCTURAL INVERSION CROSS-SECTION</strong> · MALAY BASIN TRANSECT</div>
+        <span class="badge">VERTICAL EXAGGERATION ~32x · ACOUSTIC IMPEDANCE CALIBRATION</span>
+      </div>
     </div>
+
+    <!-- Palaeogeographic Reconstruction of Sundaland -->
+    <div class="geo-visual-card">
+      <div class="img-wrap">
+        <img src="/earth/images/sundaland-geology.a41856f3.webp" alt="Sundaland Palaeo-continent Oligo-Miocene River & Lake Systems" class="geo-hero-img" width="1376" height="768" loading="lazy">
+      </div>
+      <div class="geo-visual-caption">
+        <div><strong>PALAEO-SUNDALAND CONTINENT (OLIGO-MIOCENE)</strong> · ANCIENT BRAIDED DELTAS &amp; LACUSTRINE RIFT LAKES</div>
+        <span class="badge">SOURCE KITCHEN GENESIS · GROUP L/M SHALES</span>
+      </div>
+    </div>
+
+    <!-- Petroleum Systems Event Chart (PSEC) -->
+    <div class="psec-container">
+      <div class="psec-title">Petroleum Systems Event Chart (PSEC) · Malay Basin</div>
+      <p class="psec-desc">A hydrocarbon province is a coincidence of geological timing. If the trap forms after migration, the charge is lost. In the Malay Basin, wrench-induced inversion and seal deposition timed perfectly with peak lacustrine source rock maturation.</p>
+      
+      <div class="psec-grid">
+        <div class="psec-row-k">SOURCE ROCK</div>
+        <div class="psec-track">
+          <div class="psec-bar" style="width:35%; margin-left:10%; background:#ef4444;">Group L/M Lacustrine Shales (32–23 Ma)</div>
+        </div>
+
+        <div class="psec-row-k">RESERVOIR ROCK</div>
+        <div class="psec-track">
+          <div class="psec-bar" style="width:40%; margin-left:35%; background:#fbbf24;">Group E/H/I Fluvio-Deltaic Sands (23–14 Ma)</div>
+        </div>
+
+        <div class="psec-row-k">REGIONAL SEAL</div>
+        <div class="psec-track">
+          <div class="psec-bar" style="width:35%; margin-left:55%; background:#38bdf8;">Group B/D Transgressive Marine Shales (14–5 Ma)</div>
+        </div>
+
+        <div class="psec-row-k">TRAP FORMATION</div>
+        <div class="psec-track">
+          <div class="psec-bar" style="width:30%; margin-left:45%; background:#f97316;">Middle Miocene Tectonic Inversion (16–10 Ma)</div>
+        </div>
+
+        <div class="psec-row-k">GAS CHARGE</div>
+        <div class="psec-track">
+          <div class="psec-bar" style="width:45%; margin-left:55%; background:#a855f7; color:#fff;">Peak Hydrocarbon Generation &amp; Migration (12–0 Ma)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive 4 Founder Exploration Wells Explorer -->
+    <div class="founder-wells-box">
+      <div class="founder-wells-header">
+        <h3>◈ The Four Founder Wells — Calibration Against Physical Rock</h3>
+        <span class="sovereign-tag">13+ Years Subsurface Witness</span>
+      </div>
+      <div class="wells-grid">
+        <div class="well-card">
+          <div class="well-name">BEKANTAN-1 <span style="font-size:0.7rem; color:#4ade80;">● DISCOVERY</span></div>
+          <div class="well-role">Anticlinal Inversion Play</div>
+          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Group E/H Deltaic Sand</span></div>
+          <div class="well-spec-row"><span>DEPTH:</span><span class="val">~2,850 m TVDss</span></div>
+          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">4-Way Dip Closure</span></div>
+          <div class="well-desc">Verified structural closure and sand retention across Middle Miocene inversion crest. Proved high-permeability stacked channel sands sealed by Intra-E shales.</div>
+        </div>
+
+        <div class="well-card basement">
+          <div class="well-name">PUTERI BASEMENT-1 <span style="font-size:0.7rem; color:#38bdf8;">● FRONTIER</span></div>
+          <div class="well-role">Fractured Basement Play</div>
+          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Pre-Tertiary Granitic Horst</span></div>
+          <div class="well-spec-row"><span>DEPTH:</span><span class="val">>3,400 m TVDss</span></div>
+          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">Fault-Bounded Horst Block</span></div>
+          <div class="well-desc">Penetrated weathered and fractured pre-Tertiary basement. Proved hydrocarbon migration from adjacent syn-rift Oligocene graben kitchens into crystalline rock fractures.</div>
+        </div>
+
+        <div class="well-card play-opener">
+          <div class="well-name">LEBAH EMAS-1 <span style="font-size:0.7rem; color:#f2b705;">● 2025 PLAY OPENER</span></div>
+          <div class="well-role">Western Hinge Fault Fairway</div>
+          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Deep Group J/K Lowstand</span></div>
+          <div class="well-spec-row"><span>DEPTH:</span><span class="val">~3,200 m TVDss</span></div>
+          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">Fault-Assisted Stratigraphic</span></div>
+          <div class="well-desc">Opened an unexpected new play fairway along the Western Hinge Fault in 2025. Demonstrated that fresh structural interpretation and rigorous geomechanics outlast mature consensus.</div>
+        </div>
+
+        <div class="well-card stratigraphic">
+          <div class="well-name">BUNGA TASBIH-1 <span style="font-size:0.7rem; color:#22c55e;">● TESTED</span></div>
+          <div class="well-role">Stratigraphic Pinchout Play</div>
+          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Group F Lowstand Sand Lobes</span></div>
+          <div class="well-spec-row"><span>DEPTH:</span><span class="val">~3,100 m TVDss</span></div>
+          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">Up-dip Pinchout Trap</span></div>
+          <div class="well-desc">Calibrated direct hydrocarbon indicators (DHIs) and 3D seismic amplitude anomalies against fluid substitution and petrophysical log response.</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 
     <nav class="crumbs" style="margin-top:2rem" aria-label="Basin navigation">
       <a class="crumb now" href="/earth/malay-basin/">◈ Malay Basin Dossier — full 6-section report</a>
@@ -629,7 +918,18 @@
     <h2>Basin dossiers</h2>
     <p class="lede">The globe shows you a continent. The dossiers show you <b>one basin at a time</b> — tectonic evolution, stratigraphy, petroleum system, and the cross-section that ties them together. Every dossier is sourced, dated, and honest about what is not known.</p>
 
-    <div class="dossier-grid">
+    
+    <!-- Visual Subsurface Anatomy: Deepwater Fold-and-Thrust Belt -->
+    <div class="geo-visual-card" style="margin-bottom:2rem;">
+      <div class="img-wrap">
+        <img src="/earth/images/turbidite-geology.c1b37063.webp" alt="Active Continental Margin and Deepwater Fold-and-Thrust Belt" class="geo-hero-img" width="1376" height="768" loading="lazy">
+      </div>
+      <div class="geo-visual-caption">
+        <div><strong>NW SABAH ACTIVE MARGIN &amp; DEEPWATER FOLD-AND-THRUST BELT</strong> · TURBIDITE FANS &amp; IMBRICATE WEDGES</div>
+        <span class="badge">SUBMARINE CANYONS · ACCRETIONARY PRISM · SRTM DRAPED</span>
+      </div>
+    </div>
+<div class="dossier-grid">
       <!-- KINABALU BASIN -->
       <div class="dossier-card">
         <div class="dossier-head">

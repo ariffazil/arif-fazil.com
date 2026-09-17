@@ -3494,11 +3494,19 @@
       "type": "onsite",
       "path": "/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf"
     },
-    "seal": "999",
-    "provenance_status": "sealed",
+    "seal": null,
+    "provenance_status": "unregistered",
     "session_ref": "SEAL-d7d3fde881a74721",
     "claim_register_summary": "OBS 12, DER 3, INT 3, SPEC 1",
     "word_count_target": 8500,
-    "pages": 31
+    "pages": 31,
+    "version_lineage": [
+      {
+        "version": "0.1-unpublished",
+        "date": "2026-09-18",
+        "state": "ARTIFACT_EXISTS_NOT_SERVED",
+        "note": "31-page PDF + HTML built 2026-08-26 at /root/AAA/forge_work/2026-08-26-petronas-rakyat-dossier/. Not published. This entry previously claimed seal=999 / provenance_status=sealed with claim_register=0 and source_ledger=0 — a sealed state with no witness chain. Corrected to reflect reality (F2). Publish requires F13: the dossier makes claims about living named persons."
+      }
+    ]
   }
 ]

@@ -423,6 +423,88 @@ h2.section .num {
   .bar-row { flex-direction: column; align-items: flex-start; gap: 4px; }
   .bar-track { width: 100%; }
 }
+
+.dossier-subnav {
+  background: rgba(15, 16, 21, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1f2230;
+  position: sticky;
+  top: 49px;
+  z-index: 999;
+  padding: 8px 24px;
+}
+.dossier-subnav-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.subnav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.subnav-hub {
+  color: #f2b705;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+.subnav-hub:hover { color: #ffffff; }
+.subnav-divider { color: #656a80; }
+.subnav-topic { color: #9fa4b8; }
+.dossier-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.dossier-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 11px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #9fa4b8;
+  background: #14151e;
+  border: 1px solid #1f2230;
+  transition: all 0.15s ease;
+  font-weight: 500;
+}
+.dossier-pill:hover {
+  color: #ffffff;
+  border-color: #2f3448;
+  background: #191b26;
+}
+.dossier-pill.active {
+  color: #f2b705;
+  background: rgba(242, 183, 5, 0.12);
+  border-color: #f2b705;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(242, 183, 5, 0.2);
+}
+.dossier-pill.pdf-pill {
+  color: #4ade80;
+  background: rgba(39, 174, 96, 0.1);
+  border-color: rgba(39, 174, 96, 0.3);
+}
+.dossier-pill.pdf-pill:hover {
+  background: rgba(39, 174, 96, 0.25);
+  color: #ffffff;
+  border-color: #4ade80;
+}
+@media (max-width: 680px) {
+  .dossier-subnav { top: 45px; padding: 8px 16px; }
+  .dossier-subnav-inner { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -441,6 +523,22 @@ h2.section .num {
     MALAYSIA CIVIC SLICE
   </div>
 </nav>
+<nav class="dossier-subnav" aria-label="Dossier navigation">
+  <div class="dossier-subnav-inner">
+    <div class="subnav-left">
+      <a href="/world/" class="subnav-hub">← WORLD HUB</a>
+      <span class="subnav-divider">/</span>
+      <span class="subnav-topic">AI AGENTS 2027</span>
+    </div>
+    <div class="dossier-pills">
+      <a href="/world/2027/" class="dossier-pill">GLOBAL DOSSIER</a>
+      <a href="/world/2027/malaysia/" class="dossier-pill active">MALAYSIA 2027</a>
+      <a href="/world/2027/receipts/" class="dossier-pill">RECEIPTS &amp; AUDIT</a>
+      <a href="/world/2027/ai-agents-2027-dossier.pdf" class="dossier-pill pdf-pill" download>PDF (223 KB) ↓</a>
+    </div>
+  </div>
+</nav>
+
 
 <main class="wrap">
 

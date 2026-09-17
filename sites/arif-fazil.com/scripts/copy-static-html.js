@@ -53,6 +53,10 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   "world/politics/shadow/anwar-ibrahim/index.html",
   "institution/index.html",
   "human/index.html",
+  // Sealed dossiers (2026-09-18). Deep static documents, not React routes.
+  // served by the human-lane try_files {path}/index.html branch.
+  "world/makcikgpt/petronas-full-reality-rakyat-dossier/index.html",
+  "world/makcikgpt/petronas-leadership-1974-2026/index.html",
 ]);
 
 function shouldSkip(relativePath, isDir) {

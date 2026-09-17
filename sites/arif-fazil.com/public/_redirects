@@ -51,8 +51,10 @@
 # (no static rewrite needed; Cloudflare Pages fallback to /index.html)
 
 # 2026-08-26: /forge route closure for PETRONAS dossier / SPA fallback
-/forge            /world/makcikgpt/petronas-full-reality-rakyat-dossier    200
-/forge/*          /world/makcikgpt/petronas-full-reality-rakyat-dossier    200
+# REMOVED 2026-09-18: these two lines were dead. /_redirects is a Cloudflare Pages
+# format; this site is served by Caddy and nothing reads this file. Caddy's own
+# rules send /forge -> forge.arif-fazil.com (301), so the rewrite never fired.
+# Leaving them mislabelled the target as a working route. See /etc/caddy/vhosts/arif-fazil.com.conf.
 
 # 2026-08-26: /propa canonical redirect to /vitals (Patch 4)
 /propa            /vitals/                                                 301

@@ -56,7 +56,7 @@ Dulu CEO PETRONAS berani cakap "tidak" kat Perdana Menteri. Sekarang CEO PETRONA
 
 **strong** Kisah DNA PETRONAS ni masih relevan — malah makin kuat. Board chronology 2023-2026 yang terkini (/vitals) dan full civic dossier (link di bawah) tunjuk struktur governance yang sama: bulldog DNA dah diganti dengan deal-making DNA. Makcik boleh baca kedua-dua — artikel DNA asal di bawah, + post-Aug 2026 update di hujung.
 
-**strong** [PETRONAS · VITALS — institutional intelligence](/vitals/) · [📄 Full civic dossier](/world/makcikgpt/petronas-full-reality-rakyat-dossier)
+**strong** [PETRONAS · VITALS — institutional intelligence](/vitals/) · [📄 Full civic dossier](/world/makcikgpt/petronas-full-reality-rakyat-dossier) · [🏛️ Leadership archive 1974–2026](/world/makcikgpt/petronas-leadership-1974-2026)
 
 **strong** 1H FY2026 group report — expected ~29 Ogos 2026. Watch [/world/makcikgpt/feed.xml](/world/makcikgpt/feed.xml).
 
@@ -308,7 +308,7 @@ Dan bila DNA tu mati, PETRONAS tinggal nama saja.
 
 Kisah DNA PETRONAS ni makin terbukti. Rekod lembaga pengarah terkini 2023-2026 (PETRONAS Annual Report + website BOD composition) dan Dossier Rakyat Penuh (dokumen penulis, bukan dokumen awam) mengesahkan: bulldog DNA diganti dengan extraction DNA.
 
-👉 PETRONAS · VITALS — Institutional Intelligence | 📄 Full Civic Dossier (31 Muka Surat) | 📥 Muat Turun PDF
+👉 PETRONAS · VITALS — Institutional Intelligence | 📄 Full Civic Dossier (31 Muka Surat) | 🏛️ Leadership Archive 1974–2026 (58 Muka Surat) | 📥 Muat Turun PDF
 
 ---
 

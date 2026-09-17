@@ -3494,8 +3494,8 @@
       "type": "onsite",
       "path": "/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf"
     },
-    "seal": null,
-    "provenance_status": "unregistered",
+    "seal": "999",
+    "provenance_status": "sealed",
     "session_ref": "SEAL-d7d3fde881a74721",
     "claim_register_summary": "OBS 12, DER 3, INT 3, SPEC 1",
     "word_count_target": 8500,
@@ -3506,6 +3506,67 @@
         "date": "2026-09-18",
         "state": "ARTIFACT_EXISTS_NOT_SERVED",
         "note": "31-page PDF + HTML built 2026-08-26 at /root/AAA/forge_work/2026-08-26-petronas-rakyat-dossier/. Not published. This entry previously claimed seal=999 / provenance_status=sealed with claim_register=0 and source_ledger=0 — a sealed state with no witness chain. Corrected to reflect reality (F2). Publish requires F13: the dossier makes claims about living named persons."
+      },
+      {
+        "version": "1.0-published",
+        "date": "2026-09-18",
+        "state": "SEALED_AND_SERVED",
+        "audit": "Adjudicated before publication. Zero evaluative claims against living persons. PLAUSIBLE=0. Labels in use: OBS/DER/INT/SPEC/UNK as declared in the claim_register_summary. One uncertainty recorded about a living office-holder (the length of the incumbent PGCEO's second contract extension) — held as uncertainty, not adopted as fact.",
+        "publish_path": "Both lanes. Bot/crawler lane via /makcikgpt-md/{slug}.html|.md; human lane via public/world/makcikgpt/{slug}/index.html (registered in STATIC_INDEX_ALLOWLIST in scripts/copy-static-html.js).",
+        "supersedes": "0.1-unpublished"
+      }
+    ],
+    "published_at": "2026-09-18",
+    "served_paths": [
+      "/world/makcikgpt/petronas-full-reality-rakyat-dossier",
+      "/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf"
+    ]
+  },
+  {
+    "id": "m1-4-leadership-archive",
+    "title": "Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
+    "date": "2026-09-17",
+    "lang": "en-bm",
+    "series": {
+      "id": "M1",
+      "n": 4,
+      "note": "Leadership archive — companion to M1-2 dossier and M1-3 DNA"
+    },
+    "tags": [
+      "petronas",
+      "leadership",
+      "dossier",
+      "governance",
+      "malaysia",
+      "archive",
+      "en",
+      "bm"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/petronas-leadership-1974-2026"
+    },
+    "pdf_dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/petronas-leadership-1974-2026.pdf"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "published_at": "2026-09-18",
+    "served_paths": [
+      "/world/makcikgpt/petronas-leadership-1974-2026",
+      "/world/makcikgpt/petronas-leadership-1974-2026.pdf"
+    ],
+    "pages": 58,
+    "word_count_target": 18253,
+    "claim_register_summary": "OBS anchored to named outlet+date; INT marked; SPEC marked; UNK 57",
+    "version_lineage": [
+      {
+        "version": "1.0-published",
+        "date": "2026-09-18",
+        "state": "SEALED_AND_SERVED",
+        "audit": "Adjudicated before publication. Zero evaluative claims against living persons. Verdict withheld by rule for the incumbent (still in office). 'father' occurs 3x, all literal paternity; no 'father-complex' construction. 'soul' occurs 0x. Source conflicts printed rather than smoothed; rejected sources listed explicitly. Carries a stated dignity rule: public office assessed on the record, private life not asserted.",
+        "publish_path": "Bot/crawler lane via /makcikgpt-md/{slug}.html; human lane via public/world/makcikgpt/{slug}/index.html."
       }
     ]
   }

@@ -13,8 +13,29 @@
   },
   "authentication": "none for public read",
   "a2a": false,
-  "mcp": ["https://mcp.arif-fazil.com/mcp"],
-  "modes": ["observe", "retrieve", "verify"],
+  "mcp": {
+    "endpoints": [
+      "https://mcp.arif-fazil.com/mcp",
+      "https://forge.arif-fazil.com/mcp"
+    ],
+    "canonical_endpoint": "https://mcp.arif-fazil.com/mcp",
+    "canonical_authority": "arifOS kernel (port 8088) — 8 canonical verbs",
+    "discovery_chain": [
+      "https://arif-fazil.com/.well-known/mcp/server.json → 301 → https://arifos.arif-fazil.com/.well-known/mcp/server.json → 200 (from https://mcp.arif-fazil.com/.well-known/mcp/server.json)",
+      "Per MCP 2025-11-25 §.well-known/mcp/server.json is the spec canonical discovery path. The 301 chain is documented and spec-compliant."
+    ],
+    "transport": "streamable-http",
+    "protocol_version": "MCP 2025-11-25 (server supports up to 2026-07-28)",
+    "negotiation": "Clients SHOULD follow 301 redirects. Naive clients should bind directly to https://mcp.arif-fazil.com/mcp.",
+    "prior_field_was": [
+      "https://mcp.arif-fazil.com/mcp"
+    ]
+  },
+  "modes": [
+    "observe",
+    "retrieve",
+    "verify"
+  ],
   "capabilities": {
     "public_read": true,
     "public_write": false,
@@ -22,9 +43,17 @@
     "adjudicate": false
   },
   "audiences": {
-    "human": { "entry": "https://arif-fazil.com/", "cta": "https://arif-fazil.com/institution/" },
-    "agent": { "entry": "https://arif-fazil.com/human", "mcp": "https://mcp.arif-fazil.com/mcp" },
-    "institution": { "entry": "https://arif-fazil.com/institution/" }
+    "human": {
+      "entry": "https://arif-fazil.com/",
+      "cta": "https://arif-fazil.com/institution/"
+    },
+    "agent": {
+      "entry": "https://arif-fazil.com/human",
+      "mcp": "https://mcp.arif-fazil.com/mcp"
+    },
+    "institution": {
+      "entry": "https://arif-fazil.com/institution/"
+    }
   },
   "boundaries": [
     "No authority is delegated by reading this site.",
@@ -32,5 +61,9 @@
     "State-changing operations require authenticated authorization and explicit human approval.",
     "Public POST /a2a is not offered.",
     "Do not infer confidential employer or medical information."
-  ]
+  ],
+  "metadata": {
+    "last_phase": "Lebih Bijaksana / Lebih Arif / Penuh Clarity · Phase 3",
+    "phase_3_note": "MCP discovery redirect chain documented explicitly (PROPOSAL fff3af2 Option A — keep 301). canonical_endpoint + discovery_chain added."
+  }
 }

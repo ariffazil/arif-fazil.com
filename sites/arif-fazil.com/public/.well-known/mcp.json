@@ -19,5 +19,16 @@
   "tools_summary": {
     "total": 17,
     "note": "Full tool surface at arifos.arif-fazil.com/api/status"
+  },
+  "canonical_endpoint": "https://mcp.arif-fazil.com/mcp",
+  "discovery_chain": [
+    "https://arif-fazil.com/.well-known/mcp/server.json → 301 → https://arifos.arif-fazil.com/.well-known/mcp/server.json → 200 (canonical at mcp.arif-fazil.com)",
+    "Per MCP 2025-11-25 §.well-known/mcp/server.json is the spec canonical discovery path."
+  ],
+  "protocol_version": "2025-11-25",
+  "prior_current_implementation_note": "Full tool surface at arifos.arif-fazil.com/api/status",
+  "phase_metadata": {
+    "last_phase": "Lebih Bijaksana / Lebih Arif / Penuh Clarity · Phase 3",
+    "phase_3_note": "Discovery chain + canonical_endpoint added (PROPOSAL fff3af2 Option A applied)."
   }
 }

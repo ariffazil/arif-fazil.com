@@ -90,10 +90,29 @@ ${body}
 `;
 }
 
+// Routes whose index.html is HAND-AUTHORED and must never be regenerated.
+// The generator is not the owner of these pages; it only fills the ones nobody
+// curated. Second half of the same law as STATIC_INDEX_ALLOWLIST in
+// copy-static-html.js — both answer "who owns this file?".
+//
+// /world/ — the curation hub. A generator shell was overwriting it on EVERY
+// build (3.8 KB shell replacing a 148 KB curated page). dist/ is gitignored, so
+// the overwrite left no diff and the hub appeared to vanish on its own. That is
+// why "world feel not singular": the singularity was being rebuilt away
+// (diagnosed 2026-09-18, commit 68aafb5 authored the hub, next build erased it).
+const PRESERVED_ROUTES = new Set([
+  'world',
+]);
+
 function writeRoute(route, html) {
   const dir = path.join(PUBLIC, route);
-  fs.mkdirSync(dir, { recursive: true });
   const out = path.join(dir, 'index.html');
+  if (PRESERVED_ROUTES.has(route)) {
+    const existing = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').length : 0;
+    console.log(`preserved (hand-authored, not regenerated): /${route} — ${existing} bytes kept`);
+    return;
+  }
+  fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(out, html);
   console.log('wrote', out, html.length, 'bytes');
 }

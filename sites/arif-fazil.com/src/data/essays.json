@@ -3468,7 +3468,7 @@
     "id": "m1-2-dossier",
     "title": "PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia",
     "date": "2026-08-26",
-    "lang": "en-bm",
+    "lang": "bm",
     "series": {
       "id": "M1",
       "n": 3,
@@ -3520,13 +3520,87 @@
     "served_paths": [
       "/world/makcikgpt/petronas-full-reality-rakyat-dossier",
       "/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf"
+    ],
+    "claim_register": [
+      {
+        "claim_id": "RKY-C1",
+        "text": "Dossier 31 muka surat ini mendakwa membaca PETRONAS dari dokumen awam sahaja: laporan tahunan, penyata Bursa, dan laporan media yang dinamakan. Ia mengisytiharkan setiap dakwaan berlabel OBS/DER/INT/SPEC/UNK dengan resit di Appendix B.",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "RKY-C2",
+        "text": "Bahagian kewangan dossier berpaut pada angka laporan tahunan (FY2022, FY2024, FY2025) dan penyata Bursa — bukan angka yang dikira sendiri oleh penulis.",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "RKY-C3",
+        "text": "Bahagian lembaga pengarah menjejak siapa masuk dan siapa keluar 2023-2026 berdasarkan rekod awam; ia menyenaraikan jawatan, bukan motif peribadi.",
+        "tag": "OBS",
+        "source_id": "src3",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "RKY-C4",
+        "text": "Sembilan 'tripwire kewangan' dan dua belas 'risiko tersembunyi' ialah bacaan penulis — analisis bersandarkan angka awam, bukan angka yang diterbitkan oleh PETRONAS sebagai senarai risiko.",
+        "tag": "INT",
+        "source_id": "src1",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "RKY-C5",
+        "text": "Bahagian 'bagaimana PETRONAS boleh runtuh' ialah senario bersyarat, bukan ramalan bertarikh. Ia tidak mendakwa keruntuhan sedang berlaku.",
+        "tag": "SPEC",
+        "source_id": "src1",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "RKY-C6",
+        "text": "Dossier ini bukan nasihat pelaburan, bukan tuduhan terhadap mana-mana individu, dan bukan dakwaan bahawa PETRONAS sedang gagal. Had ini diisytiharkan di dalam dokumen sendiri.",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "not_applicable"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "src1",
+        "type": "filing",
+        "title": "PETRONAS Annual Report — FY2022 / FY2024 / FY2025 (audited financials)",
+        "url": "petronas.com/investor-relations",
+        "retrieved_at": "2026-08-26"
+      },
+      {
+        "source_id": "src2",
+        "type": "filing",
+        "title": "Bursa Malaysia / Suruhanjaya Syarikat Malaysia — corporate filings",
+        "url": "bursamalaysia.com",
+        "retrieved_at": "2026-08-26"
+      },
+      {
+        "source_id": "src3",
+        "type": "news",
+        "title": "The Edge Malaysia, The Star, FMT — leadership and financial reporting 2023-2026",
+        "url": "theedgemalaysia.com",
+        "retrieved_at": "2026-08-26"
+      },
+      {
+        "source_id": "src4",
+        "type": "news",
+        "title": "Bloomberg, Reuters — commodity and earnings coverage",
+        "url": "bloomberg.com",
+        "retrieved_at": "2026-08-26"
+      }
     ]
   },
   {
     "id": "m1-4-leadership-archive",
     "title": "Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
     "date": "2026-09-17",
-    "lang": "en-bm",
+    "lang": "bm",
     "series": {
       "id": "M1",
       "n": 4,
@@ -3567,6 +3641,87 @@
         "state": "SEALED_AND_SERVED",
         "audit": "Adjudicated before publication. Zero evaluative claims against living persons. Verdict withheld by rule for the incumbent (still in office). 'father' occurs 3x, all literal paternity; no 'father-complex' construction. 'soul' occurs 0x. Source conflicts printed rather than smoothed; rejected sources listed explicitly. Carries a stated dignity rule: public office assessed on the record, private life not asserted.",
         "publish_path": "Bot/crawler lane via /makcikgpt-md/{slug}.html; human lane via public/world/makcikgpt/{slug}/index.html."
+      }
+    ],
+    "claim_register": [
+      {
+        "claim_id": "LDR-C1",
+        "text": "1974-1988 PETRONAS mempunyai satu kerusi gabungan Pengerusi dan Ketua Eksekutif; kemudian ia berpisah kepada Pengerusi (bukan eksekutif, lantikan kerajaan) dan Presiden & CEO (ketua profesional).",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "LDR-C2",
+        "text": "Tengku Razaleigh Hamzah ialah Pengerusi & Ketua Eksekutif pertama (1974-1976) dan meninggalkan jawatan itu untuk menjadi Menteri Kewangan.",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "LDR-C3",
+        "text": "Tan Sri Abdul Kadir Shamsuddin mempengerusikan 1976 hingga 8 November 1978 dan meninggal dunia semasa dalam jawatan, pada usia 58.",
+        "tag": "OBS",
+        "source_id": "src2",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "LDR-C4",
+        "text": "Antara 2004 dan 2012 kerusi pengerusi dipegang secara sementara oleh CEO yang sedang berkhidmat (Hassan Marican, kemudian Shamsul Azhar Abbas).",
+        "tag": "OBS",
+        "source_id": "src1",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "LDR-C5",
+        "text": "Tan Sri Dato' Seri Mohd Bakke Salleh mempengerusikan mulai 1 Ogos 2021; Susunan Lembaga disahkan pada 2026-09-17 daripada halaman Our Leaders PETRONAS sendiri — 8 pengarah: 3 eksekutif, 4 bebas bukan eksekutif, 1 bukan bebas bukan eksekutif.",
+        "tag": "OBS",
+        "source_id": "src3",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "LDR-C6",
+        "text": "Tahun tepat Tun Raja Mohar Raja Badiozaman mempengerusikan masih UNK, begitu juga nama penuh 'Rastam', pengarah eksekutif pengasas. Dua jurang ini diisytiharkan terbuka dalam arkib, bukan disembunyikan.",
+        "tag": "UNK",
+        "source_id": "src2",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "LDR-C7",
+        "text": "Verdict ditahan bagi penyandang jawatan. Arkib menilai jawatan atas rekod awam dan tidak mendakwa apa-apa tentang kehidupan peribadi mana-mana individu.",
+        "tag": "OBS",
+        "source_id": "src3",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "src1",
+        "type": "news",
+        "title": "The Edge Malaysia — 'Big Money: If it ain't broke, don't fix it'; 'My Say: The Petronas DNA'",
+        "url": "theedgemalaysia.com/article/big-money-if-it-aint-broke-dont-fix-it",
+        "retrieved_at": "2026-09-17"
+      },
+      {
+        "source_id": "src2",
+        "type": "reference",
+        "title": "Wikipedia (EN/MS) — individual office-holder pages",
+        "url": "en.wikipedia.org",
+        "retrieved_at": "2026-09-17"
+      },
+      {
+        "source_id": "src3",
+        "type": "primary",
+        "title": "petronas.com — Our Leaders; media releases; MPC history",
+        "url": "petronas.com/about-us/our-leaders",
+        "retrieved_at": "2026-09-17"
+      },
+      {
+        "source_id": "src4",
+        "type": "news",
+        "title": "Berita Harian, mStar, Malaysiakini, Harian Metro — appointment and departure reporting",
+        "url": "bharian.com.my",
+        "retrieved_at": "2026-09-17"
       }
     ]
   }

@@ -34,7 +34,14 @@ function pickMakcikPieces(essays) {
     .filter(
       (e) =>
         e &&
-        e.lang === "bm" &&
+        // Scope filter, not a validity filter. A compound tag like "en-bm" is
+        // BM-inclusive, so it must reach validateMakcikPieces() and be judged there.
+        // Strict equality here made invalid entries INVISIBLE instead of loud — the two
+        // sealed PETRONAS dossiers silently vanished from /world/makcikgpt/ for exactly
+        // that reason (found 2026-09-18). The validator owns "must be bm"; this owns
+        // "is it in scope".
+        typeof e.lang === "string" &&
+        e.lang.split("-").includes("bm") &&
         e.dest &&
         e.dest.type === "onsite" &&
         typeof e.dest.path === "string" &&

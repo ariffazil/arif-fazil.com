@@ -657,10 +657,20 @@ def cmd_caddy_hint(_args: argparse.Namespace) -> Report:
 def write_receipt(report: Report, out_dir: Path | None) -> Path | None:
     if out_dir is None:
         return None
-    out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / f"web-zen-{report.mode}-{report.ts.replace(':', '')}.json"
-    path.write_text(json.dumps(report.to_dict(), indent=2))
-    return path
+    try:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        path = out_dir / f"web-zen-{report.mode}-{report.ts.replace(':', '')}.json"
+        path.write_text(json.dumps(report.to_dict(), indent=2))
+        return path
+    except OSError:
+        fallback = Path("/tmp")
+        fallback.mkdir(parents=True, exist_ok=True)
+        path = fallback / f"web-zen-{report.mode}-{report.ts.replace(':', '')}.json"
+        try:
+            path.write_text(json.dumps(report.to_dict(), indent=2))
+            return path
+        except Exception:
+            return None
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -62,6 +62,10 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/writing`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/doctrine`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/world/2027/`, priority: 0.85, changefreq: "monthly", lastmod: "2026-09-18" },
+    { loc: `${SITE_BASE}/world/2027/malaysia/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-09-18" },
+    { loc: `${SITE_BASE}/world/2027/receipts/`, priority: 0.75, changefreq: "monthly", lastmod: "2026-09-18" },
+    { loc: `${SITE_BASE}/world/2027/ai-agents-2027-dossier.pdf`, priority: 0.7, changefreq: "monthly", lastmod: "2026-09-18" },
   ];
   // Canonical landing first, then every onsite BM piece (M-series)
   urls.push({ loc: CANONICAL_LANDING, priority: 0.85, changefreq: "daily" });
@@ -143,6 +147,12 @@ Civic commentary (MakcikGPT) is editorial, not the professional identity contrac
 Canonical landing: ${CANONICAL_LANDING}
 Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
+
+## World — AI Agents 2027 dossier (forged 2026-09-18)
+- [Global dossier](https://arif-fazil.com/world/2027/): Five engines of chaos, ranked by likelihood × impact. What agentic AI actually does to trust, money, labour, and Malaysia.
+- [Malaysia slice](https://arif-fazil.com/world/2027/malaysia/): Tenant of the AI economy — energy, water, on-ramp.
+- [Receipts & grades](https://arif-fazil.com/world/2027/receipts/): Permanent citations page, 19 graded receipts.
+- [PDF](https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf): Full 15-page A4 dossier.
 
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml
@@ -325,6 +335,22 @@ function main() {
     path.join(SITE_ROOT, "public/page.json"),
     JSON.stringify(buildPageJson(), null, 2) + "\n",
   );
+  // Phase 6 (Lebih Bijaksana blueprint): copy the signed agents.txt from canonical source.
+  // Source-of-truth lives in forge_work/proposals/333-AGI/2026-09-17-agentic-surface/agents.txt.
+  // If you edit that file, run sign-discovery.py to re-sign before this emit picks it up.
+  const fsAgentsSrc = "/root/arif-fazil.com/forge_work/proposals/333-AGI/2026-09-17-agentic-surface/agents.txt";
+  const fsAgentsDest = path.join(SITE_ROOT, "public/agents.txt");
+  try {
+    if (fs.existsSync(fsAgentsSrc)) {
+      writeIfChanged(fsAgentsDest, fs.readFileSync(fsAgentsSrc, "utf8"));
+    } else {
+      console.warn("[discovery] agents.txt source not present at " + fsAgentsSrc);
+    }
+  } catch (e) {
+    console.warn("[discovery] agents.txt emit failed:", e.message);
+  }
+
+
 
   // Sync canonical surfaces.json to public for vite build and machine serving
   const canonicalSurfacesPath = path.resolve(SITE_ROOT, "../../surfaces.json");

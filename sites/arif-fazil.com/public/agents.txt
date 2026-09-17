@@ -1,0 +1,80 @@
+# arif-fazil.com — agents.txt
+# OAP / Agentic Web Interface standard (2026 proposal)
+# arif-fazil.com is an agent-ready site. The following declares our access
+# policy and capability surface for AI agents acting on behalf of humans.
+#
+# Convention: https://openagentprotocol-OAP.github.io/oap-spec/papers/agent-web-whitepaper.html
+# Generated: 2026-09-17
+# Version: 0.1 (draft, awaiting ratification)
+#
+# Authority: F13 SOVEREIGN ratified 2026-09-17 (proposal 333-AGI/2026-09-17-agentic-surface)
+
+User-agent: *
+  Allow: /
+  Crawl-delay: 0
+
+# ── Agent identity expectation ──
+# Agents acting on behalf of a human SHOULD identify via standard headers:
+#   User-Agent: <agent-name>/<version>
+#   X-Agent-Identity: <DID or signed identifier of the human principal>
+#   X-Agent-Intent: read | summarize | cite | transclude | execute
+#   X-Agent-Delegation-Chain: <parent agent, root agent, principal>
+#
+# Agents that DO NOT declare identity may receive rate-limited or stub
+# responses. The agent's not unilateral. Honesty is the price of admission.
+
+# ── Rate limits ──
+Rate-Limit:
+  Global: 60 req/min (default; raised for known-good agents via Allow)
+  Per-Agent: 600 req/hour
+  Per-IP: 600 req/hour
+  Burst: 10 req/sec
+
+# ── Intent tiers (server-side enforcement) ──
+Intent-Policy:
+  read: free · unlimited
+  cite: free · must include canonical link
+  train: free · must include RSL attribution (see /rsl.xml)
+  transclude: free · must preserve provenance
+  summarize: free · must declare source
+  execute: requires authentication + F13 SOVEREIGN authorization
+  high-risk execute: requires explicit human-in-loop confirmation
+
+# ── Capability manifest ──
+Manifest: https://arif-fazil.com/.well-known/mcp/server.json
+LLMs: https://arif-fazil.com/llms.txt
+LLMs-JSON: https://arif-fazil.com/llms.json
+Agent-Card: https://arif-fazil.com/.well-known/agent.json
+RSL-License: https://arif-fazil.com/rsl.xml
+Humans-Policy: https://arif-fazil.com/policy.json
+Constitution: https://arif-fazil.com/SITE_CONSTITUTION.md
+
+# ── What we will NOT do ──
+Refuse:
+  - auto-form-submit on the human's behalf without F13 confirmation
+  - POST /a2a (intentionally 404 — see canon/file-authority.yaml)
+  - script-injection in agent-claimed data (F9 ANTI-HANTU)
+  - impersonate the human principal (F13 SOVEREIGN)
+  - mutate public state from a non-signed intent (F1 AMANAH)
+
+# ── Human override ──
+Sovereign: https://arif-fazil.com/.well-known/identity.json (DID)
+Hold: any agent action that fails F1 / F13 → escalates to human before execution
+
+# ── Receipts ──
+Receipt: every agent action against an authenticated intent emits a VAULT999 receipt
+Verify: https://arif-fazil.com/.well-known/observatory-snapshot-latest.json
+
+# ── Verification ──
+# This file is signed with the vault_attest ed25519 key.
+# Signature: ed25519:sha256:698cc1ab26357272
+# Verify:   python3 scripts/sign-discovery.py --verify agents.txt agents.txt.sig
+# Re-sign:  python3 scripts/sign-discovery.py --sign agents.txt
+
+# --- BEGIN SIGNATURE BLOCK v1 ---
+# signature: ed25519:sha256:53fe09d75b67d2c0
+# signed_at: 2026-09-17T08:48:58+00:00
+# digest_sha256: 4f8c2ece0f37c81158837b927c540f9747f43f0484bec6260b7ff662c8d0c35e
+# signature_b64: nHtCwER4GmnElXfl5/Bv0UTe5y1vV6zqJ/B4GWKUBkORLen4W/QefPOy0qrSoedKilx702dMEUQpK5m9ZG53DA==
+# verify: python3 scripts/sign-discovery.py --verify forge_work/proposals/333-AGI/2026-09-17-agentic-surface/agents.txt <file>.sig
+# --- END SIGNATURE BLOCK ---

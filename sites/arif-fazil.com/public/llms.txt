@@ -43,6 +43,12 @@ Canonical landing: https://arif-fazil.com/world/makcikgpt/
 Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
+## World — AI Agents 2027 dossier (forged 2026-09-18)
+- [Global dossier](https://arif-fazil.com/world/2027/): Five engines of chaos, ranked by likelihood × impact. What agentic AI actually does to trust, money, labour, and Malaysia.
+- [Malaysia slice](https://arif-fazil.com/world/2027/malaysia/): Tenant of the AI economy — energy, water, on-ramp.
+- [Receipts & grades](https://arif-fazil.com/world/2027/receipts/): Permanent citations page, 19 graded receipts.
+- [PDF](https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf): Full 15-page A4 dossier.
+
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml
 - RSS (editorial): https://arif-fazil.com/feed.xml

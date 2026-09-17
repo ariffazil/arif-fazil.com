@@ -108,6 +108,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://arif-fazil.com/world/2027/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/2027/malaysia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/2027/receipts/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+  <url>
     <loc>https://arif-fazil.com/world/makcikgpt/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>

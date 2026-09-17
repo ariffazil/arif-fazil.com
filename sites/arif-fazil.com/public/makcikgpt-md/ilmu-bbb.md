@@ -106,7 +106,7 @@ Macam mana nak percaya "AI Malaysia" kalau AI tu sendiri tak tahu dia dari mana?
 
 ## Penemuan 2: Ujian MalayMMLU — Self-Written Exam
 
-YTL kata ILMU dapat skor 87.20% pada MalayMMLU, lawan GPT-4o 84.97%. Depa kata ILMU "top global LLM in Malay."
+YTL kata ILMU dapat skor 87.20% pada MalayMMLU, lawan GPT-4o 84.97% (YTL press release; MalayMMLU versi YTL). Depa kata ILMU "top global LLM in Malay."
 
 Tapi siapa yang buat MalayMMLU? YTL AI Labs sendiri.
 

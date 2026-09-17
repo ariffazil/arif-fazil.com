@@ -21,6 +21,10 @@ const { getMakcikSource, computeCanonicalPayloadHash, SITE_ROOT } = require("./l
 const { isLegacyShellId, resolveLegacyTarget } = require("./lib/makcik-legacy-map.cjs");
 
 const OUT_DIR = path.join(SITE_ROOT, "public/makcikgpt-md");
+// 2026-09-18: canonical article source. Bodies are read from here, NOT from the
+// cached {slug}.html (which was generated pre-provenance-pass and drifted).
+const TS_DIR = path.join(SITE_ROOT, "src/data/makcikgpt");
+const TS_REGISTRY = path.join(TS_DIR, "index.ts");
 if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 }
@@ -86,14 +90,137 @@ function htmlToMarkdown(html) {
   return out.join("\n").trim();
 }
 
-function convertBody(slug) {
+// ── Canonical TypeScript body extraction (2026-09-18) ──────────────
+//
+// The 2026-09-18 provenance pass patched the CANONICAL bodies in
+// src/data/makcikgpt/{slug}.ts (source cites + figure labels). The cached
+// public/makcikgpt-md/{slug}.html files are from 2026-08-15 and predate that
+// pass, so building the markdown from them silently re-published the
+// un-sourced version into the lane that AI crawlers ingest. Bodies must
+// therefore be read from the .ts source of truth.
+//
+// The bodies sit inside backtick template literals in TS source, so they
+// carry TS-level backslash escapes. A naive split on the first backtick
+// corrupts any literal containing \` or \\; the scanner below consumes a
+// backslash TOGETHER WITH the next character as one unit.
+
+const TEMPLATE_ESCAPES = {
+  n: "\n", r: "\r", t: "\t", b: "\b", f: "\f", v: "\v", "0": "\0",
+  "`": "`", '"': '"', "'": "'", "\\": "\\", "$": "$", "/": "/",
+};
+
+function unescapeTemplateChar(ch) {
+  // Unknown escape (e.g. \{ ) → drop the backslash, keep the char, which is
+  // what a JS template literal evaluates to.
+  return Object.prototype.hasOwnProperty.call(TEMPLATE_ESCAPES, ch) ? TEMPLATE_ESCAPES[ch] : ch;
+}
+
+/**
+ * Scans one backtick template literal starting at `start` (just past the
+ * opening backtick). Returns { value, nextIndex } or null if unterminated.
+ */
+function scanTemplateLiteral(src, start) {
+  let i = start;
+  const buf = [];
+  while (i < src.length) {
+    const ch = src[i];
+    if (ch === "\\") {
+      const nxt = i + 1 < src.length ? src[i + 1] : "";
+      if (nxt === "") break; // trailing backslash — malformed, bail to fallback
+      buf.push(unescapeTemplateChar(nxt));
+      i += 2; // consume backslash + escaped char as a unit
+      continue;
+    }
+    if (ch === "`") return { value: buf.join(""), nextIndex: i + 1 };
+    buf.push(ch);
+    i += 1;
+  }
+  return null;
+}
+
+/**
+ * Extracts every `html:` / `const html =` template literal from TS source.
+ * Both shapes are live in src/data/makcikgpt:
+ *   const content: ArticleContent = { slug: '…', html: `…` }   (property form)
+ *   const html = `…`; const article = { slug: '…', html };     (module-const form)
+ * More than one literal is possible; they are returned in source order and
+ * concatenated by the caller.
+ */
+function extractHtmlFromTs(src) {
+  const out = [];
+  const re = /\bhtml\s*[:=]\s*`/g;
+  let m;
+  while ((m = re.exec(src)) !== null) {
+    const parsed = scanTemplateLiteral(src, m.index + m[0].length);
+    if (!parsed) break;
+    if (parsed.value.trim().length > 0) out.push(parsed.value);
+    re.lastIndex = parsed.nextIndex;
+  }
+  return out;
+}
+
+/** Canonical body HTML for a slug, straight from the .ts. null if unavailable. */
+function readCanonicalHtml(slug) {
+  const tsPath = path.join(TS_DIR, `${slug}.ts`);
+  if (!fs.existsSync(tsPath)) return null;
+  try {
+    const blocks = extractHtmlFromTs(fs.readFileSync(tsPath, "utf8"));
+    if (blocks.length === 0) return null;
+    const joined = blocks.join("\n").trim();
+    return joined.length >= 400 ? joined : null; // refuse near-empty bodies
+  } catch {
+    return null;
+  }
+}
+
+/** Legacy cached HTML, kept only as a fallback for slugs with no TS body. */
+function readCachedHtml(slug) {
   const htmlPath = path.join(OUT_DIR, `${slug}.html`);
   if (!fs.existsSync(htmlPath)) return null;
   try {
-    const md = htmlToMarkdown(fs.readFileSync(htmlPath, "utf8"));
-    return md.length >= 400 ? md : null; // refuse near-empty conversions
+    return fs.readFileSync(htmlPath, "utf8");
   } catch {
     return null;
+  }
+}
+
+// Body provenance counters, reported at the end of the run.
+const bodySource = { canonicalTs: [], cachedHtml: [], placeholder: [] };
+
+function convertBody(slug) {
+  // 1. CANONICAL: src/data/makcikgpt/{slug}.ts template literal.
+  const tsHtml = readCanonicalHtml(slug);
+  if (tsHtml) {
+    const md = htmlToMarkdown(tsHtml);
+    if (md.length >= 400) {
+      bodySource.canonicalTs.push(slug);
+      return md;
+    }
+  }
+  // 2. FALLBACK: cached {slug}.html — only reachable when the .ts is missing,
+  //    has no html literal, or yields a near-empty conversion. Never crashes.
+  const cached = readCachedHtml(slug);
+  if (cached) {
+    const md = htmlToMarkdown(cached);
+    if (md.length >= 400) {
+      bodySource.cachedHtml.push(slug);
+      return md;
+    }
+  }
+  // 3. PLACEHOLDER: caller emits the explicit "(Badan artikel belum dimuat…)" line.
+  bodySource.placeholder.push(slug);
+  return null;
+}
+
+/** Slugs published in the app registry (src/data/makcikgpt/index.ts). */
+function readRegistrySlugs() {
+  try {
+    const src = fs.readFileSync(TS_REGISTRY, "utf8");
+    const out = new Set();
+    for (const m of src.matchAll(/\bslug:\s*['"]([^'"]+)['"]/g)) out.add(m[1]);
+    return out;
+  } catch {
+    return new Set();
   }
 }
 
@@ -162,6 +289,95 @@ ${bodyMd ? bodyMd : `*(Badan artikel belum dimuat dalam lane md — fetch HTML k
   fs.writeFileSync(outFile, out);
 }
 
+// ── Cached {slug}.html → regenerated from canonical .ts (2026-09-18) ───
+//
+// These standalone HTML files are served at /makcikgpt-md/{slug}.html and are
+// also the bot lane's try_files fallback when a .md is absent. They were
+// generated 2026-08-15 (pre-provenance-pass). Regenerate the body from the
+// canonical .ts, preserving the existing shell. Files whose .ts yields no body
+// are LEFT UNTOUCHED — never truncated to an empty document.
+
+function escapeHtmlAttr(s) {
+  return String(s).replace(/\s+/g, " ").replace(/"/g, "&quot;").trim();
+}
+
+let htmlRegenerated = 0;
+let htmlSkipped = [];
+for (const p of pieces) {
+  const slug = p.dest.path.replace("/world/makcikgpt/", "");
+  const bodyHtml = readCanonicalHtml(slug);
+  if (!bodyHtml) { htmlSkipped.push(slug); continue; }
+  const shell = `<!DOCTYPE html>
+<html lang="ms">
+<head><meta charset="UTF-8"><title>MakcikGPT — ${escapeHtmlAttr(p.title || slug)}</title>
+<meta name="description" content="${escapeHtmlAttr(p.excerpt || p.title || slug)} — 999 Meterai seal">
+</head>
+<body>
+${bodyHtml}
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(OUT_DIR, `${slug}.html`), shell);
+  htmlRegenerated++;
+}
+
+// ── Unregistered canonical articles (2026-09-18) ───────────────────
+//
+// Seven articles exist as canonical src/data/makcikgpt/{slug}.ts and are live
+// in the app registry (src/data/makcikgpt/index.ts → 200 on the browser lane)
+// but have NO essays.json entry, so getMakcikSource() never sees them and the
+// bot lane fell through to /index.html — i.e. an AI crawler asking for the
+// article received the index page with none of the article. Emit a body-bearing
+// mirror for those, labelled as unregistered: canonical body, no seal, no claim
+// register (essays.json is the registration authority and is not edited here).
+
+const registeredSlugs = readRegistrySlugs();
+const knownSlugs = new Set(pieces.map(p => p.dest.path.replace("/world/makcikgpt/", "")));
+const unregisteredEmitted = [];
+const unregisteredSkipped = [];
+
+for (const slug of registeredSlugs) {
+  if (knownSlugs.has(slug)) continue; // already emitted from essays.json above
+  const bodyHtml = readCanonicalHtml(slug);
+  if (!bodyHtml) { unregisteredSkipped.push(slug); continue; }
+  const bodyMd = htmlToMarkdown(bodyHtml);
+  if (bodyMd.length < 400) { unregisteredSkipped.push(slug); continue; }
+  const h1 = (bodyHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [null, ""])[1]
+    .replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  const canonicalUrl = `https://arif-fazil.com/world/makcikgpt/${slug}`;
+  const out = `---
+article_id: unregistered-${slug}
+canonical_url: ${canonicalUrl}
+seal: null
+provenance_status: unregistered-ts-mirror
+registered_in_essays_json: false
+mirror_source: src/data/makcikgpt/${slug}.ts
+merkle_leaf: null
+epistemic_summary:
+  obs_count: 0
+  der_count: 0
+  int_count: 0
+  spec_count: 0
+---
+
+# ${h1 || slug}
+
+> Badan artikel ini dijana terus dari sumber kanonikal \`src/data/makcikgpt/${slug}.ts\`.
+>
+> ⚠️ Artikel ini BELUM didaftarkan dalam \`src/data/essays.json\` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+>
+> Canonical URL: ${canonicalUrl}
+>
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+
+---
+
+${bodyMd}
+`;
+  fs.writeFileSync(path.join(OUT_DIR, `${slug}.md`), out);
+  unregisteredEmitted.push(slug);
+}
+
 // ── Legacy id shells → redirect stubs (never empty self-links) ─────
 
 const byId = new Map(pieces.map(p => [p.id, p]));
@@ -216,4 +432,8 @@ for (const f of fs.readdirSync(OUT_DIR)) {
 }
 
 console.log(`✓ Generated ${pieces.length} markdown mirrors — ${bodyFull} with full body${bodyMissing.length ? `, body missing: ${bodyMissing.join(", ")}` : ""}`);
+console.log(`  body source: canonical .ts ${bodySource.canonicalTs.length} / cached .html ${bodySource.cachedHtml.length} / placeholder ${bodySource.placeholder.length}`);
+if (bodySource.cachedHtml.length) console.log(`  ⚠ body still from cached .html (no usable .ts body): ${bodySource.cachedHtml.join(", ")}`);
+console.log(`✓ Regenerated ${htmlRegenerated} cached HTML mirrors from canonical .ts${htmlSkipped.length ? `; left untouched (no .ts body): ${htmlSkipped.join(", ")}` : ""}`);
+console.log(`✓ Unregistered canonical articles mirrored: ${unregisteredEmitted.length}${unregisteredEmitted.length ? ` (${unregisteredEmitted.join(", ")})` : ""}${unregisteredSkipped.length ? `; unregistered but skipped: ${unregisteredSkipped.join(", ")}` : ""}`);
 console.log(`✓ Rewrote ${redirects} legacy id shells as redirect stubs; removed ${orphans} unmapped orphans`);

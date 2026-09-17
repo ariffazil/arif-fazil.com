@@ -127,7 +127,7 @@ Tapi nilai perjanjian: USD 15 bilion (RM 70 bilion) untuk 5 tahun. Tu duit yang 
 
 Aset: 19 ladang minyak dan gas. 14 kat Indonesia, 5 kat Malaysia.
 
-Lima kat Malaysia tu (per Arif, Jun 2026): SK316 (Sarawak, ada Kasawari), Kasawari (lapang, Sarawak), ExxonMobil 2008 PSC (diambil dari Exxon tahun 2024), Angsi Besar (MTJDA, kawasan Malaysia-Thailand), dan NC3 (juga MTJDA).
+Lima kat Malaysia tu (per Arif, Jun 2026 — list penulis, bukan dari press release SEARAH): SK316 (Sarawak, ada Kasawari), Kasawari (lapang, Sarawak), ExxonMobil 2008 PSC (diambil dari Exxon tahun 2024), Angsi Besar (MTJDA, kawasan Malaysia-Thailand), dan NC3 (juga MTJDA).
 
 Sarawak
 
@@ -177,7 +177,7 @@ Kalau ada mesyuarat kecemasan, 2 orang Italy boleh jalan kaki ke ENI House. 2 or
 
 Tiada mekanisme undian seri yang didedahkan. Kalau satu hal yang 2 lawan 2, tak tahu siapa menang.
 
-Ketua lembaga PETRONAS sekarang — Mohd Bakke Salleh — dia dulu jadi ketua 1MDB sebelum letak jawatan 2009. Lepastu dilantik jadi ketua PETRONAS. Fikir la sendiri.
+Ketua lembaga PETRONAS sekarang — Mohd Bakke Salleh — dia dulu jadi ketua 1MDB sebelum letak jawatan 2016. Lepastu dilantik jadi ketua PETRONAS. Fikir la sendiri.
 
 ### Masalah 3: PETROS langsung tak dilibatkan
 

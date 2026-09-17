@@ -302,7 +302,7 @@ Tengok nama Silia Anak Hamdan. "Anak" — itu nama Sarawakian. Dilantik 31 Mei 2
 
 Makcik, ini bukan corporate governance biasa. Ini scramble. Depa rushing nak setelkan struktur 6:6 dengan Sarawak token seminggu sebelum press release keluar. Kenapa rushing? Sebab depa tahu soalan-soalan ni akan ditanya.
 
-Dan satu lagi: nama asal syarikat ni SEARA ENERGY LIMITED. "Seara" — tiada makna dalam Bahasa Melayu. "H" ditambah 30 Mac — jadikan "SEARAH" — se-arah, sama arah. Ini rebranding. Seseorang dalam bilik board sedar: "Kita perlu jual cerita ni sebagai perkongsian harmoni Melayu-Italy. Letak 'H'."
+Dan satu lagi: nama asal syarikat ni SEARA ENERGY LIMITED. "Seara" — tiada makna dalam Bahasa Melayu. "H" ditambah 30 Mac — jadikan "SEARAH" — se-arah, sama arah. Ini rebranding. Mungkin ada yang fikir masa tu: "Kita perlu jual cerita ni sebagai perkongsian harmoni Melayu-Italy. Letak 'H'." Tapi Makcik takde pita. Tu推断, bukan petikan.
 
 Sekarang Makcik tanya: siapa yang rekacipta nama "SEARAH"? Adakah ia datang dari PETRONAS, atau dari firma PR London yang handle rebranding lepas incorporation?
 

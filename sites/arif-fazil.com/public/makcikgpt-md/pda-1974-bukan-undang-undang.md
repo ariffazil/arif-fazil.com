@@ -77,7 +77,7 @@ Tapi satu benda Makcik tak tulis lagi. Satu benda yang jadi akar semua drama ni.
 
 Undang-undang tu.
 
-Namanya: Akta Pembangunan Petroleum 1974 (PDA 1974). Akta kecil. Cuma 38 perenggan. Lepas tu anak dia satu — PETRONAS — jadi syarikat minyak terbesar di Asia Tenggara, nilai hampir RM600 bilion (Bloomberg, 2025).
+Namanya: Akta Pembangunan Petroleum 1974 (PDA 1974). Akta kecil. Cuma 38 perenggan. Lepas tu anak dia satu — PETRONAS — jadi syarikat minyak terbesar di Asia Tenggara, nilai hampir RM600 bilion (anggaran penulis — Bloomberg 2025 tiada angka tepat untuk PETRONAS market cap).
 
 52 tahun dah jadi raja.
 

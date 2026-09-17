@@ -267,7 +267,3 @@ Makcik habis cerita. Nak gi minum kopi o panas.
 *em*
 
 *em*
-`,
-};
-
-export default content;

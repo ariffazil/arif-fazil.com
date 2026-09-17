@@ -89,9 +89,7 @@ Taufik punya rekod:
 > 1. Tanjung plc — Deputy Group CFO, Feb 2012 – Dec 2012. 11 bulan je. Lepas tu syarikat tu lingkup. Dah delisted dari Bursa. Takde pun Wikipedia pasal dia — sebab dah mati sangat.
 > >
 > >
->     2. SapuraKencana (sekarang Vantris Energy) — CFO, Dec 2012 – Jan 2015. Masa dia ada, syarikat buat dua acquisition gergasi guna hutang — US$2.83 bilion beli Seadrill tender rig, US$900 juta beli Newfield Exploration. Total $3.7 bilion guna hutang. Dia chow Januari 2015. Lepas tu: oil crash, net loss RM791 juta, gearing 134%, PN17 Mei 2022, shareholder equity negative RM2.9 bilion.
-> >
-> >
+>     2. SapuraKencana (sekarang Vantris Energy) — CFO, Dec 2012 – Jan 2015. Masa dia ada, syarikat buat dua acquisition gergasi guna hutang — US$2.83 bilion beli Seadrill tender rig, US$900 juta beli Newfield Exploration. Total $3.7 bilion guna hutang (Bursa Malaysia filings, SapuraKencana annual reports 2012-2014). Dia chow Januari 2015. Lepas tu: oil crash, net loss RM791 juta, gearing 134%, PN17 Mei 2022, shareholder equity negative RM2.9 bilion.
 >     Sumber: Wikipedia Sapura Energy, Bursa Malaysia filings, The Edge Malaysia.
 
 Makcik, hang faham tak? Dia masuk, buat decision gergasi, chow sebelum bom meletup. Orang lain tanggung. Dua kali berlaku.

@@ -75,7 +75,7 @@ Telefon dari Sarawak.
 
 ## Cerita Yang Kedua: Sarawak Punya Gas — Tapi Tak Boleh Jual
 
-Sarawak ni, Makcik, depa duduk atas gas. Bumi depa penuh dengan gas. 90% dari semua LNG Malaysia keluar dari Sarawak. Bukan 10%, bukan 50%. Sembilan puluh peratus.
+Sarawak ni, Makcik, depa duduk atas gas. Bumi depa penuh dengan gas. 90% dari semua LNG Malaysia keluar dari Sarawak (PETRONAS downstream segmental breakdown — angka kasar, tak pecah exact percent). Bukan 10%, bukan 50%. Sembilan puluh peratus.
 
 Tahun 2016, Sarawak buat syarikat sendiri — PETROS — nak jadi orang tengah, nak control gas depa sendiri.
 

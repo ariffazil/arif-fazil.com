@@ -65,19 +65,19 @@ Tapi itu bukan cerita habis. Itu baru permulaan.
 
 Cerita pertama: kerajaan memang makan.
 
-Tahun 2022 — PETRONAS untung paling besar dalam sejarah. Seratus satu bilion enam ratus juta ringgit. Satu tahun je.
+Tahun 2022 — PETRONAS untung paling besar dalam sejarah. Seratus satu bilion enam ratus juta ringgit (PETRONAS Annual Report FY2022). Satu tahun je.
 
-Kerajaan ambil berapa? Lima puluh bilion.
+Kerajaan ambil berapa? Lima puluh bilion (Dividen PETRONAS FY2022 — pengumuman MoF Inc.).
 
 Hampir separuh.
 
 Hang baca betul. Masa PETRONAS paling kaya dalam sejarah, kerajaan ambil separuh.
 
-Tahun 2023 — PETRONAS kurang untung. Turun separuh. Kerajaan ambil berapa? Tiga puluh dua bilion. Turun dari lima puluh bilion tahun sebelumnya — tapi masih tinggi. Tak potong banyak.
+Tahun 2023 — PETRONAS kurang untung. Turun separuh. Kerajaan ambil berapa? Tiga puluh dua bilion. Turun dari lima puluh bilion tahun sebelumnya — tapi masih tinggi. Tak potong banyak. (Dividen FY2023.)
 
-Tahun 2024 — PETRONAS naik sikit. Kerajaan ambil berapa? Tiga puluh dua bilion. Sama.
+Tahun 2024 — PETRONAS naik sikit. Kerajaan ambil berapa? Tiga puluh dua bilion. Sama. (Dividen FY2024.)
 
-Tahun 2025 — PETRONAS turun lagi. Lapan belas peratus. Kerajaan ambil berapa? Tiga puluh dua bilion. Sama jugak.
+Tahun 2025 — PETRONAS turun lagi. Lapan belas peratus. Kerajaan ambil berapa? Tiga puluh dua bilion. Sama jugak. (Dividen FY2025.)
 
 Tahun ni — kerajaan potong ke dua puluh bilion. Paling rendah dalam sembilan tahun.
 
@@ -107,13 +107,15 @@ Entah. Tak pernah bagitahu.
 
 Yang Makcik tahu: kalau Gentari tak ada, satu bahagian dalam PETRONAS sepatutnya untung tujuh ratus sembilan puluh juta ringgit. Tapi sebab Gentari, bahagian tu rugi empat ratus enam puluh juta.
 
-Gentari sorang tarik turun dua ratus tujuh puluh peratus dari keseluruhan rugi bahagian tu.
+Angka tu bacaan penulis dari segmental inference — PETRONAS tidak pecah P&L mengikut anak syarikat, Gentari dilapor dalam segmen Gas & New Energy.
 
-Satu hingga satu setengah bilion ringgit setahun bakar. Empat tahun. Tak pernah untung. Tak pernah bagitahu rakyat.
+Gentari sorang tarik turun dua ratus tujuh puluh peratus dari keseluruhan rugi bahagian tu. (Anggaran — bukan angka diterbitkan.)
+
+Satu hingga satu setengah bilion ringgit setahun bakar. Empat tahun. Tak pernah untung. Tak pernah bagitahu rakyat. (Anggaran kasar berdasarkan trend segmen; tiada breakdown P&L Gentari awam.)
 
 Makcik jiran hilang kerja. Tapi Gentari masih ada. Empat tahun makan free. Dan tak ada siapa tanya berapa.
 
-Dan yang paling pelik — duit tunai PETRONAS tahun ni lebih banyak dari tahun lepas. Dari seratus lapan puluh lapan bilion, naik ke dua ratus empat bilion.
+Dan yang paling pelik — duit tunai PETRONAS tahun ni lebih banyak dari tahun lepas. Dari seratus lapan puluh lapan bilion, naik ke dua ratus empat bilion. (PETRONAS Annual Report — Cash & Cash Equivalents.)
 
 Maknanya PETRONAS ada duit. Banyak duit. Tapi Gentari bakar dalam senyap. Dan jiran Makcik hilang kerja.
 

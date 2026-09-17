@@ -525,6 +525,20 @@
   color: var(--accent-gold);
   border-color: rgba(251, 191, 36, 0.4);
 }
+.geox-visual-badge.right {
+  left: auto;
+  right: 14px;
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.35);
+  font-size: 0.62rem;
+  background: rgba(10, 14, 23, 0.92);
+}
+@media(max-width:640px) {
+  .geox-visual-badge.right {
+    top: auto;
+    bottom: 14px;
+  }
+}
 .geox-visual-caption {
   padding: 1.2rem 1.6rem;
   font-family: var(--mono);
@@ -1002,11 +1016,12 @@
       <!-- READING 01: SPACE & DEEPWATER TECTONICS -->
       <div class="act-card">
         <div class="geox-visual-wrap">
-          <img class="geox-visual-img" src="/earth/images/turbidite-geox.b4362aef.webp" alt="NW Sabah Deepwater Fold and Thrust Belt" width="1376" height="768" loading="lazy">
+          <img class="geox-visual-img" src="/earth/images/turbidite-geox.b4362aef.webp" alt="NW Sabah Deepwater Fold and Thrust Belt Conceptual Model" width="1376" height="768" loading="lazy">
           <div class="geox-visual-badge">READING 01 · SPACE</div>
+          <div class="geox-visual-badge right">CONCEPTUAL MODEL · SYNTHETIC DEEPWATER WEDGE</div>
         </div>
         <div class="act-card-body">
-          <div class="no">TECTONIC PROPAGATION</div>
+          <div class="no">TECTONIC PROPAGATION · SCHEMATIC MODEL</div>
           <h3>The ground moves</h3>
           <p>The cyan lines on the globe are <b>plate boundaries</b>. Across active continental margins, crustal subduction drives imbricate thrust fault planes, forming accretionary wedges and steep submarine canyons that dump high-energy turbidite sand lobes into deep bathyal trenches.</p>
         </div>
@@ -1015,11 +1030,12 @@
       <!-- READING 02: TIME & SUNDALAND PALAEOGEOGRAPHY -->
       <div class="act-card">
         <div class="geox-visual-wrap">
-          <img class="geox-visual-img" src="/earth/images/sundaland-geox.a41856f3.webp" alt="Sundaland Palaeo-Continent Oligo-Miocene" width="1376" height="768" loading="lazy">
+          <img class="geox-visual-img" src="/earth/images/sundaland-geox.a41856f3.webp" alt="Sundaland Palaeo-Continent Oligo-Miocene Conceptual Model" width="1376" height="768" loading="lazy">
           <div class="geox-visual-badge gold">READING 02 · TIME</div>
+          <div class="geox-visual-badge right">PALAEOGEOGRAPHIC CONCEPT · SYNTHETIC AI MODEL</div>
         </div>
         <div class="act-card-body">
-          <div class="no">DEEP TIME GEOMORPHOLOGY</div>
+          <div class="no">DEEP TIME GEOMORPHOLOGY · SCHEMATIC RECONSTRUCTION</div>
           <h3>The map is deep time</h3>
           <p>Click the globe and the answer carries an age — <b>millions to billions of years</b>. 25 million years ago, the Sundaland palaeo-continent was carved by massive braided river systems pouring sediment into sinking rift lakes — the lacustrine kitchens that generated Southeast Asia's hydrocarbons.</p>
         </div>
@@ -1028,13 +1044,14 @@
       <!-- READING 03: RECORD & SEISMIC SUBSURFACE -->
       <div class="act-card">
         <div class="geox-visual-wrap">
-          <img class="geox-visual-img" src="/earth/images/seismic-geox.de2553a8.webp" alt="Seismic Reflection Profile and Subsurface Trap" width="1376" height="768" loading="lazy">
+          <img class="geox-visual-img" src="/earth/images/seismic-geox.de2553a8.webp" alt="Seismic Reflection Profile and Subsurface Trap Conceptual Model" width="1376" height="768" loading="lazy">
           <div class="geox-visual-badge">READING 03 · RECORD</div>
+          <div class="geox-visual-badge right">SYNTHETIC SEISMIC MODEL · CONCEPTUAL TRANSECT</div>
         </div>
         <div class="act-card-body">
-          <div class="no">ACOUSTIC STRATIGRAPHY</div>
+          <div class="no">ACOUSTIC STRATIGRAPHY · SYNTHETIC PROFILE</div>
           <h3>Basins are the memory</h3>
-          <p>Where the crust sags, it records earth history. Seismic reflection profiles reveal the acoustic impedance contrasts of folded rock strata, fault throw displacements, and anticlinal gas traps sealed beneath impermeable marine mudstone caprocks.</p>
+          <p>Where the crust sags, it records earth history. Synthetic seismic profiles illustrate the acoustic impedance contrasts of folded rock strata, reverse fault throw displacements, and anticlinal gas traps sealed beneath impermeable marine mudstone caprocks.</p>
         </div>
       </div>
     </div>
@@ -1152,118 +1169,29 @@
         <div><span>today</span> · mature gas province, offshore MY/TH/VN margin</div>
         <div><span>founder wells</span> · BEKANTAN-1 · PUTERI BASEMENT-1 · LEBAH EMAS-1 · BUNGA TASBIH-1</div>
       </div>
-    
+    </div>
+
     <!-- Visual Subsurface Anatomy: High-Fidelity 3D Seismic Cross-Section -->
-    <div class="geo-visual-card">
-      <div class="img-wrap">
-        <img src="/earth/images/seismic-geology.de2553a8.webp" alt="Subsurface Seismic Reflection Profile & Inversion Anticline Cross-Section" class="geo-hero-img" width="1376" height="768" loading="lazy">
+    <div class="geox-visual-card">
+      <div class="geox-visual-wrap">
+        <img class="geox-visual-img" src="/earth/images/seismic-geox.de2553a8.webp" alt="Seismic Reflection Profile & Structural Inversion Conceptual Model" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">SEISMIC REFLECTION · MALAY BASIN TRANSECT</div>
+        <div class="geox-visual-badge right">SYNTHETIC SEISMIC MODEL · CONCEPTUAL TRANSECT</div>
       </div>
-      <div class="geo-visual-caption">
-        <div><strong>SEISMIC REFLECTION PROFILE &amp; STRUCTURAL INVERSION CROSS-SECTION</strong> · MALAY BASIN TRANSECT</div>
-        <span class="badge">VERTICAL EXAGGERATION ~32x · ACOUSTIC IMPEDANCE CALIBRATION</span>
+      <div class="geox-visual-caption">
+        <strong>SEISMIC REFLECTION PROFILE &amp; STRUCTURAL INVERSION TRANSECT (CONCEPTUAL RECONSTRUCTION)</strong> — Schematic synthetic impedance profile illustrating Middle Miocene anticlinal fold traps, reverse fault throw displacements across inverted half-grabens, and continuous Group F marine mudstone regional seal.
       </div>
     </div>
 
     <!-- Palaeogeographic Reconstruction of Sundaland -->
-    <div class="geo-visual-card">
-      <div class="img-wrap">
-        <img src="/earth/images/sundaland-geology.a41856f3.webp" alt="Sundaland Palaeo-continent Oligo-Miocene River & Lake Systems" class="geo-hero-img" width="1376" height="768" loading="lazy">
-      </div>
-      <div class="geo-visual-caption">
-        <div><strong>PALAEO-SUNDALAND CONTINENT (OLIGO-MIOCENE)</strong> · ANCIENT BRAIDED DELTAS &amp; LACUSTRINE RIFT LAKES</div>
-        <span class="badge">SOURCE KITCHEN GENESIS · GROUP L/M SHALES</span>
-      </div>
-    </div>
-
-    <!-- Petroleum Systems Event Chart (PSEC) -->
-    <div class="psec-container">
-      <div class="psec-title">Petroleum Systems Event Chart (PSEC) · Malay Basin</div>
-      <p class="psec-desc">A hydrocarbon province is a coincidence of geological timing. If the trap forms after migration, the charge is lost. In the Malay Basin, wrench-induced inversion and seal deposition timed perfectly with peak lacustrine source rock maturation.</p>
-      
-      <div class="psec-grid">
-        <div class="psec-row-k">SOURCE ROCK</div>
-        <div class="psec-track">
-          <div class="psec-bar" style="width:35%; margin-left:10%; background:#ef4444;">Group L/M Lacustrine Shales (32–23 Ma)</div>
-        </div>
-
-        <div class="psec-row-k">RESERVOIR ROCK</div>
-        <div class="psec-track">
-          <div class="psec-bar" style="width:40%; margin-left:35%; background:#fbbf24;">Group E/H/I Fluvio-Deltaic Sands (23–14 Ma)</div>
-        </div>
-
-        <div class="psec-row-k">REGIONAL SEAL</div>
-        <div class="psec-track">
-          <div class="psec-bar" style="width:35%; margin-left:55%; background:#38bdf8;">Group B/D Transgressive Marine Shales (14–5 Ma)</div>
-        </div>
-
-        <div class="psec-row-k">TRAP FORMATION</div>
-        <div class="psec-track">
-          <div class="psec-bar" style="width:30%; margin-left:45%; background:#f97316;">Middle Miocene Tectonic Inversion (16–10 Ma)</div>
-        </div>
-
-        <div class="psec-row-k">GAS CHARGE</div>
-        <div class="psec-track">
-          <div class="psec-bar" style="width:45%; margin-left:55%; background:#a855f7; color:#fff;">Peak Hydrocarbon Generation &amp; Migration (12–0 Ma)</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Interactive 4 Founder Exploration Wells Explorer -->
-    <div class="founder-wells-box">
-      <div class="founder-wells-header">
-        <h3>◈ The Four Founder Wells — Calibration Against Physical Rock</h3>
-        <span class="sovereign-tag">13+ Years Subsurface Witness</span>
-      </div>
-      <div class="wells-grid">
-        <div class="well-card">
-          <div class="well-name">BEKANTAN-1 <span style="font-size:0.7rem; color:#4ade80;">● DISCOVERY</span></div>
-          <div class="well-role">Anticlinal Inversion Play</div>
-          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Group E/H Deltaic Sand</span></div>
-          <div class="well-spec-row"><span>DEPTH:</span><span class="val">~2,850 m TVDss</span></div>
-          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">4-Way Dip Closure</span></div>
-          <div class="well-desc">Verified structural closure and sand retention across Middle Miocene inversion crest. Proved high-permeability stacked channel sands sealed by Intra-E shales.</div>
-        </div>
-
-        <div class="well-card basement">
-          <div class="well-name">PUTERI BASEMENT-1 <span style="font-size:0.7rem; color:#38bdf8;">● FRONTIER</span></div>
-          <div class="well-role">Fractured Basement Play</div>
-          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Pre-Tertiary Granitic Horst</span></div>
-          <div class="well-spec-row"><span>DEPTH:</span><span class="val">>3,400 m TVDss</span></div>
-          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">Fault-Bounded Horst Block</span></div>
-          <div class="well-desc">Penetrated weathered and fractured pre-Tertiary basement. Proved hydrocarbon migration from adjacent syn-rift Oligocene graben kitchens into crystalline rock fractures.</div>
-        </div>
-
-        <div class="well-card play-opener">
-          <div class="well-name">LEBAH EMAS-1 <span style="font-size:0.7rem; color:#f2b705;">● 2025 PLAY OPENER</span></div>
-          <div class="well-role">Western Hinge Fault Fairway</div>
-          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Deep Group J/K Lowstand</span></div>
-          <div class="well-spec-row"><span>DEPTH:</span><span class="val">~3,200 m TVDss</span></div>
-          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">Fault-Assisted Stratigraphic</span></div>
-          <div class="well-desc">Opened an unexpected new play fairway along the Western Hinge Fault in 2025. Demonstrated that fresh structural interpretation and rigorous geomechanics outlast mature consensus.</div>
-        </div>
-
-        <div class="well-card stratigraphic">
-          <div class="well-name">BUNGA TASBIH-1 <span style="font-size:0.7rem; color:#22c55e;">● TESTED</span></div>
-          <div class="well-role">Stratigraphic Pinchout Play</div>
-          <div class="well-spec-row"><span>FORMATION:</span><span class="val">Group F Lowstand Sand Lobes</span></div>
-          <div class="well-spec-row"><span>DEPTH:</span><span class="val">~3,100 m TVDss</span></div>
-          <div class="well-spec-row"><span>MECHANISM:</span><span class="val">Up-dip Pinchout Trap</span></div>
-          <div class="well-desc">Calibrated direct hydrocarbon indicators (DHIs) and 3D seismic amplitude anomalies against fluid substitution and petrophysical log response.</div>
-        </div>
-      </div>
-    </div>
-
-</div>
-
-    
-    <!-- Visual Subsurface Anatomy: High-Fidelity 3D Seismic Cross-Section -->
     <div class="geox-visual-card">
       <div class="geox-visual-wrap">
-        <img class="geox-visual-img" src="/earth/images/seismic-geox.de2553a8.webp" alt="Seismic Reflection Profile & Structural Inversion" width="1376" height="768" loading="lazy">
-        <div class="geox-visual-badge gold">SEISMIC REFLECTION · MALAY BASIN TRANSECT</div>
+        <img class="geox-visual-img" src="/earth/images/sundaland-geox.a41856f3.webp" alt="Sundaland Palaeo-continent Oligo-Miocene River & Lake Systems Conceptual Model" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">PALAEO-SUNDALAND · SYN-RIFT STAGE</div>
+        <div class="geox-visual-badge right">PALAEOGEOGRAPHIC CONCEPT · SYNTHETIC AI MODEL</div>
       </div>
       <div class="geox-visual-caption">
-        <strong>SEISMIC REFLECTION PROFILE &amp; STRUCTURAL INVERSION TRANSECT</strong> — High-resolution acoustic impedance contrasts revealing anticlinal fold traps, reverse fault throw displacements, and impermeable sealing marine shales.
+        <strong>PALAEO-SUNDALAND CONTINENT (OLIGO-MIOCENE)</strong> — Conceptual geomorphic reconstruction of ancient braided fluvio-deltaic drainage networks and syn-rift lacustrine graben lakes responsible for depositing Group L &amp; M algal source kitchens across the emerging Sunda platform.
       </div>
     </div>
 
@@ -1298,9 +1226,9 @@
           </tr>
           <tr>
             <td><strong>REGIONAL SEAL</strong></td>
-            <td>Group B &amp; D Transgressive Marine Muds</td>
+            <td>Group F Marine Shale (50–150 m)</td>
             <td class="psec-bar-cell">
-              <div class="psec-bar" style="left:50%; width:35%; background:rgba(56,189,248,0.85); color:#070709;">FLOODING (12–5 Ma)</div>
+              <div class="psec-bar" style="left:48%; width:25%; background:rgba(56,189,248,0.85); color:#070709;">REGIONAL SEAL (15–12 Ma)</div>
             </td>
           </tr>
           <tr>
@@ -1320,7 +1248,7 @@
         </tbody>
       </table>
       <div style="font-family:var(--mono); font-size:0.68rem; color:var(--text-dim); margin-top:0.8rem;">
-        ★ <strong>Critical Moment (~10 Ma):</strong> Trap formation strictly preceded peak charge, ensuring 100% preservation efficiency in major fields (Dulang, Angsi, Bekok).
+        ★ <strong>Critical Moment (~10 Ma):</strong> Trap formation strictly preceded peak charge, ensuring 100% preservation efficiency in major fields (Dulang, Angsi, Bekok). Continuous Group F marine shale provides regional top seal across basin-centre overpressure compartments (Group L on basin flanks).
       </div>
     </div>
 
@@ -1370,10 +1298,10 @@
         <div class="well-badge">WELL 04 · PINCHOUT TEST</div>
         <div class="well-name">BUNGA TASBIH-1</div>
         <div class="well-kv">
-          <div>TARGET: <span>Syn-Rift Group L Lacustrine Sandstone</span></div>
+          <div>TARGET: <span>Group F Lowstand Sand Lobes / Group L Syn-Rift</span></div>
           <div>STRUCTURE: <span>Stratigraphic / Structural Trap Combination</span></div>
-          <div>MECHANISM: <span>Direct lateral charging from syn-rift source</span></div>
-          <div>SIGNIFICANCE: <span>Demonstrated continuous gas saturation in deep graben</span></div>
+          <div>MECHANISM: <span>Direct lateral charging sealed by Group F marine muds</span></div>
+          <div>SIGNIFICANCE: <span>Calibrated direct hydrocarbon indicators against log response</span></div>
         </div>
       </div>
     </div>
@@ -1396,13 +1324,14 @@
 
     
     <!-- Visual Subsurface Anatomy: Deepwater Fold-and-Thrust Belt -->
-    <div class="geo-visual-card" style="margin-bottom:2rem;">
-      <div class="img-wrap">
-        <img src="/earth/images/turbidite-geology.c1b37063.webp" alt="Active Continental Margin and Deepwater Fold-and-Thrust Belt" class="geo-hero-img" width="1376" height="768" loading="lazy">
+    <div class="geox-visual-card" style="margin-bottom:2rem;">
+      <div class="geox-visual-wrap">
+        <img class="geox-visual-img" src="/earth/images/turbidite-geox.b4362aef.webp" alt="Active Continental Margin and Deepwater Fold-and-Thrust Belt Conceptual Model" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">NW SABAH · DEEPWATER BELT</div>
+        <div class="geox-visual-badge right">CONCEPTUAL MODEL · SYNTHETIC DEEPWATER WEDGE</div>
       </div>
-      <div class="geo-visual-caption">
-        <div><strong>NW SABAH ACTIVE MARGIN &amp; DEEPWATER FOLD-AND-THRUST BELT</strong> · TURBIDITE FANS &amp; IMBRICATE WEDGES</div>
-        <span class="badge">SUBMARINE CANYONS · ACCRETIONARY PRISM · SRTM DRAPED</span>
+      <div class="geox-visual-caption">
+        <strong>NW SABAH ACTIVE MARGIN &amp; DEEPWATER FOLD-AND-THRUST BELT (CONCEPTUAL RECONSTRUCTION)</strong> — Schematic 3D representation of bathyal turbidite fan lobes, toe-thrust imbricate fault wedges, and canyon conduit morphology across the active continental slope.
       </div>
     </div>
 

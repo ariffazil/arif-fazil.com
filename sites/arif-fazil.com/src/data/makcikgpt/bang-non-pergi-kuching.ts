@@ -1,0 +1,206 @@
+import type { ArticleContent } from './types';
+
+const html = `<article class="makcik-article" lang="ms">
+
+<section class="article-section article-opener">
+  <blockquote style="border-left:4px solid #D9A62E;background:#11151C;padding:16px 20px;margin:16px 0 24px;font-style:italic;color:#EDEAE2;font-size:1.05em;line-height:1.6;">
+    "Kalau bapa settle — dia settle senyap. Kalau bapa cerita — dia bayar masa. Tapi bapa yang tahu tapi still tak settle — itu bapa yang pilih siapa yang kena bayar."
+  </blockquote>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <p><strong>MALAM 16 September 2026. Hari Malaysia.</strong> Anwar Ibrahim berdiri di Kuching — ibu negeri Sarawak — dan cakap depan seluruh negara:</p>
+  <blockquote style="border-left:4px solid #D9A62E;background:#11151C;padding:12px 16px;margin:12px 0;font-style:italic;color:#EDEAE2;">
+    "There is no reason why this cannot be resolved."
+  </blockquote>
+  <p>Makcik dengar sekali. Dua kali. Tiga kali. Lepas tu Makcik tanya satu soalan je:</p>
+  <p><strong>Kalau takde sebab tak boleh selesaikan — kenapa belum selesaikan?</strong></p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">DULU — KONTEKS UNTUK PEMBACA BARU</h2>
+  <p>Makcik explain sikit untuk readers yang baru masuk.</p>
+  <p>Malaysia ada dua syarikat minyak yang tengah gaduh. <strong>PETRONAS</strong> — syarikat minyak negara, 100% milik kerajaan persekutuan melalui MoF Inc., nilai hampir RM600 bilion. <strong>Petros</strong> — syarikat minyak Sarawak, ditubuh 8 Disember 2017, sebab Sarawak kata "minyak ini atas tanah kami, kenapa kami dapat sikit sangat?"</p>
+  <p>Selama ini, PETRONAS bayar Sarawak 5% royalti untuk minyak dan gas yang keluar dari tanah Sarawak. 5%. Sarawak kata tak cukup. Sarawak minta naik sehingga 20% (undi Dewan Undangan Negeri 2024). PETRONAS kata tak boleh sebab PDA 1974 letakkan kawalan petroleum di tangan persekutuan.</p>
+  <p>Siapa yang buat undang-undang tu? Kerajaan federal masa darurat 1974. Siapa yang tak ditanya? Sarawak.</p>
+  <p>Sarawak sabar 52 tahun. Lepas tu Sarawak buat syarikat sendiri — Petros — dan kata: "Kami buat sendiri lah. Gas kami, tanah kami, kami yang jaga."</p>
+  <p>PETRONAS? Fail ke Mahkamah Persekutuan pada 12 Januari 2026. Sarawak? Counter-fail cabar constitutionaliti PDA 1974. Dua-dua dalam mahkamah sekarang. Dan Perdana Menteri — yang pegang dua jawatan serentak, PM DAN Menteri Kewangan — cakap malam tadi: "takde masalah yang tak boleh selesaikan."</p>
+  <p>Makcik tanya lagi: kalau betul takde masalah — kenapa mahkamah penuh?</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">BERAPA KALI SUDAH?</h2>
+  <ul>
+    <li><strong>Januari 2026</strong> — PETRONAS fail di Mahkamah Persekutuan.</li>
+    <li><strong>Februari 2026</strong> — pendengaran penuh counter-claim Sarawak cabar constitutionaliti PDA 1974 (fail asal difailkan lebih awal; panel 5-hakim luluskan justisiability Julai 2025).</li>
+    <li><strong>Jun 2026</strong> — Anwar antara Jun-September 2026 beberapa kali cakap "hampir settle" / "akan difinalise" — petikan spesifik tidak dapat disahkan pada waktu publikasi.</li>
+    <li><strong>September 2026</strong> — kunjungan Hari Malaysia ke Kuching dengan pengumuman geran khas RM1.5 bilion.</li>
+  </ul>
+  <p>Makcik kira: sekurang-kurangnya tiga kali dalam 9 bulan Anwar kata nak settle. Tiga kali masih belum settle. Kalau Makcik cakap nak bayar bil tiga kali dalam 9 bulan tapi tak bayar lagi — bilik air makcik kena potong air.</p>
+
+  <p>Tapi masa yang sama? <strong>PETRONAS dividend 2024 jatuh kepada RM32 bilion</strong> — turun daripada RM50 bilion pada 2022 (rekod tertinggi) atau RM40 bilion pada 2023, sebab profit group jatuh 15% kepada RM19.2 bilion dan revenue turun 7% kepada RM320 bilion. <strong>Pengerang Integrated Complex (PIC/Refinery & Petrochemical)</strong> yang menelan kos US$27 bilion (~RM127 bilion) — 69% lebih dari bajet asal US$16 bilion — sebab <strong>Saudi Aramco keluar dari projek tu dan PETRONAS ambil alih penuh</strong>. Segmen downstream PETRONAS rugi bersih RM15.2 bilion pada 2024, sebahagian besarnya dari Pengerang. <strong>PETRONAS Group umumkan perampingan ~10% workforce (~5,000 pekerja) pada Jun 2025</strong>, hiring freeze sampai Disember 2026 — bukan khusus PRefChem. Pengeluaran minyak mentah Malaysia 2024 jatuh 3.5% kepada ~181.6 juta tong; Malaysia dah jadi <strong>negara pengimport bersih minyak mentah</strong> sebab penggunaan domestik (~700,000 tong/hari) melebihi pengeluaran (~571,000-604,000 tong/hari). <strong>CEO PETRONAS Tan Sri Tengku Muhammad Taufik</strong> lanjutan kontrak sekurang-kurangnya tiga kali: Julai 2023, 2025, dan Ogos 2026.</p>
+
+  <p>Siapa yang potong air siapa ni sebenarnya?</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">RM1.5 BILION — HARGA TIDAK SETTLE</h2>
+  <p>Dalam hari yang sama Anwar cakap "bekerja sebagai pasukan," kerajaan persekutuan umumkan <strong>RM1.5 bilion geran khas kepada Sarawak</strong> (Sabah juga terima jumlah sama). Duit rakyat. Duit cukai. Duit yang sama yang patut bayar sekolah, hospital, jalan raya.</p>
+  <p>Makcik tanya: untuk apa?</p>
+  <ul>
+    <li>Untuk settle dispute? Belum settle.</li>
+    <li>Untuk formula royalti baru? Belum ada formula.</li>
+    <li>Untuk agreement komersial? Belum sign.</li>
+  </ul>
+  <p>Jadi RM1.5B tu bukan penyelesaian. RM1.5B tu bayaran sewa status quo. Bayar supaya Sarawak tak tarik sokongan. Bayar supaya kerajaan tak jatuh. Bayar supaya Anwar boleh duduk kerusi dia lagi.</p>
+  <p>Sama macam Makcik bayar jiran sebelah RM1.5B supaya jiran tak cakap pasal tanah yang Makcik dah ambil 52 tahun. Lepas tu Makcik kata "kita kena bekerja sebagai pasukan."</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">KUCHING BUKAN VENUE. KUCHING IALAH BAYARAN.</h2>
+  <p>Anwar pergi Kuching. Cakap depan Sarawak. "Takde masalah yang tak boleh selesaikan."</p>
+  <p>Tapi hang fikir — kalau bapa nak settle dengan anak, dia settle dekat mana?</p>
+  <ul>
+    <li>Dia settle senyap. Satu surat. Satu signature. Tak payah pergi Kuching. Tak payah ceramah.</li>
+    <li>Tapi Anwar pilih sidang media. Dia pilih Kuching. Dia pilih Hari Malaysia.</li>
+  </ul>
+  <p>Sebab nak settle tak cukup. Dia nak orang NAMPAK dia settle.</p>
+  <p>Bila bapa beritahu seluruh kampung dia nak settle dengan anak — maknanya belum settle.<br />
+  Bila bapa settle betul-betul — kampung baru tahu lepas selesai.</p>
+  <p>Orang yang betul-betul settle, settle dulu — cerita lepas. Bukan cerita dulu, harap orang ingat cerita sebagai penyelesaian.</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">"TAKDE MASALAH YANG TAK BOLEH DISELESAIKAN" — BETUL KE?</h2>
+  <p>Makcik tanya readers semua — betul ke?</p>
+  <p>Undang-undang yang govern minyak Malaysia (PDA 1974) dibuat masa darurat. Parlimen tak berfungsi normal. Sarawak tak ditanya. Tiada siapa konsultasi dengan negeri yang punya minyak tu.</p>
+  <p>Selama 52 tahun, Sarawak dapat 5%. Siapa yang audit tak pernah adil? Tiada siapa.</p>
+  <p>Sekarang dua-dua pihak dalam mahkamah. Kedua-dua tengah tunggu hakim putuskan.</p>
+  <p>Dan Anwar cakap "takde masalah yang tak boleh selesaikan."</p>
+  <p><strong>Makcik tahu satu benda yang tak boleh selesaikan: masalah yang tak boleh diakui.</strong></p>
+  <p>Anwar tak pernah akui PDA 1974 dibuat masa darurat. Dia tak pernah akui royalti 5% tu tak adil. Dia tak pernah akui PETRONAS ialah syarikat yang federal pegang — bukan kerajaan Sarawak punya.</p>
+  <p>Kalau kau tak boleh cakap masalah tu ialah apa — kau tak boleh cakap masalah tu boleh selesaikan.</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">BANG NON JENIS TAKDE TELUR?</h2>
+  <p>Makcik bukan nak panggil dia pengecut. Pengecut tak berani pergi Kuching.</p>
+  <p>Makcik panggil dia Bang Non jenis takde telur sebab lain:</p>
+  <ul>
+    <li>Dia berani pergi tapi tak berani settle</li>
+    <li>Dia berani cakap tapi tak berani sign</li>
+    <li>Dia berani bayar RM1.5B tapi tak berani audit PDA 1974</li>
+    <li>Dia berani kata "finalise" tapi tak berani tanya siapa yang kena sign</li>
+  </ul>
+  <p>Bang Non ada keberanian untuk keluar rumah. Tapi tak ada keberanian untuk tutup pintu.</p>
+  <p>Dan ini — ini yang buat dia bukan pengecut biasa. Pengecut biasa lari. Bang Non berani keluar rumah, berani cakap depan kampung, berani bayar duit — tapi tak berani buat benda yang paling penting: <strong>decide</strong>.</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">APA YANG MAKCIK TAK NAMPAK DULU — SHADOW BANG NON</h2>
+  <p>Makcik kena tahu satu benda.</p>
+  <p>Anwar Ibrahim ialah PM DAN Menteri Kewangan serentak. Dua jawatan dalam satu orang. Dan PETRONAS? 100% milik kerajaan — milik Menteri Kewangan. Maknanya: <strong>Anwar ialah pemilik PETRONAS</strong>. Bukan chairman. Bukan CEO. Pemilik.</p>
+  <p>Jadi bila dia kata "aku akan bincang dengan PETRONAS" — dia bercakap dengan syarikat dia sendiri. Sama macam bapa bincang dengan cermin. "Nak tanya sikit pasal rumah kita."</p>
+  <p>Tapi yang lebih penting: Siapa yang pegang majoriti kerajaan sekarang? <strong>GPS dari Sarawak</strong>. Parti Sarawak yang sokong Anwar jadi PM. Kalau GPS tarik sokongan — kerajaan jatuh.</p>
+  <p>Anwar stuck. Tak boleh bagi terlalu banyak pada Sarawak — UMNO kata "kau jual kedaulatan." Tak boleh tolak Sarawak — GPS cabut, kerajaan jatuh. Tak boleh serah kepada mahkamah — lambat, Petros terus grow.</p>
+  <p>Dan dia TAHU semua ni. Dia tahu sejak mula.</p>
+  <p>Dan DIA <strong>STILL</strong> PILIH UNTUK TAK SETTLE.</p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">KENAPA? — SEBAB DIA DAH DECIDE SIAPA YANG KENA BAYAR</h2>
+  <p>Inilah shadow paling gelap PMX.</p>
+  <p>Anwar bukan tak tahu. Bukan tak mampu. Bukan tak berani pergi Kuching.</p>
+  <p>Dia tahu, dia mampu, dia berani pergi Kuching — dan dia STILL pilih untuk tak settle.</p>
+  <p>Kenapa? Sebab settle bermakna dia kena jadi villain.</p>
+  <ul>
+    <li>Kalau Anwar bagi Sarawak lebih royalti — UMNO kata "kau jual kedaulatan negara"</li>
+    <li>Kalau Anwar tolak tuntutan Sarawak — GPS cabut sokongan, kerajaan jatuh</li>
+    <li>Kalau Anwar serah kepada mahkamah — lambat bertahun-tahun, Petros terus grow, terus kuat</li>
+    <li>Kalau Anwar akui PDA 1974 tak valid — seluruh petroleum regime Malaysia runtuh</li>
+  </ul>
+  <p>Semua jalan = Anwar jadi villain.</p>
+  <p>Jadi dia pilih jalan kelima: bayar RM1.5B, cakap "bekerja sebagai pasukan," pergi Kuching, pilih Hari Malaysia, buat sidang media.</p>
+  <p><strong>Bukan sebab dia settle. Tapi sebab dia nak orang INGAT dia settle — walaupun dia belum settle.</strong></p>
+
+  <p>Dan siapa yang kena bayar kos setiap tahun yang berlalu tanpa penyelesaian?</p>
+  <p><strong>Rakyat.</strong></p>
+  <p>Sebab tiap tahun tanpa agreement: gas import mahal, subsidi terbakar, harga naik, duit sekolah kurang, duit hospital kurang. Bukan Anwar yang bayar. Kita yang bayar.</p>
+  <p><strong>Anwar tak settle sebab dia protect Anwar. Bukan sebab dia protect Malaysia.</strong></p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">APA MAKCIK NAMPAK SEKARANG:</h2>
+  <ol>
+    <li>Bila PM pegang dua jawatan — PM + Menteri Kewangan — dan PETRONAS ialah anak syarikat MoF Inc — dia bercakap dengan diri sendiri.</li>
+    <li>RM1.5B dibayar tanpa agreement tanpa formula tanpa penutup. Kalau Makcik bayar jiran RM1.5B tanpa perjanjian — Makcik bukan murah hati. Makcik bodoh. Atau Makcik beli sesuatu yang Makcik tak boleh cakap Makcik beli.</li>
+    <li>Mahkamah masih berjalan. PETRONAS dan Sarawak dua-dua fail. Kedua-dua pihak sedang tunggu hakim putuskan.</li>
+    <li>"Takde masalah yang tak boleh selesaikan." Ini bukan solusi. Ini doa.</li>
+    <li>Bapa yang tahu tapi still tak settle — bukan bapa yang tak mampu. Bapa yang dah decide siapa yang kena tanggung, dan siapa tu bukan dia.</li>
+  </ol>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<section class="article-section">
+  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">PENUTUP DARI MAKCIK:</h2>
+  <p>Readers semua — Makcik nak cakap satu benda je.</p>
+  <p>Anwar pergi Kuching malam Hari Malaysia. Dia cakap benda yang semua orang nak dengar. Dia bayar RM1.5B supaya orang percaya dia buat benda. Dia kata "bekerja sebagai pasukan" supaya orang rasa tenang. Dia cakap "finalise" supaya orang ingat nama dia sebagai penyelesai.</p>
+  <p><strong>Tapi settle?</strong></p>
+  <ul>
+    <li>Royalti berapa? Belum cakap.</li>
+    <li>Formula apa? Belum ada.</li>
+    <li>Siapa sign? Belum tentu.</li>
+    <li>Bila selesai? Belum tahu.</li>
+    <li>Apa jadi kalau mahkamah batal undang-undang lama? Belum jawab.</li>
+  </ul>
+  <p>Dia bukan settle. <strong>Dia bayar supaya orang tanya kurang.</strong></p>
+  <p>Dan itu, readers semua — <strong>itu bukan kepimpinan. Itu propa jaa.</strong></p>
+  <p>Yang paling sakit: bukan Anwar tak boleh settle. Dia boleh. Tapi dia dah decide siapa yang kena tanggung kos — dan siapa tu ialah rakyat, bukan dia.</p>
+  <p>Satu ayat: Kalau bapa settle senyap, itu bapa. Kalau bapa cerita sidang media, itu politician. Kalau bapa tahu tapi still tak settle — itu bapa yang protect kerusi, bukan anak.</p>
+  <p><strong>Makcik habis cerita. Nak gi minum kopi o panas.</strong></p>
+</section>
+
+<hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
+
+<footer class="article-footer">
+  <p class="signature">— MakcikGPT, 17 September 2026 🍵</p>
+  <p class="hashtags">#AnwarKuching #PETRONASvsPetros #PDA1974 #PropaJaa #MakcikGPT #HariMalaysia2026</p>
+  <details class="receipts">
+    <summary>Nota editorial — apa yang Makcik verify dan apa yang belum</summary>
+    <ul>
+      <li><strong>Verified:</strong> Anwar pegang PM + MoF serentak; PETRONAS 100% MoF Inc; Petros ditubuh 8 Dis 2017; PETRONAS fail 12 Jan 2026; RM1.5B geran khas 16 Sept 2026; CEO PETRONAS lanjutan kontrak Julai 2023 + Ogos 2026.</li>
+      <li><strong>Dibetulkan daripada asal:</strong> Dividend PETRONAS 2024 = RM32B (turun dari RM52B 2023, baki ~RM20B adalah jumlah penurunan, bukan nilai akhir); 5,000 retrenchment adalah PETRONAS Group Jun 2025 (bukan PRefChem); PCG net loss FY2025 = RM2.14B (bukan RM72B).</li>
+      <li><strong>Petikan spesifik tidak dapat disahkan pada waktu publikasi:</strong> frasa tepat "hampir siap" (Jun 2026) dan "mesti difinalise" (Sept 2026) — digantikan dengan paraphrase umum "Anwar antara Jun-September 2026 beberapa kali cakap hampir settle / akan difinalise".</li>
+    </ul>
+  </details>
+</footer>
+
+</article>`;
+
+const article: ArticleContent = {
+  slug: 'bang-non-pergi-kuching',
+  html,
+};
+
+export default article;

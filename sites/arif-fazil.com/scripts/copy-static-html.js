@@ -102,6 +102,34 @@ if (fs.existsSync(spaEntryPath)) {
     fs.writeFileSync(targetFile, spaHtml, "utf8");
     console.log(`postbuild: injected SPA shell for /${route} -> ${path.relative(root, targetFile)}`);
   }
+
+  // 2b. Inject per-slug SPA shells for MakcikGPT articles so direct URL access renders the article
+  // (not the listing fallback). This is critical for Telegram/social links — without it,
+  // Cloudflare serves the parent listing HTML for direct /world/makcikgpt/<slug> requests.
+  try {
+    // Slugs live in src/data/makcikgpt/index.ts (TS source of truth).
+    // Parse the makcikArticlesMeta array — look for slug: '...' lines.
+    let slugs = [];
+    const indexTsPath = path.join(root, "src/data/makcikgpt/index.ts");
+    if (fs.existsSync(indexTsPath)) {
+      const src = fs.readFileSync(indexTsPath, "utf8");
+      const matches = [...src.matchAll(/^\s*slug:\s*['"]([^'"]+)['"]/gm)];
+      slugs = matches.map((m) => m[1]).filter(Boolean);
+    }
+    const articleDir = path.join(distRoot, "world/makcikgpt");
+    let injectedCount = 0;
+    for (const slug of slugs) {
+      if (!slug) continue;
+      const slugDir = path.join(articleDir, slug);
+      fs.mkdirSync(slugDir, { recursive: true });
+      const slugFile = path.join(slugDir, "index.html");
+      fs.writeFileSync(slugFile, spaHtml, "utf8");
+      injectedCount++;
+    }
+    console.log(`postbuild: injected ${injectedCount} per-slug MakcikGPT SPA shells`);
+  } catch (e) {
+    console.warn(`postbuild: per-slug SPA shell injection skipped (${e.message})`);
+  }
 }
 
 console.log(`postbuild: static html sync complete.`);

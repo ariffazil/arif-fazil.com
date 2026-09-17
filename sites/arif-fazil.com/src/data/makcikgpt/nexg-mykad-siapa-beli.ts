@@ -111,7 +111,7 @@ const html = `<article class="makcik-article" lang="ms">
 
   <p>Sekarang kita masuk cerita yang ramai tak tahu.</p>
 
-  <p>Tahun 2011, kerajaan perkenalkan <strong>1BestariNet</strong> — projek broadband untuk 10,000 sekolah seluruh Malaysia. Kontrak kepada <strong>YTL Communications</strong> (anak syarikat YTL Corporation). Skop: layari internet, kandungan digital, sistem pembelajaran, semua atas talian. Kontrak besar — ada angka sebut RM2.7 bilion.</p>
+  <p>Tahun 2011, kerajaan perkenalkan <strong>1BestariNet</strong> — projek broadband untuk 10,000 sekolah seluruh Malaysia. Kontrak kepada <strong>YTL Communications</strong> (anak syarikat YTL Corporation). Skop: layari internet, kandungan digital, sistem pembelajaran, semua atas talian. Kontrak besar — ada angka sebut RM2.7 bilion (The Edge, Jun 2024 — FMT, Jul 2025).</p>
 
   <p>Tahun 2019, kerajaan umum kontrak <strong>ditamatkan</strong>. Sebab apa? Sebab banyak aduan: line slow, server down, guru tak boleh guna. MACC (Suruhanjaya Pencegahan Rasuah Malaysia) mula siasat. Nama-nama besar YTL kena sebut. Projek jadi simbol kebocoran wang awam.</p>
 

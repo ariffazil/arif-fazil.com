@@ -22,7 +22,7 @@ const content: ArticleContent = {
 
 <h2>Hai Makcik.</h2>
 <p>Cerita ni pasal siapa jaga minyak hang.</p>
-<p>PETRONAS — syarikat minyak negara. RM266 bilion revenue. RM45 bilion untung. 50,000 pekerja. Gas Sarawak 60% simpanan negara.</p>
+<p>PETRONAS — syarikat minyak negara. RM266 bilion revenue (Annual Report FY2024). RM45 bilion untung (Annual Report FY2025). 50,000 pekerja (Annual Report FY2024). Gas Sarawak 60% simpanan negara (anggaran penulis dari segmental disclosure — breakdown tepat takde).</p>
 <p>Tapi siapa duduk dalam board? Siapa buat keputusan? Siapa tanya soalan?</p>
 <p>Makcik kira. Dan Makcik terkejut.</p>
 
@@ -380,7 +380,7 @@ const content: ArticleContent = {
 <div class="fact-box">
   <div class="fact-box-title">▲ Rightsizing — 5,000 Orang</div>
   <div class="fact-box-content">
-    <strong>5 Jun 2025:</strong> CEO Taufik sahkan potong 10% tenaga kerja (~5,000 dari 50,000)<br>
+    <strong>5 Jun 2025:</strong> CEO Taufik sahkan potong 10% tenaga kerja (~5,000 dari 50,000 — Bloomberg, Reuters, The Edge)<br>
     <strong>Semua kenaikan & pengambilan dibekukan</strong> sehingga Disember 2026<br>
     <strong>PETRONAS official:</strong> "committed to safeguarding employees' welfare" semasa "polycrisis"<br><br>
     
@@ -400,7 +400,7 @@ const content: ArticleContent = {
   <div class="fact-box-content">
     <strong>Kapasiti terpasang:</strong> 4.2 GW<br>
     <strong>Sasaran 2030:</strong> 30-40 GW<br>
-    <strong>Revenue:</strong> < 5% dari PETRONAS (The Star, Feb 2026)<br>
+    <strong>Revenue:</strong> < 5% dari PETRONAS (The Star, Feb 2026 — anggaran kasar)</p>
     <strong>P&L berasingan:</strong> <strong>TIDAK DIDEDAHKAN</strong> — buried dalam "Corporate and Others"<br>
     <strong>Status:</strong> Bloomberg (Ogos 2026) — PETRONAS sedang cari buyer untuk minority stake<br><br>
     

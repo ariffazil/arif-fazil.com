@@ -24,7 +24,7 @@ const html = `<article class="makcik-article" lang="ms">
 <section class="article-section">
   <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">DULU — KONTEKS UNTUK PEMBACA BARU</h2>
   <p>Makcik explain sikit untuk readers yang baru masuk.</p>
-  <p>Malaysia ada dua syarikat minyak yang tengah gaduh. <strong>PETRONAS</strong> — syarikat minyak negara, 100% milik kerajaan persekutuan melalui MoF Inc., nilai hampir RM600 bilion. <strong>Petros</strong> — syarikat minyak Sarawak, ditubuh 8 Disember 2017, sebab Sarawak kata "minyak ini atas tanah kami, kenapa kami dapat sikit sangat?"</p>
+  <p>Malaysia ada dua syarikat minyak yang tengah gaduh. <strong>PETRONAS</strong> — syarikat minyak negara, 100% milik kerajaan persekutuan melalui MoF Inc., nilai hampir RM600 bilion (anggaran penulis — tiada market cap PETRONAS public; angka dari perbandingan Pengerang + downstream valuation). <strong>Petros</strong> — syarikat minyak Sarawak, ditubuh 8 Disember 2017, sebab Sarawak kata "minyak ini atas tanah kami, kenapa kami dapat sikit sangat?"</p>
   <p>Selama ini, PETRONAS bayar Sarawak 5% royalti untuk minyak dan gas yang keluar dari tanah Sarawak. 5%. Sarawak kata tak cukup. Sarawak minta naik sehingga 20% (undi Dewan Undangan Negeri 2024). PETRONAS kata tak boleh sebab PDA 1974 letakkan kawalan petroleum di tangan persekutuan.</p>
   <p>Siapa yang buat undang-undang tu? Kerajaan federal masa darurat 1974. Siapa yang tak ditanya? Sarawak.</p>
   <p>Sarawak sabar 52 tahun. Lepas tu Sarawak buat syarikat sendiri — Petros — dan kata: "Kami buat sendiri lah. Gas kami, tanah kami, kami yang jaga."</p>

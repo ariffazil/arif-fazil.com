@@ -36,7 +36,7 @@ const content: ArticleContent = {
   <div class="fact-box-title">▲ Rekod Taufik — Dua Syarikat, Dua Bom</div>
   <div class="fact-box-content">
     <strong>1. Tanjung plc</strong> — Deputy Group CFO, Feb 2012 – Dec 2012. 11 bulan je. Lepas tu syarikat tu lingkup. Dah delisted dari Bursa. Takde pun Wikipedia pasal dia — sebab dah mati sangat.<br><br>
-    <strong>2. SapuraKencana (sekarang Vantris Energy)</strong> — CFO, Dec 2012 – Jan 2015. Masa dia ada, syarikat buat dua acquisition gergasi guna hutang — US$2.83 bilion beli Seadrill tender rig, US$900 juta beli Newfield Exploration. <strong>Total $3.7 bilion guna hutang.</strong> Dia chow Januari 2015. Lepas tu: oil crash, net loss RM791 juta, gearing 134%, PN17 Mei 2022, shareholder equity negative RM2.9 bilion.<br><br>
+    <strong>2. SapuraKencana (sekarang Vantris Energy)</strong> — CFO, Dec 2012 – Jan 2015. Masa dia ada, syarikat buat dua acquisition gergasi guna hutang — US$2.83 bilion beli Seadrill tender rig, US$900 juta beli Newfield Exploration. <strong>Total $3.7 bilion guna hutang</strong> (Bursa Malaysia filings, SapuraKencana annual reports 2012-2014). Dia chow Januari 2015. Lepas tu: oil crash, net loss RM791 juta, gearing 134%, PN17 Mei 2022, shareholder equity negative RM2.9 bilion.</p>
     <em>Sumber: Wikipedia Sapura Energy, Bursa Malaysia filings, The Edge Malaysia.</em>
   </div>
 </div>

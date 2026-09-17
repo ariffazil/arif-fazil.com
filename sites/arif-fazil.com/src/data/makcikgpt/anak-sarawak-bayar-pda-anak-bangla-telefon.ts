@@ -37,7 +37,7 @@ const content: ArticleContent = {
 
 <h2>Cerita Yang Kedua: Sarawak Punya Gas — Tapi Tak Boleh Jual</h2>
 
-<p>Sarawak ni, Makcik, depa duduk atas gas. Bumi depa penuh dengan gas. <strong>90% dari semua LNG Malaysia keluar dari Sarawak</strong>. Bukan 10%, bukan 50%. <strong>Sembilan puluh peratus</strong>.</p>
+<p>Sarawak ni, Makcik, depa duduk atas gas. Bumi depa penuh dengan gas. <strong>90% dari semua LNG Malaysia keluar dari Sarawak</strong> (PETRONAS downstream segmental breakdown — angka kasar, tak pecah exact percent). Bukan 10%, bukan 50%. <strong>Sembilan puluh peratus</strong>.</p>
 
 <p>Tahun 2016, Sarawak buat syarikat sendiri — <strong>PETROS</strong> — nak jadi orang tengah, nak control gas depa sendiri.</p>
 

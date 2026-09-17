@@ -16,7 +16,7 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Makcik dah tulis kenapa Makcik tak percaya. Makcik dah tulis pasal RM1.5 bilion geran khas yang dibayar tanpa agreement, tanpa formula, tanpa signature. Makcik dah tulis pasal bayaran status quo, bukan penyelesaian.</p>
   <p>Tapi satu benda Makcik tak tulis lagi. Satu benda yang jadi <strong>akar</strong> semua drama ni.</p>
   <p>Undang-undang tu.</p>
-  <p>Namanya: <strong>Akta Pembangunan Petroleum 1974 (PDA 1974)</strong>. Akta kecil. Cuma 38 perenggan. Lepas tu anak dia satu — <strong>PETRONAS</strong> — jadi syarikat minyak terbesar di Asia Tenggara, nilai hampir RM600 bilion (Bloomberg, 2025).</p>
+  <p>Namanya: <strong>Akta Pembangunan Petroleum 1974 (PDA 1974)</strong>. Akta kecil. Cuma 38 perenggan. Lepas tu anak dia satu — <strong>PETRONAS</strong> — jadi syarikat minyak terbesar di Asia Tenggara, nilai hampir RM600 bilion (anggaran penulis — Bloomberg 2025 tiada angka tepat untuk PETRONAS market cap).</p>
   <p>52 tahun dah jadi raja.</p>
   <p>Sekarang, Sarawak — tanah yang minyak tu keluar dari perut dia — nak tanya satu soalan ringkas: <strong>ini betul undang-undang ke, atau ni rampasan tanah zaman darurat?</strong></p>
   <p>Soalan tu sekarang ada kat Mahkamah Persekutuan. Hakim lima orang. Dua-dua pihak fail. Dan hujahnya ialah — hang baca Batang Tubuh dulu, baru boleh faham siapa rampas siapa.</p>

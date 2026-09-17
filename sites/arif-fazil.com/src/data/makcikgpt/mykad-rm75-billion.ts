@@ -23,7 +23,7 @@ const content: ArticleContent = {
 
 <p>Cerita ni pendek je sebenarnya.</p>
 
-<p>Kerajaan nak beli syarikat yang cetak MyKad dan pasport hang. Harga yang syarikat tu buka — <strong>RM7.5 bilion</strong>. Tapi nilai syarikat tu kat bursa cuma <strong>RM1 bilion</strong>. Tujuh kali ganda. Dan duit beli tu — <strong>duit hang</strong>.</p>
+<p>Kerajaan nak beli syarikat yang cetak MyKad dan pasport hang. Harga yang syarikat tu buka — <strong>RM7.5 bilion</strong> (Bursa Malaysia filing, Ogos 2026). Tapi nilai syarikat tu kat bursa cuma <strong>RM1 bilion</strong> (market cap pada hari filing). Tujuh kali ganda. Dan duit beli tu — <strong>duit hang</strong>.</p>
 
 <p>Yang buat Makcik terusut gigi, bukan nombor. <strong>Cara depa buat.</strong></p>
 
@@ -70,7 +70,7 @@ const content: ArticleContent = {
 <div class="fact-box-title">▲ RM20 Juta — Duit Parking Kereta Ke?</div>
 <div class="fact-box-content">
 Tahun 2016, Suruhanjaya Sekuriti Malaysia (SC) tuduh Ishak Ismail <strong>insider trading</strong> — main saham Kenmark guna maklumat orang dalam. Dia menafikan.<br><br>
-Tahun 2023, dia bayar <strong>penyelesaian RM20 juta</strong> dengan SC.<br><br>
+Tahun 2023, dia bayar <strong>penyelesaian RM20 juta</strong> dengan SC (The Edge Malaysia, SC enforcement records).</p>
 Dua puluh juta, Makcik. Bukan duit parking kereta.<br><br>
 <em>Source: The Edge Malaysia, Suruhanjaya Sekuriti Malaysia (SC) enforcement records.</em>
 </div>

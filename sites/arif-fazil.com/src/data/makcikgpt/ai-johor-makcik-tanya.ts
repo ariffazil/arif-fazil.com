@@ -114,7 +114,7 @@ const content: ArticleContent = {
 
 <div class="key-numbers">
 <span class="row"><span class="k">🤝 Nvidia × Malaysia</span><span class="v">Jensen Huang visit KL Aug 2024, every visit jadi press release "sovereign AI"</span></span>
-<span class="row"><span class="k">💰 Bajet 2026</span><span class="v">RM500M+ line items untuk AI/sandbox/digital; takde enforcement ring-fencing</span></span>
+<span class="row"><span class="k">💰 Bajet 2026</span><span class="v">RM500M+ line items untuk AI/sandbox/digital (Bajet 2026 Annex); takde enforcement ring-fencing</span></span>
 <span class="row"><span class="k">📜 Hari AI Nasional</span><<span class="v">Diumur masa MAHA 2024, takde KPI yang dilaporkan sampai Q4 2026</span></span>
 <span class="row"><span class="k">🏛️ NAIO (National AI Office)</span><span class="v">Ditubuh Disember 2024, btw report takde sampai sekarang</span></span>
 </div>

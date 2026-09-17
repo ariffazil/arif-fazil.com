@@ -45,7 +45,7 @@ const content: ArticleContent = {
 
 <p>Maknanya <strong>setiap rumah, setiap kilang, setiap data center di Johor — air mereka datang dari Ranhill, yang 53% milik YTL.</strong></p>
 
-<p>Bulan Ogos 2025, kerajaan negeri Johor luluskan <strong>kenaikan tarif air</strong>. Kali pertama dalam 9 tahun. Data center kena bayar <strong>RM5.33 semeter padu</strong> — tarif khas. Sebelum ni takde kategori "data center" dalam bil air.</p>
+<p>Bulan Ogos 2025, kerajaan negeri Johor luluskan <strong>kenaikan tarif air</strong>. Kali pertama dalam 9 tahun. Data center kena bayar <strong>RM5.33 semeter padu</strong> — tarif khas (SAJ Holdings). Sebelum ni takde kategori "data center" dalam bil air.</p>
 
 <p>Sekarang dah ada.</p>
 
@@ -104,7 +104,7 @@ Bila tender besar tak diumum secara terbuka, dan PM sendiri jumpa syarikat terte
 
 <p>Makcik, hang ingat tak <strong>1BestariNet</strong>? Projek internet untuk sekolah — RM2.7 bilion — diberi kepada YTL Communications tanpa tender terbuka. Lepastu MACC (Suruhanjaya Pencegahan Rasuah) siasat.</p>
 
-<p>Tahun 2025, MACC siasat lagi. Kali ni pasal <strong>data centre construction graft</strong> — rasuah tender bina data center di Johor bernilai <strong>RM180 juta</strong>. MACC tahan kontraktor, isteri dia, dua pengarah syarikat. Lepastu depa cuba bakar <strong>RM1 juta wang tunai</strong> masa MACC serbu rumah.</p>
+<p>Tahun 2025, MACC siasat lagi. Kali ni pasal <strong>data centre construction graft</strong> — rasuah tender bina data center di Johor bernilai <strong>RM180 juta</strong> (FMT, Jul 2025). MACC tahan kontraktor, isteri dia, dua pengarah syarikat. Lepastu depa cuba bakar <strong>RM1 juta wang tunai</strong> masa MACC serbu rumah.</p>
 
 <div class="fact-box">
 <div class="fact-box-title">▲ Kronologi MACC</div>

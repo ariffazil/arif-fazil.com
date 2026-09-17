@@ -266,7 +266,7 @@ const content: ArticleContent = {
 
 <div class="callout" style="border-left: 4px solid #00a3e0; background: rgba(0, 163, 224, 0.05); padding: 12px; margin-top: 16px;">
 <div class="callout-title" style="font-weight: bold; color: #003366;">📡 Kemas Kini 26 Ogos 2026 (Versi 1.2)</div>
-<p>Kisah DNA PETRONAS ni makin terbukti. Rekod lembaga pengarah terkini 2023-2026 dan Dossier Rakyat Penuh mengesahkan: bulldog DNA diganti dengan extraction DNA.</p>
+<p>Kisah DNA PETRONAS ni makin terbukti. Rekod lembaga pengarah terkini 2023-2026 (PETRONAS Annual Report + website BOD composition) dan Dossier Rakyat Penuh (dokumen penulis, bukan dokumen awam) mengesahkan: bulldog DNA diganti dengan extraction DNA.</p>
 <p>👉 <a href="/vitals/" style="color: #00a3e0; font-weight: bold;">PETRONAS · VITALS — Institutional Intelligence</a> | <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier" style="color: #00a3e0; font-weight: bold;">📄 Full Civic Dossier (31 Muka Surat)</a> | <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf" style="color: #00a3e0; font-weight: bold;">📥 Muat Turun PDF</a></p>
 </div>
 

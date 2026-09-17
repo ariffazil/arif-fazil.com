@@ -64,7 +64,7 @@ Model <strong>nemo-super</strong> jawab: <strong>"from-scratch."</strong></p>
 
 <h2>Penemuan 2: Ujian MalayMMLU — Self-Written Exam</h2>
 
-<p>YTL kata ILMU dapat skor 87.20% pada MalayMMLU, lawan GPT-4o 84.97%. Depa kata ILMU "top global LLM in Malay."</p>
+<p>YTL kata ILMU dapat skor 87.20% pada MalayMMLU, lawan GPT-4o 84.97% (YTL press release; MalayMMLU versi YTL). Depa kata ILMU "top global LLM in Malay."</p>
 
 <p>Tapi siapa yang buat MalayMMLU? <strong>YTL AI Labs sendiri.</strong></p>
 

@@ -594,7 +594,7 @@ Bukan MoF Inc. Bukan institusi. Individu. Sebab institusi tak makan nasi. Orang 
 
 Prinsip sistem ni satu je: Pemilik ada horizon 5 tahun. Aset ada horizon 30 tahun. Jurang horizon tu dibiayai dengan memakan masa depan yang tak boleh mengundi.
 
-Yang untung = individu yang boleh keluar sebelum后果 sampai. Yang rugi = institusi (PETRONAS) dan rakyat yang tak boleh kemana.
+Yang untung = individu yang boleh keluar sebelum akibat sampai. Yang rugi = institusi (PETRONAS) dan rakyat yang tak boleh kemana.
 
 ---
 

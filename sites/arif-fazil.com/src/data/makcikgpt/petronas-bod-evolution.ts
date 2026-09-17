@@ -466,7 +466,7 @@ const content: ArticleContent = {
 <p>Bukan MoF Inc. Bukan institusi. <strong>Individu.</strong> Sebab institusi tak makan nasi. Orang makan nasi.</p>
 
 <p>Prinsip sistem ni satu je: <strong>Pemilik ada horizon 5 tahun. Aset ada horizon 30 tahun. Jurang horizon tu dibiayai dengan memakan masa depan yang tak boleh mengundi.</strong></p>
-<p>Yang untung = individu yang boleh keluar sebelum后果 sampai. Yang rugi = institusi (PETRONAS) dan rakyat yang tak boleh kemana.</p>
+<p>Yang untung = individu yang boleh keluar sebelum akibat sampai. Yang rugi = institusi (PETRONAS) dan rakyat yang tak boleh kemana.</p>
 
 <hr />
 

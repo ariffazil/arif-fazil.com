@@ -97,7 +97,7 @@ Sampai tahun 1974 datang satu darurat.
 
 13 Mei 1969 — perkauman. Konfrontasi dengan Indonesia tamat 1966. Tapi darurat tak pernah diisytiharkan di Semenanjung secara rasmi sehinggalah dicetuskan di beberapa tempat. Untuk Sarawak dan Sabah, ordinan darurat memang ada — tapi Parlimen masih boleh bersidang.
 
-Tahun 1974 — Parlimen digantung oleh Yang di-Pertuan Agong atas nasihat PM. (Tun Abdul Razak masa tu PM.) Tujuan rasmi: konfrontasi lanjut dengan komunis. Tapi Parlimen kosong.民主 sudah takde. Dan dalam Parlimen kosong tu — PDA 1974 digubal dan diluluskan.
+Tahun 1974 — Parlimen digantung oleh Yang di-Pertuan Agong atas nasihat PM. (Tun Abdul Razak masa tu PM.) Tujuan rasmi: konfrontasi lanjut dengan komunis. Tapi Parlimen kosong. Demokrasi sudah takde. Dan dalam Parlimen kosong tu — PDA 1974 digubal dan diluluskan.
 
 Sarawak tak dirundingkan. Sabah tak dirundingkan. Tidak ada satu hari pendengaran awam. Tidak ada satu surat kepada Kerajaan Negeri Sarawak. Tidak ada satu wakil Sarawak yang menandatangani.
 

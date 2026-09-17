@@ -36,7 +36,7 @@ const wisdomEntries = [
     id: "FL-003",
     category: "field",
     title: "Ground truth outranks elegance.",
-    meaning: "No theory, no matter how beautiful, survives contact with disconfirming evidence. Runtime state always overrides design预言.",
+    meaning: "No theory, no matter how beautiful, survives contact with disconfirming evidence. Runtime state always overrides design prophecy.",
     builds: "arifOS runtime probes verify claims against live state. The system trusts evidence over narrative."
   },
   {

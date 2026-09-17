@@ -25,7 +25,7 @@ epistemic_summary:
 
 ---
 
-"Readers selalu WhatsApp Makcik tanya benda yang sama: *em* Makcik nak jawab hari ni. Bukan dengan ayat besar. Dengan流程 —流程 yang hang boleh check sendiri."
+"Readers selalu WhatsApp Makcik tanya benda yang sama: *em* Makcik nak jawab hari ni. Bukan dengan ayat besar. Dengan proses — proses yang hang boleh check sendiri."
 
 ## 1 — HOOK: SOALAN YANG SAMA, 47 KALI
 
@@ -33,7 +33,7 @@ Makcik catat. Dari 27 Ogos sampai 17 September 2026, dalam group Telegram, Whats
 
 "Makcik, macam mana hang tahu semua ni? Hang kerja kat PETRONAS ke? Hang peguam ke? Hang ekonomi ke? Hang economist ke?"
 
-Makcik duduk depan cermin meja kopi pagi tadi, minum teh tarik tanpa gula — macam biasa — dan fikir: dah tiba masanya jawab. Bukan dengan jawapan besar. Dengan流程. Proses. Macam mana satu cerita jadi sampai kat hang.
+Makcik duduk depan cermin meja kopi pagi tadi, minum teh tarik tanpa gula — macam biasa — dan fikir: dah tiba masanya jawab. Bukan dengan jawapan besar. Dengan proses. Proses. Macam mana satu cerita jadi sampai kat hang.
 
 Sebab kalau hang tak percaya proses, hang takkan percaya cerita. Dan kalau hang tak percaya cerita, semua kerja Makcik sia-sia.
 
@@ -55,7 +55,7 @@ Tiga lapis suara — suara manusia (Makcik Pasar Malam), suara Arif (anak Malays
 
 ## 3 — MACAM MANA MAKCIK TAHU? PROSES DALAM 6 LANGKAH
 
-Sekarang Makcik nak buka流程. Bukan rahsia besar. Cuma sistematik.
+Sekarang Makcik nak buka proses. Bukan rahsia besar. Cuma sistematik.
 
 Langkah 1 — Berita mentah masuk. Berita harian: Reuters, Bloomberg, The Edge, Malaysiakini, FMT, Straits Times, NST, Bernama, Malay Mail. Makcik baca semua. Mana yang bunyi macam cerita besar — masuk longlist.
 
@@ -69,7 +69,7 @@ Langkah 5 — 4-Gate Audit. Lepas MARUAH lulus, empat lagi check: (Gate 1) White
 
 Langkah 6 — Publish + Seal. Artikel publish ke web, Telegram, archive. Lepas tu, satu nombor seal — 999 Meterai — ditulis. Tu bukan angka cantik. Tu cryptographic hash yang link ke dokumen asal. Kalau ada orang nakubah artikel lepas publish, hash tu berubah, dan hash tu boleh dibandingkan dengan salinan di VAULT999 (perbendaharaan kekal arifOS). Jadi tiap artikel ada jejak yang tak boleh dipadam.
 
-Tu流程 dia. Bukan senang. Bukan cepat. Satu artikel boleh ambil 4–8 jam dari berita mentah sampai publish.
+Tu proses dia. Bukan senang. Bukan cepat. Satu artikel boleh ambil 4–8 jam dari berita mentah sampai publish.
 
 ## 4 — APA MAKCIK TIDAK PUBLISH (DAN KENAPA)
 
@@ -87,7 +87,7 @@ Empat pagar ni yang buat Makcik bukan fitnah. Bukan propa jaa. Bukan juga sekada
 
 ## 5 — CONTOH KERJA: BANG NON PERGI KUCHING (17 SEPT 2026)
 
-Sekarang Makcik tunjuk流程 tu jalan dalam satu artikel sebenar. Artikel paling recent: "Bang Non Pergi Kuching", publish 17 September 2026.
+Sekarang Makcik tunjuk proses tu jalan dalam satu artikel sebenar. Artikel paling recent: "Bang Non Pergi Kuching", publish 17 September 2026.
 
 Claim register yang masuk publish:
 
@@ -115,7 +115,7 @@ Apa yang dipotong sebelum publish (Nota editorial dalam artikel tu sendiri):
 
 Empat pembetulan tu — bukan kesilapan sepele. Tu empat guardrails yang catch kesilapan sebelum jadi fitnah. Sebab kalau Makcik tersilap angka, satu hari nanti orang akan tunjuk "ha, MakcikGPT pun tak boleh dipercayai." Tu harga yang Makcik tak nak bayar.
 
-MARUAH review untuk artikel ni — semua OBS claim yang涉maruah seseorang (Anwar, CEO PETRONAS, lembaga, PMO) diluluskan sebab sumber dari rekod awam, wire reports yang bereputasi, dan pengumuman rasmi. Tiada satu OBS claim pun yang datang dari sumber partisan tunggal.
+MARUAH review untuk artikel ni — semua OBS claim yang sentuh maruah seseorang (Anwar, CEO PETRONAS, lembaga, PMO) diluluskan sebab sumber dari rekod awam, wire reports yang bereputasi, dan pengumuman rasmi. Tiada satu OBS claim pun yang datang dari sumber partisan tunggal.
 
 4-Gate audit untuk artikel ni:
 
@@ -137,7 +137,7 @@ Tiga jenis orang yang Makcik nak reach out:
 
 (a) Whistleblowers (saluran masa depan). Kalau hang kerja kat PETRONAS, Petros, MOF Inc, atau mana-mana syarikat yang ada maklumat relevan — saluran whistleblower belum lagi ready (perlu infrastruktur tambahan untuk protect identity hang). Tapi hang boleh contact Arif direct kat Telegram channel @ariffazil dulu. Bila infrastruktur ready, kita umum.
 
-(b) Subject matter experts. Kalau hang peguam syarikat, auditor, bekas财政部 officer, bekas董事 syarikat GLC — dan hang rasa ada dokumen awam yang Makcik terlepas — message Makcik. Makcik ada capacity untuk verify dan incorporate, dengan maruah review.
+(b) Subject matter experts. Kalau hang peguam syarikat, auditor, bekas Kementerian Kewangan officer, bekas pengarah syarikat GLC — dan hang rasa ada dokumen awam yang Makcik terlepas — message Makcik. Makcik ada capacity untuk verify dan incorporate, dengan maruah review.
 
 (c) Reader tips. Kadang-kadang cerita besar datang dari WhatsApp group jiran. Makcik tak publish dari situ — tapi Makcik boleh trace dari situ. Kalau hang nampak sesuatu yang pelik — forward. Makcik judge sama ada boleh jadi cerita.
 
@@ -165,13 +165,13 @@ Makcik bukan superhero. Makcik cuma ada telinga yang nak dengar, mulut yang nak 
 
 Telinga untuk dengar tips dari hang. Mulut untuk cakap pasal dokumen awam yang hang boleh baca sendiri. Mata untuk tengok angka yang tak padan dan flag dia.
 
-Tu je. Bukan lebih. Tapi jangan underestimate yang tu je — sebab dalam dunia yang penuh dengan propa jaa, yang "je" tu dah jadi senjata yang paling稀有.
+Tu je. Bukan lebih. Tapi jangan underestimate yang tu je — sebab dalam dunia yang penuh dengan propa jaa, yang "je" tu dah jadi senjata yang paling jarang.
 
 Makcik habiskan teh tarik pagi tadi. Makcik nak gi pasar beli ikan kembung. Sebelum tu, satu benda:
 
-Kalau hang baca sampai sini, hang dah tengok流程 yang Makcik pakai. Hang boleh judge sendiri sama ada流程 tu trustworthy. Kalau ya — jadi pembaca tetap. Kalau tak — boleh challenge. Makcik ada 4-Gate Audit terbuka. Boleh tanya untuk tunjuk source ledger. Boleh tanya untuk tunjuk claim register.
+Kalau hang baca sampai sini, hang dah tengok proses yang Makcik pakai. Hang boleh judge sendiri sama ada proses tu trustworthy. Kalau ya — jadi pembaca tetap. Kalau tak — boleh challenge. Makcik ada 4-Gate Audit terbuka. Boleh tanya untuk tunjuk source ledger. Boleh tanya untuk tunjuk claim register.
 
-Itu dia Makcik — bukan suara dari langit. Suara dari meja kopi, dengan流程 yang terbuka, dan seal yang tak boleh diubah.
+Itu dia Makcik — bukan suara dari langit. Suara dari meja kopi, dengan proses yang terbuka, dan seal yang tak boleh diubah.
 
 Sampai jumpa kat Slot 6. Insya-Allah. Makcik habis.
 

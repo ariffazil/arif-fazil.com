@@ -369,7 +369,7 @@ Courses yang kerajaan bayar: AI for business, data analytics, Python for finance
 
 Tapi courses yang rakyat Johor yang lama kilang perlukan: machine maintenance basics, robotic arm programming, supervisory skills, quality control 4.0.
 
-Mismatch. Kawan Makcik yang usia 40-an — dia taknak Python. Dia nak faham PLC programming untuk生产线 robotic yang masuk kilang dia. Tapi takde kursus tu dalam HRDF approved list.
+Mismatch. Kawan Makcik yang usia 40-an — dia taknak Python. Dia nak faham PLC programming untuk production line robotic yang masuk kilang dia. Tapi takde kursus tu dalam HRDF approved list.
 
 (c) Who benefits
 

@@ -245,7 +245,7 @@ Semakan langsung dengan rekod rasmi <strong>UK Companies House (No. 17027115)</s
 
 <p>Makcik, ini bukan corporate governance biasa. Ini <strong>scramble</strong>. Depa rushing nak setelkan struktur 6:6 dengan Sarawak token <strong>seminggu</strong> sebelum press release keluar. Kenapa rushing? Sebab depa tahu soalan-soalan ni akan ditanya.</p>
 
-<p>Dan satu lagi: nama asal syarikat ni <strong>SEARA ENERGY LIMITED</strong>. "Seara" — tiada makna dalam Bahasa Melayu. "H" ditambah 30 Mac — jadikan "SEARAH" — <em>se-arah</em>, sama arah. <strong>Ini rebranding.</strong> Mungkin ada yang fikir masa tu: "Kita perlu jual cerita ni sebagai perkongsian harmoni Melayu-Italy. Letak 'H'." Tapi Makcik takde pita. Tu推断, bukan petikan.</p>
+<p>Dan satu lagi: nama asal syarikat ni <strong>SEARA ENERGY LIMITED</strong>. "Seara" — tiada makna dalam Bahasa Melayu. "H" ditambah 30 Mac — jadikan "SEARAH" — <em>se-arah</em>, sama arah. <strong>Ini rebranding.</strong> Mungkin ada yang fikir masa tu: "Kita perlu jual cerita ni sebagai perkongsian harmoni Melayu-Italy. Letak 'H'." Tapi Makcik takde pita. Tu andaian, bukan petikan.</p>
 
 <p><strong>Sekarang Makcik tanya:</strong> siapa yang rekacipta nama "SEARAH"? Adakah ia datang dari PETRONAS, atau dari firma PR London yang handle rebranding lepas incorporation?</p>
 

@@ -369,7 +369,7 @@ const content: WealthArticleContent = {
 
   <p>Itu soal siapa terakhir.</p>
 
-  <p>AI bukan soal siapa最先. AI soal siapa最后.</p>
+  <p>AI bukan soal siapa pertama. AI soal siapa terakhir.</p>
 
   <hr />
 

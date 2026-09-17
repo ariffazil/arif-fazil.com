@@ -119,7 +119,7 @@ const html = `<article class="makcik-article" lang="ms">
 <section class="article-section">
   <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">PENUTUP — MAKCIK HABIS CERITA</h2>
   <p>Readers semua — slot ketiga habis. Slot pertama (taufik-klcc-ceo-petronas, 21 Ogos 2026) Makcik cerita siapa dia. Slot kedua (taufik-pengecut-dengan-title, 9 Sept 2026) Makcik cerita perangai dia. Slot ketiga ni — Makcik cerita kenapa dia masih kerusi, dan kenapa tiada siapa usik.</p>
-  <p>Makcik habiskan dengan tiga soalan — untuk董事 siasatannya punya anak-anak, untuk parlimen hari Jumaat, untuk jiran-jiran yang pergi pasar minggu depan:</p>
+  <p>Makcik habiskan dengan tiga soalan — untuk pengarah siasatannya punya anak-anak, untuk parlimen hari Jumaat, untuk jiran-jiran yang pergi pasar minggu depan:</p>
   <ol>
     <li>Bila PMX & Menteri Kewangan bagi <strong>PETRONAS</strong> duit melalui MoF Inc — siapa yang audit konsesi tu? Atau kita percaya angka dividen yang <strong>PETRONAS</strong> umumkan tanpa audit bebas?</li>
     <li>Taufik stay sebab bagus ke stay sebab takut? Kalau takut — apa gunanya kita bayar GLC CEO RM10M setahun kalau dia tak boleh decide apa-apa?</li>

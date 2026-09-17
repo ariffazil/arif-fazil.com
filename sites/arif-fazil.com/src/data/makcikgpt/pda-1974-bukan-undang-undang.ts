@@ -31,7 +31,7 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Makcik ulang: <strong>minyak di Sarawak, atas kertas, hak Sarawak</strong>. Bukan hak persekutuan. Bukan hak PM. Bukan hak PETRONAS. Hak Sarawak.</p>
   <p>Sampai tahun 1974 datang satu darurat.</p>
   <p>13 Mei 1969 — perkauman. Konfrontasi dengan Indonesia tamat 1966. Tapi darurat tak pernah diisytiharkan di Semenanjung secara rasmi sehinggalah dicetuskan di beberapa tempat. Untuk Sarawak dan Sabah, ordinan darurat memang ada — tapi Parlimen masih boleh bersidang.</p>
-  <p>Tahun 1974 — Parlimen digantung oleh Yang di-Pertuan Agong atas nasihat PM. (Tun Abdul Razak masa tu PM.) Tujuan rasmi: konfrontasi lanjut dengan komunis. Tapi Parlimen kosong.民主 sudah takde. Dan dalam Parlimen kosong tu — PDA 1974 digubal dan diluluskan.</p>
+  <p>Tahun 1974 — Parlimen digantung oleh Yang di-Pertuan Agong atas nasihat PM. (Tun Abdul Razak masa tu PM.) Tujuan rasmi: konfrontasi lanjut dengan komunis. Tapi Parlimen kosong. Demokrasi sudah takde. Dan dalam Parlimen kosong tu — PDA 1974 digubal dan diluluskan.</p>
   <p>Sarawak tak dirundingkan. Sabah tak dirundingkan. <strong>Tidak ada satu hari pendengaran awam. Tidak ada satu surat kepada Kerajaan Negeri Sarawak. Tidak ada satu wakil Sarawak yang menandatangani.</strong></p>
   <p>Akta tu rampas semua kuasa petroleum dari negeri dan bagi kepada satu syarikat baru yang akan ditubuhkan — PETRONAS.</p>
   <p>Makcik ulang: dalam Parlimen yang <strong>takde Speaker yang free</strong>, dalam suasana <strong>darurat yang takde tarikh tamat</strong>, satu akta lulus yang <strong>mengambil hak minyak 13 buah negeri</strong> — dan negeri-negeri tu takde peluang nak cakap apa-apa.</p>

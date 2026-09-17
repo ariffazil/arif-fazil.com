@@ -486,7 +486,7 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     date: '2026-09-17',
     domain: 'MAKCIKGPT × KIT LIPAS × FORMAT × BEHIND THE CURTAIN × MARUAH × 4-GATE × CLAIM REGISTER × WHISTLEBLOWER',
     language: 'ms',
-    excerpt: '47 orang tanya benda yang sama dalam 21 hari: "Macam mana Makcik tahu semua ni?" Slot 5 jawab流程 tu. Bukan dengan ayat besar — dengan proses terbuka yang hang boleh check. Voice: kolaborasi Arif (tulis) + Makcik (curate register) + arifOS (compile, audit, seal). Empat pagar MARUAH. 16 claim IDs dari bang-non-pergi-kuching sebagai case study — boleh verify sendiri. Slot 5 = FORMAT work (15% editorial ratio), di antara Slot 1-4 SIASATAN dan Slot 6-7 akan datang.',
+    excerpt: '47 orang tanya benda yang sama dalam 21 hari: "Macam mana Makcik tahu semua ni?" Slot 5 jawab proses tu. Bukan dengan ayat besar — dengan proses terbuka yang hang boleh check. Voice: kolaborasi Arif (tulis) + Makcik (curate register) + arifOS (compile, audit, seal). Empat pagar MARUAH. 16 claim IDs dari bang-non-pergi-kuching sebagai case study — boleh verify sendiri. Slot 5 = FORMAT work (15% editorial ratio), di antara Slot 1-4 SIASATAN dan Slot 6-7 akan datang.',
     tags: ['kit-lipas-meja-kopi', 'makcikgpt', 'format', 'behind-the-curtain', 'maruah', '4-gate-audit', 'claim-register', 'whistleblower', 'voice-note', 'slot-5', 'proses', 'propa-jaa'],
     seal: '999',
     provenance_status: 'sealed',

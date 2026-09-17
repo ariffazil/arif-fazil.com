@@ -150,7 +150,7 @@ Makcik jangka Integrated Report 2026 (untuk FY2026, diterbitkan 2027) akan jadi 
 
 Readers semua — slot ketiga habis. Slot pertama (taufik-klcc-ceo-petronas, 21 Ogos 2026) Makcik cerita siapa dia. Slot kedua (taufik-pengecut-dengan-title, 9 Sept 2026) Makcik cerita perangai dia. Slot ketiga ni — Makcik cerita kenapa dia masih kerusi, dan kenapa tiada siapa usik.
 
-Makcik habiskan dengan tiga soalan — untuk董事 siasatannya punya anak-anak, untuk parlimen hari Jumaat, untuk jiran-jiran yang pergi pasar minggu depan:
+Makcik habiskan dengan tiga soalan — untuk pengarah siasatannya punya anak-anak, untuk parlimen hari Jumaat, untuk jiran-jiran yang pergi pasar minggu depan:
 
 - Bila PMX & Menteri Kewangan bagi PETRONAS duit melalui MoF Inc — siapa yang audit konsesi tu? Atau kita percaya angka dividen yang PETRONAS umumkan tanpa audit bebas?
 

@@ -4,7 +4,7 @@ const html = `<article class="makcik-article" lang="ms">
 
 <section class="article-section article-opener">
   <blockquote style="border-left:4px solid #D9A62E;background:#11151C;padding:16px 20px;margin:16px 0 24px;font-style:italic;color:#EDEAE2;font-size:1.05em;line-height:1.6;">
-    "Readers selalu WhatsApp Makcik tanya benda yang sama: <em>Makcik, macam mana hang tahu semua ni?</em> Makcik nak jawab hari ni. Bukan dengan ayat besar. Dengan流程 —流程 yang hang boleh check sendiri."
+    "Readers selalu WhatsApp Makcik tanya benda yang sama: <em>Makcik, macam mana hang tahu semua ni?</em> Makcik nak jawab hari ni. Bukan dengan ayat besar. Dengan proses — proses yang hang boleh check sendiri."
   </blockquote>
 </section>
 
@@ -14,7 +14,7 @@ const html = `<article class="makcik-article" lang="ms">
   <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">1 — HOOK: SOALAN YANG SAMA, 47 KALI</h2>
   <p>Makcik catat. Dari 27 Ogos sampai 17 September 2026, dalam group Telegram, WhatsApp, dan DM Telegram channel, <strong>47 orang</strong> tanya benda yang sama. Bukan "apa cerita PETRONAS." Bukan "kena tipu ke." Tapi lebih dalam:</p>
   <p><em>"Makcik, macam mana hang tahu semua ni? Hang kerja kat PETRONAS ke? Hang peguam ke? Hang ekonomi ke? Hang economist ke?"</em></p>
-  <p>Makcik duduk depan cermin meja kopi pagi tadi, minum teh tarik tanpa gula — macam biasa — dan fikir: dah tiba masanya jawab. Bukan dengan jawapan besar. Dengan流程. Proses. Macam mana satu cerita jadi sampai kat hang.</p>
+  <p>Makcik duduk depan cermin meja kopi pagi tadi, minum teh tarik tanpa gula — macam biasa — dan fikir: dah tiba masanya jawab. Bukan dengan jawapan besar. Dengan proses. Proses. Macam mana satu cerita jadi sampai kat hang.</p>
   <p>Sebab kalau hang tak percaya proses, hang takkan percaya cerita. Dan kalau hang tak percaya cerita, semua kerja Makcik sia-sia.</p>
   <p>Jadi hari ni, <strong>Kit Lipas Meja Kopi Episode 1</strong> — pasal belakang tabir. Pasal macam mana Makcik buat kerja. Macam mana satu angka boleh datang, dan macam mana satu tuduhan boleh dibuang sebelum sampai kat hang.</p>
 </section>
@@ -40,7 +40,7 @@ const html = `<article class="makcik-article" lang="ms">
 
 <section class="article-section">
   <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">3 — MACAM MANA MAKCIK TAHU? PROSES DALAM 6 LANGKAH</h2>
-  <p>Sekarang Makcik nak buka流程. Bukan rahsia besar. Cuma sistematik.</p>
+  <p>Sekarang Makcik nak buka proses. Bukan rahsia besar. Cuma sistematik.</p>
 
   <p><strong>Langkah 1 — Berita mentah masuk.</strong> Berita harian: Reuters, Bloomberg, The Edge, Malaysiakini, FMT, Straits Times, NST, Bernama, Malay Mail. Makcik baca semua. Mana yang bunyi macam cerita besar — masuk longlist.</p>
 
@@ -54,7 +54,7 @@ const html = `<article class="makcik-article" lang="ms">
 
   <p><strong>Langkah 6 — Publish + Seal.</strong> Artikel publish ke web, Telegram, archive. Lepas tu, satu nombor seal — <strong>999 Meterai</strong> — ditulis. Tu bukan angka cantik. Tu cryptographic hash yang link ke dokumen asal. Kalau ada orang nakubah artikel lepas publish, hash tu berubah, dan hash tu boleh dibandingkan dengan salinan di <strong>VAULT999</strong> (perbendaharaan kekal arifOS). Jadi tiap artikel ada jejak yang tak boleh dipadam.</p>
 
-  <p>Tu流程 dia. Bukan senang. Bukan cepat. Satu artikel boleh ambil 4–8 jam dari berita mentah sampai publish.</p>
+  <p>Tu proses dia. Bukan senang. Bukan cepat. Satu artikel boleh ambil 4–8 jam dari berita mentah sampai publish.</p>
 </section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
@@ -78,7 +78,7 @@ const html = `<article class="makcik-article" lang="ms">
 
 <section class="article-section">
   <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">5 — CONTOH KERJA: BANG NON PERGI KUCHING (17 SEPT 2026)</h2>
-  <p>Sekarang Makcik tunjuk流程 tu jalan dalam satu artikel sebenar. Artikel paling recent: <strong>"Bang Non Pergi Kuching"</strong>, publish 17 September 2026.</p>
+  <p>Sekarang Makcik tunjuk proses tu jalan dalam satu artikel sebenar. Artikel paling recent: <strong>"Bang Non Pergi Kuching"</strong>, publish 17 September 2026.</p>
 
   <p><strong>Claim register yang masuk publish:</strong></p>
   <ul>
@@ -100,7 +100,7 @@ const html = `<article class="makcik-article" lang="ms">
 
   <p><strong>Empat pembetulan tu</strong> — bukan kesilapan sepele. Tu empat <em>guardrails</em> yang catch kesilapan sebelum jadi fitnah. Sebab kalau Makcik tersilap angka, satu hari nanti orang akan tunjuk "ha, MakcikGPT pun tak boleh dipercayai." Tu harga yang Makcik tak nak bayar.</p>
 
-  <p><strong>MARUAH review untuk artikel ni</strong> — semua OBS claim yang涉maruah seseorang (Anwar, CEO PETRONAS, lembaga, PMO) diluluskan sebab sumber dari rekod awam, wire reports yang bereputasi, dan pengumuman rasmi. Tiada satu OBS claim pun yang datang dari sumber partisan tunggal.</p>
+  <p><strong>MARUAH review untuk artikel ni</strong> — semua OBS claim yang sentuh maruah seseorang (Anwar, CEO PETRONAS, lembaga, PMO) diluluskan sebab sumber dari rekod awam, wire reports yang bereputasi, dan pengumuman rasmi. Tiada satu OBS claim pun yang datang dari sumber partisan tunggal.</p>
 
   <p><strong>4-Gate audit untuk artikel ni:</strong></p>
   <ul>
@@ -123,7 +123,7 @@ const html = `<article class="makcik-article" lang="ms">
 
   <p><strong>(a) Whistleblowers (saluran masa depan).</strong> Kalau hang kerja kat PETRONAS, Petros, MOF Inc, atau mana-mana syarikat yang ada maklumat relevan — saluran whistleblower belum lagi ready (perlu infrastruktur tambahan untuk protect identity hang). Tapi hang boleh contact Arif direct kat Telegram channel <strong>@ariffazil</strong> dulu. Bila infrastruktur ready, kita umum.</p>
 
-  <p><strong>(b) Subject matter experts.</strong> Kalau hang peguam syarikat, auditor, bekas财政部 officer, bekas董事 syarikat GLC — dan hang rasa ada dokumen awam yang Makcik terlepas — message Makcik. Makcik ada capacity untuk verify dan incorporate, dengan maruah review.</p>
+  <p><strong>(b) Subject matter experts.</strong> Kalau hang peguam syarikat, auditor, bekas Kementerian Kewangan officer, bekas pengarah syarikat GLC — dan hang rasa ada dokumen awam yang Makcik terlepas — message Makcik. Makcik ada capacity untuk verify dan incorporate, dengan maruah review.</p>
 
   <p><strong>(c) Reader tips.</strong> Kadang-kadang cerita besar datang dari WhatsApp group jiran. Makcik tak publish dari situ — tapi Makcik boleh trace dari situ. Kalau hang nampak sesuatu yang pelik — forward. Makcik judge sama ada boleh jadi cerita.</p>
 
@@ -157,13 +157,13 @@ const html = `<article class="makcik-article" lang="ms">
 
   <p>Telinga untuk dengar tips dari hang. Mulut untuk cakap pasal dokumen awam yang hang boleh baca sendiri. Mata untuk tengok angka yang tak padan dan flag dia.</p>
 
-  <p>Tu je. Bukan lebih. Tapi jangan underestimate yang tu je — sebab dalam dunia yang penuh dengan propa jaa, yang "je" tu dah jadi senjata yang paling稀有.</p>
+  <p>Tu je. Bukan lebih. Tapi jangan underestimate yang tu je — sebab dalam dunia yang penuh dengan propa jaa, yang "je" tu dah jadi senjata yang paling jarang.</p>
 
   <p>Makcik habiskan teh tarik pagi tadi. Makcik nak gi pasar beli ikan kembung. Sebelum tu, satu benda:</p>
 
-  <p>Kalau hang baca sampai sini, hang dah tengok流程 yang Makcik pakai. Hang boleh judge sendiri sama ada流程 tu trustworthy. Kalau ya — jadi pembaca tetap. Kalau tak — boleh challenge. Makcik ada 4-Gate Audit terbuka. Boleh tanya untuk tunjuk source ledger. Boleh tanya untuk tunjuk claim register.</p>
+  <p>Kalau hang baca sampai sini, hang dah tengok proses yang Makcik pakai. Hang boleh judge sendiri sama ada proses tu trustworthy. Kalau ya — jadi pembaca tetap. Kalau tak — boleh challenge. Makcik ada 4-Gate Audit terbuka. Boleh tanya untuk tunjuk source ledger. Boleh tanya untuk tunjuk claim register.</p>
 
-  <p>Itu dia Makcik — bukan suara dari langit. Suara dari meja kopi, dengan流程 yang terbuka, dan seal yang tak boleh diubah.</p>
+  <p>Itu dia Makcik — bukan suara dari langit. Suara dari meja kopi, dengan proses yang terbuka, dan seal yang tak boleh diubah.</p>
 
   <p>Sampai jumpa kat Slot 6. Insya-Allah. <strong>Makcik habis.</strong></p>
 </section>

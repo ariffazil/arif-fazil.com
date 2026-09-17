@@ -323,7 +323,7 @@ Mengikut Memory note "Release-clean vs CONDITIONAL_ACCEPT doctrine": audit cycle
 
 <p>Tapi courses yang <strong>rakyat Johor yang lama kilang perlukan</strong>: machine maintenance basics, robotic arm programming, supervisory skills, quality control 4.0.</p>
 
-<p>Mismatch. Kawan Makcik yang usia 40-an — dia taknak Python. Dia nak faham PLC programming untuk生产线 robotic yang masuk kilang dia. Tapi takde kursus tu dalam HRDF approved list.</p>
+<p>Mismatch. Kawan Makcik yang usia 40-an — dia taknak Python. Dia nak faham PLC programming untuk production line robotic yang masuk kilang dia. Tapi takde kursus tu dalam HRDF approved list.</p>
 
 <p>(c) <strong>Who benefits</strong></p>
 

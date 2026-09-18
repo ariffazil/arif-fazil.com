@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { DeepCosmosGenesis } from '@/components/DeepCosmosGenesis';
 
 /**
  * /000 — GENESIS ROOT
@@ -204,6 +205,9 @@ export function Genesis() {
             DITEMPA BUKAN DIBERI — FORGED, NOT GIVEN.
           </p>
         </div>
+
+        {/* ── INTERACTIVE COSMIC NUCLEOSYNTHESIS & ENTROPY SUBSTRATE ── */}
+        <DeepCosmosGenesis />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* MAIN COLUMN */}

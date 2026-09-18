@@ -1306,6 +1306,36 @@
       </div>
     </div>
 
+    <!-- ── INTERACTIVE SYNTHETIC WIRELINE LOG SUITE ── -->
+    <div id="wirelineSection" style="margin-top:2.5rem; background:rgba(7,9,14,0.95); border:1px solid #1F2733; border-radius:12px; padding:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-bottom:1px solid #1F2733; padding-bottom:1rem; margin-bottom:1.25rem;">
+        <div>
+          <div style="font-family:var(--mono); font-size:0.65rem; color:#D4A853; text-transform:uppercase; letter-spacing:2px; font-weight:700;">
+            SYNTHETIC WIRELINE LOG SUITE · THREE-TRACK SUBSURFACE ANALYSIS
+          </div>
+          <h4 id="wirelineWellTitle" style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.3rem; font-weight:900; color:#EDEAE2; margin:0.3rem 0 0;">
+            BEKANTAN-1 · SHALLOW CLASTIC GROUP E/H15 (1,420 m MD)
+          </h4>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="wellBtnGroup">
+          <button type="button" class="btn-well active" onclick="selectWirelineWell('bekantan')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #D4A853; background:rgba(212,168,83,0.15); color:#D4A853; cursor:pointer;">BEKANTAN-1</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('puteri')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">PUTERI BASEMENT-1</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('lebah')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">LEBAH EMAS-1</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('bunga')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">BUNGA TASBIH-1</button>
+        </div>
+      </div>
+
+      <!-- SVG Multi-track Log Canvas -->
+      <div style="overflow-x:auto; width:100%; border:1px solid #161D2B; border-radius:8px; background:#030508; padding:1rem 0.5rem;">
+        <svg id="wirelineSvg" viewBox="0 0 900 280" style="width:100%; min-width:760px; height:auto; display:block;"></svg>
+      </div>
+
+      <!-- Log Interpretation Narrative -->
+      <div id="wirelineNarrative" style="margin-top:1.2rem; font-family:Inter,sans-serif; font-size:0.85rem; line-height:1.6; color:#EDEAE2; border-left:3px solid #D4A853; padding-left:1rem;">
+        <strong>Hydrocarbon Flag Interpretation:</strong> Pronounced Gamma Ray deflection to 22 API indicates high net-to-gross clean channel sandstone. Deep resistivity kick &gt; 85 ohm-m with significant Neutron-Density crossover proves commercial gas-oil contact (GOC) sealed beneath continuous Group F regional marine mudstones.
+      </div>
+    </div>
+
 
     <nav class="crumbs" style="margin-top:2rem" aria-label="Basin navigation">
       <a class="crumb now" href="/earth/malay-basin/">◈ Malay Basin Dossier — full 6-section report</a>
@@ -2035,6 +2065,119 @@ function wireClose(){const b=panel.querySelector(".close");if(b)b.addEventListen
   }
   updateClock();
   setInterval(updateClock, 1000);
+})();
+
+/* ── Interactive Wireline Log Suite ── */
+(function(){
+  const wellData = {
+    bekantan: {
+      title: "BEKANTAN-1 · SHALLOW CLASTIC GROUP E/H15 (1,420 m MD)",
+      narrative: "<strong>Hydrocarbon Flag Interpretation:</strong> Pronounced Gamma Ray deflection to 22 API indicates high net-to-gross clean channel sandstone. Deep resistivity kick &gt; 85 ohm-m with significant Neutron-Density crossover proves commercial gas-oil contact (GOC) sealed beneath continuous Group F regional marine mudstones.",
+      depths: ["1,400 m", "1,410 m", "1,420 m", "1,430 m", "1,440 m"],
+      gr: "M 150 20 L 145 45 L 140 70 L 35 95 L 22 120 L 28 145 L 38 170 L 130 195 L 138 220 L 144 245",
+      sandFill: "M 35 95 L 22 120 L 28 145 L 38 170 L 65 170 L 65 95 Z",
+      res: "M 250 20 L 255 45 L 252 70 L 370 95 L 430 120 L 415 145 L 360 170 L 260 195 L 254 220 L 252 245",
+      nphi: "M 830 20 L 825 45 L 828 70 L 680 95 L 665 120 L 670 145 L 690 170 L 820 195 L 826 220 L 830 245",
+      rhob: "M 740 20 L 738 45 L 742 70 L 800 95 L 820 120 L 815 145 L 795 170 L 745 195 L 748 220 L 744 245",
+      payY: 95, payH: 75,
+      formation: "GROUP E/H15 PAY"
+    },
+    puteri: {
+      title: "PUTERI BASEMENT-1 · FRACTURED BASEMENT & OVERLYING K-5 (2,850 m MD)",
+      narrative: "<strong>Fracture Zone & Overlying Oil:</strong> Primary granite basement horst showed secondary fracture mineralization. Upper interval K-5 sandstone at 2,820 m demonstrated commercial oil saturation with deep resistivity departure (>60 ohm-m), calibrating basement-flank charge dynamics.",
+      depths: ["2,800 m", "2,820 m", "2,840 m", "2,860 m", "2,880 m"],
+      gr: "M 140 20 L 135 45 L 40 70 L 30 95 L 45 120 L 150 145 L 160 170 L 155 195 L 140 220 L 135 245",
+      sandFill: "M 40 70 L 30 95 L 45 120 L 65 120 L 65 70 Z",
+      res: "M 255 20 L 260 45 L 380 70 L 410 95 L 350 120 L 270 145 L 310 170 L 340 195 L 265 220 L 260 245",
+      nphi: "M 820 20 L 818 45 L 690 70 L 675 95 L 710 120 L 815 145 L 780 170 L 770 195 L 820 220 L 825 245",
+      rhob: "M 750 20 L 748 45 L 790 70 L 810 95 L 780 120 L 755 145 L 770 170 L 780 195 L 750 220 L 748 245",
+      payY: 70, payH: 50,
+      formation: "K-5 OIL PAY"
+    },
+    lebah: {
+      title: "LEBAH EMAS-1 · WESTERN HINGE MULTI-ZONE WILDCAT (2,240 m MD)",
+      narrative: "<strong>11 Hydrocarbon-Bearing Intervals:</strong> First wildcat on Block PM6/12 western hinge. Wireline logs confirmed 11 separate pay zones spanning Groups H, I, and J with robust crossover gas indications and deep resistivity up to 140 ohm-m.",
+      depths: ["2,200 m", "2,220 m", "2,240 m", "2,260 m", "2,280 m"],
+      gr: "M 145 20 L 30 45 L 25 70 L 135 95 L 32 120 L 28 145 L 140 170 L 36 195 L 30 220 L 142 245",
+      sandFill: "M 30 45 L 25 70 L 65 70 L 65 45 Z M 32 120 L 28 145 L 65 145 L 65 120 Z M 36 195 L 30 220 L 65 220 L 65 195 Z",
+      res: "M 252 20 L 420 45 L 440 70 L 265 95 L 390 120 L 410 145 L 270 170 L 400 195 L 430 220 L 260 245",
+      nphi: "M 825 20 L 670 45 L 660 70 L 815 95 L 685 120 L 675 145 L 820 170 L 680 195 L 670 220 L 825 245",
+      rhob: "M 745 20 L 815 45 L 825 70 L 750 95 L 805 120 L 815 145 L 755 170 L 810 195 L 820 220 L 748 245",
+      payY: 45, payH: 180,
+      formation: "GROUPS H/I/J STACKED PAY"
+    },
+    bunga: {
+      title: "BUNGA TASBIH-1 · POST-RIFT LOWSTAND SAND LOBES (1,980 m MD)",
+      narrative: "<strong>Stratigraphic Trap Calibration:</strong> While syn-rift target was water-bearing, post-rift Group I/J lowstand sand lobes flowed commercial oil. Marked resistivity kick and acoustic impedance inversion tie directly to regional 3D seismic AVO anomalies.",
+      depths: ["1,950 m", "1,970 m", "1,990 m", "2,010 m", "2,030 m"],
+      gr: "M 140 20 L 142 45 L 138 70 L 40 95 L 32 120 L 38 145 L 135 170 L 142 195 L 145 220 L 140 245",
+      sandFill: "M 40 95 L 32 120 L 38 145 L 65 145 L 65 95 Z",
+      res: "M 255 20 L 252 45 L 258 70 L 360 95 L 420 120 L 380 145 L 265 170 L 255 195 L 250 220 L 252 245",
+      nphi: "M 822 20 L 825 45 L 820 70 L 695 95 L 670 120 L 690 145 L 820 170 L 825 195 L 820 220 L 822 245",
+      rhob: "M 748 20 L 745 45 L 750 70 L 795 95 L 815 120 L 800 145 L 752 170 L 748 195 L 745 220 L 748 245",
+      payY: 95, payH: 50,
+      formation: "GROUP I/J LOWSTAND PAY"
+    }
+  };
+
+  window.selectWirelineWell = function(wellKey){
+    const data = wellData[wellKey] || wellData.bekantan;
+    document.getElementById("wirelineWellTitle").textContent = data.title;
+    document.getElementById("wirelineNarrative").innerHTML = data.narrative;
+
+    const btns = document.querySelectorAll("#wellBtnGroup button");
+    btns.forEach(b => {
+      const match = b.getAttribute("onclick") && b.getAttribute("onclick").includes(wellKey);
+      b.style.borderColor = match ? "#D4A853" : "#1F2733";
+      b.style.color = match ? "#D4A853" : "#9AA0A8";
+      b.style.background = match ? "rgba(212,168,83,0.15)" : "#0B0E17";
+    });
+
+    const svg = document.getElementById("wirelineSvg");
+    if(!svg) return;
+
+    svg.innerHTML = `
+      <rect x="15" y="10" width="180" height="250" fill="#06080F" stroke="#1F2733" stroke-width="1"/>
+      <text x="105" y="24" fill="#31C48D" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">TRACK 1: GR (0-150 API)</text>
+      <line x1="15" y1="45" x2="195" y2="45" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="15" y1="95" x2="195" y2="95" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="15" y1="145" x2="195" y2="145" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="15" y1="195" x2="195" y2="195" stroke="#141B26" stroke-dasharray="2,3"/>
+      <path d="${data.sandFill}" fill="rgba(212,168,83,0.3)" stroke="none"/>
+      <path d="${data.gr}" fill="none" stroke="#31C48D" stroke-width="2"/>
+
+      <rect x="195" y="10" width="45" height="250" fill="#0A0D15" stroke="#1F2733" stroke-width="1"/>
+      <text x="217" y="24" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="middle">DEPTH</text>
+      <text x="217" y="48" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[0]}</text>
+      <text x="217" y="98" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[1]}</text>
+      <text x="217" y="148" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[2]}</text>
+      <text x="217" y="198" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[3]}</text>
+      <text x="217" y="248" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[4]}</text>
+
+      <rect x="240" y="10" width="220" height="250" fill="#06080F" stroke="#1F2733" stroke-width="1"/>
+      <text x="350" y="24" fill="#E4572E" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">TRACK 2: ILD (0.2-2000 Ω·m)</text>
+      <line x1="240" y1="45" x2="460" y2="45" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="240" y1="95" x2="460" y2="95" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="240" y1="145" x2="460" y2="145" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="240" y1="195" x2="460" y2="195" stroke="#141B26" stroke-dasharray="2,3"/>
+      <path d="${data.res}" fill="none" stroke="#E4572E" stroke-width="2.2"/>
+
+      <rect x="460" y="10" width="425" height="250" fill="#06080F" stroke="#1F2733" stroke-width="1"/>
+      <text x="672" y="24" fill="#38BDF8" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">TRACK 3: NPHI (BLUE) / RHOB (GOLD) CROSSOVER</text>
+      <line x1="460" y1="45" x2="885" y2="45" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="460" y1="95" x2="885" y2="95" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="460" y1="145" x2="885" y2="145" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="460" y1="195" x2="885" y2="195" stroke="#141B26" stroke-dasharray="2,3"/>
+      <rect x="460" y="${data.payY}" width="425" height="${data.payH}" fill="rgba(228,87,46,0.12)" stroke="#E4572E" stroke-dasharray="3,3"/>
+      <text x="870" y="${data.payY + 18}" fill="#D4A853" font-family="monospace" font-size="8" text-anchor="end" font-weight="bold">${data.formation}</text>
+      <path d="${data.rhob}" fill="none" stroke="#D4A853" stroke-width="2"/>
+      <path d="${data.nphi}" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4,2"/>
+    `;
+  };
+
+  if(document.getElementById("wirelineSvg")){
+    window.selectWirelineWell("bekantan");
+  }
 })();
 })();
 </script>

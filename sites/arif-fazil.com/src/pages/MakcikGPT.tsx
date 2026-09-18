@@ -48,9 +48,9 @@ export function MakcikGPT() {
       <div className="mx-auto max-w-[1280px] px-6">
         {/* ── HEADER & KICKER ─────────────────────────────── */}
         <div className="mb-12 border-b border-[#1F2733] pb-8">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#D9A62E] uppercase tracking-widest mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#D9A62E]" />
-            <span>CIVIC INTELLIGENCE · BAHASA MAKCIK · WORLDVIEW</span>
+          <div className="flex items-center gap-2 font-mono text-xs text-[#31C48D] uppercase tracking-widest mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#31C48D]" />
+            <span>HERMES CIVIC INTELLIGENCE · BAHASA MAKCIK · MEANING INTEGRITY</span>
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl font-black uppercase tracking-tight text-[#EDEAE2] mb-4">
@@ -132,7 +132,7 @@ export function MakcikGPT() {
                 </div>
 
                 <h2 className="font-serif text-xl md:text-2xl font-bold text-[#EDEAE2] mb-3 group-hover:text-[#D9A62E] transition-colors leading-snug">
-                  <Link to={`/world/makcikgpt/${article.slug}`}>
+                  <Link to={`/makcikgpt/${article.slug}`}>
                     {article.title}
                   </Link>
                 </h2>
@@ -159,7 +159,7 @@ export function MakcikGPT() {
                   ))}
                 </div>
                 <Link
-                  to={`/world/makcikgpt/${article.slug}`}
+                  to={`/makcikgpt/${article.slug}`}
                   className="font-mono text-xs font-semibold text-[#EDEAE2] group-hover:text-[#D9A62E] transition-colors flex items-center gap-1"
                 >
                   <span>Baca</span>

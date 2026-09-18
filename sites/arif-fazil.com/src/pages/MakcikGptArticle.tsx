@@ -43,7 +43,7 @@ export function MakcikGptArticle() {
             Artikel MakcikGPT yang diminta tiada dalam arkib atau telah dipindahkan.
           </p>
           <Link
-            to="/world/makcikgpt/"
+            to="/makcikgpt/"
             className="inline-block px-5 py-2 rounded bg-[#E4572E] text-white font-mono text-xs uppercase"
           >
             ← Kembali ke MakcikGPT
@@ -59,11 +59,11 @@ export function MakcikGptArticle() {
         {/* Navigation Breadcrumb */}
         <div className="mb-8 flex items-center justify-between border-b border-[#1F2733] pb-4">
           <Link
-            to="/world/makcikgpt/"
-            className="font-mono text-xs text-[#D9A62E] hover:underline uppercase tracking-wider flex items-center gap-1.5"
+            to="/makcikgpt/"
+            className="font-mono text-xs text-[#31C48D] hover:underline uppercase tracking-wider flex items-center gap-1.5"
           >
             <span>←</span>
-            <span>Arkib MakcikGPT</span>
+            <span>Arkib MakcikGPT (HERMES)</span>
           </Link>
           <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/30 bg-[#E4572E]/10">
             SEAL {meta.seal || '999'}
@@ -72,7 +72,7 @@ export function MakcikGptArticle() {
 
         {/* Article Header */}
         <header className="mb-10">
-          <div className="font-mono text-xs font-bold text-[#D9A62E] uppercase tracking-widest mb-3">
+          <div className="font-mono text-xs font-bold text-[#31C48D] uppercase tracking-widest mb-3">
             {meta.domain || 'CIVIC INTELLIGENCE'} · {meta.date}
           </div>
           <h1 className="font-serif text-3xl md:text-5xl font-black text-[#EDEAE2] leading-[1.1] mb-4">
@@ -108,13 +108,13 @@ export function MakcikGptArticle() {
         {/* Next/Prev Article Navigation */}
         <div className="article-nav">
           {prev ? (
-            <Link to={`/world/makcikgpt/${prev.slug}`}>
+            <Link to={`/makcikgpt/${prev.slug}`}>
               <span className="nav-label">← Artikel sebelumnya</span>
               <span className="nav-title">{prev.title}</span>
             </Link>
           ) : <div />}
           {next ? (
-            <Link to={`/world/makcikgpt/${next.slug}`} className="nav-next">
+            <Link to={`/makcikgpt/${next.slug}`} className="nav-next">
               <span className="nav-label">Artikel seterusnya →</span>
               <span className="nav-title">{next.title}</span>
             </Link>
@@ -124,8 +124,8 @@ export function MakcikGptArticle() {
         {/* Footer & Related links */}
         <div className="mt-8 pt-6 border-t border-[#1F2733] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
           <Link
-            to="/world/makcikgpt/"
-            className="text-[#D9A62E] hover:underline uppercase font-bold"
+            to="/makcikgpt/"
+            className="text-[#31C48D] hover:underline uppercase font-bold"
           >
             ← Kembali ke Semua Artikel Makcik
           </Link>

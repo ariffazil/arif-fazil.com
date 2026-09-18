@@ -12,11 +12,11 @@ function estimateReadingTime(slug: string): number {
 
 const SERIES_TABS = [
   { id: 'ALL', label: 'Semua Siri' },
-  { id: 'M1', label: 'M1 · PETRONAS DNA' },
-  { id: 'M2', label: 'M2 · SEARAH & Gas Sarawak' },
-  { id: 'M3', label: 'M3 · YTL & Ilmu' },
-  { id: 'M4', label: 'M4 · Rakyat & Sara Hidup' },
-  { id: 'M5', label: 'M5 · Akal & Kedaulatan' },
+  { id: 'PETRONAS', label: 'M1 · PETRONAS & Tenaga' },
+  { id: 'SARAWAK', label: 'M2 · Sarawak & SEARAH' },
+  { id: 'YTL', label: 'M3 · YTL & Sovereign AI' },
+  { id: 'MALAYSIA', label: 'M4 · Rakyat & Kedaulatan' },
+  { id: 'AKAL', label: 'M5 · Akal & Politik' },
 ]
 
 export function MakcikGPT() {
@@ -30,10 +30,22 @@ export function MakcikGPT() {
   const filteredArticles = useMemo(() => {
     return makcikArticlesMeta.filter((a) => {
       const domainUpper = a.domain ? a.domain.toUpperCase() : ''
-      const seriesMatch =
-        selectedSeries === 'ALL' ||
-        domainUpper.includes(selectedSeries) ||
-        (a.tags && a.tags.some(t => t.toUpperCase() === selectedSeries))
+      const tagsUpper = a.tags ? a.tags.map(t => t.toUpperCase()) : []
+      const textCorpus = `${a.title} ${a.subtitle || ''} ${a.excerpt || ''} ${domainUpper} ${tagsUpper.join(' ')}`.toUpperCase()
+
+      let seriesMatch = selectedSeries === 'ALL'
+      if (selectedSeries === 'PETRONAS') {
+        seriesMatch = domainUpper.includes('PETRONAS') || textCorpus.includes('PETRONAS') || textCorpus.includes('TENAGA')
+      } else if (selectedSeries === 'SARAWAK') {
+        seriesMatch = domainUpper.includes('SARAWAK') || domainUpper.includes('SEARAH') || domainUpper.includes('PETROS') || textCorpus.includes('SARAWAK')
+      } else if (selectedSeries === 'YTL') {
+        seriesMatch = domainUpper.includes('YTL') || domainUpper.includes('AI') || textCorpus.includes('YTL')
+      } else if (selectedSeries === 'MALAYSIA') {
+        seriesMatch = domainUpper.includes('MALAYSIA') || domainUpper.includes('MYKAD') || domainUpper.includes('RAKYAT') || textCorpus.includes('RAKYAT')
+      } else if (selectedSeries === 'AKAL') {
+        seriesMatch = domainUpper.includes('AKAL') || domainUpper.includes('DAP') || domainUpper.includes('PSYCHOLOGY') || textCorpus.includes('AKAL')
+      }
+
       const searchMatch =
         !search ||
         a.title.toLowerCase().includes(search.toLowerCase()) ||

@@ -23,6 +23,7 @@ const SPA_ROUTES = [
   "work",
   "AAA",
   "aaa",
+  "makcikgpt",
   "world/makcikgpt",
   "missions",
   "economics",
@@ -143,17 +144,22 @@ if (fs.existsSync(spaEntryPath)) {
       const matches = [...src.matchAll(/^\s*slug:\s*['"]([^'"]+)['"]/gm)];
       slugs = matches.map((m) => m[1]).filter(Boolean);
     }
-    const articleDir = path.join(distRoot, "world/makcikgpt");
+    const targetBaseDirs = [
+      path.join(distRoot, "world/makcikgpt"),
+      path.join(distRoot, "makcikgpt")
+    ];
     let injectedCount = 0;
     for (const slug of slugs) {
       if (!slug) continue;
-      const slugDir = path.join(articleDir, slug);
-      fs.mkdirSync(slugDir, { recursive: true });
-      const slugFile = path.join(slugDir, "index.html");
-      fs.writeFileSync(slugFile, spaHtml, "utf8");
-      injectedCount++;
+      for (const baseDir of targetBaseDirs) {
+        const slugDir = path.join(baseDir, slug);
+        fs.mkdirSync(slugDir, { recursive: true });
+        const slugFile = path.join(slugDir, "index.html");
+        fs.writeFileSync(slugFile, spaHtml, "utf8");
+        injectedCount++;
+      }
     }
-    console.log(`postbuild: injected ${injectedCount} per-slug MakcikGPT SPA shells`);
+    console.log(`postbuild: injected ${injectedCount} per-slug MakcikGPT SPA shells across world/makcikgpt and makcikgpt`);
   } catch (e) {
     console.warn(`postbuild: per-slug SPA shell injection skipped (${e.message})`);
   }

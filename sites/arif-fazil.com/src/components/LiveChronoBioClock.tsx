@@ -193,7 +193,7 @@ export function LiveChronoBioClock() {
       </div>
 
       {/* Main Dual Display */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+      <div className="grid grid-cols-1 gap-3.5">
         {/* LEFT: Universal Chronological Atomic Time */}
         {(activeTab === 'dual' || activeTab === 'chrono') && (
           <div className="rounded-lg border border-[#1F2733] bg-[#07090E]/90 p-4 relative">

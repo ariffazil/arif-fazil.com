@@ -67,8 +67,11 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   // React shell carrying the ROOT title. Found 2026-09-18 by nav audit: public/ had
   // Words 16.5 KB / Work 10.1 KB / MakcikGPT 42.1 KB with correct per-route titles;
   // the webroot had 8.6 KB of the homepage on all three.
+  //
+  // /work/ REMOVED from allowlist 2026-09-20 — static drill-hero shell diverged from
+  // React Work.tsx (seismic canvas, discovery wells, federation systems). SPA shell
+  // wins: React Router renders the full interactive page. /work/ dual-surface fix.
   "words/index.html",
-  "work/index.html",
   "world/makcikgpt/index.html",
   ]);
 

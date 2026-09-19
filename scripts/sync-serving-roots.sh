@@ -43,6 +43,21 @@ else
   echo "$LOG_PREFIX WARN: no earth/ in dist — skipping (build first?)" >&2
 fi
 
+# ── 1d. words / world / work trees (handle /words* /world* /work* root at
+# /var/www/html, parallel to earth — added 2026-09-19 during 6-slot nav upgrade
+# so static-page nav patches propagate on every deploy). ──────────────────
+for d in words world work; do
+  if [ -d "$DIST/$d" ]; then
+    mkdir -p "$BK"
+    [ -d "$TOP/$d" ] && cp -a "$TOP/$d" "$BK/$d"
+    mkdir -p "$TOP/$d"
+    rsync -a --delete "$DIST/$d/" "$TOP/$d/"
+    echo "$LOG_PREFIX synced $d/ ($(find "$TOP/$d" -type f | wc -l) files)"
+  else
+    echo "$LOG_PREFIX WARN: no $d/ in dist — skipping (build first?)" >&2
+  fi
+done
+
 # ── 1b. _shared tree (handle /_shared/* roots at /var/www/html — proven broken
 # 2026-08-25: dossier pages vendored Leaflet under /_shared/leaflet, top-level
 # copy missing → live maps dead while pages returned 200) ────────────────────

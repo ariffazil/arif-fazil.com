@@ -20,6 +20,7 @@ import e19 from "./19-the-tool-is-the-thought";
 import e20 from "./20-survival-of-the-fittest-tools";
 import e21 from "./21-three-timelines-one-boundary";
 import e22 from "./22-agentic-intelligence-big-bang";
+import e23 from "./23-the-last-scarcity-witness-theory-of-human-want";
 
 // Lightweight Medium-linked essay modules (auto-generated from articles.json)
 import g0 from "./generated/g_fifteen_dollar_bouncer";
@@ -73,7 +74,7 @@ import g47 from "./generated/g_scar_behind_the_vision";
 import g48 from "./generated/g_manifesto_of_forged_intelligence";
 import g49 from "./generated/g_arifos_as_a_prism";
 
-export const essayModules = [e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
+export const essayModules = [e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
 
 export const allEssays: EssayMeta[] = [
   {
@@ -585,6 +586,15 @@ export const allEssays: EssayMeta[] = [
     tags: ["arifOS", "AgenticIntelligence", "INIT", "Naming", "ConstitutionalAI", "MCP", "AIGovernance", "Kernel", "GodelLock", "DITEMPABUKANDIBERI"],
     mediumUrl: "",
     isDirectPublication: true,
+  },
+  {
+    title: `The Last Scarcity: A Witness Theory of Human Want`,
+    date: "2026-09-20",
+    slug: "the-last-scarcity-witness-theory-of-human-want",
+    excerpt: `Human needs are finite. Human wants are infinite. What makes life feel "enough" is neither — it is witnessed existence. A candidate compression layer connecting sexuality, family, religion, economics, AI alignment, social media, and the last unsolved scarcity.`,
+    tags: ["witness-theory", "human-want", "latent-variable", "unification", "ai-alignment", "economics", "psychology", "philosophy", "makcikgpt", "DITEMPABUKANDIBERI"],
+    mediumUrl: "",
+    isDirectPublication: true,
   }
 ];
 
@@ -663,6 +673,7 @@ const CURATED_SLUGS: Record<string, string> = {
   "paradox-of-language": "Human Reflection",
   "the-human-ai-time-paradox": "Human Reflection",
   "second-brain-forged-from-scars": "Human Reflection",
+  "the-last-scarcity-witness-theory-of-human-want": "Human Reflection",
 };
 
 const DOMAIN_ORDER = [

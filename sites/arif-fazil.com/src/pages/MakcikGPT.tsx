@@ -123,10 +123,13 @@ export function MakcikGPT() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredArticles.map((article, idx) => {
             const rt = estimateReadingTime(article.slug)
+            const isGenesis = article.slug === 'surat-kepada-yang-arif'
             return (
             <article
               key={article.slug || idx}
-              className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6 hover:border-[#9AA0A8]/40 transition-colors flex flex-col justify-between group"
+              className={`rounded-lg bg-[#11151C] p-6 hover:border-[#9AA0A8]/40 transition-colors flex flex-col justify-between group ${
+                isGenesis ? 'border-2 border-[#D9A62E] shadow-[0_0_24px_-8px_rgba(217,166,46,0.4)]' : 'border border-[#1F2733]'
+              }`}
             >
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -134,6 +137,11 @@ export function MakcikGPT() {
                     {article.domain ? `${article.domain} · ` : ''}{article.date}
                   </span>
                   <div className="flex items-center gap-2">
+                    {isGenesis && (
+                      <span className="font-mono text-[10px] uppercase text-[#D9A62E] px-2 py-0.5 rounded border border-[#D9A62E] bg-[#D9A62E]/15 font-bold">
+                        ✦ Genesis #001
+                      </span>
+                    )}
                     {rt > 0 && (
                       <span className="reading-time">{rt} min</span>
                     )}

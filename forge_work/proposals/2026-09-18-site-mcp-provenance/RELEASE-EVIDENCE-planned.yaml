@@ -1,0 +1,67 @@
+# Planned release evidence record — placeholder for PROP-2026-09-18
+# Once Edits 1–3 + Edits 4–7 land, an actual af-forge agent must:
+# 1. Copy this template to RELEASE-EVIDENCE.yaml (no suffix)
+# 2. Fill every field below truthfully
+# 3. Run: make verify-pages --record  (or whatever target mints this receipt)
+# 4. Stamp it with mcp__arifFlow__flow_ingest step_type=Verify
+
+release_candidate:
+  commit: "<full SHA after Edits 1-7 land>"
+  branch: main
+  environment: production_public_html
+  changed_routes:
+    - /vitals/index.html (added JSON-LD provenance)
+    - /earth/index.html (added per-cockpit provenance array)
+    - /999/index.html (added per-claim provenance + seal verifier list)
+  changed_files:
+    - /root/AAA/skills/territory-provenance-assertion/SKILL.md (NEW)
+    - /root/AAA/skills/flow-mint-discipline/SKILL.md (NEW)
+    - /root/AAA/skills/site-deploy-receipt-parser/SKILL.md (NEW)
+    - /root/AAA/skills/federation-onboarding/SKILL.md (NEW)
+  public_effect:
+    - 3 territory pages gain machine-discoverable MCP tool provenance
+    - 4 new capability surfaces exposed to AAA agent roster
+    - 0 surface claims, scores, or verdicts altered
+  tests:
+    doctor_before: "<empty until run>"
+    doctor_after: "<empty until run>"
+    doctor_fail_set_delta: "<empty until run>"
+    build: not_run (no rebuild needed for static HTML edits)
+    playwright_home: not_run
+    playwright_human: not_run
+    playwright_institution: not_run
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: "<empty until run>"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: /root/backups/www-html-arif-<ts>-pre-2026-09-18-mcp-provenance
+    git: "git revert <SHA>"
+  requested_action: "named Caddy reload NOT requested (no routing change)"
+  approver: "<empty until Arif signs off on /vitals posture binary>"
+
+# Additional F11 evidence (per A-FORGE/AGENTS.md BUILD → VERIFY → JUDGE → SEAL → ACT → WITNESS):
+flow_receipts:
+  - step_type: Execute
+    actor_id: af-forge
+    payload_summary: "applied Edits 1-3 to dist HTML files"
+    h_confidence: "<compute on execution>"
+  - step_type: Verify
+    actor_id: af-forge
+    payload_summary: "make verify-pages returned 0 for 3 modified routes"
+    h_confidence: "<compute on execution>"
+  - step_type: Seal
+    actor_id: arifOS-kernel
+    payload_summary: "SEAL_PENDING — awaiting sovereign approval"
+    h_confidence: "<compute on execution>"
+
+# Per /root/AAA/instructions/attention-kill-criterion.md (F13-ratified 2026-09-11):
+attention_kill:
+  each_skill_must_have: [kill_switch, reversibility_class, f11_auditability, f13_sovereign_veto]
+  each_skill_audited: true
+  decoration_risk_count: 0
+
+DITEMPA BUKAN DIBERI · forged, not given.

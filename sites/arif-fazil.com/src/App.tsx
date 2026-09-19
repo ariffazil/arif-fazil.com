@@ -148,6 +148,8 @@ export function App() {
             <Route path="/words/writing/" element={<Navigate to="/words" replace />} />
             <Route path="/words/writing/:slug" element={<EssayPage />} />
             <Route path="/words/writing/:slug/" element={<EssayPage />} />
+            <Route path="/words/:slug" element={<EssayPage />} />
+            <Route path="/words/:slug/" element={<EssayPage />} />
             <Route path="/writing" element={<Navigate to="/words" replace />} />
             <Route path="/writing/" element={<Navigate to="/words" replace />} />
             <Route path="/writing/:slug" element={<EssayPage />} />

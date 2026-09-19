@@ -84,9 +84,10 @@
     </div>
   </div>
 
-  <nav class="uh-nav" aria-label="Primary" data-page-context="5-lanes">
+  <nav class="uh-nav" aria-label="Primary" data-page-context="6-lanes">
     <a href="https://arif-fazil.com/earth/" data-lane="earth">EARTH</a>
     <a href="https://arif-fazil.com/words/" data-lane="words">WORDS</a>
+    <a href="https://arif-fazil.com/makcikgpt/" data-lane="makcikgpt">MAKCIKGPT</a>
     <a href="https://arif-fazil.com/world/" data-lane="world">WORLD</a>
     <a href="https://arif-fazil.com/work/" data-lane="work">WORK</a>
     <span class="uh-nav-spacer"></span>
@@ -138,8 +139,8 @@
 
   // Active-state detection: highlight current lane in the 5-lanes nav
   var path = location.pathname.toLowerCase();
-  var laneMap = { earth: '/earth', words: '/words', world: '/world', work: '/work' };
-  var navLinks = document.querySelectorAll('.uh-nav[data-page-context="5-lanes"] a[data-lane]');
+  var laneMap = { earth: '/earth', words: '/words', makcikgpt: '/makcikgpt', world: '/world', work: '/work' };
+  var navLinks = document.querySelectorAll('.uh-nav[data-page-context="6-lanes"] a[data-lane]');
   navLinks.forEach(function(a){
     var lane = a.getAttribute('data-lane');
     var prefix = laneMap[lane];

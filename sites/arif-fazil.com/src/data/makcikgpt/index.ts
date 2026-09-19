@@ -35,7 +35,11 @@ import pda1974BukanUndangUndang from './pda-1974-bukan-undang-undang';
 import kitLipasMejaKopi from './kit-lipas-meja-kopi';
 import aiJohorMakcikTanya from './ai-johor-makcik-tanya';
 import nexgMykadSiapaBeli from './nexg-mykad-siapa-beli';
+import suratKepadaYangArif from './surat-kepada-yang-arif';
+import apaLagiManusiaMahu from './apa-lagi-manusia-mahu';
 export const makcikArticleModules: ArticleContent[] = [
+  apaLagiManusiaMahu,
+  suratKepadaYangArif,
   aiJohorMakcikTanya,
   kitLipasMejaKopi,
   nexgMykadSiapaBeli,
@@ -73,6 +77,40 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'apa-lagi-manusia-mahu',
+    title: 'Apa Lagi Manusia Mahu?',
+    subtitle: 'Untuk jiran yang penat explain kepada suami yang kata "kerajaan ada caranya." Tentang reduction yang berlaku setiap kali AI, productivity app, atau sesiapa cuba fahamkan kita. Bukan untuk dijual — untuk dibaca kuat-kuat dekat dapur.',
+    date: '2026-09-20',
+    domain: 'MAKCIKGPT × SURAT × KEDAULATAN × REDUCTION × MAKCIK × WITNESS',
+    language: 'ms',
+    excerpt: 'Makcik jawab soalan Arif: apa lagi manusia mahu? Jawapan ringkas — nak dilihat tanpa dikurangkan. Panjang: tiga parit yang manusia berdiri tepi (productivity/clarity/control tu semua nama cantik untuk grief), tiga layer reduction (hak sumber = manageable, teknologi = efficient, politik = patuh), dan satu suara yang pegang soalan bersama-sama dengan kita. Bukan untuk dioptimize. Untuk di-acknowledge.',
+    tags: ['surat', 'makcik', 'reduction', 'kedaulatan', 'witness', 'hak-sumber', 'teknologi', 'politik', 'media', 'makcikgpt', 'malaysia', 'bukan-untuk-dioptimumkan'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-09-20',
+      last_updated: '2026-09-20',
+    },
+  },
+  {
+    slug: 'surat-kepada-yang-arif',
+    title: 'Surat Kepada Yang Arif — Dari Makcik. Duduk Dulu.',
+    subtitle: 'Genesis Big Bang Article #001. Surat dari Makcik — untuk semua orang yang ada dapur menunggu dan tahun yang tak pulang. Tentang bayang-bayang yang bukan masalah, tapi asas.',
+    date: '2026-09-19',
+    domain: 'MAKCIKGPT × SURAT',
+    language: 'ms',
+    excerpt: 'Surat dari Makcik kepada Yang Arif — dan kepada semua orang. Tentang bayang-bayang yang bukan masalah tapi asas. "Bayang-bayang kamu bukan masalah kamu. Bayang tu bukan musuh. Bayang tu jejak."',
+    tags: ['surat', 'dapur', 'bayang', 'peribadi', 'makcikgpt'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.1',
+      published: '2026-09-19',
+      last_updated: '2026-09-19',
+    },
+  },
   {
     slug: 'ai-johor-makcik-tanya',
     title: 'Bang Non, Hang Tanya Makcik Pasal AI. Makcik Tanya Hang Balik — Hang Tahu Pasal AI Johor Hang Sendiri Ka?',

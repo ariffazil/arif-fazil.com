@@ -48,7 +48,7 @@ const MERKLE_LEAVES: MerkleLeaf[] = [
     hash: '0x8a72b988f01c991a039772bf62e34591a08200ff',
     parent: 'branch-biometric',
     category: 'BIOMETRIC',
-    claimText: 'Calibrated DunedinPACE aging velocity score ρ = 0.82 yr/yr, EAA = -6.29 years, -18% cellular deceleration.',
+    claimText: 'Calibrated DunedinPACE aging velocity score ρ = 0.82 yr/yr. Derived biological age pace: 18% slower than chronological. EAA computed dynamically from birthdate.',
     status: 'VERIFIED',
     timestamp: '2026-09-18T16:00:00Z',
   },

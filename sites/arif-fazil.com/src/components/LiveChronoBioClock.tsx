@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { DunedinGauge } from './DunedinGauge';
+import { InstitutionalMaturity } from './InstitutionalMaturity';
 
 // ── Epigenetic & Chrono Configuration ──
 // DunedinPACE Pace of Aging (ρ): 0.82 (Ages 0.82 biological years per chronological calendar year)
-const DUNEDIN_PACE_RHO = 0.82; 
+const DUNEDIN_PACE_RHO = 0.82;
 const MYT_OFFSET = 8; // UTC+8
 
-// Baseline Anchor: Arif Fazil (34y baseline at calibration)
-const BASELINE_CHRONO_AGE_YEARS = 34.92;
-const BASELINE_BIO_AGE_YEARS = BASELINE_CHRONO_AGE_YEARS * DUNEDIN_PACE_RHO; // ~28.63y
+// Birth moment: 22 May 1990 00:00 UTC+8 → 21 May 1990 16:00 UTC
+const BIRTH_UTC_MS = Date.UTC(1990, 4, 21, 16, 0, 0);
+const SECONDS_PER_YEAR = 365.25 * 86400;
 
 interface EpigeneticState {
   years: number;
@@ -20,29 +22,30 @@ interface EpigeneticState {
   eaaYears: number; // Epigenetic Age Acceleration deviation (-years)
 }
 
-function calculateBioAge(sessionElapsedSeconds: number): EpigeneticState {
-  // Bio age increases at rate: sessionElapsedSeconds * DUNEDIN_PACE_RHO
-  const totalBioYears = BASELINE_BIO_AGE_YEARS + (sessionElapsedSeconds * DUNEDIN_PACE_RHO) / (365.25 * 86400);
+function calculateBioAge(baselineBioYears: number, baselineChronoYears: number, sessionElapsedSeconds: number): EpigeneticState {
+  // Bio age = baseline + session-elapsed contribution at DunedinPACE rate
+  const totalBioYears = baselineBioYears + (sessionElapsedSeconds * DUNEDIN_PACE_RHO) / SECONDS_PER_YEAR;
   const years = Math.floor(totalBioYears);
   const remainderYears = totalBioYears - years;
-  
+
   const totalDays = remainderYears * 365.25;
   const days = Math.floor(totalDays);
   const remainderDays = totalDays - days;
-  
+
   const totalHours = remainderDays * 24;
   const hours = Math.floor(totalHours);
   const remainderHours = totalHours - hours;
-  
+
   const totalMinutes = remainderHours * 60;
   const minutes = Math.floor(totalMinutes);
   const remainderMinutes = totalMinutes - minutes;
-  
+
   const totalSeconds = remainderMinutes * 60;
   const seconds = Math.floor(totalSeconds);
   const subSec = String(Math.floor((totalSeconds - seconds) * 100)).padStart(2, '0');
 
-  const eaa = totalBioYears - (BASELINE_CHRONO_AGE_YEARS + sessionElapsedSeconds / (365.25 * 86400));
+  // EAA = derived bio age − chronological age (constant for DunedinPACE pace model)
+  const eaa = totalBioYears - (baselineChronoYears + sessionElapsedSeconds / SECONDS_PER_YEAR);
 
   return {
     years,
@@ -123,16 +126,21 @@ function getChronoData() {
 
 export function LiveChronoBioClock() {
   const [chrono, setChrono] = useState(getChronoData);
-  const [activeTab, setActiveTab] = useState<'dual' | 'chrono' | 'epigenetic'>('dual');
+  const [activeTab, setActiveTab] = useState<'dual' | 'chrono' | 'epigenetic' | 'maturity'>('dual');
   const [tick, setTick] = useState(false);
   const sessionStartTimeRef = useRef(Date.now());
-  const [bioAge, setBioAge] = useState<EpigeneticState>(() => calculateBioAge(0));
+  const [bioAge, setBioAge] = useState<EpigeneticState>(() => {
+    const chronoYears = (Date.now() - BIRTH_UTC_MS) / (SECONDS_PER_YEAR * 1000);
+    return calculateBioAge(chronoYears * DUNEDIN_PACE_RHO, chronoYears, 0);
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
       const elapsedSec = (Date.now() - sessionStartTimeRef.current) / 1000;
       setChrono(getChronoData());
-      setBioAge(calculateBioAge(elapsedSec));
+      // Dynamic baseline: compute current chronological age from birthdate
+      const chronoYears = (Date.now() - BIRTH_UTC_MS) / (SECONDS_PER_YEAR * 1000);
+      setBioAge(calculateBioAge(chronoYears * DUNEDIN_PACE_RHO, chronoYears, elapsedSec));
       setTick(t => !t);
     }, 100);
 
@@ -189,25 +197,45 @@ export function LiveChronoBioClock() {
           >
             DunedinPACE
           </button>
+          <button
+            onClick={() => setActiveTab('maturity')}
+            className={`px-2 py-0.5 rounded text-[9px] uppercase transition-colors ${
+              activeTab === 'maturity' ? 'bg-forge-gold text-black font-bold' : 'text-[#8A8578] hover:text-white'
+            }`}
+          >
+            Maturity
+          </button>
         </div>
       </div>
 
       {/* Main Dual Display */}
       <div className="grid grid-cols-1 gap-3.5">
-        {/* LEFT: Universal Chronological Atomic Time */}
+        {/* LEFT: Chronological Age (primary) + Atomic Time */}
         {(activeTab === 'dual' || activeTab === 'chrono') && (
           <div className="rounded-lg border border-[#1F2733] bg-[#07090E]/90 p-4 relative">
             <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-[#8A8578] mb-2">
-              <span className="text-[#38BDF8] font-bold">1. CHRONOLOGICAL (ATOMIC)</span>
+              <span className="text-[#38BDF8] font-bold">CHRONOLOGICAL AGE</span>
               <span>MYT (UTC+8)</span>
             </div>
 
-            <div className="flex items-baseline justify-center gap-1 font-mono text-3xl sm:text-4xl font-bold tracking-tight text-white tabular-nums">
+            {/* Hero: chronological age from birthdate */}
+            <div className="flex items-baseline justify-center gap-2 font-mono font-bold tracking-tight tabular-nums mb-2">
+              <span className="text-5xl sm:text-6xl text-white">
+                {Math.floor((Date.now() - BIRTH_UTC_MS) / (SECONDS_PER_YEAR * 1000))}
+              </span>
+              <span className="text-xl sm:text-2xl text-[#38BDF8]">years</span>
+              <span className="text-xs text-[#8A8578] font-normal ml-1">
+                {Math.floor(((Date.now() - BIRTH_UTC_MS) / (SECONDS_PER_YEAR * 1000) - Math.floor((Date.now() - BIRTH_UTC_MS) / (SECONDS_PER_YEAR * 1000))) * 365.25)}d
+              </span>
+            </div>
+
+            {/* Sub: live time */}
+            <div className="flex items-baseline justify-center gap-1 font-mono text-lg sm:text-xl font-bold tracking-tight text-[#38BDF8] tabular-nums">
               <span>{chrono.hours}</span>
-              <span className={`text-[#38BDF8] transition-opacity duration-200 ${tick ? 'opacity-100' : 'opacity-30'}`}>:</span>
+              <span className={`transition-opacity duration-200 ${tick ? 'opacity-100' : 'opacity-30'}`}>:</span>
               <span>{chrono.minutes}</span>
-              <span className={`text-[#38BDF8] transition-opacity duration-200 ${tick ? 'opacity-100' : 'opacity-30'}`}>:</span>
-              <span className="text-[#38BDF8]">{chrono.seconds}</span>
+              <span className={`transition-opacity duration-200 ${tick ? 'opacity-100' : 'opacity-30'}`}>:</span>
+              <span>{chrono.seconds}</span>
               <span className="text-xs text-[#8A8578] font-normal">.{chrono.unixMs.slice(0, 2)}</span>
             </div>
 
@@ -222,9 +250,21 @@ export function LiveChronoBioClock() {
         {(activeTab === 'dual' || activeTab === 'epigenetic') && (
           <div className="rounded-lg border border-forge-gold/30 bg-[#07090E]/90 p-4 relative">
             <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-[#8A8578] mb-2">
-              <span className="text-forge-gold font-bold">2. BIOLOGICAL (DUNEDINPACE)</span>
+              <span className="text-forge-gold font-bold">BIOLOGICAL PACE (DUNEDINPACE MODEL)</span>
               <span className="text-[#10B981] font-semibold">ρ = {bioAge.paceScore} yr/yr</span>
             </div>
+
+            {/* Radial DunedinPACE Gauge — visual deceleration arc */}
+            {activeTab === 'epigenetic' && (
+              <div className="flex justify-center mb-3">
+                <DunedinGauge
+                  chronoYears={(Date.now() - BIRTH_UTC_MS) / (SECONDS_PER_YEAR * 1000)}
+                  bioYears={bioAge.years + bioAge.days / 365.25}
+                  rho={DUNEDIN_PACE_RHO}
+                  size={180}
+                />
+              </div>
+            )}
 
             {/* Epigenetic Age Display */}
             <div className="flex items-baseline justify-center gap-1 font-mono text-2xl sm:text-3xl font-bold tracking-tight text-forge-gold tabular-nums">
@@ -239,9 +279,20 @@ export function LiveChronoBioClock() {
             </div>
 
             <div className="mt-3 flex items-center justify-between pt-2 border-t border-[#161D2B] font-mono text-[10px]">
-              <span className="text-[#10B981] font-bold">EAA: {bioAge.eaaYears} YEARS</span>
-              <span className="text-[#9AA0A8]">Rate: -18% Deceleration</span>
+              <span className="text-[#10B981] font-bold">EAA: {bioAge.eaaYears}y (derived from pace)</span>
+              <span className="text-[#9AA0A8]">18% slower aging rate</span>
             </div>
+          </div>
+        )}
+
+        {/* MATURITY: Institutional Maturity Index */}
+        {activeTab === 'maturity' && (
+          <div className="rounded-lg border border-[#A78BFA]/30 bg-[#07090E]/90 p-4 relative">
+            <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-[#8A8578] mb-3">
+              <span className="text-[#A78BFA] font-bold">INSTITUTIONAL MATURITY</span>
+              <span className="text-[#9AA0A8]">Maturity ≠ Age</span>
+            </div>
+            <InstitutionalMaturity />
           </div>
         )}
       </div>

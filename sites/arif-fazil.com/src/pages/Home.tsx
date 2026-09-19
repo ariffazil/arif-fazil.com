@@ -2,6 +2,8 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { LiveClock } from '@/components/LiveClock'
 import { LiveChronoBioClock } from '@/components/LiveChronoBioClock'
+import { FederationConstellation } from '@/components/FederationConstellation'
+import { RevealOnScroll } from '@/components/RevealOnScroll'
 import { ZenPulse } from '@/components/ZenPulse'
 import { HeroEarthGlobe } from '@/components/HeroEarthGlobe'
 import { HeroWordsCompass } from '@/components/HeroWordsCompass'
@@ -103,6 +105,7 @@ export function Home() {
 
       {/* ── HERO — who, what, why + Dual Chrono-Epigenetic Clock ─────── */}
       <section className="relative overflow-hidden border-b border-[#1F2733] bg-[#07090E] py-16 md:py-24">
+        <FederationConstellation />
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
@@ -188,21 +191,22 @@ export function Home() {
           {/* 5-Column / Responsive Grid of Hero Visuals */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* 1. EARTH — Macrostrat Globe */}
-            <HeroEarthGlobe />
+            <RevealOnScroll delay={0}><HeroEarthGlobe /></RevealOnScroll>
 
             {/* 2. WORDS — The Constitutional Compass */}
-            <HeroWordsCompass />
+            <RevealOnScroll delay={80}><HeroWordsCompass /></RevealOnScroll>
 
             {/* 3. WORLD — Palantir Macro Situation Room */}
-            <HeroWorldIntel />
+            <RevealOnScroll delay={160}><HeroWorldIntel /></RevealOnScroll>
 
             {/* 4. 000 — Big Bang & Cosmic Star-Stuff */}
-            <HeroGenesis000 />
+            <RevealOnScroll delay={240}><HeroGenesis000 /></RevealOnScroll>
 
             {/* 5. 999 — The Vault & ZKPC Provenance */}
-            <HeroVault999 />
+            <RevealOnScroll delay={320}><HeroVault999 /></RevealOnScroll>
 
             {/* 6. HERMES — Meaning & Civic Voice Card */}
+            <RevealOnScroll delay={400}>
             <article className="group relative rounded-xl border border-[#1F2733] bg-[#090C12] p-6 hover:border-[#31C48D]/60 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-lg">
               <div className="absolute top-0 right-0 p-4 font-mono text-[9px] uppercase tracking-widest text-[#31C48D] bg-[#141A24]/70 rounded-bl-lg border-l border-b border-[#1F2733]">
                 HERMES · ORGAN
@@ -263,6 +267,7 @@ export function Home() {
                 <span className="font-mono text-[9px] text-[#6A7382]">BAHASA MAKCIK</span>
               </div>
             </article>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
@@ -270,18 +275,22 @@ export function Home() {
       {/* ── DECISIONS UNDER NOISE — the governing idea ──────────────── */}
       <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0D14]" id="idea">
         <div className="mx-auto max-w-[1360px] px-6">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
-            The Governing Idea
-          </div>
-          <h2 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-6">
-            Decisions under noise
-          </h2>
-          <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-3xl">
-            The subsurface is incomplete. Markets are noisy. Institutions simplify. AI fills gaps too confidently.
-          </p>
-          <p className="font-sans text-base text-[#EDEAE2]/85 leading-relaxed max-w-3xl mt-4">
-            My work is to preserve the evidence, name the uncertainty, and improve the decision. Ditempa bukan diberi.
-          </p>
+          <RevealOnScroll>
+            <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
+              The Governing Idea
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-6">
+              Decisions under noise
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll delay={150}>
+            <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-3xl">
+              The subsurface is incomplete. Markets are noisy. Institutions simplify. AI fills gaps too confidently.
+            </p>
+            <p className="font-sans text-base text-[#EDEAE2]/85 leading-relaxed max-w-3xl mt-4">
+              My work is to preserve the evidence, name the uncertainty, and improve the decision. Ditempa bukan diberi.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 

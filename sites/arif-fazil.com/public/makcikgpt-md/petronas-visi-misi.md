@@ -67,7 +67,7 @@ Setiap kali visi tukar — aset naik, tapi rakyat tak rasa apa-apa.
 
 ## Visi pertama (1974): Takde visi
 
-PETRONAS mula dengan RM10 juta modal. Satu sen pun tak minta tambah dari kerajaan selepas tu.
+PETRONAS mula dengan RM10 juta modal (Akta Pembangunan Petroleum 1974 — founding capital). Satu sen pun tak minta tambah dari kerajaan selepas tu.
 
 Masa tu takde "visi" atau "misi." Yang ada: Akta Pembangunan Petroleum 1974. Satu undang-undang yang kata: PETRONAS jaga semua minyak dan gas Malaysia.
 
@@ -75,7 +75,7 @@ Rastam Hadi, orang pertama yang jaga PETRONAS, ajar orang dia: "Fight like bulld
 
 Visi masa tu bukan ayat cantik. Visi masa tu: jangan bagi orang asing ambil duit negara.
 
-Dan ia berjaya. Modal RM10 juta. Aset sekarang RM775 bilion.
+Dan ia berjaya. Modal RM10 juta. Aset sekarang RM775 bilion (anggaran penulis — PETRONAS tidak dedahkan total assets secara awam).
 
 Visi kedua (1988): Empat nilai
 

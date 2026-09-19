@@ -21,7 +21,7 @@ const content: ArticleContent = {
 
 <h2>Δ GROUND — Apa yang betul-betul berlaku</h2>
 
-<p>Jun 2026. EnQuest umum beli 30% non-operated di PM6/12. Sebahagian daripada deal US$833 juta untuk empat PSC. Termasuk Balingian, SK8, D35.</p>
+<p>Jun 2026. EnQuest umum beli 30% non-operated di PM6/12. Sebahagian daripada deal US$833 juta untuk empat PSC (EnQuest RNS, Jun 2026). Termasuk Balingian, SK8, D35.</p>
 
 <p>PM6/12 ni blok yang ada Lebah Emas-1. Wildcat 2025. 11 reservoir. Buka new play. Sekarang? Jadi "mature asset". Dijual ekor.</p>
 

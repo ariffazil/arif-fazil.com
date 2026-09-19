@@ -62,15 +62,26 @@ export function App() {
             <Route path="/earth/" element={<EarthGlobeRedirect />} />
             <Route path="/earth/*" element={<EarthGlobeRedirect />} />
 
-            {/* 3. /world — Worldview, MakcikGPT, Global Commodities */}
+            {/* 3. Top-Level HERMES Organ: MakcikGPT Civic Intelligence */}
+            <Route path="/makcikgpt" element={<MakcikGPTAlias />} />
+            <Route path="/makcikgpt/" element={<MakcikGPTAlias />} />
+            <Route path="/makcikgpt/index" element={<Navigate to="/makcikgpt/" replace />} />
+            <Route path="/makcikgpt/:slug" element={<MakcikGptArticle />} />
+            <Route path="/hermes/makcikgpt" element={<Navigate to="/makcikgpt/" replace />} />
+            <Route path="/hermes/makcikgpt/" element={<Navigate to="/makcikgpt/" replace />} />
+            <Route path="/hermes/makcikgpt/:slug" element={<MakcikGptRedirect />} />
+
+            {/* Legacy /world/makcikgpt redirects (Emancipated to HERMES) */}
+            <Route path="/world/makcikgpt" element={<Navigate to="/makcikgpt/" replace />} />
+            <Route path="/world/makcikgpt/" element={<Navigate to="/makcikgpt/" replace />} />
+            <Route path="/world/makcikgpt/index" element={<Navigate to="/makcikgpt/" replace />} />
+            <Route path="/world/makcikgpt/:slug" element={<MakcikGptRedirect />} />
+
+            {/* 3b. /world — Situational Intelligence, Global Commodities, Palantir Atlas */}
             <Route path="/world" element={<World />} />
             <Route path="/world/" element={<World />} />
             <Route path="/worlds" element={<Navigate to="/world" replace />} />
             <Route path="/worlds/" element={<Navigate to="/world" replace />} />
-            <Route path="/world/makcikgpt" element={<MakcikGPTAlias />} />
-            <Route path="/world/makcikgpt/" element={<MakcikGPTAlias />} />
-            <Route path="/world/makcikgpt/index" element={<Navigate to="/world/makcikgpt/" replace />} />
-            <Route path="/world/makcikgpt/:slug" element={<MakcikGptArticle />} />
             <Route path="/world/oil" element={<CommodityPage slug="oil" />} />
             <Route path="/world/oil/" element={<CommodityPage slug="oil" />} />
             <Route path="/world/gas" element={<CommodityPage slug="gas" />} />
@@ -253,7 +264,7 @@ function EarthGlobeRedirect() {
 
 function MakcikGptRedirect() {
   const { slug } = useParams();
-  return <Navigate to={`/world/makcikgpt/${slug ?? ''}`} replace />;
+  return <Navigate to={`/makcikgpt/${slug ?? ''}`} replace />;
 }
 
 export default App;

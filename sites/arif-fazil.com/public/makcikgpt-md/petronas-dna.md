@@ -52,13 +52,19 @@ Dulu CEO PETRONAS berani cakap "tidak" kat Perdana Menteri. Sekarang CEO PETRONA
 
 **strong**, suara yang tanya "DNA hang hilang kat mana?" — dengan resit
 
-999 Meterai · Versi 1.0 Bahasa Makcik · 1 Julai 2026
+999 Meterai · Versi 1.2 Bahasa Makcik · 26 Ogos 2026 (update dari v1.1, 1 Julai 2026)
+
+**strong** Kisah DNA PETRONAS ni masih relevan — malah makin kuat. Board chronology 2023-2026 yang terkini (/vitals) dan full civic dossier (link di bawah) tunjuk struktur governance yang sama: bulldog DNA dah diganti dengan deal-making DNA. Makcik boleh baca kedua-dua — artikel DNA asal di bawah, + post-Aug 2026 update di hujung.
+
+**strong** [PETRONAS · VITALS — institutional intelligence](/vitals/) · [📄 Full civic dossier](/world/makcikgpt/petronas-full-reality-rakyat-dossier) · [🏛️ Leadership archive 1974–2026](/world/makcikgpt/petronas-leadership-1974-2026)
+
+**strong** 1H FY2026 group report — expected ~29 Ogos 2026. Watch [/world/makcikgpt/feed.xml](/world/makcikgpt/feed.xml).
 
 # PETRONAS DNA — Dulu Bulldog, Sekarang Anjing
 
 Dulu CEO PETRONAS berani cakap "tidak" kat Perdana Menteri. Sekarang CEO PETRONAS tulis kat LinkedIn: "Items Posted Are Personal Viewpoints — Not Reflection Of Company's Position." Makcik tanya: hang jaga siapa sebenarnya?
 
-999 Meterai | Versi 1.0 Bahasa Makcik | 1 Julai 2026
+999 Meterai | Versi 1.2 Bahasa Makcik · update 26 Ogos 2026 dari v1.1 (1 Julai 2026)
 
 ---
 
@@ -298,6 +304,14 @@ Tapi kalau orang kat atas tak faham DNA tu — kalau dia cuma tahu susun deal, t
 
 Dan bila DNA tu mati, PETRONAS tinggal nama saja.
 
+📡 Kemas Kini 26 Ogos 2026 (Versi 1.2)
+
+Kisah DNA PETRONAS ni makin terbukti. Rekod lembaga pengarah terkini 2023-2026 (PETRONAS Annual Report + website BOD composition) dan Dossier Rakyat Penuh (dokumen penulis, bukan dokumen awam) mengesahkan: bulldog DNA diganti dengan extraction DNA.
+
+👉 PETRONAS · VITALS — Institutional Intelligence | 📄 Full Civic Dossier (31 Muka Surat) | 🏛️ Leadership Archive 1974–2026 (58 Muka Surat) | 📥 Muat Turun PDF
+
+---
+
 ▲ Buat Ini Sekarang
 
 1. Baca artikel asal: "The Petronas DNA" — The Edge Malaysia, Issue 792, 8-14 Feb 2010.
@@ -312,6 +326,82 @@ Dan bila DNA tu mati, PETRONAS tinggal nama saja.
 
 Cerita ni dikarang dari sumber awam: The Edge Malaysia (Feb 2010), LinkedIn profil rasmi CEO PETRONAS, kenyataan akhbar PETRONAS, dan pengalaman anak PETRONAS yang masih ingat DNA tu. Setiap quote ada sumber. Setiap fakta ada rekod.
 
+## 📡 Update — 26 Ogos 2026 · DNA Thesis Reaffirmed by New Evidence
+
+Makcik, artikel ni publish 1 Julai 2026. Sejak tu, banyak benda baru confirm apa yang Makcik dah cakap.
+
+### 1. Board PETRONAS dikecilkan dari ~12 ke 8 director dalam 30 bulan
+
+Semua orang yang keluar adalah government nominee (NINED). Tinggal seorang NINED (Shahrazat, MoF Inc. nominee, dilantik 13 Januari 2025). 3 ED + 1 NINED loyal = 4 votes pro-management. TIDAK ADA mathematical path untuk INEDs challenge CEO.
+
+### 2. CEO dapat kontrak sambungan kedua — Ogos 2026
+
+Tempoh (2 atau 3 tahun) tak disclosed oleh PETRONAS. Media (The Edge, The Ledger Asia) persoalkan.
+
+### 3. Dividen RM32 bilion (FY2025) = 70.5% PAT — TRIPWIRE BROKEN
+
+70 sen setiap ringgit untung jadi dividen kerajaan SEBELUM reinvestment. Macam kebun getah yang dituai terlalu cepat. Untuk FY2026, dividen dikurangkan ke RM20 bilion (38% cut) — tapi MoF jangka Brent $60-65, bawah tripwire crossover $71.60.
+
+### 4. COO seat dihidupkan — 8 tahun dormant
+
+Mohd Jukris dilantik ED/COO 1 Februari 2026. 10 hari selepas PETRONAS fail Federal Court motion Sarawak DGO. Pangkat Upstream specialist dilantik atas holding board, tepat masa sengketa gas masuk mahkamah. Bukan coincidence.
+
+### 5. Satu orang chair BOTH Audit & Risk Committee
+
+Azizan Zakaria pegang dua-dua. Standard governance: chair berlainan. Single point of failure untuk independent challenge.
+
+### 6. 12 Hidden Risks — yang audited statements tak tunjuk
+
+- Reserves depletion (Malaysia crude 355 kbpd vs 2008 ~700 kbpd)
+
+- Pengerang RAPID bleeding (PCG rugi RM730M Q4 2025)
+
+- Kasawari carbon emissions +2.2% groupwide — pertama kali naik
+
+- Decommissioning liabilities hidden (anggaran RM5-15B)
+
+- Sukuk market shallower than conventional bonds
+
+- Sabah MA63 — parallel federal-state dispute dengan Sarawak
+
+- Tiada CEO succession plan
+
+- Dual-hat Audit & Risk chair
+
+- Hidden CAPEX overruns (40-60% norm)
+
+- ESG funds dah mula keluar dari O&G
+
+- Currency mismatch amplification (USD/MYR 4.047)
+
+- Climate litigation tail risk
+
+### 7. SOE comparison corpus — pattern matches
+
+SyarikatExtraction rateOutcome
+
+PDVSA96% (terminal)Production 3.2M → 1.2M bpd (2008-2017)
+PEMEX60-70% sustainedDebt $25B → $106B (2010-2023)
+**strong****strong****strong**
+
+### 8. The cascade order
+
+Bukan Brent jatuh dulu. Governance dulu. Board rubber-stamp capex → dividend pressure maintained → borrows → gearing up → bond spread blowout → JV partner anxiety → production decline (3-5 years later). Board adalah amplifier yang converts setiap external trigger jadi cascade.
+
+### Makcik, DNA bulldog makin hilang. DNA deal-making makin kuat.
+
+Bulatan tutup: Azizan (DNA loyalty) → CEO sekarang (DNA personal viewpoints). Setiap generasi, DNA makin cair. Bila DNA mati, PETRONAS tinggal nama saja.
+
+### Apa yang Makcik boleh buat sekarang
+
+- Baca /vitals — live institutional intelligence dengan 9 tripwires dan live market data
+
+- Tunggu 29 Ogos 2026 — 1H FY2026 group report
+
+- Kongsi artikel DNA ni — masih relevan, malah makin kuat
+
+- Tanya ahli parlimen — adakah mereka sedar governance structure sekarang?
+
 DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan diberi.
 
-Meterai 999 — arifOS Perisikan Persekutuan, 1 Julai 2026.
+Meterai 999 — arifOS Perisikan Persekutuan, Versi 1.2 · 26 Ogos 2026 (update dari v1.1, 1 Julai 2026).

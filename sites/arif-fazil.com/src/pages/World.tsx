@@ -52,6 +52,26 @@ export function World() {
       {/* TWO PATHWAYS */}
       <section className="py-16 md:py-20 border-b border-forge-iron" aria-label="Pathways">
         <div className="site-frame grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* 2027 dossier */}
+          <Link
+            to="/world/2027/"
+            className={`group block border border-forge-iron rounded-lg p-8 md:p-10 transition-colors hover:border-forge-orange/60 ${linkFocus}`}
+          >
+            <p className="font-mono text-[0.68rem] uppercase tracking-[0.12em] text-forge-dim mb-4">
+              Graded dossier · English
+            </p>
+            <h2 className="font-serif font-normal normal-case tracking-normal text-2xl text-forge-white mb-4">
+              AI Agents 2027
+            </h2>
+            <p className="font-body text-forge-dim leading-relaxed mb-8">
+              Five engines of chaos, ranked, and the one missing layer they share. Every citation
+              carries its grade — A, B or C — printed next to the claim it supports.
+            </p>
+            <span className="font-mono text-xs text-forge-orange group-hover:text-forge-white transition-colors">
+              Read the dossier &rarr;
+            </span>
+          </Link>
+
           {/* MakcikGPT */}
           <Link
             to="/world/makcikgpt/"

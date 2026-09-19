@@ -60,7 +60,7 @@ Epistemic: Data awam = OBS. Makcik interpretation = INT. Ramalan = SPEC. Niat ma
 
 ## Δ GROUND — Apa yang betul-betul berlaku
 
-Jun 2026. EnQuest umum beli 30% non-operated di PM6/12. Sebahagian daripada deal US$833 juta untuk empat PSC. Termasuk Balingian, SK8, D35.
+Jun 2026. EnQuest umum beli 30% non-operated di PM6/12. Sebahagian daripada deal US$833 juta untuk empat PSC (EnQuest RNS, Jun 2026). Termasuk Balingian, SK8, D35.
 
 PM6/12 ni blok yang ada Lebah Emas-1. Wildcat 2025. 11 reservoir. Buka new play. Sekarang? Jadi "mature asset". Dijual ekor.
 

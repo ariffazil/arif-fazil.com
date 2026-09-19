@@ -16,11 +16,13 @@
 
 ## Capabilities
 
-- 42 governed MCP tools (geox.* namespace): basin screening, STOIIP/volumetrics,
+- 31 governed MCP tools (geox.* namespace): basin screening, STOIIP/volumetrics,
   seismic attribute review, flood-risk triage, route viability, infrastructure
   watch, hazard escalation, risk matrix, verdict console, VAULT999 sealing.
-- 18 MCP App widgets (SEP-1865 GUI): WellDesk, Seismic Vision, Earth Volume,
-  Risk Console, Judge Console, Basin Explorer, Map Portal, Timeline View, and more.
+- 20 MCP App widgets (SEP-1865 GUI, active with live bindings): WellDesk,
+  Seismic Vision, Earth Volume, Risk Console, Judge Console, Basin Explorer,
+  Prospect Studio, Geoprobe, GravMag Studio, and more. (8 additional Apps
+  held as 'planned' awaiting F13 resurrection of ghosted tools; 3 deprecated.)
 - A2A negotiation via AAA control plane (:3001).
 
 ## Epistemic Contract (E1–E5)

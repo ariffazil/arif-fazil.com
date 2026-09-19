@@ -15,7 +15,7 @@ const content: ArticleContent = {
 
 <aside class="update-banner" style="background:#fff8e6;border-left:5px solid #d4a017;padding:14pt 18pt;margin:14pt 0;font-size:10pt">
 <strong>📡 Update 26 Ogos 2026:</strong> Kisah DNA PETRONAS ni masih relevan — malah makin kuat. Board chronology 2023-2026 yang terkini (/vitals) dan full civic dossier (link di bawah) tunjuk struktur governance yang sama: bulldog DNA dah diganti dengan deal-making DNA. Makcik boleh baca kedua-dua — artikel DNA asal di bawah, + post-Aug 2026 update di hujung.<br><br>
-<strong>Link:</strong> <a href="/vitals/">PETRONAS · VITALS — institutional intelligence</a> · <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier">📄 Full civic dossier</a><br><br>
+<strong>Link:</strong> <a href="/vitals/">PETRONAS · VITALS — institutional intelligence</a> · <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier">📄 Full civic dossier</a> · <a href="/world/makcikgpt/petronas-leadership-1974-2026">🏛️ Leadership archive 1974–2026</a><br><br>
 <strong>Next data point:</strong> 1H FY2026 group report — expected ~29 Ogos 2026. Watch <a href="/world/makcikgpt/feed.xml">/world/makcikgpt/feed.xml</a>.
 </aside>
 
@@ -266,8 +266,8 @@ const content: ArticleContent = {
 
 <div class="callout" style="border-left: 4px solid #00a3e0; background: rgba(0, 163, 224, 0.05); padding: 12px; margin-top: 16px;">
 <div class="callout-title" style="font-weight: bold; color: #003366;">📡 Kemas Kini 26 Ogos 2026 (Versi 1.2)</div>
-<p>Kisah DNA PETRONAS ni makin terbukti. Rekod lembaga pengarah terkini 2023-2026 dan Dossier Rakyat Penuh mengesahkan: bulldog DNA diganti dengan extraction DNA.</p>
-<p>👉 <a href="/vitals/" style="color: #00a3e0; font-weight: bold;">PETRONAS · VITALS — Institutional Intelligence</a> | <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier" style="color: #00a3e0; font-weight: bold;">📄 Full Civic Dossier (31 Muka Surat)</a> | <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf" style="color: #00a3e0; font-weight: bold;">📥 Muat Turun PDF</a></p>
+<p>Kisah DNA PETRONAS ni makin terbukti. Rekod lembaga pengarah terkini 2023-2026 (PETRONAS Annual Report + website BOD composition) dan Dossier Rakyat Penuh (dokumen penulis, bukan dokumen awam) mengesahkan: bulldog DNA diganti dengan extraction DNA.</p>
+<p>👉 <a href="/vitals/" style="color: #00a3e0; font-weight: bold;">PETRONAS · VITALS — Institutional Intelligence</a> | <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier" style="color: #00a3e0; font-weight: bold;">📄 Full Civic Dossier (31 Muka Surat)</a> | <a href="/world/makcikgpt/petronas-leadership-1974-2026" style="color: #00a3e0; font-weight: bold;">🏛️ Leadership Archive 1974–2026 (58 Muka Surat)</a> | <a href="/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf" style="color: #00a3e0; font-weight: bold;">📥 Muat Turun PDF</a></p>
 </div>
 
 <hr />

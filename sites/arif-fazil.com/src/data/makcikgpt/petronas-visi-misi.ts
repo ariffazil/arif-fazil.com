@@ -29,7 +29,7 @@ const content: ArticleContent = {
 
 <h2>Visi pertama (1974): Takde visi</h1>
 
-<p>PETRONAS mula dengan <strong>RM10 juta</strong> modal. Satu sen pun tak minta tambah dari kerajaan selepas tu.</p>
+<p>PETRONAS mula dengan <strong>RM10 juta</strong> modal (Akta Pembangunan Petroleum 1974 — founding capital). Satu sen pun tak minta tambah dari kerajaan selepas tu.</p>
 
 <p>Masa tu takde "visi" atau "misi." Yang ada: <strong>Akta Pembangunan Petroleum 1974.</strong> Satu undang-undang yang kata: PETRONAS jaga semua minyak dan gas Malaysia.</p>
 
@@ -37,7 +37,7 @@ const content: ArticleContent = {
 
 <p>Visi masa tu bukan ayat cantik. Visi masa tu: <strong>jangan bagi orang asing ambil duit negara.</strong></p>
 
-<p>Dan ia berjaya. Modal RM10 juta. Aset sekarang RM775 bilion.</p>
+<p>Dan ia berjaya. Modal RM10 juta. Aset sekarang RM775 bilion (anggaran penulis — PETRONAS tidak dedahkan total assets secara awam).</p>
 
 <hr />
 

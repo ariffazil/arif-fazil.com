@@ -101,7 +101,7 @@ Tahun 2024, YTL Power beli 53% saham Ranhill Utilities. Ranhill ni apa dia? Dia 
 
 Maknanya setiap rumah, setiap kilang, setiap data center di Johor — air mereka datang dari Ranhill, yang 53% milik YTL.
 
-Bulan Ogos 2025, kerajaan negeri Johor luluskan kenaikan tarif air. Kali pertama dalam 9 tahun. Data center kena bayar RM5.33 semeter padu — tarif khas. Sebelum ni takde kategori "data center" dalam bil air.
+Bulan Ogos 2025, kerajaan negeri Johor luluskan kenaikan tarif air. Kali pertama dalam 9 tahun. Data center kena bayar RM5.33 semeter padu — tarif khas (SAJ Holdings). Sebelum ni takde kategori "data center" dalam bil air.
 
 Sekarang dah ada.
 
@@ -158,7 +158,7 @@ Makcik ingat: tender terbuka — itu demokrasi. Tender terus — itu istimewa.
 
 Makcik, hang ingat tak 1BestariNet? Projek internet untuk sekolah — RM2.7 bilion — diberi kepada YTL Communications tanpa tender terbuka. Lepastu MACC (Suruhanjaya Pencegahan Rasuah) siasat.
 
-Tahun 2025, MACC siasat lagi. Kali ni pasal data centre construction graft — rasuah tender bina data center di Johor bernilai RM180 juta. MACC tahan kontraktor, isteri dia, dua pengarah syarikat. Lepastu depa cuba bakar RM1 juta wang tunai masa MACC serbu rumah.
+Tahun 2025, MACC siasat lagi. Kali ni pasal data centre construction graft — rasuah tender bina data center di Johor bernilai RM180 juta (FMT, Jul 2025). MACC tahan kontraktor, isteri dia, dua pengarah syarikat. Lepastu depa cuba bakar RM1 juta wang tunai masa MACC serbu rumah.
 
 > **▲ ▲ Kronologi MACC**
 > 2024: MACC siasat YTL Comms — 1BestariNet RM2.7b — ketua MACC sendiri awasi

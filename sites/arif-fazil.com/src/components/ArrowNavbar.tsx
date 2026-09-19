@@ -6,6 +6,7 @@ import { brand, primaryNav, type NavItem } from '@/data/navCanon'
 
 export const agenticMirrors = [
   { label: 'mcp', name: 'MCP Gateway', href: 'https://mcp.arif-fazil.com/mcp', icon: '🔌', desc: 'WebMCP & Tool Discovery' },
+  { label: 'hermes', name: 'HERMES', href: 'https://hermes.arif-fazil.com', icon: '🪽', desc: 'Meaning Integrity & Civic Voice' },
   { label: 'geox', name: 'GEOX', href: 'https://geox.arif-fazil.com', icon: '🌍', desc: 'Subsurface Earth Engine' },
   { label: 'well', name: 'WELL', href: 'https://well.arif-fazil.com', icon: '🫀', desc: 'Vitality & Homeostasis' },
   { label: 'wealth', name: 'WEALTH', href: 'https://wealth.arif-fazil.com', icon: '💰', desc: 'Capital & Claims Registry' },
@@ -20,7 +21,8 @@ const navHints: Record<string, string> = {
   '/': 'Home — sovereign surface',
   '/about': 'About — who is Arif Fazil',
   '/earth': 'Earth — live geology globe, wells & basins',
-  '/world': 'World — economics & civic intelligence',
+  '/world': 'World — economics & situational atlas',
+  '/makcikgpt': 'MakcikGPT — HERMES civic intelligence in Bahasa Makcik',
   '/words': 'Words — essays & analysis',
   '/work': 'Work — projects, systems & the substrate',
   '/999': '999 — proof, audit & verification',

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useNow } from '@/hooks/useNow'
+import { DeepVault999Zkpc } from '@/components/DeepVault999Zkpc'
 
 type Status = 'SEALED' | 'UNSEALED' | 'REFUTED'
 
@@ -154,8 +155,17 @@ export function Proof() {
           className="mt-6 max-w-[56ch] font-body text-[18px] leading-[1.65] text-[#9AA0A8]"
         >
           Everything claimed on these pages can be checked — against public records,
-          machine-readable documents, and the seals below.
         </motion.p>
+      </section>
+
+      {/* 1B — INTERACTIVE ZKPC MERKLE PROOF EXPLORER */}
+      <section className="mx-auto max-w-[1280px] px-6 py-12">
+        <div className="flex items-center gap-4 mb-6">
+          <span className="eyebrow text-gold">01B</span>
+          <span aria-hidden className="h-px flex-1 bg-gold/20" />
+          <span className="eyebrow text-[#9AA0A8]">ZERO-KNOWLEDGE MERKLE PROOF ENGINE</span>
+        </div>
+        <DeepVault999Zkpc />
       </section>
 
       {/* 2 — CLAIMS LEDGER */}

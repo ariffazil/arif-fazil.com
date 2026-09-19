@@ -1,7 +1,7 @@
 {
   "name": "Arif Fazil",
   "full_name": "Muhammad Arif bin Fazil",
-  "title": "\u0394\u03a9\u03a8 Architect \u00b7 Senior Exploration Geoscientist",
+  "title": "ΔΩΨ Architect · Senior Exploration Geoscientist",
   "philosophy": "Ditempa Bukan Diberi (Forged, Not Given)",
   "vocation": {
     "primary": "Earth Intelligence & Constitutional AI Governance",
@@ -30,12 +30,36 @@
     ]
   },
   "organs": [
-    {"id": "arifos", "label": "arifOS", "role": "constitutional_kernel"},
-    {"id": "aforge", "label": "A-FORGE", "role": "execution_shell"},
-    {"id": "aaa", "label": "AAA", "role": "cockpit_a2a"},
-    {"id": "geox", "label": "GEOX", "role": "earth_intelligence"},
-    {"id": "wealth", "label": "WEALTH", "role": "capital_intelligence"},
-    {"id": "well", "label": "WELL", "role": "vitality_guard"}
+    {
+      "id": "arifos",
+      "label": "arifOS",
+      "role": "constitutional_kernel"
+    },
+    {
+      "id": "aforge",
+      "label": "A-FORGE",
+      "role": "execution_shell"
+    },
+    {
+      "id": "aaa",
+      "label": "AAA",
+      "role": "cockpit_a2a"
+    },
+    {
+      "id": "geox",
+      "label": "GEOX",
+      "role": "earth_intelligence"
+    },
+    {
+      "id": "wealth",
+      "label": "WEALTH",
+      "role": "capital_intelligence"
+    },
+    {
+      "id": "well",
+      "label": "WELL",
+      "role": "vitality_guard"
+    }
   ],
   "organ_count": 6,
   "organ_sot": "https://arif-fazil.com/api/public-state",
@@ -50,6 +74,30 @@
     "version": "2.1-SOVEREIGN",
     "last_forged": "2026-08-17",
     "status": "SEALED",
-    "note": "organ_count=6 matches GET /api/public-state.organs. Canon federation.json also lists arifFLOW + HERMES (not public HTTP organs)."
+    "note": "organ_count=6 matches GET /api/public-state.organs. Canon federation.json also lists arifFLOW + HERMES (not public HTTP organs).",
+    "last_phase": "Lebih Bijaksana / Lebih Arif / Penuh Clarity · Phase 2",
+    "phase_2_note": "organ_split field added (PROPOSAL dca3d80 applied) to surface the public/internal/canon distinction honestly without changing the public-facing organ_count=6."
+  },
+  "organ_split": {
+    "public_organs": 6,
+    "public_organ_ids": [
+      "arifos",
+      "aforge",
+      "aaa",
+      "geox",
+      "wealth",
+      "well"
+    ],
+    "internal_organs": 3,
+    "internal_organ_ids": [
+      "ariflow",
+      "hermes",
+      "frame"
+    ],
+    "internal_doctrine": "Tombstoned publicly or scoped to internal governance (see canon/federation.json §organs)",
+    "canon_total_organs": 9,
+    "canon_total_assets": 12,
+    "canon_sot": "https://raw.githubusercontent.com/ariffazil/arif-fazil.com/main/canon/federation.json",
+    "rationale": "public surface = HTTP-exposed organs a human/agent can hit. internal = arifOS-registered but not HTTP-public. canon = total registered including L3 reference assets. organ_count kept at 6 (public) for backward compatibility; split field provides the full honest truth."
   }
 }

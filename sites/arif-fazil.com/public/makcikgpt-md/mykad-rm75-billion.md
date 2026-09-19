@@ -69,7 +69,7 @@ Deal berbilion ringgit, diminta secara lisan. Macam beli ikan kat pasar. Tapi ya
 
 Cerita ni pendek je sebenarnya.
 
-Kerajaan nak beli syarikat yang cetak MyKad dan pasport hang. Harga yang syarikat tu buka — RM7.5 bilion. Tapi nilai syarikat tu kat bursa cuma RM1 bilion. Tujuh kali ganda. Dan duit beli tu — duit hang.
+Kerajaan nak beli syarikat yang cetak MyKad dan pasport hang. Harga yang syarikat tu buka — RM7.5 bilion (Bursa Malaysia filing, Ogos 2026). Tapi nilai syarikat tu kat bursa cuma RM1 bilion (market cap pada hari filing). Tujuh kali ganda. Dan duit beli tu — duit hang.
 
 Yang buat Makcik terusut gigi, bukan nombor. Cara depa buat.
 
@@ -115,9 +115,7 @@ Founder asal yang bina syarikat tu 20 tahun? Kena jadikan timbalan. Itupun lepas
 > Tahun 2016, Suruhanjaya Sekuriti Malaysia (SC) tuduh Ishak Ismail insider trading — main saham Kenmark guna maklumat orang dalam. Dia menafikan.
 > >
 > >
-> Tahun 2023, dia bayar penyelesaian RM20 juta dengan SC.
-> >
-> >
+> Tahun 2023, dia bayar penyelesaian RM20 juta dengan SC (The Edge Malaysia, SC enforcement records).
 > Dua puluh juta, Makcik. Bukan duit parking kereta.
 > >
 > >

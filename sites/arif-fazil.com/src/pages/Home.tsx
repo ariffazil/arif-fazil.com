@@ -1,16 +1,24 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { LiveClock } from '@/components/LiveClock'
-import { LiveClockHero } from '@/components/LiveClockHero'
+import { LiveChronoBioClock } from '@/components/LiveChronoBioClock'
+import { FederationConstellation } from '@/components/FederationConstellation'
+import { RevealOnScroll } from '@/components/RevealOnScroll'
+import { ZenPulse } from '@/components/ZenPulse'
+import { HeroEarthGlobe } from '@/components/HeroEarthGlobe'
+import { HeroWordsCompass } from '@/components/HeroWordsCompass'
+import { HeroWorldIntel } from '@/components/HeroWorldIntel'
+import { HeroGenesis000 } from '@/components/HeroGenesis000'
+import { HeroVault999 } from '@/components/HeroVault999'
 import { discoveries } from '@/data/discoveries'
 import { agenticMirrors } from '@/components/ArrowNavbar'
 
 /**
- * Home — public routing surface.
+ * Home — Federated Agentic Web Environment Root.
  *
- * First screen = GitHub three-link offer, in human language:
- *   Arif (who) · GEOX (earth; computes, does not adjudicate) · arifOS (judge before execute)
- * Not a doctrine dump. Not six organ brands. Not port numbers.
+ * Layer 0 (Substrate): Live Chrono-Epigenetic Clock (DunedinPACE rate of aging).
+ * Layer 1 (Cognitive Orchestrator): AAA 333-AGI · 555-ASI · 888-APEX.
+ * Layer 2 (Organs): EARTH, WORDS, WORLD, 000, 999, HERMES.
  */
 
 type DoorKind = 'spa' | 'static'
@@ -53,7 +61,7 @@ const DOORS: Door[] = [
     name: 'arifOS',
     kicker: 'Governance',
     blurb:
-      'Independent policy kernel for agents: judge before execute. Not a model. Not a chatbot.',
+      'Independent policy kernel for agents: judge before execute. 13 hard constitutional floors.',
     href: '/arifos/',
     kind: 'static',
     label: 'Enter arifOS',
@@ -87,9 +95,17 @@ function DoorLink({
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
-      {/* ── HERO — who, what, why (30s, zero jargon) ─────────────────── */}
-      <section className="relative overflow-hidden border-b border-[#1F2733] bg-[#0A0B0D] py-16 md:py-24">
+    <div className="min-h-screen bg-[#07090E] text-[#EDEAE2]">
+      {/* ── ZEN PULSE — orientation in 3 seconds ──────────────────────── */}
+      <ZenPulse
+        whereAmI="arif-fazil.com · Sovereign Root"
+        whyCare="Federated agentic web system — rocks, code, biology & constitutional governance"
+        whatNext="Inspect the dual temporal node or enter an organ viewport"
+      />
+
+      {/* ── HERO — who, what, why + Dual Chrono-Epigenetic Clock ─────── */}
+      <section className="relative overflow-hidden border-b border-[#1F2733] bg-[#07090E] py-16 md:py-24">
+        <FederationConstellation />
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
@@ -99,19 +115,19 @@ export function Home() {
         />
 
         <div className="mx-auto max-w-[1360px] px-6 relative z-10">
-          {/* Status bar: identity + live clock (live clock is always-current, never stale) */}
+          {/* Status bar: identity + live clock */}
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#1F2733]">
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8]">
               <span className="w-2 h-2 rounded-full bg-[#E4572E]" />
-              <span>ARIF FAZIL</span>
+              <span>ARIF FAZIL · F13 SOVEREIGN HUMAN</span>
             </div>
             <LiveClock withDate className="text-[#9AA0A8]" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left: identity & purpose */}
-            <div className="lg:col-span-7">
-              <h1 className="font-display font-black text-[clamp(2.8rem,7vw,5.5rem)] leading-[0.92] uppercase tracking-tight text-[#EDEAE2] mb-6">
+            <div className="lg:col-span-6 xl:col-span-7">
+              <h1 className="font-display font-black text-[clamp(2.8rem,6.5vw,5.2rem)] leading-[0.92] uppercase tracking-tight text-[#EDEAE2] mb-6">
                 Arif<br />
                 <span className="text-[#9AA0A8]">Fazil</span>
               </h1>
@@ -122,18 +138,18 @@ export function Home() {
                 I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority.
               </p>
               <p className="font-sans text-base text-[#9AA0A8]/70 leading-relaxed max-w-2xl mb-8">
-                I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines.
+                I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines. Ditempa bukan diberi.
               </p>
 
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
-                Three doors
+                Three Core Gateways
               </p>
               <div className="flex flex-wrap gap-3">
                 {DOORS.map((d) => (
                   <DoorLink
                     key={d.name}
                     door={d}
-                    className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#1F2733] bg-[#11151C] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider hover:border-[#E4572E]/60 hover:text-[#EDEAE2] transition-colors"
+                    className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#1F2733] bg-[#10141D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider hover:border-[#E4572E]/60 hover:text-white transition-colors"
                   >
                     {d.label} →
                   </DoorLink>
@@ -147,71 +163,139 @@ export function Home() {
               </div>
             </div>
 
-            {/* Right: Live clock — always-current, never a stale stamp */}
-            <div className="lg:col-span-5 lg:border-l lg:border-[#1F2733] lg:pl-8 space-y-6">
-              <LiveClockHero />
+            {/* Right: DunedinPACE Dual Chrono-Biological Clock */}
+            <div className="lg:col-span-6 xl:col-span-5 lg:border-l lg:border-[#1F2733] lg:pl-8 space-y-6">
+              <LiveChronoBioClock />
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4">
-            {DOORS.map((d) => (
-              <article
-                key={d.name}
-                className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
-              >
-                <div>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E] mb-2">
-                    {d.kicker}
+      {/* ── 5 MACRO-SYSTEM HERO VIEWPORTS (FEDERATED AGENTIC WEB) ─────── */}
+      <section className="py-20 border-b border-[#1F2733] bg-[#05070B]" id="macro-viewports">
+        <div className="mx-auto max-w-[1360px] px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-10 pb-4 border-b border-[#1F2733]">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-2">
+                Federated Organ Ecosystem
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight text-white">
+                Macro-System Viewports
+              </h2>
+            </div>
+            <p className="font-mono text-xs text-[#9AA0A8] max-w-md text-right">
+              Live WebGL & SVG viewports into the five foundational sub-organs of arifOS.
+            </p>
+          </div>
+
+          {/* 5-Column / Responsive Grid of Hero Visuals */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 1. EARTH — Macrostrat Globe */}
+            <RevealOnScroll delay={0}><HeroEarthGlobe /></RevealOnScroll>
+
+            {/* 2. WORDS — The Constitutional Compass */}
+            <RevealOnScroll delay={80}><HeroWordsCompass /></RevealOnScroll>
+
+            {/* 3. WORLD — Palantir Macro Situation Room */}
+            <RevealOnScroll delay={160}><HeroWorldIntel /></RevealOnScroll>
+
+            {/* 4. 000 — Big Bang & Cosmic Star-Stuff */}
+            <RevealOnScroll delay={240}><HeroGenesis000 /></RevealOnScroll>
+
+            {/* 5. 999 — The Vault & ZKPC Provenance */}
+            <RevealOnScroll delay={320}><HeroVault999 /></RevealOnScroll>
+
+            {/* 6. HERMES — Meaning & Civic Voice Card */}
+            <RevealOnScroll delay={400}>
+            <article className="group relative rounded-xl border border-[#1F2733] bg-[#090C12] p-6 hover:border-[#31C48D]/60 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-lg">
+              <div className="absolute top-0 right-0 p-4 font-mono text-[9px] uppercase tracking-widest text-[#31C48D] bg-[#141A24]/70 rounded-bl-lg border-l border-b border-[#1F2733]">
+                HERMES · ORGAN
+              </div>
+
+              <div>
+                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#31C48D]" />
+                  <span>HERMES CIVIC VOICE · L2</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-white mb-2">
+                  MakcikGPT Conscience
+                </h3>
+                <p className="font-sans text-xs text-[#9AA0A8] leading-relaxed mb-4">
+                  Meaning integrity, civic journalism, and sovereign Malay voice deconstructing corporate power and wealth narratives.
+                </p>
+
+                <div className="relative w-full aspect-[4/3] rounded-lg bg-[#04060A] border border-[#1F2733] p-4 flex flex-col justify-between font-mono text-xs overflow-hidden">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-[9px] text-[#8A8578] pb-1 border-b border-[#1F2733]">
+                      <span className="text-[#31C48D] font-bold">VOICE GOVERNOR</span>
+                      <span>DITING GATE: PASS</span>
+                    </div>
+                    <p className="text-white text-[11px] font-serif italic leading-relaxed pt-1">
+                      "Bila RM70 bilion duit negara bergerak dan tak ada siapa berani tanya — Makcik tanya. Setiap angka ada meterai 999."
+                    </p>
+                    <div className="pt-2 text-[9px] text-[#8A8578] space-y-1">
+                      <div>· M1 PETRONAS DNA & Governance</div>
+                      <div>· M2 SEARAH & Gas Sarawak</div>
+                      <div>· M5 Akal & Kedaulatan Negara</div>
+                    </div>
                   </div>
-                  <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-3">
-                    {d.name}
-                  </h2>
-                  <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-6">
-                    {d.blurb}
-                  </p>
+
+                  <div className="pt-2 border-t border-[#1F2733] flex items-center justify-between text-[8px] text-[#6A7382]">
+                    <span>STATUS: EMANCIPATED TO HERMES</span>
+                    <span className="text-[#31C48D]">999 METERAI</span>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-[#1F2733] flex flex-wrap items-center justify-between gap-3">
-                  <DoorLink
-                    door={d}
-                    className="inline-flex items-center min-h-[44px] font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider"
-                  >
-                    {d.label} →
-                  </DoorLink>
-                  <a
-                    href={d.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center min-h-[44px] font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider"
-                  >
-                    {d.githubLabel} ↗
-                  </a>
+
+                <div className="mt-4 pt-3 border-t border-[#1F2733]">
+                  <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-[#8A8578] mb-1.5">
+                    <span>Publication Arm:</span>
+                    <span className="text-[#31C48D] font-bold">35+ ARTICLES LIVE</span>
+                  </div>
+                  <div className="p-2.5 rounded bg-[#06080E] border border-[#1F2733] font-mono text-[10px] text-[#9AA0A8] leading-relaxed">
+                    Now extracted from /world/ into top-level HERMES civic intelligence.
+                  </div>
                 </div>
-              </article>
-            ))}
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-[#1F2733] flex items-center justify-between">
+                <Link 
+                  to="/makcikgpt" 
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-[#31C48D] hover:underline uppercase tracking-wider font-semibold"
+                >
+                  Read MakcikGPT Exposes →
+                </Link>
+                <span className="font-mono text-[9px] text-[#6A7382]">BAHASA MAKCIK</span>
+              </div>
+            </article>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
 
       {/* ── DECISIONS UNDER NOISE — the governing idea ──────────────── */}
-      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0E1116]" id="idea">
+      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0D14]" id="idea">
         <div className="mx-auto max-w-[1360px] px-6">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
-            The Governing Idea
-          </div>
-          <h2 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-6">
-            Decisions under noise
-          </h2>
-          <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-3xl">
-            The subsurface is incomplete. Markets are noisy. Institutions simplify. AI fills gaps too confidently.
-          </p>
-          <p className="font-sans text-base text-[#EDEAE2]/85 leading-relaxed max-w-3xl mt-4">
-            My work is to preserve the evidence, name the uncertainty, and improve the decision.
-          </p>
+          <RevealOnScroll>
+            <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
+              The Governing Idea
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-6">
+              Decisions under noise
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll delay={150}>
+            <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-3xl">
+              The subsurface is incomplete. Markets are noisy. Institutions simplify. AI fills gaps too confidently.
+            </p>
+            <p className="font-sans text-base text-[#EDEAE2]/85 leading-relaxed max-w-3xl mt-4">
+              My work is to preserve the evidence, name the uncertainty, and improve the decision. Ditempa bukan diberi.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* ── THE WELLS RECORD — real-world grounding FIRST ────────────── */}
-      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0B0D]" id="wells">
+      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#07090E]" id="wells">
         <div className="mx-auto max-w-[1360px] px-6">
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
@@ -231,7 +315,7 @@ export function Home() {
             {discoveries.filter((d) => d.category === 'wells').slice(0, 4).map((d) => (
               <article
                 key={d.id}
-                className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
+                className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
               >
                 <div>
                   <div className="flex items-baseline justify-between gap-3 mb-2">
@@ -246,7 +330,6 @@ export function Home() {
                   <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed line-clamp-3">
                     {d.summary}
                   </p>
-                  {/* Evidence drawer — claim → evidence → source → limitations (read-only, native) */}
                   <details className="mt-3">
                     <summary className="cursor-pointer select-none font-mono text-[11px] uppercase tracking-wider text-[#9AA0A8] hover:text-[#E4572E] transition-colors">
                       Evidence drawer ▾
@@ -293,7 +376,7 @@ export function Home() {
       </section>
 
       {/* ── PROOF — bounded, not absolute ───────────────────────────── */}
-      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0B0D]" id="proof">
+      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#05070B]" id="proof">
         <div className="mx-auto max-w-[1360px] px-6">
           <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
             Proof, not performance
@@ -307,17 +390,17 @@ export function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6">
+            <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For institutions</div>
               <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">What I can contribute, what you can inspect, how to start.</p>
               <a href="/institution/" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Request a briefing →</a>
             </div>
-            <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6">
+            <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For agents</div>
               <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Start here: identity, read-only paths, what requires approval.</p>
               <Link to="/human" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Agent start here →</Link>
             </div>
-            <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-6">
+            <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For verification</div>
               <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">Inspect provenance. These are evidence snapshots, not self-issued certificates.</p>
               <Link to="/999" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Verification & provenance →</Link>
@@ -325,7 +408,7 @@ export function Home() {
           </div>
 
           {/* Agentic mirror (organs) */}
-          <div className="rounded-lg border border-[#1F2733] bg-[#0E1116] p-5 mb-10">
+          <div className="rounded-lg border border-[#1F2733] bg-[#080B10] p-5 mb-10">
             <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-3">
               Other doors — for agents
             </div>
@@ -336,7 +419,7 @@ export function Home() {
                   href={m.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-2.5 py-1.5 rounded bg-[#161B22] border border-[#1F2733] text-[11px] font-mono uppercase text-[#9AA0A8] hover:text-[#EDEAE2] hover:border-[#E4572E]/50 transition-colors"
+                  className="px-2.5 py-1.5 rounded bg-[#10141D] border border-[#1F2733] text-[11px] font-mono uppercase text-[#9AA0A8] hover:text-[#EDEAE2] hover:border-[#E4572E]/50 transition-colors"
                   title={m.desc}
                 >
                   {m.label} ↗
@@ -346,7 +429,7 @@ export function Home() {
           </div>
 
           {/* Disclaimer */}
-          <div className="rounded-lg border border-[#1F2733] bg-[#11151C] p-5">
+          <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-5">
             <p className="font-mono text-[11px] leading-relaxed text-[#9AA0A8]/70 max-w-3xl">
               Personal site of Muhammad Arif bin Fazil. Views and interpretations are personal unless explicitly
               identified as published institutional material. No confidential subsurface or commercial information

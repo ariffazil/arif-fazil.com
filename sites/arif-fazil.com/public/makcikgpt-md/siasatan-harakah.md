@@ -59,7 +59,7 @@ Hang dengar tak SEARAH?
 
 Tak? Takpe. Memang tak siapa bagitahu hang.
 
-SEARAH ni syarikat baru. Daftar kat London. Modal dua dollar je. Tapi dia pegang 19 medan gas — 14 kat Indonesia, 5 kat Malaysia. Nilai perjanjian? USD15 bilion. Lebih kurang RM70 bilion.
+SEARAH ni syarikat baru. Daftar kat London. Modal dua dollar je. Tapi dia pegang 19 medan gas — 14 kat Indonesia, 5 kat Malaysia (Companies House UK filing, 2026). Nilai perjanjian? USD15 bilion (SEARAH Limited formation documents). Lebih kurang RM70 bilion (anggaran tukaran).
 
 Dua syarikat besar punya anak: PETRONAS (Malaysia) dan Eni (Itali). Masing-masing 50%.
 

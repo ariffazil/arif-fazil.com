@@ -54,7 +54,7 @@ const content: ArticleContent = {
 
 <p>Tapi nilai perjanjian: <strong>USD 15 bilion</strong> (RM 70 bilion) untuk 5 tahun. Tu duit yang PETRONAS dan Eni komit untuk buat projek sama.</p>
 <p>Aset: <strong>19 ladang minyak dan gas</strong>. <strong>14 kat Indonesia, 5 kat Malaysia</strong>.</p>
-<p>Lima kat Malaysia tu (per Arif, Jun 2026): <strong>SK316</strong> (Sarawak, ada Kasawari), <strong>Kasawari</strong> (lapang, Sarawak), <strong>ExxonMobil 2008 PSC</strong> (diambil dari Exxon tahun 2024), <strong>Angsi Besar</strong> (MTJDA, kawasan Malaysia-Thailand), dan <strong>NC3</strong> (juga MTJDA).</p>
+<p>Lima kat Malaysia tu (per Arif, Jun 2026 — list penulis, bukan dari press release SEARAH): <strong>SK316</strong> (Sarawak, ada Kasawari), <strong>Kasawari</strong> (lapang, Sarawak), <strong>ExxonMobil 2008 PSC</strong> (diambil dari Exxon tahun 2024), <strong>Angsi Besar</strong> (MTJDA, kawasan Malaysia-Thailand), dan <strong>NC3</strong> (juga MTJDA).</p>
 <div class="key-numbers">
 <span class="row"><span class="k">Sarawak</span><span class="v">SK316, Kasawari</span></span>
 <span class="row"><span class="k">Luar Pesisir Semenanjung</span><span class="v">2008 PSC</span></span>

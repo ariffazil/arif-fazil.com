@@ -16,7 +16,10 @@
     "/world/makcikgpt/": "MakcikGPT civic intelligence — BM articles on sovereignty, governance, technology accountability (canonical landing)",
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",
     "/world/politics/shadow/anwar-ibrahim/": "33 Bayang Anwar Ibrahim — three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 public sources, editorial psychology analysis",
+    "/world/makcikgpt/petronas-leadership-1974-2026": "MakcikGPT article — Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
+    "/world/makcikgpt/pda-1974-bukan-undang-undang": "MakcikGPT article — PDA 1974 Tu Bukan Undang-Undang. Tu Rampasan Tanah. Makcik Nak Baca Batang Tubuh, Barulah Kita Boleh Tanya — Ini Selesai Ke Macam Mana?",
     "/world/makcikgpt/taufik-pengecut-dengan-title": "MakcikGPT article — Pengecut Tak Berani Confront — Edisi Khas",
+    "/world/makcikgpt/petronas-full-reality-rakyat-dossier": "MakcikGPT article — PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia",
     "/world/makcikgpt/taufik-klcc-ceo-petronas": "MakcikGPT article — Tengku Taufik: GM Bangunan, CEO Minyak Negara",
     "/world/makcikgpt/mykad-rm75-billion": "MakcikGPT article — RM7.5 Bilion Beli Kilang MyKad Hang — Makcik Tanya: Untuk Siapa?",
     "/world/makcikgpt/nusantara-ai-paradox": "MakcikGPT article — Orang Nusantara Tak Ada AI Sendiri — Dan Makcik Nak Tanya Kenapa",
@@ -83,5 +86,5 @@
     "llms_txt": true,
     "sitemap": true
   },
-  "last_updated": "2026-09-16"
+  "last_updated": "2026-09-18"
 }

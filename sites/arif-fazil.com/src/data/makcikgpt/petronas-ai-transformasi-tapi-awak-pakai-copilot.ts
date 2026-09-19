@@ -55,7 +55,7 @@ const content: ArticleContent = {
 
 <p>Makcik, mak dengar anak cakap macam tu — hati Makcik lain macam.</p>
 
-<p>Dia kata: "Mak, announcement tu untuk myPROdata. Platform data untuk investor luar. Supaya orang luar nampak apa yang PETRONAS ada. Supaya orang luar masuk Malaysia. Bukan untuk aku. Aku orang dalam. Tapi aku takde alat."</p>
+<p>Mungkin dia cakap macam ni: "Mak, announcement tu untuk myPROdata. Platform data untuk investor luar. Supaya orang luar nampak apa yang PETRONAS ada. Supaya orang luar masuk Malaysia. Bukan untuk aku. Aku orang dalam. Tapi aku takde alat." Tapi Makcik takde pita. Tu andaian — apa yang Arif rasa dia mungkin cakap.</p>
 
 <p>Makcik tanya: "Takde langsung?"</p>
 

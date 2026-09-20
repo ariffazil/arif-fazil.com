@@ -63,6 +63,26 @@
       "description": "Interactive Macrostrat globe, plates, quakes, wells. Static HTML primary — not SPA essay."
     },
     {
+      "path": "/pilot/",
+      "title": "Supervised AI Action Control — 4-Week Design Partner Pilot",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "Commercial offer: 4-week supervised pilot installing measurable action control around one AI-agent workflow. Eight exit criteria, receipt chain. Band RM20k-50k."
+    },
+    {
+      "path": "/institution/",
+      "title": "Briefing — professional conversation path",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "monthly",
+      "description": "Institutional briefing: what Arif Fazil can contribute, what can be inspected, boundaries, and how to start a professional conversation."
+    },
+    {
       "path": "/earth/kinabalu-basin/",
       "title": "Kinabalu Basin — Deepwater Stratigraphy & Play Synthesis",
       "mission": "investigate",
@@ -166,31 +186,34 @@
       "path": "/world/oil/",
       "title": "Oil Dashboard — Brent Crude Cognitive View",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Brent crude oil cognitive dashboard with live data"
+      "description": "Brent crude oil cognitive dashboard with live data",
+      "note": "Reconciled to observed HTTP 308 on 2026-09-21 (verify-surfaces.cjs truth_rule: catalog must match live HTTP)."
     },
     {
       "path": "/world/gas/",
       "title": "Gas Dashboard — Natural Gas Intelligence",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Natural gas dashboard with live data"
+      "description": "Natural gas dashboard with live data",
+      "note": "Reconciled to observed HTTP 308 on 2026-09-21 (verify-surfaces.cjs truth_rule: catalog must match live HTTP)."
     },
     {
       "path": "/world/gold/",
       "title": "Gold Dashboard — XAUUSD Trading Synthesis",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Gold trading synthesis and technical analysis dashboard"
+      "description": "Gold trading synthesis and technical analysis dashboard",
+      "note": "Reconciled to observed HTTP 308 on 2026-09-21 (verify-surfaces.cjs truth_rule: catalog must match live HTTP)."
     },
     {
       "path": "/world/politics/ns-election/",
@@ -752,5 +775,5 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-09-20T14:24:59Z"
+  "as_of": "2026-09-21"
 }

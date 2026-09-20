@@ -141,6 +141,26 @@ export function Home() {
                 I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines. Ditempa bukan diberi.
               </p>
 
+              {/* Offer line (2026-09-21): the identity above answers "who is Arif".
+                  A procurement reader also needs "what can we buy, and what does it cost".
+                  Wording is assembled from the /pilot/ page's own text — no new claims. */}
+              <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-5 mb-8 max-w-2xl">
+                <p className="font-mono text-[11px] uppercase tracking-widest text-[#E4572E] mb-2">
+                  For institutions · design partner pilot
+                </p>
+                <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-3">
+                  A four-week supervised pilot that installs measurable action control around one of
+                  your real AI-agent workflows — evidence on every action, a named human on every
+                  consequential one, and a receipt chain proving it after the fact. Band RM 20,000–50,000.
+                </p>
+                <a
+                  href="/pilot/"
+                  className="font-mono text-xs uppercase tracking-wider text-[#EDEAE2] hover:underline"
+                >
+                  See the eight exit criteria →
+                </a>
+              </div>
+
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
                 Three Core Gateways
               </p>
@@ -154,6 +174,12 @@ export function Home() {
                     {d.label} →
                   </DoorLink>
                 ))}
+                <a
+                  href="/pilot/"
+                  className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#E4572E]/60 text-[#E4572E] font-mono text-xs uppercase tracking-wider hover:bg-[#E4572E]/10 transition-colors"
+                >
+                  Design partner pilot →
+                </a>
                 <a
                   href="/institution/"
                   className="inline-flex items-center justify-center px-5 min-h-[44px] rounded bg-[#E4572E] text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-[#E4572E]/90 transition-colors"
@@ -394,6 +420,8 @@ export function Home() {
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For institutions</div>
               <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">What I can contribute, what you can inspect, how to start.</p>
               <a href="/institution/" className="font-mono text-xs text-[#EDEAE2] hover:underline uppercase tracking-wider">Request a briefing →</a>
+              <br />
+              <a href="/pilot/" className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider">Design partner pilot →</a>
             </div>
             <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6">
               <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-2">For agents</div>

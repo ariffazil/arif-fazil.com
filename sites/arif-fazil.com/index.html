@@ -25,7 +25,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arif-fazil.com" />
-    <meta property="og:image" content="https://arif-fazil.com/og-identity.svg" />
+    <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="arif-fazil.com identity mark (AF monogram — no portrait)" />
     <meta property="og:site_name" content="arif-fazil.com" />
 
@@ -36,7 +39,7 @@
       name="twitter:description"
       content="Uncertain Earth data into defensible decisions. AI bounded by evidence and human authority."
     />
-    <meta name="twitter:image" content="https://arif-fazil.com/og-identity.svg" />
+    <meta name="twitter:image" content="https://arif-fazil.com/og-identity.png" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -134,12 +137,6 @@
   </head>
   <body class="bg-[#0A0B0D] text-[#EDEAE2]">
     <a href="#main-content" class="sr-only">Skip to content</a>
-    <!-- Phase 5 (2026-09-17): REMEDIATION STATUS demoted from position-1 to footer status bar.
-         Per SITE_CONSTITUTION RULE 1 (human understanding first) + RULE 4 (agent surfaces secondary).
-         Add last_reviewed_at to prevent this disclosure from becoming stale. -->
-    <div role="status" aria-label="Federation remediation status" style="position:fixed;bottom:0;left:0;right:0;z-index:50;padding:6px 18px;border-top:1px solid #c9a84c;background:rgba(10,11,13,.92);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.6rem;line-height:1.4;color:#9a948a;text-align:center;backdrop-filter:blur(6px)">
-      <strong style="color:#c9a84c;letter-spacing:.06em">REMEDIATION STATUS</strong> — WEALTH under remediation controls · last_reviewed_at: <time datetime="2026-09-17">2026-09-17</time> · <a href="/vitals/" style="color:#c9a84c;text-decoration:underline">details</a>
-    </div>
     <noscript>
       <main id="main-content" data-noscript-fallback="true" style="padding:2rem;max-width:48rem;margin:0 auto;font-family:sans-serif;color:#EDEAE2;background:#0A0B0D;">
         <h1>Arif Fazil</h1>
@@ -154,6 +151,12 @@
         <p>Agents: start at <a href="/human" style="color:#E4572E;">/human</a> and <a href="/llms.txt" style="color:#E4572E;">/llms.txt</a>. Do not POST to /a2a.</p>
       </main>
     </noscript>
+    <!-- Remediation disclosure kept (integrity), but DOM-ordered AFTER the page content so it is
+         no longer the first thing a text extractor, crawler or screen reader meets on every route.
+         Visual position is unchanged: position:fixed;bottom:0. Moved 2026-09-21. -->
+    <div role="status" aria-label="Federation remediation status" style="position:fixed;bottom:0;left:0;right:0;z-index:50;padding:6px 18px;border-top:1px solid #c9a84c;background:rgba(10,11,13,.92);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.6rem;line-height:1.4;color:#9a948a;text-align:center;backdrop-filter:blur(6px)">
+      <strong style="color:#c9a84c;letter-spacing:.06em">REMEDIATION STATUS</strong> — WEALTH under remediation controls · last_reviewed_at: <time datetime="2026-09-17">2026-09-17</time> · <a href="/vitals/" style="color:#c9a84c;text-decoration:underline">details</a>
+    </div>
     <div id="root"></div>
   </body>
 </html>

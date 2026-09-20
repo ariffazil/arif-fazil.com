@@ -79,6 +79,40 @@ export function InstitutionPage() {
       <section className="border-b border-[#1F2733] py-14">
         <div className="mx-auto max-w-[44rem] px-6">
           <h2 className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-4">
+            Questions this answers
+          </h2>
+          <ul className="font-sans text-[#9AA0A8] space-y-2 mb-4">
+            <li>How many AI actions bypass the policy controls?</li>
+            <li>How long does it take to revoke an autonomous agent?</li>
+            <li>Can every consequential decision be reconstructed after the fact?</li>
+            <li>Can an auditor verify the chain of authority?</li>
+          </ul>
+          <p className="font-sans text-[#9AA0A8]">
+            Asked against a running system, not against a slide. Two of the four already have dated,
+            uncomfortable answers in a public failure record — published with the raw probes, including
+            the numbers that do not flatter the system that produced them.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-[#1F2733] py-14">
+        <div className="mx-auto max-w-[44rem] px-6">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-4">
+            If you want it built around your workflow
+          </h2>
+          <p className="font-sans text-[#9AA0A8]">
+            <Link className="text-[#E4572E] hover:underline" to="/pilot/">Design partner pilot</Link>
+            {' '}— four weeks, one live AI-agent workflow, eight exit criteria measured weekly and
+            reported honestly: unauthorised actions reaching execution, governance coverage of
+            high-risk action classes, false holds, approver latency, configuration drift.
+            Band RM 20,000–50,000. If a number misses, the weekly report says so.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-[#1F2733] py-14">
+        <div className="mx-auto max-w-[44rem] px-6">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-4">
             Boundaries
           </h2>
           <ul className="font-sans text-[#9AA0A8] space-y-2">

@@ -15,7 +15,10 @@ interface PageMetaProps {
 export function PageMeta({ title, description, path, image }: PageMetaProps) {
   const siteName = 'Arif Fazil'
   const baseUrl = 'https://arif-fazil.com'
-  const ogImage = image || `${baseUrl}/og${path === '/' ? '-identity' : path.replace(/\//g, '-')}.svg`
+  // F2: the per-page derivation used to build `/og-<path>.svg` — no such files exist, so every
+  // sub-page share card resolved to 404. Fall back to the one asset that is actually published.
+  // Social crawlers do not render SVG either, so the fallback is the PNG (1200x630).
+  const ogImage = image || `${baseUrl}/og-identity.png`
   const fullTitle = path === '/' ? title : `${title} — ${siteName}`
 
   useEffect(() => {

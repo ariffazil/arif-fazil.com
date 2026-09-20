@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Human Surface -->
+  <!-- Human Surface · canonicalised 2026-09-20: every URL rewritten to its post-redirect target (42); 1 unreachable entry dropped (/politics/ns-election/ index — stale Caddy redirect to a path that does not exist) -->
   <url>
     <loc>https://arif-fazil.com/</loc>
     <changefreq>monthly</changefreq>
@@ -18,7 +18,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/human</loc>
+    <loc>https://arif-fazil.com/human/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -28,7 +28,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/earth</loc>
+    <loc>https://arif-fazil.com/earth/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,12 +38,12 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/klci/</loc>
+    <loc>https://arif-fazil.com/world/economics/klci/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/usdmyr/</loc>
+    <loc>https://arif-fazil.com/world/economics/usdmyr/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -63,14 +63,9 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world</loc>
+    <loc>https://arif-fazil.com/world/</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arif-fazil.com/politics/ns-election/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://arif-fazil.com/politics/ns-election/compare/</loc>
@@ -93,12 +88,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/writing</loc>
+    <loc>https://arif-fazil.com/words/writing/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/doctrine</loc>
+    <loc>https://arif-fazil.com/words/doctrine/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -132,177 +127,177 @@
     <lastmod>2026-09-18</lastmod>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/</loc>
+    <loc>https://arif-fazil.com/makcikgpt/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/hukum-batu-realiti-atas-segalanya</loc>
+    <loc>https://arif-fazil.com/makcikgpt/hukum-batu-realiti-atas-segalanya</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency</loc>
+    <loc>https://arif-fazil.com/makcikgpt/dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/apa-lagi-manusia-mahu</loc>
+    <loc>https://arif-fazil.com/makcikgpt/apa-lagi-manusia-mahu</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/surat-kepada-yang-arif</loc>
+    <loc>https://arif-fazil.com/makcikgpt/surat-kepada-yang-arif</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-leadership-1974-2026</loc>
+    <loc>https://arif-fazil.com/makcikgpt/petronas-leadership-1974-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/pda-1974-bukan-undang-undang</loc>
+    <loc>https://arif-fazil.com/makcikgpt/pda-1974-bukan-undang-undang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/taufik-pengecut-dengan-title</loc>
+    <loc>https://arif-fazil.com/makcikgpt/taufik-pengecut-dengan-title</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-full-reality-rakyat-dossier</loc>
+    <loc>https://arif-fazil.com/makcikgpt/petronas-full-reality-rakyat-dossier</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/taufik-klcc-ceo-petronas</loc>
+    <loc>https://arif-fazil.com/makcikgpt/taufik-klcc-ceo-petronas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/mykad-rm75-billion</loc>
+    <loc>https://arif-fazil.com/makcikgpt/mykad-rm75-billion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/nusantara-ai-paradox</loc>
+    <loc>https://arif-fazil.com/makcikgpt/nusantara-ai-paradox</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/syaitan-ingat-dirinya-malaikat</loc>
+    <loc>https://arif-fazil.com/makcikgpt/syaitan-ingat-dirinya-malaikat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/suara-terlalu-siap</loc>
+    <loc>https://arif-fazil.com/makcikgpt/suara-terlalu-siap</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/chennah-bangang</loc>
+    <loc>https://arif-fazil.com/makcikgpt/chennah-bangang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/anak-sarawak-bayar-pda-anak-bangla-telefon</loc>
+    <loc>https://arif-fazil.com/makcikgpt/anak-sarawak-bayar-pda-anak-bangla-telefon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/dap-8-tahun-bangang</loc>
+    <loc>https://arif-fazil.com/makcikgpt/dap-8-tahun-bangang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/anwar-jung-shadow</loc>
+    <loc>https://arif-fazil.com/makcikgpt/anwar-jung-shadow</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/searah-senyum-media-suap</loc>
+    <loc>https://arif-fazil.com/makcikgpt/searah-senyum-media-suap</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/searah-kekal-milik-penuh</loc>
+    <loc>https://arif-fazil.com/makcikgpt/searah-kekal-milik-penuh</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/searah-bernama-lewat</loc>
+    <loc>https://arif-fazil.com/makcikgpt/searah-bernama-lewat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-visi-misi</loc>
+    <loc>https://arif-fazil.com/makcikgpt/petronas-visi-misi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-atm-kerajaan</loc>
+    <loc>https://arif-fazil.com/makcikgpt/petronas-atm-kerajaan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/ai-johor-rakyat-2026</loc>
+    <loc>https://arif-fazil.com/makcikgpt/ai-johor-rakyat-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-hive-sale</loc>
+    <loc>https://arif-fazil.com/makcikgpt/petronas-hive-sale</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/suriname-exxon-cabut</loc>
+    <loc>https://arif-fazil.com/makcikgpt/suriname-exxon-cabut</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/sam-altman-elon-musk-anwar-akal</loc>
+    <loc>https://arif-fazil.com/makcikgpt/sam-altman-elon-musk-anwar-akal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/daily-2026-07-01</loc>
+    <loc>https://arif-fazil.com/makcikgpt/daily-2026-07-01</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/ytl-monopoli</loc>
+    <loc>https://arif-fazil.com/makcikgpt/ytl-monopoli</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/ilmu-bbb</loc>
+    <loc>https://arif-fazil.com/makcikgpt/ilmu-bbb</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/searah-followup</loc>
+    <loc>https://arif-fazil.com/makcikgpt/searah-followup</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-dna</loc>
+    <loc>https://arif-fazil.com/makcikgpt/petronas-dna</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/iran-hormuz</loc>
+    <loc>https://arif-fazil.com/makcikgpt/iran-hormuz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/cerita-makcik</loc>
+    <loc>https://arif-fazil.com/makcikgpt/cerita-makcik</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/siasatan-harakah</loc>
+    <loc>https://arif-fazil.com/makcikgpt/siasatan-harakah</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

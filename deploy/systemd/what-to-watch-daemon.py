@@ -4,19 +4,30 @@ what-to-watch daemon — monitors /gold/api/snapshot for institutional
 trigger conditions and writes TRIGGER_FIRED entries to VAULT999 when
 thresholds cross.
 
-Trigger conditions (from institutional_signal.v1.json watch_conditions):
-  1. Brent < $70/bbl × 2 quarters  →  liquidity squeeze
-  2. CFFO → RM60B floor             →  ALGORITHMIC DIVIDEND CAP confirmation
-  3. Sovereign extraction > 65%    →  ESCALATE (already ENGAGED)
-  4. Reserve Replacement < 1.0×     →  CAPITAL RECYCLING OVERRIDE
-  5. Governance Capacity < 0.50    →  100% INDEPENDENT NED QUORUM
+Trigger conditions — every threshold reads a LIVE source:
+  1. Brent < $70/bbl                 →  liquidity squeeze        (OBS /oil/api/snapshot)
+  2. CFFO → RM60B floor              →  algorithmic dividend cap (OBS /data/wealth/petronas_vitals.json)
+  3. Sovereign extraction > 65%      →  ESCALATE (already ENGAGED)
+  4. Capital recycling < 1.0×        →  capital recycling override (INTERPRET — vitals tripwire 5)
 
-The daemon reads /gold/api/snapshot every 5 minutes (matches the
-zen-market.js refresh interval). On state change, writes a structured
-TRIGGER_FIRED entry to /root/arifOS/VAULT999/outcomes.jsonl with full
+The daemon reads the live snapshots every 5 minutes. On state change it writes a
+structured TRIGGER_FIRED entry to /root/arifOS/VAULT999/outcomes.jsonl with full
 context. Idempotent — does NOT re-fire if state is unchanged.
 
-F2 epistemic tags preserved on every emission.
+F2 epistemic tags preserved on every emission. Fail-closed per trigger: a trigger
+whose own source is unavailable is SKIPPED and logged — never fired, and never
+substituted with a proxy value.
+
+REPAIR 2026-09-20 (three defects found in a live audit):
+  a. The daemon read /data/wealth/institutional_signal.v1.json, which was never
+     deployed to the served root — every iteration died on HTTP 404 (journal shows
+     404 on every 5-minute tick since 2026-08-04).
+  b. T1 compared a FABRICATED Brent — gold price × 1.02 — against a $70 oil
+     threshold. A made-up number was one fetch away from being written into
+     VAULT999 as an OBS trigger. Now reads the real XBRENT price.
+  c. `vitals.get("obs_facts", {}).get(...)` crashed on the live file, where
+     obs_facts exists but is null. Anchors now read from ifr_anchors_fy2025 and
+     the tripwire list is indexed BY DECLARED id, not by list position.
 
 Service: what-to-watch.service (systemd)
 """
@@ -49,7 +60,7 @@ TRIGGERS = {
         "metric": "cffo_rm_b",
         "operator": "<",
         "threshold": 60.0,
-        "source": "/gold/api/snapshot · ticker context (estimated from PAT × 1.88)",
+        "source": "/data/wealth/petronas_vitals.json · ifr_anchors_fy2025.cffo_rm_b (audited IFR anchor)",
         "consequence": "algorithmic_dividend_cap_confirmed",
         "epistemic": "DER",
         "fired": False,
@@ -58,7 +69,7 @@ TRIGGERS = {
         "metric": "extraction_pct_pat",
         "operator": ">",
         "threshold": 65.0,
-        "source": "/data/wealth/institutional_signal.v1.json · obs_facts.extraction_pct_pat",
+        "source": "/data/wealth/petronas_vitals.json · tripwire id=9 (sovereign extraction gauge)",
         "consequence": "AMEND-2026-08-03-001 hard_lock_engaged",
         "epistemic": "OBS",
         "fired": False,  # will already be True on first run
@@ -67,7 +78,7 @@ TRIGGERS = {
         "metric": "capital_recycling_x",
         "operator": "<",
         "threshold": 1.0,
-        "source": "/data/wealth/petronas_vitals.json · DER computed (UNVERIFIED)",
+        "source": "/data/wealth/petronas_vitals.json · tripwire id=5 (tagged INTERPRET in source)",
         "consequence": "capital_recycling_override",
         "epistemic": "DER",
         "fired": False,
@@ -138,62 +149,135 @@ def write_trigger_fired(trigger_id, trigger_def, current_value, comparison, cont
         return False
 
 
+VITALS_URL = "https://arif-fazil.com/data/wealth/petronas_vitals.json"
+
+# Trigger state must survive a restart. Without this, every already-crossed
+# threshold re-fires a duplicate TRIGGER_FIRED into VAULT999 on each restart,
+# which turns the ledger into a history of process restarts rather than of
+# state transitions. Unreadable/unwritable state = fail toward the old
+# behaviour (assume not fired), never toward suppressing a real crossing.
+STATE_FILE = "/var/lib/what-to-watch/state.json"
+
+
+def load_state() -> dict:
+    try:
+        with open(STATE_FILE) as f:
+            data = json.load(f)
+        return {k: bool(v) for k, v in data.items() if k in TRIGGERS}
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        print(f"  ! state load failed ({e}) — assuming no prior crossings", flush=True)
+        return {}
+
+
+def save_state() -> None:
+    try:
+        os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
+        tmp = STATE_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump({k: v["fired"] for k, v in TRIGGERS.items()}, f, indent=1, sort_keys=True)
+        os.replace(tmp, STATE_FILE)
+    except Exception as e:
+        print(f"  ! state save failed: {e}", flush=True)
+
+
+def tripwire_now(vitals, wid):
+    """Read a tripwire's current value by its DECLARED id, not by list position."""
+    for w in vitals.get("tripwires") or []:
+        if isinstance(w, dict) and w.get("id") == wid:
+            return w.get("now")
+    return None
+
+
 def run_once():
-    """One iteration: fetch snapshots, check triggers, fire if needed."""
+    """One iteration: read the live sources, check triggers, fire on crossing.
+
+    Fail-closed PER TRIGGER: a trigger whose own source is unavailable is skipped
+    and named in the log. No value is ever substituted, proxied, or defaulted.
+    """
     gold = fetch(SNAPSHOT_URL)
     oil = fetch(OIL_URL)
-    vitals = fetch("https://arif-fazil.com/data/wealth/petronas_vitals.json")
-    sig = fetch("https://arif-fazil.com/data/wealth/institutional_signal.v1.json")
+    vitals = fetch(VITALS_URL)
 
-    if "_error" in gold or "_error" in vitals or "_error" in sig:
-        print(f"  ! fetch error: gold={gold.get('_error', 'ok')[:30]} vitals={vitals.get('_error', 'ok')[:30]} sig={sig.get('_error', 'ok')[:30]}", flush=True)
-        return
+    unavailable = [
+        f"{name}={payload['_error'][:40]}"
+        for name, payload in (("gold", gold), ("oil", oil), ("vitals", vitals))
+        if "_error" in payload
+    ]
+    if unavailable:
+        print(f"  ! source unavailable: {' | '.join(unavailable)}", flush=True)
 
-    # Extract current values
-    brent = oil.get("ticker", {}).get("price") if "_error" not in oil else None
-    if brent is None:
-        # Fall back to gold page macro panel — but for now use gold ticker as proxy
-        brent = gold.get("ticker", {}).get("price") * 1.02  # rough Brent ≈ gold × 1.02, will be replaced by oil endpoint
-    pat = vitals.get("obs_facts" if "obs_facts" in vitals else "ifr_anchors_fy2025", {}).get("pat_rm_b") or vitals.get("ifr_anchors_fy2025", {}).get("pat_rm_b")
-    cffo = pat * (vitals.get("ifr_anchors_fy2025", {}).get("cffo_rm_b", 85.2) / vitals.get("ifr_anchors_fy2025", {}).get("pat_rm_b", 45.4)) if pat else None
-    extraction = sig.get("obs_facts", {}).get("extraction_pct_pat")
+    def pick(source, *path):
+        if "_error" in source:
+            return None
+        node = source
+        for key in path:
+            if not isinstance(node, dict):
+                return None
+            node = node.get(key)
+        return node
+
+    brent = pick(oil, "ticker", "price")                                    # OBS — live XBRENT
+    pat = pick(vitals, "ifr_anchors_fy2025", "pat_rm_b")                    # OBS — audited IFR
+    cffo = pick(vitals, "ifr_anchors_fy2025", "cffo_rm_b")                  # OBS — audited IFR
+    extraction = tripwire_now(vitals, 9) if "_error" not in vitals else None  # OBS gauge (tripwire 9)
+    recycling = tripwire_now(vitals, 5) if "_error" not in vitals else None   # INTERPRET ratio (tripwire 5)
 
     context = {
         "brent_snapshot": brent,
         "pat_snapshot": pat,
-        "cffo_estimate": round(cffo, 1) if cffo else None,
+        "cffo_anchored": cffo,
         "extraction_snapshot": extraction,
-        "gold_ticker_price": gold.get("ticker", {}).get("price"),
+        "capital_recycling_snapshot": recycling,
+        "gold_ticker_price": pick(gold, "ticker", "price"),
+        "unavailable_sources": unavailable,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
+    values = {
+        "brent_usd_bbl": brent,
+        "cffo_rm_b": cffo,
+        "extraction_pct_pat": extraction,
+        "capital_recycling_x": recycling,
+    }
+
     # Check each trigger
+    changed = False
     for tid, tdef in TRIGGERS.items():
-        metric = tdef["metric"]
-        # Map metric name to current value
-        val = {
-            "brent_usd_bbl": brent,
-            "cffo_rm_b": cffo,
-            "extraction_pct_pat": extraction,
-            "capital_recycling_x": vitals.get("tripwires", [{}])[4].get("now", 1.2) if len(vitals.get("tripwires", [])) > 4 else 1.2,
-        }.get(metric)
+        val = values.get(tdef["metric"])
+        if val is None:
+            print(f"  · {tid} SKIPPED · no live value ({tdef['source'].split(' · ')[0]})", flush=True)
+            continue
 
         fired, comparison = check_trigger(tid, tdef, val)
         if fired and not tdef["fired"]:
             tdef["fired"] = True
+            changed = True
             write_trigger_fired(tid, tdef, val, comparison, context)
         elif not fired and tdef["fired"]:
             # State reset — log recovery too
             tdef["fired"] = False
+            changed = True
             print(f"  ↺ {tid} reset · {comparison}", flush=True)
         # else: same state, no-op (idempotent)
+
+    if changed:
+        save_state()
 
 
 def main():
     print(f"[what-to-watch daemon] started at {datetime.now(timezone.utc).isoformat()}", flush=True)
-    print(f"[what-to-watch daemon] watching: {SNAPSHOT_URL}", flush=True)
+    print(f"[what-to-watch daemon] watching: {SNAPSHOT_URL} + {OIL_URL} + {VITALS_URL}", flush=True)
     print(f"[what-to-watch daemon] interval: {INTERVAL}s", flush=True)
     print(f"[what-to-watch daemon] vault: {VAULT}", flush=True)
+    print(f"[what-to-watch daemon] state: {STATE_FILE}", flush=True)
+
+    restored = load_state()
+    for tid, fired in restored.items():
+        TRIGGERS[tid]["fired"] = fired
+    print(f"[what-to-watch daemon] restored crossings: "
+          f"{[t for t, f in restored.items() if f] or 'none'}", flush=True)
 
     while True:
         try:

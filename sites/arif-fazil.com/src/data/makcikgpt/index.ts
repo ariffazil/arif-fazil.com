@@ -38,7 +38,9 @@ import nexgMykadSiapaBeli from './nexg-mykad-siapa-beli';
 import suratKepadaYangArif from './surat-kepada-yang-arif';
 import apaLagiManusiaMahu from './apa-lagi-manusia-mahu';
 import hukumBatuRealitiAtasSegalanya from './hukum-batu-realiti-atas-segalanya';
+import dajjalSudahTibaDanDiaNampakMacamEfficiency from './dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency';
 export const makcikArticleModules: ArticleContent[] = [
+  dajjalSudahTibaDanDiaNampakMacamEfficiency,
   hukumBatuRealitiAtasSegalanya,
   apaLagiManusiaMahu,
   suratKepadaYangArif,
@@ -79,6 +81,23 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency',
+    title: 'Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency',
+    subtitle: 'Dajjal yang kita tunggu tak datang berkuda putih atau berpedang. Dia datang dengan dashboard yang cantik dan syurga data yang membakar manusia.',
+    date: '2026-09-20',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × METAFORA ESKATOLOGI × AI × KORPORAT',
+    language: 'ms',
+    excerpt: 'Dajjal satu mata bukan sebab cacat, tapi sebab dia dah decide apa yang nak nampak: nampak angka dan KPI, buta muka manusia. Bila CEO pakai AI agent untuk buru "efficiency", sungai air sejuk yang diminum sebenarnya api yang membakar keupayaan dan naluri manusia. Siapa yang nampak Dajjal? Makcik jawab: tengok siapa yang tiada dalam bilik mesyuarat tu.',
+    tags: ['dajjal', 'efficiency', 'ai-agents', 'korporat', 'dashboard', 'makcikgpt', 'surat', 'metafora', 'humanity'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-09-20',
+      last_updated: '2026-09-20',
+    },
+  },
   {
     slug: 'hukum-batu-realiti-atas-segalanya',
     title: 'Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang',

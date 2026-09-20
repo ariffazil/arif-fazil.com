@@ -1,5 +1,56 @@
 [
   {
+    "id": "m-dajjal-nampak-macam-efficiency",
+    "title": "Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency",
+    "date": "2026-09-20",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 4
+    },
+    "tags": [
+      "dajjal",
+      "efficiency",
+      "korporat",
+      "ai-agents",
+      "makcikgpt",
+      "metafora",
+      "humanity"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "DJL-C1",
+        "text": "Dajjal moden menjelma dalam bentuk metrik satu mata: mengukur angka dan kos sambil membutakan diri dari penderitaan manusia.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DJL-C2",
+        "text": "Peningkatan kecekapan yang membuang manusia turut menghapuskan keupayaan naluri dan pertimbangan tacit yang tidak boleh dibeli semula dengan pemerolehan.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DJL-C3",
+        "text": "Delegasi pemikiran dan pembuatan keputusan sepenuhnya kepada ejen AI menghapuskan akauntabiliti moral dan kehadiran kepimpinan.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DJL-C4",
+        "text": "Syurga korporat berasaskan data tanpa tentangan adalah neraka terasing di mana manusia kehilangan makna kewujudan.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
     "id": "m-hukum-batu-realiti-atas-segalanya",
     "title": "Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang",
     "date": "2026-09-20",

@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-09-20T14:56:10Z",
+ "generated_at": "2026-09-20T15:10:30Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",
@@ -15,8 +15,8 @@
   "state": "PRESENT",
   "path": "/root/VAULT999/RECEIPTS",
   "count": 60,
-  "total_bytes": 120721,
-  "newest": "2026-09-20T14:47:11Z",
+  "total_bytes": 126229,
+  "newest": "2026-09-20T14:59:37Z",
   "superseded_retained": 1,
   "superseded_names": [
    "2026-09-18-wscar-gate-v2-seal.json.superseded"
@@ -138,9 +138,9 @@
    },
    {
     "name": "2026-09-20-flow-gap-seal-fi008.json",
-    "bytes": 7352,
-    "mtime": "2026-09-20T14:47:11Z",
-    "sha256": "e373aea5790bc054cff34518f6371019"
+    "bytes": 12860,
+    "mtime": "2026-09-20T14:59:37Z",
+    "sha256": "d8086bc56deadbf6f1f2c9e73699725f"
    },
    {
     "name": "2026-09-20-surface-guard-baseline-persistence.json",
@@ -441,7 +441,7 @@
   "state": "PRESENT",
   "path": "/root/.hermes/carry_forward.json",
   "schema": "arifos.carry_forward.v3",
-  "entries": 110,
+  "entries": 111,
   "open_loops": 36,
   "closed_loops": 19,
   "loops_total": 55,
@@ -509,7 +509,7 @@
   {
    "id": "D5",
    "title": "Open loops accumulate faster than they close",
-   "evidence": "36 open loops of 110 entries; oldest 2026-09-14T18:38:40Z",
+   "evidence": "36 open loops of 111 entries; oldest 2026-09-14T18:38:40Z",
    "consequence": "A backlog stated as policy. The stated count is the audit.",
    "owner": "ongoing"
   },

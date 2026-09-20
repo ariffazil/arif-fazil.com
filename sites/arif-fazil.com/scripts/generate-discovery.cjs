@@ -62,6 +62,9 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/writing`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/doctrine`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
+    // 2026-09-20 — public accountability surface: receipts, gate verdicts,
+    // seal-chain state and the defect register. See /root/forge_work/witness-ledger/.
+    { loc: `${SITE_BASE}/ledger`, priority: 0.8, changefreq: "weekly", lastmod: "2026-09-20" },
     { loc: `${SITE_BASE}/world/2027/`, priority: 0.85, changefreq: "monthly", lastmod: "2026-09-18" },
     { loc: `${SITE_BASE}/world/2027/malaysia/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-09-18" },
     { loc: `${SITE_BASE}/world/2027/receipts/`, priority: 0.75, changefreq: "monthly", lastmod: "2026-09-18" },

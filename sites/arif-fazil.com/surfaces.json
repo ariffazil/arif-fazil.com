@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-17",
+  "version": "2026-09-20",
   "domain": "arif-fazil.com",
   "doctrine": {
     "title": "Single canonical surface catalog. All machine catalogs are generated views of this file.",
@@ -683,6 +683,27 @@
       "type": "page",
       "title": "For Machines — Ops guide",
       "description": "Human-readable agent contracts, AUP, disclaimer"
+    },
+    {
+      "path": "/ledger",
+      "title": "WITNESS LEDGER — Public Accountability Record",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "The federation's record of what it did and what it got wrong: receipts preserved, output-gate verdicts, seal-chain state, and a defect register. Every figure is recomputed from a named source and re-checkable."
+    },
+    {
+      "path": "/ledger/ledger.json",
+      "title": "WITNESS LEDGER — Machine Record",
+      "mission": "remember",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
     }
   ],
   "federation_subdomains": [
@@ -731,5 +752,5 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-08-25T03:17:16Z"
+  "as_of": "2026-09-20T14:24:59Z"
 }

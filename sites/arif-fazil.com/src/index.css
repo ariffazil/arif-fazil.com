@@ -372,9 +372,17 @@
 }
 
 /* ── MakcikGPT Article Surface (2026-08-21) ────────────────────────────────── */
-/* Prevent duplicate .cover inside MakcikGPT articles */
+/* Prevent duplicate cover, opener, and title inside MakcikGPT articles */
 .makcik-article .cover,
-.makcik-article article .cover {
+.makcik-article article .cover,
+.makcik-article article .article-opener,
+.makcik-article article .article-header,
+.makcik-article article .cover-title,
+.makcik-article article .cover-subtitle,
+.makcik-article article .cover-kicker,
+.makcik-article article .cover-byline,
+.makcik-article article .cover-emoji,
+.makcik-article article h1 {
   display: none !important;
 }
 

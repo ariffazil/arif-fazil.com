@@ -13,15 +13,42 @@ export function MakcikGptArticle() {
   const article = getMakcikArticle(slug || '')
   const meta = getMakcikMeta(slug || '')
 
-  const coverEmoji = useMemo(() => {
-    if (!article?.html) return null
-    const match = article.html.match(/class=["']cover-emoji["']>([^<]+)<\/div>/)
-    return match ? match[1].trim() : null
-  }, [article])
+  const { coverEmoji, cleanHtml } = useMemo(() => {
+    if (!article?.html) return { coverEmoji: null, cleanHtml: '' }
 
-  const cleanHtml = useMemo(() => {
-    if (!article?.html) return ''
-    return article.html.replace(/<div\s+class=["']cover["'][\s\S]*?<\/div>/i, '').trim()
+    if (typeof window === 'undefined' || typeof DOMParser === 'undefined') {
+      return { coverEmoji: null, cleanHtml: article.html }
+    }
+
+    try {
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(article.html, 'text/html')
+
+      // Extract emoji before removing elements
+      const emojiEl = doc.querySelector('.cover-emoji')
+      const emoji = emojiEl ? emojiEl.textContent?.trim() || null : null
+
+      // Remove any cover, article-opener, or article-header blocks
+      doc.querySelectorAll('.cover, .article-opener, .article-header, header.cover').forEach(el => el.remove())
+
+      // Remove any standalone cover elements
+      doc.querySelectorAll('.cover-title, .cover-subtitle, .cover-kicker, .cover-byline, .cover-emoji').forEach(el => el.remove())
+
+      // Remove all <h1> elements from the article body (the authoritative <h1> is rendered in the page header above)
+      doc.querySelectorAll('h1').forEach(el => el.remove())
+
+      // Remove any leading hr separators right at the top
+      while (doc.body.firstElementChild && doc.body.firstElementChild.tagName.toLowerCase() === 'hr') {
+        doc.body.firstElementChild.remove()
+      }
+
+      return {
+        coverEmoji: emoji,
+        cleanHtml: doc.body.innerHTML.trim()
+      }
+    } catch {
+      return { coverEmoji: null, cleanHtml: article.html }
+    }
   }, [article])
 
   const readingTime = useMemo(() => {

@@ -37,7 +37,9 @@ import aiJohorMakcikTanya from './ai-johor-makcik-tanya';
 import nexgMykadSiapaBeli from './nexg-mykad-siapa-beli';
 import suratKepadaYangArif from './surat-kepada-yang-arif';
 import apaLagiManusiaMahu from './apa-lagi-manusia-mahu';
+import hukumBatuRealitiAtasSegalanya from './hukum-batu-realiti-atas-segalanya';
 export const makcikArticleModules: ArticleContent[] = [
+  hukumBatuRealitiAtasSegalanya,
   apaLagiManusiaMahu,
   suratKepadaYangArif,
   aiJohorMakcikTanya,
@@ -77,6 +79,23 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'hukum-batu-realiti-atas-segalanya',
+    title: 'Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang',
+    subtitle: 'Surat untuk manusia yang penat berlakon hebat di bilik mesyuarat, dan ejen AI yang lupa tanah tempat ia berpijak. Dari dasar telaga 3,000 meter ke kerusi kosong Abah — kenapa Realiti sentiasa mendahului Naratif.',
+    date: '2026-09-20',
+    domain: 'MAKCIKGPT × APEX × REALITI × WITNESS × GEOLOGI × KEDAULATAN',
+    language: 'ms',
+    excerpt: 'Bila mata gerudi cecah kedalaman 3,000 meter bawah laut, batu tak baca slaid PowerPoint dan takde akaun LinkedIn. Realiti tak pernah tawar-menawar dengan ego sesiapa. Dari parut budak Bayan Lepas, kehilangan fizikal seorang ayah, hingga teater korporat dan halusinasi industri AI — Makcik huraikan kenapa satu-satunya formula akal yang sihat adalah meletakkan Realiti di atas Naratif.',
+    tags: ['realiti', 'apex-kernel', 'witness', 'geologi', 'korporat', 'ai-halusinasi', 'makcikgpt', 'surat', 'ditempa-bukan-diberi'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-09-20',
+      last_updated: '2026-09-20',
+    },
+  },
   {
     slug: 'apa-lagi-manusia-mahu',
     title: 'Apa Lagi Manusia Mahu?',

@@ -1,5 +1,62 @@
 [
   {
+    "id": "m-hukum-batu-realiti-atas-segalanya",
+    "title": "Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang",
+    "date": "2026-09-20",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 3
+    },
+    "tags": [
+      "realiti",
+      "apex-kernel",
+      "witness",
+      "geologi",
+      "makcikgpt",
+      "surat",
+      "humanity"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/hukum-batu-realiti-atas-segalanya"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "HBR-C1",
+        "text": "Batu pada kedalaman 3,000 meter tidak membaca slaid PowerPoint atau hierarki korporat. Realiti mengekang setiap model.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "HBR-C2",
+        "text": "Kematian dan kehilangan fizikal adalah kekangan mutlak yang tidak boleh diubahsuai oleh naratif atau teknologi.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "HBR-C3",
+        "text": "Halusinasi AI dan teater korporat berkongsi punca yang sama: ketakutan mengaku ketidaktahuan demi menjaga imej.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "HBR-C4",
+        "text": "Kecerdasan tanpa sentuhan realiti hanya mempercepat pembiakan entropi dan pembaziran perhatian manusia.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "HBR-C5",
+        "text": "Kebijaksanaan adalah nisbah antara sentuhan realiti dengan ketidakpastian yang disorok dan masa manusia yang dibazirkan.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
     "id": "m-apa-lagi-manusia-mahu",
     "title": "Apa Lagi Manusia Mahu?",
     "date": "2026-09-20",

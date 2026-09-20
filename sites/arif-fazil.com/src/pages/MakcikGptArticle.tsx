@@ -13,10 +13,21 @@ export function MakcikGptArticle() {
   const article = getMakcikArticle(slug || '')
   const meta = getMakcikMeta(slug || '')
 
-  const readingTime = useMemo(() => {
-    if (!article?.html) return 0
-    return estimateReadingTime(article.html)
+  const coverEmoji = useMemo(() => {
+    if (!article?.html) return null
+    const match = article.html.match(/class=["']cover-emoji["']>([^<]+)<\/div>/)
+    return match ? match[1].trim() : null
   }, [article])
+
+  const cleanHtml = useMemo(() => {
+    if (!article?.html) return ''
+    return article.html.replace(/<div\s+class=["']cover["'][\s\S]*?<\/div>/i, '').trim()
+  }, [article])
+
+  const readingTime = useMemo(() => {
+    if (!cleanHtml) return 0
+    return estimateReadingTime(cleanHtml)
+  }, [cleanHtml])
 
   const { prev, next } = useMemo(() => {
     if (!meta) return { prev: null, next: null }
@@ -36,15 +47,15 @@ export function MakcikGptArticle() {
 
   if (!article || !meta) {
     return (
-      <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-24">
+      <div className="min-h-screen bg-[#07080A] text-[#EDEAE2] py-24">
         <div className="mx-auto max-w-2xl px-6 text-center">
-          <h1 className="font-display text-3xl font-bold uppercase mb-4">Artikel Tidak Dijumpai</h1>
+          <h1 className="font-display text-3xl font-bold uppercase mb-4 text-[#EDEAE2]">Artikel Tidak Dijumpai</h1>
           <p className="font-sans text-sm text-[#9AA0A8] mb-8">
             Artikel MakcikGPT yang diminta tiada dalam arkib atau telah dipindahkan.
           </p>
           <Link
             to="/makcikgpt/"
-            className="inline-block px-5 py-2 rounded bg-[#E4572E] text-white font-mono text-xs uppercase"
+            className="inline-block px-5 py-2 rounded bg-[#E4572E] text-white font-mono text-xs uppercase hover:bg-[#E4572E]/80 transition-colors"
           >
             ← Kembali ke MakcikGPT
           </Link>
@@ -54,38 +65,60 @@ export function MakcikGptArticle() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-16 md:py-24">
-      <div className="mx-auto max-w-[800px] px-6 makcik-article">
+    <div className="min-h-screen bg-[#07080A] text-[#EDEAE2] py-16 md:py-24 relative overflow-hidden makcik-ambient selection:bg-[#E4572E]/30 selection:text-white">
+      {/* Fractal Geometry Watermark Motif */}
+      <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 opacity-[0.035] text-[#EDEAE2]">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full">
+          <circle cx="50" cy="50" r="45" />
+          <circle cx="50" cy="50" r="30" />
+          <circle cx="50" cy="50" r="15" />
+          <polygon points="50,5 89,27 89,73 50,95 11,73 11,27" />
+          <polygon points="50,95 89,73 89,27 50,5 11,27 11,73" />
+          <line x1="50" y1="5" x2="50" y2="95" />
+          <line x1="11" y1="27" x2="89" y2="73" />
+          <line x1="11" y1="73" x2="89" y2="27" />
+        </svg>
+      </div>
+
+      <div className="mx-auto max-w-[800px] px-6 makcik-article relative z-10">
         {/* Navigation Breadcrumb */}
         <div className="mb-8 flex items-center justify-between border-b border-[#1F2733] pb-4">
           <Link
             to="/makcikgpt/"
-            className="font-mono text-xs text-[#31C48D] hover:underline uppercase tracking-wider flex items-center gap-1.5"
+            className="font-mono text-xs text-[#3B82F6] hover:text-[#60A5FA] hover:underline uppercase tracking-wider flex items-center gap-1.5 transition-colors"
           >
             <span>←</span>
             <span>Arkib MakcikGPT (HERMES)</span>
           </Link>
-          <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/30 bg-[#E4572E]/10">
+          <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/40 bg-[#E4572E]/10 font-semibold tracking-wider">
             SEAL {meta.seal || '999'}
           </span>
         </div>
 
-        {/* Article Header */}
-        <header className="mb-10">
-          <div className="font-mono text-xs font-bold text-[#31C48D] uppercase tracking-widest mb-3">
-            {meta.domain || 'CIVIC INTELLIGENCE'} · {meta.date}
+        {/* Unified Authoritative Article Header (Rendered ONCE) */}
+        <header className="mb-10 pb-8 border-b border-[#1F2733]">
+          {coverEmoji && (
+            <div className="text-2xl mb-4 tracking-widest" aria-hidden="true">
+              {coverEmoji}
+            </div>
+          )}
+          <div className="font-mono text-xs font-bold text-[#D9A62E] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E4572E]" />
+            <span>{meta.domain || 'CIVIC INTELLIGENCE'}</span>
+            <span className="text-[#9AA0A8]/50">·</span>
+            <span className="text-[#9AA0A8] font-normal">{meta.date}</span>
           </div>
-          <h1 className="font-serif text-3xl md:text-5xl font-black text-[#EDEAE2] leading-[1.1] mb-4">
+          <h1 className="font-serif text-3xl md:text-5xl font-black text-[#EDEAE2] leading-[1.12] mb-4 tracking-tight">
             {meta.title}
           </h1>
           {meta.subtitle && (
-            <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed mb-6">
+            <p className="font-sans text-lg md:text-xl text-[#A1A7B3] leading-relaxed mb-6 font-normal">
               {meta.subtitle}
             </p>
           )}
 
-          <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[#1F2733] text-xs font-mono text-[#9AA0A8]">
-            <span>Ditulis oleh: <strong className="text-[#EDEAE2]">MakcikGPT</strong></span>
+          <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[#1F2733]/60 text-xs font-mono text-[#9AA0A8]">
+            <span>Ditulis oleh: <strong className="text-[#D9A62E]">MakcikGPT</strong></span>
             <span>·</span>
             <span>Bahasa: <strong className="text-[#EDEAE2]">{meta.language === 'ms' ? 'Bahasa Malaysia' : 'English'}</strong></span>
             {readingTime > 0 && (
@@ -97,10 +130,10 @@ export function MakcikGptArticle() {
           </div>
         </header>
 
-        {/* Article Body (Clean, comfortable reading experience) */}
+        {/* Article Body (Clean, comfortable reading experience without duplicate cover) */}
         <article className="prose prose-invert max-w-none font-sans text-base md:text-lg leading-relaxed text-[#EDEAE2]/90 space-y-6">
           <div
-            dangerouslySetInnerHTML={{ __html: article.html || '' }}
+            dangerouslySetInnerHTML={{ __html: cleanHtml }}
             className="space-y-6 [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[#EDEAE2] [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#1F2733] [&>h3]:font-serif [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-[#D9A62E] [&>h3]:mt-8 [&>h3]:mb-3 [&>p]:leading-relaxed [&>blockquote]:border-l-4 [&>blockquote]:border-[#D9A62E] [&>blockquote]:bg-[#11151C] [&>blockquote]:p-4 [&>blockquote]:italic [&>blockquote]:text-[#EDEAE2] [&>strong]:text-[#D9A62E] [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-2"
           />
         </article>

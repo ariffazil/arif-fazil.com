@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WITNESS LEDGER — arifOS Federation</title>
+<meta name="description" content="The arifOS Federation's public accountability record: receipts preserved, output-gate verdicts, seal-chain state, and a defect register. Every figure is recomputed from a named source and re-checkable by anyone.">
+<link rel="canonical" href="https://arif-fazil.com/ledger" />
+<!-- Open Graph (DTI gate L5) -->
+<meta property="og:title" content="WITNESS LEDGER — arifOS Federation" />
+<meta property="og:description" content="The federation's record of what it did and what it got wrong. Receipts, gate verdicts, seal-chain state, and six published defects." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arif-fazil.com/ledger" />
+<meta property="og:image" content="https://arif-fazil.com/og-identity.svg" />
+<meta property="og:image:alt" content="arif-fazil.com identity mark (AF monogram — no portrait)" />
+<meta property="og:site_name" content="arif-fazil.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WITNESS LEDGER — arifOS Federation" />
+<meta name="twitter:description" content="Accountability is only worth something when someone other than its owner can check it." />
+<!-- JSON-LD (DTI gate L4) -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "WITNESS LEDGER — arifOS Federation",
+ "description": "Public accountability record of the arifOS Federation: preserved receipts, output-gate verdicts, seal-chain state, and a defect register. Every figure is recomputed at build time from a named source file and can be re-derived by a third party using the published SOURCES.sha256 manifest and verify.sh.",
+ "url": "https://arif-fazil.com/ledger",
+ "isAccessibleForFree": true,
+ "license": "https://arif-fazil.com/llms.txt",
+ "creator": {
+  "@type": "Person",
+  "name": "Muhammad Arif bin Fazil",
+  "url": "https://arif-fazil.com"
+ },
+ "dateModified": "2026-09-20T14:56:10Z",
+ "variableMeasured": [
+  {
+   "@type": "PropertyValue",
+   "name": "receipts_preserved",
+   "value": 60
+  },
+  {
+   "@type": "PropertyValue",
+   "name": "gate_verdicts",
+   "value": 418
+  },
+  {
+   "@type": "PropertyValue",
+   "name": "messages_blocked",
+   "value": 0
+  },
+  {
+   "@type": "PropertyValue",
+   "name": "sealed_events",
+   "value": 1338
+  },
+  {
+   "@type": "PropertyValue",
+   "name": "defects_on_record",
+   "value": 6
+  }
+ ],
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://arif-fazil.com/ledger/ledger.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "text/plain",
+   "contentUrl": "https://arif-fazil.com/ledger/SOURCES.sha256"
+  }
+ ],
+ "citation": "DITEMPA BUKAN DIBERI"
+}
+</script>
+<style>
+:root{--ink:#1a1a1a;--mut:#666;--line:#e2e2e2;--bg:#fbfaf8;--acc:#8a1c1c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Georgia,serif}
+main{max-width:820px;margin:0 auto;padding:56px 22px 90px}
+h1{font-size:26px;letter-spacing:.14em;margin:0 0 6px;text-transform:uppercase}
+h2{font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin:44px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:34px}
+.k{display:flex;flex-wrap:wrap;gap:26px;margin:18px 0}
+.k div{min-width:120px} .k b{display:block;font-size:24px} .k span{color:var(--mut);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:400;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+ol{padding-left:20px} ol li{margin:14px 0}
+.owner{color:var(--acc);font-size:12.5px;margin-top:4px}
+code{background:#f0eee9;padding:2px 5px;font-size:13px}
+.note{background:#fff;border-left:3px solid var(--acc);padding:11px 14px;font-size:14px;margin:14px 0}
+.miss{color:var(--acc)}
+footer{margin-top:60px;border-top:1px solid var(--line);padding-top:14px;color:var(--mut);font-size:12.5px}
+</style></head><body><main>
+<h1>Witness Ledger</h1>
+<div class=sub>arifOS Federation &middot; generated 2026-09-20T14:56:10Z &middot; schema arifos.witness_ledger.v1</div>
+
+<p>This page is a record of what this system did, including what it got wrong.
+It exists for one reason: <b>accountability is only worth something when someone
+other than its owner can check it.</b> Every number below is recomputed from a
+named file at build time. Nothing here is a projection.</p>
+
+<h2>How to check this yourself</h2>
+<p>Do not trust this page. Re-derive it:</p>
+<p><code>curl -s https://arif-fazil.com/ledger/ledger.json</code><br>
+<code>curl -s https://arif-fazil.com/ledger/SOURCES.sha256</code><br>
+<code>cd /ledger &amp;&amp; sh verify.sh</code></p>
+<p>Each source hash in the manifest is the hash of a file on the sovereign's own
+disk. If a hash does not match, or a file is absent, the ledger is stale and you
+should say so.</p>
+
+<h2>Receipts preserved</h2>
+<div class=k>
+<div><b>60</b><span>receipt files</span></div>
+<div><b>120721</b><span>bytes retained</span></div>
+<div><b>2026-09-20T14:47:11Z</b><span>newest</span></div>
+<div><b>1</b><span>supersessions retained</span></div>
+</div>
+<p class=mono>/root/VAULT999/RECEIPTS</p>
+<p>Superseded artifacts are <b>kept, not overwritten</b>. One instance on record is a
+practice, not yet a pattern — the count is published so it can be judged.</p>
+<table><tr><th>file</th><th class=n>bytes</th><th>mtime</th><th>sha256</th></tr><tr><td class=mono>2026-09-08-anti-calhoun-pointer-receipt.md</td><td class=n>2549</td><td class=mono>2026-09-07T23:30:28Z</td><td class=mono>7855a6fb5a26fa43</td></tr><tr><td class=mono>2026-09-11-f13-rulings-crypto-lane-docket959.md</td><td class=n>3896</td><td class=mono>2026-09-11T04:39:26Z</td><td class=mono>69fa373b7d6b0d10</td></tr><tr><td class=mono>2026-09-13-physics-limits-decrees-receipt.md</td><td class=n>6658</td><td class=mono>2026-09-13T04:01:38Z</td><td class=mono>14367378496579d9</td></tr><tr><td class=mono>2026-09-13-scar-SEQ37-waiver-sequencing.md</td><td class=n>3073</td><td class=mono>2026-09-13T04:01:26Z</td><td class=mono>7873fb8074eff30c</td></tr><tr><td class=mono>2026-09-16-FI-003-session-seal-receipt.md</td><td class=n>3850</td><td class=mono>2026-09-16T14:38:31Z</td><td class=mono>01150220a406f834</td></tr><tr><td class=mono>2026-09-17-capability-bounding.jsonl</td><td class=n>1038</td><td class=mono>2026-09-17T13:19:59Z</td><td class=mono>ed688087177a80d3</td></tr><tr><td class=mono>2026-09-17-charter-loader-retired.jsonl</td><td class=n>720</td><td class=mono>2026-09-17T13:05:04Z</td><td class=mono>b46a64b26fe68db4</td></tr><tr><td class=mono>2026-09-17-chattr-hardening.jsonl</td><td class=n>1094</td><td class=mono>2026-09-17T12:52:12Z</td><td class=mono>9b34e06bc48ed0a0</td></tr><tr><td class=mono>2026-09-17-consequence-pipeline-gaps.jsonl</td><td class=n>2240</td><td class=mono>2026-09-17T12:52:12Z</td><td class=mono>c1c6504ce6211028</td></tr><tr><td class=mono>2026-09-17-frame-user-isolation.jsonl</td><td class=n>2111</td><td class=mono>2026-09-17T13:15:54Z</td><td class=mono>8c87da3e78f8aba0</td></tr><tr><td class=mono>2026-09-17-linux-quickwins.jsonl</td><td class=n>1593</td><td class=mono>2026-09-17T13:03:39Z</td><td class=mono>565389267508063a</td></tr><tr><td class=mono>2026-09-17-linux-reality-map.jsonl</td><td class=n>2219</td><td class=mono>2026-09-17T12:58:24Z</td><td class=mono>467f85ff3e04602a</td></tr><tr><td class=mono>2026-09-17-session-seal.jsonl</td><td class=n>1797</td><td class=mono>2026-09-17T13:50:17Z</td><td class=mono>700cd523a5863f9c</td></tr><tr><td class=mono>2026-09-17-voice-governor-telegram-first-message-receipt.md</td><td class=n>4250</td><td class=mono>2026-09-17T06:34:28Z</td><td class=mono>ad795173dde7e910</td></tr><tr><td class=mono>2026-09-17-zd3-silent-downgrade-fix.jsonl</td><td class=n>1088</td><td class=mono>2026-09-17T13:34:31Z</td><td class=mono>490bfe4f757b1429</td></tr><tr><td class=mono>2026-09-18-aforge-p0p1-stabilization.md</td><td class=n>2526</td><td class=mono>2026-09-18T00:33:29Z</td><td class=mono>06d69031a3745f8c</td></tr><tr><td class=mono>2026-09-18-wscar-gate-v2-RECEIPT-laneB.json</td><td class=n>4481</td><td class=mono>2026-09-18T01:07:32Z</td><td class=mono>f23de7ffb4369350</td></tr><tr><td class=mono>2026-09-18-wscar-gate-v2-seal.json.superseded</td><td class=n>3521</td><td class=mono>2026-09-18T01:03:21Z</td><td class=mono>fee0137a0d1ef4c3</td></tr><tr><td class=mono>2026-09-20-attention-chaos-audit-seal-attempt.json</td><td class=n>3554</td><td class=mono>2026-09-20T14:15:10Z</td><td class=mono>ce4e014287ac0f6a</td></tr><tr><td class=mono>2026-09-20-flow-gap-seal-fi008.json</td><td class=n>7352</td><td class=mono>2026-09-20T14:47:11Z</td><td class=mono>e373aea5790bc054</td></tr><tr><td class=mono>2026-09-20-surface-guard-baseline-persistence.json</td><td class=n>7374</td><td class=mono>2026-09-20T14:10:34Z</td><td class=mono>495ddbc85661a4c9</td></tr><tr><td class=mono>2026-09-20-surface-guard-oscillation-finding.json</td><td class=n>6199</td><td class=mono>2026-09-20T14:00:18Z</td><td class=mono>da34ffb5b4fba812</td></tr><tr><td class=mono>2026-09-20-surface-guard-receipt-flood-purge.jsonl</td><td class=n>2636</td><td class=mono>2026-09-20T13:43:56Z</td><td class=mono>2279ee256b746e71</td></tr><tr><td class=mono>RECEIPT-2026-08-14-qg-v031-vector-hang-ingat-balik.json</td><td class=n>2023</td><td class=mono>2026-08-14T09:00:31Z</td><td class=mono>e16f6ffaf1d67f97</td></tr><tr><td class=mono>apexzen_v1.1_marker_receipt_20260912.json</td><td class=n>2519</td><td class=mono>2026-09-12T17:52:53Z</td><td class=mono>92720ff2203a2fe9</td></tr><tr><td class=mono>fitness-text_generation-20260909T180214.json</td><td class=n>769</td><td class=mono>2026-09-09T18:02:14Z</td><td class=mono>726c39555208fda9</td></tr><tr><td class=mono>fitness-text_generation-20260910T000339.json</td><td class=n>769</td><td class=mono>2026-09-10T00:03:39Z</td><td class=mono>aeb3ec909395df6d</td></tr><tr><td class=mono>fitness-text_generation-20260910T060434.json</td><td class=n>769</td><td class=mono>2026-09-10T06:04:34Z</td><td class=mono>7f7200ca9e238fd6</td></tr><tr><td class=mono>fitness-text_generation-20260910T120557.json</td><td class=n>769</td><td class=mono>2026-09-10T12:05:57Z</td><td class=mono>5cb518ab73cc6059</td></tr><tr><td class=mono>fitness-text_generation-20260910T180726.json</td><td class=n>769</td><td class=mono>2026-09-10T18:07:26Z</td><td class=mono>c305be97455b1c48</td></tr><tr><td class=mono>fitness-text_generation-20260911T000908.json</td><td class=n>769</td><td class=mono>2026-09-11T00:09:08Z</td><td class=mono>78186700f15b22fe</td></tr><tr><td class=mono>fitness-text_generation-20260911T060942.json</td><td class=n>769</td><td class=mono>2026-09-11T06:09:42Z</td><td class=mono>61e001819d10ca75</td></tr><tr><td class=mono>fitness-text_generation-20260911T121033.json</td><td class=n>769</td><td class=mono>2026-09-11T12:10:33Z</td><td class=mono>39ffc2bcb0bb02eb</td></tr><tr><td class=mono>fitness-text_generation-20260911T181103.json</td><td class=n>769</td><td class=mono>2026-09-11T18:11:03Z</td><td class=mono>1424e19237b1dff0</td></tr><tr><td class=mono>fitness-voice_synthesis-20260909T180214.json</td><td class=n>742</td><td class=mono>2026-09-09T18:02:14Z</td><td class=mono>247635c98a2c0067</td></tr><tr><td class=mono>fitness-voice_synthesis-20260910T000339.json</td><td class=n>743</td><td class=mono>2026-09-10T00:03:39Z</td><td class=mono>68298dc593d441d6</td></tr><tr><td class=mono>fitness-voice_synthesis-20260910T060434.json</td><td class=n>743</td><td class=mono>2026-09-10T06:04:34Z</td><td class=mono>2f296ec3d8633cc9</td></tr><tr><td class=mono>fitness-voice_synthesis-20260910T120557.json</td><td class=n>743</td><td class=mono>2026-09-10T12:05:57Z</td><td class=mono>afb5b76ae5dae7ea</td></tr><tr><td class=mono>fitness-voice_synthesis-20260910T180726.json</td><td class=n>743</td><td class=mono>2026-09-10T18:07:26Z</td><td class=mono>898a4f25cd93d45c</td></tr><tr><td class=mono>fitness-voice_synthesis-20260911T000908.json</td><td class=n>743</td><td class=mono>2026-09-11T00:09:08Z</td><td class=mono>7ebf9b809decd333</td></tr><tr><td class=mono>fitness-voice_synthesis-20260911T060942.json</td><td class=n>742</td><td class=mono>2026-09-11T06:09:42Z</td><td class=mono>edbe15b5d58870a5</td></tr><tr><td class=mono>fitness-voice_synthesis-20260911T121033.json</td><td class=n>743</td><td class=mono>2026-09-11T12:10:33Z</td><td class=mono>a78a246f258d3c09</td></tr><tr><td class=mono>fitness-voice_synthesis-20260911T181103.json</td><td class=n>742</td><td class=mono>2026-09-11T18:11:03Z</td><td class=mono>e0cc5994ab12c61c</td></tr><tr><td class=mono>fitness-web_search-20260909T180214.json</td><td class=n>738</td><td class=mono>2026-09-09T18:02:14Z</td><td class=mono>19dadb16e05e2abf</td></tr><tr><td class=mono>fitness-web_search-20260910T000339.json</td><td class=n>738</td><td class=mono>2026-09-10T00:03:39Z</td><td class=mono>945cb385e02c7cb3</td></tr><tr><td class=mono>fitness-web_search-20260910T060434.json</td><td class=n>738</td><td class=mono>2026-09-10T06:04:34Z</td><td class=mono>a2d0f38966ac98ed</td></tr><tr><td class=mono>fitness-web_search-20260910T120557.json</td><td class=n>738</td><td class=mono>2026-09-10T12:05:57Z</td><td class=mono>2152ede80e596cd0</td></tr><tr><td class=mono>fitness-web_search-20260910T180726.json</td><td class=n>738</td><td class=mono>2026-09-10T18:07:26Z</td><td class=mono>dc931ea675209006</td></tr><tr><td class=mono>fitness-web_search-20260911T000908.json</td><td class=n>738</td><td class=mono>2026-09-11T00:09:08Z</td><td class=mono>d455da8e1ca1c8ff</td></tr><tr><td class=mono>fitness-web_search-20260911T060942.json</td><td class=n>738</td><td class=mono>2026-09-11T06:09:42Z</td><td class=mono>1dafa93eb93711c0</td></tr><tr><td class=mono>fitness-web_search-20260911T121033.json</td><td class=n>738</td><td class=mono>2026-09-11T12:10:33Z</td><td class=mono>db7d750a92f90c06</td></tr><tr><td class=mono>fitness-web_search-20260911T181103.json</td><td class=n>738</td><td class=mono>2026-09-11T18:11:03Z</td><td class=mono>d3eb3c3ec84284b4</td></tr><tr><td class=mono>qdrant_restore_drill_receipt_20260912.json</td><td class=n>1319</td><td class=mono>2026-09-11T19:43:12Z</td><td class=mono>937654cb7354e733</td></tr><tr><td class=mono>receipt_census_1787805567.json</td><td class=n>625</td><td class=mono>2026-08-27T04:39:27Z</td><td class=mono>35d443afe00c91be</td></tr><tr><td class=mono>receipt_cull_execution_1787806350.json</td><td class=n>950</td><td class=mono>2026-08-27T04:52:30Z</td><td class=mono>39d88d56fd88e17a</td></tr><tr><td class=mono>receipt_entropy_reduction_20260908.json</td><td class=n>1788</td><td class=mono>2026-09-08T00:35:16Z</td><td class=mono>08fb164141ad871d</td></tr><tr><td class=mono>receipts.jsonl</td><td class=n>6576</td><td class=mono>2026-08-19T04:33:56Z</td><td class=mono>f665fd7170cb0b28</td></tr><tr><td class=mono>session-seal-20260819-well-finding-fixes-and-witness.json</td><td class=n>3120</td><td class=mono>2026-08-19T03:42:08Z</td><td class=mono>042ddc240fb253c6</td></tr><tr><td class=mono>session-seal-flame-witness-20260815.json</td><td class=n>2098</td><td class=mono>2026-08-15T14:07:39Z</td><td class=mono>d73ca402d1441416</td></tr><tr><td class=mono>session_receipts.jsonl</td><td class=n>3637</td><td class=mono>2026-08-25T15:21:24Z</td><td class=mono>81697cd94c45d9e5</td></tr></table>
+
+<h2>Output gate verdicts</h2>
+<div class=k>
+<div><b>418</b><span>verdicts</span></div>
+<div><b>0</b><span>messages blocked</span></div>
+<div><b>2026-09-04T05:13:05Z</b><span>earliest</span></div>
+<div><b>2026-09-20T14:52:57Z</b><span>latest</span></div>
+</div>
+<div class=note>Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered.</div>
+<table><tr><th>class</th><th class=n>count</th></tr><tr><td>UNGROUNDED_CLAIM</td><td class=n>157</td></tr><tr><td>WARN</td><td class=n>77</td></tr><tr><td>BLOCK_CANDIDATE</td><td class=n>75</td></tr><tr><td>NARRATIVE_EMITTED_AS_OBSERVATION</td><td class=n>61</td></tr><tr><td>UNCLASSIFIED_EMITTED_AS_OBSERVATION</td><td class=n>26</td></tr><tr><td>PHANTOM_SOVEREIGNTY</td><td class=n>18</td></tr><tr><td>BASELINE_MISSING_MEASURED</td><td class=n>3</td></tr><tr><td>NARRATIVE_MARKERS_IN_MEASURED</td><td class=n>1</td></tr></table>
+
+<h2>Seal chain</h2>
+<div class=k>
+<div><b>1338</b><span>sealed events</span></div>
+<div><b>964</b><span>head id</span></div>
+<div><b>3d</b><span>since last append</span></div>
+</div>
+<p class=mono>sha256 dd4aa81113ab1bae087535831fa30999<br>/root/VAULT999/SEALED_EVENTS.jsonl<br>twin copy identical: True</p>
+<div class=note>Witness grows, chain does not move. The seal chain is the only append-only hash-linked record; it is reported here exactly as found, including how stale it is.</div>
+
+<h2>Defects on record</h2>
+<p>This is the part that makes the rest worth anything. A system that cannot lose
+and keep the record cannot be audited across time.</p>
+<ol><li><b>The output gate detects but does not stop</b><div class=mono>418 verdicts, 0 blocks, blocking_enabled=false</div><div>A flagged sentence reached its reader anyway. A cop, not a door.</div><div class=owner>owner: F13 (promotion to Phase 2 NO)</div></li><li><b>The narrative detector fires on one word</b><div class=mono>marker &#x27;paling&#x27; fired 57 times = 93% of narrative flags (61 narrative verdicts total)</div><div>Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.</div><div class=owner>owner: mechanical (marker set + threshold)</div></li><li><b>The seal chain is frozen while witnesses keep appending</b><div class=mono>last append 2026-09-16T18:28:31Z (3d ago); head id=964</div><div>Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.</div><div class=owner>owner: F13 (kernel seal path)</div></li><li><b>A sub-ledger went quiet without being retired</b><div class=mono>reality_claim_refusals.jsonl: 152 entries, last 2026-09-14T10:23:28Z</div><div>Two ledgers for one gate; one is stale. Readers cannot tell which is live.</div><div class=owner>owner: mechanical (retire or re-wire)</div></li><li><b>Open loops accumulate faster than they close</b><div class=mono>36 open loops of 110 entries; oldest 2026-09-14T18:38:40Z</div><div>A backlog stated as policy. The stated count is the audit.</div><div class=owner>owner: ongoing</div></li><li><b>Half the quality of this system is judged by this system</b><div class=mono>Peace^2, DITING, RASA gates all run inside the same issuer as the output they judge</div><div>An internal judge cannot witness its own issuer. Independent observation requires an external seat.</div><div class=owner>owner: structural / open</div></li></ol>
+
+<h2>Open loops</h2>
+<p class=mono>36 open &middot; 19 closed &middot; 110 total entries &middot; oldest open 2026-09-14T18:38:40Z</p>
+
+<h2>Public surfaces</h2>
+<table><tr><th>endpoint</th><th class=n>http</th></tr><tr><td class=mono>https://arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://arifos.arif-fazil.com/health</td><td class=n>200</td></tr><tr><td class=mono>https://mcp.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://geox.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://wealth.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://well.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://aaa.arif-fazil.com</td><td class=n>200</td></tr></table>
+<p class=note>These publish <b>capability</b> status. Until this page, none published
+the <b>accountability</b> record — the receipts, the verdicts, the defects.</p>
+
+<footer>
+Generator 1dd5bd14563f543a &middot; 29301 bytes &middot;
+invariant CAPABILITY != AUTHORITY &middot; floors 13<br>
+DITEMPA BUKAN DIBERI
+</footer>
+</main></body></html>

@@ -60,11 +60,28 @@ sync-aaa:
 
 # ── Build the React SPA ───────────────────────────────────────────────
 build:
+	@echo "[build] Regenerating the WITNESS LEDGER before the SPA build..."
+	cd sites/arif-fazil.com && python3 scripts/build-ledger.py --out public/ledger
 	@echo "[build] Building arif-fazil.com (React/Vite)..."
 	cd sites/arif-fazil.com && npm run build
 	@echo "[build] Regenerating discovery catalogs..."
 	cd sites/arif-fazil.com && node scripts/generate-discovery.cjs
 	@echo "✓ Build complete."
+
+# ── Witness ledger only (no full SPA build) ───────────────────────────
+# The ledger must be a BUILD OUTPUT, not a file hand-placed in the webroot:
+# deploy-site.sh rsyncs with --delete, and site[0] declares no overlays, so
+# anything outside the staged build tree is removed on the next deploy.
+# Writing into public/ puts it in dist/ via Vite's publicDir, which makes it
+# durable. Regenerate + publish without touching the SPA:
+ledger:
+	@echo "[ledger] Regenerating the WITNESS LEDGER..."
+	cd sites/arif-fazil.com && python3 scripts/build-ledger.py --out public/ledger
+	@echo "[ledger] Mirroring into dist/ and the live webroot..."
+	cp -a sites/arif-fazil.com/public/ledger/. sites/arif-fazil.com/dist/ledger/
+	mkdir -p /var/www/html/arif/ledger
+	cp -a sites/arif-fazil.com/public/ledger/. /var/www/html/arif/ledger/
+	@echo "✓ Ledger rebuilt and live. Verify: sh /var/www/html/arif/ledger/verify.sh"
 
 # ── Reload Caddy (apply config changes) ───────────────────────────────
 reload:

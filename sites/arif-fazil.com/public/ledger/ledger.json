@@ -1,0 +1,524 @@
+{
+ "schema": "arifos.witness_ledger.v1",
+ "generated_at": "2026-09-20T14:56:10Z",
+ "generator": {
+  "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
+  "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",
+  "bytes": 29301
+ },
+ "constitutional": {
+  "invariant": "CAPABILITY != AUTHORITY",
+  "floors": 13,
+  "claim": "This ledger reports state and outcome, not intention."
+ },
+ "receipts": {
+  "state": "PRESENT",
+  "path": "/root/VAULT999/RECEIPTS",
+  "count": 60,
+  "total_bytes": 120721,
+  "newest": "2026-09-20T14:47:11Z",
+  "superseded_retained": 1,
+  "superseded_names": [
+   "2026-09-18-wscar-gate-v2-seal.json.superseded"
+  ],
+  "entries": [
+   {
+    "name": "2026-09-08-anti-calhoun-pointer-receipt.md",
+    "bytes": 2549,
+    "mtime": "2026-09-07T23:30:28Z",
+    "sha256": "7855a6fb5a26fa43488c2ab4c967164c"
+   },
+   {
+    "name": "2026-09-11-f13-rulings-crypto-lane-docket959.md",
+    "bytes": 3896,
+    "mtime": "2026-09-11T04:39:26Z",
+    "sha256": "69fa373b7d6b0d10a301e8283351a00c"
+   },
+   {
+    "name": "2026-09-13-physics-limits-decrees-receipt.md",
+    "bytes": 6658,
+    "mtime": "2026-09-13T04:01:38Z",
+    "sha256": "14367378496579d9ec9a9903d2dd6fff"
+   },
+   {
+    "name": "2026-09-13-scar-SEQ37-waiver-sequencing.md",
+    "bytes": 3073,
+    "mtime": "2026-09-13T04:01:26Z",
+    "sha256": "7873fb8074eff30ccaf17d42b130cb65"
+   },
+   {
+    "name": "2026-09-16-FI-003-session-seal-receipt.md",
+    "bytes": 3850,
+    "mtime": "2026-09-16T14:38:31Z",
+    "sha256": "01150220a406f834c6970d3a734c3df3"
+   },
+   {
+    "name": "2026-09-17-capability-bounding.jsonl",
+    "bytes": 1038,
+    "mtime": "2026-09-17T13:19:59Z",
+    "sha256": "ed688087177a80d3f2c9b299dbe392e8"
+   },
+   {
+    "name": "2026-09-17-charter-loader-retired.jsonl",
+    "bytes": 720,
+    "mtime": "2026-09-17T13:05:04Z",
+    "sha256": "b46a64b26fe68db439712e72e7aa30aa"
+   },
+   {
+    "name": "2026-09-17-chattr-hardening.jsonl",
+    "bytes": 1094,
+    "mtime": "2026-09-17T12:52:12Z",
+    "sha256": "9b34e06bc48ed0a0023da4578cdbd46c"
+   },
+   {
+    "name": "2026-09-17-consequence-pipeline-gaps.jsonl",
+    "bytes": 2240,
+    "mtime": "2026-09-17T12:52:12Z",
+    "sha256": "c1c6504ce6211028a05e2814c0e46553"
+   },
+   {
+    "name": "2026-09-17-frame-user-isolation.jsonl",
+    "bytes": 2111,
+    "mtime": "2026-09-17T13:15:54Z",
+    "sha256": "8c87da3e78f8aba08055055f265b459a"
+   },
+   {
+    "name": "2026-09-17-linux-quickwins.jsonl",
+    "bytes": 1593,
+    "mtime": "2026-09-17T13:03:39Z",
+    "sha256": "565389267508063ac2a4bf048646ad8d"
+   },
+   {
+    "name": "2026-09-17-linux-reality-map.jsonl",
+    "bytes": 2219,
+    "mtime": "2026-09-17T12:58:24Z",
+    "sha256": "467f85ff3e04602a865ebafd352eae72"
+   },
+   {
+    "name": "2026-09-17-session-seal.jsonl",
+    "bytes": 1797,
+    "mtime": "2026-09-17T13:50:17Z",
+    "sha256": "700cd523a5863f9cacf55870062fc805"
+   },
+   {
+    "name": "2026-09-17-voice-governor-telegram-first-message-receipt.md",
+    "bytes": 4250,
+    "mtime": "2026-09-17T06:34:28Z",
+    "sha256": "ad795173dde7e910e7cd54c09a2f293f"
+   },
+   {
+    "name": "2026-09-17-zd3-silent-downgrade-fix.jsonl",
+    "bytes": 1088,
+    "mtime": "2026-09-17T13:34:31Z",
+    "sha256": "490bfe4f757b142958e2327fca808d76"
+   },
+   {
+    "name": "2026-09-18-aforge-p0p1-stabilization.md",
+    "bytes": 2526,
+    "mtime": "2026-09-18T00:33:29Z",
+    "sha256": "06d69031a3745f8c418a39752f17b1d1"
+   },
+   {
+    "name": "2026-09-18-wscar-gate-v2-RECEIPT-laneB.json",
+    "bytes": 4481,
+    "mtime": "2026-09-18T01:07:32Z",
+    "sha256": "f23de7ffb4369350cd3ebf06ec0175db"
+   },
+   {
+    "name": "2026-09-18-wscar-gate-v2-seal.json.superseded",
+    "bytes": 3521,
+    "mtime": "2026-09-18T01:03:21Z",
+    "sha256": "fee0137a0d1ef4c3d9573df171698876"
+   },
+   {
+    "name": "2026-09-20-attention-chaos-audit-seal-attempt.json",
+    "bytes": 3554,
+    "mtime": "2026-09-20T14:15:10Z",
+    "sha256": "ce4e014287ac0f6acdff255d10425b0a"
+   },
+   {
+    "name": "2026-09-20-flow-gap-seal-fi008.json",
+    "bytes": 7352,
+    "mtime": "2026-09-20T14:47:11Z",
+    "sha256": "e373aea5790bc054cff34518f6371019"
+   },
+   {
+    "name": "2026-09-20-surface-guard-baseline-persistence.json",
+    "bytes": 7374,
+    "mtime": "2026-09-20T14:10:34Z",
+    "sha256": "495ddbc85661a4c951851610025a518b"
+   },
+   {
+    "name": "2026-09-20-surface-guard-oscillation-finding.json",
+    "bytes": 6199,
+    "mtime": "2026-09-20T14:00:18Z",
+    "sha256": "da34ffb5b4fba81232e2eb0b18e1f805"
+   },
+   {
+    "name": "2026-09-20-surface-guard-receipt-flood-purge.jsonl",
+    "bytes": 2636,
+    "mtime": "2026-09-20T13:43:56Z",
+    "sha256": "2279ee256b746e71c2ccc5c074803c7e"
+   },
+   {
+    "name": "RECEIPT-2026-08-14-qg-v031-vector-hang-ingat-balik.json",
+    "bytes": 2023,
+    "mtime": "2026-08-14T09:00:31Z",
+    "sha256": "e16f6ffaf1d67f97ade924fd647833a5"
+   },
+   {
+    "name": "apexzen_v1.1_marker_receipt_20260912.json",
+    "bytes": 2519,
+    "mtime": "2026-09-12T17:52:53Z",
+    "sha256": "92720ff2203a2fe9421ca970abe1e3bf"
+   },
+   {
+    "name": "fitness-text_generation-20260909T180214.json",
+    "bytes": 769,
+    "mtime": "2026-09-09T18:02:14Z",
+    "sha256": "726c39555208fda93cac3998a9f320f6"
+   },
+   {
+    "name": "fitness-text_generation-20260910T000339.json",
+    "bytes": 769,
+    "mtime": "2026-09-10T00:03:39Z",
+    "sha256": "aeb3ec909395df6d8b3e8dc211d4487c"
+   },
+   {
+    "name": "fitness-text_generation-20260910T060434.json",
+    "bytes": 769,
+    "mtime": "2026-09-10T06:04:34Z",
+    "sha256": "7f7200ca9e238fd6bfc845878fc92c19"
+   },
+   {
+    "name": "fitness-text_generation-20260910T120557.json",
+    "bytes": 769,
+    "mtime": "2026-09-10T12:05:57Z",
+    "sha256": "5cb518ab73cc605947591eb088a1e5be"
+   },
+   {
+    "name": "fitness-text_generation-20260910T180726.json",
+    "bytes": 769,
+    "mtime": "2026-09-10T18:07:26Z",
+    "sha256": "c305be97455b1c48231e350ca7e09e95"
+   },
+   {
+    "name": "fitness-text_generation-20260911T000908.json",
+    "bytes": 769,
+    "mtime": "2026-09-11T00:09:08Z",
+    "sha256": "78186700f15b22fea5a66745a7d03238"
+   },
+   {
+    "name": "fitness-text_generation-20260911T060942.json",
+    "bytes": 769,
+    "mtime": "2026-09-11T06:09:42Z",
+    "sha256": "61e001819d10ca756d180219b2466be1"
+   },
+   {
+    "name": "fitness-text_generation-20260911T121033.json",
+    "bytes": 769,
+    "mtime": "2026-09-11T12:10:33Z",
+    "sha256": "39ffc2bcb0bb02ebcfcb4b22c1930585"
+   },
+   {
+    "name": "fitness-text_generation-20260911T181103.json",
+    "bytes": 769,
+    "mtime": "2026-09-11T18:11:03Z",
+    "sha256": "1424e19237b1dff071b7b5ecf2996da3"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260909T180214.json",
+    "bytes": 742,
+    "mtime": "2026-09-09T18:02:14Z",
+    "sha256": "247635c98a2c006723d9e36e40977bdf"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260910T000339.json",
+    "bytes": 743,
+    "mtime": "2026-09-10T00:03:39Z",
+    "sha256": "68298dc593d441d6ba38966b226b9d5e"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260910T060434.json",
+    "bytes": 743,
+    "mtime": "2026-09-10T06:04:34Z",
+    "sha256": "2f296ec3d8633cc953acd1c953e9f8bc"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260910T120557.json",
+    "bytes": 743,
+    "mtime": "2026-09-10T12:05:57Z",
+    "sha256": "afb5b76ae5dae7eaf2807084e1fa5475"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260910T180726.json",
+    "bytes": 743,
+    "mtime": "2026-09-10T18:07:26Z",
+    "sha256": "898a4f25cd93d45cc4bc54c949d9e7b8"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260911T000908.json",
+    "bytes": 743,
+    "mtime": "2026-09-11T00:09:08Z",
+    "sha256": "7ebf9b809decd333c3dcfb62510b9ca8"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260911T060942.json",
+    "bytes": 742,
+    "mtime": "2026-09-11T06:09:42Z",
+    "sha256": "edbe15b5d58870a56803977a2eabc8cb"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260911T121033.json",
+    "bytes": 743,
+    "mtime": "2026-09-11T12:10:33Z",
+    "sha256": "a78a246f258d3c097ca69792a4c56df9"
+   },
+   {
+    "name": "fitness-voice_synthesis-20260911T181103.json",
+    "bytes": 742,
+    "mtime": "2026-09-11T18:11:03Z",
+    "sha256": "e0cc5994ab12c61c92d00de22e130d03"
+   },
+   {
+    "name": "fitness-web_search-20260909T180214.json",
+    "bytes": 738,
+    "mtime": "2026-09-09T18:02:14Z",
+    "sha256": "19dadb16e05e2abf1e293afbbd157a25"
+   },
+   {
+    "name": "fitness-web_search-20260910T000339.json",
+    "bytes": 738,
+    "mtime": "2026-09-10T00:03:39Z",
+    "sha256": "945cb385e02c7cb316f82ff7b2ca1b2a"
+   },
+   {
+    "name": "fitness-web_search-20260910T060434.json",
+    "bytes": 738,
+    "mtime": "2026-09-10T06:04:34Z",
+    "sha256": "a2d0f38966ac98ed0879f1cdf116d09c"
+   },
+   {
+    "name": "fitness-web_search-20260910T120557.json",
+    "bytes": 738,
+    "mtime": "2026-09-10T12:05:57Z",
+    "sha256": "2152ede80e596cd08e0c004232c6d18d"
+   },
+   {
+    "name": "fitness-web_search-20260910T180726.json",
+    "bytes": 738,
+    "mtime": "2026-09-10T18:07:26Z",
+    "sha256": "dc931ea67520900687ed5126b2e2ee5a"
+   },
+   {
+    "name": "fitness-web_search-20260911T000908.json",
+    "bytes": 738,
+    "mtime": "2026-09-11T00:09:08Z",
+    "sha256": "d455da8e1ca1c8ffdd2a44c7b846fa42"
+   },
+   {
+    "name": "fitness-web_search-20260911T060942.json",
+    "bytes": 738,
+    "mtime": "2026-09-11T06:09:42Z",
+    "sha256": "1dafa93eb93711c04efe096a40ec33fa"
+   },
+   {
+    "name": "fitness-web_search-20260911T121033.json",
+    "bytes": 738,
+    "mtime": "2026-09-11T12:10:33Z",
+    "sha256": "db7d750a92f90c06c6028ed348a506b1"
+   },
+   {
+    "name": "fitness-web_search-20260911T181103.json",
+    "bytes": 738,
+    "mtime": "2026-09-11T18:11:03Z",
+    "sha256": "d3eb3c3ec84284b48ed1eff21e30f71b"
+   },
+   {
+    "name": "qdrant_restore_drill_receipt_20260912.json",
+    "bytes": 1319,
+    "mtime": "2026-09-11T19:43:12Z",
+    "sha256": "937654cb7354e7333febb267af4d190b"
+   },
+   {
+    "name": "receipt_census_1787805567.json",
+    "bytes": 625,
+    "mtime": "2026-08-27T04:39:27Z",
+    "sha256": "35d443afe00c91be2dfff9fe9b0d17c1"
+   },
+   {
+    "name": "receipt_cull_execution_1787806350.json",
+    "bytes": 950,
+    "mtime": "2026-08-27T04:52:30Z",
+    "sha256": "39d88d56fd88e17a62526c1bcf532408"
+   },
+   {
+    "name": "receipt_entropy_reduction_20260908.json",
+    "bytes": 1788,
+    "mtime": "2026-09-08T00:35:16Z",
+    "sha256": "08fb164141ad871d45a6a5c08cd3597f"
+   },
+   {
+    "name": "receipts.jsonl",
+    "bytes": 6576,
+    "mtime": "2026-08-19T04:33:56Z",
+    "sha256": "f665fd7170cb0b28c3c9a5f91f94d77b"
+   },
+   {
+    "name": "session-seal-20260819-well-finding-fixes-and-witness.json",
+    "bytes": 3120,
+    "mtime": "2026-08-19T03:42:08Z",
+    "sha256": "042ddc240fb253c66515e24e909f1c96"
+   },
+   {
+    "name": "session-seal-flame-witness-20260815.json",
+    "bytes": 2098,
+    "mtime": "2026-08-15T14:07:39Z",
+    "sha256": "d73ca402d14414168fca6be8dcb29fb8"
+   },
+   {
+    "name": "session_receipts.jsonl",
+    "bytes": 3637,
+    "mtime": "2026-08-25T15:21:24Z",
+    "sha256": "81697cd94c45d9e5ebead36ff6abb3b7"
+   }
+  ]
+ },
+ "gate": {
+  "state": "PRESENT",
+  "path": "/root/.hermes/logs/reality_claim_gate.log",
+  "sha256": "3783b5328292db0e2f3fe601915a0caa",
+  "lines": 418,
+  "first_verdict": "2026-09-04T05:13:05Z",
+  "last_verdict": "2026-09-20T14:52:57Z",
+  "by_class": {
+   "UNGROUNDED_CLAIM": 157,
+   "WARN": 77,
+   "BLOCK_CANDIDATE": 75,
+   "NARRATIVE_EMITTED_AS_OBSERVATION": 61,
+   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 26,
+   "PHANTOM_SOVEREIGNTY": 18,
+   "BASELINE_MISSING_MEASURED": 3,
+   "NARRATIVE_MARKERS_IN_MEASURED": 1
+  },
+  "top_markers": {
+   "paling": 57,
+   "best": 2,
+   "terbaik": 1,
+   "chosen": 1
+  },
+  "multi_token_markers_suppressed": 1,
+  "privacy": "Marker statistics only. Multi-word fragments captured from messages (1 occurrences) are never published.",
+  "blocks": 0,
+  "blocking_enabled": false,
+  "note": "Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered."
+ },
+ "refusals": {
+  "state": "PRESENT",
+  "path": "/root/.hermes/logs/reality_claim_refusals.jsonl",
+  "lines": 152,
+  "last_entry_ts": "2026-09-14T10:23:28Z",
+  "file_mtime": "2026-09-14T10:23:28Z",
+  "sha256": "d25336b2a91806ac39c4adea2e22f367"
+ },
+ "seal_chain": {
+  "state": "PRESENT",
+  "path": "/root/VAULT999/SEALED_EVENTS.jsonl",
+  "sha256": "dd4aa81113ab1bae087535831fa30999",
+  "lines": 1338,
+  "bytes": 1828346,
+  "last_append": "2026-09-16T18:28:31Z",
+  "days_since_append": 3,
+  "head_id": 964,
+  "twin_copy": {
+   "path": "/root/arifOS/VAULT999/SEALED_EVENTS.jsonl",
+   "sha256": "dd4aa81113ab1bae087535831fa30999",
+   "identical": true
+  },
+  "note": "Witness grows, chain does not move. The seal chain is the only append-only hash-linked record; it is reported here exactly as found, including how stale it is."
+ },
+ "open_loops": {
+  "state": "PRESENT",
+  "path": "/root/.hermes/carry_forward.json",
+  "schema": "arifos.carry_forward.v3",
+  "entries": 110,
+  "open_loops": 36,
+  "closed_loops": 19,
+  "loops_total": 55,
+  "oldest_open_ts": "2026-09-14T18:38:40Z"
+ },
+ "public_surfaces": [
+  {
+   "url": "https://arif-fazil.com",
+   "http": "200"
+  },
+  {
+   "url": "https://arifos.arif-fazil.com/health",
+   "http": "200"
+  },
+  {
+   "url": "https://mcp.arif-fazil.com",
+   "http": "200"
+  },
+  {
+   "url": "https://geox.arif-fazil.com",
+   "http": "200"
+  },
+  {
+   "url": "https://wealth.arif-fazil.com",
+   "http": "200"
+  },
+  {
+   "url": "https://well.arif-fazil.com",
+   "http": "200"
+  },
+  {
+   "url": "https://aaa.arif-fazil.com",
+   "http": "200"
+  }
+ ],
+ "defects": [
+  {
+   "id": "D1",
+   "title": "The output gate detects but does not stop",
+   "evidence": "418 verdicts, 0 blocks, blocking_enabled=false",
+   "consequence": "A flagged sentence reached its reader anyway. A cop, not a door.",
+   "owner": "F13 (promotion to Phase 2 NO)"
+  },
+  {
+   "id": "D2",
+   "title": "The narrative detector fires on one word",
+   "evidence": "marker 'paling' fired 57 times = 93% of narrative flags (61 narrative verdicts total)",
+   "consequence": "Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.",
+   "owner": "mechanical (marker set + threshold)"
+  },
+  {
+   "id": "D3",
+   "title": "The seal chain is frozen while witnesses keep appending",
+   "evidence": "last append 2026-09-16T18:28:31Z (3d ago); head id=964",
+   "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
+   "owner": "F13 (kernel seal path)"
+  },
+  {
+   "id": "D4",
+   "title": "A sub-ledger went quiet without being retired",
+   "evidence": "reality_claim_refusals.jsonl: 152 entries, last 2026-09-14T10:23:28Z",
+   "consequence": "Two ledgers for one gate; one is stale. Readers cannot tell which is live.",
+   "owner": "mechanical (retire or re-wire)"
+  },
+  {
+   "id": "D5",
+   "title": "Open loops accumulate faster than they close",
+   "evidence": "36 open loops of 110 entries; oldest 2026-09-14T18:38:40Z",
+   "consequence": "A backlog stated as policy. The stated count is the audit.",
+   "owner": "ongoing"
+  },
+  {
+   "id": "D6",
+   "title": "Half the quality of this system is judged by this system",
+   "evidence": "Peace^2, DITING, RASA gates all run inside the same issuer as the output they judge",
+   "consequence": "An internal judge cannot witness its own issuer. Independent observation requires an external seat.",
+   "owner": "structural / open"
+  }
+ ]
+}

@@ -63,6 +63,26 @@
       "description": "Interactive Macrostrat globe, plates, quakes, wells. Static HTML primary — not SPA essay."
     },
     {
+      "path": "/pilot/",
+      "title": "Supervised AI Action Control — 4-Week Design Partner Pilot",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "Commercial offer: 4-week supervised pilot installing measurable action control around one AI-agent workflow. Eight exit criteria, receipt chain. Band RM20k-50k."
+    },
+    {
+      "path": "/institution/",
+      "title": "Briefing — professional conversation path",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "monthly",
+      "description": "Institutional briefing: what Arif Fazil can contribute, what can be inspected, boundaries, and how to start a professional conversation."
+    },
+    {
       "path": "/earth/kinabalu-basin/",
       "title": "Kinabalu Basin — Deepwater Stratigraphy & Play Synthesis",
       "mission": "investigate",

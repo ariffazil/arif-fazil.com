@@ -36,7 +36,7 @@ function fmtNum(v, digits = 2) {
 
 
 
-function shell({ title, description, canonical, body, ring = 'SOUL' }) {
+function shell({ title, description, canonical, body, ring = 'SOUL', ogImage = 'https://arif-fazil.com/og-identity.png', extraStyle = '', breadcrumb = '' }) {
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -56,7 +56,9 @@ function shell({ title, description, canonical, body, ring = 'SOUL' }) {
   <meta property="og:title" content="${esc(title)}" />
   <meta property="og:description" content="${esc(description)}" />
   <meta property="og:url" content="${esc(canonical)}" />
-  <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+  <meta property="og:image" content="${esc(ogImage)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${esc(ogImage)}" />
   <meta property="og:type" content="website" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
   <meta name="agent-access" content="allow-read allow-train allow-cite" />
@@ -71,7 +73,7 @@ ${jsonLd}
   <style>
     body{margin:0;background:var(--bg-narrative,#0B0B0F);color:var(--text-primary,#F5F5F7);
       font-family:var(--font-sans,system-ui,sans-serif);line-height:1.55}
-    .frame{max-width:48rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+    .frame{max-width:54rem;margin:0 auto;padding:2rem 1.25rem 4rem}
     a{color:var(--gold-sovereign,#E8B84B)} a:hover{color:#fff}
     h1{font-family:var(--font-display,serif);font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.1;margin:0 0 1rem}
     h2{font-size:1.15rem;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.06em}
@@ -80,11 +82,12 @@ ${jsonLd}
     .nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1.5rem 0;font-family:var(--font-mono,monospace);font-size:.72rem;text-transform:uppercase}
     ul{padding-left:1.2rem} li{margin:.35rem 0}
     .note{font-size:.85rem;color:#9a958c;border-left:2px solid #2a2a3a;padding-left:.85rem;margin-top:2rem}
+${extraStyle}
   </style>
 </head>
 <body>
   <div class="frame">
-    <nav class="nav" aria-label="Primary">
+${breadcrumb ? `    ${breadcrumb}\n` : ''}    <nav class="nav" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/earth">Earth</a>
       <a href="/economics">Economics</a>
@@ -346,21 +349,80 @@ writeRoute(
       'Investigative journalism for jiran-jiran. When RM70 billion moves and nobody asks questions, MakcikGPT asks in Bahasa Makcik.',
     canonical: 'https://arif-fazil.com/world/makcikgpt/',
     ring: 'BODY',
+    ogImage: 'https://arif-fazil.com/images/makcikgpt/makcikgpt-hero.jpg',
+    breadcrumb: `<nav style="display:flex; align-items:center; gap:0.5rem; font-family:var(--font-mono, monospace); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 1rem 0;" aria-label="Breadcrumb">
+      <a href="/" style="color:#9CA3AF; text-decoration:none;">Arif Fazil</a>
+      <span style="color:#4B5563;">/</span>
+      <a href="/world" style="color:#9CA3AF; text-decoration:none;">World</a>
+      <span style="color:#4B5563;">/</span>
+      <span style="color:#E8B84B; font-weight:600;">MakcikGPT</span>
+    </nav>`,
+    extraStyle: `    .hero-container{margin-bottom:2.5rem;padding:2rem;background:linear-gradient(135deg, #0F172A 0%, #111827 100%);border:1px solid #1F2937;border-bottom:3px solid #E8B84B;border-radius:12px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+    @media(min-width:768px){.hero-grid{grid-template-columns:1.2fr 1fr}}
+    .hero-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:1px solid rgba(232,184,75,0.3);box-shadow:0 10px 25px -5px rgba(0,0,0,0.5)}
+    .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.25rem 0;border-top:1px solid #1F2937;padding-top:1rem}
+    .ladder-card{background:rgba(255,255,255,0.03);border:1px solid #1F2937;border-radius:6px;padding:0.6rem 0.75rem;text-decoration:none;display:block}
+    .ladder-card.active{background:rgba(232,184,75,0.08);border-color:rgba(232,184,75,0.4)}
+    .ladder-lvl{font-family:monospace;font-size:0.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:0.05em}
+    .ladder-name{font-size:0.85rem;font-weight:bold;color:#F3F4F6;margin:2px 0}
+    .ladder-sub{font-size:0.7rem;color:#9CA3AF}`,
     body: `
-    <div style="margin-bottom: 2rem; padding: 2rem; background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-bottom: 3px solid #38BDF8; border-radius: 4px;">
-      <p style="font-family: monospace; font-size: 0.75rem; font-weight: bold; color: #38BDF8; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
-        🔵 CIVIC INTELLIGENCE · 🔴 BAHASA MAKCIK · 🟡 ${makcikPieces.length} ARTICLES
-      </p>
-      <h1 style="font-size: 3.5rem; font-weight: 900; font-style: italic; text-transform: uppercase; margin: 0 0 1rem 0; color: #FFFFFF; line-height: 1;">
-        Makcik<span style="color: #38BDF8;">GPT</span>
-      </h1>
-      <p style="font-size: 1.1rem; color: #94A3B8; max-w: 600px; margin: 0 0 1.5rem 0; line-height: 1.6;">
-        Investigative journalism for jiran-jiran. When RM70 billion moves and nobody asks questions, MakcikGPT asks in Bahasa Makcik. Published directly. No Medium gate.
-      </p>
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span style="font-family: monospace; font-size: 0.7rem; padding: 4px 8px; background: rgba(56,189,248,0.1); border: 1px solid #38BDF8; color: #38BDF8; font-weight: bold;">🔵 BLUE · OBSERVE</span>
-        <span style="font-family: monospace; font-size: 0.7rem; padding: 4px 8px; background: rgba(239,68,68,0.1); border: 1px solid #EF4444; color: #EF4444; font-weight: bold;">🔴 RED · FALSIFY</span>
-        <span style="font-family: monospace; font-size: 0.7rem; padding: 4px 8px; background: rgba(234,179,8,0.1); border: 1px solid #EAB308; color: #EAB308; font-weight: bold;">🟡 YELLOW · SEAL</span>
+    <!-- Visual Hero: Attention Preservation & Information Architecture -->
+    <div class="hero-container">
+      <div class="hero-grid">
+        <div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin-bottom:0.75rem;">
+            <span style="font-family:monospace; font-size:0.7rem; font-weight:bold; padding:3px 8px; background:rgba(232,184,75,0.15); border:1px solid rgba(232,184,75,0.4); color:#E8B84B; border-radius:9999px;">
+              MakcikGPT · Public Interface of World
+            </span>
+            <span style="font-family:monospace; font-size:0.7rem; padding:3px 8px; background:#1F2937; color:#9CA3AF; border-radius:9999px;">
+              Civic Intelligence Layer
+            </span>
+          </div>
+
+          <h1 style="font-size:2.5rem; font-weight:900; font-style:italic; text-transform:uppercase; margin:0 0 0.5rem 0; color:#FFFFFF; line-height:1.05;">
+            Makcik<span style="color:#E8B84B;">GPT</span>
+          </h1>
+
+          <p style="font-style:italic; font-family:serif; color:#E8B84B; margin:0 0 0.75rem 0; font-size:1.05rem;">
+            "Kewartawanan penyiasatan sivik untuk jiran-jiran."
+          </p>
+
+          <p style="font-size:0.92rem; color:#9CA3AF; margin:0 0 1rem 0; line-height:1.6;">
+            Bila puluhan bilion ringgit dana negara beralih tangan, konsesi tenaga dipersoal, dan dasar ekonomi menyentuh poket rakyat tanpa penjelasan telus — MakcikGPT menyiasat dan merungkainya dalam Bahasa Makcik: mudah difahami, tajam berasaskan angka primer, sifar pintu tengah.
+          </p>
+
+          <!-- Semantic Ladder -->
+          <div class="ladder">
+            <a href="/" class="ladder-card">
+              <div class="ladder-lvl">Level 1 · WHO</div>
+              <div class="ladder-name">Arif Fazil</div>
+              <div class="ladder-sub">Sovereign Identity</div>
+            </a>
+            <a href="/world" class="ladder-card">
+              <div class="ladder-lvl">Level 2 · WHY</div>
+              <div class="ladder-name">World</div>
+              <div class="ladder-sub">Civic Intelligence</div>
+            </a>
+            <div class="ladder-card active">
+              <div class="ladder-lvl" style="color:#E8B84B;">Level 3 · HOW</div>
+              <div class="ladder-name" style="color:#E8B84B;">MakcikGPT</div>
+              <div class="ladder-sub" style="color:#D1D5DB;">Citizen Interface</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; font-family:monospace; font-size:0.7rem;">
+            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">⚡ ${makcikPieces.length} Artikel</span>
+            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">🛡️ F1–F13 Berperlembagaan</span>
+            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">📊 Data Primer Sahih</span>
+            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">🔓 Sifar Paywall</span>
+          </div>
+        </div>
+
+        <div>
+          <img src="/images/makcikgpt/makcikgpt-hero.jpg" alt="MakcikGPT — Kecerdasan Sivik Rakyat dan Kewartawanan Data Awam" class="hero-img" loading="eager" />
+        </div>
       </div>
     </div>
     ${makcikList}

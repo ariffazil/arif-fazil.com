@@ -62,20 +62,20 @@ export function App() {
             <Route path="/earth/" element={<EarthGlobeRedirect />} />
             <Route path="/earth/*" element={<EarthGlobeRedirect />} />
 
-            {/* 3. Top-Level HERMES Organ: MakcikGPT Civic Intelligence */}
-            <Route path="/makcikgpt" element={<MakcikGPTAlias />} />
-            <Route path="/makcikgpt/" element={<MakcikGPTAlias />} />
-            <Route path="/makcikgpt/index" element={<Navigate to="/makcikgpt/" replace />} />
-            <Route path="/makcikgpt/:slug" element={<MakcikGptArticle />} />
-            <Route path="/hermes/makcikgpt" element={<Navigate to="/makcikgpt/" replace />} />
-            <Route path="/hermes/makcikgpt/" element={<Navigate to="/makcikgpt/" replace />} />
-            <Route path="/hermes/makcikgpt/:slug" element={<MakcikGptRedirect />} />
+            {/* 3. MakcikGPT Civic Intelligence — Subordinate to WORLD */}
+            <Route path="/world/makcikgpt" element={<MakcikGPTAlias />} />
+            <Route path="/world/makcikgpt/" element={<MakcikGPTAlias />} />
+            <Route path="/world/makcikgpt/index" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/world/makcikgpt/:slug" element={<MakcikGptArticle />} />
 
-            {/* Legacy /world/makcikgpt redirects (Emancipated to HERMES) */}
-            <Route path="/world/makcikgpt" element={<Navigate to="/makcikgpt/" replace />} />
-            <Route path="/world/makcikgpt/" element={<Navigate to="/makcikgpt/" replace />} />
-            <Route path="/world/makcikgpt/index" element={<Navigate to="/makcikgpt/" replace />} />
-            <Route path="/world/makcikgpt/:slug" element={<MakcikGptRedirect />} />
+            {/* Aliases & Redirects to canonical /world/makcikgpt */}
+            <Route path="/makcikgpt" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/makcikgpt/" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/makcikgpt/index" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/makcikgpt/:slug" element={<MakcikGptRedirect />} />
+            <Route path="/hermes/makcikgpt" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/hermes/makcikgpt/" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/hermes/makcikgpt/:slug" element={<MakcikGptRedirect />} />
 
             {/* 3b. /world — Situational Intelligence, Global Commodities, Palantir Atlas */}
             <Route path="/world" element={<World />} />
@@ -266,7 +266,7 @@ function EarthGlobeRedirect() {
 
 function MakcikGptRedirect() {
   const { slug } = useParams();
-  return <Navigate to={`/makcikgpt/${slug ?? ''}`} replace />;
+  return <Navigate to={`/world/makcikgpt/${slug ?? ''}`} replace />;
 }
 
 export default App;

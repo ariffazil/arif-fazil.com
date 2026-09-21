@@ -24,7 +24,7 @@ export function MakcikGPT() {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    document.title = 'MakcikGPT — Civic Intelligence in Bahasa Makcik | arif-fazil.com'
+    document.title = 'MakcikGPT — Civic Intelligence in Bahasa Makcik | World | arif-fazil.com'
   }, [])
 
   const filteredArticles = useMemo(() => {
@@ -56,78 +56,171 @@ export function MakcikGPT() {
   }, [selectedSeries, search])
 
   return (
-    <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-16 md:py-24">
+    <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-12 md:py-20">
       <div className="mx-auto max-w-[1280px] px-6">
-        {/* ── HEADER & KICKER ─────────────────────────────── */}
-        <div className="mb-12 border-b border-[#1F2733] pb-8">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#31C48D] uppercase tracking-widest mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#31C48D]" />
-            <span>HERMES CIVIC INTELLIGENCE · BAHASA MAKCIK · MEANING INTEGRITY</span>
+        
+        {/* ── BREADCRUMB: HIERARCHICAL COHERENCE ───────────── */}
+        <nav className="flex items-center gap-2 font-mono text-xs text-[#9AA0A8] uppercase tracking-wider mb-6" aria-label="Breadcrumb">
+          <Link to="/" className="hover:text-[#EDEAE2] transition-colors">Arif Fazil</Link>
+          <span className="text-[#5C636C]">/</span>
+          <Link to="/world" className="hover:text-[#EDEAE2] transition-colors">World</Link>
+          <span className="text-[#5C636C]">/</span>
+          <span className="text-[#D9A62E] font-semibold">MakcikGPT</span>
+        </nav>
+
+        {/* ── VISUAL HERO: ATTENTION PRESERVATION ──────────── */}
+        <div className="relative overflow-hidden rounded-2xl border border-[#1F2733] bg-[#0E1218] mb-12 shadow-2xl">
+          {/* Ambient background glows */}
+          <div className="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#D9A62E]/10 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#31C48D]/10 blur-3xl" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 md:p-10 items-center relative z-10">
+            {/* Left Column: Semantic Hierarchy & Editorial Callout */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              {/* Context Badges */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider bg-[#D9A62E]/10 border border-[#D9A62E]/30 text-[#D9A62E] font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D9A62E] animate-pulse" />
+                  MakcikGPT · Public Interface of World
+                </span>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider bg-[#1A222D] border border-[#2A3441] text-[#9AA0A8]">
+                  Civic Intelligence Layer
+                </span>
+                <span className="inline-flex items-center px-2 py-0.5 text-[11px] font-mono text-[#5C636C]">
+                  Powered by Arif Fazil
+                </span>
+              </div>
+
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#EDEAE2] mb-3 leading-[1.05]">
+                MakcikGPT
+              </h1>
+
+              <p className="font-serif italic text-lg md:text-xl text-[#D9A62E] mb-4">
+                "Kewartawanan penyiasatan sivik untuk jiran-jiran."
+              </p>
+
+              <p className="font-sans text-sm md:text-base text-[#9AA0A8] leading-relaxed mb-6 max-w-2xl">
+                Bila puluhan bilion ringgit dana negara beralih tangan, konsesi tenaga dipersoal, dan dasar ekonomi menyentuh poket rakyat tanpa penjelasan telus — MakcikGPT menyiasat dan merungkainya dalam Bahasa Makcik: mudah difahami, tajam berasaskan angka primer, sifar pintu tengah.
+              </p>
+
+              {/* Semantic Ladder: WHO → WHY → HOW */}
+              <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#1F2733]/80 mb-6">
+                <Link to="/" className="rounded border border-[#1F2733] bg-[#11151C]/80 p-2.5 hover:border-[#9AA0A8]/40 transition-colors group">
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-[#5C636C] group-hover:text-[#EDEAE2]">Level 1 · WHO</div>
+                  <div className="text-xs font-semibold text-[#EDEAE2]">Arif Fazil</div>
+                  <div className="text-[10px] text-[#9AA0A8]">Sovereign Identity</div>
+                </Link>
+                <Link to="/world" className="rounded border border-[#1F2733] bg-[#11151C]/80 p-2.5 hover:border-[#9AA0A8]/40 transition-colors group">
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-[#5C636C] group-hover:text-[#EDEAE2]">Level 2 · WHY</div>
+                  <div className="text-xs font-semibold text-[#EDEAE2]">World</div>
+                  <div className="text-[10px] text-[#9AA0A8]">Civic Intelligence</div>
+                </Link>
+                <div className="rounded border border-[#D9A62E]/40 bg-[#D9A62E]/5 p-2.5">
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-[#D9A62E]">Level 3 · HOW</div>
+                  <div className="text-xs font-semibold text-[#EDEAE2]">MakcikGPT</div>
+                  <div className="text-[10px] text-[#D9A62E]">Citizen Interface</div>
+                </div>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap gap-2 text-[11px] font-mono text-[#9AA0A8]">
+                <span className="px-2.5 py-1 rounded bg-[#11151C] border border-[#1F2733] flex items-center gap-1.5">
+                  <span>⚡</span> 33+ Siri Siasatan
+                </span>
+                <span className="px-2.5 py-1 rounded bg-[#11151C] border border-[#1F2733] flex items-center gap-1.5">
+                  <span>🛡️</span> F1–F13 Berperlembagaan
+                </span>
+                <span className="px-2.5 py-1 rounded bg-[#11151C] border border-[#1F2733] flex items-center gap-1.5">
+                  <span>📊</span> Data Primer Sahih
+                </span>
+                <span className="px-2.5 py-1 rounded bg-[#11151C] border border-[#1F2733] flex items-center gap-1.5">
+                  <span>🔓</span> Sifar Paywall
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Hero for Attention Preservation */}
+            <div className="lg:col-span-5">
+              <div className="relative group rounded-xl overflow-hidden border border-[#D9A62E]/30 bg-[#11151C] shadow-[0_0_35px_-8px_rgba(217,166,46,0.3)]">
+                <img
+                  src="/images/makcikgpt/makcikgpt-hero.jpg"
+                  alt="MakcikGPT — Kecerdasan Sivik Rakyat dan Kewartawanan Data Awam"
+                  className="w-full h-auto object-cover aspect-[16/9] transition-transform duration-700 group-hover:scale-105"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0D] via-[#0A0B0D]/30 to-transparent opacity-90" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[#EDEAE2]">
+                    <span className="flex items-center gap-1.5 text-[#D9A62E] font-semibold">
+                      <span className="w-2 h-2 rounded-full bg-[#D9A62E]" />
+                      Kecerdasan Sivik Waktu Subuh
+                    </span>
+                    <span className="text-[#9AA0A8] text-[10px]">Data · Polisi · Ketirisan</span>
+                  </div>
+                  <p className="text-xs text-[#EDEAE2]/80 mt-1 line-clamp-2 font-serif italic">
+                    "Penyelidikan data belanjawan negara, kontrak konsesi, dan tadbir urus bersama secawan kopi-o."
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <h1 className="font-display text-4xl md:text-6xl font-black uppercase tracking-tight text-[#EDEAE2] mb-4">
-            MakcikGPT
-          </h1>
-
-          <p className="font-sans text-lg md:text-xl text-[#9AA0A8] max-w-3xl leading-relaxed">
-            Kewartawanan penyiasatan sivik untuk jiran-jiran. Bila RM70 bilion beralih tangan dan tiada siapa berani tanya,
-            MakcikGPT tanya dalam Bahasa Makcik. Diterbitkan terus. Sifar pintu tengah.
+        {/* ── FEATURED QUOTE BOX ──────────────────────────── */}
+        <div className="mb-10 rounded-xl border border-[#1F2733] bg-[#11151C] p-6 border-l-4 border-l-[#D9A62E]">
+          <p className="font-serif text-lg md:text-xl text-[#EDEAE2] italic mb-2">
+            "Bila senyum CEO lebih manis dari biasa dekat majlis tandatangan kontrak, itu bukan petanda untung. Itu petanda kita kena semak siapa yang dapat apa."
           </p>
+          <div className="font-mono text-xs text-[#9AA0A8] flex items-center justify-between flex-wrap gap-2">
+            <span>— MakcikGPT · Siri M2 (Gas Sarawak & SEARAH) · Cop Mohor 999</span>
+            <span className="text-[#D9A62E]">Bahasa Makcik · Kebenaran Realiti</span>
+          </div>
+        </div>
 
-          {/* Featured Quote Box */}
-          <div className="mt-8 rounded-lg border border-[#1F2733] bg-[#11151C] p-6 border-l-4 border-l-[#D9A62E]">
-            <p className="font-serif text-lg md:text-xl text-[#EDEAE2] italic mb-2">
-              "Bila senyum CEO lebih manis dari biasa dekat majlis tandatangan kontrak, itu bukan petanda untung. Itu petanda kita kena semak siapa yang dapat apa."
-            </p>
-            <div className="font-mono text-xs text-[#9AA0A8]">
-              — MakcikGPT · Siri M2 (Gas Sarawak & SEARAH) · Cop Mohor 999
-            </div>
+        {/* ── SERIES FILTER BAR & SEARCH ──────────────────── */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <div className="flex flex-wrap gap-2">
+            {SERIES_TABS.map((t) => (
+              <button
+                key={t.id}
+                onClick={() => setSelectedSeries(t.id)}
+                className={`font-mono text-xs uppercase px-3.5 py-1.5 rounded transition-colors ${
+                  selectedSeries === t.id
+                    ? 'bg-[#D9A62E] text-[#0A0B0D] font-bold'
+                    : 'bg-[#11151C] text-[#9AA0A8] border border-[#1F2733] hover:text-[#EDEAE2]'
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
           </div>
 
-          {/* Series Filter Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mt-8">
-            <div className="flex flex-wrap gap-2">
-              {SERIES_TABS.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setSelectedSeries(t.id)}
-                  className={`font-mono text-xs uppercase px-3.5 py-1.5 rounded transition-colors ${
-                    selectedSeries === t.id
-                      ? 'bg-[#D9A62E] text-[#0A0B0D] font-bold'
-                      : 'bg-[#11151C] text-[#9AA0A8] border border-[#1F2733] hover:text-[#EDEAE2]'
-                  }`}
-                >
-                  {t.label}
-                </button>
-              ))}
-            </div>
-
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Cari artikel makcik..."
-              className="font-mono text-xs px-3.5 py-1.5 rounded bg-[#11151C] border border-[#1F2733] text-[#EDEAE2] placeholder-[#9AA0A8]/50 focus:outline-none focus:border-[#D9A62E]"
-            />
-          </div>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Cari artikel makcik..."
+            className="font-mono text-xs px-3.5 py-1.5 rounded bg-[#11151C] border border-[#1F2733] text-[#EDEAE2] placeholder-[#9AA0A8]/50 focus:outline-none focus:border-[#D9A62E]"
+          />
         </div>
 
         {/* ── ARTICLE CARDS (BROADSHEET EDITORIAL) ────────── */}
         {filteredArticles.length === 0 ? (
-          <div className="no-results">
-            <div className="no-results-emoji">🔍</div>
-            <h3>Tak jumpa</h3>
-            <p>Cuba cari dengan kata kunci lain, atau tapis mengikut siri.</p>
+          <div className="text-center py-16 border border-[#1F2733] rounded-xl bg-[#11151C]">
+            <div className="text-3xl mb-2">🔍</div>
+            <h3 className="font-serif text-lg text-[#EDEAE2]">Tiada artikel dijumpai</h3>
+            <p className="text-xs text-[#9AA0A8] mt-1">Cuba cari dengan kata kunci lain, atau pilih siri lain.</p>
           </div>
         ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredArticles.map((article, idx) => {
             const rt = estimateReadingTime(article.slug)
             const isGenesis = article.slug === 'surat-kepada-yang-arif'
+            const articleUrl = `/world/makcikgpt/${article.slug}`
             return (
             <article
               key={article.slug || idx}
-              className={`rounded-lg bg-[#11151C] p-6 hover:border-[#9AA0A8]/40 transition-colors flex flex-col justify-between group ${
+              className={`rounded-xl bg-[#11151C] p-6 hover:border-[#9AA0A8]/40 transition-colors flex flex-col justify-between group ${
                 isGenesis ? 'border-2 border-[#D9A62E] shadow-[0_0_24px_-8px_rgba(217,166,46,0.4)]' : 'border border-[#1F2733]'
               }`}
             >
@@ -143,7 +236,7 @@ export function MakcikGPT() {
                       </span>
                     )}
                     {rt > 0 && (
-                      <span className="reading-time">{rt} min</span>
+                      <span className="font-mono text-[10px] text-[#9AA0A8] bg-[#0A0B0D] px-2 py-0.5 rounded border border-[#1F2733]">{rt} min</span>
                     )}
                     <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/30 bg-[#E4572E]/10">
                       SEAL 999
@@ -152,7 +245,7 @@ export function MakcikGPT() {
                 </div>
 
                 <h2 className="font-serif text-xl md:text-2xl font-bold text-[#EDEAE2] mb-3 group-hover:text-[#D9A62E] transition-colors leading-snug">
-                  <Link to={`/makcikgpt/${article.slug}`}>
+                  <Link to={articleUrl}>
                     {article.title}
                   </Link>
                 </h2>
@@ -179,7 +272,7 @@ export function MakcikGPT() {
                   ))}
                 </div>
                 <Link
-                  to={`/makcikgpt/${article.slug}`}
+                  to={articleUrl}
                   className="font-mono text-xs font-semibold text-[#EDEAE2] group-hover:text-[#D9A62E] transition-colors flex items-center gap-1"
                 >
                   <span>Baca</span>

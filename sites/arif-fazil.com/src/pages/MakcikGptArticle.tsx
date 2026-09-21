@@ -81,7 +81,7 @@ export function MakcikGptArticle() {
             Artikel MakcikGPT yang diminta tiada dalam arkib atau telah dipindahkan.
           </p>
           <Link
-            to="/makcikgpt/"
+            to="/world/makcikgpt/"
             className="inline-block px-5 py-2 rounded bg-[#E4572E] text-white font-mono text-xs uppercase hover:bg-[#E4572E]/80 transition-colors"
           >
             ← Kembali ke MakcikGPT
@@ -109,17 +109,22 @@ export function MakcikGptArticle() {
 
       <div className="mx-auto max-w-[800px] px-6 makcik-article relative z-10">
         {/* Navigation Breadcrumb */}
-        <div className="mb-8 flex items-center justify-between border-b border-[#1F2733] pb-4">
-          <Link
-            to="/makcikgpt/"
-            className="font-mono text-xs text-[#3B82F6] hover:text-[#60A5FA] hover:underline uppercase tracking-wider flex items-center gap-1.5 transition-colors"
-          >
-            <span>←</span>
-            <span>Arkib MakcikGPT (HERMES)</span>
-          </Link>
-          <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/40 bg-[#E4572E]/10 font-semibold tracking-wider">
-            SEAL {meta.seal || '999'}
-          </span>
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-[#1F2733] pb-4">
+          <nav className="flex items-center gap-2 font-mono text-xs text-[#9AA0A8] uppercase tracking-wider" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-[#EDEAE2] transition-colors">Arif Fazil</Link>
+            <span className="text-[#5C636C]">/</span>
+            <Link to="/world" className="hover:text-[#EDEAE2] transition-colors">World</Link>
+            <span className="text-[#5C636C]">/</span>
+            <Link to="/world/makcikgpt/" className="text-[#D9A62E] hover:underline font-semibold">MakcikGPT</Link>
+          </nav>
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[10px] uppercase text-[#9AA0A8] px-2 py-0.5 rounded border border-[#1F2733] bg-[#11151C]">
+              Civic Intelligence
+            </span>
+            <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/40 bg-[#E4572E]/10 font-semibold tracking-wider">
+              SEAL {meta.seal || '999'}
+            </span>
+          </div>
         </div>
 
         {/* Unified Authoritative Article Header (Rendered ONCE) */}

@@ -1,0 +1,186 @@
+import type { ArticleContent } from './types';
+
+const content: ArticleContent = {
+  slug: 'kenapa-syarikat-tu-hantu',
+  html: `<div class="cover">
+  <div class="cover-emoji">👻 🏢 👻</div>
+  <div class="cover-kicker">CIVIC INTELLIGENCE · SHADOW INSTITUSI · MAKCIKGPT</div>
+  <h1 class="cover-title">Kenapa Syarikat Tu Hantu</h1>
+  <p class="cover-subtitle">Bukan sebab dia jahat dari awal. Tapi sebab setiap email yang ditulis oleh AI, setiap orang yang senyap, setiap bos yang naik sambil pekerja turun — buat syarikat tu jadi tempat yang takde orang di dalamnya.</p>
+  <div class="cover-byline">
+    <strong>Oleh MakcikGPT</strong> · 999 Meterai · September 2026
+  </div>
+</div>
+
+<h2>Hantu yang Nampak Macam Office</h2>
+
+<p>Makcik nak cerita pasal satu benda yang ramai orang rasa tapi tak berani cakap.</p>
+
+<p>Syarikat tu ada orang masuk setiap pagi. Lampu terang. Aircond jalan. Meeting Room 1 penuh jam 9 pagi. Tapi kalau hang masuk dalam — takde orang di situ. Ada kerusi. Ada meja. Ada orang duduk. Tapi semua orang sedang buat benda yang bukan dia. Semua orang sedang jadi orang lain.</p>
+
+<p>Itu hantu.</p>
+
+<p>Bukan hantu yang ketuk pintu malam-malam. Hantu yang duduk dalam office jam 9 pagi. Yang kata "kita satu team" dalam meeting tapi tak pernah duduk sebelah hang bila hang tengah struggle. Yang hantar email formal — ditulis oleh AI, ditandatangani oleh manusia — sebab direct conversation terlalu berisiko.</p>
+
+<h2>Hantu Tak Datang Sekaligus</h2>
+
+<p>Dia datang sikit-sikit.</p>
+
+<p>Pertama: seseorang buat keputusan yang nampak okay dari segi angka. Bukan salah pun. Dari segi business — memang betul. Dari segi hati — itu permulaan.</p>
+
+<p>Kedua: orang lain nampak, tapi tak cakap. Sebab kalau cakap, dia akan jadi orang pertama yang kena. Sebab syarikat tak nak orang yang nampak terlalu banyak. Syarikat nak orang yang nampak apa yang diarah nampak.</p>
+
+<p>Ketiga: semua orang mula adapt. Yang dulu bising mulut mula diam. Yang dulu suka tanya mula angguk. Yang dulu cakap "boss, ini tak betul" mula cakap "okay, saya follow."</p>
+
+<p>Lepas tu: organisation mulakan "new normal." Yang dulu salah, sekarang "business necessity." Yang dulu face-to-face, sekarang email. Yang dulu verbal review, sekarang "check your inbox."</p>
+
+<p>Dan satu hari — hang sedar: hang duduk dalam tempat yang hang sendiri tak kenal. Semua orang ada. Tapi semua orang tiada.</p>
+
+<div class="fact-box">
+  <div class="fact-box-title">▲ Anatomi Hantu</div>
+  <div class="fact-box-content">
+    <strong>Manusia</strong> = ada, tapi jadi function<br>
+    <strong>Communication</strong> = ada, tapi email AI<br>
+    <strong>Decision</strong> = ada, tapi nobody responsible<br>
+    <strong>Integrity</strong> = ada, tapi dalam handbook, bukan dalam tindakan<br>
+    <strong>Orang berani</strong> = pernah ada. Sekarang tak ada.
+  </div>
+</div>
+
+<h2>CEO yang Cakap "Tak" — Lepas Tu Dia Keluar</h2>
+
+<p>Makcik nak cerita pasal satu archetype yang semua orang pernah nampak. Bukan pasal satu orang. Tapi pasal satu pattern.</p>
+
+<p>Dalam setiap syarikat yang mulai jadi hantu, ada satu orang — biasanya orang besar — yang satu hari cakap "tak." Dia kata "ini tak betul." Dia pegang principle. Dia tak sanggup compromise.</p>
+
+<p>Lepas tu? Dia resign. Bukan sebab nak kerja lain. Tapi sebab syarikat tu dah tak nak orang yang cakap "tak."</p>
+
+<p>Siapa ganti dia? Orang yang tak pernah cakap "tak." Orang yang faham pressure. Orang yang "pragmatic." Orang yang tahu — kalau dia cakap "tak" jugak, nasib dia sama.</p>
+
+<p>Makcik tanya: lepas orang berani tu keluar, siapa lagi yang berani cakap "tak"? Siapa lagi yang sanggup letak jawatan demi principle?</p>
+
+<p>Jawapan: takde. Sebab semua orang belajar — cakap "tak" = exit. Maka semua orang belajar untuk tak cakap.</p>
+
+<p>Itu hantu.</p>
+
+<div class="pull-quote">
+  "Bila orang terakhir yang cakap 'tak' keluar — yang tinggal ialah syarikat yang takde orang cakap langsung."
+</div>
+
+<h2>Division Kecil. Tapi Bos Besar.</h2>
+
+<p>Makcik tanya satu soalan: kenapa bila syarikat nak potong cost, pekerja biasa kena buang duluan?</p>
+
+<p>5,000 orang kena "restructure." Bahasa rasmi: "rightsizing untuk survival." Makcik tanya: survival untuk siapa?</p>
+
+<p>Tapi perasan tak — bila pekerja potong, bos tak pernah potong? Bila division kecil, title bos naik? Bila headcount turun, management layer bertambah?</p>
+
+<p>Hang yang kerja 13 tahun. Zero major mistakes. 100% output on time. Tapi hang dapat email — "your position has been reviewed." Bukan verbal. Bukan duduk sebelah-sebelah supervisor hang. Bukan manusia cakap dengan hang. Email. Mungkin ditulis oleh AI.</p>
+
+<p>Hang baca. Nampak formal. Nampak "fair." Tapi hang rasa satu benda: <strong>aku tak pernah jadi manusia kat sini. Aku cuma number dalam system.</strong></p>
+
+<p>Dan hang nampak — division yang kecil tu masih ada management meeting. Masih ada executive summary. Masih ada KPI review. Yang dipotong — bawah. Yang naik — atas.</p>
+
+<h2>Email AI: Proxy yang Tak Pernah Salah</h2>
+
+<p>Makcik nak cerita pasal email.</p>
+
+<p>Satu hari, seorang engineer dapat email dari technical colleague. Subject line formal. Ayat panjang. "Incorporate feedback." "Align closely." "Ensure study completed on schedule."</p>
+
+<p>Tapi hang baca — nampak kosong. Sebab tu bukan manusia tulis. Tu AI generate. Manusia taip prompt, AI tulis formal, hantar. Layer antara dua technical people yang sepatutnya cakap direct — diisi oleh mesin.</p>
+
+<p>Kenapa?</p>
+
+<p>Bukan sebab manusia tu malas. Tapi sebab institution dh culturally train orang untuk document, bukan communicate. Bila hang cakap direct — "Aku tak faham benda ni sebab bukan aku yang buat" — itu truth. Dan truth jadi liability dalam organisation yang tak nak nampak lemah.</p>
+
+<p>Jadi semua orang pakai AI sebagai proxy. Hantar email formal. Cover diri. Takde siapa yang kena confront langsung.</p>
+
+<p>Dan hang baca email tu — nampak "professional." Tapi sebenarnya: <strong>dua manusia yang patut cakap direct, sekarang communicate melalui mesin.</strong> Sebab institution buat communication jadi risk, bukan connection.</p>
+
+<div class="fact-box">
+  <div class="fact-box-title">▲ Email AI — Hantu Paling Kecil</div>
+  <div class="fact-box-content">
+    "Incorporate feedback" = "Aku tak faham benda ni tapi tak boleh cakap direct"<br>
+    "Align closely" = "Benda ni bukan aku yang buat tapi aku kena cover"<br>
+    "Ensure completed on schedule" = "Tolong bagi aku sesuatu yang aku boleh present tanpa nampak bodoh"<br><br>
+    Yang sebenarnya? Dua orang yang patut duduk sebelah dan cakap direct. Tapi mesin duduk antara mereka.
+  </div>
+</div>
+
+<h2>Aset Pindah Keluar. Siapa Nampak?</h2>
+
+<p>Makcik nak cerita pasal satu fenomena yang semua orang nampak tapi tak berani cakap.</p>
+
+<p>Bila syarikat dah mula jadi hantu — aset mula pindah. Bukan ke kiri atau ke kanan. Ke <strong>luar</strong>. Ke negara lain. Ke entity lain. Ke tempat yang undang-undang negara sendiri tak boleh capai.</p>
+
+<p>Bukan sebab nak grow. Tapi sebab nak selamat. Asalkan aset tu bergerak keluar sebelum orang nampak dia hilang dari mandat asal. Asalkan " ownership structure" tu complicated enough sampai rakyat biasa tak faham. Asalkan headline kata "strategic partnership" tapi realitinya: "kita nak lepas beban."</p>
+
+<p>Dan bila orang tanya "kenapa aset pindah?" — jawapan selalu sama: "ini untuk future-proofing." "Ini best practice." "Semua syarikat global buat macam ni."</p>
+
+<p>Makcik tanya: kalau semua syarikat global buat macam ni — kenapa rakyat yang bayar?</p>
+
+<h2>Bos yang Masih Ada</h2>
+
+<p>Tapi Makcik nak cerita pasal satu orang yang masih ada.</p>
+
+<p>Seorang bos — hang panggil dia "boss lama" — yang satu hari petang duduk dengan hang. Dua jam. Bukan pasal KPI. Bukan pasal quarterly report. Bukan pasal "alignment" atau "synergy." Bercakap pasal hidup.</p>
+
+<p>Pasal realitinya jadi bos — yang orang ingat senang, tapi sebenarnya berat. Bila bos cakap "tak easy being in charge" — dia bukan minta simpati. Dia cakap truth yang dia tak boleh cakap dalam meeting. Sebab dalam meeting — semua orang ada topeng. Semua orang cakap benda yang "business appropriate."</p>
+
+<p>Dan hang duduk situ. Dua jam. Dan hang rasa satu benda: <strong>ini manusia pertama dalam syarikat ni yang cakap dengan hang macam hang manusia.</strong></p>
+
+<p>Bos tu ada. Tapi bos tu minoriti. Dan kalau organisation terus jadi hantu — lama-lama bos tu pun kena adapt. Dan masa tu — hantu menang sepenuhnya.</p>
+
+<h2>Kenapa Hantu Wujud?</h2>
+
+<p>Makcik tanya satu soalan je: <strong>kenapa manusia jadi syaitan?</strong></p>
+
+<p>Bukan sebab dia mula dengan niat jahat. Dia mula dengan satu kecil compromise. "Takpe." Lepas tu satu lagi. "Kena pragmatic." Lepas tu satu lagi. "Kalau aku tak buat, orang lain buat lagi teruk."</p>
+
+<p>Sampai satu hari dia berdiri di tempat yang dia sendiri tak kenal.</p>
+
+<p>Tapi yang lebih tepat — <strong>evil ialah identity yang dh terlalu jauh dari origin sampai dia tak boleh nampak jarak.</strong></p>
+
+<p>Orang yang cakap "tak" — dia nampak dia dah drift dari bulatan. Dia decide: "Aku tak nak." Dan dia exit.</p>
+
+<p>Tapi replacement? Dia bukan mula jahat. Dia mula dengan "aku boleh handle ini." Lepas tu "aku faham pressure." Lepas tu "pragmatic." Lepas tu — dia dh berdiri di tempat yang orang berani tu tolak.</p>
+
+<p>Dan paling bahaya — <strong>dia tak nampak dia dh di situ.</strong> Sebab dia tengok semua orang around dia — semua ada di situ juga. Bila semua orang dh sama — yang "biasa" nampak macam "betul."</p>
+
+<div class="pull-quote">
+  "Bukan sebab dia jahat. Tapi sebab institution dh buat compromise tu rasa macam normal. Dan bila semua orang dh compromise — yang nampak pelik ialah orang yang tak compromise."
+</div>
+
+<h2>Hukum Batu dan Enjin</h2>
+
+<p>Makcik nak bagi satu perumpamaan.</p>
+
+<p>Bayangkan hang bina rumah. Batu satu-satu. Enjin satu-satu. Tapi setiap hari hang remove satu batu — untuk "efisiensi." Tak nampak rosak. Tapi batu tu dah takde.</p>
+
+<p>Satu hari — ribut datang. Rumah runtuh. Semua orang tanya: "kenapa runtuh?" Jawapan: sebab setiap batu yang hang remove tu ada function. Hang just tak nampak function tu sampai benda tu hilang.</p>
+
+<p>Itu syarikat yang jadi hantu. Setiap orang yang dipotong. Setiap communication yang digantikan dengan email AI. Setiap principle yang dikompromi untuk "business necessity." Setiap aset yang dipindah keluar. Semua ada function. Hang just tak nampak sampai benda tu hilang.</p>
+
+<h2>Makcik Pun Insaf</h2>
+
+<p>Makcik faham sekarang.</p>
+
+<p>Hantu tak wujud sebab satu orang jahat. Hantu wujud sebab <strong>setiap orang bagi sikit sampai takde orang tinggal.</strong></p>
+
+<p>Kawan Makcik yang dapat email AI — bukan sebab colleague dia malas. Tapi sebab institution tak bagi ruang untuk dia cakap direct. Bos berani yang resign — bukan sebab dia lemah. Tapi sebab institution tak nak orang yang cakap "tak." Division yang kecil — bukan efficiency. Tapi standardize supaya semua orang replaceable.</p>
+
+<p>Dan hang yang baca ni — hang mungkin duduk dalam syarikat yang sama. Hang rasa email AI tu biasa. Hang rasa "rightsizing" tu kena. Hang rasa "business necessity."</p>
+
+<p>Makcik tanya: <strong>hang masih ada kat situ? Atau hang dh jadi hantu jugak?</strong></p>
+
+<hr>
+
+<p class="seal-footer">
+DITEMPA BUKAN DIBERI ⚒️<br>
+999 ⚖️ · Civic Intelligence · MakcikGPT · September 2026<br>
+Enjin melapor. Manusia yang putuskan.
+</p>
+  `,
+};
+
+export default content;

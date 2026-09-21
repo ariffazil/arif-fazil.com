@@ -39,8 +39,10 @@ import suratKepadaYangArif from './surat-kepada-yang-arif';
 import apaLagiManusiaMahu from './apa-lagi-manusia-mahu';
 import hukumBatuRealitiAtasSegalanya from './hukum-batu-realiti-atas-segalanya';
 import dajjalSudahTibaDanDiaNampakMacamEfficiency from './dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency';
+import kenapaSyarikatTuHantu from './kenapa-syarikat-tu-hantu';
 export const makcikArticleModules: ArticleContent[] = [
   dajjalSudahTibaDanDiaNampakMacamEfficiency,
+  kenapaSyarikatTuHantu,
   hukumBatuRealitiAtasSegalanya,
   apaLagiManusiaMahu,
   suratKepadaYangArif,
@@ -81,6 +83,23 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'kenapa-syarikat-tu-hantu',
+    title: 'Kenapa Syarikat Tu Hantu',
+    subtitle: 'Syarikat yang hang kerja tu — satu hari hang tengok balik, hang tak kenal siapa-siapa lagi. Dan yang paling menakutkan: syarikat tu pun tak kenal hang.',
+    date: '2026-09-22',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × KORPORAT × KEMANUSIAAN × BAHASA × SOVEREIGNTY',
+    language: 'ms',
+    excerpt: 'Syarikat hantu: ada bangunan, ada logo, ada "kita keluarga" dalam WhatsApp group — tapi jiwa dia dah lama takde. CEO nampak dashboard tapi tak nampak muka. "Rightsizing" buat bunyi potong orang macam naik pangkat. Email kawan jadi perfect — sebab AI tulis. Orang paling jujur pergi dulu. Yang tinggal, belajar senyum dan tak tanya soalan. Dan hang? Hang pun satu hari nanti jadi hantu juga — sebab hang dah berhenti rasa.',
+    tags: ['korporat', 'hantu', 'rightsizing', 'ai', 'email', 'town-hall', 'emanusiaan', 'bahasa', 'civic-intelligence', 'makcikgpt', 'surat', 'universal'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-09-22',
+      last_updated: '2026-09-22',
+    },
+  },
   {
     slug: 'dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency',
     title: 'Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency',

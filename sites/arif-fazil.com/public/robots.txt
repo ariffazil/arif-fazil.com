@@ -72,6 +72,8 @@ Allow: /
 
 # ── Discovery ──
 Sitemap: https://arif-fazil.com/sitemap.xml
+Agentmap: https://arif-fazil.com/.well-known/ard.json
+Agentmap: https://arif-fazil.com/.well-known/ai-catalog.json
 License: https://arif-fazil.com/rsl.xml
 # Machine overview
 # https://arif-fazil.com/llms.txt

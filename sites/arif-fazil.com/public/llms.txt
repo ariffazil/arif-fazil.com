@@ -20,6 +20,8 @@ Ditempa Bukan Diberi — forged, not given.
 - [Verification](https://arif-fazil.com/999/): Evidence snapshots, not self-issued certificates.
 
 ## Agent connection
+- [ARD manifest (Agentic Resource Discovery v0.91)](https://arif-fazil.com/.well-known/ard.json)
+- [ARD catalog (Lighthouse 13.5 fallback)](https://arif-fazil.com/.well-known/ai-catalog.json)
 - [MCP declaration](https://arif-fazil.com/.well-known/mcp.json)
 - [Agent contract JSON](https://arif-fazil.com/.well-known/agent.json)
 - [MCP endpoint](https://mcp.arif-fazil.com/mcp) (streamable HTTP, MCP 2025-11-25)

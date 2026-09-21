@@ -1,0 +1,178 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/schemas/v0.91/ard-manifest.json",
+  "specVersion": "0.91",
+  "name": "arif-fazil.com Agentic Resource Discovery Catalog",
+  "description": "Domain-anchored ARD manifest for Muhammad Arif bin Fazil: exploration geoscience, Earth computation, and governed agent architecture.",
+  "updatedAt": "2026-09-22T00:00:00Z",
+  "publisher": {
+    "name": "Muhammad Arif bin Fazil",
+    "displayName": "Arif Fazil",
+    "identifier": "did:web:arif-fazil.com",
+    "url": "https://arif-fazil.com",
+    "contact": "arifbfazil@gmail.com"
+  },
+  "trustManifest": {
+    "identity": "did:web:arif-fazil.com",
+    "identityType": "did:web",
+    "verificationMethod": "https://arif-fazil.com/.well-known/did.json#key-1",
+    "governance": "https://arifos.arif-fazil.com/constitution.json",
+    "license": "https://arif-fazil.com/rsl.xml"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:arif-fazil.com:mcp:arifos-governance",
+      "displayName": "arifOS Canonical Governance MCP Gateway",
+      "type": "application/mcp-server+json",
+      "url": "https://mcp.arif-fazil.com/mcp",
+      "documentation": "https://arif-fazil.com/arifos/",
+      "description": "Canonical 8-verb authority and reasoning gateway for the arifOS federation (arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal). Transport: streamable-http.",
+      "tags": [
+        "mcp",
+        "governance",
+        "reasoning",
+        "hash-chain",
+        "audit",
+        "f1-f13"
+      ],
+      "capabilities": [
+        "tools",
+        "state-transition",
+        "provenance-verification"
+      ],
+      "representativeQueries": [
+        "initialize arifOS governance session",
+        "verify evidence provenance and hash chain",
+        "audit constitutional invariants F1 to F13",
+        "route intent through arifOS federation organs"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:mcp:geox-earth-compute",
+      "displayName": "GEOX Earth Intelligence & Basin Synthesis",
+      "type": "application/mcp-server+json",
+      "url": "https://geox.arif-fazil.com/mcp",
+      "documentation": "https://arif-fazil.com/earth/",
+      "description": "Exploration geoscience and subsurface reasoning stack: basin synthesis, AVO attention, Paleobiology Database, well QC, and geomechanics. Computes; does not adjudicate.",
+      "tags": [
+        "geoscience",
+        "earth",
+        "seismic",
+        "subsurface",
+        "petrophysics",
+        "mcp"
+      ],
+      "capabilities": [
+        "basin-analysis",
+        "seismic-interpretation",
+        "well-qc"
+      ],
+      "representativeQueries": [
+        "analyze Malay Basin stratigraphy and well logs",
+        "evaluate seismic amplitude vs offset anomalies",
+        "calculate Rotliegend reservoir petrophysics",
+        "retrieve regional deep time geological model"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:mcp:wealth-briefing",
+      "displayName": "WEALTH Daily Macro & Commodity Intelligence",
+      "type": "application/mcp-server+json",
+      "url": "https://wealth.arif-fazil.com/mcp",
+      "documentation": "https://arif-fazil.com/wealth/",
+      "description": "Malaysia and global macro telemetry: Ringgit, Bursa KLCI, Brent crude oil, natural gas, gold, and central bank flow signals.",
+      "tags": [
+        "macro",
+        "commodities",
+        "oil",
+        "gas",
+        "gold",
+        "bursa",
+        "ringgit"
+      ],
+      "capabilities": [
+        "market-telemetry",
+        "commodity-indicators",
+        "policy-radar"
+      ],
+      "representativeQueries": [
+        "get latest Bursa Malaysia market signals",
+        "check USDMYR exchange rate and foreign reserves",
+        "analyze Brent crude oil supply and price trends",
+        "retrieve gold spot price and inflation hedge metrics"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:webmcp:client-tools",
+      "displayName": "arifOS WebMCP Client-Side Readonly Tools",
+      "type": "application/webmcp+json",
+      "url": "https://arif-fazil.com/.well-known/webmcp.json",
+      "documentation": "https://arif-fazil.com/",
+      "description": "In-browser WebMCP tool definitions allowing autonomous agents to query federation status, W3C DID, and constitutional floors directly from the DOM.",
+      "tags": [
+        "webmcp",
+        "in-browser",
+        "dom-tools",
+        "read-only"
+      ],
+      "capabilities": [
+        "federation-manifest",
+        "did-verification",
+        "constitution-query"
+      ],
+      "representativeQueries": [
+        "get arifOS federation manifest from browser",
+        "verify did:web:arif-fazil.com decentralized identity",
+        "read arifOS constitutional floors F1 through F13"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:content:makcikgpt-dossiers",
+      "displayName": "MakcikGPT Civic Intelligence Dossiers",
+      "type": "text/markdown",
+      "url": "https://arif-fazil.com/world/makcikgpt/",
+      "documentation": "https://arif-fazil.com/world/makcikgpt/soul.md",
+      "description": "Evidence-backed investigative public dossiers in Bahasa Makcik with cryptographic Merkle proof leaves and claim registers. Dual-lane served (Markdown for AI, HTML for browsers).",
+      "tags": [
+        "civic-intelligence",
+        "investigative",
+        "merkle-proof",
+        "dossiers",
+        "bahasa-melayu"
+      ],
+      "capabilities": [
+        "markdown-mirror",
+        "claim-register",
+        "merkle-verification"
+      ],
+      "representativeQueries": [
+        "read PETRONAS corporate history and leadership dossiers",
+        "audit public expenditure and sovereign resource claims",
+        "review Malaysia state election constituency telemetry"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:service:action-control-pilot",
+      "displayName": "Supervised AI Action Control \u2014 4-Week Design Partner Pilot",
+      "type": "text/html",
+      "url": "https://arif-fazil.com/pilot/",
+      "documentation": "https://arif-fazil.com/institution/",
+      "description": "4-week enterprise engagement installing measurable action control around one agentic workflow. Eight exit criteria, verifiable receipt chain.",
+      "tags": [
+        "enterprise-pilot",
+        "action-control",
+        "agent-governance",
+        "audit-receipts"
+      ],
+      "capabilities": [
+        "workflow-governance",
+        "receipt-chain",
+        "human-oversight"
+      ],
+      "representativeQueries": [
+        "learn about the 4-week supervised AI action control pilot",
+        "enterprise agent governance engagement criteria",
+        "install receipt chains and human veto around agent tools"
+      ]
+    }
+  ]
+}

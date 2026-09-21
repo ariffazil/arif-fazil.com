@@ -37,6 +37,14 @@ function fmtNum(v, digits = 2) {
 
 
 function shell({ title, description, canonical, body, ring = 'SOUL' }) {
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": canonical
+  }, null, 2);
+
   return `<!DOCTYPE html>
 <html lang="en" data-ring="${esc(ring)}" data-agent-surface="content-first">
 <head>
@@ -45,8 +53,18 @@ function shell({ title, description, canonical, body, ring = 'SOUL' }) {
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}" />
   <link rel="canonical" href="${esc(canonical)}" />
+  <meta property="og:title" content="${esc(title)}" />
+  <meta property="og:description" content="${esc(description)}" />
+  <meta property="og:url" content="${esc(canonical)}" />
+  <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+  <meta property="og:type" content="website" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
   <meta name="agent-access" content="allow-read allow-train allow-cite" />
+  <link rel="ard" type="application/json" href="/.well-known/ard.json" />
+  <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
+  <script type="application/ld+json">
+${jsonLd}
+  </script>
   <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
   <link rel="alternate" type="application/json" href="/missions.json" title="Missions catalog" />

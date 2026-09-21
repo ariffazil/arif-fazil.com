@@ -186,34 +186,31 @@
       "path": "/world/oil/",
       "title": "Oil Dashboard — Brent Crude Cognitive View",
       "mission": "monitor",
-      "status": "redirect",
-      "type": "redirect",
+      "status": "live",
+      "type": "page",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Brent crude oil cognitive dashboard with live data",
-      "note": "Reconciled to observed HTTP 308 on 2026-09-21 (verify-surfaces.cjs truth_rule: catalog must match live HTTP)."
+      "description": "Brent crude oil cognitive dashboard with live data"
     },
     {
       "path": "/world/gas/",
       "title": "Gas Dashboard — Natural Gas Intelligence",
       "mission": "monitor",
-      "status": "redirect",
-      "type": "redirect",
+      "status": "live",
+      "type": "page",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Natural gas dashboard with live data",
-      "note": "Reconciled to observed HTTP 308 on 2026-09-21 (verify-surfaces.cjs truth_rule: catalog must match live HTTP)."
+      "description": "Natural gas dashboard with live data"
     },
     {
       "path": "/world/gold/",
       "title": "Gold Dashboard — XAUUSD Trading Synthesis",
       "mission": "monitor",
-      "status": "redirect",
-      "type": "redirect",
+      "status": "live",
+      "type": "page",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Gold trading synthesis and technical analysis dashboard",
-      "note": "Reconciled to observed HTTP 308 on 2026-09-21 (verify-surfaces.cjs truth_rule: catalog must match live HTTP)."
+      "description": "Gold trading synthesis and technical analysis dashboard"
     },
     {
       "path": "/world/politics/ns-election/",
@@ -775,5 +772,5 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-09-21"
+  "as_of": "2026-09-20T14:24:59Z"
 }

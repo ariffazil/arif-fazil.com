@@ -40,6 +40,12 @@ export interface ArticleContent {
   html: string;
 }
 
+export interface TemporalValidity {
+  valid_as_of?: string;
+  verify_at?: string;
+  stale_after?: string;
+}
+
 export interface MakcikArticleMeta {
   slug: string;
   title: string;
@@ -58,5 +64,8 @@ export interface MakcikArticleMeta {
   counter_evidence?: CounterEvidenceItem[];
   version_lineage?: VersionLineage;
   merkle_leaf?: string;
+
+  // Temporal validity — when was this evidence good, and when should it be re-checked
+  temporal_validity?: TemporalValidity;
 }
 

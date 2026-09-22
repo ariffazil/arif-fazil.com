@@ -41,11 +41,11 @@ import hukumBatuRealitiAtasSegalanya from './hukum-batu-realiti-atas-segalanya';
 import dajjalSudahTibaDanDiaNampakMacamEfficiency from './dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency';
 import kenapaSyarikatTuHantu from './kenapa-syarikat-tu-hantu';
 import realityOverEverything from './reality-over-everything';
-import yangXDiungkapTruthDalamVoid from './yang-x-diungkap-truth-dalam-void';
+import yangXDiungkapTruthSembunyiDariVoid from './yang-x-diungkap-truth-sembunyi-dalam-void';
 export const makcikArticleModules: ArticleContent[] = [
+  yangXDiungkapTruthSembunyiDariVoid,
   realityOverEverything,
   dajjalSudahTibaDanDiaNampakMacamEfficiency,
-  yangXDiungkapTruthDalamVoid,
   kenapaSyarikatTuHantu,
   hukumBatuRealitiAtasSegalanya,
   apaLagiManusiaMahu,

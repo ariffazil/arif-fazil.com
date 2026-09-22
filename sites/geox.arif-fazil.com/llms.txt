@@ -59,3 +59,15 @@ Business Source License 1.1; converts to Apache 2.0 on 2029-06-29.
 - Federation: https://geox.arif-fazil.com/federation
 - Deploy: https://geox.arif-fazil.com/deploy
 - Full corpus: https://geox.arif-fazil.com/llms-full.txt
+
+## Media (i2v clips — wired to GEOX figures)
+
+- North Sabah cross-section animation (5s, pSCS subduction → Kinabalu Granite
+  emplacement, slow pan + parallax depth): /assets/north-sabah-cross-section-i2v.mp4
+- Endurance CCS geological model animation (5s, Chalk → Cap Rock → Reservoir
+  → Basement, slow pan across porosity distribution): /assets/endurance-ccs-i2v.mp4
+- NOTE: Cloudflare edge cache may serve the SPA shell at these URLs for up to
+  4 hours after first deploy. Use a `?v=` cache-bust query if the bare URL
+  returns HTML during the cache window. Canonical v-stamp:
+  `?v=2026-09-22a` (deploy of 2026-09-22, assets/* synced to /var/www/html/geox/assets/).
+- These clips are slide-deck assets, not yet embedded in the SPA bundle.

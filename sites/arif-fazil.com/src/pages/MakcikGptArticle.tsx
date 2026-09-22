@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect, useMemo } from 'react'
 import { getMakcikArticle, getMakcikMeta, makcikArticlesMeta } from '@/data/makcikgpt/index'
+import { RealityReceiptPanel } from '@/components/RealityReceiptPanel'
 
 function estimateReadingTime(html: string): number {
   const text = html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
@@ -121,9 +122,6 @@ export function MakcikGptArticle() {
             <span className="font-mono text-[10px] uppercase text-[#9AA0A8] px-2 py-0.5 rounded border border-[#1F2733] bg-[#11151C]">
               Civic Intelligence
             </span>
-            <span className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/40 bg-[#E4572E]/10 font-semibold tracking-wider">
-              SEAL {meta.seal || '999'}
-            </span>
           </div>
         </div>
 
@@ -161,6 +159,9 @@ export function MakcikGptArticle() {
             )}
           </div>
         </header>
+
+        {/* Reality Receipt Panel — clickable seal badge, expandable provenance */}
+        <RealityReceiptPanel meta={meta} />
 
         {/* Article Body (Clean, comfortable reading experience without duplicate cover) */}
         <article className="prose prose-invert max-w-none font-sans text-base md:text-lg leading-relaxed text-[#EDEAE2]/90 space-y-6">

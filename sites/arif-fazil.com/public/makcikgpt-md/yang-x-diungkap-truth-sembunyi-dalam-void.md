@@ -1,27 +1,35 @@
 ---
-article_id: unregistered-yang-x-diungkap-truth-dalam-void
-canonical_url: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-dalam-void
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/yang-x-diungkap-truth-dalam-void.ts
-merkle_leaf: null
+article_id: m-yang-x-diungkap
+canonical_url: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 57f7d8471bdacd9fc9b70233122af109cad746ea3b8ed53349ee9f1006cd1adc
 epistemic_summary:
-  obs_count: 0
-  der_count: 0
-  int_count: 0
+  obs_count: 1
+  der_count: 2
+  int_count: 2
   spec_count: 0
 ---
 
-# Yang X DiungkapTruth Sembunyi Dalam Void
+# Yang X Diungkap — Truth Sembunyi Dalam Void
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/yang-x-diungkap-truth-dalam-void.ts`.
+> Yang X Diungkap — Truth Sembunyi Dalam Void
 >
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Canonical URL: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void
 >
-> Canonical URL: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-dalam-void
->
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| YXD-C1 | DER | Void ialah seni bina — tempat yang dibiarkan kosong supaya majlis boleh jalan macam biasa. | - | approved |
+| YXD-C2 | INT | Naming jadi liabiliti sebab nama ada track record dan keluarga — void lindung dengan anonymize. | - | approved |
+| YXD-C3 | INT | Bahasa professional ialah pagar — nampak macam penjelasan, sebenarnya tak jelaskan apa-apa. | - | approved |
+| YXD-C4 | DER | Yang paling penting ialah yang paling tak disebut — terlalu mentah untuk language. | - | approved |
+| YXD-C5 | OBS | Lapis atas sosial boleh di-spin, lapis bawah fizikal tak boleh — reality tolak lambat atau cepat. | - | approved |
 
 ---
 

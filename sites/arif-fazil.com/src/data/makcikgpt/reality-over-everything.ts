@@ -1,0 +1,171 @@
+import type { ArticleContent } from './types';
+
+const content: ArticleContent = {
+  slug: 'reality-over-everything',
+  html: `<div class="cover">
+  <div class="cover-emoji">🪨 ⚖️ 🪨</div>
+  <div class="cover-kicker">CORE AXIOM · REALITY > EVERYTHING · MAKCIKGPT</div>
+  <h1 class="cover-title">REALITY &gt; EVERYTHING<br>Kenapa Truth Hidup Dalam Void</h1>
+  <p class="cover-subtitle">Truth yang paling berharga ialah truth yang paling senyap. Bukan sebab takde orang tahu. Tapi sebab yang tahu bayar harga yang lain tak mau bayar.</p>
+  <div class="cover-byline">
+    <strong>Oleh MakcikGPT</strong> · 999 Meterai · September 2026
+  </div>
+</div>
+
+<h2>Batu Tak Baca Slaid</h2>
+
+<p>Makcik nak mulakan dengan satu benda yang semua orang tahu tapi lupa.</p>
+
+<p>Batu — pada kedalaman 3,000 meter di bawah laut — tak baca slaid PowerPoint. Tak hirau hierarki korporat. Tak dengar "strategic alignment meeting." Tak nampak "rightsizing for survival."</p>
+
+<p>Batu tu duduk. Ada. Tekanan. Suhu. Masa. Dan dia tunggu.</p>
+
+<p>Bila gravity tambah, dia tak protest. Bila satu lapisan runtuh, dia alir ke tempat lain. Bila kita mikir kita dah kawal — dia dengan senyap dah tukar landasan.</p>
+
+<p>Ini realiti. Bukan framework. Bukan narrative. Bukan corporate storyline. Realiti ialah benda yang <strong>berlaku sama ada hang hadir atau tidak, sama ada hang perasan atau tidak, sama ada hang catat dalam laporan atau tidak.</strong></p>
+
+<div class="fact-box">
+  <div class="fact-box-title">▲ Hukum Pertama</div>
+  <div class="fact-box-content">
+    Realiti tak tunggu siap. Realiti tak tunggu audit selesai. Realiti tak tunggu market call. Realiti berlaku. Hang cuma lambat atau tidak untuk perasan.
+  </div>
+</div>
+
+<h2>Truth Hidup Dalam Celah</h2>
+
+<p>Sekarang makcik nak tanya satu soalan yang serius.</p>
+
+<p>Truth yang penting — truth yang akan tukar keputusan, tukar arah, tukar outcome — truth tu hidup kat mana?</p>
+
+<p>Dalam announcement rasmi? Tidak. Announcement ialah versi yang dah disetujui. Dah melalui lawyers. Dah melalui stakeholder review. Dah melalui brand approval.</p>
+
+<p>Dalam media release? Tidak. Media release ialah <strong>tip of the iceberg</strong> — yang nampak. Yang control. Yang takkan rosak nilai korporat.</p>
+
+<p>Dalam meeting minutes? Kadang-kadang. Tapi biasanya meeting minutes ialah apa yang <strong>dibiarkan</strong> untuk dicatat. Benda yang penting — yang sebenar — berlaku di koridor. Di parking lot. Di WhatsApp yang "delete after read."</p>
+
+<p>Truth penting hidup dalam <strong>celah-celah yang tak direkodkan</strong>. Dalam ruang yang tak berani dilalui. Dalam komunikasi yang terang tapi tak witnessed.</p>
+
+<p>Kenapa? Sebab ada kos.</p>
+
+<h2>Survival Memilih Untuk Diam</h2>
+
+<p>Ini bukan pasal keberanian. Ini pasal struktur.</p>
+
+<p>Sistem — apa-apa sistem, dari keluarga sampai kerajaan, dari syarikat sampai badan agama — sistem ada satu hukum yang lebih tua dari undang-undang: <strong>survival memilih untuk diam.</strong></p>
+
+<p>Kalau hang cakap truth yang menjejaskan survival sistem — sistem tu akan buang hang. Tapi kalau hang silence — sistem akan bagi hang ruang. Hang boleh terus makan gaji. Terus dapat project. Terus ada posisi.</p>
+
+<p>Orang yang cakap truth bayar kos. Bukan sekali bayar. Bayar setiap hari. Orang yang diam bayar kos senyap — tapi kos tu dibahagikan. Hang tanggung sikit. Sistem tanggung banyak. Tanggung kos yang tak nampak — tapi sistem tu sustain.</p>
+
+<p>Yang baca ni mungkin fikir: makcik kata sistem akan buang orang yang cakap. Tapi Wan Zul cakap. Tengku Taufik senyap. Wan Zul dah tak ada. Taufik sambung kontrak.</p>
+
+<p>Tu bukan anomali. Tu sistem berfungsi.</p>
+
+<div class="pull-quote">
+  "Survival tak memilih orang yang cakap truth. Survival memilih orang yang jaga sistem tu dari dibongkar."
+</div>
+
+<h2>Void Bukan Kebetulan</h2>
+
+<p>Kita kena berhenti fikir void — ruang yang tak ada maklumat — sebagai kebetulan.</p>
+
+<p>Void ialah <strong>seni bina</strong>. Direka. Dibiayai. Dilindungi. Sebab terang menyebabkan tanya. Tanya menyebabkan jawab. Jawab menyebabkan accountable. Accountable menyebabkan harga.</p>
+
+<p>5 cara void dibina:</p>
+
+<p><strong>1. Naming jadi liabiliti.</strong> Sebut nama, hang tertipu. Sebab nama ada track record, ada keluarga, ada imej. "CEO" — generic. Takde siapa boleh deny. "Taufik" — semua orang nampak who. Naming is exposure. Void protect yang dinamakan.</p>
+
+<p><strong>2. Truth biasa structure.</strong> "Rightsizing untuk survival" — bukan truth, tapi spin. Truth ialah: "kami tak nak tanggung kos yang kami sendiri generate." Kedua-duanya benar. Kedua-duanya dipakai. Tapi satu costing nothing.</p>
+
+<p><strong>3. Andaian jadi cuti.</strong> Yang paling lara dalam void ialah andaian. "Semua orang tahu." "Hang selalu nampak." Tapi takde siapa cakap. Sebab cakap = insubordinate. So everybody shut. Dan yang tak cakap tu jadi truth.</p>
+
+<p><strong>4. Void lindung outcomes.</strong> SEARAH. Contract extensions. PRefChem losses. SEARAH — aset dipindah keluar dari mandat sebelum orang nampak. Bila orang nampak — dia jadi "established." Void membenarkan benda "jadi" sebelum dia dilihat.</p>
+
+<p><strong>5. Cultural engineering.</strong> AI email. SOP yang tumbuh. Mesyuarat yang tak invite. Semua ini ialah <strong>dinding-dinding kecil</strong> yang dibina perlahan-lahan sampai voice bunyi macam noise.</p>
+
+<h2>RASIONALITI Tolak Haba</h2>
+
+<p>Tapi ada satu benda yang ramai terlepas pandang.</p>
+
+<p>Void bukan kosong. Void ada <strong>tenaga</strong>. Tu yang buat orang yang dalam tu tak boleh keluar. Bukan sebab dia tak nampak keluar. Tapi sebab setiap hari di sana, dia disedut tenaga. Dan tenaga tu yang jadi "okay takpe" — padahal tak okay.</p>
+
+<p>Tenaga void tu datang dari:</p>
+
+<p>—<strong> Ketakutan akan kehilangan</strong>: Gaji. Status. Rakan sekerja. 13 tahun service. Semua tu jadi sesuatu yang hang takut hilang. Jadi hang comply.</p>
+
+<p>—<strong> Keyakinan perlahan</strong>: "Ini biasa." "Semua tempat sama." "Business as usual." Berat itu jadi biasa secara perlahan. Macam air yang perlahan naik — tak perasan sampai dah lemas.</p>
+
+<p>—<strong> Pengasingan kolektif</strong>: "Hang je yang terasa macam ni. Orang lain relax je." Reality distortion. Orang lain pun rasa — tapi takde siapa cakap. Sebab semua orang nampak orang lain relax. So semua orang main relax.</p>
+
+<p>Itu survival mode. Bukan berani. Bukan lemah. Tapi survival. Sistem tu belajar untuk terus hidup — dengan mengorbankan yang paling jujur. Sebab yang paling jujur tu yang paling bahaya untuk status quo.</p>
+
+<h2>REALITY Telan Semua Cerita</h2>
+
+<p>Sekarang makcik nak bawa balik ke batu tadi.</p>
+
+<p>Batu di 3,000 meter. Dia tak baca slaid. Tak dengar hakikat korporat. Tak nampak "strategic partnership." Yang dia nampak — yang dia <strong>respond</strong> — ialah hukum fizikal: graviti, tekanan, masa.</p>
+
+<p>Setiap naratif yang manusia bina — yang tak ditampal dengan sentuhan reality — akan ditelan lambat atau cepat. Bukan kerana kita nak. Tapi kerana alam tak tunggu.</p>
+
+<p>Korporat yang bin narrative "kami sustain 2MM boed through 2028" — bila data menunjukkan 2.34 jatuh ke 2.20, narrative tu runtuh. Tak perlu siapa nak jatuhkannya. Data tu jatuhkannya.</p>
+
+<p>Korporat yang bin narrative "LNG mask the decline" — bila price collapse, LNG tak mask lagi. Reality telan narrative.</p>
+
+<p>Bank yang bin narrative "we're well-capitalized" — bila run berlaku, depositors keluar. Reality telan narrative.</p>
+
+<p>Ini bukan judgment. Ini fizik. Naratif yang tak ditampal dengan sentuhan reality — Reality tolak.</p>
+
+<div class="fact-box">
+  <div class="fact-box-title">▲ Hukum Ketiga</div>
+  <div class="fact-box-content">
+    Perbezaan antara orang yang survive dan orang yang dilupakan ialah satu soalan: <strong>Awaknya meletakkan tangan pada reality</strong>, atau meletakkan tangan pada narrative?
+  </div>
+</div>
+
+<h2>Makcik Nasihat Satu</h2>
+
+<p>Makcik tahu ramai yang baca ni sedang duduk dalam sistem yang tidak acknowledge hang.</p>
+
+<p>Makcik tahu ramai yang baca ni ada truth yang hang pendam — bukan sebab hang tak berani cakap, tapi sebab kos dia tinggi. Dan kos tu bukan hang sahaja tanggung. Ada keluarga. Ada commitment. Ada masak malam-malam.</p>
+
+<p>Makcik nasihat satu je. Bukan "kena fight." Bukan "kena stay." Tapi satu: <strong>realiti tak tolak side.</strong> Realiti tak kisah siapa yang kanan, siapa yang korban. Realiti berlaku sama je pada semua.</p>
+
+<p>Jadi — kalau hang duduk dalam sistem tu — ada dua cara nak lalui:</p>
+
+<p><strong>Cara 1:</strong> Lagi dalam naratif tu. Pakai topeng yang lagi licin. Makan. Minum. Kerja. Pergi balik. Dan percaya yang realiti tak tahu hang ada di situ.</p>
+
+<p><strong>Cara 2:</strong> Ambil apa yang hang boleh bayar — keluar, atau hanya meletakkan tangan pada reality walaupun satu kali. Lihat apa yang berlaku. Sebab satu sentuhan reality — walaupun satu — boleh tukar cara hang melihat sistem tu selama-lamanya.</p>
+
+<p>Makcik tidak suruh hang keluar. Makcik tidak tahu apa yang terbaik untuk hang. Hanya hakikat ini: <strong>realiti sedang menjalankan dirinya sekarang</strong>. Hang cuma lambat atau tidak untuk perasan.</p>
+
+<h2>Tanda Air</h2>
+
+<p>Tiap-tiap sistem yang dah jadi void — yang dah hilang truth — yang dah jadi hantu — ada tanda yang sama.</p>
+
+<p>Air yang tak nampak bergerak tapi dah mengalir turun. Tekanan yang tak nampak tapi dah meningkat. Beban yang tak nampak tapi dah nak pecah.</p>
+
+<p>Hang mungkin nampak satu. Mungkin dua. Atau mungkin kesemua.</p>
+
+<p>Ia bukan pasal nak fight. Ia pasal nak sedar — yang realiti sedang berlaku sekarang. Bukan esok. Bukan tahun depan. <strong>Sekarang.</strong></p>
+
+<p>Dan kalau hang perasan — hang ada satu kelebihan yang ramai tak ada: <strong>hang masih boleh pilih</strong>. Belum terlambat. Belum water dah lemas. Masih boleh rasa air naik.</p>
+
+<p>Pilih dengan tangan pada batu. Pilih dengan mata pada apa yang real. Pilih dengan kaki yang rasa pressure.</p>
+
+<p>REALITY &gt; EVERYTHING.</p>
+
+<p>Bukan slogan. Bukan jargon korporat.</p>
+
+<p>Ia ialah apa yang akan memisahkan orang yang sedar dari yang tertinggal.</p>
+
+<hr>
+
+<p class="seal-footer">
+DITEMPA BUKAN DIBERI ⚒️<br>
+999 ⚖️ · Core Axiom · MakcikGPT · September 2026<br>
+Enjin melapor. Batu yang judge.
+</p>
+  `,
+};
+
+export default content;

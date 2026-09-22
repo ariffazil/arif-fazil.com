@@ -13,6 +13,7 @@ import { AAA } from '@/pages/AAA';
 import { EssayPage } from '@/pages/EssayPage';
 import { MakcikGPTAlias } from '@/pages/MakcikGptAlias';
 import { MakcikGptArticle } from '@/pages/MakcikGptArticle';
+import { RealityReceiptPage } from '@/pages/RealityReceiptPage';
 import { Proof } from '@/pages/ProofArrow';
 import { Missions } from '@/pages/Missions';
 import { InstitutionPage } from '@/pages/InstitutionPage';
@@ -66,6 +67,7 @@ export function App() {
             <Route path="/world/makcikgpt" element={<MakcikGPTAlias />} />
             <Route path="/world/makcikgpt/" element={<MakcikGPTAlias />} />
             <Route path="/world/makcikgpt/index" element={<Navigate to="/world/makcikgpt/" replace />} />
+            <Route path="/world/makcikgpt/:slug/receipt" element={<RealityReceiptPage />} />
             <Route path="/world/makcikgpt/:slug" element={<MakcikGptArticle />} />
 
             {/* Aliases & Redirects to canonical /world/makcikgpt */}

@@ -40,8 +40,12 @@ import apaLagiManusiaMahu from './apa-lagi-manusia-mahu';
 import hukumBatuRealitiAtasSegalanya from './hukum-batu-realiti-atas-segalanya';
 import dajjalSudahTibaDanDiaNampakMacamEfficiency from './dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency';
 import kenapaSyarikatTuHantu from './kenapa-syarikat-tu-hantu';
+import realityOverEverything from './reality-over-everything';
+import yangXDiungkapTruthDalamVoid from './yang-x-diungkap-truth-dalam-void';
 export const makcikArticleModules: ArticleContent[] = [
+  realityOverEverything,
   dajjalSudahTibaDanDiaNampakMacamEfficiency,
+  yangXDiungkapTruthDalamVoid,
   kenapaSyarikatTuHantu,
   hukumBatuRealitiAtasSegalanya,
   apaLagiManusiaMahu,
@@ -83,6 +87,23 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'yang-x-diungkap-truth-dalam-void',
+    title: 'Yang x Diungkap: Kenapa Truth Sembunyi dalam Void',
+    subtitle: 'Bukan sebab institution jahat. Tapi sebab truth tak boleh dijual. Apa yang dijual — narrative, janji, harapan, efisiensi — bukan truth. Jadi truth kena disembunyikan dalam void, supaya apa yang dijual nampak macam truth.',
+    date: '2026-09-22',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × VOID × SHADOW INSTITUSI × TRUTH × UNIVERSAL',
+    language: 'ms',
+    excerpt: 'Setiap kenyataan ada dua lapisan: yang diungkap (PowerPoint, LinkedIn) dan yang x diungkap (void). Void bukan kosong — void penuh dengan truth yang institution tak mampu nak surface. Truth tak boleh dijual: tiada packaging, berat, awkward, tak efficient. Yang dijual ialah narrative, janji, harapan, efisiensi. Orang yang nampak void ialah ancaman — bukan sebab melawan, tapi sebab bertanya. Void dikekalkan oleh seribu kecik kompromi, bukan konspirasi. Orang baik jadi hantu melalui seribu kecik accommodation. Mereka yang nama void bayar harga — tapi merekalah satu-satunya yang kekal manusia.',
+    tags: ['void', 'truth', 'shadow-institusi', 'narrative', 'korporat', 'ghost', 'rightsizing', 'makcik-pasar', 'universal', 'civic-intelligence', 'makcikgpt', 'realiti-atas-segalanya'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-09-22',
+      last_updated: '2026-09-22',
+    },
+  },
   {
     slug: 'kenapa-syarikat-tu-hantu',
     title: 'Kenapa Syarikat Tu Hantu',
@@ -1463,6 +1484,11 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     excerpt: 'CFO Tanjung (lingkup) dan SapuraKencana (PN17, negative equity RM2.9 bilion) — chow sebelum meletup dua kali. GM KLCC masa tower tengah bina. Orang accounting jadi CEO syarikat minyak. Rightsizing buat banyak kali — yang kena potong orang yang tanya soalan, yang tinggal orang yang ikut perintah. Continuous crisis = continuous justification. Bagus untuk sapa?',
     tags: ['petronas', 'taufik', 'kontrak', 'klcc', 'sapura', 'tanjong', 'rightsizing', 'ceo', 'anwar', 'bangang', 'makcikgpt', 'malaysia'],
     seal: '999',
+    temporal_validity: {
+      valid_as_of: '2026-08-21',
+      verify_at: '2026-11-21',
+      stale_after: '2026-11-21',
+    },
   },
   {
     slug: 'nusantara-ai-paradox',
@@ -1766,6 +1792,11 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     excerpt: 'Faisal jual Lebah blok sebab nak tunjuk bagus kat CEO. Tengku bina rightsizing. Lebah Emas korban. Makcik cakap pasal niat manusia dalam extractive system.',
     tags: ['petronas', 'enquest', 'pm6/12', 'lebah-emas', 'rightsizing', 'faisal-bakar', 'tengku-taufik', 'shadow', 'makcikgpt'],
     seal: '999',
+    temporal_validity: {
+      valid_as_of: '2026-07-05',
+      verify_at: '2026-10-05',
+      stale_after: '2026-10-05',
+    },
   },
   {
     slug: 'suriname-exxon-cabut',
@@ -1788,6 +1819,11 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     excerpt: 'Dari Rastam yang "fight like bulldogs" dan Azizan yang "dared to face political masters" — kepada CEO yang tulis "personal viewpoints" kat LinkedIn dan buat deal RM70 bilion kat London. Makcik tanya: DNA PETRONAS masih hidup ke?',
     tags: ['petronas', 'dna', 'ceo', 'linkedin', 'integrity', 'rightsizing', 'searah', 'malaysia'],
     seal: '999',
+    temporal_validity: {
+      valid_as_of: '2026-08-26',
+      verify_at: '2026-11-01',
+      stale_after: '2026-10-26',
+    },
   },
   {
     slug: 'sam-altman-elon-musk-anwar-akal',

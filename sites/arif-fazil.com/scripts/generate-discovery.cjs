@@ -406,6 +406,16 @@ ${pieces.map(p => `- [${p.title}](https://arif-fazil.com${p.dest.path}) (${p.dat
   }));
   writeIfChanged(path.join(makcikDir, "articles.json"), JSON.stringify(makcikArticlesJson, null, 2) + "\n");
 
+  // Mirror machine discovery documents to makcikgpt-md so crawlers and bots hitting
+  // /world/makcikgpt/{articles.json,llms.txt,llms.json} are served the raw JSON/TXT
+  // instead of falling back to the markdown index.
+  const makcikMdDir = path.join(SITE_ROOT, "public/makcikgpt-md");
+  if (fs.existsSync(makcikMdDir)) {
+    writeIfChanged(path.join(makcikMdDir, "llms.txt"), makcikLlmsTxt);
+    writeIfChanged(path.join(makcikMdDir, "llms.json"), JSON.stringify(makcikLlmsJson, null, 2) + "\n");
+    writeIfChanged(path.join(makcikMdDir, "articles.json"), JSON.stringify(makcikArticlesJson, null, 2) + "\n");
+  }
+
   // Phase 6 (Lebih Bijaksana blueprint): copy the signed agents.txt from canonical source.
   // Source-of-truth lives in forge_work/proposals/333-AGI/2026-09-17-agentic-surface/agents.txt.
   // If you edit that file, run sign-discovery.py to re-sign before this emit picks it up.

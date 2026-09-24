@@ -1,27 +1,52 @@
 ---
-article_id: unregistered-petronas-bod-evolution
+article_id: m1-7
 canonical_url: https://arif-fazil.com/world/makcikgpt/petronas-bod-evolution
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/petronas-bod-evolution.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: fc8a9c78e59c4fc5648aabd1f00495df9c56192e324442d4af5668e05d35a08c
 epistemic_summary:
-  obs_count: 0
+  obs_count: 8
   der_count: 0
-  int_count: 0
+  int_count: 2
   spec_count: 0
 ---
 
-# BOD PETRONAS:Tadak Minyak, Tadak AGM,Tadak Siapa Boleh Tanya
+# BOD PETRONAS: Tadak Minyak, Tadak AGM, Tadak Siapa Boleh Tanya
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/petronas-bod-evolution.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> BOD PETRONAS: Tadak Minyak, Tadak AGM, Tadak Siapa Boleh Tanya
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/petronas-bod-evolution
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/petronas-bod-evolution
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C001 | OBS | BOD PETRONAS terdiri daripada 8 orang, 7 mempunyai latar belakang finance/audit, hanya 1 engineer (Jukris). | SRC-001 | approved |
+| C002 | OBS | Jukris masuk board antara 15 Julai dan 14 Sept 2026 — bukan dengan COO appointment Feb 2026. | SRC-002 | approved |
+| C003 | OBS | MoF Inc ialah pemilik tunggal 100% PETRONAS. Tiada AGM. | SRC-004 | approved |
+| C004 | OBS | Abdul Rasheed Ghaffour = Gabenor Bank Negara Malaysia, duduk sebagai Independent NED PETRONAS. | SRC-001 | approved |
+| C005 | OBS | Bakke Salleh letak jawatan dari 1MDB (7 minggu) sebagai protes. Sri Ram: "It was like complaining of the loss of sheep to the wolf." | SRC-003 | approved |
+| C006 | OBS | Dividen PETRONAS: RM54B (2021 rekod) → RM20B (2025-2026, terendah 9 tahun). Profit collapse ~55% dalam 3 tahun. | SRC-006 | approved |
+| C007 | OBS | 5,000 pekerja kena potong (Jun 2025). Hiring dibekukan sehingga Disember 2026. | SRC-005 | approved |
+| C008 | OBS | Sarawak fail petition cabar Perlembagaan 3 undang-undang petroleum persekutuan (Feb 2026). | SRC-007 | approved |
+| C009 | INT | Struktur PETRONAS (MoF Inc, PM=MoF, tiada AGM) adalah sama dengan struktur 1MDB. | - | approved |
+| C010 | INT | Bakke dilabel "Independent" selepas 6 tahun dilantik oleh PM — independence dari si? | - | approved |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-001 | official_statement | PETRONAS IR2025 — Board Composition & Skills Matrix | https://www.petronas.com/integrated-report-2025/ |
+| SRC-002 | official_statement | petronas.com/about-us/our-leaders (live scrape 14 Sept 2026) | https://www.petronas.com/about-us/our-leaders |
+| SRC-003 | court_record | 1MDB-Tanore Trial — Bakke Salleh testimony (The Edge, Malay Mail, The Star) |  |
+| SRC-004 | official_statement | BERNAMA — MoF Inc sole shareholder confirmation (15 Aug 2025) | https://www.bernama.com/ |
+| SRC-005 | news | Bloomberg — Taufik contract extension (Aug 8, 2026) | https://www.bloomberg.com/ |
+| SRC-006 | news | Reuters — PETRONAS dividend RM20B lowest in 9 years | https://www.reuters.com/ |
+| SRC-007 | news | SCMP — Sarawak challenges constitutional validity of federal petroleum laws | https://www.scmp.com/ |
 
 ---
 

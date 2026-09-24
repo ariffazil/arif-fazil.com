@@ -1,27 +1,58 @@
 ---
-article_id: unregistered-nexg-mykad-siapa-beli
+article_id: m2-11
 canonical_url: https://arif-fazil.com/world/makcikgpt/nexg-mykad-siapa-beli
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/nexg-mykad-siapa-beli.ts
-merkle_leaf: null
+seal: 999
+provenance_status: migrating
+version: 1.0
+merkle_leaf: 48693002013f315ede807bd846e98155106ff4144c7a5a439978c0b46b066492
 epistemic_summary:
-  obs_count: 0
-  der_count: 0
-  int_count: 0
-  spec_count: 0
+  obs_count: 10
+  der_count: 1
+  int_count: 3
+  spec_count: 1
 ---
 
 # Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/nexg-mykad-siapa-beli.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/nexg-mykad-siapa-beli
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/nexg-mykad-siapa-beli
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C-NMSB-001 | OBS | NexG Berhad (dahulu Datasonic Technologies) — syarikat Bursa-listed yang kontrak MyKad, pasport, dan pelbagai aplikasi e-government. | SRC-NMSB-001 | approved |
+| C-NMSB-002 | OBS | Datuk Ishak Ismail pengerusi NexG; bekas CEO Malayan Cement; pernah settle RM20 juta dengan SC berhubung insider trading Kenmark (2016-2023). | SRC-NMSB-002 | approved |
+| C-NMSB-003 | OBS | Kerajaan sedang berunding membeli NexG pada RM7.5 bilion — tujuh kali ganda nilai pasaran. | SRC-NMSB-001 | approved |
+| C-NMSB-004 | OBS | 1BestariNet ialah projek broadband sekolah 1Malaysia yang dianugerah kepada YTL Communications (~RM2.7 bilion), ditamatkan 2019, MACC siasatan. | SRC-NMSB-003 | approved |
+| C-NMSB-005 | DER | Sambungan langsung 1BestariNet → NexG/Datasonic tidak disahkan oleh satu dokumen tender public tunggal — sebahagian inferens strategik berdasarkan kronologi kontrak. | SRC-NMSB-003 | approved |
+| C-NMSB-006 | OBS | YTL Data Centre Park Kulai Johor ~1,640 ekar — vertical integration: elektrik (YTL Power), telco (YTL Comms), data centre, AI. | SRC-NMSB-004 | approved |
+| C-NMSB-007 | OBS | YTL partnership dengan Nvidia untuk AI infrastructure di Malaysia. | SRC-NMSB-004 | approved |
+| C-NMSB-008 | SPEC | Angka CapEx spesifik YTL data centre Johor tertakluk kepada pengumuman korporat terkini — di sebalik pelaporan media, angka tepat berubah-ubah. | SRC-NMSB-004 | approved |
+| C-NMSB-009 | OBS | GovTech Singapura (di bawah PMO) bina SingPass, MyInfo, LifeSG — arkitektur dan IP milik kerajaan dengan vendor support (NCS, ST Engineering). | SRC-NMSB-006 | approved |
+| C-NMSB-010 | OBS | Estonia X-Road ialah platform pertukaran data antara agensi kerajaan — sejak 2001, sekarang 99% perkhidmatan Estonia dalam talian. | SRC-NMSB-005 | approved |
+| C-NMSB-011 | OBS | PDPA 2010 + JPDP mengawal selia data peribadi; JPDP ialah agensi kecil dengan sumber terhad, denda maksima RM500,000 untuk breach. | SRC-NMSB-007 | approved |
+| C-NMSB-012 | OBS | Breach data besar Malaysia 2017 — 46 juta data telefon bocor; banyak breach korporat sejak itu (Maybank, Astro, dll.). | SRC-NMSB-007 | approved |
+| C-NMSB-013 | INT | Single-vendor hosting untuk data biometrik 33 juta rakyat Malaysia mewujudkan single point of failure yang melampaui standard keselamatan Estonia. | SRC-NMSB-005 | approved |
+| C-NMSB-014 | INT | Jika satu kumpulan korporat pegang hardware (Nvidia+YTL) + connectivity (YTL Comms) + cloud platform (sovereign cloud) + government data (MyKad backend) + AI workloads (ILMU), struktur ini menjadi operating system negara, bukan sekadar vendor IT. | SRC-NMSB-008 | approved |
+| C-NMSB-015 | INT | Vendor yang sama yang pegang MyKad boleh berpotensi memantau profil tingkah laku 33 juta rakyat jika integrasi penuh dengan Touch'nGo, e-purse, data perubatan, dan rekod pendidikan berlaku. | SRC-NMSB-011 | approved |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-NMSB-001 | filing | Slot 1 — mykad-rm75-billion (21 Ogos 2026) — Pemakluman Bursa NexG, Three-Scenario Oral Request 24 Julai 2026 | https://arif-fazil.com/world/makcikgpt/mykad-rm75-billion |
+| SRC-NMSB-002 | news | The Edge Malaysia — Ishak Ismail SC RM20 juta settlement (insider trading Kenmark) | https://www.theedgemalaysia.com/ |
+| SRC-NMSB-003 | news | 1BestariNet termination history — YTL Communications, MACC siasatan, kontrak RM2.7 bilion |  |
+| SRC-NMSB-004 | document | YTL Data Centre Park — investor materials (Kulai Johor 1,640 ekar) | https://www.ytl.com/datacentres/ |
+| SRC-NMSB-005 | document | Estonia X-Road — official documentation (e-Estonia briefing centre) | https://e-estonia.com/solutions/interoperability-services/x-road |
+| SRC-NMSB-006 | document | Singapore GovTech — Government Technology Agency corporate site (SingPass, MyInfo, LifeSG) | https://www.tech.gov.sg/ |
+| SRC-NMSB-007 | document | PDPA 2010 — Akta Perlindungan Data Peribadi 2010 + JPDP | https://www.pdp.gov.my/ |
+| SRC-NMSB-008 | analysis | BBB Dataset — ILMU sovereign AI audit (markah 3.45/10) | https://huggingface.co/datasets/ariffazil/BBB |
 
 ---
 

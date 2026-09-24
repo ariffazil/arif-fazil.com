@@ -1,27 +1,61 @@
 ---
-article_id: unregistered-bang-non-pergi-kuching
+article_id: m5-5
 canonical_url: https://arif-fazil.com/world/makcikgpt/bang-non-pergi-kuching
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/bang-non-pergi-kuching.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 2a1b1619972dfffb0daaa08bba616fb482889c3d5f843ed44c2eb06bcd898f63
 epistemic_summary:
-  obs_count: 0
+  obs_count: 15
   der_count: 0
-  int_count: 0
+  int_count: 1
   spec_count: 0
 ---
 
-# bang-non-pergi-kuching
+# Bang Non Pergi Kuching, Cakap Aku Nak Setel, Tapi Makcik Tanya — Setel Apa?
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/bang-non-pergi-kuching.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Bang Non Pergi Kuching, Cakap Aku Nak Setel, Tapi Makcik Tanya — Setel Apa?
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/bang-non-pergi-kuching
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/bang-non-pergi-kuching
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C-BNK-001 | OBS | PM Anwar Ibrahim memegang dua jawatan serentak: Perdana Menteri dan Menteri Kewangan. | SRC-BNK-005 | approved |
+| C-BNK-002 | OBS | PETRONAS 100% milik kerajaan persekutuan melalui MoF Inc. | SRC-BNK-001 | approved |
+| C-BNK-003 | OBS | Petroleum Sarawak Berhad (Petros) ditubuh 8 Disember 2017, wholly owned Sarawak state government. | SRC-BNK-004 | approved |
+| C-BNK-004 | OBS | PETRONAS fail di Mahkamah Persekutuan 12 Januari 2026, respondents: Kerajaan Persekutuan + Sarawak. | SRC-BNK-003 | approved |
+| C-BNK-005 | OBS | 5-panel Federal Court luluskan justisiability Sarawak counter-claim terhadap PDA 1974 pada Julai 2025. | SRC-BNK-004 | approved |
+| C-BNK-006 | OBS | RM1.5 bilion interim special grant untuk Sarawak diumumkan 16 Sept 2026 (Hari Malaysia, Kuching), di bawah Article 112(D) Federal Constitution. | SRC-BNK-005 | approved |
+| C-BNK-007 | OBS | Dividend PETRONAS 2024 = RM32 bilion; turun dari RM50 bilion (2022, rekod) atau RM40 bilion (2023). Profit group FY2024 -15% kepada RM19.2 bilion. | SRC-BNK-001 | approved |
+| C-BNK-008 | OBS | Pengerang Integrated Complex menelan kos US$27 bilion (~RM127 bilion), 69% overrun dari bajet asal US$16 bilion (2012). | SRC-BNK-008 | approved |
+| C-BNK-009 | OBS | Segmen downstream PETRONAS rugi bersih RM15.2 bilion pada 2024; sebahagian besar dari Pengerang. | SRC-BNK-002 | approved |
+| C-BNK-010 | OBS | Saudi Aramco keluar dari Pengerang joint venture; PETRONAS ambil alih kawalan penuh. | SRC-BNK-007 | approved |
+| C-BNK-011 | OBS | PETRONAS Group umumkan perampingan ~10% workforce (~5,000 pekerja) pada Jun 2025; hiring freeze sehingga Disember 2026. | SRC-BNK-009 | approved |
+| C-BNK-012 | OBS | CEO PETRONAS Tan Sri Tengku Muhammad Taufik lanjutan kontrak sekurang-kurangnya tiga kali: Julai 2023, 2025, Ogos 2026. | SRC-BNK-006 | approved |
+| C-BNK-013 | OBS | Malaysia pengeluar minyak mentah ~571,000-604,000 tong/hari (2024-2025); penggunaan domestik ~700,000 tong/hari. Malaysia negara pengimport bersih minyak mentah. | SRC-BNK-010 | approved |
+| C-BNK-014 | OBS | Sarawak state assembly 2024 — usul luluskan tuntutan royalti minyak naik dari 5% ke 20%. | SRC-BNK-005 | approved |
+| C-BNK-015 | OBS | PDA 1974 diluluskan masa darurat; Sarawak tidak dirundingkan. 52 tahun royalti 5% tanpa audit keadilan. | SRC-BNK-004 | approved |
+| C-BNK-016 | INT | GPS Sarawak merupakan parti majoriti yang menyokong Anwar jadi PM. Penarikan sokongan GPS = kerajaan jatuh. | SRC-BNK-005 | approved |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-BNK-001 | official_statement | PETRONAS Annual Report — Dividend trajectory 2022-2024 (RM50B → RM40B → RM32B) | https://www.petronas.com/integrated-report-2025/ |
+| SRC-BNK-002 | official_statement | Finance Minister II Amir Hamzah — PETRONAS FY2024 profit -15%, revenue -7% |  |
+| SRC-BNK-003 | court_record | PETRONAS Federal Court filing — 12 January 2026 (Reuters, The Edge, NST, Malaysian Reserve) |  |
+| SRC-BNK-004 | court_record | Federal Court 5-panel justiciability ruling on Sarawak PDA1974 counter-claim — July 2025 |  |
+| SRC-BNK-005 | official_statement | Straits Times / Malay Mail / Malaysian Reserve / Vibes — RM1.5B Sarawak interim grant Article 112(D), Hari Malaysia 16 Sept 2026 |  |
+| SRC-BNK-006 | news | Bloomberg / The Edge — CEO Taufik contract extension Aug 2026 (3rd extension after Jul 2023 and 2025) |  |
+| SRC-BNK-007 | news | Reuters / Bloomberg — PETRONAS Aramco exit from Pengerang; PETRONAS full takeover |  |
+| SRC-BNK-008 | analysis | Pengerang Integrated Complex cost overrun — US$16B original → US$27B actual (69% overrun) |  |
+| SRC-BNK-009 | news | Bloomberg / Reuters / Straits Times — PETRONAS Group retrenchment ~5,000 workers (10% workforce), June 2025 |  |
+| SRC-BNK-010 | analysis | EIA / MOF Malaysia — Malaysia crude production ~571-604K bpd; net importer status |  |
 
 ---
 

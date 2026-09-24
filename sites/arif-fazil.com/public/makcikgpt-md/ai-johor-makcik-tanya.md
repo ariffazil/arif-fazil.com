@@ -1,27 +1,56 @@
 ---
-article_id: unregistered-ai-johor-makcik-tanya
+article_id: m4-3
 canonical_url: https://arif-fazil.com/world/makcikgpt/ai-johor-makcik-tanya
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/ai-johor-makcik-tanya.ts
-merkle_leaf: null
+seal: 999
+provenance_status: migrating
+version: 1.0
+merkle_leaf: f6158eaea9bc3ac334b78638cdc74d785c5c65883fb4b110f4bba3b76b1306a8
 epistemic_summary:
-  obs_count: 0
-  der_count: 0
-  int_count: 0
+  obs_count: 5
+  der_count: 2
+  int_count: 3
   spec_count: 0
 ---
 
 # Bang Non, Hang Tanya Makcik Pasal AI. Makcik Tanya Hang Balik — Hang Tahu Pasal AI Johor Hang Sendiri Ka?
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/ai-johor-makcik-tanya.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Bang Non, Hang Tanya Makcik Pasal AI. Makcik Tanya Hang Balik — Hang Tahu Pasal AI Johor Hang Sendiri Ka?
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/ai-johor-makcik-tanya
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/ai-johor-makcik-tanya
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C001 | DER | YTL kuasai power generation, telco, dan data center Johor — colocation dengan hyperscaler yang jadi underpinning kepada "sovereign AI" rhetoric. | SRC-001 | approved |
+| C002 | OBS | Microsoft Azure Malaysia West region diumumkan dengan USD 2.2B May 2024 commitment, hosted at Microsoft Cyberjaya/KL infrastructure sendiri — BUKAN YTL Kulai. (Post-audit correction, 17 Sept 2026.) | SRC-003 | approved |
+| C002b | INT | AWS Asia Pacific (Malaysia) region (ap-southeast-5) dengan USD 6B investment; Google Cloud Malaysia USD 2B. | SRC-001 | approved |
+| C002c | OBS | JS-SEZ signed 7 Jan 2025 antara PMX + Lawrence Wong di Putrajaya; AI/digital salah satu 9 focus areas. | SRC-010 | approved |
+| C002d | OBS | Cyber Security Act 2024 (Act 854) gazetted 26 Jun 2024, commenced 26 Ogos 2024. NCII framework. | SRC-007 | approved |
+| C002e | OBS | PDPA 2010 establish 7 Personal Data Protection Principles; 2024 Amendment revised cross-border transfer framework. | SRC-006 | approved |
+| C002f | OBS | AI Singapore founded May 2017. NAIS 2.0 Dec 2023. National AI Council chaired by PM Lawrence Wong ditubuh Feb 2026. ECI SGD 150M. AI Verify open-sourced Jun 2023. 70+ AI CoE. | SRC-008 | approved |
+| C003 | INT | NAIO dilancar Disember 2024 dengan mandate AI national strategy. | - | approved |
+| C004 | DER | PDPA 2010 tidak cover AI training data secara comprehensive — Microsoft/AWS ToS yang default-izinkan cross-border data transfer adalah structural loophole. | SRC-006 | approved |
+| C005 | INT | Malaysia adalah paling mundur antara Singapore, Indonesia, Vietnam dalam liga sendiri — Singapore ada NSCC sovereign + AI Singapore NRF, Indonesia ada PDP Law 2022 + BRIN, Vietnam ada National AI Strategy 2021-2030 + PDPA Julai 2025. | SRC-001 | approved |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-001 | analysis | 555-ASI Research Run — Johor AI Sovereignty (17 Sept 2026) | internal-receipt |
+| SRC-002 | document | YTL Data Centre Park (Kulai) — investor materials | https://www.ytl.com/datacentres/ |
+| SRC-003 | news | Microsoft Malaysia news — Azure region + Anwar partnership | https://news.microsoft.com/en-my |
+| SRC-004 | official_statement | MDEC (Malaysia Digital Economy Corporation) — sovereign AI positions | https://mdec.my/sovereign-ai-initiatives |
+| SRC-005 | analysis | BBB Dataset — ariffazil/BBB (ILMU red-team) | https://huggingface.co/datasets/ariffazil/BBB |
+| SRC-006 | document | PDPA 2010 + 2024 Amendment — Akta Perlindungan Data Peribadi | https://www.pdp.gov.my/ |
+| SRC-007 | document | Cyber Security Act 2024 (Act 854) — NACSA | https://www.nacsa.gov.my/act854.php |
+| SRC-008 | document | AI Singapore — National AI Strategy 2.0 + AISG founding | https://www.aisingapore.org/ |
+| SRC-009 | document | NAIS 2.0 PDF — 15 Actions, S$500M+ AISG cumulative | https://file.go.gov.sg/nais2023.pdf |
+| SRC-010 | news | JS-SEZ signed 7 January 2025 (PMX + Lawrence Wong) | https://www.pmo.gov.my |
+| SRC-011 | document | Smart Nation Portal — National AI Strategy | https://www.smartnation.gov.sg/initiatives/national-ai-strategy/ |
 
 ---
 

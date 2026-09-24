@@ -1,7 +1,7 @@
 {
   "$schema": "./public-state.schema.json",
-  "version": "1.1.0",
-  "observed_at": "2026-09-17T02:50:00Z",
+  "version": "1.0.0",
+  "observed_at": "2026-07-17T20:40:00Z",
   "description": "Declared MCP tool surfaces per organ. Validated against live tools/list at release time.",
   "rule": "Tool counts and names must match live MCP servers at deploy time. Drift = fail.",
 
@@ -18,12 +18,11 @@
         "arif_observe",
         "arif_think",
         "arif_route",
-        "arif_memory",
+        "arif_critique",
         "arif_judge",
         "arif_forge",
         "arif_seal"
-      ],
-      "note": "Live verified 17 Sep 2026 via POST /mcp tools/list. Canonical 8-verb chain: init→observe→think→route→memory→judge→forge→seal. arif_memory replaces previously-declared arif_critique (which is an alias for arif_think mode=critique, not a top-level wire tool). See witness://arifos-8d0645d2faa7."
+      ]
     },
     {
       "organ": "GEOX",
@@ -31,8 +30,8 @@
       "mcp_endpoint": "https://geox.arif-fazil.com/mcp",
       "health_endpoint": "https://geox.arif-fazil.com/health",
       "tool_prefix": "geox_",
-      "declared_tool_count": 31,
-      "note": "Live verified 17 Sep 2026 · sha256:geox-8c6c7f2d · canonical_tools=31 · drift_count=0. Healthy 31/31. Surface stable."
+      "declared_tool_count": null,
+      "note": "Tool count validated at release time via tools/list probe"
     },
     {
       "organ": "WEALTH",
@@ -40,8 +39,8 @@
       "mcp_endpoint": "https://wealth.arif-fazil.com/mcp",
       "health_endpoint": "https://wealth.arif-fazil.com/health",
       "tool_prefix": "wealth_",
-      "declared_tool_count": 14,
-      "note": "Live verified 17 Sep 2026 · git_commit=e2e0175 · canonical_tools=14. Flags surfaced: working_tree=DIRTY (uncommitted changes in WEALTH repo), runtime_seal_state=UNSEALED (no recent vault seal). Both surface in /health but are not regressions."
+      "declared_tool_count": null,
+      "note": "Tool count validated at release time via tools/list probe"
     },
     {
       "organ": "WELL",
@@ -50,7 +49,7 @@
       "health_endpoint": "https://well.arif-fazil.com/health",
       "tool_prefix": "well_",
       "declared_tool_count": null,
-      "note": "Tool count validated at release time via tools/list probe. Re-verification pending (out of audit scope)."
+      "note": "Tool count validated at release time via tools/list probe"
     },
     {
       "organ": "A-FORGE",
@@ -61,52 +60,5 @@
       "declared_tool_count": null,
       "note": "Runtime-owned; internal agents only"
     }
-  ],
-
-  "sealed_drift_acknowledgement": {
-    "audit_id": "VITALS_AUDIT_REMEDIATION_v1-20260917",
-    "baseline_artifact": "canon/vitals_audit_baseline.json",
-    "baseline_sha256_tool_surfaces_json": "f8c2965fdd500ec3a7b43910fe2f369e0d3ee0fe5aded10c58714a8e44d291f5",
-    "fixes_applied": [
-      {
-        "organ": "arifOS",
-        "field": "public_tools[4]",
-        "before": "arif_critique",
-        "after": "arif_memory",
-        "rationale": "Live wire exposes arif_memory (canonical 8-verb chain per arifos-eight-verb-canonical doctrine). arif_critique is an alias for arif_think(mode=critique), not a top-level wire tool. SOT drift corrected."
-      },
-      {
-        "organ": "arifOS",
-        "field": "observed_at",
-        "before": "2026-07-17T20:40:00Z",
-        "after": "2026-09-17T02:50:00Z",
-        "rationale": "Freshness updated to reflect live probe timestamp."
-      },
-      {
-        "organ": "GEOX",
-        "field": "declared_tool_count",
-        "before": null,
-        "after": 31,
-        "rationale": "SOT populated from live /health probe. GEOX reports canonical_tools=31, drift_count=0. Stable."
-      },
-      {
-        "organ": "WEALTH",
-        "field": "declared_tool_count",
-        "before": null,
-        "after": 14,
-        "rationale": "SOT populated from live /health probe. WEALTH reports canonical_tools=14. Flags (working_tree DIRTY, runtime_seal_state UNSEALED) noted for F13 awareness, not as regressions."
-      },
-      {
-        "field": "version",
-        "before": "1.0.0",
-        "after": "1.1.0",
-        "rationale": "Minor bump — SOT correction is backward-compatible (SOT was incomplete/drifted; now aligned with live wire)."
-      }
-    ],
-    "doctrine_invariants_preserved": [
-      "AMEND-2026-08-03-001 (arifOS governance) — preserved verbatim",
-      "constitutional-foot footer 'WEALTH computes · arifOS frames · Human (Arif) decides' — preserved verbatim",
-      "arifOS 8-verb canonical chain (init→observe→think→route→memory→judge→forge→seal) — now correctly declared"
-    ]
-  }
+  ]
 }

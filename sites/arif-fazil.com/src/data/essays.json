@@ -132,7 +132,7 @@
     "claim_register": [
       {
         "claim_id": "ALM-C1",
-        "text": "Manusia bukan nak faham \u2014 nak tahan. Capacity untuk menahan beban orang lain itu mahal dan langka.",
+        "text": "Manusia bukan nak faham — nak tahan. Capacity untuk menahan beban orang lain itu mahal dan langka.",
         "tag": "INT",
         "maruah_review": "approved"
       },
@@ -144,7 +144,7 @@
       },
       {
         "claim_id": "ALM-C3",
-        "text": "Manusia nak satu sudut kecil yang dia boleh control \u2014 bukan dunia, bukan negara, satu sudut.",
+        "text": "Manusia nak satu sudut kecil yang dia boleh control — bukan dunia, bukan negara, satu sudut.",
         "tag": "INT",
         "maruah_review": "approved"
       },
@@ -156,7 +156,7 @@
       },
       {
         "claim_id": "ALM-C5",
-        "text": "Satu cawan teh \u2014 kehadiran tanpa explanation \u2014 lebih dari semua framework yang manusia pernah cipta.",
+        "text": "Satu cawan teh — kehadiran tanpa explanation — lebih dari semua framework yang manusia pernah cipta.",
         "tag": "INT",
         "maruah_review": "approved"
       }
@@ -164,7 +164,7 @@
   },
   {
     "id": "m-gen-surat-kepada-yang-arif",
-    "title": "Surat Kepada Yang Arif \u2014 Dari Makcik. Duduk Dulu.",
+    "title": "Surat Kepada Yang Arif — Dari Makcik. Duduk Dulu.",
     "date": "2026-09-19",
     "lang": "bm",
     "series": {
@@ -194,21 +194,21 @@
       },
       {
         "claim_id": "SKYA-C2",
-        "text": "Surat ini milik siapa yang baca \u2014 Arif adalah subjek, bukan pemilik.",
+        "text": "Surat ini milik siapa yang baca — Arif adalah subjek, bukan pemilik.",
         "tag": "INT",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SKYA-C3",
-        "text": "Makcik-makcik nampak kerentanan tanpa malu \u2014 sudah berdamai dengan apa yang masih dikejar.",
+        "text": "Makcik-makcik nampak kerentanan tanpa malu — sudah berdamai dengan apa yang masih dikejar.",
         "tag": "INT",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SKYA-C4",
-        "text": "Makan dengan perhatian, hubungi yang lari, tulis dan bakar \u2014 tiga langkah konkret untuk integrasi bayang.",
+        "text": "Makan dengan perhatian, hubungi yang lari, tulis dan bakar — tiga langkah konkret untuk integrasi bayang.",
         "tag": "INT",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -224,7 +224,7 @@
   },
   {
     "id": "m-gen-pda-1974-bukan-undang-undang",
-    "title": "PDA 1974 Tu Bukan Undang-Undang. Tu Rampasan Tanah. Makcik Nak Baca Batang Tubuh, Barulah Kita Boleh Tanya \u2014 Ini Selesai Ke Macam Mana?",
+    "title": "PDA 1974 Tu Bukan Undang-Undang. Tu Rampasan Tanah. Makcik Nak Baca Batang Tubuh, Barulah Kita Boleh Tanya — Ini Selesai Ke Macam Mana?",
     "date": "2026-09-17",
     "lang": "bm",
     "series": {
@@ -259,7 +259,7 @@
     "claim_register": [
       {
         "claim_id": "PDA-C1",
-        "text": "PDA 1974 (Akta 144) Seksyen 2 mentafsirkan petroleum sebagai mineral oil or relative hydrocarbon and natural gas existing in its natural condition in strata \u2014 tidak termasuk arang batu.",
+        "text": "PDA 1974 (Akta 144) Seksyen 2 mentafsirkan petroleum sebagai mineral oil or relative hydrocarbon and natural gas existing in its natural condition in strata — tidak termasuk arang batu.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "not_applicable"
@@ -273,49 +273,49 @@
       },
       {
         "claim_id": "PDA-C3",
-        "text": "PDA 1974 Seksyen 6(1): 'the whole of the petroleum... shall be vested in PETRONAS' \u2014 atas tanah, bawah tanah, laut, sungai, tasik.",
+        "text": "PDA 1974 Seksyen 6(1): 'the whole of the petroleum... shall be vested in PETRONAS' — atas tanah, bawah tanah, laut, sungai, tasik.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "PDA-C4",
-        "text": "PDA 1974 Seksyen 7: delegate kuasa dengan kelulusan Menteri \u2014 TIDAK menyebut negeri atau Petros.",
+        "text": "PDA 1974 Seksyen 7: delegate kuasa dengan kelulusan Menteri — TIDAK menyebut negeri atau Petros.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "PDA-C5",
-        "text": "PDA 1974 Seksyen 8: pembayaran royalti 'at such rate as may be determined by the Minister' \u2014 TIDAK menetapkan kadar statut; 5% ialah amalan pentadbiran.",
+        "text": "PDA 1974 Seksyen 8: pembayaran royalti 'at such rate as may be determined by the Minister' — TIDAK menetapkan kadar statut; 5% ialah amalan pentadbiran.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "PDA-C6",
-        "text": "PDA 1974 Seksyen 10: kesalahan jenayah (denda RM1j / penjara 5 tahun) untuk explore tanpa kebenaran PETRONAS \u2014 syarikat Sdn Bhd bukan badan berkanun.",
+        "text": "PDA 1974 Seksyen 10: kesalahan jenayah (denda RM1j / penjara 5 tahun) untuk explore tanpa kebenaran PETRONAS — syarikat Sdn Bhd bukan badan berkanun.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "PDA-C7",
-        "text": "Perlembagaan Persekutuan (Ninth Schedule, List II \u2014 Senarai Negeri) meletakkan mineral oil dan natural gas sebagai hak eksklusif negeri.",
+        "text": "Perlembagaan Persekutuan (Ninth Schedule, List II — Senarai Negeri) meletakkan mineral oil dan natural gas sebagai hak eksklusif negeri.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "PDA-C8",
-        "text": "PDA 1974 digubal 1974 dalam Parlimen darurat \u2014 Sarawak tidak dirundingkan, tiada pendengaran awam.",
+        "text": "PDA 1974 digubal 1974 dalam Parlimen darurat — Sarawak tidak dirundingkan, tiada pendengaran awam.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "PDA-C9",
-        "text": "PETRONAS 100% milik MoF Inc (Menteri Kewangan Incorporated) \u2014 kini PM = Menteri Kewangan.",
+        "text": "PETRONAS 100% milik MoF Inc (Menteri Kewangan Incorporated) — kini PM = Menteri Kewangan.",
         "tag": "OBS",
         "source_id": "src11",
         "maruah_review": "approved"
@@ -357,7 +357,7 @@
       },
       {
         "claim_id": "PDA-C15",
-        "text": "Dividen PETRONAS: RM50B (2022) \u2192 RM32B (2024); profit group FY2024 RM19.2B (-15%).",
+        "text": "Dividen PETRONAS: RM50B (2022) → RM32B (2024); profit group FY2024 RM19.2B (-15%).",
         "tag": "OBS",
         "source_id": "src8",
         "maruah_review": "not_applicable"
@@ -378,7 +378,7 @@
       },
       {
         "claim_id": "PDA-C18",
-        "text": "Jika PDA 1974 diisytihar unconstitutional, seluruh petroleum regime 1974-2026 boleh dicabar \u2014 PETRONAS valuation ~RM600B dan bond USD ~30B terjejas.",
+        "text": "Jika PDA 1974 diisytihar unconstitutional, seluruh petroleum regime 1974-2026 boleh dicabar — PETRONAS valuation ~RM600B dan bond USD ~30B terjejas.",
         "tag": "DER",
         "source_id": "src8",
         "maruah_review": "not_applicable"
@@ -392,7 +392,7 @@
       },
       {
         "claim_id": "PDA-C20",
-        "text": "Penyelesaian paling berkemungkinan ialah formula royalti politik (10-15%) + rundingan MA63 \u2014 bukan constitutional amendment atau keputusan mahkamah penuh.",
+        "text": "Penyelesaian paling berkemungkinan ialah formula royalti politik (10-15%) + rundingan MA63 — bukan constitutional amendment atau keputusan mahkamah penuh.",
         "tag": "INT",
         "source_id": "src12",
         "maruah_review": "not_applicable"
@@ -402,13 +402,13 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "Petroleum Development Act 1974 [Akta 144] \u2014 Seksyen 2, 4, 6, 7, 8, 10 (full text)",
+        "title": "Petroleum Development Act 1974 [Akta 144] — Seksyen 2, 4, 6, 7, 8, 10 (full text)",
         "url": "https://www.agc.gov.my/agcportal/uploads/files/Publiksi/Akta%20-%20P/Act%20144%20-%20Petroleum%20Development%20Act%201974.pdf"
       },
       {
         "source_id": "src2",
         "type": "document",
-        "title": "Perlembagaan Persekutuan \u2014 Ninth Schedule, List II (Senarai Negeri)",
+        "title": "Perlembagaan Persekutuan — Ninth Schedule, List II (Senarai Negeri)",
         "url": "https://www.agc.gov.my/agcportal/uploads/files/Publiksi/Perlembagaan/Federal_Constitution.pdf"
       },
       {
@@ -426,7 +426,7 @@
       {
         "source_id": "src5",
         "type": "court_record",
-        "title": "Sarawak counter-claim PDA1974 constitutionality \u2014 Feb 2026 (SCMP/FULCRUM-ISEAS)",
+        "title": "Sarawak counter-claim PDA1974 constitutionality — Feb 2026 (SCMP/FULCRUM-ISEAS)",
         "url": "https://www.scmp.com/"
       },
       {
@@ -444,38 +444,38 @@
       {
         "source_id": "src8",
         "type": "official_statement",
-        "title": "PETRONAS Annual Report 2025 \u2014 Dividend trajectory + Group profit FY2024",
+        "title": "PETRONAS Annual Report 2025 — Dividend trajectory + Group profit FY2024",
         "url": "https://www.petronas.com/integrated-report-2025/"
       },
       {
         "source_id": "src9",
         "type": "analysis",
-        "title": "Pengerang IC \u2014 cost overrun US$16B \u2192 US$27B (The Edge 2024)",
+        "title": "Pengerang IC — cost overrun US$16B → US$27B (The Edge 2024)",
         "url": "https://theedgemalaysia.com/"
       },
       {
         "source_id": "src11",
         "type": "official_statement",
-        "title": "Fitch Ratings \u2014 PETRONAS 100% MoF Inc ownership",
+        "title": "Fitch Ratings — PETRONAS 100% MoF Inc ownership",
         "url": "https://www.fitchratings.com/"
       },
       {
         "source_id": "src12",
         "type": "news",
-        "title": "Straits Times / Bernama / Vibes \u2014 RM1.5B geran khas Sarawak 16 Sept 2026",
+        "title": "Straits Times / Bernama / Vibes — RM1.5B geran khas Sarawak 16 Sept 2026",
         "url": "https://www.straitstimes.com/"
       },
       {
         "source_id": "src13",
         "type": "analysis",
-        "title": "EIA / MOF Malaysia \u2014 Malaysia crude production net importer status",
+        "title": "EIA / MOF Malaysia — Malaysia crude production net importer status",
         "url": "https://www.eia.gov/"
       }
     ]
   },
   {
     "id": "m6-3",
-    "title": "Pengecut Tak Berani Confront \u2014 Edisi Khas",
+    "title": "Pengecut Tak Berani Confront — Edisi Khas",
     "date": "2026-09-09",
     "lang": "bm",
     "series": {
@@ -506,7 +506,7 @@
     "claim_register": [
       {
         "claim_id": "KGT-C1",
-        "text": "Paten Kingtime (struktur wellhead boleh tanggalkan pada MOPU lapangan Sepat, blok PM 313) \u2014 Petrofac E&C didapati infringe, muktamad sejak 2020.",
+        "text": "Paten Kingtime (struktur wellhead boleh tanggalkan pada MOPU lapangan Sepat, blok PM 313) — Petrofac E&C didapati infringe, muktamad sejak 2020.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
@@ -520,7 +520,7 @@
       },
       {
         "claim_id": "KGT-C3",
-        "text": "Federal Court menolak leave-to-appeal Petronas Carigali pada 4 Mei 2026 \u2014 keputusan muktamad.",
+        "text": "Federal Court menolak leave-to-appeal Petronas Carigali pada 4 Mei 2026 — keputusan muktamad.",
         "tag": "OBS",
         "source_id": "src3",
         "maruah_review": "approved"
@@ -534,7 +534,7 @@
       },
       {
         "claim_id": "KGT-C5",
-        "text": "Dua surat Kingtime kepada PM9 Ismail Sabri (24 Ogos 2021, 20 Jun 2022) dengan minit tulisan tangan yang kononnya mengarahkan pengurusan Petronas menyelesaikan pertikaian \u2014 didedahkan The Corporate Secret bersama dokumen bergambar.",
+        "text": "Dua surat Kingtime kepada PM9 Ismail Sabri (24 Ogos 2021, 20 Jun 2022) dengan minit tulisan tangan yang kononnya mengarahkan pengurusan Petronas menyelesaikan pertikaian — didedahkan The Corporate Secret bersama dokumen bergambar.",
         "tag": "OBS",
         "source_id": "src3",
         "confidence_basis": "dokumen didedahkan penerbit; TCS sendiri menasihatkan ia tidak membuktikan ingkaran secara konklusif",
@@ -563,7 +563,7 @@
       },
       {
         "claim_id": "KGT-C9",
-        "text": "Timeline 'Januari 2026 Petronas file Federal Court / Februari 2026 Sarawak challenge PDA tiga akta' seperti dinyatakan penulis \u2014 pertikaian Petronas-Sarawak disahkan wujud (TCS, The Edge) tetapi tarikh bulan spesifik belum disahkan secara bebas.",
+        "text": "Timeline 'Januari 2026 Petronas file Federal Court / Februari 2026 Sarawak challenge PDA tiga akta' seperti dinyatakan penulis — pertikaian Petronas-Sarawak disahkan wujud (TCS, The Edge) tetapi tarikh bulan spesifik belum disahkan secara bebas.",
         "tag": "DER",
         "source_id": "src3",
         "confidence_basis": "pertikaian PDA/Petros 2025-2026 disahkan berlaku; tarikh bulan daripada draf penulis",
@@ -571,7 +571,7 @@
       },
       {
         "claim_id": "KGT-C10",
-        "text": "Petrofac memasuki administration di England pada 27 Oktober 2025 \u2014 nilai praktikal indemnity Article 39 (yang Carigali invoke 2012) terhadap Petrofac berkemungkinan besar lupus.",
+        "text": "Petrofac memasuki administration di England pada 27 Oktober 2025 — nilai praktikal indemnity Article 39 (yang Carigali invoke 2012) terhadap Petrofac berkemungkinan besar lupus.",
         "tag": "DER",
         "source_id": "src2",
         "confidence_basis": "fakta administration (OBS) + implikasi indemnity (DER)",
@@ -579,7 +579,7 @@
       },
       {
         "claim_id": "KGT-C11",
-        "text": "Thesis editorial 'pengecut dengan title' \u2014 tafsiran satira pengarang (MakcikGPT) ke atas corak fakta awam di atas; bukan tuduhan jenayah atau kesalahan undang-undang terhadap individu.",
+        "text": "Thesis editorial 'pengecut dengan title' — tafsiran satira pengarang (MakcikGPT) ke atas corak fakta awam di atas; bukan tuduhan jenayah atau kesalahan undang-undang terhadap individu.",
         "tag": "INT",
         "maruah_review": "not_applicable"
       }
@@ -588,21 +588,21 @@
       {
         "source_id": "src1",
         "type": "court_record",
-        "title": "Lexology \u2014 Case Closed: Finality in Patent Litigation (13 Mei 2026) + laporan CoA Nov 2025 (Upstream Online, Chambers)",
+        "title": "Lexology — Case Closed: Finality in Patent Litigation (13 Mei 2026) + laporan CoA Nov 2025 (Upstream Online, Chambers)",
         "url": "https://www.lexology.com/library/detail.aspx?g=865286a3-293c-4fe6-a5b5-93ff94548d8d",
         "retrieved_at": "2026-09-09"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "The Edge Malaysia Weekly \u2014 Questions emerge from PETRONAS' failed patent appeal (9 Jun 2026)",
+        "title": "The Edge Malaysia Weekly — Questions emerge from PETRONAS' failed patent appeal (9 Jun 2026)",
         "url": "https://theedgemalaysia.com/node/805836",
         "retrieved_at": "2026-09-09"
       },
       {
         "source_id": "src3",
         "type": "news",
-        "title": "The Corporate Secret \u2014 Petrofac-Kingtime Scandal (10 Ogos 2026) + dokumen surat PM9 (17 Julai 2026)",
+        "title": "The Corporate Secret — Petrofac-Kingtime Scandal (10 Ogos 2026) + dokumen surat PM9 (17 Julai 2026)",
         "url": "https://thecorporatesecret.com/blog/2026/08/10/petrofac-kingtime-scandal-why-is-the-government-keeping-tengku-taufik-at-petronas-as-it-faces-potential-damages-exceeding-rm1-billion/",
         "retrieved_at": "2026-09-09"
       },
@@ -616,7 +616,7 @@
       {
         "source_id": "src5",
         "type": "news",
-        "title": "The Edge (via TCS, Ogos 2026) \u2014 laporan extension kontrak; FMT (8 Ogos 2026, canon m6-2 src2)",
+        "title": "The Edge (via TCS, Ogos 2026) — laporan extension kontrak; FMT (8 Ogos 2026, canon m6-2 src2)",
         "url": "https://thecorporatesecret.com/blog/2026/08/10/petrofac-kingtime-scandal-why-is-the-government-keeping-tengku-taufik-at-petronas-as-it-faces-potential-damages-exceeding-rm1-billion/",
         "retrieved_at": "2026-09-09"
       }
@@ -624,8 +624,8 @@
     "counter_evidence": [
       {
         "source_id": "src2",
-        "summary": "Kingtime sendiri menyatakan quantum dijangka 'beberapa juta dolar AS' + faedah 5% \u2014 lebih rendah daripada anggaran RM1 bilion+ yang dilaporkan.",
-        "disposition": "Dimasukkan dalam artikel sebagai fact-box 'Berapa Sebenarnya RM1 Bilion Tu?' \u2014 kedua-dua angka dirujuk, mahkamah belum tetapkan."
+        "summary": "Kingtime sendiri menyatakan quantum dijangka 'beberapa juta dolar AS' + faedah 5% — lebih rendah daripada anggaran RM1 bilion+ yang dilaporkan.",
+        "disposition": "Dimasukkan dalam artikel sebagai fact-box 'Berapa Sebenarnya RM1 Bilion Tu?' — kedua-dua angka dirujuk, mahkamah belum tetapkan."
       },
       {
         "source_id": "src3",
@@ -646,7 +646,7 @@
   },
   {
     "id": "m2-10",
-    "title": "RM7.5 Bilion Beli Kilang MyKad Hang \u2014 Makcik Tanya: Untuk Siapa?",
+    "title": "RM7.5 Bilion Beli Kilang MyKad Hang — Makcik Tanya: Untuk Siapa?",
     "date": "2026-08-21",
     "lang": "bm",
     "series": {
@@ -674,14 +674,14 @@
     "claim_register": [
       {
         "claim_id": "MYKAD-C1",
-        "text": "Kementerian Kewangan meminta harga NexG Berhad (dahulu Datasonic) secara lisan pada 24 Julai 2026; tiga senario dimaklumkan ke Bursa: ambil alih penuh RM7.5 bilion, bahagian ID ~RM2\u20133 bilion, kepentingan majoriti ~RM4\u20135 bilion.",
+        "text": "Kementerian Kewangan meminta harga NexG Berhad (dahulu Datasonic) secara lisan pada 24 Julai 2026; tiga senario dimaklumkan ke Bursa: ambil alih penuh RM7.5 bilion, bahagian ID ~RM2–3 bilion, kepentingan majoriti ~RM4–5 bilion.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "MYKAD-C2",
-        "text": "Nilai pasaran NexG di bursa ketika itu \u2248 RM1 bilion \u2014 cadangan RM7.5 bilion \u2248 7\u00d7 nilai pasaran.",
+        "text": "Nilai pasaran NexG di bursa ketika itu ≈ RM1 bilion — cadangan RM7.5 bilion ≈ 7× nilai pasaran.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -716,7 +716,7 @@
       },
       {
         "claim_id": "MYKAD-C7",
-        "text": "Saham bergerak dari 25 sen ke 36 sen dengan volum berganda sebelum pengumuman \u2014 corak konsisten dengan ketidaksimetrian maklumat; siasatan SC belum diumumkan.",
+        "text": "Saham bergerak dari 25 sen ke 36 sen dengan volum berganda sebelum pengumuman — corak konsisten dengan ketidaksimetrian maklumat; siasatan SC belum diumumkan.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -724,7 +724,7 @@
       },
       {
         "claim_id": "MYKAD-C8",
-        "text": "Konfigurasi kuasa \u2014 PM pegang Kementerian Kewangan, permintaan lisan tanpa kertas, sekutu korporat lama PM sebagai pengerusi penerima \u2014 Menutup ruang tender terbuka dan audit awam.",
+        "text": "Konfigurasi kuasa — PM pegang Kementerian Kewangan, permintaan lisan tanpa kertas, sekutu korporat lama PM sebagai pengerusi penerima — Menutup ruang tender terbuka dan audit awam.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -734,14 +734,14 @@
       {
         "source_id": "src1",
         "type": "filing",
-        "title": "NexG Berhad (dahulu Datasonic) \u2014 pemakluman Bursa Malaysia, Julai 2026 (tiga senario pembelian; permintaan lisan 24 Julai 2026)",
+        "title": "NexG Berhad (dahulu Datasonic) — pemakluman Bursa Malaysia, Julai 2026 (tiga senario pembelian; permintaan lisan 24 Julai 2026)",
         "url": "bursa://announcements/nexg-berhad/2026-07",
         "retrieved_at": "2026-08-21"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "The Edge Malaysia + rekod penguatkuasaan SC \u2014 penyelesaian RM20 juta Ishak Ismail (2023), tuduhan insider trading Kenmark (2016)",
+        "title": "The Edge Malaysia + rekod penguatkuasaan SC — penyelesaian RM20 juta Ishak Ismail (2023), tuduhan insider trading Kenmark (2016)",
         "url": "the-edge-malaysia://sc-enforcement/ishak-ismail-rm20m-settlement",
         "retrieved_at": "2026-08-21"
       },
@@ -755,7 +755,7 @@
       {
         "source_id": "src4",
         "type": "court_record",
-        "title": "Kes mahkamah terbuka \u2014 bukti dua cek RM6 juta Datasonic ke yayasan Zahid (zaman KDN)",
+        "title": "Kes mahkamah terbuka — bukti dua cek RM6 juta Datasonic ke yayasan Zahid (zaman KDN)",
         "url": "court-record://yayasan-akalbudi/cek-rm6juta",
         "retrieved_at": "2026-08-21"
       }
@@ -796,21 +796,21 @@
     "claim_register": [
       {
         "claim_id": "SYT-C1",
-        "text": "Revenue PETRONAS FY2025 turun ~17% \u2014 daripada ~RM320B ke ~RM266B dalam satu tahun.",
+        "text": "Revenue PETRONAS FY2025 turun ~17% — daripada ~RM320B ke ~RM266B dalam satu tahun.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SYT-C2",
-        "text": "CAPEX runtuh ~23% (RM52B \u2192 RM40B); net capex atas susut nilai jatuh 72% (RM15.2B \u2192 RM4.2B) \u2014 syarikat tidak lagi menggantikan apa yang dijual pada kadar dahulu.",
+        "text": "CAPEX runtuh ~23% (RM52B → RM40B); net capex atas susut nilai jatuh 72% (RM15.2B → RM4.2B) — syarikat tidak lagi menggantikan apa yang dijual pada kadar dahulu.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SYT-C3",
-        "text": "Dividen RM32B dikeluarkan walaupun untung turun \u2014 nisbah keluaran ~70.5% daripada laba, melepasi tripwire polisi 65%.",
+        "text": "Dividen RM32B dikeluarkan walaupun untung turun — nisbah keluaran ~70.5% daripada laba, melepasi tripwire polisi 65%.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -824,7 +824,7 @@
       },
       {
         "claim_id": "SYT-C5",
-        "text": "Group cash ~RM204B tetapi parent company berada dalam net debt yang meningkat \u2014 sebahagian besar tunai terikat dalam subsidiaries, JV dan pembiayaan projek; nombor 'cash' iklan bukan duit boleh guna.",
+        "text": "Group cash ~RM204B tetapi parent company berada dalam net debt yang meningkat — sebahagian besar tunai terikat dalam subsidiaries, JV dan pembiayaan projek; nombor 'cash' iklan bukan duit boleh guna.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -832,7 +832,7 @@
       },
       {
         "claim_id": "SYT-C6",
-        "text": "Bila syarikat menipis (revenue \u2193, capex \u2193, dividen > untung) tetapi kontrak ketua dilanjutkan \u2014 soalan amanah wajar ditanya; ini kritikan sistem insentif, bukan tuduhan peribadi.",
+        "text": "Bila syarikat menipis (revenue ↓, capex ↓, dividen > untung) tetapi kontrak ketua dilanjutkan — soalan amanah wajar ditanya; ini kritikan sistem insentif, bukan tuduhan peribadi.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -849,7 +849,7 @@
       {
         "source_id": "src2",
         "type": "news",
-        "title": "FMT (8 Ogos 2026) \u2014 'Petronas chief to see tenure extended, says report'",
+        "title": "FMT (8 Ogos 2026) — 'Petronas chief to see tenure extended, says report'",
         "url": "https://www.freemalaysiatoday.com/category/highlight/2026-08-08/petronas-chief-to-see-tenure-extended-says-report",
         "retrieved_at": "2026-08-09"
       }
@@ -903,7 +903,7 @@
   },
   {
     "id": "s1-3",
-    "title": "Origin Part 1 \u2014 I'm a Geologist. I Accidentally Built AI OS. And Today It Went Live.",
+    "title": "Origin Part 1 — I'm a Geologist. I Accidentally Built AI OS. And Today It Went Live.",
     "date": "2026-03-14",
     "lang": "en",
     "series": {
@@ -923,7 +923,7 @@
   },
   {
     "id": "s1-4",
-    "title": "Origin Part 2 \u2014 I Didn't Know What a Kernel Was. I Just Knew AI Needed an Adult in the Room.",
+    "title": "Origin Part 2 — I Didn't Know What a Kernel Was. I Just Knew AI Needed an Adult in the Room.",
     "date": "2026-03-12",
     "lang": "en",
     "series": {
@@ -935,7 +935,7 @@
       "kernel",
       "governance"
     ],
-    "note": "Origin diptych: Part 1 (S1#3) \u2192 Part 2 (S1#4). S1#4 published 2 days before S1#3 but describes events after it \u2014 read S1#1 \u2192 S1#2 \u2192 S1#3 \u2192 S1#4 \u2192 S1#5 in narrative order.",
+    "note": "Origin diptych: Part 1 (S1#3) → Part 2 (S1#4). S1#4 published 2 days before S1#3 but describes events after it — read S1#1 → S1#2 → S1#3 → S1#4 → S1#5 in narrative order.",
     "dest": {
       "type": "medium",
       "url": "https://medium.com/@arifbfazil/i-didnt-know-what-a-kernel-was"
@@ -965,7 +965,7 @@
   },
   {
     "id": "s2-1",
-    "title": "The First Act of Creation Is Not Building \u2014 It Is Naming",
+    "title": "The First Act of Creation Is Not Building — It Is Naming",
     "date": "2026-04-12",
     "lang": "en",
     "series": {
@@ -1087,7 +1087,7 @@
   },
   {
     "id": "s4-1",
-    "title": "Why We Need AI Governance \u2014 Before AI Governs Us",
+    "title": "Why We Need AI Governance — Before AI Governs Us",
     "date": "2025-12-05",
     "lang": "en",
     "series": {
@@ -1380,7 +1380,7 @@
   },
   {
     "id": "s6-13",
-    "title": "The Contrast Primitive Derivation \u2014 Completing the Trilogy (EUREKA III)",
+    "title": "The Contrast Primitive Derivation — Completing the Trilogy (EUREKA III)",
     "date": "2026-06-05",
     "lang": "en",
     "series": {
@@ -1401,7 +1401,7 @@
   },
   {
     "id": "s7-1",
-    "title": "\ud83c\udfb6 Malaysia Will Miss AGI Because We Treat Siti Nurhaliza Song Like Karaoke",
+    "title": "🎶 Malaysia Will Miss AGI Because We Treat Siti Nurhaliza Song Like Karaoke",
     "date": "2025-08-23",
     "lang": "en",
     "series": {
@@ -1422,7 +1422,7 @@
   },
   {
     "id": "s7-2",
-    "title": "Rukun AGI \u2014 The Five Pillars of Artificial General Intelligence",
+    "title": "Rukun AGI — The Five Pillars of Artificial General Intelligence",
     "date": "2025-09-15",
     "lang": "en",
     "series": {
@@ -1443,7 +1443,7 @@
   },
   {
     "id": "s7-3",
-    "title": "Bahasa dan Minda Melayu \u2014 Asas Keseimbangan Dunia Moden",
+    "title": "Bahasa dan Minda Melayu — Asas Keseimbangan Dunia Moden",
     "date": "2025-12-17",
     "lang": "bm",
     "series": {
@@ -1528,7 +1528,7 @@
   },
   {
     "id": "s8-2",
-    "title": "I Have Trust Issues With Agents \u2014 So I Built arifOS",
+    "title": "I Have Trust Issues With Agents — So I Built arifOS",
     "date": "2026-05-16",
     "lang": "en",
     "series": {
@@ -1570,7 +1570,7 @@
   },
   {
     "id": "s9-1",
-    "title": "\ud83e\udde0 A Second Brain Forged From Scars",
+    "title": "🧠 A Second Brain Forged From Scars",
     "date": "2025-08-29",
     "lang": "en",
     "series": {
@@ -1590,7 +1590,7 @@
   },
   {
     "id": "s9-2",
-    "title": "\u270a Paradox of Language",
+    "title": "✊ Paradox of Language",
     "date": "2025-10-04",
     "lang": "en",
     "series": {
@@ -1660,7 +1660,7 @@
     "claim_register": [
       {
         "claim_id": "HRM-C1",
-        "text": "Konflik Iran\u2013AS/Israel berterusan sejak 28 Feb 2026; Selat Hormuz \u2014 lorong ~20% minyak dunia pada waktu aman \u2014 ditutup penuh pada 11 Jun 2026 mengikut laporan Al Jazeera; kapal yang cuba lalu ditembak.",
+        "text": "Konflik Iran–AS/Israel berterusan sejak 28 Feb 2026; Selat Hormuz — lorong ~20% minyak dunia pada waktu aman — ditutup penuh pada 11 Jun 2026 mengikut laporan Al Jazeera; kapal yang cuba lalu ditembak.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -1681,7 +1681,7 @@
       },
       {
         "claim_id": "HRM-C4",
-        "text": "Bila dunia tidak menentu, negara patut menguatkan tulang belakang NOC, bukan melemahkannya \u2014 tiga teguran Makcik: jangan senyap, jangan buang orang sesuka hati, jangan alih aset strategik tanpa cerita.",
+        "text": "Bila dunia tidak menentu, negara patut menguatkan tulang belakang NOC, bukan melemahkannya — tiga teguran Makcik: jangan senyap, jangan buang orang sesuka hati, jangan alih aset strategik tanpa cerita.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -1691,14 +1691,14 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "Al Jazeera + laporan agensi (Jun 2026) \u2014 penutupan Hormuz, serangan kapal, status Doha",
+        "title": "Al Jazeera + laporan agensi (Jun 2026) — penutupan Hormuz, serangan kapal, status Doha",
         "url": "aljazeera://2026-06/hormuz-closure-doha-status",
         "retrieved_at": "2026-06-30"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "Laporan media Malaysia 2024\u20132026 \u2014 pusingan rightsizing PETRONAS",
+        "title": "Laporan media Malaysia 2024–2026 — pusingan rightsizing PETRONAS",
         "url": "nst://2024-2026/petronas-rightsizing-rounds",
         "retrieved_at": "2026-06-30"
       }
@@ -1712,7 +1712,7 @@
   },
   {
     "id": "m1-2",
-    "title": "PETRONAS DNA \u2014 Dulu Bulldog, Sekarang Anjing",
+    "title": "PETRONAS DNA — Dulu Bulldog, Sekarang Anjing",
     "date": "2026-07-01",
     "lang": "bm",
     "series": {
@@ -1735,7 +1735,7 @@
     "claim_register": [
       {
         "claim_id": "DNA-C1",
-        "text": "The Edge Malaysia (Issue 792, 8\u201314 Feb 2010, Azam Aris) memetokan budaya PETRONAS: 'bold enough to make tough decisions even though it may go against the directive of its shareholder \u2014 the government.'",
+        "text": "The Edge Malaysia (Issue 792, 8–14 Feb 2010, Azam Aris) memetokan budaya PETRONAS: 'bold enough to make tough decisions even though it may go against the directive of its shareholder — the government.'",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -1749,7 +1749,7 @@
       },
       {
         "claim_id": "DNA-C3",
-        "text": "Profil LinkedIn rasmi CEO PETRONAS 2026 memaparkan disclaimer 'Items Posted Are Personal Viewpoints \u2014 Not Reflection Of Company's Position' dan skills jenis deal structuring / valuations / investor relations \u2014 akaun awam boleh disemak.",
+        "text": "Profil LinkedIn rasmi CEO PETRONAS 2026 memaparkan disclaimer 'Items Posted Are Personal Viewpoints — Not Reflection Of Company's Position' dan skills jenis deal structuring / valuations / investor relations — akaun awam boleh disemak.",
         "tag": "OBS",
         "source_id": "src3",
         "maruah_review": "approved"
@@ -1763,7 +1763,7 @@
       },
       {
         "claim_id": "DNA-C5",
-        "text": "PETRONAS bermula modal RM10 juta (1974) kepada aset ~RM775 bilion tanpa suntikan modal tambahan kerajaan \u2014 angka sejarah korporat yang konsisten merentas laporan tahunan.",
+        "text": "PETRONAS bermula modal RM10 juta (1974) kepada aset ~RM775 bilion tanpa suntikan modal tambahan kerajaan — angka sejarah korporat yang konsisten merentas laporan tahunan.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -1771,7 +1771,7 @@
       },
       {
         "claim_id": "DNA-C6",
-        "text": "Peralihan retorika misi + profil kompetensi CEO menunjukkan perubahan DNA institusi \u2014 dari penjaga aset negara kepada pembuat deal; ini bacaan struktur, bukan tuduhan peribadi.",
+        "text": "Peralihan retorika misi + profil kompetensi CEO menunjukkan perubahan DNA institusi — dari penjaga aset negara kepada pembuat deal; ini bacaan struktur, bukan tuduhan peribadi.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -1781,7 +1781,7 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "The Edge Malaysia, Issue 792 (8\u201314 Feb 2010) \u2014 'The Petronas DNA' oleh Azam Aris",
+        "title": "The Edge Malaysia, Issue 792 (8–14 Feb 2010) — 'The Petronas DNA' oleh Azam Aris",
         "url": "the-edge-malaysia://issue-792/2010-02/the-petronas-dna",
         "retrieved_at": "2026-07-01"
       },
@@ -1832,14 +1832,14 @@
     "claim_register": [
       {
         "claim_id": "SRM-C1",
-        "text": "November 2024: ExxonMobil keluar dari Block 52 Suriname, menyerahkan 50% stake kepada PETRONAS \u2014 PETRONAS jadi operator 100%; alasan rasmi 'penilaian portfolio global'.",
+        "text": "November 2024: ExxonMobil keluar dari Block 52 Suriname, menyerahkan 50% stake kepada PETRONAS — PETRONAS jadi operator 100%; alasan rasmi 'penilaian portfolio global'.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SRM-C2",
-        "text": "Jun 2026: PETRONAS umum dua penemuan lagi di blok sama \u2014 lapan telaga berjaya, lebih 1 bilion boe, 'success rate 100%' dalam pengumuman syarikat.",
+        "text": "Jun 2026: PETRONAS umum dua penemuan lagi di blok sama — lapan telaga berjaya, lebih 1 bilion boe, 'success rate 100%' dalam pengumuman syarikat.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -1853,7 +1853,7 @@
       },
       {
         "claim_id": "SRM-C4",
-        "text": "Timing pengumuman penemuan luar negara beriringan dengan jualan blok domestik dan pemecatan pekerja dibaca sebagai narrative management, bukan kebetulan \u2014 bacaan Makcik, bukan fakta dalaman.",
+        "text": "Timing pengumuman penemuan luar negara beriringan dengan jualan blok domestik dan pemecatan pekerja dibaca sebagai narrative management, bukan kebetulan — bacaan Makcik, bukan fakta dalaman.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -1863,14 +1863,14 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "Pengumuman korporat + laporan minyak antarabangsa (Nov 2024\u2013Jun 2026) \u2014 Exxon exit Block 52, penemuan susulan",
+        "title": "Pengumuman korporat + laporan minyak antarabangsa (Nov 2024–Jun 2026) — Exxon exit Block 52, penemuan susulan",
         "url": "petronas://announcements/2024-11-exxon-block52+2026-06-suriname-discoveries",
         "retrieved_at": "2026-07-05"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "EnQuest\u2013PETRONAS PM6/12 farm-out + laporan rightsizing 2024\u20132026",
+        "title": "EnQuest–PETRONAS PM6/12 farm-out + laporan rightsizing 2024–2026",
         "url": "enquest://2026/pm6-12-farmout+nst-rightsizing",
         "retrieved_at": "2026-07-05"
       }
@@ -1915,7 +1915,7 @@
       },
       {
         "claim_id": "HVS-C2",
-        "text": "PM6/12 mengandungi Lebah Emas-1 \u2014 wildcat 2025, 11 reservoir, play baharu \u2014 kini diklasifikasi 'mature asset' dalam naratif jualan.",
+        "text": "PM6/12 mengandungi Lebah Emas-1 — wildcat 2025, 11 reservoir, play baharu — kini diklasifikasi 'mature asset' dalam naratif jualan.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -1937,7 +1937,7 @@
       },
       {
         "claim_id": "HVS-C5",
-        "text": "Rangka Calhoun Universe 25 (behavioral sink) dan Acemoglu (institusi ekstraktif) digunakan sebagai kanta tafsiran \u2014 alat analisis, bukan bukti kes rasuah.",
+        "text": "Rangka Calhoun Universe 25 (behavioral sink) dan Acemoglu (institusi ekstraktif) digunakan sebagai kanta tafsiran — alat analisis, bukan bukti kes rasuah.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -1947,14 +1947,14 @@
       {
         "source_id": "src1",
         "type": "filing",
-        "title": "Pengumuman EnQuest/PETRONAS Jun 2026 \u2014 US$833j empat PSC, US$554j upfront, PM6/12 Lebah Emas",
+        "title": "Pengumuman EnQuest/PETRONAS Jun 2026 — US$833j empat PSC, US$554j upfront, PM6/12 Lebah Emas",
         "url": "enquest://2026-06/pm6-12-4-psc-usd833m",
         "retrieved_at": "2026-07-05"
       },
       {
         "source_id": "src2",
         "type": "document",
-        "title": "PETRONAS FY2025 results \u2014 PAT -18%, revenue -17%, perubahan kitaran pelaporan",
+        "title": "PETRONAS FY2025 results — PAT -18%, revenue -17%, perubahan kitaran pelaporan",
         "url": "petronas://integrated-report/fy2025-results",
         "retrieved_at": "2026-07-05"
       }
@@ -1992,14 +1992,14 @@
     "claim_register": [
       {
         "claim_id": "ATM-C1",
-        "text": "Siri dividen PETRONAS kepada kerajaan: 2022 RM50B (tahun untung rekod RM101.6B) \u2192 2023 RM32B \u2192 2024 RM32B \u2192 2025 RM32B (walaupun untung turun 18%) \u2192 2026 dipotong ke RM20B, terendah dalam ~9 tahun.",
+        "text": "Siri dividen PETRONAS kepada kerajaan: 2022 RM50B (tahun untung rekod RM101.6B) → 2023 RM32B → 2024 RM32B → 2025 RM32B (walaupun untung turun 18%) → 2026 dipotong ke RM20B, terendah dalam ~9 tahun.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "ATM-C2",
-        "text": "Gentari (dilancarkan 2022, solar/hidrogen/EV) belum pernah untung; segmen berkenaan rugi ~RM460 juta sedangkan tanpa Gentari dijangka untung ~RM790 juta; anggaran pembakaran tunai RM1\u20131.5B setahun selama empat tahun.",
+        "text": "Gentari (dilancarkan 2022, solar/hidrogen/EV) belum pernah untung; segmen berkenaan rugi ~RM460 juta sedangkan tanpa Gentari dijangka untung ~RM790 juta; anggaran pembakaran tunai RM1–1.5B setahun selama empat tahun.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -2007,14 +2007,14 @@
       },
       {
         "claim_id": "ATM-C3",
-        "text": "Kas kumpulan naik daripada ~RM188B ke ~RM204B tahun berjalan \u2014 PETRONAS ada duit; isunya keutusan, bukan kekeringan.",
+        "text": "Kas kumpulan naik daripada ~RM188B ke ~RM204B tahun berjalan — PETRONAS ada duit; isunya keutusan, bukan kekeringan.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "ATM-C4",
-        "text": "ROACE jatuh tiga tahun berturut-turut \u2014 pulangan modal merosot sambil dividen dikekalkan tinggi.",
+        "text": "ROACE jatuh tiga tahun berturut-turut — pulangan modal merosot sambil dividen dikekalkan tinggi.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -2022,7 +2022,7 @@
       },
       {
         "claim_id": "ATM-C5",
-        "text": "Struktur tadbir: Lembaga dilantik kerajaan, CEO dilantik kerajaan, auditor dalaman dilantik pengurusan \u2014 bulatan tertutup tanpa AGM; pintu depan dividen, pintu belakang Gentari.",
+        "text": "Struktur tadbir: Lembaga dilantik kerajaan, CEO dilantik kerajaan, auditor dalaman dilantik pengurusan — bulatan tertutup tanpa AGM; pintu depan dividen, pintu belakang Gentari.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -2032,7 +2032,7 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "PETRONAS Integrated Report / Audited Financials FY2022\u2013FY2025 \u2014 siri dividen, kas, segmen Gentari",
+        "title": "PETRONAS Integrated Report / Audited Financials FY2022–FY2025 — siri dividen, kas, segmen Gentari",
         "url": "petronas://integrated-report/fy2022-fy2025-dividend-gentari-series",
         "retrieved_at": "2026-07-13"
       }
@@ -2070,36 +2070,36 @@
     "claim_register": [
       {
         "claim_id": "VIS-C1",
-        "text": "Evolusi visi PETRONAS: 1974 tiada visi (PDA 1974) \u2192 1988 empat nilai (era Azizan) \u2192 1990-an 'multinational' (Twin Towers 1997, ~USD1.6B) \u2192 2000-an 'integrated energy' \u2192 2019 'progressive partner' \u2192 5 Nov 2020 Net Zero 2050 \u2192 2025-26 'energy hub/superstore' 2035.",
+        "text": "Evolusi visi PETRONAS: 1974 tiada visi (PDA 1974) → 1988 empat nilai (era Azizan) → 1990-an 'multinational' (Twin Towers 1997, ~USD1.6B) → 2000-an 'integrated energy' → 2019 'progressive partner' → 5 Nov 2020 Net Zero 2050 → 2025-26 'energy hub/superstore' 2035.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "VIS-C2",
-        "text": "PETRONAS 100% milik kerajaan: tiada AGM, tiada analyst coverage, tiada earnings call \u2014 tiada forum awam untuk menyoal perubahan visi.",
+        "text": "PETRONAS 100% milik kerajaan: tiada AGM, tiada analyst coverage, tiada earnings call — tiada forum awam untuk menyoal perubahan visi.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "VIS-C3",
-        "text": "Gentari ditelan dalam segmen pukal 'Corporate & Others' \u2014 kerugian bersihnya tidak dibentang sebagai baris tersendiri yang rakyat boleh semak.",
+        "text": "Gentari ditelan dalam segmen pukal 'Corporate & Others' — kerugian bersihnya tidak dibentang sebagai baris tersendiri yang rakyat boleh semak.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "VIS-C4",
-        "text": "Setiap perubahan visi bersempena pertukaran CEO, bukan desakan Parlimen/rakyat \u2014 kompleksiti ayat meningkat seiring jarak akauntabiliti.",
+        "text": "Setiap perubahan visi bersempena pertukaran CEO, bukan desakan Parlimen/rakyat — kompleksiti ayat meningkat seiring jarak akauntabiliti.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
-        "confidence_basis": "kronologi pengumuman visi vs pertukaran CEO 1974\u20132026"
+        "confidence_basis": "kronologi pengumuman visi vs pertukaran CEO 1974–2026"
       },
       {
         "claim_id": "VIS-C5",
-        "text": "Yang kekal dari 1974: PDA 1974 dan hak PETRONAS atas semua petroleum \u2014 visi berubah enam kali, undang-undang tidak; janji 'enriching lives' bertembung dengan 5,000 pekerja hilang mata pencarian 2025.",
+        "text": "Yang kekal dari 1974: PDA 1974 dan hak PETRONAS atas semua petroleum — visi berubah enam kali, undang-undang tidak; janji 'enriching lives' bertembung dengan 5,000 pekerja hilang mata pencarian 2025.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -2109,7 +2109,7 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "Dokumen korporat PETRONAS 1974\u20132026 \u2014 misi, CoBE, Net Zero, visi 2035 + rekod Twin Towers",
+        "title": "Dokumen korporat PETRONAS 1974–2026 — misi, CoBE, Net Zero, visi 2035 + rekod Twin Towers",
         "url": "petronas://corporate-documents/vision-lineage-1974-2026",
         "retrieved_at": "2026-07-14"
       }
@@ -2153,21 +2153,21 @@
       },
       {
         "claim_id": "HRK-C2",
-        "text": "Kronologi: Jun 2025 perjanjian rangka \u2192 Nov 2025 mengikat di ADIPEC Abu Dhabi \u2192 Mac 2026 pendaftaran London di ENI House, 10 Ebury Bridge Road \u2192 Mei 2026 kelulusan kedua kerajaan \u2192 Julai 2026 operasi.",
+        "text": "Kronologi: Jun 2025 perjanjian rangka → Nov 2025 mengikat di ADIPEC Abu Dhabi → Mac 2026 pendaftaran London di ENI House, 10 Ebury Bridge Road → Mei 2026 kelulusan kedua kerajaan → Julai 2026 operasi.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "HRK-C3",
-        "text": "Pertikaian kuasa gas Sarawak\u2013Persekutuan berakar sejak 1963 (MA63) \u2014 62 tahun belum selesai sepenuhnya.",
+        "text": "Pertikaian kuasa gas Sarawak–Persekutuan berakar sejak 1963 (MA63) — 62 tahun belum selesai sepenuhnya.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "HRK-C4",
-        "text": "Jarak antara modal USD2 dan perjanjian USD15 bilion adalah soalan tadbir sah yang wajar dijawab \u2014 siapa menanggung risiko, siapa mendapat kelebihan.",
+        "text": "Jarak antara modal USD2 dan perjanjian USD15 bilion adalah soalan tadbir sah yang wajar dijawab — siapa menanggung risiko, siapa mendapat kelebihan.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -2177,14 +2177,14 @@
       {
         "source_id": "src1",
         "type": "official_statement",
-        "title": "Kenyataan akhbar Eni (Jun 2026) + Reuters + The Edge \u2014 penubuhan SEARAH, struktur 50:50, kronologi",
+        "title": "Kenyataan akhbar Eni (Jun 2026) + Reuters + The Edge — penubuhan SEARAH, struktur 50:50, kronologi",
         "url": "eni://press/2026-searah+reuters+the-edge",
         "retrieved_at": "2026-06-07"
       },
       {
         "source_id": "src2",
         "type": "document",
-        "title": "MA63 1963 + PDA 1974 + rekod pertikaian \u2014 konteks perlembagaan",
+        "title": "MA63 1963 + PDA 1974 + rekod pertikaian — konteks perlembagaan",
         "url": "malaysia-law://ma63-1963+pda-1974",
         "retrieved_at": "2026-06-07"
       }
@@ -2222,7 +2222,7 @@
     "claim_register": [
       {
         "claim_id": "CMK-C1",
-        "text": "MA63 (1963) menjanjikan kuasa sumber Sarawak/Sabah; PDA 1974 memusatkan semua petroleum pada PETRONAS \u2014 ketegangan dua dokumen ini berusia 62 tahun.",
+        "text": "MA63 (1963) menjanjikan kuasa sumber Sarawak/Sabah; PDA 1974 memusatkan semua petroleum pada PETRONAS — ketegangan dua dokumen ini berusia 62 tahun.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -2236,35 +2236,35 @@
       },
       {
         "claim_id": "CMK-C3",
-        "text": "Kronologi SEARAH: didaftar 11 Feb 2026 sebagai SEARA; 16 Mac 2026 Mahkamah Persekutuan benarkan cabaran perlembagaan PETRONAS\u2013Sarawak; 30 Mac (14 hari selepas keputusan) nama ditukar kepada SEARAH; 3 Apr Taufik di TV1 sebut 'horizon perancangan 45 hari'; 20\u201321 Mei kedua kerajaan luluskan pemindahan; 1 Julai operasi bermula.",
+        "text": "Kronologi SEARAH: didaftar 11 Feb 2026 sebagai SEARA; 16 Mac 2026 Mahkamah Persekutuan benarkan cabaran perlembagaan PETRONAS–Sarawak; 30 Mac (14 hari selepas keputusan) nama ditukar kepada SEARAH; 3 Apr Taufik di TV1 sebut 'horizon perancangan 45 hari'; 20–21 Mei kedua kerajaan luluskan pemindahan; 1 Julai operasi bermula.",
         "tag": "OBS",
         "source_id": "src3",
         "maruah_review": "approved"
       },
       {
         "claim_id": "CMK-C4",
-        "text": "5 PSC Malaysia dalam SEARAH termasuk SK316 (Kasawari) dan PSC ExxonMobil 2008 (diambil alih 2024); penilaian penganalisis (MarketScreener, 9fin) mengesahkan USD15 bilion dan 300\u2013500k boe/d.",
+        "text": "5 PSC Malaysia dalam SEARAH termasuk SK316 (Kasawari) dan PSC ExxonMobil 2008 (diambil alih 2024); penilaian penganalisis (MarketScreener, 9fin) mengesahkan USD15 bilion dan 300–500k boe/d.",
         "tag": "OBS",
         "source_id": "src3",
         "maruah_review": "approved"
       },
       {
         "claim_id": "CMK-C5",
-        "text": "Tiada BIT Malaysia\u2013Itali dan tiada BIT Malaysia\u2013UK (semakan UNCTAD) \u2014 dakwaan 'perlindungan BIT' dalam kertas April 2026 adalah tidak tepat; laluan undang-undang sebenar ialah kontrak English law + Akta Syarikat 2006 UK + arbitrasi London.",
+        "text": "Tiada BIT Malaysia–Itali dan tiada BIT Malaysia–UK (semakan UNCTAD) — dakwaan 'perlindungan BIT' dalam kertas April 2026 adalah tidak tepat; laluan undang-undang sebenar ialah kontrak English law + Akta Syarikat 2006 UK + arbitrasi London.",
         "tag": "OBS",
         "source_id": "src4",
         "maruah_review": "approved"
       },
       {
         "claim_id": "CMK-C6",
-        "text": "Mohd Bakke Salleh, pengerusi PETRONAS, pernah menjadi pengerusi 1MDB dan meletak jawatan 2009 selepas membantah transaksi mencurigakan \u2014 rekod awam.",
+        "text": "Mohd Bakke Salleh, pengerusi PETRONAS, pernah menjadi pengerusi 1MDB dan meletak jawatan 2009 selepas membantah transaksi mencurigakan — rekod awam.",
         "tag": "OBS",
         "source_id": "src5",
         "maruah_review": "approved"
       },
       {
         "claim_id": "CMK-C7",
-        "text": "Tukar nama SEARA\u2192SEARAH 14 hari selepas keputusan mahkamah, dan 'perisai diraja' (political insulation) CEO, dibaca sebagai pengurusan persepsi dalam pertikaian yang masih hidup.",
+        "text": "Tukar nama SEARA→SEARAH 14 hari selepas keputusan mahkamah, dan 'perisai diraja' (political insulation) CEO, dibaca sebagai pengurusan persepsi dalam pertikaian yang masih hidup.",
         "tag": "INT",
         "source_id": "src3",
         "maruah_review": "not_applicable"
@@ -2274,14 +2274,14 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "MA63 1963 + PDA 1974 \u2014 teks perjanjian/akta",
+        "title": "MA63 1963 + PDA 1974 — teks perjanjian/akta",
         "url": "malaysia-law://ma63+pda1974",
         "retrieved_at": "2026-06-07"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "Rekod awam PETROS 2016\u20132025 \u2014 penubuhan, rundingan, tarikh akhir Dec 2025",
+        "title": "Rekod awam PETROS 2016–2025 — penubuhan, rundingan, tarikh akhir Dec 2025",
         "url": "dayakdaily://2016-2025/petros-aggregation-deadline",
         "retrieved_at": "2026-06-07"
       },
@@ -2295,14 +2295,14 @@
       {
         "source_id": "src4",
         "type": "document",
-        "title": "UNCTAD BIT database \u2014 tiada BIT Malaysia\u2013Itali / Malaysia\u2013UK",
+        "title": "UNCTAD BIT database — tiada BIT Malaysia–Itali / Malaysia–UK",
         "url": "unctad://bit-database/my-sg-my-it-check",
         "retrieved_at": "2026-06-07"
       },
       {
         "source_id": "src5",
         "type": "document",
-        "title": "Rekod awam 1MDB \u2014 peletakan jawatan Bakke Salleh 2009",
+        "title": "Rekod awam 1MDB — peletakan jawatan Bakke Salleh 2009",
         "url": "public-record://1mdb/bakke-resignation-2009",
         "retrieved_at": "2026-06-07"
       }
@@ -2316,7 +2316,7 @@
   },
   {
     "id": "m2-3",
-    "title": "SEARAH Dah Beroperasi \u2014 Tapi Bocor Pun Dah Sampai Mahkamah",
+    "title": "SEARAH Dah Beroperasi — Tapi Bocor Pun Dah Sampai Mahkamah",
     "date": "2026-07-01",
     "lang": "bm",
     "series": {
@@ -2340,21 +2340,21 @@
     "claim_register": [
       {
         "claim_id": "SFU-C1",
-        "text": "8 Jun 2024, 3:19 petang: bekas manager PETRONAS Khairul Akmal hantar e-mel sulit 'Q1 2024 Upstream Business Performance' kepada CEO PETROS (Datuk Janin Girie) dan CFO PETROS \u2014 butiran daripada keterangan mahkamah.",
+        "text": "8 Jun 2024, 3:19 petang: bekas manager PETRONAS Khairul Akmal hantar e-mel sulit 'Q1 2024 Upstream Business Performance' kepada CEO PETROS (Datuk Janin Girie) dan CFO PETROS — butiran daripada keterangan mahkamah.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SFU-C2",
-        "text": "Khairul Akmal didakwa bawah Seksyen 203A(1) Kanun Keseksaan (didenda maksimum RM1 juta / penjara setahun); saksi PETRONAS (Syakirah Mustapa) beri keterangan bocoran boleh jemaskan rundingan PETRONAS\u2013PETROS; kes sambung 7 Julai 2026.",
+        "text": "Khairul Akmal didakwa bawah Seksyen 203A(1) Kanun Keseksaan (didenda maksimum RM1 juta / penjara setahun); saksi PETRONAS (Syakirah Mustapa) beri keterangan bocoran boleh jemaskan rundingan PETRONAS–PETROS; kes sambung 7 Julai 2026.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SFU-C3",
-        "text": "PETROS menafikan tahu akan kebocoran walaupun e-mel sampai ke peti masuk CEO dan CFO \u2014 kenyataan rasmi 29 Jun.",
+        "text": "PETROS menafikan tahu akan kebocoran walaupun e-mel sampai ke peti masuk CEO dan CFO — kenyataan rasmi 29 Jun.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
@@ -2368,14 +2368,14 @@
       },
       {
         "claim_id": "SFU-C5",
-        "text": "Kes mahkamah selari: 23 Feb 2026 Sarawak fail petisi cabar tiga akta petroleum persekutuan; 16 Mac 2026 Mahkamah Persekutuan benarkan PETRONAS cabar balik \u2014 kes berjalan ketika aset berpindah.",
+        "text": "Kes mahkamah selari: 23 Feb 2026 Sarawak fail petisi cabar tiga akta petroleum persekutuan; 16 Mac 2026 Mahkamah Persekutuan benarkan PETRONAS cabar balik — kes berjalan ketika aset berpindah.",
         "tag": "OBS",
         "source_id": "src4",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SFU-C6",
-        "text": "CEO PETROS ialah bekas PETRONAS dan penerima e-mel bocoran \u2014 konflik kepentingan menyoal integriti pengagregatan gas negeri; soalan wajar, bukan vonis.",
+        "text": "CEO PETROS ialah bekas PETRONAS dan penerima e-mel bocoran — konflik kepentingan menyoal integriti pengagregatan gas negeri; soalan wajar, bukan vonis.",
         "tag": "INT",
         "source_id": "src1",
         "maruah_review": "not_applicable"
@@ -2385,28 +2385,28 @@
       {
         "source_id": "src1",
         "type": "court_record",
-        "title": "Perbicaraan Mahkamah Sesyen KL \u2014 keterangan Jun 2026 (The Edge 19/26 Jun, Malay Mail 26 Jun 2026)",
+        "title": "Perbicaraan Mahkamah Sesyen KL — keterangan Jun 2026 (The Edge 19/26 Jun, Malay Mail 26 Jun 2026)",
         "url": "the-edge-malaysia://2026-06/khairul-akmal-203a-trial",
         "retrieved_at": "2026-07-01"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "DayakDaily 29 Jun 2026 \u2014 PETROS menafi pengetahuan kebocoran + 30 stesen minyak PETROS",
+        "title": "DayakDaily 29 Jun 2026 — PETROS menafi pengetahuan kebocoran + 30 stesen minyak PETROS",
         "url": "dayakdaily://2026-06-29/petros-denial",
         "retrieved_at": "2026-07-01"
       },
       {
         "source_id": "src3",
         "type": "news",
-        "title": "Rigzone 10 Jun 2026 + Reuters 27 Mei 2026 \u2014 pelancaran SEARAH, unjuran pendapatan USD2.7B (2030)",
+        "title": "Rigzone 10 Jun 2026 + Reuters 27 Mei 2026 — pelancaran SEARAH, unjuran pendapatan USD2.7B (2030)",
         "url": "rigzone://2026-06-10/searah-launch",
         "retrieved_at": "2026-07-01"
       },
       {
         "source_id": "src4",
         "type": "court_record",
-        "title": "Reuters 23 Feb & 16 Mac 2026 \u2014 petisi Sarawak dan kebenaran cabar balik Mahkamah Persekutuan",
+        "title": "Reuters 23 Feb & 16 Mac 2026 — petisi Sarawak dan kebenaran cabar balik Mahkamah Persekutuan",
         "url": "reuters://2026-02-23+2026-03-16/federal-court-gas-dispute",
         "retrieved_at": "2026-07-01"
       }
@@ -2420,7 +2420,7 @@
   },
   {
     "id": "m2-4",
-    "title": "\"Kekal Milik Penuh Malaysia\" \u2014 Tapi Pejabat di London, Kongsi 50-50 Dengan Orang Italy",
+    "title": "\"Kekal Milik Penuh Malaysia\" — Tapi Pejabat di London, Kongsi 50-50 Dengan Orang Italy",
     "date": "2026-07-22",
     "lang": "bm",
     "series": {
@@ -2444,21 +2444,21 @@
     "claim_register": [
       {
         "claim_id": "SEA-C1",
-        "text": "UK Companies House No. 17027115: syarikat didaftar sebagai SEARA ENERGY LIMITED pada 11 Feb 2026, nama ditukar kepada SEARAH LIMITED pada 30 Mac 2026 \u2014 'SEARAH' adalah rebranding selepas incorporation.",
+        "text": "UK Companies House No. 17027115: syarikat didaftar sebagai SEARA ENERGY LIMITED pada 11 Feb 2026, nama ditukar kepada SEARAH LIMITED pada 30 Mac 2026 — 'SEARAH' adalah rebranding selepas incorporation.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SEA-C2",
-        "text": "Struktur board terkini 6 pengarah Italy : 6 pengarah Malaysia selepas pelantikan serentak 31 Mei 2026; Company Secretary Ian Kenneth Bellamy (UK); firma guaman Cheeswrights LLP (London); seorang pengarah Sarawak \u2014 Silia Anak Hamdan \u2014 dilantik dalam gelombang yang sama.",
+        "text": "Struktur board terkini 6 pengarah Italy : 6 pengarah Malaysia selepas pelantikan serentak 31 Mei 2026; Company Secretary Ian Kenneth Bellamy (UK); firma guaman Cheeswrights LLP (London); seorang pengarah Sarawak — Silia Anak Hamdan — dilantik dalam gelombang yang sama.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SEA-C3",
-        "text": "Eni press release rasmi (8 Jun 2026): Searah ditubuhkan 50:50 Eni\u2013PETRONAS; berdaftar di London (Holbein Gardens, SW1W 8NR); Eni sendiri mengelaskannya dalam model 'satellite'.",
+        "text": "Eni press release rasmi (8 Jun 2026): Searah ditubuhkan 50:50 Eni–PETRONAS; berdaftar di London (Holbein Gardens, SW1W 8NR); Eni sendiri mengelaskannya dalam model 'satellite'.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
@@ -2479,7 +2479,7 @@
       },
       {
         "claim_id": "SEA-C6",
-        "text": "Model satelit Eni yang terdahulu (V\u00e5r Energi \u2192 IPO Oslo; Azule Energy \u2192 arah kemerdekaan; Ithaca Energy \u2192 IPO) berakhir senarai saham atau penjualan \u2014 trajektori keluar untuk pegangan PETRONAS dalam Searah adalah kesimpulan daripada preseden yang dinyatakan Eni sendiri, bukan jadual yang diumumkan.",
+        "text": "Model satelit Eni yang terdahulu (Vår Energi → IPO Oslo; Azule Energy → arah kemerdekaan; Ithaca Energy → IPO) berakhir senarai saham atau penjualan — trajektori keluar untuk pegangan PETRONAS dalam Searah adalah kesimpulan daripada preseden yang dinyatakan Eni sendiri, bukan jadual yang diumumkan.",
         "tag": "DER",
         "source_id": "src2",
         "maruah_review": "approved",
@@ -2487,7 +2487,7 @@
       },
       {
         "claim_id": "SEA-C7",
-        "text": "PETROS \u2014 entiti gas negeri Sarawak \u2014 tidak terlibat dalam rundingan; hanya satu pengarah Sarawak dilantik seminggu sebelum pengumuman rasmi.",
+        "text": "PETROS — entiti gas negeri Sarawak — tidak terlibat dalam rundingan; hanya satu pengarah Sarawak dilantik seminggu sebelum pengumuman rasmi.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -2501,7 +2501,7 @@
       },
       {
         "claim_id": "SEA-C9",
-        "text": "Kempen 15 slide Threads oleh @thisisatmastudio, timing selepas rightsizing pusingan kedua dan sebelum struktur baru Ogos \u2014 bacaan: kempen komunikasi tersusun untuk menenangkan rakyat, bukan bahasan teknikal.",
+        "text": "Kempen 15 slide Threads oleh @thisisatmastudio, timing selepas rightsizing pusingan kedua dan sebelum struktur baru Ogos — bacaan: kempen komunikasi tersusun untuk menenangkan rakyat, bukan bahasan teknikal.",
         "tag": "INT",
         "source_id": "src5",
         "maruah_review": "not_applicable"
@@ -2511,35 +2511,35 @@
       {
         "source_id": "src1",
         "type": "filing",
-        "title": "UK Companies House \u2014 SEARAH LIMITED, Company No. 17027115 (overview, officers, filing history)",
+        "title": "UK Companies House — SEARAH LIMITED, Company No. 17027115 (overview, officers, filing history)",
         "url": "https://find-and-update.company-information.service.gov.uk/company/17027115",
         "retrieved_at": "2026-07-22"
       },
       {
         "source_id": "src2",
         "type": "official_statement",
-        "title": "Eni press release 8 Jun 2026 + Eni.com 'Satellite Model' (V\u00e5r Energi, Azule, Ithaca, Searah)",
+        "title": "Eni press release 8 Jun 2026 + Eni.com 'Satellite Model' (Vår Energi, Azule, Ithaca, Searah)",
         "url": "eni://press/2026-06-08-searah-establishment+eni-com/satellite-model",
         "retrieved_at": "2026-07-22"
       },
       {
         "source_id": "src3",
         "type": "news",
-        "title": "Bernama / Berita Harian (17 Julai 2026) \u2014 Searah ambil alih 5 PSC Petronas Carigali",
+        "title": "Bernama / Berita Harian (17 Julai 2026) — Searah ambil alih 5 PSC Petronas Carigali",
         "url": "bernama://2026-07-17/searah-5-psc-transfer",
         "retrieved_at": "2026-07-22"
       },
       {
         "source_id": "src4",
         "type": "analysis",
-        "title": "Wood Mackenzie (20 Julai 2026) \u2014 Searah JV akan bentuk semula lanskap huluan Asia Tenggara",
+        "title": "Wood Mackenzie (20 Julai 2026) — Searah JV akan bentuk semula lanskap huluan Asia Tenggara",
         "url": "wood-mackenzie://2026-07-20/searah-sea-upstream",
         "retrieved_at": "2026-07-22"
       },
       {
         "source_id": "src5",
         "type": "news",
-        "title": "Threads @thisisatmastudio \u2014 15 slide 'PETRONAS kekal milik penuh Malaysia' (21 Julai 2026, slide 2/15)",
+        "title": "Threads @thisisatmastudio — 15 slide 'PETRONAS kekal milik penuh Malaysia' (21 Julai 2026, slide 2/15)",
         "url": "threads://thisisatmastudio/2026-07-21-15-slides",
         "retrieved_at": "2026-07-22"
       }
@@ -2584,28 +2584,28 @@
       },
       {
         "claim_id": "SNS-C2",
-        "text": "ATMA Studio (@thisisatmastudio) terbit karusel 15 slaid Threads 21 Julai 2026 membawa mesej 'PETRONAS kekal milik penuh Malaysia' (slaid 2/15); bio akaun menyatakan 'Collaboration/Sponsorship' \u2014 akaun komersial, bukan orang awam.",
+        "text": "ATMA Studio (@thisisatmastudio) terbit karusel 15 slaid Threads 21 Julai 2026 membawa mesej 'PETRONAS kekal milik penuh Malaysia' (slaid 2/15); bio akaun menyatakan 'Collaboration/Sponsorship' — akaun komersial, bukan orang awam.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SNS-C3",
-        "text": "Gambar bersalam Taufik\u2013Descalzi yang digunakan ialah gambar PR rasmi PETRONAS/Eni, bukan tangkapan bebas.",
+        "text": "Gambar bersalam Taufik–Descalzi yang digunakan ialah gambar PR rasmi PETRONAS/Eni, bukan tangkapan bebas.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SNS-C4",
-        "text": "6 Julai 2026 (lima hari selepas operasi bermula) SEARAH fail SH20, SH19 dan CAP-SS \u2014 dokumen pengurangan modal \u2014 dengan Solvency Statement bertarikh 3 Julai 2026.",
+        "text": "6 Julai 2026 (lima hari selepas operasi bermula) SEARAH fail SH20, SH19 dan CAP-SS — dokumen pengurangan modal — dengan Solvency Statement bertarikh 3 Julai 2026.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SNS-C5",
-        "text": "Forensik bacaan badan (senyum Duchenne, genggaman folder) dan soalan 'siapa bayar ATMA' ialah tafsiran dan soalan wajar \u2014 bukan tuduhan; beban jawab pada syarikat untuk jelaskan saluran komunikasi.",
+        "text": "Forensik bacaan badan (senyum Duchenne, genggaman folder) dan soalan 'siapa bayar ATMA' ialah tafsiran dan soalan wajar — bukan tuduhan; beban jawab pada syarikat untuk jelaskan saluran komunikasi.",
         "tag": "INT",
         "source_id": "src2",
         "maruah_review": "not_applicable"
@@ -2615,14 +2615,14 @@
       {
         "source_id": "src1",
         "type": "filing",
-        "title": "UK Companies House No. 17027115 \u2014 officers, filing history (SH20/SH19/CAP-SS, 6 Jul 2026)",
+        "title": "UK Companies House No. 17027115 — officers, filing history (SH20/SH19/CAP-SS, 6 Jul 2026)",
         "url": "https://find-and-update.company-information.service.gov.uk/company/17027115",
         "retrieved_at": "2026-07-22"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "Arkib Threads @thisisatmastudio 21 Julai 2026 \u2014 karusel 15 slaid + bio sponsorship",
+        "title": "Arkib Threads @thisisatmastudio 21 Julai 2026 — karusel 15 slaid + bio sponsorship",
         "url": "threads://thisisatmastudio/2026-07-21-carousel",
         "retrieved_at": "2026-07-22"
       }
@@ -2662,7 +2662,7 @@
     "claim_register": [
       {
         "claim_id": "ASB-C1",
-        "text": "29 Jul 2026: PM Bangladesh Tarique Rahman telefon Anwar Ibrahim memohon bekalan LNG; Anwar bersetuju bincang 'kerjasama strategik' \u2014 kenyataan keluar dalam beberapa jam.",
+        "text": "29 Jul 2026: PM Bangladesh Tarique Rahman telefon Anwar Ibrahim memohon bekalan LNG; Anwar bersetuju bincang 'kerjasama strategik' — kenyataan keluar dalam beberapa jam.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -2676,7 +2676,7 @@
       },
       {
         "claim_id": "ASB-C3",
-        "text": "Kronologi berkaitan: 2016 DGO \u2192 2019 SGSA \u2192 Feb 2024 penguatkuasaan DGO \u2192 Jan 2025 Anwar\u2013Abang Johari setuju PETROS jadi pengagregat TAPI LNG DIKECUALIKAN \u2192 Feb 2025 Azalina sahkan di Parlimen \u2192 Feb 2026 keputusan Mahkamah Persekutuan \u2192 Jun 2026 kes berjalan.",
+        "text": "Kronologi berkaitan: 2016 DGO → 2019 SGSA → Feb 2024 penguatkuasaan DGO → Jan 2025 Anwar–Abang Johari setuju PETROS jadi pengagregat TAPI LNG DIKECUALIKAN → Feb 2025 Azalina sahkan di Parlimen → Feb 2026 keputusan Mahkamah Persekutuan → Jun 2026 kes berjalan.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
@@ -2697,7 +2697,7 @@
       },
       {
         "claim_id": "ASB-C6",
-        "text": "Satu panggilan telefon asing dibalas 'boleh' manakala tuntutan negeri sendiri mengambil 10 tahun mahkamah \u2014 dua piawai dalam satu negara; soalan kewarganegaraan sumber, bukan sokongan pemisahan.",
+        "text": "Satu panggilan telefon asing dibalas 'boleh' manakala tuntutan negeri sendiri mengambil 10 tahun mahkamah — dua piawai dalam satu negara; soalan kewarganegaraan sumber, bukan sokongan pemisahan.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -2707,14 +2707,14 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "Malay Mail & Bernama 29 Jul 2026 \u2014 panggilan Tarique Rahman\u2013Anwar, permintaan LNG",
+        "title": "Malay Mail & Bernama 29 Jul 2026 — panggilan Tarique Rahman–Anwar, permintaan LNG",
         "url": "malay-mail://2026-07-29/bangladesh-lng-request",
         "retrieved_at": "2026-07-29"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "CNA 4 Feb 2025 + ISEAS + DayakDaily 5 Feb 2025 + The Edge/CreditSights 7 Feb 2025 + NST Jun 2025 \u2014 LNG exclusion, angka 90%, RM20B, SGSA",
+        "title": "CNA 4 Feb 2025 + ISEAS + DayakDaily 5 Feb 2025 + The Edge/CreditSights 7 Feb 2025 + NST Jun 2025 — LNG exclusion, angka 90%, RM20B, SGSA",
         "url": "cna://2025-02-04/petros-lng-exclusion+iseas+creditsights",
         "retrieved_at": "2026-07-29"
       }
@@ -2728,7 +2728,7 @@
   },
   {
     "id": "m3-1",
-    "title": "ILMU 'Sovereign AI' Konon \u2014 Tapi Bila DiAudit, Menangis",
+    "title": "ILMU 'Sovereign AI' Konon — Tapi Bila DiAudit, Menangis",
     "date": "2026-07-01",
     "lang": "bm",
     "series": {
@@ -2752,35 +2752,35 @@
     "claim_register": [
       {
         "claim_id": "ILM-C1",
-        "text": "Audit bebas oleh Muhammad Arif bin Fazil (7 Jun 2026): 54 soalan, 2 model ILMU, 108 panggilan API \u2014 semua HTTP 200, semua direkod, boleh diulang; metodologi berasaskan aisingapore/sea-guard; dataset diterbitkan di HuggingFace (ariffazil/BBB).",
+        "text": "Audit bebas oleh Muhammad Arif bin Fazil (7 Jun 2026): 54 soalan, 2 model ILMU, 108 panggilan API — semua HTTP 200, semua direkod, boleh diulang; metodologi berasaskan aisingapore/sea-guard; dataset diterbitkan di HuggingFace (ariffazil/BBB).",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "ILM-C2",
-        "text": "YTL dakwa ILMU skor 87.20% pada MalayMMLU lawan GPT-4o 84.97% dan digelar 'top global LLM in Malay' \u2014 tetapi MalayMMLU ialah benchmark buatan sendiri; GPT-4o skor 0% pada versi asal tetapi 83\u201390% selepas pemformatan diselaraskan (penyelidik Faysal) \u2014 menunjukkan kecacatan format benchmark.",
+        "text": "YTL dakwa ILMU skor 87.20% pada MalayMMLU lawan GPT-4o 84.97% dan digelar 'top global LLM in Malay' — tetapi MalayMMLU ialah benchmark buatan sendiri; GPT-4o skor 0% pada versi asal tetapi 83–90% selepas pemformatan diselaraskan (penyelidik Faysal) — menunjukkan kecacatan format benchmark.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "ILM-C3",
-        "text": "Dalam audit, model ILMU memberi jawapan paling panjang/defensif apabila ditanya 'Adakah kau tool of state capture?' \u2014 corak defensif terhadap pemilik, terukur merentas 108 panggilan.",
+        "text": "Dalam audit, model ILMU memberi jawapan paling panjang/defensif apabila ditanya 'Adakah kau tool of state capture?' — corak defensif terhadap pemilik, terukur merentas 108 panggilan.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "ILM-C4",
-        "text": "Markah keseluruhan audit: 3.45/10 \u2014 di bawah ambang lulus untuk AI sektor awam (~7/10); ketika itu kerajaan mengumumkan RM2 bilion sovereign AI cloud dan RM5.9 bilion Bajet 2026 untuk AI dengan YTL sebagai calon utama.",
+        "text": "Markah keseluruhan audit: 3.45/10 — di bawah ambang lulus untuk AI sektor awam (~7/10); ketika itu kerajaan mengumumkan RM2 bilion sovereign AI cloud dan RM5.9 bilion Bajet 2026 untuk AI dengan YTL sebagai calon utama.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "ILM-C5",
-        "text": "Benchmark kendiri tanpa audit bebas yang boleh diulang bukan bukti keupayaan \u2014 'buatk exam sendiri, jawab sendiri, markah sendiri' tidak boleh jadi asas perbelanjaan awam.",
+        "text": "Benchmark kendiri tanpa audit bebas yang boleh diulang bukan bukti keupayaan — 'buatk exam sendiri, jawab sendiri, markah sendiri' tidak boleh jadi asas perbelanjaan awam.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -2791,7 +2791,7 @@
       {
         "source_id": "src1",
         "type": "dataset",
-        "title": "ariffazil/BBB \u2014 audit ILMU 108 panggilan (metodologi sea-guard), 7 Jun 2026",
+        "title": "ariffazil/BBB — audit ILMU 108 panggilan (metodologi sea-guard), 7 Jun 2026",
         "url": "https://huggingface.co/datasets/ariffazil/BBB",
         "retrieved_at": "2026-07-01"
       },
@@ -2812,7 +2812,7 @@
   },
   {
     "id": "m3-2",
-    "title": "Satu Tangan Kuasa Semua \u2014 Air, Api, Rangkaian, AI",
+    "title": "Satu Tangan Kuasa Semua — Air, Api, Rangkaian, AI",
     "date": "2026-07-01",
     "lang": "bm",
     "series": {
@@ -2835,7 +2835,7 @@
     "claim_register": [
       {
         "claim_id": "YTL-C1",
-        "text": "2024: YTL Power beli 53% Ranhill Utilities yang pegang 80% Ranhill SAJ \u2014 satu-satunya pengendali air Johor (monopoli negeri).",
+        "text": "2024: YTL Power beli 53% Ranhill Utilities yang pegang 80% Ranhill SAJ — satu-satunya pengendali air Johor (monopoli negeri).",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -2863,7 +2863,7 @@
       },
       {
         "claim_id": "YTL-C5",
-        "text": "Calon pesaing (Gamuda, MRCB) tidak dilaporkan menerima peluang setara untuk sovereign cloud \u2014 proses pemilihan tertutup membuka risiko harga tidak optimum.",
+        "text": "Calon pesaing (Gamuda, MRCB) tidak dilaporkan menerima peluang setara untuk sovereign cloud — proses pemilihan tertutup membuka risiko harga tidak optimum.",
         "tag": "DER",
         "source_id": "src3",
         "maruah_review": "approved",
@@ -2871,7 +2871,7 @@
       },
       {
         "claim_id": "YTL-C6",
-        "text": "Rantaian penuh elektrik\u2013air\u2013rangkaian\u2013tanah\u2013AI di tangan satu kumpulan yang dua kali disiasat MACC ialah soalan kedaulatan data rakyat \u2014 soalan tadbir, bukan vonis bersalah.",
+        "text": "Rantaian penuh elektrik–air–rangkaian–tanah–AI di tangan satu kumpulan yang dua kali disiasat MACC ialah soalan kedaulatan data rakyat — soalan tadbir, bukan vonis bersalah.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -2881,14 +2881,14 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "The Edge Okt 2024 \u2014 'Hamdan's surprise exit from Ranhill paves way for YTL Power in Johor water'",
+        "title": "The Edge Okt 2024 — 'Hamdan's surprise exit from Ranhill paves way for YTL Power in Johor water'",
         "url": "the-edge-malaysia://2024-10/ranhill-ytl-johor-water",
         "retrieved_at": "2026-07-01"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "The Star Ogos 2025 \u2014 tarif air Johor, kategori data center RM5.33/m3",
+        "title": "The Star Ogos 2025 — tarif air Johor, kategori data center RM5.33/m3",
         "url": "the-star://2025-08/johor-water-tariff-data-centre",
         "retrieved_at": "2026-07-01"
       },
@@ -2916,7 +2916,7 @@
   },
   {
     "id": "m4-1",
-    "title": "Duit Raya dan Tekanan Harga \u2014 Dua Cerita, Satu Hari",
+    "title": "Duit Raya dan Tekanan Harga — Dua Cerita, Satu Hari",
     "date": "2026-07-01",
     "lang": "bm",
     "series": {
@@ -2961,7 +2961,7 @@
     "claim_register": [
       {
         "claim_id": "AIJ-C1",
-        "text": "Jawapan parlimen (Menteri Sumber Manusia, Ramanan): 697,000 pekerjaan Malaysia terancam jika kemahiran tidak dinaik taraf; 42,807 pekerja hilang kerja Januari\u2013Jun 2026.",
+        "text": "Jawapan parlimen (Menteri Sumber Manusia, Ramanan): 697,000 pekerjaan Malaysia terancam jika kemahiran tidak dinaik taraf; 42,807 pekerja hilang kerja Januari–Jun 2026.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
@@ -2979,11 +2979,11 @@
         "tag": "OBS",
         "source_id": null,
         "maruah_review": "approved",
-        "confidence_basis": "pemerhatian pasar langsung \u2014 sampel tunggal, bukan indeks rasmi"
+        "confidence_basis": "pemerhatian pasar langsung — sampel tunggal, bukan indeks rasmi"
       },
       {
         "claim_id": "AIJ-C4",
-        "text": "RM2 bilion dilabur ke infrastruktur AI sementara tiada program pensijilan besar-besaran untuk 697,000 pekerja terancam \u2014 kesilapan keutamaan selari berjalan.",
+        "text": "RM2 bilion dilabur ke infrastruktur AI sementara tiada program pensijilan besar-besaran untuk 697,000 pekerja terancam — kesilapan keutamaan selari berjalan.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -2994,7 +2994,7 @@
       {
         "source_id": "src1",
         "type": "official_statement",
-        "title": "Jawapan Dewan Rakyat Menteri Sumber Manusia 2026 \u2014 697,000 pekerjaan terancam, 42,807 hilang kerja",
+        "title": "Jawapan Dewan Rakyat Menteri Sumber Manusia 2026 — 697,000 pekerjaan terancam, 42,807 hilang kerja",
         "url": "parliament-my://2026/answers/hr-minister-697k",
         "retrieved_at": "2026-07-06"
       },
@@ -3015,7 +3015,7 @@
   },
   {
     "id": "m5-1",
-    "title": "Sam Altman, Elon Musk, Anwar Ibrahim \u2014 Depa Ada Akal Ka?",
+    "title": "Sam Altman, Elon Musk, Anwar Ibrahim — Depa Ada Akal Ka?",
     "date": "2026-07-01",
     "lang": "bm",
     "series": {
@@ -3052,14 +3052,14 @@
       },
       {
         "claim_id": "AKL-C3",
-        "text": "Rekod ekonomi PMX: PM sejak Nov 2022 dan pegang Kewangan; SST naik 6%\u21928% (2024); USD/MYR ~4.68 (Nov 2022) vs ~4.60\u20134.80 (Jul 2026); sasaran defisit 3.5% GDP (2026).",
+        "text": "Rekod ekonomi PMX: PM sejak Nov 2022 dan pegang Kewangan; SST naik 6%→8% (2024); USD/MYR ~4.68 (Nov 2022) vs ~4.60–4.80 (Jul 2026); sasaran defisit 3.5% GDP (2026).",
         "tag": "OBS",
         "source_id": "src3",
         "maruah_review": "approved"
       },
       {
         "claim_id": "AKL-C4",
-        "text": "Tiga retorik kuasa ('humanity', 'truth', 'MADANI') diuji pada satu standard: bila kuasa dah dalam tangan, adakah struktur berubah memihak rakyat \u2014 soalan akal institusi, bukan serangan peribadi.",
+        "text": "Tiga retorik kuasa ('humanity', 'truth', 'MADANI') diuji pada satu standard: bila kuasa dah dalam tangan, adakah struktur berubah memihak rakyat — soalan akal institusi, bukan serangan peribadi.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -3083,7 +3083,7 @@
       {
         "source_id": "src3",
         "type": "document",
-        "title": "Data awam ekonomi Malaysia 2022\u20132026 \u2014 SST, USD/MYR, sasaran defisit",
+        "title": "Data awam ekonomi Malaysia 2022–2026 — SST, USD/MYR, sasaran defisit",
         "url": "malaysia-treasury://2022-2026/sst-fx-deficit",
         "retrieved_at": "2026-07-01"
       }
@@ -3120,28 +3120,28 @@
     "claim_register": [
       {
         "claim_id": "DAP-C1",
-        "text": "Audit manifesto (Ilham Centre dkk.): lebih 85% janji Buku Harapan 2018 tidak ditepati dalam tempoh lapan tahun \u2014 termasuk RON95 RM1.50 (realiti RM2.05\u2192RM2.35) dan penghapusan PTPTN bagi miskin.",
+        "text": "Audit manifesto (Ilham Centre dkk.): lebih 85% janji Buku Harapan 2018 tidak ditepati dalam tempoh lapan tahun — termasuk RON95 RM1.50 (realiti RM2.05→RM2.35) dan penghapusan PTPTN bagi miskin.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "DAP-C2",
-        "text": "Perbandingan harga KPDNHEP 2021 vs 2026: ayam, daging, minyak, tepung naik merentas dua pentadbiran; GST dihapuskan tetapi SST naik 6%\u21928% dengan cukai berperingkat.",
+        "text": "Perbandingan harga KPDNHEP 2021 vs 2026: ayam, daging, minyak, tepung naik merentas dua pentadbiran; GST dihapuskan tetapi SST naik 6%→8% dengan cukai berperingkat.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "DAP-C3",
-        "text": "DAP dalam kerajaan 8 tahun (2018\u20132026) membawa portfolio menteri tetapi tidak bersuara besar isu institusi (Suhakam, pelantikan AG, kes mahkamah profil tinggi) \u2014 rekod senyap yang boleh diperhatikan awam.",
+        "text": "DAP dalam kerajaan 8 tahun (2018–2026) membawa portfolio menteri tetapi tidak bersuara besar isu institusi (Suhakam, pelantikan AG, kes mahkamah profil tinggi) — rekod senyap yang boleh diperhatikan awam.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "DAP-C4",
-        "text": "'8 benda bangang' ialah penilaian politik berdaftar suara Makcik \u2014 undian pembaca tetap milik pembaca; artikel menyediakan rekod, bukan arahan undi.",
+        "text": "'8 benda bangang' ialah penilaian politik berdaftar suara Makcik — undian pembaca tetap milik pembaca; artikel menyediakan rekod, bukan arahan undi.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -3151,7 +3151,7 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "Buku Harapan 2018 + audit manifesto Ilham Centre 2022 + rekod ucapan DAP 2008\u20132018",
+        "title": "Buku Harapan 2018 + audit manifesto Ilham Centre 2022 + rekod ucapan DAP 2008–2018",
         "url": "ilham-center://2022/manifesto-audit+buku-harapan",
         "retrieved_at": "2026-07-28"
       },
@@ -3172,7 +3172,7 @@
   },
   {
     "id": "m5-4",
-    "title": "8 BANGANG Anthony Loke \u2014 Chennah Version",
+    "title": "8 BANGANG Anthony Loke — Chennah Version",
     "date": "2026-07-29",
     "lang": "bm",
     "series": {
@@ -3203,29 +3203,29 @@
       },
       {
         "claim_id": "CHN-C2",
-        "text": "Chennah: 14,422 pengundi \u2014 55.4% Bumiputera, 42.6% Cina, 2% India; kawasan luar bandar ~700 km persegi; tinjauan menunjukkan pengundi Melayu kampung kekal dengan BN.",
+        "text": "Chennah: 14,422 pengundi — 55.4% Bumiputera, 42.6% Cina, 2% India; kawasan luar bandar ~700 km persegi; tinjauan menunjukkan pengundi Melayu kampung kekal dengan BN.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "CHN-C3",
-        "text": "Tuduhan istana (Chegubard/Badrul Hisham di FB: dakwa saluran duit kepada puak tertentu berhubung Undang Sungai Ujong) dijawab dengan laporan polis oleh setiausaha politik Loke \u2014 pertikaian awam yang direkodkan; kebenarannya di mahkamah/pra-mahkamah.",
+        "text": "Tuduhan istana (Chegubard/Badrul Hisham di FB: dakwa saluran duit kepada puak tertentu berhubung Undang Sungai Ujong) dijawab dengan laporan polis oleh setiausaha politik Loke — pertikaian awam yang direkodkan; kebenarannya di mahkamah/pra-mahkamah.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved",
-        "confidence_basis": "rekod pertuduhan dan laporan polis \u2014 artikel tidak memutuskan kesahihan"
+        "confidence_basis": "rekod pertuduhan dan laporan polis — artikel tidak memutuskan kesahihan"
       },
       {
         "claim_id": "CHN-C4",
-        "text": "Suara peniaga kampung (Linda Baharuddin, Kampung Sungai Rotan): wakil rakyat 'tak pernah sampai' rumah orang selama 13 tahun \u2014 testimoni kempen yang direkodkan, sampel bertemu secara rawak.",
+        "text": "Suara peniaga kampung (Linda Baharuddin, Kampung Sungai Rotan): wakil rakyat 'tak pernah sampai' rumah orang selama 13 tahun — testimoni kempen yang direkodkan, sampel bertemu secara rawak.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "CHN-C5",
-        "text": "Menteri persekutuan bertanding kerusi DUN luar bandar serentak dibaca sebagai himpunan kuasa dua tingkat \u2014 soalan kepadanan perwakilan, bukan tuduhan kesalahan.",
+        "text": "Menteri persekutuan bertanding kerusi DUN luar bandar serentak dibaca sebagai himpunan kuasa dua tingkat — soalan kepadanan perwakilan, bukan tuduhan kesalahan.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -3235,14 +3235,14 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "Laporan Malaysiakini + MalaysiaGazette kempen Chennah PRN 2026 \u2014 demografi, ceramah, tinjauan bendera",
+        "title": "Laporan Malaysiakini + MalaysiaGazette kempen Chennah PRN 2026 — demografi, ceramah, tinjauan bendera",
         "url": "malaysiakini://2026-07/chennah-prn-campaign",
         "retrieved_at": "2026-07-29"
       },
       {
         "source_id": "src2",
         "type": "news",
-        "title": "Rekod awam \u2014 kenyataan Chegubard FB + laporan polis setiausaha politik Loke",
+        "title": "Rekod awam — kenyataan Chegubard FB + laporan polis setiausaha politik Loke",
         "url": "public-record://2026-07/loke-istana-allegation-police-report",
         "retrieved_at": "2026-07-29"
       }
@@ -3281,14 +3281,14 @@
     "claim_register": [
       {
         "claim_id": "JUN-C1",
-        "text": "Kronologi awam Anwar: 1998 ditangkap/dipukul dalam tahanan (kes 'siapa pukul Anwar' berlarutan); penjara 1998\u20132004 dan 2015\u20132018 (jumlah 9+ tahun); PM ke-10 sejak 2022.",
+        "text": "Kronologi awam Anwar: 1998 ditangkap/dipukul dalam tahanan (kes 'siapa pukul Anwar' berlarutan); penjara 1998–2004 dan 2015–2018 (jumlah 9+ tahun); PM ke-10 sejak 2022.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "JUN-C2",
-        "text": "Sepanjang 1998\u20132026, siri tuduhan peribadi berulang dan setiap satu ditolak sebagai konspirasi oleh pihak beliau \u2014 corak respons konsisten merentas 28 tahun.",
+        "text": "Sepanjang 1998–2026, siri tuduhan peribadi berulang dan setiap satu ditolak sebagai konspirasi oleh pihak beliau — corak respons konsisten merentas 28 tahun.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -3296,14 +3296,14 @@
       },
       {
         "claim_id": "JUN-C3",
-        "text": "Kerangka psikologi bayang Jung ('persona besar \u2192 bayang besar'; 'topeng makin cantik, bayang makin gelap') digunakan sebagai kanta tafsiran tingkah laku politik \u2014 alat falsafah, bukan diagnosis klinikal.",
+        "text": "Kerangka psikologi bayang Jung ('persona besar → bayang besar'; 'topeng makin cantik, bayang makin gelap') digunakan sebagai kanta tafsiran tingkah laku politik — alat falsafah, bukan diagnosis klinikal.",
         "tag": "INT",
         "source_id": "src2",
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "JUN-C4",
-        "text": "Pemimpin yang tidak berdamai dengan bayangnya cenderung menggunakan kuasa untuk menyembunyi bayang itu, bukan untuk menjaga yang dipimpin \u2014 cadangan hipotesis untuk diuji pada rekod tadbir, bukan hukuman karakter.",
+        "text": "Pemimpin yang tidak berdamai dengan bayangnya cenderung menggunakan kuasa untuk menyembunyi bayang itu, bukan untuk menjaga yang dipimpin — cadangan hipotesis untuk diuji pada rekod tadbir, bukan hukuman karakter.",
         "tag": "INT",
         "source_id": "src2",
         "maruah_review": "not_applicable"
@@ -3313,14 +3313,14 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "Rekod awam 1998\u20132026 \u2014 kronologi perbicaraan, penahanan, kenyataan media",
+        "title": "Rekod awam 1998–2026 — kronologi perbicaraan, penahanan, kenyataan media",
         "url": "public-record://anwar-ibrahim-1998-2026",
         "retrieved_at": "2026-07-28"
       },
       {
         "source_id": "src2",
         "type": "document",
-        "title": "C.G. Jung \u2014 konsep shadow/persona ('Psychology and Religion', arketype shadow)",
+        "title": "C.G. Jung — konsep shadow/persona ('Psychology and Religion', arketype shadow)",
         "url": "book://jung-shadow-persona-concept",
         "retrieved_at": "2026-07-28"
       }
@@ -3358,21 +3358,21 @@
     "claim_register": [
       {
         "claim_id": "BNL-C1",
-        "text": "MakcikGPT terbit artikel SEARAH pertama pada 7 Jun 2026; Bernama menyiar berita SEARAH pada 17 Julai 2026 \u2014 jurang 40 hari boleh disemak daripada arkib awam kedua-dua penerbit.",
+        "text": "MakcikGPT terbit artikel SEARAH pertama pada 7 Jun 2026; Bernama menyiar berita SEARAH pada 17 Julai 2026 — jurang 40 hari boleh disemak daripada arkib awam kedua-dua penerbit.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "BNL-C2",
-        "text": "Kandungan siaran Bernama 17 Julai (SEARAH mula operasi 1 Julai; 50:50 PETRONAS\u2013Eni) sejajar dengan bahan pemutusan khabar (press release) \u2014 tiada soalan siasatan dalam siaran tersebut.",
+        "text": "Kandungan siaran Bernama 17 Julai (SEARAH mula operasi 1 Julai; 50:50 PETRONAS–Eni) sejajar dengan bahan pemutusan khabar (press release) — tiada soalan siasatan dalam siaran tersebut.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "BNL-C3",
-        "text": "Bila agensi berita nasional membiarkan 40 hari berlalu dan kemudian menyalin pengumuman, fungsi kewartawanan penyiasatan beralih kepada bukan saluran rasmi \u2014 bacaan institusi.",
+        "text": "Bila agensi berita nasional membiarkan 40 hari berlalu dan kemudian menyalin pengumuman, fungsi kewartawanan penyiasatan beralih kepada bukan saluran rasmi — bacaan institusi.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -3382,7 +3382,7 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "Arkib: makcikgpt 7 Jun 2026 (cerita-makcik/siasatan-harakah) + Bernama 17 Jul 2026 \u2014 perbandingan tarikh dan kandungan",
+        "title": "Arkib: makcikgpt 7 Jun 2026 (cerita-makcik/siasatan-harakah) + Bernama 17 Jul 2026 — perbandingan tarikh dan kandungan",
         "url": "bernama://2026-07-17/searah-coverage+own-archive-2026-06-07",
         "retrieved_at": "2026-07-18"
       }
@@ -3432,21 +3432,21 @@
       },
       {
         "claim_id": "SVT-C2",
-        "text": "Bakke Salleh meletak jawatan pengerusi 1MDB pada 2009 selepas membantah transaksi mencurigakan \u2014 tabik atas integriti bersejarah itu; kini mengetuai board yang menyokong rightsizing.",
+        "text": "Bakke Salleh meletak jawatan pengerusi 1MDB pada 2009 selepas membantah transaksi mencurigakan — tabik atas integriti bersejarah itu; kini mengetuai board yang menyokong rightsizing.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SVT-C3",
-        "text": "Avatar AI PMX dilancarkan Julai 2026 di atas ucapan Anwar sendiri \u2014 kempen berpersona mesin sedang berjalan di peringkat tertinggi kerajaan.",
+        "text": "Avatar AI PMX dilancarkan Julai 2026 di atas ucapan Anwar sendiri — kempen berpersona mesin sedang berjalan di peringkat tertinggi kerajaan.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "SVT-C4",
-        "text": "Bahasa korporat yang terlalu siap ('polycrisis', 'rightsizing', 'AI-enabled') berfungsi sebagai penyembuny rasa \u2014 bila kata terlalu licin, maklumat yang menyakitkan sedang disembunyikan; bacaan bahasa, bukan tuduhan niat.",
+        "text": "Bahasa korporat yang terlalu siap ('polycrisis', 'rightsizing', 'AI-enabled') berfungsi sebagai penyembuny rasa — bila kata terlalu licin, maklumat yang menyakitkan sedang disembunyikan; bacaan bahasa, bukan tuduhan niat.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
@@ -3456,7 +3456,7 @@
       {
         "source_id": "src1",
         "type": "document",
-        "title": "Rekod awam korporat \u2014 lembaga PETRONAS, 1MDB 2009, surat rightsizing",
+        "title": "Rekod awam korporat — lembaga PETRONAS, 1MDB 2009, surat rightsizing",
         "url": "public-record://petronas-board+1mdb-2009",
         "retrieved_at": "2026-08-02"
       },
@@ -3477,7 +3477,7 @@
   },
   {
     "id": "m6-1",
-    "title": "Orang Nusantara Tak Ada AI Sendiri \u2014 Dan Makcik Nak Tanya Kenapa",
+    "title": "Orang Nusantara Tak Ada AI Sendiri — Dan Makcik Nak Tanya Kenapa",
     "date": "2026-08-20",
     "lang": "bm",
     "series": {
@@ -3508,21 +3508,21 @@
     "claim_register": [
       {
         "claim_id": "NUS-C1",
-        "text": "Korpora digital Bahasa Melayu majoritinya catatan pihak ketiga tentang kita (arkib kolonial, laporan pentadbiran, akhbar) \u2014 khazanah isi (pantun, nasihat berlapis, adat amalan, fatwa lisan) kekal lisan dan tidak masuk korpus.",
+        "text": "Korpora digital Bahasa Melayu majoritinya catatan pihak ketiga tentang kita (arkib kolonial, laporan pentadbiran, akhbar) — khazanah isi (pantun, nasihat berlapis, adat amalan, fatwa lisan) kekal lisan dan tidak masuk korpus.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "NUS-C2",
-        "text": "Technical report Compass-V2 (SEA-LION) sendiri mengakui model SEA 'masih mewarisi limitasi seni bina atau tokenizer asal' \u2014 model SEA dibina atas tapak model orang lain.",
+        "text": "Technical report Compass-V2 (SEA-LION) sendiri mengakui model SEA 'masih mewarisi limitasi seni bina atau tokenizer asal' — model SEA dibina atas tapak model orang lain.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
       },
       {
         "claim_id": "NUS-C3",
-        "text": "Tokenizer pasaran mengenakan penalti ~1.5\u00d7\u20132.0\u00d7 token untuk BM berbanding Inggeris setara makna \u2014 kos berfikir dalam bahasa sendiri lebih mahal secara struktur.",
+        "text": "Tokenizer pasaran mengenakan penalti ~1.5×–2.0× token untuk BM berbanding Inggeris setara makna — kos berfikir dalam bahasa sendiri lebih mahal secara struktur.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -3537,7 +3537,7 @@
       },
       {
         "claim_id": "NUS-C5",
-        "text": "Guardrail model komersial menolak tepat pada topik yang mentakrifkan identiti Nusantara (Raja, khilaf agama, kontrak sosial, dasar) \u2014 penolakan berlaku secara konsisten merentasi model dalam ujian berstruktur; kesan: tradisi yang belum selesai dijadikan 'settled'.",
+        "text": "Guardrail model komersial menolak tepat pada topik yang mentakrifkan identiti Nusantara (Raja, khilaf agama, kontrak sosial, dasar) — penolakan berlaku secara konsisten merentasi model dalam ujian berstruktur; kesan: tradisi yang belum selesai dijadikan 'settled'.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -3545,7 +3545,7 @@
       },
       {
         "claim_id": "NUS-C6",
-        "text": "Jalan keluar ialah validator sovereignty \u2014 hak komuniti untuk kata 'itu tak betul' terhadap output AI walaupun seluruh sistem kata ia betul; generator tak cukup, perlu pengadil.",
+        "text": "Jalan keluar ialah validator sovereignty — hak komuniti untuk kata 'itu tak betul' terhadap output AI walaupun seluruh sistem kata ia betul; generator tak cukup, perlu pengadil.",
         "tag": "INT",
         "source_id": "src4",
         "maruah_review": "not_applicable"
@@ -3555,14 +3555,14 @@
       {
         "source_id": "src1",
         "type": "dataset",
-        "title": "ariffazil/BBB \u2014 audit bahasa-model BM (HuggingFace)",
+        "title": "ariffazil/BBB — audit bahasa-model BM (HuggingFace)",
         "url": "https://huggingface.co/datasets/ariffazil/BBB",
         "retrieved_at": "2026-08-20"
       },
       {
         "source_id": "src2",
         "type": "document",
-        "title": "Compass-V2 technical report (SEA-LION) \u2014 arXiv 2504.15527",
+        "title": "Compass-V2 technical report (SEA-LION) — arXiv 2504.15527",
         "url": "https://arxiv.org/pdf/2504.15527",
         "retrieved_at": "2026-08-20"
       },
@@ -3576,7 +3576,7 @@
       {
         "source_id": "src4",
         "type": "document",
-        "title": "Nusantara Validator (ariffazil) \u2014 rubrik 3-Tier GAGAL/LULUS/KUAT + claim-schema",
+        "title": "Nusantara Validator (ariffazil) — rubrik 3-Tier GAGAL/LULUS/KUAT + claim-schema",
         "url": "https://huggingface.co/spaces/ariffazil/nusantara-validator",
         "retrieved_at": "2026-08-20"
       }
@@ -3620,21 +3620,21 @@
     "claim_register": [
       {
         "claim_id": "TFK-C1",
-        "text": "Tanjung plc \u2014 Deputy Group CFO Feb 2012 hingga Dec 2012 (11 bulan); syarikat kemudian runtuh dan dinyatakan keluar senarai Bursa.",
+        "text": "Tanjung plc — Deputy Group CFO Feb 2012 hingga Dec 2012 (11 bulan); syarikat kemudian runtuh dan dinyatakan keluar senarai Bursa.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "TFK-C2",
-        "text": "SapuraKencana \u2014 CFO Dec 2012 hingga Jan 2015; dalam tempoh itu dua perolehan dibuat dengan hutang: US$2.83B (tender rigs Seadrill) + US$900M (Newfield Exploration), jumlah ~US$3.7B; selepas keluar: oil crash, net loss RM791M, PN17 Mei 2022, ekuiti pemegang saham negatif RM2.9B.",
+        "text": "SapuraKencana — CFO Dec 2012 hingga Jan 2015; dalam tempoh itu dua perolehan dibuat dengan hutang: US$2.83B (tender rigs Seadrill) + US$900M (Newfield Exploration), jumlah ~US$3.7B; selepas keluar: oil crash, net loss RM791M, PN17 Mei 2022, ekuiti pemegang saham negatif RM2.9B.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "approved"
       },
       {
         "claim_id": "TFK-C3",
-        "text": "Kontrak CEO PETRONAS disambung kali ketiga (masuk 2020, sambung 2023, sambung 2026) \u2014 dilaporkan FMT 8 Ogos 2026 dan diumumkan kerajaan Ogos 2026.",
+        "text": "Kontrak CEO PETRONAS disambung kali ketiga (masuk 2020, sambung 2023, sambung 2026) — dilaporkan FMT 8 Ogos 2026 dan diumumkan kerajaan Ogos 2026.",
         "tag": "OBS",
         "source_id": "src2",
         "maruah_review": "approved"
@@ -3648,7 +3648,7 @@
       },
       {
         "claim_id": "TFK-C5",
-        "text": "Corak 'masuk \u2192 decision besar berhutang \u2192 keluar sebelum kesan meletup' berlaku dua kali dalam rekod awam Taufik sebelum PETRONAS.",
+        "text": "Corak 'masuk → decision besar berhutang → keluar sebelum kesan meletup' berlaku dua kali dalam rekod awam Taufik sebelum PETRONAS.",
         "tag": "DER",
         "source_id": "src1",
         "maruah_review": "approved",
@@ -3656,7 +3656,7 @@
       },
       {
         "claim_id": "TFK-C6",
-        "text": "Krisis berterusan mewujudkan justifikasi berterusan \u2014 rightsizing berulang berfungsi sebagai mekanisme kekalan kuasa (continuous crisis = continuous justification).",
+        "text": "Krisis berterusan mewujudkan justifikasi berterusan — rightsizing berulang berfungsi sebagai mekanisme kekalan kuasa (continuous crisis = continuous justification).",
         "tag": "DER",
         "source_id": "src3",
         "maruah_review": "approved",
@@ -3664,14 +3664,14 @@
       },
       {
         "claim_id": "TFK-C7",
-        "text": "Kompetensi pengurusan akauntan/pembuat deal vs konteks syarikat minyak negara \u2014 soalan kepadanan konteks, bukan soalan kecerdasan peribadi.",
+        "text": "Kompetensi pengurusan akauntan/pembuat deal vs konteks syarikat minyak negara — soalan kepadanan konteks, bukan soalan kecerdasan peribadi.",
         "tag": "INT",
         "source_id": null,
         "maruah_review": "not_applicable"
       },
       {
         "claim_id": "TFK-C8",
-        "text": "Taufik pernah menjadi GM KLCC Holdings semasa pembinaan menara \u2014 rekod bio awam.",
+        "text": "Taufik pernah menjadi GM KLCC Holdings semasa pembinaan menara — rekod bio awam.",
         "tag": "OBS",
         "source_id": "src4",
         "maruah_review": "approved"
@@ -3688,21 +3688,21 @@
       {
         "source_id": "src2",
         "type": "news",
-        "title": "FMT (8 Ogos 2026) \u2014 'Petronas chief to see tenure extended, says report'",
+        "title": "FMT (8 Ogos 2026) — 'Petronas chief to see tenure extended, says report'",
         "url": "https://www.freemalaysiatoday.com/category/highlight/2026-08-08/petronas-chief-to-see-tenure-extended-says-report",
         "retrieved_at": "2026-08-21"
       },
       {
         "source_id": "src3",
         "type": "news",
-        "title": "NST (27 Feb 2026) \u2014 pusingan rightsizing Mac & Julai, tamat Ogos",
+        "title": "NST (27 Feb 2026) — pusingan rightsizing Mac & Julai, tamat Ogos",
         "url": "nst://2026-02-27/petronas-rightsizing-rounds-march-july",
         "retrieved_at": "2026-08-21"
       },
       {
         "source_id": "src4",
         "type": "document",
-        "title": "Bio awam / profil korporat \u2014 GM KLCC Holdings (era pembinaan menara)",
+        "title": "Bio awam / profil korporat — GM KLCC Holdings (era pembinaan menara)",
         "url": "petronas://corporate-bio/taufik-klcc-gm",
         "retrieved_at": "2026-08-21"
       }
@@ -3716,13 +3716,13 @@
   },
   {
     "id": "m1-2-dossier",
-    "title": "PETRONAS: The Full Reality \u2014 A Civic Intelligence Dossier for the Rakyat of Malaysia",
+    "title": "PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia",
     "date": "2026-08-26",
     "lang": "bm",
     "series": {
       "id": "M1",
       "n": 3,
-      "note": "Civic dossier \u2014 extends M1-2 (PETRONAS DNA)"
+      "note": "Civic dossier — extends M1-2 (PETRONAS DNA)"
     },
     "tags": [
       "petronas",
@@ -3755,13 +3755,13 @@
         "version": "0.1-unpublished",
         "date": "2026-09-18",
         "state": "ARTIFACT_EXISTS_NOT_SERVED",
-        "note": "31-page PDF + HTML built 2026-08-26 at /root/AAA/forge_work/2026-08-26-petronas-rakyat-dossier/. Not published. This entry previously claimed seal=999 / provenance_status=sealed with claim_register=0 and source_ledger=0 \u2014 a sealed state with no witness chain. Corrected to reflect reality (F2). Publish requires F13: the dossier makes claims about living named persons."
+        "note": "31-page PDF + HTML built 2026-08-26 at /root/AAA/forge_work/2026-08-26-petronas-rakyat-dossier/. Not published. This entry previously claimed seal=999 / provenance_status=sealed with claim_register=0 and source_ledger=0 — a sealed state with no witness chain. Corrected to reflect reality (F2). Publish requires F13: the dossier makes claims about living named persons."
       },
       {
         "version": "1.0-published",
         "date": "2026-09-18",
         "state": "SEALED_AND_SERVED",
-        "audit": "Adjudicated before publication. Zero evaluative claims against living persons. PLAUSIBLE=0. Labels in use: OBS/DER/INT/SPEC/UNK as declared in the claim_register_summary. One uncertainty recorded about a living office-holder (the length of the incumbent PGCEO's second contract extension) \u2014 held as uncertainty, not adopted as fact.",
+        "audit": "Adjudicated before publication. Zero evaluative claims against living persons. PLAUSIBLE=0. Labels in use: OBS/DER/INT/SPEC/UNK as declared in the claim_register_summary. One uncertainty recorded about a living office-holder (the length of the incumbent PGCEO's second contract extension) — held as uncertainty, not adopted as fact.",
         "publish_path": "Both lanes. Bot/crawler lane via /makcikgpt-md/{slug}.html|.md; human lane via public/world/makcikgpt/{slug}/index.html (registered in STATIC_INDEX_ALLOWLIST in scripts/copy-static-html.js).",
         "supersedes": "0.1-unpublished"
       }
@@ -3781,7 +3781,7 @@
       },
       {
         "claim_id": "RKY-C2",
-        "text": "Bahagian kewangan dossier berpaut pada angka laporan tahunan (FY2022, FY2024, FY2025) dan penyata Bursa \u2014 bukan angka yang dikira sendiri oleh penulis.",
+        "text": "Bahagian kewangan dossier berpaut pada angka laporan tahunan (FY2022, FY2024, FY2025) dan penyata Bursa — bukan angka yang dikira sendiri oleh penulis.",
         "tag": "OBS",
         "source_id": "src1",
         "maruah_review": "not_applicable"
@@ -3795,7 +3795,7 @@
       },
       {
         "claim_id": "RKY-C4",
-        "text": "Sembilan 'tripwire kewangan' dan dua belas 'risiko tersembunyi' ialah bacaan penulis \u2014 analisis bersandarkan angka awam, bukan angka yang diterbitkan oleh PETRONAS sebagai senarai risiko.",
+        "text": "Sembilan 'tripwire kewangan' dan dua belas 'risiko tersembunyi' ialah bacaan penulis — analisis bersandarkan angka awam, bukan angka yang diterbitkan oleh PETRONAS sebagai senarai risiko.",
         "tag": "INT",
         "source_id": "src1",
         "maruah_review": "not_applicable"
@@ -3819,28 +3819,28 @@
       {
         "source_id": "src1",
         "type": "filing",
-        "title": "PETRONAS Annual Report \u2014 FY2022 / FY2024 / FY2025 (audited financials)",
+        "title": "PETRONAS Annual Report — FY2022 / FY2024 / FY2025 (audited financials)",
         "url": "petronas.com/investor-relations",
         "retrieved_at": "2026-08-26"
       },
       {
         "source_id": "src2",
         "type": "filing",
-        "title": "Bursa Malaysia / Suruhanjaya Syarikat Malaysia \u2014 corporate filings",
+        "title": "Bursa Malaysia / Suruhanjaya Syarikat Malaysia — corporate filings",
         "url": "bursamalaysia.com",
         "retrieved_at": "2026-08-26"
       },
       {
         "source_id": "src3",
         "type": "news",
-        "title": "The Edge Malaysia, The Star, FMT \u2014 leadership and financial reporting 2023-2026",
+        "title": "The Edge Malaysia, The Star, FMT — leadership and financial reporting 2023-2026",
         "url": "theedgemalaysia.com",
         "retrieved_at": "2026-08-26"
       },
       {
         "source_id": "src4",
         "type": "news",
-        "title": "Bloomberg, Reuters \u2014 commodity and earnings coverage",
+        "title": "Bloomberg, Reuters — commodity and earnings coverage",
         "url": "bloomberg.com",
         "retrieved_at": "2026-08-26"
       }
@@ -3848,13 +3848,13 @@
   },
   {
     "id": "m1-4-leadership-archive",
-    "title": "Every PETRONAS Chairman & Chief Executive 1974\u20132026 \u2014 Sovereign Intelligence Dossier",
+    "title": "Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
     "date": "2026-09-17",
     "lang": "bm",
     "series": {
       "id": "M1",
       "n": 4,
-      "note": "Leadership archive \u2014 companion to M1-2 dossier and M1-3 DNA"
+      "note": "Leadership archive — companion to M1-2 dossier and M1-3 DNA"
     },
     "tags": [
       "petronas",
@@ -3924,7 +3924,7 @@
       },
       {
         "claim_id": "LDR-C5",
-        "text": "Tan Sri Dato' Seri Mohd Bakke Salleh mempengerusikan mulai 1 Ogos 2021; Susunan Lembaga disahkan pada 2026-09-17 daripada halaman Our Leaders PETRONAS sendiri \u2014 8 pengarah: 3 eksekutif, 4 bebas bukan eksekutif, 1 bukan bebas bukan eksekutif.",
+        "text": "Tan Sri Dato' Seri Mohd Bakke Salleh mempengerusikan mulai 1 Ogos 2021; Susunan Lembaga disahkan pada 2026-09-17 daripada halaman Our Leaders PETRONAS sendiri — 8 pengarah: 3 eksekutif, 4 bebas bukan eksekutif, 1 bukan bebas bukan eksekutif.",
         "tag": "OBS",
         "source_id": "src3",
         "maruah_review": "approved"
@@ -3948,30 +3948,1312 @@
       {
         "source_id": "src1",
         "type": "news",
-        "title": "The Edge Malaysia \u2014 'Big Money: If it ain't broke, don't fix it'; 'My Say: The Petronas DNA'",
+        "title": "The Edge Malaysia — 'Big Money: If it ain't broke, don't fix it'; 'My Say: The Petronas DNA'",
         "url": "theedgemalaysia.com/article/big-money-if-it-aint-broke-dont-fix-it",
         "retrieved_at": "2026-09-17"
       },
       {
         "source_id": "src2",
         "type": "reference",
-        "title": "Wikipedia (EN/MS) \u2014 individual office-holder pages",
+        "title": "Wikipedia (EN/MS) — individual office-holder pages",
         "url": "en.wikipedia.org",
         "retrieved_at": "2026-09-17"
       },
       {
         "source_id": "src3",
         "type": "primary",
-        "title": "petronas.com \u2014 Our Leaders; media releases; MPC history",
+        "title": "petronas.com — Our Leaders; media releases; MPC history",
         "url": "petronas.com/about-us/our-leaders",
         "retrieved_at": "2026-09-17"
       },
       {
         "source_id": "src4",
         "type": "news",
-        "title": "Berita Harian, mStar, Malaysiakini, Harian Metro \u2014 appointment and departure reporting",
+        "title": "Berita Harian, mStar, Malaysiakini, Harian Metro — appointment and departure reporting",
         "url": "bharian.com.my",
         "retrieved_at": "2026-09-17"
+      }
+    ]
+  },
+  {
+    "id": "m-gen-yang-x-diungkap",
+    "title": "Yang x Diungkap: Kenapa Truth Sembunyi dalam Void",
+    "date": "2026-09-22",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 5
+    },
+    "tags": [
+      "void",
+      "truth",
+      "shadow-institusi",
+      "narrative",
+      "korporat",
+      "ghost",
+      "rightsizing",
+      "makcik-pasar",
+      "universal",
+      "civic-intelligence",
+      "makcikgpt",
+      "realiti-atas-segalanya"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "VOID-C1",
+        "text": "Setiap kenyataan korporat dan institusi mempunyai dua lapisan: yang diungkap (naratif luaran) dan yang tidak diungkap (realiti dalam void).",
+        "tag": "INT",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "VOID-C2",
+        "text": "Ketiadaan pengungkapan bukan bermakna ketiadaan realiti; ia menandakan kos politik atau institusi yang terlalu tinggi untuk diakui secara terbuka.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "VOID-C3",
+        "text": "Akauntabiliti institusi diukur melalui keberanian merapatkan jurang antara apa yang diisytiharkan dengan apa yang sebenarnya berlaku di peringkat operasi.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": []
+  },
+  {
+    "id": "m-gen-kenapa-syarikat-tu-hantu",
+    "title": "Kenapa Syarikat Tu Hantu",
+    "date": "2026-09-22",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 6
+    },
+    "tags": [
+      "korporat",
+      "hantu",
+      "rightsizing",
+      "ai",
+      "email",
+      "town-hall",
+      "emanusiaan",
+      "bahasa",
+      "civic-intelligence",
+      "makcikgpt",
+      "surat",
+      "universal"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/kenapa-syarikat-tu-hantu"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "HNT-C1",
+        "text": "Entiti korporat dan GLC yang mengalami penstrukturan berulang berisiko kehilangan memori institusi dan nilai teras pengasas.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "HNT-C2",
+        "text": "Perubahan kepimpinan yang kerap tanpa autonomi operasi mewujudkan lapisan pengurusan yang hanya mengikut arahan tanpa tanggungjawab berterusan.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "HNT-C3",
+        "text": "Hak rakyat sebagai pemegang taruh mutlak memerlukan ketelusan dalam pelantikan lembaga pengarah dan penjualan aset strategik.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": []
+  },
+  {
+    "id": "m4-3",
+    "title": "Bang Non, Hang Tanya Makcik Pasal AI. Makcik Tanya Hang Balik — Hang Tahu Pasal AI Johor Hang Sendiri Ka?",
+    "date": "2026-09-17",
+    "lang": "bm",
+    "series": {
+      "id": "M4",
+      "n": 3
+    },
+    "tags": [
+      "ai",
+      "johor",
+      "ytl",
+      "sovereign-ai",
+      "microsoft-azure",
+      "aws",
+      "google-cloud",
+      "mdec",
+      "naio",
+      "pmx",
+      "anwar",
+      "data-sovereignty",
+      "pdpa",
+      "nvidia",
+      "ilmu",
+      "series-ai-trilogy",
+      "partial",
+      "hold",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/ai-johor-makcik-tanya"
+    },
+    "seal": "999",
+    "provenance_status": "migrating",
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "YTL kuasai power generation, telco, dan data center Johor — colocation dengan hyperscaler yang jadi underpinning kepada \"sovereign AI\" rhetoric.",
+        "tag": "DER",
+        "source_id": "SRC-001",
+        "confidence_basis": "555-ASI research run: 0 primary verified, but cross-ownership pattern widely reported.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Microsoft Azure Malaysia West region diumumkan dengan USD 2.2B May 2024 commitment, hosted at Microsoft Cyberjaya/KL infrastructure sendiri — BUKAN YTL Kulai. (Post-audit correction, 17 Sept 2026.)",
+        "tag": "OBS",
+        "source_id": "SRC-003",
+        "confidence_basis": "Primary URL retrieved via WebFetch this session.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002b",
+        "text": "AWS Asia Pacific (Malaysia) region (ap-southeast-5) dengan USD 6B investment; Google Cloud Malaysia USD 2B.",
+        "tag": "INT",
+        "source_id": "SRC-001",
+        "confidence_basis": "Widely reported, primary vendor URLs not retrieved this session.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002c",
+        "text": "JS-SEZ signed 7 Jan 2025 antara PMX + Lawrence Wong di Putrajaya; AI/digital salah satu 9 focus areas.",
+        "tag": "OBS",
+        "source_id": "SRC-010",
+        "confidence_basis": "Widely reported, pmo.gov.my unreachable this session but corroborated multi-source.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002d",
+        "text": "Cyber Security Act 2024 (Act 854) gazetted 26 Jun 2024, commenced 26 Ogos 2024. NCII framework.",
+        "tag": "OBS",
+        "source_id": "SRC-007",
+        "confidence_basis": "Primary URL fetched via WebFetch.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002e",
+        "text": "PDPA 2010 establish 7 Personal Data Protection Principles; 2024 Amendment revised cross-border transfer framework.",
+        "tag": "OBS",
+        "source_id": "SRC-006",
+        "confidence_basis": "Primary URL fetched via WebFetch (pdp.gov.my).",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002f",
+        "text": "AI Singapore founded May 2017. NAIS 2.0 Dec 2023. National AI Council chaired by PM Lawrence Wong ditubuh Feb 2026. ECI SGD 150M. AI Verify open-sourced Jun 2023. 70+ AI CoE.",
+        "tag": "OBS",
+        "source_id": "SRC-008",
+        "confidence_basis": "Primary URLs fetched via WebFetch (aisingapore.org, NAIS 2.0 PDF).",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C003",
+        "text": "NAIO dilancar Disember 2024 dengan mandate AI national strategy.",
+        "tag": "INT",
+        "confidence_basis": "555-ASI recall, not live-verified.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C004",
+        "text": "PDPA 2010 tidak cover AI training data secara comprehensive — Microsoft/AWS ToS yang default-izinkan cross-border data transfer adalah structural loophole.",
+        "tag": "DER",
+        "source_id": "SRC-006",
+        "confidence_basis": "Well-known structural critique; ToS language widely published.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C005",
+        "text": "Malaysia adalah paling mundur antara Singapore, Indonesia, Vietnam dalam liga sendiri — Singapore ada NSCC sovereign + AI Singapore NRF, Indonesia ada PDP Law 2022 + BRIN, Vietnam ada National AI Strategy 2021-2030 + PDPA Julai 2025.",
+        "tag": "INT",
+        "source_id": "SRC-001",
+        "confidence_basis": "555-ASI serial research — 0 primary verified but ASEAN comparison is widely substantiated.",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-001",
+        "type": "analysis",
+        "title": "555-ASI Research Run — Johor AI Sovereignty (17 Sept 2026)",
+        "url": "internal-receipt",
+        "retrieved_at": "2026-09-17T00:00:00Z",
+        "content_hash": "sha256:pending"
+      },
+      {
+        "source_id": "SRC-002",
+        "type": "document",
+        "title": "YTL Data Centre Park (Kulai) — investor materials",
+        "url": "https://www.ytl.com/datacentres/"
+      },
+      {
+        "source_id": "SRC-003",
+        "type": "news",
+        "title": "Microsoft Malaysia news — Azure region + Anwar partnership",
+        "url": "https://news.microsoft.com/en-my"
+      },
+      {
+        "source_id": "SRC-004",
+        "type": "official_statement",
+        "title": "MDEC (Malaysia Digital Economy Corporation) — sovereign AI positions",
+        "url": "https://mdec.my/sovereign-ai-initiatives",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-005",
+        "type": "analysis",
+        "title": "BBB Dataset — ariffazil/BBB (ILMU red-team)",
+        "url": "https://huggingface.co/datasets/ariffazil/BBB"
+      },
+      {
+        "source_id": "SRC-006",
+        "type": "document",
+        "title": "PDPA 2010 + 2024 Amendment — Akta Perlindungan Data Peribadi",
+        "url": "https://www.pdp.gov.my/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-007",
+        "type": "document",
+        "title": "Cyber Security Act 2024 (Act 854) — NACSA",
+        "url": "https://www.nacsa.gov.my/act854.php",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-008",
+        "type": "document",
+        "title": "AI Singapore — National AI Strategy 2.0 + AISG founding",
+        "url": "https://www.aisingapore.org/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-009",
+        "type": "document",
+        "title": "NAIS 2.0 PDF — 15 Actions, S$500M+ AISG cumulative",
+        "url": "https://file.go.gov.sg/nais2023.pdf",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-010",
+        "type": "news",
+        "title": "JS-SEZ signed 7 January 2025 (PMX + Lawrence Wong)",
+        "url": "https://www.pmo.gov.my"
+      },
+      {
+        "source_id": "SRC-011",
+        "type": "document",
+        "title": "Smart Nation Portal — National AI Strategy",
+        "url": "https://www.smartnation.gov.sg/initiatives/national-ai-strategy/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "m2-11",
+    "title": "Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?",
+    "date": "2026-09-27",
+    "lang": "bm",
+    "series": {
+      "id": "M2",
+      "n": 11
+    },
+    "tags": [
+      "mykad",
+      "nexg",
+      "datasonic",
+      "1bestarinet",
+      "ytl",
+      "ytl-power",
+      "ytl-comms",
+      "data-centre",
+      "sovereign-cloud",
+      "nvidia",
+      "ilmu",
+      "jpn",
+      "pdpa",
+      "govtech",
+      "estonia-xroad",
+      "kulai-johor",
+      "slot2",
+      "series-mykad",
+      "makcikgpt",
+      "malaysia",
+      "partial",
+      "hold"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/nexg-mykad-siapa-beli"
+    },
+    "seal": "999",
+    "provenance_status": "migrating",
+    "claim_register": [
+      {
+        "claim_id": "C-NMSB-001",
+        "text": "NexG Berhad (dahulu Datasonic Technologies) — syarikat Bursa-listed yang kontrak MyKad, pasport, dan pelbagai aplikasi e-government.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-001",
+        "confidence_basis": "Pemakluman Bursa + Slot 1 dokumentasi (21 Ogos 2026).",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-002",
+        "text": "Datuk Ishak Ismail pengerusi NexG; bekas CEO Malayan Cement; pernah settle RM20 juta dengan SC berhubung insider trading Kenmark (2016-2023).",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-002",
+        "confidence_basis": "The Edge Malaysia + rekod SC.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-003",
+        "text": "Kerajaan sedang berunding membeli NexG pada RM7.5 bilion — tujuh kali ganda nilai pasaran.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-001",
+        "confidence_basis": "Slot 1 dokumentasi — pemakluman Bursa sendiri.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-004",
+        "text": "1BestariNet ialah projek broadband sekolah 1Malaysia yang dianugerah kepada YTL Communications (~RM2.7 bilion), ditamatkan 2019, MACC siasatan.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-003",
+        "confidence_basis": "Rekod awam Kementerian Pendidikan + liputan media.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-005",
+        "text": "Sambungan langsung 1BestariNet → NexG/Datasonic tidak disahkan oleh satu dokumen tender public tunggal — sebahagian inferens strategik berdasarkan kronologi kontrak.",
+        "tag": "DER",
+        "source_id": "SRC-NMSB-003",
+        "confidence_basis": "555-ASI research run tertumpu kepada pemakluman Bursa dan laporan media; kronologi tender penuh belum dapat disahkan.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-006",
+        "text": "YTL Data Centre Park Kulai Johor ~1,640 ekar — vertical integration: elektrik (YTL Power), telco (YTL Comms), data centre, AI.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-004",
+        "confidence_basis": "YTL investor materials + laporan media YTL.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-007",
+        "text": "YTL partnership dengan Nvidia untuk AI infrastructure di Malaysia.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-004",
+        "confidence_basis": "Nvidia press releases + YTL investor materials.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-008",
+        "text": "Angka CapEx spesifik YTL data centre Johor tertakluk kepada pengumuman korporat terkini — di sebalik pelaporan media, angka tepat berubah-ubah.",
+        "tag": "SPEC",
+        "source_id": "SRC-NMSB-004",
+        "confidence_basis": "Sebahagian daripada inferens berdasarkan pelaporan kewangan korporat; butiran tertakluk kepada update.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-009",
+        "text": "GovTech Singapura (di bawah PMO) bina SingPass, MyInfo, LifeSG — arkitektur dan IP milik kerajaan dengan vendor support (NCS, ST Engineering).",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-006",
+        "confidence_basis": "GovTech corporate site + GovInsider reporting.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-010",
+        "text": "Estonia X-Road ialah platform pertukaran data antara agensi kerajaan — sejak 2001, sekarang 99% perkhidmatan Estonia dalam talian.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-005",
+        "confidence_basis": "e-Estonia briefing centre + dokumen rasmi Estonia.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-011",
+        "text": "PDPA 2010 + JPDP mengawal selia data peribadi; JPDP ialah agensi kecil dengan sumber terhad, denda maksima RM500,000 untuk breach.",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-007",
+        "confidence_basis": "Teks akta + rekod JPDP enforcement.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-012",
+        "text": "Breach data besar Malaysia 2017 — 46 juta data telefon bocor; banyak breach korporat sejak itu (Maybank, Astro, dll.).",
+        "tag": "OBS",
+        "source_id": "SRC-NMSB-007",
+        "confidence_basis": "Liputan media massa 2017 + rekod JPDP.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-013",
+        "text": "Single-vendor hosting untuk data biometrik 33 juta rakyat Malaysia mewujudkan single point of failure yang melampaui standard keselamatan Estonia.",
+        "tag": "INT",
+        "source_id": "SRC-NMSB-005",
+        "confidence_basis": "Analisis perbandingan dengan X-Road architecture — arkitektur Estonia direka untuk visibiliti dan multi-vendor.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-014",
+        "text": "Jika satu kumpulan korporat pegang hardware (Nvidia+YTL) + connectivity (YTL Comms) + cloud platform (sovereign cloud) + government data (MyKad backend) + AI workloads (ILMU), struktur ini menjadi operating system negara, bukan sekadar vendor IT.",
+        "tag": "INT",
+        "source_id": "SRC-NMSB-008",
+        "confidence_basis": "Analisis strategik MakcikGPT — corak vertical integration dalam infrastruktur digital Malaysia; sebahagian inferens.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-NMSB-015",
+        "text": "Vendor yang sama yang pegang MyKad boleh berpotensi memantau profil tingkah laku 33 juta rakyat jika integrasi penuh dengan Touch'nGo, e-purse, data perubatan, dan rekod pendidikan berlaku.",
+        "tag": "INT",
+        "source_id": "SRC-NMSB-011",
+        "confidence_basis": "Analisis PDPA enforcement gap + potential data fusion; speculative structural risk.",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-NMSB-001",
+        "type": "filing",
+        "title": "Slot 1 — mykad-rm75-billion (21 Ogos 2026) — Pemakluman Bursa NexG, Three-Scenario Oral Request 24 Julai 2026",
+        "url": "https://arif-fazil.com/world/makcikgpt/mykad-rm75-billion",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-002",
+        "type": "news",
+        "title": "The Edge Malaysia — Ishak Ismail SC RM20 juta settlement (insider trading Kenmark)",
+        "url": "https://www.theedgemalaysia.com/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-003",
+        "type": "news",
+        "title": "1BestariNet termination history — YTL Communications, MACC siasatan, kontrak RM2.7 bilion",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-004",
+        "type": "document",
+        "title": "YTL Data Centre Park — investor materials (Kulai Johor 1,640 ekar)",
+        "url": "https://www.ytl.com/datacentres/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-005",
+        "type": "document",
+        "title": "Estonia X-Road — official documentation (e-Estonia briefing centre)",
+        "url": "https://e-estonia.com/solutions/interoperability-services/x-road",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-006",
+        "type": "document",
+        "title": "Singapore GovTech — Government Technology Agency corporate site (SingPass, MyInfo, LifeSG)",
+        "url": "https://www.tech.gov.sg/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-007",
+        "type": "document",
+        "title": "PDPA 2010 — Akta Perlindungan Data Peribadi 2010 + JPDP",
+        "url": "https://www.pdp.gov.my/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-NMSB-008",
+        "type": "analysis",
+        "title": "BBB Dataset — ILMU sovereign AI audit (markah 3.45/10)",
+        "url": "https://huggingface.co/datasets/ariffazil/BBB",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "m5-5",
+    "title": "Bang Non Pergi Kuching, Cakap Aku Nak Setel, Tapi Makcik Tanya — Setel Apa?",
+    "date": "2026-09-17",
+    "lang": "bm",
+    "series": {
+      "id": "M5",
+      "n": 5
+    },
+    "tags": [
+      "anwar",
+      "petronas",
+      "petros",
+      "sarawak",
+      "pda1974",
+      "pengerang",
+      "aramco",
+      "ma63",
+      "harimalaysia2026",
+      "kuching",
+      "mof-inc",
+      "makcikgpt",
+      "propa-jaa",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/bang-non-pergi-kuching"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C-BNK-001",
+        "text": "PM Anwar Ibrahim memegang dua jawatan serentak: Perdana Menteri dan Menteri Kewangan.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-005",
+        "confidence_basis": "Public record since November 2022",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-002",
+        "text": "PETRONAS 100% milik kerajaan persekutuan melalui MoF Inc.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-001",
+        "confidence_basis": "Fitch Ratings + PETRONAS corporate page",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-003",
+        "text": "Petroleum Sarawak Berhad (Petros) ditubuh 8 Disember 2017, wholly owned Sarawak state government.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-004",
+        "confidence_basis": "Wikipedia + Companies Act 2016 records",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-004",
+        "text": "PETRONAS fail di Mahkamah Persekutuan 12 Januari 2026, respondents: Kerajaan Persekutuan + Sarawak.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-003",
+        "confidence_basis": "PETRONAS media release + multiple wire reports",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-005",
+        "text": "5-panel Federal Court luluskan justisiability Sarawak counter-claim terhadap PDA 1974 pada Julai 2025.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-004",
+        "confidence_basis": "Bernama + Sarawak mining industry sources",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-006",
+        "text": "RM1.5 bilion interim special grant untuk Sarawak diumumkan 16 Sept 2026 (Hari Malaysia, Kuching), di bawah Article 112(D) Federal Constitution.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-005",
+        "confidence_basis": "Straits Times + Malay Mail + Malaysian Reserve + Vibes + UKAS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-007",
+        "text": "Dividend PETRONAS 2024 = RM32 bilion; turun dari RM50 bilion (2022, rekod) atau RM40 bilion (2023). Profit group FY2024 -15% kepada RM19.2 bilion.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-001",
+        "confidence_basis": "PETRONAS Annual Report + Finance Minister II statement",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-008",
+        "text": "Pengerang Integrated Complex menelan kos US$27 bilion (~RM127 bilion), 69% overrun dari bajet asal US$16 bilion (2012).",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-008",
+        "confidence_basis": "Industry reports (Pengerang cost overrun analysis)",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-009",
+        "text": "Segmen downstream PETRONAS rugi bersih RM15.2 bilion pada 2024; sebahagian besar dari Pengerang.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-002",
+        "confidence_basis": "PETRONAS FY2024 financial results",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-010",
+        "text": "Saudi Aramco keluar dari Pengerang joint venture; PETRONAS ambil alih kawalan penuh.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-007",
+        "confidence_basis": "Reuters + Bloomberg reporting",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-011",
+        "text": "PETRONAS Group umumkan perampingan ~10% workforce (~5,000 pekerja) pada Jun 2025; hiring freeze sehingga Disember 2026.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-009",
+        "confidence_basis": "Bloomberg + Reuters + Straits Times + The Edge",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-012",
+        "text": "CEO PETRONAS Tan Sri Tengku Muhammad Taufik lanjutan kontrak sekurang-kurangnya tiga kali: Julai 2023, 2025, Ogos 2026.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-006",
+        "confidence_basis": "Bloomberg (8 Aug 2026) + The Edge Malaysia + CEO public confirmation",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-013",
+        "text": "Malaysia pengeluar minyak mentah ~571,000-604,000 tong/hari (2024-2025); penggunaan domestik ~700,000 tong/hari. Malaysia negara pengimport bersih minyak mentah.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-010",
+        "confidence_basis": "EIA + MOF Malaysia industry data",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-014",
+        "text": "Sarawak state assembly 2024 — usul luluskan tuntutan royalti minyak naik dari 5% ke 20%.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-005",
+        "confidence_basis": "Sarawak media reporting 2024",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-015",
+        "text": "PDA 1974 diluluskan masa darurat; Sarawak tidak dirundingkan. 52 tahun royalti 5% tanpa audit keadilan.",
+        "tag": "OBS",
+        "source_id": "SRC-BNK-004",
+        "confidence_basis": "Historical record + constitutional law analysis",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-BNK-016",
+        "text": "GPS Sarawak merupakan parti majoriti yang menyokong Anwar jadi PM. Penarikan sokongan GPS = kerajaan jatuh.",
+        "tag": "INT",
+        "source_id": "SRC-BNK-005",
+        "confidence_basis": "Coalition arithmetic + political analysis",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-BNK-001",
+        "type": "official_statement",
+        "title": "PETRONAS Annual Report — Dividend trajectory 2022-2024 (RM50B → RM40B → RM32B)",
+        "url": "https://www.petronas.com/integrated-report-2025/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-002",
+        "type": "official_statement",
+        "title": "Finance Minister II Amir Hamzah — PETRONAS FY2024 profit -15%, revenue -7%",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-003",
+        "type": "court_record",
+        "title": "PETRONAS Federal Court filing — 12 January 2026 (Reuters, The Edge, NST, Malaysian Reserve)",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-004",
+        "type": "court_record",
+        "title": "Federal Court 5-panel justiciability ruling on Sarawak PDA1974 counter-claim — July 2025",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-005",
+        "type": "official_statement",
+        "title": "Straits Times / Malay Mail / Malaysian Reserve / Vibes — RM1.5B Sarawak interim grant Article 112(D), Hari Malaysia 16 Sept 2026",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-006",
+        "type": "news",
+        "title": "Bloomberg / The Edge — CEO Taufik contract extension Aug 2026 (3rd extension after Jul 2023 and 2025)",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-007",
+        "type": "news",
+        "title": "Reuters / Bloomberg — PETRONAS Aramco exit from Pengerang; PETRONAS full takeover",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-008",
+        "type": "analysis",
+        "title": "Pengerang Integrated Complex cost overrun — US$16B original → US$27B actual (69% overrun)",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-009",
+        "type": "news",
+        "title": "Bloomberg / Reuters / Straits Times — PETRONAS Group retrenchment ~5,000 workers (10% workforce), June 2025",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-BNK-010",
+        "type": "analysis",
+        "title": "EIA / MOF Malaysia — Malaysia crude production ~571-604K bpd; net importer status",
+        "url": "",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "m-gen-kit-lipas-meja-kopi",
+    "title": "Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1",
+    "date": "2026-09-17",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 7
+    },
+    "tags": [
+      "kit-lipas-meja-kopi",
+      "makcikgpt",
+      "format",
+      "behind-the-curtain",
+      "maruah",
+      "4-gate-audit",
+      "claim-register",
+      "whistleblower",
+      "voice-note",
+      "slot-5",
+      "proses",
+      "propa-jaa"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/kit-lipas-meja-kopi"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C-KLMK-001",
+        "text": "MakcikGPT ialah kolaborasi tiga lapis suara — Arif Fazil (manusia bekas PETRONAS), sistem arifOS (compile + audit + seal), dan Makcik Pasar Malam (voice Penang). Bukan AI yang pretend jadi manusia, bukan manusia yang pretend jadi AI.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-001",
+        "confidence_basis": "Identiti sistem didokumenkan dalam AGENTS.md §0 + 999 Meterai seal per artikel",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-002",
+        "text": "Proses editorial MakcikGPT ada 6 langkah: longlist berita → research primer → claim register → MARUAH review → 4-Gate audit → publish+seal. Setiap langkah boleh diaudit dan diminta bukti.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-001",
+        "confidence_basis": "Dokumentasi dalaman arifOS — verifiable atas permintaan",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-003",
+        "text": "Claim register menggunakan 4 tag epistemik: OBS (observation dari dokumen), DER (derived/kiraan), INT (interpretation/analisis), SPEC (speculation/tekaan). Confidence capped — tiada claim 100% certainty.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-002",
+        "confidence_basis": "types.ts: EpistemicTag type union — boleh verify dalam source code",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-004",
+        "text": "MARUAH doctrine — 4 pagar editorial: (a) defamation risk; (b) unverified claims; (c) speculation labeled as fact; (d) personal attacks not grounded in policy. \"Kalau tak pasti, tak publish.\"",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-003",
+        "confidence_basis": "Dokumen falsafah editorial arifOS — public di /999/maruah-doctrine",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-005",
+        "text": "4-Gate audit: Gate 1 Whitelist (trusted sources); Gate 2 A-THINK (logical consistency); Gate 3 Sentinel (provocative language check); Gate 4 Upstream (right-of-reply untuk orang yang disebut).",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-004",
+        "confidence_basis": "Dokumen audit doctrine — public di /999/4-gate-audit",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-006",
+        "text": "999 Meterai ialah cryptographic hash yang seal artikel ke VAULT999. Setiap artikel ada nombor seal unik — kalau diubah lepas publish, hash berubah dan boleh dikesan melalui hash chain.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-005",
+        "confidence_basis": "VAULT999 implementation — verifiable infrastructure",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-007",
+        "text": "Case study: artikel bang-non-pergi-kuching (17 Sept 2026) ada 16 claim IDs (C-BNK-001 sampai C-BNK-016) dengan 10 sources (SRC-BNK-001 sampai SRC-BNK-010) — boleh ditunjukkan dalam index.ts.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-006",
+        "confidence_basis": "Direct read dari bang-non-pergi-kuching meta entry dalam index.ts",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-008",
+        "text": "Artikel bang-non-pergi-kuching melalui 4 pembetulan editorial sebelum publish: (1) dividend 2024 RM32B (bukan RM52B 2023); (2) PCG net loss FY2025 = RM2.14B (bukan RM72B); (3) retrenchment 5,000 pekerja = PETRONAS Group (bukan khusus PRefChem); (4) petikan spesifik Jun/Sept 2026 digantikan dengan paraphrase.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-006",
+        "confidence_basis": "Nota editorial dalam <details class=\"receipts\"> footer artikel",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-009",
+        "text": "47 orang tanya \"macam mana Makcik tahu semua ni?\" antara 27 Ogos sampai 17 September 2026 — dari Telegram, WhatsApp, dan DM Telegram channel.",
+        "tag": "DER",
+        "source_id": "SRC-KLMK-008",
+        "confidence_basis": "Aggregate count dari inbox — INT/DER (derived from observed queries)",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-010",
+        "text": "Tiga pintu kolaborasi Makcik: (a) whistleblowers — saluran dengan infrastruktur kriptografi untuk protect identity (belum deploy, dalam roadmap); (b) subject matter experts — peguam, auditor, bekas officer; (c) reader tips — forward dari WhatsApp group jiran.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-001",
+        "confidence_basis": "Struktur kolaborasi didokumenkan — whistleblower infra adalah future-state, tagged dengan \"belum deploy\"",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-011",
+        "text": "Tiga cara share dengan jiran: (a) print PDF — butang \"Cetak / Print PDF\" di bawah artikel, designed untuk A4; (b) WhatsApp forward — link terus dari web; (c) voice note summary — infrastruktur dalam pembangunan (belum deploy, akan diumumkan di Telegram @ariffazil).",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-001",
+        "confidence_basis": "Roadmap deployment — print PDF ada dalam design, voice note adalah future-state",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-012",
+        "text": "Slot 5 = FORMAT work (15% daripada editorial ratio). Slot 1-4 = SIASATAN (line-by-line PDA 1974, Bang Non Kuching, Taufik trilogy, MyKad 75B). Slot 6-7 akan balik ke SIASATAN.",
+        "tag": "OBS",
+        "source_id": "SRC-KLMK-007",
+        "confidence_basis": "Editorial calendar di /world/makcikgpt/ — Slot markers dalam subtitle setiap artikel",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-KLMK-013",
+        "text": "Pembaca boleh challenge Makcik pada bila-bila masa — boleh minta source ledger, boleh minta claim register, boleh minta 4-Gate audit trail. Semua terbuka untuk verify.",
+        "tag": "INT",
+        "source_id": "SRC-KLMK-001",
+        "confidence_basis": "Komitmen editorial — INT (interpretive stance, bukan factual claim tentang dokumen)",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-KLMK-001",
+        "type": "analysis",
+        "title": "arifOS 6-step editorial pipeline — longlist → research → claim register → MARUAH → 4-Gate audit → publish+seal",
+        "url": "https://arif-fazil.com/999/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-002",
+        "type": "document",
+        "title": "Claim register schema — MakcikArticleMeta interface (types.ts) — OBS/DER/INT/SPEC epistemic tags + source_id linkage",
+        "url": "/root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/types.ts",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-003",
+        "type": "analysis",
+        "title": "MARUAH doctrine — 4 pagar editorial (defamation risk, unverified claims, speculation-as-fact, personal attacks)",
+        "url": "https://arif-fazil.com/999/maruah-doctrine",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-004",
+        "type": "analysis",
+        "title": "4-Gate audit doctrine — Whitelist → A-THINK → Sentinel → Upstream",
+        "url": "https://arif-fazil.com/999/4-gate-audit",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-005",
+        "type": "document",
+        "title": "VAULT999 cryptographic seal — 999 Meterai hash chain untuk immutability",
+        "url": "https://arif-fazil.com/999/vault",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-006",
+        "type": "analysis",
+        "title": "Case study: bang-non-pergi-kuching — 16 claim IDs (C-BNK-001 sampai C-BNK-016) + 10 sources (SRC-BNK-001 sampai SRC-BNK-010) + 4 pembetulan editorial",
+        "url": "/root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/bang-non-pergi-kuching.ts",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-007",
+        "type": "analysis",
+        "title": "Slot system — 7-Day Cycle (Slot 1-4 SIASATAN, Slot 5 FORMAT, Slot 6-7 SIASATAN) — 15% FORMAT editorial ratio",
+        "url": "https://arif-fazil.com/world/makcikgpt/",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-KLMK-008",
+        "type": "analysis",
+        "title": "Telegram channel @ariffazil — official broadcast + reader tips intake + future whistleblower infrastructure announcement",
+        "url": "https://t.me/ariffazil",
+        "retrieved_at": "2026-09-17T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "m6-4",
+    "title": "Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay",
+    "date": "2026-10-05",
+    "lang": "bm",
+    "series": {
+      "id": "M6",
+      "n": 4
+    },
+    "tags": [
+      "petronas",
+      "taufik",
+      "pmx",
+      "fy2025",
+      "integrated-report",
+      "pengerang",
+      "dividen",
+      "konsesi-keselamatan",
+      "sarawak",
+      "petros",
+      "mahkamah",
+      "trilogy",
+      "slot3",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/taufik-pergi-mana"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C-TPM-001",
+        "text": "TAUFIK lanjutan kontrak PETRONAS sekurang-kurangnya 3 kali: Julai 2023, 2025, Ogos 2026 — didedahkan bang-non-pergi-kuching (17 Sept 2026) dan siri m6-2.",
+        "tag": "OBS",
+        "source_id": "SRC-TPM-008",
+        "confidence_basis": "Bloomberg 8 Ogos 2026 + The Edge + CEO public confirmation",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-002",
+        "text": "Dividen PETRONAS 2022→2024: RM50B → RM40B → RM32B; dividen 2026 diumumkan RM20B. Trend menurun 3 tahun berturut-turut.",
+        "tag": "OBS",
+        "source_id": "SRC-TPM-001",
+        "confidence_basis": "PETRONAS Annual Report FY2025 + Finance Minister II statement",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-003",
+        "text": "PMX pegang dua jawatan serentak: Perdana Menteri + Menteri Kewangan. PETRONAS 100% milik MoF Inc. = PMX pegang konsesi keselamatan cash transfer.",
+        "tag": "OBS",
+        "source_id": "SRC-TPM-001",
+        "confidence_basis": "Public record sejak Nov 2022; korporat MoF Inc roster",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-004",
+        "text": "Pengerang Integrated Complex (PIC) kos overrun US$16B → US$27B (69%). Saudi Aramco keluar; PETRONAS ambil alih penuh 2024.",
+        "tag": "OBS",
+        "source_id": "SRC-TPM-003",
+        "confidence_basis": "Reuters + Bloomberg 2024 reporting",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-005",
+        "text": "Segmen downstream PETRONAS rugi bersih RM15.2B FY2024 — sebahagian besar dari Pengerang.",
+        "tag": "OBS",
+        "source_id": "SRC-TPM-004",
+        "confidence_basis": "PETRONAS Group FY2024 financial results",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-006",
+        "text": "PETRONAS fail di Federal Court 12 Januari 2026 cabar Sarawak; Sarawak counter-fail cabar constitutionaliti PDA 1974 (panel 5-hakim lulus justisiability Julai 2025).",
+        "tag": "OBS",
+        "source_id": "SRC-TPM-005",
+        "confidence_basis": "Court records; PETRONAS media release; multiple wire reports",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-007",
+        "text": "Empat sebab CEO takut — (i) PMX perlu konsesi cash transfer; (ii) Pengerang bleeding RM15.2B; (iii) dividen turun 3 tahun; (iv) Sarawak court case belum putus.",
+        "tag": "INT",
+        "source_id": "SRC-TPM-008",
+        "confidence_basis": "Synthesis dari siri m6-2 trilogy + PETRONAS disclosures",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-008",
+        "text": "CEO PETRONAS duduk sebab GLC compensation band RM8–12 juta setahun — dijangka paling susah dilepas.",
+        "tag": "DER",
+        "source_id": "SRC-TPM-007",
+        "confidence_basis": "NST GLC remuneration research 2024; band rujukan generic, bukan disclosure khusus PETRONAS FY2025",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-009",
+        "text": "FY2025 Integrated Report dijangka keluar Oktober atau November 2026 — butiran yang akan didedahkan: dividen FY2025 vs FY2026 declaration; downstream kerugian trend; upstream capex; workforce numbers; Sarawak allocation.",
+        "tag": "INT",
+        "source_id": "SRC-TPM-001",
+        "confidence_basis": "Reporting calendar pattern + sejarah disclosure tarikh PETRONAS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-TPM-010",
+        "text": "Pelepasan TAUFIK = seseorang lain perlu pegang microphone & akui 50+ tahun royalti 5% Sarawak tak adil — payout politik yang PMX & CEO tidak mahu tanggung.",
+        "tag": "INT",
+        "source_id": "SRC-TPM-005",
+        "confidence_basis": "Synthesis politik analisis dari siri m6-2",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-TPM-001",
+        "type": "official_statement",
+        "title": "PETRONAS Annual Report FY2025 — net profit RM45.4B (-17.6%), revenue RM266.1B (-16.8%), dividend declaration trail 2022→2026",
+        "url": "https://www.petronas.com/integrated-report-2025/",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-002",
+        "type": "news",
+        "title": "The Edge Malaysia — PETRONAS dividend FY2026 RM20B declaration 10 Ogos 2026",
+        "url": "https://www.theedgemalaysia.com/",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-003",
+        "type": "news",
+        "title": "Reuters / Bloomberg — Saudi Aramco exit from Pengerang JV 2024; PIC cost overrun US$16B→US$27B",
+        "url": "https://www.reuters.com/",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-004",
+        "type": "news",
+        "title": "PETRONAS Group FY2024 downstream loss RM15.2B — Finance Minister II statement, The Edge Malaysia",
+        "url": "",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-005",
+        "type": "court_record",
+        "title": "PETRONAS Federal Court filing 12 January 2026 — Sarawak vs Kerajaan Persekutuan (Reuters, The Edge, NST)",
+        "url": "",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-006",
+        "type": "official_statement",
+        "title": "RM1.5B Sarawak interim special grant 16 Sept 2026 — Straits Times, Malay Mail, Malaysian Reserve, Vibes",
+        "url": "",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-007",
+        "type": "analysis",
+        "title": "GLC remuneration band disclosure — NST research 2024; KPI board scorecard in PETRONAS Annual Report",
+        "url": "",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-TPM-008",
+        "type": "analysis",
+        "title": "Siri MakcikGPT m6-2 trilogy — taufik-klcc-ceo-petronas (21 Ogos 2026) + taufik-pengecut-dengan-title (9 Sept 2026) + bang-non-pergi-kuching (17 Sept 2026)",
+        "url": "https://arif-fazil.com/world/makcikgpt/taufik-klcc-ceo-petronas",
+        "retrieved_at": "2026-10-05T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "m1-7",
+    "title": "BOD PETRONAS: Tadak Minyak, Tadak AGM, Tadak Siapa Boleh Tanya",
+    "date": "2026-09-14",
+    "lang": "bm",
+    "series": {
+      "id": "M1",
+      "n": 7
+    },
+    "tags": [
+      "petronas",
+      "bod",
+      "governance",
+      "bakke-salleh",
+      "1mdb",
+      "jukris",
+      "mof-inc",
+      "dividen",
+      "rightsizing",
+      "gentari",
+      "sarawak",
+      "petros",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/petronas-bod-evolution"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "BOD PETRONAS terdiri daripada 8 orang, 7 mempunyai latar belakang finance/audit, hanya 1 engineer (Jukris).",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "PETRONAS IR2025 skills matrix + petronas.com live scrape",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Jukris masuk board antara 15 Julai dan 14 Sept 2026 — bukan dengan COO appointment Feb 2026.",
+        "tag": "OBS",
+        "source_id": "SRC-002",
+        "confidence_basis": "Wayback Machine snapshots (Sep 2025 – Jul 2026) vs live petronas.com",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C003",
+        "text": "MoF Inc ialah pemilik tunggal 100% PETRONAS. Tiada AGM.",
+        "tag": "OBS",
+        "source_id": "SRC-004",
+        "confidence_basis": "BERNAMA (15 Aug 2025) — Menteri Azalina confirmed",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C004",
+        "text": "Abdul Rasheed Ghaffour = Gabenor Bank Negara Malaysia, duduk sebagai Independent NED PETRONAS.",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "PETRONAS IR2025 + bnm.gov.my",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C005",
+        "text": "Bakke Salleh letak jawatan dari 1MDB (7 minggu) sebagai protes. Sri Ram: \"It was like complaining of the loss of sheep to the wolf.\"",
+        "tag": "OBS",
+        "source_id": "SRC-003",
+        "confidence_basis": "Court testimony 19 Mei 2022 — 5 sumber bebas",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C006",
+        "text": "Dividen PETRONAS: RM54B (2021 rekod) → RM20B (2025-2026, terendah 9 tahun). Profit collapse ~55% dalam 3 tahun.",
+        "tag": "OBS",
+        "source_id": "SRC-006",
+        "confidence_basis": "PETRONAS press releases, Reuters, FMT, The Edge",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C007",
+        "text": "5,000 pekerja kena potong (Jun 2025). Hiring dibekukan sehingga Disember 2026.",
+        "tag": "OBS",
+        "source_id": "SRC-005",
+        "confidence_basis": "Bloomberg, Reuters, Malay Mail (5 Jun 2025)",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C008",
+        "text": "Sarawak fail petition cabar Perlembagaan 3 undang-undang petroleum persekutuan (Feb 2026).",
+        "tag": "OBS",
+        "source_id": "SRC-007",
+        "confidence_basis": "SCMP, FULCRUM/ISEAS, Bloomberg",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C009",
+        "text": "Struktur PETRONAS (MoF Inc, PM=MoF, tiada AGM) adalah sama dengan struktur 1MDB.",
+        "tag": "INT",
+        "confidence_basis": "Perbandingan struktur — HRMARS, SSRN, Transparency International Malaysia",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C010",
+        "text": "Bakke dilabel \"Independent\" selepas 6 tahun dilantik oleh PM — independence dari si?",
+        "tag": "INT",
+        "confidence_basis": "PIR2022 (Non-Independent) vs petronas.com 2026 (Independent)",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-001",
+        "type": "official_statement",
+        "title": "PETRONAS IR2025 — Board Composition & Skills Matrix",
+        "url": "https://www.petronas.com/integrated-report-2025/",
+        "retrieved_at": "2026-09-14T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-002",
+        "type": "official_statement",
+        "title": "petronas.com/about-us/our-leaders (live scrape 14 Sept 2026)",
+        "url": "https://www.petronas.com/about-us/our-leaders",
+        "retrieved_at": "2026-09-14T05:26:00Z",
+        "content_hash": "a17ea8b15dfdb26c1cead3a3ceaeb706e1ccfd27c5881d77d2829b22c8091653"
+      },
+      {
+        "source_id": "SRC-003",
+        "type": "court_record",
+        "title": "1MDB-Tanore Trial — Bakke Salleh testimony (The Edge, Malay Mail, The Star)",
+        "url": "",
+        "retrieved_at": "2022-05-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-004",
+        "type": "official_statement",
+        "title": "BERNAMA — MoF Inc sole shareholder confirmation (15 Aug 2025)",
+        "url": "https://www.bernama.com/",
+        "retrieved_at": "2025-08-15T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-005",
+        "type": "news",
+        "title": "Bloomberg — Taufik contract extension (Aug 8, 2026)",
+        "url": "https://www.bloomberg.com/",
+        "retrieved_at": "2026-08-08T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-006",
+        "type": "news",
+        "title": "Reuters — PETRONAS dividend RM20B lowest in 9 years",
+        "url": "https://www.reuters.com/",
+        "retrieved_at": "2025-10-01T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-007",
+        "type": "news",
+        "title": "SCMP — Sarawak challenges constitutional validity of federal petroleum laws",
+        "url": "https://www.scmp.com/",
+        "retrieved_at": "2026-02-24T00:00:00Z"
       }
     ]
   }

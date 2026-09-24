@@ -361,6 +361,7 @@ export function MakcikGPT() {
           {filteredArticles.map((article, idx) => {
             const rt = estimateReadingTime(article.slug)
             const isGenesis = article.slug === 'surat-kepada-yang-arif'
+            const isStandalone = article.slug.startsWith('petronas-full-reality') || article.slug.startsWith('petronas-leadership')
             const articleUrl = `/world/makcikgpt/${article.slug}`
             return (
             <article
@@ -380,6 +381,11 @@ export function MakcikGPT() {
                         ✦ Genesis #001
                       </span>
                     )}
+                    {isStandalone && (
+                      <span className="font-mono text-[10px] uppercase text-[#38BDF8] px-2 py-0.5 rounded border border-[#38BDF8]/30 bg-[#38BDF8]/10 font-bold">
+                        📄 Dossier Khas
+                      </span>
+                    )}
                     {rt > 0 && (
                       <span className="font-mono text-[10px] text-[#9AA0A8] bg-[#0A0B0D] px-2 py-0.5 rounded border border-[#1F2733]">{rt} min</span>
                     )}
@@ -390,9 +396,15 @@ export function MakcikGPT() {
                 </div>
 
                 <h2 className="font-serif text-xl md:text-2xl font-bold text-[#EDEAE2] mb-3 group-hover:text-[#D9A62E] transition-colors leading-snug">
-                  <Link to={articleUrl}>
-                    {article.title}
-                  </Link>
+                  {isStandalone ? (
+                    <a href={articleUrl}>
+                      {article.title}
+                    </a>
+                  ) : (
+                    <Link to={articleUrl}>
+                      {article.title}
+                    </Link>
+                  )}
                 </h2>
 
                 {article.subtitle && (
@@ -416,13 +428,23 @@ export function MakcikGPT() {
                     </span>
                   ))}
                 </div>
-                <Link
-                  to={articleUrl}
-                  className="font-mono text-xs font-semibold text-[#EDEAE2] group-hover:text-[#D9A62E] transition-colors flex items-center gap-1"
-                >
-                  <span>Baca</span>
-                  <span>→</span>
-                </Link>
+                {isStandalone ? (
+                  <a
+                    href={articleUrl}
+                    className="font-mono text-xs font-semibold text-[#38BDF8] group-hover:underline transition-colors flex items-center gap-1"
+                  >
+                    <span>Buka Dossier</span>
+                    <span>→</span>
+                  </a>
+                ) : (
+                  <Link
+                    to={articleUrl}
+                    className="font-mono text-xs font-semibold text-[#EDEAE2] group-hover:text-[#D9A62E] transition-colors flex items-center gap-1"
+                  >
+                    <span>Baca</span>
+                    <span>→</span>
+                  </Link>
+                )}
               </div>
             </article>
             )

@@ -1,27 +1,33 @@
 ---
-article_id: unregistered-kenapa-syarikat-tu-hantu
+article_id: m-gen-kenapa-syarikat-tu-hantu
 canonical_url: https://arif-fazil.com/world/makcikgpt/kenapa-syarikat-tu-hantu
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/kenapa-syarikat-tu-hantu.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 4d797c2dd381cb2f8b4243336b658acc95ef24939a404d4c34779fb5d83be108
 epistemic_summary:
   obs_count: 0
-  der_count: 0
-  int_count: 0
+  der_count: 1
+  int_count: 2
   spec_count: 0
 ---
 
 # Kenapa Syarikat Tu Hantu
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/kenapa-syarikat-tu-hantu.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Kenapa Syarikat Tu Hantu
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/kenapa-syarikat-tu-hantu
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/kenapa-syarikat-tu-hantu
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| HNT-C1 | DER | Entiti korporat dan GLC yang mengalami penstrukturan berulang berisiko kehilangan memori institusi dan nilai teras pengasas. | - | approved |
+| HNT-C2 | INT | Perubahan kepimpinan yang kerap tanpa autonomi operasi mewujudkan lapisan pengurusan yang hanya mengikut arahan tanpa tanggungjawab berterusan. | - | approved |
+| HNT-C3 | INT | Hak rakyat sebagai pemegang taruh mutlak memerlukan ketelusan dalam pelantikan lembaga pengarah dan penjualan aset strategik. | - | approved |
 
 ---
 

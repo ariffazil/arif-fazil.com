@@ -1,27 +1,56 @@
 ---
-article_id: unregistered-kit-lipas-meja-kopi
+article_id: m-gen-kit-lipas-meja-kopi
 canonical_url: https://arif-fazil.com/world/makcikgpt/kit-lipas-meja-kopi
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/kit-lipas-meja-kopi.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 7f158bc1fc5191eb2515bf5c5c7326c3e6cfc5d6092a429779a0c28c94450f6c
 epistemic_summary:
-  obs_count: 0
-  der_count: 0
-  int_count: 0
+  obs_count: 11
+  der_count: 1
+  int_count: 1
   spec_count: 0
 ---
 
-# kit-lipas-meja-kopi
+# Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/kit-lipas-meja-kopi.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/kit-lipas-meja-kopi
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/kit-lipas-meja-kopi
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C-KLMK-001 | OBS | MakcikGPT ialah kolaborasi tiga lapis suara — Arif Fazil (manusia bekas PETRONAS), sistem arifOS (compile + audit + seal), dan Makcik Pasar Malam (voice Penang). Bukan AI yang pretend jadi manusia, bukan manusia yang pretend jadi AI. | SRC-KLMK-001 | approved |
+| C-KLMK-002 | OBS | Proses editorial MakcikGPT ada 6 langkah: longlist berita → research primer → claim register → MARUAH review → 4-Gate audit → publish+seal. Setiap langkah boleh diaudit dan diminta bukti. | SRC-KLMK-001 | approved |
+| C-KLMK-003 | OBS | Claim register menggunakan 4 tag epistemik: OBS (observation dari dokumen), DER (derived/kiraan), INT (interpretation/analisis), SPEC (speculation/tekaan). Confidence capped — tiada claim 100% certainty. | SRC-KLMK-002 | approved |
+| C-KLMK-004 | OBS | MARUAH doctrine — 4 pagar editorial: (a) defamation risk; (b) unverified claims; (c) speculation labeled as fact; (d) personal attacks not grounded in policy. "Kalau tak pasti, tak publish." | SRC-KLMK-003 | approved |
+| C-KLMK-005 | OBS | 4-Gate audit: Gate 1 Whitelist (trusted sources); Gate 2 A-THINK (logical consistency); Gate 3 Sentinel (provocative language check); Gate 4 Upstream (right-of-reply untuk orang yang disebut). | SRC-KLMK-004 | approved |
+| C-KLMK-006 | OBS | 999 Meterai ialah cryptographic hash yang seal artikel ke VAULT999. Setiap artikel ada nombor seal unik — kalau diubah lepas publish, hash berubah dan boleh dikesan melalui hash chain. | SRC-KLMK-005 | approved |
+| C-KLMK-007 | OBS | Case study: artikel bang-non-pergi-kuching (17 Sept 2026) ada 16 claim IDs (C-BNK-001 sampai C-BNK-016) dengan 10 sources (SRC-BNK-001 sampai SRC-BNK-010) — boleh ditunjukkan dalam index.ts. | SRC-KLMK-006 | approved |
+| C-KLMK-008 | OBS | Artikel bang-non-pergi-kuching melalui 4 pembetulan editorial sebelum publish: (1) dividend 2024 RM32B (bukan RM52B 2023); (2) PCG net loss FY2025 = RM2.14B (bukan RM72B); (3) retrenchment 5,000 pekerja = PETRONAS Group (bukan khusus PRefChem); (4) petikan spesifik Jun/Sept 2026 digantikan dengan paraphrase. | SRC-KLMK-006 | approved |
+| C-KLMK-009 | DER | 47 orang tanya "macam mana Makcik tahu semua ni?" antara 27 Ogos sampai 17 September 2026 — dari Telegram, WhatsApp, dan DM Telegram channel. | SRC-KLMK-008 | approved |
+| C-KLMK-010 | OBS | Tiga pintu kolaborasi Makcik: (a) whistleblowers — saluran dengan infrastruktur kriptografi untuk protect identity (belum deploy, dalam roadmap); (b) subject matter experts — peguam, auditor, bekas officer; (c) reader tips — forward dari WhatsApp group jiran. | SRC-KLMK-001 | approved |
+| C-KLMK-011 | OBS | Tiga cara share dengan jiran: (a) print PDF — butang "Cetak / Print PDF" di bawah artikel, designed untuk A4; (b) WhatsApp forward — link terus dari web; (c) voice note summary — infrastruktur dalam pembangunan (belum deploy, akan diumumkan di Telegram @ariffazil). | SRC-KLMK-001 | approved |
+| C-KLMK-012 | OBS | Slot 5 = FORMAT work (15% daripada editorial ratio). Slot 1-4 = SIASATAN (line-by-line PDA 1974, Bang Non Kuching, Taufik trilogy, MyKad 75B). Slot 6-7 akan balik ke SIASATAN. | SRC-KLMK-007 | approved |
+| C-KLMK-013 | INT | Pembaca boleh challenge Makcik pada bila-bila masa — boleh minta source ledger, boleh minta claim register, boleh minta 4-Gate audit trail. Semua terbuka untuk verify. | SRC-KLMK-001 | approved |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-KLMK-001 | analysis | arifOS 6-step editorial pipeline — longlist → research → claim register → MARUAH → 4-Gate audit → publish+seal | https://arif-fazil.com/999/ |
+| SRC-KLMK-002 | document | Claim register schema — MakcikArticleMeta interface (types.ts) — OBS/DER/INT/SPEC epistemic tags + source_id linkage | /root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/types.ts |
+| SRC-KLMK-003 | analysis | MARUAH doctrine — 4 pagar editorial (defamation risk, unverified claims, speculation-as-fact, personal attacks) | https://arif-fazil.com/999/maruah-doctrine |
+| SRC-KLMK-004 | analysis | 4-Gate audit doctrine — Whitelist → A-THINK → Sentinel → Upstream | https://arif-fazil.com/999/4-gate-audit |
+| SRC-KLMK-005 | document | VAULT999 cryptographic seal — 999 Meterai hash chain untuk immutability | https://arif-fazil.com/999/vault |
+| SRC-KLMK-006 | analysis | Case study: bang-non-pergi-kuching — 16 claim IDs (C-BNK-001 sampai C-BNK-016) + 10 sources (SRC-BNK-001 sampai SRC-BNK-010) + 4 pembetulan editorial | /root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/bang-non-pergi-kuching.ts |
+| SRC-KLMK-007 | analysis | Slot system — 7-Day Cycle (Slot 1-4 SIASATAN, Slot 5 FORMAT, Slot 6-7 SIASATAN) — 15% FORMAT editorial ratio | https://arif-fazil.com/world/makcikgpt/ |
+| SRC-KLMK-008 | analysis | Telegram channel @ariffazil — official broadcast + reader tips intake + future whistleblower infrastructure announcement | https://t.me/ariffazil |
 
 ---
 

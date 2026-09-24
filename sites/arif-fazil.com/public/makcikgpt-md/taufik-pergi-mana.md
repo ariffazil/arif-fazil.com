@@ -1,27 +1,53 @@
 ---
-article_id: unregistered-taufik-pergi-mana
+article_id: m6-4
 canonical_url: https://arif-fazil.com/world/makcikgpt/taufik-pergi-mana
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/taufik-pergi-mana.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: d5afdee9c56805de66d2af4ae3fc2f2652673c8a593c34d4fbfe56733714a604
 epistemic_summary:
-  obs_count: 0
-  der_count: 0
-  int_count: 0
+  obs_count: 6
+  der_count: 1
+  int_count: 3
   spec_count: 0
 ---
 
-# taufik-pergi-mana
+# Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/taufik-pergi-mana.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/taufik-pergi-mana
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/taufik-pergi-mana
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C-TPM-001 | OBS | TAUFIK lanjutan kontrak PETRONAS sekurang-kurangnya 3 kali: Julai 2023, 2025, Ogos 2026 — didedahkan bang-non-pergi-kuching (17 Sept 2026) dan siri m6-2. | SRC-TPM-008 | approved |
+| C-TPM-002 | OBS | Dividen PETRONAS 2022→2024: RM50B → RM40B → RM32B; dividen 2026 diumumkan RM20B. Trend menurun 3 tahun berturut-turut. | SRC-TPM-001 | approved |
+| C-TPM-003 | OBS | PMX pegang dua jawatan serentak: Perdana Menteri + Menteri Kewangan. PETRONAS 100% milik MoF Inc. = PMX pegang konsesi keselamatan cash transfer. | SRC-TPM-001 | approved |
+| C-TPM-004 | OBS | Pengerang Integrated Complex (PIC) kos overrun US$16B → US$27B (69%). Saudi Aramco keluar; PETRONAS ambil alih penuh 2024. | SRC-TPM-003 | approved |
+| C-TPM-005 | OBS | Segmen downstream PETRONAS rugi bersih RM15.2B FY2024 — sebahagian besar dari Pengerang. | SRC-TPM-004 | approved |
+| C-TPM-006 | OBS | PETRONAS fail di Federal Court 12 Januari 2026 cabar Sarawak; Sarawak counter-fail cabar constitutionaliti PDA 1974 (panel 5-hakim lulus justisiability Julai 2025). | SRC-TPM-005 | approved |
+| C-TPM-007 | INT | Empat sebab CEO takut — (i) PMX perlu konsesi cash transfer; (ii) Pengerang bleeding RM15.2B; (iii) dividen turun 3 tahun; (iv) Sarawak court case belum putus. | SRC-TPM-008 | approved |
+| C-TPM-008 | DER | CEO PETRONAS duduk sebab GLC compensation band RM8–12 juta setahun — dijangka paling susah dilepas. | SRC-TPM-007 | approved |
+| C-TPM-009 | INT | FY2025 Integrated Report dijangka keluar Oktober atau November 2026 — butiran yang akan didedahkan: dividen FY2025 vs FY2026 declaration; downstream kerugian trend; upstream capex; workforce numbers; Sarawak allocation. | SRC-TPM-001 | approved |
+| C-TPM-010 | INT | Pelepasan TAUFIK = seseorang lain perlu pegang microphone & akui 50+ tahun royalti 5% Sarawak tak adil — payout politik yang PMX & CEO tidak mahu tanggung. | SRC-TPM-005 | approved |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-TPM-001 | official_statement | PETRONAS Annual Report FY2025 — net profit RM45.4B (-17.6%), revenue RM266.1B (-16.8%), dividend declaration trail 2022→2026 | https://www.petronas.com/integrated-report-2025/ |
+| SRC-TPM-002 | news | The Edge Malaysia — PETRONAS dividend FY2026 RM20B declaration 10 Ogos 2026 | https://www.theedgemalaysia.com/ |
+| SRC-TPM-003 | news | Reuters / Bloomberg — Saudi Aramco exit from Pengerang JV 2024; PIC cost overrun US$16B→US$27B | https://www.reuters.com/ |
+| SRC-TPM-004 | news | PETRONAS Group FY2024 downstream loss RM15.2B — Finance Minister II statement, The Edge Malaysia |  |
+| SRC-TPM-005 | court_record | PETRONAS Federal Court filing 12 January 2026 — Sarawak vs Kerajaan Persekutuan (Reuters, The Edge, NST) |  |
+| SRC-TPM-006 | official_statement | RM1.5B Sarawak interim special grant 16 Sept 2026 — Straits Times, Malay Mail, Malaysian Reserve, Vibes |  |
+| SRC-TPM-007 | analysis | GLC remuneration band disclosure — NST research 2024; KPI board scorecard in PETRONAS Annual Report |  |
+| SRC-TPM-008 | analysis | Siri MakcikGPT m6-2 trilogy — taufik-klcc-ceo-petronas (21 Ogos 2026) + taufik-pengecut-dengan-title (9 Sept 2026) + bang-non-pergi-kuching (17 Sept 2026) | https://arif-fazil.com/world/makcikgpt/taufik-klcc-ceo-petronas |
 
 ---
 

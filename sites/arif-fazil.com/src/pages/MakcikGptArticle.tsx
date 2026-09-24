@@ -67,11 +67,15 @@ export function MakcikGptArticle() {
   }, [meta])
 
   useEffect(() => {
+    if (slug?.startsWith('petronas-full-reality') || slug?.startsWith('petronas-leadership')) {
+      window.location.replace(`/world/makcikgpt/${slug}`);
+      return;
+    }
     if (meta) {
       document.title = `${meta.title} — MakcikGPT | arif-fazil.com`
       window.scrollTo(0, 0)
     }
-  }, [meta])
+  }, [meta, slug])
 
   if (!article || !meta) {
     return (

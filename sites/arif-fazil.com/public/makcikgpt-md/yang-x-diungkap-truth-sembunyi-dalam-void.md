@@ -1,27 +1,33 @@
 ---
-article_id: unregistered-yang-x-diungkap-truth-sembunyi-dalam-void
+article_id: m-gen-yang-x-diungkap
 canonical_url: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: fbfba021026897ac7efeb9d39bedd95632d2a967c6d28509be757113f5388c6d
 epistemic_summary:
   obs_count: 0
-  der_count: 0
-  int_count: 0
+  der_count: 1
+  int_count: 2
   spec_count: 0
 ---
 
-# Yang X DiungkapTruth Sembunyi Dalam Void
+# Yang x Diungkap: Kenapa Truth Sembunyi dalam Void
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Yang x Diungkap: Kenapa Truth Sembunyi dalam Void
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| VOID-C1 | INT | Setiap kenyataan korporat dan institusi mempunyai dua lapisan: yang diungkap (naratif luaran) dan yang tidak diungkap (realiti dalam void). | - | approved |
+| VOID-C2 | DER | Ketiadaan pengungkapan bukan bermakna ketiadaan realiti; ia menandakan kos politik atau institusi yang terlalu tinggi untuk diakui secara terbuka. | - | approved |
+| VOID-C3 | INT | Akauntabiliti institusi diukur melalui keberanian merapatkan jurang antara apa yang diisytiharkan dengan apa yang sebenarnya berlaku di peringkat operasi. | - | approved |
 
 ---
 

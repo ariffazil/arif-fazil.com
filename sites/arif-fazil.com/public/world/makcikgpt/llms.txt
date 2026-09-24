@@ -11,7 +11,7 @@
   - HYPOTHESIS: Analytical model or open question for public scrutiny.
   - UNKNOWN: Material information unverified or absent from public record.
 - Seal 999 Meaning: Records authorship, Merkle content integrity, and revision lineage in VAULT999. It does NOT constitute independent judicial certification of empirical claims.
-- Corpus Statistics: 34 canonical articles. Latest update: 2026-09-24.
+- Corpus Statistics: 42 canonical articles. Latest update: 2026-09-24.
 
 ## Discovery Endpoints
 - Canonical Web Landing: https://arif-fazil.com/world/makcikgpt/
@@ -19,13 +19,21 @@
 - RSS Syndication: https://arif-fazil.com/feed.xml
 - Root AI Map: https://arif-fazil.com/llms.txt
 
-## Canonical Articles (34)
+## Canonical Articles (42)
+- [Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay](https://arif-fazil.com/world/makcikgpt/taufik-pergi-mana) (2026-10-05 · Series M6)
+- [Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?](https://arif-fazil.com/world/makcikgpt/nexg-mykad-siapa-beli) (2026-09-27 · Series M2)
+- [Yang x Diungkap: Kenapa Truth Sembunyi dalam Void](https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void) (2026-09-22 · Series GENESIS)
+- [Kenapa Syarikat Tu Hantu](https://arif-fazil.com/world/makcikgpt/kenapa-syarikat-tu-hantu) (2026-09-22 · Series GENESIS)
 - [Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang](https://arif-fazil.com/world/makcikgpt/hukum-batu-realiti-atas-segalanya) (2026-09-20 · Series GENESIS)
 - [Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency](https://arif-fazil.com/world/makcikgpt/dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency) (2026-09-20 · Series GENESIS)
 - [Apa Lagi Manusia Mahu?](https://arif-fazil.com/world/makcikgpt/apa-lagi-manusia-mahu) (2026-09-20 · Series GENESIS)
 - [Surat Kepada Yang Arif — Dari Makcik. Duduk Dulu.](https://arif-fazil.com/world/makcikgpt/surat-kepada-yang-arif) (2026-09-19 · Series GENESIS)
+- [Bang Non Pergi Kuching, Cakap Aku Nak Setel, Tapi Makcik Tanya — Setel Apa?](https://arif-fazil.com/world/makcikgpt/bang-non-pergi-kuching) (2026-09-17 · Series M5)
+- [Bang Non, Hang Tanya Makcik Pasal AI. Makcik Tanya Hang Balik — Hang Tahu Pasal AI Johor Hang Sendiri Ka?](https://arif-fazil.com/world/makcikgpt/ai-johor-makcik-tanya) (2026-09-17 · Series M4)
 - [Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier](https://arif-fazil.com/world/makcikgpt/petronas-leadership-1974-2026) (2026-09-17 · Series M1)
 - [PDA 1974 Tu Bukan Undang-Undang. Tu Rampasan Tanah. Makcik Nak Baca Batang Tubuh, Barulah Kita Boleh Tanya — Ini Selesai Ke Macam Mana?](https://arif-fazil.com/world/makcikgpt/pda-1974-bukan-undang-undang) (2026-09-17 · Series M6)
+- [Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1](https://arif-fazil.com/world/makcikgpt/kit-lipas-meja-kopi) (2026-09-17 · Series GENESIS)
+- [BOD PETRONAS: Tadak Minyak, Tadak AGM, Tadak Siapa Boleh Tanya](https://arif-fazil.com/world/makcikgpt/petronas-bod-evolution) (2026-09-14 · Series M1)
 - [Pengecut Tak Berani Confront — Edisi Khas](https://arif-fazil.com/world/makcikgpt/taufik-pengecut-dengan-title) (2026-09-09 · Series M6)
 - [PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia](https://arif-fazil.com/world/makcikgpt/petronas-full-reality-rakyat-dossier) (2026-08-26 · Series M1)
 - [Tengku Taufik: GM Bangunan, CEO Minyak Negara](https://arif-fazil.com/world/makcikgpt/taufik-klcc-ceo-petronas) (2026-08-21 · Series M6)

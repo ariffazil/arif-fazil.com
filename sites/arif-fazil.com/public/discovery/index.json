@@ -1,0 +1,279 @@
+{
+  "$schema": "arif-discovery-v3",
+  "note": "Federation discovery graph v3. Satu traversal: identity, authority, governance, capabilities (why + edges + if_down), relationships, boundaries, endpoints, REGISTRY MESIN-VERIFIED (/discovery/registry.json — MCP tools/list semasa build). Kesihatan live dipaut (/status.json), tidak dibakar.",
+  "generated_at": "2026-09-24T06:26:09.592Z",
+  "generator": "scripts/generate-discovery-graph.cjs (site build pipeline)",
+  "identity": {
+    "site": "https://arif-fazil.com",
+    "name": "arif-fazil.com",
+    "symbol": "Ψ SOUL (Human Surface)",
+    "sovereign": {
+      "name": "Muhammad Arif bin Fazil",
+      "role": "F13 SOVEREIGN — absolute human veto",
+      "contact": "arif@arif-fazil.com",
+      "telegram": "@ariffazil"
+    },
+    "identity_record": "https://arif-fazil.com/.well-known/identity.json",
+    "tagline": "DITEMPA BUKAN DIBERI — Forged, Not Given",
+    "purpose": "Bukan sekadar laman — lapisan penemuan berperlembagaan federasi. Manusia kekal berdaulat; manusia bukan lapisan pengangkutan."
+  },
+  "authority": {
+    "floors": "https://arif-fazil.com/floors.json",
+    "floors_summary": "F1 AMANAH · F2 TRUTH · F4 CLARITY · F6 MARUAH · F9 ANTI-HANTU · F13 SOVEREIGN (senarai penuh /floors.json)",
+    "veto": "Veto manusia (F13) mutlak dan muktamad",
+    "mutation_rule": "Permukaan awam baca-sahaja. Mutasi keadaan perlukan kebenaran terauthentikasi + kelulusan manusia eksplisit.",
+    "file_governance": "FAIL-CLOSED — lihat /AGENTS.md"
+  },
+  "governance": {
+    "pattern": "Musyawarah — 333 ARCHITECT merancang × 555 AUDITOR mencabar × 888 APEX mengadili; F13 SOVEREIGN meratifikasi",
+    "kernel": {
+      "name": "arifOS",
+      "mcp": "https://mcp.arif-fazil.com/mcp",
+      "health": "https://arifos.arif-fazil.com/health"
+    },
+    "witness_ledger": "https://arif-fazil.com/ledger/",
+    "receipts": "https://arif-fazil.com/receipts/",
+    "vault_proof": "https://arif-fazil.com/999",
+    "seals": "Permukaan pembuktian immutable di /999. VAULT999 itu sendiri dalaman-sahaja."
+  },
+  "capabilities": [
+    {
+      "id": "arifos",
+      "name": "arifOS Kernel",
+      "kind": "kernel",
+      "role": "Constitutional kernel — governance, sessions, floors, memory, MCP gateway",
+      "why": "Wujud supaya kuasa mutasi tidak pernah berada tanpa lantai perlembagaan — setiap tindakan boleh diadili, dibatalkan, dan disaksi.",
+      "depends_on": [],
+      "if_down": "Federation bertukar READ-ONLY: MCP gateway, /health, judge dan seal gagal — organ domain masih hidup tetapi tiada arbitrase; F13 tetap berdaulat.",
+      "endpoints": {
+        "mcp": "https://mcp.arif-fazil.com/mcp",
+        "health": "https://arifos.arif-fazil.com/health",
+        "observatory": "https://arifos.arif-fazil.com/"
+      }
+    },
+    {
+      "id": "aaa",
+      "name": "AAA",
+      "kind": "coordination",
+      "role": "Federation state plane — agent cockpit, registry, A2A gateway, MCP tool explorer",
+      "why": "Wujud supaya identiti dan laluan ejen berdaftar di satu tempat — bukan tersebar dalam ingatan sesiapa.",
+      "depends_on": [
+        "arifos"
+      ],
+      "if_down": "Ejen baru tidak dapat berdaftar atau ber-A2A; routing manual menjadi beban Arif semula (attention tax naik).",
+      "endpoints": {
+        "site": "https://aaa.arif-fazil.com/",
+        "a2a": "https://aaa.arif-fazil.com/a2a/",
+        "health": "https://aaa.arif-fazil.com/health"
+      },
+      "boundary": "Public A2A 404 di apex; delegasi + pendaftaran perlukan kelulusan manusia"
+    },
+    {
+      "id": "a-forge",
+      "name": "A-FORGE",
+      "kind": "execution",
+      "role": "Execution shell — governed execution, sandboxes, forge pipeline",
+      "why": "Wujud supaya 'digital = mudah, irreversible = tahan (hold)' ada tempat kebenaran berlaku — eksekusi selepas SEAL, bukan selepas ghairah.",
+      "depends_on": [
+        "arifos"
+      ],
+      "if_down": "Tiada eksekusi terkawal baru; kerja ejen berhenti di peringkat cadangan (HOLD selamanya).",
+      "endpoints": {
+        "site": "https://forge.arif-fazil.com/"
+      },
+      "boundary": "Eksekusi bergated-resit; tindakan irreversible tahan di 888"
+    },
+    {
+      "id": "geox",
+      "name": "GEOX",
+      "kind": "domain-organ",
+      "role": "Earth intelligence — basin reasoning, seismic interpretation, petrophysics, paleo",
+      "why": "Wujud kerana realiti fizikal (batuan, kedalaman, fizik gelombang) mesti mengikat naratif — hukum batu & enjin.",
+      "depends_on": [
+        "arifos"
+      ],
+      "if_down": "Taakulan bumi/seismik berhenti; laman /earth dan laluan geox hilang; keputusan E&P kembali kepada ingatan manusia sahaja.",
+      "endpoints": {
+        "mcp": "https://geox.arif-fazil.com/mcp",
+        "site": "https://geox.arif-fazil.com/",
+        "surface": "https://arif-fazil.com/geox/",
+        "health": "https://geox.arif-fazil.com/health"
+      },
+      "boundary": "GEOX mengira; tidak mengadili"
+    },
+    {
+      "id": "well",
+      "name": "WELL",
+      "kind": "domain-organ",
+      "role": "Sovereign homeostasis — triadic state (human × machine × governance), vitality substrate",
+      "why": "Wujud supaya kesediaan (readiness) diukur, bukan dirasa — manusia × mesin × tadbiran dalam satu nadi.",
+      "depends_on": [
+        "arifos"
+      ],
+      "if_down": "Tiada nadi triadic; drift kesediaan tidak dikesan sehingga menjadi kerosakan.",
+      "endpoints": {
+        "mcp": "https://well.arif-fazil.com/mcp",
+        "site": "https://well.arif-fazil.com/",
+        "health": "https://well.arif-fazil.com/health"
+      },
+      "boundary": "WELL mencadang; arifOS mengadili (pemisahan kuasa)"
+    },
+    {
+      "id": "wealth",
+      "name": "WEALTH",
+      "kind": "domain-organ",
+      "role": "Sovereign capital & market synthesis — deductive computation, power topology",
+      "why": "Wujud supaya modal dan kuasa dihitung secara deduktif dengan resit — bukan rekaan naratif.",
+      "depends_on": [
+        "arifos"
+      ],
+      "if_down": "Terminal gold/oil/gas/klci/usdmyr dan taakulan modal berhenti; radar fiskal buta.",
+      "endpoints": {
+        "mcp": "https://wealth.arif-fazil.com/mcp",
+        "site": "https://wealth.arif-fazil.com/",
+        "health": "https://wealth.arif-fazil.com/health"
+      },
+      "boundary": "Analyst ≠ Judge — WEALTH menasihat; arifOS berarbitrasi"
+    },
+    {
+      "id": "arifflow",
+      "name": "arifFlow",
+      "kind": "substrate",
+      "role": "Metabolic ledger — FlowReceipts, FQ (verify/execute) telemetry",
+      "why": "Wujud supaya setiap langkah meninggalkan resit — kerja tanpa resit ialah longgokan peristiwa, bukan lejar.",
+      "depends_on": [],
+      "if_down": "FQ tidak boleh diukur; metabolisme (verify vs execute) hilang kaca mata — burn tak kelihatan.",
+      "endpoints": {
+        "pulse": "https://arif-fazil.com/999/flow"
+      }
+    },
+    {
+      "id": "frame",
+      "name": "FRAME",
+      "kind": "substrate",
+      "role": "Independent observer — drift detection, behavioural telemetry",
+      "why": "Wujud supaya ada mata luar sistem — bukti, bukan kelicinan diri sendiri.",
+      "depends_on": [],
+      "if_down": "Drift tidak diperhatikan secara bebas; entropi senyap menang.",
+      "boundary": "OBSERVATIONAL_ONLY — bukti, bukan verdik; tiada permukaan awam secara reka bentuk"
+    },
+    {
+      "id": "hermes",
+      "name": "HERMES",
+      "kind": "domain-organ",
+      "role": "Language & social organ — claim validation, contradiction scan, voice law",
+      "why": "Wujud supaya ayat tentang manusia dan institusi disaring sebelum dihebahkan — maruah sebelum utiliti.",
+      "depends_on": [],
+      "if_down": "Tuntutan tidak disahkan silang; kontradaksi bersembunyi dalam naratif.",
+      "endpoints": {
+        "site": "https://hermes.arif-fazil.com/"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "type": "proposes→judges",
+      "from": [
+        "geox",
+        "wealth",
+        "well"
+      ],
+      "to": "arifos",
+      "note": "Organ domain mencadang; kernel mengadili (separation of powers)"
+    },
+    {
+      "type": "sealed-execution",
+      "from": [
+        "a-forge"
+      ],
+      "to": "arifos",
+      "note": "A-FORGE hanya melaksana selepas SEAL kernel — digital mudah, irreversible tahan"
+    },
+    {
+      "type": "routes",
+      "from": [
+        "aaa"
+      ],
+      "to": "*",
+      "note": "AAA ialah satah routing/registry — pintu koordinasi ejen"
+    },
+    {
+      "type": "metabolizes",
+      "from": [
+        "arifflow"
+      ],
+      "to": "*",
+      "note": "Setiap langkah organ meninggalkan FlowReceipt"
+    },
+    {
+      "type": "observes",
+      "from": [
+        "frame"
+      ],
+      "to": "*",
+      "note": "FRAME memerhati semua — bukti sahaja, tidak pernah verdik"
+    },
+    {
+      "type": "sovereign-ratifies",
+      "from": [
+        "F13 (Arif)"
+      ],
+      "to": "arifos",
+      "note": "Veto manusia mutlak — kuasa terakhir di luar mesin"
+    }
+  ],
+  "boundaries": {
+    "read_only_public": true,
+    "writes": "Sebarang penghantaran borang / mutasi / muat naik perlukan kelulusan manusia",
+    "a2a_public": "404 di apex secara reka bentuk (kanonik: aaa.arif-fazil.com/a2a/)",
+    "anti_hantu_f9": "Tiada tuntutan metafizik / kesedaran (F9)",
+    "dignity_f6": "Struktur dinilai, bukan individu; tuntutan sifat-peribadi dikecualikan",
+    "claims": "Tuntutan awam mesti ada sumber, tarikh, had, atau label interpretation"
+  },
+  "endpoints": {
+    "mcp": {
+      "kernel": "https://mcp.arif-fazil.com/mcp",
+      "geox": "https://geox.arif-fazil.com/mcp",
+      "wealth": "https://wealth.arif-fazil.com/mcp",
+      "well": "https://well.arif-fazil.com/mcp",
+      "protocol": "POST JSON-RPC 2.0"
+    },
+    "health": {
+      "snapshot": "https://arif-fazil.com/status.json",
+      "kernel_direct": "https://arif-fazil.com/health",
+      "federation": "https://arif-fazil.com/api/organs"
+    },
+    "webmcp": "https://arif-fazil.com/.well-known/webmcp.json"
+  },
+  "surfaces": {
+    "llms": "https://arif-fazil.com/llms.txt",
+    "agent_card": "https://arif-fazil.com/.well-known/agent.json",
+    "floors": "https://arif-fazil.com/floors.json",
+    "status": "https://arif-fazil.com/status.json",
+    "sitemap": "https://arif-fazil.com/sitemap.xml",
+    "page_overview": "https://arif-fazil.com/page.json",
+    "witness_ledger": "https://arif-fazil.com/ledger/",
+    "receipts": "https://arif-fazil.com/receipts/",
+    "laws": "https://arif-fazil.com/laws/",
+    "human_contract": "https://arif-fazil.com/human",
+    "institutional": "https://arif-fazil.com/institution/"
+  },
+  "traversal": {
+    "start": "/discovery/",
+    "question_answered": "Ekosistem keupayaan apa yang wujud di sini, authority apa yang mentadbirnya, dan bagaimana aku boleh berinteraksi dengannya dengan selamat?",
+    "depth_2": [
+      "/floors.json",
+      "/status.json",
+      "/discovery/registry.json",
+      "/.well-known/agent.json",
+      "/ledger/",
+      "/receipts/",
+      "/human"
+    ]
+  },
+  "capability_registry": {
+    "snapshot": "/discovery/registry.json",
+    "method": "MACHINE-VERIFIED — MCP tools/list semasa build (bukan senarai tangan)",
+    "live_state": "/status.json"
+  }
+}

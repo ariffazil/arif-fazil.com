@@ -1,0 +1,389 @@
+{
+  "$schema": "arif-discovery-registry-v1",
+  "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
+  "generated_at": "2026-09-24T06:26:09.592Z",
+  "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
+  "organs": {
+    "arifos": {
+      "verified": true,
+      "count": 8,
+      "tools": [
+        {
+          "name": "arif_init",
+          "desc": "KERNEL 000 · Session ignition — binds actor, floors, and audit before any other arif_* ver"
+        },
+        {
+          "name": "arif_observe",
+          "desc": "KERNEL 111 · Sense reality into evidence with epistemic tags and uncertainty bounds."
+        },
+        {
+          "name": "arif_think",
+          "desc": "KERNEL 333 · Mind — structured reasoning under F2/F7 with OBS/DER/INT/SPEC labels."
+        },
+        {
+          "name": "arif_route",
+          "desc": "KERNEL 444 · Intent→organ router — dispatches to GEOX/WEALTH/WELL/A-FORGE."
+        },
+        {
+          "name": "arif_memory",
+          "desc": "KERNEL 555 · Memory governor — L1–L6 governed semantic recall, storage, and persistence."
+        },
+        {
+          "name": "arif_judge",
+          "desc": "KERNEL 666 · Constitutional verdict — binding SEAL/HOLD/SABAR/VOID arbitration."
+        },
+        {
+          "name": "arif_forge",
+          "desc": "KERNEL 777 · Execution gate via A-FORGE — mutates only after SEAL verdict."
+        },
+        {
+          "name": "arif_seal",
+          "desc": "KERNEL 999 · VAULT999 immutable append — irreversible civilizational memory sealing."
+        }
+      ]
+    },
+    "geox": {
+      "verified": true,
+      "count": 26,
+      "tools": [
+        {
+          "name": "geox_geomechanics",
+          "desc": "Geomechanical analysis: bulk/shear/young modulus, poisson ratio, acoustic impedance, stres"
+        },
+        {
+          "name": "geox_glof",
+          "desc": "Unified GLOF multi-phase cascade simulation. Multi-phase physics: solid dam → granular deb"
+        },
+        {
+          "name": "geox_paleobiodb_query",
+          "desc": "Query the Paleobiology Database (PBDB v1.2) for taxa, occurrences, and biozones. Modes: ta"
+        },
+        {
+          "name": "geox_well_ingest",
+          "desc": "Load well log data from LAS, SEG-Y, DST, deviation, or tops files. Auto-detects format. Us"
+        },
+        {
+          "name": "geox_well_qc",
+          "desc": "Quality control for well data: depth monotonicity, null %, physical range checks. Use when"
+        },
+        {
+          "name": "geox_petrophysics",
+          "desc": "Unified petrophysics: Vsh, porosity, Sw, permeability, net pay, LEM inference, QC. Modes: "
+        },
+        {
+          "name": "geox_seismic_ingest",
+          "desc": "SEG-Y I/O, header inspection, export. Use when: Use when you need seismic ingest evidence."
+        },
+        {
+          "name": "geox_seismic_interpret",
+          "desc": "One semantic capability — propose geometry, physics-gate, compare hypotheses (NOT autonomo"
+        },
+        {
+          "name": "geox_basin",
+          "desc": "Unified basin intelligence: profile, resolve, macrostrat, backstrip, mass balance, thermal"
+        },
+        {
+          "name": "geox_prospect",
+          "desc": "Prospect evaluation: volumetrics, POS, EVOI, risk assessment. Modes: screen, evaluate. Use"
+        },
+        {
+          "name": "geox_contrast_metabolize",
+          "desc": "Unified anomalous contrast metabolic pipeline. Binds three stages into one call: ISOLATE ("
+        },
+        {
+          "name": "geox_temporal",
+          "desc": "Temporal analytics for petroleum basins. Modes: decline (decline curve analysis), rrr (res"
+        },
+        {
+          "name": "geox_map",
+          "desc": "Geological map pipeline. Modes: layers_list (list available layers for bbox), scene_plan ("
+        },
+        {
+          "name": "geox_source",
+          "desc": "Source rock and diagenesis evaluation. Modes: source_rock (TOC, kerogen, maturity, ΔlogR),"
+        },
+        {
+          "name": "geox_spatial",
+          "desc": "Spatial indexing and discovery. Modes: h3_index (H3 hexagonal spatial indexing), lancedb_s"
+        },
+        {
+          "name": "geox_deep_time",
+          "desc": "Deep-time Digital Earth reasoning. Modes: dde_reason (DDE Ontology + Macrostrat neuro-symb"
+        },
+        {
+          "name": "geox_claim",
+          "desc": "Unified claim engine. Modes: create/validate/challenge/seal/attach (claim lifecycle), fals"
+        },
+        {
+          "name": "geox_model",
+          "desc": "Subsurface and geological modeling. Modes: subsurface (joint inversion, gravity/mag, MT fo"
+        },
+        {
+          "name": "geox_well",
+          "desc": "Well operations. Modes: view (hydrate LAS curves into interactive tracks for WellDesk), de"
+        },
+        {
+          "name": "geox_seismic_compute",
+          "desc": "Seismic computation. Modes: avo_forward (AVO forward modeling: Zoeppritz, Shuey, LMR, Cast"
+        },
+        {
+          "name": "geox_surface_status",
+          "desc": "Federation-standard registry probe for GEOX."
+        },
+        {
+          "name": "geox_calibration_register_witness",
+          "desc": "Register a calibration witness for structural interpretation."
+        },
+        {
+          "name": "geox_extract_display_proxy",
+          "desc": "Extract a display-derived proxy from a raster seismic image."
+        },
+        {
+          "name": "geox_register_native_source",
+          "desc": "Register a native SEG-Y source for trace extraction."
+        },
+        {
+          "name": "geox_extract_native_trace",
+          "desc": "Extract a native seismic trace from a registered source."
+        },
+        {
+          "name": "geox_list_registered_sources",
+          "desc": "List all registered native seismic sources."
+        }
+      ]
+    },
+    "wealth": {
+      "verified": true,
+      "count": 15,
+      "tools": [
+        {
+          "name": "capital_primitive",
+          "desc": "Deductive capital math primitives — pure computation, no inference or governance verdict. "
+        },
+        {
+          "name": "capital_health",
+          "desc": "Financial health metrics — deductive computation from structured inputs, no inference or g"
+        },
+        {
+          "name": "capital_diagnose",
+          "desc": "Abductive institutional diagnostics — inference from partial evidence across stress, gover"
+        },
+        {
+          "name": "capital_market",
+          "desc": "Market data and commodity intelligence — observational with derived and interpreted fields"
+        },
+        {
+          "name": "capital_ledger",
+          "desc": "VAULT999 immutable ledger access — query read-only, write requires human acknowledgment. S"
+        },
+        {
+          "name": "capital_registry",
+          "desc": "WEALTH meta/introspection — registry status, tool schema, domain index, health check. Obse"
+        },
+        {
+          "name": "capital_claims",
+          "desc": "Named-entity claim gate — validates claims about real institutions/persons before publicat"
+        },
+        {
+          "name": "capital_entropy",
+          "desc": "Capital and institutional entropy analysis — measures information loss, consequence displa"
+        },
+        {
+          "name": "wealth_judge_handoff",
+          "desc": "Build or validate structured handoff envelope for arifOS governance review and 888_HOLD ju"
+        },
+        {
+          "name": "capital_indicator",
+          "desc": "Compute technical analysis indicators for any yfinance symbol. Indicators: ema, sma, rsi, "
+        },
+        {
+          "name": "capital_backtest",
+          "desc": "Run strategy backtest on XAUUSD using the proven indicator fusion (EMA alignment + ATR-sca"
+        },
+        {
+          "name": "capital_entry_plan",
+          "desc": "Compute S/R-aware entry zone, stop loss, and take profit targets for XAUUSD. Combines swin"
+        },
+        {
+          "name": "wealth_synthesize",
+          "desc": "Ω00 Cross-dimensional synthesis — collapses the 12 Ω-invariants (Ω01 conservation, Ω02 flo"
+        },
+        {
+          "name": "capital_polix",
+          "desc": "Power topology intelligence — incentive mapping, capture detection, rent extraction analys"
+        },
+        {
+          "name": "capital_civx",
+          "desc": "Civilizational scenario intelligence — long-horizon resilience, sovereignty, intergenerati"
+        }
+      ]
+    },
+    "well": {
+      "verified": true,
+      "count": 40,
+      "tools": [
+        {
+          "name": "well_log_intake",
+          "desc": "[Triad Phase 1] Log a meal/snack/intake event with kcal + macro breakdown."
+        },
+        {
+          "name": "well_log_recovery_event",
+          "desc": "[Triad Phase 1] Log a recovery/restorative event."
+        },
+        {
+          "name": "well_log_substance",
+          "desc": "[Triad Phase 1] Log a substance intake event."
+        },
+        {
+          "name": "well_inject_biometric",
+          "desc": "[Triad Phase 1] Hermes-only biometric injection from external device."
+        },
+        {
+          "name": "well_observe_machine",
+          "desc": "[Triad Phase 2] Per-organ thermal/drift/scar/evidence card."
+        },
+        {
+          "name": "well_observe_federation_thermal",
+          "desc": "[Triad Phase 2] Aggregate thermal state across KVM8 organs + KVM4/KVM2 mesh."
+        },
+        {
+          "name": "well_observe_scar_load",
+          "desc": "[Triad Phase 2] Scar volume per organ. Graceful UNKNOWN if no endpoint."
+        },
+        {
+          "name": "well_observe_drift_field",
+          "desc": "[Triad Phase 2] FRAME observer drift over last N hours."
+        },
+        {
+          "name": "well_observe_evidence_backlog",
+          "desc": "[Triad Phase 2] Receipt queue depth. Graceful UNKNOWN if no endpoint."
+        },
+        {
+          "name": "well_classify_machine_state",
+          "desc": "[Triad Phase 2] Compose prior tools → OPTIMAL/WATCH/DEGRADED/CRITICAL."
+        },
+        {
+          "name": "well_attest_to_kernel",
+          "desc": "[Triad Phase 3] Bridge fire — attestation from WELL → arifOS :18081 /attest."
+        },
+        {
+          "name": "well_handoff_dignity_to_arifos",
+          "desc": "[Triad Phase 3] High-urgency dignity handoff WELL → arifOS /dignity/handoff."
+        },
+        {
+          "name": "well_propose_seal_recommendation",
+          "desc": "[Triad Phase 3] Propose SEAL recommendation to arifOS :18081 /recommendation/inbox."
+        },
+        {
+          "name": "well_propose_governance_signal",
+          "desc": "[Triad Phase 3] Propose operational governance signal to arifOS :18081 /signal/inbox."
+        },
+        {
+          "name": "well_consent_set_scope",
+          "desc": "[Triad Phase 3] Grant or revoke consent scope. Hermes-only (F11 governance.consent_write)."
+        },
+        {
+          "name": "well_consent_audit",
+          "desc": "[Triad Phase 3] Read consent scope registry. Sovereign's right (no F11 gate)."
+        },
+        {
+          "name": "well_seal_recommendation_log",
+          "desc": "[Triad Phase 3] Read recommendation history from events.jsonl. Read-only."
+        },
+        {
+          "name": "well_assess_triadic_state",
+          "desc": "[Triad Phase 4] Headline composition: human × machine × governance → unified signal."
+        },
+        {
+          "name": "well_get_triadic_snapshot",
+          "desc": "[Triad Phase 5] Read the canonical triadic snapshot at /state/triadic_snapshot.json."
+        },
+        {
+          "name": "well_render_hud_panel",
+          "desc": "[Triad Phase 5] Render HUD cockpit ASCII panel from triadic snapshot."
+        },
+        {
+          "name": "well_frame_read_snapshot",
+          "desc": "[Triad Phase 5] FRAME observer reads snapshot as evidence, never verdict."
+        },
+        {
+          "name": "well_machine_diagnose",
+          "desc": "M-WELL MACHINE DIAGNOSTIC -- Full VPS health with actionable recommendations."
+        },
+        {
+          "name": "well_machine_recommend",
+          "desc": "M-WELL RECOMMENDATION ENGINE -- Get specific fix commands for machine issues."
+        },
+        {
+          "name": "well_classify_substrate",
+          "desc": "Ω-WELL-01: Substrate classification and boundary sensing."
+        },
+        {
+          "name": "well_trace_lineage",
+          "desc": "Ω-WELL-02: Memory, trend, ledger, and vault chain tracing."
+        },
+        {
+          "name": "well_assess_homeostasis",
+          "desc": "Ω-WELL-06: Assess regulation, stability, and empathic balance under change."
+        },
+        {
+          "name": "well_check_repair",
+          "desc": "Ω-WELL-07: Check repair, recovery, resilience, and forge cycle integrity."
+        },
+        {
+          "name": "well_validate_vitality",
+          "desc": "Ω-WELL-08: Validate vitality, readiness, and NIAT. (Floor compliance removed -- arifOS adj"
+        },
+        {
+          "name": "well_assess_reliability",
+          "desc": "Ω-WELL-10: Assess machine, tool, institution, and operational reliability."
+        },
+        {
+          "name": "well_guard_dignity",
+          "desc": "Ω-WELL-12: Guard soul, personhood, meaning, and symbolic boundaries."
+        },
+        {
+          "name": "well_registry_status",
+          "desc": "WELL registry truth diagnostic -- blueprint canonical format."
+        },
+        {
+          "name": "well_human",
+          "desc": "H-WELL unified plane. mode=homeostasis|readiness|dignity."
+        },
+        {
+          "name": "well_machine",
+          "desc": "M-WELL unified plane. mode=diagnose|recommend|classify|observe."
+        },
+        {
+          "name": "well_triad",
+          "desc": "G+C triadic plane. mode=assess|snapshot|hud."
+        },
+        {
+          "name": "well_reality",
+          "desc": "R-WELL (v1). Reality Integrity plane. mode=confidence|memory|witness|lineage|patterns."
+        },
+        {
+          "name": "well_adaptation",
+          "desc": "A-WELL (v0). Adaptation Readiness plane. mode=precheck|readiness|mttr|gaps."
+        },
+        {
+          "name": "well_intake",
+          "desc": "H-WELL write plane. mode=meal|recovery|substance|biometric."
+        },
+        {
+          "name": "well_consent",
+          "desc": "G-WELL consent plane. mode=audit|grant|revoke."
+        },
+        {
+          "name": "well_bridge",
+          "desc": "G-WELL outbound witness plane. mode=attest|signal|recommend|dignity|log."
+        },
+        {
+          "name": "well_registry",
+          "desc": "WELL registry meta. mode=status|full|contradictions."
+        }
+      ]
+    }
+  },
+  "total_verified": 89
+}

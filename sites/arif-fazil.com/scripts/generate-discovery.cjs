@@ -114,6 +114,7 @@ This file is a curated map, not a sitemap and not a permission grant. Convention
 Ditempa Bukan Diberi — forged, not given.
 
 ## Start Here
+- [Discovery graph](https://arif-fazil.com/discovery/index.json): Federation capability graph — identity, authority, governance, capabilities, boundaries in one traversal.
 - [About](https://arif-fazil.com/about): Who Arif is.
 - [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.

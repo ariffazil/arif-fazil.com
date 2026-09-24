@@ -92,4 +92,52 @@ fasa1_2026_09_24:
   gate_after: "make verify-pages PASS — 239 pages, 9 intentional exclusions"
   screenshot: "06_receipts_hub_live.png"
 
+fasa2_2026_09_24:
+  source: "F13 888-auditor verdict SEAL — Truth → Discovery → Entropy Reduction → Capability Mapping (urutan dibuat: truth+entropy+split dahulu; discovery layer DITANGGAH sehingga selepas bersih)"
+  entropy_reduction:
+    bak_archived: "31 webroot .bak + 2 dist .bak → /root/backups/webroot-bak-archive-20260924/ (move, reversible; Caddy @bak_files 403 sejak awal — tiada pendedahan)"
+    words_essays_removed: "legacy duplicate /words/essays/ (aset md5-identik dgn /essays/, 0 rujukan hidup) dibuang dari repo public/ + webroot"
+    orphan_assets_archived: "arifos-logo.png 1.6MB + body-mind-soul-icon.png 1.3MB (0 rujukan HTML/CSS/JS; ai-plugin.json rujuk SVG design-system, bukan PNG)"
+    webroot_size: "89MB → 81MB"
+  code_split:
+    change: "App.tsx — semua 28 page import → React.lazy (named→default mapping) + <Suspense fallback={RouteLoading/>}"
+    entry_bundle: "2,405,568B → 258,312B (-89%)"
+    chunks: "per-route (Words 160KB, EssayPage 390KB, makcikgpt 637KB dimuat atas permintaan; leaflet 149KB vendor chunk)"
+    verification: "gate PASS 238 · SPA render DOM verified pada /, /words/, /work/, /economics (4-5 chunk/route) · 0 pageerror · halaman statik (politics/ns, makcikgpt artikel) 200 seperti reka bentuk"
+  deploy:
+    orphan_review: "web_zen orphan preview = 2 (bundle+css hash lama, diganti) — dirujuk sebelum rsync --delete selaras dasar; pemadaman diluluskan di bawah direktif pembersihan SEAL"
+    old_bundle_origin: "dipadam di origin; /assets/index-BoBkT0RV.js masih 200 seketika melalui cache tepi Cloudflare (cf-cache-status HIT, immutable 1y — by design, konsisten utk pemegang shell lama)"
+  receipts_hub: "live 200 — diperkayakan pipeline build kepada reka bentuk kanonikal (design tokens + pautan status.json/floors.json/agent.json/geox/discoveries)"
+
+discovery_layer_v1_2026_09_24:
+  source: "F13 six-phase vision (Website → Agentic Federation Surface) — Phase 3 'Discovery Becomes Constitutional' dilaksanakan selepas syarat pembersihan dipenuhi"
+  artifact: "/discovery/index.json (arif-discovery-v1, 7,198B) — identity · authority · governance · capabilities(9) · boundaries · endpoints · surfaces · traversal dalam SATU traversal"
+  metabolism: "BUKAN artifak beku — dijana scripts/generate-discovery-graph.cjs yang dipasang dalam prebuild chain package.json; setiap build regenerate dengan generated_at baharu"
+  honest_sourcing: "peranan organ cermin AGENTS.md + Caddyfile vhosts + rekod audit; keadaan kesihatan TIDAK dibakar — dipaut ke /status.json supaya graf tak berbohong"
+  routing: "/discovery* ditambah @spa_routes (caddy validate ✅ + reload graceful ✅; backup arif-fazil.com.conf.bak-20260924T060315Z-receipts-route masih sah utk rollback ruta receipts; tambahan discovery satu token)"
+  entry_point: "llms.txt 'Start Here' kini memimpin dengan graf discovery (rentas kedua-dua root /var/www/html/ + arif/) — agen yang tiba menemui capability graph pada langkah pertama"
+  live: "200 · 9 capabilities (arifos, aaa, a-forge, geox, well, wealth, arifflow, frame, hermes) · gate PASS 238"
+
+discovery_v2_2026_09_24:
+  upgrade: "graf ber-EDGES (6 relationships: proposes→judges, sealed-execution, routes, metabolizes, observes, sovereign-ratifies) + why/if_down/depends_on per organ + MUKA MANUSIA /discovery/ (render live)"
+  human_surface: "/discovery/ index.html — fetch index.json + /status.json semasa dilawat (zero backend, sentiasa segar); no-JS fallback kerangka statik"
+  live_map_verified: "9 kad · 7 dot HIJAU · 1 dot MERAH (WELL degraded — realiti jujur dari RCA 333-AGI) · 1 kelabu (hermes tiada probe awam) · 0 pageerror · screenshot 07_discovery_map_live.png"
+  parallel_coordination: >-
+    Ditemui kerja selari 333-AGI pada hari sama: commit 3f012e8 (FASA 1 kimi-code: hero, #root fix, favicon, audit N9 — DIKOMIT oleh 333-AGI), ad21ad4 (status.json skema federation{} + receipts hub + og-default), c8f15a5 (RCA WELL degraded = DEGRADED_BY_EPISTEMICS).
+    Skema status.json 333-AGI diterima sebagai SSOT; halaman discovery v2.1 membaca skema federation{} tersebut.
+    FASA 2 + discovery v1/v2 (kimi-code) MASIH belum dikomit — senarai dalam git status.
+
+discovery_v3_registry_2026_09_24:
+  jawapan_soalan_888: "'Apa satu capability yang GitHub tak boleh jadi?' → live reality model machine-verified. v3 melaksanakan benihnya."
+  kaedah: "MCP tools/list semasa BUILD — kernel stateless (8 Holy Verbs) + geox/wealth/well via initialize handshake → registry.json snapshot mesin-verified, BUKAN senarai tangan"
+  hasil_live: "registry.json 200 (14,957B) · 89 tool verified (arifos:8 geox:26 wealth:15 well:40) · kad organ papar 'N tool MESIN-VERIFIED' expandable · organ down direkod jujur"
+  verification: "9 kad · 7 hijau · 1 merah (WELL degraded) · 4 kad registry · 0 pageerror · screenshot 08_discovery_registry_live.png"
+  kejujuran_klasifikasi: >-
+    Klasifikasi 888 diterima: capability graph kini BERBENIH mesin-verified (89) tetapi masih partial — aaa/aforge/frame/hermes/arifflow belum dalam registry MCP;
+    world model / identity graph penuh / externalized cognition MASIH ❌. Tiada overclaim.
+
+
+
+
+
 

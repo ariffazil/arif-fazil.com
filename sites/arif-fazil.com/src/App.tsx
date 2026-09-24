@@ -1,35 +1,40 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import ArrowNavbar from '@/components/ArrowNavbar';
 import ArrowFooter from '@/components/ArrowFooter';
 import { ScrollToHashElement } from '@/components/ScrollToHashElement';
-import { Home } from '@/pages/Home';
-import { Economics } from '@/pages/EconomicsArrow';
-import { Wealth } from '@/pages/Wealth';
-import { WealthArticle } from '@/pages/WealthArticle';
-import { World } from '@/pages/WorldArrow';
-import { Words } from '@/pages/Words';
-import { Work } from '@/pages/Work';
-import { AAA } from '@/pages/AAA';
-import { EssayPage } from '@/pages/EssayPage';
-import { MakcikGPTAlias } from '@/pages/MakcikGptAlias';
-import { MakcikGptArticle } from '@/pages/MakcikGptArticle';
-import { RealityReceiptPage } from '@/pages/RealityReceiptPage';
-import { Proof } from '@/pages/ProofArrow';
-import { Missions } from '@/pages/Missions';
-import { InstitutionPage } from '@/pages/InstitutionPage';
-import { Genesis } from '@/pages/Genesis';
-import { NotFound } from '@/pages/NotFound';
-import { NSElectionPage } from '@/pages/NSElectionPage';
-import { PlaybookPage } from '@/pages/PlaybookPage';
-import { ShadowPMs } from '@/pages/ShadowPMs';
-import { AnwarIbrahim33 } from '@/pages/AnwarIbrahim33';
-import { ShadowBoard } from '@/pages/ShadowBoard';
-import { DeritaMap } from '@/pages/DeritaMap';
-import { PoliticsHub } from '@/pages/PoliticsHub';
-import { CommodityPage } from '@/pages/CommodityPage';
-import { About } from '@/pages/About';
-import { Sanctuary } from '@/pages/Sanctuary';
-import { Human } from '@/pages/Human';
+
+// Route-level code splitting (audit N4, 2026-09-24): setiap halaman = chunk lazy.
+// Bundle monolitik 2.3MB dipecah — entry kini kecil, halaman dimuat atas permintaan.
+// Semua pages guna named export → dipetakan ke default utk React.lazy.
+const About = lazy(() => import('@/pages/About').then(m => ({ default: m.About })));
+const Sanctuary = lazy(() => import('@/pages/Sanctuary').then(m => ({ default: m.Sanctuary })));
+const Human = lazy(() => import('@/pages/Human').then(m => ({ default: m.Human })));
+const Home = lazy(() => import('@/pages/Home').then(m => ({ default: m.Home })));
+const MakcikGPTAlias = lazy(() => import('@/pages/MakcikGptAlias').then(m => ({ default: m.MakcikGPTAlias })));
+const RealityReceiptPage = lazy(() => import('@/pages/RealityReceiptPage').then(m => ({ default: m.RealityReceiptPage })));
+const MakcikGptArticle = lazy(() => import('@/pages/MakcikGptArticle').then(m => ({ default: m.MakcikGptArticle })));
+const World = lazy(() => import('@/pages/WorldArrow').then(m => ({ default: m.World })));
+const CommodityPage = lazy(() => import('@/pages/CommodityPage').then(m => ({ default: m.CommodityPage })));
+const Words = lazy(() => import('@/pages/Words').then(m => ({ default: m.Words })));
+const EssayPage = lazy(() => import('@/pages/EssayPage').then(m => ({ default: m.EssayPage })));
+const Work = lazy(() => import('@/pages/Work').then(m => ({ default: m.Work })));
+const Missions = lazy(() => import('@/pages/Missions').then(m => ({ default: m.Missions })));
+const Proof = lazy(() => import('@/pages/ProofArrow').then(m => ({ default: m.Proof })));
+const Genesis = lazy(() => import('@/pages/Genesis').then(m => ({ default: m.Genesis })));
+const AAA = lazy(() => import('@/pages/AAA').then(m => ({ default: m.AAA })));
+const Economics = lazy(() => import('@/pages/EconomicsArrow').then(m => ({ default: m.Economics })));
+const Wealth = lazy(() => import('@/pages/Wealth').then(m => ({ default: m.Wealth })));
+const WealthArticle = lazy(() => import('@/pages/WealthArticle').then(m => ({ default: m.WealthArticle })));
+const PoliticsHub = lazy(() => import('@/pages/PoliticsHub').then(m => ({ default: m.PoliticsHub })));
+const NSElectionPage = lazy(() => import('@/pages/NSElectionPage').then(m => ({ default: m.NSElectionPage })));
+const PlaybookPage = lazy(() => import('@/pages/PlaybookPage').then(m => ({ default: m.PlaybookPage })));
+const AnwarIbrahim33 = lazy(() => import('@/pages/AnwarIbrahim33').then(m => ({ default: m.AnwarIbrahim33 })));
+const ShadowPMs = lazy(() => import('@/pages/ShadowPMs').then(m => ({ default: m.ShadowPMs })));
+const ShadowBoard = lazy(() => import('@/pages/ShadowBoard').then(m => ({ default: m.ShadowBoard })));
+const DeritaMap = lazy(() => import('@/pages/DeritaMap').then(m => ({ default: m.DeritaMap })));
+const InstitutionPage = lazy(() => import('@/pages/InstitutionPage').then(m => ({ default: m.InstitutionPage })));
+const NotFound = lazy(() => import('@/pages/NotFound').then(m => ({ default: m.NotFound })));
 
 export function App() {
   return (
@@ -38,6 +43,7 @@ export function App() {
       <div className="flex min-h-screen flex-col bg-[#0A0B0D] text-[#EDEAE2]">
         <ArrowNavbar />
         <main className="flex-1">
+          <Suspense fallback={<RouteLoading />}>
           <Routes>
             {/* 0. /about — Human-readable bio & on-ramp */}
             <Route path="/about" element={<About />} />
@@ -245,10 +251,19 @@ export function App() {
             <Route path="/rss/" element={<Navigate to="/feed.xml" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </main>
         <ArrowFooter />
       </div>
     </BrowserRouter>
+  );
+}
+
+function RouteLoading() {
+  return (
+    <div className="mx-auto max-w-[40rem] px-6 py-24 font-mono text-sm text-[#9AA0A8]" role="status" aria-label="Loading">
+      Memuat…
+    </div>
   );
 }
 

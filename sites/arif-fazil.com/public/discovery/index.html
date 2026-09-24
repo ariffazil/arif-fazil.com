@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ms" data-ring="SOUL" data-plane="discovery">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Discovery — Peta Federasi | arif-fazil.com</title>
+<meta name="description" content="Satu traversal: identity, authority, governance, capabilities, boundaries federasi Arif."/>
+<link rel="canonical" href="https://arif-fazil.com/discovery/"/>
+<meta name="robots" content="index,follow"/><meta name="theme-color" content="#0A0B0D"/>
+<meta property="og:type" content="website"/><meta property="og:title" content="Discovery — Peta Federasi | arif-fazil.com"/>
+<meta property="og:url" content="https://arif-fazil.com/discovery/"/>
+<link rel="icon" href="/favicon.ico"/>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0A0B0D;color:#EDEAE2;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;min-height:100vh}
+.wrap{max-width:1080px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.kicker{color:#C9A227;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.6rem}
+h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;margin-bottom:.5rem}
+.sub{color:#9AA3AF;font-size:.85rem;line-height:1.6;max-width:46rem;margin-bottom:2rem}
+.sub a{color:#C9A227;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:2.5rem}
+.card{border:1px solid #1F2733;border-left:3px solid #C9A227;background:#0D1016;border-radius:6px;padding:1.1rem 1.25rem}
+.card h2{font-size:1rem;margin-bottom:.2rem}
+.card .kind{color:#5B6470;font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.card .role{color:#D8D4CC;font-size:.78rem;line-height:1.55;margin-bottom:.6rem}
+.card .why,.card .ifdown{color:#9AA3AF;font-size:.72rem;line-height:1.5;margin-top:.45rem}
+.card .why b,.card .ifdown b{color:#C9A227;font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#5B6470;margin-right:.45rem;vertical-align:middle}
+.dot.up{background:#3FB68B}.dot.down{background:#E4572E}
+.health{font-size:.7rem;color:#9AA3AF}
+section h2.sec{color:#C9A227;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin:2.2rem 0 1rem;border-bottom:1px solid #1F2733;padding-bottom:.5rem}
+.rel{border:1px solid #1F2733;background:#0D1016;border-radius:6px;padding:.8rem 1rem;margin-bottom:.6rem;font-size:.75rem;line-height:1.55;color:#D8D4CC}
+.rel .t{color:#C9A227;font-weight:700;margin-right:.5rem}
+footer{border-top:1px solid #1F2733;margin-top:3rem;padding-top:1.25rem;color:#5B6470;font-size:.68rem;line-height:1.7}
+footer a{color:#9AA3AF;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="kicker">Federation Discovery Surface</p>
+<h1>Peta Federasi</h1>
+<p class="sub">Satu traversal untuk manusia dan agent: siapa berdaulat, apa keupayaan, apa sempadan, apa keadaan semasa.
+Kesihatan <span id="live-tag">dimuat live</span> dari <a href="/status.json">/status.json</a>. Graf mesin: <a href="/discovery/index.json">/discovery/index.json</a>.</p>
+
+<section><h2 class="sec">Capabilities × Kesihatan Live</h2><div class="grid" id="organs"></div></section>
+<section><h2 class="sec">Relationships — Siapa Berhubung Dengan Siapa</h2><div id="rels"></div></section>
+<section><h2 class="sec">Authority & Governance</h2>
+<div class="rel"><span class="t">AUTHORITY</span> F1 AMANAH · F2 TRUTH · F4 CLARITY · F6 MARUAH · F9 ANTI-HANTU · F13 SOVEREIGN — <a href="/floors.json" style="color:#C9A227">senarai penuh</a>. Veto manusia mutlak.</div>
+<div class="rel"><span class="t">PATTERN</span> Musyawarah — 333 ARCHITECT merancang × 555 AUDITOR mencabar × 888 APEX mengadili; F13 meratifikasi.</div>
+<div class="rel"><span class="t">WITNESS</span> <a href="/ledger/" style="color:#C9A227">Ledger</a> · <a href="/receipts/" style="color:#C9A227">Receipts</a> · <a href="/999" style="color:#C9A227">/999 vault proof</a></div>
+</section>
+<footer>
+Graf ini dijana oleh pipeline build (setiap build regenerate) · Kesihatan dipaut, tidak dibakar (F2) ·
+<a href="/human">Kontrak agent</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/agent.json">agent.json</a><br/>
+DITEMPA BUKAN DIBERI — Manusia kekal berdaulat; manusia bukan lapisan pengangkutan.
+</footer>
+</div>
+<script>
+(async () => {
+  const g = await fetch('/discovery/index.json').then(r => r.json()).catch(() => null);
+  if (!g) return;
+  let st = null, reg = null;
+  try { st = await fetch('/status.json').then(r => r.json()); } catch (e) {}
+  try { reg = await fetch('/discovery/registry.json').then(r => r.json()); } catch (e) {}
+  const healthOf = id => {
+    if (!st) return null;
+    const key = { arifos:'arifos', aaa:'aaa', geox:'geox', wealth:'wealth', well:'well', 'a-forge':'aforge', arifflow:'arifflow', frame:'frame', hermes:null }[id];
+    if (!key) return null;
+    const o = (st.federation || {})[key];
+    if (!o) return null;
+    const s = o.status;
+    if (s === 'healthy' || s === 'flowing' || s === 'ok' || s === 200) return 'UP:' + s;
+    return 'DOWN:' + (s || '?');
+  };
+  const organs = document.getElementById('organs');
+  organs.innerHTML = g.capabilities.map(c => {
+    const h = healthOf(c.id);
+    const dot = h === null ? '<span class="dot"></span>' : (h.startsWith('UP') ? '<span class="dot up"></span>' : '<span class="dot down"></span>');
+    const label = h === null ? 'tiada probe awam (substrate)' : h.replace(':', ' · ');
+    const eps = Object.values(c.endpoints || {}).filter(Boolean);
+    const ro = reg ? ((reg.organs || {})[c.id]) : null;
+    const toolsBlock = ro && ro.verified
+      ? '<details style="margin-top:.55rem"><summary style="cursor:pointer;color:#C9A227;font-size:.72rem">' + ro.count + ' tool MESIN-VERIFIED (MCP) — klik untuk senarai</summary>'
+        + '<div style="margin-top:.4rem;font-size:.66rem;color:#9AA3AF;line-height:1.7">'
+        + ro.tools.map(t => '<span style="color:#D8D4CC">' + t.name + '</span>' + (t.desc ? ' — ' + t.desc : '')).join('<br/>')
+        + '</div></details>'
+      : (ro && !ro.verified ? '<div class="ifdown"><b>Registry:</b> ' + (ro.note || 'tidak verified pada build ini') + '</div>' : '');
+    return '<div class="card"><h2>' + dot + c.name + '</h2><div class="kind">' + c.kind + ' · <span class="health">' + label + '</span></div>'
+      + '<div class="role">' + c.role + '</div>'
+      + '<div class="why"><b>Mengapa wujud:</b> ' + c.why + '</div>'
+      + (c.if_down ? '<div class="ifdown"><b>Jika mati:</b> ' + c.if_down + '</div>' : '')
+      + (c.boundary ? '<div class="ifdown"><b>Sempadan:</b> ' + c.boundary + '</div>' : '')
+      + (eps.length ? '<div class="ifdown"><b>Endpoints:</b> ' + eps.join(' · ') + '</div>' : '')
+      + toolsBlock
+      + '</div>';
+  }).join('');
+  const rels = document.getElementById('rels');
+  rels.innerHTML = g.relationships.map(r =>
+    '<div class="rel"><span class="t">' + r.type.toUpperCase() + '</span>' +
+    (Array.isArray(r.from) ? r.from.join(', ') : r.from) + ' → ' + r.to +
+    ' — ' + r.note + '</div>').join('');
+})();
+</script>
+</body>
+</html>
+

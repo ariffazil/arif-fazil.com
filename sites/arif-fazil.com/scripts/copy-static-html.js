@@ -59,6 +59,9 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   // /world/ — curated static hub (2026-09-18). This route is ALSO in SPA_ROUTES;
   // without this entry every build replaced the hub with the SPA shell.
   "world/index.html",
+  // /words/ — content-first static hub with Atlas & Compass + 7 Civilizations (2026-09-24).
+  // Preserved so raw curl/agents get full semantic HTML; postbuild enriches with SPA bundle.
+  "words/index.html",
   // Curated pages that Caddy ALREADY prefers over React. Its try_files lines read
   // `{path} {path}/index.html /<route>/index.html /index.html =404` and
   // `/world/makcikgpt/index.html /index.html =404` — static first, shell as fallback.
@@ -67,11 +70,6 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   // React shell carrying the ROOT title. Found 2026-09-18 by nav audit: public/ had
   // Words 16.5 KB / Work 10.1 KB / MakcikGPT 42.1 KB with correct per-route titles;
   // the webroot had 8.6 KB of the homepage on all three.
-  //
-  // /work/ REMOVED from allowlist 2026-09-20 — static drill-hero shell diverged from
-  // React Work.tsx (seismic canvas, discovery wells, federation systems). SPA shell
-  // wins: React Router renders the full interactive page. /work/ dual-surface fix.
-  "words/index.html",
   "world/makcikgpt/index.html",
   ]);
 
@@ -125,6 +123,26 @@ if (fs.existsSync(spaEntryPath)) {
     // gitignored, so the overwrite left no trace. That is why the hub kept vanishing.)
     if (STATIC_INDEX_ALLOWLIST.has(`${route}/index.html`) || STATIC_INDEX_ALLOWLIST.has(`${route}/index.html`.replace(/\\/g, "/"))) {
       console.log(`postbuild: preserving static page for /${route} (allowlisted, not injecting SPA shell)`);
+      if (route === "words") {
+        const wordsDistPath = path.join(distRoot, "words/index.html");
+        if (fs.existsSync(wordsDistPath)) {
+          let wordsHtml = fs.readFileSync(wordsDistPath, "utf8");
+          const scriptMatches = [...spaHtml.matchAll(/<script type="module" crossorigin src="([^"]+)"><\/script>/g)];
+          const cssMatches = [...spaHtml.matchAll(/<link rel="stylesheet" crossorigin href="([^"]+)">/g)];
+          for (const m of cssMatches) {
+            if (!wordsHtml.includes(m[0])) {
+              wordsHtml = wordsHtml.replace("</head>", `  ${m[0]}\n</head>`);
+            }
+          }
+          for (const m of scriptMatches) {
+            if (!wordsHtml.includes(m[0])) {
+              wordsHtml = wordsHtml.replace("</body>", `  ${m[0]}\n</body>`);
+            }
+          }
+          fs.writeFileSync(wordsDistPath, wordsHtml, "utf8");
+          console.log(`postbuild: enriched /words/index.html with Vite assets for hybrid SPA hydration`);
+        }
+      }
       continue;
     }
     fs.mkdirSync(routeDir, { recursive: true });

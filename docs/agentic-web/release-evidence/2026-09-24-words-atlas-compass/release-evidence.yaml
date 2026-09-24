@@ -1,0 +1,74 @@
+# Release evidence — /words/ Atlas & Compass hero — 2026-09-24
+# External name: release evidence / deploy receipt. NOT a kernel SEAL.
+# Deploy (build + rsync + Caddy reload) executed by prior agent session
+# (gemini antigravity-cli); this record completes VERIFY + WITNESS.
+
+release_candidate:
+  commit: "f86bfcafe04635ea75e9a42cc694c53f565622e3"
+  branch: main
+  environment: production_public_html
+  working_tree_note: >-
+    Words.tsx hero + WIKI_TOPICS changes and regenerated public/words/* shells
+    are present in working tree but NOT yet committed at time of this record.
+  changed_routes:
+    - /words/ (hero visual + Compass Lexigram Codex + Topic Category 04)
+    - /words/writing/* (15 per-slug shells, asset hash refresh)
+    - /assets/index-BoBkT0RV.js
+    - /assets/index-DUyxPmzF.css
+    - /images/atlas-compass-hero.jpg
+  public_effect:
+    - Atlas & Compass cinematic hero banner live on /words/
+    - New wiki category "Civilizational Order & Geopolitics" (Topic Category 04)
+    - 79 official publications with S1-S9/M1-M5/GENESIS filters + quick search
+  tests:
+    doctor_before: "run by prior agent session (not captured)"
+    doctor_after: "ALL GREEN — receipt /root/forge_work/2026-09-24/web-zen/web-zen-doctor-2026-09-24T053019Z.json"
+    doctor_fail_set_delta: "none"
+    build: "exit 0 by prior agent session (2,304 modules, per-slug shells)"
+    verify_pages_gate: "PASS — 239 pages verified, 8 intentional exclusions (make verify-pages)"
+    playwright_home: "docs/agentic-web/release-evidence/2026-09-24-words-atlas-compass/01_words_live_hero_atlas_compass.png (full-page, vision-verified)"
+    playwright_words_catalog: "02_words_live_essays_catalog.png (viewport @ publications, anchor Medium)"
+    playwright_words_wiki: "03_words_live_wiki_topics.png (viewport @ Topic Category 04, vision-verified)"
+    playwright_avo_paper: "04_avo_ai_paper_live.png (full-page)"
+    console_error_audit: "0 pageerrors / 0 console.errors on /words/ + AVO paper (Playwright)"
+    axe: not_run
+    lighthouse: not_run
+  http_live_checks: >-
+    200 OK: /words/ (26,146B) · /images/atlas-compass-hero.jpg (966,892B, byte-exact
+    vs webroot) · /assets/index-DUyxPmzF.css (191,417B) · /assets/index-BoBkT0RV.js
+    (2,405,568B) · 3 AVO AI paper routes (52-57KB each)
+  security:
+    secrets_scan: "not run this session (no secret-bearing files touched)"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: true
+    caddy_reload_note: "reloaded by prior agent session; this session made no Caddy change"
+  hygiene:
+    orphan_cleanup: "removed stale symlink /var/www/html/arif/assets/index-Dte6gqTG.css (0 refs webroot-wide)"
+  rollback:
+    backup: "none taken this session (sync executed by prior session)"
+    git: "git checkout -- sites/arif-fazil.com/src/pages/Words.tsx && make build && rsync (revert to pre-hero /words/)"
+  requested_action: "none (verification + evidence record only)"
+  approver: ""
+
+redundancy_fix_2026_09_24:
+  detected_by: "F13 (Arif) — 'git redundant components. verify again'"
+  symptom: >-
+    Live /words/ rendered the hero TWICE (static shell H1 + React H2) plus duplicate
+    nav; root cause: postbuild injected SPA scripts into the static words shell whose
+    entire semantic page (.frame) sat OUTSIDE <div id="root"> — browser showed static
+    page AND React app concatenated.
+  fix: >-
+    public/words/index.html: wrapped .frame inside <div id="root"> (prerendered-root
+    pattern). Crawlers/no-JS still get full semantic HTML; JS users get ONE React
+    render that replaces the static content. 2-anchor edit, div balance 56/56.
+  fix_files:
+    - sites/arif-fazil.com/public/words/index.html
+  deploy: "npm run build (asset hashes unchanged) + targeted rsync words/index.html; no Caddy reload"
+  verification_after_fix:
+    dom_counts: "hero_imgs=1 (was 2) · atlas_headings=[H2] (was H1+H2) · static .frame=0 · nav=1"
+    console_errors: 0
+    verify_pages_gate: "PASS — 239 pages"
+    http: "200 OK /words/ (24,894B served, root-before-frame confirmed)"
+    screenshot: "05_words_live_hero_FIXED_single.png (vision-verified: hero exactly once, styled, no defects)"
+

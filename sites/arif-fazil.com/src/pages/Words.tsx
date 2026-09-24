@@ -43,6 +43,14 @@ const WIKI_TOPICS = [
       { title: 'The Seven-Contract Agent Model', desc: 'Definition of an authentic agent: boundary, context, tool veto, accountability.' },
       { title: 'The Holy 8 Verbs of arifOS', desc: 'init → observe → think → route → memory → judge → forge → seal.' },
     ]
+  },
+  {
+    category: 'Civilizational Order & Geopolitics',
+    items: [
+      { title: 'The Seven Civilizational Languages of AI', desc: 'Mapping Kissinger’s World Order, Isaacson’s humanist lens, and Nusantara statecraft into the autonomous agentic era.' },
+      { title: 'Musyawarah vs. Unilateral Algorithmic Diktat', desc: 'How archipelagic consensus (333 Architect + 555 Auditor) prevents institutional epistemic collapse.' },
+      { title: 'Batu & Enjin: Reality Constraints at Depth', desc: 'Why rock formations at 3,000m constrain corporate and artificial narratives alike.' },
+    ]
   }
 ]
 
@@ -81,9 +89,38 @@ export function Words() {
             Every word published directly.
           </p>
 
-          {/* Hero Visual: Compass Lexigram Codex */}
-          <div className="my-8">
-            <CompassLexigramCodex />
+          {/* Visual Hero: The Atlas & Compass of Thought */}
+          <div className="my-8 overflow-hidden rounded-2xl border border-[#C9A227]/30 bg-[#0B0D13] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+            <div className="relative aspect-[21/9] w-full overflow-hidden max-h-[380px]">
+              <img
+                src="/images/atlas-compass-hero.jpg"
+                alt="The Atlas & Compass of Thought — Nusantara Archipelago Caelestis"
+                className="w-full h-full object-cover object-center filter brightness-[0.82] contrast-[1.1] transition-transform duration-700 hover:scale-[1.02]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D13] via-[#0B0D13]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D13]/90 via-transparent to-[#0B0D13]/60" />
+              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 right-6 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#0A0B0D]/80 border border-[#C9A227]/40 font-mono text-[0.65rem] text-[#C9A227] uppercase tracking-widest backdrop-blur-sm mb-3">
+                  <span>🧭 CARTOGRAPHY OF ORDER</span>
+                  <span>·</span>
+                  <span>NUSANTARA CAELESTIS</span>
+                  <span>·</span>
+                  <span>7 CIVILIZATIONS</span>
+                </div>
+                <h2 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tight text-[#EDEAE2] drop-shadow-md">
+                  The Atlas & The Compass
+                </h2>
+                <p className="font-sans text-xs md:text-sm text-[#D8D4CC]/90 leading-relaxed mt-2 drop-shadow">
+                  Navigating the frontier of AI governance, civilizational order, and physical reality. 
+                  Grounded at the maritime crossroads of Nusantara where truth is forged, not granted.
+                </p>
+              </div>
+            </div>
+            
+            {/* Interactive Astrolabe Dial */}
+            <div className="p-4 md:p-6 border-t border-[#1F2733]/80 bg-gradient-to-b from-[#0F1219] to-[#0A0B0D]">
+              <CompassLexigramCodex />
+            </div>
           </div>
 
           {/* Tab Switcher */}

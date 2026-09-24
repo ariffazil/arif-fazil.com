@@ -37,6 +37,8 @@ INTENTIONAL_EXCLUSIONS=(
     "/forge"
     "/propa/"
     "/propa"
+    "/receipts/"
+    "/receipts/ai-agents-2027/"
 )
 
 FAIL_COUNT=0

@@ -1,0 +1,49 @@
+{
+  "$schema": "status_v1",
+  "generated_at": "2026-09-24T06:01:23.758504Z",
+  "note": "Static snapshot regenerated at deploy. Not live-polled. Discovery file per AGENTS.md.",
+  "site": "arif-fazil.com",
+  "organs": [
+    {
+      "name": "arifos",
+      "health_url": "https://arifos.arif-fazil.com/health",
+      "status": 200
+    },
+    {
+      "name": "mcp-gateway",
+      "health_url": "https://mcp.arif-fazil.com/health",
+      "status": 200
+    },
+    {
+      "name": "geox",
+      "health_url": "https://geox.arif-fazil.com/health",
+      "status": 200
+    },
+    {
+      "name": "wealth",
+      "health_url": "https://wealth.arif-fazil.com/health",
+      "status": 200
+    },
+    {
+      "name": "well",
+      "health_url": "https://well.arif-fazil.com/health",
+      "status": 200
+    },
+    {
+      "name": "chron",
+      "health_url": "https://chron.arif-fazil.com/health",
+      "status": 200
+    },
+    {
+      "name": "aaa",
+      "health_url": "https://aaa.arif-fazil.com/health",
+      "status": 200
+    }
+  ],
+  "organs_up": 7,
+  "organs_total": 7,
+  "floors": {
+    "path": "/floors.json",
+    "sha256": "920135bf6f9034f2fefd6bd171fe0efc02a8acfc4081146a56ffcaa601f3bd2d"
+  }
+}

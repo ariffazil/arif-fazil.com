@@ -72,3 +72,24 @@ redundancy_fix_2026_09_24:
     http: "200 OK /words/ (24,894B served, root-before-frame confirmed)"
     screenshot: "05_words_live_hero_FIXED_single.png (vision-verified: hero exactly once, styled, no defects)"
 
+fasa1_2026_09_24:
+  source: "AUDIT-REPORT-2026-09-24.md · FASA 1 (commit excluded — awaiting explicit F13 ya)"
+  favicon:
+    before: "_shared/favicon.png 1024x1024 1.43MB; /favicon.png referenced 20x but 404 (file only in _shared/)"
+    after: "favicon.png 256x256 29KB (-98%) served at root (200) + _shared/; favicon.ico 48x48 3.7KB regenerated (was stale 4.3KB Jul-29)"
+    backup: "/root/backups/www-html-arif-20260924-pre-asset-optimization/ (12MB originals)"
+  textures:
+    decision: "quantization attempted, seismic-amber INFLATED 3.36→4.05MB → restored originals; WebP conversion deferred to FASA 2 as planned"
+  receipts_route:
+    fix: "public/receipts/index.html hub (additive) + /receipts* added to @spa_routes in /etc/caddy/vhosts/arif-fazil.com.conf (documented gate procedure)"
+    caddy_backup: "arif-fazil.com.conf.bak-20260924T060315Z-receipts-route"
+    caddy_validate: "Valid configuration · reload graceful · service active"
+    live: "/receipts/ 200 (4,256B hub) · /receipts/ai-agents-2027/ 200 (163,746B — was 404 since creation)"
+  status_json:
+    decision: "never existed in git; generated static snapshot (7/7 organs UP, floors.json sha256) placed at /var/www/html/status.json (@root_static location) — discovery promise in AGENTS.md now honoured"
+  og_default_png:
+    verdict: "MOOT — zero references anywhere (old audit issue C1 closed as not-a-bug)"
+  gate_after: "make verify-pages PASS — 239 pages, 9 intentional exclusions"
+  screenshot: "06_receipts_hub_live.png"
+
+

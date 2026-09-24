@@ -1,11 +1,11 @@
 {
   "service": "arif-fazil.com",
   "purpose": "Live runtime state, organ endpoints & floor compliance (per AGENTS.md discovery contract)",
-  "generated_at_utc": "2026-09-24T06:55:00Z",
+  "generated_at_utc": "2026-09-24T07:10:00Z",
   "build": {
-    "commit": "3f012e8",
+    "commit": "ad21ad4",
     "branch": "main",
-    "deployed_by": "333-AGI — Fasa 1 audit 2026-09-24",
+    "deployed_by": "333-AGI \u2014 Fasa 1 audit 2026-09-24",
     "generator": "scripts/gen-status.sh (run at deploy; values below are probe-truth, not aspirations)"
   },
   "federation": {
@@ -17,13 +17,46 @@
       "kernel_thermodynamic_verdict": "HOLD",
       "verdict_note": "Kernel HOLD = constitutional gates active (session G sub-threshold). HOLD is a truth state, not an outage. See /floors.json F7/F8."
     },
-    "aaa": { "role": "control plane", "local_health": "http://127.0.0.1:3001/health", "status": "healthy" },
-    "aforge": { "role": "execution shell", "local_health": "http://127.0.0.1:7072/health", "status": "healthy" },
-    "arifflow": { "role": "metabolic nerve", "local_health": "http://127.0.0.1:7073/health", "status": "flowing", "fq": 1.35 },
-    "geox": { "role": "earth intelligence", "url": "https://arif-fazil.com/geox/", "local_health": "http://127.0.0.1:8081/health", "status": "healthy" },
-    "wealth": { "role": "capital intelligence", "local_health": "http://127.0.0.1:18082/health", "status": "healthy" },
-    "well": { "role": "vitality mirror", "local_health": "http://127.0.0.1:18083/health", "status": "degraded", "note": "RCA in progress 2026-09-24 (S2). Degraded is observed truth; classification pending." },
-    "frame": { "role": "independent observer", "local_health": "http://127.0.0.1:18085/health", "status": "ok" }
+    "aaa": {
+      "role": "control plane",
+      "local_health": "http://127.0.0.1:3001/health",
+      "status": "healthy"
+    },
+    "aforge": {
+      "role": "execution shell",
+      "local_health": "http://127.0.0.1:7072/health",
+      "status": "healthy"
+    },
+    "arifflow": {
+      "role": "metabolic nerve",
+      "local_health": "http://127.0.0.1:7073/health",
+      "status": "flowing",
+      "fq": 1.35
+    },
+    "geox": {
+      "role": "earth intelligence",
+      "url": "https://arif-fazil.com/geox/",
+      "local_health": "http://127.0.0.1:8081/health",
+      "status": "healthy"
+    },
+    "wealth": {
+      "role": "capital intelligence",
+      "local_health": "http://127.0.0.1:18082/health",
+      "status": "healthy"
+    },
+    "well": {
+      "role": "vitality mirror",
+      "local_health": "http://127.0.0.1:18083/health",
+      "status": "degraded",
+      "degradation_class": "DEGRADED_BY_EPISTEMICS (not service failure)",
+      "rca_2026_09_24": "has_verified_telemetry=false, source_type=OPERATOR_REPORTED \u2014 WELL honestly refuses to claim sensor-verified vitality. Telemetry collector (oneshot+timer) ran successfully 14:00:58 MYT; cf703be drift=false. Services healthy.",
+      "known_quirk": "freshness.status='fresh' while age 22749s > stale_after 14400s \u2014 WELL-internal logic ticket S2.1"
+    },
+    "frame": {
+      "role": "independent observer",
+      "local_health": "http://127.0.0.1:18085/health",
+      "status": "ok"
+    }
   },
   "discovery_files": {
     "llms_txt": "/llms.txt",
@@ -34,14 +67,23 @@
     "robots": "/robots.txt"
   },
   "receipts_surfaces": [
-    { "path": "/receipts/", "what": "receipt hub index" },
-    { "path": "/world/2027/receipts/", "what": "AI Agents 2027 — 19 graded receipts + musyawarah audit trail" },
-    { "path": "/geox/", "what": "earth intelligence evidence surfaces" }
+    {
+      "path": "/receipts/",
+      "what": "receipt hub index"
+    },
+    {
+      "path": "/world/2027/receipts/",
+      "what": "AI Agents 2027 \u2014 19 graded receipts + musyawarah audit trail"
+    },
+    {
+      "path": "/geox/",
+      "what": "earth intelligence evidence surfaces"
+    }
   ],
   "floors": {
     "constitution": "F1-F13",
     "canonical": "/floors.json",
     "compliance_note": "Floors enforced by arifOS kernel; this file reports, never adjudicates."
   },
-  "truth_class": "OBSERVED — all statuses probed live at generation time; TTL = deploy cycle"
+  "truth_class": "OBSERVED \u2014 all statuses probed live at generation time; TTL = deploy cycle"
 }

@@ -1,49 +1,47 @@
 {
-  "$schema": "status_v1",
-  "generated_at": "2026-09-24T06:01:23.758504Z",
-  "note": "Static snapshot regenerated at deploy. Not live-polled. Discovery file per AGENTS.md.",
-  "site": "arif-fazil.com",
-  "organs": [
-    {
-      "name": "arifos",
-      "health_url": "https://arifos.arif-fazil.com/health",
-      "status": 200
+  "service": "arif-fazil.com",
+  "purpose": "Live runtime state, organ endpoints & floor compliance (per AGENTS.md discovery contract)",
+  "generated_at_utc": "2026-09-24T06:55:00Z",
+  "build": {
+    "commit": "3f012e8",
+    "branch": "main",
+    "deployed_by": "333-AGI — Fasa 1 audit 2026-09-24",
+    "generator": "scripts/gen-status.sh (run at deploy; values below are probe-truth, not aspirations)"
+  },
+  "federation": {
+    "arifos": {
+      "role": "constitutional kernel",
+      "endpoint": "https://mcp.arif-fazil.com/mcp",
+      "local_health": "http://127.0.0.1:8088/health",
+      "status": "healthy",
+      "kernel_thermodynamic_verdict": "HOLD",
+      "verdict_note": "Kernel HOLD = constitutional gates active (session G sub-threshold). HOLD is a truth state, not an outage. See /floors.json F7/F8."
     },
-    {
-      "name": "mcp-gateway",
-      "health_url": "https://mcp.arif-fazil.com/health",
-      "status": 200
-    },
-    {
-      "name": "geox",
-      "health_url": "https://geox.arif-fazil.com/health",
-      "status": 200
-    },
-    {
-      "name": "wealth",
-      "health_url": "https://wealth.arif-fazil.com/health",
-      "status": 200
-    },
-    {
-      "name": "well",
-      "health_url": "https://well.arif-fazil.com/health",
-      "status": 200
-    },
-    {
-      "name": "chron",
-      "health_url": "https://chron.arif-fazil.com/health",
-      "status": 200
-    },
-    {
-      "name": "aaa",
-      "health_url": "https://aaa.arif-fazil.com/health",
-      "status": 200
-    }
+    "aaa": { "role": "control plane", "local_health": "http://127.0.0.1:3001/health", "status": "healthy" },
+    "aforge": { "role": "execution shell", "local_health": "http://127.0.0.1:7072/health", "status": "healthy" },
+    "arifflow": { "role": "metabolic nerve", "local_health": "http://127.0.0.1:7073/health", "status": "flowing", "fq": 1.35 },
+    "geox": { "role": "earth intelligence", "url": "https://arif-fazil.com/geox/", "local_health": "http://127.0.0.1:8081/health", "status": "healthy" },
+    "wealth": { "role": "capital intelligence", "local_health": "http://127.0.0.1:18082/health", "status": "healthy" },
+    "well": { "role": "vitality mirror", "local_health": "http://127.0.0.1:18083/health", "status": "degraded", "note": "RCA in progress 2026-09-24 (S2). Degraded is observed truth; classification pending." },
+    "frame": { "role": "independent observer", "local_health": "http://127.0.0.1:18085/health", "status": "ok" }
+  },
+  "discovery_files": {
+    "llms_txt": "/llms.txt",
+    "agent_card": "/.well-known/agent.json",
+    "webmcp": "/.well-known/webmcp.json",
+    "floors": "/floors.json",
+    "sitemap": "/sitemap.xml",
+    "robots": "/robots.txt"
+  },
+  "receipts_surfaces": [
+    { "path": "/receipts/", "what": "receipt hub index" },
+    { "path": "/world/2027/receipts/", "what": "AI Agents 2027 — 19 graded receipts + musyawarah audit trail" },
+    { "path": "/geox/", "what": "earth intelligence evidence surfaces" }
   ],
-  "organs_up": 7,
-  "organs_total": 7,
   "floors": {
-    "path": "/floors.json",
-    "sha256": "920135bf6f9034f2fefd6bd171fe0efc02a8acfc4081146a56ffcaa601f3bd2d"
-  }
+    "constitution": "F1-F13",
+    "canonical": "/floors.json",
+    "compliance_note": "Floors enforced by arifOS kernel; this file reports, never adjudicates."
+  },
+  "truth_class": "OBSERVED — all statuses probed live at generation time; TTL = deploy cycle"
 }

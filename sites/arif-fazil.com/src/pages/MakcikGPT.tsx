@@ -103,6 +103,22 @@ export function MakcikGPT() {
                 Bila puluhan bilion ringgit dana negara beralih tangan, konsesi tenaga dipersoal, dan dasar ekonomi menyentuh poket rakyat tanpa penjelasan telus — MakcikGPT menyiasat dan merungkainya dalam Bahasa Makcik: mudah difahami, tajam berasaskan angka primer, sifar pintu tengah.
               </p>
 
+              {/* Primary Actions (Two Only) */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                <a
+                  href="#current-signal"
+                  className="inline-flex items-center px-4 py-2.5 rounded bg-[#D9A62E] text-[#0A0B0D] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#D9A62E]/90 transition-colors shadow-lg"
+                >
+                  Baca Isu Semasa ↓
+                </a>
+                <a
+                  href="#live-dossiers"
+                  className="inline-flex items-center px-4 py-2.5 rounded bg-[#1A222D] border border-[#2A3441] text-[#EDEAE2] font-mono text-xs font-bold uppercase tracking-wider hover:border-[#D9A62E] transition-colors"
+                >
+                  Cari Mengikut Topik →
+                </a>
+              </div>
+
               {/* Semantic Ladder: WHO → WHY → HOW */}
               <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-[#1F2733]/80 mb-6">
                 <Link to="/" className="rounded border border-[#1F2733] bg-[#11151C]/80 p-2.5 hover:border-[#9AA0A8]/40 transition-colors group">
@@ -125,7 +141,7 @@ export function MakcikGPT() {
               {/* Trust Indicators */}
               <div className="flex flex-wrap gap-2 text-[11px] font-mono text-[#9AA0A8]">
                 <span className="px-2.5 py-1 rounded bg-[#11151C] border border-[#1F2733] flex items-center gap-1.5">
-                  <span>⚡</span> 33+ Siri Siasatan
+                  <span>⚡</span> {makcikArticlesMeta.length} Siri Siasatan
                 </span>
                 <span className="px-2.5 py-1 rounded bg-[#11151C] border border-[#1F2733] flex items-center gap-1.5">
                   <span>🛡️</span> F1–F13 Berperlembagaan
@@ -166,6 +182,135 @@ export function MakcikGPT() {
           </div>
         </div>
 
+        {/* ── TIER 1: CURRENT SIGNAL (LEAD INVESTIGATION) ─── */}
+        {makcikArticlesMeta[0] && (
+          <section id="current-signal" className="mb-12">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#D9A62E] flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#D9A62E] animate-pulse" />
+                Tier 1 · Isu Semasa / Current Signal
+              </span>
+              <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded bg-[#D9A62E]/15 border border-[#D9A62E]/40 text-[#D9A62E] font-bold">
+                STATUS: CURRENT
+              </span>
+            </div>
+            <article className="rounded-2xl border-2 border-[#D9A62E] bg-[#0E131A] p-6 md:p-8 shadow-[0_0_35px_-8px_rgba(217,166,46,0.3)]">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span className="font-mono text-xs font-bold text-[#D9A62E]">
+                  {makcikArticlesMeta[0].domain || 'CIVIC INTELLIGENCE'} · {makcikArticlesMeta[0].date}
+                </span>
+                <span className="font-mono text-[11px] text-[#9AA0A8] bg-[#0A0B0D] px-2.5 py-1 rounded border border-[#1F2733]">
+                  SEAL 999 · REVISION LINEAGE
+                </span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-black text-[#EDEAE2] mb-4 leading-tight hover:text-[#D9A62E] transition-colors">
+                <Link to={`/world/makcikgpt/${makcikArticlesMeta[0].slug}`}>
+                  {makcikArticlesMeta[0].title}
+                </Link>
+              </h2>
+              {makcikArticlesMeta[0].subtitle && (
+                <p className="font-sans text-sm md:text-base text-[#D1D5DB] mb-4 leading-relaxed">
+                  {makcikArticlesMeta[0].subtitle}
+                </p>
+              )}
+              {makcikArticlesMeta[0].excerpt && (
+                <p className="font-sans text-xs md:text-sm text-[#9AA0A8] mb-6 leading-relaxed">
+                  {makcikArticlesMeta[0].excerpt}
+                </p>
+              )}
+              <div className="flex items-center justify-between pt-4 border-t border-[#1F2733] flex-wrap gap-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {(makcikArticlesMeta[0].tags || []).slice(0, 4).map((t) => (
+                    <span key={t} className="font-mono text-[10px] text-[#9AA0A8] bg-[#0A0B0D] px-2 py-0.5 rounded border border-[#1F2733]">
+                      #{t}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  to={`/world/makcikgpt/${makcikArticlesMeta[0].slug}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded bg-[#D9A62E] text-[#0A0B0D] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#D9A62E]/90 transition-colors"
+                >
+                  <span>Siasat Dokumen Penuh</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </article>
+          </section>
+        )}
+
+        {/* ── TIER 2: LIVE DOSSIERS (GROUPED HUBS) ─────────── */}
+        <section id="live-dossiers" className="mb-12">
+          <div className="mb-4">
+            <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#9AA0A8]">
+              Tier 2 · Fail Siasatan Berkelompok / Live Dossiers
+            </h3>
+            <p className="text-xs text-[#5C636C] mt-1">
+              Tiga medan siasatan berterusan — kontrak tenaga, hak wilayah, dan prasarana data negara.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="rounded-xl border border-[#1F2733] border-t-2 border-t-[#38BDF8] bg-[#11151C] p-5 flex flex-col justify-between">
+              <div>
+                <div className="font-mono text-[10px] uppercase font-bold text-[#38BDF8] mb-2">
+                  Dossier 01 · Siri M1 & M6
+                </div>
+                <h4 className="font-serif text-lg font-bold text-[#EDEAE2] mb-2">
+                  PETRONAS & Kedaulatan Tenaga
+                </h4>
+                <p className="text-xs text-[#9AA0A8] leading-relaxed mb-4">
+                  Penyelidikan DNA korporat, dividen kerajaan, konsesi luar negara, dan status rizab minyak negara.
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedSeries('PETRONAS')}
+                className="font-mono text-xs font-semibold text-[#38BDF8] hover:underline text-left"
+              >
+                Lihat fail siasatan M1 →
+              </button>
+            </div>
+
+            <div className="rounded-xl border border-[#1F2733] border-t-2 border-t-[#EF4444] bg-[#11151C] p-5 flex flex-col justify-between">
+              <div>
+                <div className="font-mono text-[10px] uppercase font-bold text-[#EF4444] mb-2">
+                  Dossier 02 · Siri M2
+                </div>
+                <h4 className="font-serif text-lg font-bold text-[#EDEAE2] mb-2">
+                  Gas Sarawak, SEARAH & PDA 1974
+                </h4>
+                <p className="text-xs text-[#9AA0A8] leading-relaxed mb-4">
+                  Rundingan Eni Italy, pengagihan gas asli Sarawak, status RM70 bilion, dan semakan perlembagaan.
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedSeries('SARAWAK')}
+                className="font-mono text-xs font-semibold text-[#EF4444] hover:underline text-left"
+              >
+                Lihat fail siasatan M2 →
+              </button>
+            </div>
+
+            <div className="rounded-xl border border-[#1F2733] border-t-2 border-t-[#31C48D] bg-[#11151C] p-5 flex flex-col justify-between">
+              <div>
+                <div className="font-mono text-[10px] uppercase font-bold text-[#31C48D] mb-2">
+                  Dossier 03 · Siri M3 & M4
+                </div>
+                <h4 className="font-serif text-lg font-bold text-[#EDEAE2] mb-2">
+                  Sovereign AI & Poket Rakyat
+                </h4>
+                <p className="text-xs text-[#9AA0A8] leading-relaxed mb-4">
+                  Pusat data Johor, konsesi MyKad, monopoli YTL, dan impak inflasi teknologi terhadap rakyat marhaen.
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedSeries('YTL')}
+                className="font-mono text-xs font-semibold text-[#31C48D] hover:underline text-left"
+              >
+                Lihat fail siasatan M3 & M4 →
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* ── FEATURED QUOTE BOX ──────────────────────────── */}
         <div className="mb-10 rounded-xl border border-[#1F2733] bg-[#11151C] p-6 border-l-4 border-l-[#D9A62E]">
           <p className="font-serif text-lg md:text-xl text-[#EDEAE2] italic mb-2">
@@ -177,8 +322,8 @@ export function MakcikGPT() {
           </div>
         </div>
 
-        {/* ── SERIES FILTER BAR & SEARCH ──────────────────── */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+        {/* ── TIER 3: SERIES FILTER BAR & SEARCH ──────────── */}
+        <div id="series-archive" className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div className="flex flex-wrap gap-2">
             {SERIES_TABS.map((t) => (
               <button

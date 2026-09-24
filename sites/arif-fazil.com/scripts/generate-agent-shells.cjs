@@ -313,33 +313,131 @@ try {
   makcikPieces = [];
 }
 
-const makcikList = makcikPieces
-  .map(
-    (p, idx) => {
-      const colors = [
-        { border: '#38BDF8', badge: 'rgba(56,189,248,0.15)', text: '#38BDF8' },
-        { border: '#EF4444', badge: 'rgba(239,68,68,0.15)', text: '#EF4444' },
-        { border: '#EAB308', badge: 'rgba(234,179,8,0.15)', text: '#EAB308' },
-      ];
-      const theme = colors[idx % 3];
-      return `<article class="card" style="border: 1px solid ${theme.border}66; border-left: 4px solid ${theme.border}; background: #0F172A; margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 4px;">
-        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
-          <span style="font-family: monospace; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; background: ${theme.badge}; color: ${theme.text}; padding: 2px 6px; border-radius: 2px;">
-            ${esc(p.domain || 'CIVIC')}
-          </span>
-          <span style="font-family: monospace; font-size: 0.7rem; color: #94A3B8;">
-            ${esc(p.date || '')} ${p.seal ? `· seal ${esc(p.seal)}` : ''}
-          </span>
-        </div>
-        <h2 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.35rem; font-weight: 900; text-transform: uppercase;">
-          <a href="${esc(p.dest.path)}" style="color: #FFFFFF; text-decoration: none;">${esc(p.title)}</a>
-        </h2>
-        <p style="color: #94A3B8; font-size: 0.9rem; line-height: 1.5; margin: 0 0 1rem 0;">${esc(p.subtitle || p.excerpt || '')}</p>
-        <a href="${esc(p.dest.path)}" style="font-family: monospace; font-size: 0.8rem; font-weight: bold; color: ${theme.text}; text-decoration: none;">Read article →</a>
-      </article>`;
-    }
-  )
-  .join('\n');
+const leadPiece = makcikPieces[0];
+const remainingPieces = makcikPieces.slice(1);
+
+// Dossier Hubs Grouping
+const dossierM1 = makcikPieces.filter(p => p.series && (p.series.id === 'M1' || p.series.id === 'M6'));
+const dossierM2 = makcikPieces.filter(p => p.series && p.series.id === 'M2');
+const dossierM3M4 = makcikPieces.filter(p => p.series && (p.series.id === 'M3' || p.series.id === 'M4'));
+
+const currentSignalHtml = leadPiece ? `
+<section id="current-signal" style="margin-bottom: 2.5rem;">
+  <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom: 0.75rem;">
+    <span style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center; gap:0.4rem;">
+      <span style="width:8px; height:8px; border-radius:50%; background:#E8B84B; display:inline-block;"></span>
+      Tier 1 · Isu Semasa / Current Signal
+    </span>
+    <span style="font-family:monospace; font-size:0.7rem; background:rgba(232,184,75,0.15); border:1px solid rgba(232,184,75,0.4); color:#E8B84B; padding:2px 6px; border-radius:3px;">
+      STATUS: CURRENT
+    </span>
+  </div>
+  <article class="card" style="border: 2px solid #E8B84B; border-radius: 8px; background: #0E1626; padding: 2rem; box-shadow: 0 0 30px -5px rgba(232,184,75,0.25);">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+      <span style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B;">
+        ${esc(leadPiece.domain || 'CIVIC INTELLIGENCE')} · ${esc(leadPiece.date || '')}
+      </span>
+      <span style="font-family:monospace; font-size:0.7rem; color:#94A3B8; background:#070B14; border:1px solid #1E293B; padding:2px 8px; border-radius:4px;">
+        ${leadPiece.claim_register ? `${leadPiece.claim_register.length} Klaim Berdaftar` : 'Bukti Primer'} · SEAL 999
+      </span>
+    </div>
+    <h2 style="font-size: 1.85rem; font-weight: 900; margin: 0 0 0.75rem 0; line-height: 1.2;">
+      <a href="${esc(leadPiece.dest.path)}" style="color: #FFFFFF; text-decoration: none;">${esc(leadPiece.title)}</a>
+    </h2>
+    <p style="font-size: 1rem; color: #CBD5E1; line-height: 1.6; margin: 0 0 1.25rem 0;">
+      ${esc(leadPiece.subtitle || leadPiece.excerpt || '')}
+    </p>
+    <a href="${esc(leadPiece.dest.path)}" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:monospace; font-size:0.85rem; font-weight:bold; background:#E8B84B; color:#0A0E1A; padding:0.6rem 1.25rem; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+      <span>Siasat Dokumen Penuh</span> <span>→</span>
+    </a>
+  </article>
+</section>` : '';
+
+const dossiersHtml = `
+<section id="live-dossiers" style="margin-bottom: 2.5rem;">
+  <div style="margin-bottom: 1rem;">
+    <h3 style="font-family:monospace; font-size:0.8rem; font-weight:bold; color:#94A3B8; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.25rem 0;">
+      Tier 2 · Fail Siasatan Berkelompok / Live Dossiers
+    </h3>
+    <p style="font-size:0.85rem; color:#64748B; margin:0;">
+      Tiga medan siasatan berterusan — kontrak tenaga, hak wilayah, dan prasarana data negara.
+    </p>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+    <div style="background:#0F172A; border:1px solid #1E293B; border-top:3px solid #38BDF8; border-radius:6px; padding:1.25rem;">
+      <div style="font-family:monospace; font-size:0.7rem; color:#38BDF8; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
+        DOSSIER 01 · ${dossierM1.length} Kertas Siasatan
+      </div>
+      <h4 style="font-size:1.1rem; font-weight:bold; color:#FFFFFF; margin:0 0 0.5rem 0;">PETRONAS & Kedaulatan Tenaga</h4>
+      <p style="font-size:0.85rem; color:#94A3B8; line-height:1.5; margin:0 0 1rem 0;">
+        Dari DNA korporat, pengurusan rizab minyak, dividen kerajaan, hingga cabutnya pemain global di Suriname.
+      </p>
+      <a href="#series-archive" style="font-family:monospace; font-size:0.75rem; color:#38BDF8; text-decoration:none; font-weight:bold;">Lihat siri M1 & M6 →</a>
+    </div>
+
+    <div style="background:#0F172A; border:1px solid #1E293B; border-top:3px solid #EF4444; border-radius:6px; padding:1.25rem;">
+      <div style="font-family:monospace; font-size:0.7rem; color:#EF4444; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
+        DOSSIER 02 · ${dossierM2.length} Kertas Siasatan
+      </div>
+      <h4 style="font-size:1.1rem; font-weight:bold; color:#FFFFFF; margin:0 0 0.5rem 0;">Gas Sarawak, SEARAH & PDA 1974</h4>
+      <p style="font-size:0.85rem; color:#94A3B8; line-height:1.5; margin:0 0 1rem 0;">
+        Penyiasatan hak gas perlembagaan, rundingan Eni Italy, RM70 bilion aliran hasil, dan batas undang-undang negara.
+      </p>
+      <a href="#series-archive" style="font-family:monospace; font-size:0.75rem; color:#EF4444; text-decoration:none; font-weight:bold;">Lihat siri M2 →</a>
+    </div>
+
+    <div style="background:#0F172A; border:1px solid #1E293B; border-top:3px solid #31C48D; border-radius:6px; padding:1.25rem;">
+      <div style="font-family:monospace; font-size:0.7rem; color:#31C48D; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
+        DOSSIER 03 · ${dossierM3M4.length} Kertas Siasatan
+      </div>
+      <h4 style="font-size:1.1rem; font-weight:bold; color:#FFFFFF; margin:0 0 0.5rem 0;">Sovereign AI, Data Johor & Rakyat</h4>
+      <p style="font-size:0.85rem; color:#94A3B8; line-height:1.5; margin:0 0 1rem 0;">
+        Beban air dan grid elektrik Johor, monopoli konsesi MyKad, serta naratif AI yang membebankan poket rakyat.
+      </p>
+      <a href="#series-archive" style="font-family:monospace; font-size:0.75rem; color:#31C48D; text-decoration:none; font-weight:bold;">Lihat siri M3 & M4 →</a>
+    </div>
+  </div>
+</section>`;
+
+const dispatchesListHtml = `
+<section id="series-archive" style="margin-bottom: 3rem;">
+  <div style="margin-bottom: 1.25rem;">
+    <h3 style="font-family:monospace; font-size:0.8rem; font-weight:bold; color:#94A3B8; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.25rem 0;">
+      Tier 3 · Kronologi Laporan Sivik / Dispatches & Archive (${remainingPieces.length})
+    </h3>
+    <p style="font-size:0.85rem; color:#64748B; margin:0;">
+      Semua rekod siasatan mengikut tarikh penerbitan berserta status meterai.
+    </p>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:1rem;">
+    ${remainingPieces
+      .map(
+        (p) => {
+          return `<article class="card" style="border: 1px solid #1E293B; background: #0B0F19; padding: 1.25rem 1.5rem; border-radius: 6px; display:flex; flex-direction:column; gap:0.5rem;">
+            <div style="display: flex; gap: 0.5rem; align-items: center; justify-content: space-between; flex-wrap:wrap;">
+              <span style="font-family: monospace; font-size: 0.7rem; font-weight: bold; color: #E8B84B; text-transform: uppercase;">
+                Series ${esc(p.series?.id || 'M')} · ${esc(p.date || '')}
+              </span>
+              <span style="font-family: monospace; font-size: 0.65rem; color: #64748B; background:#070B14; padding:2px 6px; border-radius:3px;">
+                SEAL 999 · LINEAGE
+              </span>
+            </div>
+            <h4 style="margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.3;">
+              <a href="${esc(p.dest.path)}" style="color: #F1F5F9; text-decoration: none;">${esc(p.title)}</a>
+            </h4>
+            <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin: 0;">
+              ${esc(p.subtitle || p.excerpt || '')}
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.25rem;">
+              <span style="font-family:monospace; font-size:0.7rem; color:#475569;">${esc((p.tags || []).slice(0, 3).map(t => `#${t}`).join(' '))}</span>
+              <a href="${esc(p.dest.path)}" style="font-family: monospace; font-size: 0.75rem; font-weight: bold; color: #E8B84B; text-decoration: none;">Baca laporan →</a>
+            </div>
+          </article>`;
+        }
+      )
+      .join('\n')}
+  </div>
+</section>`;
 
 writeRoute(
   'world/makcikgpt',
@@ -393,6 +491,16 @@ writeRoute(
             Bila puluhan bilion ringgit dana negara beralih tangan, konsesi tenaga dipersoal, dan dasar ekonomi menyentuh poket rakyat tanpa penjelasan telus — MakcikGPT menyiasat dan merungkainya dalam Bahasa Makcik: mudah difahami, tajam berasaskan angka primer, sifar pintu tengah.
           </p>
 
+          <!-- Primary Actions (Two Only) -->
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin:1.25rem 0;">
+            <a href="#current-signal" style="display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1.25rem; background:#E8B84B; color:#0F172A; font-family:monospace; font-size:0.8rem; font-weight:bold; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+              Baca Isu Semasa ↓
+            </a>
+            <a href="#live-dossiers" style="display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1.25rem; background:#1E293B; color:#E2E8F0; border:1px solid #334155; font-family:monospace; font-size:0.8rem; font-weight:bold; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+              Cari Mengikut Topik →
+            </a>
+          </div>
+
           <!-- Semantic Ladder -->
           <div class="ladder">
             <a href="/" class="ladder-card">
@@ -425,7 +533,25 @@ writeRoute(
         </div>
       </div>
     </div>
-    ${makcikList}
+
+    <!-- TIER 1: Current Signal -->
+    ${currentSignalHtml}
+
+    <!-- TIER 2: Live Dossiers -->
+    ${dossiersHtml}
+
+    <!-- TIER 3: Chronological Dispatches -->
+    ${dispatchesListHtml}
+
+    <!-- Trust & Verification Footer -->
+    <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #1E293B; font-family: monospace; font-size: 0.75rem; color: #64748B;">
+      <p style="margin: 0 0 0.5rem 0;">
+        ⚖️ <strong>Meterai 999</strong>: Merekodkan silsilah penulisan dan integriti semakan dalam VAULT999. Bukan perakuan kehakiman mutlak terhadap setiap dakwaan empirikal.
+      </p>
+      <p style="margin: 0;">
+        Mesin & Ejen: <a href="/world/makcikgpt/llms.txt" style="color: #E8B84B;">llms.txt</a> · <a href="/world/makcikgpt/llms.json" style="color: #E8B84B;">llms.json</a> · <a href="/feed.xml" style="color: #E8B84B;">RSS Syndication</a> · <em>Ditempa bukan diberi.</em>
+      </p>
+    </footer>
 `,
   }),
 );

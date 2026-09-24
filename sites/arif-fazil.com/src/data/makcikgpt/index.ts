@@ -88,7 +88,7 @@ export const makcikArticleModules: ArticleContent[] = [
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
   {
-    slug: 'yang-x-diungkap-truth-dalam-void',
+    slug: 'yang-x-diungkap-truth-sembunyi-dalam-void',
     title: 'Yang x Diungkap: Kenapa Truth Sembunyi dalam Void',
     subtitle: 'Bukan sebab institution jahat. Tapi sebab truth tak boleh dijual. Apa yang dijual — narrative, janji, harapan, efisiensi — bukan truth. Jadi truth kena disembunyikan dalam void, supaya apa yang dijual nampak macam truth.',
     date: '2026-09-22',

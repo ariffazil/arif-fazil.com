@@ -1,0 +1,123 @@
+[
+  {
+    "name": "verify_did",
+    "route": "https://arif-fazil.com/.well-known/did.json",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "AAA Identity Layer",
+    "status": "live",
+    "recommendation": "Preserve. W3C DID document for did:web:arif-fazil.com."
+  },
+  {
+    "name": "get_floors",
+    "route": "https://arif-fazil.com/floors.json",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "arifOS Governance Kernel",
+    "status": "live",
+    "recommendation": "Preserve. Constitutional floors F1-F13."
+  },
+  {
+    "name": "get_missions",
+    "route": "https://arif-fazil.com/missions.json",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "AAA Control Plane",
+    "status": "live",
+    "recommendation": "Preserve. 6-mission cockpit actions."
+  },
+  {
+    "name": "get_llms_overview",
+    "route": "https://arif-fazil.com/llms.txt",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "arif-fazil.com Public Surface",
+    "status": "live",
+    "recommendation": "Update metadata to point to generated MakcikGPT sub-manifest."
+  },
+  {
+    "name": "get_vault_verify",
+    "route": "https://arif-fazil.com/999/verify",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "VAULT999 Witness",
+    "status": "live",
+    "recommendation": "Preserve. Live vault proof verification endpoint."
+  },
+  {
+    "name": "get_seal_chain_head",
+    "route": "https://aaa.arif-fazil.com/api/seal-chain/head",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "AAA Witness Organ",
+    "status": "live",
+    "recommendation": "Preserve as independent witness of seal-chain head."
+  },
+  {
+    "name": "get_gold_price",
+    "route": "https://arif-fazil.com/wealth/gold/api/gold/ticker",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "WEALTH Organ",
+    "status": "live",
+    "recommendation": "Preserve live market data feed."
+  },
+  {
+    "name": "get_gold_history",
+    "route": "https://arif-fazil.com/wealth/gold/api/gold/history",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "WEALTH Organ",
+    "status": "live",
+    "recommendation": "Preserve live market data feed."
+  },
+  {
+    "name": "get_gold_signals",
+    "route": "https://arif-fazil.com/wealth/gold/api/gold/signals",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "WEALTH Organ",
+    "status": "live",
+    "recommendation": "Preserve confluence trading signal feed."
+  },
+  {
+    "name": "get_gold_levels",
+    "route": "https://arif-fazil.com/wealth/gold/api/gold/levels",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "WEALTH Organ",
+    "status": "live",
+    "recommendation": "Preserve support/resistance calculations."
+  },
+  {
+    "name": "get_gold_macro",
+    "route": "https://arif-fazil.com/wealth/gold/api/gold/macro",
+    "method": "GET",
+    "type": "read_only",
+    "http_status": 200,
+    "auth": "none",
+    "owner": "WEALTH Organ",
+    "status": "live",
+    "recommendation": "Preserve macro indicators (DXY, VIX, US10Y)."
+  }
+]

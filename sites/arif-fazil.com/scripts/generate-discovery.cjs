@@ -338,6 +338,74 @@ function main() {
     path.join(SITE_ROOT, "public/page.json"),
     JSON.stringify(buildPageJson(), null, 2) + "\n",
   );
+
+  // ── MakcikGPT Scoped Agent Surfaces ────────────────────────────────────
+  const makcikDir = path.join(SITE_ROOT, "public/world/makcikgpt");
+  if (!fs.existsSync(makcikDir)) {
+    fs.mkdirSync(makcikDir, { recursive: true });
+  }
+
+  const makcikLlmsTxt = `# MakcikGPT — Civic Intelligence in Bahasa Makcik
+
+> Editorial civic-intelligence publication authored by Muhammad Arif bin Fazil.
+> Investigating Malaysian sovereignty, resource governance, institutional integrity, and technology accountability.
+
+## Reading & Truth Policy
+- Editorial Nature: Authored civic analysis and public-interest inquiries in Bahasa Makcik, not neutral wire reporting.
+- Epistemic Labels:
+  - CLAIM: An attributed factual assertion with source references.
+  - PLAUSIBLE: Reasoned interpretation with indirect or incomplete evidence.
+  - HYPOTHESIS: Analytical model or open question for public scrutiny.
+  - UNKNOWN: Material information unverified or absent from public record.
+- Seal 999 Meaning: Records authorship, Merkle content integrity, and revision lineage in VAULT999. It does NOT constitute independent judicial certification of empirical claims.
+- Corpus Statistics: ${pieces.length} canonical articles. Latest update: ${todayISO()}.
+
+## Discovery Endpoints
+- Canonical Web Landing: https://arif-fazil.com/world/makcikgpt/
+- Machine Article Manifest: https://arif-fazil.com/world/makcikgpt/articles.json
+- RSS Syndication: https://arif-fazil.com/feed.xml
+- Root AI Map: https://arif-fazil.com/llms.txt
+
+## Canonical Articles (${pieces.length})
+${pieces.map(p => `- [${p.title}](https://arif-fazil.com${p.dest.path}) (${p.date} · Series ${p.series?.id || 'M'})`).join("\n")}
+`;
+  writeIfChanged(path.join(makcikDir, "llms.txt"), makcikLlmsTxt);
+
+  const makcikLlmsJson = {
+    schemaVersion: "1.0",
+    surface: "makcikgpt",
+    canonicalUrl: CANONICAL_LANDING,
+    generatedAt: new Date().toISOString(),
+    articleCount: pieces.length,
+    latestPublishedAt: pieces[0]?.date || todayISO(),
+    epistemicPolicy: {
+      preserveLabels: true,
+      sealMeaning: "authorship_and_revision_lineage",
+      notIndependentVerification: true,
+      labels: ["CLAIM", "PLAUSIBLE", "HYPOTHESIS", "UNKNOWN"]
+    },
+    discovery: {
+      articles: "/world/makcikgpt/articles.json",
+      feed: "/feed.xml",
+      rootLlms: "/llms.txt"
+    }
+  };
+  writeIfChanged(path.join(makcikDir, "llms.json"), JSON.stringify(makcikLlmsJson, null, 2) + "\n");
+
+  const makcikArticlesJson = pieces.map(p => ({
+    id: p.id,
+    title: p.title,
+    date: p.date,
+    series: p.series?.id || "M",
+    series_number: p.series?.n || 1,
+    path: p.dest.path,
+    canonical_url: `${SITE_BASE}${p.dest.path}`,
+    seal: p.seal || "999",
+    claims_count: Array.isArray(p.claim_register) ? p.claim_register.length : 0,
+    tags: p.tags || []
+  }));
+  writeIfChanged(path.join(makcikDir, "articles.json"), JSON.stringify(makcikArticlesJson, null, 2) + "\n");
+
   // Phase 6 (Lebih Bijaksana blueprint): copy the signed agents.txt from canonical source.
   // Source-of-truth lives in forge_work/proposals/333-AGI/2026-09-17-agentic-surface/agents.txt.
   // If you edit that file, run sign-discovery.py to re-sign before this emit picks it up.

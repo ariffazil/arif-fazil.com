@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-09-24T08:50:00+08:00",
+  "total_essays_json_makcik": 34,
+  "total_index_ts_makcik": 40,
+  "drift_delta": 6,
+  "in_index_not_essays": [
+    {
+      "slug": "yang-x-diungkap-truth-sembunyi-dalam-void",
+      "title": "Yang x Diungkap: Kenapa Truth Sembunyi dalam Void",
+      "date": "2026-09-22"
+    },
+    {
+      "slug": "kenapa-syarikat-tu-hantu",
+      "title": "Kenapa Syarikat Tu Hantu",
+      "date": "2026-09-22"
+    },
+    {
+      "slug": "ai-johor-makcik-tanya",
+      "title": "Bang Non, Hang Tanya Makcik Pasal AI. Makcik Tanya Hang Balik — Hang Tahu Pasal AI Johor Hang Sendiri Ka?",
+      "date": "2026-09-17"
+    },
+    {
+      "slug": "nexg-mykad-siapa-beli",
+      "title": "Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?",
+      "date": "2026-09-27"
+    },
+    {
+      "slug": "bang-non-pergi-kuching",
+      "title": "Bang Non Pergi Kuching, Cakap Aku Nak Setel, Tapi Makcik Tanya — Setel Apa?",
+      "date": "2026-09-17"
+    },
+    {
+      "slug": "kit-lipas-meja-kopi",
+      "title": "Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1",
+      "date": "2026-09-17"
+    },
+    {
+      "slug": "taufik-pergi-mana",
+      "title": "Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay",
+      "date": "2026-10-05"
+    },
+    {
+      "slug": "petronas-bod-evolution",
+      "title": "BOD PETRONAS: Tadak Minyak, Tadak AGM, Tadak Siapa Boleh Tanya",
+      "date": "2026-09-14"
+    }
+  ],
+  "in_essays_not_index": [
+    {
+      "slug": "petronas-full-reality-rakyat-dossier",
+      "title": "PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia",
+      "date": "2026-08-26",
+      "series": {
+        "id": "M1",
+        "n": 3,
+        "note": "Civic dossier — extends M1-2 (PETRONAS DNA)"
+      }
+    },
+    {
+      "slug": "petronas-leadership-1974-2026",
+      "title": "Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
+      "date": "2026-09-17",
+      "series": {
+        "id": "M1",
+        "n": 4,
+        "note": "Leadership archive — companion to M1-2 dossier and M1-3 DNA"
+      }
+    }
+  ]
+}

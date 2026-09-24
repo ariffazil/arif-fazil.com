@@ -51,8 +51,8 @@ function extractSlugs(text) {
   while ((m = re.exec(text)) !== null) {
     const slugish = m[1];
     // The canonical landing has an empty slug ("/world/makcikgpt/" → captures ""),
-    // which we exclude — landing is never a piece.
-    if (!slugish || slugish.endsWith("/")) continue;
+    // and machine documents (.json, .txt, .xml, .md) are excluded.
+    if (!slugish || slugish.endsWith("/") || slugish.endsWith(".json") || slugish.endsWith(".txt") || slugish.endsWith(".xml")) continue;
     slugs.add(slugish);
   }
   return slugs;
@@ -194,13 +194,13 @@ test("Generated public/sitemap.xml contains every canonical slug", () => {
   assertSameSet("public/sitemap.xml", actual, canonical);
 });
 
-test("Generated public/llms.txt lists every canonical slug", () => {
+test("Generated public/world/makcikgpt/llms.txt lists every canonical slug", () => {
   const { pieces } = getMakcikSource();
   const canonical = new Set(pieces.map((p) => p.dest.path.slice(CANONICAL_PREFIX.length)));
-  const llmsPath = path.join(PUBLIC_DIR, "llms.txt");
+  const llmsPath = path.join(PUBLIC_DIR, "world/makcikgpt/llms.txt");
   const txt = readUtf8(llmsPath);
   const actual = extractSlugs(txt);
-  assertSameSet("public/llms.txt", actual, canonical);
+  assertSameSet("public/world/makcikgpt/llms.txt", actual, canonical);
 });
 
 test("Generated public/llms.json route_roles lists every canonical slug", () => {

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "surface": "makcikgpt",
+  "canonicalUrl": "https://arif-fazil.com/world/makcikgpt/",
+  "generatedAt": "2026-09-24T01:12:29.925Z",
+  "articleCount": 34,
+  "latestPublishedAt": "2026-09-20",
+  "epistemicPolicy": {
+    "preserveLabels": true,
+    "sealMeaning": "authorship_and_revision_lineage",
+    "notIndependentVerification": true,
+    "labels": [
+      "CLAIM",
+      "PLAUSIBLE",
+      "HYPOTHESIS",
+      "UNKNOWN"
+    ]
+  },
+  "discovery": {
+    "articles": "/world/makcikgpt/articles.json",
+    "feed": "/feed.xml",
+    "rootLlms": "/llms.txt"
+  }
+}

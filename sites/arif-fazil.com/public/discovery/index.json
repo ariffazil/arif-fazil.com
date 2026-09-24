@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-v3",
   "note": "Federation discovery graph v3. Satu traversal: identity, authority, governance, capabilities (why + edges + if_down), relationships, boundaries, endpoints, REGISTRY MESIN-VERIFIED (/discovery/registry.json — MCP tools/list semasa build). Kesihatan live dipaut (/status.json), tidak dibakar.",
-  "generated_at": "2026-09-24T06:26:09.592Z",
+  "generated_at": "2026-09-24T06:30:15.891Z",
   "generator": "scripts/generate-discovery-graph.cjs (site build pipeline)",
   "identity": {
     "site": "https://arif-fazil.com",

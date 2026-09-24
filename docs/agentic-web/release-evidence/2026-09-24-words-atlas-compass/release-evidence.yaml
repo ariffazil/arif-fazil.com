@@ -136,6 +136,22 @@ discovery_v3_registry_2026_09_24:
     Klasifikasi 888 diterima: capability graph kini BERBENIH mesin-verified (89) tetapi masih partial — aaa/aforge/frame/hermes/arifflow belum dalam registry MCP;
     world model / identity graph penuh / externalized cognition MASIH ❌. Tiada overclaim.
 
+audit_metabolism_emitter_2026_09_24:
+  jawapan: "Fasa 2 🟡 'audit masih event, bukan metabolism — tiada emitter berjadual' → emitter kini wujud sebagai SUBSTRAT BERDIRI SENDIRI"
+  komponen: "/root/scripts/infra-crons/site-audit-metabolism.sh + system crontab '37 */6 * * *' (bukan sesi agen — survive restart)"
+  kitaran: "verify-pages (dgn debounce 60s anti-hingar-cache) + web_zen doctor + orphan preview → resit JSON forge_work/<tarikh>/site-audit-metabolism/ setiap 6 jam"
+  disiplin: "senyap bila sihat (resit sahaja) · Telegram DM Arif HANYA bila anomali berulang · log /var/log/arifos/site-audit-metabolism.log"
+  bukti_hidup: "ujian pertama TANGKAP 2 anomali sebenar (gate flaky /aaa/apps/geox/ pasca sync-aaa 333-AGI + orphan registry.json akibat deploy pantas saya) → kedua-dua didiagnosis & diselesaikan → ujian kedua BERSIH (PASS 239 · doctor 27 hijau · orphan 0 · escalated false)"
+  rollback: "buang baris crontab site-audit-metabolism + rm skrip"
+
+a8_blind_test_2026_09_24:
+  ujian: "EUREKA 5 / Invarian A8 — 'Remove Arif. Can the agent understand the federation?'"
+  kaedah: "subagent explore KONTEKS-SIFAR, arahan keras: sumber = rantaian URL awam bermula /discovery/index.json sahaja, tiada pengetahuan luar/fail lokal"
+  hasil: "6 URL dilalui (index→floors→status→registry→agent.json→llms.txt→policy.json) · 7/7 soalan betul termasuk nuansa (F13 veto ABSOLUTE; WELL DEGRADED_BY_EPISTEMICS bukan outage; mutasi=HUMAN_APPROVAL_REQUIRED; 89 alat via MCP tools/list semasa build; arifOS mati→federasi READ-ONLY; laluan kontrak selamat /discovery→/human→/policy) · markah kendiri 9/10"
+  jurang_dijumpai: "/human render kosong tanpa-JS — kontrak ejen tidak terbaca oleh agen non-browser (bata A9 seterusnya)"
+  erti: "satah federasi LULUS KPI 'agent builds accurate model without Arif present' — diukur, bukan diklaim"
+
+
 
 
 

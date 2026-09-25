@@ -175,7 +175,7 @@ export function ShadowBoard() {
 
   useEffect(() => {
     document.title = 'Shadow Board — Org-Chart Instrument · arifOS Federation';
-    document.querySelector('link[rel=canonical]')?.setAttribute('href', 'https://arif-fazil.com/politics/shadow/board');
+    document.querySelector('link[rel=canonical]')?.setAttribute('href', 'https://arif-fazil.com/world/politics/shadow/board');
   }, []);
 
   return (

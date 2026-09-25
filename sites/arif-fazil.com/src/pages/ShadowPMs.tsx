@@ -27,11 +27,11 @@ export function ShadowPMs() {
             Δ-ONLY · Bayang = Nyata · Dari Rekod Umum
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link to="/politics/shadow/board"
+            <Link to="/world/politics/shadow/board"
               className="font-mono text-xs uppercase tracking-wider px-4 py-2 border border-forge-orange/40 text-forge-orange hover:bg-forge-orange hover:text-forge-black transition-colors">
               🏛 Shadow Board Org-Chart ↗
             </Link>
-            <Link to="/politics/shadow/derita"
+            <Link to="/world/politics/shadow/derita"
               className="font-mono text-xs uppercase tracking-wider px-4 py-2 border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/20 transition-colors">
               💔 RASA DERITA Map ↗
             </Link>
@@ -124,7 +124,7 @@ function PMCard({ pm, index }: { pm: ShadowPM; index: number }) {
           <span className="font-mono text-[0.6rem] text-forge-dim">{pm.tenure}</span>
         </div>
         {pm.id === 'dato-seri-anwar' && (
-          <Link to="/politics/shadow/anwar-ibrahim"
+          <Link to="/world/politics/shadow/anwar-ibrahim"
             className="block mt-2 mb-1 font-mono text-[0.65rem] uppercase tracking-wider text-purple-400 border border-purple-500/40 hover:bg-purple-500/20 px-3 py-1.5 rounded transition-colors text-center">
             🗝️ 33 Bayang Penuh →
           </Link>

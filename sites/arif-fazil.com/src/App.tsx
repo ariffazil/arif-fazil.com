@@ -234,6 +234,13 @@ export function App() {
             <Route path="/politics/shadow/board/" element={<ShadowBoard />} />
             <Route path="/politics/shadow/derita" element={<DeritaMap />} />
             <Route path="/politics/shadow/derita/" element={<DeritaMap />} />
+            {/* 2026-09-25: canonical /world routes (alignment audit — canonical space is /world/*) */}
+            <Route path="/world/politics/shadow" element={<ShadowPMs />} />
+            <Route path="/world/politics/shadow/" element={<ShadowPMs />} />
+            <Route path="/world/politics/shadow/board" element={<ShadowBoard />} />
+            <Route path="/world/politics/shadow/board/" element={<ShadowBoard />} />
+            <Route path="/world/politics/shadow/derita" element={<DeritaMap />} />
+            <Route path="/world/politics/shadow/derita/" element={<DeritaMap />} />
 
             {/* Vitals, Institution, Discovery */}
             <Route path="/vitals" element={<Navigate to="/vitals/" replace />} />

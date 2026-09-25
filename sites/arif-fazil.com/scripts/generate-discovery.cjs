@@ -59,6 +59,8 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/politics/ns-election/playbook/`, priority: 0.75, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/shadow/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/anwar-ibrahim/`, priority: 0.7, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/world/politics/shadow/board/`, priority: 0.65, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/world/politics/shadow/derita/`, priority: 0.65, changefreq: "monthly" },
     { loc: `${SITE_BASE}/writing`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/doctrine`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
@@ -157,6 +159,12 @@ Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-ful
 - [Malaysia slice](https://arif-fazil.com/world/2027/malaysia/): Tenant of the AI economy — energy, water, on-ramp.
 - [Receipts & grades](https://arif-fazil.com/world/2027/receipts/): Permanent citations page, 19 graded receipts.
 - [PDF](https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf): Full 15-page A4 dossier.
+
+## World — Politics
+- [PM Bayang](https://arif-fazil.com/world/politics/shadow/): Jungian shadow analysis of all 9 Malaysian Prime Ministers — Persona / Bayang / Tragedi / Legasi. Framework analysis from public records; editorial, not biographical fact.
+- [Anwar Ibrahim — 33 Bayang](https://arif-fazil.com/world/politics/shadow/anwar-ibrahim/): Three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 cited public sources, editorial psychology analysis.
+- [Shadow Board](https://arif-fazil.com/world/politics/shadow/board/): Comparative board view of all nine PM shadow profiles.
+- [Peta Derita](https://arif-fazil.com/world/politics/shadow/derita/): Suffering-index map companion surface.
 
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml

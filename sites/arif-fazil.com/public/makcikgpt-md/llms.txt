@@ -11,7 +11,7 @@
   - HYPOTHESIS: Analytical model or open question for public scrutiny.
   - UNKNOWN: Material information unverified or absent from public record.
 - Seal 999 Meaning: Records authorship, Merkle content integrity, and revision lineage in VAULT999. It does NOT constitute independent judicial certification of empirical claims.
-- Corpus Statistics: 42 canonical articles. Latest update: 2026-09-24.
+- Corpus Statistics: 42 canonical articles. Latest update: 2026-09-25.
 
 ## Discovery Endpoints
 - Canonical Web Landing: https://arif-fazil.com/world/makcikgpt/

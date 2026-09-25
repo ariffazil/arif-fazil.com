@@ -142,7 +142,7 @@ export function DeritaMap() {
 
   useEffect(() => {
     document.title = 'RASA DERITA — Generational Trauma Map · arifOS Shadow Board';
-    document.querySelector('link[rel=canonical]')?.setAttribute('href', 'https://arif-fazil.com/politics/shadow/derita');
+    document.querySelector('link[rel=canonical]')?.setAttribute('href', 'https://arif-fazil.com/world/politics/shadow/derita');
   }, []);
 
   /* APEX grade string from scores */

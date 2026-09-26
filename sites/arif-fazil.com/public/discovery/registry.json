@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-09-25T01:43:09.567Z",
+  "generated_at": "2026-09-26T23:54:44.838Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -10,35 +10,35 @@
       "tools": [
         {
           "name": "arif_init",
-          "desc": "KERNEL 000 · Session ignition — binds actor, floors, and audit before any other arif_* ver"
+          "desc": "KERNEL 000 · Ignite a governed kernel session: binds actor identity, constitutional floors"
         },
         {
           "name": "arif_observe",
-          "desc": "KERNEL 111 · Sense reality into evidence with epistemic tags and uncertainty bounds."
+          "desc": "KERNEL 111 · Collect evidence — facts and sources with epistemic tags (OBS) and uncertaint"
         },
         {
           "name": "arif_think",
-          "desc": "KERNEL 333 · Mind — structured reasoning under F2/F7 with OBS/DER/INT/SPEC labels."
+          "desc": "KERNEL 333 · Structured reasoning pass: decomposes a query and returns reasoning steps lab"
         },
         {
           "name": "arif_route",
-          "desc": "KERNEL 444 · Intent→organ router — dispatches to GEOX/WEALTH/WELL/A-FORGE."
+          "desc": "KERNEL 444 · Intent→organ router: classifies a natural-language intent and dispatches it t"
         },
         {
           "name": "arif_memory",
-          "desc": "KERNEL 555 · Memory governor — L1–L6 governed semantic recall, storage, and persistence."
+          "desc": "KERNEL 555 · Governed memory of the kernel itself: six tiers (L1–L6) with per-mode gating."
         },
         {
           "name": "arif_judge",
-          "desc": "KERNEL 666 · Constitutional verdict — binding SEAL/HOLD/SABAR/VOID arbitration."
+          "desc": "KERNEL 666 · Binding constitutional arbitration: evaluates a candidate action or claim and"
         },
         {
           "name": "arif_forge",
-          "desc": "KERNEL 777 · Execution gate via A-FORGE — mutates only after SEAL verdict."
+          "desc": "KERNEL 777 · Governed execution: applies a mutation through A-FORGE only when carrying a S"
         },
         {
           "name": "arif_seal",
-          "desc": "KERNEL 999 · VAULT999 immutable append — irreversible civilizational memory sealing."
+          "desc": "KERNEL 999 · Append an entry to VAULT999, the immutable ledger — accepted entries can neve"
         }
       ]
     },

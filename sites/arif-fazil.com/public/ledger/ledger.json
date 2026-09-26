@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-09-20T15:10:30Z",
+ "generated_at": "2026-09-26T23:54:43Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",
@@ -14,9 +14,9 @@
  "receipts": {
   "state": "PRESENT",
   "path": "/root/VAULT999/RECEIPTS",
-  "count": 60,
-  "total_bytes": 126229,
-  "newest": "2026-09-20T14:59:37Z",
+  "count": 72,
+  "total_bytes": 203266,
+  "newest": "2026-09-20T21:50:28Z",
   "superseded_retained": 1,
   "superseded_names": [
    "2026-09-18-wscar-gate-v2-seal.json.superseded"
@@ -161,6 +161,48 @@
     "sha256": "2279ee256b746e71c2ccc5c074803c7e"
    },
    {
+    "name": "2026-09-21-7-machine-laws-canon-application.md",
+    "bytes": 4480,
+    "mtime": "2026-09-20T18:36:22Z",
+    "sha256": "9920f67ea590c0094ae365d648614c53"
+   },
+   {
+    "name": "2026-09-21-agi-asi-apex-loop-session.md",
+    "bytes": 5208,
+    "mtime": "2026-09-20T18:34:41Z",
+    "sha256": "2a24347b33864a2151062820f1e44a77"
+   },
+   {
+    "name": "2026-09-21-ed25519-session-bind-facf0415.md",
+    "bytes": 1187,
+    "mtime": "2026-09-20T21:50:28Z",
+    "sha256": "e7e57b2245cbf04813573f35d8d46114"
+   },
+   {
+    "name": "2026-09-21-federation-runtime-id-mint-receipt.md",
+    "bytes": 6956,
+    "mtime": "2026-09-20T18:20:19Z",
+    "sha256": "0816b4693ac609325b38635ddee94ec8"
+   },
+   {
+    "name": "2026-09-21-federation-stabilization-session-receipt.md",
+    "bytes": 7098,
+    "mtime": "2026-09-20T18:30:10Z",
+    "sha256": "c989122f5ccdf846193df71934ad8935"
+   },
+   {
+    "name": "2026-09-21-hermes-reformulation-receipt.md",
+    "bytes": 5279,
+    "mtime": "2026-09-20T18:46:41Z",
+    "sha256": "cd33b2328c22265ede67aa64535649a3"
+   },
+   {
+    "name": "2026-09-21-hermes-selfloop-delivery-fix.md",
+    "bytes": 2868,
+    "mtime": "2026-09-20T18:36:18Z",
+    "sha256": "0fcdbd1095d240dfaf33ad6ae002f2ea"
+   },
+   {
     "name": "RECEIPT-2026-08-14-qg-v031-vector-hang-ingat-balik.json",
     "bytes": 2023,
     "mtime": "2026-08-14T09:00:31Z",
@@ -171,6 +213,30 @@
     "bytes": 2519,
     "mtime": "2026-09-12T17:52:53Z",
     "sha256": "92720ff2203a2fe9421ca970abe1e3bf"
+   },
+   {
+    "name": "cleanup-subtractive-trivial-2026-09-21.jsonl",
+    "bytes": 2763,
+    "mtime": "2026-09-20T20:42:15Z",
+    "sha256": "08a095263ff062c7bf3c8290021330d0"
+   },
+   {
+    "name": "federation-quiet-detector.jsonl",
+    "bytes": 2720,
+    "mtime": "2026-09-20T18:44:53Z",
+    "sha256": "1c84e179685ff1fded855d8b7ab2fe7f"
+   },
+   {
+    "name": "federation-release-witness.jsonl",
+    "bytes": 4244,
+    "mtime": "2026-09-20T20:13:17Z",
+    "sha256": "2d60c3a6f3ed83945febc430924545ca"
+   },
+   {
+    "name": "federation-verifier-receipt.jsonl",
+    "bytes": 23940,
+    "mtime": "2026-09-20T18:44:53Z",
+    "sha256": "1825851f7c0d836fed4ef59ca13108e9"
    },
    {
     "name": "fitness-text_generation-20260909T180214.json",
@@ -335,6 +401,12 @@
     "sha256": "d3eb3c3ec84284b48ed1eff21e30f71b"
    },
    {
+    "name": "pre-fed-002-snapshot.json",
+    "bytes": 10294,
+    "mtime": "2026-09-20T20:12:19Z",
+    "sha256": "2aba6e7a3bd35b059cd797c0d17432ae"
+   },
+   {
     "name": "qdrant_restore_drill_receipt_20260912.json",
     "bytes": 1319,
     "mtime": "2026-09-11T19:43:12Z",
@@ -387,28 +459,31 @@
  "gate": {
   "state": "PRESENT",
   "path": "/root/.hermes/logs/reality_claim_gate.log",
-  "sha256": "3783b5328292db0e2f3fe601915a0caa",
-  "lines": 418,
+  "sha256": "ac3d31da892eafde672565c581361496",
+  "lines": 775,
   "first_verdict": "2026-09-04T05:13:05Z",
-  "last_verdict": "2026-09-20T14:52:57Z",
+  "last_verdict": "2026-09-26T23:51:29Z",
   "by_class": {
-   "UNGROUNDED_CLAIM": 157,
+   "NARRATIVE_EMITTED_AS_OBSERVATION": 213,
+   "UNGROUNDED_CLAIM": 175,
+   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 175,
    "WARN": 77,
    "BLOCK_CANDIDATE": 75,
-   "NARRATIVE_EMITTED_AS_OBSERVATION": 61,
-   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 26,
-   "PHANTOM_SOVEREIGNTY": 18,
-   "BASELINE_MISSING_MEASURED": 3,
-   "NARRATIVE_MARKERS_IN_MEASURED": 1
+   "PHANTOM_SOVEREIGNTY": 43,
+   "BASELINE_MISSING_MEASURED": 14,
+   "NARRATIVE_MARKERS_IN_MEASURED": 2,
+   "BASELINE_MISSING_MECHANISM": 1
   },
   "top_markers": {
-   "paling": 57,
-   "best": 2,
-   "terbaik": 1,
-   "chosen": 1
+   "paling": 190,
+   "terbaik": 11,
+   "best": 6,
+   "chosen": 1,
+   "blood": 1,
+   "sememangnya": 1
   },
-  "multi_token_markers_suppressed": 1,
-  "privacy": "Marker statistics only. Multi-word fragments captured from messages (1 occurrences) are never published.",
+  "multi_token_markers_suppressed": 5,
+  "privacy": "Marker statistics only. Multi-word fragments captured from messages (5 occurrences) are never published.",
   "blocks": 0,
   "blocking_enabled": false,
   "note": "Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered."
@@ -424,15 +499,15 @@
  "seal_chain": {
   "state": "PRESENT",
   "path": "/root/VAULT999/SEALED_EVENTS.jsonl",
-  "sha256": "dd4aa81113ab1bae087535831fa30999",
-  "lines": 1338,
-  "bytes": 1828346,
-  "last_append": "2026-09-16T18:28:31Z",
-  "days_since_append": 3,
-  "head_id": 964,
+  "sha256": "8200c57691218b346d8bde554cea419c",
+  "lines": 1342,
+  "bytes": 1839390,
+  "last_append": "2026-09-20T19:16:01Z",
+  "days_since_append": 6,
+  "head_id": 968,
   "twin_copy": {
    "path": "/root/arifOS/VAULT999/SEALED_EVENTS.jsonl",
-   "sha256": "dd4aa81113ab1bae087535831fa30999",
+   "sha256": "8200c57691218b346d8bde554cea419c",
    "identical": true
   },
   "note": "Witness grows, chain does not move. The seal chain is the only append-only hash-linked record; it is reported here exactly as found, including how stale it is."
@@ -441,10 +516,10 @@
   "state": "PRESENT",
   "path": "/root/.hermes/carry_forward.json",
   "schema": "arifos.carry_forward.v3",
-  "entries": 111,
-  "open_loops": 36,
+  "entries": 210,
+  "open_loops": 48,
   "closed_loops": 19,
-  "loops_total": 55,
+  "loops_total": 67,
   "oldest_open_ts": "2026-09-14T18:38:40Z"
  },
  "public_surfaces": [
@@ -481,21 +556,21 @@
   {
    "id": "D1",
    "title": "The output gate detects but does not stop",
-   "evidence": "418 verdicts, 0 blocks, blocking_enabled=false",
+   "evidence": "775 verdicts, 0 blocks, blocking_enabled=false",
    "consequence": "A flagged sentence reached its reader anyway. A cop, not a door.",
    "owner": "F13 (promotion to Phase 2 NO)"
   },
   {
    "id": "D2",
    "title": "The narrative detector fires on one word",
-   "evidence": "marker 'paling' fired 57 times = 93% of narrative flags (61 narrative verdicts total)",
+   "evidence": "marker 'paling' fired 190 times = 89% of narrative flags (213 narrative verdicts total)",
    "consequence": "Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.",
    "owner": "mechanical (marker set + threshold)"
   },
   {
    "id": "D3",
    "title": "The seal chain is frozen while witnesses keep appending",
-   "evidence": "last append 2026-09-16T18:28:31Z (3d ago); head id=964",
+   "evidence": "last append 2026-09-20T19:16:01Z (6d ago); head id=968",
    "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
    "owner": "F13 (kernel seal path)"
   },
@@ -509,7 +584,7 @@
   {
    "id": "D5",
    "title": "Open loops accumulate faster than they close",
-   "evidence": "36 open loops of 111 entries; oldest 2026-09-14T18:38:40Z",
+   "evidence": "48 open loops of 210 entries; oldest 2026-09-14T18:38:40Z",
    "consequence": "A backlog stated as policy. The stated count is the audit.",
    "owner": "ongoing"
   },

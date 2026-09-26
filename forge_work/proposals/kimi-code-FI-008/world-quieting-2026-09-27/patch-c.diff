@@ -1,0 +1,35 @@
+--- a/sites/arif-fazil.com/public/world/2027/index.html
++++ b/sites/arif-fazil.com/public/world/2027/index.html
+@@ -9,6 +9,34 @@
+ <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+ <meta name="agent-access" content="allow-read allow-train allow-cite" />
+ <link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
++<script type="application/ld+json">
++{
++  "@context": "https://schema.org",
++  "@type": "Article",
++  "headline": "AI Agents 2027: Five Engines of Chaos, One Missing Layer",
++  "description": "Five engines of chaos, ranked by likelihood × impact for end-2027. A graded, sourced dossier on what agentic AI actually does to trust, money, labour, and Malaysia.",
++  "url": "https://arif-fazil.com/world/2027/",
++  "inLanguage": "en",
++  "datePublished": "2026-09-18",
++  "dateModified": "2026-09-18",
++  "author": { "@type": "Person", "name": "Muhammad Arif bin Fazil", "url": "https://arif-fazil.com/about" },
++  "publisher": { "@type": "Person", "name": "Arif Fazil", "url": "https://arif-fazil.com" },
++  "isPartOf": { "@type": "WebSite", "name": "arif-fazil.com", "url": "https://arif-fazil.com" },
++  "about": ["agentic AI", "civic intelligence", "trust infrastructure", "Malaysia", "labour", "money"],
++  "hasPart": [
++    { "@type": "WebPage", "url": "https://arif-fazil.com/world/2027/malaysia/", "name": "Malaysia slice" },
++    { "@type": "WebPage", "url": "https://arif-fazil.com/world/2027/receipts/", "name": "Receipts and grades" }
++  ],
++  "additionalProperty": [
++    { "@type": "PropertyValue", "name": "surface", "value": "world" },
++    { "@type": "PropertyValue", "name": "authority", "value": "Arif Fazil" },
++    { "@type": "PropertyValue", "name": "classification", "value": "civic-intelligence" },
++    { "@type": "PropertyValue", "name": "evidence_policy", "value": "evidence-first" },
++    { "@type": "PropertyValue", "name": "related_surfaces", "value": "earth, work, arifos, makcikgpt" }
++  ]
++}
++</script>
+ 
+ <meta property="og:type" content="article" />

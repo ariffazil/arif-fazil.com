@@ -1,0 +1,9 @@
+--- a/sites/arif-fazil.com/public/world/index.html
++++ b/sites/arif-fazil.com/public/world/index.html
+@@ -468,7 +468,7 @@
+     <p><strong>INTEGRITY — world-state.json</strong> (generated <time datetime="2026-09-06T21:22:00Z">2026-09-06 21:22 UTC</time>)</p>
+     <p>sha256: <code>aaea39b2202a2e6e70f6d3f04ef292ec0444bf87c8321fd816297ef34d65dbe8</code></p>
+     <p>Brent <data value="96.28">USD 96.28</data> · USD/MYR <data value="4.04">4.04</data> · KLCI RSI-14 <data value="42.56">42.56</data> — organ-live, receipts 4a35c5f1 / ff2aa60e (VAULT999 wealth ledger, 2026-09-06).</p>
+-    <p>Witness: INCOMPLETE (AI present; human + earth pending). Cross-witness: SINGLE_SOURCE. Cryptographic seal: PENDING Lane A key (888). A prior "vault999_consensus" block (w3 0.985, MERKLE_ROOT_LOCKED) was removed — it had no VAULT999 receipt and no human witness; free-text self-seal is void. Mismatch of the sha above = tampered.</p>
++    <p>Integrity hash above; mismatch = tampered. Verification and witness state live at <a href="/vitals/" style="color:#c9a84c;">/vitals/</a> and <a href="/machine/" style="color:#c9a84c;">/machine/</a>.</p>
+   </footer>

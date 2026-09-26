@@ -724,6 +724,97 @@
       "priority": 0.7,
       "changefreq": "weekly",
       "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
+    },
+    {
+      "path": "/about/",
+      "title": "About Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "About — professional identity, federation overview. Served via SPA/static."
+    },
+    {
+      "path": "/laws/",
+      "title": "Constitutional Laws (F1–F13 & doctrine)",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "description": "Canonical laws, doctrine, and governance floors of arifOS federation."
+    },
+    {
+      "path": "/arif/",
+      "title": "Sovereign — Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "description": "Sovereign profile, index, and sovereign-anchored records."
+    },
+    {
+      "path": "/commodity/",
+      "title": "Commodity Dashboard",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Commodity prices and analytics surface."
+    },
+    {
+      "path": "/human/",
+      "title": "Human & Vitality",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Human-facing surface for vitality, well, and dignity lanes."
+    },
+    {
+      "path": "/politics/ns-election/playbook/",
+      "title": "NS Election Playbook",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "Negeri Sembilan election playbook analysis surface."
+    },
+    {
+      "path": "/world/2027/malaysia/",
+      "title": "2027 — Malaysia",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "2027 Malaysia outlook/writing surface."
+    },
+    {
+      "path": "/world/2027/receipts/",
+      "title": "2027 — Receipts",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "2027 receipts ledger surface."
+    },
+    {
+      "path": "/world/2027/ai-agents-2027-dossier.pdf",
+      "title": "2027 AI Agents Dossier (PDF)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "document",
+      "format": "application/pdf",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "2027 AI agents dossier — PDF artifact."
     }
   ],
   "federation_subdomains": [
@@ -772,5 +863,5 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-09-20T14:24:59Z"
+  "as_of": "2026-09-27T08:10:00Z"
 }

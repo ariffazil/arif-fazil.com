@@ -46,7 +46,9 @@ jobs:
             --json displayTitle,createdAt,url \
             --jq '.[] | "- \(.displayTitle)"' 2>/dev/null || echo "none")
 
-          MANIFEST_COUNT=$(grep -c "\.yml$" ".github/workflows.CANONICAL.yml" 2>/dev/null || echo "?")
+          # grep -c exits 1 when count is 0; pipe through cat to swallow grep's stdout and
+# then echo a single dash placeholder if any pipe element failed.
+MANIFEST_COUNT=$( ( grep -c "\.yml$" ".github/workflows.CANONICAL.yml" 2>/dev/null || true ) | head -n1 )
           ACTUAL_COUNT=$(ls .github/workflows/*.yml 2>/dev/null | wc -l)
 
           {

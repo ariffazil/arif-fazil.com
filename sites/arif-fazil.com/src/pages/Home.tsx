@@ -42,11 +42,11 @@ export function Home() {
         />
 
         <div className="mx-auto max-w-[1360px] px-6 relative z-10">
-          {/* Status bar: identity + live clock */}
+          {/* Status bar: context + live clock */}
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#1F2733]">
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8]">
               <span className="w-2 h-2 rounded-full bg-[#E4572E]" />
-              <span>ARIF FAZIL · KUALA LUMPUR</span>
+              <span>EXPLORATION GEOSCIENCE · OFFSHORE MALAYSIA</span>
             </div>
             <LiveClock withDate className="text-[#9AA0A8]" />
           </div>
@@ -60,11 +60,8 @@ export function Home() {
               <p className="font-mono text-xs text-[#E4572E] uppercase tracking-widest mb-4">
                 Exploration Geoscientist · PETRONAS Carigali · Basin Analysis · Offshore Malaysia
               </p>
-              <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-2xl mb-4">
+              <p className="font-sans text-lg md:text-xl text-[#EDEAE2] font-medium leading-relaxed max-w-2xl mb-4">
                 I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority.
-              </p>
-              <p className="font-sans text-base text-[#EDEAE2]/85 leading-relaxed max-w-2xl mb-4">
-                I help technical teams make defensible decisions when evidence is incomplete — across offshore subsurface work and governed AI systems.
               </p>
               <p className="font-sans text-base text-[#9AA0A8] leading-relaxed max-w-2xl mb-6">
                 I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines. Ditempa bukan diberi.
@@ -80,7 +77,7 @@ export function Home() {
                 Start here
               </p>
               <div className="flex flex-wrap gap-3 mb-5">
-                <a href="/institution/" className="inline-flex items-center justify-center px-6 min-h-[44px] rounded bg-[#E4572E] text-white font-mono text-xs uppercase tracking-wider font-semibold hover:bg-[#E4572E]/90 transition-colors">Request a briefing →</a>
+                <a href="/institution/" className="inline-flex items-center justify-center px-6 min-h-[44px] rounded bg-[#E4572E] text-[#07090E] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[#E4572E]/90 transition-colors">Request a briefing →</a>
                 <Link to="/work" className="inline-flex items-center justify-center px-6 min-h-[44px] rounded border border-[#EDEAE2]/40 bg-[#10141D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#EDEAE2]/70 hover:text-white transition-colors">View selected work →</Link>
               </div>
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] leading-loose">

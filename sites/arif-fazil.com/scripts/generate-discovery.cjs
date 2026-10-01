@@ -46,7 +46,16 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/human`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
-    { loc: `${SITE_BASE}/earth`, priority: 0.8, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/earth/`, priority: 0.8, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/vitals/`, priority: 0.9, changefreq: "weekly", lastmod: "2026-09-27" },
+    { loc: `${SITE_BASE}/work/`, priority: 0.8, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/arifos/`, priority: 0.7, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/words/`, priority: 0.8, changefreq: "weekly" },
+    // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
+    { loc: `${SITE_BASE}/words/essays/`, priority: 0.7, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/words/wiki/`, priority: 0.7, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/words/makcikgpt/`, priority: 0.65, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/world/politics/`, priority: 0.6, changefreq: "monthly" },
     { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
     { loc: `${SITE_BASE}/klci/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/usdmyr/`, priority: 0.85, changefreq: "daily" },
@@ -54,9 +63,9 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/oil/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/gas/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/world`, priority: 0.7, changefreq: "daily" },
-    { loc: `${SITE_BASE}/politics/ns-election/`, priority: 0.8, changefreq: "weekly" },
-    { loc: `${SITE_BASE}/politics/ns-election/compare/`, priority: 0.75, changefreq: "weekly" },
-    { loc: `${SITE_BASE}/politics/ns-election/playbook/`, priority: 0.75, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/world/politics/ns-election/`, priority: 0.8, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/world/politics/ns-election/compare/`, priority: 0.75, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/world/politics/ns-election/playbook/`, priority: 0.75, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/shadow/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/anwar-ibrahim/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/board/`, priority: 0.65, changefreq: "monthly" },
@@ -115,9 +124,15 @@ function buildLlmsTxt(_pieces) {
 This file is a curated map, not a sitemap and not a permission grant. Convention: llmstxt.org (not a ratified standard). Full dump: /llms-full.txt.
 Ditempa Bukan Diberi — forged, not given.
 
+## Human menu
+About, Earth, Research, Writing, Institution. Research opens on the PETRONAS page. MakcikGPT is a column inside Writing, not a peer of the name.
+
 ## Start Here
-- [Discovery graph](https://arif-fazil.com/discovery/index.json): Federation capability graph — identity, authority, governance, capabilities, boundaries in one traversal.
 - [About](https://arif-fazil.com/about): Who Arif is.
+- [Research / PETRONAS](https://arif-fazil.com/vitals/): Public cash against sellable barrels. Not a forecast.
+- [Earth](https://arif-fazil.com/earth/): The ground.
+- [Writing](https://arif-fazil.com/words/): Essays. The column is linked from there.
+- [Institution](https://arif-fazil.com/institution/): Briefing. The price lives on the pilot page, not the home.
 - [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
 - [Design Partner Pilot](https://arif-fazil.com/pilot/): 4-week supervised AI action control around your agent workflow — eight measurable criteria, receipt chain. Band RM20k-50k.
@@ -153,6 +168,12 @@ Civic commentary (MakcikGPT) is editorial, not the professional identity contrac
 Canonical landing: ${CANONICAL_LANDING}
 Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
+
+## Words subpages (2026-10-01)
+The /words/ hub now exposes three peer subpages. Discovery parity with the React IA. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the name; canonical surface remains /world/makcikgpt/.
+- [Words / Essays](https://arif-fazil.com/words/essays/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5.
+- [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
+- [Words / MakcikGPT (column)](https://arif-fazil.com/words/makcikgpt/): Civic commentary in Bahasa Makcik. A column inside the writing hub. Canonical article archive remains /world/makcikgpt/.
 
 ## World — AI Agents 2027 dossier (forged 2026-09-18)
 - [Global dossier](https://arif-fazil.com/world/2027/): Five engines of chaos, ranked by likelihood × impact. What agentic AI actually does to trust, money, labour, and Malaysia.
@@ -197,6 +218,10 @@ function buildLlmsJson(pieces) {
   routeRoles["/canon/"] = "constitutional canon — written law of arifOS";
   routeRoles["/discoveries/"] = "well portfolio — exploration record and subsurface dossier";
   routeRoles["/essays/"] = "long-form writing and analysis";
+  // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
+  routeRoles["/words/essays/"] = "Words — Essays subpage. Long-form essays, formal derivations, philosophical treatises by Arif Fazil. Series 1–9 plus PETRONAS / civic arc M1–M5.";
+  routeRoles["/words/wiki/"] = "Words — Wiki subpage. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.";
+  routeRoles["/words/makcikgpt/"] = "Words — MakcikGPT civic column subpage. A column inside the writing hub, not a peer of the personal / professional identity. Canonical surface remains /world/makcikgpt/.";
 
   return {
     site_name: "arif-fazil.com",

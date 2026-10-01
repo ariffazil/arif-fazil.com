@@ -255,6 +255,46 @@
       "description": "Canonical essays home. Long-form writing by Arif on AI governance, thermodynamics, geological reasoning. Promoted from /writing/ 2026-09-17 to close catalog/reality drift."
     },
     {
+      "path": "/words/",
+      "title": "Words — Hub (Essays · Wiki · MakcikGPT)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "hub",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "Words hub. Three peer subpages — Essays, Wiki & Knowledge, MakcikGPT civic column. Refactored 2026-10-01 from tabbed single-page into a true hub. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the personal / professional identity."
+    },
+    {
+      "path": "/words/essays/",
+      "title": "Words — Essays",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Peer subpage of the /words/ hub. Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5. Refactored 2026-10-01."
+    },
+    {
+      "path": "/words/wiki/",
+      "title": "Words — Wiki & Knowledge",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Peer subpage of the /words/ hub. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order. Refactored 2026-10-01."
+    },
+    {
+      "path": "/words/makcikgpt/",
+      "title": "Words — MakcikGPT (column)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.65,
+      "changefreq": "weekly",
+      "description": "Peer subpage of the /words/ hub. A civic column inside the writing hub, NOT a peer of the personal / professional identity. Canonical article archive and full reception remain at /world/makcikgpt/. Doctrine unchanged. Added 2026-10-01."
+    },
+    {
       "path": "/writing/:slug",
       "title": "Essay",
       "mission": "interpret",
@@ -772,5 +812,5 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-09-20T14:24:59Z"
+  "as_of": "2026-10-01T00:00:00Z"
 }

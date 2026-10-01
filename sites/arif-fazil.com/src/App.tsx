@@ -199,6 +199,8 @@ export function App() {
             {/* 6. /999 — Proof & Immutable Seals */}
             <Route path="/999" element={<Proof />} />
             <Route path="/999/" element={<Proof />} />
+            <Route path="/vault-999" element={<Navigate to="/999" replace />} />
+            <Route path="/vault-999/" element={<Navigate to="/999" replace />} />
             <Route path="/proof" element={<Proof />} />
             <Route path="/proof/" element={<Proof />} />
 

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useNow, formatKL } from '@/hooks/useNow'
@@ -104,19 +104,6 @@ function NavItemLink({
 export default function Navbar() {
   const now = useNow()
   const [open, setOpen] = useState(false)
-  const [mirrorOpen, setMirrorOpen] = useState(false)
-  const mirrorRef = useRef<HTMLDivElement>(null)
-
-  // Close mirror dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (mirrorRef.current && !mirrorRef.current.contains(e.target as Node)) {
-        setMirrorOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
 
   return (
     <header className="sticky top-0 z-50 border-b bg-paper/95 backdrop-blur-md hairline">
@@ -139,69 +126,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right side: Agentic Mirror Switcher + Live Clock */}
         <div className="hidden sm:flex items-center gap-3 shrink-0">
-          {/* Agentic Mirror Dropdown */}
-          <div className="relative" ref={mirrorRef}>
-            <button
-              onClick={() => setMirrorOpen(!mirrorOpen)}
-              className={`flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded border transition-colors ${
-                mirrorOpen
-                  ? 'border-ember text-ember bg-ember/10'
-                  : 'border-ink-soft/20 text-ink-soft hover:text-ink hover:border-ink-soft/40 bg-ink-soft/5'
-              }`}
-              title="Mirror to Agentic Web Organs"
-            >
-              <span>🪞 Agentic</span>
-              <span className="text-[9px] opacity-70">▾</span>
-            </button>
-
-            <AnimatePresence>
-              {mirrorOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 6, scale: 0.96 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 4, scale: 0.96 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute right-0 mt-2 w-64 rounded-lg border border-ink-soft/20 bg-[#111318] p-2 shadow-2xl z-50"
-                >
-                  <div className="px-2.5 py-1.5 border-b border-ink-soft/10 mb-1">
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-ink-soft/60">
-                      Federation Organs · Agentic Web
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    {agenticMirrors.map((m) => (
-                      <a
-                        key={m.label}
-                        href={m.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-start gap-2.5 px-2 py-1.5 rounded hover:bg-ink-soft/10 transition-colors group"
-                      >
-                        <span className="text-sm mt-0.5">{m.icon}</span>
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-1.5">
-                            <span className="font-mono text-xs font-bold uppercase text-ink group-hover:text-ember transition-colors">
-                              {m.label}
-                            </span>
-                            <span className="font-mono text-[10px] text-ink-soft/50 group-hover:text-ink-soft">
-                              ↗
-                            </span>
-                          </div>
-                          <div className="text-[11px] text-ink-soft/70 leading-tight">
-                            {m.desc}
-                          </div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Live Clock with Green Pulse */}
+          {/* Live Clock */}
           <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.04em] text-ink-soft pl-2 border-l border-ink-soft/20">
             <span className="w-1.5 h-1.5 rounded-full bg-[#31C48D] animate-pulse" />
             <span className="text-ink font-medium tabular-nums">{formatKL(now)}</span>
@@ -260,27 +186,6 @@ export default function Navbar() {
                 </motion.div>
               ))}
             </nav>
-
-            {/* Agentic Mirrors on Mobile */}
-            <div className="mt-8 border-t border-ink-soft/20 pt-5">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-ink-soft/70 mb-3">
-                🪞 Agentic Web Organs
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {agenticMirrors.map((m) => (
-                  <a
-                    key={m.label}
-                    href={m.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 p-2 rounded bg-ink-soft/5 border border-ink-soft/10 text-xs font-mono text-ink uppercase"
-                  >
-                    <span>{m.icon}</span>
-                    <span>{m.label} ↗</span>
-                  </a>
-                ))}
-              </div>
-            </div>
 
             <div className="mt-auto pt-6 flex items-center gap-2 font-mono text-[11px] tabular-nums text-ink-soft">
               <span className="w-1.5 h-1.5 rounded-full bg-[#31C48D] animate-pulse" />

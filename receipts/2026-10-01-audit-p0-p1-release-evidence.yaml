@@ -1,0 +1,40 @@
+# Release evidence — 2026-10-01 external-audit P0/P1 pass
+# Not a kernel SEAL. Deploy receipt per AGENTS.md rule 10.
+release_candidate:
+  commit: "86a510a (arif-fazil.com) · 8b615a0 (web-canon, PR #9 pending merge — protected main)"
+  branch: main
+  environment: production_public_html
+  changed_routes: ["/", "/about", "/work/", "/reality/", "/evidence/", "/graph/", "/economics/", "/missions", "/sanctuary/", "all routes (footer CSS, nav labels)"]
+  public_effect:
+    - "Skip link target now exists in SPA DOM (main#main-content) — WCAG 2.4.1"
+    - "Hero: 5 peer actions → Request a briefing + View selected work + text-row record links"
+    - "Per-route <title>/description/canonical/OG served on initial HTML for /work/ /reality/ /evidence/ /graph/ /economics/ /about /sanctuary/ (verified via curl, no JS)"
+    - "Primary nav: About · Work · Earth · Writing · Briefing (canon web-canon navigation.json)"
+    - "Work page: 3 decision-first featured cases before ledger; seismic canvas demoted below proof"
+    - "Homepage secondary-copy contrast 4.14:1 → >7:1 (opacity drop removed)"
+    - "prefers-reduced-motion collapse + 44px footer hit areas on coarse pointers"
+  tests:
+    doctor_before: "GREEN (1 pre-existing YELLOW /999 seal marker — untouched)"
+    doctor_after: "not rerun; verify-pages PASS post-sync"
+    build: "npm run build OK (tsc + vite + postbuild stamps)"
+    verify_pages: "PASS — 248 pages (closed pre-existing /earth/kinabalu-basin/ 404 via split-roots sync)"
+    live_titles_curl: "/work/ 'Selected Work — Arif Fazil' · /about 'About — Arif Fazil' · /reality/ · /evidence/ · /graph/ · /economics/ · /words/ all route-specific"
+    bundle_check: "entry index-CB-X6gZ_.js contains main-content; Home-Ds9b1ACp.js chunk contains new hero strings"
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: "none added; no new files with secrets"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: "/root/BACKUPS/webroot-arif-20261001-234355/top-files.tgz + /var/www/html/.split-roots-backup-20261001-234355"
+    git: "git revert 86a510a (site) · PR #9 close (canon)"
+  incident:
+    - "Operator error: git reset --hard origin/main on web-canon orphaned 13 pre-existing local commits; recovered immediately via reflog (reset to 8b615a0). No data lost. Lesson: check ahead-count before reset. F1 near-miss."
+  requested_action: "named Caddy reload for two fenced items (see below)"
+  approver: ""
+  pending_f13:
+    - "Cache-Control: homepage handle sends no-store; recommend public,max-age=300,s-maxage=3600,stale-while-revalidate=86400 for static pages (audit P2). Requires Caddyfile edit + reload (AGENTS.md rule 5)."
+    - "Root catch-all try_files lacks {path}/index.html — /about-class routes only got stamped shells because existing handlers covered them; future SPA routes need the one-token Caddy addition."
+    - "CSP hardening ('unsafe-eval'/'unsafe-inline' reduction) — audit P2, test visualizations first."

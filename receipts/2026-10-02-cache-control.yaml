@@ -1,0 +1,27 @@
+# Release evidence — 2026-10-02 Cache-Control fix (audit P2)
+# Approved by Arif: "ok sah" (2026-10-01, in reply to: benarkan reload Caddy untuk cache headers statik?)
+# Not a kernel SEAL.
+release_candidate:
+  change: "/etc/caddy/vhosts/arif-fazil.com.conf — Cache-Control policy for static editorial surfaces"
+  environment: production_edge (Caddy 443, behind Cloudflare)
+  what_changed:
+    - "handle / : no-store → public, max-age=300, stale-while-revalidate=86400 (CDN max-age=3600)"
+    - "handle @spa_routes (covers /work* /about* /words* /earth-spa shells etc.): no-store → same short-cache policy"
+    - "handle @static_dirs (/institution /999 /000 /vitals /politics etc.): no-store → same short-cache policy"
+    - "Pragma/Expires no-cache headers removed from those three blocks"
+  deliberately_untouched:
+    - "/health /ready (no-store — liveness must be fresh)"
+    - "robots.txt (no-store — CF must always revalidate, per 2026-09-22 note)"
+    - "makcikgpt bot lanes, /ledger witness, /api/* (unchanged)"
+    - "versioned assets already had immutable 1y via /assets/* and /images/* handles"
+  verification:
+    caddy_validate: "Valid configuration"
+    reload: "systemctl reload caddy — active"
+    live_headers: "/ · /work/ · /about → public, max-age=300, swr=86400 | /health + /robots.txt still no-store | /earth/ /words/ /institution/ /999/ no header (default)"
+    make_status: "all key surfaces HTTP 200"
+  rollback: "cp /etc/caddy/vhosts/arif-fazil.com.conf.bak-20261001T-cache-short → conf; systemctl reload caddy"
+  caddy_reloaded: true
+  approver: "Arif (ok sah, 2026-10-01)"
+  residual_audit_items:
+    - "CSP hardening ('unsafe-eval'/'unsafe-inline' reduction) — needs its own QA pass over visualizations"
+    - "handle / catch-all lacks {path}/index.html (future SPA routes under root-only paths would serve homepage shell; current key routes all covered)"

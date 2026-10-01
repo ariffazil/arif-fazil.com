@@ -69,6 +69,14 @@ export function InstitutionPage() {
               {' '}— GEOX, arifOS, this site.
             </p>
             <p>
+              <a className="text-[#E4572E] hover:underline" href="/vitals/">/vitals/</a>
+              {' '}— PETRONAS in public numbers. Cash against sellable barrels.
+            </p>
+            <p>
+              <a className="text-[#E4572E] hover:underline" href="/arifos/">/arifos/</a>
+              {' '}— the rules the machines follow. Judge before they act.
+            </p>
+            <p>
               <a className="text-[#E4572E] hover:underline" href="/999/">/999/</a>
               {' '}— verification and provenance records (evidence snapshots, not self-issued certificates).
             </p>

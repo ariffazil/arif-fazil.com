@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-09-26T23:54:44.838Z",
+  "generated_at": "2026-10-01T17:21:50.532Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -10,35 +10,35 @@
       "tools": [
         {
           "name": "arif_init",
-          "desc": "KERNEL 000 · Ignite a governed kernel session: binds actor identity, constitutional floors"
+          "desc": "KERNEL 000 · Session ignition — binds actor, floors, and audit before any other arif_* ver"
         },
         {
           "name": "arif_observe",
-          "desc": "KERNEL 111 · Collect evidence — facts and sources with epistemic tags (OBS) and uncertaint"
+          "desc": "KERNEL 111 · Sense reality into evidence with epistemic tags and uncertainty bounds."
         },
         {
           "name": "arif_think",
-          "desc": "KERNEL 333 · Structured reasoning pass: decomposes a query and returns reasoning steps lab"
+          "desc": "KERNEL 333 · Mind — structured reasoning under F2/F7 with OBS/DER/INT/SPEC labels."
         },
         {
           "name": "arif_route",
-          "desc": "KERNEL 444 · Intent→organ router: classifies a natural-language intent and dispatches it t"
+          "desc": "KERNEL 444 · Intent→organ router — dispatches to GEOX/WEALTH/WELL/A-FORGE."
         },
         {
           "name": "arif_memory",
-          "desc": "KERNEL 555 · Governed memory of the kernel itself: six tiers (L1–L6) with per-mode gating."
+          "desc": "KERNEL 555 · Memory governor — L1–L6 governed semantic recall, storage, and persistence."
         },
         {
           "name": "arif_judge",
-          "desc": "KERNEL 666 · Binding constitutional arbitration: evaluates a candidate action or claim and"
+          "desc": "KERNEL 666 · Constitutional verdict — binding SEAL/HOLD/SABAR/VOID arbitration."
         },
         {
           "name": "arif_forge",
-          "desc": "KERNEL 777 · Governed execution: applies a mutation through A-FORGE only when carrying a S"
+          "desc": "KERNEL 777 · Execution gate via A-FORGE — mutates only after SEAL verdict."
         },
         {
           "name": "arif_seal",
-          "desc": "KERNEL 999 · Append an entry to VAULT999, the immutable ledger — accepted entries can neve"
+          "desc": "KERNEL 999 · VAULT999 immutable append — irreversible civilizational memory sealing."
         }
       ]
     },
@@ -220,92 +220,8 @@
     },
     "well": {
       "verified": true,
-      "count": 40,
+      "count": 10,
       "tools": [
-        {
-          "name": "well_log_intake",
-          "desc": "[Triad Phase 1] Log a meal/snack/intake event with kcal + macro breakdown."
-        },
-        {
-          "name": "well_log_recovery_event",
-          "desc": "[Triad Phase 1] Log a recovery/restorative event."
-        },
-        {
-          "name": "well_log_substance",
-          "desc": "[Triad Phase 1] Log a substance intake event."
-        },
-        {
-          "name": "well_inject_biometric",
-          "desc": "[Triad Phase 1] Hermes-only biometric injection from external device."
-        },
-        {
-          "name": "well_observe_machine",
-          "desc": "[Triad Phase 2] Per-organ thermal/drift/scar/evidence card."
-        },
-        {
-          "name": "well_observe_federation_thermal",
-          "desc": "[Triad Phase 2] Aggregate thermal state across KVM8 organs + KVM4/KVM2 mesh."
-        },
-        {
-          "name": "well_observe_scar_load",
-          "desc": "[Triad Phase 2] Scar volume per organ. Graceful UNKNOWN if no endpoint."
-        },
-        {
-          "name": "well_observe_drift_field",
-          "desc": "[Triad Phase 2] FRAME observer drift over last N hours."
-        },
-        {
-          "name": "well_observe_evidence_backlog",
-          "desc": "[Triad Phase 2] Receipt queue depth. Graceful UNKNOWN if no endpoint."
-        },
-        {
-          "name": "well_classify_machine_state",
-          "desc": "[Triad Phase 2] Compose prior tools → OPTIMAL/WATCH/DEGRADED/CRITICAL."
-        },
-        {
-          "name": "well_attest_to_kernel",
-          "desc": "[Triad Phase 3] Bridge fire — attestation from WELL → arifOS :18081 /attest."
-        },
-        {
-          "name": "well_handoff_dignity_to_arifos",
-          "desc": "[Triad Phase 3] High-urgency dignity handoff WELL → arifOS /dignity/handoff."
-        },
-        {
-          "name": "well_propose_seal_recommendation",
-          "desc": "[Triad Phase 3] Propose SEAL recommendation to arifOS :18081 /recommendation/inbox."
-        },
-        {
-          "name": "well_propose_governance_signal",
-          "desc": "[Triad Phase 3] Propose operational governance signal to arifOS :18081 /signal/inbox."
-        },
-        {
-          "name": "well_consent_set_scope",
-          "desc": "[Triad Phase 3] Grant or revoke consent scope. Hermes-only (F11 governance.consent_write)."
-        },
-        {
-          "name": "well_consent_audit",
-          "desc": "[Triad Phase 3] Read consent scope registry. Sovereign's right (no F11 gate)."
-        },
-        {
-          "name": "well_seal_recommendation_log",
-          "desc": "[Triad Phase 3] Read recommendation history from events.jsonl. Read-only."
-        },
-        {
-          "name": "well_assess_triadic_state",
-          "desc": "[Triad Phase 4] Headline composition: human × machine × governance → unified signal."
-        },
-        {
-          "name": "well_get_triadic_snapshot",
-          "desc": "[Triad Phase 5] Read the canonical triadic snapshot at /state/triadic_snapshot.json."
-        },
-        {
-          "name": "well_render_hud_panel",
-          "desc": "[Triad Phase 5] Render HUD cockpit ASCII panel from triadic snapshot."
-        },
-        {
-          "name": "well_frame_read_snapshot",
-          "desc": "[Triad Phase 5] FRAME observer reads snapshot as evidence, never verdict."
-        },
         {
           "name": "well_machine_diagnose",
           "desc": "M-WELL MACHINE DIAGNOSTIC -- Full VPS health with actionable recommendations."
@@ -345,45 +261,9 @@
         {
           "name": "well_registry_status",
           "desc": "WELL registry truth diagnostic -- blueprint canonical format."
-        },
-        {
-          "name": "well_human",
-          "desc": "H-WELL unified plane. mode=homeostasis|readiness|dignity."
-        },
-        {
-          "name": "well_machine",
-          "desc": "M-WELL unified plane. mode=diagnose|recommend|classify|observe."
-        },
-        {
-          "name": "well_triad",
-          "desc": "G+C triadic plane. mode=assess|snapshot|hud."
-        },
-        {
-          "name": "well_reality",
-          "desc": "R-WELL (v1). Reality Integrity plane. mode=confidence|memory|witness|lineage|patterns."
-        },
-        {
-          "name": "well_adaptation",
-          "desc": "A-WELL (v0). Adaptation Readiness plane. mode=precheck|readiness|mttr|gaps."
-        },
-        {
-          "name": "well_intake",
-          "desc": "H-WELL write plane. mode=meal|recovery|substance|biometric."
-        },
-        {
-          "name": "well_consent",
-          "desc": "G-WELL consent plane. mode=audit|grant|revoke."
-        },
-        {
-          "name": "well_bridge",
-          "desc": "G-WELL outbound witness plane. mode=attest|signal|recommend|dignity|log."
-        },
-        {
-          "name": "well_registry",
-          "desc": "WELL registry meta. mode=status|full|contradictions."
         }
       ]
     }
   },
-  "total_verified": 89
+  "total_verified": 59
 }

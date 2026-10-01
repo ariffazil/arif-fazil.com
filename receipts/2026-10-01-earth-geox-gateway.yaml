@@ -1,0 +1,27 @@
+# Release evidence — 2026-10-01 /earth/ GEOX gateway (follow-up to audit P0/P1 pass)
+# Not a kernel SEAL. Deploy receipt per AGENTS.md rule 10.
+release_candidate:
+  commit: "e83cc74 (arif-fazil.com)"
+  branch: main
+  environment: production_public_html
+  decision:
+    question: "Should /earth/ redirect to geox.arif-fazil.com, or stay a human front door with a prominent GEOX pathway?"
+    chosen: "Stay + prominent 'Open GEOX MCP Apps' pathway (auditor recommendation). Reversible; preserves context for first-time visitors."
+  changed_routes: ["/earth/", "/words/", "all pages using _shared/unified-header.html"]
+  public_effect:
+    - "/earth/ gains a full GEOX gateway section (#geox): plain-language framing, best-for line, three doors (app / viewer / MCP endpoint)"
+    - "Broken in-page anchor closed: dock 'GEOX Tools' linked #geox; no such id existed. Dock relabelled 'Open GEOX ↗' and now resolves."
+    - "Nav canon (About·Work·Earth·Writing·Briefing) propagated to earth header, unified-header, words hub, legacy work page"
+  tests:
+    build: "npm run build OK"
+    verify_pages: "PASS — 248 pages"
+    live_curl: "/earth/ contains 'Open GEOX MCP Apps', id=geox, LAUNCH GEOX APP, MCP ENDPOINT; /words/ nav shows Work+Briefing"
+    axe: not_run
+  security:
+    new_public_write_capability: false
+    caddy_reloaded: false
+  rollback:
+    backup: "/var/www/html/.split-roots-backup-20261001-235508 + webroot rsync is additive"
+    git: "git revert e83cc74"
+  requested_action: "none new — prior F13 items still pending (Cache-Control headers; Caddy try_files token)"
+  approver: ""

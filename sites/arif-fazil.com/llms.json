@@ -61,7 +61,10 @@
     "/constellation/": "federation map — system topology and organ status",
     "/canon/": "constitutional canon — written law of arifOS",
     "/discoveries/": "well portfolio — exploration record and subsurface dossier",
-    "/essays/": "long-form writing and analysis"
+    "/essays/": "long-form writing and analysis",
+    "/words/essays/": "Words — Essays subpage. Long-form essays, formal derivations, philosophical treatises by Arif Fazil. Series 1–9 plus PETRONAS / civic arc M1–M5.",
+    "/words/wiki/": "Words — Wiki subpage. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.",
+    "/words/makcikgpt/": "Words — MakcikGPT civic column subpage. A column inside the writing hub, not a peer of the personal / professional identity. Canonical surface remains /world/makcikgpt/."
   },
   "related_sites": [
     "https://arifos.arif-fazil.com",
@@ -98,5 +101,5 @@
     "llms_txt": true,
     "sitemap": true
   },
-  "last_updated": "2026-09-26"
+  "last_updated": "2026-10-01"
 }

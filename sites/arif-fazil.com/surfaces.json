@@ -255,6 +255,46 @@
       "description": "Canonical essays home. Long-form writing by Arif on AI governance, thermodynamics, geological reasoning. Promoted from /writing/ 2026-09-17 to close catalog/reality drift."
     },
     {
+      "path": "/words/",
+      "title": "Words — Hub (Essays · Wiki · MakcikGPT)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "hub",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "Words hub. Three peer subpages — Essays, Wiki & Knowledge, MakcikGPT civic column. Refactored 2026-10-01 from tabbed single-page into a true hub. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the personal / professional identity."
+    },
+    {
+      "path": "/words/essays/",
+      "title": "Words — Essays",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Peer subpage of the /words/ hub. Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5. Refactored 2026-10-01."
+    },
+    {
+      "path": "/words/wiki/",
+      "title": "Words — Wiki & Knowledge",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Peer subpage of the /words/ hub. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order. Refactored 2026-10-01."
+    },
+    {
+      "path": "/words/makcikgpt/",
+      "title": "Words — MakcikGPT (column)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.65,
+      "changefreq": "weekly",
+      "description": "Peer subpage of the /words/ hub. A civic column inside the writing hub, NOT a peer of the personal / professional identity. Canonical article archive and full reception remain at /world/makcikgpt/. Doctrine unchanged. Added 2026-10-01."
+    },
+    {
       "path": "/writing/:slug",
       "title": "Essay",
       "mission": "interpret",
@@ -724,97 +764,6 @@
       "priority": 0.7,
       "changefreq": "weekly",
       "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
-    },
-    {
-      "path": "/about/",
-      "title": "About Arif Fazil",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "About — professional identity, federation overview. Served via SPA/static."
-    },
-    {
-      "path": "/laws/",
-      "title": "Constitutional Laws (F1–F13 & doctrine)",
-      "mission": "remember",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Canonical laws, doctrine, and governance floors of arifOS federation."
-    },
-    {
-      "path": "/arif/",
-      "title": "Sovereign — Arif Fazil",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Sovereign profile, index, and sovereign-anchored records."
-    },
-    {
-      "path": "/commodity/",
-      "title": "Commodity Dashboard",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Commodity prices and analytics surface."
-    },
-    {
-      "path": "/human/",
-      "title": "Human & Vitality",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "weekly",
-      "description": "Human-facing surface for vitality, well, and dignity lanes."
-    },
-    {
-      "path": "/politics/ns-election/playbook/",
-      "title": "NS Election Playbook",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.5,
-      "changefreq": "monthly",
-      "description": "Negeri Sembilan election playbook analysis surface."
-    },
-    {
-      "path": "/world/2027/malaysia/",
-      "title": "2027 — Malaysia",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.5,
-      "changefreq": "monthly",
-      "description": "2027 Malaysia outlook/writing surface."
-    },
-    {
-      "path": "/world/2027/receipts/",
-      "title": "2027 — Receipts",
-      "mission": "remember",
-      "status": "live",
-      "type": "page",
-      "priority": 0.5,
-      "changefreq": "monthly",
-      "description": "2027 receipts ledger surface."
-    },
-    {
-      "path": "/world/2027/ai-agents-2027-dossier.pdf",
-      "title": "2027 AI Agents Dossier (PDF)",
-      "mission": "interpret",
-      "status": "live",
-      "type": "document",
-      "format": "application/pdf",
-      "priority": 0.5,
-      "changefreq": "monthly",
-      "description": "2027 AI agents dossier — PDF artifact."
     }
   ],
   "federation_subdomains": [
@@ -863,5 +812,5 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-09-27T08:10:00Z"
+  "as_of": "2026-10-01T00:00:00Z"
 }

@@ -28,9 +28,50 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/earth</loc>
+    <loc>https://arif-fazil.com/earth/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/vitals/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/work/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/arifos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/words/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/words/essays/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/words/wiki/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/words/makcikgpt/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/politics/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://arif-fazil.com/economics</loc>
@@ -68,17 +109,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/politics/ns-election/</loc>
+    <loc>https://arif-fazil.com/world/politics/ns-election/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/politics/ns-election/compare/</loc>
+    <loc>https://arif-fazil.com/world/politics/ns-election/compare/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/politics/ns-election/playbook/</loc>
+    <loc>https://arif-fazil.com/world/politics/ns-election/playbook/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>

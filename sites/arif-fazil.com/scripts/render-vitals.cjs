@@ -58,6 +58,10 @@ if (!fs.existsSync(resolvedJson)) {
 
 const data = JSON.parse(fs.readFileSync(resolvedJson, 'utf8'));
 let html = fs.readFileSync(SOURCE_HTML, 'utf8');
+if (!html.includes('<!--B11-A:GRID9-MARKER:BEGIN-->')) {
+  console.log('render-vitals: human page has no tripwire markers — leaving it untouched');
+  process.exit(0);
+}
 
 // ──────────────────────────── helpers ────────────────────────────
 function score(t) {

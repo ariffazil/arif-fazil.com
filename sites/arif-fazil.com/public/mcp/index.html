@@ -987,7 +987,7 @@
                 </div>
             </div>
             <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted);">
-                © 2026 ARIF FAZIL — arifOS v2026.5.14-SELAMAT
+                © 2026 ARIF FAZIL — arifOS <span id="footer-version"></span>
             </div>
         </div>
     </footer>
@@ -1015,8 +1015,11 @@
                     : 'System experiencing issues';
                 document.getElementById('header-status-text').textContent = isHealthy ? 'Live' : 'Degraded';
 
-                // Version
+                // Version (2026-10-02: footer version now follows the same live probe —
+                // a hardcoded footer claimed v2026.5.14-SELAMAT while live panel said otherwise. F2.)
                 document.getElementById('version').textContent = data.version || '--';
+                const fv = document.getElementById('footer-version');
+                if (fv) fv.textContent = data.version ? '· ' + data.version : '';
                 document.getElementById('transport').textContent = (data.transport || 'HTTP').toUpperCase();
 
                 // Thermodynamic

@@ -31,8 +31,6 @@ const SPA_ROUTES = [
   "missions",
   "economics",
   "sanctuary",
-  "000",
-  "999",
   "graph",
   "evidence",
   "reality",
@@ -177,6 +175,13 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   "words/essays/index.html",
   "words/wiki/index.html",
   "words/makcikgpt/index.html",
+  // /000/ + /999/ — sovereign proof pages (2026-10-02). Hand-forged, NO SPA shell
+  // injection, NO React hydration. The Caddy @genesis / @validation handlers route
+  // the canonical trailing-slash URLs to these files; SPA bundle clobbering them
+  // was the root cause of the witness's "DRIFT — SEAL MUST NOT RUN" verdict.
+  // Removed from SPA_ROUTES above (no route-stamping, no overwrite).
+  "000/index.html",
+  "999/index.html",
   ]);
 
 function shouldSkip(relativePath, isDir) {

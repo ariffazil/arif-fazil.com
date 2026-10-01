@@ -18,6 +18,7 @@
   .uh-status { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; padding: 0.35rem 1.5rem; font-size: 0.65rem; letter-spacing: 0.06em; border-bottom: 1px solid var(--uh-border); color: var(--uh-text-dim); }
   .uh-status .live { color: var(--uh-mind); }
   .uh-status-full { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; }
+  #uh-epoch, #uh-date, #uh-timer { display: none; }
   .uh-status-compact { display: none; }
 
   html[data-header="product"] .uh-status-full,
@@ -29,7 +30,7 @@
   html[data-header="product"] .uh-identity,
   body[data-header="product"] .uh-identity { padding: 0.65rem 1.5rem; }
 
-  .uh-canon { display: flex; justify-content: space-between; align-items: center; padding: 0.35rem 1.5rem; font-size: 0.65rem; letter-spacing: 0.06em; border-bottom: 1px solid var(--uh-border); }
+  .uh-canon { display: none; }
   .uh-canon .day { color: var(--uh-body); font-weight: 600; }
   .uh-canon .quote { color: var(--uh-text-dim); font-style: italic; }
 
@@ -58,6 +59,22 @@
 </style>
 
 <header class="uh">
+  <div class="uh-identity">
+    <a href="https://arif-fazil.com/" class="uh-logo" style="color:inherit">AF</a>
+    <div>
+      <div class="uh-name">ARIF FAZIL</div>
+      <div class="uh-role">EXPLORATION GEOSCIENTIST · KUALA LUMPUR</div>
+    </div>
+  </div>
+
+  <nav class="uh-nav" aria-label="Primary">
+    <a href="https://arif-fazil.com/about">ABOUT</a>
+    <a href="https://arif-fazil.com/work/">WORK</a>
+    <a href="https://arif-fazil.com/earth/">EARTH</a>
+    <a href="https://arif-fazil.com/words/">WRITING</a>
+    <a href="https://arif-fazil.com/institution/">BRIEFING</a>
+  </nav>
+
   <div class="uh-status">
     <span class="live" aria-hidden="true">●</span>
     <span class="uh-status-compact" id="uh-compact">—</span>
@@ -76,23 +93,6 @@
     <div id="uh-fdate" style="color:#666">---- --th ------ ---- --:-- -- MYT</div>
   </div>
 
-  <div class="uh-identity">
-    <a href="https://arif-fazil.com/" class="uh-logo" style="color:inherit">AF</a>
-    <div>
-      <div class="uh-name">ARIF FAZIL</div>
-      <div class="uh-role">GEOSCIENTIST · ARCHITECT</div>
-    </div>
-  </div>
-
-  <nav class="uh-nav" aria-label="Primary" data-page-context="6-lanes">
-    <a href="https://arif-fazil.com/earth/" data-lane="earth">EARTH</a>
-    <a href="https://arif-fazil.com/words/" data-lane="words">WORDS</a>
-    <a href="https://arif-fazil.com/makcikgpt/" data-lane="makcikgpt">MAKCIKGPT</a>
-    <a href="https://arif-fazil.com/world/" data-lane="world">WORLD</a>
-    <a href="https://arif-fazil.com/work/" data-lane="work">WORK</a>
-    <span class="uh-nav-spacer"></span>
-    <a href="https://arif-fazil.com/" style="font-size:.7rem;color:var(--uh-text-dim)">DITEMPA BUKAN DIBERI ⚒</a>
-</nav>
 </header>
 
 <script>

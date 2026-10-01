@@ -1,7 +1,7 @@
 // AUTO-GENERATED from /root/web-canon/canon/navigation.json (generate-nav-canon.cjs)
 // DERIVED — never hand-edit. Edit canon, regenerate.
 // F2: this file must match canon exactly. Drift = entropy.
-// canon version: 7.2.0 · as_of: 2026-09-21 · trinity: DRAFT_FUTURE
+// canon version: 7.3.0 · as_of: 2026-10-01 · trinity: DRAFT_FUTURE
 
 export interface NavItem {
   label: string;
@@ -18,39 +18,33 @@ export const brand = {
 
 export const primaryNav: NavItem[] = [
   {
-    "label": "Home",
-    "href": "/",
+    "label": "About",
+    "href": "/about",
     "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "Earth",
-    "href": "/earth",
-    "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "Words",
-    "href": "/words",
-    "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "MakcikGPT",
-    "href": "/makcikgpt",
-    "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "World",
-    "href": "/world",
-    "mode": "static",
     "external": false
   },
   {
     "label": "Work",
-    "href": "/work",
-    "mode": "spa",
+    "href": "/work/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Earth",
+    "href": "/earth/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Writing",
+    "href": "/words/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Briefing",
+    "href": "/institution/",
+    "mode": "static",
     "external": false
   }
 ];
@@ -75,8 +69,14 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
+    "label": "Column",
+    "href": "/world/makcikgpt/",
+    "mode": "static",
+    "external": false
+  },
+  {
     "label": "PETRONAS",
-    "href": "/propa/",
+    "href": "/vitals/",
     "mode": "static",
     "external": false
   },
@@ -88,7 +88,7 @@ export const secondaryNav: NavItem[] = [
   },
   {
     "label": "Politics",
-    "href": "/politics/",
+    "href": "/world/politics/",
     "mode": "static",
     "external": false
   },
@@ -101,6 +101,12 @@ export const secondaryNav: NavItem[] = [
   {
     "label": "Organs",
     "href": "/organs/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Research",
+    "href": "/vitals/",
     "mode": "static",
     "external": false
   }

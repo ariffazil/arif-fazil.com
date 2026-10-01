@@ -1,17 +1,14 @@
 import { brand, machineNav, secondaryNav, type NavItem } from '@/data/navCanon'
 
 const territoryLinks = [
-  { label: 'Home', href: '/', desc: 'Sovereign surface' },
-  { label: 'About', href: '/about', desc: 'Who is Arif Fazil' },
-  { label: 'Earth', href: '/earth', desc: 'Geology globe & wells' },
-  { label: 'World', href: '/world', desc: 'Economics & commodities' },
-  { label: 'Words', href: '/words', desc: '63+ essays & analysis' },
-  { label: 'Work', href: '/work', desc: 'Systems & wells record' },
-  { label: 'Briefing', href: '/institution/', desc: 'Institutional engagement' },
-  { label: 'Agents', href: '/human', desc: 'Start here for machines' },
-  { label: '999', href: '/999/', desc: 'Proof & sealed evidence' },
-  { label: '000', href: '/000/', desc: 'Genesis & origin' },
-  { label: 'AAA', href: '/AAA', desc: 'Canon & federation' },
+  { label: 'About', href: '/about', desc: 'Who he is' },
+  { label: 'Earth', href: '/earth/', desc: 'The ground' },
+  { label: 'Research', href: '/vitals/', desc: 'PETRONAS, in public numbers' },
+  { label: 'Writing', href: '/words/', desc: 'Essays' },
+  { label: 'Column', href: '/world/makcikgpt/', desc: 'MakcikGPT, editorial' },
+  { label: 'Briefing', href: '/institution/', desc: 'Start a professional conversation' },
+  { label: 'Work', href: '/work/', desc: 'Wells and systems' },
+  { label: 'For machines', href: '/llms.txt', desc: 'The map agents should trust' },
 ]
 
 const connectLinks = [

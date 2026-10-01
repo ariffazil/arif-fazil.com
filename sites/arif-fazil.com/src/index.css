@@ -584,3 +584,28 @@
   font-size: 0.9rem;
   color: #9AA0A8;
 }
+
+/* ── 2026-10-01 accessibility pass (external audit) ───────────────────── */
+
+/* Reduced motion: particle fields, transitions, live pulses collapse to static */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch targets: compact footer/utility links gain a 44px hit area on coarse pointers */
+@media (pointer: coarse) {
+  footer a,
+  .utility-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 0.25rem;
+  }
+}

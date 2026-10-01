@@ -17,6 +17,9 @@ const MakcikGptArticle = lazy(() => import('@/pages/MakcikGptArticle').then(m =>
 const World = lazy(() => import('@/pages/WorldArrow').then(m => ({ default: m.World })));
 const CommodityPage = lazy(() => import('@/pages/CommodityPage').then(m => ({ default: m.CommodityPage })));
 const Words = lazy(() => import('@/pages/Words').then(m => ({ default: m.Words })));
+const WordsEssays = lazy(() => import('@/pages/WordsEssays').then(m => ({ default: m.WordsEssays })));
+const WordsWiki = lazy(() => import('@/pages/WordsWiki').then(m => ({ default: m.WordsWiki })));
+const WordsMakcikgpt = lazy(() => import('@/pages/WordsMakcikgpt').then(m => ({ default: m.WordsMakcikgpt })));
 const EssayPage = lazy(() => import('@/pages/EssayPage').then(m => ({ default: m.EssayPage })));
 const Work = lazy(() => import('@/pages/Work').then(m => ({ default: m.Work })));
 const Missions = lazy(() => import('@/pages/Missions').then(m => ({ default: m.Missions })));
@@ -34,6 +37,9 @@ const ShadowPMs = lazy(() => import('@/pages/ShadowPMs').then(m => ({ default: m
 const ShadowBoard = lazy(() => import('@/pages/ShadowBoard').then(m => ({ default: m.ShadowBoard })));
 const DeritaMap = lazy(() => import('@/pages/DeritaMap').then(m => ({ default: m.DeritaMap })));
 const InstitutionPage = lazy(() => import('@/pages/InstitutionPage').then(m => ({ default: m.InstitutionPage })));
+const RealityGraphView = lazy(() => import('@/pages/RealityGraphView').then(m => ({ default: m.RealityGraphView })));
+const EvidenceHub = lazy(() => import('@/pages/EvidenceHub').then(m => ({ default: m.EvidenceHub })));
+const RealityOverview = lazy(() => import('@/pages/RealityOverview').then(m => ({ default: m.RealityOverview })));
 const NotFound = lazy(() => import('@/pages/NotFound').then(m => ({ default: m.NotFound })));
 
 export function App() {
@@ -42,7 +48,7 @@ export function App() {
       <ScrollToHashElement />
       <div className="flex min-h-screen flex-col bg-[#0A0B0D] text-[#EDEAE2]">
         <ArrowNavbar />
-        <main className="flex-1">
+        <main id="main-content" tabIndex={-1} className="flex-1">
           <Suspense fallback={<RouteLoading />}>
           <Routes>
             {/* 0. /about — Human-readable bio & on-ramp */}
@@ -63,6 +69,14 @@ export function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/home/" element={<Navigate to="/home" replace />} />
+
+            {/* Reality Atlas Core Nodes */}
+            <Route path="/graph" element={<RealityGraphView />} />
+            <Route path="/graph/" element={<RealityGraphView />} />
+            <Route path="/evidence" element={<EvidenceHub />} />
+            <Route path="/evidence/" element={<EvidenceHub />} />
+            <Route path="/reality" element={<RealityOverview />} />
+            <Route path="/reality/" element={<RealityOverview />} />
 
             {/* 2. /earth */}
             <Route path="/earth" element={<EarthGlobeRedirect />} />
@@ -90,40 +104,36 @@ export function App() {
             <Route path="/world/" element={<World />} />
             <Route path="/worlds" element={<Navigate to="/world" replace />} />
             <Route path="/worlds/" element={<Navigate to="/world" replace />} />
-            <Route path="/world/oil" element={<CommodityPage slug="oil" />} />
-            <Route path="/world/oil/" element={<CommodityPage slug="oil" />} />
-            <Route path="/world/gas" element={<CommodityPage slug="gas" />} />
-            <Route path="/world/gas/" element={<CommodityPage slug="gas" />} />
-            <Route path="/world/gold" element={<CommodityPage slug="gold" />} />
-            <Route path="/world/gold/" element={<CommodityPage slug="gold" />} />
-            <Route path="/world/klci" element={<CommodityPage slug="klci" />} />
-            <Route path="/world/klci/" element={<CommodityPage slug="klci" />} />
-            <Route path="/world/usdmyr" element={<CommodityPage slug="usdmyr" />} />
-            <Route path="/world/usdmyr/" element={<CommodityPage slug="usdmyr" />} />
-            
-            {/* /world/economics/* routes */}
-            <Route path="/world/economics/oil" element={<CommodityPage slug="oil" />} />
-            <Route path="/world/economics/oil/" element={<CommodityPage slug="oil" />} />
-            <Route path="/world/economics/gas" element={<CommodityPage slug="gas" />} />
-            <Route path="/world/economics/gas/" element={<CommodityPage slug="gas" />} />
-            <Route path="/world/economics/gold" element={<CommodityPage slug="gold" />} />
-            <Route path="/world/economics/gold/" element={<CommodityPage slug="gold" />} />
-            <Route path="/world/economics/klci" element={<CommodityPage slug="klci" />} />
-            <Route path="/world/economics/klci/" element={<CommodityPage slug="klci" />} />
-            <Route path="/world/economics/usdmyr" element={<CommodityPage slug="usdmyr" />} />
-            <Route path="/world/economics/usdmyr/" element={<CommodityPage slug="usdmyr" />} />
-
-            {/* /economics/* routes */}
-            <Route path="/economics/oil" element={<CommodityPage slug="oil" />} />
-            <Route path="/economics/oil/" element={<CommodityPage slug="oil" />} />
-            <Route path="/economics/gas" element={<CommodityPage slug="gas" />} />
-            <Route path="/economics/gas/" element={<CommodityPage slug="gas" />} />
-            <Route path="/economics/gold" element={<CommodityPage slug="gold" />} />
-            <Route path="/economics/gold/" element={<CommodityPage slug="gold" />} />
-            <Route path="/economics/klci" element={<CommodityPage slug="klci" />} />
-            <Route path="/economics/klci/" element={<CommodityPage slug="klci" />} />
-            <Route path="/economics/usdmyr" element={<CommodityPage slug="usdmyr" />} />
-            <Route path="/economics/usdmyr/" element={<CommodityPage slug="usdmyr" />} />
+            <Route path="/world/oil" element={<Navigate to="/oil" replace />} />
+            <Route path="/world/oil/" element={<Navigate to="/oil" replace />} />
+            <Route path="/world/gas" element={<Navigate to="/gas" replace />} />
+            <Route path="/world/gas/" element={<Navigate to="/gas" replace />} />
+            <Route path="/world/gold" element={<Navigate to="/gold" replace />} />
+            <Route path="/world/gold/" element={<Navigate to="/gold" replace />} />
+            <Route path="/world/klci" element={<Navigate to="/klci" replace />} />
+            <Route path="/world/klci/" element={<Navigate to="/klci" replace />} />
+            <Route path="/world/usdmyr" element={<Navigate to="/usdmyr" replace />} />
+            <Route path="/world/usdmyr/" element={<Navigate to="/usdmyr" replace />} />
+            <Route path="/world/economics/oil" element={<Navigate to="/oil" replace />} />
+            <Route path="/world/economics/oil/" element={<Navigate to="/oil" replace />} />
+            <Route path="/world/economics/gas" element={<Navigate to="/gas" replace />} />
+            <Route path="/world/economics/gas/" element={<Navigate to="/gas" replace />} />
+            <Route path="/world/economics/gold" element={<Navigate to="/gold" replace />} />
+            <Route path="/world/economics/gold/" element={<Navigate to="/gold" replace />} />
+            <Route path="/world/economics/klci" element={<Navigate to="/klci" replace />} />
+            <Route path="/world/economics/klci/" element={<Navigate to="/klci" replace />} />
+            <Route path="/world/economics/usdmyr" element={<Navigate to="/usdmyr" replace />} />
+            <Route path="/world/economics/usdmyr/" element={<Navigate to="/usdmyr" replace />} />
+            <Route path="/economics/oil" element={<Navigate to="/oil" replace />} />
+            <Route path="/economics/oil/" element={<Navigate to="/oil" replace />} />
+            <Route path="/economics/gas" element={<Navigate to="/gas" replace />} />
+            <Route path="/economics/gas/" element={<Navigate to="/gas" replace />} />
+            <Route path="/economics/gold" element={<Navigate to="/gold" replace />} />
+            <Route path="/economics/gold/" element={<Navigate to="/gold" replace />} />
+            <Route path="/economics/klci" element={<Navigate to="/klci" replace />} />
+            <Route path="/economics/klci/" element={<Navigate to="/klci" replace />} />
+            <Route path="/economics/usdmyr" element={<Navigate to="/usdmyr" replace />} />
+            <Route path="/economics/usdmyr/" element={<Navigate to="/usdmyr" replace />} />
 
             {/* Root alias routes */}
             <Route path="/oil" element={<CommodityPage slug="oil" />} />
@@ -138,20 +148,28 @@ export function App() {
             <Route path="/usdmyr/" element={<CommodityPage slug="usdmyr" />} />
 
             {/* 3.1 Sub-routes for world */}
-            <Route path="/world/vitals" element={<Navigate to="/wealth/vitals/" replace />} />
-            <Route path="/world/vitals/" element={<Navigate to="/wealth/vitals/" replace />} />
+            <Route path="/world/vitals" element={<Navigate to="/vitals/" replace />} />
+            <Route path="/world/vitals/" element={<Navigate to="/vitals/" replace />} />
             <Route path="/world/malaysia" element={<Navigate to="/wealth/malaysia/" replace />} />
             <Route path="/world/malaysia/" element={<Navigate to="/wealth/malaysia/" replace />} />
             <Route path="/world/propa" element={<Navigate to="/world" replace />} />
             <Route path="/world/propa/" element={<Navigate to="/world" replace />} />
-            <Route path="/propa" element={<Navigate to="/world" replace />} />
-            <Route path="/propa/" element={<Navigate to="/world" replace />} />
+            <Route path="/propa" element={<Navigate to="/vitals/" replace />} />
+            <Route path="/propa/" element={<Navigate to="/vitals/" replace />} />
             <Route path="/malaysia" element={<Navigate to="/wealth/malaysia/" replace />} />
             <Route path="/malaysia/" element={<Navigate to="/wealth/malaysia/" replace />} />
 
-            {/* 4. /words — Essays (S1-S9), Wiki, Knowledge Base */}
+            {/* 4. /words — Hub + Essays + Wiki + MakcikGPT (column) */}
             <Route path="/words" element={<Words />} />
             <Route path="/words/" element={<Words />} />
+            {/* Peer subpages (must come BEFORE the /:slug catch-all) */}
+            <Route path="/words/essays" element={<WordsEssays />} />
+            <Route path="/words/essays/" element={<WordsEssays />} />
+            <Route path="/words/wiki" element={<WordsWiki />} />
+            <Route path="/words/wiki/" element={<WordsWiki />} />
+            <Route path="/words/makcikgpt" element={<WordsMakcikgpt />} />
+            <Route path="/words/makcikgpt/" element={<WordsMakcikgpt />} />
+            {/* Legacy aliases — keep on /words hub */}
             <Route path="/words/writing" element={<Navigate to="/words" replace />} />
             <Route path="/words/writing/" element={<Navigate to="/words" replace />} />
             <Route path="/words/writing/:slug" element={<EssayPage />} />
@@ -221,8 +239,6 @@ export function App() {
             {/* Politics & Specialized Hubs */}
             <Route path="/politics" element={<PoliticsHub />} />
             <Route path="/politics/" element={<PoliticsHub />} />
-            <Route path="/malaysia" element={<PoliticsHub />} />
-            <Route path="/malaysia/" element={<PoliticsHub />} />
             <Route path="/politics/ns-election" element={<NSElectionPage />} />
             <Route path="/politics/ns-election/" element={<NSElectionPage />} />
             <Route path="/politics/ns-election/playbook" element={<PlaybookPage />} />

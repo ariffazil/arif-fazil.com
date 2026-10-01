@@ -19,6 +19,9 @@ const SPA_ROUTES = [
   "home",
   "about",
   "words",
+  "words/essays",
+  "words/wiki",
+  "words/makcikgpt",
   "world",
   "work",
   "AAA",
@@ -27,8 +30,12 @@ const SPA_ROUTES = [
   "world/makcikgpt",
   "missions",
   "economics",
+  "sanctuary",
   "000",
   "999",
+  "graph",
+  "evidence",
+  "reality",
 ];
 
 const SKIP_FILES = new Set([
@@ -47,6 +54,98 @@ const SKIP_FILES = new Set([
 // Static index.html files that MUST be copied verbatim from public/ → dist/
 // instead of being treated as SPA fallback targets. These are non-React pages
 // (e.g. /world/politics/shadow/ PM Bayang hub + 33 Bayang Anwar Ibrahim).
+// Route-specific metadata for SPA shells (2026-10-01, external audit P0).
+// The SPA fallback served the ROOT title/description on every route — crawlers,
+// link unfurlers, and no-JS users got the homepage shell on /about, /work/, etc.
+// When injecting the SPA shell for a route, stamp that route's own identity.
+// Values mirror each page's PageMeta component (client-side truth stays canonical).
+const SITE = "https://arif-fazil.com";
+const ROUTE_META = {
+  about: {
+    title: "About — Arif Fazil",
+    description: "Muhammad Arif bin Fazil — exploration geoscientist, builder of governed systems. Based in Kuala Lumpur, Malaysia.",
+    path: "/about",
+    h1: "About Arif Fazil",
+  },
+  work: {
+    title: "Selected Work — Arif Fazil",
+    description: "Selected offshore exploration work, public evidence, roles, outcomes, and governed AI systems by Arif Fazil.",
+    path: "/work/",
+    h1: "The Work & the Record",
+  },
+  reality: {
+    title: "Reality Domains — Arif Fazil",
+    description: "The reality atlas: Earth, capital, institutions, and governed machines — each domain bounded by evidence.",
+    path: "/reality/",
+    h1: "Reality Domains",
+  },
+  evidence: {
+    title: "Evidence Register — Arif Fazil",
+    description: "Public evidence behind the claims on this site: sources, dates, limitations, and what is withheld.",
+    path: "/evidence/",
+    h1: "Evidence Register",
+  },
+  graph: {
+    title: "Reality Graph — Arif Fazil",
+    description: "The linked map of domains, claims, and evidence across the federation.",
+    path: "/graph/",
+    h1: "Reality Graph",
+  },
+  economics: {
+    title: "Research — Arif Fazil",
+    description: "Public-numbers research: PETRONAS vitals, Malaysian fiscal structure, commodities.",
+    path: "/economics/",
+    h1: "Research in Public Numbers",
+  },
+  missions: {
+    title: "Missions — Arif Fazil",
+    description: "Active missions across the federation: status, evidence, and boundaries.",
+    path: "/missions/",
+    h1: "Missions",
+  },
+  sanctuary: {
+    title: "Sanctuary — arifOS",
+    description: "arifOS is not a product. It is Witnessed Territory — a place where a human can think, decide, bear consequence, and grow.",
+    path: "/sanctuary/",
+    h1: "Sanctuary",
+  },
+};
+
+function escapeHtml(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+// Stamp a route's own title/description/canonical/OG onto the SPA shell and
+// give no-JS readers and crawlers real content inside #root (React replaces it on mount).
+function stampRouteShell(spaHtml, route) {
+  const meta = ROUTE_META[route];
+  if (!meta) return spaHtml;
+  const url = SITE + meta.path;
+  let html = spaHtml;
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(meta.title)}</title>`);
+  html = html.replace(
+    /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
+    `<meta name="description" content="${escapeHtml(meta.description)}" />`
+  );
+  html = html.replace(
+    /<link rel="canonical" href="[^"]*" \/>/,
+    `<link rel="canonical" href="${url}" />`
+  );
+  html = html.replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${escapeHtml(meta.title)}" />`);
+  html = html.replace(/<meta property="og:description"\s+content="[^"]*"\s*\/>/, `<meta property="og:description" content="${escapeHtml(meta.description)}" />`);
+  html = html.replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${url}" />`);
+  html = html.replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${escapeHtml(meta.title)}" />`);
+  html = html.replace(/<meta name="twitter:description"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${escapeHtml(meta.description)}" />`);
+  const fallback =
+    `<main style="padding:2rem;max-width:48rem;margin:0 auto;font-family:sans-serif;">` +
+    `<h1>${escapeHtml(meta.h1)}</h1>` +
+    `<p>${escapeHtml(meta.description)}</p>` +
+    `<p><a href="/" style="color:#E4572E;">Home</a> · <a href="/work/" style="color:#E4572E;">Work</a> · <a href="/institution/" style="color:#E4572E;">Briefing</a></p>` +
+    `</main>`;
+  html = html.replace('<div id="root"></div>', `<div id="root">${fallback}</div>`);
+  return html;
+}
+
 const STATIC_INDEX_ALLOWLIST = new Set([
   "world/politics/shadow/index.html",
   "world/politics/shadow/anwar-ibrahim/index.html",
@@ -71,6 +170,13 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   // Words 16.5 KB / Work 10.1 KB / MakcikGPT 42.1 KB with correct per-route titles;
   // the webroot had 8.6 KB of the homepage on all three.
   "world/makcikgpt/index.html",
+  // /words/essays/, /words/wiki/, /words/makcikgpt/ — peer subpages of the
+  // Words hub (2026-10-01). Static shells with proper titles so agent/SEO
+  // crawlers see correct metadata before React hydration. Hybrid enrichment
+  // (same pattern as /words/index.html) injects Vite assets on build.
+  "words/essays/index.html",
+  "words/wiki/index.html",
+  "words/makcikgpt/index.html",
   ]);
 
 function shouldSkip(relativePath, isDir) {
@@ -123,31 +229,39 @@ if (fs.existsSync(spaEntryPath)) {
     // gitignored, so the overwrite left no trace. That is why the hub kept vanishing.)
     if (STATIC_INDEX_ALLOWLIST.has(`${route}/index.html`) || STATIC_INDEX_ALLOWLIST.has(`${route}/index.html`.replace(/\\/g, "/"))) {
       console.log(`postbuild: preserving static page for /${route} (allowlisted, not injecting SPA shell)`);
-      if (route === "words") {
-        const wordsDistPath = path.join(distRoot, "words/index.html");
-        if (fs.existsSync(wordsDistPath)) {
-          let wordsHtml = fs.readFileSync(wordsDistPath, "utf8");
-          const scriptMatches = [...spaHtml.matchAll(/<script type="module" crossorigin src="([^"]+)"><\/script>/g)];
-          const cssMatches = [...spaHtml.matchAll(/<link rel="stylesheet" crossorigin href="([^"]+)">/g)];
-          for (const m of cssMatches) {
-            if (!wordsHtml.includes(m[0])) {
-              wordsHtml = wordsHtml.replace("</head>", `  ${m[0]}\n</head>`);
-            }
+      // Hybrid enrichment: inject Vite assets into any allowlisted static page so
+      // React hydration still works on top of curated SEO shell. Pattern generalized
+      // from the original /words/ case (2026-09-24) to all allowlisted routes including
+      // the new /words/{essays,wiki,makcikgpt}/ peer subpages (2026-10-01).
+      const staticDistPath = path.join(distRoot, route, "index.html");
+      if (fs.existsSync(staticDistPath)) {
+        let staticHtml = fs.readFileSync(staticDistPath, "utf8");
+        const scriptMatches = [...spaHtml.matchAll(/<script type="module" crossorigin src="([^"]+)"><\/script>/g)];
+        const cssMatches = [...spaHtml.matchAll(/<link rel="stylesheet" crossorigin href="([^"]+)">/g)];
+        let changed = false;
+        for (const m of cssMatches) {
+          if (!staticHtml.includes(m[0])) {
+            staticHtml = staticHtml.replace("</head>", `  ${m[0]}\n</head>`);
+            changed = true;
           }
-          for (const m of scriptMatches) {
-            if (!wordsHtml.includes(m[0])) {
-              wordsHtml = wordsHtml.replace("</body>", `  ${m[0]}\n</body>`);
-            }
+        }
+        for (const m of scriptMatches) {
+          if (!staticHtml.includes(m[0])) {
+            staticHtml = staticHtml.replace("</body>", `  ${m[0]}\n</body>`);
+            changed = true;
           }
-          fs.writeFileSync(wordsDistPath, wordsHtml, "utf8");
-          console.log(`postbuild: enriched /words/index.html with Vite assets for hybrid SPA hydration`);
+        }
+        if (changed) {
+          fs.writeFileSync(staticDistPath, staticHtml, "utf8");
+          console.log(`postbuild: enriched /${route}/index.html with Vite assets for hybrid SPA hydration`);
         }
       }
       continue;
     }
     fs.mkdirSync(routeDir, { recursive: true });
-    fs.writeFileSync(targetFile, spaHtml, "utf8");
-    console.log(`postbuild: injected SPA shell for /${route} -> ${path.relative(root, targetFile)}`);
+    const stamped = stampRouteShell(spaHtml, route);
+    fs.writeFileSync(targetFile, stamped, "utf8");
+    console.log(`postbuild: injected SPA shell for /${route} -> ${path.relative(root, targetFile)}${stamped === spaHtml ? "" : " (route-stamped)"}`);
   }
 
   // 2b. Inject per-slug SPA shells for MakcikGPT articles so direct URL access renders the article

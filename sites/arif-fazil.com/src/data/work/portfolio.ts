@@ -126,7 +126,7 @@ export const careerArc: CareerMilestone[] = [
   { date: '2017', label: 'Puteri Basement-1 — originated play concept', evidence_ref: 'CV v2; ExxonMobil CV (Apr 2026)', truth_class: 'DOCUMENTED' },
   { date: '2024', label: 'Bekantan-1 — shallowest flowing oil discovery, Malay Basin', evidence_ref: 'CV v2; portfolio PDF (frozen 2026-10-02)', truth_class: 'DOCUMENTED' },
   { date: '2018–2022', label: 'Block H deepwater margin — subsurface evaluation', evidence_ref: 'CV v2', truth_class: 'DOCUMENTED' },
-  { date: '2024', label: 'Kinabalu Basin Integrated Study — 88-well database', evidence_ref: 'CV v2; GEOX KL2 notes (Jun 2026)', truth_class: 'DOCUMENTED' },
+  { date: 'Phase I', label: 'Kinabalu Basin Integrated Study — 88-well database', evidence_ref: 'CV v2; GEOX KL2 notes (Jun 2026)', truth_class: 'DOCUMENTED' },
   { date: '2024', label: 'Bunga Tasbih-1 — post-drill play assessment & close-out', evidence_ref: 'CV v2; ExxonMobil CV (Apr 2026)', truth_class: 'DOCUMENTED' },
   { date: '2024–Present', label: 'GEOX — Earth-reasoning computational stack', evidence_ref: 'GitHub ariffazil/GEOX', truth_class: 'DOCUMENTED' },
   { date: '2024–Present', label: 'arifOS — constitutional governance kernel (F1–F13)', evidence_ref: 'GitHub ariffazil/arifOS; PyPI', truth_class: 'DOCUMENTED' },
@@ -195,7 +195,7 @@ export const flagshipCases: FlagshipCase[] = [
   {
     id: 'kinabalu-ibs',
     project: 'KINABALU BASIN INTEGRATED STUDY',
-    year: '2024',
+    year: 'Phase I',
     basin: 'Offshore Sabah',
     role: 'Integrated Study · Regional Framework Author',
     problem: 'Sparse, conflicting datasets across a structurally complex frontier basin. Regional questions had no shared reference framework — every team was reading from a different map.',

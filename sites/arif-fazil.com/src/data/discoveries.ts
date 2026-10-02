@@ -21,8 +21,8 @@ export const discoveries: Discovery[] = [
     category: 'wells',
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Lead Subsurface Interpreter & Prospect Maturation',
-    year: '2018',
-    location: 'Malay Basin (Block PM304 / Cendor Graben Flank)',
+    year: '2024',
+    location: 'Malay Basin (Cendor Graben Flank)',
     summary: 'Appraisal and exploration well targeting Group E and H15 clastic sandstone reservoirs near the Cendor Graben. Proved the shallowest flowing oil discovery recorded in the Malay Basin, demonstrating that bypassed shallow clastic reservoirs in a mature basin hold material producible hydrocarbons.',
     evidence: [
       'Wireline logs and production testing confirmed flowing oil in Group E and H15 clastic reservoirs',
@@ -39,7 +39,7 @@ export const discoveries: Discovery[] = [
     category: 'wells',
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Structural Lead & Basement Prospect Maturation',
-    year: '2020',
+    year: '2017',
     location: 'Malay Basin, Offshore Peninsular Malaysia',
     summary: 'Basement-involved structural test designed to evaluate pre-Tertiary fractured granite reservoirs beneath basin fill. While the crystalline basement itself tested water-bearing (due to lack of charge timing or top seal breach), the well successfully discovered commercial hydrocarbons in the overlying K-5 sandstone reservoirs, yielding crucial calibration on basement charge risk and near-field asset valuation.',
     evidence: [

@@ -45,7 +45,7 @@ export const discoveries: Discovery[] = [
     evidence: [
       'Hydrocarbon discovery confirmed in overlying K-5 sandstone reservoirs',
       'Basement interval confirmed granite/granodiorite and tested water-bearing, establishing critical charge/seal risk bounds',
-      'De-risked adjacent structural trends and contributed to PM318 asset evaluation'
+      'De-risked adjacent structural trends and contributed to nearby asset evaluation'
     ],
     limits: 'Subsurface sections withheld.',
     link: 'https://geox.arif-fazil.com/viewer/',
@@ -58,12 +58,12 @@ export const discoveries: Discovery[] = [
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Prospect Framing & Discovery Evaluation',
     year: '2025',
-    location: 'Western Hinge Fault Zone, Malay Basin Margin · Block PM6/12',
+    location: 'Western Hinge Fault Zone, Malay Basin Margin',
     summary: 'Frontier wildcat exploration well targeting Group H, I, and J sandstone reservoirs along the structurally complex western hinge fault zone. Successfully proved a working petroleum system in the margin play, encountering 11 hydrocarbon-bearing intervals and opening a new hinge play fairway.',
     evidence: [
       '11 hydrocarbon-bearing intervals logged across Group H, I, and J sandstone targets (gas and oil)',
       'Opened a new hinge fault play fairway along the western margin of the Malay Basin',
-      'Block PM6/12 subsequently included in commercial farm-out arrangements'
+      'Acreage subsequently included in commercial farm-out arrangements'
     ],
     limits: 'Full technical pack and internal ranking withheld.',
     link: 'https://geox.arif-fazil.com',

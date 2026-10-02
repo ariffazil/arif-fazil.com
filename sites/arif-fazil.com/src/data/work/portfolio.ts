@@ -120,7 +120,7 @@ export const thirtySecondArif = {
 export const careerArc: CareerMilestone[] = [
   { date: '2009', label: 'PETRONAS scholarship awarded', evidence_ref: 'CV v2 (Sept 2026)', truth_class: 'DOCUMENTED' },
   { date: '2009–2013', label: 'Dual degree: Geology + Economics', evidence_ref: 'CV v2', truth_class: 'DOCUMENTED' },
-  { date: '2013-11', label: 'Joined PETRONAS Carigali — Exploration Geoscience', evidence_ref: 'Career form (29 Sept 2026), on file', truth_class: 'DOCUMENTED' },
+  { date: '2013', label: 'Joined PETRONAS Carigali — Exploration Geoscience', evidence_ref: 'Career form (29 Sept 2026), on file', truth_class: 'DOCUMENTED' },
   { date: '2014–Present', label: 'Malay Basin regional synthesis — decade-long', evidence_ref: 'CV v2', truth_class: 'DOCUMENTED' },
   { date: '2016–Present', label: 'Sabah Basin & Fold-Thrust Belt regional evaluation', evidence_ref: 'CV v2', truth_class: 'DOCUMENTED' },
   { date: '2017', label: 'Puteri Basement-1 — originated play concept', evidence_ref: 'CV v2; ExxonMobil CV (Apr 2026)', truth_class: 'DOCUMENTED' },
@@ -152,7 +152,7 @@ export const theatres = [
   {
     id: 'offshore-sabah',
     name: 'OFFSHORE SABAH',
-    description: 'Frontier and deepwater — sparse data, high consequence, structurally complex. The Kinabalu Basin integrated study, the SB412 / SB505 / Layang-Layang evaluation area, the inherited dry-hole corpus, and platform subsurface assurance all belong to this theatre.',
+    description: 'Frontier and deepwater — sparse data, high consequence, structurally complex. The Kinabalu Basin integrated study, the Layang-Layang outboard evaluation area, the inherited dry-hole corpus, and platform subsurface assurance all belong to this theatre.',
     geox_link: '/earth/kinabalu-basin/',
     geox_label: 'Explore Kinabalu Basin →',
   },

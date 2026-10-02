@@ -17,7 +17,7 @@ const featuredCases = [
   {
     id: 'lebah-emas-1',
     decision: 'Test a frontier wildcat on the western hinge fault zone, Group H–J sands.',
-    outcome: '11 hydrocarbon-bearing intervals; opened a new hinge play fairway. Block PM6/12 subsequently entered commercial farm-out arrangements.',
+    outcome: '11 hydrocarbon-bearing intervals; opened a new hinge play fairway. Acreage subsequently entered commercial farm-out arrangements.',
   },
   {
     id: 'bunga-tasbih-1',

@@ -50,7 +50,7 @@
       "type": "page",
       "priority": 1.0,
       "changefreq": "monthly",
-      "description": "Professional homepage for Arif Fazil — geoscientist, economist, AI governance architect"
+      "description": "Professional homepage for Arif Fazil — exploration geoscientist who builds governed AI systems"
     },
     {
       "path": "/earth/",
@@ -151,6 +151,46 @@
       "priority": 0.7,
       "changefreq": "monthly",
       "description": "Individual WEALTH capital intelligence article"
+    },
+    {
+      "path": "/work/",
+      "title": "Selected Work — Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "monthly",
+      "description": "Selected offshore exploration work, public evidence, roles, outcomes, and governed AI systems by Arif Fazil. Includes the full career artifact."
+    },
+    {
+      "path": "/work/exploration-2013-2026/",
+      "title": "Exploration 2013–2026 — Career Artifact",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "monthly",
+      "description": "Web-native career artifact: thirteen years of offshore exploration geoscience, evidence-tagged. Malay Basin and offshore Sabah — flagged work, uncertainty discipline, and what was proven."
+    },
+    {
+      "path": "/work/exploration-2013-2026/evidence/",
+      "title": "Exploration Portfolio — Evidence Ledger",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.75,
+      "changefreq": "monthly",
+      "description": "Every claim in the exploration portfolio, tagged by truth class and publication class. Includes what was deliberately withheld, and why."
+    },
+    {
+      "path": "/work/exploration-2013-2026/portfolio.pdf",
+      "title": "Arif Fazil — Subsurface · Systems · Intelligence (PDF)",
+      "mission": "remember",
+      "status": "live",
+      "type": "document",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Frozen PDF career artifact: 18 pages, evidence-grounded, claim-tagged. Compiled 2026-10-02. SHA-256 verified."
     },
     {
       "path": "/world/",
@@ -812,5 +852,6 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-10-01T00:00:00Z"
+  "as_of": "2026-10-01T00:00:00Z",
+  "last_updated": "2026-10-02"
 }

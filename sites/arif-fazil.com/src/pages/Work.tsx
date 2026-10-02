@@ -111,6 +111,30 @@ export function Work() {
           </div>
         </div>
 
+        {/* Portfolio artifact — full career narrative (deep surface) */}
+        <Link
+          to="/work/exploration-2013-2026/"
+          className="group mb-14 block rounded-lg border border-[#31C48D]/30 bg-gradient-to-br from-[#0F131D] to-[#0A1412] p-8 hover:border-[#31C48D]/60 transition-colors"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="font-mono text-xs uppercase tracking-widest text-[#31C48D] mb-2">
+                Career Artifact · Evidence-Grounded · 2026
+              </div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-3">
+                Exploration 2013–2026 — The Full Portfolio
+              </h2>
+              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed">
+                Thirteen years of exploration geoscience in one web-native artifact: career arc, six flagship
+                cases, uncertainty discipline — and every claim tagged with its evidence class. Frozen PDF included.
+              </p>
+            </div>
+            <span className="font-mono text-xs uppercase tracking-wider text-[#31C48D] group-hover:translate-x-1 transition-transform">
+              Open the portfolio →
+            </span>
+          </div>
+        </Link>
+
         {/* Featured cases — the decision-first read (20–30 seconds) */}
         <section className="mb-14" aria-labelledby="featured-cases">
           <div className="flex items-center justify-between mb-6">

@@ -43,10 +43,14 @@ else
   echo "$LOG_PREFIX WARN: no earth/ in dist — skipping (build first?)" >&2
 fi
 
-# ── 1d. words / world / work trees (handle /words* /world* /work* root at
+# ── 1d. words / world / work / pilot trees (handle /words* /world* /work* root at
 # /var/www/html, parallel to earth — added 2026-09-19 during 6-slot nav upgrade
-# so static-page nav patches propagate on every deploy). ──────────────────
-for d in words world work; do
+# so static-page nav patches propagate on every deploy). pilot added 2026-10-02:
+# vhost `handle /pilot/*` also roots at top level and was serving a stranded
+# Sep-19 copy (stale head, missing JSON-LD) while /var/www/html/arif/pilot/ was
+# current — proven by served-vs-disk diff during the 2026-10-02 deploy gates.
+# ────────────────────────────────────────────────────────────────────────
+for d in words world work pilot; do
   if [ -d "$DIST/$d" ]; then
     mkdir -p "$BK"
     [ -d "$TOP/$d" ] && cp -a "$TOP/$d" "$BK/$d"

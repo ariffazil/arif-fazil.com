@@ -602,13 +602,13 @@
     },
     {
       "path": "/pulse/",
-      "title": "Pulse (gone)",
+      "title": "Federation Pulse — arifOS",
       "mission": "monitor",
-      "status": "gone",
-      "type": "gone",
+      "status": "live",
+      "type": "page",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Never a real apex route. Live broken shell removed. Use /missions (Monitor) + organ health endpoints."
+      "description": "Live federation health surface: organ status, pulse telemetry, recent activity. Written by the FI-003 consolidation cron every 6h."
     },
     {
       "path": "/forge/",

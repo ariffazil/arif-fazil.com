@@ -78,6 +78,12 @@
           "owner": "wealth-briefing-cron",
           "strategy": "preserve-live",
           "note": "2026-07-27: latest.json + 50-day archive are cron-maintained; deploy must never clobber (888 auth)"
+        },
+        {
+          "path": "pulse/data.json",
+          "owner": "fi-003-pulse-cron",
+          "strategy": "preserve-live",
+          "note": "2026-10-02: FI-003 consolidation cron (every 6h) writes live pulse telemetry; deploy must never clobber. index.html stays git-owned (DTI head fixed same day)."
         }
       ],
       "aliases": [

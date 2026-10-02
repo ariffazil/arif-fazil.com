@@ -11,17 +11,17 @@ import { SeismicAmplitudeCanvas } from '@/components/SeismicAmplitudeCanvas'
 const featuredCases = [
   {
     id: 'bekantan-1',
-    decision: 'Evaluate shallow clastic reservoir potential on the Cendor Graben flank.',
+    decision: 'Evaluate shallow clastic reservoir potential in the central Malay Basin.',
     outcome: 'Shallowest flowing oil discovery recorded in the Malay Basin.',
   },
   {
     id: 'lebah-emas-1',
-    decision: 'Test a frontier wildcat on the western hinge fault zone, Group H–J sands.',
+    decision: 'Test a frontier wildcat in the central Malay Basin, Group H–J sands.',
     outcome: '11 hydrocarbon-bearing intervals; opened a new hinge play fairway. Acreage subsequently entered commercial farm-out arrangements.',
   },
   {
     id: 'bunga-tasbih-1',
-    decision: 'Evaluate syn-rift and post-rift plays on the eastern basin margin.',
+    decision: 'Evaluate syn-rift and post-rift plays in the central Malay Basin.',
     outcome: 'Commercial oil in post-rift Group I and J sands; syn-rift risk recalibrated across the margin; supported an MBR+ Round I Small Field Asset PSC award (2024).',
   },
 ] as const

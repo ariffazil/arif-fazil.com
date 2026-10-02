@@ -22,12 +22,12 @@ export const discoveries: Discovery[] = [
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Lead Subsurface Interpreter & Prospect Maturation',
     year: '2024',
-    location: 'Malay Basin (Cendor Graben Flank)',
-    summary: 'Appraisal and exploration well targeting Group E and H15 clastic sandstone reservoirs near the Cendor Graben. Proved the shallowest flowing oil discovery recorded in the Malay Basin, demonstrating that bypassed shallow clastic reservoirs in a mature basin hold material producible hydrocarbons.',
+    location: 'Central Malay Basin',
+    summary: 'Appraisal and exploration well targeting Group E and H15 clastic sandstone reservoirs in the central Malay Basin. Proved the shallowest flowing oil discovery recorded in the Malay Basin, demonstrating that bypassed shallow clastic reservoirs in a mature basin hold material producible hydrocarbons.',
     evidence: [
       'Wireline logs and production testing confirmed flowing oil in Group E and H15 clastic reservoirs',
       'Established the shallowest productive oil reservoir interval in the Malay Basin',
-      'Calibrated structural and stratigraphic trapping models across the Cendor Graben margin'
+      'Calibrated structural and stratigraphic trapping models across the central basin trend'
     ],
     limits: 'Technical pack withheld.',
     link: 'https://geox.arif-fazil.com',
@@ -58,11 +58,11 @@ export const discoveries: Discovery[] = [
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Prospect Framing & Discovery Evaluation',
     year: '2025',
-    location: 'Western Hinge Fault Zone, Malay Basin Margin',
-    summary: 'Frontier wildcat exploration well targeting Group H, I, and J sandstone reservoirs along the structurally complex western hinge fault zone. Successfully proved a working petroleum system in the margin play, encountering 11 hydrocarbon-bearing intervals and opening a new hinge play fairway.',
+    location: 'Central Malay Basin',
+    summary: 'Frontier wildcat exploration well targeting Group H, I, and J sandstone reservoirs in the structurally complex central Malay Basin. Successfully proved a working petroleum system in the margin play, encountering 11 hydrocarbon-bearing intervals and opening a new hinge play fairway.',
     evidence: [
       '11 hydrocarbon-bearing intervals logged across Group H, I, and J sandstone targets (gas and oil)',
-      'Opened a new hinge fault play fairway along the western margin of the Malay Basin',
+      'Opened a new hinge fault play fairway in the central Malay Basin',
       'Acreage subsequently included in commercial farm-out arrangements'
     ],
     limits: 'Full technical pack and internal ranking withheld.',
@@ -76,8 +76,8 @@ export const discoveries: Discovery[] = [
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Opportunity Evaluation & Post-Drill Risk Recalibration',
     year: '2024',
-    location: 'Eastern Malay Basin Margin · Malaysia Bid Round Plus (MBR+)',
-    summary: 'Exploration well evaluating syn-rift and post-rift plays on the eastern basin margin. While the primary syn-rift objective proved water-bearing, the well discovered commercial oil in post-rift Group I and J sands. The outcome demonstrated that the post-rift petroleum system was fully effective while providing crucial lessons that recalibrated syn-rift risk across the margin (later supporting an MBR+ Round I Small Field Asset PSC award).',
+    location: 'Central Malay Basin · Malaysia Bid Round Plus (MBR+)',
+    summary: 'Exploration well evaluating syn-rift and post-rift plays in the central Malay Basin. While the primary syn-rift objective proved water-bearing, the well discovered commercial oil in post-rift Group I and J sands. The outcome demonstrated that the post-rift petroleum system was fully effective while providing crucial lessons that recalibrated syn-rift risk across the basin (later supporting an MBR+ Round I Small Field Asset PSC award).',
     evidence: [
       'Oil discovery confirmed in post-rift Group I and J reservoir sands',
       'Primary syn-rift objective tested water-bearing, providing crucial calibration to downgrade regional syn-rift risk',

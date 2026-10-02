@@ -51,6 +51,9 @@ function SectionLabel({ n, title }: { n: string; title: string }) {
 export function ExplorationPortfolio() {
   return (
     <div className="min-h-screen bg-[#FAF7F0] text-[#2A2A26]">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:bg-[#0F5E5A] focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-[#FAF7F0]">
+        Skip to content
+      </a>
       <PageMeta
         title="Exploration 2013–2026"
         description="Thirteen years of offshore exploration geoscience, evidence-tagged. Malay Basin and offshore Sabah — flagged work, uncertainty discipline, and what was proven."
@@ -102,7 +105,7 @@ export function ExplorationPortfolio() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 py-16 md:py-24 space-y-24 md:space-y-32">
+      <main id="main-content" className="mx-auto max-w-5xl px-6 py-16 md:py-24 space-y-24 md:space-y-32">
         {/* ── SECTION 2 — 30 SECOND ARIF ─────────────────────────────── */}
         <section aria-labelledby="thirty-second" id="thirty-second">
           <SectionLabel n="01" title="The 30-Second Arif" />

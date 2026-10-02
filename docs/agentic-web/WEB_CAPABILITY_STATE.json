@@ -1,0 +1,69 @@
+{
+  "schema": "aaa.agentic_web.capability_state.v1",
+  "as_of": "2026-10-02",
+  "branch": "feat/work-portfolio-2026-v2",
+  "head": "a49583c",
+  "note": "Truth state of site capabilities at build time. Values are evidence-labelled: VERIFIED (measured this lane) or UNMEASURED (not fabricated). Maturity ladder: PRESENT→LOADABLE→BUILDABLE→REACHABLE→USABLE→ACCESSIBLE→PROVEN.",
+  "maturity_ladder": {
+    "PRESENT": "source exists",
+    "LOADABLE": "imports without error",
+    "BUILDABLE": "tsc clean + vite build passes",
+    "REACHABLE": "HTTP 200 on deployed URL",
+    "USABLE": "core content complete without JS, navigation works",
+    "ACCESSIBLE": "a11y requirements pass (audit, not self-attestation)",
+    "PROVEN": "200 + content correct + mobile correct + keyboard accessible + no-JS readable + no overflow + visual QA + no broken links + metadata correct + structured data + sitemap/llms updated + confidentiality check + performance measured + deployment receipt"
+  },
+  "capabilities": [
+    {
+      "id": "work.portfolio_artifact",
+      "route": "/work/exploration-2013-2026/",
+      "maturity": "BUILDABLE",
+      "evidence": {
+        "tsc_clean": "VERIFIED",
+        "vite_build": "VERIFIED (2.6-3.0s, chunk 20.86 kB gzip 4.80 kB)",
+        "local_200": "VERIFIED (dist serve + vite preview)",
+        "no_js_content": "VERIFIED (route-stamped shell + full React content at hydration)",
+        "link_check": "VERIFIED (15 hrefs, 0 broken, per page)",
+        "pdf_hash_roundtrip": "VERIFIED (d353606ae038705a0dee2dc6106ef84daae41fb7c3a7ba35ce03ae3dfe88dc81)",
+        "confidentiality_scan": "VERIFIED clean (no GIIP/STOIIP/NPV/IRR/EMV/resource volumes)",
+        "skip_link": "VERIFIED (present in built HTML)",
+        "mobile_visual_qa": "UNMEASURED (screenshots exist at /tmp/afz-shots/ but this model cannot view images)",
+        "deployed_url": "UNMEASURED (not deployed — awaiting authority)",
+        "lcp_cls": "UNMEASURED"
+      }
+    },
+    {
+      "id": "work.evidence_ledger",
+      "route": "/work/exploration-2013-2026/evidence/",
+      "maturity": "BUILDABLE",
+      "evidence": {
+        "claims_published": "VERIFIED (C01-C15)",
+        "claims_withheld": "VERIFIED (W01-W07)",
+        "table_nojs_readable": "VERIFIED (static shell contains route h1 + description; full table at hydration)",
+        "a11y_audit": "UNMEASURED"
+      }
+    },
+    {
+      "id": "work.frozen_pdf",
+      "route": "/work/exploration-2013-2026/portfolio.pdf",
+      "maturity": "BUILDABLE",
+      "evidence": {
+        "served_200": "VERIFIED locally (application/pdf)",
+        "sha256_roundtrip": "VERIFIED",
+        "known_defects": "VERIFIED (figure numbering 07→09→08, frozen as-is)"
+      }
+    },
+    {
+      "id": "machine_discovery",
+      "maturity": "BUILDABLE",
+      "evidence": {
+        "surfaces_json": "VERIFIED (+4 work routes in all 3 copies: root, public, dist)",
+        "sitemap_xml": "VERIFIED (3 new URLs)",
+        "llms_txt": "VERIFIED (2 new lines via generator)",
+        "page_json": "VERIFIED (3 new route_model entries)",
+        "web_canon_verify": "UNMEASURED (verifier absent on KVM4 — af-forge only)"
+      }
+    }
+  ],
+  "dual_copy_law_note": "surfaces.json root copy is overwritten from public/ by every build. Both copies must be edited together. Verified byte-identical post-build 2026-10-02."
+}

@@ -1,0 +1,59 @@
+# WEB_ROUTING.yaml — builder routing contract (aaa.agentic_web.web_routing.v1)
+# Complements ROUTE-REGISTRY.yaml (serving topology). This file is the CONTRACT the
+# agentic web builder must satisfy when adding or mutating routes.
+# As_of: 2026-10-02 · Author: openclaw/FI-017 · Status: BUILT (branch feat/work-portfolio-2026-v2)
+
+schema: aaa.agentic_web.web_routing.v1
+as_of: 2026-10-02
+canonical_catalog: sites/arif-fazil.com/surfaces.json   # single source of truth
+generated_views: [sitemap.xml, llms.txt, llms.json, page.json, missions.json]
+generator: sites/arif-fazil.com/scripts/generate-discovery.cjs
+
+# ── DUAL-COPY LAW (defect fixed 2026-10-02) ────────────────────────────────
+# generate-discovery.cjs COPIES public/surfaces.json → site-root surfaces.json
+# on every build. Editing only one copy = silent clobber. Rule: edit BOTH
+# sites/arif-fazil.com/surfaces.json AND sites/arif-fazil.com/public/surfaces.json,
+# keep them byte-identical, or route registrations vanish on next build.
+dual_copy_law:
+  canonical_reads_from: public/surfaces.json    # generator source
+  root_copy_is_mirror: true
+  verification: "byte-identical after build; grep new route in all 3 (root, public, dist)"
+
+# ── ROUTE ADDITION CONTRACT ────────────────────────────────────────────────
+# A route does not exist until ALL of these are true:
+required_steps:
+  1_react_route: "src/App.tsx — path + path/ variants, lazy import, named default mapping"
+  2_spa_routes: "scripts/copy-static-html.js — add to SPA_ROUTES (or STATIC_INDEX_ALLOWLIST for curated static)"
+  3_route_meta: "scripts/copy-static-html.js ROUTE_META — stamp no-JS shell title/description/canonical/h1"
+  4_surfaces: "surfaces.json + public/surfaces.json — status:live entry (fails closed if not 200)"
+  5_sitemap_llms: "scripts/generate-discovery.cjs — url list + llms.txt section (generator, never hand-edit output)"
+  6_build_verify: "tsc clean; vite build; local 200 on new route; link check"
+  7_deploy_authority: "af-forge `make deploy` — NEVER self-deployed from a build lane"
+
+# ── ACTIVE PORTFOLIO ROUTES (2026-10-02) ───────────────────────────────────
+routes:
+  /work/:
+    kind: spa
+    job: work_hub
+    files: [src/pages/Work.tsx]
+    notes: enriched with artifact card → /work/exploration-2013-2026/
+  /work/exploration-2013-2026/:
+    kind: spa
+    job: career_artifact
+    files: [src/pages/work/ExplorationPortfolio.tsx, src/data/work/portfolio.ts]
+    content_source: "ARIF_FAZIL_PETRONAS_PORTFOLIO_2026.pdf (18p, SHA-256 d353606ae038705a0dee2dc6106ef84daae41fb7c3a7ba35ce03ae3dfe88dc81)"
+  /work/exploration-2013-2026/evidence/:
+    kind: spa
+    job: evidence_ledger
+    files: [src/pages/work/PortfolioEvidence.tsx, src/data/work/portfolio.ts]
+  /work/exploration-2013-2026/portfolio.pdf:
+    kind: static_document
+    job: frozen_artifact
+    file: public/work/exploration-2013-2026/portfolio.pdf
+    hash_rule: "if PDF is rebuilt, update portfolioPdf.sha256 in src/data/work/portfolio.ts in the same commit"
+
+# ── NEVER CHANGE SILENTLY ──────────────────────────────────────────────────
+never_change_silently:
+  - canonical public routes
+  - identity claims in surfaces.json descriptions (F13 directive 2026-10-02: no "economist")
+  - withheld-claims list (W01–W07)

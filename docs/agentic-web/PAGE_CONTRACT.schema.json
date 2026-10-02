@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://arif-fazil.com/docs/agentic-web/PAGE_CONTRACT.schema.json",
+  "title": "Page Contract",
+  "description": "Machine contract every agentic-built page must satisfy before it may leave BUILDABLE. Schema v1, 2026-10-02, openclaw/FI-017.",
+  "type": "object",
+  "required": [
+    "route",
+    "audience",
+    "purpose",
+    "content_sources",
+    "privacy_class",
+    "seo_title",
+    "seo_description",
+    "accessibility_requirements",
+    "authority_class",
+    "deployment_state"
+  ],
+  "properties": {
+    "route": { "type": "string", "pattern": "^/" },
+    "audience": { "type": "array", "items": { "enum": ["humans", "collaborators", "agents", "verifiers", "recruiters", "institutions"] }, "minItems": 1 },
+    "purpose": { "type": "string", "maxLength": 280 },
+    "first_screen_contract": {
+      "type": "object",
+      "properties": {
+        "h1": { "type": "string" },
+        "above_fold_summary": { "type": "string" },
+        "primary_cta": { "type": "string" }
+      }
+    },
+    "content_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["artifact", "provenance"],
+        "properties": {
+          "artifact": { "type": "string" },
+          "provenance": { "enum": ["FIRST_PARTY", "REPORTED", "DERIVED", "SYNTHETIC", "UNKNOWN"] },
+          "sha256": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "claim_ids": { "type": "array", "items": { "type": "string", "pattern": "^[CW]\\d{2}$" } },
+    "privacy_class": { "enum": ["PUBLIC", "PUBLIC_SAFE_ABSTRACT", "INTERNAL", "WITHHELD"] },
+    "interactive_dependencies": { "type": "array", "items": { "type": "string" }, "description": "JS required for core content = contract violation; progressive enhancement only." },
+    "fallback": { "type": "string", "description": "What a no-JS reader gets. Must be the full core content, not a shell promise." },
+    "seo_title": { "type": "string", "maxLength": 70 },
+    "seo_description": { "type": "string", "maxLength": 200 },
+    "structured_data": { "type": "string", "description": "JSON-LD approach or 'consistent with site doctrine (Person/WebSite @graph)'" },
+    "machine_discovery": { "type": "array", "items": { "enum": ["surfaces.json", "sitemap.xml", "llms.txt", "page.json", "ROUTE_META_shell"] } },
+    "accessibility_requirements": {
+      "type": "array",
+      "minItems": 6,
+      "items": { "enum": ["one_h1", "logical_heading_order", "landmarks", "skip_link", "keyboard_nav", "visible_focus", "alt_text", "contrast_aa", "reduced_motion", "no_canvas_only_information"] }
+    },
+    "performance_budget": {
+      "type": "object",
+      "properties": {
+        "page_weight_kb": { "type": "number" },
+        "lcp_ms": { "type": "number" },
+        "cls": { "type": "number" },
+        "note": { "type": "string" }
+      },
+      "required": ["note"],
+      "description": "Values only when measured (VERIFIED). Otherwise note must say UNMEASURED — never fabricate metrics."
+    },
+    "visual_reference": { "type": "string", "description": "Screenshot path or 'none yet'." },
+    "authority_class": { "enum": ["informational", "evidence_linked", "governed_mutation"], "description": "Reading any page grants ZERO authority. governed_mutation = separate authenticated flow." },
+    "deployment_state": { "enum": ["LOCAL_BUILD", "BRANCH_PUSHED", "DEPLOYED", "DEPLOYED_AND_VERIFIED"] },
+    "maturity": {
+      "enum": ["PRESENT", "LOADABLE", "BUILDABLE", "REACHABLE", "USABLE", "ACCESSIBLE", "PROVEN"],
+      "description": "PROVEN requires the full checklist in WEB_OPERATIONS.md §proven. HTTP 200 alone is at most REACHABLE."
+    },
+    "known_defects": { "type": "array", "items": { "type": "string" } }
+  }
+}

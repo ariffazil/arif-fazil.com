@@ -117,7 +117,8 @@ probe_local "$TOP/earth/index.html" "/map/#earth" "earth page links to canonical
 probe_local "$TOP/llms.json" "arif-fazil.com" "llms.json serves"
 probe_local "$TOP/llms.txt" "Does not adjudicate" "llms.txt is the compact professional map"
 probe_local "$TOP/human/index.html" "does not grant authority" "human/ is agent start-here, not SPA shell"
-probe_local "$TOP/institution/index.html" "Work together, inspect first" "institution/ is briefing, not organ dump"
+probe_local "$TOP/institution/index.html" "Work together" "institution/ is briefing (hero, part 1)"
+probe_local "$TOP/institution/index.html" "inspect first" "institution/ is briefing, not organ dump (hero, part 2)"
 
 if [ "$fail" -ne 0 ]; then
   echo "$LOG_PREFIX FAILED local verification — rollback: cp -a $BK/* $TOP/" >&2

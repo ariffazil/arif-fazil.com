@@ -24,6 +24,8 @@ const SPA_ROUTES = [
   "words/makcikgpt",
   "world",
   "work",
+  "work/exploration-2013-2026",
+  "work/exploration-2013-2026/evidence",
   "AAA",
   "aaa",
   "makcikgpt",
@@ -70,6 +72,18 @@ const ROUTE_META = {
     description: "Selected offshore exploration work, public evidence, roles, outcomes, and governed AI systems by Arif Fazil.",
     path: "/work/",
     h1: "The Work & the Record",
+  },
+  "work/exploration-2013-2026": {
+    title: "Exploration 2013–2026 — Arif Fazil",
+    description: "Thirteen years of offshore exploration geoscience, evidence-tagged. Malay Basin and offshore Sabah — flagged work, uncertainty discipline, and what was proven.",
+    path: "/work/exploration-2013-2026/",
+    h1: "Arif Fazil — Subsurface · Systems · Intelligence",
+  },
+  "work/exploration-2013-2026/evidence": {
+    title: "Exploration Portfolio — Evidence Ledger",
+    description: "Every claim in the exploration portfolio, tagged by truth class and publication class. Includes what was deliberately withheld, and why.",
+    path: "/work/exploration-2013-2026/evidence/",
+    h1: "Evidence Ledger",
   },
   reality: {
     title: "Reality Domains — Arif Fazil",

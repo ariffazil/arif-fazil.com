@@ -14,6 +14,9 @@
     "/human": "agent start-here",
     "/institution/": "institutional briefing",
     "/earth/": "GEOX human globe",
+    "/work/": "selected work — wells, systems, evidence",
+    "/work/exploration-2013-2026/": "career artifact — 13 years exploration geoscience, evidence-tagged",
+    "/work/exploration-2013-2026/evidence/": "evidence ledger — claims, truth classes, publication classes",
     "/000/": "genesis and wisdom archive",
     "/999/": "trust and proof chamber",
     "/world/makcikgpt/": "MakcikGPT civic intelligence (editorial, optional)"
@@ -70,5 +73,5 @@
       "relationship": "earth intelligence apps"
     }
   ],
-  "last_updated": "2026-10-01"
+  "last_updated": "2026-10-02"
 }

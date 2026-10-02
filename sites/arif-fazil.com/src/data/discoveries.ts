@@ -62,7 +62,6 @@ export const discoveries: Discovery[] = [
     summary: 'Frontier wildcat exploration well targeting Group H, I, and J sandstone reservoirs along the structurally complex western hinge fault zone. Successfully proved a working petroleum system in the margin play, encountering 11 hydrocarbon-bearing intervals and opening a new hinge play fairway.',
     evidence: [
       '11 hydrocarbon-bearing intervals logged across Group H, I, and J sandstone targets (gas and oil)',
-      'Substantial post-drill recoverable resource volume under evaluation',
       'Opened a new hinge fault play fairway along the western margin of the Malay Basin',
       'Block PM6/12 subsequently included in commercial farm-out arrangements'
     ],

@@ -39,6 +39,8 @@ const DeritaMap = lazy(() => import('@/pages/DeritaMap').then(m => ({ default: m
 const InstitutionPage = lazy(() => import('@/pages/InstitutionPage').then(m => ({ default: m.InstitutionPage })));
 const RealityGraphView = lazy(() => import('@/pages/RealityGraphView').then(m => ({ default: m.RealityGraphView })));
 const EvidenceHub = lazy(() => import('@/pages/EvidenceHub').then(m => ({ default: m.EvidenceHub })));
+const ExplorationPortfolio = lazy(() => import('@/pages/work/ExplorationPortfolio').then(m => ({ default: m.ExplorationPortfolio })));
+const PortfolioEvidence = lazy(() => import('@/pages/work/PortfolioEvidence').then(m => ({ default: m.PortfolioEvidence })));
 const RealityOverview = lazy(() => import('@/pages/RealityOverview').then(m => ({ default: m.RealityOverview })));
 const NotFound = lazy(() => import('@/pages/NotFound').then(m => ({ default: m.NotFound })));
 
@@ -193,6 +195,10 @@ export function App() {
             {/* 5. /work — Systems, The Wells Record, Operations */}
             <Route path="/work" element={<Work />} />
             <Route path="/work/" element={<Work />} />
+            <Route path="/work/exploration-2013-2026" element={<ExplorationPortfolio />} />
+            <Route path="/work/exploration-2013-2026/" element={<ExplorationPortfolio />} />
+            <Route path="/work/exploration-2013-2026/evidence" element={<PortfolioEvidence />} />
+            <Route path="/work/exploration-2013-2026/evidence/" element={<PortfolioEvidence />} />
             <Route path="/missions" element={<Missions />} />
             <Route path="/missions/" element={<Missions />} />
 

@@ -23,6 +23,8 @@ About, Earth, Research, Writing, Institution. Research opens on the PETRONAS pag
 ## Read-only resources
 - [Earth / GEOX](https://arif-fazil.com/earth/): Live source-linked Earth model. Computes. Does not adjudicate.
 - [Selected work](https://arif-fazil.com/work/): Wells and systems, with withheld-material notes.
+- [Exploration 2013–2026](https://arif-fazil.com/work/exploration-2013-2026/): Web-native career artifact — thirteen years of offshore exploration geoscience, evidence-tagged.
+- [Portfolio evidence ledger](https://arif-fazil.com/work/exploration-2013-2026/evidence/): Every claim tagged by truth class and publication class.
 - [arifOS](https://arif-fazil.com/arifos/): Governance layer — judge before execute. Not a model.
 - [Verification](https://arif-fazil.com/999/): Evidence snapshots, not self-issued certificates.
 

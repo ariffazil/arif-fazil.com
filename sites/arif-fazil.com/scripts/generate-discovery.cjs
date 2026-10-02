@@ -49,6 +49,9 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/earth/`, priority: 0.8, changefreq: "monthly" },
     { loc: `${SITE_BASE}/vitals/`, priority: 0.9, changefreq: "weekly", lastmod: "2026-09-27" },
     { loc: `${SITE_BASE}/work/`, priority: 0.8, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/work/exploration-2013-2026/`, priority: 0.85, changefreq: "monthly", lastmod: "2026-10-02" },
+    { loc: `${SITE_BASE}/work/exploration-2013-2026/evidence/`, priority: 0.75, changefreq: "monthly", lastmod: "2026-10-02" },
+    { loc: `${SITE_BASE}/work/exploration-2013-2026/portfolio.pdf`, priority: 0.7, changefreq: "monthly", lastmod: "2026-10-02" },
     { loc: `${SITE_BASE}/arifos/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/words/`, priority: 0.8, changefreq: "weekly" },
     // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
@@ -142,6 +145,8 @@ About, Earth, Research, Writing, Institution. Research opens on the PETRONAS pag
 ## Read-only resources
 - [Earth / GEOX](https://arif-fazil.com/earth/): Live source-linked Earth model. Computes. Does not adjudicate.
 - [Selected work](https://arif-fazil.com/work/): Wells and systems, with withheld-material notes.
+- [Exploration 2013–2026](https://arif-fazil.com/work/exploration-2013-2026/): Web-native career artifact — thirteen years of offshore exploration geoscience, evidence-tagged.
+- [Portfolio evidence ledger](https://arif-fazil.com/work/exploration-2013-2026/evidence/): Every claim tagged by truth class and publication class.
 - [arifOS](https://arif-fazil.com/arifos/): Governance layer — judge before execute. Not a model.
 - [Verification](https://arif-fazil.com/999/): Evidence snapshots, not self-issued certificates.
 
@@ -283,6 +288,9 @@ function buildPageJson() {
       "/human": "agent start-here",
       "/institution/": "institutional briefing",
       "/earth/": "GEOX human globe",
+      "/work/": "selected work — wells, systems, evidence",
+      "/work/exploration-2013-2026/": "career artifact — 13 years exploration geoscience, evidence-tagged",
+      "/work/exploration-2013-2026/evidence/": "evidence ledger — claims, truth classes, publication classes",
       "/000/": "genesis and wisdom archive",
       "/999/": "trust and proof chamber",
       "/world/makcikgpt/": "MakcikGPT civic intelligence (editorial, optional)",

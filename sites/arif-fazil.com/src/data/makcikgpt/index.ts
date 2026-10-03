@@ -1,5 +1,6 @@
 import type { ArticleContent, MakcikArticleMeta } from './types';
 
+import rm48BilionBelanjawanAtauDarurat from './rm48-bilion-belanjawan-atau-darurat';
 import ceritaMakcik from './cerita-makcik';
 import siasatanHarakah from './siasatan-harakah';
 import iranHormuz from './iran-hormuz';
@@ -43,6 +44,7 @@ import kenapaSyarikatTuHantu from './kenapa-syarikat-tu-hantu';
 import realityOverEverything from './reality-over-everything';
 import yangXDiungkapTruthSembunyiDariVoid from './yang-x-diungkap-truth-sembunyi-dalam-void';
 export const makcikArticleModules: ArticleContent[] = [
+  rm48BilionBelanjawanAtauDarurat,
   yangXDiungkapTruthSembunyiDariVoid,
   realityOverEverything,
   dajjalSudahTibaDanDiaNampakMacamEfficiency,
@@ -87,6 +89,210 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'rm48-bilion-belanjawan-atau-darurat',
+    title: 'RM48 Bilion: Belanjawan 9 Oktober, Atau Darurat?',
+    subtitle: 'Nota BIMB Securities (Utusan, 3 Okt) kata dividen PETRONAS berpotensi RM48B — +RM28B dari Bajet 2026. Tapi extraction ratio 105.7% = bayar dividen dari simpanan, bukan untung. 5,000 orang kena buang, downstream rugi RM15.2B, Debt/GDP 63.1%. Empat hari lagi Anwar bentang Belanjawan. Empat tarikh rakyat kena tonton: 9 Okt, 31 Dis, Feb 2027, 30 Sept 2027. RM48B bukan bonus — ia shock absorber. Dan ada tiga loopholes governance (PDA 1974, bukan Akta Syarikat 2007) yang Hang kena tahu.',
+    date: '2026-10-05',
+    domain: 'MAKCIKGPT × PETRONAS × DIVIDEN × BELANJAWAN 2027 × M7',
+    language: 'ms',
+    excerpt: 'Nota BIMB Securities melalui Utusan Malaysia 3 Oktober 2026: dividen PETRONAS berpotensi RM48 bilion FY2026 — +RM28B (+140%) atas baseline Bajet 2026 RM20B. Tapi extraction ratio 105.7% berbanding PAT FY2025 RM45.4B bermaksud PETRONAS bayar dividen dari simpanan, bukan untung. Subsidi bahan api mencecah RM50B jika Brent kekal USD95+. Downstream rugi RM15.2B (Pengerang). Debt/GDP 63.1% (1.9pp dari siling 65%). Defisit 3.8% (1.2pp dari ambang 5%). PULSE sealed 45 HOLD, 24 Julai 2026. Belanjawan 2027 dibentang 9 Oktober 2026. Empat tarikh untuk tonton: 9 Okt (belanjawan), 31 Dis (EnQuest deal), Feb 2027 (akaun penuh PETRONAS), 30 Sept 2027 (akaun pertama EnQuest PLC London). Tiga loopholes: laporan kewangan hanya dibentang di Parlimen (PDA 1974 Section 4), dividen ialah apa yang MoF arahkan (Seksyen 3(2)), cabaran Sarawak terhadap constitutionaliti PDA 1974 masih terbuka (panel 5-hakim lulus justisiability Julai 2025). Cross-link Dossier 01 (PETRONAS Full Reality), Dossier 02 (Gas Sarawak & PDA 1974), Dossier 03 (Sovereign AI — analogi governance monopolistic).',
+    tags: ['petronas', 'dividen', 'belanjawan2027', 'rightsizing', 'bimb', 'pda-1974', 'sarawak', 'pengerang', 'ekstrasi-105', 'shock-absorber', 'm7', 'series-m7', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-10-05',
+      last_updated: '2026-10-05',
+    },
+    source_ledger: [
+      {
+        source_id: 'SRC-M7-001',
+        type: 'news',
+        title: 'Utusan Malaysia 3 Oktober 2026 — Nota BIMB Securities: dividen PETRONAS berpotensi RM48 bilion FY2026 (vs Bajet 2026 RM20B baseline)',
+        url: 'https://www.utusantv.com.my/',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-002',
+        type: 'filing',
+        title: '/vitals/ (PETRONAS Financial Vitals, sealed 27 Sept 2026) — tunai 30 Jun 2026 RM193.6B, dividen diisytihar 26 Feb 2026 RM20B, PAT FY2025 RM45.4B, downstream loss RM15.2B, tong boleh dijual 9.35B → 8.64B → 7.92B',
+        url: 'https://arif-fazil.com/vitals/',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-003',
+        type: 'filing',
+        title: '/wealth/malaysia/ (Federal Sovereign Vitals, sealed 24 Julai 2026) — Debt/GDP 63.1%, Deficit 3.8%, CPI 50, PULSE 45 HOLD',
+        url: 'https://arif-fazil.com/wealth/malaysia/',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-004',
+        type: 'document',
+        title: 'Petroleum Development Act 1974 (PDA 1974) — Seksyen 3(2) & Seksyen 4 — teks akta',
+        url: 'https://www.agc.gov.my/agcportal/uploads/files/Publications/LOM/EN/Act%20144.pdf',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-005',
+        type: 'court_record',
+        title: 'Federal Court 5-hakim panel — lulus justisiability cabaran Sarawak terhadap constitutionaliti PDA 1974 (Julai 2025)',
+        url: '',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-006',
+        type: 'news',
+        title: 'Straits Times / Malay Mail / Malaysian Reserve / Vibes — RM1.5B Sarawak interim special grant 16 Sept 2026',
+        url: '',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-007',
+        type: 'analysis',
+        title: 'Siri MakcikGPT m6-2 trilogy — bang-non-pergi-kuching (17 Sept 2026) + taufik-pergi-mana (5 Okt 2026) untuk konteks PETRONAS, PMX, Pengerang, Sarawak',
+        url: 'https://arif-fazil.com/world/makcikgpt/bang-non-pergi-kuching',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-M7-008',
+        type: 'news',
+        title: 'EnQuest PLC London filings — akaun pertama di bawah PETRONAS dijangka 30 Sept 2027',
+        url: 'https://www.enquest.com/',
+        retrieved_at: '2026-10-05T00:00:00Z',
+      },
+    ],
+    claim_register: [
+      {
+        claim_id: 'C-M7-001',
+        text: 'Nota BIMB Securities (Utusan Malaysia 3 Oktober 2026): dividen PETRONAS berpotensi RM48 bilion FY2026 vs Bajet 2026 baseline RM20B. Delta +RM28B (+140%).',
+        tag: 'OBS',
+        source_id: 'SRC-M7-001',
+        confidence_basis: 'Nota BIMB Securities lapik oleh Utusan Malaysia — boleh disemak di arkib Utusan.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-002',
+        text: 'Subsidi bahan api boleh mencecah RM50 bilion jika Brent kekal USD95+ — implikasi langsung ke Bajet 2027.',
+        tag: 'DER',
+        source_id: 'SRC-M7-003',
+        confidence_basis: '/wealth/malaysia/ Pre-Budget 2027 alert (3 Okt 2026) menyebut subsidi ~RM40-50B dalam julat.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-003',
+        text: 'Tunai PETRONAS 30 Jun 2026: RM193.6 bilion (ikut /vitals/); hutang kumpulan RM126.8B; gearing 21.2%.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-002',
+        confidence_basis: 'Lapor /vitals/ sealed 27 Sept 2026.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-004',
+        text: 'Dividen PETRONAS 2026 diisytihar RM20B (26 Feb 2026); RM8B sudah dibayar menjelang 30 Jun.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-002',
+        confidence_basis: 'Ikut /vitals/ sealed; disahkan The Edge 10 Ogos 2026.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-005',
+        text: 'Extraction ratio 105.7% berbanding PAT FY2025 RM45.4B = dividen yang dibayar/diisytihar MELIBIHI untung satu tahun. Bayar dari simpanan, bukan untung.',
+        tag: 'DER',
+        source_id: 'SRC-M7-002',
+        confidence_basis: 'Pengiraan dari /vitals/: dividen diisytihar RM20B + potensi RM48B baseline = RM48B/PAT RM45.4B = 105.7%.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-006',
+        text: 'Segmen downstream PETRONAS rugi RM15.2 bilion FY2024 — sebahagian besar Pengerang. Tangkapan lama RM14.8B menyelamatkan angka itu; tanpa tangkapan, hiliran untung RM7B.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-002',
+        confidence_basis: 'Ikut /vitals/ yang lapik dari PETRONAS Group FY2024 disclosures.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-007',
+        text: 'Tong yang boleh dijual jatuh 2 tahun berturut-turut: 9.35B → 8.64B → 7.92B tong.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-002',
+        confidence_basis: 'Ikut /vitals/ plot dual-clock — sealed.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-008',
+        text: 'Debt/GDP Persekutuan 63.1% (1.9pp dari siling 65%); Defisit/GDP 3.8% (1.2pp dari ambang 5% rating review); CPI 50; PULSE 45 HOLD. Semua sealed 24 Julai 2026.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-003',
+        confidence_basis: 'Ikut /wealth/malaysia/ — sealed, tiada reseal.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-009',
+        text: 'PMX pegang dua jawatan serentak: Perdana Menteri + Menteri Kewangan. PETRONAS 100% milik MoF Inc. = PMX pegang konsesi keselamatan cash transfer.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-007',
+        confidence_basis: 'Rekod awam + siri m6-2.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-010',
+        text: 'PETRONAS rightsizing 5,000 orang (~10% tenaga kerja) berlaku awal 2026, PADA MASA YANG SAMA dividen diisytihar RM20B dan prospek naik ke RM48B — korelasi langsung.',
+        tag: 'INT',
+        source_id: 'SRC-M7-007',
+        confidence_basis: 'Siri m6-1, m6-2, m6-3, m6-4 + public release PETRONAS.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-011',
+        text: 'PETRONAS beroperasi di bawah Petroleum Development Act 1974 (PDA 1974), bukan Akta Syarikat 2007. PDA 1974 Seksyen 3(2): dividen = wang yang diarahkan Menteri Kewangan. Seksyen 4: akaun disimpan sebagai rahsia. Tiada formula dividen, tiada hak shareholder.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-004',
+        confidence_basis: 'Teks akta PDA 1974 Seksyen 3(2) & Seksyen 4.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-012',
+        text: 'Federal Court panel 5-hakim lulus justisiability cabaran Sarawak terhadap constitutionaliti PDA 1974 (Julai 2025). Perbicaraan penuh belum selesai; implikasi: seluruh petroleum regime 1974-2026 boleh dicabar (kontrak JV, lesen, downstream).',
+        tag: 'OBS',
+        source_id: 'SRC-M7-005',
+        confidence_basis: 'Rekod mahkamah + liputan Reuters / The Edge / NST.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-013',
+        text: 'RM1.5 bilion geran khas interim Sarawak 16 Sept 2026 — tanpa agreement tetap, tanpa formula kekal, tanpa tandatangan panjang. PMX laluan termudah tunda keputusan.',
+        tag: 'OBS',
+        source_id: 'SRC-M7-006',
+        confidence_basis: 'Straits Times / Malay Mail / Malaysian Reserve / Vibes 16 Sept 2026.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-M7-014',
+        text: 'Empat tarikh untuk tonton: (i) 9 Okt 2026 — Belanjawan 2027 dibentang; (ii) 31 Dis 2026 — jangka siap EnQuest deal; (iii) Feb 2027 — akaun penuh PETRONAS FY2026; (iv) 30 Sept 2027 — akaun pertama EnQuest PLC (London, lebih terbuka).',
+        tag: 'INT',
+        source_id: 'SRC-M7-008',
+        confidence_basis: 'Tarikh-tarikh dari reporting calendar + public corporate events.',
+        maruah_review: 'approved',
+      },
+    ],
+    counter_evidence: [
+      {
+        summary: 'Nota BIMB Securities (RM48B) ialah prospek, bukan deklarasi rasmi. PETRONAS sendiri hanya diisytihar RM20B (26 Feb 2026). Terdapat jurang besar antara prospek analis dan dividen sebenar yang PETRONAS akan bayar.',
+        disposition: 'Dicatat dalam artikel sebagai "berpotensi" / "prospek" — bukan fakta. Anggaran sensitif kepada harga Brent, kos operasi, dan keputusan MoF.',
+      },
+      {
+        summary: 'Kerajaan Persekutuan mungkin berhujah bahawa dividen tambahan RM28B akan digunakan untuk program rakyat (subsidi, bantuan, infrastruktur) dan oleh itu patut dialu-alukan.',
+        disposition: 'Artikel mengakui utilisasi mungkin baik, tetapi cabarannya ialah PENCIPTAAN dividen tersebut — extraction ratio 105.7% + rightsizing 5,000 — bukan konsumsinya. Kritikan menumpu pada punca, bukan simptom.',
+      },
+    ],
+    temporal_validity: {
+      valid_as_of: '2026-10-05',
+      verify_at: '2026-10-10',
+      stale_after: '2026-10-31',
+    },
+  },
   {
     slug: 'yang-x-diungkap-truth-sembunyi-dalam-void',
     title: 'Yang x Diungkap: Kenapa Truth Sembunyi dalam Void',

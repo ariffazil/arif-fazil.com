@@ -47,6 +47,21 @@
   .attention-list li{flex-direction:column;gap:.3rem}
   .attention-list li::before{width:1.2rem;height:1.2rem;font-size:.62rem}
 }
+
+/* PRE-BUDGET 2027 ALERT — addendum banner, not a reseal */
+.pb-banner{margin:0 0 1.2rem;padding:1rem 1.1rem;border:1px solid #c9a84c;border-left:4px solid #c9a84c;border-radius:8px;background:linear-gradient(180deg,rgba(201,168,76,.08),rgba(201,168,76,.03));font-family:var(--mono,monospace);box-shadow:inset 0 0 0 1px rgba(201,168,76,.15)}
+.pb-banner .pb-head{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.55rem;font-size:.78rem;letter-spacing:.06em}
+.pb-banner .pb-tag{font-weight:700;color:#c9a84c;text-transform:uppercase}
+.pb-banner .pb-seal{color:var(--dim,#8a8378);font-size:.66rem;letter-spacing:.05em}
+.pb-banner .pb-body{font-size:.78rem;line-height:1.6;color:var(--text,#d8d2c4)}
+.pb-banner .pb-body p{margin:0 0 .45rem}
+.pb-banner .pb-body p:last-child{margin-bottom:0}
+.pb-banner .pb-body b{color:#c9a84c;font-weight:600}
+.pb-banner .pb-body code{font-family:var(--mono,monospace);background:rgba(201,168,76,.1);padding:1px 5px;border-radius:3px;color:#c9a84c;font-size:.72rem}
+.pb-banner .pb-body a{color:#c9a84c;text-decoration:underline;text-decoration-color:rgba(201,168,76,.4);text-underline-offset:2px}
+.pb-banner .pb-body a:hover{text-decoration-color:#c9a84c}
+.pb-banner .pb-anchor{margin-top:.7rem;padding-top:.55rem;border-top:1px dashed rgba(201,168,76,.3);font-size:.66rem;letter-spacing:.05em;color:var(--dim,#8a8378)}
+.pb-banner .pb-anchor b{color:#c9a84c}
 </style>
   <script src="/_shared/unified-header-loader.js" defer></script>
 </head>
@@ -69,6 +84,21 @@
 
 <!-- HERO -->
 <header class="hero" aria-labelledby="hero-title">
+  <!-- ⚠️ PRE-BUDGET 2027 ALERT — addendum banner, NOT a reseal. Sealed pulse remains 45 HOLD · 2026-07-24. -->
+  <aside class="pb-banner" role="note" aria-label="Pre-Budget 2027 alert, 3 Oktober 2026">
+    <div class="pb-head">
+      <span class="pb-tag">⚠️ PRE-BUDGET 2027 ALERT</span>
+      <span class="pb-seal">3 Oktober 2026 · addendum, bukan reseal</span>
+    </div>
+    <div class="pb-body">
+      <p>Prospek petroleum revenue naik: dividen PETRONAS berpotensi <b>RM48B</b> (Utusan Malaysia / BIMB Securities, 3 Okt 2026), vs Bajet 2026 baseline <code>RM20B</code> = <b>+RM28B (+140%)</b>.</p>
+      <p>Implikasi tripwire: <b>Debt/GDP #1</b> boleh tertekan naik; <b>Deficit #2</b> (subsidi ~RM40-50B) boleh mencanak jika Brent kekal <code>USD95+</code>.</p>
+      <p><b>Pulse composite 45 HOLD</b> — sealed 24 Julai 2026. Next audit 24 Oktober 2026. Tiada reseal.</p>
+    </div>
+    <div class="pb-anchor">
+      Cross-ref → <a href="/vitals/">/vitals/</a> (PETRONAS, Quantum Tripwire) · M7 artikel prospek petroleum: <b>TBD</b> (tiada dalam repo, jangan fabrikasi link)
+    </div>
+  </aside>
   <div class="hero-tag">Federal sovereign vitals · sealed 2026-07-24</div>
   <h1 id="hero-title">One nation. Three pillars. <span>Nine tripwires.</span><span class="epi-tag">INTERPRET</span></h1>
   <div class="subtitle" style="font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2px">Fiscal capacity · economic engine · institutions &amp; demographics</div>

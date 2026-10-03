@@ -49,7 +49,6 @@
 .live-strip .ls-chip .up{color:#22c55e}.live-strip .ls-chip .down{color:#ef4444}
 .live-strip .ls-note{margin-top:.55rem;font-size:.62rem;color:var(--faint,#5a554d)}
 </style>
-  <script src="/_shared/unified-header-loader.js"></script>
 <style id="nv-canon">
 .nv-strip{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding:.72rem max(1.25rem,calc(50vw - 26rem));border-bottom:1px solid rgba(237,234,226,.09);background:rgba(10,11,13,.72);font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px}
 .nv-brand{font-family:IBM Plex Mono,ui-monospace,monospace;font-weight:700;letter-spacing:.18em;font-size:11.5px;color:#EDEAE2;text-decoration:none}
@@ -91,14 +90,16 @@
 
 <!-- ═══ ADDENDUM (bukan reseal) — PRE-BUDGET 2027 ALERT · 3 Oktober 2026 ═══
      Seal asal: 27 September 2026 (line di bawah) — tidak disentuh.
-     Banner ini cuma addendum; integriti metadata (JSON-LD dateModified) tidak berubah. -->
+     Banner ini cuma addendum; seal asal tidak disentuh. 2026-10-04 FI-008 reality-align:
+     JSON-LD dateModified dikemas ke tarikh addendum (2026-10-03) supaya metadata
+     machine-readable cakap benar, dan kiraan hari dijadikan computed (tiada rot). -->
 <div id="prebudget-alert" data-addendum="2026-10-03" data-m7-pending-href="/world/makcikgpt/petronas-dividen-rm48b" style="max-width:640px;margin:0 auto;padding:24px 24px 0">
   <div style="border:1px solid var(--state-hold);border-left:4px solid var(--state-hold);border-radius:6px;background:rgba(255,149,0,.06);padding:12px 14px;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--ink)">
     <div style="font-weight:700;letter-spacing:.04em;color:var(--state-hold);margin-bottom:6px">⚠️ PRE-BUDGET 2027 ALERT · 3 Oktober 2026</div>
     <div style="color:var(--ink)">Utusan lapik BIMB Securities: dividen PETRONAS berpotensi <b>RM48 bilion FY2026</b>.</div>
     <div style="color:var(--ink);margin-top:4px">Baseline Bajet 2026: <b>RM20B</b>. Delta: <b style="color:var(--state-hold)">+RM28B (+140%)</b>.</div>
     <div style="color:var(--dim);margin-top:4px">Extraction ratio: 105.7% vs PAT FY2025 (bayar dividen dari simpanan, bukan untung).</div>
-    <div style="color:var(--ink);margin-top:4px">Belanjawan 2027 dibentang <b>9 Oktober 2026</b> — 4 hari lagi.</div>
+    <div style="color:var(--ink);margin-top:4px">Belanjawan 2027 dibentang <b>9 Oktober 2026</b> — <span id="budget-countdown" data-target="2026-10-09">5 hari lagi</span>.</div>
     <div style="margin-top:8px"><a href="/world/makcikgpt/" style="color:var(--state-hold);text-decoration:underline;text-underline-offset:2px" data-pending="m7-rm48b">→ MakcikGPT: M7 RM48B Dividen (artikel dalam semakan)</a></div>
   </div>
 </div>
@@ -259,7 +260,7 @@
   <div style="margin-top:0.3rem;font-style:italic;">DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan diberi.</div>
 </footer>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — duit hari ini, tong masa depan","dateModified":"2026-09-27","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2027 figure is not printed. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/vitals/"}
+{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — duit hari ini, tong masa depan","dateModified":"2026-10-03","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2027 figure is not printed. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/vitals/"}
 </script>
-<footer class="nv-foot nv-light"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
+<footer class="nv-foot nv-light"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var el=document.getElementById('budget-countdown');if(!el)return;try{var myt=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kuala_Lumpur'}).format(new Date());var t=new Date(myt+'T00:00:00+08:00');var tgt=new Date(el.getAttribute('data-target')+'T00:00:00+08:00');var d=Math.round((tgt-t)/86400000);if(d>1)el.textContent=d+' hari lagi';else if(d===1)el.textContent='esok';else if(d===0)el.textContent='HARI INI';else el.textContent='tarikh lepas — rujuk dapatan belanjawan';}catch(e){}})();</script><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
 </html>

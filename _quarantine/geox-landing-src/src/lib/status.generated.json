@@ -1,0 +1,10 @@
+{
+ "canonical": 27,
+ "live": 27,
+ "drift_ok": true,
+ "runtime_commit": "b0026426",
+ "main_head": "17802197",
+ "internal": 39,
+ "generated_at": "2026-10-03T05:08Z",
+ "verify": "operators: /drift on the organ; public: this snapshot is build-time"
+}

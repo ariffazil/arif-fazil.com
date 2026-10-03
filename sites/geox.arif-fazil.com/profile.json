@@ -1,15 +1,13 @@
 {
   "organ": "GEOX",
   "role": "Earth Intelligence",
-  "mcp_tools": 31,
+  "mcp_tools": 27,
   "mcp_apps": 20,
   "rasa_cap": 0.9,
   "hold": "888_HOLD",
-  "ledger": "VAULT999",
   "license": "BSL-1.1 \u2192 Apache-2.0 @2029-06-29",
-  "port": 8081,
+  "authority": "555_COMPUTE_ONLY \u2014 computes, never adjudicates, never seals",
   "health": "https://geox.arif-fazil.com/health",
   "mcp": "https://geox.arif-fazil.com/mcp",
-  "version": "v2026.09.18",
-  "evidence": "OBS: live public_tools=31 from .well-known/mcp/server.json"
+  "counts_note": "build-time snapshot 2026-10-03T05:08Z from registry.py::CANONICAL_PUBLIC_TOOLS (canonical=27); operators verify live parity at the organ /drift (drift_ok=true, runtime b0026426)"
 }

@@ -1,0 +1,164 @@
+[
+ {
+  "name": "geox_basin",
+  "desc": "Unified basin intelligence: profile, resolve, macrostrat, backstrip, mass balance, thermal maturity, map context, deep time, tectonic reconstruction.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_calibration_register_witness",
+  "desc": "Register a CalibrationWitness for structural interpretation. Validates schema, checks completeness blockers (missing axes, depth-without-velocity). Returns VOID on bad input, HOLD on missing calibration.",
+  "family": "structural",
+  "tier": "B"
+ },
+ {
+  "name": "geox_claim",
+  "desc": "Claim lifecycle: create, validate, challenge, seal, evidence, falsify, synthesize, contradict. Modes: create, validate, challenge, seal, attach, falsify, discover, synthesize, abduct, contradict, scan.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_contrast_metabolize",
+  "desc": "Unified anomalous contrast metabolic pipeline. Binds three stages into one call: ISOLATE (deterministic acoustic impedance contrast detection) then MEASURE (AVO gradient + LMR estimates) then CLASSIFY (>=3 stratigraphic trap hypotheses). substrate_class=INERT. Local max QUALIFIED_CANDIDATE - arifOS seals.",
+  "family": "interpret",
+  "tier": "B"
+ },
+ {
+  "name": "geox_deep_time",
+  "desc": "Deep time: Earth state, dynamical systems, DDE reasoning. Modes: dde_reason.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_extract_display_proxy",
+  "desc": "Extract display-derived proxy from raster seismic image. Requires CalibrationWitness. Output labeled DISPLAY_DERIVED_PROXY \u2014 NOT suitable for AVO, amplitude preservation, or native well-tie.",
+  "family": "seismic",
+  "tier": "B"
+ },
+ {
+  "name": "geox_extract_native_trace",
+  "desc": "Extract a native seismic trace from a registered source. Returns NativeTraceRef with full provenance. HOLD for unverified authority, restricted data, or missing source.",
+  "family": "seismic",
+  "tier": "B"
+ },
+ {
+  "name": "geox_geomechanics",
+  "desc": "Geomechanical analysis: bulk/shear/young modulus, poisson ratio, acoustic impedance, stress polygon.",
+  "family": "interpret",
+  "tier": "B"
+ },
+ {
+  "name": "geox_glof",
+  "desc": "Unified GLOF multi-phase cascade simulation. Multi-phase physics: solid dam \u2192 granular debris \u2192 liquid flood (Mohr-Coulomb + Saint-Venant + 33D zen-33 state). Modes: run (full cascade in one call), inverse (Bayesian grid-search), mcmc (MCMC posterior), propagate (Saint-Venant 1D), phase (yield surface debug). Replaces 7 individual geox_glof_cascade_* tools (333 ARCHITECT 2026-09-19).",
+  "family": "research",
+  "tier": "C"
+ },
+ {
+  "name": "geox_list_registered_sources",
+  "desc": "List all registered native seismic sources with classification, authority, trace count, and sample metadata.",
+  "family": "seismic",
+  "tier": "B"
+ },
+ {
+  "name": "geox_map",
+  "desc": "Map intelligence: layer discovery, scene composition, preview. Modes: layers_list, scene_plan, render_preview.",
+  "family": "view",
+  "tier": "A"
+ },
+ {
+  "name": "geox_model",
+  "desc": "Geological modeling: subsurface inversion, 2D cross-sections, GemPy 3D. Modes: subsurface, geological_generate, gempy_3d.",
+  "family": "model",
+  "tier": "A"
+ },
+ {
+  "name": "geox_observe",
+  "desc": "Canonical multimodal Earth observation umbrella (Earth Witness v1). Rock/outcrop/core/thin_section/fossil/seismic_display/map/section intake \u2192 governed EarthObservationPacket. Vision output is EVIDENCE only; interpretations stay HYPOTHESIS; no hydrocarbon claim from image alone (I1-I9); missing diagnostics \u2192 INPUT_REQUIRED; local ceiling QUALIFIED_CANDIDATE \u2014 arifOS seals only.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_paleobiodb_query",
+  "desc": "Query the Paleobiology Database (PBDB v1.2) for taxa, occurrences, and biozones. Modes: taxa (resolve a taxon), occurrence (fossil occurrence records), zone (biozones by scale), age_intervals (ICS / nanno / foram zones). Read-only, public-domain fossil data.",
+  "family": "evidence",
+  "tier": "B"
+ },
+ {
+  "name": "geox_petrophysics",
+  "desc": "Unified petrophysics: Vsh, porosity, Sw, permeability, net pay, LEM inference, QC. Modes: generate, verify, lem_inference, stoip_feed, qc.",
+  "family": "interpret",
+  "tier": "A"
+ },
+ {
+  "name": "geox_prospect",
+  "desc": "Prospect evaluation: volumetrics, POS, EVOI, risk assessment. Modes: screen, evaluate.",
+  "family": "prospect",
+  "tier": "A"
+ },
+ {
+  "name": "geox_register_native_source",
+  "desc": "Register a native SEG-Y source for trace extraction. Validates file existence, computes SHA256, extracts binary header metadata. Authority downgrade: OPERATOR_APPROVED without actor \u2192 UNVERIFIED.",
+  "family": "seismic",
+  "tier": "B"
+ },
+ {
+  "name": "geox_seismic_compute",
+  "desc": "Seismic computation: forward model, well tie, attributes, wavelet extraction, inversion.",
+  "family": "interpret",
+  "tier": "B"
+ },
+ {
+  "name": "geox_seismic_ingest",
+  "desc": "SEG-Y I/O, header inspection, export.",
+  "family": "ingest",
+  "tier": "B"
+ },
+ {
+  "name": "geox_seismic_interpret",
+  "desc": "One semantic capability \u2014 propose geometry, physics-gate, compare hypotheses (NOT autonomous SEAL). Live modes: horizon_contrast, fault_sticks, volume_frame, blend, structure_validate, interpret (interpretation_bundle \u22653 hyps), interpret_section/rsi_pipeline (INT_SEISMIC), segy_slice. Gates return PASS|WARN|KILL|UNMEASURED + receipt_hash. preferred_hypothesis always null from GEOX. Local max QUALIFIED_CANDIDATE \u2014 arifOS seals only.",
+  "family": "interpret",
+  "tier": "A"
+ },
+ {
+  "name": "geox_source",
+  "desc": "Source rock & diagenesis: TOC, kerogen, maturity, compaction. Modes: source_rock, diagenesis.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_spatial",
+  "desc": "Spatial intelligence: H3, LanceDB, STAC. Modes: h3_index, lancedb_store, stac_discover.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_surface_status",
+  "desc": "Canonical registry probe: public surface truth (count, canonical_tools, verdict). Self-witness for surface SOT.",
+  "family": "view",
+  "tier": "A"
+ },
+ {
+  "name": "geox_temporal",
+  "desc": "Temporal analytics: decline curve, RRR, basin lifecycle, cadence. Modes: decline, rrr, basin_lifecycle, cadence.",
+  "family": "evidence",
+  "tier": "A"
+ },
+ {
+  "name": "geox_well",
+  "desc": "Well intelligence: view curves, open desk, desurvey. Modes: view, desk.",
+  "family": "interpret",
+  "tier": "A"
+ },
+ {
+  "name": "geox_well_ingest",
+  "desc": "Load well log data from LAS, SEG-Y, DST, deviation, or tops files. Auto-detects format.",
+  "family": "ingest",
+  "tier": "B"
+ },
+ {
+  "name": "geox_well_qc",
+  "desc": "Quality control for well data: depth monotonicity, null %, physical range checks.",
+  "family": "ingest",
+  "tier": "A"
+ }
+]

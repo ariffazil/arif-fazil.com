@@ -1,73 +1,98 @@
 # GEOX — Earth Intelligence Organ of the arifOS Federation
 
 > GEOX is the Earth Intelligence organ of the arifOS Federation: a governed MCP
-> service for geological, geophysical, hazard, terrain, mobility and
-> infrastructure reasoning. Every surface is dual-authored — rendered for
-> humans, enumerated for agents. Creed: DITEMPA BUKAN DIBERI — "truth must cool
-> before it rules." Humility band Ω₀ ≈ 0.04.
+> service for geological, geophysical, hazard, and earth-science reasoning.
+> Creed: DITEMPA BUKAN DIBERI — "truth must cool before it rules."
+> GEOX computes. It never adjudicates, never seals, never books resources.
+> Counts in this file are a build-time snapshot from the organ's registry
+> (canonical = 27, snapshot 2026-10-03T05:08Z); operators verify live parity
+> at the organ `/drift` endpoint.
 
 ## Endpoints
 
-- MCP endpoint (SSE transport): https://geox.arif-fazil.com/mcp
+- MCP endpoint: https://geox.arif-fazil.com/mcp
 - Health: https://geox.arif-fazil.com/health
 - Agent profile: https://geox.arif-fazil.com/profile
 - Scenarios: https://geox.arif-fazil.com/scenarios
 - WebMCP manifest: https://geox.arif-fazil.com/.well-known/mcp.json
 
+## Auth (current position)
+
+Authenticated, not open. Connectors send a pre-registered `X-MCP-Client-Id`
+header (exact-match registry, P3_AUTH_LITE) or perform full OAuth 2.1 + DPoP.
+Governed tool calls may additionally require federation-issued credentials via
+the AAA control plane. There is no anonymous tools/list.
+
 ## Capabilities
 
-- 31 governed MCP tools (geox.* namespace): basin screening, STOIIP/volumetrics,
-  seismic attribute review, flood-risk triage, route viability, infrastructure
-  watch, hazard escalation, risk matrix, verdict console, VAULT999 sealing.
-- 20 MCP App widgets (SEP-1865 GUI, active with live bindings): WellDesk,
-  Seismic Vision, Earth Volume, Risk Console, Judge Console, Basin Explorer,
-  Prospect Studio, Geoprobe, GravMag Studio, and more. (8 additional Apps
-  held as 'planned' awaiting F13 resurrection of ghosted tools; 3 deprecated.)
-- A2A negotiation via AAA control plane (:3001).
+- 27 canonical MCP tools (underscore names, e.g. `geox_basin`, `geox_claim`,
+  `geox_observe`): basin screening, claim lifecycle, seismic interpretation and
+  evidence spine, petrophysics, well ingest/QC, multimodal Earth observation,
+  paleobiology, GLOF hazard, prospect advisory, map/spatial/deep-time.
+  Full generated inventory: https://github.com/ariffazil/GEOX (tools_sot.yaml).
+- 20 MCP App widgets (SEP-1865 GUI, live bindings): WellDesk, Seismic Vision,
+  Earth Volume, Risk Console, Judge Console, Basin Explorer, Prospect Studio,
+  Geoprobe, and more.
+- A2A negotiation via the AAA control plane (federation-internal; no public port
+  is disclosed here).
 
 ## Epistemic Contract (E1–E5)
 
-- E1 Every response includes `epistemic_layer: OBS | DER | INT | SPEC`.
+- E1 Every response carries an epistemic layer: `OBS | DER | INT | SPEC`, and
+  `UNKNOWN` when there is no data — refusal is an output, not a failure.
 - E2 SPEC outputs are capped by RASA ≤ 0.90 and labeled hypothesis.
 - E3 Irreversible/high-risk calls return `status: 888_HOLD` until sovereign human release (F13).
-- E4 Agents may seal any result to VAULT999 via `geox.seal_vault999()`.
-- E5 Ω₀ ≈ 0.04 — the Earth keeps its humility band; your model should too.
+- E4 GEOX never seals. Constitutional SEAL verdicts belong to the arifOS kernel
+  (`arif_judge`) alone. `geox_claim(mode='seal')` is organ-local claim
+  bookkeeping, not a judgment.
+- E5 Irreducible uncertainty is always declared — it is never a fixed percentage.
+
+## What GEOX cannot know (physics limits)
+
+Non-uniqueness · seismic tuning/resolution · time≠depth until velocity-calibrated ·
+fluid ambiguity (fizz gas vs commercial gas on amplitude) · equifinality ·
+sparse-well interpolation · erased time at unconformities. GEOX names the limit
+and the next measurement; it does not pretend them away.
 
 ## Governance
 
 Constitutional floors F1–F13 of the arifOS Federation apply to every call.
 F13 — Sovereign Human Veto (888_HOLD) — is load-bearing: a human can always
-stop the machine. Federation organs: arifOS :8088, A-FORGE :7071/:7072,
-AAA :3001, GEOX :8081, WEALTH :18082, WELL :18083, HERMES :8644.
+stop the machine. Federation siblings: arifOS (judgment), A-FORGE (execution),
+AAA (attention), WEALTH (capital), WELL (vitality), arifFlow (receipts) —
+public repos under github.com/ariffazil. Internal ports are intentionally not
+disclosed.
 
 ## Quickstart (60 seconds)
 
-1. Point your MCP client at `https://geox.arif-fazil.com/mcp` (SSE).
-2. Call a tool, e.g. `geox.stoiip({ prospect: "KINABALU-N", p50_area_km2: 42 })`.
-3. Render an app, e.g. register `geox.app.welldesk` as an SEP-1865 inline widget.
+1. Point your MCP client at `https://geox.arif-fazil.com/mcp` with your
+   registered `X-MCP-Client-Id` header (or OAuth 2.1 + DPoP).
+2. Call a real tool, e.g.
+   `geox_basin(basin_name="Malay Basin", mode="profile")`.
+3. Expect refusal as behaviour: a carbonate image without an HCl field test
+   returns `state: INPUT_REQUIRED` with the exact requested test — never a guess.
 
 ## License
 
-Business Source License 1.1; converts to Apache 2.0 on 2029-06-29.
+Business Source License 1.1; converts to Apache 2.0 on 2029-06-29. Production
+use in commercial undertakings requires a separate paid license from the
+Licensor (see the repo LICENSE: Additional Use Grant covers non-production,
+evaluation, and academic use).
 
 ## Links
 
 - Site: https://geox.arif-fazil.com/
-- Platform (42 tools): https://geox.arif-fazil.com/platform
-- MCP Apps (18 widgets): https://geox.arif-fazil.com/mcp-apps
+- Platform (27 canonical tools): https://geox.arif-fazil.com/platform
+- MCP Apps (20 widgets): https://geox.arif-fazil.com/mcp-apps
 - MCP door: https://geox.arif-fazil.com/mcp (public HTML WebMCP console is not exposed)
 - Federation: https://geox.arif-fazil.com/federation
 - Deploy: https://geox.arif-fazil.com/deploy
 - Full corpus: https://geox.arif-fazil.com/llms-full.txt
 
-## Media (i2v clips — wired to GEOX figures)
+## Media (i2v clips — slide-deck assets)
 
-- North Sabah cross-section animation (5s, pSCS subduction → Kinabalu Granite
-  emplacement, slow pan + parallax depth): /assets/north-sabah-cross-section-i2v.mp4
-- Endurance CCS geological model animation (5s, Chalk → Cap Rock → Reservoir
-  → Basement, slow pan across porosity distribution): /assets/endurance-ccs-i2v.mp4
-- NOTE: Cloudflare edge cache may serve the SPA shell at these URLs for up to
-  4 hours after first deploy. Use a `?v=` cache-bust query if the bare URL
-  returns HTML during the cache window. Canonical v-stamp:
-  `?v=2026-09-22a` (deploy of 2026-09-22, assets/* synced to /var/www/html/geox/assets/).
-- These clips are slide-deck assets, not yet embedded in the SPA bundle.
+- North Sabah cross-section animation (5s): /assets/north-sabah-cross-section-i2v.mp4
+- Endurance CCS geological model animation (5s): /assets/endurance-ccs-i2v.mp4
+- These clips are schematic slide assets, not embedded in the SPA bundle.
+  Cloudflare edge cache may serve the SPA shell at these URLs for up to 4 hours
+  after deploy; use a `?v=` cache-bust query during the cache window.

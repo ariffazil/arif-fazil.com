@@ -1,9 +1,9 @@
 {
   "$schema": "https://modelcontextprotocol.io/schemas/webmcp-manifest.json",
   "name": "GEOX",
-  "title": "GEOX — Earth Intelligence Organ of the arifOS Federation",
+  "title": "GEOX \u2014 Earth Intelligence Organ of the arifOS Federation",
   "version": "1.0.0",
-  "description": "Governed Earth Intelligence MCP: 42 tools, 18 SEP-1865 GUI apps, epistemic contract OBS/DER/INT/SPEC, RASA cap 0.90, constitutional floors F1-F13 with sovereign human veto (888_HOLD).",
+  "description": "Governed Earth Intelligence MCP: 27 canonical tools, epistemic contract OBS/DER/INT/SPEC/UNKNOWN, RASA cap 0.90, constitutional floors F1-F13 with sovereign human veto (888_HOLD). GEOX computes; it never adjudicates and never seals.",
   "homepage": "https://geox.arif-fazil.com",
   "endpoint": "https://geox.arif-fazil.com/mcp",
   "transport": "sse",
@@ -11,18 +11,27 @@
   "profile": "https://geox.arif-fazil.com/profile",
   "scenarios": "https://geox.arif-fazil.com/scenarios",
   "auth": {
-    "scheme": "none",
-    "notes": "Public discovery endpoints; governed tool calls may require federation-issued credentials via AAA control plane."
+    "scheme": "static-client-id or OAuth 2.1+DPoP (P3_AUTH_LITE)",
+    "notes": "Connectors send a pre-registered X-MCP-Client-Id header (exact-match registry) or perform full OAuth 2.1+DPoP. Governed tool calls may additionally require federation-issued credentials via the AAA control plane."
   },
-  "capabilities": ["tools", "prompts", "resources"],
+  "capabilities": [
+    "tools",
+    "prompts",
+    "resources"
+  ],
   "tools_url": "https://geox.arif-fazil.com/mcp#tools",
   "apps_url": "https://geox.arif-fazil.com/mcp-apps",
-  "tool_count": 42,
+  "tool_count": 27,
   "epistemic_contract": {
-    "layers": ["OBS", "DER", "INT", "SPEC"],
+    "layers": [
+      "OBS",
+      "DER",
+      "INT",
+      "SPEC",
+      "UNKNOWN"
+    ],
     "rasa_cap": 0.9,
-    "hold_status": "888_HOLD",
-    "humility_band": 0.04
+    "hold_status": "888_HOLD"
   },
   "widgets": [
     "geox.app.welldesk",
@@ -49,14 +58,31 @@
     "name": "arifOS Federation",
     "organs": {
       "arifOS": 8088,
-      "A-FORGE": [7071, 7072],
+      "A-FORGE": [
+        7071,
+        7072
+      ],
       "AAA": 3001,
       "GEOX": 8081,
       "WEALTH": 18082,
       "WELL": 18083,
       "HERMES": 8644
     },
-    "floors": ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13"],
+    "floors": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F11",
+      "F12",
+      "F13"
+    ],
     "sovereign_veto": "F13"
   },
   "agent_files": {

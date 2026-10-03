@@ -840,6 +840,13 @@
       "title": "PM Bayang alias (single-hop fix 2026-10-04)",
       "redirects_to": "/world/politics/shadow/",
       "code": "301"
+    },
+    {
+      "path": "/geox/",
+      "status": "redirect",
+      "title": "GEOX door — canonical organ (consolidated 2026-10-04)",
+      "redirects_to": "https://geox.arif-fazil.com/",
+      "code": "308"
     }
   ],
   "federation_subdomains": [

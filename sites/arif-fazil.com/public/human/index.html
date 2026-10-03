@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://arif-fazil.com/human"/>
 <link rel="alternate" type="text/markdown" href="/human.md" title="Agent contract (markdown)"/>
 <link rel="stylesheet" href="/_shared/design-system/tokens.css">
-<script src="/_shared/unified-header-loader.js" defer></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0A0B0D;color:#EDEAE2;font-family:IBM Plex Sans,system-ui,sans-serif;line-height:1.65;}
@@ -76,6 +75,17 @@ nav a{margin-right:1.25rem;color:#9AA0A8}
     <tr><td>Public A2A POST /a2a</td><td>No</td><td>No</td><td>No</td><td>—</td><td>HOLD</td><td>Explicit 404</td></tr>
   </tbody>
 </table>
+
+<h2>Verdict vocabulary</h2>
+<div class="card">
+  <p>Governed systems on this federation emit machine-verifiable verdicts. Treat each as a terminal state, not a suggestion. Machine schema: <a href="/policy.json">/policy.json</a> → <code>verdict_schema</code>.</p>
+  <p><strong style="color:#EDEAE2">SEAL</strong> — verified; execution authorized within the sealed scope only.</p>
+  <p><strong style="color:#EDEAE2">PARTIAL</strong> — subset verified; proceed only within verified bounds.</p>
+  <p><strong style="color:#EDEAE2">UNKNOWN</strong> — unmeasured; absence of data is not evidence.</p>
+  <p><strong style="color:#EDEAE2">SABAR</strong> — cooling; deliberate pause before judgment, neither refusal nor approval.</p>
+  <p><strong style="color:#EDEAE2">HOLD</strong> — human authority required; the agent must stop.</p>
+  <p><strong style="color:#EDEAE2">VOID</strong> — invalid; rejected, do not retry without new evidence.</p>
+</div>
 
 <h2>Trust zones</h2>
 <div class="card">

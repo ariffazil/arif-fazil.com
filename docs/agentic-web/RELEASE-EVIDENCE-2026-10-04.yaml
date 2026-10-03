@@ -1,0 +1,77 @@
+# RELEASE EVIDENCE — Agentic Web Release 2026-10-04
+# Per repo AGENTS.md rule 10. Actor: FI-008, session SEAL-876eb660e14c49cc (prior: SEAL-d2b10ba361b04797)
+# Vault seal: PENDING Lane A (888 sovereign) — constitutional chain not self-sealable by agent
+
+release:
+  id: agentic-web-2026-10-04
+  branch: site/harden
+  commits: 196bc62..f54627e
+  pushed_to: github.com:ariffazil/arif-fazil.com.git
+  pushed_at: 2026-10-03T19:0xZ
+
+missions:
+  - id: politics-hub-canon
+    scope: /world/politics/ rebuilt (nv-strip + arrow_hybrid_frame + metadata)
+    evidence: ["/tmp/politics_desktop.png", "/tmp/politics_mobile.png", live 200]
+  - id: site-reality-align
+    scope: world-state.json v1.2.0 (serving bug fixed: public URL was serving void v1.0.0; market fields refreshed via WEALTH receipts 7649c924/e09a6547/ced5055a; official stats quarantined-labeled); /world/ footer hash-bound (62c6c59f); /vitals/ countdown computed + dateModified truthful
+    evidence: ["curl hash match 62c6c59f", "wealth receipts VAULT999/wealth/receipts.jsonl"]
+  - id: pilot-dark-canon
+    scope: /pilot/ rebuilt (dark-on-dark + double-nav fixed; offer copy verbatim)
+    evidence: ["/tmp/pilot_new_desktop.png", "/tmp/pilot_new_mobile.png"]
+  - id: site-arch-scan
+    scope: ~150 pages scanned; /about/ + /economics/ rebuilt (dead SPA shell, 404 bundle, black-on-black); double-nav removed 999/human/vitals/arifos
+    evidence: ["visible-text audit: about 476->1119, economics 479->1455", "29-URL sweep 200/3xx only"]
+  - id: contract-verdicts
+    scope: policy.json v1.1.0 verdict_schema (SEAL/PARTIAL/UNKNOWN/SABAR/HOLD/VOID, binding arifos constitution); /human verdict vocabulary
+    evidence: ["live policy v1.1.0", "/human renders section"]
+  - id: work-hub-canon
+    scope: /work/ hub rebuilt (was self-declared stale 2026-08-06 + pre-canon nav)
+    evidence: ["/tmp/work_new.png", "as-of 2026-10-04 live"]
+  - id: politics-ia-map
+    scope: atlas -> /world/politics/geopolitics/; /politics(+/) 308 -> hub; /shadow(+) 301 single hop; caddy validated + graceful reload; sitemap +1; surfaces.json v2026-10-04 (85)
+    evidence: ["8-route sweep all correct", "hub 0 stale links"]
+  - id: aaa-truth
+    scope: hermes-mcp-server (:18087) restarted after 01:27 cycle omission; cockpit_probe.py redis auth fixed (probe false-alarm); 9/9 organs alive pushed live
+    evidence: ["health 200 :18087", "status.json 9/9 alive, redis PONG"]
+  - id: map-update
+    scope: surfaces.json is map SOT; /map/ renders it live (85 surfaces incl. politics remap)
+    evidence: ["surfaces v2026-10-04 live"]
+
+gates:
+  verify_pages:
+    result: PASS
+    detail: "250 pages verified, ALL PAGES REACHABLE, 9 intentional exclusions"
+    warning_soft: "/.well-known/mcp/server.json -> 301 (pre-existing, not from this release)"
+  live_routes:
+    result: PASS
+  json_validity:
+    result: PASS (policy.json, surfaces.json, world-state.json)
+
+push:
+  remote: origin
+  range: 196bc62..f54627e
+  commits:
+    - bd7abb6 chore(public): land prior-session state
+    - 7110bd2 refactor(politics): single canonical hub
+    - a5c4d83 fix(reality): world-state v1.2.0 + vitals countdown
+    - 3e3d437 feat(human-surfaces): canon rebuilds + de-double-nav
+    - f54627e feat(contract): verdict schema + surfaces v2026-10-04
+
+reversibility:
+  backups: "*.bak-pre-* / *.bak-moved-* / *.bak-void-* / *.bak-redis-auth-* timestamps 20261003T18-19Z"
+  caddy: "conf.bak-pre-politics-map-* + validate PASS + graceful reload"
+  git: "all SOT changes committed; revert = git revert range"
+
+seal:
+  status: PENDING_LANE_A
+  reason: "arif_judge HOLD NEEDS_REVIEW — constitutional chain (observe->think->judge->seal) requires transport-bound kernel session; repo rule: agents do not self-SEAL"
+  first_attempt: "TOKEN_INVALID (SCT) — re-authenticated per sesat route, max_retries=1 consumed"
+  sovereign_action: "ARIF may seal on review; all evidence above is traceable"
+
+known_residuals:
+  - "/.well-known/mcp/server.json 301 (pre-existing)"
+  - "AAA closure SLO YELLOW: 200 unsealed sessions/24h vs max 10, oldest 54.3d (needs ARIF decision)"
+  - "AAA static fleet roster stale vs 9 live agents (render-from-status.json candidate)"
+  - "A-FORGE forge_registry drift: stale 31-tool list vs live 65+ (kernel-side)"
+  - "observatory: 12/13 floors unmeasured (floor probes not wired) — by-design honest display"

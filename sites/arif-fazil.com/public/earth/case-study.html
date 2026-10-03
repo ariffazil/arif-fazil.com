@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malay Basin Case Study — Founder Wells & Petroleum System · GEOX Earth</title>
+<meta name="description" content="Malay Basin case study: petroleum system, PSEC, teaching wells (names fictionalised, results withheld). Public, sourced.">
+<style>
+/* ── PAGE-SPECIFIC: Globe, Hero, Deck, Veil, Pipes, Unit Panel ── */
+
+/* hero / globe */
+.hero{position:relative;height:100vh;min-height:640px}
+#globeViz{position:absolute;inset:0;cursor:crosshair}
+.hero-title{position:absolute;top:5.8rem;left:2rem;z-index:10;max-width:500px;
+  background:rgba(10,11,15,0.85);border:1px solid #1F2733;border-radius:14px;padding:1.4rem 1.6rem;
+  backdrop-filter:blur(14px);box-shadow:0 16px 40px rgba(0,0,0,0.75)}
+.hero-title .kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:2.5px;color:var(--accent-cyan);margin-bottom:.4rem;font-weight:600}
+.hero-title h1{font-family:'Cabinet Grotesk',Inter,sans-serif;font-size:clamp(2rem,3.8vw,2.8rem);font-weight:900;line-height:1.05;color:#EDEAE2;margin:0 0 .5rem;text-transform:uppercase;letter-spacing:-0.02em}
+.hero-title h1 span{color:var(--accent-gold)}
+.hero-title p{margin-top:.4rem;color:#9AA0A8;font-size:.88rem;line-height:1.5}
+.hero-title .hint{font-family:var(--mono);font-size:.65rem;color:var(--accent-gold);margin-top:.8rem;letter-spacing:.5px;font-weight:500}
+/* ── provenance metadata line under pipe counters (P0: fetch time + pipe status + cache state) ── */
+.stat-meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#9a9aa8;margin-top:.9rem;display:flex;gap:1.25rem;flex-wrap:wrap}
+.stat-meta b{color:var(--accent-gold);font-weight:600}
+/* ── persistent reader-state chip beside the draft-claim queue (human action authority, visible) ── */
+.state-chip{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);border:1px solid var(--accent-gold);border-radius:999px;padding:.2rem .6rem;white-space:nowrap;background:rgba(212,175,55,.06)}
+
+/* control deck */
+.deck{position:absolute;top:6.5rem;right:2rem;z-index:10;width:230px;background:rgba(16,16,24,.88);border:1px solid var(--border-dim);
+  border-radius:var(--radius-md);padding:1rem 1.1rem;backdrop-filter:blur(10px)}
+.deck h4{font-family:var(--mono);font-size:.62rem;letter-spacing:2px;color:var(--text-secondary);margin-bottom:.7rem;text-transform:uppercase}
+.deck label{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:var(--text-primary);padding:.28rem 0;cursor:pointer;user-select:none}
+.deck input[type=checkbox]{accent-color:var(--accent-cyan);width:14px;height:14px;cursor:pointer}
+.deck .seg{display:flex;gap:.4rem;margin:.7rem 0 .2rem}
+.deck .seg button{flex:1;font-family:var(--mono);font-size:.62rem;letter-spacing:1px;padding:.4rem 0;border-radius:var(--radius-sm);cursor:pointer;
+  background:transparent;border:1px solid var(--border-dim);color:var(--text-secondary);transition:all .2s}
+.deck .seg button.on{border-color:var(--accent-cyan);color:var(--accent-cyan)}
+.deck .waypoints{margin-top:.7rem;display:flex;flex-direction:column;gap:.35rem}
+.deck .waypoints button{font-family:var(--mono);font-size:.62rem;text-align:left;letter-spacing:.5px;padding:.42rem .6rem;border-radius:var(--radius-sm);cursor:pointer;
+  background:transparent;border:1px solid var(--border-dim);color:var(--text-secondary);transition:all .2s}
+.deck .waypoints button:hover{border-color:var(--accent-gold);color:var(--accent-gold)}
+
+/* pipe status strip */
+.pipes{position:absolute;left:2rem;bottom:1.2rem;z-index:10;font-family:var(--mono);font-size:.62rem;letter-spacing:.5px;
+  color:var(--text-secondary);background:rgba(16,16,24,.85);border:1px solid var(--border-dim);border-radius:8px;padding:.5rem .8rem;display:flex;gap:1.1rem;flex-wrap:wrap}
+.pipes .ok{color:var(--accent-cyan)}
+.pipes .bad{color:var(--accent-rust)}
+.pipes .wait{color:var(--accent-gold)}
+
+/* unit panel (click-to-query popup) */
+#unitPanel{position:absolute;right:2rem;bottom:1.2rem;z-index:11;width:320px;background:rgba(16,16,24,.92);border:1px solid var(--border-dim);
+  border-radius:var(--radius-md);padding:1rem 1.2rem;backdrop-filter:blur(10px);display:none}
+#unitPanel.show{display:block;animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#unitPanel .close{position:absolute;top:.5rem;right:.7rem;background:none;border:none;color:var(--text-secondary);cursor:pointer;font-size:1rem}
+#unitPanel .close:hover{color:var(--accent-gold)}
+#unitPanel .src{font-family:var(--mono);font-size:.58rem;letter-spacing:1px;color:var(--accent-cyan);text-transform:uppercase}
+#unitPanel h3{font-size:1.02rem;font-weight:600;margin:.35rem 0 .15rem;line-height:1.3}
+#unitPanel .swatch{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:.4rem;vertical-align:baseline}
+#unitPanel .age{font-family:var(--mono);font-size:.74rem;color:var(--accent-gold);margin:.2rem 0 .5rem}
+#unitPanel .lith{font-size:.8rem;color:var(--text-secondary)}
+#unitPanel .ref{margin-top:.6rem;font-size:.64rem;color:#666672;font-style:italic;line-height:1.4}
+#unitPanel .coords{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);margin-top:.5rem}
+#unitPanel .ocean h3{color:var(--accent-cyan)}
+#unitPanel .kv{display:flex;gap:.5rem;font-size:.76rem;padding:.12rem 0}
+#unitPanel .kv b{font-family:var(--mono);font-size:.6rem;letter-spacing:1px;color:var(--text-dim);text-transform:uppercase;min-width:74px;padding-top:.15rem}
+#unitPanel .withheld{margin-top:.55rem;font-family:var(--mono);font-size:.6rem;letter-spacing:1px;color:var(--accent-gold);border:1px dashed rgba(212,175,55,.45);border-radius:var(--radius-sm);padding:.35rem .5rem}
+
+/* loading veil — first paint must look intentional, not broken (MAKRUH load-race fix) */
+#veil{position:absolute;inset:0;z-index:40;background:var(--bg-deep);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .9s ease,visibility 0s linear 0s;
+  /* subtle grid + shimmer so blank canvas ≠ error page */
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 45%,rgba(212,175,55,.06),transparent 70%),
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-size:auto,48px 48px,48px 48px}
+#veil.gone{opacity:0;pointer-events:none;visibility:hidden;transition:opacity .9s ease,visibility 0s linear .9s}
+#veil .veil-inner{display:flex;flex-direction:column;align-items:center;gap:.85rem;max-width:min(92vw,360px);padding:1.5rem;text-align:center}
+#veil .spin{width:42px;height:42px;border:2px solid var(--border-dim);border-top-color:var(--accent-gold);border-radius:50%;animation:sp .85s linear infinite;flex-shrink:0}
+@keyframes sp{to{transform:rotate(360deg)}}
+#veil #veilTitle{font-family:var(--mono);font-size:.72rem;letter-spacing:2.2px;color:var(--text-primary);margin:0}
+#veil .veil-sub{font-family:var(--mono);font-size:.62rem;letter-spacing:.8px;color:var(--text-secondary);margin:0;min-height:1.2em;line-height:1.45}
+#veil .veil-sub.warn{color:var(--accent-gold)}
+#veil .veil-sub.bad{color:var(--accent-rust)}
+#veil .veil-bar{width:100%;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+#veil .veil-bar-fill{height:100%;width:8%;background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));
+  border-radius:2px;transition:width .45s ease;animation:veilShimmer 1.6s ease-in-out infinite}
+@keyframes veilShimmer{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}
+#veil .veil-steps{list-style:none;margin:.2rem 0 0;padding:0;width:100%;display:flex;flex-direction:column;gap:.28rem;text-align:left}
+#veil .veil-steps li{font-family:var(--mono);font-size:.58rem;letter-spacing:.6px;color:var(--text-dim);
+  padding:.22rem .45rem;border-left:2px solid var(--border-dim);display:flex;justify-content:space-between;gap:.5rem}
+#veil .veil-steps li.wait{color:var(--accent-gold);border-color:rgba(212,175,55,.45)}
+#veil .veil-steps li.ok{color:var(--accent-cyan);border-color:var(--accent-cyan)}
+#veil .veil-steps li.bad{color:var(--accent-rust);border-color:var(--accent-rust)}
+#veil .veil-skip{margin-top:.35rem;font-family:var(--mono);font-size:.58rem;letter-spacing:1px;cursor:pointer;
+  background:transparent;border:1px solid var(--border-dim);color:var(--text-secondary);padding:.4rem .75rem;border-radius:var(--radius-sm)}
+#veil .veil-skip:hover{border-color:var(--accent-gold);color:var(--accent-gold)}
+#veil .veil-skip[hidden]{display:none}
+/* reduce motion: still show state, no spin thrash */
+@media(prefers-reduced-motion:reduce){
+  #veil .spin{animation:none;border-top-color:var(--accent-gold)}
+  #veil .veil-bar-fill{animation:none}
+  #veil,#veil.gone{transition-duration:.2s}
+}
+
+/* ── Mobile ── */
+@media(max-width:720px){
+  .deck{top:auto;bottom:1rem;right:1rem;width:200px}.hero-title{left:1rem;right:1rem}
+  .pipes{left:1rem;bottom:auto;top:5.2rem;max-width:46vw;font-size:.55rem}
+  #unitPanel{left:1rem;right:1rem;width:auto}
+}
+/* ── CANONICAL FEDERATION NAVBAR ── */
+.fed-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 1.5rem;
+  background: rgba(10, 11, 13, 0.95);
+  border-bottom: 1px solid #1F2733;
+  backdrop-filter: blur(12px);
+  font-family: "IBM Plex Mono", "Fira Code", ui-monospace, monospace;
+  box-sizing: border-box;
+}
+.fed-navbar .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cabinet Grotesk', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #EDEAE2;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.fed-navbar .nav-brand:hover { color: #E4572E; }
+.fed-navbar .nav-brand .psi-badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(154, 160, 168, 0.3);
+  color: #9AA0A8;
+}
+.fed-navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.fed-navbar .nav-links a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9AA0A8;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.fed-navbar .nav-links a:hover { color: #EDEAE2; }
+.fed-navbar .nav-links a.active {
+  color: #EDEAE2;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #E4572E;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+.fed-navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.fed-navbar .live-clock-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #9AA0A8;
+}
+.fed-navbar .live-clock-badge .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #31C48D;
+  display: inline-block;
+}
+.fed-navbar .agentic-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(154, 160, 168, 0.2);
+  background: rgba(154, 160, 168, 0.05);
+  color: #9AA0A8;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.fed-navbar .agentic-link:hover {
+  color: #EDEAE2;
+  border-color: rgba(154, 160, 168, 0.4);
+}
+
+/* ── ZEN FLOATING SUB-DOCK ── */
+.earth-zen-dock {
+  position: absolute;
+  top: 4.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  background: rgba(13, 15, 22, 0.88);
+  border: 1px solid #1F2733;
+  border-radius: 9999px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  max-width: 92vw;
+}
+.earth-zen-dock a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9AA0A8;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.earth-zen-dock a:hover {
+  color: #EDEAE2;
+  background: rgba(255, 255, 255, 0.06);
+}
+.earth-zen-dock a.active {
+  color: #C9A227;
+  background: rgba(201, 162, 39, 0.15);
+  font-weight: 600;
+}
+
+/* ── CARL SAGAN QUOTE ZEN CARD ── */
+.earth-sagan-quote {
+  margin-top: 1.1rem;
+  border-left: 2px solid #C9A227;
+  padding: 0.75rem 1rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #EDEAE2;
+  line-height: 1.5;
+  background: rgba(13, 15, 22, 0.85);
+  border-radius: 0 8px 8px 0;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  border-right: 1px solid rgba(201, 162, 39, 0.15);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+.earth-sagan-quote cite {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-size: 0.68rem;
+  color: #C9A227;
+  margin-top: 0.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media(max-width:768px){
+  .fed-navbar .nav-links { display: none; }
+  .earth-zen-dock { top: 4.2rem; }
+}
+
+/* ── GEOLOGICAL VISUALS & SUBSURFACE REALITY (2026-09-18) ── */
+.geo-visual-card {
+  background: #0f121d;
+  border: 1px solid #22293d;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 30px rgba(242, 183, 5, 0.05);
+}
+.geo-visual-card .img-wrap {
+  position: relative;
+  background: #05070a;
+}
+.geo-visual-card img.geo-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.geo-visual-caption {
+  padding: 1rem 1.4rem;
+  background: #141724;
+  border-top: 1px solid #22293d;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #9aa4b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.geo-visual-caption strong { color: #f2b705; font-weight: 700; letter-spacing: 0.05em; }
+.geo-visual-caption .badge {
+  background: rgba(242, 183, 5, 0.12);
+  color: #f2b705;
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+/* 4 Founder Wells Matrix */
+.founder-wells-box {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.6rem;
+  background: #0c0f18;
+  border: 1px solid #1f273b;
+  border-radius: 12px;
+}
+.founder-wells-header {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #1f273b;
+  padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.founder-wells-header h3 {
+  font-family: 'Archivo Black', Inter, sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.founder-wells-header .sovereign-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #f2b705;
+  background: rgba(242, 183, 5, 0.1);
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.well-card {
+  background: #131722;
+  border: 1px solid #20273a;
+  border-radius: 8px;
+  padding: 1.1rem;
+  transition: all 0.2s;
+  border-left: 3px solid #20273a;
+}
+.well-card:hover {
+  border-color: #2f3b56;
+  border-left-color: #f2b705;
+  background: #171d2c;
+  transform: translateY(-2px);
+}
+.well-card.play-opener { border-left-color: #e0301e; }
+.well-card.basement { border-left-color: #38bdf8; }
+.well-card.stratigraphic { border-left-color: #22c55e; }
+
+.well-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.well-role {
+  font-size: 0.65rem;
+  color: #f2b705;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.well-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  margin: 3px 0;
+  color: #9aa4b8;
+}
+.well-spec-row span.val { color: #f5f5f7; font-weight: 600; }
+.well-desc {
+  font-size: 0.75rem;
+  color: #8b95a8;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #20273a;
+  line-height: 1.45;
+}
+
+/* Petroleum Systems Event Chart (PSEC) */
+.psec-container {
+  margin: 2rem 0;
+  background: #0d101a;
+  border: 1px solid #1f273b;
+  border-radius: 10px;
+  padding: 1.4rem;
+}
+.psec-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.95rem;
+  color: #f2b705;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.psec-desc {
+  font-size: 0.78rem;
+  color: #9aa4b8;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.psec-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  align-items: center;
+}
+.psec-row-k { color: #cbd5e1; font-weight: 600; text-transform: uppercase; }
+.psec-track {
+  position: relative;
+  background: #171c2a;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.psec-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #070709;
+  white-space: nowrap;
+}
+
+
+/* ─── GEOX GEOLOGICAL REALITY UPGRADE (2026-09-18 F13 SEAL) ─── */
+.geox-visual-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.geox-visual-card:hover {
+  border-color: var(--accent-gold);
+}
+.geox-visual-wrap {
+  position: relative;
+  background: #000;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.geox-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.geox-visual-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(10, 14, 23, 0.9);
+  border: 1px solid var(--border-dim);
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  color: var(--accent-cyan);
+}
+.geox-visual-badge.gold {
+  color: var(--accent-gold);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+.geox-visual-badge.right {
+  left: auto;
+  right: 14px;
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.35);
+  font-size: 0.62rem;
+  background: rgba(10, 14, 23, 0.92);
+}
+@media(max-width:640px) {
+  .geox-visual-badge.right {
+    top: auto;
+    bottom: 14px;
+  }
+}
+.geox-visual-caption {
+  padding: 1.2rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid var(--border-dim);
+}
+.geox-visual-caption strong {
+  color: var(--accent-gold);
+}
+
+/* Dynamic Acts Visual Grid */
+.acts-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+.act-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+.act-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+}
+.act-card-body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.act-card-body .no {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.act-card-body h3 {
+  font-family: 'Cabinet Grotesk', Inter, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.7rem;
+}
+.act-card-body p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* Petroleum System Event Chart (PSEC) */
+.psec-container {
+  margin-top: 2.2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+.psec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+.psec-title {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.psec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+.psec-table th, .psec-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+}
+.psec-table th {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.psec-bar-cell {
+  position: relative;
+  width: 48%;
+  height: 22px;
+}
+.psec-bar {
+  position: absolute;
+  top: 3px;
+  height: 16px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* 4 Founder Wells Grid */
+.founder-wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.well-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: all 0.2s ease;
+}
+.well-card:hover {
+  border-color: var(--accent-cyan);
+  border-left-color: var(--accent-cyan);
+  background: rgba(15, 23, 42, 1);
+  transform: translateY(-2px);
+}
+.well-badge {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.35rem;
+}
+.well-name {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.6rem;
+}
+.well-kv {
+  font-family: var(--mono);
+  font-size: 0.71rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.well-kv span {
+  color: var(--accent-cyan);
+}
+
+/* Chronostratigraphic Wheel / Matrix */
+.chrono-matrix {
+  margin-top: 1.8rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+}
+.chrono-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+}
+.chrono-label {
+  width: 150px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  color: #070709;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.chrono-desc {
+  flex: 1;
+  padding: 9px 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chrono-desc b {
+  color: var(--text-primary);
+}
+
+/* Cross-Section Banner Card */
+.xsection-banner {
+  background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(10,14,23,0.98));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.xsection-info h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+}
+.xsection-info p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+</style>
+<style>.dossier-back{display:inline-block;margin:1.2rem 2rem 0;font-family:ui-monospace,monospace;font-size:13px;color:#7dd3fc}</style>
+</head>
+<body>
+<a class="dossier-back" href="/earth/malay-basin/">← Malay Basin dossier</a> · <a class="dossier-back" href="/earth/">living Earth</a>
+<section id="malay">
+  <div class="container">
+    <div class="kicker">CASE STUDY · THE FOUNDER'S HOME WATERS</div>
+    <h2>◈ The Malay Basin — a tape recorder that became a gas province</h2>
+    <p class="lede">The globe opens looking at the <b>Malay Basin</b> for a reason. This is where the founder spent 11+ years reading rocks offshore Peninsular Malaysia. What follows is the basin's story — from tectonic birth to petroleum system to the wells that proved it.</p>
+
+    <div class="basin-callout">
+      <div>
+        <h3>How a sag becomes a province</h3>
+        <p>In the Oligo–Miocene, the Sundaland crust stretched in a back-arc setting, faults dropped the basement into half-grabens, and ~30 million years of sediment poured in — lacustrine source rocks at the base, fluvio-deltaic reservoirs above, all sealed by marine mudstones as the sea returned.</p>
+        <p>Heat did the rest. The tape-recorder became a <b>petroleum system</b>: one of Southeast Asia's great gas provinces. Reading that record — seismic, well logs, geochemistry — is what an exploration geoscientist does, and it is the human craft the GEOX agentic engine: <b>evidence-gated, human-decided.</b></p>
+        <p>In 2025, the TEACHING WELL 03 wildcat opened a <b>new play fairway</b> along the Western Hinge Fault — proof that even a mature basin can surprise you. The four founder wells below are the ones the sovereign actually signed off on. Their coordinates are withheld; their existence is witness enough.</p>
+      </div>
+      <div class="facts">
+        <div><span>setting</span> · back-arc extension, Sundaland</div>
+        <div><span>age</span> · Oligocene–Recent fill</div>
+        <div><span>dimensions</span> · ~500 km × ~200 km, NW-SE trend</div>
+        <div><span>fill</span> · &gt;12 km in deep centres</div>
+        <div><span>stratigraphy</span> · Groups A→M (lacustrine → deltaic → marine)</div>
+        <div><span>system</span> · lacustrine source → deltaic reservoir → marine seal</div>
+        <div><span>trap</span> · Middle Miocene anticlines + Western Hinge Fault</div>
+        <div><span>today</span> · mature gas province, offshore MY/TH/VN margin</div>
+        <div><span>founder wells</span> · TEACHING WELL 01–04 (names fictionalised)</div>
+      </div>
+    </div>
+
+    <!-- Visual Subsurface Anatomy: High-Fidelity 3D Seismic Cross-Section -->
+    <div class="geox-visual-card">
+      <div class="geox-visual-wrap">
+        <img class="geox-visual-img" src="/earth/images/seismic-geox.webp" alt="Seismic Reflection Profile & Structural Inversion Conceptual Model" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">SEISMIC REFLECTION · MALAY BASIN TRANSECT</div>
+        <div class="geox-visual-badge right">SYNTHETIC SEISMIC MODEL · CONCEPTUAL TRANSECT</div>
+      </div>
+      <div class="geox-visual-caption">
+        <strong>SEISMIC REFLECTION PROFILE &amp; STRUCTURAL INVERSION TRANSECT (CONCEPTUAL RECONSTRUCTION)</strong> — Schematic synthetic impedance profile illustrating Middle Miocene anticlinal fold traps, reverse fault throw displacements across inverted half-grabens, and continuous Group F marine mudstone regional seal.
+      </div>
+    </div>
+
+    <!-- Palaeogeographic Reconstruction of Sundaland -->
+    <div class="geox-visual-card">
+      <div class="geox-visual-wrap">
+        <img class="geox-visual-img" src="/earth/images/sundaland-geox.webp" alt="Sundaland Palaeo-continent Oligo-Miocene River & Lake Systems Conceptual Model" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">PALAEO-SUNDALAND · SYN-RIFT STAGE</div>
+        <div class="geox-visual-badge right">PALAEOGEOGRAPHIC CONCEPT · SYNTHETIC AI MODEL · SCHEMATIC, NOT DATA</div>
+      </div>
+      <div class="geox-visual-caption">
+        <strong>PALAEO-SUNDALAND CONTINENT (OLIGO-MIOCENE)</strong> — Conceptual geomorphic reconstruction of ancient braided fluvio-deltaic drainage networks and syn-rift lacustrine graben lakes responsible for depositing Group L &amp; M algal source kitchens across the emerging Sunda platform.
+      </div>
+    </div>
+
+    <!-- PETROLEUM SYSTEM EVENT CHART (PSEC) -->
+    <div class="psec-container">
+      <div class="psec-header">
+        <span class="psec-title">MALAY BASIN PETROLEUM SYSTEM EVENT CHART (PSEC) · GROUP A→M</span>
+        <span style="font-family:var(--mono); font-size:0.68rem; color:var(--text-dim);">TIMING &amp; CRITICAL MOMENT (~10 Ma)</span>
+      </div>
+      <table class="psec-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">Petroleum Element</th>
+            <th style="width:30%;">Stratigraphic Unit</th>
+            <th>Cenozoic Temporal Window (30 Ma → Present)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SOURCE ROCK</strong></td>
+            <td>Group L &amp; M Deep Lacustrine Shales</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:5%; width:35%; background:rgba(224,48,30,0.85); color:#ffffff;">SYN-RIFT (30–22 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>RESERVOIR ROCK</strong></td>
+            <td>Group E, H, I Fluviodeltaic Sandstones</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:25%; width:45%; background:rgba(251,191,36,0.85); color:#070709;">POST-RIFT (22–12 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>REGIONAL SEAL</strong></td>
+            <td>Group F Marine Shale (50–150 m)</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:48%; width:25%; background:rgba(56,189,248,0.85); color:#070709;">REGIONAL SEAL (15–12 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>TRAP FORMATION</strong></td>
+            <td>Middle Miocene Inversion Anticlines</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:45%; width:20%; background:rgba(168,85,247,0.85); color:#ffffff;">INVERSION (15–10 Ma)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>GENERATION &amp; MIGRATION</strong></td>
+            <td>Peak Hydrocarbon Expulsion Window</td>
+            <td class="psec-bar-cell">
+              <div class="psec-bar" style="left:55%; width:45%; background:rgba(74,222,128,0.85); color:#070709;">PEAK CHARGE (10–0 Ma)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-family:var(--mono); font-size:0.68rem; color:var(--text-dim); margin-top:0.8rem;">
+        ★ <strong>Critical Moment (~10 Ma):</strong> Trap formation preceded peak charge across the mapped fields. Continuous Group F marine shale provides regional top seal across basin-centre overpressure compartments (Group L on basin flanks).
+      </div>
+    </div>
+
+    <!-- THE 4 FOUNDER WELLS SUB-SURFACE PROFILES -->
+    <h3 style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.25rem; font-weight:800; color:#EDEAE2; margin-top:2.5rem; margin-bottom:0.5rem;">
+      ◈ The Four Founder Wells — Ground Truth Boreholes
+    </h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+      Signed off by the sovereign over 11+ years of exploration. Coordinates withheld for proprietary protection; play architecture presented as empirical witness.
+    </p>
+
+    <div class="founder-wells-grid">
+      <div class="well-card">
+        <div class="well-badge">WELL 01 · ANTICLINAL PLAY</div>
+        <div class="well-name">TEACHING WELL 01</div>
+        <div class="well-kv"><div>NAME STATUS: <span>fictionalised teaching example — architecture shown, results withheld</span></div></div>
+          <div>STRUCTURE: <span>4-Way Dip Inversion Anticline</span></div>
+          <div>MECHANISM: <span>Crestal rollover over inverted half-graben</span></div>
+          <div>SIGNIFICANCE: <span>Confirmed multi-stacked gas-bearing sand intervals</span></div>
+        </div>
+      </div>
+
+      <div class="well-card">
+        <div class="well-badge">WELL 02 · BASEMENT TEST</div>
+        <div class="well-name">TEACHING WELL 02</div>
+        <div class="well-kv"><div>NAME STATUS: <span>fictionalised teaching example — architecture shown, results withheld</span></div></div>
+          <div>STRUCTURE: <span>Basement Horst High / Fault Block</span></div>
+          <div>MECHANISM: <span>Secondary hydrothermal fracture porosity</span></div>
+          <div>SIGNIFICANCE: <span>Proved deep oil charging into weathered granite/schist</span></div>
+        </div>
+      </div>
+
+      <div class="well-card">
+        <div class="well-badge">WELL 03 · 2025 PLAY OPENER</div>
+        <div class="well-name">TEACHING WELL 03</div>
+        <div class="well-kv"><div>NAME STATUS: <span>fictionalised teaching example — architecture shown, results withheld</span></div></div>
+          <div>STRUCTURE: <span>Downthrown Fault-Assisted Roll-over</span></div>
+          <div>MECHANISM: <span>Stratigraphic pinchout against basement hinge</span></div>
+          <div>SIGNIFICANCE: <span>Opened new frontier fairway in mature province</span></div>
+        </div>
+      </div>
+
+      <div class="well-card">
+        <div class="well-badge">WELL 04 · PINCHOUT TEST</div>
+        <div class="well-name">TEACHING WELL 04</div>
+        <div class="well-kv"><div>NAME STATUS: <span>fictionalised teaching example — architecture shown, results withheld</span></div></div>
+          <div>STRUCTURE: <span>Stratigraphic / Structural Trap Combination</span></div>
+          <div>MECHANISM: <span>Direct lateral charging sealed by Group F marine muds</span></div>
+          <div>SIGNIFICANCE: <span>Calibrated direct hydrocarbon indicators against log response</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── INTERACTIVE SYNTHETIC WIRELINE LOG SUITE ── -->
+    <div id="wirelineSection" style="margin-top:2.5rem; background:rgba(7,9,14,0.95); border:1px solid #1F2733; border-radius:12px; padding:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-bottom:1px solid #1F2733; padding-bottom:1rem; margin-bottom:1.25rem;">
+        <div>
+          <div style="font-family:var(--mono); font-size:0.65rem; color:#D4A853; text-transform:uppercase; letter-spacing:2px; font-weight:700;">
+            SYNTHETIC WIRELINE LOG SUITE · THREE-TRACK SUBSURFACE ANALYSIS
+          </div>
+          <h4 id="wirelineWellTitle" style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.3rem; font-weight:900; color:#EDEAE2; margin:0.3rem 0 0;">
+            TEACHING WELL 01 (FICTIONAL) · SHALLOW CLASTIC GROUP E/H15
+          </h4>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="wellBtnGroup">
+          <button type="button" class="btn-well active" onclick="selectWirelineWell('bekantan')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #D4A853; background:rgba(212,168,83,0.15); color:#D4A853; cursor:pointer;">TEACHING WELL 01</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('puteri')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">TEACHING WELL 02</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('lebah')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">TEACHING WELL 03</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('bunga')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">TEACHING WELL 04</button>
+        </div>
+      </div>
+
+      <!-- SVG Multi-track Log Canvas -->
+      <div style="overflow-x:auto; width:100%; border:1px solid #161D2B; border-radius:8px; background:#030508; padding:1rem 0.5rem;">
+        <svg id="wirelineSvg" viewBox="0 0 900 280" style="width:100%; min-width:760px; height:auto; display:block;"></svg>
+      </div>
+
+      <!-- Log Interpretation Narrative -->
+      <div id="wirelineNarrative" style="margin-top:1.2rem; font-family:Inter,sans-serif; font-size:0.85rem; line-height:1.6; color:#EDEAE2; border-left:3px solid #D4A853; padding-left:1rem;">
+        <strong>Hydrocarbon Flag Interpretation:</strong> Pronounced Gamma Ray deflection to 22 API indicates high net-to-gross clean channel sandstone. Deep resistivity kick &gt; 85 ohm-m with significant Neutron-Density crossover proves commercial gas-oil contact (GOC) sealed beneath continuous Group F regional marine mudstones.
+      </div>
+    </div>
+
+
+    <nav class="crumbs" style="margin-top:2rem" aria-label="Basin navigation">
+      <a class="crumb now" href="/earth/malay-basin/">◈ Malay Basin Dossier — full 6-section report</a>
+      <span class="sep">|</span>
+      <a class="crumb next" href="/earth/malay-basin-cross-section.html">Cross-Section — NW-SE transect, 4 founder wells</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ══ BASIN DOSSIERS ══ -->
+
+<section id="dossiers" aria-label="Basin dossiers">
+  <div class="container">
+    <div class="kicker">EVIDENCE REGISTER</div>
+    <h2>Basin dossiers</h2>
+    <p class="lede">The globe shows you a continent. The dossiers show you <b>one basin at a time</b> — tectonic evolution, stratigraphy, petroleum system, and the cross-section that ties them together. Every dossier is sourced, dated, and honest about what is not known.</p>
+
+    
+    <!-- Visual Subsurface Anatomy: Deepwater Fold-and-Thrust Belt -->
+    <div class="geox-visual-card" style="margin-bottom:2rem;">
+      <div class="geox-visual-wrap">
+        <img class="geox-visual-img" src="/earth/images/turbidite-geox.webp" alt="Active Continental Margin and Deepwater Fold-and-Thrust Belt Conceptual Model" width="1376" height="768" loading="lazy">
+        <div class="geox-visual-badge gold">NW SABAH · DEEPWATER BELT</div>
+        <div class="geox-visual-badge right">CONCEPTUAL MODEL · SYNTHETIC DEEPWATER WEDGE</div>
+      </div>
+      <div class="geox-visual-caption">
+        <strong>NW SABAH ACTIVE MARGIN &amp; DEEPWATER FOLD-AND-THRUST BELT (CONCEPTUAL RECONSTRUCTION)</strong> — Schematic 3D representation of bathyal turbidite fan lobes, toe-thrust imbricate fault wedges, and canyon conduit morphology across the active continental slope.
+      </div>
+    </div>
+
+    <!-- REGIONAL CROSS-SECTION SHOWCASE -->
+    <div class="xsection-banner">
+      <div class="xsection-info">
+        <h3>◈ Geological-Grade Regional Cross-Sections</h3>
+        <p>Direct subsurface transects compiled with USGS-standard lithology patterns, SRTM topography, structural fault symbols, and biostratigraphic control. Rendered as interactive vector profiles.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="arrow" href="/earth/malay-basin-cross-section.html" style="background:var(--accent-gold); color:#070709; padding:0.65rem 1.3rem; border-radius:6px; font-family:var(--mono); font-size:0.75rem; text-decoration:none; font-weight:700;">▸ MALAY BASIN TRANSECT</a>
+        <a class="arrow" href="/earth/kinabalu-cross-section.html" style="border:1px solid var(--accent-cyan); color:var(--accent-cyan); padding:0.65rem 1.3rem; border-radius:6px; font-family:var(--mono); font-size:0.75rem; text-decoration:none; font-weight:700;">▸ NW SABAH TRANSECT</a>
+      </div>
+    </div>
+
+
+    <div class="dossier-grid">
+      <!-- KINABALU BASIN -->
+      <div class="dossier-card">
+        <div class="dossier-head">
+          <span class="dossier-tag gold">FEATURED · NW SABAH</span>
+          <span class="dossier-status">● LIVE</span>
+        </div>
+        <a href="/earth/kinabalu-basin/" style="text-decoration:none;color:inherit"><h3>◈ Kinabalu Basin</h3></a>
+        <p class="dossier-subtitle">One of three producing basins in Malaysia. Offshore NW Sabah, fold-thrust belt, post-MMU clastic play. SRTM-draped cross-section with USGS-standard lithology patterns.</p>
+        <div class="dossier-stats">
+          <div><b>4,095 m</b><span>Kinabalu peak</span></div>
+          <div><b>~2,900 m</b><span>Sabah Trough</span></div>
+          <div><b>5</b><span>tectonic events</span></div>
+          <div><b>12</b><span>provinces</span></div>
+        </div>
+        <ul class="dossier-points">
+          <li>Five tectonic events from Sarawak Orogeny to Meliau Orogeny</li>
+          <li>Stratigraphic column: 9 named units, ophiolite basement</li>
+          <li>Petroleum system: source → reservoir → seal → trap → migration</li>
+          <li>Recent discoveries: Zoisit Deep-1 · Well A oil beneath gas · Megah-1 frontier</li>
+        </ul>
+        <div class="dossier-cta">
+          <a class="arrow" href="/earth/kinabalu-basin/">▸ READ THE DOSSIER</a>
+          <a class="arrow xs" href="/earth/kinabalu-cross-section.html">▸ CROSS-SECTION</a>
+          <span class="more">+ PDF · geological-grade</span>
+        </div>
+      </div>
+
+      <!-- KINABALU GEOX COCKPIT -->
+      <div class="dossier-card muted">
+        <div class="dossier-head">
+          <span class="dossier-tag">GEOX COCKPIT</span>
+          <span class="dossier-status">● EXTERNAL</span>
+        </div>
+        <a href="https://geox.arif-fazil.com/basins/kinabalu/" style="text-decoration:none;color:inherit"><h3>◇ Kinabalu — GEOX Prospect</h3></a>
+        <p class="dossier-subtitle">The prospect-maturation pipeline for the same basin. Hypothesis space, four basement models, verification plan, prospect verdicts. Sibling to the human-readable dossier.</p>
+        <ul class="dossier-points">
+          <li>PSCS subduction working hypothesis</li>
+          <li>NSPW-corrected BMU/TCU vs DRU</li>
+          <li>Four basement hypotheses, scored</li>
+          <li>Prospect verdicts + acquisition plan</li>
+        </ul>
+        <div class="dossier-cta">
+          <a class="arrow" href="https://geox.arif-fazil.com/basins/kinabalu/">▸ OPEN GEOX COCKPIT ↗</a>
+          <span class="more">geox.arif-fazil.com · opens in new surface</span>
+        </div>
+      </div>
+
+      <!-- MALAY BASIN -->
+      <div class="dossier-card">
+        <div class="dossier-head">
+          <span class="dossier-tag gold">FEATURED · OFFSHORE PENINSULAR MALAYSIA</span>
+          <span class="dossier-status">● LIVE</span>
+        </div>
+        <a href="/earth/malay-basin/" style="text-decoration:none;color:inherit"><h3>◈ Malay Basin</h3></a>
+        <p class="dossier-subtitle">The founder's home waters. 11+ years reading rocks offshore Malaysia. Cenozoic failed rift + Miocene inversion. Mature gas province, 4 founder wells, 1 new play fairway (2025).</p>
+        <div class="dossier-stats">
+          <div><b>~500 km</b><span>length</span></div>
+          <div><b>8</b><span>groups (A–M)</span></div>
+          <div><b>4</b><span>founder wells</span></div>
+          <div><b>2025</b><span>new hinge play</span></div>
+        </div>
+        <ul class="dossier-points">
+          <li>Group L/M lacustrine source + Group E/H/I deltaic reservoirs</li>
+          <li>Middle Miocene anticline play (Dulang, Angsi) — proven</li>
+          <li>Western Hinge Fault — opened by TEACHING WELL 03 (2025)</li>
+          <li>Founder wells: TEACHING WELL 01 · TEACHING WELL 02 · TEACHING WELL 03 · TEACHING WELL 04</li>
+        </ul>
+        <div class="dossier-cta">
+          <a class="arrow" href="/earth/malay-basin/">▸ READ THE DOSSIER</a>
+          <a class="arrow xs" href="/earth/malay-basin-cross-section.html">▸ CROSS-SECTION</a>
+          <span class="more">+ 6 sections · geological-grade</span>
+        </div>
+      </div>
+
+      <!-- JMG MALAYSIA MYGEMS -->
+      <div class="dossier-card" style="border-color: rgba(201, 162, 39, 0.4);">
+        <div class="dossier-head">
+          <span class="dossier-tag" style="background:rgba(201,162,39,0.15);color:#C9A227;border:1px solid rgba(201,162,39,0.3)">GOVERNMENT WITNESS · JMG MALAYSIA</span>
+          <span class="dossier-status" style="color:#31C48D">● MYGEMS LIVE</span>
+        </div>
+        <h3>◈ JMG MyGEMS Geologic Layer</h3>
+        <p class="dossier-subtitle">Jabatan Mineral dan Geosains Malaysia official 1:500,000 national geological mapping. High-resolution bedrock lithology across all 14 states and major crustal shear zones.</p>
+        <div class="dossier-stats">
+          <div><b>14</b><span>states mapped</span></div>
+          <div><b>1:500k</b><span>scale</span></div>
+          <div><b>100%</b><span>bedrock cover</span></div>
+          <div><b>GIS</b><span>MyGEMS REST</span></div>
+        </div>
+        <ul class="dossier-points">
+          <li>Bentong-Raub Suture, Main Range Granite, Crocker Turbidites, Rajang Group</li>
+          <li>Detailed bedrock ages (Paleozoic to Quaternary) from JMG Geological Survey</li>
+          <li>Major structural faults: Bukit Tinggi, Bok Bak, Mersing Shear, Lupar Line</li>
+          <li>ArcGIS MapServer endpoint: <code>Demarcation/Litology_by_Negeri</code></li>
+        </ul>
+        <div class="dossier-cta">
+          <a class="arrow" href="https://mygems.jmg.gov.my/portal/apps/webappviewer/index.html?id=90702a483ab6489bbaab210e038c2ed9" target="_blank" rel="noreferrer">▸ LAUNCH JMG MYGEMS VIEWER ↗</a>
+          <span class="more">mygems.jmg.gov.my · official portal</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="crumbs" style="margin-top:2rem" aria-label="Earth surfaces directory">
+      <span class="crumb now">All earth surfaces</span>
+      <span class="sep">→</span>
+      <a class="crumb next" href="/map/#earth">▸ FULL SITE MAP — every page, no hidden doors</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ══ STUDIES · evidence register ══ -->
+
+<footer class="earth-footer" style="padding:2rem;text-align:center;font-family:ui-monospace,monospace;font-size:12px;color:#64748b">Well names on this page are FICTIONALISED teaching examples. Play architecture is shown; results are withheld. GEOX computes — it does not adjudicate.</footer>
+</body>
+</html>

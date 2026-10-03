@@ -1,23 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ring="BODY" data-plane="politics">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Politics — Arif Fazil</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politics — Electoral Cartography & Statecraft — Arif Fazil</title>
+<meta name="description" content="Politics surface of arif-fazil.com. Electoral cartography of Negeri Sembilan (PRN 2026), the prime ministers read as shadow, and geopolitical power vectors — Malaysian and regional, from public records." />
+<link rel="canonical" href="https://arif-fazil.com/world/politics/" />
+<meta name="robots" content="index,follow" />
+<meta name="agent-access" content="allow-read allow-train allow-cite" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
+<meta name="theme-color" content="#070709" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Politics — Electoral Cartography & Statecraft" />
+<meta property="og:description" content="Electoral cartography, shadow governance, and statecraft mechanics — World surface, arif-fazil.com." />
+<meta property="og:url" content="https://arif-fazil.com/world/politics/" />
+<meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+<meta property="og:site_name" content="arif-fazil.com" />
+
+<link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  body{background:#0A0B0D;color:#EDEAE2;font-family:system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1.25rem;line-height:1.55}
-  a{color:#E4572E}
-  h1{font-size:2rem;letter-spacing:-0.02em}
-  p,li{color:#9AA0A8}
+:root {
+  --bg-base: #070709;
+  --bg-surface: #0f1015;
+  --bg-card: #14151e;
+  --bg-card-hover: #191b26;
+  --border-subtle: #1f2230;
+  --border-strong: #2f3448;
+  --text-main: #f5f5f7;
+  --text-muted: #9fa4b8;
+  --text-dim: #656a80;
+  --yellow: #f2b705;
+  --red: #e0301e;
+  --blue: #1f3fd4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Section nav (World surface pattern) */
+.nav-strip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 14px 24px;
+  background: rgba(7, 7, 9, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.nav-strip a { color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+.nav-strip a:hover { color: var(--text-main); }
+.nav-strip a.active { color: var(--yellow); font-weight: 600; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
+.nav-strip a.current { color: var(--yellow); }
+.nav-strip a.current:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--yellow);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before { content: ""; display: inline-block; width: 16px; height: 2px; background: var(--yellow); }
+
+h1.page-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 48px;
+  line-height: 1.05;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+p.page-desc {
+  font-size: 20px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.crumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+}
+.crumb a { color: var(--text-muted); text-decoration: none; }
+.crumb a:hover { color: var(--yellow); }
+
+/* Section header */
+h2.surface-header {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  margin: 24px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 28px;
+}
+h2.surface-header .num {
+  color: var(--yellow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  background: rgba(242, 183, 5, 0.1);
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(242, 183, 5, 0.3);
+}
+
+/* Room cards */
+.surface-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.surface-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 22px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 3px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+}
+.surface-item:hover {
+  border-color: var(--border-strong);
+  border-left-color: var(--yellow);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+.surface-item.red { border-left-color: var(--red); }
+.surface-item.blue { border-left-color: var(--blue); }
+.surface-item.yellow { border-left-color: var(--yellow); }
+
+.item-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.item-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 17px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.item-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex: 1;
+}
+.item-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* Footer strip */
+.footer-strip {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-strip a { color: var(--text-muted); text-decoration: none; }
+.footer-strip a:hover { color: var(--yellow); }
+
+@media (max-width: 680px) {
+  h1.page-title { font-size: 34px; }
+  p.page-desc { font-size: 17px; }
+  .wrap { padding: 20px 16px 48px; }
+}
 </style>
-</head>
+
+<!-- DTI gate pattern (matches /world/ metadata block): generated from this page's
+     own title/description/canonical. Additive metadata only; no content claims added. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://arif-fazil.com/world/politics/#webpage",
+      "url": "https://arif-fazil.com/world/politics/",
+      "name": "Politics — Electoral Cartography & Statecraft",
+      "description": "Politics surface of arif-fazil.com. Electoral cartography of Negeri Sembilan (PRN 2026), the prime ministers read as shadow, and geopolitical power vectors.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://arif-fazil.com/#website",
+        "url": "https://arif-fazil.com/",
+        "name": "arif-fazil.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Muhammad Arif bin Fazil",
+        "url": "https://arif-fazil.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arif-fazil.com/" },
+        { "@type": "ListItem", "position": 2, "name": "World", "item": "https://arif-fazil.com/world/" },
+        { "@type": "ListItem", "position": 3, "name": "Politics", "item": "https://arif-fazil.com/world/politics/" }
+      ]
+    }
+  ]
+}
+</script>
+<style id="nv-canon">
+.nv-strip{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding:.72rem max(1.25rem,calc(50vw - 26rem));border-bottom:1px solid rgba(237,234,226,.09);background:rgba(10,11,13,.72);font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px}
+.nv-brand{font-family:IBM Plex Mono,ui-monospace,monospace;font-weight:700;letter-spacing:.18em;font-size:11.5px;color:#EDEAE2;text-decoration:none}
+.nv-primary{display:flex;gap:1.05rem;flex-wrap:wrap;margin-left:auto}
+.nv-primary a{color:rgba(237,234,226,.68);text-decoration:none;letter-spacing:.03em;padding:.35rem 0}
+.nv-primary a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-clock{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;color:rgba(237,234,226,.5);letter-spacing:.12em}
+.nv-foot{border-top:1px solid rgba(237,234,226,.09);margin-top:3rem;padding:1.7rem max(1.25rem,calc(50vw - 26rem)) 2.2rem;font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px;color:rgba(237,234,226,.55)}
+.nv-foot a{color:rgba(237,234,226,.68);text-decoration:none;margin-right:1.05rem;white-space:nowrap;display:inline-block;padding:.3rem 0}
+.nv-foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-row{display:flex;flex-wrap:wrap;align-items:baseline;margin:0 0 .85rem}
+.nv-lab{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,234,226,.45);margin-right:1.1rem;min-width:64px}
+.nv-creed{margin:1.1rem 0 0;font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,234,226,.45)}
+@media(pointer:coarse){.nv-primary a,.nv-foot a{min-height:44px;display:inline-flex;align-items:center}}
+@media(max-width:640px){.nv-primary{margin-left:0;width:100%;order:3}.nv-clock{margin-left:auto}}
+</style></head>
 <body>
-<h1>Politics</h1>
-<p>Two public rooms. Neither of them is the front door of the site.</p>
-<ul>
-  <li><a href="/world/politics/ns-election/">Negeri Sembilan election map</a></li>
-  <li><a href="/world/politics/shadow/">Prime ministers, read as shadow</a> — editorial, from public records.</li>
-</ul>
-<p><a href="/">Home</a> · <a href="/about">About</a> · <a href="/words/">Writing</a></p>
-</body>
+
+<!-- arrow_hybrid_frame · 1 brand_clock_strip + 2 primary_nav (canon/navigation.json v7.3) -->
+<div class="nv-strip"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/">Home</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
+
+<nav class="nav-strip" aria-label="World surface">
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/earth/">Earth</a>
+    <a href="/economics/">Economics</a>
+    <a href="/world/" class="active">World</a>
+    <a href="/world/politics/" class="current" aria-current="page">Politics</a>
+    <a href="/read/">Read</a>
+    <a href="/writing/">Writing</a>
+  </div>
+  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--yellow);">
+    WORLD SURFACE · §POLITICS
+  </div>
+</nav>
+
+<!-- arrow_hybrid_frame · 3 page_content -->
+<main class="wrap">
+
+  <div class="eyebrow">World Surface · Politics</div>
+  <h1 class="page-title">Politics</h1>
+  <p class="page-desc">Electoral cartography, shadow readings of power, and statecraft mechanics — Malaysian and regional, built from public records.</p>
+  <p class="crumb"><a href="/world/">← World</a> / Politics</p>
+
+  <h2 class="surface-header"><span class="num">§</span>Public Rooms</h2>
+  <div class="surface-grid">
+    <a href="/world/politics/ns-election/" class="surface-item red">
+      <div class="item-badge">ELECTORAL · LIVE MAP</div>
+      <div class="item-title">PRN Negeri Sembilan 2026</div>
+      <div class="item-desc">Interactive GIS seat map, nine invariants, and field dispatch dashboard for the Negeri Sembilan state election — projection vs actual.</div>
+      <div class="item-link">Open Seat Map →</div>
+    </a>
+
+    <a href="/world/politics/shadow/" class="surface-item yellow">
+      <div class="item-badge">EDITORIAL · BAHASA MELAYU</div>
+      <div class="item-title">PM Bayang — Shadow Read</div>
+      <div class="item-desc">Nine Malaysian prime ministers read through persona and bayang — editorial analysis, from public records only.</div>
+      <div class="item-link">Read the Shadows →</div>
+    </a>
+
+    <a href="/world/politics/geopolitics/" class="surface-item blue">
+      <div class="item-badge">STRATEGIC · ATLAS</div>
+      <div class="item-title">Geopolitics &amp; Spatial Power</div>
+      <div class="item-desc">Seven geopolitical power vectors, maritime chokepoints — Malacca, Taiwan Strait, Hormuz — and the Nusantara pivot.</div>
+      <div class="item-link">Open the Atlas →</div>
+    </a>
+  </div>
+
+  <div class="footer-strip">
+    <span>DITEMPA BUKAN DIBERI · arifOS Federation</span>
+    <span><a href="/world/">World</a> · <a href="/earth/">Earth</a> · <a href="/economics/">Economics</a></span>
+  </div>
+
+</main>
+
+<!-- arrow_hybrid_frame · 4 secondary_footer + 5 machine_footer (canon/navigation.json) -->
+<footer class="nv-foot"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/world/politics/geopolitics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer>
+<script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
 </html>

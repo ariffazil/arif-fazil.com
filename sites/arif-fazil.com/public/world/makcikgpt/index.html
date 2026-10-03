@@ -26,53 +26,73 @@
   "url": "https://arif-fazil.com/world/makcikgpt/"
 }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
   <link rel="alternate" type="application/json" href="/missions.json" title="Missions catalog" />
+  <style id="nv-canon">
+  .nv-strip{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding:.72rem max(1.25rem,calc(50vw - 26rem));border-bottom:1px solid rgba(237,234,226,.09);background:rgba(10,11,13,.72);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:12.5px}
+  .nv-brand{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:700;letter-spacing:.18em;font-size:11.5px;color:#EDEAE2;text-decoration:none}
+  .nv-primary{display:flex;gap:1.05rem;flex-wrap:wrap;margin-left:auto}
+  .nv-primary a{color:rgba(237,234,226,.68);text-decoration:none;letter-spacing:.03em;padding:.35rem 0}
+  .nv-primary a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+  .nv-primary a.active{color:#E8B84B;font-weight:600}
+  .nv-clock{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:rgba(237,234,226,.5);letter-spacing:.12em}
+  .nv-foot{border-top:1px solid rgba(237,234,226,.09);margin-top:3rem;padding:1.7rem max(1.25rem,calc(50vw - 26rem)) 2.2rem;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:12.5px;color:rgba(237,234,226,.55)}
+  .nv-foot a{color:rgba(237,234,226,.68);text-decoration:none;margin-right:1.05rem;white-space:nowrap;display:inline-block;padding:.3rem 0}
+  .nv-foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+  .nv-row{display:flex;flex-wrap:wrap;align-items:baseline;margin:0 0 .85rem}
+  .nv-lab{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,234,226,.45);margin-right:1.1rem;min-width:64px}
+  .nv-creed{margin:1.1rem 0 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,234,226,.45)}
+  @media(pointer:coarse){.nv-primary a,.nv-foot a{min-height:44px;display:inline-flex;align-items:center}}
+  @media(max-width:640px){.nv-primary{margin-left:0;width:100%;order:3}.nv-clock{margin-left:auto}}
+  </style>
   <style>
-    body{margin:0;background:var(--bg-narrative,#0B0B0F);color:var(--text-primary,#F5F5F7);
-      font-family:var(--font-sans,system-ui,sans-serif);line-height:1.55}
-    .frame{max-width:54rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-    a{color:var(--gold-sovereign,#E8B84B)} a:hover{color:#fff}
-    h1{font-family:var(--font-display,serif);font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.1;margin:0 0 1rem}
-    h2{font-size:1.15rem;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.06em}
-    .meta{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
-    .card{border:1px solid #2a2a3a;border-radius:8px;padding:1rem 1.15rem;margin:.75rem 0;background:rgba(255,255,255,.02)}
-    .nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1.5rem 0;font-family:var(--font-mono,monospace);font-size:.72rem;text-transform:uppercase}
+    :root {
+      --bg-narrative: #0A0B0D;
+      --text-primary: #EDEAE2;
+      --text-muted: #9AA0A8;
+      --gold-sovereign: #E8B84B;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+    body{margin:0;background:var(--bg-narrative);color:var(--text-primary);
+      font-family:var(--font-sans);line-height:1.6}
+    .frame{max-width:54rem;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+    a{color:var(--gold-sovereign);text-decoration:none} a:hover{color:#fff;text-decoration:underline}
+    h1{font-family:var(--font-display);font-size:clamp(1.85rem,5vw,2.75rem);line-height:1.15;margin:0 0 1rem;font-weight:400}
+    h2{font-family:var(--font-display);font-size:1.4rem;margin:2rem 0 .75rem;letter-spacing:0.02em;font-weight:400}
+    .meta{font-family:var(--font-mono);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+    .card{border:1px solid #1F2230;border-radius:8px;padding:1rem 1.15rem;margin:.75rem 0;background:#111218;transition:border-color 0.2s}
+    .card:hover{border-color:rgba(232,184,75,0.3)}
+    .nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1.5rem 0;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase}
     ul{padding-left:1.2rem} li{margin:.35rem 0}
-    .note{font-size:.85rem;color:#9a958c;border-left:2px solid #2a2a3a;padding-left:.85rem;margin-top:2rem}
-    .hero-container{margin-bottom:2.5rem;padding:2rem;background:linear-gradient(135deg, #0F172A 0%, #111827 100%);border:1px solid #1F2937;border-bottom:3px solid #E8B84B;border-radius:12px;overflow:hidden}
+    .note{font-family:var(--font-mono);font-size:.75rem;color:#9a958c;border-left:2px solid #2a2a3a;padding-left:.85rem;margin-top:2rem}
+    .hero-container{margin-bottom:2.5rem;padding:2rem;background:radial-gradient(ellipse at top right, rgba(232,184,75,0.06) 0%, #0F1420 100%);border:1px solid #1F273B;border-bottom:3px solid #E8B84B;border-radius:12px;overflow:hidden}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
     @media(min-width:768px){.hero-grid{grid-template-columns:1.2fr 1fr}}
     .hero-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:1px solid rgba(232,184,75,0.3);box-shadow:0 10px 25px -5px rgba(0,0,0,0.5)}
-    .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.25rem 0;border-top:1px solid #1F2937;padding-top:1rem}
-    .ladder-card{background:rgba(255,255,255,0.03);border:1px solid #1F2937;border-radius:6px;padding:0.6rem 0.75rem;text-decoration:none;display:block}
+    .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.25rem 0;border-top:1px solid #1F273B;padding-top:1rem}
+    .ladder-card{background:rgba(255,255,255,0.03);border:1px solid #1F273B;border-radius:6px;padding:0.6rem 0.75rem;text-decoration:none;display:block}
     .ladder-card.active{background:rgba(232,184,75,0.08);border-color:rgba(232,184,75,0.4)}
-    .ladder-lvl{font-family:monospace;font-size:0.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:0.05em}
+    .ladder-lvl{font-family:var(--font-mono);font-size:0.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:0.05em}
     .ladder-name{font-size:0.85rem;font-weight:bold;color:#F3F4F6;margin:2px 0}
     .ladder-sub{font-size:0.7rem;color:#9CA3AF}
   </style>
 </head>
 <body>
+  <div class="nv-strip nv-light"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/">Home</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/world/makcikgpt" class="active">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
+
   <div class="frame">
-    <nav style="display:flex; align-items:center; gap:0.5rem; font-family:var(--font-mono, monospace); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 1rem 0;" aria-label="Breadcrumb">
-      <a href="/" style="color:#9CA3AF; text-decoration:none;">Arif Fazil</a>
-      <span style="color:#4B5563;">/</span>
-      <a href="/world" style="color:#9CA3AF; text-decoration:none;">World</a>
-      <span style="color:#4B5563;">/</span>
-      <span style="color:#E8B84B; font-weight:600;">MakcikGPT</span>
-    </nav>
-    <nav class="nav" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/earth">Earth</a>
-      <a href="/economics">Economics</a>
-      <a href="/world">World</a>
-      <a href="/writing">Writing</a>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/missions">Missions</a>
-      <a href="/999/">999</a>
-      <a href="/vitals/">VITALS</a>
-      <a href="/llms.txt">llms.txt</a>
+    <nav style="display:flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; margin:0.5rem 0 1.5rem 0;" aria-label="Breadcrumb">
+      <a href="/" style="color:#6B7280;">ARIF FAZIL</a>
+      <span style="color:#374151;">/</span>
+      <a href="/world" style="color:#6B7280;">WORLD</a>
+      <span style="color:#374151;">/</span>
+      <span style="color:#E8B84B; font-weight:600;">MAKCIKGPT</span>
     </nav>
 
     <!-- Visual Hero: Attention Preservation & Information Architecture -->
@@ -1074,5 +1094,8 @@
       MCP: <a href="https://mcp.arif-fazil.com/mcp">mcp.arif-fazil.com/mcp</a>.
       Training and citation permitted with attribution (see <a href="/rsl.xml">/rsl.xml</a>).</p>
   </div>
+
+<footer class="nv-foot nv-light"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer>
+<script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script>
 </body>
 </html>

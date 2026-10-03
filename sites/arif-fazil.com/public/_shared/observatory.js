@@ -1106,14 +1106,34 @@
     // the signed observatory snapshot is regenerated on deploy. When a
     // public-state source is older than OBSERVATORY_FRESHNESS_WINDOW_MS,
     // the renderer skips it and falls through to the next source.
+    // SCAR-OBS-GREENWASH (2026-10-03): richest-first ordering + coverage gate.
+    // This ladder used to return the FIRST source that answered 200 and passed
+    // the freshness gate, which was always /api/public-state — a ~37KB sanitised
+    // projection missing 17 top-level keys. The ~115KB observatory.v1 snapshot
+    // carries runtime_identity (real commits, branch, drift_state, platform,
+    // process_started_at), federation_edges (11 probed edges with identity_match
+    // and semantic_proven), metabolism, substrate and signature — so ~100 cells
+    // rendered "unavailable" while the data existed one entry down the ladder.
+    // A fresh-but-field-poor source is now kept only as a fallback, never as the
+    // winner, so a degraded source can still serve rather than blank the page.
+    const OBSERVATORY_REQUIRED_KEYS = ['runtime_identity', 'federation_edges', 'metabolism', 'substrate', 'signature'];
+    const MIN_COVERAGE = 3;
     const sources = [
+      { url: SNAPSHOT_LIVE, label: 'observatory.v1 live' },
+      { url: SNAPSHOT_MIRROR, label: 'observatory.v1 mirror' },
       { url: PUBLIC_STATE_LIVE, label: 'public-state.v1 live', freshnessCheck: true },
       { url: PUBLIC_STATE_MIRROR, label: 'public-state.v1 mirror', freshnessCheck: true },
-      { url: SNAPSHOT_MIRROR, label: 'observatory.v1 mirror' },
-      { url: SNAPSHOT_LIVE, label: 'observatory.v1 live' },
     ];
     const errors = [];
     let mirrorMissing = false;
+    let poorFallback = null;
+    const selectSource = (response, source, coverage) => {
+      runtime.fetchSource = source.url;
+      runtime.fetchedSchema = source.label;
+      runtime.sourceCoverage = `${coverage}/${OBSERVATORY_REQUIRED_KEYS.length}`;
+      runtime.mirrorMissing = mirrorMissing;
+      return response;
+    };
     for (const source of sources) {
       try {
         const response = await fetch(source.url, { cache: 'no-store' });
@@ -1122,10 +1142,15 @@
           errors.push(`${source.url}=HTTP ${response.status}`);
           continue;
         }
+        let preview = null;
+        try {
+          preview = await response.clone().json();
+        } catch (_parseError) {
+          errors.push(`${source.url}=unparseable`);
+          continue;
+        }
         // Freshness gate for public-state sources only.
         if (source.freshnessCheck) {
-          const cloned = response.clone();
-          const preview = await cloned.json();
           const observedAt = preview && (preview.observed_at || preview.generated_at);
           if (observedAt) {
             const ageMs = Date.now() - new Date(observedAt).getTime();
@@ -1135,14 +1160,17 @@
             }
           }
         }
-        runtime.fetchSource = source.url;
-        runtime.fetchedSchema = source.label;
-        runtime.mirrorMissing = mirrorMissing;
-        return response;
+        const coverage = OBSERVATORY_REQUIRED_KEYS.filter(
+          (key) => preview && preview[key] != null
+        ).length;
+        if (coverage >= MIN_COVERAGE) return selectSource(response, source, coverage);
+        if (!poorFallback) poorFallback = { response, source, coverage };
+        errors.push(`${source.url}=field-poor (${coverage}/${OBSERVATORY_REQUIRED_KEYS.length})`);
       } catch (error) {
         errors.push(`${source.url}=${error.constructor && error.constructor.name || 'Error'}:${String(error).slice(0, 80)}`);
       }
     }
+    if (poorFallback) return selectSource(poorFallback.response, poorFallback.source, poorFallback.coverage);
     runtime.mirrorMissing = mirrorMissing;
     const composed = new Error(`all observatory sources unreachable: ${errors.join(' | ')}`);
     composed.attempts = errors;

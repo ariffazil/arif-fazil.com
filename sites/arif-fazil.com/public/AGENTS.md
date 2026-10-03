@@ -75,7 +75,8 @@ All actions on this site are governed by F1-F13:
 
 ## Contact
 
-- **Human:** arif@arif-fazil.com
+- **Human:** arifos@arif-fazil.com
+- **Agents (machine lane):** agents@arif-fazil.com — agent-originated contact only
 - **Telegram:** `@ariffazil`
 - **GitHub:** `https://github.com/ariffazil`
 

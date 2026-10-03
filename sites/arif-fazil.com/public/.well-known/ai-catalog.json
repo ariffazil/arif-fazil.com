@@ -9,7 +9,7 @@
     "displayName": "Arif Fazil",
     "identifier": "did:web:arif-fazil.com",
     "url": "https://arif-fazil.com",
-    "contact": "arifbfazil@gmail.com"
+    "contact": "arifos@arif-fazil.com"
   },
   "trustManifest": {
     "identity": "did:web:arif-fazil.com",

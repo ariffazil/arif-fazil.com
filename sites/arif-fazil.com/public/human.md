@@ -20,7 +20,7 @@ Reading this file does not grant authority. Public surfaces are informational.
 ## Connection
 
 - MCP: https://mcp.arif-fazil.com/mcp
-- Email: mailto:arifbfazil@gmail.com
+- Email: mailto:arifos@arif-fazil.com
 
 ## Must not
 

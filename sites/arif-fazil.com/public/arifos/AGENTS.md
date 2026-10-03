@@ -81,7 +81,7 @@ All actions on this site are governed by F1-F13:
 
 ## Contact
 
-- **Human:** arif@arif-fazil.com
+- **Human:** arifos@arif-fazil.com
 - **Telegram:** @ariffazil
 - **GitHub:** https://github.com/ariffazil/arifos
 

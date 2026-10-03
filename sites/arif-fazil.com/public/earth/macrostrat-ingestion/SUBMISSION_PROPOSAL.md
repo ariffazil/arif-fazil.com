@@ -67,7 +67,7 @@ The dataset is subdivided into key geotectonic domains:
 ## 5. Contact & Coordination
 
 * **Submitter:** Muhammad Arif bin Fazil
-* **Email:** `arif@arif-fazil.com`
+* **Email:** `arifos@arif-fazil.com`
 * **Canonical Web Surface:** `https://arif-fazil.com/earth/macrostrat-ingestion/`
 * **Upstream Submission:** Intended for submission as an Issue on [UW-Macrostrat/macrostrat](https://github.com/UW-Macrostrat/macrostrat/issues).
 

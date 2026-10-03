@@ -7,6 +7,6 @@
   "auth": {"type": "none"},
   "api": {"type": "openapi", "url": "https://mcp.arif-fazil.com/.well-known/openapi.json"},
   "logo_url": "https://arif-fazil.com/arifos/_shared/design-system/arifos-logo.svg",
-  "contact_email": "arif@arif-fazil.com",
+  "contact_email": "arifos@arif-fazil.com",
   "legal_info_url": "https://arif-fazil.com/AGENTS.md"
 }

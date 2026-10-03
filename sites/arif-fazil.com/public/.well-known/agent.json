@@ -1,10 +1,14 @@
 {
   "name": "arif-fazil.com",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Public site of Muhammad Arif bin Fazil. Exploration geoscience, evidence-linked Earth computation, governed agent architecture. Reading this file does not grant authority.",
   "url": "https://arif-fazil.com",
   "start_here": "https://arif-fazil.com/human",
   "llms_txt": "https://arif-fazil.com/llms.txt",
+  "contact_lanes": {
+    "human": "mailto:arifos@arif-fazil.com",
+    "agents": "mailto:agents@arif-fazil.com"
+  },
   "provider": {
     "name": "Muhammad Arif bin Fazil",
     "url": "https://arif-fazil.com/about",
@@ -64,6 +68,7 @@
   ],
   "metadata": {
     "last_phase": "Lebih Bijaksana / Lebih Arif / Penuh Clarity · Phase 3",
-    "phase_3_note": "MCP discovery redirect chain documented explicitly (PROPOSAL fff3af2 Option A — keep 301). canonical_endpoint + discovery_chain added."
+    "phase_3_note": "MCP discovery redirect chain documented explicitly (PROPOSAL fff3af2 Option A — keep 301). canonical_endpoint + discovery_chain added.",
+    "v1.4.1_note": "contact_lanes added — agents@arif-fazil.com machine lane; human lane canonical at arifos@arif-fazil.com."
   }
 }

@@ -454,7 +454,11 @@
       const time = new Date(value).getTime();
       return Number.isFinite(time) ? new Date(time).toLocaleString() : compactValue(value);
     }, 'process start metadata unavailable');
-    set('platform', firstPresent(identity.platform, 'Linux x86_64 · KVM8'), compactValue, 'platform metadata unavailable');
+    // SCAR-OBS-GREENWASH: was firstPresent(identity.platform, 'Linux x86_64 · KVM8').
+    // A hardcoded literal rendered as measured platform metadata — true by luck,
+    // fabricated by construction, and it would have survived a migration to
+    // another host. Absence must render "unavailable", not a guess.
+    set('platform', identity.platform, compactValue, 'platform metadata unavailable');
     set('epoch', firstPresent(identity.kernel_epoch, release.release_name, release.release_id), compactValue, 'kernel epoch metadata unavailable');
   }
 
@@ -473,7 +477,13 @@
     const states = {
       LIVENESS: { value: memoryPercent != null ? `${(100 - Number(memoryPercent)).toFixed(0)}% memory free` : (data.planes && data.planes.transport ? data.planes.transport : UNAVAILABLE), state: data.substrate && data.substrate.memory ? data.substrate.memory : (data.planes && data.planes.transport === 'REACHABLE' ? 'healthy' : 'unknown') },
       READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness) },
-      CAPABILITY: { value: unwrap(capabilities.declared_count) != null ? `${compactValue(firstPresent(capabilities.tested_count, capabilities.invocable_count, capabilities.proven_live), '0')}/${compactValue(capabilities.declared_count)}` : (data.planes && data.planes.capability ? data.planes.capability : UNAVAILABLE), state: capabilities.state || capabilities.status || (data.capabilities && data.capabilities.tested_count ? 'healthy' : 'degraded') },
+      // SCAR-OBS-GREENWASH: was firstPresent(capabilities.tested_count,
+      // capabilities.invocable_count, capabilities.proven_live). That fallback
+      // relabelled "invocable" as "tested" — with tested_count=2 and
+      // invocable_count=8 the card read "8/8 tested" while six tools had never
+      // been exercised. A count must keep the meaning of its own column, and
+      // 'healthy' requires every declared tool tested, not merely some.
+      CAPABILITY: { value: unwrap(capabilities.declared_count) != null ? `${compactValue(capabilities.tested_count, '0')}/${compactValue(capabilities.declared_count)}` : (data.planes && data.planes.capability ? data.planes.capability : UNAVAILABLE), state: capabilities.state || capabilities.status || (unwrap(capabilities.declared_count) != null && capabilities.tested_count === capabilities.declared_count ? 'healthy' : 'degraded') },
       GOVERNANCE: { value: governance.rawVerdict === 'UNKNOWN' ? (data.planes && data.planes.governance ? data.planes.governance : 'HOLD') : governance.verdict, state: governance.verdict || (data.planes && data.planes.governance) },
       AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : (data.planes && data.planes.authorization ? data.planes.authorization : UNAVAILABLE)), state: authorized != null ? authorized : (data.planes && data.planes.authorization ? 'degraded' : 'unknown') },
       RECEIPT: { value: compactValue(firstPresent(data.receipts && data.receipts.last_receipt_tier, data.receipt && data.receipt.canonical_status, data.planes && data.planes.receipt)), state: firstPresent(data.receipts && data.receipts.last_receipt_tier, data.receipt && data.receipt.canonical_status, data.planes && data.planes.receipt) },

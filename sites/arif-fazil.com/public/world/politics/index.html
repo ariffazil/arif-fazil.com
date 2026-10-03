@@ -1,23 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ring="BODY" data-plane="geopolitical">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Politics — Arif Fazil</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politics — Power, Read Plainly — Arif Fazil</title>
+<meta name="description" content="Politics surface of arif-fazil.com. Two public rooms: the Negeri Sembilan PRN 2026 GIS briefing, and PM Bayang — nine prime ministers read as Jungian shadow." />
+<link rel="canonical" href="https://arif-fazil.com/world/politics/" />
+<meta name="robots" content="index,follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Politics — Power, Read Plainly" />
+<meta property="og:description" content="Two public rooms: a GIS briefing of Negeri Sembilan PRN 2026, and nine prime ministers read as shadow." />
+<meta property="og:url" content="https://arif-fazil.com/world/politics/" />
+<meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+
+<link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Politics — Power, Read Plainly",
+  "description": "Two public rooms: the Negeri Sembilan PRN 2026 GIS briefing, and PM Bayang — nine prime ministers read as Jungian shadow.",
+  "url": "https://arif-fazil.com/world/politics/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "arif-fazil.com",
+    "url": "https://arif-fazil.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Muhammad Arif bin Fazil",
+    "url": "https://arif-fazil.com/"
+  },
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "Negeri Sembilan PRN 2026 — Live Interactive GIS Map & 9 Invariants",
+      "url": "https://arif-fazil.com/world/politics/ns-election/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "PM Bayang — Shadow Prime Ministers of Malaysia",
+      "url": "https://arif-fazil.com/world/politics/shadow/"
+    }
+  ]
+}
+</script>
+
 <style>
-  body{background:#0A0B0D;color:#EDEAE2;font-family:system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1.25rem;line-height:1.55}
-  a{color:#E4572E}
-  h1{font-size:2rem;letter-spacing:-0.02em}
-  p,li{color:#9AA0A8}
+:root {
+  --bg-base: #070709;
+  --bg-surface: #0f1015;
+  --bg-card: #14151e;
+  --bg-card-hover: #191b26;
+  --border-subtle: #1f2230;
+  --border-strong: #2f3448;
+  --text-main: #f5f5f7;
+  --text-muted: #9fa4b8;
+  --text-dim: #656a80;
+  --yellow: #f2b705;
+  --gold: #c9a84c;
+  --emerald: #34d399;
+  --red: #ef4444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nav-strip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 14px 24px;
+  background: rgba(7, 7, 9, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.nav-strip a { color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+.nav-strip a:hover { color: var(--text-main); }
+.nav-strip a.active { color: var(--yellow); font-weight: 600; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--yellow);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before { content: ""; display: inline-block; width: 16px; height: 2px; background: var(--yellow); }
+
+h1.page-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 48px;
+  line-height: 1.05;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+p.page-desc {
+  font-size: 20px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 12px;
+  max-width: 640px;
+}
+p.page-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  margin-bottom: 48px;
+}
+
+/* Featured room cards */
+.room-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.room-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 28px 24px 20px;
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.room-card:hover { transform: translateY(-3px); background: var(--bg-card-hover); }
+.room-card.gis:hover { border-color: var(--yellow); }
+.room-card.bayang:hover { border-color: var(--gold); }
+
+.room-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.room-card.gis .room-tag { color: var(--yellow); }
+.room-card.bayang .room-tag { color: var(--gold); }
+
+.room-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 24px;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.room-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.room-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+.room-meta .dot { color: var(--emerald); }
+.room-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.room-card.gis .room-link { color: var(--yellow); }
+.room-card.bayang .room-link { color: var(--gold); }
+
+.footer-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid var(--border-subtle);
+  padding: 20px 0 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+.footer-strip a { color: var(--text-muted); text-decoration: none; }
+.footer-strip a:hover { color: var(--yellow); }
+
+@media (max-width: 720px) {
+  h1.page-title { font-size: 34px; }
+  p.page-desc { font-size: 17px; }
+  .wrap { padding: 20px 16px 48px; }
+  .room-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<h1>Politics</h1>
-<p>Two public rooms. Neither of them is the front door of the site.</p>
-<ul>
-  <li><a href="/world/politics/ns-election/">Negeri Sembilan election map</a></li>
-  <li><a href="/world/politics/shadow/">Prime ministers, read as shadow</a> — editorial, from public records.</li>
-</ul>
-<p><a href="/">Home</a> · <a href="/about">About</a> · <a href="/words/">Writing</a></p>
+
+<nav class="nav-strip" aria-label="Site">
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/earth/">Earth</a>
+    <a href="/economics/">Economics</a>
+    <a href="/world/">World</a>
+    <a href="/world/politics/" class="active" aria-current="page">Politics</a>
+    <a href="/read/">Read</a>
+    <a href="/writing/">Writing</a>
+  </div>
+  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--yellow);">
+    POLITICS SURFACE · WORLD
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <p class="eyebrow">Kuasa, Dibaca Jelas</p>
+  <h1 class="page-title">Politics</h1>
+  <p class="page-desc">Two public rooms. Neither of them is the front door of the site. One reads a state election as terrain; the other reads nine prime ministers as shadow. Both from the public record. Both written plainly.</p>
+  <p class="page-note">DITEMPA BUKAN DIBERI — forged, not given.</p>
+
+  <div class="room-grid">
+
+    <a class="room-card gis" href="/world/politics/ns-election/">
+      <div class="room-tag">GIS Briefing · Negeri Sembilan</div>
+      <h2 class="room-title">Negeri Sembilan PRN 2026 — Live Interactive GIS Map &amp; 9 Invariants</h2>
+      <p class="room-desc">A spatial reading of the state election: 36 DUN seats on a real Leaflet/OpenStreetMap canvas, candidate relocation vectors, and nine contrast invariants — demographics, economic thermodynamics, Adat Perpatih substrate — mapped to ground truth.</p>
+      <div class="room-meta"><span class="dot">●</span> FINAL RESULT · 36 DUN · BN-PN 25 · PH 11 · VAULT999 SEALED</div>
+      <div class="room-link">Enter the map →</div>
+    </a>
+
+    <a class="room-card bayang" href="/world/politics/shadow/">
+      <div class="room-tag">Jungian Editorial · PM Bayang</div>
+      <h2 class="room-title">PM Bayang — Shadow Prime Ministers of Malaysia</h2>
+      <p class="room-desc">Every prime minister has a persona — the mask shown to the world. Jung: the prettier the mask, the darker the shadow. Nine PMs, from Tunku to Anwar, read through persona, bayang, tragedi, dan legasi — TERSEDAR, SAMAR, TENGGELAM.</p>
+      <div class="room-meta">9 PM · 33 BAYANG · DARI REKOD UMUM · BAHASA MELAYU</div>
+      <div class="room-link">Masuk bilik bayang →</div>
+    </a>
+
+  </div>
+
+  <div class="footer-strip">
+    <span>DITEMPA BUKAN DIBERI · arifOS Federation</span>
+    <span><a href="/">Home</a> · <a href="/world/">World</a> · <a href="/writing/">Writing</a></span>
+  </div>
+
+</main>
+
 </body>
 </html>

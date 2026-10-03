@@ -75,13 +75,13 @@ export const discoveries: Discovery[] = [
     category: 'wells',
     categoryLabel: 'Discoveries & Exploration Wells',
     role: 'Opportunity Evaluation & Post-Drill Risk Recalibration',
-    year: '2024',
-    location: 'Central Malay Basin · Malaysia Bid Round Plus (MBR+)',
-    summary: 'Exploration well evaluating syn-rift and post-rift plays in the central Malay Basin. While the primary syn-rift objective proved water-bearing, the well discovered commercial oil in post-rift Group I and J sands. The outcome demonstrated that the post-rift petroleum system was fully effective while providing crucial lessons that recalibrated syn-rift risk across the basin (later supporting an MBR+ Round I Small Field Asset PSC award).',
+    year: '2020',
+    location: 'Central Malay Basin (Block PM328) · MBR+ Award 2024',
+    summary: 'Exploration well (2020) evaluating syn-rift and post-rift plays in the central Malay Basin (Block PM328). While the primary syn-rift objective proved water-bearing, the well discovered commercial oil in post-rift Group I and J sands. The outcome demonstrated that the post-rift petroleum system was fully effective while providing crucial lessons that recalibrated syn-rift risk across the basin (later supporting an MBR+ Round I Small Field Asset PSC award in 2024).',
     evidence: [
       'Oil discovery confirmed in post-rift Group I and J reservoir sands',
       'Primary syn-rift objective tested water-bearing, providing crucial calibration to downgrade regional syn-rift risk',
-      'Post-drill resource evaluation supported inclusion and award in MBR+ Round I Small Field Asset PSC (2024)'
+      'Post-drill resource evaluation (2020) supported subsequent inclusion and award in MBR+ Round I Small Field Asset PSC (2024)'
     ],
     limits: 'Award-phase details withheld.',
     link: 'https://geox.arif-fazil.com',

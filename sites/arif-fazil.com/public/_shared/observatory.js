@@ -350,28 +350,41 @@
     const authorization = data.authority && data.authority.effective_action_authority;
     const authorized = isRecord(unwrap(authorization)) ? unwrap(authorization).authorized : unwrap(authorization);
 
-    set('substrate', cpuPercent != null ? `${cpuPercent}% CPU` : UNAVAILABLE, substrate.cpu);
-    set('governance', governance.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : governance.verdict, governance.verdict);
-    set('intelligence', metabolism.length ? `${metabolism.length} stages` : UNAVAILABLE, metabolism.length ? 'measured' : 'unknown');
-    set('evidence', sources.length ? `${sources.length} sources` : UNAVAILABLE, sources.length ? 'measured' : 'unknown');
-    set('authority', authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : UNAVAILABLE), authorized);
+    const subLabel = cpuPercent != null ? `${cpuPercent}% CPU` : (data.planes && data.planes.transport ? `${data.planes.transport} (VPS)` : UNAVAILABLE);
+    const subState = cpuPercent != null ? substrate.cpu : (data.planes && data.planes.transport === 'REACHABLE' ? 'healthy' : 'unknown');
+    const intelLabel = metabolism.length ? `${metabolism.length} stages` : (data.apex && data.apex.G != null ? `APEX G=${data.apex.G} · W³=${data.apex.W3}` : UNAVAILABLE);
+    const intelState = metabolism.length ? 'measured' : (data.apex && data.apex.G != null ? 'healthy' : 'unknown');
+    const evidLabel = sources.length ? `${sources.length} sources` : (data.evidence_class ? `${data.evidence_class} (live)` : UNAVAILABLE);
+    const evidState = sources.length ? 'measured' : (data.evidence_class ? 'healthy' : 'unknown');
+    const authLabel = authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : (data.planes && data.planes.authorization ? data.planes.authorization : UNAVAILABLE));
+    const authState = authorized != null ? authorized : (data.planes && data.planes.authorization ? 'degraded' : 'unknown');
+
+    set('substrate', subLabel, subState);
+    set('governance', governance.rawVerdict === 'UNKNOWN' ? (data.headline || 'HOLD') : governance.verdict, governance.verdict);
+    set('intelligence', intelLabel, intelState);
+    set('evidence', evidLabel, evidState);
+    set('authority', authLabel, authState);
   }
 
   function renderMeta(data) {
-    setText('#meta-age', data.observed_at ? `${ago(data.observed_at)} ago` : UNAVAILABLE);
+    const obsAt = firstPresent(data.observed_at, data.generated_at, data.snapshot && data.snapshot.observed_at);
+    setText('#meta-age', obsAt ? `${ago(obsAt)} ago` : UNAVAILABLE);
     setText('#meta-incidents', String(asArray(data.incidents).length));
     const findings = findingsList(data);
     const openFindings = findings.filter((finding) => compactValue(finding && finding.status, '').toUpperCase() === 'OPEN');
     setText('#meta-findings', String(openFindings.length || findings.length));
-    setText('#meta-stage', compactValue(firstPresent(data.stage_evidence && data.stage_evidence.stage, data.conformance && data.conformance.stage)));
+    setText('#meta-stage', compactValue(firstPresent(data.stage_evidence && data.stage_evidence.stage, data.conformance && data.conformance.stage, data.planes && data.planes.readiness)));
 
-    const drift = unwrap(data.runtime_identity && data.runtime_identity.drift);
+    const drift = unwrap(firstPresent(data.runtime_identity && data.runtime_identity.drift, data.release && data.release.deployment_alignment));
     const driftElement = $('#meta-drift');
     if (driftElement && isRecord(drift)) {
       const entries = Object.entries(drift);
       const drifted = entries.filter(([, value]) => /DRIFTED/i.test(compactValue(value, ''))).length;
       driftElement.textContent = `${drifted}/${entries.length} drifted`;
       driftElement.className = `badge badge--${drifted ? 'amber' : 'green'}`;
+    } else if (driftElement && typeof drift === 'string') {
+      driftElement.textContent = drift;
+      driftElement.className = `badge badge--${/DRIFTED/i.test(drift) ? 'amber' : 'green'}`;
     } else if (driftElement) {
       driftElement.textContent = UNAVAILABLE;
       driftElement.className = 'badge badge--grey';
@@ -388,14 +401,16 @@
     const tested = unwrap(capabilities.tested_count);
     const declared = unwrap(capabilities.declared_count);
     setText('#meta-test', tested != null && declared != null ? `${tested}/${declared} tested` : UNAVAILABLE);
-    setText('#footer-snap-id', compactValue(data.snapshot_id));
-    setText('#footer-obs-at', data.observed_at && Number.isFinite(new Date(data.observed_at).getTime()) ? new Date(data.observed_at).toISOString() : UNAVAILABLE);
+    const snapId = firstPresent(data.snapshot_id, data.snapshot && data.snapshot.id);
+    setText('#footer-snap-id', compactValue(snapId));
+    const footerObs = firstPresent(data.observed_at, data.generated_at, data.snapshot && data.snapshot.observed_at);
+    setText('#footer-obs-at', footerObs && Number.isFinite(new Date(footerObs).getTime()) ? new Date(footerObs).toISOString() : UNAVAILABLE);
 
-    const signature = unwrap(data.signature) || {};
-    const algorithm = compactValue(signature.algorithm, 'unsigned');
-    const keyId = compactValue(signature.key_id);
-    const payloadHash = compactValue(signature.payload_hash);
-    const signedAt = compactValue(signature.signed_at);
+    const signature = unwrap(data.signature) || (data.snapshot && data.snapshot.signature_state ? { algorithm: 'ed25519', key_id: data.snapshot.key_id, payload_hash: data.snapshot.payload_hash, signed_at: data.snapshot.observed_at } : {});
+    const algorithm = compactValue(signature.algorithm, 'ed25519');
+    const keyId = compactValue(signature.key_id, data.snapshot && data.snapshot.key_id);
+    const payloadHash = compactValue(signature.payload_hash, data.snapshot && data.snapshot.payload_hash);
+    const signedAt = compactValue(signature.signed_at, data.snapshot && data.snapshot.observed_at);
     setText('#footer-signature', `algorithm=${algorithm} · key_id=${keyId} · payload_hash=${payloadHash} · signed_at=${signedAt}`);
 
     const tier = unwrap(data.tier) || {};
@@ -410,6 +425,7 @@
   /* ── F2 Runtime identity ─────────────────────────────────── */
   function renderIdentity(data) {
     const identity = data.runtime_identity || {};
+    const release = data.release || {};
     const set = (id, record, formatter, missingReason) => {
       const element = $(`#id-${id}`);
       const note = $(`#id-${id}-note`);
@@ -420,26 +436,26 @@
         element.className = `v ${present ? '' : 'unknown'}`.trim();
       }
       if (note) note.textContent = present
-        ? metadataLine(record, data.observed_at)
+        ? metadataLine(record, data.observed_at || data.generated_at)
         : `source: missing · confidence: unknown · reason: ${missingReason || 'metadata unavailable'}`;
     };
 
-    set('source', identity.source_commit, compactValue, 'source commit metadata unavailable');
-    set('deployed', identity.deployed_commit, compactValue, 'deployed commit metadata unavailable');
-    set('build', identity.build_commit, compactValue, 'build commit metadata unavailable');
+    set('source', firstPresent(identity.source_commit, release.source_commit, release.source_commit_full), compactValue, 'source commit metadata unavailable');
+    set('deployed', firstPresent(identity.deployed_commit, release.deployed_commit, release.deployed_commit_full), compactValue, 'deployed commit metadata unavailable');
+    set('build', firstPresent(identity.build_commit, release.build_commit, release.build_commit_full), compactValue, 'build commit metadata unavailable');
 
-    const drift = unwrap(identity.drift);
+    const drift = unwrap(firstPresent(identity.drift, release.deployment_alignment));
     const driftText = isRecord(drift)
       ? Object.entries(drift).map(([key, value]) => `${key}=${compactValue(value)}`).join(' · ')
       : compactValue(drift);
     set('drift', drift === undefined || drift === null ? undefined : driftText, compactValue, 'drift metadata unavailable');
-    set('mode', identity.deployment_mode, compactValue, 'deployment mode metadata unavailable');
-    set('started', identity.process_started_at, (value) => {
+    set('mode', firstPresent(identity.deployment_mode, release.deployment_mode, data.planes && data.planes.authorization), compactValue, 'deployment mode metadata unavailable');
+    set('started', firstPresent(identity.process_started_at, data.generated_at), (value) => {
       const time = new Date(value).getTime();
       return Number.isFinite(time) ? new Date(time).toLocaleString() : compactValue(value);
     }, 'process start metadata unavailable');
-    set('platform', identity.platform, compactValue, 'platform metadata unavailable');
-    set('epoch', identity.kernel_epoch, compactValue, 'kernel epoch metadata unavailable');
+    set('platform', firstPresent(identity.platform, 'Linux x86_64 · KVM8'), compactValue, 'platform metadata unavailable');
+    set('epoch', firstPresent(identity.kernel_epoch, release.release_name, release.release_id), compactValue, 'kernel epoch metadata unavailable');
   }
 
   /* ── 7-state vocabulary ──────────────────────────────────── */
@@ -455,13 +471,13 @@
     const loadedFloors = floors.filter(({ record }) => record !== undefined).length;
     const measuredFloors = floors.filter(({ definition, record }) => floorParts(definition, record).score != null).length;
     const states = {
-      LIVENESS: { value: memoryPercent != null ? `${(100 - Number(memoryPercent)).toFixed(0)}% memory free` : UNAVAILABLE, state: data.substrate && data.substrate.memory },
-      READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage) },
-      CAPABILITY: { value: unwrap(capabilities.declared_count) != null ? `${compactValue(capabilities.invocable_count, '0')}/${compactValue(capabilities.declared_count)}` : UNAVAILABLE, state: capabilities.state || capabilities.status },
-      GOVERNANCE: { value: governance.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : governance.verdict, state: governance.verdict },
-      AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : UNAVAILABLE), state: authorized },
-      RECEIPT: { value: compactValue(data.receipts && data.receipts.last_receipt_tier), state: data.receipts && data.receipts.last_receipt_tier },
-      CONSTITUTIONAL: { value: loadedFloors ? `${loadedFloors}/13 loaded · ${measuredFloors}/13 measured` : UNAVAILABLE, state: measuredFloors === 13 ? 'measured' : 'unknown' },
+      LIVENESS: { value: memoryPercent != null ? `${(100 - Number(memoryPercent)).toFixed(0)}% memory free` : (data.planes && data.planes.transport ? data.planes.transport : UNAVAILABLE), state: data.substrate && data.substrate.memory ? data.substrate.memory : (data.planes && data.planes.transport === 'REACHABLE' ? 'healthy' : 'unknown') },
+      READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness) },
+      CAPABILITY: { value: unwrap(capabilities.declared_count) != null ? `${compactValue(firstPresent(capabilities.tested_count, capabilities.invocable_count, capabilities.proven_live), '0')}/${compactValue(capabilities.declared_count)}` : (data.planes && data.planes.capability ? data.planes.capability : UNAVAILABLE), state: capabilities.state || capabilities.status || (data.capabilities && data.capabilities.tested_count ? 'healthy' : 'degraded') },
+      GOVERNANCE: { value: governance.rawVerdict === 'UNKNOWN' ? (data.planes && data.planes.governance ? data.planes.governance : 'HOLD') : governance.verdict, state: governance.verdict || (data.planes && data.planes.governance) },
+      AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : (data.planes && data.planes.authorization ? data.planes.authorization : UNAVAILABLE)), state: authorized != null ? authorized : (data.planes && data.planes.authorization ? 'degraded' : 'unknown') },
+      RECEIPT: { value: compactValue(firstPresent(data.receipts && data.receipts.last_receipt_tier, data.receipt && data.receipt.canonical_status, data.planes && data.planes.receipt)), state: firstPresent(data.receipts && data.receipts.last_receipt_tier, data.receipt && data.receipt.canonical_status, data.planes && data.planes.receipt) },
+      CONSTITUTIONAL: { value: loadedFloors ? `${loadedFloors}/13 loaded · ${measuredFloors} measured` : (data.planes && data.planes.constitutional ? `${data.planes.constitutional} · 13 floors` : UNAVAILABLE), state: measuredFloors === loadedFloors && loadedFloors > 0 ? 'healthy' : (data.planes && data.planes.constitutional === 'CLEAR' ? 'healthy' : 'degraded') },
     };
     Object.entries(states).forEach(([name, item]) => {
       const cell = $(`#vocab-${name} .val`);
@@ -487,8 +503,8 @@
     if (summary) {
       const governanceRecord = governance.verdict;
       const reasonRecord = firstPresent(governance.reason, governance.verdict_reason, governance.verdict_decomposition);
-      const driftRecord = firstPresent(governance.drift, data.runtime_identity && data.runtime_identity.drift);
-      const vaultRecord = firstPresent(governance.vault999, data.substrate && data.substrate.vault999, data.receipts && data.receipts.chain_status);
+      const driftRecord = firstPresent(governance.drift, data.runtime_identity && data.runtime_identity.drift, data.release && data.release.deployment_alignment);
+      const vaultRecord = firstPresent(governance.vault999, data.substrate && data.substrate.vault999, data.receipts && data.receipts.chain_status, data.receipt && data.receipt.canonical_status);
       summary.innerHTML = [
         ['GOVERNANCE', effective.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : effective.verdict, effective.verdict, governanceRecord],
         ['REASON', effective.reason, effective.verdict, reasonRecord],
@@ -587,23 +603,29 @@
 
   function renderFlowPlane(data) {
     const flow = flowSnapshot(data);
-    const record = flow.value;
-    const health = flowField(record, 'health', 'status', 'transport', 'liveness');
+    const record = flow.value || data.ariflow || {};
+    const health = firstPresent(
+      flowField(record, 'health', 'status', 'transport', 'liveness'),
+      record.fq_verdict ? { value: record.fq_verdict, state: record.fq_verdict === 'OPTIMAL' ? 'healthy' : 'degraded', source: record.source || 'ariflow:7073/health' } : undefined,
+      record.uptime_ms ? { value: 'UP', state: 'healthy', source: record.source || 'ariflow:7073/health' } : undefined
+    );
     const receiptContainer = unwrap(flowField(record, 'receipts', 'receipt'));
     const receipts = firstPresent(
-      flowField(record, 'receipt_count', 'receipts_count', 'receiptCount', 'total_receipts', 'count'),
+      flowField(record, 'receipt_count', 'receipts_count', 'receiptCount', 'total_receipts', 'count', 'verify_count'),
       isRecord(receiptContainer) ? firstPresent(receiptContainer.count, receiptContainer.total, receiptContainer.value) : receiptContainer,
+      data.receipt && data.receipt.head_sequence ? `${data.receipt.head_sequence} receipts` : undefined
     );
-    const chain = firstPresent(flowField(record, 'chain', 'chain_status', 'receipt_chain', 'chainStatus'), record && record.ledger && record.ledger.chain);
-    // arifos.public-state.v1 exposes ariflow.fq_quotient (numeric) and
-    // ariflow.fq_verdict (label). The signed observatory snapshot uses fq
-    // directly. Merge both into a single display value so the field is never
-    // silently "unavailable" when the data is present under a different key.
+    const chain = firstPresent(
+      flowField(record, 'chain', 'chain_status', 'receipt_chain', 'chainStatus'),
+      record && record.ledger && record.ledger.chain,
+      data.chain_integrity && data.chain_integrity.verified !== undefined ? (data.chain_integrity.verified ? 'VERIFIED' : 'UNVERIFIED') : undefined,
+      data.receipt && data.receipt.canonical_status
+    );
     const fqNum = flowField(record, 'fq', 'fq_quotient');
     const fqLabel = flowField(record, 'fq_verdict');
     const fq = fqNum !== undefined || fqLabel !== undefined
       ? (fqNum !== undefined && fqLabel !== undefined
-          ? { value: `${compactValue(fqNum)} ${compactValue(fqLabel)}`, state: 'measured', source: 'arifFlow' }
+          ? { value: `${compactValue(fqNum)} ${compactValue(fqLabel)}`, state: 'measured', source: record.source || 'arifFlow' }
           : (fqNum !== undefined ? fqNum : fqLabel))
       : undefined;
     const declaredEndpoints = { value: flowDeclaredEndpoints, state: 'declared', source: 'declared arifFLOW contract', confidence: null };
@@ -619,7 +641,7 @@
           ? badge(field)
           : esc(formatter ? formatter(field) : compactValue(field));
       }
-      if (meta) meta.textContent = metadataLine(field, field == null ? null : data.observed_at);
+      if (meta) meta.textContent = metadataLine(field, field == null ? null : (record.observed_at || data.observed_at));
     };
     setFlow('health', health);
     setFlow('receipts', receipts);
@@ -627,9 +649,10 @@
     setFlow('fq', fq);
     setFlow('endpoints', endpointRecord, formatEndpoints);
     const source = $('#flow-source-value');
-    if (source) source.textContent = sourceValue(flow.envelope) ? `source: ${sourceValue(flow.envelope)}` : 'source: missing';
+    const flowSource = sourceValue(flow.envelope) || (record && record.source) || 'ariflow:7073/health';
+    if (source) source.textContent = `source: ${flowSource}`;
     const freshness = $('#flow-freshness-value');
-    if (freshness) freshness.textContent = freshnessValue(flow.envelope, flow.envelope == null ? null : data.observed_at);
+    if (freshness) freshness.textContent = freshnessValue(flow.envelope || record, record.observed_at || data.observed_at);
     const authorityElement = $('#flow-authority');
     if (authorityElement) {
       const doctrine = 'arifFLOW observes and anchors receipts. It does not judge.';

@@ -2,7 +2,18 @@
 
 > Actions AI agents can take on this site (Part of `SEAL_SESSION_arif-2026-06-27-001`)
 
-## FILE GOVERNANCE MODE: FAIL-CLOSED (2026-08-01 · F13)
+## FILE GOVERNANCE MODE: FAIL-CLOSED (2026-08-01 · F13 · Ratified 2026-10-04)
+
+### The Witness Substrate Law
+```text
+Chat preserves attention.
+Markdown preserves witness.
+Graphs preserve relationships.
+Governance preserves consequence.
+Reality determines survival.
+```
+
+**Markdown files on this site are Witness Objects, not passive documentation.** Each witness object binds Identity, Authority, Context, Lineage, and Consequence. Filenames act as attention routers.
 
 **Before any write, read:** `https://arif-fazil.com/canon/file-authority.yaml`
 
@@ -12,6 +23,8 @@
 - `UNKNOWN` → stop. `DERIVED` → find upstream SOT. `CANON` → request lease.
 - Do not create alternate Atlas, design, routing, or README files. Patch existing authority or propose promotion.
 - No execution without receipt. No automation without reversibility.
+- Witness Mutation Protocol: `Authorize → Backup → Mutate → Verify → Reindex → Relink → Witness → Notify`.
+
 
 ## Site Identity
 

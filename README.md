@@ -114,6 +114,23 @@ arif-fazil.com/
 
 ---
 
+## 📜 Witness Substrate & Theory (HERMES META-COMPRESSION v1)
+
+```text
+Chat preserves attention.
+Markdown preserves witness.
+Graphs preserve relationships.
+Governance preserves consequence.
+Reality determines survival.
+```
+
+The repository hosts 342 Markdown Witness Objects governed by strict authority, attention routing, and mutation verification.
+- **Canonical Theory:** [`docs/agentic-web/HERMES-META-COMPRESSION-v1.md`](./docs/agentic-web/HERMES-META-COMPRESSION-v1.md)
+- **Census & Taxonomy:** [`docs/MARKDOWN_MAP.md`](./docs/MARKDOWN_MAP.md)
+- **Mutation Protocol:** `Authorize → Backup → Mutate → Verify → Reindex → Relink → Witness → Notify`
+
+---
+
 ## 🏛️ Federation Navigation
 
 | Organ | Role | Port | Repo | MCP | Health | LLMs |

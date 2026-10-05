@@ -1,0 +1,65 @@
+/* Room coats — one house, different ground.
+   Humans see the bar. Agents read data-room, theme-color, and arif-job. */
+html[data-room] { --room: #E4572E; --room-ground: #0A0B0D; }
+html[data-room="door"]       { --room:#E4572E; --room-ground:#0A0B0D; }
+html[data-room="earth"]      { --room:#3DDC97; --room-ground:#071410; }
+html[data-room="words"]      { --room:#E4C39A; --room-ground:#16130F; }
+html[data-room="world"]      { --room:#F2B705; --room-ground:#070709; }
+html[data-room="institution"]{ --room:#C9A227; --room-ground:#100E0A; }
+html[data-room="discovery"]  { --room:#7EE0C6; --room-ground:#070B12; }
+html[data-room="vitals"]     { --room:#4AA8FF; --room-ground:#0C1018; }
+html[data-room="gold"]       { --room:#F0C840; --room-ground:#120F07; --bg:#120F07; --accent:#F0C840; --gold:#F0C840; }
+html[data-room="oil"]        { --room:#E07A3D; --room-ground:#140C08; --bg:#140C08; --accent:#E07A3D; }
+html[data-room="gas"]        { --room:#5ED0C8; --room-ground:#071416; --bg:#071416; --accent:#5ED0C8; }
+html[data-room="human"]      { --room:#7AA2FF; --room-ground:#0A0B0D; }
+html[data-room="work"]       { --room:#C5CDD6; --room-ground:#12131A; }
+html[data-room="civic"]      { --room:#D9A62E; --room-ground:#120E0A; }
+
+html[data-room="earth"] body,
+html[data-room="words"] body,
+html[data-room="world"] body,
+html[data-room="institution"] body,
+html[data-room="discovery"] body,
+html[data-room="vitals"] body,
+html[data-room="civic"] body,
+html[data-room="gold"] body,
+html[data-room="oil"] body,
+html[data-room="gas"] body,
+html[data-room="work"] body {
+  background: var(--room-ground) !important;
+}
+
+.room-plate {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem 1rem;
+  padding: .55rem 1.25rem;
+  background: #05060A;
+  color: #EDEAE2;
+  border-top: 4px solid var(--room);
+  border-bottom: 1px solid rgba(237,234,226,.12);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.room-plate b {
+  color: var(--room);
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.room-plate span { color: #EDEAE2; }
+.room-plate a {
+  margin-left: auto;
+  color: var(--room);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.room-plate a:hover { text-decoration: underline; }

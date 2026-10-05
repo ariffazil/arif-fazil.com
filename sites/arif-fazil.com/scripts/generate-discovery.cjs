@@ -203,7 +203,7 @@ The /words/ hub now exposes three peer subpages. Discovery parity with the React
 // ── llms.json ───────────────────────────────────────────────────────────
 function buildLlmsJson(pieces) {
   const routeRoles = {
-    "/": "professional human entry — three doors (Arif / GEOX / arifOS) plus briefing",
+    "/": "professional human entry — one sentence, nine rooms, the mind stays with the person",
     "/about": "who Arif is",
     "/human": "agent start-here contract — retrieve vs approval",
     "/institution/": "human / institutional briefing and engagement path",
@@ -283,7 +283,7 @@ function buildPageJson() {
     audience: ["humans", "collaborators", "agents", "verifiers"],
     canonical_url: "https://arif-fazil.com/",
     route_model: {
-      "/": "human L1 — three doors + briefing",
+      "/": "human L1 — front door, nine rooms",
       "/about": "who",
       "/human": "agent start-here",
       "/institution/": "institutional briefing",

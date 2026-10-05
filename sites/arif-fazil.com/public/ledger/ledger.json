@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-09-26T23:54:43Z",
+ "generated_at": "2026-10-05T10:00:36Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",
@@ -14,9 +14,9 @@
  "receipts": {
   "state": "PRESENT",
   "path": "/root/VAULT999/RECEIPTS",
-  "count": 72,
-  "total_bytes": 203266,
-  "newest": "2026-09-20T21:50:28Z",
+  "count": 77,
+  "total_bytes": 272794,
+  "newest": "2026-10-01T09:27:34Z",
   "superseded_retained": 1,
   "superseded_names": [
    "2026-09-18-wscar-gate-v2-seal.json.superseded"
@@ -203,10 +203,40 @@
     "sha256": "0fcdbd1095d240dfaf33ad6ae002f2ea"
    },
    {
+    "name": "20261001-hermes-a2a-federation-seal-20261001T092734Z.json",
+    "bytes": 2434,
+    "mtime": "2026-10-01T09:27:34Z",
+    "sha256": "5a1741312f9eed74c6f74e9635a9ac15"
+   },
+   {
+    "name": "20261001-hermes-gateway-outage-fix-20261001T080616Z.json",
+    "bytes": 3439,
+    "mtime": "2026-10-01T08:06:16Z",
+    "sha256": "d821fff0074e8dae863279b26d0af571"
+   },
+   {
+    "name": "20261001-hermes-hardening-seal-20261001T084943Z.json",
+    "bytes": 2510,
+    "mtime": "2026-10-01T08:49:43Z",
+    "sha256": "647a4fd346d2729ea0a5c968d4db3a56"
+   },
+   {
     "name": "RECEIPT-2026-08-14-qg-v031-vector-hang-ingat-balik.json",
     "bytes": 2023,
     "mtime": "2026-08-14T09:00:31Z",
     "sha256": "e16f6ffaf1d67f97ade924fd647833a5"
+   },
+   {
+    "name": "SEAL-REFLECTION-2026-09-27.pdf",
+    "bytes": 61048,
+    "mtime": "2026-09-27T05:52:08Z",
+    "sha256": "2dfd6248a7ddc79c054ced8f611618a4"
+   },
+   {
+    "name": "SEAL-REFLECTION-2026-09-27.pdf.sha256",
+    "bytes": 97,
+    "mtime": "2026-09-27T05:52:08Z",
+    "sha256": "feec3d2bf7a415bd1fa5069cdd277774"
    },
    {
     "name": "apexzen_v1.1_marker_receipt_20260912.json",
@@ -459,31 +489,33 @@
  "gate": {
   "state": "PRESENT",
   "path": "/root/.hermes/logs/reality_claim_gate.log",
-  "sha256": "ac3d31da892eafde672565c581361496",
-  "lines": 775,
+  "sha256": "a49feaf1f62f5b0831b82eca62200074",
+  "lines": 1345,
   "first_verdict": "2026-09-04T05:13:05Z",
-  "last_verdict": "2026-09-26T23:51:29Z",
+  "last_verdict": "2026-10-05T09:56:04Z",
   "by_class": {
-   "NARRATIVE_EMITTED_AS_OBSERVATION": 213,
-   "UNGROUNDED_CLAIM": 175,
-   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 175,
+   "NARRATIVE_EMITTED_AS_OBSERVATION": 478,
+   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 404,
+   "UNGROUNDED_CLAIM": 211,
    "WARN": 77,
    "BLOCK_CANDIDATE": 75,
-   "PHANTOM_SOVEREIGNTY": 43,
-   "BASELINE_MISSING_MEASURED": 14,
-   "NARRATIVE_MARKERS_IN_MEASURED": 2,
-   "BASELINE_MISSING_MECHANISM": 1
+   "PHANTOM_SOVEREIGNTY": 57,
+   "BASELINE_MISSING_MEASURED": 35,
+   "NARRATIVE_MARKERS_IN_MEASURED": 6,
+   "BASELINE_MISSING_MECHANISM": 1,
+   "BASELINE_MISSING_PATTERN": 1
   },
   "top_markers": {
-   "paling": 190,
-   "terbaik": 11,
-   "best": 6,
-   "chosen": 1,
-   "blood": 1,
+   "paling": 394,
+   "best": 31,
+   "terbaik": 29,
+   "blood": 8,
+   "chosen": 4,
+   "takdir": 4,
    "sememangnya": 1
   },
-  "multi_token_markers_suppressed": 5,
-  "privacy": "Marker statistics only. Multi-word fragments captured from messages (5 occurrences) are never published.",
+  "multi_token_markers_suppressed": 13,
+  "privacy": "Marker statistics only. Multi-word fragments captured from messages (13 occurrences) are never published.",
   "blocks": 0,
   "blocking_enabled": false,
   "note": "Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered."
@@ -499,15 +531,15 @@
  "seal_chain": {
   "state": "PRESENT",
   "path": "/root/VAULT999/SEALED_EVENTS.jsonl",
-  "sha256": "8200c57691218b346d8bde554cea419c",
-  "lines": 1342,
-  "bytes": 1839390,
-  "last_append": "2026-09-20T19:16:01Z",
-  "days_since_append": 6,
-  "head_id": 968,
+  "sha256": "7adffdb48a71bc3ab5efa982e5efbaed",
+  "lines": 1346,
+  "bytes": 1852263,
+  "last_append": "2026-10-03T10:31:50Z",
+  "days_since_append": 1,
+  "head_id": 971,
   "twin_copy": {
    "path": "/root/arifOS/VAULT999/SEALED_EVENTS.jsonl",
-   "sha256": "8200c57691218b346d8bde554cea419c",
+   "sha256": "7adffdb48a71bc3ab5efa982e5efbaed",
    "identical": true
   },
   "note": "Witness grows, chain does not move. The seal chain is the only append-only hash-linked record; it is reported here exactly as found, including how stale it is."
@@ -516,11 +548,11 @@
   "state": "PRESENT",
   "path": "/root/.hermes/carry_forward.json",
   "schema": "arifos.carry_forward.v3",
-  "entries": 210,
-  "open_loops": 48,
-  "closed_loops": 19,
-  "loops_total": 67,
-  "oldest_open_ts": "2026-09-14T18:38:40Z"
+  "entries": 0,
+  "open_loops": 0,
+  "closed_loops": 0,
+  "loops_total": 0,
+  "oldest_open_ts": null
  },
  "public_surfaces": [
   {
@@ -556,21 +588,21 @@
   {
    "id": "D1",
    "title": "The output gate detects but does not stop",
-   "evidence": "775 verdicts, 0 blocks, blocking_enabled=false",
+   "evidence": "1345 verdicts, 0 blocks, blocking_enabled=false",
    "consequence": "A flagged sentence reached its reader anyway. A cop, not a door.",
    "owner": "F13 (promotion to Phase 2 NO)"
   },
   {
    "id": "D2",
    "title": "The narrative detector fires on one word",
-   "evidence": "marker 'paling' fired 190 times = 89% of narrative flags (213 narrative verdicts total)",
+   "evidence": "marker 'paling' fired 394 times = 82% of narrative flags (478 narrative verdicts total)",
    "consequence": "Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.",
    "owner": "mechanical (marker set + threshold)"
   },
   {
    "id": "D3",
    "title": "The seal chain is frozen while witnesses keep appending",
-   "evidence": "last append 2026-09-20T19:16:01Z (6d ago); head id=968",
+   "evidence": "last append 2026-10-03T10:31:50Z (1d ago); head id=971",
    "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
    "owner": "F13 (kernel seal path)"
   },
@@ -584,7 +616,7 @@
   {
    "id": "D5",
    "title": "Open loops accumulate faster than they close",
-   "evidence": "48 open loops of 210 entries; oldest 2026-09-14T18:38:40Z",
+   "evidence": "0 open loops of 0 entries; oldest None",
    "consequence": "A backlog stated as policy. The stated count is the audit.",
    "owner": "ongoing"
   },

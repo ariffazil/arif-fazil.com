@@ -30,7 +30,12 @@ e7e57b2245cbf04813573f35d8d46114f024189c989697db6c3645e72279b565  /root/VAULT999
 c989122f5ccdf846193df71934ad89353963dca8333991f3f24fa829bc5ba627  /root/VAULT999/RECEIPTS/2026-09-21-federation-stabilization-session-receipt.md
 cd33b2328c22265ede67aa64535649a34202f9612acb2dc6862dfcc8739901fa  /root/VAULT999/RECEIPTS/2026-09-21-hermes-reformulation-receipt.md
 0fcdbd1095d240dfaf33ad6ae002f2ea117f551bf5d5e102d073394f798560bd  /root/VAULT999/RECEIPTS/2026-09-21-hermes-selfloop-delivery-fix.md
+5a1741312f9eed74c6f74e9635a9ac15939583c64dd181592e7da41ed1d6c11c  /root/VAULT999/RECEIPTS/20261001-hermes-a2a-federation-seal-20261001T092734Z.json
+d821fff0074e8dae863279b26d0af571b86d8a12f3cb4eb799b5ae7928415561  /root/VAULT999/RECEIPTS/20261001-hermes-gateway-outage-fix-20261001T080616Z.json
+647a4fd346d2729ea0a5c968d4db3a561060e94da5e2806bf417084e5484ddac  /root/VAULT999/RECEIPTS/20261001-hermes-hardening-seal-20261001T084943Z.json
 e16f6ffaf1d67f97ade924fd647833a53be1a4ed7f728f133c2d5b7673ec6fd7  /root/VAULT999/RECEIPTS/RECEIPT-2026-08-14-qg-v031-vector-hang-ingat-balik.json
+2dfd6248a7ddc79c054ced8f611618a4fd61d565a35c3bcb07d07c0d491a0bb6  /root/VAULT999/RECEIPTS/SEAL-REFLECTION-2026-09-27.pdf
+feec3d2bf7a415bd1fa5069cdd27777443caa5e07b8832c9a519a6d1b335dbac  /root/VAULT999/RECEIPTS/SEAL-REFLECTION-2026-09-27.pdf.sha256
 92720ff2203a2fe9421ca970abe1e3bf04c8671b27c693c4b3297fd4c7773bac  /root/VAULT999/RECEIPTS/apexzen_v1.1_marker_receipt_20260912.json
 08a095263ff062c7bf3c8290021330d08a797f2a50d0f22643c2cdca229aa79d  /root/VAULT999/RECEIPTS/cleanup-subtractive-trivial-2026-09-21.jsonl
 1c84e179685ff1fded855d8b7ab2fe7f805b32ce58c3b8a7726e021c0f493f6b  /root/VAULT999/RECEIPTS/federation-quiet-detector.jsonl
@@ -73,10 +78,10 @@ f665fd7170cb0b28c3c9a5f91f94d77b9626c7d4a46d055c55e3bef5e4f2eb24  /root/VAULT999
 d73ca402d14414168fca6be8dcb29fb8ef798c2f47eeed357fe2c0074d625841  /root/VAULT999/RECEIPTS/session-seal-flame-witness-20260815.json
 81697cd94c45d9e5ebead36ff6abb3b7fc00e28d36804ad15dfcdc1936e04914  /root/VAULT999/RECEIPTS/session_receipts.jsonl
 d25336b2a91806ac39c4adea2e22f3676faae5fc8e18e90cee3d57e48bc42003  /root/.hermes/logs/reality_claim_refusals.jsonl
-8200c57691218b346d8bde554cea419c608eef8ad6c35224821f052a9cd5eb2c  /root/VAULT999/SEALED_EVENTS.jsonl
+7adffdb48a71bc3ab5efa982e5efbaedde7197fb0c1fc38bfd3e697402c67822  /root/VAULT999/SEALED_EVENTS.jsonl
 1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6  /root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py
 
 # SECTION 2 — ADVANCING: live logs that append by design.
 # Format: <sha256>  <lines_at_build>  <path>
 # These are expected to grow. verify.sh reports ADVANCED, not failure.
-ac3d31da892eafde672565c581361496afb32b4b3d942e7d21c549cd031f1ffa  775  /root/.hermes/logs/reality_claim_gate.log
+a49feaf1f62f5b0831b82eca62200074479ad0d8526b03f5ba0439c615eb0440  1345  /root/.hermes/logs/reality_claim_gate.log

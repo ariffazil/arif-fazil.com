@@ -3,9 +3,22 @@ import { LiveClock } from '@/components/LiveClock'
 import { FederationConstellation } from '@/components/FederationConstellation'
 import { PageMeta } from '@/components/PageMeta'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
-import { ZenPulse } from '@/components/ZenPulse'
 import { discoveries } from '@/data/discoveries'
 import { agenticMirrors } from '@/components/ArrowNavbar'
+import { makcikArticlesMeta } from '@/data/makcikgpt'
+
+// Tier-1 nav (2026-10-04): Latest from MakcikGPT block — 10 most recent by date.
+// Source of truth = src/data/makcikgpt/index.ts (same TS module prerender-makcik-slugs uses).
+const latestMakcik = [...makcikArticlesMeta]
+  .filter((a) => a?.date && a?.slug && a?.title)
+  .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+  .slice(0, 10)
+  .map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    date: a.date,
+    kicker: (a.subtitle ?? a.excerpt ?? '').slice(0, 180).replace(/\s+\S*$/, '') + (((a.subtitle ?? a.excerpt ?? '').length > 180) ? '…' : ''),
+  }))
 
 /**
  * Home — Federated Agentic Web Environment Root.
@@ -23,13 +36,6 @@ export function Home() {
         description="I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority."
         path="/"
       />
-      {/* ── ZEN PULSE — orientation in 3 seconds ──────────────────────── */}
-      <ZenPulse
-        whereAmI="Kuala Lumpur"
-        whyCare="Exploration geoscientist. I read incomplete ground and refuse fake certainty."
-        whatNext="Earth, research, writing, or a briefing."
-      />
-
       {/* ── HERO — who, what, why + Dual Chrono-Epigenetic Clock ─────── */}
       <section className="relative overflow-hidden border-b border-[#1F2733] bg-[#07090E] py-16 md:py-24">
         <FederationConstellation />
@@ -92,6 +98,27 @@ export function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#07090E]" id="nine-rooms">
+        <div className="mx-auto max-w-[1360px] px-6">
+          <p className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
+            Why these nine rooms
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-6 max-w-3xl">
+            Most websites publish information. This one keeps an institution.
+          </h2>
+          <div className="max-w-2xl space-y-4 font-sans text-base md:text-lg text-[#C9C4B8] leading-relaxed">
+            <p>A decision passes through nine rooms. The court judges. The roll says who is here. The workshop does the work only after it is allowed.</p>
+            <p>Earth reads the ground. Health shows whether the person, the machine, and the rules are ready. Money counts the capital.</p>
+            <p>The record writes down what happened. The measure watches for drift. The voice carries the words out. The mind stays with the person.</p>
+          </div>
+          <p className="mt-6">
+            <a href="/discovery/" className="font-mono text-xs uppercase tracking-wider text-[#E4572E] underline underline-offset-4">
+              The nine rooms, and the one public teacher for each
+            </a>
+          </p>
         </div>
       </section>
 
@@ -261,6 +288,60 @@ export function Home() {
               is presented. Ditempa bukan diberi — forged, not given.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── LATEST FROM MAKCIKGPT (Tier-1 nav, 2026-10-04) ──────────── */}
+      <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#07090E]" id="latest-makcikgpt">
+        <div className="mx-auto max-w-[1360px] px-6">
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-widest text-[#E4572E] mb-3">
+                Latest from MakcikGPT
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight text-[#EDEAE2]">
+                Dapur pasar malam — apa yang ditulis minggu ini
+              </h2>
+              <p className="font-sans text-base text-[#9AA0A8] leading-relaxed max-w-3xl mt-3">
+                10 most recent articles. Plain BM. Linked evidence.{' '}
+                <Link to="/world/makcikgpt/" className="text-[#E4572E] hover:underline">
+                  See all 43 published investigations at /world/makcikgpt/
+                </Link>
+                .
+              </p>
+            </div>
+            <Link
+              to="/world/makcikgpt/"
+              className="font-mono text-xs text-[#EDEAE2] hover:text-[#E4572E] uppercase tracking-wider"
+            >
+              Open column →
+            </Link>
+          </div>
+
+          <ol className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {latestMakcik.map((a, i) => (
+              <li
+                key={a.slug}
+                className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-5 hover:border-[#E4572E]/50 transition-colors"
+              >
+                <a href={`/world/makcikgpt/${a.slug}/`} className="block group">
+                  <div className="flex items-baseline justify-between gap-3 mb-2">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8]">
+                      {String(i + 1).padStart(2, '0')} · {a.date}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-lg md:text-xl font-semibold text-[#EDEAE2] leading-snug mb-2 group-hover:text-[#E4572E] transition-colors">
+                    {a.title}
+                  </h3>
+                  {a.kicker && (
+                    <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed">
+                      {a.kicker}
+                    </p>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
     </div>

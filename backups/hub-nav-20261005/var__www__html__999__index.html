@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proof Chamber — arifOS</title>
+    <meta name="description" content="Every claim sealed. Don't trust this site — verify it.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #030303; color: #EDEAE2; line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        .gold { color: #C9A227; }
+        .font-mono { font-family: ui-monospace, monospace; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 96px 24px; }
+        .seal { width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, #C9A227 0%, #8B7320 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 60px rgba(201,162,39,0.3); margin-bottom: 24px; }
+        .seal-inner { width: 160px; height: 160px; border-radius: 50%; border: 2px solid #030303; display: flex; align-items: center; justify-content: center; font-family: monospace; font-weight: 700; font-size: 24px; color: #030303; }
+        .eyebrow { font-family: monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: clamp(36px, 8vw, 64px); font-weight: 700; line-height: 1; margin-bottom: 24px; }
+        .section { padding: 96px 0; border-top: 1px solid rgba(201,162,39,0.15); }
+        .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+        .section-header .line { flex: 1; height: 1px; background: rgba(201,162,39,0.2); }
+        .claim-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; padding: 24px 0; border-bottom: 1px solid rgba(201,162,39,0.15); }
+        .claim-text { flex: 1; font-size: 17px; max-width: 520px; }
+        .status { display: inline-block; padding: 4px 10px; font-family: monospace; font-size: 11px; border: 1px solid; }
+        .status-sealed { border-color: #C9A227; background: rgba(201,162,39,0.1); color: #C9A227; }
+        .status-unsealed { border-color: #8A8378; color: #8A8378; }
+        .status-refuted { border-color: #B05555; background: rgba(176,85,85,0.1); color: #D98A8A; }
+        .artifact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .artifact-card { border: 1px solid rgba(201,162,39,0.25); background: #0A0A08; padding: 24px; transition: all 0.2s; }
+        .artifact-card:hover { border-color: rgba(201,162,39,0.7); transform: translateY(-2px); }
+        .artifact-name { font-family: monospace; font-size: 13px; color: #C9A227; }
+        .artifact-desc { font-size: 15px; color: #9AA0A8; margin: 12px 0; }
+        .artifact-link { font-family: monospace; font-size: 11px; color: rgba(201,162,39,0.6); }
+        .veto-section { max-width: 900px; margin: 0 auto; text-align: center; padding: 128px 24px; }
+        .veto-quote { font-size: clamp(24px, 4vw, 46px); color: #C9A227; line-height: 1.2; }
+        .veto-meta { font-family: monospace; font-size: 13px; color: #9AA0A8; margin-top: 40px; }
+        .return-link { display: inline-block; font-family: monospace; font-size: 13px; text-transform: uppercase; color: #C9A227; }
+        .footer { border-top: 1px solid #1F2733; padding: 32px 0; display: flex; justify-content: space-between; align-items: center; font-family: monospace; font-size: 12px; color: #6B7280; }
+        a { color: #C9A227; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+    <link rel="canonical" href="https://arif-fazil.com/999/">
+    <meta property="og:title" content="Proof Chamber — arifOS" />
+    <meta property="og:description" content="Every claim sealed. Don't trust this site — verify it." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arif-fazil.com/999/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Proof Chamber",
+      "description": "Evidence snapshots and sealed verification records. Don't trust this site — verify it.",
+      "url": "https://arif-fazil.com/999/",
+      "isPartOf": {"@type":"WebSite","name":"arif-fazil.com","url":"https://arif-fazil.com"},
+      "publisher": {"@type":"Organization","name":"arifOS Federation","url":"https://arif-fazil.com"}
+    }
+    </script>
+<style id="nv-canon">
+.nv-strip{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding:.72rem max(1.25rem,calc(50vw - 26rem));border-bottom:1px solid rgba(237,234,226,.09);background:rgba(10,11,13,.72);font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px}
+.nv-brand{font-family:IBM Plex Mono,ui-monospace,monospace;font-weight:700;letter-spacing:.18em;font-size:11.5px;color:#EDEAE2;text-decoration:none}
+.nv-primary{display:flex;gap:1.05rem;flex-wrap:wrap;margin-left:auto}
+.nv-primary a{color:rgba(237,234,226,.68);text-decoration:none;letter-spacing:.03em;padding:.35rem 0}
+.nv-primary a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-clock{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;color:rgba(237,234,226,.5);letter-spacing:.12em}
+.nv-foot{border-top:1px solid rgba(237,234,226,.09);margin-top:3rem;padding:1.7rem max(1.25rem,calc(50vw - 26rem)) 2.2rem;font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px;color:rgba(237,234,226,.55)}
+.nv-foot a{color:rgba(237,234,226,.68);text-decoration:none;margin-right:1.05rem;white-space:nowrap;display:inline-block;padding:.3rem 0}
+.nv-foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-row{display:flex;flex-wrap:wrap;align-items:baseline;margin:0 0 .85rem}
+.nv-lab{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,234,226,.45);margin-right:1.1rem;min-width:64px}
+.nv-creed{margin:1.1rem 0 0;font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,234,226,.45)}
+@media(pointer:coarse){.nv-primary a,.nv-foot a{min-height:44px;display:inline-flex;align-items:center}}
+@media(max-width:640px){.nv-primary{margin-left:0;width:100%;order:3}.nv-clock{margin-left:auto}}
+</style></head>
+<body><div class="nv-strip"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/">Home</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
+    <section class="hero">
+        <div class="eyebrow gold">999 · THE PROOF CHAMBER</div>
+        <div class="seal"><div class="seal-inner">SEAL</div></div>
+        <p class="font-mono" style="font-size: 12px; color: rgba(201,162,39,0.7);">ΔΩ∞ · EVERY CLAIM SEALED · arif-fazil.com ·</p>
+        <h1>Don't trust this site. Verify it.</h1>
+        <p style="max-width: 56ch; color: #9AA0A8;">Everything claimed can be checked — against public records, machine-readable documents, and the seals below.</p>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow gold">02</span>
+                <span class="line"></span>
+                <span class="eyebrow" style="color: #9AA0A8;">THE CLAIMS LEDGER</span>
+            </div>
+            <p style="max-width: 62ch; margin-bottom: 32px; color: #9AA0A8;">Each claim carries a fact tag — <span class="font-mono">[OBS]</span> observed, <span class="font-mono">[SPEC]</span> speculative — and a status.</p>
+            <div>
+                <div class="claim-row"><p class="claim-text">13 years at PETRONAS (2013–present), exploration geoscientist</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><span style="font-size: 12px; color: #9AA0A8;">Public record</span></div>
+                <div class="claim-row"><p class="claim-text">BEKANTAN-1 — shallowest flowing oil discovery in the Malay Basin</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><span style="font-size: 12px; color: #9AA0A8;">Well record</span></div>
+                <div class="claim-row"><p class="claim-text">Every exploration well led has flowed</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><a href="/earth" style="font-size: 12px;">Well ledger ↗</a></div>
+                <div class="claim-row"><p class="claim-text">arifOS v2026.08.01 — 13 Constitutional Floors, 8 MCP tools</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><a href="https://pypi.org/project/arifos/" style="font-size: 12px;">PyPI ↗</a></div>
+                <div class="claim-row"><p class="claim-text">$750M scenario — labelled simulation</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[SPEC]</span><span class="status status-unsealed">UNSEALED</span><span style="font-size: 12px; color: #9AA0A8;">Speculative by design</span></div>
+                <div class="claim-row"><p class="claim-text">"PETRONAS collapse" — claim found circulating online</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-refuted">REFUTED</span><span style="font-size: 12px; color: #9AA0A8;">Not supported by any record</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow gold">03</span>
+                <span class="line"></span>
+                <span class="eyebrow" style="color: #9AA0A8;">MACHINE-READABLE IDENTITY</span>
+            </div>
+            <div class="artifact-grid">
+                <a href="/000/genesis-statement.json" class="artifact-card"><p class="artifact-name">/000/genesis-statement.json</p><p class="artifact-desc">The sovereign attestation: signed statement binding the domain to a human operator.</p><p class="artifact-link">OPEN ↗</p></a>
+                <a href="/000/claims.json" class="artifact-card"><p class="artifact-name">/000/claims.json</p><p class="artifact-desc">The claims registry: every assertion with its epistemic tag.</p><p class="artifact-link">OPEN ↗</p></a>
+                <a href="/llms.txt" class="artifact-card"><p class="artifact-name">/llms.txt</p><p class="artifact-desc">Plain instructions for language models visiting this site.</p><p class="artifact-link">OPEN ↗</p></a>
+                <a href="https://mcp.arif-fazil.com/mcp" class="artifact-card"><p class="artifact-name">mcp.arif-fazil.com/mcp</p><p class="artifact-desc">The public MCP endpoint: 8 tools, governed by 13 floors.</p><p class="artifact-link">OPEN ↗</p></a>
+                <a href="https://pypi.org/project/arifos/" class="artifact-card"><p class="artifact-name">pypi.org/project/arifos</p><p class="artifact-desc">The arifOS package.</p><p class="artifact-link">OPEN ↗</p></a>
+                <a href="https://github.com/ariffazil" class="artifact-card"><p class="artifact-name">github.com/ariffazil</p><p class="artifact-desc">The source. arifOS, A-FORGE, AAA, GEOX, WEALTH, WELL.</p><p class="artifact-link">OPEN ↗</p></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="veto-section">
+        <blockquote class="veto-quote">"Floor 13: SOVEREIGN. The human veto is absolute. Every system on this site — including this site — answers to a person."</blockquote>
+        <p class="veto-meta">— ARIF FAZIL · KUALA LUMPUR · SEALED THIS DAY, 8 SEPTEMBER 2026</p>
+    </section>
+
+    <section style="padding: 0 24px 112px 24px; text-align: center;">
+        <a href="/000" class="return-link">← Return to /000 Sanctuary</a>
+    </section>
+
+    <footer class="footer">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <span>DITEMPA BUKAN DIBERI ⚒️</span>
+            <span>Ψ /999 — Proof Chamber</span>
+        </div>
+    </footer>
+<footer class="nv-foot"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
+</html>

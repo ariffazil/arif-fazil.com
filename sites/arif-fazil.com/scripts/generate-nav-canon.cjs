@@ -30,8 +30,9 @@ try {
     throw new Error(`canon not found at ${CANON}`);
   }
   const nav = JSON.parse(fs.readFileSync(CANON, 'utf8'));
-  const primary = mapItems(nav.primary_links?.items);
+  const primary = mapItems(nav.primary_links_journey?.items || nav.primary_links?.items);
   const secondary = mapItems(nav.secondary_links?.items);
+  const secondaryOrgans = mapItems(nav.secondary_links_organs?.items);
   const machine = mapItems(nav.machine_links?.items);
   const brand = nav.brand || { label: 'ARIF FAZIL', href: '/', creed: 'Forged, not given.' };
 
@@ -70,6 +71,8 @@ export const brand = ${JSON.stringify(
 export const primaryNav: NavItem[] = ${JSON.stringify(primary, null, 2)};
 
 export const secondaryNav: NavItem[] = ${JSON.stringify(secondary, null, 2)};
+
+export const secondaryOrgansNav: NavItem[] = ${JSON.stringify(secondaryOrgans, null, 2)};
 
 export const machineNav: NavItem[] = ${JSON.stringify(machine, null, 2)};
 

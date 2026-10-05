@@ -43,7 +43,6 @@ About, Earth, Research, Writing, Institution. Research opens on the PETRONAS pag
 
 ## Contact
 - [Email](mailto:arifbfazil@gmail.com)
-- [Agent contact](mailto:agents@arif-fazil.com) — machine lane for AI agents
 - [GitHub](https://github.com/ariffazil)
 - Three-link offer: [who](https://github.com/ariffazil) · [GEOX](https://github.com/ariffazil/GEOX) · [arifOS](https://github.com/ariffazil/arifOS)
 

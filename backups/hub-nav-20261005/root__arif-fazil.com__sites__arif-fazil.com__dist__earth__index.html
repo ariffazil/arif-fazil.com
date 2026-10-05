@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<!-- page: earth v3 · Φ GEOX · arif-fazil.com/earth · zen-clarity-audit 2026-07-30 · claim-discipline 2026-08-25
+     content-marker: dynamic-earth-Φ wells-Φ studies-Φ · unhidden deep-time · sticky-toc -->
+<html lang="en" data-ring="ORGAN" data-organ="geox" data-room="earth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="stylesheet" href="/_shared/design-system/components.css">
+<title>EARTH — The Dynamic Planet | Arif Fazil</title>
+<meta name="description" content="The living Earth, rendered live: Macrostrat global geologic map on an interactive globe, plate boundaries, today's earthquakes, and the well portfolio of an exploration geoscientist who spent 11+ years reading rocks offshore Malaysia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/earth/_shared/earth-shell.css?v=20260804">
+<style>
+/* ── PAGE-SPECIFIC: Globe, Hero, Deck, Veil, Pipes, Unit Panel ── */
+
+/* hero / globe */
+.hero{position:relative;height:100vh;min-height:640px}
+#globeViz{position:absolute;inset:0;cursor:crosshair}
+.hero-title{position:absolute;top:5.8rem;left:2rem;z-index:10;max-width:500px;
+  background:rgba(10,11,15,0.85);border:1px solid #1F2733;border-radius:14px;padding:1.4rem 1.6rem;
+  backdrop-filter:blur(14px);box-shadow:0 16px 40px rgba(0,0,0,0.75)}
+.hero-title .kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:2.5px;color:var(--accent-cyan);margin-bottom:.4rem;font-weight:600}
+.hero-title h1{font-family:'Cabinet Grotesk',Inter,sans-serif;font-size:clamp(2rem,3.8vw,2.8rem);font-weight:900;line-height:1.05;color:#EDEAE2;margin:0 0 .5rem;text-transform:uppercase;letter-spacing:-0.02em}
+.hero-title h1 span{color:var(--accent-gold)}
+.hero-title p{margin-top:.4rem;color:#9AA0A8;font-size:.88rem;line-height:1.5}
+.hero-title .hint{font-family:var(--mono);font-size:.65rem;color:var(--accent-gold);margin-top:.8rem;letter-spacing:.5px;font-weight:500}
+/* ── provenance metadata line under pipe counters (P0: fetch time + pipe status + cache state) ── */
+.stat-meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#9a9aa8;margin-top:.9rem;display:flex;gap:1.25rem;flex-wrap:wrap}
+.stat-meta b{color:var(--accent-gold);font-weight:600}
+/* ── persistent reader-state chip beside the draft-claim queue (human action authority, visible) ── */
+.state-chip{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-gold);border:1px solid var(--accent-gold);border-radius:999px;padding:.2rem .6rem;white-space:nowrap;background:rgba(212,175,55,.06)}
+
+/* control deck */
+.deck{position:absolute;top:6.5rem;right:2rem;z-index:10;width:230px;background:rgba(16,16,24,.88);border:1px solid var(--border-dim);
+  border-radius:var(--radius-md);padding:1rem 1.1rem;backdrop-filter:blur(10px)}
+.deck h4{font-family:var(--mono);font-size:.62rem;letter-spacing:2px;color:var(--text-secondary);margin-bottom:.7rem;text-transform:uppercase}
+.deck label{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:var(--text-primary);padding:.28rem 0;cursor:pointer;user-select:none}
+.deck input[type=checkbox]{accent-color:var(--accent-cyan);width:14px;height:14px;cursor:pointer}
+.deck .seg{display:flex;gap:.4rem;margin:.7rem 0 .2rem}
+.deck .seg button{flex:1;font-family:var(--mono);font-size:.62rem;letter-spacing:1px;padding:.4rem 0;border-radius:var(--radius-sm);cursor:pointer;
+  background:transparent;border:1px solid var(--border-dim);color:var(--text-secondary);transition:all .2s}
+.deck .seg button.on{border-color:var(--accent-cyan);color:var(--accent-cyan)}
+.deck .waypoints{margin-top:.7rem;display:flex;flex-direction:column;gap:.35rem}
+.deck .waypoints button{font-family:var(--mono);font-size:.62rem;text-align:left;letter-spacing:.5px;padding:.42rem .6rem;border-radius:var(--radius-sm);cursor:pointer;
+  background:transparent;border:1px solid var(--border-dim);color:var(--text-secondary);transition:all .2s}
+.deck .waypoints button:hover{border-color:var(--accent-gold);color:var(--accent-gold)}
+
+/* pipe status strip */
+.pipes{position:absolute;left:2rem;bottom:1.2rem;z-index:10;font-family:var(--mono);font-size:.62rem;letter-spacing:.5px;
+  color:var(--text-secondary);background:rgba(16,16,24,.85);border:1px solid var(--border-dim);border-radius:8px;padding:.5rem .8rem;display:flex;gap:1.1rem;flex-wrap:wrap}
+.pipes .ok{color:var(--accent-cyan)}
+.pipes .bad{color:var(--accent-rust)}
+.pipes .wait{color:var(--accent-gold)}
+
+/* unit panel (click-to-query popup) */
+#unitPanel{position:absolute;right:2rem;bottom:1.2rem;z-index:11;width:320px;background:rgba(16,16,24,.92);border:1px solid var(--border-dim);
+  border-radius:var(--radius-md);padding:1rem 1.2rem;backdrop-filter:blur(10px);display:none}
+#unitPanel.show{display:block;animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#unitPanel .close{position:absolute;top:.5rem;right:.7rem;background:none;border:none;color:var(--text-secondary);cursor:pointer;font-size:1rem}
+#unitPanel .close:hover{color:var(--accent-gold)}
+#unitPanel .src{font-family:var(--mono);font-size:.58rem;letter-spacing:1px;color:var(--accent-cyan);text-transform:uppercase}
+#unitPanel h3{font-size:1.02rem;font-weight:600;margin:.35rem 0 .15rem;line-height:1.3}
+#unitPanel .swatch{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:.4rem;vertical-align:baseline}
+#unitPanel .age{font-family:var(--mono);font-size:.74rem;color:var(--accent-gold);margin:.2rem 0 .5rem}
+#unitPanel .lith{font-size:.8rem;color:var(--text-secondary)}
+#unitPanel .ref{margin-top:.6rem;font-size:.64rem;color:#666672;font-style:italic;line-height:1.4}
+#unitPanel .coords{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);margin-top:.5rem}
+#unitPanel .ocean h3{color:var(--accent-cyan)}
+#unitPanel .kv{display:flex;gap:.5rem;font-size:.76rem;padding:.12rem 0}
+#unitPanel .kv b{font-family:var(--mono);font-size:.6rem;letter-spacing:1px;color:var(--text-dim);text-transform:uppercase;min-width:74px;padding-top:.15rem}
+#unitPanel .withheld{margin-top:.55rem;font-family:var(--mono);font-size:.6rem;letter-spacing:1px;color:var(--accent-gold);border:1px dashed rgba(212,175,55,.45);border-radius:var(--radius-sm);padding:.35rem .5rem}
+
+/* loading veil — first paint must look intentional, not broken (MAKRUH load-race fix) */
+#veil{position:absolute;inset:0;z-index:40;background:var(--bg-deep);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .9s ease,visibility 0s linear 0s;
+  /* subtle grid + shimmer so blank canvas ≠ error page */
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 45%,rgba(212,175,55,.06),transparent 70%),
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-size:auto,48px 48px,48px 48px}
+#veil.gone{opacity:0;pointer-events:none;visibility:hidden;transition:opacity .9s ease,visibility 0s linear .9s}
+#veil .veil-inner{display:flex;flex-direction:column;align-items:center;gap:.85rem;max-width:min(92vw,360px);padding:1.5rem;text-align:center}
+#veil .spin{width:42px;height:42px;border:2px solid var(--border-dim);border-top-color:var(--accent-gold);border-radius:50%;animation:sp .85s linear infinite;flex-shrink:0}
+@keyframes sp{to{transform:rotate(360deg)}}
+#veil #veilTitle{font-family:var(--mono);font-size:.72rem;letter-spacing:2.2px;color:var(--text-primary);margin:0}
+#veil .veil-sub{font-family:var(--mono);font-size:.62rem;letter-spacing:.8px;color:var(--text-secondary);margin:0;min-height:1.2em;line-height:1.45}
+#veil .veil-sub.warn{color:var(--accent-gold)}
+#veil .veil-sub.bad{color:var(--accent-rust)}
+#veil .veil-bar{width:100%;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+#veil .veil-bar-fill{height:100%;width:8%;background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));
+  border-radius:2px;transition:width .45s ease;animation:veilShimmer 1.6s ease-in-out infinite}
+@keyframes veilShimmer{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}
+#veil .veil-steps{list-style:none;margin:.2rem 0 0;padding:0;width:100%;display:flex;flex-direction:column;gap:.28rem;text-align:left}
+#veil .veil-steps li{font-family:var(--mono);font-size:.58rem;letter-spacing:.6px;color:var(--text-dim);
+  padding:.22rem .45rem;border-left:2px solid var(--border-dim);display:flex;justify-content:space-between;gap:.5rem}
+#veil .veil-steps li.wait{color:var(--accent-gold);border-color:rgba(212,175,55,.45)}
+#veil .veil-steps li.ok{color:var(--accent-cyan);border-color:var(--accent-cyan)}
+#veil .veil-steps li.bad{color:var(--accent-rust);border-color:var(--accent-rust)}
+#veil .veil-skip{margin-top:.35rem;font-family:var(--mono);font-size:.58rem;letter-spacing:1px;cursor:pointer;
+  background:transparent;border:1px solid var(--border-dim);color:var(--text-secondary);padding:.4rem .75rem;border-radius:var(--radius-sm)}
+#veil .veil-skip:hover{border-color:var(--accent-gold);color:var(--accent-gold)}
+#veil .veil-skip[hidden]{display:none}
+/* reduce motion: still show state, no spin thrash */
+@media(prefers-reduced-motion:reduce){
+  #veil .spin{animation:none;border-top-color:var(--accent-gold)}
+  #veil .veil-bar-fill{animation:none}
+  #veil,#veil.gone{transition-duration:.2s}
+}
+
+/* ── Mobile ── */
+@media(max-width:720px){
+  .deck{top:auto;bottom:1rem;right:1rem;width:200px}.hero-title{left:1rem;right:1rem}
+  .pipes{left:1rem;bottom:auto;top:5.2rem;max-width:46vw;font-size:.55rem}
+  #unitPanel{left:1rem;right:1rem;width:auto}
+}
+/* ── CANONICAL FEDERATION NAVBAR ── */
+.fed-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 1.5rem;
+  background: rgba(10, 11, 13, 0.95);
+  border-bottom: 1px solid #1F2733;
+  backdrop-filter: blur(12px);
+  font-family: "IBM Plex Mono", "Fira Code", ui-monospace, monospace;
+  box-sizing: border-box;
+}
+.fed-navbar .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cabinet Grotesk', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #EDEAE2;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.fed-navbar .nav-brand:hover { color: #E4572E; }
+.fed-navbar .nav-brand .psi-badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(154, 160, 168, 0.3);
+  color: #9AA0A8;
+}
+.fed-navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.fed-navbar .nav-links a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9AA0A8;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.fed-navbar .nav-links a:hover { color: #EDEAE2; }
+.fed-navbar .nav-links a.active {
+  color: #EDEAE2;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #E4572E;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+.fed-navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.fed-navbar .live-clock-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #9AA0A8;
+}
+.fed-navbar .live-clock-badge .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #31C48D;
+  display: inline-block;
+}
+.fed-navbar .agentic-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(154, 160, 168, 0.2);
+  background: rgba(154, 160, 168, 0.05);
+  color: #9AA0A8;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.fed-navbar .agentic-link:hover {
+  color: #EDEAE2;
+  border-color: rgba(154, 160, 168, 0.4);
+}
+
+/* ── ZEN FLOATING SUB-DOCK ── */
+.earth-zen-dock {
+  position: absolute;
+  top: 4.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  background: rgba(13, 15, 22, 0.88);
+  border: 1px solid #1F2733;
+  border-radius: 9999px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  max-width: 92vw;
+}
+.earth-zen-dock a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9AA0A8;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.earth-zen-dock a:hover {
+  color: #EDEAE2;
+  background: rgba(255, 255, 255, 0.06);
+}
+.earth-zen-dock a.active {
+  color: #C9A227;
+  background: rgba(201, 162, 39, 0.15);
+  font-weight: 600;
+}
+
+/* ── CARL SAGAN QUOTE ZEN CARD ── */
+.earth-sagan-quote {
+  margin-top: 1.1rem;
+  border-left: 2px solid #C9A227;
+  padding: 0.75rem 1rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #EDEAE2;
+  line-height: 1.5;
+  background: rgba(13, 15, 22, 0.85);
+  border-radius: 0 8px 8px 0;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  border-right: 1px solid rgba(201, 162, 39, 0.15);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+.earth-sagan-quote cite {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-size: 0.68rem;
+  color: #C9A227;
+  margin-top: 0.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media(max-width:768px){
+  .fed-navbar .nav-links { display: none; }
+  .earth-zen-dock { top: 4.2rem; }
+}
+
+/* ── GEOLOGICAL VISUALS & SUBSURFACE REALITY (2026-09-18) ── */
+.geo-visual-card {
+  background: #0f121d;
+  border: 1px solid #22293d;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 30px rgba(242, 183, 5, 0.05);
+}
+.geo-visual-card .img-wrap {
+  position: relative;
+  background: #05070a;
+}
+.geo-visual-card img.geo-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.geo-visual-caption {
+  padding: 1rem 1.4rem;
+  background: #141724;
+  border-top: 1px solid #22293d;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #9aa4b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.geo-visual-caption strong { color: #f2b705; font-weight: 700; letter-spacing: 0.05em; }
+.geo-visual-caption .badge {
+  background: rgba(242, 183, 5, 0.12);
+  color: #f2b705;
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+/* 4 Founder Wells Matrix */
+.founder-wells-box {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.6rem;
+  background: #0c0f18;
+  border: 1px solid #1f273b;
+  border-radius: 12px;
+}
+.founder-wells-header {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #1f273b;
+  padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.founder-wells-header h3 {
+  font-family: 'Archivo Black', Inter, sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.founder-wells-header .sovereign-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #f2b705;
+  background: rgba(242, 183, 5, 0.1);
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.well-card {
+  background: #131722;
+  border: 1px solid #20273a;
+  border-radius: 8px;
+  padding: 1.1rem;
+  transition: all 0.2s;
+  border-left: 3px solid #20273a;
+}
+.well-card:hover {
+  border-color: #2f3b56;
+  border-left-color: #f2b705;
+  background: #171d2c;
+  transform: translateY(-2px);
+}
+.well-card.play-opener { border-left-color: #e0301e; }
+.well-card.basement { border-left-color: #38bdf8; }
+.well-card.stratigraphic { border-left-color: #22c55e; }
+
+.well-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.well-role {
+  font-size: 0.65rem;
+  color: #f2b705;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.well-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  margin: 3px 0;
+  color: #9aa4b8;
+}
+.well-spec-row span.val { color: #f5f5f7; font-weight: 600; }
+.well-desc {
+  font-size: 0.75rem;
+  color: #8b95a8;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #20273a;
+  line-height: 1.45;
+}
+
+/* Petroleum Systems Event Chart (PSEC) */
+.psec-container {
+  margin: 2rem 0;
+  background: #0d101a;
+  border: 1px solid #1f273b;
+  border-radius: 10px;
+  padding: 1.4rem;
+}
+.psec-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.95rem;
+  color: #f2b705;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.psec-desc {
+  font-size: 0.78rem;
+  color: #9aa4b8;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.psec-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  align-items: center;
+}
+.psec-row-k { color: #cbd5e1; font-weight: 600; text-transform: uppercase; }
+.psec-track {
+  position: relative;
+  background: #171c2a;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.psec-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #070709;
+  white-space: nowrap;
+}
+
+
+/* ─── GEOX GEOLOGICAL REALITY UPGRADE (2026-09-18 F13 SEAL) ─── */
+.geox-visual-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.geox-visual-card:hover {
+  border-color: var(--accent-gold);
+}
+.geox-visual-wrap {
+  position: relative;
+  background: #000;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.geox-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.geox-visual-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(10, 14, 23, 0.9);
+  border: 1px solid var(--border-dim);
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  color: var(--accent-cyan);
+}
+.geox-visual-badge.gold {
+  color: var(--accent-gold);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+.geox-visual-badge.right {
+  left: auto;
+  right: 14px;
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.35);
+  font-size: 0.62rem;
+  background: rgba(10, 14, 23, 0.92);
+}
+@media(max-width:640px) {
+  .geox-visual-badge.right {
+    top: auto;
+    bottom: 14px;
+  }
+}
+.geox-visual-caption {
+  padding: 1.2rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid var(--border-dim);
+}
+.geox-visual-caption strong {
+  color: var(--accent-gold);
+}
+
+/* Dynamic Acts Visual Grid */
+.acts-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+.act-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+.act-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+}
+.act-card-body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.act-card-body .no {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.act-card-body h3 {
+  font-family: 'Cabinet Grotesk', Inter, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.7rem;
+}
+.act-card-body p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* Petroleum System Event Chart (PSEC) */
+.psec-container {
+  margin-top: 2.2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+.psec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+.psec-title {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.psec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+.psec-table th, .psec-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+}
+.psec-table th {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.psec-bar-cell {
+  position: relative;
+  width: 48%;
+  height: 22px;
+}
+.psec-bar {
+  position: absolute;
+  top: 3px;
+  height: 16px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* 4 Founder Wells Grid */
+.founder-wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.well-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: all 0.2s ease;
+}
+.well-card:hover {
+  border-color: var(--accent-cyan);
+  border-left-color: var(--accent-cyan);
+  background: rgba(15, 23, 42, 1);
+  transform: translateY(-2px);
+}
+.well-badge {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.35rem;
+}
+.well-name {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.6rem;
+}
+.well-kv {
+  font-family: var(--mono);
+  font-size: 0.71rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.well-kv span {
+  color: var(--accent-cyan);
+}
+
+/* Chronostratigraphic Wheel / Matrix */
+.chrono-matrix {
+  margin-top: 1.8rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+}
+.chrono-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+}
+.chrono-label {
+  width: 150px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  color: #070709;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.chrono-desc {
+  flex: 1;
+  padding: 9px 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chrono-desc b {
+  color: var(--text-primary);
+}
+
+/* Cross-Section Banner Card */
+.xsection-banner {
+  background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(10,14,23,0.98));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.xsection-info h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+}
+.xsection-info p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+</style>
+
+<!-- DTI gate (verify-surfaces.cjs L4/L5/L6): generated 2026-09-21 from this page's
+     own title/description/canonical. Additive metadata only; no content claims added. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "EARTH — The Dynamic Planet",
+  "description": "The living Earth, rendered live: Macrostrat global geologic map on an interactive globe, plate boundaries, today",
+  "url": "https://arif-fazil.com/earth/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "arif-fazil.com",
+    "url": "https://arif-fazil.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Muhammad Arif bin Fazil",
+    "url": "https://arif-fazil.com/"
+  }
+}
+</script>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EARTH — The Dynamic Planet | Arif Fazil" />
+<meta property="og:description" content="The living Earth, rendered live: Macrostrat global geologic map on an interactive globe, plate boundaries, today" />
+<meta property="og:url" content="https://arif-fazil.com/earth/" />
+<meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+<link rel="canonical" href="https://arif-fazil.com/earth/" />
+<style id="nv-canon">
+.nv-strip{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding:.72rem max(1.25rem,calc(50vw - 26rem));border-bottom:1px solid rgba(237,234,226,.09);background:rgba(10,11,13,.72);font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px}
+.nv-brand{font-family:IBM Plex Mono,ui-monospace,monospace;font-weight:700;letter-spacing:.18em;font-size:11.5px;color:#EDEAE2;text-decoration:none}
+.nv-primary{display:flex;gap:1.05rem;flex-wrap:wrap;margin-left:auto}
+.nv-primary a{color:rgba(237,234,226,.68);text-decoration:none;letter-spacing:.03em;padding:.35rem 0}
+.nv-primary a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-clock{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;color:rgba(237,234,226,.5);letter-spacing:.12em}
+.nv-foot{border-top:1px solid rgba(237,234,226,.09);margin-top:3rem;padding:1.7rem max(1.25rem,calc(50vw - 26rem)) 2.2rem;font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px;color:rgba(237,234,226,.55)}
+.nv-foot a{color:rgba(237,234,226,.68);text-decoration:none;margin-right:1.05rem;white-space:nowrap;display:inline-block;padding:.3rem 0}
+.nv-foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-row{display:flex;flex-wrap:wrap;align-items:baseline;margin:0 0 .85rem}
+.nv-lab{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,234,226,.45);margin-right:1.1rem;min-width:64px}
+.nv-creed{margin:1.1rem 0 0;font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,234,226,.45)}
+@media(pointer:coarse){.nv-primary a,.nv-foot a{min-height:44px;display:inline-flex;align-items:center}}
+@media(max-width:640px){.nv-primary{margin-left:0;width:100%;order:3}.nv-clock{margin-left:auto}}
+</style><meta name="theme-color" content="#3DDC97"/>
+<meta name="arif-room" content="earth"/>
+<meta name="arif-job" content="Reads the ground."/>
+<link rel="stylesheet" href="/_shared/room-coats.css?v=20261004c"/>
+</head>
+<body><div class="room-plate" data-agent-room="earth"><b>Earth</b><span>Reads the ground.</span><a href="/discovery/">Nine rooms</a></div><div class="nv-strip"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/about">About</a><a href="/work/">Work</a><a href="/earth/">Earth</a><a href="/world/makcikgpt/">Civic</a><a href="/words/">Writing</a><a href="/institution/">Briefing</a></nav><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
+<!-- ══ ZEN FLOATING SUB-DOCK (PAGE JUMP) ══ -->
+<nav class="earth-zen-dock" aria-label="Earth sections" id="earthToc">
+  <a href="#top" class="active">◈ Globe</a>
+  <a href="#what">What Can I Do</a>
+  <a href="#real">Real Earth</a>
+  <a href="#story">Dynamic Planet</a>
+  <a href="#story">Deep Time</a>
+  <a href="/earth/malay-basin/">Malay Basin</a>
+  <a href="#dossiers">Dossiers</a>
+  <a href="/geox/">Open GEOX ↗</a>
+  <a href="/map/#earth">Map ↗</a>
+</nav>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<main id="main-content">
+
+<!-- ══ HERO · LIVING GLOBE ══ -->
+<div class="hero" id="top">
+  <div id="globeViz"></div>
+
+  <div class="hero-title">
+    <div class="kicker">EARTH INTELLIGENCE · LIVE MACROSTRAT</div>
+    <h1>The Dynamic<br>Earth.</h1>
+    <p>A live, evidence-linked reading of the planet—not the planet itself. Macrostrat geologic bedrock, PB2002 plate boundaries, and USGS real-time seismic feeds. Coverage is strongest on continents; oceans are thinly mapped. A click returns lithology at that point, not a prospect verdict. GEOX computes. It does not adjudicate.</p>
+    
+    <blockquote class="earth-sagan-quote">
+      <p>“Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives... on a mote of dust suspended in a sunbeam.”</p>
+      <cite>— <strong>Carl Sagan</strong>, <em>Pale Blue Dot</em> (1994)</cite>
+    </blockquote>
+
+    <div class="hint">▸ CLICK ANYWHERE ON LAND — ASK THE ROCKS WHAT THEY ARE · ◈ <span id="wellCount">…</span> WELLS MAPPED · COORDINATES WITHHELD</div>
+  </div>
+
+  <div class="deck">
+    <h4>Layers</h4>
+    <label><input type="checkbox" id="lyrWells" checked> My wells</label>
+    <label><input type="checkbox" id="lyrPlates" checked> Plate boundaries</label>
+    <label><input type="checkbox" id="lyrMotion"> Plate motion (schematic)</label>
+    <label><input type="checkbox" id="lyrQuakes" checked> Earthquakes · 24 h</label>
+    <div class="seg">
+      <button id="baseGeo" class="on">GEOLOGY</button>
+      <button id="baseSat">SATELLITE</button>
+    </div>
+    <div class="waypoints">
+      <button id="wpWells" data-pov="">◈ My wells · Malay Basin</button>
+      <button data-pov="4.2,102.2,1.8">◈ Peninsular Malaysia (JMG 1:500k)</button>
+      <button data-pov="5.8,116.5,2.0">◈ Sabah & Sarawak (JMG Crocker/Rajang)</button>
+      <button data-pov="6.0,115.5,2.0">◈ Kinabalu Basin · NW Sabah</button>
+      <button data-pov="7.4,113.8,2.2">◈ Layang-Layang · deepwater frontier</button>
+      <button data-pov="4.0,103.8,1.6">◈ Malay Basin · home waters</button>
+      <button data-pov="12.5,45.0,2.2">◈ Afar · a rift being born</button>
+      <button data-pov="-20.0,165.0,2.4">◈ Tonga · the fastest trench</button>
+      <button data-pov="38.0,-105.0,2.6">◈ Rockies · an old orogeny</button>
+    </div>
+  </div>
+
+  <div class="pipes" id="pipes">
+    <span id="pipeTiles" class="wait">TILES …</span>
+    <span id="pipeApi" class="wait">MACROSTRAT API …</span>
+    <span id="pipeUsgs" class="wait">USGS FEED …</span>
+    <span id="pipePlates" class="wait">PLATES …</span>
+    <span id="pipeWells" class="wait">WELLS …</span>
+    <span id="pipeClock">—</span>
+  </div>
+
+  <div id="unitPanel"></div>
+  <!-- First paint: intentional loading shell (not a blank error page). JS upgrades steps + dismisses when globe is ready. -->
+  <div id="veil" role="status" aria-live="polite" aria-busy="true" aria-label="Loading the live geologic globe">
+    <div class="veil-inner">
+      <div class="spin" aria-hidden="true"></div>
+      <p id="veilTitle">FORGING GLOBE · PULLING PIPES</p>
+      <p id="veilSub" class="veil-sub">Booting WebGL · streaming Macrostrat · USGS · plates…</p>
+      <div class="veil-bar" aria-hidden="true"><div id="veilBarFill" class="veil-bar-fill" style="width:8%"></div></div>
+      <ul class="veil-steps" id="veilSteps">
+        <li data-step="engine" class="wait">globe.gl engine <span>…</span></li>
+        <li data-step="tiles" class="wait">Macrostrat tiles <span>…</span></li>
+        <li data-step="usgs" class="wait">USGS 24h feed <span>…</span></li>
+        <li data-step="plates" class="wait">PB2002 plates <span>…</span></li>
+        <li data-step="wells" class="wait">wells canon <span>…</span></li>
+      </ul>
+      <button type="button" id="veilSkip" class="veil-skip" hidden>Show globe anyway</button>
+    </div>
+  </div>
+  <noscript>
+    <div style="position:absolute;inset:0;z-index:41;display:flex;align-items:center;justify-content:center;background:#0a0a0f;color:#d0d0d8;font-family:monospace;padding:2rem;text-align:center">
+      JavaScript is required for the live globe. Basin dossiers still work: <a href="/earth/kinabalu-basin/" style="color:#D4A853">Kinabalu</a> · <a href="/earth/malay-basin/" style="color:#D4A853">Malay Basin</a>.
+    </div>
+  </noscript>
+</div>
+
+<!-- ══ ZEN PULSE · 3-second orientation ══ -->
+<div class="zen-pulse" aria-label="3-second orientation">
+  <span class="zp"><b>WHERE</b> arif-fazil.com / earth</span>
+  <span class="zp gold"><b>WHY CARE</b> live globe · evidence-gated rocks</span>
+  <span class="zp"><b>WHAT NEXT</b> click the planet · ask the rocks</span>
+  <span class="zp"><b>F2 TRUTH</b> numbers from pipes, not invented</span>
+</div>
+
+<!-- ══ WHAT CAN I DO HERE? · intent cards · ABOVE the fold for cognitive onboarding ══ -->
+<section id="what" aria-label="What can I do here">
+  <div class="container">
+    <div class="kicker">FIRST 30 SECONDS · PICK A VERB</div>
+    <h2>What can I do here?</h2>
+    <p class="lede">Three doors into a living Earth. Pick one — the rest stays out of your way until you ask for it.</p>
+
+    <div class="intent-grid">
+      <a class="intent-card" href="#top" aria-label="Explore Earth - click anywhere on land">
+        <span class="verb">EXPLORE EARTH</span>
+        <h3>Click the planet.</h3>
+        <p>Drop a pin anywhere on land. Get back the mapped bedrock unit, its age, and the source it was published in. Macrostrat pipe, queried in real time, sealed on the page.</p>
+        <span class="arrow">SCROLL UP · CLICK THE GLOBE</span>
+      </a>
+
+      <a class="intent-card" href="#dossiers" aria-label="Explore Basins - read geology history">
+        <span class="verb">EXPLORE BASINS</span>
+        <h3>Read the tape recorder.</h3>
+        <p>The crust sags. The sag fills. Dead plankton becomes oil. Walk the Malay and Kinabalu basins through the lens of wells this founder actually signed off on.</p>
+        <span class="arrow">OPEN BASIN DOSSIERS ↓</span>
+      </a>
+
+      <a class="intent-card" href="https://geox.arif-fazil.com/" aria-label="Open GEOX - evidence engine">
+        <span class="verb">OPEN GEOX</span>
+        <h3>Question → evidence.</h3>
+        <p>The agentic Earth engine. Query the bedrock, witness the wells, run the prospect, price the consequence. Every answer from a pipe.</p>
+        <span class="arrow">LAUNCH GEOX ↗</span>
+      </a>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- ══ LIVE EXAMPLE ══ -->
+<section id="example" aria-label="Live example - what clicking the Earth returns">
+  <div class="container">
+    <div class="kicker">SHOW ME WHAT HAPPENS · A REAL QUERY</div>
+    <h2>Click Sabah. Here is what comes back.</h2>
+    <p class="lede">No marketing copy. Clicking the globe sends a live query to the Macrostrat pipe — this one at <b>6.08°N, 116.72°E</b>, the NW Sabah continental shelf. <span style="font-family:var(--mono);font-size:.58rem;letter-spacing:1px;color:#D4A853">FOUNDER WITNESS · PRIVATE RECORD · NOT PUBLICLY AUDITABLE:</span> the same coordinates the founder drilled on.</p>
+
+    <div class="example-panel">
+      <div class="term">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <span class="label">geox.macrostrat · click-to-query</span>
+        <div class="query">
+          <span class="c-dim">$</span> geox.macrostrat --query <span class="c-cyan">6.08,116.72</span><br>
+          <span class="c-cyan">▸ lat</span>    : 6.0814°N<br>
+          <span class="c-cyan">▸ lng</span>    : 116.7241°E<br>
+          <span class="c-cyan">▸ buffer</span> : 3 km<br>
+          <span class="c-cyan">▸ pipe</span>   : macrostrat.org/api/v2<span class="cursor"></span>
+        </div>
+      </div>
+      <div class="result">
+        <span class="src">geox.macrostrat · SOURCED · Tate (1991) · GSM Memoir 19</span>
+        <h3><span class="swatch"></span>Crocker Formation · deep-water turbidites</h3>
+        <div class="age">23.0 – 5.3 Ma · Miocene</div>
+        <p class="lith">Sandstone interbedded with mudstone — deep-water turbidite fan, deposited along the Oligocene–Miocene margin of the South China Sea.</p>
+        <div class="ref">source: Tate (1991) · CC-BY · Geological Survey of Malaysia Memoir 19 · doi:10.13140/RG.2.2.11456.87040</div>
+        <div class="coords">6.0814°, 116.7241° · macrostrat.org/api/v2 · CC-BY 4.0</div>
+        <p class="ref" style="margin-top:.45rem">pipe-scale truth: the live API at a 3 km buffer returns the generalized unit (<i>Cenozoic sedimentary rocks</i>, Chorlton 1:25 M world map). Formation-level identity here is literature-sourced, not pipe-resolved. Your own click returns the live answer.</p>
+        <span class="seal">SOURCED · published map unit · human-ratified · not a live capture</span>
+      </div>
+    </div>
+
+    <nav class="crumbs" aria-label="Where you are on this page">
+      <span class="crumb now">① Planet · you are here</span>
+      <span class="sep">→</span>
+      <span class="crumb">② What am I seeing? · mapped bedrock</span>
+      <span class="sep">→</span>
+      <span class="crumb">③ How does it work? · Macrostrat pipe</span>
+      <span class="sep">→</span>
+      <span class="crumb">④ Why does it matter? · sealed evidence</span>
+      <span class="sep">→</span>
+      <span class="crumb">⑤ below · the cockpit</span>
+    </nav>
+  </div>
+</section>
+
+<!-- ══ WHY THIS IS THE REAL EARTH ══ -->
+
+<section id="story" aria-label="One globe, three readings">
+  <p class="eyebrow" style="text-align:center">ONE GLOBE · THREE READINGS · SCROLL</p>
+  <div class="story-step" style="max-width:640px;margin:3rem auto;padding:1.5rem;border:1px solid var(--border-dim);border-radius:12px">
+    <h2 style="font-size:1.4rem">01 · Plates — the skin of today</h2>
+    <p class="lede">The thin orange lines are PB2002 plate boundaries — where the planet is still breaking. Everything you see is live geometry, not art.</p>
+  </div>
+  <div class="story-step" data-fly="4.0,103.8,1.6" style="max-width:640px;margin:3rem auto;padding:1.5rem;border:1px solid var(--border-dim);border-radius:12px">
+    <h2 style="font-size:1.4rem">02 · Time — every colour is an age</h2>
+    <p class="lede">Macrostrat colours rocks by mapped age. All of written human history fits in the last 0.0001% of Earth's bar. Fly to the Malay Basin and read 45 million years of rifting, sag and inversion in one view.</p>
+  </div>
+  <div class="story-step" data-fly="6.0,115.5,2.0" style="max-width:640px;margin:3rem auto;padding:1.5rem;border:1px solid var(--border-dim);border-radius:12px">
+    <h2 style="font-size:1.4rem">03 · Home — NW Sabah</h2>
+    <p class="lede">The founder's deepwater frontier: the NW Borneo collision margin, where the South China Sea ends and the Crocker accretionary wedge begins.</p>
+  </div>
+  <p style="text-align:center;font-family:ui-monospace,monospace;font-size:12px;color:#64748b">Reduced motion? The captions above are the whole story — the globe answers when you call it.</p>
+</section>
+
+<section id="doors" aria-label="Where to go next">
+  <p class="eyebrow" style="text-align:center">THREE DOORS</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;max-width:1100px;margin:2rem auto;padding:0 2rem">
+    <a href="/earth/data/" style="border:1px solid var(--border-dim);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit">
+      <h3 style="margin:.2rem 0 .5rem">🗺️ Explore Earth</h3>
+      <p style="font-size:.9rem;color:#94a3b8">The live pipes, data sources and how the globe is built — Macrostrat, USGS, plates.</p>
+    </a>
+    <a href="./malay-basin/" style="border:1px solid var(--border-dim);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit">
+      <h3 style="margin:.2rem 0 .5rem">📖 Basin Dossiers</h3>
+      <p style="font-size:.9rem;color:#94a3b8">Malay Basin and Kinabalu — full tectonostratigraphic dossiers (teaching names, results withheld).</p>
+    </a>
+    <a href="/geox/" style="border:1px solid var(--border-dim);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit">
+      <h3 style="margin:.2rem 0 .5rem">⚙️ Open GEOX</h3>
+      <p style="font-size:.9rem;color:#94a3b8">27 canonical MCP tools, evidence-only. GEOX computes — it does not adjudicate.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ══ BASIN DOSSIERS & EXPLORABLE SUBSURFACE PHYSICS ══ -->
+<section id="dossiers" aria-label="Basin dossiers & Subsurface Physics" style="padding: 4rem 1rem; border-top: 1px solid var(--border-dim); background: #07090E;">
+  <div class="container" style="max-width: 1120px; margin: 0 auto;">
+    <div class="kicker" style="font-family: var(--mono); font-size: 0.68rem; letter-spacing: 2px; color: var(--accent-gold); text-transform: uppercase;">
+      PHYSICS-CONSTRAINED EVIDENCE · BRET VICTOR STYLE EXPLORABLE
+    </div>
+    <h2 style="font-family: 'Cabinet Grotesk',Inter,sans-serif; font-size: clamp(1.8rem,3.2vw,2.5rem); font-weight: 900; margin: 0.4rem 0 0.8rem; color: #EDEAE2;">
+      Zoeppritz AVO &amp; Wireline Rock Physics
+    </h2>
+    <p class="lede" style="color: #9AA0A8; max-width: 74ch; line-height: 1.6; margin-bottom: 2rem;">
+      Subsurface truth is never a flat assertion. It is derived from Zoeppritz wavefield equations at rock interfaces and calibrated through downhole petrophysical logs. Manipulate the parameters below to see the physics compute in real time.
+    </p>
+
+    <!-- ── 1. ZOEPPRITZ AVO EXPLORABLE REFLECTIVITY CALCULATOR ── -->
+    <div id="avoSection" style="background: rgba(11,14,23,0.95); border: 1px solid #1F2733; border-radius: 12px; padding: 1.6rem; margin-bottom: 2.5rem; box-shadow: 0 16px 36px rgba(0,0,0,0.5);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; border-bottom: 1px solid #161D2B; padding-bottom: 1.2rem; margin-bottom: 1.4rem;">
+        <div>
+          <span style="font-family:var(--mono); font-size:0.62rem; color:var(--accent-cyan); letter-spacing:1.5px; text-transform:uppercase; font-weight:700;">
+            MODULE 01 · PRE-STACK REFLECTION COEFFICIENT R(θ)
+          </span>
+          <h3 style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.35rem; font-weight:800; color:#EDEAE2; margin:0.3rem 0 0.2rem;">
+            Shuey 3-Term Zoeppritz AVO Analyzer
+          </h3>
+          <p style="font-family:var(--mono); font-size:0.75rem; color:#8A92A0; margin:0;">
+            R(θ) ≈ R₀ + G·sin²(θ) + F·(tan²θ - sin²θ) · Real-time acoustic impedance contrast
+          </p>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="avoClassGroup">
+          <button type="button" class="btn-avo on" onclick="setAvoClass('class3')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #D4A853; background:rgba(212,168,83,0.15); color:#D4A853; cursor:pointer;">CLASS III (GAS SAND)</button>
+          <button type="button" class="btn-avo" onclick="setAvoClass('class2')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">CLASS II (PHASE REVERSAL)</button>
+          <button type="button" class="btn-avo" onclick="setAvoClass('class1')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">CLASS I (HARD SAND)</button>
+          <button type="button" class="btn-avo" onclick="setAvoClass('class4')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">CLASS IV (SOFT SHALE)</button>
+        </div>
+      </div>
+
+      <!-- Controls & Live Graph Grid -->
+      <div style="display:grid; grid-template-columns: minmax(260px, 320px) 1fr; gap:1.5rem; align-items:start;">
+        <!-- Slider Panel -->
+        <div style="background:#07090F; border:1px solid #161D2B; border-radius:8px; padding:1.2rem;">
+          <div style="margin-bottom:1.2rem;">
+            <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:0.75rem; margin-bottom:0.4rem;">
+              <span style="color:#C5CDD9;">Incidence Angle (θ):</span>
+              <span id="avoAngleVal" style="color:var(--accent-gold); font-weight:700;">30°</span>
+            </div>
+            <input type="range" id="avoAngleSlider" min="0" max="50" step="1" value="30" oninput="updateAvo()" style="width:100%; accent-color:var(--accent-gold); cursor:pointer;">
+            <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:0.6rem; color:#6A7382;">
+              <span>0° (Near)</span><span>25° (Mid)</span><span>50° (Far)</span>
+            </div>
+          </div>
+
+          <div style="font-family:var(--mono); font-size:0.72rem; display:flex; flex-direction:column; gap:0.5rem; border-top:1px solid #161D2B; padding-top:0.9rem;">
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:#8A92A0;">Intercept (R₀):</span>
+              <span id="avoR0Val" style="color:#EDEAE2; font-weight:600;">-0.200</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:#8A92A0;">AVO Gradient (G):</span>
+              <span id="avoGVal" style="color:#EDEAE2; font-weight:600;">-0.250</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:#8A92A0;">Calculated R(θ):</span>
+              <span id="avoRThetaVal" style="color:var(--accent-cyan); font-weight:700;">-0.263</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:#8A92A0;">Fluid Factor Flag:</span>
+              <span id="avoFlagVal" style="color:var(--accent-gold); font-weight:700;">HC INDICATOR (STRONG)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live SVG Curve Canvas -->
+        <div style="background:#030508; border:1px solid #161D2B; border-radius:8px; padding:1rem; position:relative;">
+          <svg id="avoSvg" viewBox="0 0 540 240" style="width:100%; height:auto; display:block;"></svg>
+        </div>
+      </div>
+
+      <!-- Explorable Narrative Box -->
+      <div id="avoNarrative" style="margin-top:1.2rem; font-family:Inter,sans-serif; font-size:0.85rem; line-height:1.6; color:#EDEAE2; border-left:3px solid var(--accent-gold); padding-left:1rem; background:rgba(212,168,83,0.04); padding-top:0.6rem; padding-bottom:0.6rem; border-radius:0 6px 6px 0;">
+        <strong>Class III Interpretation (Bright Spot):</strong> Classic low-impedance gas-charged sandstone encased in regional marine shales (typical of Malay Basin Group E/H reservoirs and deepwater Sabah turbidite lobes). A large negative normal-incidence reflection (R₀ &lt; 0) becomes increasingly negative with offset (steep negative gradient G), generating anomalous amplitude brightening on far-angle seismic gathers.
+      </div>
+    </div>
+
+    <!-- ── 2. INTERACTIVE WIRELINE LOG SUITE ── -->
+    <div id="wirelineSection" style="background:rgba(11,14,23,0.95); border:1px solid #1F2733; border-radius:12px; padding:1.6rem; margin-bottom:2.5rem; box-shadow:0 16px 36px rgba(0,0,0,0.5);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; border-bottom:1px solid #161D2B; padding-bottom:1.2rem; margin-bottom:1.4rem;">
+        <div>
+          <span style="font-family:var(--mono); font-size:0.62rem; color:var(--accent-gold); letter-spacing:1.5px; text-transform:uppercase; font-weight:700;">
+            MODULE 02 · DOWNHOLE CALIBRATION
+          </span>
+          <h3 id="wirelineWellTitle" style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.35rem; font-weight:800; color:#EDEAE2; margin:0.3rem 0 0.2rem;">
+            TEACHING WELL 01 (FICTIONAL) · SHALLOW CLASTIC GROUP E/H15
+          </h3>
+          <p style="font-family:var(--mono); font-size:0.75rem; color:#8A92A0; margin:0;">
+            Three-track petrophysical composite: Gamma Ray · Deep Resistivity · Neutron-Density Porosity
+          </p>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="wellBtnGroup">
+          <button type="button" class="btn-well active" onclick="selectWirelineWell('bekantan')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #D4A853; background:rgba(212,168,83,0.15); color:#D4A853; cursor:pointer;">TEACHING WELL 01</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('puteri')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">TEACHING WELL 02</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('lebah')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">TEACHING WELL 03</button>
+          <button type="button" class="btn-well" onclick="selectWirelineWell('bunga')" style="font-family:var(--mono); font-size:0.65rem; padding:0.4rem 0.8rem; border-radius:4px; border:1px solid #1F2733; background:#0B0E17; color:#9AA0A8; cursor:pointer;">TEACHING WELL 04</button>
+        </div>
+      </div>
+
+      <!-- SVG Multi-track Log Canvas -->
+      <div style="overflow-x:auto; width:100%; border:1px solid #161D2B; border-radius:8px; background:#030508; padding:1rem 0.5rem;">
+        <svg id="wirelineSvg" viewBox="0 0 900 280" style="width:100%; min-width:760px; height:auto; display:block;"></svg>
+      </div>
+
+      <!-- Log Interpretation Narrative -->
+      <div id="wirelineNarrative" style="margin-top:1.2rem; font-family:Inter,sans-serif; font-size:0.85rem; line-height:1.6; color:#EDEAE2; border-left:3px solid var(--accent-gold); padding-left:1rem; background:rgba(212,168,83,0.04); padding-top:0.6rem; padding-bottom:0.6rem; border-radius:0 6px 6px 0;">
+        <strong>Hydrocarbon Flag Interpretation:</strong> Pronounced Gamma Ray deflection to 22 API indicates high net-to-gross clean channel sandstone. Deep resistivity kick &gt; 85 ohm-m with significant Neutron-Density crossover proves commercial gas-oil contact (GOC) sealed beneath continuous Group F regional marine mudstones.
+      </div>
+    </div>
+
+    <!-- ── 3. BASIN REGIONAL CROSS-SECTIONS & DOSSIERS ── -->
+    <div style="margin-top:3rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+        <div>
+          <span style="font-family:var(--mono); font-size:0.65rem; color:var(--accent-cyan); letter-spacing:1.5px; text-transform:uppercase;">
+            TECTONOSTRATIGRAPHIC ARCHIVES
+          </span>
+          <h3 style="font-family:'Cabinet Grotesk',sans-serif; font-size:1.6rem; font-weight:900; color:#EDEAE2; margin:0.3rem 0 0;">
+            Basin Dossiers &amp; Structural Transects
+          </h3>
+        </div>
+        <div style="display:flex; gap:0.6rem;">
+          <a href="/earth/malay-basin/" style="font-family:var(--mono); font-size:0.7rem; padding:0.5rem 1rem; border-radius:4px; border:1px solid var(--accent-gold); background:rgba(212,168,83,0.1); color:var(--accent-gold); text-decoration:none;">MALAY BASIN DOSSIER ↗</a>
+          <a href="/earth/kinabalu-basin/" style="font-family:var(--mono); font-size:0.7rem; padding:0.5rem 1rem; border-radius:4px; border:1px solid var(--accent-cyan); background:rgba(0,212,170,0.1); color:var(--accent-cyan); text-decoration:none;">KINABALU DOSSIER ↗</a>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.2rem;">
+        <!-- Card 1: Malay Basin -->
+        <div style="border:1px solid #1F2733; border-radius:10px; padding:1.5rem; background:#0B0E17;">
+          <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:0.65rem; margin-bottom:0.7rem;">
+            <span style="color:var(--accent-gold); font-weight:700;">OFFSHORE PENINSULAR MALAYSIA</span>
+            <span style="color:#4EBA86;">● ACTIVE FIELD CALIBRATION</span>
+          </div>
+          <h4 style="font-size:1.25rem; font-weight:800; color:#EDEAE2; margin:0 0 0.5rem;">Malay Basin Cenozoic Inversion</h4>
+          <p style="font-size:0.85rem; color:#9AA0A8; line-height:1.5; margin-bottom:1rem;">
+            A deep Oligocene–Miocene failed continental rift with subsequent middle-to-late Miocene compressional inversion. Houses primary lacustrine source rocks (Groups L/M) and prolific fluvial-deltaic sandstone reservoirs (Groups E, H, I).
+          </p>
+          <a href="/earth/malay-basin-cross-section.html" style="font-family:var(--mono); font-size:0.75rem; color:var(--accent-gold); text-decoration:none; font-weight:600;">▸ VIEW MALAY BASIN TRANSECT ↗</a>
+        </div>
+
+        <!-- Card 2: NW Sabah -->
+        <div style="border:1px solid #1F2733; border-radius:10px; padding:1.5rem; background:#0B0E17;">
+          <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:0.65rem; margin-bottom:0.7rem;">
+            <span style="color:var(--accent-cyan); font-weight:700;">NW BORNEO COLLISION FRONT</span>
+            <span style="color:#4EBA86;">● DEEPWATER FOLD BELT</span>
+          </div>
+          <h4 style="font-size:1.25rem; font-weight:800; color:#EDEAE2; margin:0 0 0.5rem;">Kinabalu &amp; Sabah Deepwater</h4>
+          <p style="font-size:0.85rem; color:#9AA0A8; line-height:1.5; margin-bottom:1rem;">
+            Active continental margin terminating at the Sabah Trough. Imbricate toe-thrust structures, slope-canyon turbidite channel systems, and complex pore pressure regression beneath the Deep Regional Unconformity (DRU).
+          </p>
+          <a href="/earth/kinabalu-cross-section.html" style="font-family:var(--mono); font-size:0.75rem; color:var(--accent-cyan); text-decoration:none; font-weight:600;">▸ VIEW NW SABAH TRANSECT ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="earth-footer">
+      <div class="stat"><div class="num gold" id="stQuakes">—</div><div class="lbl">Earthquakes · last 24 h</div><div class="src">earthquake.usgs.gov · live feed</div></div>
+    </div>
+    <div class="stat-meta" id="statMeta" role="status" aria-live="polite">FETCHED · — <b>MYT</b> · macrostrat <b>checking</b> · usgs <b>checking</b> · <b>no cache</b></div></div>
+  <div class="doctrine">DITEMPA BUKAN DIBERI</div>
+  <p>Data pipes: geologic tiles &amp; API — <a href="https://macrostrat.org">Macrostrat</a> (CC-BY 4.0) · earthquakes — <a href="https://earthquake.usgs.gov">USGS</a> real-time feed · plate boundaries — PB2002 (Bird, 2003) · globe engine — globe.gl. Satellite base — Esri World Imagery (for reference).</p>
+  <p>Wells &amp; studies — sovereign canon from <a href="/earth/data/wells.json">wells.json</a> · existence-tier wells carry no coordinates, depths, or results; markers are jittered basin-level positions, labeled approximate.</p>
+  <p>Numbers on this page are read from live pipes at load time and withheld if a pipe fails. Nothing here is claimed unobserved. Ω₀ ≈ 0.04.</p>
+  <p>An organ of the arifOS federation · <a href="/map/#earth">site map</a> · <a href="https://arif-fazil.com">arif-fazil.com</a> · <a href="https://geox.arif-fazil.com/">GEOX ↗</a></p>
+</footer>
+
+<!-- ══ GEOX TIMESCALE (PR #1, 2026-08-26, F2/F13 audited, no sovereign write) ══ -->
+
+<!-- ══ GLOBE ENGINE + ALL LIVE PIPES (unchanged — this is the living heart) ══ -->
+<script src="https://unpkg.com/globe.gl@2.46.1/dist/globe.gl.min.js"></script>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ── pipe status ── */
+function pipe(id,state,text){const e=$(id);if(!e)return;e.className=state;e.textContent=text;}
+setInterval(()=>{const d=new Date();const c=$("pipeClock");if(c)c.textContent=d.toISOString().slice(11,19)+" UTC";},1000);
+
+/* ── boot veil: one page, staged load — never look like two random pages (MAKRUH) ── */
+const boot={
+  t0:performance.now(),
+  minMs:1400,     /* minimum perceived load so skeleton→globe is a transition, not a cut */
+  softMs:4500,    /* “pipe delayed” messaging */
+  hardMs:12000,   /* force reveal; keep strip honest about which pipes failed */
+  ready:{engine:false,tiles:false,usgs:false,plates:false,wells:false},
+  labels:{engine:"globe.gl engine",tiles:"Macrostrat tiles",usgs:"USGS 24h feed",plates:"PB2002 plates",wells:"wells canon"},
+  dismissed:false,
+  softFired:false
+};
+function setVeilStep(key,state,hint){
+  boot.ready[key]=state==="ok"||state==="bad";
+  const li=document.querySelector(`#veilSteps li[data-step="${key}"]`);
+  if(!li)return;
+  li.className=state;
+  const label=boot.labels[key]||key;
+  const mark=state==="ok"?"OK":state==="bad"?"FAIL":"…";
+  li.innerHTML=`${label} <span>${hint?esc(hint):mark}</span>`;
+  const n=Object.keys(boot.ready).length;
+  const done=Object.values(boot.ready).filter(Boolean).length;
+  const fill=$("veilBarFill");
+  if(fill)fill.style.width=Math.max(8,Math.round((done/n)*100))+"%";
+  tryDismissVeil();
+}
+function setVeilCopy(title,sub,cls){
+  const t=$("veilTitle"),s=$("veilSub");
+  if(t&&title)t.textContent=title;
+  if(s){s.textContent=sub||"";s.className="veil-sub"+(cls?" "+cls:"");}
+}
+function tryDismissVeil(){
+  if(boot.dismissed)return;
+  const elapsed=performance.now()-boot.t0;
+  const engineOk=boot.ready.engine;
+  const criticalOk=boot.ready.tiles||boot.ready.usgs; /* globe is usable with either base */
+  const allSettled=Object.values(boot.ready).every(Boolean);
+  const hard=elapsed>=boot.hardMs;
+  const soft=elapsed>=boot.softMs;
+  if(soft&&!boot.softFired&&!allSettled){
+    boot.softFired=true;
+    setVeilCopy("FORGING GLOBE · PIPE DELAYED","One or more live pipes are slow — retrying. Globe will show when WebGL is ready.", "warn");
+    const skip=$("veilSkip");if(skip)skip.hidden=false;
+  }
+  const canGo=engineOk&&elapsed>=boot.minMs&&(criticalOk||allSettled||soft||hard);
+  if(!canGo&&!hard)return;
+  if(!engineOk&&!hard)return;
+  dismissVeil(hard&&!criticalOk?"degraded":"ready");
+}
+function dismissVeil(reason){
+  if(boot.dismissed)return;
+  boot.dismissed=true;
+  const v=$("veil");
+  if(!v)return;
+  v.setAttribute("aria-busy","false");
+  if(reason==="degraded"){
+    setVeilCopy("GLOBE READY · PIPES PARTIAL","Some pipes timed out — numbers withheld where failed. Interact with what loaded.", "warn");
+  }
+  /* short beat so copy can paint, then fade */
+  setTimeout(()=>{
+    v.classList.add("gone");
+    setTimeout(()=>{if(v.parentNode)v.remove();},1000);
+  },reason==="degraded"?480:80);
+}
+/* soft + hard clocks + skip */
+setTimeout(()=>tryDismissVeil(),boot.softMs);
+setTimeout(()=>{
+  if(boot.dismissed)return;
+  setVeilCopy("REVEALING GLOBE","Load budget exceeded — showing what we have. Strip below stays honest.", "warn");
+  boot.ready.engine=boot.ready.engine||true; /* allow reveal even if globe.gl CDN hung */
+  tryDismissVeil();
+},boot.hardMs);
+const skipBtn=$("veilSkip");
+if(skipBtn)skipBtn.addEventListener("click",()=>{boot.ready.engine=true;dismissVeil("skip");});
+
+/* ── tile engines ── */
+const TILE_GEO=(x,y,z)=>`/earth/tiles/macrostrat/carto/${z}/${x}/${y}.png`;
+const TILE_SAT=(x,y,z)=>`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;
+let base="geo";
+
+/* ── globe ── */
+const el=$("globeViz");
+let world=null;
+try{
+  if(typeof Globe!=="function")throw new Error("globe.gl not loaded");
+  world=Globe({rendererConfig:{antialias:true}})(el)
+    .globeImageUrl("https://unpkg.com/three-globe/example/img/earth-night.jpg")
+    .globeTileEngineUrl((x,y,z)=>TILE_GEO(x,y,z))
+    .showAtmosphere(true).atmosphereColor("#00d4aa").atmosphereAltitude(0.16)
+    .backgroundColor("#0a0a0f")
+    .pointsData([]).pointLat("lat").pointLng("lng")
+    .pointAltitude("alt").pointRadius("r").pointColor("c").pointLabel("label")
+    .ringsData([]).ringLat("lat").ringLng("lng").ringColor("c")
+    .ringMaxRadius("maxR").ringPropagationSpeed("speed").ringRepeatPeriod("period")
+    .pathsData([]).pathPoints("coords")
+    .pathPointLat(p=>p[1]).pathPointLng(p=>p[0])
+    .pathColor(()=>"rgba(0,212,170,0.5)").pathStroke(0.55)
+    .labelsData([]).labelLat("lat").labelLng("lng")
+    .labelText("text").labelColor("color").labelSize("size")
+    .labelAltitude("alt").labelDotRadius("dot")
+    .onLabelClick(onMarkerClick)
+    .onGlobeClick(onRockClick);
+  /* two rAFs ≈ first painted frame — engine step green before pipes settle */
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    setVeilStep("engine","ok","READY");
+    setVeilCopy("FORGING GLOBE · PULLING PIPES","WebGL up · waiting on live pipes…");
+  }));
+}catch(err){
+  console.error("Globe boot failed",err);
+  setVeilStep("engine","bad","FAIL");
+  setVeilCopy("GLOBE ENGINE FAILED","globe.gl did not boot — scroll for dossiers and static maps.","bad");
+  const skip=$("veilSkip");if(skip){skip.hidden=false;skip.textContent="Dismiss overlay";}
+}
+
+function size(){if(world&&el)world.width(el.clientWidth).height(el.clientHeight);}
+window.addEventListener("resize",size);size();
+if(world)world.pointOfView({lat:8,lng:104,altitude:2.3});
+
+const ctrl=world?world.controls():null;
+if(ctrl){ctrl.autoRotate=true;ctrl.autoRotateSpeed=0.32;}
+let idleT=null;
+function pauseSpin(){if(!ctrl)return;ctrl.autoRotate=false;clearTimeout(idleT);idleT=setTimeout(()=>{ctrl.autoRotate=true;},9000);}
+if(el){
+  el.addEventListener("pointerdown",pauseSpin);
+  el.addEventListener("wheel",pauseSpin,{passive:true});
+}
+
+fetch(TILE_GEO(3,1,2),{method:"HEAD"})
+  .then(r=>{
+    pipe("pipeTiles",r.ok?"ok":"bad",r.ok?"TILES · MACROSTRAT OK":"TILES · FAIL");
+    setVeilStep("tiles",r.ok?"ok":"bad",r.ok?"OK":"FAIL");
+  })
+  .catch(()=>{
+    pipe("pipeTiles","bad","TILES · FAIL");
+    setVeilStep("tiles","bad","FAIL");
+  });
+
+function setBase(b){
+  if(!world)return;
+  base=b;
+  $("baseGeo").classList.toggle("on",b==="geo");
+  $("baseSat").classList.toggle("on",b==="sat");
+  world.globeTileEngineUrl((x,y,z)=>b==="geo"?TILE_GEO(x,y,z):TILE_SAT(x,y,z));
+  world.globeTileEngineClearCache();
+  const pov=world.pointOfView();world.pointOfView({lat:pov.lat,lng:pov.lng,altitude:pov.altitude},0);
+}
+$("baseGeo").addEventListener("click",()=>setBase("geo"));
+$("baseSat").addEventListener("click",()=>setBase("sat"));
+
+document.querySelectorAll(".waypoints button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    if(!world)return;
+    if(btn.id==="wpWells"){
+      pauseSpin();
+      const c=wellCentroid||{lat:8,lng:104};
+      world.pointOfView({lat:c.lat,lng:c.lng,altitude:1.2},1800);
+      return;
+    }
+    const [lat,lng,alt]=btn.dataset.pov.split(",").map(Number);
+    pauseSpin();
+    world.pointOfView({lat,lng,altitude:alt},1800);
+  });
+});
+
+/* ── earthquakes (USGS 24h) ── */
+let quakePts=[],quakeRings=[];
+fetch("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson")
+ .then(r=>r.json()).then(j=>{
+   const feats=j.features||[];
+   quakePts=feats.map(f=>{
+     const m=f.properties.mag||0,c=f.geometry.coordinates;
+     return {lat:c[1],lng:c[0],alt:Math.max(0.004,m*0.008),r:Math.max(0.16,m*0.2),
+       c:m>=5?"#e05a5a":m>=4?"#d4af37":"rgba(212,175,55,0.75)",
+       label:`<b style="color:#d4af37">M${(m||0).toFixed(1)}</b> · ${esc(f.properties.place||"")}<br><span style="color:#9a9aa8;font-size:.85em">${new Date(f.properties.time).toISOString().slice(0,16).replace("T"," ")} UTC · depth ${(c[2]||0).toFixed(0)} km</span>`};
+   });
+   quakeRings=feats.filter(f=>(f.properties.mag||0)>=4.5).map(f=>{
+     const c=f.geometry.coordinates;
+     return {lat:c[1],lng:c[0],c:t=>`rgba(212,175,55,${Math.sqrt(Math.max(0,1-t))})`,maxR:(f.properties.mag||4.5)*1.3,speed:1.1,period:2200};
+   });
+   if(world&&$("lyrQuakes").checked){world.pointsData(quakePts);world.ringsData(quakeRings);}
+   pipe("pipeUsgs","ok","USGS · "+feats.length+" EVENTS/24H");
+   const stq=$("stQuakes");if(stq)stq.textContent=feats.length.toLocaleString();
+   window.__us="OK";statMeta();
+   setVeilStep("usgs","ok",feats.length+" EV");
+ }).catch(()=>{
+   pipe("pipeUsgs","bad","USGS · FAIL");
+   const stq=$("stQuakes");if(stq)stq.textContent="UNVERIFIED";
+   window.__us="FAIL";statMeta();
+   setVeilStep("usgs","bad","FAIL");
+ });
+$("lyrQuakes").addEventListener("change",e=>{
+  if(!world)return;
+  world.pointsData(e.target.checked?quakePts:[]);
+  world.ringsData(e.target.checked?quakeRings:[]);
+});
+
+/* ── plate boundaries (PB2002) ── */
+const PLATE_BOUNDARIES_URL="/earth/data/plates/PB2002_boundaries.geojson";
+const PLATE_PLATES_URL="/earth/data/plates/PB2002_plates.geojson";
+
+function plateColor(kind=""){
+  const k=String(kind||"").toLowerCase();
+  if(k.includes("subduction")||k.includes("convergent"))return ["#ff4d4d","rgba(255,77,77,0.55)"];
+  return ["#9ca3af","rgba(156,163,175,0.55)"];
+}
+function plateLabelOf(kind=""){
+  const k=String(kind||"").toLowerCase();
+  if(k.includes("subduction")||k.includes("convergent"))return "Subduction zone — oceanic crust descends beneath overriding plate";
+  return "Unclassified boundary — PB2002 source has no Type tag (ridge/transform/inferred-class not represented in this dataset)";
+}
+
+let platePaths=[],platePolygons=[],motionArcs=[];
+let plateStats={subduction:0,unclass:0};
+let lastPlateClickAt=0;
+
+async function loadPlates(){
+  try{
+    const[r1,r2]=await Promise.all([
+      fetch(PLATE_BOUNDARIES_URL).then(r=>{if(!r.ok)throw new Error("plates_http_"+r.status);return r.json();}),
+      fetch(PLATE_PLATES_URL).then(r=>r.ok?r.json():{features:[]}).catch(()=>({features:[]}))
+    ]);
+    (r1.features||[]).forEach(f=>{
+      const g=f.geometry||{},p=f.properties||{};
+      const t=String(p.Type||"").toLowerCase();
+      if(t.includes("subduction"))plateStats.subduction++;else plateStats.unclass++;
+      const meta={kind:t,tag:t==="subduction"?"subduction":"unclassified",
+                  name:p.Name||"PB2002 boundary",
+                  source:p.Source||"PB2002 (Bird 2003)",
+                  plateA:p.PlateA||"?",plateB:p.PlateB||""};
+      const line=coords=>({coords:coords.map(([lng,lat])=>[lat,lng]),...meta});
+      if(g.type==="LineString")platePaths.push(line(g.coordinates));
+      else if(g.type==="MultiLineString")g.coordinates.forEach(c=>platePaths.push(line(c)));
+    });
+    (r2.features||[]).forEach(f=>{
+      const g=f.geometry||{},p=f.properties||{};
+      const ring=coords=>({coords:coords.map(([lng,lat])=>[lat,lng]),
+        name:p.PlateName||p.Code||"plate",
+        /* three-globe reads polygonGeoJsonGeometry from the `geometry` FIELD by
+           default ({default:"geometry"}). Data without it threw
+           "Cannot read properties of undefined (reading 'type')" every load and
+           killed the polygon layer (console-verified, source-mapped 2026-08-25) */
+        geometry:{type:"Polygon",coordinates:[coords]}});
+      if(g.type==="Polygon")platePolygons.push(ring(g.coordinates[0]));
+      else if(g.type==="MultiPolygon")g.coordinates.forEach(poly=>platePolygons.push(ring(poly[0])));
+    });
+
+    motionArcs=platePaths.filter(p=>p.coords.length>=4).map(p=>{
+      const mid=Math.floor(p.coords.length/2);
+      const nxt=Math.min(p.coords.length-1,mid+2);
+      return {
+        startLat:p.coords[mid][0],startLng:p.coords[mid][1],
+        endLat:p.coords[nxt][0],endLng:p.coords[nxt][1],
+        tag:p.tag
+      };
+    });
+
+    if(world){
+      world.pathsData([])
+        .pathPoints("coords").pathPointLat(p=>p[1]).pathPointLng(p=>p[0])
+        .pathColor(d=>plateColor(d.tag)[1])
+        .pathStroke(1.7)
+        .pathDashLength(d=>d.tag==="subduction"?0:0.6)
+        .pathDashGap(d=>d.tag==="subduction"?0:0.4)
+        .pathDashAnimateTime(d=>d.tag==="subduction"?0:2400)
+        .pathTransitionDuration(900)
+        .onPathClick(d=>{
+          if(!d)return;pauseSpin();
+          lastPlateClickAt=Date.now();
+          const[col]=plateColor(d.tag);
+          panel.className="show";
+          panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+            <div class="src">Φ GEOX · plate boundary witness</div>
+            <h3><span class="swatch" style="background:${col}"></span>${esc(d.name)}</h3>
+            <p class="lith">${plateLabelOf(d.tag)}</p>
+            <div class="kv"><b>PLATE A</b><span>${esc(d.plateA)}</span></div>
+            <div class="kv"><b>PLATE B</b><span>${esc(d.plateB||"")}</span></div>
+            <div class="kv"><b>SOURCE</b><span>${esc(d.source)}</span></div>
+            <div class="kv"><b>VERDICT</b><span>PIPE-READ · BIRD 2003</span></div>
+            <div class="coords">PB2002_boundaries.geojson · arif-fazil.com/earth/data/plates · boundary attributes from source, not inferred</div>`;
+          wireClose();
+        });
+
+      try{
+        world.polygonsData(platePolygons)
+          .polygonGeoJsonGeometry(d=>d.geometry)
+          .polygonCapColor(()=>"rgba(255,255,255,0.04)")
+          .polygonSideColor(()=>"rgba(255,255,255,0.05)")
+          .polygonStrokeColor(()=>"rgba(212,175,55,0.18)")
+          .polygonAltitude(0.003);
+      }catch(e){console.warn("plate polygons skipped:",e&&e.message);}
+
+      world.arcsData([])
+        .arcStartLat("startLat").arcStartLng("startLng")
+        .arcEndLat("endLat").arcEndLng("endLng")
+        .arcColor(d=>plateColor(d.tag)[1])
+        .arcStroke(0.45)
+        .arcAltitude(0.012)
+        .arcDashLength(0.14)
+        .arcDashGap(0.7)
+        .arcDashAnimateTime(2000)
+        .arcsTransitionDuration(1200);
+
+      if($("lyrPlates").checked)world.pathsData(platePaths);
+      if($("lyrMotion").checked)world.arcsData(motionArcs);
+    }
+
+    pipe("pipePlates","ok",`PLATES · PB2002 OK · ${plateStats.subduction} SUBDUCT · ${plateStats.unclass} UNCLASS · ${platePaths.length} SEG`);
+    setVeilStep("plates","ok",platePaths.length+" SEG");
+  }catch(err){
+    console.error("Plate pipe failed",err);
+    pipe("pipePlates","bad","PLATES · FAIL");
+    setVeilStep("plates","bad","FAIL");
+  }
+}
+loadPlates();
+
+$("lyrPlates").addEventListener("change",e=>{
+  if(world)world.pathsData(e.target.checked?platePaths:[]);
+});
+$("lyrMotion").addEventListener("change",e=>{
+  if(world)world.arcsData(e.target.checked?motionArcs:[]);
+});
+
+/* ── macrostrat live stats ── */
+const statMeta=()=>{const s=$("statMeta");if(!s)return;const t=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date());s.innerHTML="FETCHED · "+t+" <b>MYT</b> · macrostrat <b>"+(window.__ms||"…")+"</b> · usgs <b>"+(window.__us||"…")+"</b> · <b>no cache</b>";};
+fetch("https://macrostrat.org/api/v2/stats?all")
+ .then(r=>r.json()).then(j=>{
+   const rows=(j.success&&j.success.data)||[];
+   const sum=k=>rows.reduce((a,r)=>a+(Number(r[k])||0),0);
+   pipe("pipeApi","ok","MACROSTRAT API · OK");
+   window.__ms="OK";statMeta();
+ }).catch(()=>{
+   pipe("pipeApi","bad","MACROSTRAT API · FAIL");
+   window.__ms="FAIL";statMeta();
+ });
+
+/* ══ WELLS & REGIONS — sovereign canon ══ */
+let wellLabels=[],wellCentroid=null;
+function hashStr(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function jittered(name,anchor,spread){
+  const h=hashStr(name);
+  const ang=(h%360)*Math.PI/180, rad=0.6+((h>>8)%1000)/1000*spread;
+  return {lat:anchor.lat+Math.sin(ang)*rad*0.55,lng:anchor.lng+Math.cos(ang)*rad};
+}
+fetch("/earth/data/wells.json")
+ .then(r=>r.json()).then(j=>{
+   const wells=j.wells||[], anchors=j.basin_anchors||{}, regions=j.regions||[];
+   const pts=[];
+   wells.forEach(w=>{
+     if(w.tier==="proprietary")return;
+     let pos=null;
+     if(w.lat!=null&&w.lng!=null)pos={lat:w.lat,lng:w.lng};
+     else{
+       const a=anchors[w.basin]||anchors["Malay Basin"]||{lat:4,lng:103.8};
+       pos=jittered(w.name,a,1.4);
+     }
+     pts.push(pos);
+     wellLabels.push({lat:pos.lat,lng:pos.lng,
+       text:w.name+(w.tier==="existence"?" ~":""),
+       color:w.tier==="existence"?"rgba(0,212,170,0.95)":"#d4af37",
+       size:0.6,alt:0.01,dot:0.45,kind:"well",w});
+   });
+   regions.forEach(rg=>{
+     wellLabels.push({lat:rg.lat,lng:rg.lng,text:"◇ "+rg.name,
+       color:"rgba(154,154,168,0.9)",size:0.55,alt:0.008,dot:0.3,kind:"region",rg});
+   });
+   if(pts.length){
+     wellCentroid={lat:pts.reduce((a,p)=>a+p.lat,0)/pts.length,lng:pts.reduce((a,p)=>a+p.lng,0)/pts.length};
+   }
+   if(world&&$("lyrWells").checked)world.labelsData(wellLabels);
+   const wc=$("wellCount");if(wc)wc.textContent=wells.length;
+   pipe("pipeWells","ok","WELLS · "+wells.length+" SOVEREIGN CANON");
+   setVeilStep("wells","ok",wells.length+"");
+ }).catch(()=>{
+   pipe("pipeWells","bad","WELLS · FAIL");
+   const wc=$("wellCount");if(wc)wc.textContent="UNVERIFIED";
+   setVeilStep("wells","bad","FAIL");
+ });
+$("lyrWells").addEventListener("change",e=>{
+  if(world)world.labelsData(e.target.checked?wellLabels:[]);
+});
+
+function onMarkerClick(d){
+  if(!d)return;pauseSpin();
+  if(d.kind==="region"){
+    const rg=d.rg;
+    panel.className="show";
+    panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+    <div class="src">Φ GEOX · regional geology</div>
+    <h3>◇ ${esc(rg.name)}</h3>
+    <p class="lith">${esc(rg.note||"")}</p>
+    ${rg.approximate?`<div class="withheld">REGION ANCHOR · APPROXIMATE</div>`:""}`;
+    wireClose();return;
+  }
+  if(d.kind!=="well")return;
+  const w=d.w,rows=[];
+  if(w.status)rows.push(["status",w.status]);
+  if(w.play)rows.push(["play",w.play]);
+  if(w.significance)rows.push(["significance",w.significance]);
+  if(w.role)rows.push(["role",w.role]);
+  if(w.spud_year)rows.push(["year",w.spud_year]);
+  if(w.operator)rows.push(["operator",w.operator]);
+  if(w.location_note)rows.push(["area",w.location_note]);
+  panel.className="show";
+  panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+  <div class="src">Φ GEOX · well witness · sovereign canon</div>
+  <h3>${esc(w.name)}${w.tier==="existence"?" ~":""}</h3>
+  ${rows.map(r=>`<div class="kv"><b>${r[0]}</b><span>${esc(r[1])}</span></div>`).join("")}
+  ${w.tier==="existence"?`<div class="withheld">LOCATION APPROXIMATE · DETAILS WITHHELD</div>`:""}`;
+  wireClose();
+}
+
+/* STUDIES register removed from the public page (2026-10-03) — operator UI moves behind auth. */
+
+/* ── click-to-query: ask the rocks ── */
+const panel=$("unitPanel");
+let lock=false;
+async function onRockClick({lat,lng}){
+  if(lock)return;lock=true;pauseSpin();
+  if(Date.now()-lastPlateClickAt<800){lock=false;return;}
+  panel.className="show";
+  panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+    <div class="src">geox.macrostrat · querying pipe…</div>
+    <h3 style="color:#9a9aa8;font-weight:400">Asking ${lat.toFixed(2)}°, ${lng.toFixed(2)}°…</h3>`;
+  wireClose();
+  try{
+    const r=await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&buffer=3`);
+    const j=await r.json();
+    const data=(j.success&&j.success.data)||[];
+    const refs=(j.success&&j.success.refs)||{};
+    if(!data.length){
+      panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+      <div class="ocean"><div class="src">geox.macrostrat · honest answer</div>
+      <h3>No mapped bedrock unit here</h3>
+      <p class="lith">You're likely over ocean. Oceanic crust is young (&lt;200 Ma everywhere) and thinly mapped at this scale — Macrostrat's harmonized maps cover the continents. The blue below is the newest rock on the planet, still being poured at the mid-ocean ridges.</p>
+      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2 · CC-BY 4.0</div></div>`;
+    }else{
+      const u=data[0];
+      const t=(u.t_int_age!=null)?u.t_int_age:u.t_age, b=(u.b_int_age!=null)?u.b_int_age:u.b_age;
+      const ref=refs[u.source_id]?esc(refs[u.source_id]).slice(0,220):"";
+      panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+      <div class="src">geox.macrostrat · live from pipe</div>
+      <h3><span class="swatch" style="background:${esc(u.color||"#666")}"></span>${esc(u.name||"Unnamed unit")}</h3>
+      <div class="age">${t} – ${b} Ma · ${esc(u.best_int_name||u.t_int_name||"")}</div>
+      <p class="lith">${esc(u.lith||"lithology not recorded")}</p>
+      ${ref?`<div class="ref">source: ${ref}…</div>`:""}
+      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2 · CC-BY 4.0</div>`;
+    }
+    wireClose();
+  }catch(e){
+    panel.innerHTML=`<button class="close" aria-label="close">✕</button>
+    <div class="src" style="color:#e05a5a">pipe unreachable</div>
+    <h3 style="font-weight:400;color:#9a9aa8">Query failed — per F7, no answer is better than an invented one.</h3>`;
+    wireClose();
+  }finally{lock=false;}
+}
+function wireClose(){const b=panel.querySelector(".close");if(b)b.addEventListener("click",()=>panel.classList.remove("show"));}
+
+/* veil dismiss is owned by boot tracker (setVeilStep / soft+hard timers) — no jump-cut on window.load */
+
+/* ── sticky TOC active state ── */
+(function(){
+  const toc=$("earthToc");
+  if(!toc)return;
+  const links=toc.querySelectorAll("a");
+  const sections=[];
+  links.forEach(a=>{
+    const href=a.getAttribute("href");
+    if(!href||!href.startsWith("#"))return;
+    const el=document.getElementById(href.slice(1));
+    if(el)sections.push({el,link:a});
+  });
+  if(!sections.length)return;
+  function update(){
+    const scrollY=window.scrollY+120;
+    let active=null;
+    for(let i=sections.length-1;i>=0;i--){
+      if(sections[i].el.offsetTop<=scrollY){active=sections[i];break;}
+    }
+    if(!active)active=sections[0];
+    links.forEach(a=>a.classList.remove("active"));
+    if(active)active.link.classList.add("active");
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+
+/* ── live navbar clock ── */
+(function(){
+  const clock = document.getElementById("fedNavClock");
+  if(!clock) return;
+  function updateClock(){
+    const now = new Date();
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const myt = new Date(utc + (3600000 * 8));
+    const h = String(myt.getHours()).padStart(2, '0');
+    const m = String(myt.getMinutes()).padStart(2, '0');
+    const s = String(myt.getSeconds()).padStart(2, '0');
+    clock.textContent = `${h}:${m}:${s} MYT`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+})();
+
+/* ── Interactive Wireline Log Suite ── */
+(function(){
+  const wellData = {
+    bekantan: {
+      title: "TEACHING WELL 01 (FICTIONAL) · SHALLOW CLASTIC GROUP E/H15",
+      narrative: "<strong>Hydrocarbon Flag Interpretation:</strong> Pronounced Gamma Ray deflection to 22 API indicates high net-to-gross clean channel sandstone. Deep resistivity kick &gt; 85 ohm-m with significant Neutron-Density crossover proves commercial gas-oil contact (GOC) sealed beneath continuous Group F regional marine mudstones.",
+      depths: ["1,400 m", "1,410 m", "1,420 m", "1,430 m", "1,440 m"],
+      gr: "M 150 20 L 145 45 L 140 70 L 35 95 L 22 120 L 28 145 L 38 170 L 130 195 L 138 220 L 144 245",
+      sandFill: "M 35 95 L 22 120 L 28 145 L 38 170 L 65 170 L 65 95 Z",
+      res: "M 250 20 L 255 45 L 252 70 L 370 95 L 430 120 L 415 145 L 360 170 L 260 195 L 254 220 L 252 245",
+      nphi: "M 830 20 L 825 45 L 828 70 L 680 95 L 665 120 L 670 145 L 690 170 L 820 195 L 826 220 L 830 245",
+      rhob: "M 740 20 L 738 45 L 742 70 L 800 95 L 820 120 L 815 145 L 795 170 L 745 195 L 748 220 L 744 245",
+      payY: 95, payH: 75,
+      formation: "GROUP E/H15 PAY"
+    },
+    puteri: {
+      title: "PUTERI BASEMENT-1 · FRACTURED BASEMENT & OVERLYING K-5 (2,850 m MD)",
+      narrative: "<strong>Fracture Zone & Overlying Oil:</strong> Primary granite basement horst showed secondary fracture mineralization. Upper interval K-5 sandstone at 2,820 m demonstrated commercial oil saturation with deep resistivity departure (>60 ohm-m), calibrating basement-flank charge dynamics.",
+      depths: ["2,800 m", "2,820 m", "2,840 m", "2,860 m", "2,880 m"],
+      gr: "M 140 20 L 135 45 L 40 70 L 30 95 L 45 120 L 150 145 L 160 170 L 155 195 L 140 220 L 135 245",
+      sandFill: "M 40 70 L 30 95 L 45 120 L 65 120 L 65 70 Z",
+      res: "M 255 20 L 260 45 L 380 70 L 410 95 L 350 120 L 270 145 L 310 170 L 340 195 L 265 220 L 260 245",
+      nphi: "M 820 20 L 818 45 L 690 70 L 675 95 L 710 120 L 815 145 L 780 170 L 770 195 L 820 220 L 825 245",
+      rhob: "M 750 20 L 748 45 L 790 70 L 810 95 L 780 120 L 755 145 L 770 170 L 780 195 L 750 220 L 748 245",
+      payY: 70, payH: 50,
+      formation: "K-5 OIL PAY"
+    },
+    lebah: {
+      title: "LEBAH EMAS-1 · WESTERN HINGE MULTI-ZONE WILDCAT (2,240 m MD)",
+      narrative: "<strong>11 Hydrocarbon-Bearing Intervals:</strong> First wildcat on Block PM6/12 western hinge. Wireline logs confirmed 11 separate pay zones spanning Groups H, I, and J with robust crossover gas indications and deep resistivity up to 140 ohm-m.",
+      depths: ["2,200 m", "2,220 m", "2,240 m", "2,260 m", "2,280 m"],
+      gr: "M 145 20 L 30 45 L 25 70 L 135 95 L 32 120 L 28 145 L 140 170 L 36 195 L 30 220 L 142 245",
+      sandFill: "M 30 45 L 25 70 L 65 70 L 65 45 Z M 32 120 L 28 145 L 65 145 L 65 120 Z M 36 195 L 30 220 L 65 220 L 65 195 Z",
+      res: "M 252 20 L 420 45 L 440 70 L 265 95 L 390 120 L 410 145 L 270 170 L 400 195 L 430 220 L 260 245",
+      nphi: "M 825 20 L 670 45 L 660 70 L 815 95 L 685 120 L 675 145 L 820 170 L 680 195 L 670 220 L 825 245",
+      rhob: "M 745 20 L 815 45 L 825 70 L 750 95 L 805 120 L 815 145 L 755 170 L 810 195 L 820 220 L 748 245",
+      payY: 45, payH: 180,
+      formation: "GROUPS H/I/J STACKED PAY"
+    },
+    bunga: {
+      title: "BUNGA TASBIH-1 · POST-RIFT LOWSTAND SAND LOBES (1,980 m MD)",
+      narrative: "<strong>Stratigraphic Trap Calibration:</strong> While syn-rift target was water-bearing, post-rift Group I/J lowstand sand lobes flowed commercial oil. Marked resistivity kick and acoustic impedance inversion tie directly to regional 3D seismic AVO anomalies.",
+      depths: ["1,950 m", "1,970 m", "1,990 m", "2,010 m", "2,030 m"],
+      gr: "M 140 20 L 142 45 L 138 70 L 40 95 L 32 120 L 38 145 L 135 170 L 142 195 L 145 220 L 140 245",
+      sandFill: "M 40 95 L 32 120 L 38 145 L 65 145 L 65 95 Z",
+      res: "M 255 20 L 252 45 L 258 70 L 360 95 L 420 120 L 380 145 L 265 170 L 255 195 L 250 220 L 252 245",
+      nphi: "M 822 20 L 825 45 L 820 70 L 695 95 L 670 120 L 690 145 L 820 170 L 825 195 L 820 220 L 822 245",
+      rhob: "M 748 20 L 745 45 L 750 70 L 795 95 L 815 120 L 800 145 L 752 170 L 748 195 L 745 220 L 748 245",
+      payY: 95, payH: 50,
+      formation: "GROUP I/J LOWSTAND PAY"
+    }
+  };
+
+  window.selectWirelineWell = function(wellKey){
+    const data = wellData[wellKey] || wellData.bekantan;
+    const titleEl = document.getElementById("wirelineWellTitle");
+    if(titleEl) titleEl.textContent = data.title;
+    const narEl = document.getElementById("wirelineNarrative");
+    if(narEl) narEl.innerHTML = data.narrative;
+
+    const btns = document.querySelectorAll("#wellBtnGroup button");
+    btns.forEach(b => {
+      const match = b.getAttribute("onclick") && b.getAttribute("onclick").includes(wellKey);
+      b.style.borderColor = match ? "#D4A853" : "#1F2733";
+      b.style.color = match ? "#D4A853" : "#9AA0A8";
+      b.style.background = match ? "rgba(212,168,83,0.15)" : "#0B0E17";
+    });
+
+    const svg = document.getElementById("wirelineSvg");
+    if(!svg) return;
+
+    svg.innerHTML = `
+      <rect x="15" y="10" width="180" height="250" fill="#06080F" stroke="#1F2733" stroke-width="1"/>
+      <text x="105" y="24" fill="#31C48D" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">TRACK 1: GR (0-150 API)</text>
+      <line x1="15" y1="45" x2="195" y2="45" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="15" y1="95" x2="195" y2="95" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="15" y1="145" x2="195" y2="145" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="15" y1="195" x2="195" y2="195" stroke="#141B26" stroke-dasharray="2,3"/>
+      <path d="${data.sandFill}" fill="rgba(212,168,83,0.3)" stroke="none"/>
+      <path d="${data.gr}" fill="none" stroke="#31C48D" stroke-width="2"/>
+
+      <rect x="195" y="10" width="45" height="250" fill="#0A0D15" stroke="#1F2733" stroke-width="1"/>
+      <text x="217" y="24" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="middle">DEPTH</text>
+      <text x="217" y="48" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[0]}</text>
+      <text x="217" y="98" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[1]}</text>
+      <text x="217" y="148" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[2]}</text>
+      <text x="217" y="198" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[3]}</text>
+      <text x="217" y="248" fill="#8A8578" font-family="monospace" font-size="8" text-anchor="middle">${data.depths[4]}</text>
+
+      <rect x="240" y="10" width="220" height="250" fill="#06080F" stroke="#1F2733" stroke-width="1"/>
+      <text x="350" y="24" fill="#E4572E" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">TRACK 2: ILD (0.2-2000 Ω·m)</text>
+      <line x1="240" y1="45" x2="460" y2="45" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="240" y1="95" x2="460" y2="95" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="240" y1="145" x2="460" y2="145" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="240" y1="195" x2="460" y2="195" stroke="#141B26" stroke-dasharray="2,3"/>
+      <path d="${data.res}" fill="none" stroke="#E4572E" stroke-width="2.2"/>
+
+      <rect x="460" y="10" width="425" height="250" fill="#06080F" stroke="#1F2733" stroke-width="1"/>
+      <text x="672" y="24" fill="#38BDF8" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">TRACK 3: NPHI (BLUE) / RHOB (GOLD) CROSSOVER</text>
+      <line x1="460" y1="45" x2="885" y2="45" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="460" y1="95" x2="885" y2="95" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="460" y1="145" x2="885" y2="145" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="460" y1="195" x2="885" y2="195" stroke="#141B26" stroke-dasharray="2,3"/>
+      <rect x="460" y="${data.payY}" width="425" height="${data.payH}" fill="rgba(228,87,46,0.12)" stroke="#E4572E" stroke-dasharray="3,3"/>
+      <text x="870" y="${data.payY + 18}" fill="#D4A853" font-family="monospace" font-size="8" text-anchor="end" font-weight="bold">${data.formation}</text>
+      <path d="${data.rhob}" fill="none" stroke="#D4A853" stroke-width="2"/>
+      <path d="${data.nphi}" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4,2"/>
+    `;
+  };
+
+  if(document.getElementById("wirelineSvg")){
+    window.selectWirelineWell("bekantan");
+  }
+})();
+
+/* ── Zoeppritz AVO Calculator Engine ── */
+(function(){
+  const avoClasses = {
+    class3: {
+      name: "CLASS III (GAS SAND)",
+      r0: -0.20,
+      g: -0.25,
+      f: 0.10,
+      flag: "HC INDICATOR (HIGH CONFIDENCE)",
+      narrative: "<strong>Class III Interpretation (Bright Spot):</strong> Classic low-impedance gas-charged sandstone encased in regional marine shales (typical of Malay Basin Group E/H reservoirs and deepwater Sabah turbidite lobes). A large negative normal-incidence reflection (R₀ &lt; 0) becomes increasingly negative with offset (steep negative gradient G), generating anomalous amplitude brightening on far-angle seismic gathers."
+    },
+    class2: {
+      name: "CLASS II (PHASE REVERSAL)",
+      r0: 0.02,
+      g: -0.28,
+      f: 0.08,
+      flag: "PHASE REVERSAL (GAS CLASTIC)",
+      narrative: "<strong>Class II Interpretation (Phase Reversal):</strong> Near-zero acoustic impedance contrast at normal incidence with low positive or negative R₀. Strong negative gradient causes reflection polarity reversal between 15° and 30° incidence angles, diagnostic of moderately consolidated gas sands."
+    },
+    class1: {
+      name: "CLASS I (HARD SAND)",
+      r0: 0.22,
+      g: -0.20,
+      f: 0.05,
+      flag: "HIGH IMPEDANCE / BRINE OR TIGHT",
+      narrative: "<strong>Class I Interpretation (Dim-Out):</strong> High-impedance sandstone with higher velocity and density than capping shale. Positive normal-incidence reflection (R₀ &gt; 0) dims significantly with increasing offset angle. Common in compacted pre-Tertiary formations or deeply buried clastics."
+    },
+    class4: {
+      name: "CLASS IV (SOFT SHALE)",
+      r0: -0.18,
+      g: 0.15,
+      f: -0.05,
+      flag: "CLASS IV UNCONVENTIONAL / SOFT SHALE",
+      narrative: "<strong>Class IV Interpretation:</strong> Low-impedance porous sand capped by higher-velocity shale, where reflection coefficient is negative at normal incidence but becomes less negative (dims) with offset due to positive gradient G. Frequently misdiagnosed without pre-stack inversion."
+    }
+  };
+
+  let currentClass = "class3";
+
+  window.setAvoClass = function(clsKey){
+    currentClass = clsKey;
+    const btns = document.querySelectorAll("#avoClassGroup button");
+    btns.forEach(b => {
+      const match = b.getAttribute("onclick") && b.getAttribute("onclick").includes(clsKey);
+      b.style.borderColor = match ? "#D4A853" : "#1F2733";
+      b.style.color = match ? "#D4A853" : "#9AA0A8";
+      b.style.background = match ? "rgba(212,168,83,0.15)" : "#0B0E17";
+    });
+    window.updateAvo();
+  };
+
+  window.updateAvo = function(){
+    const data = avoClasses[currentClass] || avoClasses.class3;
+    const slider = document.getElementById("avoAngleSlider");
+    const thetaDeg = slider ? parseFloat(slider.value) : 30;
+    const thetaRad = (thetaDeg * Math.PI) / 180;
+
+    const sin2 = Math.pow(Math.sin(thetaRad), 2);
+    const tan2 = Math.pow(Math.tan(thetaRad), 2);
+    const rTheta = data.r0 + data.g * sin2 + data.f * (tan2 - sin2);
+
+    const angleVal = document.getElementById("avoAngleVal");
+    if(angleVal) angleVal.textContent = thetaDeg + "°";
+    const r0Val = document.getElementById("avoR0Val");
+    if(r0Val) r0Val.textContent = (data.r0 >= 0 ? "+" : "") + data.r0.toFixed(3);
+    const gVal = document.getElementById("avoGVal");
+    if(gVal) gVal.textContent = (data.g >= 0 ? "+" : "") + data.g.toFixed(3);
+    const rThetaVal = document.getElementById("avoRThetaVal");
+    if(rThetaVal) rThetaVal.textContent = (rTheta >= 0 ? "+" : "") + rTheta.toFixed(3);
+    const flagVal = document.getElementById("avoFlagVal");
+    if(flagVal) flagVal.textContent = data.flag;
+    const nar = document.getElementById("avoNarrative");
+    if(nar) nar.innerHTML = data.narrative;
+
+    // Draw SVG Curve
+    const svg = document.getElementById("avoSvg");
+    if(!svg) return;
+
+    const mapX = deg => 60 + (deg / 50) * 440;
+    const mapY = r => 120 - (r / 0.40) * 100;
+
+    let pathD = "";
+    for(let d = 0; d <= 50; d += 1){
+      const r_d = (d * Math.PI) / 180;
+      const s2 = Math.pow(Math.sin(r_d), 2);
+      const t2 = Math.pow(Math.tan(r_d), 2);
+      const r_val = data.r0 + data.g * s2 + data.f * (t2 - s2);
+      const cx = mapX(d);
+      const cy = Math.max(10, Math.min(230, mapY(r_val)));
+      pathD += (d === 0 ? "M " : " L ") + cx.toFixed(1) + " " + cy.toFixed(1);
+    }
+
+    const curX = mapX(thetaDeg);
+    const curY = Math.max(10, Math.min(230, mapY(rTheta)));
+
+    svg.innerHTML = `
+      <rect x="0" y="0" width="540" height="240" fill="#030508"/>
+      <!-- Grid Lines -->
+      <line x1="60" y1="20" x2="500" y2="20" stroke="#161D2B" stroke-dasharray="2,3"/>
+      <line x1="60" y1="70" x2="500" y2="70" stroke="#161D2B" stroke-dasharray="2,3"/>
+      <line x1="60" y1="120" x2="500" y2="120" stroke="#2A3447" stroke-width="1.2"/>
+      <line x1="60" y1="170" x2="500" y2="170" stroke="#161D2B" stroke-dasharray="2,3"/>
+      <line x1="60" y1="220" x2="500" y2="220" stroke="#161D2B" stroke-dasharray="2,3"/>
+
+      <!-- Vertical angle guides -->
+      <line x1="${mapX(0)}" y1="15" x2="${mapX(0)}" y2="225" stroke="#1F2733"/>
+      <line x1="${mapX(15)}" y1="15" x2="${mapX(15)}" y2="225" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="${mapX(30)}" y1="15" x2="${mapX(30)}" y2="225" stroke="#141B26" stroke-dasharray="2,3"/>
+      <line x1="${mapX(45)}" y1="15" x2="${mapX(45)}" y2="225" stroke="#141B26" stroke-dasharray="2,3"/>
+
+      <!-- Labels -->
+      <text x="50" y="24" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">+0.40</text>
+      <text x="50" y="74" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">+0.20</text>
+      <text x="50" y="124" fill="#D4A853" font-family="monospace" font-size="8" text-anchor="end" font-weight="bold">0.00</text>
+      <text x="50" y="174" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">-0.20</text>
+      <text x="50" y="224" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">-0.40</text>
+
+      <text x="${mapX(0)}" y="235" fill="#8A92A0" font-family="monospace" font-size="8" text-anchor="middle">0°</text>
+      <text x="${mapX(15)}" y="235" fill="#8A92A0" font-family="monospace" font-size="8" text-anchor="middle">15°</text>
+      <text x="${mapX(30)}" y="235" fill="#8A92A0" font-family="monospace" font-size="8" text-anchor="middle">30°</text>
+      <text x="${mapX(45)}" y="235" fill="#8A92A0" font-family="monospace" font-size="8" text-anchor="middle">45°</text>
+      <text x="${mapX(50)}" y="235" fill="#8A92A0" font-family="monospace" font-size="8" text-anchor="middle">50°</text>
+
+      <!-- Shuey Curve -->
+      <path d="${pathD}" fill="none" stroke="#00D4AA" stroke-width="2.5"/>
+
+      <!-- Current angle indicator crosshair -->
+      <line x1="${curX}" y1="15" x2="${curX}" y2="225" stroke="#D4A853" stroke-width="1.2" stroke-dasharray="3,3"/>
+      <circle cx="${curX}" cy="${curY}" r="5" fill="#D4A853" stroke="#030508" stroke-width="2"/>
+      <text x="${curX + (curX > 400 ? -8 : 8)}" y="${curY - 8}" fill="#D4A853" font-family="monospace" font-size="9" font-weight="bold" text-anchor="${curX > 400 ? 'end' : 'start'}">R(${thetaDeg}°) = ${(rTheta >= 0 ? '+' : '') + rTheta.toFixed(3)}</text>
+    `;
+  };
+
+  if(document.getElementById("avoSvg")){
+    window.setAvoClass("class3");
+  }
+})();
+</script>
+
+<script>
+/* pinned-story driver: IntersectionObserver flies the EXISTING globe via the
+   hero waypoint controls; reduced-motion users get static captions. */
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (rm || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var fly = e.target.getAttribute('data-fly');
+      if (!fly) return;
+      var btn = document.querySelector('.waypoints button[data-pov="' + fly + '"]');
+      if (btn) btn.click();
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.story-step[data-fly]').forEach(function(s){ io.observe(s); });
+})();
+</script>
+
+<footer class="nv-foot"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
+</html>

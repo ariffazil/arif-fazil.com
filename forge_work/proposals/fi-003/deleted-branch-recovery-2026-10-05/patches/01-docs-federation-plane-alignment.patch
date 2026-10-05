@@ -1,0 +1,61 @@
+From e06032db92eea97d914400902ed31c474385a8c3 Mon Sep 17 00:00:00 2001
+From: ariffazil <ariffazil@users.noreply.github.com>
+Date: Mon, 14 Sep 2026 17:05:31 +0800
+Subject: [PATCH] [AUDIT] docs: reclassify HERMES as Tier-3 interface, adopt
+ Attention Plane label
+
+- FEDERATION.md (2026-07-25 auto-generated snapshot) marked superseded,
+  points to arifOS FEDERATION_CONTRACT.md as canonical topology source
+- README.md: AAA identity annotated as Attention Plane; federation card
+  updated with Authority/Attention/Execution plane labels for
+  arifOS/AAA/A-FORGE
+- No runtime, port, or code changes
+
+REPO=AAA
+---
+ FEDERATION.md | 2 ++
+ README.md     | 6 ++++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/FEDERATION.md b/FEDERATION.md
+index 5fbe4767..158c5046 100644
+--- a/FEDERATION.md
++++ b/FEDERATION.md
+@@ -1,5 +1,7 @@
+ # Federation Contract v2 — AAA
+ 
++> ⚠️ **SUPERSEDED (2026-09-14).** Historical snapshot (auto-generated 2026-07-25, `fed-phase-7-zen`), preserved as-is — its organ table below still lists HERMES as a core organ, which this federation no longer treats as accurate. **Canonical, current federation topology: [arifOS FEDERATION_CONTRACT.md](https://github.com/ariffazil/arifos/blob/main/FEDERATION_CONTRACT.md).** Do not cite this file's organ table as current. AAA's current identity: Attention Plane (see [README.md](README.md)).
++
+ > SOT: 2026-07-25 | seal_seq: fed-phase-7-zen
+ > Authority: F13 SOVEREIGN — Muhammad Arif bin Fazil
+ > Canonical location: /root/FEDERATION_CONTRACT.md
+diff --git a/README.md b/README.md
+index 9547edc4..3e913c56 100644
+--- a/README.md
++++ b/README.md
+@@ -17,10 +17,12 @@ branch_collapse: 2026-09-01 — 2 stale branches deleted (chore/2026-08-25-amana
+ readme_note: ZEN first-fold — full technical README preserved at docs/README-FULL.md
+ -->
+ 
+-# AAA — Institution
++# AAA — Institution (Attention Plane)
+ 
+ ## Display state. Never judge. Never execute.
+ 
++*Terminology note (2026-09-14): AAA is designated the federation's Attention Plane — observe, verify, compress, route. Sibling repos' full-reference docs previously called this organ "Control Plane"; that label is retired in favor of Attention Plane. "Institution" and "Cockpit" remain accurate functional descriptions of what AAA operates (see below) and are not being replaced — only the plane label is standardized.*
++
+ AAA is the institution's cockpit and A2A gateway: it shows state and queues messages.
+ It never judges. It never executes.
+ 
+@@ -68,7 +70,7 @@ FLAME   :18901  advisory
+ 
+ ## Federation card
+ 
+-ARIF = Sovereign · arifOS = Law · AAA = Institution · A-FORGE = Hands
++ARIF = Sovereign · arifOS = Law (Authority Plane) · AAA = Institution (Attention Plane) · A-FORGE = Hands (Execution Plane)
+ 
+ **ARIF vetoes. arifOS judges. AAA routes. A-FORGE executes.**
+ 
+-- 
+2.51.0
+

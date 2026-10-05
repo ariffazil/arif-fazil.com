@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { makcikArticlesMeta, getMakcikArticle } from '@/data/makcikgpt/index'
+import { PageMeta } from '@/components/PageMeta'
 
 function estimateReadingTime(slug: string): number {
   const article = getMakcikArticle(slug)
@@ -57,6 +58,12 @@ export function MakcikGPT() {
 
   return (
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-12 md:py-20">
+      {/* 2026-10-04 Tier-1 nav: canonical /world/makcikgpt/ (consolidates 3 legacy URLs). */}
+      <PageMeta
+        title="MakcikGPT — Civic Intelligence in Bahasa Makcik"
+        description="Penyiasatan, surat, dan siasatan dalam Bahasa Makcik. PETRONAS, MyKad, Sarawak, duit negara, konsesi. Plain BM, evidence-linked."
+        path="/world/makcikgpt/"
+      />
       <div className="mx-auto max-w-[1280px] px-6">
         
         {/* ── BREADCRUMB: HIERARCHICAL COHERENCE ───────────── */}

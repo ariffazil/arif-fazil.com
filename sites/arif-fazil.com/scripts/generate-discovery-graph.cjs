@@ -92,6 +92,16 @@ const capabilities = [
     id: "arifos", name: "arifOS Kernel", kind: "kernel",
     role: "Constitutional kernel — governance, sessions, floors, memory, MCP gateway",
     why: "Wujud supaya kuasa mutasi tidak pernah berada tanpa lantai perlembagaan — setiap tindakan boleh diadili, dibatalkan, dan disaksi.",
+    human: "The court",
+    group: "The decision",
+    job: "Judges a proposed action. A person can still stop it.",
+    must_not: "build the product, or stand in for the person",
+    reference: {
+      name: "UK Supreme Court",
+      url: "https://www.supremecourt.uk/about-the-court",
+      lesson: "The highest appeal court in the United Kingdom. It sits apart from the government, and it publishes the reason.",
+      checked: "2026-10-04",
+    },
     depends_on: [],
     if_down: "Federation bertukar READ-ONLY: MCP gateway, /health, judge dan seal gagal — organ domain masih hidup tetapi tiada arbitrase; F13 tetap berdaulat.",
     endpoints: { mcp: "https://mcp.arif-fazil.com/mcp", health: "https://arifos.arif-fazil.com/health", observatory: "https://arifos.arif-fazil.com/" },
@@ -100,6 +110,16 @@ const capabilities = [
     id: "aaa", name: "AAA", kind: "coordination",
     role: "Federation state plane — agent cockpit, registry, A2A gateway, MCP tool explorer",
     why: "Wujud supaya identiti dan laluan ejen berdaftar di satu tempat — bukan tersebar dalam ingatan sesiapa.",
+    human: "The roll",
+    group: "The decision",
+    job: "Says who is here, and which door is theirs.",
+    must_not: "do the work, or decide the case",
+    reference: {
+      name: "ORCID",
+      url: "https://info.orcid.org/what-is-orcid/",
+      lesson: "A unique, persistent identifier for a person, kept separate from that person's work.",
+      checked: "2026-10-04",
+    },
     depends_on: ["arifos"],
     if_down: "Ejen baru tidak dapat berdaftar atau ber-A2A; routing manual menjadi beban Arif semula (attention tax naik).",
     endpoints: { site: "https://aaa.arif-fazil.com/", a2a: "https://aaa.arif-fazil.com/a2a/", health: "https://aaa.arif-fazil.com/health" },
@@ -109,6 +129,16 @@ const capabilities = [
     id: "a-forge", name: "A-FORGE", kind: "execution",
     role: "Execution shell — governed execution, sandboxes, forge pipeline",
     why: "Wujud supaya 'digital = mudah, irreversible = tahan (hold)' ada tempat kebenaran berlaku — eksekusi selepas SEAL, bukan selepas ghairah.",
+    human: "The workshop",
+    group: "The decision",
+    job: "Does the work only after it is allowed, and leaves a receipt.",
+    must_not: "judge the case, or seal the record",
+    reference: {
+      name: "Stripe receipts",
+      url: "https://docs.stripe.com/receipts",
+      lesson: "A payment leaves a receipt. A request can be marked so the same action is not taken twice.",
+      checked: "2026-10-04",
+    },
     depends_on: ["arifos"],
     if_down: "Tiada eksekusi terkawal baru; kerja ejen berhenti di peringkat cadangan (HOLD selamanya).",
     endpoints: { site: "https://forge.arif-fazil.com/" },
@@ -118,6 +148,16 @@ const capabilities = [
     id: "geox", name: "GEOX", kind: "domain-organ",
     role: "Earth intelligence — basin reasoning, seismic interpretation, petrophysics, paleo",
     why: "Wujud kerana realiti fizikal (batuan, kedalaman, fizik gelombang) mesti mengikat naratif — hukum batu & enjin.",
+    human: "Earth",
+    group: "Reality",
+    job: "Reads the rock, the basin, and the wave.",
+    must_not: "judge the case",
+    reference: {
+      name: "U.S. Geological Survey",
+      url: "https://www.usgs.gov/about/about-us/who-we-are",
+      lesson: "Science for a changing world: earth, water, living systems, and maps.",
+      checked: "2026-10-04",
+    },
     depends_on: ["arifos"],
     if_down: "Taakulan bumi/seismik berhenti; laman /earth dan laluan geox hilang; keputusan E&P kembali kepada ingatan manusia sahaja.",
     endpoints: { mcp: "https://geox.arif-fazil.com/mcp", site: "https://geox.arif-fazil.com/", surface: `${SITE}/geox/`, health: "https://geox.arif-fazil.com/health" },
@@ -127,6 +167,16 @@ const capabilities = [
     id: "well", name: "WELL", kind: "domain-organ",
     role: "Sovereign homeostasis — triadic state (human × machine × governance), vitality substrate",
     why: "Wujud supaya kesediaan (readiness) diukur, bukan dirasa — manusia × mesin × tadbiran dalam satu nadi.",
+    human: "Health",
+    group: "Reality",
+    job: "Shows whether the person, the machine, and the rules are ready. Measured, not guessed.",
+    must_not: "diagnose, or give an order",
+    reference: {
+      name: "Our World in Data",
+      url: "https://ourworldindata.org/global-health",
+      lesson: "Charts of life expectancy, child mortality, and the burden of disease. You can check the number. They do not treat the patient.",
+      checked: "2026-10-04",
+    },
     depends_on: ["arifos"],
     if_down: "Tiada nadi triadic; drift kesediaan tidak dikesan sehingga menjadi kerosakan.",
     endpoints: { mcp: "https://well.arif-fazil.com/mcp", site: "https://well.arif-fazil.com/", health: "https://well.arif-fazil.com/health" },
@@ -136,6 +186,16 @@ const capabilities = [
     id: "wealth", name: "WEALTH", kind: "domain-organ",
     role: "Sovereign capital & market synthesis — deductive computation, power topology",
     why: "Wujud supaya modal dan kuasa dihitung secara deduktif dengan resit — bukan rekaan naratif.",
+    human: "Money",
+    group: "Reality",
+    job: "Counts capital, and leaves the series where it can be checked.",
+    must_not: "say what to buy, or move the money",
+    reference: {
+      name: "FRED, St. Louis Fed",
+      url: "https://fred.stlouisfed.org/",
+      lesson: "Their own line: “Your trusted source for economic data since 1991.”",
+      checked: "2026-10-04",
+    },
     depends_on: ["arifos"],
     if_down: "Terminal gold/oil/gas/klci/usdmyr dan taakulan modal berhenti; radar fiskal buta.",
     endpoints: { mcp: "https://wealth.arif-fazil.com/mcp", site: "https://wealth.arif-fazil.com/", health: "https://wealth.arif-fazil.com/health" },
@@ -145,6 +205,16 @@ const capabilities = [
     id: "arifflow", name: "arifFlow", kind: "substrate",
     role: "Metabolic ledger — FlowReceipts, FQ (verify/execute) telemetry",
     why: "Wujud supaya setiap langkah meninggalkan resit — kerja tanpa resit ialah longgokan peristiwa, bukan lejar.",
+    human: "The record",
+    group: "Witness",
+    job: "Writes down what happened.",
+    must_not: "carry out the work",
+    reference: {
+      name: "UK National Audit Office",
+      url: "https://www.nao.org.uk/about-us/",
+      lesson: "The United Kingdom's independent public spending watchdog. It reports to Parliament. It does not run the departments.",
+      checked: "2026-10-04",
+    },
     depends_on: [],
     if_down: "FQ tidak boleh diukur; metabolisme (verify vs execute) hilang kaca mata — burn tak kelihatan.",
     endpoints: { pulse: `${SITE}/999/flow` },
@@ -153,6 +223,16 @@ const capabilities = [
     id: "frame", name: "FRAME", kind: "substrate",
     role: "Independent observer — drift detection, behavioural telemetry",
     why: "Wujud supaya ada mata luar sistem — bukti, bukan kelicinan diri sendiri.",
+    human: "The measure",
+    group: "Witness",
+    job: "Watches for drift against a fixed measure.",
+    must_not: "give the verdict",
+    reference: {
+      name: "BIPM",
+      url: "https://www.bipm.org/en/about-us",
+      lesson: "The office that keeps measurements comparable from one country to another. A number without a reference is only a number.",
+      checked: "2026-10-04",
+    },
     depends_on: [],
     if_down: "Drift tidak diperhatikan secara bebas; entropi senyap menang.",
     boundary: "OBSERVATIONAL_ONLY — bukti, bukan verdik; tiada permukaan awam secara reka bentuk",
@@ -161,6 +241,16 @@ const capabilities = [
     id: "hermes", name: "HERMES", kind: "domain-organ",
     role: "Language & social organ — claim validation, contradiction scan, voice law",
     why: "Wujud supaya ayat tentang manusia dan institusi disaring sebelum dihebahkan — maruah sebelum utiliti.",
+    human: "The voice",
+    group: "Witness",
+    job: "Carries words about people and institutions, and checks them before they go out.",
+    must_not: "judge the case, or argue it",
+    reference: {
+      name: "Reuters Trust Principles",
+      url: "https://www.thomsonreuters.com/en/about-us/trust-principles",
+      lesson: "A written promise of independence, integrity, and freedom from bias when news is gathered and passed on.",
+      checked: "2026-10-04",
+    },
     depends_on: [],
     if_down: "Tuntutan tidak disahkan silang; kontradaksi bersembunyi dalam naratif.",
     endpoints: { site: "https://hermes.arif-fazil.com/" },
@@ -235,22 +325,40 @@ const graph = {
   },
 };
 
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+const referenceSection = ["The decision", "Reality", "Witness"].map((group) => {
+  const cards = capabilities.filter((c) => c.group === group).map((c) => `
+    <article class="card">
+      <div class="kind">${esc(group)} · ${esc(c.name)}</div>
+      <h2>${esc(c.human)}</h2>
+      <div class="role">${esc(c.job)}</div>
+      <div class="why"><b>Teacher:</b> <a href="${esc(c.reference.url)}">${esc(c.reference.name)}</a> — ${esc(c.reference.lesson)}</div>
+      <div class="ifdown"><b>This room does not:</b> ${esc(c.must_not)}</div>
+    </article>`).join("");
+  return `<h2 class="sec">${esc(group)}</h2><div class="grid">${cards}</div>`;
+}).join("");
+
 // ── Muka manusia: /discovery/ ──────────────────────────────────────────
 const html = `<!DOCTYPE html>
-<html lang="ms" data-ring="SOUL" data-plane="discovery">
+<html lang="ms" data-ring="SOUL" data-plane="discovery" data-room="discovery">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Discovery — Peta Federasi | arif-fazil.com</title>
 <meta name="description" content="Satu traversal: identity, authority, governance, capabilities, boundaries federasi Arif."/>
 <link rel="canonical" href="${SITE}/discovery/"/>
-<meta name="robots" content="index,follow"/><meta name="theme-color" content="#0A0B0D"/>
+<meta name="robots" content="index,follow"/><meta name="theme-color" content="#7EE0C6"/>
+<meta name="arif-room" content="discovery"/>
+<meta name="arif-job" content="Seven organs, two boundary services."/>
+<link rel="stylesheet" href="/_shared/room-coats.css?v=20261004c"/>
 <meta property="og:type" content="website"/><meta property="og:title" content="Discovery — Peta Federasi | arif-fazil.com"/>
 <meta property="og:url" content="${SITE}/discovery/"/>
 <link rel="icon" href="/favicon.ico"/>
 <style>
 :root{color-scheme:dark}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0A0B0D;color:#EDEAE2;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;min-height:100vh}
+body{background:#070B12;color:#EDEAE2;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;min-height:100vh}
 .wrap{max-width:1080px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
 .kicker{color:#C9A227;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.6rem}
 h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;margin-bottom:.5rem}
@@ -263,6 +371,8 @@ h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;margin-bottom:.5rem}
 .card .role{color:#D8D4CC;font-size:.78rem;line-height:1.55;margin-bottom:.6rem}
 .card .why,.card .ifdown{color:#9AA3AF;font-size:.72rem;line-height:1.5;margin-top:.45rem}
 .card .why b,.card .ifdown b{color:#C9A227;font-weight:600}
+.card a{color:#C9A227;text-decoration:none}
+.card a:hover{text-decoration:underline}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#5B6470;margin-right:.45rem;vertical-align:middle}
 .dot.up{background:#3FB68B}.dot.down{background:#E4572E}
 .health{font-size:.7rem;color:#9AA3AF}
@@ -274,11 +384,24 @@ footer a{color:#9AA3AF;text-decoration:none}
 </style>
 </head>
 <body>
+<div class="room-plate" data-agent-room="discovery"><b>The map</b><span>Seven organs, two boundary services.</span><a href="/">Front door</a></div>
 <div class="wrap">
 <p class="kicker">Federation Discovery Surface</p>
 <h1>Peta Federasi</h1>
 <p class="sub">Satu traversal untuk manusia dan agent: siapa berdaulat, apa keupayaan, apa sempadan, apa keadaan semasa.
 Kesihatan <span id="live-tag">dimuat live</span> dari <a href="/status.json">/status.json</a>. Graf mesin: <a href="/discovery/index.json">/discovery/index.json</a>.</p>
+
+<section lang="en">
+<h2 class="sec">Why these nine rooms</h2>
+<p class="sub">Most websites publish information. This one keeps an institution.</p>
+<p class="sub">One system, seven organs: arifOS (kernel), A-FORGE (execution), AAA (coordination), GEOX (ground), WELL (health), WEALTH (capital), arifFlow (metabolism). Two boundary services: HERMES carries meaning across the boundary; CHRON carries time.</p>
+<p class="sub">GEOX reads the ground. WELL shows whether the person, the machine, and the rules are ready. WEALTH counts the capital.</p>
+<p class="sub">The ledger writes down what happened, gaps recorded not erased. arifFlow watches the metabolism for drift. Evidence lives at /999/.</p>
+<h2 class="sec">Seven organs, two boundary services</h2>
+<p class="sub">Most public institutions are only one of these rooms. The pages were checked on 4 October 2026.</p>
+${referenceSection}
+<p class="sub">Six other names teach a second job, so they are not the teacher. Anthropic writes about safety and also builds the model. GitHub’s about page is a place to write code and ship it, not only a roll of names. Zapier’s own title is automation of workflows, apps, and agents. The Mozilla page that was named is a blog. Morningstar and the OECD principles page did not open for this check. A rater, and a book of governance rules, are the wrong teachers for a room that only counts or only measures.</p>
+</section>
 
 <section><h2 class="sec">Capabilities × Kesihatan Live</h2><div class="grid" id="organs"></div></section>
 <section><h2 class="sec">Relationships — Siapa Berhubung Dengan Siapa</h2><div id="rels"></div></section>

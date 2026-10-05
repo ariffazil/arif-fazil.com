@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-v3",
   "note": "Federation discovery graph v3. Satu traversal: identity, authority, governance, capabilities (why + edges + if_down), relationships, boundaries, endpoints, REGISTRY MESIN-VERIFIED (/discovery/registry.json — MCP tools/list semasa build). Kesihatan live dipaut (/status.json), tidak dibakar.",
-  "generated_at": "2026-10-03T00:24:19.377Z",
+  "generated_at": "2026-10-05T10:00:38.891Z",
   "generator": "scripts/generate-discovery-graph.cjs (site build pipeline)",
   "identity": {
     "site": "https://arif-fazil.com",
@@ -10,7 +10,7 @@
     "sovereign": {
       "name": "Muhammad Arif bin Fazil",
       "role": "F13 SOVEREIGN — absolute human veto",
-      "contact": "arifos@arif-fazil.com",
+      "contact": "arif@arif-fazil.com",
       "telegram": "@ariffazil"
     },
     "identity_record": "https://arif-fazil.com/.well-known/identity.json",
@@ -43,6 +43,16 @@
       "kind": "kernel",
       "role": "Constitutional kernel — governance, sessions, floors, memory, MCP gateway",
       "why": "Wujud supaya kuasa mutasi tidak pernah berada tanpa lantai perlembagaan — setiap tindakan boleh diadili, dibatalkan, dan disaksi.",
+      "human": "The court",
+      "group": "The decision",
+      "job": "Judges a proposed action. A person can still stop it.",
+      "must_not": "build the product, or stand in for the person",
+      "reference": {
+        "name": "UK Supreme Court",
+        "url": "https://www.supremecourt.uk/about-the-court",
+        "lesson": "The highest appeal court in the United Kingdom. It sits apart from the government, and it publishes the reason.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [],
       "if_down": "Federation bertukar READ-ONLY: MCP gateway, /health, judge dan seal gagal — organ domain masih hidup tetapi tiada arbitrase; F13 tetap berdaulat.",
       "endpoints": {
@@ -57,6 +67,16 @@
       "kind": "coordination",
       "role": "Federation state plane — agent cockpit, registry, A2A gateway, MCP tool explorer",
       "why": "Wujud supaya identiti dan laluan ejen berdaftar di satu tempat — bukan tersebar dalam ingatan sesiapa.",
+      "human": "The roll",
+      "group": "The decision",
+      "job": "Says who is here, and which door is theirs.",
+      "must_not": "do the work, or decide the case",
+      "reference": {
+        "name": "ORCID",
+        "url": "https://info.orcid.org/what-is-orcid/",
+        "lesson": "A unique, persistent identifier for a person, kept separate from that person's work.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [
         "arifos"
       ],
@@ -74,6 +94,16 @@
       "kind": "execution",
       "role": "Execution shell — governed execution, sandboxes, forge pipeline",
       "why": "Wujud supaya 'digital = mudah, irreversible = tahan (hold)' ada tempat kebenaran berlaku — eksekusi selepas SEAL, bukan selepas ghairah.",
+      "human": "The workshop",
+      "group": "The decision",
+      "job": "Does the work only after it is allowed, and leaves a receipt.",
+      "must_not": "judge the case, or seal the record",
+      "reference": {
+        "name": "Stripe receipts",
+        "url": "https://docs.stripe.com/receipts",
+        "lesson": "A payment leaves a receipt. A request can be marked so the same action is not taken twice.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [
         "arifos"
       ],
@@ -89,6 +119,16 @@
       "kind": "domain-organ",
       "role": "Earth intelligence — basin reasoning, seismic interpretation, petrophysics, paleo",
       "why": "Wujud kerana realiti fizikal (batuan, kedalaman, fizik gelombang) mesti mengikat naratif — hukum batu & enjin.",
+      "human": "Earth",
+      "group": "Reality",
+      "job": "Reads the rock, the basin, and the wave.",
+      "must_not": "judge the case",
+      "reference": {
+        "name": "U.S. Geological Survey",
+        "url": "https://www.usgs.gov/about/about-us/who-we-are",
+        "lesson": "Science for a changing world: earth, water, living systems, and maps.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [
         "arifos"
       ],
@@ -107,6 +147,16 @@
       "kind": "domain-organ",
       "role": "Sovereign homeostasis — triadic state (human × machine × governance), vitality substrate",
       "why": "Wujud supaya kesediaan (readiness) diukur, bukan dirasa — manusia × mesin × tadbiran dalam satu nadi.",
+      "human": "Health",
+      "group": "Reality",
+      "job": "Shows whether the person, the machine, and the rules are ready. Measured, not guessed.",
+      "must_not": "diagnose, or give an order",
+      "reference": {
+        "name": "Our World in Data",
+        "url": "https://ourworldindata.org/global-health",
+        "lesson": "Charts of life expectancy, child mortality, and the burden of disease. You can check the number. They do not treat the patient.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [
         "arifos"
       ],
@@ -124,6 +174,16 @@
       "kind": "domain-organ",
       "role": "Sovereign capital & market synthesis — deductive computation, power topology",
       "why": "Wujud supaya modal dan kuasa dihitung secara deduktif dengan resit — bukan rekaan naratif.",
+      "human": "Money",
+      "group": "Reality",
+      "job": "Counts capital, and leaves the series where it can be checked.",
+      "must_not": "say what to buy, or move the money",
+      "reference": {
+        "name": "FRED, St. Louis Fed",
+        "url": "https://fred.stlouisfed.org/",
+        "lesson": "Their own line: “Your trusted source for economic data since 1991.”",
+        "checked": "2026-10-04"
+      },
       "depends_on": [
         "arifos"
       ],
@@ -141,6 +201,16 @@
       "kind": "substrate",
       "role": "Metabolic ledger — FlowReceipts, FQ (verify/execute) telemetry",
       "why": "Wujud supaya setiap langkah meninggalkan resit — kerja tanpa resit ialah longgokan peristiwa, bukan lejar.",
+      "human": "The record",
+      "group": "Witness",
+      "job": "Writes down what happened.",
+      "must_not": "carry out the work",
+      "reference": {
+        "name": "UK National Audit Office",
+        "url": "https://www.nao.org.uk/about-us/",
+        "lesson": "The United Kingdom's independent public spending watchdog. It reports to Parliament. It does not run the departments.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [],
       "if_down": "FQ tidak boleh diukur; metabolisme (verify vs execute) hilang kaca mata — burn tak kelihatan.",
       "endpoints": {
@@ -153,6 +223,16 @@
       "kind": "substrate",
       "role": "Independent observer — drift detection, behavioural telemetry",
       "why": "Wujud supaya ada mata luar sistem — bukti, bukan kelicinan diri sendiri.",
+      "human": "The measure",
+      "group": "Witness",
+      "job": "Watches for drift against a fixed measure.",
+      "must_not": "give the verdict",
+      "reference": {
+        "name": "BIPM",
+        "url": "https://www.bipm.org/en/about-us",
+        "lesson": "The office that keeps measurements comparable from one country to another. A number without a reference is only a number.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [],
       "if_down": "Drift tidak diperhatikan secara bebas; entropi senyap menang.",
       "boundary": "OBSERVATIONAL_ONLY — bukti, bukan verdik; tiada permukaan awam secara reka bentuk"
@@ -163,6 +243,16 @@
       "kind": "domain-organ",
       "role": "Language & social organ — claim validation, contradiction scan, voice law",
       "why": "Wujud supaya ayat tentang manusia dan institusi disaring sebelum dihebahkan — maruah sebelum utiliti.",
+      "human": "The voice",
+      "group": "Witness",
+      "job": "Carries words about people and institutions, and checks them before they go out.",
+      "must_not": "judge the case, or argue it",
+      "reference": {
+        "name": "Reuters Trust Principles",
+        "url": "https://www.thomsonreuters.com/en/about-us/trust-principles",
+        "lesson": "A written promise of independence, integrity, and freedom from bias when news is gathered and passed on.",
+        "checked": "2026-10-04"
+      },
       "depends_on": [],
       "if_down": "Tuntutan tidak disahkan silang; kontradaksi bersembunyi dalam naratif.",
       "endpoints": {

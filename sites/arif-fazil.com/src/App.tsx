@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import ArrowNavbar from '@/components/ArrowNavbar';
+import { RoomCoat } from '@/components/RoomCoat';
 import ArrowFooter from '@/components/ArrowFooter';
 import { ScrollToHashElement } from '@/components/ScrollToHashElement';
 
@@ -48,7 +49,8 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToHashElement />
-      <div className="flex min-h-screen flex-col bg-[#0A0B0D] text-[#EDEAE2]">
+      <div className="flex min-h-screen flex-col text-[#EDEAE2]" style={{ background: "var(--room-ground, #0A0B0D)" }}>
+        <RoomCoat />
         <ArrowNavbar />
         <main id="main-content" tabIndex={-1} className="flex-1">
           <Suspense fallback={<RouteLoading />}>

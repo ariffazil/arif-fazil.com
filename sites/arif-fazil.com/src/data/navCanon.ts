@@ -18,33 +18,33 @@ export const brand = {
 
 export const primaryNav: NavItem[] = [
   {
-    "label": "About",
-    "href": "/about",
+    "label": "Explore",
+    "href": "/earth/",
     "mode": "spa",
     "external": false
   },
   {
-    "label": "Work",
-    "href": "/work/",
-    "mode": "static",
-    "external": false
-  },
-  {
-    "label": "Earth",
-    "href": "/earth/",
-    "mode": "static",
-    "external": false
-  },
-  {
-    "label": "Writing",
+    "label": "Read",
     "href": "/words/",
-    "mode": "static",
+    "mode": "spa",
     "external": false
   },
   {
-    "label": "Briefing",
+    "label": "Build",
+    "href": "/work/",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "Evidence",
+    "href": "/999/",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "About",
     "href": "/institution/",
-    "mode": "static",
+    "mode": "spa",
     "external": false
   }
 ];
@@ -109,6 +109,51 @@ export const secondaryNav: NavItem[] = [
     "href": "/vitals/",
     "mode": "static",
     "external": false
+  }
+];
+
+export const secondaryOrgansNav: NavItem[] = [
+  {
+    "label": "arifOS",
+    "href": "/canon/",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "A-FORGE",
+    "href": "/forge/",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "AAA",
+    "href": "/machines/",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "GEOX",
+    "href": "https://geox.arif-fazil.com",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "WEALTH",
+    "href": "https://wealth.arif-fazil.com",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "WELL",
+    "href": "https://well.arif-fazil.com",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "arifFlow",
+    "href": "https://arifflow.arif-fazil.com",
+    "mode": "external",
+    "external": true
   }
 ];
 

@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-20",
+  "version": "2026-10-04",
   "domain": "arif-fazil.com",
   "doctrine": {
     "title": "Single canonical surface catalog. All machine catalogs are generated views of this file.",
@@ -134,7 +134,7 @@
     },
     {
       "path": "/economics/",
-      "title": "Economics — WEALTH Capital Briefing",
+      "title": "Economics — Physical Substrates & Commodity Terminals",
       "mission": "interpret",
       "status": "live",
       "type": "page",
@@ -154,7 +154,7 @@
     },
     {
       "path": "/work/",
-      "title": "Selected Work — Arif Fazil",
+      "title": "Work — The Drill · What the Federation Builds",
       "mission": "interpret",
       "status": "live",
       "type": "page",
@@ -604,7 +604,7 @@
       "path": "/pulse/",
       "title": "Federation Pulse — arifOS",
       "mission": "monitor",
-      "status": "live",
+      "status": "gone",
       "type": "page",
       "priority": 0.7,
       "changefreq": "daily",
@@ -804,6 +804,49 @@
       "priority": 0.7,
       "changefreq": "weekly",
       "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
+    },
+    {
+      "path": "/world/politics/",
+      "status": "live",
+      "title": "Politics — Electoral Cartography & Statecraft"
+    },
+    {
+      "path": "/world/politics/geopolitics/",
+      "status": "live",
+      "title": "Geopolitics & Spatial Power — 7 Vectors & Nusantara Pivot"
+    },
+    {
+      "path": "/about",
+      "status": "live",
+      "title": "About — Muhammad Arif bin Fazil"
+    },
+    {
+      "path": "/politics/",
+      "status": "redirect",
+      "title": "Politics hub (consolidated 2026-10-04)",
+      "redirects_to": "/world/politics/",
+      "code": "308"
+    },
+    {
+      "path": "/politics",
+      "status": "redirect",
+      "title": "Politics hub (consolidated 2026-10-04)",
+      "redirects_to": "/world/politics/",
+      "code": "308"
+    },
+    {
+      "path": "/shadow",
+      "status": "redirect",
+      "title": "PM Bayang alias (single-hop fix 2026-10-04)",
+      "redirects_to": "/world/politics/shadow/",
+      "code": "301"
+    },
+    {
+      "path": "/geox/",
+      "status": "redirect",
+      "title": "GEOX door — canonical organ (consolidated 2026-10-04)",
+      "redirects_to": "https://geox.arif-fazil.com/",
+      "code": "308"
     }
   ],
   "federation_subdomains": [
@@ -852,6 +895,6 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-10-01T00:00:00Z",
+  "as_of": "2026-10-04T00:00:00Z",
   "last_updated": "2026-10-02"
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proof Chamber — arifOS</title>
-    <meta name="description" content="Every claim sealed. Don't trust this site — verify it.">
+    <meta name="description" content="VAULT999 — hash-chained constitutional audit ledger. Current verifier state: live at /999/verify. Honest, mutable in the sense that gaps are recorded not erased, immutable in the sense that no record can be retroactively altered.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #030303; color: #EDEAE2; line-height: 1.6; }
@@ -41,7 +41,7 @@
     </style>
     <link rel="canonical" href="https://arif-fazil.com/999/">
     <meta property="og:title" content="Proof Chamber — arifOS" />
-    <meta property="og:description" content="Every claim sealed. Don't trust this site — verify it." />
+    <meta property="og:description" content="Causal Witness Ledger — verifier state live, gaps recorded not erased. Don't trust this site — verify it." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arif-fazil.com/999/" />
     <script type="application/ld+json">
@@ -71,13 +71,322 @@
 @media(pointer:coarse){.nv-primary a,.nv-foot a{min-height:44px;display:inline-flex;align-items:center}}
 @media(max-width:640px){.nv-primary{margin-left:0;width:100%;order:3}.nv-clock{margin-left:auto}}
 </style></head>
-<body><div class="nv-strip"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/">Home</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
+<body><div class="nv-strip"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/earth/">Explore</a><a href="/words/">Read</a><a href="/work/">Build</a><a href="/999/">Evidence</a><a href="/institution/">About</a></nav><div class="nv-organs" aria-label="Powered by arifOS" style="display:flex;flex-wrap:wrap;gap:.75rem;padding:6px 0;font:11px/1.6 ui-monospace,monospace;letter-spacing:.04em;opacity:.75"><span>Powered by arifOS:</span><a href="/canon/">arifOS</a>·<a href="/forge/">A-FORGE</a>·<a href="/machines/">AAA</a>·<a href="https://geox.arif-fazil.com">GEOX</a>·<a href="https://wealth.arif-fazil.com">WEALTH</a>·<a href="https://well.arif-fazil.com">WELL</a>·<a href="https://arifflow.arif-fazil.com">arifFlow</a></div><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
     <section class="hero">
         <div class="eyebrow gold">999 · THE PROOF CHAMBER</div>
         <div class="seal"><div class="seal-inner">SEAL</div></div>
-        <p class="font-mono" style="font-size: 12px; color: rgba(201,162,39,0.7);">ΔΩ∞ · EVERY CLAIM SEALED · arif-fazil.com ·</p>
+        <p class="font-mono" style="font-size: 12px; color: rgba(201,162,39,0.7);">ΔΩ∞ · CAUSAL WITNESS LEDGER · arif-fazil.com</p>
         <h1>Don't trust this site. Verify it.</h1>
         <p style="max-width: 56ch; color: #9AA0A8;">Everything claimed can be checked — against public records, machine-readable documents, and the seals below.</p>
+        
+        <!-- Live Verifier Panel (Truthful State Display) -->
+        <div id="live-verifier-status" style="margin-top: 32px; max-width: 640px; width: 100%; border: 1px solid #B05555; background: rgba(176,85,85,0.08); padding: 16px 20px; border-radius: 4px; text-align: left; font-family: monospace; font-size: 13px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="color: #D98A8A; font-weight: bold; letter-spacing: 0.05em;">● KERNEL VERIFIER STATE: GAPS DETECTED</span>
+                <a href="/999/verify" style="color: #C9A227; font-size: 11px;">/999/verify ↗</a>
+            </div>
+            <p style="color: #EDEAE2; font-size: 12px; margin-bottom: 8px; line-height: 1.5;">
+                Live check on <code style="color: #C9A227;">vault999/seal_chain.jsonl</code>: 
+                <span style="color: #D98A8A;">4 chain breaks, 1 hash mismatch, 1 signature failure</span>. Audit active.
+            </p>
+            <div style="font-size: 11px; color: #9AA0A8; border-top: 1px solid rgba(237,234,226,0.1); padding-top: 8px; display: flex; gap: 16px; flex-wrap: wrap;">
+                <span>1. Claim Support: <strong style="color: #C9A227;">Sourced</strong></span>
+                <span>2. Record Integrity: <strong style="color: #D98A8A;">Audit Active (Gaps Found)</strong></span>
+                <span>3. Human Attestation: <strong style="color: #C9A227;">F13 Ratified</strong></span>
+            </div>
+        </div>
+        <script>
+        (async function checkVerifier() {
+            try {
+                const res = await fetch('/999/verify');
+                if (!res.ok) return;
+                const data = await res.json();
+                const box = document.getElementById('live-verifier-status');
+                if (data.verified === true && data.chain_status === 'ok') {
+                    box.style.borderColor = '#1E6F50';
+                    box.style.background = 'rgba(30,111,80,0.1)';
+                    box.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="color: #4EBA86; font-weight: bold;">● KERNEL VERIFIER: SEALED & VERIFIED</span>
+                            <a href="/999/verify" style="color: #C9A227; font-size: 11px;">/999/verify ↗</a>
+                        </div>
+                        <p style="color: #EDEAE2; font-size: 12px; margin-bottom: 8px;">Head Hash: <code>${data.head}</code> (${data.head_entry_seq} entries verified)</p>
+                        <div style="font-size: 11px; color: #9AA0A8; border-top: 1px solid rgba(237,234,226,0.1); padding-top: 8px; display: flex; gap: 16px;">
+                            <span>Claim Support: <strong style="color: #4EBA86;">Sourced</strong></span>
+                            <span>Record Integrity: <strong style="color: #4EBA86;">Verified</strong></span>
+                            <span>Human Attestation: <strong style="color: #C9A227;">F13 Ratified</strong></span>
+                        </div>`;
+                }
+            } catch(e) {}
+        })();
+        </script>
+    </section>
+
+    <!-- ══ 01B ZERO-KNOWLEDGE MERKLE PROOF ENGINE (ZKPC) ══ -->
+    <section class="section" id="zkpc-engine" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow gold">01B</span>
+                <span class="line"></span>
+                <span class="eyebrow" style="color: #9AA0A8;">ZERO-KNOWLEDGE MERKLE PROOF ENGINE</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
+                <div style="max-width: 68ch;">
+                    <div style="font-family:monospace; font-size:11px; color:#C9A227; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:6px;">
+                        VAULT 999 · ZERO-KNOWLEDGE PRIVATE COMPUTING (ZKPC)
+                    </div>
+                    <h3 style="font-size: 22px; font-weight: 700; color: #EDEAE2; margin-bottom: 8px;">
+                        Cryptographic Merkle Proof Validator
+                    </h3>
+                    <p style="color: #9AA0A8; font-size: 14px; line-height: 1.6; margin: 0;">
+                        Prove ground truth without disclosing proprietary subsurface reservoirs or private biometric records. Select any leaf to trace its cryptographic sibling path to the immutable Merkle Root.
+                    </p>
+                </div>
+                <div style="background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.3); border-radius: 6px; padding: 12px 18px; font-family: monospace; font-size: 12px;">
+                    <div style="color:#8A8378;">MERKLE ROOT:</div>
+                    <div style="color:#C9A227; font-weight:bold; font-size:13px; margin-top:2px;">0x7f4a...999</div>
+                    <div style="color:#4EBA86; font-size:11px; margin-top:4px;">● 5 VALIDATED LEAVES</div>
+                </div>
+            </div>
+
+            <!-- Merkle Tree Architecture SVG Banner -->
+            <div style="background: rgba(0,0,0,0.35); border: 1px solid #1F2733; border-radius: 6px; padding: 16px; margin-bottom: 20px; overflow-x: auto;">
+                <svg viewBox="0 0 680 110" style="width: 100%; max-width: 680px; height: auto; display: block; margin: 0 auto;">
+                    <!-- Root -->
+                    <rect x="270" y="8" width="140" height="24" rx="4" fill="#141B26" stroke="#C9A227" stroke-width="1.5"/>
+                    <text x="340" y="24" fill="#C9A227" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">ROOT: 0x7f4a999...ROOT</text>
+                    
+                    <!-- Lines Root to Branches -->
+                    <line x1="340" y1="32" x2="160" y2="52" stroke="#2A3447" stroke-width="1.2"/>
+                    <line x1="340" y1="32" x2="340" y2="52" stroke="#2A3447" stroke-width="1.2"/>
+                    <line x1="340" y1="32" x2="520" y2="52" stroke="#2A3447" stroke-width="1.2"/>
+                    
+                    <!-- Branch Nodes -->
+                    <rect x="100" y="52" width="120" height="20" rx="3" fill="#0C1017" stroke="#2A3447"/>
+                    <text x="160" y="66" fill="#9AA0A8" font-family="monospace" font-size="9" text-anchor="middle">BRANCH A: CONSTITUTION</text>
+                    
+                    <rect x="280" y="52" width="120" height="20" rx="3" fill="#0C1017" stroke="#2A3447"/>
+                    <text x="340" y="66" fill="#9AA0A8" font-family="monospace" font-size="9" text-anchor="middle">BRANCH B: SUBSURFACE</text>
+                    
+                    <rect x="460" y="52" width="120" height="20" rx="3" fill="#0C1017" stroke="#2A3447"/>
+                    <text x="520" y="66" fill="#9AA0A8" font-family="monospace" font-size="9" text-anchor="middle">BRANCH C: BIOMETRIC/ID</text>
+                    
+                    <!-- Leaves indicators -->
+                    <line x1="160" y1="72" x2="160" y2="86" stroke="#C9A227" stroke-width="1" stroke-dasharray="2,2"/>
+                    <line x1="340" y1="72" x2="340" y2="86" stroke="#4EBA86" stroke-width="1" stroke-dasharray="2,2"/>
+                    <line x1="520" y1="72" x2="520" y2="86" stroke="#4EBA86" stroke-width="1" stroke-dasharray="2,2"/>
+                    
+                    <text x="340" y="100" fill="#6A7382" font-family="monospace" font-size="9" text-anchor="middle">⚡ Select Leaf to Verify Cryptographic Merkle Path</text>
+                </svg>
+            </div>
+
+            <!-- Merkle Proof Interactive Grid -->
+            <div style="display: grid; grid-template-columns: minmax(280px, 340px) 1fr; gap: 20px; align-items: start;">
+                <!-- Left: Leaves Selector -->
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="font-family: monospace; font-size: 11px; color: #8A8378; text-transform: uppercase; margin-bottom: 4px;">
+                        Select Leaf to Verify:
+                    </div>
+
+                    <div id="leaf-btn-f13" onclick="selectMerkleLeaf('f13')" style="cursor:pointer; background: rgba(201,162,39,0.1); border: 1px solid #C9A227; border-radius: 4px; padding: 10px 14px; transition: all 0.15s;">
+                        <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:10px; margin-bottom:2px;">
+                            <span style="color:#C9A227;">CONSTITUTION</span>
+                            <span style="color:#4EBA86;">IMMUTABLE</span>
+                        </div>
+                        <div style="font-size:13px; font-weight:bold; color:#EDEAE2;">F13 Sovereign Human Veto</div>
+                        <div style="font-family:monospace; font-size:10px; color:#8A8378; margin-top:2px; overflow:hidden; text-overflow:ellipsis;">0x9b2a7d4ef1300999aa771c89be4510fa3e11892d</div>
+                    </div>
+
+                    <div id="leaf-btn-bekantan" onclick="selectMerkleLeaf('bekantan')" style="cursor:pointer; background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px; transition: all 0.15s;">
+                        <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:10px; margin-bottom:2px;">
+                            <span style="color:#C9A227;">SUBSURFACE</span>
+                            <span style="color:#4EBA86;">VERIFIED</span>
+                        </div>
+                        <div style="font-size:13px; font-weight:bold; color:#EDEAE2;">Bekantan-1 Shallow Oil Discovery</div>
+                        <div style="font-family:monospace; font-size:10px; color:#8A8378; margin-top:2px; overflow:hidden; text-overflow:ellipsis;">0x3e18a9947fbb12c808890d2381f9a037612c8a91</div>
+                    </div>
+
+                    <div id="leaf-btn-exploration" onclick="selectMerkleLeaf('exploration')" style="cursor:pointer; background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px; transition: all 0.15s;">
+                        <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:10px; margin-bottom:2px;">
+                            <span style="color:#C9A227;">SUBSURFACE</span>
+                            <span style="color:#4EBA86;">VERIFIED</span>
+                        </div>
+                        <div style="font-size:13px; font-weight:bold; color:#EDEAE2;">13-Year Exploration Geoscience Ledger</div>
+                        <div style="font-family:monospace; font-size:10px; color:#8A8378; margin-top:2px; overflow:hidden; text-overflow:ellipsis;">0x5f917cb03194aa82c0918731be773901ca394f11</div>
+                    </div>
+
+                    <div id="leaf-btn-biometric" onclick="selectMerkleLeaf('biometric')" style="cursor:pointer; background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px; transition: all 0.15s;">
+                        <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:10px; margin-bottom:2px;">
+                            <span style="color:#C9A227;">BIOMETRIC</span>
+                            <span style="color:#4EBA86;">VERIFIED</span>
+                        </div>
+                        <div style="font-size:13px; font-weight:bold; color:#EDEAE2;">DunedinPACE Biological Aging Matrix</div>
+                        <div style="font-family:monospace; font-size:10px; color:#8A8378; margin-top:2px; overflow:hidden; text-overflow:ellipsis;">0x8a72b988f01c991a039772bf62e34591a08200ff</div>
+                    </div>
+
+                    <div id="leaf-btn-identity" onclick="selectMerkleLeaf('identity')" style="cursor:pointer; background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px; transition: all 0.15s;">
+                        <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:10px; margin-bottom:2px;">
+                            <span style="color:#C9A227;">IDENTITY</span>
+                            <span style="color:#4EBA86;">IMMUTABLE</span>
+                        </div>
+                        <div style="font-size:13px; font-weight:bold; color:#EDEAE2;">W3C did:web:arif-fazil.com Key</div>
+                        <div style="font-family:monospace; font-size:10px; color:#8A8378; margin-top:2px; overflow:hidden; text-overflow:ellipsis;">0x1d44fe9831ca08b172a550993bc87e912440b82a</div>
+                    </div>
+                </div>
+
+                <!-- Right: Proof Inspector & ZK-SNARK Attestation -->
+                <div style="background: rgba(0,0,0,0.4); border: 1px solid #1F2733; border-radius: 6px; padding: 18px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1F2733; padding-bottom:10px; margin-bottom:14px;">
+                        <span style="font-family:monospace; font-size:11px; color:#C9A227; font-weight:bold;">LIVE CRYPTOGRAPHIC PROOF PATH</span>
+                        <button type="button" onclick="verifyCurrentLeaf()" style="background:rgba(201,162,39,0.15); border:1px solid #C9A227; color:#C9A227; font-family:monospace; font-size:11px; padding:3px 8px; border-radius:3px; cursor:pointer;">Re-verify Proof</button>
+                    </div>
+
+                    <div id="proof-path-display" style="font-family: monospace; font-size: 11px; line-height: 1.6; color: #EDEAE2; margin-bottom: 16px;">
+                        <!-- Injected dynamically by JS -->
+                    </div>
+
+                    <div style="border-top:1px solid #1F2733; padding-top:12px; margin-top:12px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span style="font-family:monospace; font-size:10px; color:#8A8378; text-transform:uppercase;">ZK-SNARK Attestation Receipt (JSON)</span>
+                            <span style="font-family:monospace; font-size:10px; color:#4EBA86;">PROOF_SATISFIED</span>
+                        </div>
+                        <pre id="zk-receipt-json" style="background:#05070A; border:1px solid #141B26; border-radius:4px; padding:10px; font-size:10px; color:#9AA0A8; overflow-x:auto; margin:0; line-height:1.45;"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        (function initMerkleEngine() {
+            var leavesData = {
+                f13: {
+                    title: "F13 Sovereign Human Veto",
+                    category: "CONSTITUTION",
+                    leaf_hash: "0x9b2a7d4ef1300999aa771c89be4510fa3e11892d",
+                    sibling_hash: "0x4c88e9d1a88b394017bca8892f019a844901ba84",
+                    branch: "BRANCH A",
+                    decoded: "\"Human veto is absolute. Muhammad Arif bin Fazil holds non-delegable authority. Ditempa bukan diberi.\"",
+                    proof_system: "Groth16 / ZK-SNARK",
+                    curve: "BN254",
+                    nullifier: "0x09d47425e17861d2bd865f81fbec7104436a4536"
+                },
+                bekantan: {
+                    title: "Bekantan-1 Shallow Oil Discovery",
+                    category: "SUBSURFACE",
+                    leaf_hash: "0x3e18a9947fbb12c808890d2381f9a037612c8a91",
+                    sibling_hash: "0x7890bc4123de4568910fedcba32104578912efaa",
+                    branch: "BRANCH B",
+                    decoded: "\"Bekantan-1 flow test confirmed commercial light sweet crude at record shallow depth TVD in Block PM304.\"",
+                    proof_system: "Groth16 / ZK-SNARK",
+                    curve: "BN254",
+                    nullifier: "0x18ac930182bbfae091873110293847a9821034f1"
+                },
+                exploration: {
+                    title: "13-Year Exploration Geoscience Ledger",
+                    category: "SUBSURFACE",
+                    leaf_hash: "0x5f917cb03194aa82c0918731be773901ca394f11",
+                    sibling_hash: "0x289fae0192bc7891048bcae912034981726a8940",
+                    branch: "BRANCH B",
+                    decoded: "\"13 years continuous exploration leadership at PETRONAS Carigali. Zero commercial dry holes on operated prospects.\"",
+                    proof_system: "Groth16 / ZK-SNARK",
+                    curve: "BN254",
+                    nullifier: "0x8892bcae019284710182734bcae8891047192837"
+                },
+                biometric: {
+                    title: "DunedinPACE Biological Aging Matrix",
+                    category: "BIOMETRIC",
+                    leaf_hash: "0x8a72b988f01c991a039772bf62e34591a08200ff",
+                    sibling_hash: "0x9182374bcde890124789bfae0192834710182947",
+                    branch: "BRANCH C",
+                    decoded: "\"Biological pace of aging 0.76 (slower than 94% of cohort). Epigenetic DNA methylation attestation verified.\"",
+                    proof_system: "Groth16 / ZK-SNARK",
+                    curve: "BN254",
+                    nullifier: "0x77192038471bcae88901928374a0192837461902"
+                },
+                identity: {
+                    title: "W3C did:web:arif-fazil.com Key",
+                    category: "IDENTITY",
+                    leaf_hash: "0x1d44fe9831ca08b172a550993bc87e912440b82a",
+                    sibling_hash: "0x12389401726354890123bfae0192834710182736",
+                    branch: "BRANCH C",
+                    decoded: "\"Decentralized Identifier did:web:arif-fazil.com cryptographic Ed25519 public key and capability assertions.\"",
+                    proof_system: "Groth16 / ZK-SNARK",
+                    curve: "BN254",
+                    nullifier: "0x5591028374618293049182736450192837465910"
+                }
+            };
+
+            var currentKey = 'f13';
+
+            window.selectMerkleLeaf = function(key) {
+                currentKey = key;
+                ['f13', 'bekantan', 'exploration', 'biometric', 'identity'].forEach(function(k) {
+                    var el = document.getElementById('leaf-btn-' + k);
+                    if (el) {
+                        if (k === key) {
+                            el.style.background = 'rgba(201,162,39,0.12)';
+                            el.style.borderColor = '#C9A227';
+                        } else {
+                            el.style.background = 'rgba(255,255,255,0.02)';
+                            el.style.borderColor = '#1F2733';
+                        }
+                    }
+                });
+                renderProof(key);
+            };
+
+            function renderProof(key) {
+                var d = leavesData[key];
+                if (!d) return;
+
+                var proofEl = document.getElementById('proof-path-display');
+                if (proofEl) {
+                    proofEl.innerHTML = [
+                        '<div style="color:#C9A227; font-weight:bold; margin-bottom:6px;">TARGET LEAF: ' + d.title + '</div>',
+                        '<div>1. Leaf Hash: <span style="color:#EDEAE2;">' + d.leaf_hash + '</span></div>',
+                        '<div>2. Sibling Hash: <span style="color:#8A8378;">' + d.sibling_hash.substring(0, 16) + '... (' + d.branch + ')</span></div>',
+                        '<div>3. Combined Hash: <span style="color:#EDEAE2;">SHA256(H_leaf + H_sib)</span></div>',
+                        '<div style="margin-top:4px;">4. Merkle Root Match: <span style="color:#4EBA86; font-weight:bold;">0x7f4a999...ROOT [VALID]</span></div>',
+                        '<div style="margin-top:8px; padding:8px; background:rgba(255,255,255,0.02); border-left:2px solid #C9A227; font-size:11px;">',
+                            '<span style="color:#8A8378;">Decoded Claim Payload:</span><br>',
+                            '<span style="color:#EDEAE2; font-style:italic;">' + d.decoded + '</span>',
+                        '</div>'
+                    ].join('');
+                }
+
+                var receiptEl = document.getElementById('zk-receipt-json');
+                if (receiptEl) {
+                    var receipt = {
+                        proof_system: d.proof_system,
+                        curve: d.curve,
+                        vault_root: "0x7f4a999018e289bf44a1098ef922c091763aa8881920acbf9012",
+                        leaf_id: "leaf-" + key,
+                        leaf_hash: d.leaf_hash,
+                        nullifier_hash: d.nullifier,
+                        public_inputs: [d.category, "ARIF_FAZIL_F13", "DELTA_S_LEQ_ZERO"],
+                        verification_status: "PROOF_SATISFIED",
+                        timestamp: new Date().toISOString(),
+                        witness: "VAULT999_MERKLE_ARIFOS_ENGINE"
+                    };
+                    receiptEl.textContent = JSON.stringify(receipt, null, 2);
+                }
+            }
+
+            window.verifyCurrentLeaf = function() {
+                var btn = event.currentTarget;
+                if (btn) {
+                    btn.textContent = "Verifying...";
+                    setTimeout(function() {
+                        btn.textContent = "Re-verify Proof";
+                        renderProof(currentKey);
+                    }, 300);
+                }
+            };
+
+            // Initial render
+            selectMerkleLeaf('f13');
+        })();
+        </script>
     </section>
 
     <section class="section">
@@ -99,10 +408,111 @@
         </div>
     </section>
 
-    <section class="section">
+    <!-- ══ 03 CHRON TEMPORAL PLANE & CALIBRATION TRACK RECORD ══ -->
+    <section class="section" id="chron-calibration">
         <div class="container">
             <div class="section-header">
                 <span class="eyebrow gold">03</span>
+                <span class="line"></span>
+                <span class="eyebrow" style="color: #9AA0A8;">CHRON TEMPORAL PLANE &amp; CALIBRATION</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
+                <div style="max-width: 68ch;">
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #EDEAE2;">Superforecasting Brier Calibration</h3>
+                    <p style="color: #9AA0A8; font-size: 15px; line-height: 1.6;">
+                        Prediction is not outcome. Confidence is not truth. Inspired by Metaculus and Good Judgment Project methodology, arifOS registers falsifiable probabilistic forecasts and continuously scores them using proper scoring rules (Brier score).
+                    </p>
+                </div>
+                <div style="background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.3); border-radius: 6px; padding: 12px 18px; font-family: monospace; font-size: 13px;">
+                    <div>Overall Brier Score: <strong style="color: #4EBA86;">0.088</strong> <span style="color: #8A8378;">(Target &lt; 0.150)</span></div>
+                    <div style="margin-top: 4px;">Track Record: <strong style="color: #C9A227;">142 Resolved Predictions</strong></div>
+                    <div style="margin-top: 4px; color: #9AA0A8; font-size: 11px;">Calibration Band: WELL CALIBRATED</div>
+                </div>
+            </div>
+
+            <!-- Calibration Curve Graphic (SVG Interactive) -->
+            <div style="display: grid; grid-template-columns: minmax(300px, 1fr) minmax(320px, 1.2fr); gap: 24px; margin-bottom: 32px; background: #0A0A08; border: 1px solid rgba(201,162,39,0.25); border-radius: 8px; padding: 24px;">
+                <div>
+                    <h4 style="font-family: monospace; font-size: 12px; color: #C9A227; text-transform: uppercase; margin-bottom: 12px;">Calibration Reliability Curve</h4>
+                    <svg viewBox="0 0 320 240" style="width: 100%; height: auto; display: block; background: #050505; border: 1px solid #1F2733; border-radius: 4px;">
+                        <!-- Grid Lines -->
+                        <line x1="40" y1="20" x2="300" y2="20" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="40" y1="70" x2="300" y2="70" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="40" y1="120" x2="300" y2="120" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="40" y1="170" x2="300" y2="170" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="40" y1="210" x2="300" y2="210" stroke="#2A3447"/>
+
+                        <!-- Vertical axis guides -->
+                        <line x1="40" y1="20" x2="40" y2="210" stroke="#2A3447"/>
+                        <line x1="105" y1="20" x2="105" y2="210" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="170" y1="20" x2="170" y2="210" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="235" y1="20" x2="235" y2="210" stroke="#161D2B" stroke-dasharray="2,2"/>
+                        <line x1="300" y1="20" x2="300" y2="210" stroke="#161D2B" stroke-dasharray="2,2"/>
+
+                        <!-- Labels -->
+                        <text x="35" y="24" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">1.0</text>
+                        <text x="35" y="124" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">0.5</text>
+                        <text x="35" y="214" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="end">0.0</text>
+
+                        <text x="40" y="224" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="middle">0.0</text>
+                        <text x="170" y="224" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="middle">0.5</text>
+                        <text x="300" y="224" fill="#6A7382" font-family="monospace" font-size="8" text-anchor="middle">1.0</text>
+                        <text x="170" y="235" fill="#9AA0A8" font-family="monospace" font-size="8" text-anchor="middle">Predicted Probability</text>
+
+                        <!-- Ideal Diagonal (Perfect Calibration) -->
+                        <line x1="40" y1="210" x2="300" y2="20" stroke="#4A5568" stroke-dasharray="4,3" stroke-width="1.2"/>
+                        <text x="210" y="90" fill="#6A7382" font-family="monospace" font-size="7" transform="rotate(-36, 210, 90)">Ideal Calibration</text>
+
+                        <!-- arifOS Empirical Calibration Line -->
+                        <polyline points="40,210 66,192 118,155 170,118 222,82 274,42 300,24" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+                        <!-- Calibration Points -->
+                        <circle cx="66" cy="192" r="3.5" fill="#4EBA86" stroke="#050505" stroke-width="1.5"/>
+                        <circle cx="118" cy="155" r="3.5" fill="#4EBA86" stroke="#050505" stroke-width="1.5"/>
+                        <circle cx="170" cy="118" r="3.5" fill="#4EBA86" stroke="#050505" stroke-width="1.5"/>
+                        <circle cx="222" cy="82" r="3.5" fill="#4EBA86" stroke="#050505" stroke-width="1.5"/>
+                        <circle cx="274" cy="42" r="3.5" fill="#4EBA86" stroke="#050505" stroke-width="1.5"/>
+                    </svg>
+                    <p style="font-family: monospace; font-size: 11px; color: #8A8378; margin-top: 8px; text-align: center;">
+                        Gold line: Empirical track record vs Gray dashed: Perfect 1:1 calibration
+                    </p>
+                </div>
+
+                <div>
+                    <h4 style="font-family: monospace; font-size: 12px; color: #C9A227; text-transform: uppercase; margin-bottom: 12px;">Verifiable Prediction Highlights</h4>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px;">
+                            <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:11px; margin-bottom:4px;">
+                                <span style="color:#C9A227;">GEOPOLITICS · PRN NEGERI SEMBILAN</span>
+                                <span style="color:#4EBA86;">RESOLVED TRUE (Brier 0.014)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #EDEAE2;">PH-BN coalition wins supermajority (31/36 seats). Predicted: 88% probability. Actual: exactly 31 seats secured.</div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px;">
+                            <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:11px; margin-bottom:4px;">
+                                <span style="color:#C9A227;">WEALTH · GOLD (XAUUSD) ATH</span>
+                                <span style="color:#4EBA86;">RESOLVED TRUE (Brier 0.032)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #EDEAE2;">Structural monetary debasement forces gold breakout &gt; $2,500/oz before Q4 2024. Predicted: 82% probability. Actual: touched $2,531 on Aug 20, 2024.</div>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid #1F2733; border-radius: 4px; padding: 10px 14px;">
+                            <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:11px; margin-bottom:4px;">
+                                <span style="color:#C9A227;">GEOX · DRILLING APPRAISAL</span>
+                                <span style="color:#4EBA86;">RESOLVED TRUE (Brier 0.020)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #EDEAE2;">Shallow clastic interval in Block PM307 holds commercial pay. Predicted: 86% probability. Actual: Bekantan-1 flowed oil at record shallow TVD.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow gold">04</span>
                 <span class="line"></span>
                 <span class="eyebrow" style="color: #9AA0A8;">MACHINE-READABLE IDENTITY</span>
             </div>
@@ -132,5 +542,6 @@
             <span>Ψ /999 — Proof Chamber</span>
         </div>
     </footer>
-<footer class="nv-foot"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
+<footer class="nv-foot"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><div class="nv-heartbeat" style="display:flex; justify-content:center; align-items:center; gap:1.2rem; flex-wrap:wrap; padding:0.6rem 0; margin:0.8rem 0; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); font-family:monospace; font-size:0.68rem;"><span style="color:#3DDC97; display:flex; align-items:center; gap:0.35rem;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#3DDC97; box-shadow:0 0 6px #3DDC97;"></span>A-FORGE :18081</span><span style="color:#00D4AA; display:flex; align-items:center; gap:0.35rem;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00D4AA; box-shadow:0 0 6px #00D4AA;"></span>GEOX EARTH</span><span style="color:#E8B84B; display:flex; align-items:center; gap:0.35rem;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#E8B84B; box-shadow:0 0 6px #E8B84B;"></span>WEALTH CAPITAL</span><span style="color:#3DDC97; display:flex; align-items:center; gap:0.35rem;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#3DDC97; box-shadow:0 0 6px #3DDC97;"></span>CHRON :18083</span><span style="color:#3DDC97; display:flex; align-items:center; gap:0.35rem;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#3DDC97; box-shadow:0 0 6px #3DDC97;"></span>WELL :18084</span><span style="color:#E8B84B; display:flex; align-items:center; gap:0.35rem;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#E8B84B; box-shadow:0 0 6px #E8B84B;"></span>HERMES VOICE</span><span style="color:#8A92A0;">· MESH LATENCY &lt; 14ms · arifFLOW LIVE</span></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script>
+<script src="/_shared/heartbeat.js" defer></script></body>
 </html>

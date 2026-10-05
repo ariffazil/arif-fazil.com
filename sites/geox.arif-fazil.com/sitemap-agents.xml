@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://geox.arif-fazil.com/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/platform</loc></url>
+  <url><loc>https://geox.arif-fazil.com/mcp-apps</loc></url>
+  <url><loc>https://geox.arif-fazil.com/webmcp</loc></url>
+  <url><loc>https://geox.arif-fazil.com/federation</loc></url>
+  <url><loc>https://geox.arif-fazil.com/deploy</loc></url>
+  <url><loc>https://geox.arif-fazil.com/observe/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/gui/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/gui/seismic_viewer/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/gui/ac_risk_console/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/gui/well_context_desk/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/gui/basin_explorer/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/well-desk/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/prospect-ui/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/earth-volume/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/judge-console/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/calibration-witness/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/analog-digitizer/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/glof_substrate/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/apps/geox-mcp-visual/</loc></url>
+  <url><loc>https://geox.arif-fazil.com/llms.txt</loc></url>
+  <url><loc>https://geox.arif-fazil.com/health</loc></url>
+  <url><loc>https://geox.arif-fazil.com/.well-known/mcp.json</loc></url>
+</urlset>

@@ -9,7 +9,7 @@
   ],
   "canonical_url": "https://arif-fazil.com/",
   "route_model": {
-    "/": "human L1 — three doors + briefing",
+    "/": "human L1 — front door, nine rooms",
     "/about": "who",
     "/human": "agent start-here",
     "/institution/": "institutional briefing",
@@ -73,5 +73,5 @@
       "relationship": "earth intelligence apps"
     }
   ],
-  "last_updated": "2026-10-03"
+  "last_updated": "2026-10-05"
 }

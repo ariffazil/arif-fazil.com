@@ -108,32 +108,45 @@ export function RealityReceiptPanel({ meta }: RealityReceiptPanelProps) {
             </span>
             {meta.provenance_status && (
               <span className={`font-mono text-[9px] uppercase px-1.5 py-0.5 rounded border ${
-                meta.provenance_status === 'sealed'
+                meta.provenance_status === 'sealed' && stats.verifiedSources === stats.totalSources && stats.totalSources > 0
                   ? 'text-[#4CAF50] border-[#4CAF50]/30 bg-[#4CAF50]/10'
                   : 'text-[#FF9800] border-[#FF9800]/30 bg-[#FF9800]/10'
               }`}>
-                {meta.provenance_status}
+                {meta.provenance_status === 'sealed' && (stats.verifiedSources < stats.totalSources || stats.totalSources === 0)
+                  ? 'audit active'
+                  : meta.provenance_status}
               </span>
             )}
-            <StatusDot fresh={!isStale} />
+            <StatusDot fresh={!isStale && stats.verifiedSources > 0} />
             {isStale && (
               <span className="font-mono text-[9px] text-[#FF9800] uppercase">stale</span>
             )}
           </div>
 
           <div className="flex items-center gap-4 text-[10px] font-mono text-[#5C636C]">
-            <span>{stats.verifiedSources}/{stats.totalSources} src</span>
+            <span className={stats.verifiedSources < stats.totalSources ? 'text-[#FF9800]' : ''}>
+              {stats.verifiedSources}/{stats.totalSources} src
+            </span>
             <span>{stats.totalClaims} claims</span>
             {stats.contradictions > 0 && (
               <span className="text-[#FF9800]">{stats.contradictions} contra</span>
             )}
-            {/* Seal badge — clickable */}
-            <span
-              className="font-mono text-[10px] uppercase text-[#E4572E] px-2 py-0.5 rounded border border-[#E4572E]/40 bg-[#E4572E]/10 font-semibold tracking-wider hover:bg-[#E4572E]/20 hover:border-[#E4572E]/60 transition-all"
-              title="Expand receipt details"
-            >
-              SEAL {meta.seal || '999'}
-            </span>
+            {/* Seal badge — conditional on verified sources */}
+            {stats.verifiedSources === stats.totalSources && stats.totalSources > 0 ? (
+              <span
+                className="font-mono text-[10px] uppercase text-[#4CAF50] px-2 py-0.5 rounded border border-[#4CAF50]/40 bg-[#4CAF50]/10 font-semibold tracking-wider hover:bg-[#4CAF50]/20 hover:border-[#4CAF50]/60 transition-all"
+                title="Expand receipt details"
+              >
+                SEAL {meta.seal || '999'}
+              </span>
+            ) : (
+              <span
+                className="font-mono text-[10px] uppercase text-[#FF9800] px-2 py-0.5 rounded border border-[#FF9800]/40 bg-[#FF9800]/10 font-semibold tracking-wider hover:bg-[#FF9800]/20 hover:border-[#FF9800]/60 transition-all"
+                title="Expand receipt details (sources unverified)"
+              >
+                UNSEALED ({stats.verifiedSources}/{stats.totalSources} SRC)
+              </span>
+            )}
             <span className="text-[#5C636C]">{expanded ? '▾' : '▸'}</span>
           </div>
         </button>

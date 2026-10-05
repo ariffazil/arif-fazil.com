@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useWebMCP } from '@/hooks/useWebMCP';
 import { QuoteCard } from '@/components/QuoteCard';
-import { ZenPulse } from '@/components/ZenPulse';
-
 const worldTools = [
   {
     name: 'get_world_surface',
@@ -26,13 +24,6 @@ export function World() {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
-      {/* ZEN PULSE — orientation in 3 seconds */}
-      <ZenPulse
-        whereAmI="arif-fazil.com · World"
-        whyCare="Civic journalism + commodity intelligence, evidence-gated"
-        whatNext="Read MakcikGPT or open a dashboard"
-      />
-
       {/* HERO — calm, editorial */}
       <section className="py-20 md:py-24 border-b border-forge-iron">
         <div className="site-frame">

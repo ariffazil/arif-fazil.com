@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-10-03T00:24:19.377Z",
+  "generated_at": "2026-10-05T10:00:38.891Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -44,7 +44,7 @@
     },
     "geox": {
       "verified": true,
-      "count": 26,
+      "count": 27,
       "tools": [
         {
           "name": "geox_geomechanics",
@@ -57,6 +57,10 @@
         {
           "name": "geox_paleobiodb_query",
           "desc": "Query the Paleobiology Database (PBDB v1.2) for taxa, occurrences, and biozones. Modes: ta"
+        },
+        {
+          "name": "geox_observe",
+          "desc": "Canonical multimodal Earth observation umbrella (Earth Witness v1). Rock/outcrop/core/thin"
         },
         {
           "name": "geox_well_ingest",
@@ -265,5 +269,5 @@
       ]
     }
   },
-  "total_verified": 59
+  "total_verified": 60
 }

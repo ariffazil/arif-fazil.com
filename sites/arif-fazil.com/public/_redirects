@@ -62,3 +62,9 @@
 
 
 
+
+# 2026-10-04: Tier-1 nav consolidation — /words/makcikgpt/* -> /world/makcikgpt/* (canonical)
+# Live runtime fix is in Caddy vhost (Caddy serves this site, not CF Pages). Kept here for parity.
+/words/makcikgpt      /world/makcikgpt/         301
+/words/makcikgpt/     /world/makcikgpt/         301
+/words/makcikgpt/*    /world/makcikgpt/:splat   301

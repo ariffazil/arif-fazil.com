@@ -64,12 +64,12 @@ const LENSES = [
   },
 ]
 
-const FACTS: { claim: string; figure: string; tag: 'OBS' | 'SPEC' | null; note?: string }[] = [
+const FACTS: { claim: string; figure: string; tag: 'OBS' | 'DER' | 'SPEC' | null; note?: string }[] = [
   {
     claim: 'Approximate share of PETRONAS extraction economics flowing to the government (dividends, tax, royalty)',
     figure: '~70.5%',
-    tag: 'OBS',
-    note: 'arithmetic',
+    tag: 'DER',
+    note: 'arithmetic derivation from annual reports & budget disclosures',
   },
   {
     claim: 'Simulated sovereign-wealth scenario value',
@@ -85,12 +85,12 @@ const FACTS: { claim: string; figure: string; tag: 'OBS' | 'SPEC' | null; note?:
   },
 ]
 
-const ESSAYS = [
-  { title: 'The Price of a Risk', summary: 'What an exploration well teaches you about expected value — and about yourself.' },
-  { title: 'Subsidies Are Sentences', summary: 'Fuel subsidy design as a grammatical problem: who is the subject, and who pays the verb.' },
-  { title: 'What a National Oil Company Is For', summary: 'The Petroleum Development Act 1974, read as an economic argument about custody.' },
-  { title: 'The Arithmetic of 70.5%', summary: 'Following extraction economics from the wellhead to the national budget, in plain numbers.' },
-  { title: 'Options on the Unknown', summary: 'Portfolio discipline: why the best exploration decision is often the well you decline.' },
+const ESSAYS: { title: string; summary: string; slug: string | null; status: 'Published' | 'Forthcoming' }[] = [
+  { title: 'The Price of a Risk', summary: 'What an exploration well teaches you about expected value — and about yourself.', slug: null, status: 'Forthcoming' },
+  { title: 'Subsidies Are Sentences', summary: 'Fuel subsidy design as a grammatical problem: who is the subject, and who pays the verb.', slug: null, status: 'Forthcoming' },
+  { title: 'What a National Oil Company Is For', summary: 'The Petroleum Development Act 1974, read as an economic argument about custody.', slug: '/world/makcikgpt/pda-1974-bukan-undang-undang', status: 'Published' },
+  { title: 'The Arithmetic of 70.5%', summary: 'Following extraction economics from the wellhead to the national budget, in plain numbers.', slug: '/propa/', status: 'Published' },
+  { title: 'Options on the Unknown', summary: 'Portfolio discipline: why the best exploration decision is often the well you decline.', slug: null, status: 'Forthcoming' },
 ]
 
 export function Economics() {
@@ -252,21 +252,47 @@ export function Economics() {
                 animate={essaysInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <Link
-                  to="/writing"
-                  className="group flex items-baseline gap-6 border-b border-ink/10 py-6 transition-all duration-300 hover:border-l-2 hover:pl-3"
-                  style={{ borderLeftColor: GREEN }}
-                >
-                  <span className="font-mono text-[13px] tabular-nums tracking-[0.04em]" style={{ color: BRASS }}>
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-[28px] tracking-[-0.02em] transition-colors group-hover:text-[#1E6F50]">
-                      {e.title}
-                    </h3>
-                    <p className="mt-1 font-body text-[17px] leading-[1.55] text-ink-soft">{e.summary}</p>
+                {e.slug ? (
+                  <Link
+                    to={e.slug}
+                    className="group flex items-baseline gap-6 border-b border-ink/10 py-6 transition-all duration-300 hover:border-l-2 hover:pl-3"
+                    style={{ borderLeftColor: GREEN }}
+                  >
+                    <span className="font-mono text-[13px] tabular-nums tracking-[0.04em]" style={{ color: BRASS }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3">
+                        <h3 className="font-display text-[28px] tracking-[-0.02em] transition-colors group-hover:text-[#1E6F50]">
+                          {e.title}
+                        </h3>
+                        <span className="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 border border-[#1E6F50]/40 text-[#1E6F50] rounded">
+                          PUBLISHED ↗
+                        </span>
+                      </div>
+                      <p className="mt-1 font-body text-[17px] leading-[1.55] text-ink-soft">{e.summary}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  <div
+                    className="flex items-baseline gap-6 border-b border-ink/10 py-6 opacity-75"
+                  >
+                    <span className="font-mono text-[13px] tabular-nums tracking-[0.04em]" style={{ color: BRASS }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3">
+                        <h3 className="font-display text-[28px] tracking-[-0.02em] text-ink/80">
+                          {e.title}
+                        </h3>
+                        <span className="font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 border border-ink/20 text-ink-soft rounded">
+                          FORTHCOMING
+                        </span>
+                      </div>
+                      <p className="mt-1 font-body text-[17px] leading-[1.55] text-ink-soft">{e.summary}</p>
+                    </div>
                   </div>
-                </Link>
+                )}
               </motion.div>
             ))}
           </div>

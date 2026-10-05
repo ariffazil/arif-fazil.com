@@ -7,7 +7,7 @@
 <!-- Primary Meta -->
 <title>/999 — Proof · Sealed Vault | Arif Fazil</title>
 <meta name="title" content="/999 — Proof · Sealed Vault | Arif Fazil">
-<meta name="description" content="The immutable proof chamber. Cryptographic signatures, sealed records, DID documents, and the hash-chain audit trail. /999 closes the verification loop — evidence governs truth. Public attestation. No secrets, no keys.">
+<meta name="description" content="VAULT999 — hash-chained constitutional audit ledger. Current verifier state: live at /999/verify. Honest, mutable in the sense that gaps are recorded not erased, immutable in the sense that no record can be retroactively altered. Read the current chain status before you trust any SEAL label.">
 <meta name="keywords" content="VAULT999, immutable ledger, hash-chain, constitutional floors, F1-F13, sealed records, arifOS, audit trail, governed intelligence, DID, verification">
 <meta name="author" content="Muhammad Arif bin Fazil">
 <meta name="robots" content="index, follow">
@@ -216,7 +216,7 @@
 
   <div class="block attest">
     <div class="block-label">Attestation &amp; Historical Bridge</div>
-    <p>VAULT999 exists. It is append-only. It is constitutionally governed by floors F1–F13. Every seal is hash-chained to its predecessor. The vault is auditable without trusting this server: clone <code>github.com/ariffazil/arifOS</code>, recompute the SHA-256 chain from <code>VAULT999/seal_chain.jsonl</code>, and compare against the HEAD hash at <code>arif-fazil.com/999/verify</code>. Note: 1 historical format transition exists at canonical seq 8 (line 201), bridged by <code>V999-BRIDGE-SEAL-001</code> under grandfather rule <code>V999-GR-001</code>. The break is preserved, not erased — proving the ledger cannot be retroactively rewritten. Verification holds continuously from seq 8 onward.</p>
+    <p>VAULT999 exists. It is append-only. It is constitutionally governed by floors F1–F13. Every seal is hash-chained to its predecessor. The vault is auditable without trusting this server: clone <code>github.com/ariffazil/arifOS</code>, recompute the SHA-256 chain from <code>VAULT999/seal_chain.jsonl</code>, and compare against the HEAD hash at <code>arif-fazil.com/999/verify</code>. Note: 1 historical format transition exists at canonical seq 8 (line 201), bridged by <code>V999-BRIDGE-SEAL-001</code> under grandfather rule <code>V999-GR-001</code>. The break is preserved, not erased — proving the ledger cannot be retroactively rewritten. Verification holds continuously from seq 8 onward <em>under the bridge-seal grandfather rule</em>; the verifier also reports additional breaks at seq 16, 28, 30, and 43 that are NOT covered by the bridge seal and are awaiting root-cause analysis. A re-seal that re-asserts <code>verified:true</code> without explaining these gaps would conceal the original failure.</p>
   </div>
 
   <div class="block abduct">
@@ -396,6 +396,26 @@
 
   <p>The loop is closed. The record is sealed. The architecture is public.</p>
 
+  <section id="current-verifier-state" class="vault-panel">
+    <h2>Current verifier state</h2>
+    <p>Read the live verifier endpoint at <a href="/999/verify">/999/verify</a> before you trust any SEAL label on this page. The chain is honest about its gaps.</p>
+    <dl>
+      <dt>Last head hash</dt>     <dd><code>sha256:dd759920a624d4c04649482f3c23e488f73d528ff550070be78832f18eb56332</code></dd>
+      <dt>Head sequence</dt>      <dd>45 of 62 entries verified (17 unverified)</dd>
+      <dt>Verified</dt>            <dd><strong>false</strong></dd>
+      <dt>Chain status</dt>        <dd><code>gaps-found</code> — 6 chain breaks recorded</dd>
+    </dl>
+    <h3>Chain breaks (read-only, preserved)</h3>
+    <ol>
+      <li>seq 8 — CHAIN_BREAK — covered by <code>V999-BRIDGE-SEAL-001</code> under grandfather rule <code>V999-GR-001</code> (historical format transition, preserved not erased)</li>
+      <li>seq 16 — CHAIN_BREAK — <em>not covered by any bridge seal</em></li>
+      <li>seq 28 — CHAIN_BREAK — <em>not covered</em></li>
+      <li>seq 30 — CHAIN_BREAK — <em>not covered</em></li>
+      <li>seq 43 — HASH_MISMATCH + SIGNATURE_FAIL (HMAC-SHA256) — mechanism: <code>OUT_OF_BAND_APPEND</code>; "operation_id is a prefix of its own receipt_hash"</li>
+    </ol>
+    <p>The verifier returns this state at every request. The ledger is preserved, not retroactively rewritten; gaps are recorded so diagnosis can proceed.</p>
+  </section>
+
 </section>
 
 <!-- ═══════════════ 8. AUDIT PATH ═══════════════ -->
@@ -408,7 +428,7 @@
   <p><strong>F9 ANTIHANTU names this failure directly:</strong> authority without external attestation. And if verification must flow through the governed system, the fourth Verifier channel in F3 is an employee, not a witness. The architecture separates these deliberately:</p>
 
   <div class="loop-diagram">
-    <span class="hl">WINDOW 1 — /999/verify</span><br>
+    <span class="hl"><a href="/999/verify" style="color:inherit;text-decoration:underline">WINDOW 1 — current verifier state</a></span><br>
     <span class="arrow">→</span> HEAD hash · chain status · gap count · verified_at<br>
     <span style="color:var(--text-muted);font-size:0.65rem;">Public · unauthenticated · CORS enabled · 60s cache</span><br>
     <br>

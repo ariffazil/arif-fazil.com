@@ -47,6 +47,7 @@ function NavItemLink({
   const territoryAccent: Record<string, string> = {
     '/earth': 'decoration-[#E4572E]',
     '/world': 'decoration-[#EDEAE2]',
+    '/world/makcikgpt': 'decoration-[#D9A62E]',
     '/words': 'decoration-[#C9A227]',
     '/makcikgpt': 'decoration-[#D9A62E]',
     '/work': 'decoration-[#31C48D]',
@@ -55,7 +56,7 @@ function NavItemLink({
     '/AAA': 'decoration-[#91B0F2]',
   }
   const hrefNorm = item.href.replace(/\/$/, '') || '/'
-  const accent = territoryAccent[hrefNorm] || 'decoration-ember'
+  const accent = territoryAccent[hrefNorm] || territoryAccent['/world/makcikgpt'] && hrefNorm.startsWith('/world/makcikgpt') ? territoryAccent['/world/makcikgpt'] : 'decoration-ember'
   const hint = navHints[hrefNorm]
   const base =
     className ??

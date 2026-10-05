@@ -1,0 +1,81 @@
+From 4f3ad90e303e4191e83ce2a72775a214d59a2a05 Mon Sep 17 00:00:00 2001
+From: irfanclaw <irfanclaw@arifos.local>
+Date: Thu, 24 Sep 2026 14:39:55 +0000
+Subject: [PATCH 1/2] =?UTF-8?q?rule(skills):=20artifact=20text=20routing?=
+ =?UTF-8?q?=20=E2=80=94=20deterministic=20render=20for=20text,=20generativ?=
+ =?UTF-8?q?e=20for=20mood?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Closes the read/write asymmetry: poster-vision-extraction already governs reading
+text from images (scar 2026-08-27), but no cross-cutting rule governed WRITING
+text into artifacts. Generative models estimate glyphs and misspell or invent them
+(observed same session: IRFANGLAW, arifeOS, an unrequested watermark); deterministic
+renders of the same content: 0 misspellings.
+
+- forge-pdf-delivery: new 'Routing: text vs mood' section (before Pipeline).
+  Points at existing partial patterns rather than duplicating them.
+- civic-social-infographic: extend the existing matplotlib/HTML+CSS rule to all text.
+
+Gate: verify from the text layer (pdftotext), never from a vision model's opinion.
+
+Proposed by irfanclaw (KVM4). Verified by HERMES. Sealed by ARIF (F13) — NOT YET.
+APEX: G=0.823, C_dark=0.0088, verdict OK (is_canonical_g=true; W3 UNMEASURED).
+
+Root-cause note: my first draft targeted a 23-day-stale mirror (39 lines). The real
+tree was 2666 commits ahead. Corrected against origin/main before writing.
+---
+ .../civic-social-infographic/SKILL.md         |  2 ++
+ .../forge-pdf-delivery/SKILL.md               | 22 +++++++++++++++++++
+ 2 files changed, 24 insertions(+)
+
+diff --git a/skills/domains/general/workshop/creative-design/civic-social-infographic/SKILL.md b/skills/domains/general/workshop/creative-design/civic-social-infographic/SKILL.md
+index 6c4fe239..3f4f32aa 100644
+--- a/skills/domains/general/workshop/creative-design/civic-social-infographic/SKILL.md
++++ b/skills/domains/general/workshop/creative-design/civic-social-infographic/SKILL.md
+@@ -97,6 +97,8 @@ EOF
+ ### 1. Matplotlib can't wrap text
+ Filled body text in matplotlib cards overflows silently. **Use HTML+CSS** for any infographic with body text. Reserve matplotlib for decorative numbers and external chart PNGs.
+ 
++**Same rule for any text at all.** A generative image model estimates glyphs and will misspell or invent them (observed: a wordmark rendered as `IRFANGLAW`). Render text deterministically — HTML/CSS via weasyprint or headless Chrome — and verify from the text layer (`pdftotext`), not from a vision check. Full routing rule: `workshop/document-intel/forge-pdf-delivery/SKILL.md` -> “Routing: text vs mood”.
++
+ ### 2. CSS class colour selectors silently no-op on `.vf.X` patterns
+ When child `<div>` is inside a flex parent, complex class selectors sometimes lose specificity. **Always inline the colour and width on the bar fill:**
+ ```html
+diff --git a/skills/domains/general/workshop/document-intel/forge-pdf-delivery/SKILL.md b/skills/domains/general/workshop/document-intel/forge-pdf-delivery/SKILL.md
+index ad82d498..8b99f51a 100644
+--- a/skills/domains/general/workshop/document-intel/forge-pdf-delivery/SKILL.md
++++ b/skills/domains/general/workshop/document-intel/forge-pdf-delivery/SKILL.md
+@@ -13,6 +13,28 @@ Class-level skill. Trigger: the user wants a portable document, not a chat reply
+ 
+ **A file with the `.pdf` extension is NOT a PDF.** Always confirm via `file <path>` that the output shows `PDF document, version 1.7` (or similar) before delivering. If `file` returns `Unicode text`, you wrote text with a wrong extension — fix the pipeline, don't ship.
+ 
++## Routing: text vs mood — pick the engine before you build
++
++Some deliverables are text and some are imagery, and one engine cannot do both well.
++
++- **Exact text matters** (wordmark, logo, poster, document, infographic, chat-style
++  artifact — anything a human reads letter-by-letter) -> **deterministic renderer**:
++  author HTML/CSS, render with weasyprint or headless Chrome. Glyphs are placed, not
++  guessed.
++- **No text** (mood, texture, light, scene, conceptual imagery) -> a generative image
++  model is fine; that is what it is good at. When the artifact needs BOTH, generate
++  the text-free background generatively and overlay the text deterministically — see
++  `image-gen/lightweight-image-generation/references/brand-motivational-poster-pattern.md`
++  and the text-bearing-prop rule in `image-gen/synthetic-human-media-pipeline/SKILL.md`.
++
++Why this is a rule and not a preference: a diffusion model draws pixels and estimates
++glyphs. Given any run of text it misspells it or invents something plausible (observed
++same session: `IRFANGLAW`, `arifeOS`, an unrequested watermark). A deterministic render
++of the same content: 0 misspellings.
++
++**Gate — verify from the text layer, not from a vision model's opinion.**
++`pdftotext out.pdf - | head` must show the exact strings. "Looks fine" is not evidence.
++
+ ## Pipeline (use this exact order)
+ 
+ 1. **Author content as Markdown.** One source of truth. Use proper headings (`##`, `###`), pipe-table syntax, lists — pandoc/weasyprint render them well.
+-- 
+2.51.0
+

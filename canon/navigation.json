@@ -34,6 +34,33 @@
   "clock": "Asia/Kuala_Lumpur",
   "creed": "Forged, not given."
  },
+ "primary_links_journey": {
+  "description": "Human-journey primary nav (5 slots, F13 audit 2026-10-05).",
+  "rule": "Renders above primary_links. Maximum 5 items. Each href is one human purpose, not one organ.",
+  "as_of": "2026-10-05",
+  "ratified_by": "F13 (binary A, 2026-10-05)",
+  "items": [
+   { "label": "Explore",  "href": "/earth/",        "question": "What does physical reality show?" },
+   { "label": "Read",     "href": "/words/",        "question": "What does this mean for people?" },
+   { "label": "Build",    "href": "/work/",         "question": "What can I do here?" },
+   { "label": "Evidence", "href": "/999/",          "question": "What evidence is this built on? — F13 binary D" },
+   { "label": "About",    "href": "/institution/",  "question": "Who is Arif and why does this exist?" }
+  ]
+ },
+ "secondary_links_organs": {
+  "description": "7-organ 'Powered by' strip, replacing v7.3's 6 organ-mirror. Demoted to secondary (was v7.3 primary).",
+  "rule": "Always visible. The 7 organs are canonical per arifOS §2.1 (2026-09-14) and AAA P2 (2026-09-21). HERMES and CHRON are Tier-3 boundary services, not organs, and are NOT in this strip — they appear in the machine-doors footer.",
+  "as_of": "2026-10-05",
+  "items": [
+   { "label": "arifOS",   "href": "/canon/",                   "role": "authority" },
+   { "label": "A-FORGE",  "href": "/forge/",                   "role": "execution" },
+   { "label": "AAA",      "href": "/machines/",                "role": "attention" },
+   { "label": "GEOX",     "href": "https://geox.arif-fazil.com",  "role": "domain:earth" },
+   { "label": "WEALTH",   "href": "https://wealth.arif-fazil.com","role": "domain:capital" },
+   { "label": "WELL",     "href": "https://well.arif-fazil.com",  "role": "domain:vitality" },
+   { "label": "arifFlow", "href": null,                         "role": "metabolism",   "note": "arifFlow is the metabolism/telemetry organ; the 7th strip entry. /pulse/ is intentionally 410 (F13 audit 2026-10-05). System status: see Evidence → /999/." }
+  ]
+ },
  "primary_links": {
   "description": "6-slot human nav. Each nav item = an organ's output portal: HOME=sovereign, EARTH=GEOX, WORDS=arifOS, MAKCIKGPT=HERMES civic voice, WORLD=WEALTH, WORK=WELL. Organs themselves are agent-owned and live in machine_links.",
   "rule": "Max 6. Labels = organ domains. Every page must render the same 6 slots — no per-page divergence.",

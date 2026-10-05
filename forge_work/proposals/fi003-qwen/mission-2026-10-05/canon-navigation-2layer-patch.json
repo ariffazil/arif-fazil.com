@@ -1,0 +1,62 @@
+{
+  "patch_kind": "json-patch",
+  "patch_version": "1.0",
+  "applied_to": "/root/arif-fazil.com/canon/navigation.json",
+  "ratification": "F13 binary A — adopt 5 stable primary destinations, 2026-10-05",
+  "rationale": "F13 external audit 2026-10-05 recommended 5 stable primary destinations (Explore · Read · Build · Evidence · About). Adopt additively so the existing v7.3 organ-mirror primary_links block is preserved (revertible). Demote the 6 organ-mirror to a 7-organ 'Powered by' strip (canon per arifOS §2.1 + AAA P2).",
+  "patch": [
+    {
+      "op": "add",
+      "path": "/primary_links_journey",
+      "value": {
+        "description": "Human-journey primary nav (5 slots, F13 audit 2026-10-05).",
+        "rule": "Renders above primary_links. Maximum 5 items. Each href is one human purpose, not one organ.",
+        "as_of": "2026-10-05",
+        "ratified_by": "F13 (binary A, 2026-10-05)",
+        "items": [
+          { "label": "Explore",  "href": "/earth/",        "question": "What does physical reality show?" },
+          { "label": "Read",     "href": "/words/",        "question": "What does this mean for people?" },
+          { "label": "Build",    "href": "/work/",         "question": "What can I do here?" },
+          { "label": "Evidence", "href": "/999/",          "question": "What evidence is this built on? — F13 binary D" },
+          { "label": "About",    "href": "/institution/",  "question": "Who is Arif and why does this exist?" }
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/secondary_links_organs",
+      "value": {
+        "description": "7-organ 'Powered by' strip, replacing v7.3's 6 organ-mirror. Demoted to secondary (was v7.3 primary).",
+        "rule": "Always visible. The 7 organs are canonical per arifOS §2.1 (2026-09-14) and AAA P2 (2026-09-21). HERMES and CHRON are Tier-3 boundary services, not organs, and are NOT in this strip — they appear in the machine-doors footer.",
+        "as_of": "2026-10-05",
+        "items": [
+          { "label": "arifOS",   "href": "/canon/",                   "role": "authority" },
+          { "label": "A-FORGE",  "href": "/forge/",                   "role": "execution" },
+          { "label": "AAA",      "href": "/machines/",                "role": "attention" },
+          { "label": "GEOX",     "href": "https://geox.arif-fazil.com",  "role": "domain:earth" },
+          { "label": "WEALTH",   "href": "https://wealth.arif-fazil.com","role": "domain:capital" },
+          { "label": "WELL",     "href": "https://well.arif-fazil.com",  "role": "domain:vitality" },
+          { "label": "arifFlow", "href": null,                         "role": "metabolism",   "note": "arifFlow is the metabolism/telemetry organ; the 7th strip entry. /pulse/ is intentionally 410 (F13 audit 2026-10-05). System status: see Evidence → /999/." }
+        ]
+      }
+    }
+  ],
+  "preserved": [
+    "primary_links (organ-mirror v7.3, 6 slots) — kept for revertibility; not rendered in the new nav but available in canon",
+    "secondary_links (footer v7.3) — kept",
+    "machine_links (footer v7.3) — kept"
+  ],
+  "revert": "Remove the two new top-level blocks. v7.3 is preserved as-is.",
+  "falsification": {
+    "apply": [
+      "python3 -c 'import json; d=json.load(open(\"canon/navigation.json\")); assert d[\"primary_links_journey\"][\"items\"][0][\"label\"]==\"Explore\"; assert len(d[\"primary_links_journey\"][\"items\"])==5; assert len(d[\"secondary_links_organs\"][\"items\"])==7'",
+      "git diff canon/navigation.json shows the 2 new top-level keys and no other change"
+    ],
+    "render": [
+      "Every page on arif-fazil.com shows a 5-item primary nav: Explore · Read · Build · Evidence · About",
+      "The 'Powered by' footer strip shows 7 organs",
+      "The existing v7.3 6-slot primary_links is no longer rendered (replaced by the 5-slot primary_links_journey) but is preserved in the canon for revertibility"
+    ],
+    "retest": "Open /, /earth/, /words/, /world/, /work/, /999/, /institution/ — each must show the 5-slot primary nav and 7-organ footer"
+  }
+}

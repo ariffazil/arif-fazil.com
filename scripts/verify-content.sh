@@ -107,10 +107,11 @@ for b in bad:
     fi
     local okcount
     okcount=$(echo "$out" | head -1 | sed 's/OK=//')
-    if [ -n "$okcount" ] && [ "$okcount" -ge 4 ]; then
+    # 2026-10-05: narrative redesign carries 1 consolidated WebPage block; floor = 1 (all must parse).
+    if [ -n "$okcount" ] && [ "$okcount" -ge 1 ]; then
         echo -e "  ${GREEN}✅${NC} B11-E: $url JSON-LD blocks parse ($okcount blocks)"
     else
-        echo -e "  ${RED}❌ B11-E: $url JSON-LD parse count = $okcount (expected ≥4)${NC}"
+        echo -e "  ${RED}❌ B11-E: $url JSON-LD parse count = $okcount (expected ≥1)${NC}"
         FAILURES=$((FAILURES + 1))
     fi
     # Surface any parser errors
@@ -174,80 +175,81 @@ print("PASS" if ok else "FAIL", json.dumps({
     fi
 }
 
-echo -e "${CYAN}═══ CONTENT ASSERTIONS — /vitals/${NC}"
+echo -e "${CYAN}═══ CONTENT ASSERTIONS — /vitals/ (rewritten 2026-10-05: asserts the 27-Sep narrative page + 5-Okt reality-align; every needle verified to FRA 1H26 / IR2023-25 / Utusan-BH 2-3 Okt)${NC}"
 
-# ── Workstream A — Banner ──
-assert_present "/vitals/"  "A: FY2026 DECLARED panel"     "FY2026 DECLARED STATE"
-assert_present "/vitals/"  "A: FY2025 SEALED reading"      "FY2025 SEALED READING"
-assert_present "/vitals/"  "A: RM20 billion disclosed"     "RM20 billion"
-assert_present "/vitals/"  "A: 38% cut stated"             "38% cut"
-assert_present "/vitals/"  "A: Feb 2026 date"              "27 February 2026"
-assert_present "/vitals/"  "A: Capex RM45-50B"             "RM45–50B"
-assert_present "/vitals/"  "A: F13 veto restored"          "F13 veto remains final"
-assert_present "/vitals/"  "A: Exit at RM36.4B"            "RM36.4B"
-assert_present "/vitals/"  "A: Cap/floor collision"        "RM33.3B"
-assert_present "/vitals/"  "A: [DEC] tag"                  "[DEC]"
+# ── Alert (addendum 3 Okt, disemak 5 Okt) ──
+assert_present "/vitals/"  "Alert: RM48B BIMB"              "RM48 bilion FY2026"
+assert_present "/vitals/"  "Alert: RM20B baseline"          "Baseline Bajet 2026: <b>RM20B</b>"
+assert_present "/vitals/"  "Alert: +140% delta"             "+RM28B (+140%)"
+assert_present "/vitals/"  "Alert: 105.7% extraction"       "105.7% vs PAT FY2025"
+assert_present "/vitals/"  "Alert: budget date"             "9 Oktober 2026"
+assert_present "/vitals/"  "Alert: BIMB forward path"       "Laluan BIMB: RM32B (2027), RM25B (2028)"
+assert_present "/vitals/"  "Alert: computed countdown"      'id="budget-countdown"'
 
-# ── Stale phrases removed ──
-assert_absent "/vitals/"   "A: DIVIDEND STOP removed"      "DIVIDEND STOP EFFECTIVE"
-assert_absent "/vitals/"   "A: No human override removed"   "No human override"
+# ── Hero cards ──
+assert_present "/vitals/"  "Wallet: RM193.6B"               "RM193.6 bilion"
+assert_present "/vitals/"  "Wallet: as-at 30 Jun 2026"      "30 Jun 2026"
+assert_present "/vitals/"  "Wallet: drawdown chip"          "−RM10.8B sejak Dis 2025"
+assert_present "/vitals/"  "Tank: 7.92 boe"                 "7.92 bilion tong"
+assert_present "/vitals/"  "Tank: as-at 1 Jan 2026"         "Posisi 1 Jan 2026"
 
-# ── Workstream B — Site render ──
-assert_present "/vitals/"  "B1: Pulse 0"                   'id="pulseval" style="color:var(--void)">0<'
-assert_present "/vitals/"  "B1: Verdict VOID"              'pulseverdict" style="background:var(--void)'
-assert_present "/vitals/"  "B2: BODY override"             "OVERRIDE ACTIVE"
-assert_present "/vitals/"  "B3: 2 of 6 ENGAGED"            "2 of 6 ENGAGED"
-assert_present "/vitals/"  "B3: Governance ACTIVE"          "Governance Capacity"
-assert_absent "/vitals/"   "B4: 0.59/1.00 removed"          "0.59/1.00"
-assert_present "/vitals/"  "B4: 1.00/3 present"             "1.00/3"
-assert_present "/vitals/"  "B5: Tripwire labelled"          "60% tripwire"
-assert_present "/vitals/"  "B5: Pacemaker labelled"         "65% pacemaker"
-assert_absent "/vitals/"   "B6: \$83.78 hardcoded removed"  "83.78"
-assert_present "/vitals/"  "B8: Honesty EN"                 "None of the"
-assert_absent "/vitals/"   "B9: RM3.5B removed"             "RM3.5B"
-assert_present "/vitals/"  "B9: RM3.1B present"             "RM3.1B"
-assert_absent "/vitals/"   "B10: 12 tools removed"          "12 WEALTH tools"
-assert_present "/vitals/"  "B10: 8 canonical present"       "8 canonical WEALTH"
+# ── Tank chart (IR2023/24/25, posisi 1 Januari) ──
+assert_present "/vitals/"  "Chart: 2024 = 9.35"             "9.35"
+assert_present "/vitals/"  "Chart: 2025 = 8.64"             "8.64"
+assert_present "/vitals/"  "Chart: 2026 = 7.92"             "7.92"
+assert_present "/vitals/"  "Chart: declines labelled -8%"   "−8%"
+assert_present "/vitals/"  "Chart: next review microtext"   "semakan pertengahan 2027"
+assert_present "/vitals/"  "Chart: positions are 1 Jan"     "Posisi setiap 1 Januari"
 
-# ── B11-E: forbidden contiguous marker '48 HOLD' (R1 + B11-D) ──
-assert_absent "/vitals/"   "B11-E: no contiguous '48 HOLD' marker" "48 HOLD"
-assert_absent "/data/wealth/petronas_vitals.json" "B11-E: source JSON no '48 HOLD' (canonical-source URL is irrelevant; this would 404 but checks for absence via grep on dist if reachable)" "48 HOLD" || true
+# ── Wallet vs tank answer dates (duit Feb 2027, tong pertengahan 2027) ──
+assert_present "/vitals/"  "Answers: wallet Feb 2027"       "Duit dijawab Februari 2027"
+assert_present "/vitals/"  "Answers: tank mid-2027"         "Tong dijawab pertengahan 2027"
 
-# ── B11-A: exactly 9 static .tripcell rows in no-JS HTML ──
-assert_grid9_count "/vitals/" 9
+# ── Deep layer: printed numbers (FRA 1H26 + FY2025, IR) ──
+assert_present "/vitals/"  "Facts: cash Dec 2025"           "RM204.4"
+assert_present "/vitals/"  "Facts: group debt"              "RM126.8"
+assert_present "/vitals/"  "Facts: gearing 21.2%"           "21.2"
+assert_present "/vitals/"  "Facts: H1 PAT RM27.2B"          "RM27.2"
+assert_present "/vitals/"  "Facts: Searah gain RM5.0B"      "RM5.0"
+assert_present "/vitals/"  "Facts: RM8B paid by 30 Jun"     "RM8 bilion"
+assert_present "/vitals/"  "Facts: RM32B paid 2025"         "RM32 bilion"
+assert_present "/vitals/"  "Facts: FY2025 PAT RM45.4B"      "RM45.4"
+assert_present "/vitals/"  "Facts: Brent 1H26 avg"          'US$92.31'
+assert_present "/vitals/"  "Facts: reserves as-at chain"    "1 Januari 2024"
+assert_present "/vitals/"  "Facts: EnQuest not yet done"    "belum siap"
 
-# ── B11-B: static SVG fan fallback present ──
-assert_present "/vitals/"  "B11-B: SVG fan-svg element"   'id="fan-svg"'
-assert_present "/vitals/"  "B11-B: NET-DEBT TRIPWIRE label" "NET-DEBT TRIPWIRE"
-assert_present "/vitals/"  "B11-B: fan-fallback marker"    'data-agent-role="fan-fallback-static"'
-assert_present "/vitals/"  "B11-B: [SPEC] non-scoring"     "[SPEC] non-scoring"
+# ── Stale content stays out ──
+assert_absent "/vitals/"   "Old: DIVIDEND STOP removed"     "DIVIDEND STOP EFFECTIVE"
+assert_absent "/vitals/"   "Old: human override removed"    "No human override"
+assert_absent "/vitals/"   "Old: tripwire cells removed"    "tripcell"
+assert_absent "/vitals/"   "Old: pacemaker removed"         "pacemaker"
+assert_absent "/vitals/"   "Old: 0.59 score removed"        "0.59/1.00"
+assert_absent "/vitals/"   "Old: 83.78 removed"             "83.78"
+assert_absent "/vitals/"   "Old: RM3.5B removed"            "RM3.5B"
+assert_absent "/vitals/"   "B11-E: no '48 HOLD' marker"     "48 HOLD"
+assert_absent "/data/wealth/petronas_vitals.json" "B11-E: source JSON no '48 HOLD'" "48 HOLD" || true
 
-# ── B11-C: static scenario summary present ──
-assert_present "/vitals/"  "B11-C: scenario-summary marker" 'data-agent-role="scenario-summary-static"'
-assert_present "/vitals/"  "B11-C: IFR sole scoring input" "audited IFR FY2025 remains the sole scoring input"
-
-# ── B11-D: reality JSON-LD contract ──
-assert_reality_jsonld "/vitals/"
-assert_present "/vitals/"  "B11-D: pre_lock_pulse 48 in JSON-LD"  '"pre_lock_pulse": 48'
-assert_present "/vitals/"  "B11-D: display_pulse 0 in JSON-LD"    '"display_pulse": 0'
-assert_present "/vitals/"  "B11-D: fy2026 [DEC] feeds_scoring=false" '"feeds_scoring": false'
-assert_absent "/vitals/"   "B11-D: '48 HOLD' must not appear in any JSON-LD" "48 HOLD"
-
-# ── JSON-LD integrity (all blocks parse) ──
+# ── JSON-LD integrity ──
 echo ""
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — JSON-LD${NC}"
 assert_jsonld_parses "/vitals/"
-assert_present "/vitals/"  "JSON-LD: ThreeDoorsDigest"     "ThreeDoorsDigest"
-assert_present "/vitals/"  "JSON-LD: PacemakerAction"       "PacemakerAction"
-assert_present "/vitals/"  "JSON-LD: CrisisAlert"           "InstitutionalCrisisAlert"
-assert_present "/vitals/"  "JSON-LD: 2 pacemakers"          "2 pacemakers ENGAGED"
-assert_present "/vitals/"  "JSON-LD: InstitutionalVitals"   "InstitutionalVitals"
+assert_present "/vitals/"  "JSON-LD: WebPage dated"         "dateModified"
 
-# ── Cross-surface nav & live proxies (SPA-rendered routes) ──
+# ── Room pages: static truth since 2026-10-05 (no longer SPA shells) ──
+echo ""
+echo -e "${CYAN}═══ CONTENT ASSERTIONS — commodity rooms (static)${NC}"
+assert_present "/oil/"    "Oil: real h1"        "<h1"
+assert_present "/oil/"    "Oil: og graph"       "og:title"
+assert_present "/gas/"    "Gas: real h1"        "<h1"
+assert_present "/gas/"    "Gas: og graph"       "og:title"
+assert_present "/gold/"   "Gold: real h1"       "<h1"
+assert_present "/gold/"   "Gold: og graph"      "og:title"
+
+# ── SPA-rendered routes: /klci/ /usdmyr/ resolve into the world room (2026-10-05 truth) ──
 echo ""
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — SPA routes integrity${NC}"
-for page in /oil/ /gas/ /gold/ /klci/ /usdmyr/; do
-    assert_present "$page" "SPA shell on $page" 'id="root"'
+for page in /klci/ /usdmyr/; do
+    assert_present "$page" "$page serves real content in raw HTML" '<h1'
 done
 
 # ── Verdict ──

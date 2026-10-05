@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html data-room="vitals" data-ring="BODY" data-plane="organ" lang="en">
+<head>
+<link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PETRONAS — dompet hari ini, tangki masa depan</title>
+<meta name="description" content="PETRONAS masih ada tunai dan untung. Dalam laporan mereka sendiri, tong yang boleh dijual turun dua tahun berturut-turut. Kita belum tahu sama ada itu diganti.">
+<meta name="agent-identity" content="WEALTH · PETRONAS institution health">
+<meta property="og:title" content="PETRONAS · VITALS — Financial capacity and resilience">
+<meta property="og:description" content="PETRONAS financial capacity, operating resilience, and governance balance. Sealed tripwire scores, live market proxies, and net-cash scenarios. WITALS_* score bands: BUFFERED / WATCH / STRESSED / CRITICAL.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arif-fazil.com/vitals/">
+<meta property="og:image" content="https://arif-fazil.com/canon/atlas.png">
+<meta property="og:site_name" content="arifOS · Federation Intelligence">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PETRONAS · VITALS — Financial capacity and resilience">
+<meta name="twitter:description" content="Sealed FY2025 audited baseline + 1H26 declared overlay + dual-clock drift. 9 tripwires, VITALS_* namespacing, AMEND-2026-08-03-001 preserved.">
+<link rel="canonical" href="https://arif-fazil.com/vitals/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_shared/economics.css">
+<style>
+/* VITALS page-specific overrides */
+:root{--accent:#4aa8ff;--accent-dim:#1a4a80;--accent-bg:rgba(74,168,255,.08);--accent-glow:rgba(74,168,255,.15)}
+/* Hero subtitle */
+.hero .subtitle{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2px}
+/* VITALS keeps its own fan chart canvas sizing */
+#fan{width:100%;max-width:1040px;height:auto;display:block;margin-top:8px}
+.pulse-label{font-family:var(--mono);font-size:11px;color:var(--dim);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
+.attention{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.attention-title{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.attention-list{display:grid;gap:6px;margin:8px 0 0;padding:0;list-style:none}
+.attention-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 9px;background:var(--surface3);border:1px solid var(--line);border-radius:6px;font-size:11px;color:var(--ink)}
+.attention-layer{color:var(--faint);font-family:var(--mono);font-size:9px}
+.attention-score{font-family:var(--mono);font-size:11px;color:var(--hold);white-space:nowrap}
+.scope-note{margin:14px 0 0;padding:10px 12px;border-left:2px solid var(--accent);font-size:11px;color:var(--dim);line-height:1.6}
+.scope-note strong{color:var(--ink)}
+</style>
+
+<style>
+.live-strip{margin:0 0 1.2rem;padding:.9rem 1rem;border:1px solid var(--line,#2a2a3a);border-radius:8px;background:rgba(255,255,255,.02);font-family:var(--mono,monospace)}
+.live-strip .ls-head{display:flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.08em;color:var(--dim,#8a8378);margin-bottom:.6rem}
+.live-strip .ls-badge{font-weight:700}
+.live-strip .ls-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.live-strip .ls-chip{padding:.35rem .6rem;border:1px solid var(--line,#2a2a3a);border-radius:6px;font-size:.72rem;color:var(--ink,#d8d2c4)}
+.live-strip .ls-chip b{color:#c9a84c}
+.live-strip .ls-chip .up{color:#22c55e}.live-strip .ls-chip .down{color:#ef4444}
+.live-strip .ls-note{margin-top:.55rem;font-size:.62rem;color:var(--faint,#5a554d)}
+</style>
+<style id="nv-canon">
+.nv-strip{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;padding:.72rem max(1.25rem,calc(50vw - 26rem));border-bottom:1px solid rgba(237,234,226,.09);background:rgba(10,11,13,.72);font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px}
+.nv-brand{font-family:IBM Plex Mono,ui-monospace,monospace;font-weight:700;letter-spacing:.18em;font-size:11.5px;color:#EDEAE2;text-decoration:none}
+.nv-primary{display:flex;gap:1.05rem;flex-wrap:wrap;margin-left:auto}
+.nv-primary a{color:rgba(237,234,226,.68);text-decoration:none;letter-spacing:.03em;padding:.35rem 0}
+.nv-primary a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-clock{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;color:rgba(237,234,226,.5);letter-spacing:.12em}
+.nv-foot{border-top:1px solid rgba(237,234,226,.09);margin-top:3rem;padding:1.7rem max(1.25rem,calc(50vw - 26rem)) 2.2rem;font-family:IBM Plex Sans,system-ui,sans-serif;font-size:12.5px;color:rgba(237,234,226,.55)}
+.nv-foot a{color:rgba(237,234,226,.68);text-decoration:none;margin-right:1.05rem;white-space:nowrap;display:inline-block;padding:.3rem 0}
+.nv-foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nv-row{display:flex;flex-wrap:wrap;align-items:baseline;margin:0 0 .85rem}
+.nv-lab{font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(237,234,226,.45);margin-right:1.1rem;min-width:64px}
+.nv-creed{margin:1.1rem 0 0;font-family:IBM Plex Mono,ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,234,226,.45)}
+@media(pointer:coarse){.nv-primary a,.nv-foot a{min-height:44px;display:inline-flex;align-items:center}}
+@media(max-width:640px){.nv-primary{margin-left:0;width:100%;order:3}.nv-clock{margin-left:auto}}
+</style><style id="nv-light-override">
+.nv-strip.nv-light{background:rgba(255,255,255,.82);border-bottom-color:rgba(0,0,0,.1)}
+.nv-strip.nv-light .nv-brand{color:#18181B}
+.nv-strip.nv-light .nv-primary a{color:rgba(24,24,27,.72)}
+.nv-strip.nv-light .nv-primary a:hover{color:#000}
+.nv-strip.nv-light .nv-clock{color:rgba(24,24,27,.5)}
+.nv-foot.nv-light{border-top-color:rgba(0,0,0,.1);color:rgba(24,24,27,.6)}
+.nv-foot.nv-light a{color:rgba(24,24,27,.72)}
+.nv-foot.nv-light a:hover{color:#000}
+.nv-foot.nv-light .nv-lab,.nv-foot.nv-light .nv-creed{color:rgba(24,24,27,.5)}
+</style><meta name="theme-color" content="#4AA8FF"/>
+<meta name="arif-room" content="vitals"/><meta name="arif-job" content="The barrels, counted in the open."/>
+<link rel="stylesheet" href="/_shared/room-coats.css?v=20261004c"/>
+</head>
+<body class="fam-vitals-petronas">
+<div class="room-plate" data-agent-room="vitals"><b>Research</b><span>The barrels, counted in the open.</span><a href="/discovery/">Nine rooms</a></div><div class="nv-strip nv-light"><a class="nv-brand" href="/">ARIF FAZIL</a><nav class="nv-primary" aria-label="Primary"><a href="/about">About</a><a href="/work/">Work</a><a href="/earth/">Earth</a><a href="/world/makcikgpt/">Civic</a><a href="/words/">Writing</a><a href="/institution/">Briefing</a></nav><span class="nv-clock" data-nv-clock title="Asia/Kuala_Lumpur">MYT</span></div>
+
+<!-- ═══ ZEN PULSE — unified cross-nav with live verdict badges ═══ -->
+<nav style="display:flex;gap:14px;flex-wrap:wrap;padding:14px 24px;font-family:var(--mono);font-size:12px">
+  <a href="/vitals/" style="color:var(--ink)">PETRONAS</a>
+  <a href="/malaysia/" style="color:var(--dim)">MALAYSIA</a>
+  <a href="/oil/" style="color:var(--dim)">MINYAK</a>
+  <a href="/gas/" style="color:var(--dim)">GAS</a>
+  <a href="/gold/" style="color:var(--dim)">EMAS</a>
+</nav>
+
+<main class="wrap">
+
+<!-- ═══ ADDENDUM (bukan reseal) — PRE-BUDGET 2027 ALERT · 3 Oktober 2026 ═══
+     Seal asal: 27 September 2026 (line di bawah) — tidak disentuh.
+     Banner ini cuma addendum; seal asal tidak disentuh. 2026-10-04 FI-008 reality-align:
+     JSON-LD dateModified dikemas ke tarikh addendum (2026-10-03) supaya metadata
+     machine-readable cakap benar, dan kiraan hari dijadikan computed (tiada rot). -->
+<div id="prebudget-alert" data-addendum="2026-10-03" data-m7-pending-href="/world/makcikgpt/petronas-dividen-rm48b" style="max-width:640px;margin:0 auto;padding:24px 24px 0">
+  <div style="border:1px solid var(--state-hold);border-left:4px solid var(--state-hold);border-radius:6px;background:rgba(255,149,0,.06);padding:12px 14px;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--ink)">
+    <div style="font-weight:700;letter-spacing:.04em;color:var(--state-hold);margin-bottom:6px">⚠️ PRE-BUDGET 2027 ALERT · 3 Oktober 2026</div>
+    <div style="color:var(--ink)">Utusan lapik BIMB Securities: dividen PETRONAS berpotensi <b>RM48 bilion FY2026</b>.</div>
+    <div style="color:var(--ink);margin-top:4px">Baseline Bajet 2026: <b>RM20B</b>. Delta: <b style="color:var(--state-hold)">+RM28B (+140%)</b>.</div>
+    <div style="color:var(--dim);margin-top:4px">Extraction ratio: 105.7% vs PAT FY2025 (bayar dividen dari simpanan, bukan untung).</div>
+    <div style="color:var(--ink);margin-top:4px">Belanjawan 2027 dibentang <b>9 Oktober 2026</b> — <span id="budget-countdown" data-target="2026-10-09">5 hari lagi</span>.</div>
+    <div style="margin-top:8px"><a href="/world/makcikgpt/" style="color:var(--state-hold);text-decoration:underline;text-underline-offset:2px" data-pending="m7-rm48b">→ MakcikGPT: M7 RM48B Dividen (artikel dalam semakan)</a></div>
+  </div>
+</div>
+
+<div id="cerita" style="max-width:640px;margin:0 auto;padding:36px 24px 8px">
+  <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.04em">27 September 2026 · bukan ramalan bankrap</div>
+  <h1 style="font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.2;color:var(--ink);margin:16px 0 0">Dompet hari ini.<br>Tangki masa depan.</h1>
+  <p style="font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.45rem);line-height:1.45;color:var(--ink);margin:18px 0 0">PETRONAS masih ada duit. Tong yang boleh dijual sudah turun dua tahun.</p>
+  <img src="/vitals/tangki.jpg" alt="Dalam tangki besar, minyak tinggal di bawah. Ruang di atas kosong." style="width:100%;display:block;margin-top:22px;border-radius:14px">
+  <p style="font-family:var(--serif);font-size:1.05rem;color:var(--dim);margin:10px 0 0">Minyak tinggal di bawah. Ruang di atas kosong. Itu tangki masa depan.</p>
+</div>
+
+<div style="max-width:640px;margin:8px auto 0;padding:8px 24px 12px">
+  <div style="font-family:var(--serif);font-size:1.35rem;color:var(--ink);margin-bottom:6px">Tong yang PETRONAS boleh jual sendiri</div>
+  <div style="font-family:var(--serif);font-size:1rem;color:var(--dim);margin-bottom:16px">2024 ke 2026. Tahun depan belum dicetak.</div>
+  <div style="border:1px solid var(--line);border-radius:12px;padding:16px 16px 8px;background:var(--surface2)">
+    <div style="display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:10px;margin:10px 0;font-family:var(--mono);font-size:14px;color:var(--ink)">
+      <span>2024</span>
+      <span style="display:block;height:28px;width:100%;background:#c9a84c;border-radius:4px"></span>
+      <span>9.35</span>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:10px;margin:10px 0;font-family:var(--mono);font-size:14px;color:var(--ink)">
+      <span>2025</span>
+      <span style="display:block;height:28px;width:92%;background:#c9a84c;border-radius:4px"></span>
+      <span>8.64</span>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:10px;margin:10px 0;font-family:var(--mono);font-size:14px;color:var(--ink)">
+      <span>2026</span>
+      <span style="display:block;height:28px;width:85%;background:#c9a84c;border-radius:4px"></span>
+      <span>7.92</span>
+    </div>
+    <div style="display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:10px;margin:10px 0;font-family:var(--mono);font-size:14px;color:var(--dim)">
+      <span>2027</span>
+      <span style="display:block;height:28px;width:100%;border:1px dashed var(--line);border-radius:4px"></span>
+      <span>belum</span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+    <div style="padding:14px;border:1px solid var(--line);border-radius:8px">
+      <div style="font-family:var(--serif);color:var(--dim)">Dompet hari ini</div>
+      <div style="font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin-top:4px">RM193.6 bilion</div>
+      <div style="font-family:var(--serif);color:var(--dim)">30 Jun 2026. Masih besar.</div>
+    </div>
+    <div style="padding:14px;border:1px solid var(--line);border-radius:8px">
+      <div style="font-family:var(--serif);color:var(--dim)">Tangki masa depan</div>
+      <div style="font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin-top:4px">7.92 bilion tong</div>
+      <div style="font-family:var(--serif);color:var(--dim)">Turun dari 9.35. Tahun depan kosong.</div>
+    </div>
+  </div>
+  <p style="font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin:18px 0 0">Duit turun sedikit. Tangki turun dua kali. Nombor 2027 belum dicetak.</p>
+  <p style="font-family:var(--serif);font-size:1.05rem;color:var(--dim);margin:8px 0 0">Akaun penuh seterusnya, sekitar Februari 2027, yang akan jawab.</p>
+</div>
+
+<details id="jalan" style="max-width:640px;margin:0 auto;padding:8px 24px 28px">
+  <summary style="font-family:var(--serif);font-size:1.15rem;color:var(--ink);cursor:pointer">Empat jalan, dan apa yang membunuhnya</summary>
+  <p style="font-family:var(--serif);font-size:1.05rem;color:var(--dim);margin:12px 0 14px">Bukan niat sesiapa. Hanya apa yang laporan boleh sahkan atau bunuh.</p>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="padding:12px 0;border-top:1px solid var(--line)">
+      <div style="font-family:var(--serif);font-size:1.1rem;color:var(--ink)">A. Tong baru dijumpai <span style="color:var(--dim);font-size:.9rem">· keyakinan rendah, menunggu semakan</span></div>
+      <div style="font-family:var(--serif);color:var(--dim);margin-top:4px">Hidup jika semakan berikutnya mengganti apa yang diangkat. Mati jika tong terus turun dan penggantian kekal di bawah 1.</div>
+    </div>
+    <div style="padding:12px 0;border-top:1px solid var(--line)">
+      <div style="font-family:var(--serif);font-size:1.1rem;color:var(--ink)">B. Kurang milik, lebih kuasa jual <span style="color:var(--dim);font-size:.9rem">· belum terbukti</span></div>
+      <div style="font-family:var(--serif);color:var(--dim);margin-top:4px">Hidup jika hak jual atau margin naik bersama aliran. Setakat ini gas mengalir lebih, hak jual tidak naik. Untung RM5 bilion ialah untung melepas milik, bukan sewa.</div>
+    </div>
+    <div style="padding:12px 0;border-top:1px solid var(--line)">
+      <div style="font-family:var(--serif);font-size:1.1rem;color:var(--ink)">C. Lebih kecil, masih untung <span style="color:var(--dim);font-size:.9rem">· paling hampir dengan buku hari ini</span></div>
+      <div style="font-family:var(--serif);color:var(--dim);margin-top:4px">Tong turun, penggantian 0.3, belanja cari telaga hampir rata, kakitangan sedang dikecilkan. Jalan ini yang paling hampir dengan buku hari ini. Mati jika tong berhenti turun.</div>
+    </div>
+    <div style="padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div style="font-family:var(--serif);font-size:1.1rem;color:var(--ink)">D. Tuai hari ini <span style="color:var(--dim);font-size:.9rem">· menunggu 9 Oktober</span></div>
+      <div style="font-family:var(--serif);color:var(--dim);margin-top:4px">Hidup jika belanjawan 9 Oktober minta lebih daripada RM20 bilion yang sudah diisytihar, sementara belanja cari tong kekal kecil. Mati jika permintaan dividen tidak naik.</div>
+    </div>
+  </div>
+  <div style="margin-top:22px;font-family:var(--serif);font-size:1.1rem;line-height:1.6;color:var(--ink)">
+    9 Oktober 2026 — belanjawan<br>
+    31 Disember 2026 — perjanjian ladang, belum siap<br>
+    Februari 2027 — akaun penuh
+  </div>
+</details>
+
+<details id="sinyal" data-agent-role="next-signals" style="max-width:720px;margin:0 auto;padding:8px 24px 24px">
+  <summary style="font-family:var(--serif);font-size:1.15rem;color:var(--ink);cursor:pointer">Apa yang perlu ditonton seterusnya</summary>
+  <div style="font-family:var(--serif);font-size:1.02rem;line-height:1.55;color:var(--dim);margin-top:12px">
+    <p>Jangan tonton niat orang. Jangan tonton skor sifar lama. Jangan tonton satu harga minyak sebagai kebenaran. Tonton enam benda ini, dan tulis apa yang laporan cetak, bukan apa yang terasa.</p>
+    <ol>
+      <li><strong>9 Oktober 2026.</strong> Adakah ucapan belanjawan minta lebih daripada RM20 bilion yang sudah diisytihar? Lebih = jalan D hidup. Sama atau kurang = jalan D lemah.</li>
+      <li><strong>31 Disember 2026.</strong> Adakah perjanjian EnQuest siap, dengan ekonomi 1 Januari 2027? Belum siap = jangan tulis “sudah dijual”.</li>
+      <li><strong>Februari 2027.</strong> Akaun penuh. Tunai. Dividen benar-benar dibayar. Adakah loji PRefChem sudah masuk kumpulan, dan berapa rugi lama yang masih tinggal.</li>
+      <li><strong>Separuh tahun berikut.</strong> Jika gas yang mengalir naik, adakah gas yang boleh dijual naik sekali? Naik bersama = jalan B mula ada bukti. Tidak naik = jalan B gagal lagi.</li>
+      <li><strong>Semakan tong berikutnya</strong> (biasanya pertengahan tahun selepas 1 Januari). Adakah 7.92 turun selepas pindah 31 Mei dikira? Adakah penggantian kembali ke atas 1, atau kekal di bawah? Ini yang bunuh atau hidupkan jalan A dan C.</li>
+      <li><strong>30 September 2027.</strong> Akaun pertama syarikat London rakan kongsi itu patut ada. Sebelum tarikh itu, kenyataan akhbar bukan kunci kira-kira.</li>
+    </ol>
+    <p>Satu tahun penggantian masih tidak dicetak. Purata tiga tahun 0.3 menyembunyikan tahun mana yang jatuh. Jangan reka tahun itu.</p>
+  </div>
+</details>
+
+<!-- LAYER 2 — THE NUMBERS (optional, collapsed by default) -->
+<details class="sec" id="angka" style="padding:24px;border-bottom:1px solid var(--line)">
+  <summary style="font-family:var(--serif);font-size:1.15rem;color:var(--ink);cursor:pointer">Apa yang kita tahu</summary>
+  <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Tunai 30 Jun 2026</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--ink)">RM193.6B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">31 Dis 2025: RM204.4B. Hutang kumpulan 30 Jun: RM126.8B. Gearing 21.2%, dan nota kaki mereka masukkan jaminan.</div>
+    </div>
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Untung 6 bulan 2026</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--ink)">RM27.2B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">Huluan RM28.1B termasuk keuntungan pelupusan Searah RM5.0B. Gas dan maritim RM16.7B.</div>
+    </div>
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Dividen keluar 6 bulan</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--void)">RM8B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">Daripada RM20B diisytihar untuk 2026</div>
+    </div>
+    <div style="background:var(--surface3);border:1px solid var(--line);border-radius:6px;padding:14px 16px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;margin-bottom:4px">Rugi downstream</div>
+      <div style="font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--ink)">RM15.2B / RM14.8B</div>
+      <div style="font-size:.75rem;color:var(--faint);margin-top:2px">RM15.2B = rugi segmen hiliran. RM14.8B = tangkapan lama PRefChem. Tanpa tangkapan itu, hiliran untung RM7.0B. Bukan dua versi satu nombor.</div>
+    </div>
+  </div>
+  <div style="margin-top:16px;padding:14px;background:var(--surface2);border-radius:6px;font-family:var(--mono);font-size:.8rem;color:var(--dim)">
+    <strong>Tarikh, bukan skor:</strong> 9 Okt 2026 ucapan Belanjawan 2027 (Kementerian Kewangan) → 31 Dis 2026 EnQuest dijangka siap → 1 Jan 2027 ekonomi EnQuest → sekitar Feb 2027 akaun diaudit → semakan rizab seterusnya ialah kali pertama stok Januari dan pindah 31 Mei terpaksa bertemu.
+  </div>
+</details>
+
+<details class="sec" id="tak-tahu" style="padding:24px;border-bottom:1px solid var(--line)">
+  <summary style="font-family:var(--serif);font-size:1.15rem;color:var(--ink);cursor:pointer">Apa yang kita tidak tahu</summary>
+  <ul style="margin:16px 0 0;padding-left:18px;font-family:var(--serif);font-size:1.05rem;line-height:1.55;color:var(--dim)">
+    <li>Tahun tunggal berapa tong diganti tidak diterbitkan. Yang ada hanya purata tiga tahun, dan ia jatuh ke 0.3.</li>
+    <li>Apa yang PETRONAS dapat sebagai ganti tong yang tidak lagi dimiliki — belum ada bukti sewa atau hak jual yang naik.</li>
+    <li>Pindah ke rakan kongsi pada 31 Mei belum masuk dalam gambar tong 7.92. Gambar itu diambil 1 Januari.</li>
+    <li>Satu perjanjian ladang belum siap. Ia dijangka 31 Disember, bukan sudah berlaku.</li>
+    <li>Tiada tarikh syarikat kehabisan duit. Tiada tarikh syarikat runtuh.</li>
+  </ul>
+</details>
+
+<details class="sec" id="machine" style="padding:24px;border-bottom:1px solid var(--line)">
+  <summary style="font-family:var(--serif);font-size:1.15rem;color:var(--ink);cursor:pointer">Nombor yang dicetak</summary>
+  <div style="font-family:var(--serif);font-size:1.02rem;line-height:1.55;color:var(--dim);margin-top:12px;max-width:640px">
+    <p>Ini bukan ramalan. Ini apa yang laporan syarikat cetak.</p>
+    <p>Tunai 30 Jun 2026: RM193.6 bilion. Disember 2025: RM204.4 bilion. Hutang kumpulan 30 Jun: RM126.8 bilion. Gearing 21.2 peratus, termasuk jaminan. Nota dan bon ada dalam hutang itu.</p>
+    <p>Untung enam bulan: RM27.2 bilion. Daripada itu, RM5.0 bilion ialah untung melepas milik ke rakan kongsi pada 31 Mei. Gas dan maritim: RM16.7 bilion.</p>
+    <p>Dividen dibayar sepanjang 2025: RM32 bilion, atas untung RM45.4 bilion. Dividen diisytihar 26 Februari 2026: RM20 bilion. RM8 bilion sudah dibayar menjelang 30 Jun.</p>
+    <p>Tong yang boleh dijual: 9.35 bilion pada 1 Januari 2024, 8.64 pada 1 Januari 2025, 7.92 pada 1 Januari 2026. Penggantian terbukti, purata tiga tahun: 1.6, kemudian 0.8, kemudian 0.3. Tahun tunggal tidak dicetak. Nombor 2027 tidak dicetak.</p>
+    <p>Gas yang mengalir separuh tahun ini naik. Gas yang boleh dijual tidak naik.</p>
+    <p>Belanja cari telaga hampir rata. Belanja besar separuh tahun ini ialah cek loji, bukan telaga baru. Rugi bahagian loji RM15.2 bilion. Tangkapan lama loji RM14.8 bilion. Tanpa tangkapan itu, bahagian itu untung RM7.0 bilion.</p>
+    <p>Harga minyak pada halaman lama tidak dipakai. Harga yang masuk akaun separuh tahun ialah purata Brent US$92.31.</p>
+  </div>
+</details>
+
+</main>
+
+<!-- CanonFooter (WEB_ATLAS shell invariant I4) -->
+<footer class="canon-footer" style="margin-top:3rem;padding:1.2rem 1.5rem;border-top:1px solid #1e293b;font-size:0.8rem;color:#94a3b8;text-align:center;">
+  <div><strong>arifOS · Federation Intelligence</strong> — governed by <a href="/canon/atlas.yaml" style="color:#60a5fa">WEB_ATLAS</a> · <a href="/canon/file-authority.yaml" style="color:#60a5fa">file authority</a></div>
+  <div style="margin-top:0.3rem;font-style:italic;">DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan diberi.</div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — duit hari ini, tong masa depan","dateModified":"2026-10-03","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2027 figure is not printed. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/vitals/"}
+</script>
+<footer class="nv-foot nv-light"><div class="nv-row"><span class="nv-lab">Explore</span><a href="/pilot/">Pilot</a><a href="/000/">Origin</a><a href="/map/">Map</a><a href="/discovery/">Reality Graph</a><a href="/propa/">PETRONAS</a><a href="/malaysia/">Malaysia</a><a href="/politics/">Politics</a><a href="/connect/">Signal</a><a href="/organs/">Organs</a><a href="/institution/">Institution</a><a href="/vitals/">Vitals</a><a href="/999/">Proof</a></div><div class="nv-row"><span class="nv-lab">Agents</span><a href="/llms.txt">llms.txt</a><a href="/missions.json">missions.json</a><a href="/surfaces.json">surfaces.json</a><a href="/.well-known/webmcp.json">webmcp</a><a href="https://mcp.arif-fazil.com/mcp">mcp</a><a href="/.well-known/did.json">did</a><a href="/canon/">arifOS</a><a href="https://geox.arif-fazil.com">GEOX</a><a href="https://wealth.arif-fazil.com">WEALTH</a><a href="https://well.arif-fazil.com">WELL</a><a href="/human">Agent contract</a></div><p class="nv-creed">Ditempa Bukan Diberi — forged, not given · arifOS F1–F13</p></footer><script>(function(){var el=document.getElementById('budget-countdown');if(!el)return;try{var myt=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kuala_Lumpur'}).format(new Date());var t=new Date(myt+'T00:00:00+08:00');var tgt=new Date(el.getAttribute('data-target')+'T00:00:00+08:00');var d=Math.round((tgt-t)/86400000);if(d>1)el.textContent=d+' hari lagi';else if(d===1)el.textContent='esok';else if(d===0)el.textContent='HARI INI';else el.textContent='tarikh lepas — rujuk dapatan belanjawan';}catch(e){}})();</script><script>(function(){var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",hour12:false});function t(){var s=f.format(new Date())+" MYT";document.querySelectorAll("[data-nv-clock]").forEach(function(x){x.textContent=s})}t();setInterval(t,3e4)})();</script></body>
+</html>

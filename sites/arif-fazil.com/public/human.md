@@ -2,6 +2,8 @@
 
 Personal public site of Muhammad Arif bin Fazil: exploration geoscience, evidence-first Earth intelligence, and governed agent-system architecture.
 
+I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority. The house has nine rooms: https://arif-fazil.com/discovery/ . The mind stays with the person.
+
 Canonical HTML: https://arif-fazil.com/human
 Canonical map: https://arif-fazil.com/llms.txt
 Machine contract: https://arif-fazil.com/.well-known/agent.json

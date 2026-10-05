@@ -604,7 +604,7 @@
       "path": "/pulse/",
       "title": "Federation Pulse — arifOS",
       "mission": "monitor",
-      "status": "live",
+      "status": "gone",
       "type": "page",
       "priority": 0.7,
       "changefreq": "daily",

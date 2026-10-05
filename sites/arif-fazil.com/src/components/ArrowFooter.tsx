@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { brand, machineNav, secondaryNav, type NavItem } from '@/data/navCanon'
 
 const territoryLinks = [
@@ -9,6 +10,15 @@ const territoryLinks = [
   { label: 'Briefing', href: '/institution/', desc: 'Start a professional conversation' },
   { label: 'Work', href: '/work/', desc: 'Wells and systems' },
   { label: 'For machines', href: '/llms.txt', desc: 'The map agents should trust' },
+  // 2026-10-04 Tier-1 nav: ensure every major column is reachable in <=2 hops from /.
+  { label: 'World', href: '/world/', desc: 'Commodity & situational atlas' },
+  { label: 'Canon', href: '/canon/', desc: 'Federation canon & doctrine' },
+  { label: 'Pilot', href: '/pilot/', desc: 'Design partner engagement' },
+  { label: 'Map', href: '/map/', desc: 'Site map — what lives where' },
+  { label: 'Missions', href: '/missions/', desc: 'Federation mission register' },
+  { label: 'arifOS', href: '/arifos/', desc: 'F1-F13 governance kernel' },
+  { label: 'Vitals', href: '/vitals/', desc: 'Public PETRONAS data' },
+  { label: 'Propa', href: '/propa/', desc: 'Proposed actions (legacy)' },
 ]
 
 const connectLinks = [
@@ -37,8 +47,19 @@ function FootLink({ item }: { item: NavItem }) {
 }
 
 export default function Footer() {
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    if (!document.getElementById('ariflow-heartbeat-script')) {
+      const s = document.createElement('script')
+      s.id = 'ariflow-heartbeat-script'
+      s.src = '/_shared/heartbeat.js'
+      s.async = true
+      document.body.appendChild(s)
+    }
+  }, [])
+
   return (
-    <footer className="border-t hairline">
+    <footer className="border-t hairline pb-10">
       <div className="mx-auto max-w-[1360px] px-6 py-14 md:py-16">
         {/* Creed */}
         <p className="font-display text-4xl tracking-[-0.02em] text-ink md:text-5xl lg:text-6xl">

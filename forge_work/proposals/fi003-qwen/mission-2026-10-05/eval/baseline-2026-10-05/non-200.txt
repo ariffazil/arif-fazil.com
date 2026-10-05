@@ -1,0 +1,2 @@
+/economics/article/:slug	404	HTTP 404
+/pulse/	410	HTTP 410

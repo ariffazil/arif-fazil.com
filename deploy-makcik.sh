@@ -162,6 +162,15 @@ if [ -f "scripts/generate-md-mirrors.cjs" ]; then
   node scripts/generate-md-mirrors.cjs && pass "markdown mirrors regenerated (body lane)" || warn "Mirror regeneration had issues"
 fi
 
+# 2026-10-04: stamp per-article static HTMLs (world/makcikgpt/<slug>/index.html)
+# so direct URLs render the article (title/desc/canonical/OG/JSON-LD + noscript
+# body) instead of the SPA root fallback. Idempotent — overwrites whatever
+# copy-static-html.js emitted, but the postbuild chain in package.json also
+# runs it after `vite build` so the artifact exists in dist/ before deploy.
+if [ -f "scripts/prerender-makcik-slugs.cjs" ]; then
+  node scripts/prerender-makcik-slugs.cjs && pass "per-slug MakcikGPT HTMLs stamped" || warn "per-slug prerender had issues (will retry via postbuild)"
+fi
+
 # ── Phase 4: Build ─────────────────────────────────────────────────
 header "PHASE 4: Build"
 if npm run build 2>&1; then
@@ -215,15 +224,30 @@ else
   TOTAL_FAIL=1
 fi
 
-# 6b: Check each article slug
+# 6b: Check each article slug — status + per-slug title stamped into the shell.
+# 2026-10-04: before this, every /world/makcikgpt/<slug>/ returned 200 but
+# served the ROOT <title> ("Arif Fazil — Exploration Geoscientist …") so
+# crawlers / link unfurlers could not tell which article was shared. Now
+# dist/world/makcikgpt/<slug>/index.html is stamped with the article title
+# by scripts/prerender-makcik-slugs.cjs.
 TOTAL_FAIL=${TOTAL_FAIL:-0}
 for ts_file in "$MAKCIKGPT_DIR"/*.ts; do
   slug=$(basename "$ts_file" .ts)
   [ "$slug" = "index" ] || [ "$slug" = "types" ] || [ "$slug" = "fix" ] || [ "$slug" = "jsonld-blocks" ] && continue
   BOT_CODE=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 -o /dev/null -w "%{http_code}" "https://arif-fazil.com/world/makcikgpt/$slug" 2>/dev/null || echo "000")
   BROW_CODE=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 -H "User-Agent: Mozilla/5.0" -o /dev/null -w "%{http_code}" "https://arif-fazil.com/world/makcikgpt/$slug" 2>/dev/null || echo "000")
+  # Local dist check: the served HTML's <title> must not be the SPA root title.
+  SLUG_FILE="$SITE_DIR/dist/world/makcikgpt/$slug/index.html"
+  SLUG_TITLE=""
+  if [ -f "$SLUG_FILE" ]; then
+    SLUG_TITLE=$(grep -oP '<title>\K[^<]+' "$SLUG_FILE" 2>/dev/null | head -1)
+    if echo "$SLUG_TITLE" | grep -q "Arif Fazil — Exploration Geoscientist"; then
+      fail "$slug — per-slug title NOT stamped (still root title)"; TOTAL_FAIL=$((TOTAL_FAIL+1))
+      continue
+    fi
+  fi
   if [ "$BOT_CODE" = "200" ] && [ "$BROW_CODE" = "200" ]; then
-    pass "$slug — bot:$BOT_CODE browser:$BROW_CODE"
+    pass "$slug — bot:$BOT_CODE browser:$BROW_CODE title:$(echo "${SLUG_TITLE:-n/a}" | head -c 60)"
   elif [ "$BOT_CODE" = "200" ]; then
     warn "$slug — bot:$BOT_CODE browser:$BROW_CODE (SPA may need JS)"
   else

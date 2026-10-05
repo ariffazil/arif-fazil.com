@@ -7,6 +7,10 @@
 # A 200 with stale content passes verify-pages. This gate catches it.
 #
 # Forged 2026-08-03 by 333-AGI under APEX Audit Directive E2.
+# MAINTENANCE LAW (2026-10-05, FI-008): these assertions are COUPLED to page redesigns.
+# When /vitals/ (or any asserted surface) is redesigned, REWRITE this block to the new
+# page's verified truth in the same change — a gate asserting dead content blocks deploys
+# and gets bypassed. Every needle must be verified to a primary source before it lands.
 # DITEMPA BUKAN DIBERI — a gate that passes when zero changes deployed
 # is not a gate — it is a liveness check wearing a gate's name.
 #

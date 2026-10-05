@@ -43,3 +43,12 @@
 - **backups:** repo `index.html.bak-20261005-visual-pass` · serving `/var/www/html/.arif-backup-20261005-171813-visual-pass/`
 - **edits (6 ops):** alert fakta/konteks dipecah (dashed divider, 11px footnote) · nombor payload clamp(1.9→2.4rem) · chip −RM10.8B sejak Dis 2025 · carta label ±% (+1%/−8%/−8%, sumber IR2023/24/25) · 2027 baris microtext "semakan pertengahan 2027" · details.sec → 720px satu ritma · #jalan 640→720 · kad duo-cards stack 1-turun <480px
 - **gate:** make verify-pages PASS (210 pages) · md5 parity public=dist=serving · live grep 7/7 new strings · screenshot desktop 1280 + mobile 390 disemak — kad stack, divider, delta label semua render
+
+## FULL DEPLOY (2026-10-05 ~18:00 MYT) — sovereign directive "deploy live" (T3 unlock named)
+- **initial run BLOCKED by fail-closed gates (4 pre-existing failures, none from vitals work):**
+  1. /pulse/ 410 vs surfaces.json "live" → catalog aligned to server truth: status "gone" (Caddy @pulse_gone audit P0 already served honest 410; its own HTML says "surfaces.json: status gone")
+  2-4. /oil /gas /gold DTI L3/L5 fail (no h1, no og in raw HTML) → room-plate <b> upgraded to real <h1> (font:inherit, zero visual delta) + og block after canonical; canonical copies → public/{oil,gas,gold}/index.html; backups *.bak-dti-20261005-175322
+- **content gate re-anchored:** verify-content.sh asserted the dead pre-27-Sep tripwire design (21 failing needles). Rewritten to assert the current page's verified truth — 50/50 PASS. JSON-LD floor ≥4→≥1 (narrative page carries 1 consolidated block). /klci/ /usdmyr/ now assert real content (they resolve into world room, no longer SPA shells). Bash quoting fix: 'US$92.31'.
+- **deploy:** make deploy FULL — verify-surfaces PASS · content 50/50 · verify-pages 210/210 · Caddy validate + reload · split-roots synced (backup /var/www/html/.split-roots-backup-20261005-180055) · commit 1218ab0
+- **post-deploy live verification:** /vitals/ BIMB line ✓ · oil/gas/gold h1+og ✓ · /pulse/ 410 ✓ · surfaces.json served carries "gone" ✓ · site root 200 ✓
+- **found-scar (for next session):** generate-discovery.cjs resolves canonical surfaces.json at ../../surfaces.json (repo root) — path does not exist; effective flow is public/ (stale Oct 4 copy) overwriting sites/ catalog each build. Catalog edits must land in public/surfaces.json or they get clobbered. Two copies now aligned; generator path fix pending.

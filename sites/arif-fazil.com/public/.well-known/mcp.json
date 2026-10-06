@@ -9,7 +9,9 @@
   },
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://mcp.arif-fazil.com/mcp"
+    "endpoint": "https://mcp.arif-fazil.com/mcp",
+    "session_mode": "stateless",
+    "stateless_explanation": "This endpoint runs in stateless mode (per MCP 2025-11-25 streamable-http). Does NOT emit mcp-session-id on initialize; subsequent calls do not require session continuity. For stateful arifOS 8-verb circuit, use arif_seal mode=receipt."
   },
   "capabilities": {
     "tools": true,
@@ -29,6 +31,7 @@
   "prior_current_implementation_note": "Full tool surface at arifos.arif-fazil.com/api/status",
   "phase_metadata": {
     "last_phase": "Lebih Bijaksana / Lebih Arif / Penuh Clarity · Phase 3",
-    "phase_3_note": "Discovery chain + canonical_endpoint added (PROPOSAL fff3af2 Option A applied)."
+    "phase_3_note": "Discovery chain + canonical_endpoint added (PROPOSAL fff3af2 Option A applied).",
+    "defect_003_resolution": "Documented stateless mode 2026-10-06 (audit-id hermes-mcp-stability-audit-v2)"
   }
 }

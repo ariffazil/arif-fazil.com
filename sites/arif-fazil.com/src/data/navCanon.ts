@@ -1,7 +1,7 @@
 // AUTO-GENERATED from /root/web-canon/canon/navigation.json (generate-nav-canon.cjs)
 // DERIVED — never hand-edit. Edit canon, regenerate.
 // F2: this file must match canon exactly. Drift = entropy.
-// canon version: 7.3.0 · as_of: 2026-10-03 · trinity: DRAFT_FUTURE
+// canon version: 7.4.0 · as_of: 2026-10-03 · trinity: DRAFT_FUTURE
 
 export interface NavItem {
   label: string;
@@ -134,21 +134,21 @@ export const secondaryNav: NavItem[] = [
 export const secondaryOrgansNav: NavItem[] = [
   {
     "label": "arifOS",
-    "href": "/canon/",
-    "mode": "spa",
-    "external": false
+    "href": "https://arifos.arif-fazil.com/",
+    "mode": "external",
+    "external": true
   },
   {
     "label": "A-FORGE",
-    "href": "/forge/",
-    "mode": "spa",
-    "external": false
+    "href": "https://a-forge.arif-fazil.com/",
+    "mode": "external",
+    "external": true
   },
   {
     "label": "AAA",
-    "href": "/machines/",
-    "mode": "spa",
-    "external": false
+    "href": "https://aaa.arif-fazil.com/",
+    "mode": "external",
+    "external": true
   },
   {
     "label": "GEOX",
@@ -170,9 +170,9 @@ export const secondaryOrgansNav: NavItem[] = [
   },
   {
     "label": "arifFlow",
-    "href": "",
-    "mode": "spa",
-    "external": false,
+    "href": "https://arifflow.arif-fazil.com/",
+    "mode": "external",
+    "external": true,
     "note": "arifFlow is the metabolism/telemetry organ; the 7th strip entry. /pulse/ is intentionally 410 (F13 audit 2026-10-05). System status: see Evidence → /999/."
   }
 ];
@@ -216,9 +216,21 @@ export const machineNav: NavItem[] = [
   },
   {
     "label": "arifOS",
-    "href": "/canon/",
-    "mode": "spa",
-    "external": false
+    "href": "https://arifos.arif-fazil.com/",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "A-FORGE",
+    "href": "https://a-forge.arif-fazil.com/",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "AAA",
+    "href": "https://aaa.arif-fazil.com/",
+    "mode": "external",
+    "external": true
   },
   {
     "label": "GEOX",
@@ -237,6 +249,13 @@ export const machineNav: NavItem[] = [
     "href": "https://well.arif-fazil.com",
     "mode": "external",
     "external": true
+  },
+  {
+    "label": "arifFlow",
+    "href": "https://arifflow.arif-fazil.com/",
+    "mode": "external",
+    "external": true,
+    "note": "Serves a live JSON status payload (diagnosis/fq). Added 2026-10-07 - arifFlow was absent from the agent surface entirely."
   },
   {
     "label": "Agent contract",

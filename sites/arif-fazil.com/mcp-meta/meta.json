@@ -1,0 +1,42 @@
+{
+  "generated": "2026-10-06T16:42:00+08:00",
+  "agent": "qwen-code/FI-003",
+  "directive": "F13 2026-10-06 'a b c' — option (c). Add mcp-meta as tracked sibling in arif-fazil.com source (not in dist/, which is gitignored).",
+  "live_path": "/var/www/html/mcp/",
+  "live_md5_at_capture": "59daf9ff8d9b1ec10c09504687a95b85",
+  "caddy_vhost": "/etc/caddy/vhosts/mcp.arif-fazil.com.conf",
+  "url": "https://mcp.arif-fazil.com/",
+  "title": "arifOS MCP — Constitutional AI Gateway",
+  "schema": "arifOS-world-feed-v1",
+  "aoe_coverage_8_of_8": {
+    "og_image": "https://arif-fazil.com/og-identity.png",
+    "twitter_image": "https://arif-fazil.com/og-identity.png",
+    "description": "Constitutional tools, prompts, and resources for reality-aligned AI. MCP endpoint at /mcp, health at /health, 13 constitutional floors enforced.",
+    "canonical": "https://mcp.arif-fazil.com/",
+    "json_ld": true,
+    "llms_txt_link": true,
+    "mcp_endpoint_link": true,
+    "well_known_mcp_server_json": true
+  },
+  "meta_tags": [
+    "<meta property=\"og:type\" content=\"website\">",
+    "<meta property=\"og:url\" content=\"https://mcp.arif-fazil.com/\">",
+    "<meta property=\"og:title\" content=\"arifOS MCP — Constitutional AI Gateway\">",
+    "<meta property=\"og:description\" content=\"Constitutional tools, prompts, and resources for reality-aligned AI. MCP endpoint at /mcp, health at /health, 13 constitutional floors enforced.\">",
+    "<meta property=\"og:image\" content=\"https://arif-fazil.com/og-identity.png\">",
+    "<meta property=\"og:site_name\" content=\"arif-fazil.com\">",
+    "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+    "<meta name=\"twitter:title\" content=\"arifOS MCP — Constitutional AI Gateway\">",
+    "<meta name=\"twitter:description\" content=\"Constitutional tools, prompts, and resources for reality-aligned AI. MCP endpoint at /mcp, health at /health, 13 constitutional floors enforced.\">",
+    "<meta name=\"twitter:image\" content=\"https://arif-fazil.com/og-identity.png\">"
+  ],
+  "endpoints": {
+    "/mcp": "POST (MCP Streamable-HTTP)",
+    "/health": "GET (kernel health)",
+    "/tools": "GET (tool catalog)",
+    "/llms.txt": "GET (machine-readable surface catalog)",
+    "/llms-full.txt": "GET (long-form LLM surface catalog)",
+    "/.well-known/mcp/server.json": "GET (MCP server metadata)"
+  },
+  "reversibility": "mcp-meta.json is metadata only — does not affect live /var/www/html/mcp/index.html. To revert: git rm the file."
+}

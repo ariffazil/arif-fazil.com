@@ -69,6 +69,12 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
+    "label": "World",
+    "href": "/world/",
+    "mode": "spa",
+    "external": false
+  },
+  {
     "label": "Column",
     "href": "/world/makcikgpt/",
     "mode": "static",

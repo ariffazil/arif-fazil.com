@@ -11,12 +11,17 @@ const CANON = '/root/web-canon/canon/navigation.json';
 const OUT = path.join(__dirname, '..', 'src/data/navCanon.ts');
 
 function mapItems(items) {
-  return (items || []).map((it) => ({
-    label: it.label,
-    href: it.href,
-    mode: it.mode || (String(it.href || '').startsWith('http') ? 'external' : 'spa'),
-    external: it.mode === 'external' || String(it.href || '').startsWith('http'),
-  }));
+  return (items || []).map((it) => {
+    const href = it.href == null ? '' : String(it.href);
+    const out = {
+      label: it.label,
+      href,
+      mode: it.mode || (href.startsWith('http') ? 'external' : 'spa'),
+      external: it.mode === 'external' || href.startsWith('http'),
+    };
+    if (it.note) out.note = it.note;
+    return out;
+  });
 }
 
 try {
@@ -56,6 +61,8 @@ export interface NavItem {
   href: string;
   mode?: 'spa' | 'static' | 'external';
   external?: boolean;
+  /** Optional note — render-only, not navigation */
+  note?: string;
 }
 
 export const brand = ${JSON.stringify(

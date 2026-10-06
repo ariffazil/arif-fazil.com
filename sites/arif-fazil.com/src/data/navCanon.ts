@@ -1,13 +1,15 @@
 // AUTO-GENERATED from /root/web-canon/canon/navigation.json (generate-nav-canon.cjs)
 // DERIVED — never hand-edit. Edit canon, regenerate.
 // F2: this file must match canon exactly. Drift = entropy.
-// canon version: 7.3.0 · as_of: 2026-10-01 · trinity: DRAFT_FUTURE
+// canon version: 7.3.0 · as_of: 2026-10-03 · trinity: DRAFT_FUTURE
 
 export interface NavItem {
   label: string;
   href: string;
   mode?: 'spa' | 'static' | 'external';
   external?: boolean;
+  /** Optional note — render-only, not navigation */
+  note?: string;
 }
 
 export const brand = {
@@ -54,7 +56,8 @@ export const secondaryNav: NavItem[] = [
     "label": "Pilot",
     "href": "/pilot/",
     "mode": "static",
-    "external": false
+    "external": false,
+    "note": "Commercial offer surface — 4-week design-partner pilot."
   },
   {
     "label": "Origin",
@@ -72,17 +75,12 @@ export const secondaryNav: NavItem[] = [
     "label": "World",
     "href": "/world/",
     "mode": "spa",
-    "external": false
-  },
-  {
-    "label": "Column",
-    "href": "/world/makcikgpt/",
-    "mode": "static",
-    "external": false
+    "external": false,
+    "note": "Frontier AI, geopolitics & civic intelligence (parent of /world/makcikgpt, /world/politics). F13 binary 2026-10-06: surface World parent in footer nav, not in primary 5-slot journey (preserves Explore·Read·Build·Evidence·About)."
   },
   {
     "label": "PETRONAS",
-    "href": "/vitals/",
+    "href": "/propa/",
     "mode": "static",
     "external": false
   },
@@ -94,7 +92,7 @@ export const secondaryNav: NavItem[] = [
   },
   {
     "label": "Politics",
-    "href": "/world/politics/",
+    "href": "/politics/",
     "mode": "static",
     "external": false
   },
@@ -111,10 +109,25 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
-    "label": "Research",
+    "label": "Institution",
+    "href": "/institution/",
+    "mode": "static",
+    "external": false,
+    "note": "Briefing — live human engagement door"
+  },
+  {
+    "label": "Vitals",
     "href": "/vitals/",
     "mode": "static",
-    "external": false
+    "external": false,
+    "note": "PETRONAS in public numbers"
+  },
+  {
+    "label": "Proof",
+    "href": "/999/",
+    "mode": "static",
+    "external": false,
+    "note": "Evidence snapshots — /999 proof"
   }
 ];
 
@@ -157,9 +170,10 @@ export const secondaryOrgansNav: NavItem[] = [
   },
   {
     "label": "arifFlow",
-    "href": "https://arifflow.arif-fazil.com",
-    "mode": "external",
-    "external": true
+    "href": "",
+    "mode": "spa",
+    "external": false,
+    "note": "arifFlow is the metabolism/telemetry organ; the 7th strip entry. /pulse/ is intentionally 410 (F13 audit 2026-10-05). System status: see Evidence → /999/."
   }
 ];
 
@@ -223,6 +237,13 @@ export const machineNav: NavItem[] = [
     "href": "https://well.arif-fazil.com",
     "mode": "external",
     "external": true
+  },
+  {
+    "label": "Agent contract",
+    "href": "/human",
+    "mode": "static",
+    "external": false,
+    "note": "Start here for agents"
   }
 ];
 

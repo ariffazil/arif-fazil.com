@@ -10,7 +10,10 @@
 .PHONY: deploy verify build reload status clean help sync-aaa verify-pages
 
 # ── DEFAULT: full deploy ──────────────────────────────────────────────
-deploy: verify sync-aaa build verify-pages reload split-roots
+scan-confidential:
+	@bash scripts/scan-confidential.sh
+
+deploy: verify sync-aaa build scan-confidential verify-pages reload split-roots
 	@echo ""
 	@echo "═══════════════════════════════════════════"
 	@echo "  DEPLOY COMPLETE — arif-fazil.com live"

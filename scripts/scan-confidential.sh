@@ -96,6 +96,6 @@ done
 VERDICT=$([ "$FAILS" -eq 0 ] && echo PASS || echo BLOCKED)
 echo "│  strings=${#STRINGS[@]} patterns=3 allowlist=tepat|emas-#|megah-# cited_volume='$CITED_VOLUME'"
 echo "└─ $VERDICT · fails=$FAILS"
-printf '{"gate":"scan-confidential","version":3,"ts":"%s","targets":"%s","live":"%s","fails":%s,"verdict":"%s"}\n'
+printf '{"gate":"scan-confidential","version":3,"ts":"%s","targets":"%s","live":"%s","fails":%s,"verdict":"%s"}\n' \
   "$TS" "${TARGETS[*]}" "$LIVE_VERDICT" "$FAILS" "$VERDICT"
 [ "$FAILS" -eq 0 ] || exit 1

@@ -1,1044 +1,592 @@
 <!DOCTYPE html>
-<!-- page: earth/kinabalu-cross-section v2 · Φ GEOX · geological-grade SVG with USGS patterns + proper structural symbols -->
+<!-- page: earth/kinabalu-cross-section v3 · Φ GEOX · Dangerous Grounds → East Sabah · four competing working models, rendered from in-page data -->
 <html lang="en" data-ring="ORGAN" data-organ="geox" data-content-marker="kinabalu-cross-section-Φ">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kinabalu Basin — Regional Cross-Section · Φ GEOX | Arif Fazil</title>
-<meta name="description" content="NW–SE regional cross-section, Kinabalu Basin offshore NW Sabah. SRTM topography + published geology. USGS-standard lithology patterns, proper structural symbols, stratigraphic column. Sourced from Balaguru & Hall 2009, Madon & Jong 2022, PETRONAS MPM 2025.">
+<meta name="description" content="Regional cross-section from the Dangerous Grounds across the Sabah Trough, Kinabalu Basin, Crocker Range and Central Sabah to the Sandakan Basin and Sulu Sea. Four competing working models of what drives the deformation, each with predictions and falsifiers. Public sources only.">
 <link rel="canonical" href="https://arif-fazil.com/earth/kinabalu-cross-section.html">
-<meta property="og:title" content="Kinabalu Basin — Regional Cross-Section">
-<meta property="og:description" content="Geological-grade cross-section. SRTM topography + published geology. 12 provinces, unconformities, structural symbols.">
-<meta property="og:type" content="image/svg+xml">
+<meta property="og:title" content="Kinabalu Basin — Dangerous Grounds to East Sabah, four working models">
+<meta property="og:description" content="One section, four competing tectonic drivers: a Sabah Trough magmatic ridge (Arif Fazil hypothesis), a Miocene mud canopy (Morley et al. 2023), continental underthrusting, and slab-remnant plus gravity tectonics.">
+<meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
 <style>
 :root{
-  --bg-deep:#0a0e17;
-  --bg-panel:#0f172a;
-  --border-dim:#1e293b;
-  --text-primary:#e2e8f0;
-  --text-secondary:#94a3b8;
-  --text-dim:#64748b;
-  --accent-gold:#fbbf24;
-  --accent-cyan:#38bdf8;
-  --accent-rust:#f87171;
-  --mono:'JetBrains Mono',monospace;
-  --sans:'Inter',-apple-system,sans-serif;
+  --bg-deep:#0a0e17; --bg-panel:#0f172a; --border-dim:#1e293b;
+  --text-primary:#e2e8f0; --text-secondary:#94a3b8; --text-dim:#64748b;
+  --accent-gold:#fbbf24; --accent-cyan:#38bdf8; --accent-rust:#f87171; --accent-mag:#f472b6;
+  --mono:'JetBrains Mono',ui-monospace,monospace; --sans:'Inter',-apple-system,"Segoe UI",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans);padding:1.5rem;line-height:1.6}
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:fixed;top:.5rem;left:.5rem;width:auto;height:auto;padding:.5rem 1rem;background:var(--accent-gold);color:var(--bg-deep);border-radius:4px;z-index:9999;font-family:var(--mono);font-size:.8rem;font-weight:600}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:var(--accent-cyan)}
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{position:fixed;top:.5rem;left:.5rem;padding:.5rem 1rem;background:var(--accent-gold);color:var(--bg-deep);border-radius:4px;z-index:9999;font-family:var(--mono);font-size:.8rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 .container{max-width:1480px;margin:0 auto}
-
-/* ── header ── */
 .hdr{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border-dim)}
-.hdr h1{font-family:var(--mono);font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:var(--accent-gold);margin-bottom:.25rem}
+.hdr h1{font-family:var(--mono);font-size:1.35rem;font-weight:800;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.25rem}
 .hdr .sub{font-size:.7rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.18em;margin-bottom:.4rem}
-.hdr .src{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);letter-spacing:.5px;max-width:520px;text-align:right}
-.back-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;color:var(--accent-cyan);border:1px solid var(--accent-cyan);padding:.4rem .8rem;border-radius:6px;text-decoration:none;transition:all .2s;display:inline-block;margin-top:.5rem}
-.back-btn:hover{color:var(--accent-gold);border-color:var(--accent-gold)}
-
-/* ── zen pulse ── */
+.hdr .src{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);max-width:520px;text-align:right}
+.back-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;color:var(--accent-cyan);border:1px solid var(--accent-cyan);padding:.4rem .8rem;border-radius:6px;text-decoration:none;display:inline-block;margin-top:.5rem}
 .zen-pulse{display:flex;flex-wrap:wrap;gap:.4rem;padding:.5rem .8rem;background:rgba(15,23,42,.7);border:1px solid var(--border-dim);border-radius:8px;margin-bottom:1rem;font-size:.7rem}
 .zen-pulse .zp{color:var(--text-secondary);padding:.18rem .55rem;border:1px solid var(--border-dim);border-radius:99px;background:rgba(0,0,0,.3)}
-.zen-pulse .zp b{font-family:var(--mono);font-size:.58rem;letter-spacing:1.2px;color:var(--accent-cyan);text-transform:uppercase;font-weight:600;margin-right:.35rem}
+.zen-pulse .zp b{font-family:var(--mono);font-size:.58rem;letter-spacing:1.2px;color:var(--accent-cyan);text-transform:uppercase;margin-right:.35rem}
 .zen-pulse .zp.gold b{color:var(--accent-gold)}
-
-/* ── frame ── */
-.frame{border:1px solid var(--border-dim);border-radius:12px;overflow:hidden;background:var(--bg-panel)}
-.frame .toolbar{display:flex;justify-content:space-between;align-items:center;padding:.5rem 1rem;background:rgba(0,0,0,.3);border-bottom:1px solid var(--border-dim);font-family:var(--mono);font-size:.6rem;letter-spacing:1.2px;color:var(--text-dim);text-transform:uppercase}
-.frame .toolbar .right{color:var(--accent-cyan)}
-.frame svg{display:block;width:100%;height:auto;background:#0a0e17}
-
-/* ── info panels ── */
-.info-panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;margin-top:1.5rem}
-.card{border:1px solid var(--border-dim);border-radius:8px;padding:1.25rem;background:var(--bg-panel)}
-.card h3{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-gold);margin-bottom:.7rem;border-bottom:1px solid var(--border-dim);padding-bottom:.4rem}
-.card ul{list-style:none;font-size:.74rem;line-height:1.7;color:var(--text-secondary)}
-.card ul li{padding:.25rem 0;border-bottom:1px dashed rgba(148,163,184,.1)}
-.card ul li:last-child{border-bottom:none}
-.card ul li b{color:var(--text-primary)}
-.card ul li .age{font-family:var(--mono);font-size:.65rem;color:var(--accent-gold);margin-right:.4rem}
-
-.attribution{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border-dim);font-size:.66rem;color:var(--text-dim);text-align:center;line-height:1.7;letter-spacing:.2px}
+.panel{border:1px solid var(--border-dim);border-radius:12px;background:var(--bg-panel);overflow:hidden;margin-bottom:1.25rem}
+.panel-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;padding:.7rem 1.1rem;background:rgba(0,0,0,.35);border-bottom:1px solid var(--border-dim)}
+.panel-head h3{font-family:var(--mono);font-size:.74rem;letter-spacing:1.4px;color:var(--accent-gold);text-transform:uppercase}
+.panel-head .note{font-family:var(--mono);font-size:.62rem;color:var(--text-dim)}
+#xsMap{width:100%;height:300px;background:#070a10}
+.models{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.5rem;padding:.8rem 1rem;border-bottom:1px solid var(--border-dim)}
+.mbtn{font-family:var(--sans);text-align:left;background:#0a0e17;border:1px solid var(--border-dim);border-radius:8px;padding:.6rem .75rem;color:var(--text-secondary);cursor:pointer;transition:border-color .15s}
+.mbtn:hover{border-color:var(--text-dim)}
+.mbtn .k{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:.2rem}
+.mbtn .t{display:block;font-size:.82rem;font-weight:600;color:var(--text-primary);line-height:1.3}
+.mbtn .s{display:block;font-size:.68rem;margin-top:.2rem}
+.mbtn[aria-pressed="true"]{border-color:var(--mc,#fbbf24);box-shadow:inset 0 0 0 1px var(--mc,#fbbf24);background:rgba(255,255,255,.03)}
+.xs-wrap{overflow-x:auto;background:#0a0e17}
+#xs{display:block;min-width:1100px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:.35rem 1rem;padding:.7rem 1rem;border-top:1px solid var(--border-dim);font-size:.68rem;color:var(--text-secondary)}
+.legend .sw{display:inline-block;width:20px;height:11px;border-radius:2px;margin-right:.35rem;vertical-align:-1px;border:1px solid #ffffff22}
+.card-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.25rem}
+@media(max-width:1000px){.card-grid{grid-template-columns:1fr}}
+.card{border:1px solid var(--border-dim);border-radius:10px;padding:1.1rem 1.2rem;background:var(--bg-panel)}
+.card h3{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-gold);margin-bottom:.6rem;border-bottom:1px solid var(--border-dim);padding-bottom:.4rem}
+.card h4{font-size:1.02rem;margin-bottom:.15rem}
+.card .who{font-family:var(--mono);font-size:.64rem;color:var(--text-dim);margin-bottom:.6rem}
+.card p{font-size:.82rem;color:var(--text-secondary);margin-bottom:.55rem}
+.card dl{display:grid;grid-template-columns:7.5rem 1fr;gap:.35rem .8rem;font-size:.78rem}
+.card dt{font-family:var(--mono);font-size:.6rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);padding-top:.15rem}
+.card dd{color:var(--text-secondary)}
+.card dd b{color:var(--text-primary)}
+.status{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:1px;padding:.15rem .5rem;border-radius:99px;border:1px solid;margin-left:.4rem;vertical-align:2px}
+table.mx{width:100%;border-collapse:collapse;font-size:.74rem}
+table.mx th,table.mx td{padding:.45rem .5rem;border-bottom:1px solid var(--border-dim);vertical-align:top;text-align:left}
+table.mx th{font-family:var(--mono);font-size:.58rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);font-weight:600}
+table.mx td.c{text-align:center;font-family:var(--mono);font-weight:700;white-space:nowrap}
+table.mx tr.sel-col td.hl, table.mx th.hl{background:rgba(251,191,36,.07)}
+.y{color:#4ade80}.n{color:#f87171}.u{color:#64748b}
+.obs{font-family:var(--mono);font-size:.58rem;padding:.1rem .4rem;border-radius:4px;white-space:nowrap}
+.obs.done{background:#14532d;color:#bbf7d0}.obs.open{background:#3f2d06;color:#fde68a}
+.timeline{padding:.6rem 1rem 1rem}
+.attribution{margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--border-dim);font-size:.68rem;color:var(--text-dim);line-height:1.7}
 .attribution b{color:var(--text-secondary)}
-
-@media(max-width:900px){
-  body{padding:1rem}
-  .frame{overflow-x:auto}
-  .hdr{flex-direction:column}
-  .hdr .src{text-align:left}
-}
+.refs{font-size:.7rem;color:var(--text-secondary);columns:2 420px;column-gap:2rem}
+.refs li{margin:0 0 .35rem 1rem;break-inside:avoid}
+#tip{position:fixed;pointer-events:none;z-index:50;max-width:340px;background:#020617;border:1px solid #334155;color:#e2e8f0;font-size:.72rem;line-height:1.45;padding:.5rem .65rem;border-radius:6px;box-shadow:0 8px 24px #000a}
+#tip b{color:var(--accent-gold)}
+/* ?figure → the section alone, for the PDF build */
+html.figure-only body{padding:0}
+html.figure-only body>*:not(.container), html.figure-only header, html.figure-only .zen-pulse, html.figure-only .panel:not(#xsPanel), html.figure-only .card-grid, html.figure-only .card, html.figure-only .attribution, html.figure-only #xsPanel>.panel-head, html.figure-only #xsPanel>.models, html.figure-only #xsPanel>.legend{display:none!important}
+html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
+@media(max-width:900px){body{padding:1rem}.hdr{flex-direction:column}.hdr .src{text-align:left}}
 </style>
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>
-/* ─── GIS LOCATOR MAP & INTERACTIVE CONTROLS ─── */
-.gis-locator-card {
-  margin-bottom: 1.25rem;
-  background: var(--bg-panel);
-  border: 1px solid var(--border-dim);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.gis-locator-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 0.75rem 1.2rem;
-  background: rgba(0,0,0,0.35);
-  border-bottom: 1px solid var(--border-dim);
-}
-.gis-locator-header h3 {
-  font-family: var(--mono);
-  font-size: 0.76rem;
-  letter-spacing: 1.5px;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-}
-.gis-ctrl-group {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-.gis-btn {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  padding: 0.3rem 0.65rem;
-  border-radius: 5px;
-  background: #0a0e17;
-  border: 1px solid var(--border-dim);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.gis-btn:hover { color: #fff; border-color: var(--accent-gold); }
-.gis-btn.active { background: var(--accent-gold); color: #0a0e17; font-weight: 700; border-color: var(--accent-gold); }
-.gis-btn.cyan.active { background: var(--accent-cyan); color: #0a0e17; border-color: var(--accent-cyan); }
-
-#kinTransectMap {
-  width: 100%;
-  height: 280px;
-  background: #070a10;
-}
-.gis-telemetry {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  padding: 0.6rem 1.2rem;
-  background: rgba(0,0,0,0.4);
-  border-top: 1px solid var(--border-dim);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--text-secondary);
-}
-.gis-telemetry b { color: var(--accent-cyan); }
-</style>
-
-
-<!-- DTI gate (verify-surfaces.cjs L4/L5/L6): generated 2026-09-21 from this page's
-     own title/description/canonical. Additive metadata only; no content claims added. -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Kinabalu Basin — Regional Cross-Section · Φ GEOX",
-  "description": "NW–SE regional cross-section, Kinabalu Basin offshore NW Sabah. SRTM topography + published geology. USGS-standard lithology patterns, proper structural symbols, stratigraphic column. Sourced from Balaguru & Hall 2009, Madon & Jong 2022, PETRONAS MPM 2025.",
-  "url": "https://arif-fazil.com/earth/kinabalu-cross-section.html",
-  "inLanguage": "en",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "arif-fazil.com",
-    "url": "https://arif-fazil.com/"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Muhammad Arif bin Fazil",
-    "url": "https://arif-fazil.com/"
-  }
-}
+{"@context":"https://schema.org","@type":"CreativeWork","name":"Kinabalu Basin — Regional Cross-Section · Φ GEOX","description":"Regional cross-section from the Dangerous Grounds to East Sabah with four competing working models of the tectonic driver. Public sources only.","url":"https://arif-fazil.com/earth/kinabalu-cross-section.html","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"arif-fazil.com","url":"https://arif-fazil.com/"},"publisher":{"@type":"Person","name":"Muhammad Arif bin Fazil","url":"https://arif-fazil.com/"}}
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main-content" style="position:absolute;left:-9999px">Skip to main content</a>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div class="container">
-
 <header>
 <div class="hdr">
   <div>
-    <div class="sub">Φ GEOX · REGIONAL CROSS-SECTION · NW SABAH</div>
-    <h1>Kinabalu Basin — NW–SE Transect</h1>
+    <div class="sub">Φ GEOX · REGIONAL CROSS-SECTION · SABAH</div>
+    <h1>Dangerous Grounds → East Sabah</h1>
     <a href="https://arif-fazil.com/earth/kinabalu-basin/" class="back-btn">← BACK TO DOSSIER</a>
   </div>
-  <div class="src">
-    SRTM topography: Open-Meteo API · Bathymetry: published values · Geology: Balaguru &amp; Hall (2009), Madon &amp; Jong (2022), PETRONAS MPM (2025), TGS Choi (2026)
-  </div>
+  <div class="src">One section, four competing explanations. Shallow geometry is shared; the deep structure and the driver change with the model you pick. Public sources only — no proprietary well or seismic data.</div>
 </div>
 </header>
 
 <main id="main-content">
-<h2 class="sr-only">Geological cross-section — Kinabalu Basin</h2>
-
-<!-- ══ ZEN PULSE · 3-second orientation ══ -->
-<div class="zen-pulse" aria-label="3-second orientation">
-  <span class="zp"><b>WHERE</b> arif-fazil.com / earth / cross-section</span>
-  <span class="zp gold"><b>WHAT</b> NW–SE transect, ~600 km</span>
-  <span class="zp"><b>SCALE</b> vertical ~4× exaggerated</span>
-  <span class="zp"><b>LAYERS</b> 12 provinces · 2 unconformities</span>
+<h2 class="sr-only">Regional cross-section with four working models</h2>
+<div class="zen-pulse" aria-label="Orientation">
+  <span class="zp"><b>WHERE</b> NW Dangerous Grounds → SE Sulu Sea</span>
+  <span class="zp gold"><b>LENGTH</b> ~830 km along a dog-leg line</span>
+  <span class="zp"><b>SCALE</b> upper 15 km ~17× vertical · lithosphere ~3×</span>
+  <span class="zp gold"><b>MODELS</b> 4 · one is a new hypothesis, untested</span>
 </div>
 
-<!-- ═══ GIS TRANSECT LOCATOR MAP ═══ -->
-<div class="gis-locator-card">
-  <div class="gis-locator-header">
-    <h3>◈ Spatial Locator · NW–SE Transect B–B' (~600 km)</h3>
-    <div class="gis-ctrl-group">
-      <button class="gis-btn active" id="btnKTMapMacro" onclick="setKTBase('macro')">Macrostrat Geology</button>
-      <button class="gis-btn" id="btnKTMapSat" onclick="setKTBase('sat')">Satellite</button>
-      <button class="gis-btn" id="btnKTMapDark" onclick="setKTBase('dark')">Dark</button>
-      <button class="gis-btn cyan active" id="btnKTMapWells" onclick="toggleKTWells()">Wells (5)</button>
-      <button class="gis-btn cyan active" id="btnKTMapQuakes" onclick="toggleKTQuakes()">USGS Quakes</button>
-      <button class="gis-btn" onclick="fitKTTransect()">Fit Transect</button>
-    </div>
-  </div>
-  <div id="kinTransectMap"></div>
-  <div class="gis-telemetry">
-    <span>TRANSECT: <b>Dangerous Grounds → Sabah Trough → Crocker → Mt Kinabalu → Sulu Sea</b></span>
-    <span>ORIENTATION: <b>NW–SE (135° Strike)</b></span>
-    <span>REAL-TIME COORDS: <b id="ktHudCoords">6.3500° N, 115.6000° E</b></span>
-    <span>PIPE: <b>Macrostrat & USGS Seismic Feed</b></span>
+<div class="panel">
+  <div class="panel-head"><h3>◈ Locator · section A–A′</h3><span class="note">Line and stations are schematic. Ridge axis drawn approximately along the Sabah Trough.</span></div>
+  <div id="xsMap" role="img" aria-label="Map of the section line from the Dangerous Grounds to the Sulu Sea"></div>
+</div>
+
+<div class="panel" id="xsPanel">
+  <div class="panel-head"><h3>◈ Cross-section A–A′ · pick a working model</h3><span class="note" id="modelNote"></span></div>
+  <div class="models" id="modelBtns" role="group" aria-label="Working model"></div>
+  <div class="xs-wrap"><svg id="xs" role="img" aria-label="Geological cross-section"></svg></div>
+  <div class="legend" id="legend"></div>
+</div>
+
+<div class="card-grid">
+  <div class="card" id="modelCard"></div>
+  <div class="card">
+    <h3>What would decide it · discriminating observations</h3>
+    <table class="mx" id="matrix"></table>
+    <p style="margin-top:.6rem;font-size:.7rem;color:var(--text-dim)"><span class="y">✓</span> predicted · <span class="n">✗</span> contradicted / not expected · <span class="u">○</span> silent. “Observed” means published; “open” means the decisive data exist in industry but are not public.</p>
   </div>
 </div>
 
-<div class="frame">
-<div class="toolbar">
-  <span>Geological-grade cross-section · SRTM + interpreted geology</span>
-  <span class="right">arif-fazil.com / earth / kinabalu-cross-section</span>
+<div class="panel" style="margin-top:1.25rem">
+  <div class="panel-head"><h3>◈ Event strip · 35 Ma to present</h3><span class="note">Shared events (grey) and the selected model's events (colour)</span></div>
+  <div class="timeline"><svg id="tl" role="img" aria-label="Tectonic event timeline" style="width:100%;height:auto;display:block"></svg></div>
 </div>
 
-<svg viewBox="0 0 1480 1180" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kinabalu Basin NW-SE regional cross-section. SRTM topography with USGS-standard lithology patterns. 12 geological provinces including Dangerous Grounds, Layang-Layang, Sabah Trough, Kinabalu Basin fold-thrust belt with 4 imbricated thrust sheets, Crocker Range, Central Sabah mélange, Sandakan Basin, Sulu Sea. 5 well sticks (Megah-1, Tepat-1, Well A, Well B, Zoisit Deep-1). 2 angular unconformities (DRU/BMU, SRU). Ophiolite basement with obduction.">
-  <defs>
-    <!-- ─── USGS-standard lithology patterns ─── -->
-    <!-- Sandstone (deltaic clastic) — regular stippled dots -->
-    <pattern id="pat-sandstone" patternUnits="userSpaceOnUse" width="10" height="10">
-      <rect width="10" height="10" fill="#a16207"/>
-      <circle cx="5" cy="5" r="0.9" fill="#fef3c7"/>
-    </pattern>
-    <!-- Shale / mudstone — thin horizontal lines -->
-    <pattern id="pat-shale" patternUnits="userSpaceOnUse" width="10" height="6">
-      <rect width="10" height="6" fill="#365314"/>
-      <line x1="0" y1="2" x2="10" y2="2" stroke="#84cc16" stroke-width="0.4"/>
-      <line x1="0" y1="5" x2="10" y2="5" stroke="#84cc16" stroke-width="0.4"/>
-    </pattern>
-    <!-- Limestone (carbonate platform) — brick pattern -->
-    <pattern id="pat-limestone" patternUnits="userSpaceOnUse" width="14" height="8">
-      <rect width="14" height="8" fill="#0369a1"/>
-      <rect x="0" y="0" width="6.5" height="3.5" fill="none" stroke="#7dd3fc" stroke-width="0.5"/>
-      <rect x="7" y="3.8" width="6.5" height="3.5" fill="none" stroke="#7dd3fc" stroke-width="0.5"/>
-    </pattern>
-    <!-- Conglomerate — circles -->
-    <pattern id="pat-conglomerate" patternUnits="userSpaceOnUse" width="12" height="12">
-      <rect width="12" height="12" fill="#78716c"/>
-      <circle cx="3" cy="3" r="1.6" fill="#d6d3d1"/>
-      <circle cx="9" cy="6" r="1.2" fill="#d6d3d1"/>
-      <circle cx="4" cy="9" r="1.4" fill="#d6d3d1"/>
-    </pattern>
-    <!-- Turbidite (Crocker) — sand + shale alternating -->
-    <pattern id="pat-turbidite" patternUnits="userSpaceOnUse" width="12" height="12">
-      <rect width="12" height="12" fill="#4d7c0f"/>
-      <rect y="0" width="12" height="4" fill="url(#pat-sandstone)" opacity="0.7"/>
-      <rect y="4" width="12" height="3" fill="#1a2e05"/>
-      <rect y="7" width="12" height="5" fill="url(#pat-sandstone)" opacity="0.7"/>
-    </pattern>
-    <!-- Granite (Kinabalu pluton) — V pattern -->
-    <pattern id="pat-granite" patternUnits="userSpaceOnUse" width="10" height="10">
-      <rect width="10" height="10" fill="#9f1239"/>
-      <path d="M0 8 L5 0 L10 8 Z" fill="none" stroke="#fda4af" stroke-width="0.5"/>
-      <path d="M-5 13 L0 5 L5 13" fill="none" stroke="#fda4af" stroke-width="0.4"/>
-      <path d="M5 13 L10 5 L15 13" fill="none" stroke="#fda4af" stroke-width="0.4"/>
-    </pattern>
-    <!-- Ophiolite basement — irregular X marks -->
-    <pattern id="pat-ophiolite" patternUnits="userSpaceOnUse" width="14" height="14">
-      <rect width="14" height="14" fill="#1c1917"/>
-      <line x1="2" y1="2" x2="6" y2="6" stroke="#57534e" stroke-width="0.6"/>
-      <line x1="6" y1="2" x2="2" y2="6" stroke="#57534e" stroke-width="0.6"/>
-      <line x1="9" y1="8" x2="13" y2="12" stroke="#57534e" stroke-width="0.6"/>
-      <line x1="13" y1="8" x2="9" y2="12" stroke="#57534e" stroke-width="0.6"/>
-      <line x1="2" y1="9" x2="5" y2="12" stroke="#57534e" stroke-width="0.5"/>
-    </pattern>
-    <!-- Mélange — chaotic dots + dashes -->
-    <pattern id="pat-melange" patternUnits="userSpaceOnUse" width="14" height="14">
-      <rect width="14" height="14" fill="#2e1065"/>
-      <circle cx="3" cy="4" r="1" fill="#a78bfa"/>
-      <line x1="7" y1="2" x2="12" y2="3" stroke="#c084fc" stroke-width="0.5"/>
-      <line x1="2" y1="8" x2="6" y2="9" stroke="#c084fc" stroke-width="0.5"/>
-      <circle cx="10" cy="11" r="0.8" fill="#a78bfa"/>
-      <line x1="4" y1="11" x2="9" y2="12" stroke="#c084fc" stroke-width="0.4"/>
-    </pattern>
-    <!-- Continental crust (Dangerous Grounds) — cross-hatch -->
-    <pattern id="pat-continental" patternUnits="userSpaceOnUse" width="10" height="10">
-      <rect width="10" height="10" fill="#44403c"/>
-      <line x1="0" y1="5" x2="10" y2="5" stroke="#78716c" stroke-width="0.5"/>
-      <line x1="5" y1="0" x2="5" y2="10" stroke="#78716c" stroke-width="0.5"/>
-    </pattern>
-    <!-- Syn-rift clastic (Oligocene) — coarse dots -->
-    <pattern id="pat-synrift" patternUnits="userSpaceOnUse" width="11" height="11">
-      <rect width="11" height="11" fill="#451a03"/>
-      <circle cx="2" cy="3" r="1.1" fill="#fbbf24"/>
-      <circle cx="7" cy="6" r="0.9" fill="#fbbf24"/>
-      <circle cx="4" cy="9" r="1.0" fill="#fbbf24"/>
-    </pattern>
-    <!-- Post-rift delta (Sandakan) — sand + wavy -->
-    <pattern id="pat-postrift" patternUnits="userSpaceOnUse" width="12" height="8">
-      <rect width="12" height="8" fill="#431407"/>
-      <path d="M0 4 Q3 2 6 4 T12 4" fill="none" stroke="#f97316" stroke-width="0.5"/>
-      <circle cx="2" cy="6" r="0.6" fill="#fed7aa"/>
-      <circle cx="6" cy="7" r="0.6" fill="#fed7aa"/>
-      <circle cx="10" cy="6" r="0.6" fill="#fed7aa"/>
-    </pattern>
-    <!-- Stage IV clastic (Kinabalu Basin reservoir) — sand dominant -->
-    <pattern id="pat-stageiv" patternUnits="userSpaceOnUse" width="9" height="9">
-      <rect width="9" height="9" fill="#7c2d12"/>
-      <circle cx="2" cy="2" r="0.7" fill="#fde68a"/>
-      <circle cx="6" cy="5" r="0.7" fill="#fde68a"/>
-      <circle cx="3" cy="7" r="0.7" fill="#fde68a"/>
-      <circle cx="7" cy="2" r="0.5" fill="#fde68a"/>
-    </pattern>
-    <!-- Rajang Group (deeper, older turbidite) -->
-    <pattern id="pat-rajang" patternUnits="userSpaceOnUse" width="14" height="10">
-      <rect width="14" height="10" fill="#1a2e05"/>
-      <line x1="0" y1="3" x2="14" y2="3" stroke="#65a30d" stroke-width="0.5"/>
-      <line x1="0" y1="7" x2="14" y2="7" stroke="#65a30d" stroke-width="0.5"/>
-      <circle cx="3" cy="5" r="0.6" fill="#a3e635"/>
-      <circle cx="9" cy="5" r="0.6" fill="#a3e635"/>
-    </pattern>
-
-    <!-- Water (bathymetry fill) -->
-    <linearGradient id="water-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0c4a6e" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#082f49" stop-opacity="0.65"/>
-    </linearGradient>
-    <!-- Sky -->
-    <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.05"/>
-    </linearGradient>
-
-    <!-- ─── Structural symbols ─── -->
-    <marker id="thr-teeth" markerWidth="14" markerHeight="10" refX="0" refY="5" orient="auto">
-      <path d="M0 0 L7 5 L0 10 L4 5 Z" fill="#ef4444"/>
-    </marker>
-    <marker id="norm-tick" markerWidth="12" markerHeight="10" refX="0" refY="5" orient="auto">
-      <line x1="0" y1="0" x2="0" y2="10" stroke="#fbbf24" stroke-width="1.4"/>
-      <line x1="-4" y1="0" x2="4" y2="0" stroke="#fbbf24" stroke-width="1"/>
-    </marker>
-    <marker id="ss-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <polygon points="0 0, 9 5, 0 10, 3 5" fill="#38bdf8"/>
-    </marker>
-    <marker id="kin-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-      <polygon points="0 0, 9 5, 0 10, 3 5" fill="#fbbf24"/>
-    </marker>
-  </defs>
-
-  <!-- Sky background -->
-  <rect width="1480" height="340" fill="url(#sky-grad)"/>
-  <!-- Frame border -->
-  <rect x="2" y="2" width="1476" height="1176" fill="none" stroke="#1e293b" stroke-width="0.5"/>
-
-  <!-- ═══ SEA LEVEL line ═══ -->
-  <line x1="120" y1="340" x2="1450" y2="340" stroke="#38bdf8" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.55"/>
-  <text x="125" y="335" fill="#38bdf8" font-size="7" opacity="0.7" font-family="JetBrains Mono" letter-spacing="1.2">MSL · 0 m</text>
-
-  <!-- ═══ BATHYMETRIC / TOPOGRAPHIC SURFACE (real SRTM + published bathymetry) ═══
-       x-scale: 1480px = 600 km (≈ 2.47 px/km horizontal)
-       y-scale: 80 px/km vertical
-       Kinabalu 4095m → 327.6 px above MSL → y=12
-       Crocker ~1025m → 82 px above MSL → y=258
-       Sabah Trough -2900m → 232 px below MSL → y=572
-       Sulu Sea -4000m → 320 px below MSL → y=660
-       Ophiolite -8000m → 640 px below MSL → y=980  -->
-  <path id="topo" d="M120 340
-    L135 365 L150 395 L165 425 L180 455 L195 482 L210 510 L225 532 L240 548
-    L260 558 L280 565 L300 570 L320 572 L340 572 L360 570 L380 565
-    L400 555 L420 540 L440 520 L460 495 L480 465 L500 432 L520 400 L540 372
-    L560 350 L580 332 L600 315 L620 300 L640 285 L660 272 L680 262
-    L700 254 L720 248 L740 240 L760 232 L780 222 L800 215 L820 208
-    L835 195 L845 175 L855 145 L865 110 L875 75 L885 45 L895 25 L900 18
-    L910 35 L920 60 L930 95 L940 130 L950 165 L960 195 L970 220
-    L980 240 L990 252 L1000 260 L1010 265 L1020 270 L1030 275
-    L1040 282 L1050 290 L1060 298 L1070 308 L1080 320 L1090 332
-    L1100 342 L1110 348 L1120 352 L1130 354 L1140 354 L1160 350
-    L1180 348 L1200 350 L1220 358 L1240 370 L1260 388 L1280 410
-    L1300 438 L1320 470 L1340 500 L1360 528 L1380 552 L1400 572 L1420 585 L1450 600"
-    fill="none" stroke="#cbd5e1" stroke-width="1.3" stroke-linejoin="round"/>
-
-  <!-- ═══ WATER LAYER ═══ -->
-  <path d="M120 340 L120 360 L135 365 L150 395 L165 425 L180 455 L195 482 L210 510 L225 532 L240 548
-    L260 558 L280 565 L300 570 L320 572 L340 572 L360 570 L380 565
-    L400 555 L420 540 L440 520 L460 495 L480 465 L500 432 L520 400 L540 372
-    L560 350 L580 332 L600 315 L620 300 L640 285 L660 272 L680 262
-    L700 254 L720 248 L740 240 L760 232 L780 222 L800 215 L820 208
-    L835 195 L845 175 L855 145 L865 110 L875 75 L885 45 L895 25 L900 18
-    L910 35 L920 60 L930 95 L940 130 L950 165 L960 195 L970 220
-    L980 240 L990 252 L1000 260 L1010 265 L1020 270 L1030 275
-    L1040 282 L1050 290 L1060 298 L1070 308 L1080 320 L1090 332
-    L1100 342 L1110 348 L1120 352 L1130 354 L1140 354 L1160 350
-    L1180 348 L1200 350 L1220 358 L1240 370 L1260 388 L1280 410
-    L1300 438 L1320 470 L1340 500 L1360 528 L1380 552 L1400 572 L1420 585 L1450 600
-    L1450 340 Z" fill="url(#water-grad)" opacity="0.82"/>
-
-  <!-- Water hatch dots -->
-  <g opacity="0.18" fill="#38bdf8">
-    <circle cx="180" cy="380" r="0.7"/><circle cx="240" cy="430" r="0.7"/>
-    <circle cx="300" cy="475" r="0.7"/><circle cx="360" cy="500" r="0.7"/>
-    <circle cx="420" cy="470" r="0.7"/><circle cx="480" cy="420" r="0.7"/>
-    <circle cx="540" cy="370" r="0.7"/><circle cx="1240" cy="380" r="0.7"/>
-    <circle cx="1300" cy="430" r="0.7"/><circle cx="1360" cy="510" r="0.7"/>
-    <circle cx="1420" cy="560" r="0.7"/>
-  </g>
-
-  <!-- ═══ GEOLOGIC BODIES (deepest first) ═══ -->
-
-  <!-- Deepest: Ophiolite basement — irregular depth, obducted on east -->
-  <!-- Top of ophiolite at ~8-10 km depth (y=980-1140) -->
-  <path d="M120 1170 L1450 1170 L1450 920
-    L1380 880 L1300 840 L1220 820 L1160 810 L1100 800 L1040 810 L980 830
-    L920 860 L860 880 L800 870 L740 850 L680 830 L620 800 L560 770 L500 760
-    L440 780 L380 800 L320 820 L260 850 L200 880 L150 920 L120 980 Z"
-    fill="url(#pat-ophiolite)" stroke="#44403c" stroke-width="0.5"/>
-  <!-- Ophiolite obduction surface on the east (overthrust onto Crocker) -->
-  <path d="M1100 800 L1160 810 L1220 820 L1280 815 L1320 790 L1300 760 L1260 740 L1200 720 L1140 700 L1100 700"
-    fill="url(#pat-ophiolite)" stroke="#44403c" stroke-width="0.6" opacity="0.85"/>
-  <!-- Thrust teeth on obduction -->
-  <line x1="1110" y1="750" x2="1170" y2="790" stroke="#ef4444" stroke-width="1.0" marker-end="url(#thr-teeth)"/>
-  <line x1="1180" y1="730" x2="1240" y2="770" stroke="#ef4444" stroke-width="1.0" marker-end="url(#thr-teeth)"/>
-  <text x="1220" y="800" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" font-style="italic">Ophiolite obduction</text>
-
-  <!-- Rajang Group (above ophiolite, beneath West Crocker) — L. Cretaceous – Eocene -->
-  <path d="M120 980 L150 920 L200 880 L260 850 L320 820 L380 800 L440 780 L500 760 L560 770 L620 800 L680 830 L740 850 L800 870 L860 880 L920 860 L980 830 L1040 810 L1100 800
-    L1100 700 L1140 700 L1200 720 L1260 740 L1300 760 L1320 790 L1280 815 L1220 820 L1160 810 L1100 800 L980 830 L920 860 L860 880 L800 870 L740 850 L680 830 L620 800 L560 770 L500 760 L440 780 L380 800 L320 820 L260 850 L200 880 L150 920 L120 980 Z"
-    fill="url(#pat-rajang)" stroke="#365314" stroke-width="0.4"/>
-  <text x="650" y="940" fill="#a3e635" font-size="6.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">RAJANG GROUP</text>
-  <text x="650" y="952" fill="#bef264" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">L. Cretaceous – Eocene · deep-marine mudstones &amp; turbidites</text>
-
-  <!-- Continental crust (Dangerous Grounds, NW) — extended crust, on top of Rajang/oceanic -->
-  <path d="M120 540 L150 510 L180 488 L210 478 L240 478 L260 482 L280 488 L300 495 L320 502 L340 510
-    L340 760 L120 760 Z" fill="url(#pat-continental)" stroke="#57534e" stroke-width="0.4"/>
-  <!-- Block faults within continental crust (extensional) -->
-  <path d="M150 510 L150 760" stroke="#fbbf24" stroke-width="0.5" stroke-dasharray="3,2" marker-end="url(#norm-tick)"/>
-  <path d="M200 488 Q195 600 200 760" stroke="#fbbf24" stroke-width="0.5" stroke-dasharray="3,2" marker-end="url(#norm-tick)"/>
-  <path d="M260 482 Q255 600 260 760" stroke="#fbbf24" stroke-width="0.5" stroke-dasharray="3,2" marker-end="url(#norm-tick)"/>
-  <text x="220" y="730" fill="#d6d3d1" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">Dangerous Grounds</text>
-  <text x="220" y="742" fill="#a8a29e" font-size="5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.7">extended crust</text>
-
-  <!-- Oligocene syn-rift (Layang-Layang) — half-graben, listric fault -->
-  <path d="M340 510 L370 502 L400 498 L430 496 L460 498 L480 502
-    L480 800 L340 800 Z" fill="url(#pat-synrift)" stroke="#a16207" stroke-width="0.4"/>
-  <!-- Listric (curved) normal fault bounding the half-graben on the west -->
-  <path d="M340 510 Q335 600 348 700 Q352 760 360 800" stroke="#fbbf24" stroke-width="1.0" fill="none" marker-end="url(#norm-tick)"/>
-  <text x="380" y="600" fill="#fbbf24" font-size="5.5" font-family="JetBrains Mono" opacity="0.85">listric growth fault</text>
-  <text x="380" y="612" fill="#fbbf24" font-size="5" font-family="JetBrains Mono" opacity="0.7">→ half-graben</text>
-
-  <!-- Oligo-Miocene carbonate platforms (Gomantong Limestone) — SHALLOW SHELF, not deep water -->
-  <!-- These are on top of the Stage IV clinoforms where the section shallows toward the coast -->
-  <ellipse cx="425" cy="510" rx="18" ry="9" fill="url(#pat-limestone)" stroke="#7dd3fc" stroke-width="0.7"/>
-  <ellipse cx="465" cy="500" rx="14" ry="7" fill="url(#pat-limestone)" stroke="#7dd3fc" stroke-width="0.7"/>
-  <ellipse cx="510" cy="475" rx="11" ry="5" fill="url(#pat-limestone)" stroke="#7dd3fc" stroke-width="0.6"/>
-  <text x="425" y="513" fill="#e0f2fe" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">Gomantong Lst</text>
-  <text x="465" y="503" fill="#e0f2fe" font-size="5" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">Gomantong Lst</text>
-  <text x="510" y="478" fill="#e0f2fe" font-size="4.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">Gomantong</text>
-  <line x1="425" y1="520" x2="425" y2="540" stroke="#7dd3fc" stroke-width="0.3" stroke-dasharray="2,1" opacity="0.6"/>
-  <text x="380" y="556" fill="#7dd3fc" font-size="5" font-family="JetBrains Mono" opacity="0.85">carbonate platform · shallow shelf</text>
-  <text x="380" y="567" fill="#7dd3fc" font-size="4.5" font-family="JetBrains Mono" opacity="0.7">E. Miocene (Burdigalian) · 200 km belt</text>
-
-  <!-- Stage IV clastic (Kinabalu Basin) — imbricated thrust slices + anticlinal closures -->
-  <!-- This is the main fold-thrust belt with 4-5 thrust sheets -->
-  <!-- Thrust 1: x=400-460, anticlinal closure 1 -->
-  <path d="M480 502 Q470 470 480 450 Q510 420 560 410 Q580 405 600 408 Q610 412 605 420 Q600 460 580 500 Q560 530 540 545 Q520 540 500 520 Q485 510 480 502 Z" fill="url(#pat-stageiv)" stroke="#7c2d12" stroke-width="0.4"/>
-  <line x1="500" y1="430" x2="500" y2="540" stroke="#ef4444" stroke-width="1.2" marker-end="url(#thr-teeth)"/>
-  <text x="540" y="445" fill="#fde68a" font-size="5" font-family="JetBrains Mono">T1</text>
-  <text x="500" y="425" fill="#fde68a" font-size="5" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">Closure 1</text>
-
-  <!-- Thrust 2: x=480-560, anticlinal closure 2 (Kinabalu Field) -->
-  <path d="M580 408 Q620 395 680 388 Q720 385 760 388 Q780 392 775 405 Q770 430 750 460 Q720 490 690 510 Q650 515 620 505 Q595 490 580 460 Q575 430 580 408 Z" fill="url(#pat-stageiv)" stroke="#7c2d12" stroke-width="0.4"/>
-  <line x1="610" y1="395" x2="610" y2="510" stroke="#ef4444" stroke-width="1.2" marker-end="url(#thr-teeth)"/>
-  <text x="650" y="420" fill="#fde68a" font-size="5" font-family="JetBrains Mono">T2</text>
-  <text x="700" y="385" fill="#fde68a" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">KINABALU CLOSURE</text>
-  <text x="700" y="396" fill="#fde68a" font-size="4.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">500 MMbbl OOIP</text>
-
-  <!-- Thrust 3: x=620-720, anticlinal closure 3 -->
-  <path d="M760 388 Q800 372 850 368 Q880 365 900 370 Q915 380 905 400 Q890 440 870 470 Q850 490 820 495 Q790 490 770 470 Q755 440 760 388 Z" fill="url(#pat-stageiv)" stroke="#7c2d12" stroke-width="0.4"/>
-  <line x1="800" y1="375" x2="800" y2="495" stroke="#ef4444" stroke-width="1.2" marker-end="url(#thr-teeth)"/>
-  <text x="830" y="400" fill="#fde68a" font-size="5" font-family="JetBrains Mono">T3</text>
-
-  <!-- Thrust 4: x=820-900, anticlinal closure 4 (eroded, the onland West Crocker) -->
-  <path d="M900 370 Q920 360 940 350 Q960 340 970 330 L970 480 L900 480 Z" fill="url(#pat-stageiv)" stroke="#7c2d12" stroke-width="0.4" opacity="0.85"/>
-  <line x1="940" y1="350" x2="940" y2="480" stroke="#ef4444" stroke-width="1.0" marker-end="url(#thr-teeth)"/>
-  <text x="950" y="400" fill="#fde68a" font-size="5" font-family="JetBrains Mono">T4</text>
-
-  <!-- Stage IV clinoforms (prograding delta, sediment transport from east) -->
-  <g stroke="#fde68a" stroke-width="0.4" fill="none" opacity="0.55">
-    <path d="M580 430 Q570 420 555 432"/>
-    <path d="M620 415 Q610 405 595 417"/>
-    <path d="M660 405 Q650 395 635 407"/>
-    <path d="M700 400 Q690 390 675 402"/>
-    <path d="M740 395 Q730 385 715 397"/>
-    <path d="M780 388 Q770 378 755 390"/>
-  </g>
-  <!-- Sediment transport arrow (E to W) -->
-  <line x1="900" y1="430" x2="450" y2="470" stroke="#fde68a" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6" marker-end="url(#kin-arrow)"/>
-  <text x="675" y="455" fill="#fde68a" font-size="5" font-family="JetBrains Mono" opacity="0.7" text-anchor="middle">progradation → W</text>
-
-  <!-- Stage IV label (above all thrust sheets) -->
-  <rect x="595" y="555" width="320" height="20" rx="3" fill="#0a0e17" stroke="#7c2d12" stroke-width="0.6"/>
-  <text x="755" y="569" fill="#fde68a" font-size="8" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">STAGE IV CLASTIC · Kinabalu Basin</text>
-  <text x="755" y="586" fill="#fde68a" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.85">Mid–Late Miocene · post-MMU turbidite reservoirs</text>
-
-  <!-- West Crocker Fm (accretionary prism) — tight folds, between x=900-1000 -->
-  <path d="M900 350 Q920 340 950 330 Q970 325 985 322 L985 600 L900 600 Z" fill="url(#pat-turbidite)" stroke="#365314" stroke-width="0.4"/>
-  <!-- Tight folds in Crocker -->
-  <g stroke="#bef264" stroke-width="0.5" fill="none" opacity="0.7">
-    <path d="M920 350 Q930 332 945 348"/>
-    <path d="M950 335 Q960 318 975 332"/>
-  </g>
-  <text x="942" y="370" fill="#d9f99d" font-size="6" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">West Crocker Fm</text>
-  <text x="942" y="381" fill="#bef264" font-size="5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">L. Eocene – Olig.</text>
-
-  <!-- Mount Kinabalu granite pluton — circular, intrudes Crocker -->
-  <ellipse cx="922" cy="380" rx="26" ry="40" fill="url(#pat-granite)" stroke="#fb7185" stroke-width="1.0"/>
-  <ellipse cx="922" cy="380" rx="36" ry="50" fill="none" stroke="#fb7185" stroke-width="0.4" stroke-dasharray="3,2" opacity="0.5"/>
-  <ellipse cx="922" cy="380" rx="46" ry="62" fill="none" stroke="#fda4af" stroke-width="0.3" stroke-dasharray="1,1" opacity="0.35"/>
-  <text x="922" y="405" fill="#fecdd3" font-size="6" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">KINABALU</text>
-  <text x="922" y="416" fill="#fda4af" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono">granodiorite</text>
-  <text x="922" y="427" fill="#fda4af" font-size="4.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.85">10–8 Ma</text>
-
-  <!-- Kinabalu growth fault (normal, late stage collapse) -->
-  <line x1="985" y1="322" x2="1000" y2="600" stroke="#fbbf24" stroke-width="1.0" stroke-dasharray="2,1" marker-end="url(#norm-tick)"/>
-  <text x="1005" y="450" fill="#fbbf24" font-size="5" font-family="JetBrains Mono" opacity="0.85" transform="rotate(78 1005 450)">growth fault</text>
-
-  <!-- Tanjong Fm (E.-M. Miocene deltaic) — onshore, between Crocker and Mélange -->
-  <path d="M985 322 Q1000 320 1020 318 Q1050 315 1080 320 L1080 600 L985 600 Z" fill="url(#pat-stageiv)" stroke="#7c2d12" stroke-width="0.3" opacity="0.7"/>
-  <text x="1030" y="345" fill="#fde68a" font-size="5.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500">TANJONG FM</text>
-  <text x="1030" y="356" fill="#fde68a" font-size="4.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">E–M. Miocene deltaic</text>
-
-  <!-- Central Sabah Mélange (chaotic) -->
-  <path d="M1080 320 Q1100 325 1130 332 Q1170 345 1200 360 L1200 600 L1080 600 Z" fill="url(#pat-melange)" stroke="#7c3aed" stroke-width="0.4"/>
-  <ellipse cx="1140" cy="380" rx="20" ry="10" fill="none" stroke="#c084fc" stroke-width="0.5" stroke-dasharray="3,1"/>
-  <ellipse cx="1170" cy="420" rx="14" ry="8" fill="none" stroke="#c084fc" stroke-width="0.5" stroke-dasharray="3,1"/>
-  <text x="1140" y="370" fill="#e9d5ff" font-size="6" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">MÉLANGE</text>
-  <text x="1140" y="381" fill="#c084fc" font-size="5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">Central Sabah circular basins</text>
-
-  <!-- Sandakan Basin post-rift delta (Sebahat Fm) -->
-  <path d="M1200 360 Q1230 372 1260 388 Q1300 410 1340 438 L1340 600 L1200 600 Z" fill="url(#pat-postrift)" stroke="#9a3412" stroke-width="0.3"/>
-  <g stroke="#fed7aa" stroke-width="0.4" fill="none" opacity="0.6">
-    <path d="M1220 372 Q1230 360 1245 372"/>
-    <path d="M1260 388 Q1270 376 1285 388"/>
-    <path d="M1300 410 Q1310 398 1325 410"/>
-  </g>
-  <text x="1270" y="430" fill="#fed7aa" font-size="6" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">SEBAHAT FM</text>
-  <text x="1270" y="441" fill="#fed7aa" font-size="5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.8">Late Mio.–Pliocene delta</text>
-
-  <!-- Sulu Sea deep basin fill -->
-  <path d="M1340 438 Q1380 470 1410 500 L1450 540 L1450 600 L1340 600 Z" fill="url(#pat-postrift)" stroke="#9a3412" stroke-width="0.3" opacity="0.75"/>
-  <text x="1395" y="500" fill="#fed7aa" font-size="6" text-anchor="middle" font-family="JetBrains Mono" opacity="0.85">Sulu Sea</text>
-  <text x="1395" y="511" fill="#fed7aa" font-size="4.5" text-anchor="middle" font-family="JetBrains Mono" opacity="0.7">deep basin fill</text>
-
-  <!-- ═══ UNCONFORMITIES (angular, truncating older units) ═══ -->
-  <!-- DRU/BMU ~15.5–22 Ma — angular, slight tilt down to east -->
-  <path d="M120 590
-    Q260 595 400 600
-    Q560 608 700 615
-    Q840 625 980 638
-    Q1100 650 1200 660
-    Q1300 670 1380 678
-    L1450 685"
-    fill="none" stroke="#fbbf24" stroke-width="1.4" stroke-dasharray="10,3,2,3" opacity="0.85"/>
-  <!-- Squiggle markers along DRU -->
-  <g opacity="0.9">
-    <path d="M-5 588 Q2 583 9 588 T23 588" transform="translate(200 0)" fill="none" stroke="#fbbf24" stroke-width="0.8"/>
-    <path d="M-5 593 Q2 588 9 593 T23 593" transform="translate(600 0)" fill="none" stroke="#fbbf24" stroke-width="0.8"/>
-    <path d="M-5 600 Q2 595 9 600 T23 600" transform="translate(1000 0)" fill="none" stroke="#fbbf24" stroke-width="0.8"/>
-    <path d="M-5 608 Q2 603 9 608 T23 608" transform="translate(1300 0)" fill="none" stroke="#fbbf24" stroke-width="0.8"/>
-  </g>
-  <rect x="220" y="616" width="240" height="22" rx="3" fill="#0a0e17" stroke="#fbbf24" stroke-width="0.6"/>
-  <text x="340" y="632" fill="#fbbf24" font-size="9" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">DRU / BMU · 15.5–22 Ma</text>
-  <text x="340" y="666" fill="#fbbf24" font-size="6" text-anchor="middle" font-family="JetBrains Mono" opacity="0.85">angular unconformity · truncates Rajang, West Crocker, Labang</text>
-
-  <!-- SRU ~8.6 Ma — angular, shallower -->
-  <path d="M120 480
-    Q260 485 400 488
-    Q560 492 700 495
-    Q840 500 980 502
-    Q1100 505 1200 508
-    Q1300 510 1380 512
-    L1450 514"
-    fill="none" stroke="#f87171" stroke-width="1.0" stroke-dasharray="6,2,2,2" opacity="0.75"/>
-  <g opacity="0.85">
-    <path d="M-5 484 Q2 479 9 484 T23 484" transform="translate(380 0)" fill="none" stroke="#f87171" stroke-width="0.7"/>
-    <path d="M-5 491 Q2 486 9 491 T23 491" transform="translate(800 0)" fill="none" stroke="#f87171" stroke-width="0.7"/>
-    <path d="M-5 502 Q2 497 9 502 T23 502" transform="translate(1180 0)" fill="none" stroke="#f87171" stroke-width="0.7"/>
-  </g>
-  <rect x="780" y="510" width="200" height="18" rx="3" fill="#0a0e17" stroke="#f87171" stroke-width="0.5"/>
-  <text x="880" y="524" fill="#f87171" font-size="8" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">SRU · 8.6 Ma</text>
-
-  <!-- ═══ STRUCTURAL SYMBOLS ═══ -->
-  <!-- Strike-slip (Meliau Orogeny) — paired arrows at depth -->
-  <line x1="240" y1="880" x2="290" y2="880" stroke="#38bdf8" stroke-width="1.3" marker-end="url(#ss-arrow)"/>
-  <line x1="1250" y1="880" x2="1200" y2="880" stroke="#38bdf8" stroke-width="1.3" marker-end="url(#ss-arrow)"/>
-  <text x="265" y="874" fill="#38bdf8" font-size="6" text-anchor="middle" font-family="JetBrains Mono">NW</text>
-  <text x="1225" y="874" fill="#38bdf8" font-size="6" text-anchor="middle" font-family="JetBrains Mono">SE</text>
-  <text x="700" y="884" fill="#38bdf8" font-size="6.5" text-anchor="middle" font-family="JetBrains Mono" letter-spacing="1">MELIAU OROGENY · NW–SE STRIKE-SLIP TRANSPRESSION · L. PLIOCENE – RECENT</text>
-
-  <!-- ═══ WELL STICKS (correctly positioned) ═══ -->
-  <!-- Megah-1: in Layang-Layang Oligocene carbonate, x=400 -->
-  <g transform="translate(400, 0)">
-    <line x1="0" y1="500" x2="0" y2="780" stroke="#94a3b8" stroke-width="0.8"/>
-    <circle cx="0" cy="510" r="2.5" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <circle cx="0" cy="525" r="2" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <text x="6" y="500" fill="#94a3b8" font-size="5.5" font-family="JetBrains Mono" font-weight="600">MEGAH-1</text>
-    <text x="6" y="540" fill="#f87171" font-size="5" font-family="JetBrains Mono">oil (Oligo. carb.)</text>
-  </g>
-
-  <!-- Tepat-1: in Layang-Layang syn-rift, x=440 -->
-  <g transform="translate(440, 0)">
-    <line x1="0" y1="496" x2="0" y2="780" stroke="#94a3b8" stroke-width="0.8"/>
-    <circle cx="0" cy="505" r="2.5" fill="#fbbf24" stroke="#92400e" stroke-width="0.5"/>
-    <text x="6" y="496" fill="#94a3b8" font-size="5.5" font-family="JetBrains Mono">TEPAT-1</text>
-    <text x="6" y="516" fill="#fbbf24" font-size="5" font-family="JetBrains Mono">gas (syn-rift)</text>
-  </g>
-
-  <!-- Well B: in Stage IV fold-thrust, x=500 -->
-  <g transform="translate(500, 0)">
-    <line x1="0" y1="430" x2="0" y2="780" stroke="#94a3b8" stroke-width="0.8"/>
-    <circle cx="0" cy="455" r="2.5" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <circle cx="0" cy="475" r="2" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <text x="6" y="430" fill="#94a3b8" font-size="5.5" font-family="JetBrains Mono" font-weight="600">WELL B</text>
-    <text x="6" y="455" fill="#f87171" font-size="5" font-family="JetBrains Mono">oil (post-MMU)</text>
-  </g>
-
-  <!-- Well A: in Stage IV Kinabalu closure, x=700 (gas above, oil below) -->
-  <g transform="translate(700, 0)">
-    <line x1="0" y1="385" x2="0" y2="780" stroke="#94a3b8" stroke-width="0.8"/>
-    <circle cx="0" cy="395" r="2.5" fill="#fbbf24" stroke="#92400e" stroke-width="0.5"/>
-    <circle cx="0" cy="410" r="2.2" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <circle cx="0" cy="425" r="2" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <text x="6" y="385" fill="#94a3b8" font-size="5.5" font-family="JetBrains Mono" font-weight="700">WELL A</text>
-    <text x="6" y="398" fill="#fbbf24" font-size="5" font-family="JetBrains Mono">gas</text>
-    <text x="6" y="413" fill="#f87171" font-size="5" font-family="JetBrains Mono">oil (deeper)</text>
-  </g>
-
-  <!-- Zoisit Deep-1: deeper pool, x=750 -->
-  <g transform="translate(750, 0)">
-    <line x1="0" y1="380" x2="0" y2="780" stroke="#94a3b8" stroke-width="0.8"/>
-    <circle cx="0" cy="390" r="2.5" fill="#fbbf24" stroke="#92400e" stroke-width="0.5"/>
-    <circle cx="0" cy="405" r="2" fill="#fbbf24" stroke="#92400e" stroke-width="0.5"/>
-    <circle cx="0" cy="420" r="2" fill="#f87171" stroke="#7f1d1d" stroke-width="0.5"/>
-    <text x="6" y="380" fill="#94a3b8" font-size="5.5" font-family="JetBrains Mono" font-weight="700">ZOISIT DEEP-1</text>
-    <text x="6" y="408" fill="#fbbf24" font-size="5" font-family="JetBrains Mono">gas + oil</text>
-    <text x="6" y="422" fill="#f87171" font-size="5" font-family="JetBrains Mono">deeper pool</text>
-  </g>
-
-  <!-- ═══ ELEVATION LABELS (real SRTM values) ═══ -->
-  <g font-family="JetBrains Mono">
-    <!-- Kinabalu peak (4,095m = 327.6 px above MSL → y=12) -->
-    <line x1="900" y1="12" x2="900" y2="40" stroke="#fda4af" stroke-width="0.5" stroke-dasharray="2,1"/>
-    <circle cx="900" cy="12" r="2.2" fill="#fda4af"/>
-    <text x="900" y="6" fill="#fda4af" font-size="9" text-anchor="middle" font-weight="700">4,095 m</text>
-
-    <!-- Crocker Range high point (~1,025m = 82 px above MSL → y=258) -->
-    <line x1="750" y1="240" x2="750" y2="262" stroke="#bef264" stroke-width="0.4" stroke-dasharray="2,1"/>
-    <text x="750" y="236" fill="#bef264" font-size="6.5" text-anchor="middle" font-weight="600">~1,025 m</text>
-
-    <!-- Central Sabah low -->
-    <line x1="1140" y1="345" x2="1140" y2="370" stroke="#c084fc" stroke-width="0.4" stroke-dasharray="2,1"/>
-    <text x="1140" y="395" fill="#c084fc" font-size="5.5" text-anchor="middle" font-weight="500">~300 m</text>
-  </g>
-
-  <!-- ═══ BATHYMETRY LABELS ═══ -->
-  <g font-family="JetBrains Mono">
-    <text x="180" y="430" font-size="5.5" fill="#64748b" opacity="0.85">SCS ~1,000 m</text>
-    <text x="290" y="500" font-size="5.5" fill="#64748b" opacity="0.85">~2,000 m</text>
-    <rect x="295" y="548" width="180" height="16" rx="2" fill="#0a0e17" stroke="#475569" stroke-width="0.4" opacity="0.85"/>
-    <text x="385" y="560" font-size="6.5" font-weight="700" fill="#475569" text-anchor="middle">SABAH TROUGH · ~2,900 m</text>
-    <text x="1190" y="385" font-size="5.5" fill="#64748b" opacity="0.85">~1,200 m</text>
-    <text x="1310" y="450" font-size="5.5" fill="#64748b" opacity="0.85">~2,500 m</text>
-    <text x="1395" y="560" font-size="5.5" fill="#64748b" opacity="0.85">~3,000 m</text>
-  </g>
-
-  <!-- ═══ ZONE LABELS (top band) ═══ -->
-  <g font-family="JetBrains Mono" text-anchor="middle">
-    <text x="220" y="32" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">DANGEROUS GROUNDS</text>
-    <text x="220" y="46" fill="#57534e" font-size="7">Extended continental crust</text>
-
-    <text x="410" y="32" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">LAYANG-LAYANG BASIN</text>
-    <text x="410" y="46" fill="#a16207" font-size="7">Oligocene syn-rift · Megah-1 oil</text>
-
-    <text x="580" y="32" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">SABAH TROUGH</text>
-    <text x="580" y="46" fill="#94a3b8" font-size="7">Sediment-filled foredeep</text>
-
-    <text x="760" y="32" fill="#fbbf24" font-size="11" font-weight="700" letter-spacing="1">KINABALU BASIN</text>
-    <text x="760" y="46" fill="#a16207" font-size="7">Post-MMU fold-thrust · Stage IV clastic</text>
-
-    <text x="942" y="14" fill="#fda4af" font-size="11" font-weight="700" letter-spacing="1">CROCKER RANGE</text>
-    <text x="942" y="62" fill="#365314" font-size="7">Accretionary prism (L. Eocene – Olig.)</text>
-
-    <text x="1140" y="32" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">CENTRAL SABAH</text>
-    <text x="1140" y="46" fill="#a78bfa" font-size="7">Tanjong Fm + Mélange</text>
-
-    <text x="1270" y="32" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">SANDAKAN BASIN</text>
-    <text x="1270" y="46" fill="#9a3412" font-size="7">Post-rift delta (Sebahat Fm)</text>
-  </g>
-
-  <!-- ═══ HORIZONTAL SCALE BAR ═══ -->
-  <g transform="translate(140, 1140)">
-    <line x1="0" y1="0" x2="1100" y2="0" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="0" y1="-3" x2="0" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="183" y1="-3" x2="183" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="367" y1="-3" x2="367" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="550" y1="-3" x2="550" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="733" y1="-3" x2="733" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="917" y1="-3" x2="917" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="1100" y1="-3" x2="1100" y2="3" stroke="#1e293b" stroke-width="0.6"/>
-    <text x="0" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">0</text>
-    <text x="183" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">50</text>
-    <text x="367" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">100</text>
-    <text x="550" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">200</text>
-    <text x="733" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">300</text>
-    <text x="917" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">450</text>
-    <text x="1100" y="-7" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" text-anchor="middle">~600 km</text>
-    <text x="550" y="14" fill="#475569" font-size="6.5" font-family="JetBrains Mono" text-anchor="middle" letter-spacing="1">HORIZONTAL SCALE · KILOMETRES</text>
-  </g>
-
-  <!-- Vertical scale (depth) -->
-  <g transform="translate(85, 340)">
-    <line x1="0" y1="0" x2="0" y2="800" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="0" x2="3" y2="0" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="80" x2="3" y2="80" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="160" x2="3" y2="160" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="240" x2="3" y2="240" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="320" x2="3" y2="320" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="400" x2="3" y2="400" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="480" x2="3" y2="480" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="560" x2="3" y2="560" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="640" x2="3" y2="640" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="720" x2="3" y2="720" stroke="#1e293b" stroke-width="0.6"/>
-    <line x1="-3" y1="800" x2="3" y2="800" stroke="#1e293b" stroke-width="0.6"/>
-    <text x="-6" y="3" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">0</text>
-    <text x="-6" y="83" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−1</text>
-    <text x="-6" y="163" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−2</text>
-    <text x="-6" y="243" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−3</text>
-    <text x="-6" y="323" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−4</text>
-    <text x="-6" y="403" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−5</text>
-    <text x="-6" y="483" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−6</text>
-    <text x="-6" y="563" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−7</text>
-    <text x="-6" y="643" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−8</text>
-    <text x="-6" y="723" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−9</text>
-    <text x="-6" y="803" fill="#94a3b8" font-size="6" font-family="JetBrains Mono" text-anchor="end">−10 km</text>
-    <text x="-6" y="-12" fill="#475569" font-size="6" font-family="JetBrains Mono" text-anchor="end" letter-spacing="0.5">DEPTH (km)</text>
-  </g>
-
-  <!-- Vertical exaggeration callout -->
-  <text x="700" y="1170" fill="#475569" font-size="6.5" text-anchor="middle" font-family="JetBrains Mono" letter-spacing="1.5">VERTICAL EXAGGERATION ~32× · SRTM TOPOGRAPHY + PUBLISHED GEOLOGY · STRUCTURES INTERPRETIVE, NOT MEASURED</text>
-
-  <!-- ═══ LEGEND ═══ -->
-  <g transform="translate(20, 760)">
-    <rect x="0" y="0" width="58" height="370" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="0.6" fill-opacity="0.95"/>
-    <text x="29" y="14" fill="#fbbf24" font-size="6.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" letter-spacing="1">LEGEND</text>
-    <!-- Patterns -->
-    <rect x="6" y="22" width="12" height="9" rx="1" fill="url(#pat-sandstone)"/><text x="22" y="29" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Sandstone</text>
-    <rect x="6" y="34" width="12" height="9" rx="1" fill="url(#pat-shale)"/><text x="22" y="41" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Shale</text>
-    <rect x="6" y="46" width="12" height="9" rx="1" fill="url(#pat-limestone)"/><text x="22" y="53" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Limestone</text>
-    <rect x="6" y="58" width="12" height="9" rx="1" fill="url(#pat-conglomerate)"/><text x="22" y="65" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Conglomerate</text>
-    <rect x="6" y="70" width="12" height="9" rx="1" fill="url(#pat-turbidite)"/><text x="22" y="77" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Turbidite (Crocker)</text>
-    <rect x="6" y="82" width="12" height="9" rx="1" fill="url(#pat-rajang)"/><text x="22" y="89" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Rajang Gp (Eoc.)</text>
-    <rect x="6" y="94" width="12" height="9" rx="1" fill="url(#pat-granite)"/><text x="22" y="101" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Granodiorite</text>
-    <rect x="6" y="106" width="12" height="9" rx="1" fill="url(#pat-ophiolite)"/><text x="22" y="113" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Ophiolite bsmt</text>
-    <rect x="6" y="118" width="12" height="9" rx="1" fill="url(#pat-melange)"/><text x="22" y="125" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Mélange</text>
-    <rect x="6" y="130" width="12" height="9" rx="1" fill="url(#pat-continental)"/><text x="22" y="137" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Cont. crust</text>
-    <rect x="6" y="142" width="12" height="9" rx="1" fill="url(#pat-synrift)"/><text x="22" y="149" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Syn-rift cl.</text>
-    <rect x="6" y="154" width="12" height="9" rx="1" fill="url(#pat-stageiv)"/><text x="22" y="161" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Stage IV cl.</text>
-    <rect x="6" y="166" width="12" height="9" rx="1" fill="url(#pat-postrift)"/><text x="22" y="173" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Post-rift δ</text>
-    <!-- Structures -->
-    <line x1="6" y1="190" x2="18" y2="190" stroke="#ef4444" stroke-width="1.0" marker-end="url(#thr-teeth)"/><text x="22" y="192" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Thrust (W-verge)</text>
-    <line x1="6" y1="202" x2="18" y2="202" stroke="#fbbf24" stroke-width="1.0" marker-end="url(#norm-tick)"/><text x="22" y="204" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Normal fault</text>
-    <line x1="6" y1="214" x2="18" y2="214" stroke="#fbbf24" stroke-width="1.0" stroke-dasharray="3,1"/><text x="22" y="216" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Unconformity</text>
-    <line x1="6" y1="226" x2="18" y2="226" stroke="#38bdf8" stroke-width="1.0" marker-end="url(#ss-arrow)"/><text x="22" y="228" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Strike-slip</text>
-    <!-- Hydrocarbons -->
-    <circle cx="12" cy="240" r="2" fill="#fbbf24" stroke="#92400e" stroke-width="0.4"/><text x="22" y="242" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Gas</text>
-    <circle cx="12" cy="252" r="2" fill="#f87171" stroke="#7f1d1d" stroke-width="0.4"/><text x="22" y="254" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Oil</text>
-    <line x1="12" y1="262" x2="12" y2="272" stroke="#94a3b8" stroke-width="0.8"/><text x="22" y="270" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Well</text>
-    <!-- Tectonic arrows -->
-    <line x1="6" y1="288" x2="18" y2="288" stroke="#fde68a" stroke-width="1.0" stroke-dasharray="2,1" marker-end="url(#kin-arrow)"/><text x="22" y="290" fill="#94a3b8" font-size="5" font-family="JetBrains Mono">Sediment transp.</text>
-    <!-- Thrust slices label -->
-    <text x="29" y="312" fill="#94a3b8" font-size="5" font-family="JetBrains Mono" text-anchor="middle" letter-spacing="0.5">T1–T4 thrust sheets</text>
-    <text x="29" y="324" fill="#94a3b8" font-size="5" font-family="JetBrains Mono" text-anchor="middle" letter-spacing="0.5">anticlinal closures</text>
-    <text x="29" y="336" fill="#94a3b8" font-size="5" font-family="JetBrains Mono" text-anchor="middle" letter-spacing="0.5">imbricated fan</text>
-    <text x="29" y="354" fill="#fbbf24" font-size="5" font-family="JetBrains Mono" text-anchor="middle" font-weight="700" letter-spacing="0.5">W-vergent</text>
-  </g>
-
-  <!-- ═══ COMPASS ROSE ═══ -->
-  <g transform="translate(1420, 100)">
-    <circle cx="0" cy="0" r="22" fill="#0f172a" stroke="#1e293b" stroke-width="0.6" fill-opacity="0.9"/>
-    <line x1="0" y1="-18" x2="0" y2="18" stroke="#475569" stroke-width="0.5"/>
-    <line x1="-18" y1="0" x2="18" y2="0" stroke="#475569" stroke-width="0.5"/>
-    <polygon points="0,-18 -3,-3 0,-8 3,-3" fill="#fbbf24"/>
-    <polygon points="0,18 -3,3 0,8 3,3" fill="#475569"/>
-    <text x="0" y="-25" fill="#fbbf24" font-size="9" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">N</text>
-    <text x="0" y="33" fill="#475569" font-size="8" text-anchor="middle" font-family="JetBrains Mono">S</text>
-    <text x="-28" y="3" fill="#475569" font-size="8" text-anchor="middle" font-family="JetBrains Mono">W</text>
-    <text x="28" y="3" fill="#475569" font-size="8" text-anchor="middle" font-family="JetBrains Mono">E</text>
-  </g>
-
-  <!-- NW–SE transect indicator -->
-  <g transform="translate(1380, 60)">
-    <line x1="-30" y1="20" x2="30" y2="-20" stroke="#fbbf24" stroke-width="1.0" marker-end="url(#ss-arrow)" opacity="0.7"/>
-    <text x="0" y="-30" fill="#fbbf24" font-size="7" text-anchor="middle" font-family="JetBrains Mono" letter-spacing="1">SE</text>
-    <text x="-30" y="30" fill="#fbbf24" font-size="7" text-anchor="end" font-family="JetBrains Mono" letter-spacing="1">NW</text>
-  </g>
-
-  <!-- ═══ Provenance footer ═══ -->
-  <text x="740" y="1115" fill="#334155" font-size="6" text-anchor="middle" font-family="JetBrains Mono" letter-spacing="1">SOURCES · SRTM (Open-Meteo) · BALAGURU &amp; HALL 2009 · MADON &amp; JONG 2022 · PETRONAS MPM 2025 · TGS CHOI EAGE 2026 · CORNWELL JGR 2025</text>
-</svg>
-</div>
-
-<!-- ═══ INFO CARDS ═══ -->
-<div class="info-panel">
-  <div class="card">
-    <h3>Tectonic Events · 5 Acts</h3>
-    <ul>
-      <li><span class="age">~40 Ma</span><b>Sarawak Orogeny</b> — Rajang Group folded, Crocker accretion begins</li>
-      <li><span class="age">22–20 Ma</span><b>Sabah Orogeny</b> — Dangerous Grounds collision · BMU cut</li>
-      <li><span class="age">15.5 Ma</span><b>Cagayan Arc</b> — MMU/DRU · end of rifting · inversion begins</li>
-      <li><span class="age">10–8 Ma</span><b>Kinabalu granite</b> — granodiorite emplacement · SRU</li>
-      <li><span class="age">L. Plio.</span><b>Meliau Orogeny</b> — NW–SE strike-slip · ongoing</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Real Elevations · SRTM</h3>
-    <ul>
-      <li><b>Mt Kinabalu:</b> 3,951 m (SRTM) · 4,095 m (geodetic)</li>
-      <li><b>Crocker Range:</b> ~900–1,025 m</li>
-      <li><b>Central Sabah:</b> ~300–630 m</li>
-      <li><b>Sabah Trough:</b> ~2,800–2,900 m below MSL · foredeep</li>
-      <li><b>Sulu Sea:</b> ~1,500–4,000 m deepening east</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Wells (5) — Plays Tested</h3>
-    <ul>
-      <li><b>Megah-1</b> — Oligocene carbonate · oil · Layang-Layang</li>
-      <li><b>Tepat-1</b> — Oligocene syn-rift · gas · Layang-Layang</li>
-      <li><b>Well B</b> — Stage IV post-MMU · oil · Kinabalu</li>
-      <li><b>Well A</b> — Stage IV (Kinabalu closure) · gas + oil · Kinabalu</li>
-      <li><b>Zoisit Deep-1</b> — deeper pool · gas + oil · 2025</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Fold-Thrust Belt · T1–T4</h3>
-    <ul>
-      <li><b>W-vergent imbricated fan</b> · 4 thrust sheets · toe-thrust dominant</li>
-      <li><b>Anticlinal closures</b> form the petroleum traps</li>
-      <li><b>Kinabalu closure</b> · 500 MMbbl OOIP · the producing field</li>
-      <li><b>Closure 1, 3, 4</b> · undrilled or sub-commercial</li>
-      <li><b>Sediment transport:</b> E→W · Crocker source → Stage IV sink</li>
-    </ul>
-  </div>
+<div class="card" style="margin-top:1.25rem">
+  <h3>Sources</h3>
+  <ul class="refs" id="refs"></ul>
 </div>
 
 <div class="attribution">
-  <b>Cross-section</b> · SRTM topography via <a href="https://open-meteo.com" style="color:#64748b">open-meteo.com</a> · Bathymetry from published values · Geology from Balaguru &amp; Hall (2009), Balaguru et al. (2003), Bait (2003), Madon &amp; Jong (2022), PETRONAS MPM (2025), TGS Choi (2026), Ab Ghani et al. EAGE (2026). <b>Vertical exaggeration ~4×</b>. <b>F7 humility:</b> body shapes are interpretive schematics, not seismic picks. <br>
-  <a href="https://arif-fazil.com/earth/kinabalu-basin/" style="color:#38bdf8">◂ BACK TO DOSSIER</a> · <a href="/earth/kinabalu-basin.pdf" style="color:#38bdf8">DOWNLOAD PDF ↓</a> · <a href="https://geox.arif-fazil.com/basins/kinabalu/" style="color:#38bdf8">LAUNCH GEOX COCKPIT ↗</a>
+  <b>Read this honestly.</b> Topography and bathymetry are schematic profiles from published values (Mt Kinabalu 4,095 m; Sabah Trough ~2.9 km). Bodies are interpretive schematics, not seismic picks; depths of deep crust and Moho are approximate. Model A is a new working hypothesis by Arif Fazil and is <b>untested</b>: it is drawn at the same weight as the published models so that it can be argued with, not because it is established.<br>
+  <a href="https://arif-fazil.com/earth/kinabalu-basin/">◂ BACK TO DOSSIER</a> · <a href="/earth/kinabalu-basin.pdf">DOWNLOAD PDF ↓</a> · <a href="https://geox.arif-fazil.com/basins/kinabalu/">LAUNCH GEOX ↗</a>
 </div>
-
 </div>
-<!-- ═══ GEOX CONTRAST BRIDGE ═══ -->
-<div style="padding:2.8rem 2rem;background:linear-gradient(135deg,#0A0B0D 0%,#1A1E24 100%);border-top:2px solid #E8733B;border-bottom:1px solid #2A2F37">
-  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center">
-    <div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:#5C636C;margin-bottom:.5rem">GEOX INTELLIGENCE LAYER · geox.arif-fazil.com</div>
-      <h3 style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:#EDEAE2;margin-bottom:.5rem">This page is the reading layer. GEOX is the intelligence layer.</h3>
-      <p style="font-size:.87rem;color:#9AA0A8;line-height:1.65;max-width:640px">arif-fazil.com/earth is where you <em>read</em> the basin. <strong style="color:#EDEAE2">geox.arif-fazil.com</strong> is where you <em>compute</em> it — Kill Matrix K001–K007, evidence ledger (OBS/DER/INT/SPEC), abductive hypothesis, capital bridge. Evidence-first, never adjudicates.</p>
-      <div style="margin-top:.9rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#5C636C;letter-spacing:1px"><span style="color:#5FD68A">●</span> GEOX MCP LIVE · :8081 &nbsp;|&nbsp; <span style="color:#D9A441">◆</span> 888_HOLD ACTIVE &nbsp;|&nbsp; <span style="color:#E8733B">▸</span> Kill Matrix ARMED</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:.7rem;min-width:180px">
-      <a href="https://geox.arif-fazil.com/basins/kinabalu/" style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;background:#E8733B;color:#0A0B0D;padding:.65rem 1.2rem;text-align:center;font-weight:700;text-decoration:none;display:block">ENTER GEOX ↗</a>
-      <a href="https://geox.arif-fazil.com/mcp-apps" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;border:1px solid #2A2F37;color:#9AA0A8;padding:.5rem 1.2rem;text-align:center;text-decoration:none;display:block">MCP APPS →</a>
-      <a href="https://geox.arif-fazil.com/platform" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;border:1px solid #2A2F37;color:#9AA0A8;padding:.5rem 1.2rem;text-align:center;text-decoration:none;display:block">PLATFORM →</a>
-    </div>
-  </div>
-</div>
-
 </main>
-<!-- /#main-content -->
+<div id="tip" hidden></div>
 <script src="/_shared/zen-all.js" defer></script>
-<!-- Leaflet JS & Kinabalu Transect Script -->
 <script src="/_shared/leaflet/leaflet.js"></script>
 <script>
-if (typeof L === 'undefined') {
-  document.write('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script>');
-}
+/* ═══ DATA · every shape on the section comes from here. x = km along A–A′, y = depth km (negative = elevation). ═══ */
+const XS = {
+  stations: [
+    {km: 0,   lat: 8.30, lng: 113.00, name: "A · Dangerous Grounds"},
+    {km: 139, lat: 7.37, lng: 113.84, name: "Layang-Layang atoll"},
+    {km: 262, lat: 6.80, lng: 114.80, name: "Sabah Trough axis"},
+    {km: 325, lat: 6.45, lng: 115.25, name: "Toe-thrust belt"},
+    {km: 373, lat: 6.20, lng: 115.60, name: "Shelf edge"},
+    {km: 430, lat: 5.98, lng: 116.07, name: "Kota Kinabalu coast"},
+    {km: 485, lat: 6.075, lng: 116.558, name: "Mt Kinabalu"},
+    {km: 568, lat: 5.62, lng: 117.15, name: "Telupid"},
+    {km: 652, lat: 5.55, lng: 117.90, name: "Kinabatangan"},
+    {km: 716, lat: 5.85, lng: 118.40, name: "Sandakan Basin"},
+    {km: 833, lat: 6.20, lng: 119.40, name: "A′ · Sulu Sea"}
+  ],
+  ridgeAxis: [[5.75, 113.95], [6.80, 114.80], [7.70, 115.75]],
+  provinces: [
+    [0, 230, "DANGEROUS GROUNDS"], [230, 290, "SABAH TROUGH"], [290, 373, "OUTBOARD"], [373, 430, "INBOARD SHELF"],
+    [430, 540, "CROCKER RANGE"], [540, 650, "CENTRAL SABAH"], [650, 790, "SANDAKAN BASIN"], [790, 833, "SULU SEA"]
+  ],
+  surface: [[0,2.0],[30,1.7],[60,2.1],[90,1.6],[120,1.9],[133,0.7],[137,0.05],[141,0.05],[146,0.7],[160,1.9],[190,2.3],[220,2.6],
+            [245,2.85],[262,2.9],[280,2.7],[300,2.3],[325,1.9],[345,1.5],[360,1.1],[368,0.4],[373,0.15],[400,0.08],[430,0],
+            [440,-0.1],[455,-0.6],[470,-1.2],[479,-1.8],[485,-4.095],[491,-1.9],[505,-1.4],[520,-1.0],[540,-0.7],[568,-0.4],
+            [600,-0.6],[630,-0.3],[652,-0.05],[700,0],[716,0.05],[740,0.15],[770,0.6],[790,1.5],[810,2.8],[833,3.6]],
+  facies: {
+    WATER: {name: "Sea water", fill: "#0c2a4a"},
+    DRAPE: {name: "Neogene marine mud / turbidites", fill: "#3f4a5c"},
+    STAGE4:{name: "Stage IV deltaic–shelf clastics (post-DRU)", fill: "#a16207"},
+    TOE:   {name: "Deepwater fold-thrust belt fill", fill: "#6b5a2e"},
+    CARB:  {name: "Oligo–Miocene carbonate platforms", fill: "#0369a1"},
+    SYNRIFT:{name: "Paleogene syn-rift fill", fill: "#7c5a3a"},
+    CCRUST:{name: "Continental crust (Dangerous Grounds)", fill: "#57534e"},
+    PRISM: {name: "Rajang–Crocker accretionary prism", fill: "#4c3d63"},
+    MELANGE:{name: "Mélange + ophiolite slivers", fill: "#3b4a3a"},
+    CIRC:  {name: "Neogene 'circular basin' remnants", fill: "#8a6f3a"},
+    SANDK: {name: "Sandakan delta (Sebahat–Ganduman)", fill: "#b45309"},
+    GRANITE:{name: "Kinabalu granite (7.85–7.22 Ma)", fill: "#db2777"},
+    OCEAN: {name: "Oceanic crust (Sulu Sea)", fill: "#1f3d3a"},
+    SABCRUST:{name: "Sabah lower crust (composition uncertain)", fill: "#3a3330"},
+    MANTLE:{name: "Lithospheric mantle", fill: "#1a1416"},
+    ASTH:  {name: "Asthenosphere / upwelling", fill: "#4a1d12"},
+    MOBSH: {name: "Overpressured mobile shale", fill: "#334155"},
+    CANOPY:{name: "Mud canopy / mud-volcano complex", fill: "#94a3b8"},
+    BASALT:{name: "Basaltic ridge / dykes / sills", fill: "#dc2626"},
+    SLAB:  {name: "Subducted slab remnant", fill: "#0e7490"}
+  },
+  /* shared bodies (all models) */
+  common: [
+    {f: "CCRUST", pts: [[0,4.0],[25,3.2],[42,5.5],[70,3.0],[88,5.8],[112,3.6],[139,3.0],[152,5.6],[172,3.4],[188,6.2],[215,4.2],[235,7.0],[262,8.0],[262,15],[0,15]], tip: "Dangerous Grounds: rifted continental crust of the South China Sea margin, cut into tilted fault blocks (Hinz & Schlüter 1985)"},
+    {f: "SYNRIFT", pts: [[0,4.0],[25,3.2],[42,5.5],[70,3.0],[88,5.8],[112,3.6],[139,3.0],[152,5.6],[172,3.4],[188,6.2],[215,4.2],[235,7.0],[262,8.0],[262,4.4],[235,4.4],[215,3.9],[188,3.7],[172,3.4],[152,3.5],[139,3.0],[112,3.4],[88,3.5],[70,3.0],[42,3.5],[25,3.2]], tip: "Paleogene syn-rift half-graben fill"},
+    {f: "DRAPE", pts: [[0,2.0],[30,1.7],[60,2.1],[90,1.6],[120,1.9],[133,0.7],[146,0.7],[160,1.9],[190,2.3],[220,2.6],[245,2.85],[262,2.9],[262,4.4],[235,4.4],[215,3.9],[188,3.7],[172,3.4],[152,3.5],[139,3.0],[112,3.4],[88,3.5],[70,3.0],[42,3.5],[25,3.2],[0,4.0]], tip: "Post-breakup marine section and post-MMU hemipelagic drape over the Dangerous Grounds"},
+    {f: "CARB", pts: [[18,3.3],[33,3.2],[30,2.4],[21,2.4]], tip: "Oligo–Miocene carbonate platform on a block crest; drowned at ~16 Ma (MMU)"},
+    {f: "CARB", pts: [[62,3.1],[78,3.2],[75,2.2],[66,2.2]], tip: "Carbonate platform on a block crest"},
+    {f: "CARB", pts: [[128,3.25],[150,3.45],[141,0.05],[137,0.05]], tip: "Layang-Layang atoll: a platform that kept pace with subsidence and still reaches sea level"},
+    {f: "CARB", pts: [[165,3.45],[180,3.55],[176,2.6],[168,2.6]], tip: "Carbonate platform on a block crest"},
+    {f: "CARB", pts: [[238,4.5],[256,4.6],[252,3.6],[242,3.6]], tip: "Tepat-type Oligo–Miocene carbonate buildup on the trough's NW flank (Tepat-1, public: TGS/EAGE 2026)"},
+    {f: "DRAPE", pts: [[262,2.9],[280,2.7],[290,2.55],[290,5.0],[262,4.4]], tip: "Sabah Trough fill: Neogene hemipelagic mud and distal turbidites"},
+    {f: "TOE", pts: [[290,2.55],[300,2.3],[325,1.9],[345,1.5],[360,1.1],[373,0.15],[373,6.0],[340,5.0],[310,4.9],[290,5.0]], tip: "Outboard deepwater fold-thrust belt: post-DRU turbidites and mud folded above a shale décollement"},
+    {f: "STAGE4", pts: [[373,0.15],[400,0.08],[430,0],[432,3.0],[415,5.5],[390,6.6],[373,6.0]], tip: "Stage IV deltaic–shelf clastics: the producing reservoirs of the Kinabalu Basin, thickening into growth faults"},
+    {f: "PRISM", pts: [[430,0],[440,-0.1],[455,-0.6],[470,-1.2],[479,-1.8],[491,-1.9],[505,-1.4],[520,-1.0],[540,-0.7],[548,3.0],[540,15],[420,15],[415,8.0],[432,3.0]], tip: "Rajang–Crocker accretionary prism: Eocene–Oligocene deep-marine turbidites, folded and thrust (Crocker Range)"},
+    {f: "GRANITE", pts: [[475,-1.5],[479,-1.8],[485,-4.095],[491,-1.9],[496,-1.0],[500,3],[497,8],[486,9.5],[473,8],[470,3]], tip: "Kinabalu granite: emplaced 7.85–7.22 Ma (U-Pb zircon, Cottam et al. 2010); exhumed rapidly (Cottam et al. 2013)"},
+    {f: "MELANGE", pts: [[540,-0.7],[568,-0.4],[600,-0.6],[630,-0.3],[652,-0.05],[660,0],[668,2.0],[668,4],[660,15],[540,15],[548,3.0]], tip: "Central Sabah: Kuamut/Garinono mélange with ophiolite slivers (Telupid)"},
+    {f: "CIRC", pts: [[575,-0.45],[598,-0.58],[594,1.8],[580,1.8]], tip: "Circular-basin remnant (Tanjong/Kapilit deltaics), preserved in a syncline (Balaguru et al. 2003)"},
+    {f: "SANDK", pts: [[652,-0.05],[700,0],[716,0.05],[740,0.15],[770,0.6],[790,1.5],[790,7.0],[740,6.5],[700,4.5],[668,2.0],[660,0]], tip: "Sandakan Basin: Middle–Late Miocene to Recent deltaic clinoforms prograding NE into the Sulu Sea (Madon & Jong 2022)"},
+    {f: "MELANGE", pts: [[668,2.0],[700,4.5],[740,6.5],[790,7.0],[790,15],[660,15],[668,4]], tip: "Basement under the Sandakan Basin: mélange / ophiolite (uncertain)"},
+    {f: "DRAPE", pts: [[790,1.5],[810,2.8],[833,3.6],[833,5.2],[790,4.0]], tip: "Sulu Sea sediment cover"},
+    {f: "OCEAN", pts: [[790,4.0],[833,5.2],[833,11.5],[790,10.5]], tip: "Sulu Sea oceanic crust: back-arc basin opened in the Early–Middle Miocene (Rangin & Silver 1991)"},
+    {f: "MELANGE", pts: [[790,7.0],[790,15],[833,15],[833,11.5],[790,10.5]], tip: "Continent–ocean transition (schematic)"}
+  ],
+  /* shared surfaces */
+  lines: [
+    {id: "MMU", c: "#2dd4bf", w: 1.6, wavy: true, pts: [[0,2.7],[60,2.75],[120,2.6],[200,3.0],[240,3.8],[262,4.4]], lab: "RU/MMU ~16 Ma", tip: "End of South China Sea spreading; drowning of Dangerous Grounds platforms"},
+    {id: "DRU", c: "#fbbf24", w: 1.8, wavy: true, pts: [[262,4.4],[290,5.0],[340,5.0],[373,6.0],[390,6.6],[415,5.5],[432,3.0]], lab: "DRU ~15.5 Ma", tip: "Deep Regional Unconformity (Middle Miocene). Published ages ~15.5 Ma (Hazebroek & Tan 1993); exact age debated"},
+    {id: "SRU", c: "#f87171", w: 1.8, wavy: true, pts: [[345,3.0],[373,2.6],[400,2.2],[430,1.0]], lab: "SRU ~8–9.5 Ma", tip: "Shallow Regional Unconformity (Late Miocene inversion). Published ages range ~8.5–9.5 Ma depending on calibration"},
+    {id: "MOHO", c: "#e2e8f0", w: 1.2, dash: "6 4", pts: [[0,25],[150,22],[230,18]], lab: "Moho", tip: "Moho under thinned continental crust (approximate)"},
+    {id: "MOHO2", c: "#e2e8f0", w: 1.2, dash: "6 4", pts: [[540,32],[650,28],[740,24],[790,16],[833,11.5]], lab: "", tip: "Moho beneath Central and East Sabah (approximate), shallowing to Sulu Sea oceanic crust"}
+  ],
+  faults: [
+    {pts: [[300,2.3],[318,4.9]], k: "thrust"}, {pts: [[322,1.95],[340,5.0]], k: "thrust"}, {pts: [[345,1.5],[362,5.1]], k: "thrust"},
+    {pts: [[392,0.07],[386,3.5],[381,6.2]], k: "normal"}, {pts: [[415,0.03],[409,3.0],[404,6.2]], k: "normal"},
+    {pts: [[42,3.5],[43,9]], k: "normal"}, {pts: [[88,3.5],[89,9]], k: "normal"}, {pts: [[152,3.5],[153,9]], k: "normal"}, {pts: [[188,3.7],[189,9.5]], k: "normal"}, {pts: [[235,4.4],[236,10]], k: "normal"},
+    {pts: [[548,3.0],[555,10]], k: "thrust"}, {pts: [[668,4],[675,11]], k: "strike"}
+  ]
+};
 </script>
 <script>
-let ktMap, ktBaseLayer, ktWellGroup, ktQuakeGroup;
-const KT_TILES = {
-  macro: 'https://tiles.macrostrat.org/carto/{z}/{x}/{y}.png',
-  sat: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+/* Region below the DRU between the trough and the coast: every model must say what fills it. */
+const SUBDRU = [[262,4.4],[290,5.0],[340,5.0],[373,6.0],[390,6.6],[415,5.5],[432,3.0],[415,8.0],[420,15],[262,15],[262,8.0]];
+const SHARED_EVENTS = [
+  {a: 32, b: 16, lab: "South China Sea spreading", tip: "~32–16 Ma (Briais et al. 1993; Li et al. 2014)"},
+  {a: 23, b: 20, lab: "BMU · Sabah deformation", tip: "Early Miocene uplift and erosion (Balaguru & Hall 2009)"},
+  {a: 20, b: 15, lab: "Sulu Sea back-arc opening", tip: "Early–Middle Miocene (Rangin & Silver 1991)"},
+  {a: 15.5, b: 15.5, lab: "DRU", tip: "Deep Regional Unconformity, ~15.5 Ma in published charts"},
+  {a: 9.5, b: 8.5, lab: "SRU", tip: "Shallow Regional Unconformity, ~9.5–8.5 Ma depending on calibration"},
+  {a: 7.85, b: 7.22, lab: "Kinabalu granite", tip: "U-Pb zircon 7.85–7.22 Ma (Cottam et al. 2010)"}
+];
+const MODELS = [
+  {
+    id: "A", color: "#f43f5e", key: "Model A · new hypothesis", title: "Sabah Trough magmatic ridge",
+    short: "A basaltic ridge along the trough pushes both ways",
+    who: "Working hypothesis · Arif Fazil · 2026", status: "UNTESTED",
+    thesis: "An extensional basaltic ridge runs along the Sabah Trough, on a strike line through the Tepat-1 area. Magmatic accretion along that axis pushed outward in both directions: north-west into the Dangerous Grounds, reactivating fault blocks and lifting carbonate highs, and south-east into the Kinabalu outboard, adding a driver for toe-thrust and wedge shortening. If real, this is a tectonic event that no current tectonostratigraphic chart records.",
+    mechanism: "Ridge push / magmatic wedging from an axial dyke complex fed by mantle upwelling beneath the trough.",
+    timing: "Not yet constrained. Two windows to test: (1) Oligocene–Early Miocene, at the end of rifting; (2) Middle–Late Miocene, coeval with DRU–SRU deformation.",
+    strengths: "Would give the outboard belt an internal driver independent of delta loading; would add a heat source relevant to the new deep oil (oil beneath gas); would tie volcanic or high-standing features along the trough into one structure.",
+    problems: "No published magnetic lineations, gravity high or dated basalt along the trough axis. The trough is usually read as a flexural foredeep, which predicts a cold, gravity-low axis — the opposite of a ridge. Ridge push is of order 10¹² N/m even for mature ocean ridges and smaller for a narrow young one; a stress budget is needed to show it can move a 100-km fold-thrust belt.",
+    kill: "No axial magnetic and gravity high along the strike line, and no dated basalt in trough-flank wells → reject.",
+    refs: ["TS02"],
+    bodies: [
+      {f: "MOBSH", pts: SUBDRU, tip: "Stage II–III wedge (North Sabah–Pagasa Wedge) beneath the DRU"},
+      {f: "BASALT", pts: [[247,8.6],[278,8.6],[272,5.8],[263,4.7],[254,5.8]], tip: "Hypothesised basaltic ridge edifice on the trough axis, buried by trough fill"},
+      {f: "BASALT", pts: [[268,4.85],[290,5.05],[289,5.25],[268,5.1]], tip: "Hypothesised sill in trough fill"},
+      {f: "BASALT", pts: [[232,4.9],[250,5.05],[250,5.25],[232,5.1]], tip: "Hypothesised sill in trough fill"},
+      {f: "BASALT", pts: [[254,8.6],[271,8.6],[274,15],[251,15]], tip: "Axial dyke complex (feeder)"},
+      {f: "CCRUST", pts: [[0,15],[251,15],[249,17.5],[230,18],[150,22],[0,25]], tip: "Thinned continental crust"},
+      {f: "BASALT", pts: [[251,15],[274,15],[277,21],[248,21]], tip: "Magmatic crust beneath the axis"},
+      {f: "SABCRUST", pts: [[274,15],[790,15],[790,16],[740,24],[650,28],[540,32],[430,30],[300,22],[277,21]], tip: "Sabah crust"},
+      {f: "ASTH", pts: [[195,60],[205,42],[240,27],[262,22],[285,27],[322,42],[332,60]], tip: "Mantle upwelling beneath the hypothesised ridge"}
+    ],
+    arrows: [
+      {from: [248,7.0], to: [175,7.0], lab: "push NW → DG blocks", c: "#f43f5e"},
+      {from: [278,7.4], to: [352,7.4], lab: "push SE → outboard", c: "#f43f5e"},
+      {from: [262,34], to: [262,23], lab: "melt", c: "#fb923c"}
+    ],
+    labels: [{x: 262, y: 10.7, t: "magmatic ridge?", c: "#fecaca"}],
+    events: [
+      {a: 30, b: 20, lab: "Ridge · window 1 (test)", dash: true, tip: "Oligocene–Early Miocene magmatism along the trough axis"},
+      {a: 16, b: 8, lab: "Ridge push · window 2 (test)", dash: true, tip: "Middle–Late Miocene push coeval with DRU–SRU deformation"}
+    ]
+  },
+  {
+    id: "B", color: "#a78bfa", key: "Model B · Morley et al. 2023", title: "Miocene mud canopy (NSPW)",
+    short: "The wedge is mobile shale, loaded and vented",
+    who: "Morley et al. (2023) · Geosphere 19(1): 291 · 3D seismic + wells", status: "PUBLISHED",
+    thesis: "The North Sabah–Pagasa Wedge is not mainly an accretionary wedge. After collision it was a body of overpressured shale, loaded by up to ~4 km of clastics in mini-basins. A short burst of mud volcanism then built a submarine mud canopy: about 50 mud-volcano centres, each 4–80 km², with ~1,900 km² of dense canopy — the largest and most complex such system described.",
+    mechanism: "Differential sedimentary loading of overpressured shale → shale mobility, mud pipes, chambers and volcanoes.",
+    timing: "Middle Miocene, after collision.",
+    strengths: "Built on 3D seismic and wells. Explains chaotic seismic facies, mini-basins and vent complexes in the outboard without invoking stacked thrust sheets.",
+    problems: "Explains the wedge's internal structure, not the plate-scale driver: it still needs one of A, C or D underneath. Canopy level must be reconciled with the DRU age.",
+    kill: "Wells through 'canopy' facies that prove in-situ accreted strata rather than extruded mud → reject for that area.",
+    refs: ["MOR23"],
+    bodies: [
+      {f: "MOBSH", pts: SUBDRU, tip: "Overpressured post-collisional shale (North Sabah–Pagasa Wedge)"},
+      {f: "CCRUST", pts: [[262,8.0],[330,12.5],[345,15],[262,15]], tip: "Dangerous Grounds crust beneath the wedge"},
+      {f: "TOE", pts: [[292,5.0],[312,5.0],[303,9.2]], tip: "Mini-basin: up to ~4 km of clastics loading the shale"},
+      {f: "TOE", pts: [[330,5.0],[358,5.6],[344,9.6]], tip: "Mini-basin: up to ~4 km of clastics loading the shale"},
+      {f: "CANOPY", pts: [[316,10.5],[320,10.5],[320.5,5.0],[315.5,5.0]], tip: "Mud pipe feeding the canopy"},
+      {f: "CANOPY", pts: [[362,11],[366,11],[366.5,6.0],[361.5,6.0]], tip: "Mud pipe feeding the canopy"},
+      {f: "CANOPY", pts: [[298,4.75],[340,4.75],[338,5.05],[300,5.1]], tip: "Mud canopy: ~50 vent centres, ~1,900 km² (Morley et al. 2023)"},
+      {f: "CANOPY", pts: [[348,5.45],[384,6.25],[381,6.55],[350,5.8]], tip: "Mud canopy sheet"},
+      {f: "CCRUST", pts: [[0,15],[345,15],[420,22],[420,26],[300,22],[230,18],[150,22],[0,25]], tip: "Continental crust"},
+      {f: "SABCRUST", pts: [[345,15],[790,15],[790,16],[740,24],[650,28],[540,32],[430,30],[420,26],[420,22]], tip: "Sabah crust"}
+    ],
+    arrows: [
+      {from: [318,10], to: [318,6.0], lab: "mud rises", c: "#c4b5fd"},
+      {from: [344,3.6], to: [344,6.4], lab: "load", c: "#fbbf24"}
+    ],
+    labels: [{x: 330, y: 12.6, t: "overpressured shale", c: "#cbd5e1"}],
+    events: [
+      {a: 16, b: 12, lab: "Mini-basin loading", tip: "Up to ~4 km of clastics on overpressured shale"},
+      {a: 14, b: 12, lab: "Mud-volcano burst · canopy", tip: "Short Middle Miocene burst (Morley et al. 2023)"}
+    ]
+  },
+  {
+    id: "C", color: "#38bdf8", key: "Model C · classic", title: "Continental underthrusting",
+    short: "Dangerous Grounds crust dives under Sabah",
+    who: "Hinz et al. (1989); Hazebroek & Tan (1993); Hutchison (2005)", status: "CLASSIC",
+    thesis: "As the proto-South China Sea closed, Dangerous Grounds continental crust was carried south-east beneath NW Borneo. The Sabah Trough is the flexural foredeep, or remnant trench, on the down-going plate; the North Sabah–Pagasa Wedge is an accretionary thrust wedge; the DRU records the collision.",
+    mechanism: "Plate convergence and crustal underthrusting; flexural loading of the lower plate.",
+    timing: "Early to Middle Miocene collision; flexural loading continues.",
+    strengths: "Explains the deep, narrow trough, its flexural normal faults, the imbricate thrusts on older 2D seismic and the regional DRU.",
+    problems: "Spreading ended ~16 Ma, yet shortening continues to the present; much young shortening is linked to delta loading. 3D seismic shows mobile shale where this model draws thrust sheets (B).",
+    kill: "Deep seismic or receiver functions show no Dangerous Grounds crust beneath the shelf → reject.",
+    refs: ["HIN89", "HT93", "HUT05"],
+    bodies: [
+      {f: "PRISM", pts: SUBDRU, tip: "North Sabah–Pagasa Wedge as an accretionary thrust wedge (Stage II–III)"},
+      {f: "CCRUST", pts: [[262,8.0],[420,15],[262,15]], tip: "Dangerous Grounds crust underthrust beneath the wedge"},
+      {f: "CCRUST", pts: [[0,15],[420,15],[520,22],[600,30],[600,36],[430,32],[300,24],[230,18],[150,22],[0,25]], tip: "Underthrust continental crust"},
+      {f: "SABCRUST", pts: [[420,15],[790,15],[790,16],[740,24],[650,28],[600,30],[520,22]], tip: "Sabah crust (upper plate)"}
+    ],
+    faultsExtra: [
+      {pts: [[290,5.0],[320,9.8]], k: "thrust"}, {pts: [[330,5.0],[365,11.5]], k: "thrust"}, {pts: [[372,6.0],[405,13.5]], k: "thrust"},
+      {pts: [[262,8.0],[420,15]], k: "detach"}
+    ],
+    arrows: [
+      {from: [80,21], to: [190,20], lab: "underthrusting", c: "#38bdf8"},
+      {from: [520,24], to: [560,28], lab: "", c: "#38bdf8"}
+    ],
+    labels: [{x: 345, y: 13.4, t: "thrust wedge", c: "#bae6fd"}],
+    events: [
+      {a: 22, b: 15, lab: "DG crust underthrusts Sabah", tip: "Collision and underthrusting"},
+      {a: 15, b: 0, lab: "Flexural foredeep loading", tip: "Sabah Trough loaded by the advancing wedge"}
+    ]
+  },
+  {
+    id: "D", color: "#34d399", key: "Model D · post-subduction", title: "Slab remnant + gravity tectonics",
+    short: "Mantle lifts the mountains, gravity moves the delta",
+    who: "Hall (2013); Cottam et al. (2010, 2013); King et al. (2010); Cornwell et al. (2025)", status: "PUBLISHED",
+    thesis: "Subduction stopped in the Early Miocene, but a detached slab remnant still sits 45–55 km beneath Sabah. Post-subduction mantle flow and rollback of the Celebes Sea slab to the south-east drive uplift (Crocker Range, Kinabalu granite) and extension. The eroding mountains feed deltas whose weight drives shelf extension linked, through a shale detachment, to outboard toe-thrusts.",
+    mechanism: "Vertical mantle forces + rollback-driven extension + gravitational collapse of the delta wedge.",
+    timing: "Early Miocene end of subduction; Late Miocene to present uplift, granite and gravity tectonics.",
+    strengths: "Explains the slab image at 45–55 km, granite timing and fast exhumation, and the kinematic link between growth faults and toe-thrusts.",
+    problems: "Gravity alone may not balance all outboard shortening (King et al. 2010 separate plate-scale and gravitational parts); the timing of Celebes Sea rollback is debated.",
+    kill: "Outboard shortening far exceeds shelf extension with no detachment linkage → a plate-scale push (A or C) is needed.",
+    refs: ["HALL13", "COT10", "COT13", "KING10", "COR25"],
+    bodies: [
+      {f: "MOBSH", pts: SUBDRU, tip: "Overpressured shale: the detachment level linking shelf extension to toe-thrusts"},
+      {f: "CCRUST", pts: [[262,8.0],[300,10.5],[380,15],[262,15]], tip: "Dangerous Grounds crust (former lower plate)"},
+      {f: "CCRUST", pts: [[0,15],[380,15],[380,24],[300,22],[230,18],[150,22],[0,25]], tip: "Continental crust"},
+      {f: "SABCRUST", pts: [[380,15],[790,15],[790,16],[740,24],[650,28],[540,33],[430,31],[380,24]], tip: "Sabah crust"},
+      {f: "SLAB", pts: [[430,45],[520,47],[575,52],[600,57],[588,59],[560,55],[510,51],[428,49]], tip: "Detached slab remnant imaged at 45–55 km (Cornwell et al. 2025)"},
+      {f: "ASTH", pts: [[425,60],[450,44],[470,38],[485,35],[500,38],[520,44],[545,60]], tip: "Post-subduction mantle upwelling beneath the Crocker Range"}
+    ],
+    faultsExtra: [
+      {pts: [[292,5.1],[330,5.5],[373,6.2],[404,6.2]], k: "detach"},
+      {pts: [[700,0],[706,4.5]], k: "normal"}, {pts: [[745,0.18],[752,6.4]], k: "normal"}
+    ],
+    arrows: [
+      {from: [485,36], to: [485,24], lab: "uplift", c: "#34d399"},
+      {from: [412,1.6], to: [430,1.6], lab: "", c: "#fbbf24"}, {from: [398,1.6], to: [380,1.6], lab: "extension", c: "#fbbf24"},
+      {from: [300,3.2], to: [318,3.2], lab: "", c: "#fbbf24"}, {from: [338,3.2], to: [320,3.2], lab: "shortening", c: "#fbbf24"},
+      {from: [690,42], to: [780,42], lab: "Celebes slab rollback →", c: "#34d399"}
+    ],
+    labels: [{x: 515, y: 53, t: "slab remnant", c: "#a5f3fc"}],
+    events: [
+      {a: 21, b: 18, lab: "Subduction ends · slab detaches", tip: "Early Miocene"},
+      {a: 15, b: 0, lab: "Rollback-driven extension (debated)", dash: true, tip: "Hall (2013)"},
+      {a: 9, b: 0, lab: "Delta loading → toe-thrusts", tip: "Gravity-driven, linked by shale detachment"}
+    ]
+  }
+];
+const MATRIX = [
+  {q: "Linear magnetic + gravity high along the trough axis (Tepat-1 strike line)", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
+  {q: "Dated basalt / dolerite in trough-flank wells", p: {A: "y", B: "u", C: "u", D: "u"}, obs: "open"},
+  {q: "Sills, saucer intrusions, hydrothermal vents in trough fill (3D seismic)", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
+  {q: "Heat flow / maturity peaks on the trough axis", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
+  {q: "Mud-volcano canopy and pipes at Middle Miocene level", p: {A: "u", B: "y", C: "n", D: "u"}, obs: "done", src: "Morley et al. 2023"},
+  {q: "Outboard shortening exceeds shelf extension", p: {A: "y", B: "u", C: "y", D: "n"}, obs: "open", src: "contested; King et al. 2010"},
+  {q: "Slab remnant at 45–55 km beneath Sabah", p: {A: "u", B: "u", C: "y", D: "y"}, obs: "done", src: "Cornwell et al. 2025"},
+  {q: "Granite 7.85–7.22 Ma with rapid exhumation", p: {A: "u", B: "u", C: "u", D: "y"}, obs: "done", src: "Cottam et al. 2010, 2013"}
+];
+const REFS = {
+  TS02: "Fazil, A. (2026). Sabah Trough magmatic-ridge hypothesis. Working note, this page (untested).",
+  MOR23: "Morley, C.K. et al. (2023). A major Miocene deepwater mud canopy system: the North Sabah–Pagasa Wedge, northwestern Borneo. Geosphere 19(1): 291.",
+  HIN89: "Hinz, K. et al. (1989). Thrust tectonics along the north-western continental margin of Sabah/Borneo. Geologische Rundschau 78: 705–730.",
+  HT93: "Hazebroek, H.P. & Tan, D.N.K. (1993). Tertiary tectonic evolution of the NW Sabah continental margin. Bulletin of the Geological Society of Malaysia 33: 195–210.",
+  HUT05: "Hutchison, C.S. (2005). Geology of North-West Borneo: Sarawak, Brunei and Sabah. Elsevier.",
+  HALL13: "Hall, R. (2013). Contraction and extension in northern Borneo driven by subduction rollback. Journal of Asian Earth Sciences 76: 399–411.",
+  COT10: "Cottam, M.A. et al. (2010). Pulsed emplacement of the Mount Kinabalu granite, northern Borneo. Journal of the Geological Society 167: 49–60.",
+  COT13: "Cottam, M.A. et al. (2013). Neogene rock uplift and erosion in northern Borneo: evidence from the Kinabalu granite, Mount Kinabalu. Journal of the Geological Society 170: 805–816.",
+  KING10: "King, R.C. et al. (2010). Balancing deformation in NW Borneo: quantifying plate-scale vs. gravitational tectonics in a delta and deepwater fold-thrust belt system. Marine and Petroleum Geology 27: 238–246.",
+  COR25: "Cornwell et al. (2025). Journal of Geophysical Research — teleseismic receiver functions beneath Sabah (as cited in the dossier; full reference to be confirmed).",
+  BH09: "Balaguru, A. & Hall, R. (2009). Tectonic evolution and sedimentation of Sabah, North Borneo. AAPG Search and Discovery #30084.",
+  BAL03: "Balaguru, A., Nichols, G. & Hall, R. (2003). The origin of the 'circular basins' of Sabah. Bulletin of the Geological Society of Malaysia 46: 335–351.",
+  MJ22: "Madon, M. & Jong, J. (2022). Structural-stratigraphic framework and petroleum systems of the Sandakan Basin. Bulletin of the Geological Society of Malaysia 74: 135–160.",
+  HS85: "Hinz, K. & Schlüter, H.U. (1985). Geology of the Dangerous Grounds, South China Sea, and the continental margin off southwest Palawan. Energy 10: 297–315.",
+  BR93: "Briais, A., Patriat, P. & Tapponnier, P. (1993). Updated interpretation of magnetic anomalies and seafloor spreading stages in the South China Sea. JGR 98: 6299–6328.",
+  LI14: "Li, C.-F. et al. (2014). Ages and magnetic structures of the South China Sea constrained by deep tow magnetic surveys and IODP Expedition 349. G³ 15: 4958–4983.",
+  RS91: "Rangin, C. & Silver, E.A. (1991). Neogene tectonic evolution of the Celebes-Sulu basins. Proceedings of the Ocean Drilling Program, Scientific Results 124.",
+  CHOI26: "Choi, T. (2026). Unlocking the Oligocene play in offshore Sabah: new insights from Layang-Layang Basin. TGS / EAGE workshop."
 };
-
-const KT_POINTS = [
-  [7.20, 113.80], // Dangerous Grounds Continental Crust
-  [6.60, 114.70], // Sabah Trough (-2,900 m)
-  [6.20, 115.30], // Deepwater Toe Thrusts
-  [5.80, 115.80], // Shelf Edge
-  [5.90, 116.30], // Crocker Range Turbidites
-  [6.075, 116.558], // Mt. Kinabalu Summit (4,095 m)
-  [5.80, 118.00]  // Sandakan Basin / Sulu Sea
-];
-
-const KT_WELLS = [
-  { name: 'Megah-1', lat: 6.45, lng: 115.15, note: 'Stage IV deepwater turbidite discovery (2024)' },
-  { name: 'Tepat-1', lat: 6.72, lng: 114.85, note: 'Outer fold-thrust appraisal (2025)' },
-  { name: 'Zoisit Deep-1', lat: 6.95, lng: 114.40, note: 'Ultra-deepwater frontier (>2,400m water depth, 2026)' },
-  { name: 'Well A (Shelf)', lat: 5.82, lng: 115.75, note: 'Mid-Miocene deltaic clastic pay' },
-  { name: 'Well B (Slope)', lat: 6.15, lng: 115.35, note: 'Toe-thrust anticline gas discovery' }
-];
-
-function initKinTransectMap() {
-  ktMap = L.map('kinTransectMap', {
-    center: [6.35, 115.60],
-    zoom: 7,
-    attributionControl: false
-  });
-
-  ktBaseLayer = L.tileLayer(KT_TILES.macro, { maxZoom: 15 }).addTo(ktMap);
-
-  // Draw Transect Line
-  const line = L.polyline(KT_POINTS, {
-    color: '#f43f5e',
-    weight: 3.5,
-    opacity: 0.95
-  }).addTo(ktMap);
-
-  // Stations
-  L.circleMarker(KT_POINTS[0], { radius: 6, color: '#fbbf24', fillColor: '#fbbf24', fillOpacity: 1 })
-    .bindTooltip('<b>NW (Dangerous Grounds)</b>', { permanent: true, direction: 'left', className: 'leaflet-tooltip-dark' })
-    .addTo(ktMap);
-
-  L.circleMarker([6.075, 116.558], { radius: 6, color: '#fbbf24', fillColor: '#fbbf24', fillOpacity: 1 })
-    .bindTooltip('<b>Mt Kinabalu (4,095 m)</b>', { permanent: true, direction: 'top', className: 'leaflet-tooltip-dark' })
-    .addTo(ktMap);
-
-  L.circleMarker(KT_POINTS[KT_POINTS.length - 1], { radius: 6, color: '#fbbf24', fillColor: '#fbbf24', fillOpacity: 1 })
-    .bindTooltip('<b>SE (Sulu Sea)</b>', { permanent: true, direction: 'right', className: 'leaflet-tooltip-dark' })
-    .addTo(ktMap);
-
-  // Wells
-  ktWellGroup = L.layerGroup().addTo(ktMap);
-  KT_WELLS.forEach(w => {
-    const icon = L.divIcon({
-      className: 'custom-well-icon',
-      html: `<div style="background:#00d4aa;width:10px;height:10px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 8px #00d4aa;"></div>`,
-      iconSize: [10, 10]
-    });
-    L.marker([w.lat, w.lng], { icon: icon }).bindPopup(`
-      <div style="font-family:var(--sans);font-size:0.75rem;">
-        <b style="color:#00d4aa">${w.name}</b><br>
-        <span style="color:#94a3b8">${w.note}</span>
-      </div>
-    `).addTo(ktWellGroup);
-  });
-
-  // USGS Earthquakes
-  ktQuakeGroup = L.layerGroup().addTo(ktMap);
-  fetchKTUSGSQuakes();
-
-  ktMap.on('mousemove', function(e) {
-    document.getElementById('ktHudCoords').textContent = `${e.latlng.lat.toFixed(4)}° N, ${e.latlng.lng.toFixed(4)}° E`;
-  });
-}
-
-function setKTBase(type) {
-  if (ktBaseLayer) ktMap.removeLayer(ktBaseLayer);
-  document.getElementById('btnKTMapMacro').classList.remove('active');
-  document.getElementById('btnKTMapSat').classList.remove('active');
-  document.getElementById('btnKTMapDark').classList.remove('active');
-
-  ktBaseLayer = L.tileLayer(KT_TILES[type], { maxZoom: 15 }).addTo(ktMap);
-  if (type === 'macro') document.getElementById('btnKTMapMacro').classList.add('active');
-  if (type === 'sat') document.getElementById('btnKTMapSat').classList.add('active');
-  if (type === 'dark') document.getElementById('btnKTMapDark').classList.add('active');
-}
-
-function toggleKTWells() {
-  const btn = document.getElementById('btnKTMapWells');
-  if (ktMap.hasLayer(ktWellGroup)) {
-    ktMap.removeLayer(ktWellGroup);
-    btn.classList.remove('active');
-  } else {
-    ktMap.addLayer(ktWellGroup);
-    btn.classList.add('active');
-  }
-}
-
-function toggleKTQuakes() {
-  const btn = document.getElementById('btnKTMapQuakes');
-  if (ktMap.hasLayer(ktQuakeGroup)) {
-    ktMap.removeLayer(ktQuakeGroup);
-    btn.classList.remove('active');
-  } else {
-    ktMap.addLayer(ktQuakeGroup);
-    btn.classList.add('active');
-  }
-}
-
-function fitKTTransect() {
-  ktMap.fitBounds(L.latLngBounds(KT_POINTS).pad(0.2));
-}
-
-async function fetchKTUSGSQuakes() {
-  try {
-    const res = await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson');
-    if (!res.ok) return;
-    const data = await res.json();
-    
-    const regional = data.features.filter(f => {
-      const [lng, lat] = f.geometry.coordinates;
-      return lat >= 3.0 && lat <= 9.0 && lng >= 112.0 && lng <= 120.0;
-    });
-
-    regional.forEach(q => {
-      const [lng, lat, depth] = q.geometry.coordinates;
-      const mag = q.properties.mag;
-      L.circleMarker([lat, lng], {
-        radius: Math.max(4, mag * 2.5),
-        color: '#f43f5e',
-        fillColor: '#f43f5e',
-        fillOpacity: 0.6,
-        weight: 1
-      }).bindPopup(`
-        <div style="font-family:var(--sans);font-size:0.75rem;">
-          <b style="color:#f43f5e">USGS M ${mag} Seismic Event</b><br>
-          <b>Depth:</b> ${depth} km<br>
-          <span>${q.properties.place}</span>
-        </div>
-      `).addTo(ktQuakeGroup);
-    });
-  } catch(e) {}
-}
-
-window.addEventListener('DOMContentLoaded', initKinTransectMap);
 </script>
+<script>
+(function () {
+  const FIGURE = new URLSearchParams(location.search).has("figure");
+  if (FIGURE) document.documentElement.classList.add("figure-only");
+  const NS = "http://www.w3.org/2000/svg";
+  const W = 1480, L = 74, R = 26, KM = 833;
+  const TOP = 78, ZTOP = -4.6, ZBRK = 15, ZBOT = 60, HTOP = 560, HLOW = 240;
+  const X = km => L + km / KM * (W - L - R);
+  const Y = z => z <= ZBRK ? TOP + (z - ZTOP) / (ZBRK - ZTOP) * HTOP : TOP + HTOP + (z - ZBRK) / (ZBOT - ZBRK) * HLOW;
+  const H = TOP + HTOP + HLOW + 46;
+  let cur = MODELS[0];
 
+  const el = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) if (a[k] != null) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+  const tx = (p, x, y, s, a) => { const t = el("text", Object.assign({x, y, "font-family": "JetBrains Mono, monospace"}, a), p); t.textContent = s; return t; };
+  const path = pts => "M" + pts.map(([k, z]) => X(k).toFixed(1) + "," + Y(z).toFixed(1)).join(" L");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  const tip = (e, h) => { e.setAttribute("data-tip", h); return e; };
+
+  function wavy(pts) {
+    let d = "";
+    for (let i = 0; i < pts.length - 1; i++) {
+      const [x1, y1] = [X(pts[i][0]), Y(pts[i][1])], [x2, y2] = [X(pts[i + 1][0]), Y(pts[i + 1][1])];
+      const len = Math.hypot(x2 - x1, y2 - y1), n = Math.max(1, Math.round(len / 9)), nx = -(y2 - y1) / len, ny = (x2 - x1) / len;
+      if (!i) d += `M${x1.toFixed(1)},${y1.toFixed(1)}`;
+      for (let j = 1; j <= n; j++) {
+        const t = j / n, tm = (j - 0.5) / n, a = j % 2 ? 2.2 : -2.2;
+        d += ` Q${(x1 + (x2 - x1) * tm + nx * a).toFixed(1)},${(y1 + (y2 - y1) * tm + ny * a).toFixed(1)} ${(x1 + (x2 - x1) * t).toFixed(1)},${(y1 + (y2 - y1) * t).toFixed(1)}`;
+      }
+    }
+    return d;
+  }
+  function arrow(g, a) {
+    const [x1, y1, x2, y2] = [X(a.from[0]), Y(a.from[1]), X(a.to[0]), Y(a.to[1])];
+    el("line", {x1, y1, x2, y2, stroke: a.c, "stroke-width": 2.4}, g);
+    const ang = Math.atan2(y2 - y1, x2 - x1), s = 8;
+    el("polygon", {points: [[x2, y2], [x2 - s * Math.cos(ang - .45), y2 - s * Math.sin(ang - .45)], [x2 - s * Math.cos(ang + .45), y2 - s * Math.sin(ang + .45)]].map(p => p.join(",")).join(" "), fill: a.c}, g);
+    if (a.lab) tx(g, (x1 + x2) / 2, Math.min(y1, y2) - 6, a.lab, {"font-size": 10, "text-anchor": "middle", fill: a.c, "font-weight": 700, "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3});
+  }
+  function fault(g, f) {
+    const st = {thrust: {s: "#f1f5f9", w: 1.3}, normal: {s: "#cbd5e1", w: 1.1}, strike: {s: "#cbd5e1", w: 1.1, d: "2 3"}, detach: {s: "#fb7185", w: 1.6, d: "7 4"}}[f.k];
+    el("path", {d: path(f.pts), stroke: st.s, "stroke-width": st.w, fill: "none", "stroke-dasharray": st.d}, g);
+  }
+
+  function drawSection() {
+    const svg = document.getElementById("xs");
+    svg.innerHTML = "";
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    const g = el("g", {}, svg);
+    const surf = XS.surface;
+    el("path", {d: path(surf.concat([[KM, ZBOT], [0, ZBOT]])) + "Z", fill: XS.facies.MANTLE.fill}, g);
+    el("path", {d: path(surf.map(([k, z]) => [k, Math.max(z, 0)]).concat([[KM, 0], [0, 0]])) + "Z", fill: XS.facies.WATER.fill}, g);
+    const body = (b, layer) => tip(el("path", {d: path(b.pts) + "Z", fill: XS.facies[b.f].fill, stroke: "#0a0e17", "stroke-width": .6, "stroke-opacity": .6}, layer),
+      `<b>${esc(XS.facies[b.f].name)}</b><br>${esc(b.tip || "")}`);
+    XS.common.forEach(b => body(b, g));
+    cur.bodies.forEach(b => body(b, g));
+    el("line", {x1: X(0), x2: X(KM), y1: Y(0), y2: Y(0), stroke: "#38bdf8", "stroke-width": .6, "stroke-dasharray": "3 3", opacity: .6}, g);
+    el("path", {d: path(surf), stroke: "#e2e8f0", "stroke-width": 1.2, fill: "none"}, g);
+    const fg = el("g", {}, g);
+    XS.faults.concat(cur.faultsExtra || []).forEach(f => fault(fg, f));
+    XS.lines.forEach(s => {
+      const d = s.wavy ? wavy(s.pts) : path(s.pts);
+      tip(el("path", {d, stroke: s.c, "stroke-width": s.w, fill: "none", "stroke-dasharray": s.dash}, g), `<b>${esc(s.lab || s.id)}</b><br>${esc(s.tip)}`);
+      if (s.lab) { const [k, z] = s.pts[s.pts.length - 1]; tx(g, X(k) + 4, Y(z) - 4, s.lab, {"font-size": 9.5, fill: s.c, "font-weight": 700, "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3}); }
+    });
+    (cur.arrows || []).forEach(a => arrow(g, a));
+    (cur.labels || []).forEach(l => tx(g, X(l.x), Y(l.y), l.t, {"font-size": 10.5, "text-anchor": "middle", fill: l.c, "font-weight": 700, "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3}));
+    el("line", {x1: L, x2: W - R, y1: Y(ZBRK), y2: Y(ZBRK), stroke: "#fbbf24", "stroke-width": .8, "stroke-dasharray": "2 5", opacity: .7}, g);
+    tx(g, W - R - 4, Y(ZBRK) - 5, "scale change · above ~17× vertical · below ~3×", {"font-size": 9, fill: "#fbbf24", "text-anchor": "end", opacity: .85});
+    const ax = el("g", {}, g);
+    el("line", {x1: L - 8, x2: L - 8, y1: Y(ZTOP), y2: Y(ZBOT), stroke: "#475569"}, ax);
+    [-4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 20, 30, 40, 50, 60].forEach(z => {
+      el("line", {x1: L - 13, x2: L - 8, y1: Y(z), y2: Y(z), stroke: "#475569"}, ax);
+      tx(ax, L - 16, Y(z) + 3.5, z < 0 ? "+" + (-z) : String(z), {"font-size": 9.5, fill: "#94a3b8", "text-anchor": "end"});
+    });
+    tx(ax, 14, Y(6), "depth km", {"font-size": 10, fill: "#64748b", transform: `rotate(-90 14 ${Y(6)})`, "text-anchor": "middle"});
+    XS.provinces.forEach(([a, b, n], i) => {
+      el("line", {x1: X(a), x2: X(a), y1: 28, y2: 44, stroke: "#334155"}, g);
+      tx(g, (X(a) + X(b)) / 2, 40, n, {"font-size": 9.5, fill: i % 2 ? "#94a3b8" : "#cbd5e1", "text-anchor": "middle", "letter-spacing": 1});
+    });
+    XS.stations.forEach(s => el("polygon", {points: `${X(s.km)},${TOP - 8} ${X(s.km) - 4},${TOP - 16} ${X(s.km) + 4},${TOP - 16}`, fill: "#fbbf24"}, g));
+    tx(g, X(0), 18, "A · NW", {"font-size": 12, fill: "#fbbf24", "font-weight": 800});
+    tx(g, X(KM), 18, "SE · A′", {"font-size": 12, fill: "#fbbf24", "font-weight": 800, "text-anchor": "end"});
+    tx(g, X(485), Y(-4.095) - 6, "Mt Kinabalu 4,095 m", {"font-size": 10, fill: "#f9a8d4", "text-anchor": "middle"});
+    tx(g, X(139), Y(-0.6), "Layang-Layang atoll", {"font-size": 9.5, fill: "#7dd3fc", "text-anchor": "middle"});
+    tx(g, X(262), Y(2.9) + 13, "Sabah Trough ~2.9 km", {"font-size": 9.5, fill: "#cbd5e1", "text-anchor": "middle"});
+    for (let k = 0; k <= 800; k += 100) {
+      el("line", {x1: X(k), x2: X(k), y1: Y(ZBOT), y2: Y(ZBOT) + 5, stroke: "#475569"}, g);
+      tx(g, X(k), Y(ZBOT) + 17, k + " km", {"font-size": 9.5, fill: "#94a3b8", "text-anchor": "middle"});
+    }
+    tx(g, W - R, Y(ZBOT) + 36, "Schematic. Bodies are interpretive, not seismic picks. Distances along the dog-leg line A–A′.", {"font-size": 9.5, fill: "#64748b", "text-anchor": "end"});
+  }
+
+  function drawCard() {
+    const m = cur;
+    document.getElementById("modelNote").textContent = `${m.key} · ${m.status}`;
+    document.getElementById("modelCard").innerHTML =
+      `<h3>${esc(m.key)}</h3><h4>${esc(m.title)}<span class="status" style="color:${m.color};border-color:${m.color}">${esc(m.status)}</span></h4>
+       <div class="who">${esc(m.who)}</div><p>${esc(m.thesis)}</p>
+       <dl><dt>Mechanism</dt><dd>${esc(m.mechanism)}</dd><dt>Timing</dt><dd>${esc(m.timing)}</dd>
+       <dt>Strengths</dt><dd>${esc(m.strengths)}</dd><dt>Problems</dt><dd>${esc(m.problems)}</dd>
+       <dt>Kill test</dt><dd><b>${esc(m.kill)}</b></dd></dl>`;
+    const sym = {y: '<span class="y">✓</span>', n: '<span class="n">✗</span>', u: '<span class="u">○</span>'};
+    document.getElementById("matrix").innerHTML =
+      `<tr><th>Observation</th>${MODELS.map(x => `<th class="${x.id === m.id ? "hl" : ""}" style="text-align:center;color:${x.color}">${x.id}</th>`).join("")}<th>Status</th></tr>` +
+      MATRIX.map(r => `<tr class="sel-col"><td>${esc(r.q)}</td>${MODELS.map(x => `<td class="c ${x.id === m.id ? "hl" : ""}">${sym[r.p[x.id]]}</td>`).join("")}<td><span class="obs ${r.obs}">${r.obs === "done" ? "observed" : "open"}</span>${r.src ? `<div style="font-size:.62rem;color:#64748b;margin-top:.2rem">${esc(r.src)}</div>` : ""}</td></tr>`).join("");
+    const used = new Set(XS.common.map(b => b.f).concat(m.bodies.map(b => b.f), ["WATER", "MANTLE"]));
+    const ln = (c, n, d) => `<span><span class="sw" style="background:none;border:0;border-top:2px ${d ? "dashed" : "solid"} ${c};height:0"></span>${n}</span>`;
+    document.getElementById("legend").innerHTML = [...used].map(k => `<span><span class="sw" style="background:${XS.facies[k].fill}"></span>${esc(XS.facies[k].name)}</span>`).join("") +
+      ln("#fbbf24", "DRU") + ln("#f87171", "SRU") + ln("#2dd4bf", "RU/MMU") + ln("#fb7185", "Detachment", 1) + ln("#e2e8f0", "Moho", 1);
+    document.querySelectorAll("#modelBtns .mbtn").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === m.id));
+  }
+
+  function drawTimeline() {
+    const svg = document.getElementById("tl"), w = 1440, l = 230, r = 20, rowH = 20;
+    const rows = SHARED_EVENTS.map(e => Object.assign({}, e, {c: "#64748b"})).concat(cur.events.map(e => Object.assign({}, e, {c: cur.color})));
+    const h = 30 + rows.length * rowH + 10;
+    svg.innerHTML = ""; svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+    const tX = a => l + (35 - a) / 35 * (w - l - r);
+    for (let a = 35; a >= 0; a -= 5) {
+      el("line", {x1: tX(a), x2: tX(a), y1: 20, y2: h - 6, stroke: "#1e293b"}, svg);
+      tx(svg, tX(a), 14, a + " Ma", {"font-size": 10, fill: "#64748b", "text-anchor": "middle"});
+    }
+    rows.forEach((e, i) => {
+      const y = 28 + i * rowH, shared = e.c === "#64748b";
+      tx(svg, l - 10, y + 9, e.lab, {"font-size": 10.5, fill: shared ? "#94a3b8" : e.c, "text-anchor": "end", "font-weight": shared ? 400 : 700});
+      const x1 = tX(e.a), x2 = Math.max(tX(e.b), x1 + 4);
+      tip(el("rect", {x: x1, y: y + 2, width: x2 - x1, height: 10, rx: 3, fill: e.dash ? "none" : e.c, stroke: e.c, "stroke-width": 1.5, "stroke-dasharray": e.dash ? "4 3" : null}, svg),
+        `<b>${esc(e.lab)}</b><br>${e.a === e.b ? e.a : e.a + "–" + e.b} Ma<br>${esc(e.tip || "")}`);
+    });
+  }
+
+  function drawRefs() {
+    const ids = ["TS02", "MOR23", "HIN89", "HT93", "HUT05", "HALL13", "COT10", "COT13", "KING10", "COR25", "BH09", "BAL03", "MJ22", "HS85", "BR93", "LI14", "RS91", "CHOI26"];
+    document.getElementById("refs").innerHTML = ids.map(i => `<li>${esc(REFS[i])}</li>`).join("");
+  }
+
+  let ridgeLine;
+  function drawMap() {
+    if (typeof window.L === "undefined" || !document.getElementById("xsMap")) return;
+    const map = window.L.map("xsMap", {scrollWheelZoom: false}).setView([6.6, 116.2], 6);
+    window.L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}", {maxZoom: 10, attribution: "Esri, GEBCO, NOAA, Garmin"}).addTo(map);
+    const pts = XS.stations.map(s => [s.lat, s.lng]);
+    window.L.polyline(pts, {color: "#fbbf24", weight: 3}).addTo(map);
+    XS.stations.forEach((s, i) => window.L.circleMarker([s.lat, s.lng], {radius: 4, color: "#fbbf24", fillOpacity: 1})
+      .bindTooltip(`${s.name} · ${s.km} km`, {direction: i % 2 ? "bottom" : "top"}).addTo(map));
+    ridgeLine = window.L.polyline(XS.ridgeAxis, {color: "#f43f5e", weight: 2.5, dashArray: "6 6", opacity: cur.id === "A" ? 1 : .25})
+      .bindTooltip("Hypothesised magmatic-ridge axis along the Sabah Trough (Model A, schematic)").addTo(map);
+    map.fitBounds(window.L.latLngBounds(pts).pad(0.12));
+  }
+
+  function select(m) { cur = m; drawSection(); drawCard(); drawTimeline(); if (ridgeLine) ridgeLine.setStyle({opacity: m.id === "A" ? 1 : .25}); }
+
+  document.getElementById("modelBtns").innerHTML = MODELS.map(m =>
+    `<button class="mbtn" data-id="${m.id}" style="--mc:${m.color}" aria-pressed="false"><span class="k" style="color:${m.color}">${esc(m.key)}</span><span class="t">${esc(m.title)}</span><span class="s">${esc(m.short)}</span></button>`).join("");
+  document.getElementById("modelBtns").addEventListener("click", e => { const b = e.target.closest(".mbtn"); if (b) select(MODELS.find(m => m.id === b.dataset.id)); });
+
+  const tipEl = document.getElementById("tip");
+  document.addEventListener("mousemove", e => {
+    const t = e.target.closest && e.target.closest("[data-tip]");
+    if (!t) { tipEl.hidden = true; return; }
+    tipEl.innerHTML = t.getAttribute("data-tip"); tipEl.hidden = false;
+    const r = tipEl.getBoundingClientRect();
+    tipEl.style.left = Math.min(e.clientX + 14, innerWidth - r.width - 8) + "px";
+    tipEl.style.top = (e.clientY + 14 + r.height > innerHeight ? e.clientY - r.height - 10 : e.clientY + 14) + "px";
+  });
+
+  const want = (location.hash || "").replace("#model-", "").toUpperCase();
+  select(MODELS.find(m => m.id === want) || MODELS[0]);
+  drawRefs();
+  if (!FIGURE) { if (document.readyState === "complete") drawMap(); else window.addEventListener("load", drawMap); }
+})();
+</script>
 </body>
 </html>

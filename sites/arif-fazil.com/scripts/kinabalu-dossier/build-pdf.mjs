@@ -105,6 +105,22 @@ const body = `
 <h2>7. Regional section: Dangerous Grounds → East Sabah</h2>
 <p>An ~830-km dog-leg section from the Dangerous Grounds (NW) across the Sabah Trough, the outboard fold-thrust belt, the Kinabalu shelf, the Crocker Range and Mt Kinabalu, Central Sabah and the Sandakan Basin to the Sulu Sea (SE). The upper 15 km is drawn at ~17× vertical exaggeration and the lithosphere at ~3×. Shallow geometry is shared by all models; the region beneath the DRU and everything below 15 km depend on the model. All bodies are schematic interpretations, not seismic picks. Interactive version: arif-fazil.com/earth/kinabalu-cross-section.html.</p>
 
+<section class="provenance">
+  <h2>Provenance — sources behind this dossier</h2>
+  <p>This dossier is built from peer-reviewed and publicly released sources only. Key references by section:</p>
+  <ul class="refs">
+    <li><b>Section 2 (Tectonic evolution):</b> Balaguru &amp; Hall 2009; Hutchison 2005; Briais et al. 1993; Rangin &amp; Silver 1991.</li>
+    <li><b>Section 4 (Kinabalu field):</b> Bait 2003 (GSM Bulletin 47).</li>
+    <li><b>Section 6 (Recent discoveries):</b> Ab Ghani et al. EAGE 2026; Choi et al. EAGE 2026; Cornwell et al. JGR 2025.</li>
+    <li><b>Section 8 (Model A — magmatic ridge):</b> Author's untested hypothesis; no public support yet.</li>
+    <li><b>Section 8 (Model B — mud canopy):</b> Morley et al. 2023, <i>Geosphere</i> 19(1): 291–326.</li>
+    <li><b>Section 8 (Model C — underthrust):</b> Hinz et al. 1989; Hazebroek &amp; Tan 1993; Hutchison 2005.</li>
+    <li><b>Section 8 (Model D — slab + gravity):</b> Hall 2013; Cottam et al. 2010, 2013; King et al. 2010; Cornwell et al. 2025.</li>
+    <li><b>Background:</b> PETRONAS MPM 2025; Geological Survey of Malaysia Memoir 19.</li>
+  </ul>
+  <p class="note">No proprietary well, seismic or company data. No picks. No internal chronostratigraphy. Public sources only.</p>
+</section>
+
 <h2>8. Four working models</h2>
 ${MODELS.map(m => `
 <div class="model">
@@ -155,6 +171,11 @@ table.t { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 1mm 0 
 table.t th, table.t td { text-align: left; vertical-align: top; padding: 1.4mm 2mm; border-bottom: .5px solid #d5d9de; }
 table.t th { background: #f1f3f5; font-weight: 600; }
 table.mx { break-inside: avoid; } table.mx td.c { text-align: center; font-weight: 700; } td.y { color: #15803d; } td.n { color: #b91c1c; } td.u { color: #9aa1a9; }
+section.provenance { break-inside: avoid; margin: 4mm 0 6mm; padding: 3mm 4mm 3mm 5mm; background: #f6f8fa; border-left: 3px solid #6b7380; }
+section.provenance h2 { font-size: 11pt; margin: 0 0 2mm; padding-bottom: .5mm; border-bottom: 1px solid #c1c6cd; }
+section.provenance ul.refs { font-size: 8.5pt; line-height: 1.5; margin: 0; padding-left: 4mm; }
+section.provenance ul.refs li { margin-bottom: .8mm; }
+section.provenance ul.refs b { color: #1c2128; }
 .src { color: #6b7380; font-size: 8pt; }
 .model { break-inside: avoid-page; margin-bottom: 6mm; }
 .model .who { color: #5b6470; font-size: 8.8pt; margin-bottom: 2mm; }

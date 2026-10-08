@@ -205,6 +205,16 @@ footer a:hover{color:var(--accent-cyan)}
   .toc a:hover{color:var(--accent-gold)}
   .toc a .num{color:var(--accent-cyan);margin-right:.4rem}
 }
+
+/* Map attribution (Macrostrat · Esri · CARTO/OSM) — subtle, dark-theme compliant */
+.leaflet-control-attribution {
+  background: rgba(7, 10, 16, 0.75) !important;
+  color: #64748b !important;
+  font-size: 9px !important;
+  font-family: var(--mono, monospace);
+  padding: 1px 6px;
+}
+.leaflet-control-attribution a { color: #475569 !important; }
 </style>
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
@@ -417,23 +427,23 @@ footer a:hover{color:var(--accent-cyan)}
         <p>The Rajang Group (deep-marine mudstones and turbidites) is folded and thrusted as the Proto-South China Sea subducts. The <b>West Crocker Formation</b> — turbiditic sandstones — is scraped off into the accretionary complex. <i>Unconformity within Paleogene turbidites.</i></p>
       </div>
       <div class="event gold">
-        <div class="age">22–20 Ma · EARLY MIOCENE</div>
+        <div class="age">~24 Ma · OLIGO-MIOCENE</div>
         <h3>Sabah Orogeny — the continent arrives</h3>
         <p>The <b>Dangerous Grounds</b> continental block collides with Sabah. Mélanges form. The <b>Base Miocene Unconformity (BMU)</b> is cut. Deep marine gives way to shallow deltaic sedimentation. This is the moment the basin starts to look like a basin.</p>
       </div>
       <div class="event">
-        <div class="age">15.5 Ma · MID-MIOCENE</div>
+        <div class="age">~8.5 Ma · LATE MIOCENE</div>
         <h3>Cagayan Arc collision — rifting ends</h3>
-        <p>Arc-continent collision cuts the <b>Mid-Miocene Unconformity (MMU = Deep Regional Unconformity (DRU))</b>. Extension halts. Inversion begins. The fold-thrust belt starts growing westward into the present-day shelf.</p>
+        <p>Collision-related uplift cuts the <b>DRU, ~13–12 Ma (Lunt 2022, BGSM 74)</b> — distinct from the ~16 Ma Sarawak MMU. Inversion begins. The fold-thrust belt starts growing westward into the present-day shelf.</p>
       </div>
       <div class="event gold">
-        <div class="age">10–8 Ma · LATE MIOCENE</div>
+        <div class="age">~7.9–7.2 Ma · LATE MIOCENE</div>
         <h3>Mount Kinabalu — the mountain arrives</h3>
-        <p>Granodiorite pluton intrudes the Crocker prism. Today it stands at <b>4,095 m</b> — the highest peak between the Himalayas and Papua. The <b>Shallow Regional Unconformity (SRU, 8.6 Ma)</b> marks a sediment-supply surge: the Baram and Kinabatangan deltas prograde across the shelf.</p>
+        <p>Granodiorite pluton intrudes the Crocker prism. Today it stands at <b>4,095 m</b> — the highest peak between the Himalayas and Papua. The <b>Shallow Regional Unconformity (SRU, ~8.5 Ma)</b> marks a sediment-supply surge: the Baram and Kinabatangan deltas prograde across the shelf.</p>
       </div>
       <div class="event">
         <div class="age">L. PLIOCENE – RECENT</div>
-        <h3>Meliau Orogeny — strike-slip, ongoing</h3>
+        <h3>SRU ~8.5 Ma — post-canopy burial / transpression (readings differ)</h3>
         <p>NW-SE transpression dissects the older "circular basins" into their present geometry. Final structural configuration. <b>The deformation has not stopped.</b> Today the basin is still folding, still faulting, still leaking.</p>
       </div>
     </div>
@@ -548,13 +558,13 @@ footer a:hover{color:var(--accent-cyan)}
       </div>
       <div class="psys res">
         <div class="role">RESERVOIR</div>
-        <h4>Post-MMU turbidite sandstones</h4>
-        <p>Proven good. Stage IV clastic play (Kinabalu Field: 500 MMbbl OOIP). Deeper Oligocene syn-rift clastics emerging.</p>
+        <h4>post-DRU turbidite sandstones</h4>
+        <p>Proven good. Stage IV clastic play (Kinabalu Field — producing; ~500 MMstb OOIP (Bait 2003, BGSM 47)). Deeper Oligocene syn-rift clastics emerging.</p>
       </div>
       <div class="psys seal">
         <div class="role">SEAL</div>
-        <h4>Intraformational shales + MMU</h4>
-        <p>Good. The MMU acts as a regional seal across the basin — a single horizontal line that keeps the gas down.</p>
+        <h4>Intraformational shales + DRU</h4>
+        <p>Good. The DRU and intraformational shales act as regional seals across the basin — a single horizontal line that keeps the gas down.</p>
       </div>
       <div class="psys trap">
         <div class="role">TRAP</div>
@@ -582,7 +592,7 @@ footer a:hover{color:var(--accent-cyan)}
 <!-- ══ SECTION 05 · CROSS-SECTION (EMBEDDED) ══ -->
 <section id="crosssection">
   <div class="container">
-    <div class="kicker">F2 TRUTH · SRTM TOPOGRAPHY + PUBLISHED GEOLOGY · VERTICAL ~32× · STRUCTURES INTERPRETIVE</div>
+    <div class="kicker">F2 TRUTH · SRTM TOPOGRAPHY + PUBLISHED GEOLOGY · VERTICAL SCHEMATIC · STRUCTURES INTERPRETIVE</div>
     <h2><span class="num">05</span>See it from the side</h2>
     <p class="lede">A 600-km transect from the Dangerous Grounds in the NW, across the Sabah Trough, up the Crocker Range, and into the Sandakan Basin in the SE. The surface is real SRTM (Kinabalu peak: <b>3,951 m</b> via Open-Meteo API · Crocker Range: <b>~1,025 m</b>). The bathymetry comes from published values (Sabah Trough: <b>~2,900 m</b>). The bodies below the surface come from Balaguru & Hall (2009), Madon & Jong (2022), and the TGS / EAGE 2026 papers.</p>
 
@@ -606,7 +616,7 @@ footer a:hover{color:var(--accent-cyan)}
           <p>Look for three things:</p>
           <ul>
             <li><b>The granite pluton under Kinabalu</b> — pink, sitting in the Crocker prism. It is the engine that lifted the mountain.</li>
-            <li><b>The two unconformity lines</b> — the dashed gold (DRU/BMU, ~15.5–22 Ma) and red (SRU, ~8.6 Ma). They are the only two horizontal lines in the section. Everything else dips, folds, or is cut by a fault.</li>
+            <li><b>The two unconformity lines</b> — the dashed gold (DRU ~13–12 Ma · BMU ~24 Ma, after Lunt 2022) and red (SRU, ~8.5 Ma). They are the only two horizontal lines in the section. Everything else dips, folds, or is cut by a fault.</li>
             <li><b>The oil and gas symbols</b> — the gold and red dots in the offshore Stage IV clastics (Kinabalu Field) and in the deeper Sandakan delta. Where you see red, there is oil; gold, gas.</li>
           </ul>
         </div>
@@ -631,13 +641,13 @@ footer a:hover{color:var(--accent-cyan)}
       </div>
       <div class="disc">
         <span class="tag">DEEPER POOL</span>
-        <h3>Zoisit Deep-1</h3>
+        <h3>Well D</h3>
         <div class="meta">KINABALU BASIN · PETRONAS MPM 2025</div>
         <p>Gas and oil in a deeper pool, tested by a 2025 exploration well. Extends the proven play downward. Reprocessed seismic on Well B (Ab Ghani et al. EAGE 2026) shows the play continues laterally.</p>
       </div>
       <div class="disc">
         <span class="tag">FRONTIER</span>
-        <h3>Megah-1 — Layang-Layang</h3>
+        <h3>Megah-1 (schematic)</h3>
         <div class="meta">OLIGOCENE CARBONATE · ADJACENT BASIN</div>
         <p>Malaysia's largest recent oil find, in the Oligocene carbonate play of the Layang-Layang Basin next door. Proves the Oligo-Miocene carbonate fairway works at scale. Tepat-1 was the earlier discovery.</p>
       </div>
@@ -669,7 +679,7 @@ footer a:hover{color:var(--accent-cyan)}
       <ul>
         <li><b>Three competing models</b> for NE Borneo Cenozoic extension remain unresolved. The right one changes the trap-volume estimate by an order of magnitude.</li>
         <li><b>The deeper-charge mechanism</b> — is the deeper oil at Well A from a separate kitchen, phase segregation, or multi-episode charge? Each model has a different sweet spot.</li>
-        <li><b>Oligocene syn-rift play extent</b> beneath the post-MMU fold belt. Seismic sees it; wells do not yet penetrate it. The upside is large if the play is continuous.</li>
+        <li><b>Oligocene syn-rift play extent</b> beneath the post-DRU fold belt. Seismic sees it; wells do not yet penetrate it. The upside is large if the play is continuous.</li>
         <li><b>Exact PSC block boundaries</b> are confidential until the next data room. Until then, prospect locations in this dossier are approximate, not proprietary.</li>
       </ul>
     </div>
@@ -745,7 +755,7 @@ footer a:hover{color:var(--accent-cyan)}
 <footer>
   <div class="doctrine">DITEMPA BUKAN DIBERI</div>
   <p><b>Provenance:</b> PETRONAS MPM (2025) · Balaguru &amp; Hall (2009) · Balaguru et al. (2003) · Bait (2003) · Madon &amp; Jong (2022) · Choi, Tad et al. EAGE 2026 · Ab Ghani et al. EAGE 2026 · Cornwell et al. JGR 2025 · Geological Survey of Malaysia Memoir 19.</p>
-  <p>SRTM topography via <a href="https://open-meteo.com">open-meteo.com</a> · Bathymetry from published values · Cross-section is interpretive, not measured — <b>F7 humility: vertical exaggeration ~4×, body shapes are schematics not picks.</b></p>
+  <p>SRTM topography via <a href="https://open-meteo.com">open-meteo.com</a> · <a href="dossier-v2.pdf" style="color:#94a3b8">Dossier v2 (PDF, Oct 2026 — revised ages)</a> · Bathymetry from published values · Cross-section is interpretive, not measured — <b>F7 humility: vertical scale schematic; body shapes are schematics, not picks.</b></p>
   <p>Φ GEOX · an organ of the arifOS federation · <a href="https://arif-fazil.com">arif-fazil.com</a></p>
 </footer>
 
@@ -783,19 +793,19 @@ if (typeof L === 'undefined') {
 }
 </script>
 <script>
-let kMap, kBaseLayer, kInspectMode = false;
+let kMap, kBaseLayer, kUnderLayer, kInspectMode = false;
 let kWellsGroup, kTransectGroup, kStructGroup, kQuakesGroup;
 
 const K_BASE_TILES = {
   macro: 'https://tiles.macrostrat.org/carto/{z}/{x}/{y}.png',
-  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+  dark: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
   sat: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
 };
 
 const K_WELLS = [
   { name: 'Megah-1', year: 2024, lat: 6.45, lng: 115.15, play: 'Deepwater Turbidite (Miocene)', status: 'Discovery', note: 'Deepwater wildcat; confirmed material hydrocarbon column in Stage IV turbidite sands.' },
   { name: 'Tepat-1', year: 2025, lat: 6.72, lng: 114.85, play: 'Outer Fold-Thrust Gas/Condensate', status: 'Discovery', note: 'Appraisal well de-risking the outer thrust fairway near the Sabah Trough.' },
-  { name: 'Zoisit Deep-1', year: 2026, lat: 6.95, lng: 114.40, play: 'Ultra-deepwater Frontier', status: 'Discovery', note: 'Tested deep-seated toe-thrust closure in >2,400 m water depth.' },
+  { name: 'Well D', year: 2026, lat: 6.95, lng: 114.40, play: 'Ultra-deepwater Frontier', status: 'Discovery', note: 'Tested deep-seated toe-thrust closure in >2,400 m water depth.' },
   { name: 'Gumusut-Kakap', year: 2014, lat: 5.85, lng: 114.35, play: 'Deepwater Turbidite Oil', status: 'Producing', note: 'Semi-submersible FPS landmark deepwater oil development in Block J.' },
   { name: 'Malikai', year: 2016, lat: 6.35, lng: 115.10, play: 'Deepwater Tension Leg Platform', status: 'Producing', note: 'Malaysia first TLP development, targeting Miocene turbidite stacked pays.' },
   { name: 'Kikeh', year: 2007, lat: 5.88, lng: 114.30, play: 'First Deepwater Spar in Malaysia', status: 'Producing', note: 'Pioneered deepwater Sabah production in Block K.' }
@@ -805,10 +815,10 @@ const K_TRANSECT_POINTS = [
   [7.20, 113.80], // Dangerous Grounds Continental Crust
   [6.60, 114.70], // Sabah Trough (-2,900 m)
   [6.20, 115.30], // Deepwater Toe Thrusts
-  [5.80, 115.80], // Shelf Edge
-  [5.90, 116.30], // Crocker Range Turbidites
+  [5.98, 115.78], // Shelf Edge (v9 aligned — was 5.80, V-kink)
+  [6.05, 116.28], // Crocker Range Turbidites (v9 on-trend)
   [6.075, 116.558], // Mt. Kinabalu Summit (4,095 m)
-  [5.80, 118.00]  // Sandakan Basin / Sulu Sea
+  [5.75, 118.10]  // Sandakan Basin / Sulu Sea
 ];
 
 const K_BASIN_POLY = [
@@ -827,10 +837,11 @@ function initKinabaluMap() {
     zoom: 7,
     minZoom: 5,
     maxZoom: 14,
-    attributionControl: false
+    attributionControl: true
   });
+  kMap.attributionControl.setPrefix(false);
 
-  kBaseLayer = L.tileLayer(K_BASE_TILES.macro, { maxZoom: 16 }).addTo(kMap);
+  setKBaseLayer('macro'); // Fix 2026-10-08: dark base under transparent Macrostrat overlay
 
   // Structural Basin Envelope
   kStructGroup = L.layerGroup().addTo(kMap);
@@ -933,21 +944,25 @@ function initKinabaluMap() {
 }
 
 function setKBaseLayer(type) {
-  if (kBaseLayer) kMap.removeLayer(kBaseLayer);
+  if (kBaseLayer) { kMap.removeLayer(kBaseLayer); kBaseLayer = null; }
+  if (kUnderLayer) { kMap.removeLayer(kUnderLayer); kUnderLayer = null; }
   document.getElementById('btnKLayerGeo').classList.remove('active');
   document.getElementById('btnKLayerSat').classList.remove('active');
   document.getElementById('btnKLayerDark').classList.remove('active');
 
   if (type === 'macro') {
-    kBaseLayer = L.tileLayer(K_BASE_TILES.macro, { maxZoom: 16 }).addTo(kMap);
+    // Fix 2026-10-08: Macrostrat carto = transparent geology overlay (0% opaque over
+    // NW Sabah). Carto dark base beneath; geology renders on top where coverage exists.
+    kUnderLayer = L.tileLayer(K_BASE_TILES.dark, { maxZoom: 16, attribution: 'Basemap © <a href=\"https://www.esri.com\">Esri</a>' }).addTo(kMap);
+    kBaseLayer = L.tileLayer(K_BASE_TILES.macro, { maxZoom: 16, opacity: 0.9, attribution: 'Geology © <a href=\"https://macrostrat.org\">Macrostrat</a>' }).addTo(kMap);
     document.getElementById('btnKLayerGeo').classList.add('active');
-    document.getElementById('kinMapPipeStatus').textContent = 'PIPE: MACROSTRAT GEOLOGY ACTIVE';
+    document.getElementById('kinMapPipeStatus').textContent = 'MACROSTRAT GEOLOGY OVER CARTO DARK BASE';
   } else if (type === 'sat') {
-    kBaseLayer = L.tileLayer(K_BASE_TILES.sat, { maxZoom: 16 }).addTo(kMap);
+    kBaseLayer = L.tileLayer(K_BASE_TILES.sat, { maxZoom: 16, attribution: 'Imagery © <a href=\"https://www.esri.com\">Esri</a>' }).addTo(kMap);
     document.getElementById('btnKLayerSat').classList.add('active');
     document.getElementById('kinMapPipeStatus').textContent = 'BASE: ESRI HIGH-RES SATELLITE';
   } else if (type === 'dark') {
-    kBaseLayer = L.tileLayer(K_BASE_TILES.dark, { maxZoom: 16 }).addTo(kMap);
+    kBaseLayer = L.tileLayer(K_BASE_TILES.dark, { maxZoom: 16, attribution: 'Basemap © <a href=\"https://www.esri.com\">Esri</a>' }).addTo(kMap);
     document.getElementById('btnKLayerDark').classList.add('active');
     document.getElementById('kinMapPipeStatus').textContent = 'BASE: CARTODB DARK MATTER';
   }

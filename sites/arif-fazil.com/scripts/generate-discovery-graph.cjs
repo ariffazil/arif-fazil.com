@@ -198,7 +198,7 @@ const capabilities = [
     },
     depends_on: ["arifos"],
     if_down: "Terminal gold/oil/gas/klci/usdmyr dan taakulan modal berhenti; radar fiskal buta.",
-    endpoints: { mcp: "https://wealth.arif-fazil.com/mcp", site: "https://wealth.arif-fazil.com/", health: "https://wealth.arif-fazil.com/health" },
+    endpoints: { mcp: "https://wealth.arif-fazil.com/mcp", site: "https://wealth.arif-fazil.com/", surface: `${SITE}/vitals/`, health: "https://wealth.arif-fazil.com/health" },
     boundary: "Analyst ≠ Judge — WEALTH menasihat; arifOS berarbitrasi",
   },
   {
@@ -312,6 +312,17 @@ const graph = {
     status: `${SITE}/status.json`, sitemap: `${SITE}/sitemap.xml`, page_overview: `${SITE}/page.json`,
     witness_ledger: `${SITE}/ledger/`, receipts: `${SITE}/receipts/`, laws: `${SITE}/laws/`,
     human_contract: `${SITE}/human`, institutional: `${SITE}/institution/`,
+    vitals_petronas: `${SITE}/vitals/`, vitals_malaysia: `${SITE}/wealth/malaysia/`, vitals_sot: `${SITE}/data/wealth/petronas_vitals.json`,
+  },
+  // Linkgraph nodes use the lg: namespace (FATWA K1 / linkgraph-namespace.md) —
+  // bare numerals are RESERVED for kernel verbs. Sub-node labels mandatory for lg:888/lg:999.
+  linkgraph: {
+    vitals_lifecycle: [
+      { node: "lg:556 DEPLOY", state: "LIVE", evidence: "/vitals/ lock panel + /data/wealth/petronas_vitals.json v-served", as_of: "2026-10-05" },
+      { node: "lg:777 SUSTAIN", state: "SENSOR WATCH", evidence: "Sensor #1 Budget 2027 due 2026-10-09; Petros 2027-01-25..29; gearing tripwire 23.0%", as_of: "2026-10-05" },
+      { node: "lg:999 COMMITMENT", state: "SEALED", evidence: "extraction_crisis_lock ENGAGED · AMEND-2026-08-03-001 · display 0/VOID · pre-lock 48/HOLD preserved", as_of: "2026-08-03" },
+      { node: "lg:888 HOLD", state: "NOT ACTIVE", evidence: "no 888_HOLD pending on vitals surfaces", as_of: "2026-10-05" },
+    ],
   },
   traversal: {
     start: "/discovery/",

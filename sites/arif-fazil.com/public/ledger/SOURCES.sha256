@@ -30,6 +30,10 @@ e7e57b2245cbf04813573f35d8d46114f024189c989697db6c3645e72279b565  /root/VAULT999
 c989122f5ccdf846193df71934ad89353963dca8333991f3f24fa829bc5ba627  /root/VAULT999/RECEIPTS/2026-09-21-federation-stabilization-session-receipt.md
 cd33b2328c22265ede67aa64535649a34202f9612acb2dc6862dfcc8739901fa  /root/VAULT999/RECEIPTS/2026-09-21-hermes-reformulation-receipt.md
 0fcdbd1095d240dfaf33ad6ae002f2ea117f551bf5d5e102d073394f798560bd  /root/VAULT999/RECEIPTS/2026-09-21-hermes-selfloop-delivery-fix.md
+610d0ffc0aa50f87453a38919af8fd9517b5246ce520c6eb4f45877cc970b04d  /root/VAULT999/RECEIPTS/2026-10-06-P0-1-chain-forensic-replay.json
+d23888b9d90e0fd928d8773044eec852c1be8faa248bbf27546c51acd22bbd68  /root/VAULT999/RECEIPTS/2026-10-06-federation-surface-reconciliation.json
+b9fd03b0e7f6811cb50f6f894c511720fbd848783fcc925bbb0d7a422aae3a0e  /root/VAULT999/RECEIPTS/2026-10-06-runtime-truth-mission.json
+0d4538c9463959d4f26bdba1ea9d2ccb0b3a2571b1ffa1f32e22bed5a3b0c4aa  /root/VAULT999/RECEIPTS/2026-10-06-seq46-chain-break-forensics.json
 5a1741312f9eed74c6f74e9635a9ac15939583c64dd181592e7da41ed1d6c11c  /root/VAULT999/RECEIPTS/20261001-hermes-a2a-federation-seal-20261001T092734Z.json
 d821fff0074e8dae863279b26d0af571b86d8a12f3cb4eb799b5ae7928415561  /root/VAULT999/RECEIPTS/20261001-hermes-gateway-outage-fix-20261001T080616Z.json
 647a4fd346d2729ea0a5c968d4db3a561060e94da5e2806bf417084e5484ddac  /root/VAULT999/RECEIPTS/20261001-hermes-hardening-seal-20261001T084943Z.json
@@ -84,4 +88,4 @@ d25336b2a91806ac39c4adea2e22f3676faae5fc8e18e90cee3d57e48bc42003  /root/.hermes/
 # SECTION 2 — ADVANCING: live logs that append by design.
 # Format: <sha256>  <lines_at_build>  <path>
 # These are expected to grow. verify.sh reports ADVANCED, not failure.
-a49feaf1f62f5b0831b82eca62200074479ad0d8526b03f5ba0439c615eb0440  1345  /root/.hermes/logs/reality_claim_gate.log
+c45f9bbbc71fc03519fd69a221be3a6301358bd6cb8ba7786fc88a7948aea394  1557  /root/.hermes/logs/reality_claim_gate.log

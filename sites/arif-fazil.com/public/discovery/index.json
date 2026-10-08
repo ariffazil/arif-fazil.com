@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-v3",
   "note": "Federation discovery graph v3. Satu traversal: identity, authority, governance, capabilities (why + edges + if_down), relationships, boundaries, endpoints, REGISTRY MESIN-VERIFIED (/discovery/registry.json — MCP tools/list semasa build). Kesihatan live dipaut (/status.json), tidak dibakar.",
-  "generated_at": "2026-10-05T10:00:38.891Z",
+  "generated_at": "2026-10-07T17:36:43.195Z",
   "generator": "scripts/generate-discovery-graph.cjs (site build pipeline)",
   "identity": {
     "site": "https://arif-fazil.com",
@@ -191,6 +191,7 @@
       "endpoints": {
         "mcp": "https://wealth.arif-fazil.com/mcp",
         "site": "https://wealth.arif-fazil.com/",
+        "surface": "https://arif-fazil.com/vitals/",
         "health": "https://wealth.arif-fazil.com/health"
       },
       "boundary": "Analyst ≠ Judge — WEALTH menasihat; arifOS berarbitrasi"
@@ -346,7 +347,38 @@
     "receipts": "https://arif-fazil.com/receipts/",
     "laws": "https://arif-fazil.com/laws/",
     "human_contract": "https://arif-fazil.com/human",
-    "institutional": "https://arif-fazil.com/institution/"
+    "institutional": "https://arif-fazil.com/institution/",
+    "vitals_petronas": "https://arif-fazil.com/vitals/",
+    "vitals_malaysia": "https://arif-fazil.com/wealth/malaysia/",
+    "vitals_sot": "https://arif-fazil.com/data/wealth/petronas_vitals.json"
+  },
+  "linkgraph": {
+    "vitals_lifecycle": [
+      {
+        "node": "lg:556 DEPLOY",
+        "state": "LIVE",
+        "evidence": "/vitals/ lock panel + /data/wealth/petronas_vitals.json v-served",
+        "as_of": "2026-10-05"
+      },
+      {
+        "node": "lg:777 SUSTAIN",
+        "state": "SENSOR WATCH",
+        "evidence": "Sensor #1 Budget 2027 due 2026-10-09; Petros 2027-01-25..29; gearing tripwire 23.0%",
+        "as_of": "2026-10-05"
+      },
+      {
+        "node": "lg:999 COMMITMENT",
+        "state": "SEALED",
+        "evidence": "extraction_crisis_lock ENGAGED · AMEND-2026-08-03-001 · display 0/VOID · pre-lock 48/HOLD preserved",
+        "as_of": "2026-08-03"
+      },
+      {
+        "node": "lg:888 HOLD",
+        "state": "NOT ACTIVE",
+        "evidence": "no 888_HOLD pending on vitals surfaces",
+        "as_of": "2026-10-05"
+      }
+    ]
   },
   "traversal": {
     "start": "/discovery/",

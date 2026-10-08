@@ -58,7 +58,86 @@ if (!fs.existsSync(resolvedJson)) {
 
 const data = JSON.parse(fs.readFileSync(resolvedJson, 'utf8'));
 let html = fs.readFileSync(SOURCE_HTML, 'utf8');
-if (!html.includes('<!--B11-A:GRID9-MARKER:BEGIN-->')) {
+const hasScorer = html.includes('<!--B11-A:GRID9-MARKER:BEGIN-->');
+const hasLockPanel = html.includes('<!--B11-E:LOCK-PANEL:BEGIN-->');
+
+// ──────────────────────────── B11-E: extraction-crisis lock panel ────────────────────────────
+// New-generation human-language page. Values are derived ONLY from the source JSON
+// (extraction_crisis_lock + pulse fields) — the page never hand-writes lock state.
+if (hasLockPanel) {
+  const lock = data.extraction_crisis_lock || {};
+  const displayPulse = data.pulse !== undefined ? data.pulse : 0;
+  const displayVerdict = data.pulse_verdict || 'VOID';
+  // Same pre-lock derivation contract as B11-D (line ~305): 48/HOLD when pre-lock verdict is HOLD.
+  const preLockPulse = (data.pulse_pre_lock !== undefined ? data.pulse_pre_lock : (data.pulse_verdict_pre_lock === 'HOLD' ? 48 : null));
+  const preLockVerdict = data.pulse_verdict_pre_lock || 'HOLD';
+  const pct = lock.current_extraction_pct_pat;
+  const trip = lock.trip_threshold_pct_pat;
+  const pacemaker = lock.pacemaker_threshold_pct_pat;
+  const engagedAt = (lock.engaged_at || '').split('T')[0];
+  const fmtMY = (iso) => {
+    const m = { '01': 'Jan', '02': 'Feb', '03': 'Mac', '04': 'Apr', '05': 'Mei', '06': 'Jun', '07': 'Jul', '08': 'Ogo', '09': 'Sep', '10': 'Okt', '11': 'Nov', '12': 'Dis' };
+    const p = String(iso).split('-');
+    return p.length === 3 ? `${parseInt(p[2], 10)} ${m[p[1]] || p[1]} ${p[0]}` : String(iso);
+  };
+  const lockPanelHtml = `  <div style="border:1px solid var(--state-hold);border-left:4px solid var(--state-hold);border-radius:8px;background:rgba(255,149,0,.06);padding:14px 16px">
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--state-hold);text-transform:uppercase;margin-bottom:8px">Kunci krisis extraksi · ${escapeText(lock.state || 'ENGAGED')}</div>
+    <div style="font-family:var(--serif);font-size:1.05rem;line-height:1.55;color:var(--ink)">Extraksi dividen ke kerajaan kini <strong>${escapeText(pct)}% daripada PAT</strong> — atas tripwire ${escapeText(trip)}%.</div>
+    <details style="margin-top:10px;font-family:var(--mono);font-size:.78rem;color:var(--dim)"><summary style="cursor:pointer;color:var(--state-hold)">Cara enjin mengira (klik buka)</summary>
+      <div style="margin-top:8px;line-height:1.6">Pacemaker ${escapeText(pacemaker)}% · trip ${escapeText(trip)}% · dikunci sejak ${escapeText(fmtMY(engagedAt))}.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;font-family:var(--mono);font-size:12px">
+        <div style="border:1px solid var(--line);border-radius:8px;padding:8px 10px"><div style="color:var(--dim);font-size:.68rem">EXTRAKSI / PAT</div><div style="color:var(--ink);font-size:1.15rem">${escapeText(pct)}%</div><div style="color:var(--faint);font-size:.66rem">trip ${escapeText(trip)} · pacemaker ${escapeText(pacemaker)}</div></div>
+        <div style="border:1px solid var(--line);border-radius:8px;padding:8px 10px"><div style="color:var(--dim);font-size:.68rem">PULS GABUNGAN</div><div style="color:var(--ink);font-size:1.15rem">${escapeText(displayVerdict)}</div><div style="color:var(--faint);font-size:.66rem">BODY dikunci 0 — override</div></div>
+        <div style="border:1px solid var(--line);border-radius:8px;padding:8px 10px"><div style="color:var(--dim);font-size:.68rem">PRA-KUNCI</div><div style="color:var(--ink);font-size:1.15rem">${escapeText(preLockPulse)} · ${escapeText(preLockVerdict)}</div><div style="color:var(--faint);font-size:.66rem">keputusan sebelum kunci, disimpan</div></div>
+      </div>
+      <p style="font-family:var(--serif);font-size:.92rem;color:var(--dim);margin:10px 0 0">Angka RM48B (105.7% PAT) dalam amaran di atas ialah <em>anggaran bank pelaburan</em>. Keputusan di sini ialah kiraan enjin WEALTH sendiri atas PAT FY2025 yang diaudit. Nombor rasmi dividen dikunci di petak Belanjawan 9 Okt.</p>
+      <div style="font-family:var(--mono);font-size:.7rem;color:var(--faint);margin-top:8px">${escapeText(lock.doctrine || '')} · Sumber: WEALTH organ · ${escapeText(lock.constitutional_amendment_id || '')}</div>
+    </details>
+  </div>`;
+  html = replaceMarker(html, 'B11-E:LOCK-PANEL', lockPanelHtml);
+
+  // ──────────────────────────── B11-F: reality JSON-LD (lock + FRA facts) ────────────────────────────
+  const facts = data.reality_facts_fra_1h26 || {};
+  const stock = Array.isArray(facts.sellable_stock_b_bbl) ? facts.sellable_stock_b_bbl : [];
+  const stockDesc = stock.map((s) => `${s.value} (${s.position})`).join(' to ');
+  const jsonLdLock = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'PETRONAS — duit hari ini, tong masa depan',
+    dateModified: data.reseal_date || new Date().toISOString().split('T')[0],
+    description: `Reality and 3-year prediction. Cash at 30 June 2026 was RM${(facts.cash_30jun2026_rm_m / 1000).toFixed(1)} billion. Sellable stock fell from ${stockDesc} billion barrels. The 2027 figure is not printed; the next reserves print is the 1 January 2027 position, due mid-2027. Extraction-crisis lock ${lock.state || 'ENGAGED'}: extraction ${pct}% of PAT (trip ${trip}%, pacemaker ${pacemaker}%); composite pulse ${displayPulse}/${displayVerdict}; pre-lock verdict ${preLockPulse}/${preLockVerdict} preserved. FY2026 declared state is [DEC] and does not feed scoring. Four roads stay open. No personal motive. No collapse date.`,
+    url: 'https://arif-fazil.com/vitals/',
+    about: {
+      '@type': 'Corporation',
+      name: 'PETRONAS',
+      extractionCrisisLock: {
+        state: lock.state || 'ENGAGED',
+        extraction_pct_pat: pct,
+        trip_threshold_pct_pat: trip,
+        pacemaker_threshold_pct_pat: pacemaker,
+        constitutional_amendment_id: lock.constitutional_amendment_id || null,
+        display_pulse: displayPulse,
+        display_verdict: displayVerdict,
+        pre_lock_pulse: preLockPulse,
+        pre_lock_verdict: preLockVerdict,
+        composite_pulse_pre_lock: preLockPulse,
+        verdict_pre_lock: preLockVerdict
+      },
+      fy2026_declared_state: { epistemic_class: '[DEC]', feeds_scoring: false },
+      scoring_input: 'audited IFR FY2025 only — FY2026 [DEC] is non-scoring per B11-F contract'
+    }
+  };
+  const jsonLdLockBlock = `<script type="application/ld+json" data-agent-role="institutional-vitals-reality">\n${JSON.stringify(jsonLdLock, null, 2)}\n</script>`;
+  html = replaceMarker(html, 'B11-F:JSONLD-LOCK-MARKER', jsonLdLockBlock);
+
+  fs.writeFileSync(DIST_HTML, html);
+  if (!hasScorer) {
+    console.log(`render-vitals: lock panel + reality JSON-LD written to ${path.relative(ROOT, DIST_HTML)} (lock ${lock.state || 'ENGAGED'}, extraction ${pct}%, pulse ${displayPulse}/${displayVerdict})`);
+    process.exit(0);
+  }
+}
+
+if (!hasScorer) {
   console.log('render-vitals: human page has no tripwire markers — leaving it untouched');
   process.exit(0);
 }

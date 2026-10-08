@@ -38,6 +38,11 @@
     wellorgan: 'well',
     aaafederation: 'aaa', aaacontrol: 'aaa',
     aforgeorgan: 'aforge', 'a-forge': 'aforge', 'a_forge': 'aforge',
+    // 2026-10-07 (Observatory green mission): the snapshot organs block includes
+    // arifflow + mcp_gateway; without these aliases stableOrganId() collapsed both
+    // to 'unknown' even though organMetadata below already carries their cards.
+    arifflow: 'arifflow', 'arif-flow': 'arifflow', 'arif_flow': 'arifflow',
+    mcp_gateway: 'mcpgateway', mcpgateway: 'mcpgateway', mcp: 'mcpgateway',
   };
   const stableOrganId = (value) => {
     if (value == null) return 'unknown';
@@ -406,11 +411,17 @@
     const footerObs = firstPresent(data.observed_at, data.generated_at, data.snapshot && data.snapshot.observed_at);
     setText('#footer-obs-at', footerObs && Number.isFinite(new Date(footerObs).getTime()) ? new Date(footerObs).toISOString() : UNAVAILABLE);
 
-    const signature = unwrap(data.signature) || (data.snapshot && data.snapshot.signature_state ? { algorithm: 'ed25519', key_id: data.snapshot.key_id, payload_hash: data.snapshot.payload_hash, signed_at: data.snapshot.observed_at } : {});
-    const algorithm = compactValue(signature.algorithm, 'ed25519');
-    const keyId = compactValue(signature.key_id, data.snapshot && data.snapshot.key_id);
-    const payloadHash = compactValue(signature.payload_hash, data.snapshot && data.snapshot.payload_hash);
-    const signedAt = compactValue(signature.signed_at, data.snapshot && data.snapshot.observed_at);
+    // 2026-10-07: the signature envelope keeps key_id/payload_hash/signed_at as
+    // SIBLINGS of .value (.value is the raw base64 signature string). unwrap()
+    // returned the string, so every field rendered 'unavailable' even though the
+    // snapshot was genuinely signed (audit F9-render). Read envelope siblings too.
+    const sigEnvelope = isRecord(data.signature) ? data.signature : {};
+    const sigValue = unwrap(data.signature);
+    const signature = isRecord(sigValue) ? sigValue : (data.snapshot && data.snapshot.signature_state ? { algorithm: 'ed25519', key_id: data.snapshot.key_id, payload_hash: data.snapshot.payload_hash, signed_at: data.snapshot.observed_at } : {});
+    const algorithm = compactValue(firstPresent(signature.algorithm, sigEnvelope.algorithm), 'ed25519');
+    const keyId = compactValue(firstPresent(signature.key_id, sigEnvelope.key_id, data.snapshot && data.snapshot.key_id));
+    const payloadHash = compactValue(firstPresent(signature.payload_hash, sigEnvelope.payload_hash, data.snapshot && data.snapshot.payload_hash));
+    const signedAt = compactValue(firstPresent(signature.signed_at, sigEnvelope.signed_at, data.snapshot && data.snapshot.observed_at));
     setText('#footer-signature', `algorithm=${algorithm} · key_id=${keyId} · payload_hash=${payloadHash} · signed_at=${signedAt}`);
 
     const tier = unwrap(data.tier) || {};
@@ -912,10 +923,24 @@
       return;
     }
     grid.innerHTML = metabolism.map((stage) => {
-      if (!isRecord(stage) || !stage.name) return '';
-      const state = recordState(stage, stage.value);
-      return `<div class="metab-cell metab-cell--${paletteClass(state)}"><div class="metab-name">${esc(compactValue(stage.name))}</div>
-        <div class="metab-val">${esc(compactValue(firstPresent(stage.value, stage.state)))}</div>
+      if (!isRecord(stage)) return '';
+      // 2026-10-07: snapshot metabolism items carry {stage, invocations, success_rate}
+      // envelopes — there is no .name — so every cell bailed out and the section
+      // rendered empty while the header correctly counted 11 stages (audit F6).
+      const nm = unwrap(firstPresent(stage.name, stage.stage));
+      if (nm === undefined || nm === null || nm === '') return '';
+      let val = unwrap(stage.value);
+      if (val === undefined || val === null) {
+        const inv = unwrap(stage.invocations);
+        const rate = unwrap(stage.success_rate);
+        const parts = [];
+        if (inv !== undefined && inv !== null) parts.push(`${inv} invocations`);
+        if (rate !== undefined && rate !== null && Number.isFinite(Number(rate))) parts.push(`success ${Math.round(Number(rate) * 1000) / 10}%`);
+        val = parts.length ? parts.join(' · ') : unwrap(stage.state);
+      }
+      const state = recordState(stage, val);
+      return `<div class="metab-cell metab-cell--${paletteClass(state)}"><div class="metab-name">${esc(compactValue(nm))}</div>
+        <div class="metab-val">${esc(compactValue(val))}</div>
         <div class="metab-meta">${esc(metadataLine(stage, data.observed_at))}</div></div>`;
     }).join('');
   }
@@ -983,7 +1008,10 @@
     if (!data || !data.observed_at) return 'unknown';
     const timestamp = new Date(data.observed_at).getTime();
     if (!Number.isFinite(timestamp)) return 'unknown';
-    return Date.now() - timestamp < 120000 ? 'fresh' : 'stale';
+    // 2026-10-07: threshold was 120 s against a 10-minute emit cron — the page
+    // permanently labelled itself 'stale' between emits (alarm fatigue; audit F10).
+    // 15 min = cron cadence + grace; a genuinely dead emitter still surfaces.
+    return Date.now() - timestamp < 900000 ? 'fresh' : 'stale';
   };
   function renderSelfCheck(data) {
     const measured = Boolean(data);

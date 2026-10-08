@@ -119,7 +119,7 @@ function makeJsonLd(a) {
     }
 
     const page = await browser.newPage();
-    const url = `${BASE}/wealth/makcikgpt/${a.slug}`;
+    const url = `${BASE}/world/makcikgpt/${a.slug}`;
     
     console.log(`Rendering: ${a.slug}`);
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 45000 });
@@ -156,13 +156,13 @@ function makeJsonLd(a) {
   <meta name="author" content="${a.author}">
   <meta name="keywords" content="${a.keywords}">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="${BASE}/wealth/makcikgpt/${a.slug}">
+  <link rel="canonical" href="${BASE}/world/makcikgpt/${a.slug}">
 
   <!-- Open Graph -->
   <meta property="og:title" content="${a.title}">
   <meta property="og:description" content="${a.desc}">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="${BASE}/wealth/makcikgpt/${a.slug}">
+  <meta property="og:url" content="${BASE}/world/makcikgpt/${a.slug}">
   <meta property="og:image" content="https://arif-fazil.com/og-identity.svg">
   <meta property="og:site_name" content="MakcikGPT — arifOS Perisikan Persekutuan">
   <meta property="og:locale" content="ms_MY">

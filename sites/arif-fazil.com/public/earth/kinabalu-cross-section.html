@@ -43,6 +43,8 @@ a{color:var(--accent-cyan)}
 .panel-head .note{font-family:var(--mono);font-size:.62rem;color:var(--text-dim)}
 #xsMap{width:100%;height:300px;background:#070a10}
 .models{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.5rem;padding:.8rem 1rem;border-bottom:1px solid var(--border-dim)}
+.read-guide{font-size:.78rem;line-height:1.55;color:var(--text-mid);padding:.85rem 1.1rem;border-bottom:1px solid var(--border-dim);background:rgba(242,183,5,.04)}
+.read-guide b{color:var(--accent-gold);font-weight:600}
 .mbtn{font-family:var(--sans);text-align:left;background:#0a0e17;border:1px solid var(--border-dim);border-radius:8px;padding:.6rem .75rem;color:var(--text-secondary);cursor:pointer;transition:border-color .15s}
 .mbtn:hover{border-color:var(--text-dim)}
 .mbtn .k{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:.2rem}
@@ -120,6 +122,9 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
 
 <div class="panel" id="xsPanel">
   <div class="panel-head"><h3>◈ Cross-section A–A′ · pick a working model</h3><span class="note" id="modelNote"></span></div>
+  <div class="read-guide" role="note" aria-label="How to read this cross-section">
+    <b>How to read this.</b> The shallow geometry (basins, granite, unconformities) is the same in every model. Press a button to switch what sits <i>under</i> the Deep Regional Unconformity and below ~15 km: <b>A</b> magmatic ridge, <b>B</b> overpressured mud canopy, <b>C</b> underthrust Dangerous Grounds, <b>D</b> slab remnant + gravity tectonics. Model <b>A</b> is the author's untested working hypothesis — drawn at equal weight so it can be argued with, not because it is established.
+  </div>
   <div class="models" id="modelBtns" role="group" aria-label="Working model"></div>
   <div class="xs-wrap"><svg id="xs" role="img" aria-label="Geological cross-section"></svg></div>
   <div class="legend" id="legend"></div>

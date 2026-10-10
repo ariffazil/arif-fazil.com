@@ -1,3 +1,14 @@
+<!-- CURRENT-VERIFIED-STATE :: re-probed 2026-10-10/11 UTC · do not delete -->
+> ### ⚠️ Current verified state (2026-10-11) — measured, not intended
+>
+> Re-probed live by FI-008 on this date. This block states only what was observed; it does not replace the SOT-MANIFEST below, and it deliberately does **not** advance `last_verified`.
+>
+> **What was observed:** site deploys and serves; legacy subdomain redirects work; Cloudflare edge routes per Caddyfile. **What was NOT verified:** independent uptime, content freshness, link rot, or A2A discovery at federation level.
+>
+> No customers, no pilots, no signed contracts, no independent benchmark, no external security audit. Current revenue value: USD 0.
+>
+> Claim-level audit: `AAA/forge_work/grant-arifos-reality-reforge-2026-10-11/`.
+
 <!-- SOT-MANIFEST
 federation_release: v2026.09.13
 last_verified: 2026-09-13T06:32:00Z

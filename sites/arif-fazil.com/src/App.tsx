@@ -19,7 +19,6 @@ const World = lazy(() => import('@/pages/WorldArrow').then(m => ({ default: m.Wo
 const CommodityPage = lazy(() => import('@/pages/CommodityPage').then(m => ({ default: m.CommodityPage })));
 const Words = lazy(() => import('@/pages/Words').then(m => ({ default: m.Words })));
 const WordsEssays = lazy(() => import('@/pages/WordsEssays').then(m => ({ default: m.WordsEssays })));
-const WordsWiki = lazy(() => import('@/pages/WordsWiki').then(m => ({ default: m.WordsWiki })));
 const WordsMakcikgpt = lazy(() => import('@/pages/WordsMakcikgpt').then(m => ({ default: m.WordsMakcikgpt })));
 const EssayPage = lazy(() => import('@/pages/EssayPage').then(m => ({ default: m.EssayPage })));
 const Work = lazy(() => import('@/pages/Work').then(m => ({ default: m.Work })));
@@ -169,8 +168,6 @@ export function App() {
             {/* Peer subpages (must come BEFORE the /:slug catch-all) */}
             <Route path="/words/essays" element={<WordsEssays />} />
             <Route path="/words/essays/" element={<WordsEssays />} />
-            <Route path="/words/wiki" element={<WordsWiki />} />
-            <Route path="/words/wiki/" element={<WordsWiki />} />
             <Route path="/words/makcikgpt" element={<WordsMakcikgpt />} />
             <Route path="/words/makcikgpt/" element={<WordsMakcikgpt />} />
             {/* Legacy aliases — keep on /words hub */}

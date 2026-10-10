@@ -16,12 +16,12 @@
 
     bar.innerHTML = [
       '<div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">',
-        '<span style="display:flex; align-items:center; gap:6px;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#4af626; box-shadow:0 0 6px #4af626;"></span>arifFLOW</span>',
-        '<span id="hb-aforge">A-FORGE: <span style="color:#4af626;">IDLE/HEALTHY</span></span>',
-        '<span id="hb-mcp">AAA MCP: <span style="color:#4af626;">ACTIVE</span></span>',
+        '<span style="display:flex; align-items:center; gap:6px;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#888;"></span>arifFLOW</span>',
+        '<span id="hb-aforge">A-FORGE: <span style="color:#888;">UNPROBED</span></span>',
+        '<span id="hb-mcp">AAA MCP: <span style="color:#888;">UNPROBED</span></span>',
       '</div>',
       '<div style="display:flex; gap:16px; align-items:center;">',
-        '<span id="hb-ledger">WITNESS HASH: <span style="color:#888;">SYNCING...</span></span>',
+        '<span id="hb-ledger">LEDGER POINTER: <span style="color:#888;">SYNCING...</span></span>',
         '<a href="/999/" style="color:#fff; text-decoration:none; font-weight:bold; background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:3px;">[ EVIDENCE / 999 ]</a>',
       '</div>'
     ].join('');
@@ -37,15 +37,15 @@
         if (data) {
           var hash = (data.receipts && data.receipts.entries && data.receipts.entries[0] && data.receipts.entries[0].sha256) ||
                      (data.generator && data.generator.sha256) || 'V999-SEALED';
-          elLedger.innerHTML = 'WITNESS HASH: <span style="color:#4af626;">[' + hash.substring(0, 8) + ']</span>';
+          elLedger.innerHTML = 'LEDGER POINTER: <span style="color:#4af626;">[' + hash.substring(0, 8) + ']</span>';
         } else {
-          elLedger.innerHTML = 'WITNESS HASH: <span style="color:#f00;">[DESYNC]</span>';
+          elLedger.innerHTML = 'LEDGER POINTER: <span style="color:#f00;">[DESYNC]</span>';
         }
       })
       .catch(function(err) {
         console.error("arifFLOW telemetry fault:", err);
         var elLedger = document.getElementById('hb-ledger');
-        if (elLedger) elLedger.innerHTML = 'WITNESS HASH: <span style="color:#faa;">[FAULT]</span>';
+        if (elLedger) elLedger.innerHTML = 'LEDGER POINTER: <span style="color:#faa;">[FAULT]</span>';
       });
   });
 })();

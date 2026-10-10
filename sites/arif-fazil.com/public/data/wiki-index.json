@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "arifOS Federation & Subsurface Knowledge Wiki",
+  "updated_at": "2026-10-10T15:00:00Z",
+  "categories": [
+    "Identity & Biography",
+    "Subsurface & Earth Methodology",
+    "Agents & Federation Architecture",
+    "Civilizational Order & Geopolitics"
+  ],
+  "entries": [
+    {
+      "slug": "arif-fazil",
+      "title": "Arif Fazil \u2014 Sovereign Dossier",
+      "category": "Identity & Biography",
+      "epistemic_class": "HISTORICAL",
+      "canonical_status": "CANONICAL",
+      "source": "Primary records: 13 years offshore exploration geoscience (Malay/Sabah basins), founder arifOS & GEOX",
+      "updated_at": "2026-10-08T00:00:00Z",
+      "desc": "Biographical evidence, professional exploration track record, and architect dossier of the arifOS federation.",
+      "links": [
+        "/work/exploration-2013-2026/",
+        "/000/",
+        "/institution/"
+      ]
+    },
+    {
+      "slug": "ontology-sovereign-anchor",
+      "title": "Ontology & Human Sovereign Anchor",
+      "category": "Identity & Biography",
+      "epistemic_class": "DERIVED",
+      "canonical_status": "CANONICAL",
+      "source": "ARIFOS Constitutional Floors F1\u2013F13; Section /000 Genesis Statement",
+      "updated_at": "2026-09-12T00:00:00Z",
+      "desc": "Formal rationale why governed intelligence requires an irreducible human sovereign veto at F13 to prevent algorithmic drift.",
+      "links": [
+        "/000/",
+        "/words/writing/the-last-scarcity-witness-theory-of-human-want/"
+      ]
+    },
+    {
+      "slug": "ditempa-bukan-diberi",
+      "title": "Philosophy of Ditempa Bukan Diberi",
+      "category": "Identity & Biography",
+      "epistemic_class": "INTERPRETATION",
+      "canonical_status": "CANONICAL",
+      "source": "arifOS Genesis Canon & Sovereign Seal",
+      "updated_at": "2026-08-30T00:00:00Z",
+      "desc": "Foundational operational doctrine: systems are forged through contact with reality and empirical resistance, not granted by assumption.",
+      "links": [
+        "/000/",
+        "/words/"
+      ]
+    },
+    {
+      "slug": "avo-fluid-factor-residuals",
+      "title": "AVO Fluid Factor & Attention Residuals",
+      "category": "Subsurface & Earth Methodology",
+      "epistemic_class": "OBSERVED",
+      "canonical_status": "CANONICAL",
+      "source": "Zoeppritz equations; Shuey (1985); GEOX geophysics engine & well calibration receipts",
+      "updated_at": "2026-10-05T00:00:00Z",
+      "desc": "Physics-constrained subsurface attention mechanism deriving fluid anomalies from pre-stack seismic amplitudes.",
+      "links": [
+        "/earth/",
+        "/work/exploration-2013-2026/evidence/"
+      ]
+    },
+    {
+      "slug": "malay-sabah-basin-models",
+      "title": "Malay & Sabah Deepwater Basin Models",
+      "category": "Subsurface & Earth Methodology",
+      "epistemic_class": "OBSERVED",
+      "canonical_status": "CANONICAL",
+      "source": "Madon (2013), Ishlah (2015), public offshore exploration wells & field logs",
+      "updated_at": "2026-10-08T00:00:00Z",
+      "desc": "Tectonostratigraphic architecture, Oligo-Miocene play fairways, and fault seal risk across Western Hinge and Sabah deepwater folds.",
+      "links": [
+        "/earth/malay-basin/",
+        "/earth/"
+      ]
+    },
+    {
+      "slug": "seven-contract-agent-model",
+      "title": "The Seven-Contract Agent Model",
+      "category": "Agents & Federation Architecture",
+      "epistemic_class": "DERIVED",
+      "canonical_status": "CANONICAL",
+      "source": "arifOS A2A Gateway Protocol & Human Attention Membrane Specification",
+      "updated_at": "2026-09-26T00:00:00Z",
+      "desc": "Seven structural contracts separating an authentic agent from an unanchored script: boundary, context, tool veto, evidence, and consequence accountability.",
+      "links": [
+        "/human/",
+        "/machines/"
+      ]
+    },
+    {
+      "slug": "holy-8-verbs-arifos",
+      "title": "The Holy 8 Verbs of arifOS",
+      "category": "Agents & Federation Architecture",
+      "epistemic_class": "DERIVED",
+      "canonical_status": "CANONICAL",
+      "source": "arifOS Kernel Architecture (init, observe, think, route, memory, judge, forge, seal)",
+      "updated_at": "2026-10-01T00:00:00Z",
+      "desc": "The canonical 8-verb authority loop executing all state transitions across the federation without bypass.",
+      "links": [
+        "/arifos/",
+        "/999/"
+      ]
+    },
+    {
+      "slug": "seven-civilizational-languages",
+      "title": "The Seven Civilizational Languages of AI",
+      "category": "Civilizational Order & Geopolitics",
+      "epistemic_class": "INTERPRETATION",
+      "canonical_status": "PROVISIONAL",
+      "source": "Synthesis of World Order (Kissinger), Walter Isaacson biographies, and Nusantara statecraft",
+      "updated_at": "2026-08-14T00:00:00Z",
+      "desc": "Mapping historical statecraft and diplomatic equilibrium onto multi-agent autonomous swarms and sovereign boundaries.",
+      "links": [
+        "/words/writing/"
+      ]
+    },
+    {
+      "slug": "musyawarah-vs-algorithmic-diktat",
+      "title": "Musyawarah vs. Unilateral Algorithmic Diktat",
+      "category": "Civilizational Order & Geopolitics",
+      "epistemic_class": "DERIVED",
+      "canonical_status": "CANONICAL",
+      "source": "arifOS Deliberation Framework (333 Architect \u00d7 555 Auditor \u00d7 888 Judge)",
+      "updated_at": "2026-09-20T00:00:00Z",
+      "desc": "Archipelagic consensus preventing epistemic failure through adversarial dialectic before execution.",
+      "links": [
+        "/discovery/",
+        "/999/"
+      ]
+    },
+    {
+      "slug": "batu-enjin-reality-constraints",
+      "title": "Batu & Enjin: Reality Constraints at Depth",
+      "category": "Civilizational Order & Geopolitics",
+      "epistemic_class": "OBSERVED",
+      "canonical_status": "CANONICAL",
+      "source": "Overpressure regimes, pore pressure drilling calculations, and physical energy infrastructure",
+      "updated_at": "2026-10-04T00:00:00Z",
+      "desc": "Why physical rocks at 3,000m subsea strictly constrain financial models, tech narratives, and political announcements.",
+      "links": [
+        "/vitals/",
+        "/earth/"
+      ]
+    }
+  ]
+}

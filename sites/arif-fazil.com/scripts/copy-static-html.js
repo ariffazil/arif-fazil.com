@@ -20,7 +20,6 @@ const SPA_ROUTES = [
   "about",
   "words",
   "words/essays",
-  "words/wiki",
   "words/makcikgpt",
   "world",
   "work",
@@ -93,7 +92,7 @@ const ROUTE_META = {
   },
   evidence: {
     title: "Evidence Register — Arif Fazil",
-    description: "Public evidence behind the claims on this site: sources, dates, limitations, and what is withheld.",
+    description: "Public evidence behind the claims on this site: sources, dates, limitations, what is withheld, and explicit Consequence Episodes.",
     path: "/evidence/",
     h1: "Evidence Register",
   },

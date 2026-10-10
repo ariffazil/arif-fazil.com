@@ -1,0 +1,44 @@
+# Release evidence / deploy receipt. NOT a kernel SEAL.
+# Produced per /root/arif-fazil.com/AGENTS.md §14.
+release_candidate:
+  commit: "6140fd30f8896aa9c67ce9c1b83f5d7821cc7cd0"
+  branch: site/harden
+  environment: production_public_html
+  changed_routes:
+    - "16 index.html paths touched (public/makcigpt, exploration-2013-2026, wiki, cockpit, root)"
+  public_effect:
+    - "68 files changed, +342 -84 — committed and pushed (4feadec..6140fd3)"
+    - "NOT deployed. No rsync. No Caddy reload."
+  tests:
+    verify_pages: "PASS — 213 pages verified, 9 intentionally excluded; 1 warning: 301 on /.well-known/mcp/server.json"
+    doctor_before: not_run
+    doctor_after: not_run
+    doctor_fail_set_delta: not_run
+    build: not_run
+    playwright_home: not_run
+    playwright_human: not_run
+    playwright_institution: not_run
+    axe: not_run
+    lighthouse: not_run
+    machine_manifests:
+      llms_txt: 200
+      machine_witness_json: 200
+      a2a: 404   # required to stay 404 by AGENTS.md §35
+  security:
+    secrets_scan: "PASS — 0 matches on staged diff (api_key|secret|token|password|PRIVATE KEY|ghp_|sk-)"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+    caddy_active_enter: "2026-10-09T21:03:10+08 — unchanged by this work"
+  rollback:
+    backup: "sites/arif-fazil.com/.backups/asset-refs-2026-10-10 (present, deliberately NOT staged)"
+    git: "git revert 6140fd30f8896aa9c67ce9c1b83f5d7821cc7cd0"
+  requested_action: "none"
+  approver: ""   # empty until Arif
+  notes:
+    - "AGENTS.md §7 honoured: no whole `make deploy`, no Caddy reload (T3 HOLD unless named)."
+    - "AGENTS.md §14 honoured: no SEAL issued by any agent."
+    - "AGENTS.md §38-42 call `make verify-pages` NON-BYPASSABLE. It was run and passed. Observed fact: the gate is MANUAL — no CI run was triggered by this push (the three most recent runs on this repository are from 2026-10-08). It is therefore non-bypassable by convention, not by enforcement. Recorded, not judged."
+    - "Playwright, axe, Lighthouse and `web_zen.py doctor` were NOT run and are recorded as not_run — never as pass."
+    - "Untracked and intentionally left out of the commit: `sites/arif-fazil.com/.backups/asset-refs-2026-10-10/`."
+    - "Excluded from scope by the invoker's instruction: AAA hook debris (`pre-push.broken`, `pre-push.disabled`) and the 19 repositories with no upstream tracking."

@@ -1,9 +1,9 @@
 {
-  "observed_at": "2026-10-10T07:54:16Z",
-  "snapshot_id": "obs_20261010_075416",
+  "observed_at": "2026-10-10T19:24:17Z",
+  "snapshot_id": "obs_20261010_192417",
   "signature_state": "signed",
-  "source_commit": "dbecd35",
-  "deployed_commit": "dbecd35",
+  "source_commit": "9aff141",
+  "deployed_commit": "9aff141",
   "artifact_drift": "ALIGNED",
   "capabilities_declared": 8,
   "capabilities_proven_live": 3,
@@ -12,7 +12,7 @@
   "receipt_state": {
     "snapshot_receipt": "PRESENT",
     "issuer_claim": "SEAL",
-    "head_seq": 68,
+    "head_seq": 69,
     "signature_verified": null,
     "chain_verified": false,
     "replay_verified": true
@@ -20,8 +20,8 @@
   "_meta": {
     "stale": false,
     "source": "https://arifos.arif-fazil.com/api/observatory/v1/snapshot",
-    "generated_at": "2026-10-10T08:04:10.654Z",
-    "fetched_at": "2026-10-10T08:04:10.655Z",
-    "snapshot_id": "obs_20261010_075416"
+    "generated_at": "2026-10-10T19:28:15.103Z",
+    "fetched_at": "2026-10-10T19:28:15.104Z",
+    "snapshot_id": "obs_20261010_192417"
   }
 }

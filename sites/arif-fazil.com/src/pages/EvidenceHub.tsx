@@ -159,6 +159,64 @@ export function EvidenceHub() {
           </div>
         </section>
 
+        
+        {/* ── CONSEQUENCE EPISODE: INTENT → EVIDENCE → DECISION → EXECUTION → CONSEQUENCE → CONTINUITY ── */}
+        <section className="rounded-xl border border-[#1F2733] bg-[#0A0D14] p-8 mb-16">
+          <div className="flex items-center justify-between pb-3 mb-6 border-b border-[#1F2733]">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-widest text-[#10B981] mb-1">
+                Causal Trajectory · Non-Synthetic Chain
+              </div>
+              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">
+                Consequence Episode
+              </h2>
+            </div>
+            <span className="font-mono text-xs text-[#9AA0A8] uppercase tracking-wider">
+              Strict Falsifiability
+            </span>
+          </div>
+
+          <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-6 max-w-3xl">
+            No action or claim is sealed without tracing its consequence arc. If any evidence packet is missing, the chain fail-closes explicitly rather than fabricating closure.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-3 font-mono text-xs mb-8">
+            <div className="p-3 rounded bg-[#0F131D] border border-[#1F2733]">
+              <span className="text-[#E4572E] font-bold block mb-1">01. INTENT</span>
+              <span className="text-[#EDEAE2]">Ground public surface in witnessed reality</span>
+            </div>
+            <div className="p-3 rounded bg-[#0F131D] border border-[#1F2733]">
+              <span className="text-[#38BDF8] font-bold block mb-1">02. EVIDENCE</span>
+              <span className="text-[#EDEAE2]">Observed endpoints & hash-verified files</span>
+            </div>
+            <div className="p-3 rounded bg-[#0F131D] border border-[#1F2733]">
+              <span className="text-[#F59E0B] font-bold block mb-1">03. DECISION</span>
+              <span className="text-[#EDEAE2]">Zero fake quotes, UNKNOWN preserved</span>
+            </div>
+            <div className="p-3 rounded bg-[#0F131D] border border-[#1F2733]">
+              <span className="text-[#10B981] font-bold block mb-1">04. EXECUTION</span>
+              <span className="text-[#EDEAE2]">Atomic build & deployment pass</span>
+            </div>
+            <div className="p-3 rounded bg-[#0F131D] border border-[#1F2733]">
+              <span className="text-[#A78BFA] font-bold block mb-1">05. CONSEQUENCE</span>
+              <span className="text-[#EDEAE2]">Public projections match reality without drift</span>
+            </div>
+            <div className="p-3 rounded bg-[#0F131D] border border-[#1F2733]">
+              <span className="text-[#9AA0A8] font-bold block mb-1">06. CONTINUITY</span>
+              <span className="text-[#EDEAE2]">Immutable audit trail & rollback readiness</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded border border-[#1F2733] bg-[#07090E] flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <span className="font-mono text-xs text-[#9AA0A8] block">UNVERIFIED PACKET FALLBACK TEST:</span>
+              <span className="font-mono text-xs text-[#E4572E]">EVIDENCE UNAVAILABLE · DECISION NOT DERIVED · EXECUTION NOT CLAIMED</span>
+            </div>
+            <div className="font-mono text-[11px] text-[#9AA0A8]">
+              Public Digest Ref: <code className="text-[#EDEAE2]">hash-bound::ep-20261010-001</code>
+            </div>
+          </div>
+        </section>
         {/* ── 3. COMMODITY & MARKET TERMINALS ── */}
         <section>
           <div className="flex items-center justify-between pb-3 mb-6 border-b border-[#1F2733]">

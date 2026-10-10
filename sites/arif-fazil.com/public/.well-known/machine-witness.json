@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "1.0.0",
+  "description": "Public Machine Witness Projection Contract for KVM2, KVM4, and KVM8. Bounded by strict allowlist.",
+  "policy": {
+    "projection": "allowlist_only",
+    "private_exposure": "prohibited",
+    "authority_nature": "projection_not_sovereign",
+    "epistemic_class": "OBSERVED_OR_UNKNOWN"
+  },
+  "witnesses": {
+    "KVM2": {
+      "machine_alias": "KVM2",
+      "schema_version": "1.0.0",
+      "collector_version": "1.0.0",
+      "snapshot_age_seconds": null,
+      "observation_status": "UNAVAILABLE",
+      "lineage_verdict": "UNKNOWN",
+      "contradiction_count": 0,
+      "signature_verification_status": "UNVERIFIED",
+      "transport_receipt_status": "UNOBSERVED",
+      "redacted_resource_class": "allowlist_enforced",
+      "last_successful_witness_time": null,
+      "reason": "External machine telemetry not queried directly without live authenticated probe; state preserved as UNKNOWN."
+    },
+    "KVM4": {
+      "machine_alias": "KVM4",
+      "schema_version": "1.0.0",
+      "collector_version": "1.0.0",
+      "snapshot_age_seconds": null,
+      "observation_status": "UNAVAILABLE",
+      "lineage_verdict": "UNKNOWN",
+      "contradiction_count": 0,
+      "signature_verification_status": "UNVERIFIED",
+      "transport_receipt_status": "UNOBSERVED",
+      "redacted_resource_class": "allowlist_enforced",
+      "last_successful_witness_time": null,
+      "reason": "External machine telemetry not queried directly without live authenticated probe; state preserved as UNKNOWN."
+    },
+    "KVM8": {
+      "machine_alias": "KVM8 (Host af-forge)",
+      "schema_version": "1.0.0",
+      "collector_version": "1.0.0",
+      "snapshot_age_seconds": 0,
+      "observation_status": "OBSERVED",
+      "lineage_verdict": "LOCAL_NODE_VERIFIED",
+      "contradiction_count": 0,
+      "signature_verification_status": "LOCAL_EXEC_RECEIPT",
+      "transport_receipt_status": "LOCAL_TRANSPORT_OK",
+      "redacted_resource_class": "allowlist_enforced",
+      "last_successful_witness_time": "2026-10-10T06:50:00Z",
+      "reason": "Active build & execution witness on host af-forge."
+    }
+  }
+}

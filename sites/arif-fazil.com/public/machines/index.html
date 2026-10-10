@@ -107,7 +107,19 @@
   <a href="/.well-known/hold-conditions.json">hold-conditions</a> ·
   <a href="/schemas/v1/index.json">JSON schemas</a></p>
 
-  <h2>Three zones</h2>
+  <h2>Machine Witness Public Contract (KVM2 · KVM4 · KVM8)</h2>
+<p>Explicit allowlist projection of machine witness state. Private paths, internal IPs, credentials, host keys, and environment variables are strictly withheld.</p>
+<table>
+  <thead><tr><th>Machine</th><th>Observation</th><th>Lineage</th><th>Signature</th><th>Transport Receipt</th><th>Witness Status</th></tr></thead>
+  <tbody>
+    <tr><td><code>KVM2</code></td><td><span style="color:#9AA0A8;">UNAVAILABLE</span></td><td>UNKNOWN</td><td>UNVERIFIED</td><td>UNOBSERVED</td><td>Preserved as UNKNOWN (no synthetic numbers)</td></tr>
+    <tr><td><code>KVM4</code></td><td><span style="color:#9AA0A8;">UNAVAILABLE</span></td><td>UNKNOWN</td><td>UNVERIFIED</td><td>UNOBSERVED</td><td>Preserved as UNKNOWN (no synthetic numbers)</td></tr>
+    <tr><td><code>KVM8 (Host af-forge)</code></td><td><span style="color:#5ec8c0;">OBSERVED</span></td><td>LOCAL_NODE_VERIFIED</td><td>LOCAL_EXEC_RECEIPT</td><td>LOCAL_TRANSPORT_OK</td><td>Build & Execution Witness active</td></tr>
+  </tbody>
+</table>
+<p class="muted">Public JSON contract: <a href="/.well-known/machine-witness.json"><code>/.well-known/machine-witness.json</code></a></p>
+
+<h2>Three zones</h2>
   <div class="zone">
     <p><strong>Public read</strong> — HTML dossiers, doctrine, writing, <code>llms.txt</code>, catalogs. Crawlers and training with RSL attribution.</p>
     <p><strong>Governed query</strong> — live pipes and MCP/WebMCP GET tools that return cited outputs. Compute-only organs. No silent writes.</p>

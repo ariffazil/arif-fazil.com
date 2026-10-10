@@ -1,9 +1,9 @@
 {
-  "observed_at": "2026-10-02T04:00:21Z",
-  "snapshot_id": "obs_20261002_040021",
+  "observed_at": "2026-10-10T07:54:16Z",
+  "snapshot_id": "obs_20261010_075416",
   "signature_state": "signed",
-  "source_commit": "122e49e",
-  "deployed_commit": "122e49e",
+  "source_commit": "dbecd35",
+  "deployed_commit": "dbecd35",
   "artifact_drift": "ALIGNED",
   "capabilities_declared": 8,
   "capabilities_proven_live": 3,
@@ -11,8 +11,8 @@
   "highest_unknown": "F-004 (HIGH, OPEN) — VAULT paths live; chain not fully green (gaps declared allowed)",
   "receipt_state": {
     "snapshot_receipt": "PRESENT",
-    "issuer_claim": "SEALED",
-    "head_seq": 62,
+    "issuer_claim": "SEAL",
+    "head_seq": 68,
     "signature_verified": null,
     "chain_verified": false,
     "replay_verified": true
@@ -20,8 +20,8 @@
   "_meta": {
     "stale": false,
     "source": "https://arifos.arif-fazil.com/api/observatory/v1/snapshot",
-    "generated_at": "2026-10-02T04:21:52.727Z",
-    "fetched_at": "2026-10-02T04:21:52.727Z",
-    "snapshot_id": "obs_20261002_040021"
+    "generated_at": "2026-10-10T08:04:10.654Z",
+    "fetched_at": "2026-10-10T08:04:10.655Z",
+    "snapshot_id": "obs_20261010_075416"
   }
 }

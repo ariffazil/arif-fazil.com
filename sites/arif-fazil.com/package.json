@@ -5,15 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-agent-shells.cjs && node scripts/generate-nav-canon.cjs && node scripts/generate-feed.cjs && node scripts/generate-discovery.cjs && node scripts/generate-discovery-graph.cjs && node scripts/generate-makcik-index.cjs && node scripts/generate-md-mirrors.cjs && node scripts/generate-wealth-archive-index.cjs && node scripts/generate-ns-telemetry.cjs && node scripts/generate-ns-compare.cjs && node -e \"const fs=require('fs');const p='/root/web-canon/scripts/verify-design-canon.cjs';if(fs.existsSync(p)){require('child_process').execFileSync(process.execPath,[p],{stdio:'inherit'})}else if(process.env.CI){console.log('info: verify-design-canon skipped in CI (web-canon not present)')}else{console.error('web-canon verifier missing on VPS: '+p);process.exit(1)}\"",
+    "prebuild": "node scripts/render-arifos-reality.cjs && node scripts/generate-agent-shells.cjs && node scripts/generate-nav-canon.cjs && node scripts/generate-feed.cjs && node scripts/generate-discovery.cjs && node scripts/generate-discovery-graph.cjs && node scripts/generate-makcik-index.cjs && node scripts/generate-md-mirrors.cjs && node scripts/generate-wealth-archive-index.cjs && node scripts/generate-ns-telemetry.cjs && node scripts/generate-ns-compare.cjs && node scripts/generate-wiki-index.cjs && node -e \"const fs=require('fs');const p='/root/web-canon/scripts/verify-design-canon.cjs';if(fs.existsSync(p)){require('child_process').execFileSync(process.execPath,[p],{stdio:'inherit'})}else if(process.env.CI){console.log('info: verify-design-canon skipped in CI (web-canon not present)')}else{console.error('web-canon verifier missing on VPS: '+p);process.exit(1)}\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "postinstall": "node patches/vite-plugin-ssg.js",
     "postbuild": "node scripts/copy-static-html.js && node scripts/prerender-makcik-slugs.cjs && node scripts/render-vitals.cjs && node scripts/refresh-hand-page-assets.cjs",
-    "test:source-parity": "node --test tests/makcik-source.test.cjs tests/wealth-archive-source.test.cjs tests/caddy-source.test.cjs tests/vitals-parity.test.cjs",
+    "test:source-parity": "node --test tests/makcik-source.test.cjs tests/wealth-archive-source.test.cjs tests/caddy-source.test.cjs tests/vitals-parity.test.cjs tests/wiki-source.test.cjs",
     "test:makcik": "node --test tests/makcik-source.test.cjs",
-    "test:vitals-parity": "node --test tests/vitals-parity.test.cjs"
+    "test:vitals-parity": "node --test tests/vitals-parity.test.cjs",
+    "test:wiki": "node --test tests/wiki-source.test.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

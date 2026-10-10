@@ -18,8 +18,8 @@
   'use strict';
 
   const PUBLIC_STATE_LIVE = '/api/public-state';
-  const PUBLIC_STATE_MIRROR = '/.well-known/public-state.json';
-  const SNAPSHOT_MIRROR = '/.well-known/observatory-snapshot-latest.json';
+  const PUBLIC_STATE_MIRROR = 'https://arifos.arif-fazil.com/.well-known/public-state.json';
+  const SNAPSHOT_MIRROR = 'https://arifos.arif-fazil.com/.well-known/observatory-snapshot-latest.json';
   const SNAPSHOT_LIVE = '/api/observatory/v1/snapshot';
   const REFRESH_MS = 30000;
   // arifos.public-state.v1 can carry stale data (esp. arifFlow FQ). After
@@ -644,9 +644,9 @@
     { id: 'P1-2', scope: 'Python client', status: 'SEALED' },
     { id: 'P1-3', scope: 'TypeScript client', status: 'SEALED' },
     { id: 'P1-B', scope: 'PAI ↔ arifFLOW bridge', status: 'SEALED' },
-    { id: 'P1-4', scope: 'AAA emitReceipt wiring', status: 'SEALED LIVE' },
-    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'CANARY LIVE' },
-    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'CANARY LIVE' },
+    { id: 'P1-4', scope: 'AAA emitReceipt wiring', status: 'DECLARED' },
+    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'DECLARED_CANARY' },
+    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'DECLARED_CANARY' },
     { id: 'P1-7', scope: 'deprecation flags', status: 'pending' },
   ];
   const p1Snapshot = (data) => {
@@ -798,11 +798,11 @@
   const flowEdgeOverlays = [
     {
       source: 'AAA', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'yes',
-      receipt_produced: 'yes', telemetry_produced: 'yes', overall: 'SEALED LIVE', overlay_ref: 'P1-4',
+      receipt_produced: 'yes', telemetry_produced: 'yes', overall: 'DECLARED', overlay_ref: 'P1-4',
     },
     {
       source: 'A-FORGE', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'canary P1-5f 2026-09-09',
-      receipt_produced: 'canary live (P1-5f)', telemetry_produced: 'live via telemetry.ts /ingest (P1-6)', overall: 'CANARY LIVE', overlay_ref: 'AF-110 / P1-5',
+      receipt_produced: 'canary live (P1-5f)', telemetry_produced: 'live via telemetry.ts /ingest (P1-6)', overall: 'DECLARED_CANARY', overlay_ref: 'AF-110 / P1-5',
     },
     {
       source: 'arifOS', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'pending OS-1',

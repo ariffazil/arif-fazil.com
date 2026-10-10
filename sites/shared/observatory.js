@@ -18,8 +18,8 @@
   'use strict';
 
   const PUBLIC_STATE_LIVE = '/api/public-state';
-  const PUBLIC_STATE_MIRROR = '/.well-known/public-state.json';
-  const SNAPSHOT_MIRROR = '/.well-known/observatory-snapshot-latest.json';
+  const PUBLIC_STATE_MIRROR = 'https://arifos.arif-fazil.com/.well-known/public-state.json';
+  const SNAPSHOT_MIRROR = 'https://arifos.arif-fazil.com/.well-known/observatory-snapshot-latest.json';
   const SNAPSHOT_LIVE = '/api/observatory/v1/snapshot';
   const REFRESH_MS = 30000;
   // arifos.public-state.v1 can carry stale data (esp. arifFlow FQ). After

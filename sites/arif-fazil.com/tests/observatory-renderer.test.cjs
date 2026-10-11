@@ -6,7 +6,8 @@ const { chromium } = require('playwright');
 
 const SITE_ROOT = path.resolve(__dirname, '..');
 const REPO_ROOT = path.resolve(SITE_ROOT, '../..');
-const PAGE_PATH = path.join(SITE_ROOT, 'public/arifos/index.html');
+// Live /arifos/ is the hand truth page. This fixture keeps the Observatory contract.
+const PAGE_PATH = path.join(SITE_ROOT, 'tests/fixtures/arifos-observatory-20261011.html');
 const CANONICAL_PATH = path.join(REPO_ROOT, 'sites/shared/observatory.js');
 const ROOT_MIRROR_PATH = path.join(SITE_ROOT, 'public/_shared/observatory.js');
 const ARIFOS_MIRROR_PATH = path.join(SITE_ROOT, 'public/arifos/_shared/observatory.js');

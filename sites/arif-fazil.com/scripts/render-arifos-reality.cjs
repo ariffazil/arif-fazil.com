@@ -159,6 +159,14 @@ async function main() {
     process.exit(2);
   }
 
+  // The hand truth page at public/arifos/index.html has no REALITY markers.
+  // Injecting a block after <body> would rewrite that page on every prebuild.
+  // The Observatory contract lives in tests/fixtures/ and is not this target.
+  if (!(html.includes(BEGIN) && html.includes(END))) {
+    console.log("[arifos-reality] no REALITY markers — leaving the hand page unchanged");
+    return;
+  }
+
   const res = await fetchSnapshot();
   let data;
   let meta;

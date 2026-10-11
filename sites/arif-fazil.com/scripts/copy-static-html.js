@@ -25,8 +25,9 @@ const SPA_ROUTES = [
   "work",
   "work/exploration-2013-2026",
   "work/exploration-2013-2026/evidence",
-  "AAA",
-  "aaa",
+  // /aaa and /AAA are not SPA routes. Caddy 301s both to https://aaa.arif-fazil.com/
+  // and that host serves the hand truth page. Leaving them here made every build
+  // write the homepage shell over dist/aaa/index.html.
   "makcikgpt",
   "world/makcikgpt",
   "missions",
@@ -195,6 +196,14 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   // Removed from SPA_ROUTES above (no route-stamping, no overwrite).
   "000/index.html",
   "999/index.html",
+  // 2026-10-11 public-surface truth pages. Verbatim, not React.
+  // These are not in SPA_ROUTES, so the mirror copies them and the Vite
+  // bundle is not injected. aaa.arif-fazil.com, /arifos/, the MCP gateway,
+  // and the A-FORGE page each keep the file that is already live.
+  "aaa/index.html",
+  "arifos/index.html",
+  "mcp/index.html",
+  "forge/index.html",
   ]);
 
 function shouldSkip(relativePath, isDir) {

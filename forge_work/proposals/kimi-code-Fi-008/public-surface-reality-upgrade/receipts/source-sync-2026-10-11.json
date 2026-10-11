@@ -1,0 +1,27 @@
+{
+  "kind": "source-sync",
+  "at": "2026-10-11",
+  "actor": "FI-007",
+  "caddy_reload": false,
+  "make_deploy": false,
+  "note": "Live bytes copied into the copies a later build reads. Not a constitutional seal. forge.arif-fazil.com still 301s to mcp.arif-fazil.com.",
+  "pages": {
+    "aaa": {"sha256_12": "fed147176a58", "bytes": 11813, "public": true, "dist": true, "webroot_arif_aaa": true, "organ_dist_untouched": true},
+    "arifos": {"sha256_12": "c9349f0ccc3f", "bytes": 21289, "public": true, "dist": true},
+    "mcp": {"sha256_12": "87830e361ab4", "bytes": 8834, "public": true, "dist": true},
+    "forge": {"sha256_12": "dfe3d757c466", "bytes": 7494, "public": true, "dist": true, "host_still_redirects": true}
+  },
+  "build_guard": {
+    "aaa_removed_from_spa_routes": true,
+    "allowlist": ["aaa/index.html", "arifos/index.html", "mcp/index.html", "forge/index.html"],
+    "render_arifos_reality_noops_without_markers": true,
+    "observatory_fixture": "sites/arif-fazil.com/tests/fixtures/arifos-observatory-20261011.html"
+  },
+  "probes": {
+    "https://aaa.arif-fazil.com/": "200 title AAA — What is open",
+    "https://arif-fazil.com/arifos/": "200 title arifOS — Governed execution for consequential AI agents",
+    "https://mcp.arif-fazil.com/": "200 title arifOS MCP — Developer Gateway (bounded, observed)",
+    "https://forge.arif-fazil.com/": "301 https://mcp.arif-fazil.com/",
+    "https://arif-fazil.com/aaa/": "301 https://aaa.arif-fazil.com/"
+  }
+}

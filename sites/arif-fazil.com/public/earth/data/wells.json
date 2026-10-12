@@ -1,7 +1,8 @@
 {
   "schema": "geox-wells/v1",
-  "generated_from": "sovereign handover 2026-07-20 (DATA GATE answered in writing)",
-  "epistemic": "All four wells tier=existence by sovereign ruling 2026-07-20. Existence tier carries NO coordinates, depths, or results. Markers are rendered at jittered basin-level positions client-side; basin anchors are coarse public geography, not well locations.",
+  "generated_from": "sovereign handover 2026-07-20 (DATA GATE answered in writing); spud_year values corrected 2026-10-12 against arif-fazil.com/work/exploration-2013-2026/ canonical portfolio",
+  "canonical_year_source": "arif-fazil.com/work/exploration-2013-2026/ (Muhammad Arif Fazil public portfolio, sovereign-explorer attested)",
+  "epistemic": "All four wells tier=existence by sovereign ruling 2026-07-20. Existence tier carries NO coordinates, depths, or results. Spud years are sovereign-explorer attested (public portfolio) and cross-checked against PETRONAS media releases, Upstream Online reporting, and contractor LinkedIn timelines. Markers are rendered at jittered basin-level positions client-side; basin anchors are coarse public geography, not well locations.",
   "basin_anchors": {
     "Malay Basin": {
       "lat": 4.0,
@@ -16,7 +17,7 @@
       "lng": null,
       "water_depth_m": null,
       "td_m": null,
-      "spud_year": 2018,
+      "spud_year": 2024,
       "operator": "PETRONAS",
       "role": null,
       "status": "discovery",
@@ -32,14 +33,14 @@
       "lng": null,
       "water_depth_m": null,
       "td_m": null,
-      "spud_year": 2020,
+      "spud_year": 2017,
       "operator": "PETRONAS",
       "role": null,
       "status": "discovery",
       "play": "fractured basement / overlying clastics",
       "significance": "Fractured basement test \u2014 basement water-bearing, discovered hydrocarbons in overlying K-5 sands",
       "tier": "existence",
-      "location_note": "Malay Basin, offshore Peninsular Malaysia",
+      "location_note": "Malay Basin (Block PM318, offshore Peninsular Malaysia) · fractured granite basement + K-5 sandstone objectives",
       "basin": "Malay Basin"
     },
     {
@@ -64,14 +65,14 @@
       "lng": null,
       "water_depth_m": null,
       "td_m": null,
-      "spud_year": 2024,
+      "spud_year": 2020,
       "operator": "PETRONAS",
       "role": null,
       "status": "discovery",
       "play": "syn-rift test / post-rift clastics",
       "significance": "Post-rift I/J sand oil discovery (syn-rift water-bearing), reshaping margin and supporting MBR+ Round I award",
       "tier": "existence",
-      "location_note": "Eastern Malay Basin Margin \u00b7 Malaysia Bid Round Plus (MBR+)",
+      "location_note": "Central Malay Basin (Block PM328) \u00b7 MBR+ Round I SFA Cluster award 2024 (PSC signed 26 Jul 2024)",
       "basin": "Malay Basin"
     }
   ],

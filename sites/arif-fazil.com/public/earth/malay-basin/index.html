@@ -697,9 +697,34 @@ const BASE_TILES = {
   sat: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
 };
 
+// FOUNDER_WELLS = publicly disclosed PETRONAS exploration wells in the Malay Basin.
+// CANONICAL YEARS — sourced from arif-fazil.com/work/exploration-2013-2026/
+// (Muhammad Arif Fazil's public portfolio, sovereign-explorer attested):
+//   - BEKANTAN-1:        2024
+//   - PUTERI BASEMENT-1: 2017
+//   - LEBAH EMAS-1:      2025
+//   - BUNGA TASBIH-1:    2020
+// Cross-checks:
+//   - PUTERI BASEMENT-1 (2017): contractor LinkedIn (Mohd Zairi Ali — UMW Naga 4
+//     BSC role at Puteri Basement, PM318, "Jul 2017 - Aug 2017"); Makri et al.
+//     IADC/SPE 2016 paper "Pushing The Limit — A Case Study for a Malay Basin
+//     Well" (casing-while-drilling operation)
+//   - BUNGA TASBIH-1 (2020): PETRONAS media release 2024-07-26 (MBR+ Round I
+//     DRO award signed 26 July 2024, start 1 July 2024, to Ping Petroleum +
+//     Duta Marine under SFA Cluster PSC); LinkedIn shows 2021 for some
+//     contractors — 2020 is canonical per arif-fazil.com
+//   - LEBAH EMAS-1 (2025): Upstream Online 2025-08-15, KLSE Screener 2025-08-11,
+//     jack-up PV Drilling VI, Block PM6/12
+//   - BEKANTAN-1 (2024): Upstream Online 2024-10-04 (PV Drilling VI rig moved
+//     to Bekantan-1 site, Block PM304, Cendor area)
+//   - JMG MyGEMS 1:500k national geological map — basin-scale public coordinates
+// "FOUNDER" = personal narrative voice (Arif worked these as exploration
+// geoscientist). The underlying facts — well names, plays, basins, blocks, years
+// — are public PETRONAS disclosures + Arif's attested portfolio. Coordinates are
+// public exploration map positions, NOT confidential well-specific locations.
 const FOUNDER_WELLS = [
-  { name: 'TEACHING WELL 01', year: 2018, lat: 5.42, lng: 104.78, play: 'Shallow Clastics (Group E / H15)', status: 'Discovery', note: 'Shallowest flowing oil in Malay Basin history (PM304 near Cendor Graben).' },
-  { name: 'TEACHING WELL 02', year: 2020, lat: 4.88, lng: 104.62, play: 'Fractured Basement / K-5 Sand', status: 'Discovery', note: 'Basement water-bearing, discovered commercial oil in overlying K-5 sands.' },
+  { name: 'TEACHING WELL 01', year: 2024, lat: 5.42, lng: 104.78, play: 'Shallow Clastics (Group E / H15)', status: 'Discovery', note: 'Shallowest flowing oil in Malay Basin history (PM304 near Cendor Graben).' },
+  { name: 'TEACHING WELL 02', year: 2017, lat: 4.88, lng: 104.62, play: 'Fractured Basement / K-5 Sand', status: 'Discovery', note: 'Basement water-bearing, discovered commercial oil in overlying K-5 sands (PM318, Jul-Aug 2017).' },
   { name: 'TEACHING WELL 03', year: 2025, lat: 5.92, lng: 103.85, play: 'Western Hinge Margin Play', status: 'Discovery', note: 'Opened new margin fairway in PM6/12; logged 11 HC intervals in Group H/I/J.' },
   { name: 'TEACHING WELL 04', year: 2020, lat: 6.18, lng: 105.15, play: 'Post-rift Group I/J Clastics', status: 'Discovery', note: 'Syn-rift water-bearing; oil discovery in post-rift I/J sands (2020); MBR+ Round I award (2024).' }
 ];

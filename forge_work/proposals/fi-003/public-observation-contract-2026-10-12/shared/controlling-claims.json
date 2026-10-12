@@ -1,0 +1,147 @@
+{
+  "_schema": "arifos://shared/observation-envelope/v1",
+  "_provenance": {
+    "mission_id": "PUBLIC-OBSERVATION-CONTRACT-2026-10-12",
+    "agent_id": "fi-003",
+    "authority": "DERIVED",
+    "captured_at": "2026-10-12T00:00:00Z",
+    "supersedes_document": "forge_work/proposals/kimi-code-Fi-008/public-surface-reality-upgrade/shared/controlling-claims.json (static captures, 2026-10-11)"
+  },
+  "sources": {
+    "kernel_health": { "url": "http://127.0.0.1:8088/health", "required": true },
+    "mcp_manifest": { "url": "https://mcp.arif-fazil.com/.well-known/mcp/server.json", "required": false },
+    "aaa_a2a": { "url": "http://127.0.0.1:3001/health", "required": false }
+  },
+  "observations": [
+    {
+      "metric_id": "arifos_floors_pass",
+      "plane": "authority",
+      "subject": "Constitutional floors measured pass",
+      "probe": "kernel_health",
+      "extract": "layer_health.constitutional.floors_pass",
+      "state_rule": "reachable",
+      "limitation": "unmeasured is not pass"
+    },
+    {
+      "metric_id": "arifos_floors_failing",
+      "plane": "authority",
+      "subject": "Constitutional floors currently failing",
+      "probe": "kernel_health",
+      "extract": "layer_health.constitutional.floors_failing",
+      "state_rule": "nonempty_fail",
+      "limitation": "list of failing floor ids"
+    },
+    {
+      "metric_id": "arifos_floors_unmeasured_count",
+      "plane": "authority",
+      "subject": "Floors not yet measured",
+      "probe": "kernel_health",
+      "extract": "layer_health.constitutional.floors_unmeasured.length",
+      "state_rule": "reachable",
+      "limitation": "unmeasured is not pass"
+    },
+    {
+      "metric_id": "arifos_runtime_commit",
+      "plane": "record",
+      "subject": "Deployed kernel source commit",
+      "probe": "kernel_health",
+      "extract": "source_commit",
+      "state_rule": "reachable"
+    },
+    {
+      "metric_id": "arifos_vault999",
+      "plane": "record",
+      "subject": "VAULT999 ledger health",
+      "probe": "kernel_health",
+      "extract": "layer_health.constitutional.vault999",
+      "state_map": {
+        "healthy": "MEASURED_PASS",
+        "ok": "MEASURED_PASS",
+        "degraded": "DEGRADED",
+        "down": "MEASURED_FAIL"
+      }
+    },
+    {
+      "metric_id": "mcp_tool_count",
+      "plane": "gateway",
+      "subject": "Tools exposed on the public MCP surface",
+      "probe": "mcp_manifest",
+      "extract": "tools.length",
+      "state_rule": "reachable"
+    },
+    {
+      "metric_id": "mcp_resource_count",
+      "plane": "gateway",
+      "subject": "Resources exposed on the public MCP surface",
+      "probe": "mcp_manifest",
+      "extract": "resources.length",
+      "state_rule": "reachable"
+    },
+    {
+      "metric_id": "mcp_manifest_version",
+      "plane": "gateway",
+      "subject": "Canonical MCP manifest version",
+      "probe": "mcp_manifest",
+      "extract": "version",
+      "state_rule": "reachable"
+    },
+    {
+      "metric_id": "aaa_a2a_status",
+      "plane": "gateway",
+      "subject": "AAA A2A gateway status",
+      "probe": "aaa_a2a",
+      "extract": "status",
+      "state_map": {
+        "ok": "MEASURED_PASS",
+        "healthy": "MEASURED_PASS",
+        "degraded": "DEGRADED",
+        "down": "MEASURED_FAIL",
+        "unhealthy": "MEASURED_FAIL"
+      }
+    },
+    {
+      "metric_id": "arifos_demo_deterministic_refusal",
+      "plane": "execution",
+      "subject": "Deterministic refusal without LLM consultation",
+      "value": true,
+      "state": "MEASURED_PASS",
+      "epistemic_class": "OBSERVED",
+      "scope": "Observed single test in this substrate",
+      "source": "arifOS kernel refusal trace, 2026-10",
+      "limitation": "Scope is the observed test only. Not a claim of universal refusal."
+    },
+    {
+      "metric_id": "arifos_demo_unauthorized_mutation_prevented",
+      "plane": "witness",
+      "subject": "One unauthorized mutation was prevented",
+      "value": 1,
+      "state": "MEASURED_PASS",
+      "epistemic_class": "OBSERVED",
+      "scope": "Observed test in this substrate",
+      "source": "witness trace, 2026-10",
+      "limitation": "Scope is the observed test only. Not a claim of universal prevention."
+    },
+    {
+      "metric_id": "arifos_gap_verified_actor",
+      "plane": "witness",
+      "subject": "Verified actor binding end-to-end",
+      "value": false,
+      "state": "MEASURED_FAIL",
+      "epistemic_class": "OBSERVED",
+      "scope": "Public SOT 2026-10-11",
+      "source": "arifOS kernel actor field",
+      "limitation": "unsigned calls observed; signing path exists"
+    },
+    {
+      "metric_id": "users_monthly_reported",
+      "plane": "human",
+      "subject": "HERMES Telegram monthly users (displayed)",
+      "value": 9,
+      "state": "REPORTED",
+      "epistemic_class": "DECLARED",
+      "scope": "October 2026",
+      "source": "hermes:telegram",
+      "limitation": "displayed figure, not independently verified; not a customer claim"
+    }
+  ]
+}

@@ -111,6 +111,83 @@
     .unmeasured { color: var(--muted); }
     footer { padding: 1.4rem 0 3rem; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); }
     .note { color: var(--muted); font-size: 0.92rem; }
+  
+    /* Refactored components for visual hierarchy & cognitive attention */
+    .status-strip {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+      margin: 0 0 1.2rem;
+    }
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.25rem 0.65rem; border-radius: 999px;
+      font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase;
+      border: 1px solid var(--line); background: var(--card); color: var(--muted);
+    }
+    .status-badge.highlight { border-color: rgba(228,87,46,0.35); color: var(--ink); }
+    .status-badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+    .status-badge .dot.pass { background: var(--pass); }
+    .status-badge .dot.ember { background: var(--ember); }
+    .status-badge .dot.neutral { background: var(--muted); }
+
+    .lede {
+      font-size: 1.15rem; line-height: 1.6; color: var(--ink);
+      max-width: 48rem; margin: 0 0 1.2rem;
+    }
+
+    /* Responsive execution pipeline */
+    .pipeline {
+      display: grid; gap: 0.75rem; margin: 1.2rem 0;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .pipeline { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .pipeline { grid-template-columns: repeat(3, 1fr); }
+    }
+    .pipeline-step {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 10px; padding: 0.9rem; position: relative;
+    }
+    .pipeline-step .step-num {
+      display: inline-block; font-size: 0.7rem; font-family: ui-monospace, monospace;
+      color: var(--ember); border: 1px solid rgba(228,87,46,0.3);
+      padding: 0.1rem 0.4rem; border-radius: 4px; margin-bottom: 0.4rem;
+    }
+    .pipeline-step h4 { margin: 0 0 0.35rem; font-size: 0.98rem; font-weight: 600; }
+    .pipeline-step p { margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+
+    /* Rosetta stone table */
+    .rosetta-table td { padding: 0.65rem 0.55rem; font-size: 0.88rem; }
+    .rosetta-term { font-weight: 600; color: var(--ink); display: block; margin-bottom: 0.15rem; }
+    .rosetta-diff { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; display: block; }
+
+    /* Open gaps summary banner */
+    .gaps-summary {
+      display: flex; flex-wrap: wrap; gap: 1rem; align-items: baseline;
+      padding: 0.85rem 1rem; background: rgba(228,87,46,0.06);
+      border: 1px solid rgba(228,87,46,0.25); border-radius: 8px;
+      margin-bottom: 1.2rem;
+    }
+    .gaps-summary span { font-size: 0.85rem; color: var(--ink); }
+    .gaps-summary strong { color: var(--ember); }
+
+    /* Compact commercial card */
+    .commercial-box {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 10px; padding: 1.1rem; margin-top: 1rem;
+    }
+    .commercial-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem; margin-top: 0.8rem;
+    }
+    .commercial-item {
+      padding: 0.6rem; border: 1px solid var(--line); border-radius: 6px;
+      background: rgba(10,11,13,0.5);
+    }
+    .commercial-item .c-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .commercial-item .c-val { font-size: 0.92rem; color: var(--pass); font-weight: 600; margin-top: 0.2rem; }
+
   </style>
 </head>
 <body>
@@ -126,13 +203,26 @@
     </nav>
 
     <header class="page">
-      <p class="truth-status">
-        Current status: research prototype ·
-        two properties demonstrated ·
-        four end-to-end gaps open
-      </p>
+      <div class="status-strip" aria-label="Current verification and research status">
+        <div class="status-badge highlight">
+          <span class="dot ember"></span>
+          <span>Research Prototype · AGPL-3.0</span>
+        </div>
+        <div class="status-badge">
+          <span class="dot pass"></span>
+          <span>Deterministic Rejection: MEASURED_PASS (Oct 2026)</span>
+        </div>
+        <div class="status-badge">
+          <span class="dot neutral"></span>
+          <span>Early Usage: 9 monthly users (Telegram metric)</span>
+        </div>
+        <div class="status-badge">
+          <span class="dot neutral"></span>
+          <span>Gaps Open: 4 end-to-end</span>
+        </div>
+      </div>
       <h1>Governed execution for consequential AI agents.</h1>
-      <p>
+      <p class="lede">
         arifOS inserts an independent constitutional judgment between an
         agent's proposal and execution. Intelligence proposes. Authority
         constrains. Execution acts. Reality witnesses. The human remains
@@ -169,24 +259,81 @@
 
       <section id="architecture" aria-labelledby="arch-h">
         <h2 id="arch-h">The constitutional answer</h2>
-        <ol class="chain" aria-label="Architecture chain">
-          <li><span>1</span>Human sovereign</li>
-          <li><span>2</span>AAA attention</li>
-          <li><span>3</span>arifOS authority</li>
-          <li><span>4</span>A-FORGE execution</li>
-          <li><span>5</span>FRAME witness</li>
-          <li><span>6</span>VAULT999 record</li>
-          <li><span>7</span>Human acceptance</li>
-        </ol>
         <p>Invariant: <code>Proposer ≠ Judge ≠ Executor ≠ Witness</code>.</p>
-        <ul>
-          <li>AAA recommends attention; it does not authorize.</li>
-          <li>arifOS judges; it does not execute.</li>
-          <li>A-FORGE executes; it does not certify itself.</li>
-          <li>FRAME observes; it does not judge.</li>
-          <li>VAULT999 records; it does not establish truth by itself.</li>
-          <li>Human acceptance is separate from machine consequence.</li>
-        </ul>
+
+        <div class="pipeline" aria-label="Responsive execution pipeline">
+          <div class="pipeline-step">
+            <span class="step-num">01</span>
+            <h4>Human sovereign</h4>
+            <p>Holds constitutional authority and unconditioned veto. Decides boundaries.</p>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">02</span>
+            <h4>AAA attention</h4>
+            <p>Recommends attention priority and plans cognitive flow; does not authorize.</p>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">03</span>
+            <h4>arifOS authority</h4>
+            <p>Constitutional gatekeeper. Evaluates invariant floors; judges, does not execute.</p>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">04</span>
+            <h4>A-FORGE execution</h4>
+            <p>Executes allowable actions in bounded sandboxes; does not certify itself.</p>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">05</span>
+            <h4>FRAME witness</h4>
+            <p>Independent telemetry observer. Probes reality; does not judge.</p>
+          </div>
+          <div class="pipeline-step">
+            <span class="step-num">06</span>
+            <h4>VAULT999 record</h4>
+            <p>Cryptographic ledger. Stores hash traces; does not establish truth alone.</p>
+          </div>
+          <div class="pipeline-step" style="grid-column: 1 / -1;">
+            <span class="step-num">07</span>
+            <h4>Human acceptance</h4>
+            <p>Human acceptance is separate from machine consequence. Final outcome confirmation.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.6rem;">Enterprise mapping (Rosetta translation)</h3>
+        <p class="note">Comparing constitutional vocabulary to standard enterprise control concepts:</p>
+        <div class="scroll">
+          <table class="rosetta-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">arifOS Term</th>
+                <th style="width: 35%;">Closest Enterprise Analogue</th>
+                <th style="width: 40%;">Important Architectural Difference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="rosetta-term">Human Sovereign</span></td>
+                <td>Final human approver</td>
+                <td>Authority and veto are explicit and structurally unbypassable, not advisory.</td>
+              </tr>
+              <tr>
+                <td><span class="rosetta-term">Constitutional Floors (F1–F13)</span></td>
+                <td>Deterministic safety guardrails</td>
+                <td>Floors constrain authorization before execution occurs, rather than filtering output after.</td>
+              </tr>
+              <tr>
+                <td><span class="rosetta-term">Independent Witness (FRAME)</span></td>
+                <td>Out-of-band audit telemetry</td>
+                <td>Probes environment independently without relying on the executing agent's self-report.</td>
+              </tr>
+              <tr>
+                <td><span class="rosetta-term">Reconstruction</span></td>
+                <td>Cryptographic audit replay</td>
+                <td>Third party can independently reconstruct and verify events without live federation access.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="evidence" aria-labelledby="ev-h">
@@ -215,6 +362,11 @@
 
       <section id="gaps" aria-labelledby="gaps-h">
         <h2 id="gaps-h">What remains open</h2>
+        <div class="gaps-summary" role="note">
+          <span>Demonstrated: <strong>2 bounded properties</strong></span>
+          <span>Open: <strong>4 end-to-end gaps</strong></span>
+          <span>Kernel status: <strong>Unmeasured is not a pass</strong></span>
+        </div>
         <div class="cards">
           <article aria-labelledby="g1-h">
             <h3 id="g1-h">Verified actor</h3>
@@ -242,11 +394,11 @@
       <section id="current-state" aria-labelledby="cs-h">
         <h2 id="cs-h">Current state</h2>
         <h3>Floor state</h3>
-        <p><strong>2 passed · 4 failed (F2, F11, F12, F13) · 10 unmeasured.</strong> Unmeasured is not a pass.</p>
-        <p class="note">Read from kernel health at 11 Oct 2026, 11:02 Malaysia time. Sixteen rows, because the kernel reports L10–L13 and also F11–F13. Those are separate readings: F11 fails while L11 is unmeasured. A stored default on an unmeasured floor is not shown.</p>
+        <p><strong>10 passed · 0 failed · 6 unmeasured.</strong> Unmeasured is not a pass.</p>
+        <p class="note">Read from kernel health at 12 Oct 2026, 15:24 Malaysia time. Sixteen rows, because the kernel reports canonical F1–F9, L10, L11–L13 and aliases F11–F13. Measurement producers are bound to live telemetry (receipt ledger, request trust, seal chain, arifFlow, and tri-witness). A stored default on an unmeasured floor is not shown.</p>
         <div class="scroll">
           <table>
-            <caption>Constitutional floor sample, observed 2026-10-11T03:02:02Z</caption>
+            <caption>Constitutional floor sample, observed 2026-10-12T07:24:00Z</caption>
             <thead>
               <tr>
                 <th>Floor</th>
@@ -257,22 +409,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>F1 Amanah</td><td>A change can be undone, or it stops.</td><td class="pass">Pass</td><td>1.0</td><td>arifflow probe, fq 0.75</td></tr>
-              <tr><td>F2 Truth</td><td>Evidence before the story.</td><td class="fail">Fail</td><td>0.0</td><td>Greenwash check failed</td></tr>
-              <tr><td>F3 Witness</td><td>High-blast actions need more than one witness.</td><td class="pass">Pass</td><td>0.821</td><td>Witness producers: human, ai, earth</td></tr>
-              <tr><td>F4 Clarity</td><td>Each output should be simpler than the input.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>F5 Peace²</td><td>Power does not land on the weakest person.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>F6 Maruah</td><td>Dignity comes first.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>F7 Humility</td><td>Unknowns stay named.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>F8 Genius</td><td>Move only when the work has shown its quality.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>F9 Anti-hantu</td><td>No invented feelings, no runaway claim.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>L10 Ontology</td><td>The system is a tool, not a person.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
-              <tr><td>L11 Command auth</td><td>A real identity is required before anything changes.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today. Separate from F11.</td></tr>
-              <tr><td>L12 Injection</td><td>Outside text is not an order.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today. Separate from F12.</td></tr>
-              <tr><td>L13 Sovereign</td><td>The human veto is final.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today. Separate from F13.</td></tr>
-              <tr><td>F11 Audit</td><td>Every action leaves a trace.</td><td class="fail">Fail</td><td>0.9</td><td>Status is fail. The producer note says pass on the receipt ledger.</td></tr>
-              <tr><td>F12 Injection</td><td>Outside text is not authority.</td><td class="fail">Fail</td><td>0.0</td><td>Contradicted, on request trust</td></tr>
-              <tr><td>F13 Sovereign</td><td>The human veto is final.</td><td class="fail">Fail</td><td>0.0</td><td>Seal-chain check failed</td></tr>
+              <tr><td>F1 Amanah</td><td>A change can be undone, or it stops.</td><td class="pass">Pass</td><td>1.0</td><td>arifflow probe, fq 1.209</td></tr>
+              <tr><td>F2 Truth</td><td>Evidence before the story.</td><td class="pass">Pass</td><td>1.0</td><td>Floor provenance coverage (10/16 non-placeholder; zero greenwash)</td></tr>
+              <tr><td>F3 Witness</td><td>High-blast actions need more than one witness.</td><td class="pass">Pass</td><td>0.908</td><td>Witness producers: human, ai, earth (coherence 0.9085 &gt; 0.75)</td></tr>
+              <tr><td>F4 Clarity</td><td>Each output should be simpler than the input.</td><td class="pass">Pass</td><td>0.8</td><td>arifflow probe, &Delta;S = -0.0 (normalized 0.80 &ge; 0.80)</td></tr>
+              <tr><td>F5 Peace²</td><td>Power does not land on the weakest person.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>Unmeasured default: empty kernel signal</td></tr>
+              <tr><td>F6 Maruah</td><td>Dignity comes first.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>Unmeasured default: empty kernel signal</td></tr>
+              <tr><td>F7 Humility</td><td>Unknowns stay named.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>Unmeasured default</td></tr>
+              <tr><td>F8 Genius</td><td>Move only when the work has shown its quality.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>Unmeasured default</td></tr>
+              <tr><td>F9 Anti-hantu</td><td>No invented feelings, no runaway claim.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>Unmeasured default: empty kernel signal</td></tr>
+              <tr><td>L10 Ontology</td><td>The system is a tool, not a person.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>Unmeasured default</td></tr>
+              <tr><td>L11 Command auth</td><td>A real identity is required before anything changes.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: receipt ledger attributable tail</td></tr>
+              <tr><td>L12 Injection</td><td>Outside text is not an order.</td><td class="pass">Pass</td><td>0.0</td><td>Floor producer: request trust (auto-sign denied; risk score 0.0 &lt; 0.85)</td></tr>
+              <tr><td>L13 Sovereign</td><td>The human veto is final.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: seal chain sovereign human acceptance verified</td></tr>
+              <tr><td>F11 Audit</td><td>Every action leaves a trace.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: receipt ledger attributable tail</td></tr>
+              <tr><td>F12 Injection</td><td>Outside text is not authority.</td><td class="pass">Pass</td><td>0.0</td><td>Floor producer: request trust (auto-sign denied; risk score 0.0 &lt; 0.85)</td></tr>
+              <tr><td>F13 Sovereign</td><td>The human veto is final.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: seal chain sovereign human acceptance verified</td></tr>
             </tbody>
           </table>
         </div>
@@ -280,24 +432,41 @@
 
         <h3>Early usage signal</h3>
         <p>The HERMES Telegram interface displayed <strong>9 monthly users</strong> in a platform-generated metric captured in October 2026.</p>
-        <p>Composition is unverified. The public wording does not claim nine distinct external humans, recurring users, customers or pilot participants.</p>
+        <p class="note"><strong>Composition unverified · October 2026:</strong> The public wording does not claim nine distinct external humans, recurring users, customers or pilot participants.</p>
 
         <h3>Commercial state</h3>
-        <div class="scroll">
-          <table>
-            <caption>Commercial state, 2026-10-11. Zero here is a count that was checked, not a blank.</caption>
-            <thead>
-              <tr><th>Field</th><th>State</th><th>Value</th><th>Source</th><th>Limitation</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Paying customers</td><td>Measured pass, honest zero</td><td>0</td><td>Billing and CRM channels queried</td><td>Count of zero is observed, not assumed.</td></tr>
-              <tr><td>Formal pilots</td><td>Measured pass, honest zero</td><td>0</td><td>Federation engagement log</td><td>Same.</td></tr>
-              <tr><td>Signed contracts</td><td>Measured pass, honest zero</td><td>0</td><td>CRM channels queried</td><td>Same.</td></tr>
-              <tr><td>Attributable revenue</td><td>Measured pass, honest zero</td><td>USD 0</td><td>Finance ledger</td><td>Same.</td></tr>
-              <tr><td>Independent benchmark</td><td>Measured pass, honest zero</td><td>none</td><td>Public benchmark index</td><td>No federation-led benchmark is published yet.</td></tr>
-              <tr><td>Formal external security audit</td><td>Measured pass, honest zero</td><td>none completed</td><td>Security disclosure register</td><td>External findings have been received; remediation is tracked in the claim registry.</td></tr>
-            </tbody>
-          </table>
+        <p class="note">Commercial state, 2026-10-11. Zero here is a count that was checked, not a blank.</p>
+        <div class="commercial-box">
+          <div style="font-size: 0.92rem; color: var(--ink); line-height: 1.5;">
+            <strong>Commercial status: research prototype.</strong> No paying customers, pilots, contracts, or attributable revenue claimed.
+          </div>
+          <div class="commercial-grid">
+            <div class="commercial-item">
+              <div class="c-label">Paying customers</div>
+              <div class="c-val">0 · Honest Zero</div>
+            </div>
+            <div class="commercial-item">
+              <div class="c-label">Formal pilots</div>
+              <div class="c-val">0 · Honest Zero</div>
+            </div>
+            <div class="commercial-item">
+              <div class="c-label">Signed contracts</div>
+              <div class="c-val">0 · Honest Zero</div>
+            </div>
+            <div class="commercial-item">
+              <div class="c-label">Attributable revenue</div>
+              <div class="c-val">USD 0 · Honest Zero</div>
+            </div>
+            <div class="commercial-item">
+              <div class="c-label">External benchmark</div>
+              <div class="c-val">None published</div>
+            </div>
+            <div class="commercial-item">
+              <div class="c-label">External security audit</div>
+              <div class="c-val">None completed</div>
+            </div>
+          </div>
+          <p class="note" style="margin-top: 0.8rem; margin-bottom: 0;">Counts queried across billing, CRM, finance, and security disclosure registers. External findings received; remediation tracked in claim registry.</p>
         </div>
       </section>
 
@@ -382,7 +551,7 @@
     </main>
 
     <footer>
-      <p>Floor rows were read from kernel health at 2026-10-11T03:02:02Z. They are an observation of that moment, not a seal. Machine-readable, timestamped claims (refreshed every 15 min): <a href="https://mcp.arif-fazil.com/shared/claims.json">mcp.arif-fazil.com/shared/claims.json</a>. The rest of this page is the public statement published the same morning. File register: <a href="/canon/file-authority.yaml">file-authority</a>.</p>
+      <p>Floor rows were read from kernel health at 2026-10-12T07:24:00Z. They are an observation of that moment, not a seal. Machine-readable, timestamped claims (refreshed every 15 min): <a href="https://mcp.arif-fazil.com/shared/claims.json">mcp.arif-fazil.com/shared/claims.json</a>. The rest of this page is the public statement published the same morning. File register: <a href="/canon/file-authority.yaml">file-authority</a>.</p>
     </footer>
   </div>
 </body>

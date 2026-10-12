@@ -1,12 +1,13 @@
 {
   "service": "arif-fazil.com",
   "purpose": "Live runtime state, organ endpoints & floor compliance (per AGENTS.md discovery contract)",
-  "generated_at_utc": "2026-09-24T07:10:00Z",
+  "generated_at_utc": "2026-10-12T05:21:58Z",
   "build": {
     "commit": "ad21ad4",
     "branch": "main",
-    "deployed_by": "333-AGI \u2014 Fasa 1 audit 2026-09-24",
-    "generator": "scripts/gen-status.sh (run at deploy; values below are probe-truth, not aspirations)"
+    "deployed_by": "FI-004 Antigravity — site upgrade 2026-10-12",
+    "generator": "scripts/gen-status.sh (run at deploy; values below are probe-truth, not aspirations)",
+    "note": "Timestamp refreshed 2026-10-12 via site upgrade pass. Organ statuses are carry-forward from last probe (2026-09-24). TTL: deploy cycle."
   },
   "federation": {
     "arifos": {
@@ -49,8 +50,8 @@
       "local_health": "http://127.0.0.1:18083/health",
       "status": "degraded",
       "degradation_class": "DEGRADED_BY_EPISTEMICS (not service failure)",
-      "rca_2026_09_24": "has_verified_telemetry=false, source_type=OPERATOR_REPORTED \u2014 WELL honestly refuses to claim sensor-verified vitality. Telemetry collector (oneshot+timer) ran successfully 14:00:58 MYT; cf703be drift=false. Services healthy.",
-      "known_quirk": "freshness.status='fresh' while age 22749s > stale_after 14400s \u2014 WELL-internal logic ticket S2.1"
+      "rca_2026_09_24": "has_verified_telemetry=false, source_type=OPERATOR_REPORTED — WELL honestly refuses to claim sensor-verified vitality. Telemetry collector (oneshot+timer) ran successfully 14:00:58 MYT; cf703be drift=false. Services healthy.",
+      "known_quirk": "freshness.status='fresh' while age 22749s > stale_after 14400s — WELL-internal logic ticket S2.1"
     },
     "frame": {
       "role": "independent observer",
@@ -73,7 +74,7 @@
     },
     {
       "path": "/world/2027/receipts/",
-      "what": "AI Agents 2027 \u2014 19 graded receipts + musyawarah audit trail"
+      "what": "AI Agents 2027 — 19 graded receipts + musyawarah audit trail"
     },
     {
       "path": "/geox/",
@@ -85,5 +86,5 @@
     "canonical": "/floors.json",
     "compliance_note": "Floors enforced by arifOS kernel; this file reports, never adjudicates."
   },
-  "truth_class": "OBSERVED \u2014 all statuses probed live at generation time; TTL = deploy cycle"
+  "truth_class": "OBSERVED_STALE — statuses probed 2026-09-24; refreshed at deploy 2026-10-12. Re-probe each organ before citing as live truth."
 }

@@ -305,7 +305,7 @@ export function Home() {
               <p className="font-sans text-base text-[#9AA0A8] leading-relaxed max-w-3xl mt-3">
                 10 most recent articles. Plain BM. Linked evidence.{' '}
                 <Link to="/world/makcikgpt/" className="text-[#E4572E] hover:underline">
-                  See all 43 published investigations at /world/makcikgpt/
+                  See all {makcikArticlesMeta.filter((a) => a?.slug && a?.title).length} published investigations at /world/makcikgpt/
                 </Link>
                 .
               </p>

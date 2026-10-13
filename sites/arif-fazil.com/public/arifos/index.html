@@ -209,12 +209,12 @@
           <span>Research Prototype · AGPL-3.0</span>
         </div>
         <div class="status-badge">
-          <span class="dot pass"></span>
-          <span>Constitutional Floors: 16/16 MEASURED_PASS</span>
+          <span class="dot neutral"></span>
+          <span>Constitutional Floors: see <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live)</span>
         </div>
         <div class="status-badge">
-          <span class="dot pass"></span>
-          <span>Deterministic Rejection: MEASURED_PASS (Oct 2026)</span>
+          <span class="dot neutral"></span>
+          <span>Deterministic Rejection: anonymous seal refused (external probe, 13 Oct 2026)</span>
         </div>
         <div class="status-badge">
           <span class="dot neutral"></span>
@@ -394,8 +394,8 @@
       <section id="current-state" aria-labelledby="cs-h">
         <h2 id="cs-h">Current state</h2>
         <h3>Floor state</h3>
-        <p><strong>16 passed · 0 failed · 0 unmeasured.</strong> All constitutional floors measured and verified.</p>
-        <p class="note">Read from kernel health at 13 Oct 2026, 15:53 Malaysia time. Sixteen rows, because the kernel reports canonical F1–F9, L10, L11–L13 and aliases F11–F13. Measurement producers are bound to live telemetry (receipt ledger, request trust, seal chain, arifFlow, and tri-witness). All floors actively measured with zero placeholder defaults.</p>
+        <p><strong>Floor counts: see <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live).</strong> Per-table status reflects the kernel at the snapshot time noted below; the live source is the MCP kernel endpoint, not the public web host.</p>
+        <p class="note">Floor counts and provenance come from <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live). The table below was rendered against a 15:53 MYT snapshot; the kernel's reported state has since changed (F5 fails, alias double-count → 13 unique floors vs 16 rows, 6 floors sourced from a static probe). Treat this table as reference, not live.</p>
         <div class="scroll">
           <table>
             <caption>Constitutional floor sample, observed 2026-10-13T07:53:00Z</caption>
@@ -410,7 +410,7 @@
             </thead>
             <tbody>
               <tr><td>F1 Amanah</td><td>A change can be undone, or it stops.</td><td class="pass">Pass</td><td>1.0</td><td>arifflow probe, fq 1.353</td></tr>
-              <tr><td>F2 Truth</td><td>Evidence before the story.</td><td class="pass">Pass</td><td>1.0</td><td>Floor provenance coverage (16/16 verified non-placeholder; zero greenwash)</td></tr>
+              <tr><td>F2 Truth</td><td>Evidence before the story.</td><td class="pass">Pass</td><td>1.0</td><td>see <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> — provenance coverage, live computation</td></tr>
               <tr><td>F3 Witness</td><td>High-blast actions need more than one witness.</td><td class="pass">Pass</td><td>0.821</td><td>Witness producers: human, ai, earth (coherence 0.821 &gt; 0.75)</td></tr>
               <tr><td>F4 Clarity</td><td>Each output should be simpler than the input.</td><td class="pass">Pass</td><td>0.8</td><td>arifflow probe, &Delta;S = -0.0 (normalized 0.80 &ge; 0.80)</td></tr>
               <tr><td>F5 Peace²</td><td>Power does not land on the weakest person.</td><td class="pass">Pass</td><td>1.175</td><td>f4_f9_probe: claims.json (1.1745 &gt; 0.70)</td></tr>
@@ -514,9 +514,9 @@
             <h3>For a developer</h3>
             <ul>
               <li><a href="https://github.com/ariffazil/arifOS">Repository</a></li>
-              <li><a href="/mcp/">Quickstart</a></li>
-              <li><a href="/mcp/#verbs">Eight canonical verbs</a></li>
-              <li><a href="/mcp/#safe-request">Safe read-only request</a></li>
+              <li><a href="https://mcp.arif-fazil.com/">Quickstart (mcp.arif-fazil.com)</a></li>
+              <li><a href="https://mcp.arif-fazil.com/#verbs">Eight canonical verbs</a></li>
+              <li><a href="https://mcp.arif-fazil.com/#safe-request">Safe read-only request</a></li>
             </ul>
           </article>
           <article>
@@ -541,8 +541,8 @@
             <h3>For an agent</h3>
             <ul>
               <li><a href="https://arifos.arif-fazil.com/.well-known/agent-card.json">Public agent card</a></li>
-              <li><a href="/mcp/#verbs">Authority ceiling</a></li>
-              <li><a href="/mcp/#safe-request">Read-only discovery</a></li>
+              <li><a href="https://mcp.arif-fazil.com/#verbs">Authority ceiling</a></li>
+              <li><a href="https://mcp.arif-fazil.com/#safe-request">Read-only discovery</a></li>
               <li><a href="/.well-known/security.txt">Actions requiring human authorization</a></li>
             </ul>
           </article>

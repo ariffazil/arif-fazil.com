@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- page: earth/kinabalu-cross-section v2 · Φ GEOX · geological-grade SVG with USGS patterns + proper structural symbols -->
+<!-- page: earth/kinabalu-cross-section v3 · 2026-10-13 · measured GEBCO line + ABKSS chart. v8 SVG kept. -->
 <html lang="en" data-ring="ORGAN" data-organ="geox" data-content-marker="kinabalu-cross-section-Φ" data-room="earth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kinabalu Basin — Regional Cross-Section · Φ GEOX | Arif Fazil</title>
-<meta name="description" content="NW–SE regional cross-section, Kinabalu Basin offshore NW Sabah. SRTM topography + published geology. USGS-standard lithology patterns, proper structural symbols, stratigraphic column. Sourced from Balaguru & Hall 2009, Madon & Jong 2022, PETRONAS MPM 2025.">
+<title>Kinabalu line — cross-section and chronostratigraphic chart · Φ GEOX | Arif Fazil</title>
+<meta name="description" content="Measured 687 km GEBCO line from Dangerous Grounds to the Sulu side of Sabah, with an interpretive section and an ABKSS tectono-chronostratigraphic chart. Ages are bands and holds. Northern Sabah only where the evidence is northern. GEOX computes; it does not seal.">
 <link rel="canonical" href="https://arif-fazil.com/earth/kinabalu-cross-section.html">
 <!-- KL2 measured-surface receipt (machine-readable, audit-4 §minimum publish receipt) -->
 <meta name="KL2_GEOMETRY" content="687.0_km">
@@ -16,8 +16,9 @@
 <meta name="KL2_DRU" content="SABAR_provisional">
 <meta name="KL2_FALSIFIER" content="T12_open">
 <meta name="KL2_BUILD_TS" content="2026-10-08T01:30Z">
-<meta property="og:title" content="Kinabalu Basin — Regional Cross-Section">
-<meta property="og:description" content="Geological-grade cross-section. SRTM topography + published geology. 12 provinces, unconformities, structural symbols.">
+<meta name="KL2_PAGE_REV" content="2026-10-13-v9">
+<meta property="og:title" content="Kinabalu line — cross-section and chronostratigraphic chart">
+<meta property="og:description" content="687 km measured seafloor, interpretive geology below it, and an ABKSS chart. DRU and SRU stay as age bands. Vertical exaggeration 12.9× on this drawing.">
 <meta property="og:type" content="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,15 +73,24 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans)
 .card ul li:last-child{border-bottom:none}
 .card ul li b{color:var(--text-primary)}
 .card ul li .age{font-family:var(--mono);font-size:.65rem;color:var(--accent-gold);margin-right:.4rem}
+.card p.note{margin-top:.75rem;font-size:.68rem;color:var(--text-dim);line-height:1.5}
+.frame + .frame{margin-top:1rem}
+.fig-note{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);padding:.15rem 1rem .75rem;line-height:1.55}
+.fig-note a{color:var(--accent-cyan)}
 
 .attribution{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border-dim);font-size:.66rem;color:var(--text-dim);text-align:center;line-height:1.7;letter-spacing:.2px}
 .attribution b{color:var(--text-secondary)}
 
+.geox-bridge{padding:2.8rem 2rem;background:linear-gradient(135deg,#0A0B0D 0%,#1A1E24 100%);border-top:2px solid #E8733B;border-bottom:1px solid #2A2F37}
+.geox-bridge-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center}
+.geox-bridge-actions{display:flex;flex-direction:column;gap:.7rem;min-width:180px}
 @media(max-width:900px){
   body{padding:1rem}
   .frame{overflow-x:auto}
   .hdr{flex-direction:column}
-  .hdr .src{text-align:left}
+  .hdr .src{text-align:left;max-width:none}
+  .geox-bridge{padding:1.6rem 0}
+  .geox-bridge-grid{grid-template-columns:1fr;gap:1rem}
 }
 </style>
 <!-- Leaflet CSS -->
@@ -168,8 +178,8 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans)
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Kinabalu Basin — Regional Cross-Section · Φ GEOX",
-  "description": "NW–SE regional cross-section, Kinabalu Basin offshore NW Sabah. SRTM topography + published geology. USGS-standard lithology patterns, proper structural symbols, stratigraphic column. Sourced from Balaguru & Hall 2009, Madon & Jong 2022, PETRONAS MPM 2025.",
+  "name": "Kinabalu line — cross-section and chronostratigraphic chart · Φ GEOX",
+  "description": "Measured 687 km GEBCO line across NW Sabah with an interpretive cross-section and an ABKSS tectono-chronostratigraphic chart. Surface ages are published bands and open holds. GEOX compute is not a seal.",
   "url": "https://arif-fazil.com/earth/kinabalu-cross-section.html",
   "inLanguage": "en",
   "isPartOf": {
@@ -197,11 +207,11 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans)
 <div class="hdr">
   <div>
     <div class="sub">Φ GEOX · REGIONAL CROSS-SECTION · NW SABAH</div>
-    <h1>Kinabalu Basin — NW–SE Transect</h1>
+    <h1>Kinabalu line — section and chart</h1>
     <a href="https://arif-fazil.com/earth/kinabalu-basin/" class="back-btn">← BACK TO DOSSIER</a>
   </div>
   <div class="src">
-    Bathymetry/topography: GEBCO_2019 15″ (Rutgers THREDDS dodsC) — measured L0 · SRTM15+V2.7 1-arc-min (GMT @earth) — coarse regional · Geology: Balaguru &amp; Hall (2009), Madon &amp; Jong (2022), PETRONAS MPM (2025), TGS Choi (2026)
+    Seafloor: GEBCO_2019 15″ nearest neighbour, retrieved 2026-10-07. Geology below the line is an envelope. Chart: Morley et al. 2023, Morley 2024, Lunt 2022 (two papers), Cottam et al. 2010 and 2013, Hall 2013.
   </div>
 </div>
 </header>
@@ -212,9 +222,9 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans)
 <!-- ══ ZEN PULSE · 3-second orientation ══ -->
 <div class="zen-pulse" aria-label="3-second orientation">
   <span class="zp"><b>WHERE</b> arif-fazil.com / earth / cross-section</span>
-  <span class="zp gold"><b>WHAT</b> NW–SE transect, 519 km geodesic (KT_POINTS v9 aligned) — see KL2 panel for measured 687 km variant</span>
-  <span class="zp"><b>SCALE</b> vertical scale ≈16× exaggerated</span>
-  <span class="zp"><b>LAYERS</b> 12 provinces · 2 unconformities</span>
+  <span class="zp gold"><b>WHAT</b> Measured line 687 km. The map polyline is a different ~519 km path and was not moved.</span>
+  <span class="zp"><b>SCALE</b> 12.9× on this section. The old ≈16× was a 600 km schematic.</span>
+  <span class="zp"><b>LAYERS</b> ABKSS chart · ages are bands, not two unconformities</span>
 </div>
 
 <!-- ═══ GIS TRANSECT LOCATOR MAP ═══ -->
@@ -241,77 +251,95 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans)
 
 <div class="frame">
 <div class="toolbar">
-  <span>Geological-grade cross-section · SRTM + interpreted geology</span>
-  <span class="right">arif-fazil.com / earth / kinabalu-cross-section</span>
+  <span>Cross-section · measured seafloor · bodies below it are schematic</span>
+  <span class="right">kinabalu-xs-v9 · 12.9×</span>
+</div>
+<img src="kinabalu-xs-v9.svg" alt="Kinabalu line v9. White line is the measured GEBCO_2019 seafloor, 687 km, trough −2,924 m at 191.3 km, Kinabalu cell +3,945 m at 435.9 km. Geology below the line is an interpretive envelope, not a seismic pick and not a depth conversion. NSPW shale only on the northwest end. SRU only on the upper plate. No wells and no hydrocarbons drawn." style="width:100%;height:auto;background:#0a0e17">
+<p class="fig-note">Previous figure, 8 Oct 2026, schematic seafloor: <a href="kinabalu-xs-v8.svg">kinabalu-xs-v8.svg</a></p>
 </div>
 
-<img src="kinabalu-xs-v8.svg" alt="KINABALU BASIN v8 — NW Sabah cross-section B-B′: KL2-measured seafloor (GEBCO_2019 15″ via Rutgers THREDDS, trough -2,924 m @ 191.3 km chainage), interpretive geology re-hung to data, USGS/AAPG conventions, wells A/B/D + Tepat-1 per dossier v2. Interpretive schematic — not seismic picks" style="width:100%;height:auto;border-radius:12px;background:#0b1220">
+<div class="frame">
+<div class="toolbar">
+  <span>Tectono-chronostratigraphic chart · this transect · holds left open</span>
+  <span class="right">kinabalu-chrono-v1</span>
+</div>
+<img src="kinabalu-chrono-v1.svg" alt="ABKSS tectono-chronostratigraphic chart for this Kinabalu transect. Four columns: lower plate, Sabah Trough, NSPW wedge on the northern end only, and the Kinabalu upper plate. DRU shown as the 13.77 to 11.7 Ma bracket, not one age. SRU held at about 9 to 8.5 Ma on the upper plate only. Granite 7.85 to 7.22 Ma with the mechanism left open." style="width:100%;height:auto;background:#0a0e17">
 </div>
 
 <!-- ═══ INFO CARDS ═══ -->
 <div class="info-panel">
   <div class="card">
-    <h3>Tectonic Events · 5 Acts</h3>
+    <h3>ABKSS · events, not a ruler</h3>
     <ul>
-      <li><span class="age">~40 Ma</span><b>Sarawak Orogeny</b> — Rajang Group folded, Crocker accretion begins</li>
-      <li><span class="age">~24 Ma</span><b>BMU / collision onset</b> — Dangerous Grounds collision begins (Lunt 2022, BGSM 74)</li>
-      <li><span class="age">~13–12 Ma</span><b>DRU</b> — composite surface (Morley et al. 2023) · age after Lunt 2022, BGSM 74 · <b>SABAR provisional</b> (T12 per-well DRU dating = falsifier)</li>
-      <li><span class="age">~7.9–7.2 Ma</span><b>Kinabalu granite</b> — sheeted laccolith, post-SRU (Cottam et al. 2010)</li>
-      <li><span class="age">8.5 Ma</span><b>SRU</b> — post-canopy burial · transpression (readings differ)</li>
+      <li><span class="age">~40–23</span><b>ASAS</b> — Paleogene to Early Miocene extension of the Proto-South China Sea. Crocker accretion on the upper plate. High.</li>
+      <li><span class="age">Oligocene</span><b>BEBAS</b> — intra-rift reorganisation. Medium. Morley does not name it. It is not drawn as a new reflector.</li>
+      <li><span class="age">~23–24</span><b>KAPUR · BMU/TCU</b> — collision, Dangerous Grounds crust underthrust. Lunt 2022, Journal of Asian Earth Sciences v.230. The timing is still argued. This is not the DRU.</li>
+      <li><span class="age">open</span><b>SABAR</b> — one ledger ties the name to the DRU, and that tie is provisional. The collision profile ties it to the UIU. Both stay on the chart.</li>
+      <li><span class="age">10.5–0</span><b>SENJA</b> — gravity-driven mud canopy, then burial. The canopy comes together at the UIU, in a burst shorter than 0.1 million years, not at the SRU.</li>
     </ul>
+  </div>
+
+  <div class="card">
+    <h3>Ages that are still open</h3>
+    <ul>
+      <li><b>DRU</b> — composite wedge-top on the upper plate, dashed where it is conformable (Morley et al. 2023). Public bracket 13.77–11.7 Ma, Lunt 2022, Bulletin of the Geological Society of Malaysia 74, one author. Federation ladder 13.5–12.5. Four candidates are on the chart and are not averaged. A legacy 15.5 Ma tick is shown and is not the pick.</li>
+      <li><b>SRU ~9–8.5 Ma, hold.</b> Kinabalu upper plate only. It dies downdip: onlap, then conformity, then nothing in the trough and nothing on Layang-Layang. Inboard readings sit nearer 9.4 Ma. The deepwater family sits nearer 8.3–8.5. Which stage name sits on the pick is also held.</li>
+      <li><b>LIU</b> — late Middle Miocene, Levell 1987, not re-dated. No age is invented for it. Top IVA and Base IVB are this surface.</li>
+      <li><b>Granite</b> — U–Pb zircon 7.85–7.22 Ma, sheeted laccolith, emplaced in under 800 thousand years (Cottam et al. 2010). Cooling path in Cottam et al. 2013. The mechanism is open. It is not “the Sabah orogeny”.</li>
+    </ul>
+    <p class="note">Same surface, two habits. Project ages are tops of stages. Legacy TB ages are bases. Top III = Base IVA = DRU. Top IVB = Base IVC = UIU. Top IVC = Base IVD = SRU. An NN zone is not a surface. A composite pick on an inversion high takes the deepest missing surface and stays out of single-surface age calibration.</p>
   </div>
 
   <div class="card">
     <h3>Real Elevations · DEM-sampled (coarse)</h3>
     <ul>
       <li><b>Mt Kinabalu:</b> +3,945 m (GEBCO_2019 15″ cell) · <b>4,095.2 m</b> Low's Peak geodetic (Sabah Parks) — grid attenuated, summit truth is geodetic</li>
-      <li><b>Crocker Range:</b> +900–1,025 m (SRTM coarse regional)</li>
-      <li><b>Central Sabah:</b> +300–630 m (SRTM coarse regional)</li>
-      <li><b>Sabah Trough:</b> <b>−2,924 m</b> @ chainage 191.3 km (KL2 measured, GEBCO_2019) — not a regional-axis claim, line-specific</li>
-      <li><b>Sulu Sea:</b> ~1,500–4,000 m deepening east (GEBCO coarse, ±1 km grid)</li>
+      <li><b>Coast on this line:</b> sign change at 391.6 km</li>
+      <li><b>Crocker +900–1,025 m</b> and <b>central Sabah +300–630 m</b> are coarse regional SRTM. They are not samples on this polyline. On the line, ground east and west of the summit is tens to a few hundred metres.</li>
+      <li><b>Sabah Trough on this line:</b> <b>−2,924 m</b> at 191.3 km. A flexural low in front of the wedge, not a trench, and not a claim about the whole trough axis.</li>
+      <li><b>End of line, B′:</b> +33 m at 5.100°N, 118.600°E. Sandakan is 51 km off the line. Deep Sulu water is east of B′ and is not drawn.</li>
     </ul>
-    <p class="note">F2 · numbers above are DEM cell samples (460 m / 1.9 km grid), not point observations. Geodetic witness stands separate.</p>
+    <p class="note">GEBCO cells are not point surveys. Low’s Peak, 4,095.2 m, is the geodetic summit and stands separate from the +3,945 m cell.</p>
   </div>
 
   <div class="card">
-    <h3>Wells (5) — Plays Tested</h3>
+    <h3>Wells · two readings, not merged</h3>
     <ul>
-      <li><b>Megah-1</b> — well (schematic; play detail not published)</li>
-      <li><b>Tepat-1</b> — Oligocene syn-rift · gas · Layang-Layang</li>
-      <li><b>Well B</b> — Stage IV post-DRU · oil · Kinabalu</li>
-      <li><b>Well A</b> — Stage IV (Kinabalu Field) · gas + oil · Kinabalu</li>
-      <li><b>Well D</b> — deeper pool · gas + oil · 2025 (per dossier v2)</li>
+      <li><b>Dossier cards:</b> Megah-1 schematic. Tepat-1, Oligocene syn-rift gas, Layang-Layang. Well B, Stage IV post-DRU oil, Kinabalu. Well A, Stage IV gas and oil, Kinabalu Field. Well D, deeper pool, gas and oil, 2025, dossier v2.</li>
+      <li><b>Map popups, projected onto the locator only:</b> Tepat-1 “outer fold-thrust appraisal (2025)”. Well D “ultra-deepwater frontier, water deeper than 2,400 m, 2026”. Well A “mid-Miocene deltaic clastic pay”. Well B “toe-thrust anticline gas discovery”. Megah-1 “schematic”.</li>
     </ul>
+    <p class="note">The two readings are left side by side. No well is hung on the section. There is no published chainage along the measured line.</p>
   </div>
 
   <div class="card">
-    <h3>Fold-Thrust Belt · T1–T4</h3>
+    <h3>What this line is, and is not</h3>
     <ul>
-      <li><b>W-vergent imbricated fan</b> · 4 thrust sheets · toe-thrust dominant</li>
-      <li><b>Anticlinal closures</b> form the petroleum traps</li>
-      <li><b>Kinabalu Field</b> (producing) · ~500 MMstb OOIP (Bait 2003, BGSM 47)</li>
-      <li><b>Closure 1, 3, 4</b> · undrilled or sub-commercial</li>
-      <li><b>Sediment transport:</b> E→W · Crocker source → Stage IV sink</li>
+      <li><b>NSPW</b> is the shale wedge on the northwest end of this transect only. It is absent in southern Sabah. Published size is regional: longer than 500 km, about 150 km wide, up to about 9 km thick (Morley et al. 2023; Morley 2024). The 7 km drawn here is a schematic thickness, not a depth conversion.</li>
+      <li><b>Sabah Trough</b> is flexure of hyperextended Dangerous Grounds crust under that load (Hall 2013). It is not a trench, and present-day Sundaland–Philippine Sea motion did not build NW Sabah.</li>
+      <li><b>Toe thrusts</b> drawn at the wedge front are gravity-driven SENJA structure. They are not a four-sheet collision fan.</li>
+      <li><b>Stage IV</b> is correlated outward from Kinabalu. Those boxes are not transferred to Layang-Layang.</li>
+      <li><b>Kinabalu Field ~500 MMstb OOIP</b> is Bait 2003, Bulletin of the Geological Society of Malaysia 47. A published figure, not a GEOX seal. Nothing on this section is a hydrocarbon.</li>
     </ul>
+    <p class="note">Underthrust Dangerous Grounds crust beneath the wedge is an interpretation. A well-tied dip line across the trough would test it. This is the Sabah margin. The Malay Basin is a different basin and is not drawn.</p>
   </div>
 </div>
 
 <div class="attribution">
-  <b>Cross-section</b> · SRTM topography via <a href="https://open-meteo.com" style="color:#64748b">open-meteo.com</a> · Bathymetry from published values · Geology from Balaguru &amp; Hall (2009), Balaguru et al. (2003), Bait (2003), Madon &amp; Jong (2022), PETRONAS MPM (2025), TGS Choi (2026), Ab Ghani et al. EAGE (2026). <b>Vertical exaggeration ≈16× (computed)</b>. <b>F7 humility:</b> body shapes are interpretive schematics, not seismic picks. <br>
-  <a href="https://arif-fazil.com/earth/kinabalu-basin/" style="color:#38bdf8">◂ BACK TO DOSSIER</a> · <a href="/earth/kinabalu-basin.pdf" style="color:#38bdf8">DOWNLOAD PDF ↓</a> · <span style="color:#5C636C;text-transform:uppercase;letter-spacing:1.2px;font-size:.7rem">GEOX COCKPIT — PENDING</span> <span style="color:#5C636C;font-size:.65rem">(geox.arif-fazil.com/basins/kinabalu/ 404 as of 2026-10-08)</span>
+  <b>Seafloor</b> · GEBCO_2019 15-arcsec, nearest neighbour, Rutgers THREDDS, retrieved 2026-10-07T17:15:26Z. <b>Vertical exaggeration 12.9×</b> on this drawing. Bodies below the seabed are envelopes. <b>Chart</b> · Morley et al. 2023 Geosphere; Morley 2024 Earth-Science Reviews; Lunt 2022 JAES v.230 (BMU) and Lunt 2022 BGSM 74 (DRU bracket); Cottam et al. 2010 and 2013; Hall 2013; Levell 1987; Bait 2003. Balaguru &amp; Hall 2009 and Madon &amp; Jong 2022 remain the regional companions. <br>
+  <a href="https://arif-fazil.com/earth/kinabalu-basin/" style="color:#38bdf8">◂ BACK TO DOSSIER</a> · <a href="/earth/kinabalu-basin.pdf" style="color:#38bdf8">DOWNLOAD PDF ↓</a> · <span style="color:#5C636C;font-size:.68rem">GEOX basin page 404, checked 2026-10-13. Service up, kernel verdict HOLD.</span>
 </div>
 
 </div>
 <!-- ═══ GEOX CONTRAST BRIDGE ═══ -->
-<div style="padding:2.8rem 2rem;background:linear-gradient(135deg,#0A0B0D 0%,#1A1E24 100%);border-top:2px solid #E8733B;border-bottom:1px solid #2A2F37">
-  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center">
+<div class="geox-bridge">
+  <div class="geox-bridge-grid">
     <div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:#5C636C;margin-bottom:.5rem">GEOX INTELLIGENCE LAYER · geox.arif-fazil.com</div>
-      <h3 style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:#EDEAE2;margin-bottom:.5rem">This page is the reading layer. GEOX is the intelligence layer.</h3>
-      <p style="font-size:.87rem;color:#9AA0A8;line-height:1.65;max-width:640px">arif-fazil.com/earth is where you <em>read</em> the basin. <strong style="color:#EDEAE2">geox.arif-fazil.com</strong> is where you <em>compute</em> it — Kill Matrix K001–K007, evidence ledger (OBS/DER/INT/SPEC), abductive hypothesis, capital bridge. Evidence-first, never adjudicates.</p>
-      <div style="margin-top:.9rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#5C636C;letter-spacing:1px"><span style="color:#5FD68A">●</span> GEOX MCP LIVE · :8081 &nbsp;|&nbsp; <span style="color:#D9A441">◆</span> 888_HOLD ACTIVE &nbsp;|&nbsp; <span style="color:#E8733B">▸</span> Kill Matrix ARMED</div>
+      <h3 style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:#EDEAE2;margin-bottom:.5rem">This page is a reading. GEOX computed it and did not seal it.</h3>
+      <p style="font-size:.87rem;color:#9AA0A8;line-height:1.65;max-width:680px">On 13 Oct 2026 GEOX profiled Kinabalu Basin as upper-plate wedge-top and foreland depocentres on the NW Borneo collision margin. That result is computed, verification still pending, and it is not a seal of a basin, a well, or a hydrocarbon. The local service was healthy, 27 tools, v2026.10.03, ceiling compute-only, kernel verdict HOLD. The public basin route was still 404.</p>
+      <div style="margin-top:.9rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:#5C636C;letter-spacing:.4px">geox_basin · 2026-10-13T15:28:13Z · geox:ANON-30aa7a1be69:geox_basin:ca5962009f0e</div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:.7rem;min-width:180px">
+    <div class="geox-bridge-actions">
       <span style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;background:#2A2F37;color:#5C636C;padding:.65rem 1.2rem;text-align:center;font-weight:700;display:block">ENTER GEOX — PENDING</span>
       <a href="https://geox.arif-fazil.com/mcp-apps" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;border:1px solid #2A2F37;color:#9AA0A8;padding:.5rem 1.2rem;text-align:center;text-decoration:none;display:block">MCP APPS →</a>
       <a href="https://geox.arif-fazil.com/platform" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;border:1px solid #2A2F37;color:#9AA0A8;padding:.5rem 1.2rem;text-align:center;text-decoration:none;display:block">PLATFORM →</a>

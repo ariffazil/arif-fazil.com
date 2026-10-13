@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1166.4pt" height="806.4pt" viewBox="0 0 1166.4 806.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-13T23:36:05.944274</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 806.4 
+L 1166.4 806.4 
+L 1166.4 0 
+L 0 0 
+z
+" style="fill: #0a0e17"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 81.648 628.992 
+L 1131.408 628.992 
+L 1131.408 80.64 
+L 81.648 80.64 
+z
+" style="fill: #0c1220"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 104.142857 116.671343 
+L 334.090286 116.671343 
+L 334.090286 628.992 
+L 104.142857 628.992 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #0c1424; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 354.085714 116.671343 
+L 584.033143 116.671343 
+L 584.033143 628.992 
+L 354.085714 628.992 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #0c1424; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 604.028571 116.671343 
+L 833.976 116.671343 
+L 833.976 628.992 
+L 604.028571 628.992 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #0c1424; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 853.971429 116.671343 
+L 1083.918857 116.671343 
+L 1083.918857 628.992 
+L 853.971429 628.992 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #0c1424; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m7aedba0788" d="M 0 0 
+L -3.5 0 
+" style="stroke: #94a3b8; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="116.671343" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="119.520464" transform="rotate(-0 74.648 119.520464)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="172.970316" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="175.819437" transform="rotate(-0 74.648 175.819437)">5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="201.119803" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="203.968924" transform="rotate(-0 74.648 203.968924)">7.5</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="212.379598" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="215.228719" transform="rotate(-0 74.648 215.228719)">8.5–9</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="234.899187" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="237.748308" transform="rotate(-0 74.648 237.748308)">10.5</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="251.788879" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="254.638" transform="rotate(-0 74.648 254.638)">12</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="272.056509" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="274.90563" transform="rotate(-0 74.648 274.90563)">13.8</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="291.19816" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="294.047574" transform="rotate(-0 74.648 294.047574)">15.5 ghost</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="375.64662" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="378.495741" transform="rotate(-0 74.648 378.495741)">23</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="386.906415" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="389.755536" transform="rotate(-0 74.648 389.755536)">24</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="499.504361" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="502.353482" transform="rotate(-0 74.648 502.353482)">34</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m7aedba0788" x="81.648" y="567.063129" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #94a3b8" x="74.648" y="569.91225" transform="rotate(-0 74.648 569.91225)">40</text>
+     </g>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #94a3b8" x="28.212062" y="354.816" transform="rotate(-90 28.212062 354.816)">Age (Ma)</text>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 114.140571 499.504361 
+L 324.092571 499.504361 
+L 324.092571 567.063129 
+L 114.140571 567.063129 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #1e3a5f; opacity: 0.92"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 114.140571 382.402497 
+L 324.092571 382.402497 
+L 324.092571 498.378382 
+L 114.140571 498.378382 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #3f3518; opacity: 0.92"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 364.083429 382.402497 
+L 574.035429 382.402497 
+L 574.035429 567.063129 
+L 364.083429 567.063129 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #172554; opacity: 0.92"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 614.026286 382.402497 
+L 823.978286 382.402497 
+L 823.978286 567.063129 
+L 614.026286 567.063129 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #172554; opacity: 0.92"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 863.969143 382.402497 
+L 1073.921143 382.402497 
+L 1073.921143 567.063129 
+L 863.969143 567.063129 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #1e3a5f; opacity: 0.92"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 614.026286 275.997437 
+L 823.978286 275.997437 
+L 823.978286 367.764764 
+L 614.026286 367.764764 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #4c1d6e; opacity: 0.92"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 863.969143 275.997437 
+L 1073.921143 275.997437 
+L 1073.921143 367.764764 
+L 863.969143 367.764764 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #3a2a1c; opacity: 0.92"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 614.026286 248.41094 
+L 823.978286 248.41094 
+L 823.978286 271.718715 
+L 614.026286 271.718715 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #9a3412; opacity: 0.92"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 863.969143 248.41094 
+L 1073.921143 248.41094 
+L 1073.921143 271.718715 
+L 863.969143 271.718715 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #9a3412; opacity: 0.92"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 364.083429 237.151146 
+L 574.035429 237.151146 
+L 574.035429 367.764764 
+L 364.083429 367.764764 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #0f1f33; opacity: 0.92"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 364.083429 119.486292 
+L 574.035429 119.486292 
+L 574.035429 233.773207 
+L 364.083429 233.773207 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #14532d; opacity: 0.92"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 614.026286 119.486292 
+L 823.978286 119.486292 
+L 823.978286 219.698464 
+L 614.026286 219.698464 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #166534; opacity: 0.92"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 863.969143 119.486292 
+L 1073.921143 119.486292 
+L 1073.921143 210.690628 
+L 863.969143 210.690628 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #1f2937; opacity: 0.92"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 114.140571 119.486292 
+L 324.092571 119.486292 
+L 324.092571 377.898579 
+L 114.140571 377.898579 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #3f3a2a; opacity: 0.92"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 81.648 628.992 
+L 81.648 80.64 
+" style="fill: none; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 1131.408 628.992 
+L 1131.408 80.64 
+" style="fill: none; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 81.648 628.992 
+L 1131.408 628.992 
+" style="fill: none; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 81.648 80.64 
+L 1131.408 80.64 
+" style="fill: none; stroke: #1e293b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #fbbf24" x="219.116571" y="106.320626" transform="rotate(-0 219.116571 106.320626)">Lower plate</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(182.341462 86.871783)">Dangerous Grounds</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(190.8214 95.267893)">Layang-Layang</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #fbbf24" x="469.059429" y="106.320626" transform="rotate(-0 469.059429 106.320626)">Sabah Trough</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(433.807679 86.871783)">flexural depression</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(446.490007 96.098658)">not a trench</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #fbbf24" x="719.002286" y="106.320626" transform="rotate(-0 719.002286 106.320626)">NSPW wedge</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(680.82002 86.871783)">Northern Sabah only</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(685.546192 96.098658)">this line’s NW end</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #fbbf24" x="968.945143" y="106.320626" transform="rotate(-0 968.945143 106.320626)">Upper plate</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(935.169346 87.297862)">Kinabalu / Inboard</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(943.209908 95.381783)">Crocker prism</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(208.490946 526.99562)">ASAS</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(188.060946 536.266245)">PSCS extension</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(208.820946 545.39562)">HIGH</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; fill: #fde68a" transform="translate(185.708009 434.097189)">BEBAS · Oligocene</text>
+    <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; fill: #fde68a" transform="translate(180.043071 442.377189)">MED · silent in Morley</text>
+    <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; fill: #fde68a" transform="translate(184.970009 451.354689)">not a new reflector</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #94a3b8" x="469.059429" y="476.940313" transform="rotate(-0 469.059429 476.940313)">no trough yet</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #94a3b8" x="719.002286" y="476.940313" transform="rotate(-0 719.002286 476.940313)">no shale wedge yet</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(958.319518 463.844688)">ASAS</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(933.868893 473.115313)">Crocker accretion</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(936.605768 482.315313)">ends at collision</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(958.649518 491.444688)">HIGH</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(676.431661 314.888601)">wedge growth · HIGH</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(693.521661 324.863601)">mobile shale</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #e2e8f0" transform="translate(677.724161 333.288601)">Northern Sabah only</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #fcd9b0" transform="translate(945.823268 319.488601)">upper plate</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #fcd9b0" transform="translate(934.031393 328.688601)">uplift and erosion</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #ffedd5" transform="translate(687.841926 258.503312)">DRU  13.77–11.7</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #ffedd5" transform="translate(687.708958 267.07864)">ladder 13.5–12.5</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #ffedd5" transform="translate(937.784783 258.503312)">DRU  13.77–11.7</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #ffedd5" transform="translate(937.651815 267.07864)">ladder 13.5–12.5</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6.6px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(535.578054 288.951969)">15.5 legacy</text>
+    <text style="font-size: 6.6px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(534.726241 296.873773)">not the pick</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(424.181319 330.340943)">foredeep under the load</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(447.95035 339.222967)">not imaged</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f5d0fe" x="719.002286" y="243.932764" transform="rotate(-0 719.002286 243.932764)">shale expulsion · minibasins 2–15 km</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 6.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #94a3b8" x="968.945143" y="243.932764" transform="rotate(-0 968.945143 243.932764)">LIU undated · Levell 1987</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #38bdf8" x="719.002286" y="228.222709" transform="rotate(-0 719.002286 228.222709)">UIU ~10.5 · canopy burst · basin-wide open</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #bbf7d0" transform="translate(436.642436 175.113343)">flexure continues</text>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #bbf7d0" transform="translate(423.650444 183.011781)">condensed · not imaged</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #dcfce7" transform="translate(676.840786 163.124315)">SENJA · gravity canopy</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #dcfce7" transform="translate(685.820223 172.35119)">then burial · HIGH</text>
+    <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #dcfce7" transform="translate(680.719426 180.86119)">coalesced at the UIU</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(932.919643 163.612491)">burial after the SRU</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #94a3b8" transform="translate(930.150205 172.007491)">where the SRU exists</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f87171" x="968.945143" y="223.691114" transform="rotate(-0 968.945143 223.691114)">SRU ~9–8.5 HOLD · this column only</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 5.8px; font-family: 'DejaVu Sans'; fill: #fecaca" transform="translate(717.984522 213.22062)">local</text>
+    <text style="font-size: 5.8px; font-family: 'DejaVu Sans'; fill: #fecaca" transform="translate(719.230616 220.182206)">only</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 6.4px; font-family: 'DejaVu Sans'; fill: #fecaca" transform="translate(912.314143 199.166874)">granite 7.85–7.22</text>
+    <text style="font-size: 6.4px; font-family: 'DejaVu Sans'; fill: #fecaca" transform="translate(913.867143 206.848624)">mechanism open</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; fill: #f5edd6" transform="translate(161.484821 242.04956)">drape and carbonate continue</text>
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; fill: #f5edd6" transform="translate(171.850509 250.78956)">no SRU · no shale wedge</text>
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; fill: #f5edd6" transform="translate(166.302509 259.52956)">Stage IV is not correlated in</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #e7e5e4" transform="translate(193.050321 317.70161)">DRU is not one</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #e7e5e4" transform="translate(190.01079 326.103524)">erosive line here</text>
+   </g>
+   <g id="line2d_13">
+    <path d="M 114.140571 380.150538 
+L 324.092571 380.150538 
+" clip-path="url(#p77d55bce94)" style="fill: none; stroke: #fbbf24; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 614.026286 380.150538 
+L 823.978286 380.150538 
+" clip-path="url(#p77d55bce94)" style="fill: none; stroke: #fbbf24; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 863.969143 380.150538 
+L 1073.921143 380.150538 
+" clip-path="url(#p77d55bce94)" style="fill: none; stroke: #fbbf24; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 614.026286 291.19816 
+L 664.014857 291.19816 
+" clip-path="url(#p77d55bce94)" style="fill: none; stroke: #94a3b8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 614.026286 234.899187 
+L 823.978286 234.899187 
+" clip-path="url(#p77d55bce94)" style="fill: none; stroke: #38bdf8; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 863.969143 234.899187 
+L 1073.921143 234.899187 
+" clip-path="url(#p77d55bce94)" style="fill: none; stroke: #38bdf8; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 863.969143 212.379598 
+L 1073.921143 212.379598 
+L 1073.921143 218.572485 
+L 863.969143 218.572485 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #b91c1c"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 748.995429 212.379598 
+L 818.979429 212.379598 
+L 818.979429 218.572485 
+L 748.995429 218.572485 
+z
+" clip-path="url(#p77d55bce94)" style="fill: #7f1d1d; opacity: 0.7"/>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #fbbf24" x="719.002286" y="375.724057" transform="rotate(-0 719.002286 375.724057)">KAPUR · BMU/TCU ~23–24 Ma · Lunt 2022, JAES v.230</text>
+   </g>
+   <g id="patch_27">
+    <path d="M 981.442286 197.96706 
+L 1061.424 197.96706 
+L 1061.424 205.060731 
+L 981.442286 205.060731 
+z
+" clip-path="url(#p77d55bce94)" style="fill: url(#he4ddfaaea0); stroke: #fecaca; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+  </g>
+  <g id="text_45">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #fbbf24" x="81.648" y="38.101969" transform="rotate(-0 81.648 38.101969)">Tectono-chronostratigraphy  ·  this transect  ·  events change character, they are not one ruler</text>
+  </g>
+  <g id="text_46">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #94a3b8" x="81.648" y="60.91395" transform="rotate(-0 81.648 60.91395)">Northern Sabah surfaces stay on the northern end of this line. They are not promoted to southern Sabah or to another basin.</text>
+  </g>
+  <g id="text_47">
+   <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #94a3b8" x="81.648" y="662.762859" transform="rotate(-0 81.648 662.762859)">TOP ≡ BASE. Project ages are tops of stages; legacy TB ages are bases of the same surfaces.</text>
+  </g>
+  <g id="text_48">
+   <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #94a3b8" x="81.648" y="684.535659" transform="rotate(-0 81.648 684.535659)">Top III = Base IVA = DRU.    Top IVA = Base IVB = LIU.    Top IVB = Base IVC = UIU.    Top IVC = Base IVD = SRU, and which of those names sits on the pick is HOLD.</text>
+  </g>
+  <g id="text_49">
+   <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #94a3b8" x="81.648" y="706.308459" transform="rotate(-0 81.648 706.308459)">DRU candidates, not averaged:  (a) legacy TB 15.4    (b) legacy recalibrated 14.91    (c) project 14.2 at top NN5, a different surface    (d) federation 13.5–12.5.</text>
+  </g>
+  <g id="text_50">
+   <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #94a3b8" x="81.648" y="728.081259" transform="rotate(-0 81.648 728.081259)">Public bracket 13.77–11.7 Ma is Lunt 2022, Bulletin of the Geological Society of Malaysia 74, single-witnessed. BMU age is the other Lunt 2022 paper, JAES v.230.</text>
+  </g>
+  <g id="text_51">
+   <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #94a3b8" x="81.648" y="749.854059" transform="rotate(-0 81.648 749.854059)">SABAR is unresolved. One ledger ties it to the DRU, provisional, falsifier still open. The collision profile ties it to the UIU. Both stay.</text>
+  </g>
+  <g id="text_52">
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #64748b" x="81.648" y="771.550875" transform="rotate(-0 81.648 771.550875)">A hold moves on per-well ages above and below the DRU, on an SRU decision at the de-identified deepwater well, and on a well-tied dip line across the trough.</text>
+  </g>
+  <g id="text_53">
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #64748b" x="81.648" y="790.904475" transform="rotate(-0 81.648 790.904475)">NN zone is not a surface. Qualified candidate. This chart is a reading, not a seal.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p77d55bce94">
+   <rect x="81.648" y="80.64" width="1049.76" height="548.352"/>
+  </clipPath>
+ </defs>
+ <defs>
+  <pattern id="he4ddfaaea0" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#e07a72"/>
+   <path d="M 0 69 
+L 72 69 
+M 0 63 
+L 72 63 
+M 0 57 
+L 72 57 
+M 0 51 
+L 72 51 
+M 0 45 
+L 72 45 
+M 0 39 
+L 72 39 
+M 0 33 
+L 72 33 
+M 0 27 
+L 72 27 
+M 0 21 
+L 72 21 
+M 0 15 
+L 72 15 
+M 0 9 
+L 72 9 
+M 0 3 
+L 72 3 
+M 3 72 
+L 3 0 
+M 9 72 
+L 9 0 
+M 15 72 
+L 15 0 
+M 21 72 
+L 21 0 
+M 27 72 
+L 27 0 
+M 33 72 
+L 33 0 
+M 39 72 
+L 39 0 
+M 45 72 
+L 45 0 
+M 51 72 
+L 51 0 
+M 57 72 
+L 57 0 
+M 63 72 
+L 63 0 
+M 69 72 
+L 69 0 
+" style="fill: #fecaca; stroke: #fecaca; stroke-width: 1.0; stroke-linecap: butt; stroke-linejoin: miter"/>
+  </pattern>
+ </defs>
+</svg>

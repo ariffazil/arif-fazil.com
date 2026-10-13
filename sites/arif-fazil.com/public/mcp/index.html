@@ -1103,12 +1103,12 @@ asyncio.run(main())</code></pre>
           <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_memory')">Load in Console ↗</button>
         </article>
 
-        <!-- 888 arif_judge -->
+        <!-- 666 arif_judge -->
         <article class="verb-card">
           <div class="verb-header">
             <div class="verb-name">
               <span>arif_judge</span>
-              <span class="stage-tag">888 · JUDGE</span>
+              <span class="stage-tag">666 · JUDGE</span>
             </div>
             <span class="badge-pill badge-judge">JUDGE</span>
           </div>
@@ -1133,7 +1133,7 @@ asyncio.run(main())</code></pre>
             <span class="badge-pill badge-mutate">MUTATE</span>
           </div>
           <p class="verb-purpose">
-            Governed code and state mutation through A-FORGE execution gate. Unsealed writes are refused; strictly requires prior 888 SEAL verdict hash.
+            Governed code and state mutation through A-FORGE execution gate. Unsealed writes are refused; strictly requires prior 666 SEAL verdict hash.
           </p>
           <table class="verb-meta-table">
             <tr><th>Mutation</th><td>State & Code Mutation</td><th>Risk Tier</th><td>T3 (Execute Gate)</td></tr>
@@ -1289,7 +1289,7 @@ asyncio.run(main())</code></pre>
       </div>
 
       <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center;">
-        <pre style="font-size:14px;color:var(--cyan);letter-spacing:1px;font-family:var(--font-mono);overflow-x:auto;">init (000) ──> observe (111) ──> think (333) ──> route (444) ──> memory (555) ──> judge (888) ──> forge (777) ──> seal (999)</pre>
+        <pre style="font-size:14px;color:var(--cyan);letter-spacing:1px;font-family:var(--font-mono);overflow-x:auto;">init (000) ──> observe (111) ──> think (333) ──> route (444) ──> memory (555) ──> judge (666) ──> forge (777) ──> seal (999)</pre>
       </div>
       <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">
         A session identifier does not prove sovereign approval. Execution and human acceptance remain separate by law.
@@ -1645,7 +1645,12 @@ asyncio.run(main())</code></pre>
           }
           if (h.constitutional) {
             document.getElementById('telemetry-freshness').textContent = 
-              `${h.constitutional.floors_pass}/${h.constitutional.floors_target || 13} floors active`;
+              (() => {
+              const tgt = h.constitutional.floors_target || 13;
+              const pass = h.constitutional.floors_pass;
+              const bounded = Math.min(pass, tgt);
+              return pass > tgt ? `${bounded}/${tgt} floors active (${pass} measured)` : `${pass}/${tgt} floors active`;
+            })();
           }
         }
       } catch (e) {

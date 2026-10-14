@@ -398,9 +398,84 @@ def cmd_orphan(args: argparse.Namespace) -> Report:
         r.add("rsync", False, str(e), "ORANGE")
         return r
 
-    deleting = [ln for ln in out.splitlines() if ln.startswith("deleting ")]
+    # ── keep-if-referenced (task p1-site-audit-false-delete, 2026-10-15) ──
+    # A file a page still names is KEEP, even when dist lacks it (old bundles
+    # survive until the pages naming them are republished). Transitive: pages
+    # name bundles; bundles name chunks. Only unreferenced leftovers are
+    # delete candidates.
+    def _referenced_names():
+        import re as _re
+        ref_pat = _re.compile(r"[A-Za-z0-9_.@-]+\.(?:mjs|json|css|txt|xml|js)\b")
+        link_pat = _re.compile(r"(?:href|src)=[\"']([^\"'#?]+)")
+        fetch_pat = _re.compile(r"[\"'](/[A-Za-z0-9_./@-]+\.(?:json|js|css))[\"']")
+        names = set()
+        links = set()
+
+        def _norm(u):
+            u = u.strip().split("?")[0]
+            if u.startswith(("http://", "https://", "mailto:", "data:")):
+                return
+            u = u.split("://")[-1]
+            if "/" in u and not u.startswith("/"):
+                u = u.split("/", 1)[1] if "/" in u else u
+            links.add(u.lstrip("/"))
+            links.add(u.rstrip("/").split("/")[-1])
+
+        for p in dest.rglob("*"):
+            if p.suffix not in (".html", ".json", ".js", ".txt", ".xml"):
+                continue
+            s = str(p)
+            if ".bak" in s or "/archive/" in s or "removed-" in s or ".split-roots" in s:
+                continue
+            try:
+                txt = p.read_text(encoding="utf-8", errors="ignore")
+            except Exception:
+                continue
+            names |= set(ref_pat.findall(txt))
+            names |= {Path(m).name for m in fetch_pat.findall(txt)}
+            if p.suffix == ".html":
+                for m in link_pat.findall(txt):
+                    _norm(m)
+        return names, links
+
+    keep_names, keep_links = _referenced_names()
+    raw_deleting = [ln for ln in out.splitlines() if ln.startswith("deleting ")]
+    deleting, keeping = [], []
+    for ln in raw_deleting:
+        rel = ln[len("deleting "):].strip().strip("/")
+        base = Path(rel).name
+        if base in keep_names or rel in keep_links or base in keep_links:
+            keeping.append(ln)
+        else:
+            deleting.append(ln)
+    # Protected classes (p1-site-audit-false-delete, 2026-10-15):
+    #  - receipts/ = append-only audit output, never a delete candidate;
+    #  - *insider* = the private layer, unnamed by public pages BY DESIGN.
+    def _prot(rel: str) -> bool:
+        return rel.startswith("receipts/") or "insider" in rel
+    keep2, del2 = [], []
+    for ln in deleting:
+        rel = ln[len("deleting "):].strip().strip("/")
+        (keep2 if _prot(rel) else del2).append(ln)
+    deleting = del2
+    keeping.extend(keep2)
+    # A directory whose remaining files are all kept is not a delete candidate.
+    del_rels = [ln[len("deleting "):].strip().strip("/") for ln in deleting]
+    keep3, del3 = [], []
+    for ln in deleting:
+        rel0 = ln[len("deleting "):].strip()
+        rel = rel0.strip("/")
+        is_dir = rel0.endswith("/") or not Path(rel).suffix
+        if is_dir and not any(d.startswith(rel + "/") for d in del_rels):
+            keep3.append(ln)
+        else:
+            del3.append(ln)
+    deleting = del3
+    keeping.extend(keep3)
     r.meta["delete_count"] = len(deleting)
     r.meta["delete_sample"] = deleting[:40]
+    r.meta["keep_referenced_count"] = len(keeping)
+    r.meta["keep_referenced_sample"] = keeping[:20]
     # Heuristic: any delete of non-trivial paths → HOLD signal
     hold = len(deleting) > 0
     r.add(

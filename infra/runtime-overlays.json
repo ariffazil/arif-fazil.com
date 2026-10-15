@@ -11,7 +11,43 @@
   },
   "sites": [
     {
-      "site": "_shared",
+     "site": "syedos",
+     "source": "sites/syedos.arif-fazil.com",
+     "webroot": "syedos",
+     "owner": "arif-sites",
+     "batch": false,
+     "batch_order": 90,
+     "build": {
+      "kind": "npm",
+      "install": [
+       "npm",
+       "ci",
+       "--quiet",
+       "--legacy-peer-deps"
+      ],
+      "command": [
+       "npm",
+       "run",
+       "build"
+      ],
+      "output": "dist"
+     },
+     "required_artifacts": [
+      "index.html"
+     ],
+     "probe": {
+      "url": "https://syedos.arif-fazil.com/",
+      "accepted_codes": [
+       200
+      ]
+     },
+     "overlays": [],
+     "aliases": [
+      "syedos.arif-fazil.com"
+     ]
+    },
+    {
+     "site": "_shared",
       "source": "sites/shared",
       "webroot": "_shared",
       "owner": "arif-sites",

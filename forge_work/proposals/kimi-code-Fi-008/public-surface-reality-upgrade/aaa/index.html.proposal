@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" data-room="aaa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AAA — What is open</title>
+  <meta name="description" content="Five readings were open at 11:15 Malaysia on 11 Oct 2026. AAA points at them. It does not judge, execute, or seal.">
+  <link rel="canonical" href="https://aaa.arif-fazil.com/">
+  <meta property="og:title" content="AAA — What is open">
+  <meta property="og:description" content="Five open readings. AAA points. It does not judge, execute, or seal.">
+  <meta property="og:url" content="https://aaa.arif-fazil.com/">
+  <link rel="stylesheet" href="/_shared/room-coats.css?v=20261004c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
+  <style>
+    :root {
+      --paper: #0A0B0D;
+      --ink: #EDEAE2;
+      --muted: #9AA0A8;
+      --line: rgba(237, 234, 226, 0.14);
+      --ember: #E4572E;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    a:hover { color: var(--ember); }
+    :focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+    .skip {
+      position: absolute; left: 1rem; top: -4rem;
+      background: var(--ember); color: #07090E; padding: 0.4rem 0.7rem;
+    }
+    .skip:focus { top: 0.6rem; z-index: 20; }
+    .nav {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.55rem 1.15rem;
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid var(--line);
+      background: #05060A;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650; font-size: 1.05rem; letter-spacing: -0.02em;
+      text-decoration: none; margin-right: auto;
+    }
+    .brand span {
+      display: inline-grid; place-items: center;
+      width: 1.35rem; height: 1.35rem;
+      border: 1px solid var(--line); border-radius: 3px;
+      font-size: 0.85rem;
+    }
+    .nav ol { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; list-style: none; margin: 0; padding: 0; }
+    .nav a.item {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .nav a.item:hover { color: var(--ink); }
+    .when {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+    }
+    .when i {
+      display: inline-block; width: 0.45rem; height: 0.45rem; margin-right: 0.35rem;
+      border-radius: 50%; background: var(--ember); font-style: normal;
+    }
+    main { width: min(920px, calc(100% - 2.4rem)); margin: 0 auto; padding: 3.2rem 0 4rem; }
+    .kicker {
+      margin: 0 0 0.9rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ember);
+    }
+    h1 {
+      margin: 0 0 1.1rem;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(3rem, 8vw, 5.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      font-variation-settings: "opsz" 144, "SOFT" 40, "WONK" 1;
+    }
+    .lede { max-width: 40rem; margin: 0; font-size: 1.12rem; }
+    .signals, .holds { list-style: none; margin: 2.4rem 0 0; padding: 0; }
+    .signals li, .holds li { border-left: 4px solid var(--ember); padding: 1.15rem 0 1.2rem 1.05rem; }
+    .holds li { border-left-width: 2px; padding-top: 0.85rem; padding-bottom: 0.85rem; }
+    .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.35rem 1rem; }
+    .top h2 {
+      margin: 0;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560;
+      font-size: clamp(1.55rem, 3vw, 2.05rem);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      font-variation-settings: "opsz" 36, "SOFT" 30;
+    }
+    .holds h2 { font-size: clamp(1.25rem, 2.4vw, 1.55rem); }
+    .n, .state {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ember);
+    }
+    .n { margin-right: 0.65rem; }
+    .signals p, .holds p { margin: 0.4rem 0 0; max-width: 42rem; }
+    .meta { display: block; margin-top: 0.35rem; color: var(--muted); font-size: 0.92rem; }
+    h3 {
+      margin: 3rem 0 0.4rem;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560; font-size: 1.7rem; letter-spacing: -0.02em;
+    }
+    .quiet { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+    .quiet li {
+      display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.8rem;
+      padding: 0.75rem 0; border-top: 1px solid var(--line);
+      font-size: 0.98rem;
+    }
+    .quiet li:last-child { border-bottom: 1px solid var(--line); }
+    .quiet b { font-weight: 500; }
+    .dim { color: var(--muted); }
+    .note { color: var(--muted); font-size: 0.95rem; max-width: 42rem; }
+    footer {
+      width: min(920px, calc(100% - 2.4rem));
+      margin: 0 auto; padding: 1.2rem 0 3rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.92rem;
+    }
+    footer a { color: var(--ink); }
+    @media (max-width: 640px) {
+      main { padding-top: 2.2rem; }
+      .quiet li { grid-template-columns: 1fr; gap: 0.15rem; }
+      .when { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#open">Skip to what is open</a>
+  <div class="room-plate">
+    <b>AAA</b>
+    <span>What is open.</span>
+    <a href="https://arif-fazil.com/discovery/">Nine rooms</a>
+  </div>
+  <header class="nav">
+    <a class="brand" href="https://arif-fazil.com/"><span>Ψ</span> Arif Fazil</a>
+    <nav aria-label="House">
+      <ol>
+        <li><a class="item" href="https://arif-fazil.com/earth/">Explore</a></li>
+        <li><a class="item" href="https://arif-fazil.com/words/">Read</a></li>
+        <li><a class="item" href="https://arif-fazil.com/work/">Build</a></li>
+        <li><a class="item" href="https://arif-fazil.com/999/">Evidence</a></li>
+        <li><a class="item" href="https://arif-fazil.com/institution/">About</a></li>
+      </ol>
+    </nav>
+    <a class="when" href="#open"><i></i>Read at 11:15 MYT</a>
+  </header>
+
+  <main id="open">
+    <p class="kicker">Attention plane · display only · not a seal</p>
+    <h1>Five readings<br>are still open.</h1>
+    <p class="lede">AAA points at what matters. It does not authorize or execute. Four of these were already open in this morning’s contract. The fifth is AAA’s own deploy drift, read at 11:15 Malaysia on 11 Oct 2026. None of them is a choice waiting on you.</p>
+
+    <ol class="signals">
+      <li>
+        <div class="top">
+          <h2><span class="n">01</span>Verified actor</h2>
+          <span class="state">Open</span>
+        </div>
+        <p>A signing path exists. The calls that were looked at were unsigned.</p>
+        <span class="meta">Contract, 11 Oct 2026</span>
+      </li>
+      <li>
+        <div class="top">
+          <h2><span class="n">02</span>Receipt fidelity</h2>
+          <span class="state">Open</span>
+        </div>
+        <p>One hold was stored as a success. The record did not carry the governance field.</p>
+        <span class="meta">Contract, 11 Oct 2026</span>
+      </li>
+      <li>
+        <div class="top">
+          <h2><span class="n">03</span>Sink agreement</h2>
+          <span class="state">Open</span>
+        </div>
+        <p>One failed ledger event was missing from the organ counters.</p>
+        <span class="meta">Contract, 11 Oct 2026</span>
+      </li>
+      <li>
+        <div class="top">
+          <h2><span class="n">04</span>Independent reconstruction</h2>
+          <span class="state">Open</span>
+        </div>
+        <p>No outside verifier is bound to the record.</p>
+        <span class="meta">Contract, 11 Oct 2026</span>
+      </li>
+      <li>
+        <div class="top">
+          <h2><span class="n">05</span>Deploy drift</h2>
+          <span class="state">Live</span>
+        </div>
+        <p>AAA’s own health reply says deployment drift is true. This page does not guess why.</p>
+        <span class="meta">11:15 Malaysia</span>
+      </li>
+    </ol>
+
+    <ol class="holds">
+      <li>
+        <div class="top">
+          <h2>arifOS thermodynamic verdict</h2>
+          <span class="state">Hold</span>
+        </div>
+        <p>Constitutional layer degraded. Receipt state unsealed. Ceiling recorded as sovereign.</p>
+      </li>
+      <li>
+        <div class="top">
+          <h2>GEOX kernel verdict</h2>
+          <span class="state">Hold</span>
+        </div>
+        <p>Deploy reading aligned. Ceiling is compute only.</p>
+      </li>
+      <li>
+        <div class="top">
+          <h2>Floor sample</h2>
+          <span class="state">Mixed</span>
+        </div>
+        <p>Kernel health: 2 passed, 4 failed (F2, F11, F12, F13), 10 unmeasured. Unmeasured is not a pass. The rows are on <a href="https://arif-fazil.com/arifos/">the arifOS page</a>.</p>
+        <span class="meta">11:15 Malaysia</span>
+      </li>
+    </ol>
+
+    <h3>Every room, separately</h3>
+    <p class="note">Answering is not the same as healthy, and healthy is not sealed. There is no combined green score. Grey lines had nothing further to say.</p>
+    <ul class="quiet">
+      <li>
+        <b>AAA</b>
+        <span>Display only. The chain field says seal, sequence 69. This page does not treat that field as AAA issuing a seal.</span>
+      </li>
+      <li>
+        <b>A-FORGE</b>
+        <span class="dim">Answered. Deploy drift false. Ceiling is execution, not judgment.</span>
+      </li>
+      <li>
+        <b>WELL</b>
+        <span>Degraded. Drift false. Ceiling is reflect only. Its own freshness field said fresh.</span>
+      </li>
+      <li>
+        <b>WEALTH</b>
+        <span>Answered. Runtime seal state unsealed. Fifteen tools loaded. Ceiling is compute only. Its apex scalars were unmeasured.</span>
+      </li>
+      <li>
+        <b>arifFlow</b>
+        <span>Verdict on the reply: partial wiring, heuristic advisory. Status <code>ok-v3-vector</code>. The quotient in the body was 0.75, from 55 executions and 41 verifications, over a window of 100, formula qg.v0.3.1-vector. Barrier count 0. Receipt count 1000. An older label still says balanced, and an older verdict still says flowing. Those are not the current verdict. The reply says the single quotient is deprecated as a health mark.</span>
+      </li>
+      <li>
+        <b>FRAME</b>
+        <span>Answered. No constitutional field in the reply. Ok here is not a floor result.</span>
+      </li>
+      <li>
+        <b>Hermes</b>
+        <span class="dim">Answered. Relay only. Execution is not authorized.</span>
+      </li>
+    </ul>
+    <p class="note">The model route answered that it was alive. That reading is transport only, and it is not one of the rooms above.</p>
+    <p class="note">Sense, prioritize, route, prepare, hand off. AAA stops before judgment.</p>
+  </main>
+
+  <footer>
+    <p>Readings above are an observation at 2026-10-11T03:15:39Z. They are not a seal. The four open gaps are the public contract published the same morning. House: <a href="https://arif-fazil.com/">arif-fazil.com</a>.</p>
+  </footer>
+</body>
+</html>

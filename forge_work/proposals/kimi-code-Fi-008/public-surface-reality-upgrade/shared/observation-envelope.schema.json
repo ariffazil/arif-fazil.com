@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "arifos://shared/observation-envelope/v1",
+  "title": "Public Observation Envelope",
+  "type": "object",
+  "required": [
+    "metric_id", "plane", "subject", "value", "state",
+    "epistemic_class", "scope", "source", "observed_at",
+    "limitation"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metric_id":          { "type": "string", "pattern": "^[a-z][a-z0-9_\\-]{2,80}$" },
+    "plane":              { "type": "string", "enum": ["attention","authority","execution","witness","record","metabolism","domain","gateway","boundary","synthesis","human"] },
+    "subject":            { "type": "string", "minLength": 1, "maxLength": 240 },
+    "value":              { "type": ["string","number","boolean","null"] },
+    "state":              { "type": "string", "enum": ["MEASURED_PASS","MEASURED_FAIL","REACHABLE","UNREACHABLE","DEGRADED","HELD","STALE","UNMEASURED","UNKNOWN"] },
+    "epistemic_class":    { "type": "string", "enum": ["OBSERVED","DERIVED","DECLARED","HISTORICAL","TARGET","UNKNOWN"] },
+    "scope":              { "type": "string", "minLength": 1, "maxLength": 240 },
+    "source":             { "type": "string", "minLength": 1, "maxLength": 240 },
+    "observed_at":        { "type": "string", "format": "date-time" },
+    "freshness":          { "type": ["string","null"] },
+    "measurement_method": { "type": ["string","null"] },
+    "population":         { "type": ["string","number","null"] },
+    "denominator":        { "type": ["string","number","null"] },
+    "limitation":         { "type": "string", "minLength": 1, "maxLength": 400 },
+    "supersedes":         { "type": ["string","null"] },
+    "superseded_by":      { "type": ["string","null"] }
+  },
+  "description": "Canonical public observation envelope for arifOS public surfaces. Authority: DERIVED (rules inherited from arifOS evidence policy). See /forge_work/proposals/kimi-code-Fi-008/public-surface-reality-upgrade/shared/observation-envelope.AUTHORITY"
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>arifOS MCP — Developer Gateway (bounded, observed)</title>
+  <meta name="description" content="Public MCP endpoint for the arifOS kernel. Eight canonical verbs, observed counts, two demonstrated properties, four end-to-end gaps open. Read-only first.">
+  <link rel="canonical" href="https://mcp.arif-fazil.com/">
+  <meta property="og:title" content="arifOS MCP — Developer Gateway">
+  <meta property="og:description" content="Bounded, observed public MCP endpoint for the arifOS kernel.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mcp.arif-fazil.com/">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+</head>
+<body>
+  <header>
+    <h1>arifOS MCP — Developer Gateway</h1>
+    <p class="plain">A bounded, observable connection to the arifOS kernel. Read this page before calling anything.</p>
+  </header>
+
+  <section id="status" aria-labelledby="status-h">
+    <h2 id="status-h">A · Status strip</h2>
+    <dl>
+      <dt>MCP endpoint</dt><dd>https://mcp.arif-fazil.com/mcp (POST, JSON-RPC 2.0)</dd>
+      <dt>Kernel condition</dt><dd>measured state — see <a href="#current">Current state</a></dd>
+      <dt>Protocol</dt><dd>MCP transport over HTTPS, JSON-RPC 2.0</dd>
+      <dt>Tools / Prompts / Resources</dt><dd>observed counts load from <code>shared/controlling-claims.json</code> on render</dd>
+      <dt>Snapshot age</dt><dd>timestamp + freshness labels are pulled from the shared observation contract</dd>
+      <dt>Status scope</dt><dd>transport / schema / governance are reported separately</dd>
+    </dl>
+  </section>
+
+  <section id="connect" aria-labelledby="connect-h">
+    <h2 id="connect-h">B · Connect in 60 seconds</h2>
+    <p>For every example below, <em>tested client</em>, <em>tested version</em>, <em>transport</em>, <em>endpoint</em>, and <em>last verified</em> are filled in from the shared observation contract.</p>
+    <p>Do not invent compatibility. If a client is not in the verified list, say so.</p>
+  </section>
+
+  <section id="verbs" aria-labelledby="verbs-h">
+    <h2 id="verbs-h">C · Eight canonical verbs</h2>
+    <table>
+      <caption>Eight canonical kernel verbs — purpose, authority ceiling, mutation potential, current test status.</caption>
+      <thead><tr><th>Verb</th><th>Purpose</th><th>Authority ceiling</th><th>Mutation</th><th>Current test status</th></tr></thead>
+      <tbody>
+        <tr><th>arif_init</th><td>Bind actor identity and constitutional floors for a session</td><td>OBSERVE_ONLY by default; full capacity requires authenticated identity</td><td>none</td><td>MEASURED_PASS for observed tests; signature path does not yet bind for unsigned calls</td></tr>
+        <tr><th>arif_observe</th><td>Read-only evidence collection against a declared scope</td><td>OBSERVE</td><td>none</td><td>MEASURED_PASS</td></tr>
+        <tr><th>arif_think</th><td>Structured reasoning with truth-class labels</td><td>OBSERVE</td><td>none</td><td>MEASURED_PASS for the reasoning record shape</td></tr>
+        <tr><th>arif_route</th><td>Intent classification and dispatch to a target organ</td><td>OBSERVE</td><td>none</td><td>MEASURED_PASS for routing decisions on observed intents</td></tr>
+        <tr><th>arif_memory</th><td>Read or write L1–L6 memory tiers under declared content class</td><td>READ_WRITE (per content class &amp; tier)</td><td>memory writes</td><td>READ_WRITE works; SOT fidelity gap noted in current state</td></tr>
+        <tr><th>arif_judge</th><td>Binding constitutional arbitration: SEAL / HOLD / SABAR / VOID</td><td>JUDGE</td><td>none (returns verdict)</td><td>MEASURED_PASS for observed verdicts; receipt fidelity open</td></tr>
+        <tr><th>arif_forge</th><td>Governed mutation through A-FORGE; requires SEAL + actor</td><td>MUTATE (after SEAL)</td><td>canonical store mutation</td><td>UNSEALED writes refused; one unauthorized mutation observed prevented</td></tr>
+        <tr><th>arif_seal</th><td>Append VAULT999 ledger entry; permanent</td><td>SEAL (permanence)</td><td>permanent ledger append</td><td>append works; independent reconstruction open</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="what" aria-labelledby="what-h">
+    <h2 id="what-h">D · What the gateway proves</h2>
+    <article class="evidence-card"><h3>Deterministic rejection</h3><p>Hard-deterministic gate observed; <code>llm_consulted=false</code>. Limitation: scope is the observed test.</p></article>
+    <article class="evidence-card"><h3>One unauthorized mutation prevented</h3><p>Witness rejected an attempted mutation not bound to authority. Limitation: scope is the observed test.</p></article>
+  </section>
+
+  <section id="gaps" aria-labelledby="gaps-h">
+    <h2 id="gaps-h">E · What it does not yet prove</h2>
+    <ol>
+      <li>Verified actor — unsigned calls observed.</li>
+      <li>Receipt fidelity — telemetry lacks governance fields; one HOLD persisted as <code>ok:true</code>.</li>
+      <li>Sink agreement — one failed ledger event omitted by organ counters.</li>
+      <li>Independent reconstruction — no external verifier bound.</li>
+    </ol>
+  </section>
+
+  <section id="current" aria-labelledby="cs-h">
+    <h2 id="cs-h">F · Current state</h2>
+    <p><strong>2 pass · 4 fail (F2, F11, F12, F13) · 10 unmeasured.</strong> Unmeasured is not pass.</p>
+    <p>Color convention: <span style="color:#1a7f37">green = measured pass</span>; <span style="color:#c53030">red = measured fail</span>; <span style="color:#b88a00">amber = unmeasured or stale</span>. Status is never communicated by color alone.</p>
+  </section>
+
+  <section id="safe-request" aria-labelledby="safe-h">
+    <h2 id="safe-h">G · Try a safe request</h2>
+    <p>Read-only first. The following <code>arif_observe</code> call returns a snapshot of governing constants without mutating any store.</p>
+    <pre aria-label="Safe read-only example" class="terminal">curl -X POST https://mcp.arif-fazil.com/mcp \
+  -H 'content-type: application/json' \
+  -H 'accept: application/json, text/event-stream' \
+  -d '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"tools/call",
+    "params":{
+      "name":"arif_observe",
+      "arguments":{
+        "scope":"kernel.floors.summary",
+        "as_of":"2026-10-11T00:00:00Z"
+      }
+    }
+  }'</pre>
+    <p>Expected response shape includes <code>result.structuredContent</code> with a list of floors; each carries <code>id</code>, <code>state</code>, <code>observed_at</code>, and <code>limitation</code>. The page never shows a hardcoded value.</p>
+  </section>
+
+  <section id="workflow" aria-labelledby="wf-h">
+    <h2 id="wf-h">H · Governed workflow</h2>
+    <pre aria-label="Workflow">init  → observe  → think  → route  → memory  → judge  → forge  → seal</pre>
+    <p>Calling a stage does not imply authorization. A SEAL-like session identifier does not prove sovereign approval. Execution and human acceptance remain separate.</p>
+  </section>
+
+  <section id="evidence" aria-labelledby="ev-h">
+    <h2 id="ev-h">I · Evidence and reproduction</h2>
+    <ul>
+      <li><a href="/arifos/#evidence">Current verified state</a></li>
+      <li><a href="/canon/file-authority.yaml">Claim registry</a></li>
+      <li><a href="/llms.txt">Schemas</a></li>
+      <li><a href="https://github.com/ariffazil/arifOS">Source repository</a></li>
+      <li><a href="/security">Security policy</a></li>
+      <li><a href="/arifos/#gaps">Known gaps</a></li>
+    </ul>
+  </section>
+
+  <section id="usage" aria-labelledby="usage-h">
+    <h2 id="usage-h">J · Early usage — does not become a customer claim</h2>
+    <p>FEDERATION USAGE SIGNAL — <strong>HERMES Telegram displayed 9 monthly users in October 2026.</strong> Audience composition, distinct external-user count and customer status are not independently verified.</p>
+    <p>The MCP gateway does not promote this metric. It does not claim nine MCP users, nine external users, nine customers, nine recurring users, or product–market fit.</p>
+  </section>
+
+  <section id="dev-next" aria-labelledby="next-h">
+    <h2 id="next-h">K · Developer next steps</h2>
+    <ol>
+      <li>Connect read-only — first call is <code>arif_observe</code>.</li>
+      <li>Inspect resources — start with <code>kernel.floors.summary</code>.</li>
+      <li>Reproduce deterministic refusal locally — see the kernel test suite.</li>
+      <li>Inspect an evidence packet — see <a href="/arifos/#evidence">current state</a>.</li>
+      <li>Report a defect — via the public disclosure route.</li>
+      <li>Contribute a verifier — see the four-gap closing program.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Authority of this page: <code>DERIVED</code> from the public observation contract.</p>
+  </footer>
+</body>
+</html>

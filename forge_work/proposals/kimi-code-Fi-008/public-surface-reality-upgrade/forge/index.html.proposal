@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A-FORGE — Execution Plane (transparency, not authorization)</title>
+  <meta name="description" content="A-FORGE Execution Plane: declared, registered, exposed, callable, authorized, executed, receipted, independently verified, and human-accepted — as separate states. A-FORGE does not manufacture authorization.">
+  <link rel="canonical" href="https://forge.arif-fazil.com/">
+  <meta property="og:title" content="A-FORGE — Execution Plane">
+  <meta property="og:url" content="https://forge.arif-fazil.com/">
+</head>
+<body>
+  <header>
+    <h1>A-FORGE — Execution Plane</h1>
+    <p class="plain">A-FORGE performs bounded actions after required authority is established. A-FORGE does not authorize itself and does not certify human acceptance.</p>
+  </header>
+
+  <section id="diagnosis" aria-labelledby="diag-h">
+    <h2 id="diag-h">A · Local and public accessibility diagnosis</h2>
+    <table>
+      <caption>States reported separately, not collapsed.</caption>
+      <thead><tr><th>State</th><th>Current</th><th>Source</th><th>Limitation</th></tr></thead>
+      <tbody>
+        <tr><td>SOURCE state</td><td>A-FORGE local source tree at HEAD <code>adb09ef…</code></td><td>git rev-parse on local worktree</td><td>Source path withheld from public surface; only HEAD digest shown.</td></tr>
+        <tr><td>BUILD state</td><td>A-FORGE build path discovered in local worktree</td><td>filesystem probe</td><td>Build path withheld; only build invocation outcomes reported.</td></tr>
+        <tr><td>DEPLOYMENT state</td><td>DEPLOY command not executed; STATUS PENDING</td><td>this proposal</td><td>Deployment requires separate ARIF GO binary.</td></tr>
+        <tr><td>ROUTE state</td><td>route resolution pending local Caddy check</td><td>this proposal</td><td>Route surface not retrieved in this turn.</td></tr>
+        <tr><td>RUNTIME state</td><td>arifOS kernel :8088 status pending independent probe</td><td>shared observation contract</td><td>Probe at execution surface not performed here.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="authority-boundary" aria-labelledby="auth-h">
+    <h2 id="auth-h">B · Authority boundary</h2>
+    <ul class="do-not">
+      <li>A-FORGE does not manufacture authorization.</li>
+      <li>A-FORGE does not treat a SEAL-like string as identity.</li>
+      <li>A-FORGE does not accept its own receipt as independent witness.</li>
+      <li>A-FORGE does not declare human acceptance.</li>
+    </ul>
+  </section>
+
+  <section id="capability" aria-labelledby="cap-h">
+    <h2 id="cap-h">C · Capability surface</h2>
+    <table>
+      <caption>Each capability is reported in separate states, not collapsed.</caption>
+      <thead><tr><th>Capability</th><th>Class</th><th>Mutation</th><th>Reversibility</th><th>Authority req.</th><th>Lease req.</th><th>Actor-verification req.</th><th>Public</th><th>Runtime-active</th><th>Last tested</th><th>Test result</th><th>Limitation</th></tr></thead>
+      <tbody><tr><td colspan="12">Rows populate from the shared observation contract.</td></tr></tbody>
+    </table>
+    <p>Distinct labels: <code>DECLARED</code> · <code>REGISTERED</code> · <code>EXPOSED</code> · <code>CALLABLE</code> · <code>AUTHORIZED</code> · <code>EXECUTED</code> · <code>RECEIPTED</code> · <code>INDEPENDENTLY_VERIFIED</code> · <code>HUMAN_ACCEPTED</code>. Tool count alone is not a capability proof.</p>
+  </section>
+
+  <section id="pipeline" aria-labelledby="pipe-h">
+    <h2 id="pipe-h">D · Execution pipeline</h2>
+    <pre aria-label="Pipeline">PROPOSAL
+  → AUTHORITY CHECK
+    → ACTOR CHECK
+      → LEASE
+        → PRECONDITION
+          → EXECUTION
+            → RECEIPT
+              → INDEPENDENT VERIFICATION
+                → HUMAN ACCEPTANCE</pre>
+    <p>Gap markers:</p>
+    <ul class="gap-list">
+      <li>actor verification incomplete</li>
+      <li>transaction-bound authority incomplete where applicable</li>
+      <li>invocation receipt fidelity incomplete</li>
+      <li>independent reconstruction absent</li>
+    </ul>
+  </section>
+
+  <section id="evidence" aria-labelledby="ev-h">
+    <h2 id="ev-h">E · Execution evidence (current)</h2>
+    <p><strong>Observed unauthorized mutation prevention:</strong> 1 event.</p>
+    <p><strong>Scope:</strong> the observed test only. Not a claim of universal prevention.</p>
+    <p>Source-level patches are reported separately from runtime-active fixes, with these labels: <code>SOURCE_PATCH_ONLY</code> · <code>BUILT_NOT_DEPLOYED</code> · <code>RUNTIME_ACTIVE</code> · <code>INDEPENDENTLY_VERIFIED</code> · <code>ROLLED_BACK</code> · <code>UNKNOWN</code>.</p>
+  </section>
+
+  <section id="receipt-truth" aria-labelledby="receipt-h">
+    <h2 id="receipt-h">F · Receipt truth</h2>
+    <p>Five distinct fields, never collapsed:</p>
+    <ul>
+      <li>transport outcome</li>
+      <li>governance verdict</li>
+      <li>execution outcome</li>
+      <li>witness result</li>
+      <li>human acceptance</li>
+    </ul>
+    <p>The page never shows <code>ok:true</code> meaning all five.</p>
+    <p><strong>Current gap:</strong> invocation telemetry lacks governance fields; one HOLD was observed as <code>ok:true</code>.</p>
+  </section>
+
+  <section id="safe-demo" aria-labelledby="demo-h">
+    <h2 id="demo-h">G · Safe demonstration</h2>
+    <p>This page does not expose a public mutation control. A read-only or simulated demonstration, when offered, shows: proposed action, authority state, expected refusal or simulation, no real-world mutation, evidence generated, limitation.</p>
+  </section>
+
+  <section id="security" aria-labelledby="sec-h">
+    <h2 id="sec-h">H · Security and disclosure</h2>
+    <p>An external researcher submitted security findings. This is not a completed independent security audit.</p>
+    <p>Findings (public-safe):</p>
+    <table>
+      <thead><tr><th>ID</th><th>Class</th><th>Affected component</th><th>Status</th><th>Public summary</th><th>Remediation</th><th>Last verified</th></tr></thead>
+      <tbody>
+        <tr><td colspan="7">Public-safe summary rows populate from the claim registry. Researcher email, message bodies, and private correspondence are not exposed.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="reproduce" aria-labelledby="rep-h">
+    <h2 id="rep-h">I · Reproduction</h2>
+    <ul>
+      <li>Deterministic refusal — see kernel test suite.</li>
+      <li>Unsigned actor refusal — see <code>forge_work/.../test_actor_unsigned.sh</code>.</li>
+      <li>Safe simulation — see <code>forge_work/.../test_safe_sim.py</code>.</li>
+      <li>Receipt inspection — see <code>/chron/data</code>.</li>
+      <li>Mismatch detection — see <code>forge_work/.../test_mismatch.py</code>.</li>
+    </ul>
+    <p>Where behavior is not yet available, the page says so.</p>
+  </section>
+
+  <section id="usage" aria-labelledby="usage-h">
+    <h2 id="usage-h">J · Early usage — not a customer claim</h2>
+    <p>FEDERATION USAGE SIGNAL — <strong>HERMES Telegram displayed 9 monthly users in October 2026.</strong> Composition, distinct external-user count and customer status are not independently verified.</p>
+    <p>The page does not claim nine A-FORGE users, nine external users, nine customers, nine recurring users, or product–market fit.</p>
+  </section>
+
+  <footer>
+    <p>Authority of this page: <code>DERIVED</code> from the shared observation contract.</p>
+  </footer>
+</body>
+</html>

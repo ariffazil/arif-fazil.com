@@ -1,0 +1,51 @@
+{
+  "mission_id": "PUBLIC-SURFACE-REALITY-UPGRADE-2026-10-11",
+  "agent_id": "kimi-code/FI-008",
+  "proposal_path": "/root/arif-fazil.com/forge_work/proposals/kimi-code-Fi-008/public-surface-reality-upgrade/",
+  "deploy_target": "STAGE_ONLY",
+  "production_mutations": "NONE",
+  "executed_phases": ["B", "C", "D"],
+  "completed_phases": ["B", "C", "D"],
+  "current_phase": "E",
+  "stop_authority_required_for": ["F (final-verdict commit without deployment) is permitted; deployment requires separate ARIF GO binary"],
+  "pre_hashes": {
+    "public_arifos_index_html": "412674d5ee43c2ad6d7463049f836caf6b761da2c9be2db7560ce8255b6ac016",
+    "public_mcp_index_html": "e48f100f2b2284e73f1dba75aa3d55de20351361cb7282c68962f11096526846",
+    "public_aaa_index_html": "190783804ea33a2b34be28c93e032d1eba55b59557e99d6870f31753aeb55814",
+    "public_forge_index_html": "f55097f7ffdd8b27c737d514cbe53fafe5152bced4f94a7068ac68023e1fdb7f"
+  },
+  "post_artifact_hashes": {
+    "shared_observation_envelope_schema_json": "8c294fa5dddefee44ee0a3facf3b65c8335ca185848fd90e0173e55a50c1c5ac",
+    "shared_controlling_claims_json": "f43e251d6215abcbe439eef572889528e4a30980655137b1a158fc39d909da57",
+    "shared_CLAIM_REGISTRY_md": "c8c6d29f0f866e94a2cefd8f08933b9ada898dc0613b112bf34beaa7f5599ca3",
+    "arifos_index_html_proposal": "ededa9ee8c6b2010c2b7d68ed6d0b413b140233b2f6afea896971053ddf60eba",
+    "mcp_index_html_proposal": "87830e361ab403e431bd9d23c1561a9c275385631fc2924534cf826631fa78ae",
+    "aaa_index_html_proposal": "4c98fbf2ac1bf109ab16dff5cbeb06c79e27a32e512e646b8f3ea436c6e5dd2d",
+    "forge_index_html_proposal": "dfe3d757c4668e2e3cd1aa2da56d8e192f10c735b749a9eae1a95e8ce7edabed",
+    "receipts_build_receipt_2026_10_11_json": "(this file)"
+  },
+  "validation_outcomes": {
+    "json_schema_validation": "PASS",
+    "schema_observation_count": 14,
+    "schema_errors": 0,
+    "private_path_scan": "ONE VIOLATION FOUND AND REDACTED — '/root/A-FORGE/' removed from forge/index.html.proposal; post-fix scan empty",
+    "secret_scan": "PASS (no api_key/token/bearer/secret/password values)",
+    "superlative_scan": "PASS (no 'first/only/complete/production-proven/tamper-proof/fully sovereign/enterprise-ready/universal' used positively)",
+    "fail_closed_governance_path_obeyed": "PASS — all artifacts created under forge_work/proposals/kimi-code-Fi-008/public-surface-reality-upgrade/, NOT under sites/arif-fazil.com/public/"
+  },
+  "inherited_unrelated_changes": {
+    "git_status_untracked": [
+      "sites/arif-fazil.com/.backups/asset-refs-2026-10-10/ (inherited, NOT touched by this proposal)",
+      "forge_work/proposals/kimi-code-Fi-008/ (this proposal — expected untracked)"
+    ],
+    "git_status_modified": "none",
+    "absorbed_into_proposal": "no"
+  },
+  "deployment_command": {
+    "site": "arif-fazil.com",
+    "explicit_invocation": "ARIF GO: DEPLOY PUBLIC-SURFACE-REALITY-UPGRADE /arifos/",
+    "status": "NOT RUN — deferred to separate authorization per binding repository rules"
+  },
+  "captured_at": "2026-10-11T08:30:00Z",
+  "next_step": "Issue Phase F final local verdict (SEAL_LOCAL_READY / PARTIAL / HOLD / VOID / ROLLED_BACK). Deployment remains out of scope until separate ARIF GO binary instruction."
+}

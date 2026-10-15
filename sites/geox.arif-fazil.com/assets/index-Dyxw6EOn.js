@@ -95,7 +95,7 @@ curl -N https://geox.arif-fazil.com/mcp \\
   -H "Accept: text/event-stream"
 
 # sanity check
-curl https://geox.arif-fazil.com/health`},Jg=`> geox.stoiip({ prospect: "KINABALU-N", p50_area_km2: 42 })
+curl https://geox.arif-fazil.com/health`},Jg=`> geox.stoiip({ prospect: "SYNTHETIC-MARMOUSI", p50_area_km2: 42 })
 
 {
   "p10_mmbbl": 184.2,
@@ -103,7 +103,7 @@ curl https://geox.arif-fazil.com/health`},Jg=`> geox.stoiip({ prospect: "KINABAL
   "p90_mmbbl": 41.3,
   "epistemic_layer": "DER",
   "rasa": 0.84,
-  "provenance": ["OBS: seismic_attr.kin_n"],
+  "provenance": ["SYNTHETIC: marmousi2_demo"],
   "hold": null
 }`,UP=`// register an SEP-1865 inline widget
 await session.registerApp({

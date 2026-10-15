@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>arifOS — Governed execution for consequential AI agents</title>
+  <meta name="description" content="arifOS inserts an independent constitutional judgment between an agent's proposal and execution. Two properties demonstrated; four end-to-end gaps open. No paying customers; no formal pilots; no signed contracts; no attributable revenue.">
+  <link rel="canonical" href="https://arif-fazil.com/arifos/">
+  <meta property="og:title" content="arifOS — Governed execution for consequential AI agents">
+  <meta property="og:description" content="A research-stage constitutional substrate for agent governance. Two properties demonstrated, four end-to-end gaps open, zero commercial state.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arif-fazil.com/arifos/">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "arifOS",
+    "description": "Constitutional substrate for AI agent governance. AGPL-3.0.",
+    "codeRepository": "https://github.com/ariffazil/arifOS",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+  }
+  </script>
+  <style>
+    :root {
+      --paper: #0A0B0D;
+      --ink: #EDEAE2;
+      --muted: #A39E93;
+      --line: #2A2926;
+      --ember: #E4572E;
+      --pass: #8FB9A0;
+      --fail: #E4572E;
+      --card: #14161A;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.55 "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+    a { color: var(--ink); text-underline-offset: 0.18em; }
+    a:hover { color: var(--ember); }
+    .wrap { width: min(920px, calc(100% - 2rem)); margin: 0 auto; }
+    .house {
+      display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .house a { text-decoration: none; color: var(--muted); }
+    .house a:hover { color: var(--ink); }
+    .house .home { color: var(--ember); letter-spacing: 0.02em; text-transform: none; font-size: 0.95rem; }
+    header.page { padding: 2.2rem 0 1.2rem; }
+    .truth-status {
+      margin: 0 0 1rem;
+      color: var(--ember);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.12; font-weight: 560; letter-spacing: -0.02em; }
+    h2 { margin: 0 0 0.8rem; font-size: 1.35rem; font-weight: 600; }
+    h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+    p { margin: 0 0 0.8rem; }
+    section { padding: 1.6rem 0; border-top: 1px solid var(--line); }
+    nav.page, .primary-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+    nav.page a, .primary-actions a {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+    nav.page a:hover, .primary-actions a:hover { border-color: var(--ember); color: var(--ember); }
+    .chain { list-style: none; margin: 0 0 1rem; padding: 0; }
+    .chain li { padding: 0.15rem 0 0.15rem 0.2rem; color: var(--ink); }
+    .chain li span { color: var(--muted); margin-right: 0.4rem; }
+    .cards { display: grid; gap: 0.8rem; }
+    @media (min-width: 720px) { .cards.two { grid-template-columns: 1fr 1fr; } }
+    article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1rem 0.4rem;
+    }
+    dl { display: grid; grid-template-columns: 7.2rem 1fr; gap: 0.25rem 0.8rem; margin: 0 0 0.8rem; }
+    dt { color: var(--muted); font-size: 0.82rem; }
+    dd { margin: 0; }
+    .label { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    caption { text-align: left; color: var(--muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.55rem 0.45rem; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: 560; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .scroll { overflow-x: auto; }
+    code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.86em; }
+    .pass { color: var(--pass); }
+    .fail { color: var(--fail); }
+    .unmeasured { color: var(--muted); }
+    footer { padding: 1.4rem 0 3rem; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); }
+    .note { color: var(--muted); font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="house" aria-label="House">
+      <a class="home" href="/">arif-fazil</a>
+      <a href="/about">About</a>
+      <a href="/work/">Work</a>
+      <a href="/earth/">Earth</a>
+      <a href="/world/makcikgpt/">Civic</a>
+      <a href="/words/">Writing</a>
+      <a href="/institution/">Briefing</a>
+    </nav>
+
+    <header class="page">
+      <p class="truth-status">
+        Current status: research prototype ·
+        two properties demonstrated ·
+        four end-to-end gaps open
+      </p>
+      <h1>Governed execution for consequential AI agents.</h1>
+      <p>
+        arifOS inserts an independent constitutional judgment between an
+        agent's proposal and execution. Intelligence proposes. Authority
+        constrains. Execution acts. Reality witnesses. The human remains
+        sovereign.
+      </p>
+      <nav class="page" aria-label="On this page">
+        <a href="#problem">The problem</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#current-state">Current state</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#start">Start here</a>
+      </nav>
+      <ul class="primary-actions" aria-label="Primary actions">
+        <li><a href="#evidence">Inspect the evidence</a></li>
+        <li><a href="#architecture">View the architecture</a></li>
+        <li><a href="/arifos/dashboard/">Open the observatory</a></li>
+        <li><a href="https://github.com/ariffazil/arifOS">Read the source</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section id="problem" aria-labelledby="problem-h">
+        <h2 id="problem-h">The problem</h2>
+        <p>Most agent systems combine proposal, execution and self-reporting. That makes it difficult to establish:</p>
+        <ul>
+          <li>who acted,</li>
+          <li>who authorized the action,</li>
+          <li>what evidence was used,</li>
+          <li>whether execution stayed in scope,</li>
+          <li>and whether an independent party can reconstruct the event.</li>
+        </ul>
+      </section>
+
+      <section id="architecture" aria-labelledby="arch-h">
+        <h2 id="arch-h">The constitutional answer</h2>
+        <ol class="chain" aria-label="Architecture chain">
+          <li><span>1</span>Human sovereign</li>
+          <li><span>2</span>AAA attention</li>
+          <li><span>3</span>arifOS authority</li>
+          <li><span>4</span>A-FORGE execution</li>
+          <li><span>5</span>FRAME witness</li>
+          <li><span>6</span>VAULT999 record</li>
+          <li><span>7</span>Human acceptance</li>
+        </ol>
+        <p>Invariant: <code>Proposer ≠ Judge ≠ Executor ≠ Witness</code>.</p>
+        <ul>
+          <li>AAA recommends attention; it does not authorize.</li>
+          <li>arifOS judges; it does not execute.</li>
+          <li>A-FORGE executes; it does not certify itself.</li>
+          <li>FRAME observes; it does not judge.</li>
+          <li>VAULT999 records; it does not establish truth by itself.</li>
+          <li>Human acceptance is separate from machine consequence.</li>
+        </ul>
+      </section>
+
+      <section id="evidence" aria-labelledby="ev-h">
+        <h2 id="ev-h">What has been demonstrated</h2>
+        <div class="cards two">
+          <article aria-labelledby="d1-h">
+            <h3 id="d1-h">A · Deterministic rejection</h3>
+            <dl>
+              <dt>State</dt><dd>Measured pass</dd>
+              <dt>Method</dt><dd>Kernel gate <code>hard_deterministic</code>; <code>llm_consulted=false</code> observed</dd>
+              <dt>Source</dt><dd>arifOS kernel refusal trace, 2026-10</dd>
+              <dt>Limitation</dt><dd>Scope is the observed test only. Not a claim of universal refusal.</dd>
+            </dl>
+          </article>
+          <article aria-labelledby="d2-h">
+            <h3 id="d2-h">B · One unauthorized mutation was prevented</h3>
+            <dl>
+              <dt>State</dt><dd>Measured pass</dd>
+              <dt>Method</dt><dd>Witness rejected an attempted mutation not bound to authority</dd>
+              <dt>Source</dt><dd>Witness trace, 2026-10</dd>
+              <dt>Limitation</dt><dd>Scope is the observed test only. Not universal prevention.</dd>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section id="gaps" aria-labelledby="gaps-h">
+        <h2 id="gaps-h">What remains open</h2>
+        <div class="cards">
+          <article aria-labelledby="g1-h">
+            <h3 id="g1-h">Verified actor</h3>
+            <p>Signing path exists; observed calls unsigned; <code>actor_verified=false</code>.</p>
+            <p><strong>Acceptance test:</strong> every irreversible action carries an Ed25519 signature verifiable by an independent verifier.</p>
+          </article>
+          <article aria-labelledby="g2-h">
+            <h3 id="g2-h">Receipt fidelity</h3>
+            <p>Invocation telemetry lacks governance fields; one kernel HOLD observed as <code>ok:true</code>.</p>
+            <p><strong>Acceptance test:</strong> every invocation record carries a governance verdict field, whose transport outcome is independent of its verdict.</p>
+          </article>
+          <article aria-labelledby="g3-h">
+            <h3 id="g3-h">Sink agreement</h3>
+            <p>One failed ledger event was omitted by organ counters.</p>
+            <p><strong>Acceptance test:</strong> ledger sinks agree on the same set of failure events; checksums match cross-ledger.</p>
+          </article>
+          <article aria-labelledby="g4-h">
+            <h3 id="g4-h">Independent reconstruction</h3>
+            <p>No external verifier is bound.</p>
+            <p><strong>Acceptance test:</strong> one competent outsider can install the package, reproduce a refusal, attempt an unsigned action, observe rejection, inspect evidence, and reconstruct the event without federation access.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="current-state" aria-labelledby="cs-h">
+        <h2 id="cs-h">Current state</h2>
+        <h3>Floor state</h3>
+        <p><strong>2 passed · 4 failed (F2, F11, F12, F13) · 10 unmeasured.</strong> Unmeasured is not a pass.</p>
+        <p class="note">Read from kernel health at 11 Oct 2026, 11:02 Malaysia time. Sixteen rows, because the kernel reports L10–L13 and also F11–F13. Those are separate readings: F11 fails while L11 is unmeasured. A stored default on an unmeasured floor is not shown.</p>
+        <div class="scroll">
+          <table>
+            <caption>Constitutional floor sample, observed 2026-10-11T03:02:02Z</caption>
+            <thead>
+              <tr>
+                <th>Floor</th>
+                <th>Guards</th>
+                <th>Result</th>
+                <th>Value</th>
+                <th>Where this reading came from</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>F1 Amanah</td><td>A change can be undone, or it stops.</td><td class="pass">Pass</td><td>1.0</td><td>arifflow probe, fq 0.75</td></tr>
+              <tr><td>F2 Truth</td><td>Evidence before the story.</td><td class="fail">Fail</td><td>0.0</td><td>Greenwash check failed</td></tr>
+              <tr><td>F3 Witness</td><td>High-blast actions need more than one witness.</td><td class="pass">Pass</td><td>0.821</td><td>Witness producers: human, ai, earth</td></tr>
+              <tr><td>F4 Clarity</td><td>Each output should be simpler than the input.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>F5 Peace²</td><td>Power does not land on the weakest person.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>F6 Maruah</td><td>Dignity comes first.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>F7 Humility</td><td>Unknowns stay named.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>F8 Genius</td><td>Move only when the work has shown its quality.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>F9 Anti-hantu</td><td>No invented feelings, no runaway claim.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>L10 Ontology</td><td>The system is a tool, not a person.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today</td></tr>
+              <tr><td>L11 Command auth</td><td>A real identity is required before anything changes.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today. Separate from F11.</td></tr>
+              <tr><td>L12 Injection</td><td>Outside text is not an order.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today. Separate from F12.</td></tr>
+              <tr><td>L13 Sovereign</td><td>The human veto is final.</td><td class="unmeasured">Unmeasured</td><td>—</td><td>No kernel signal today. Separate from F13.</td></tr>
+              <tr><td>F11 Audit</td><td>Every action leaves a trace.</td><td class="fail">Fail</td><td>0.9</td><td>Status is fail. The producer note says pass on the receipt ledger.</td></tr>
+              <tr><td>F12 Injection</td><td>Outside text is not authority.</td><td class="fail">Fail</td><td>0.0</td><td>Contradicted, on request trust</td></tr>
+              <tr><td>F13 Sovereign</td><td>The human veto is final.</td><td class="fail">Fail</td><td>0.0</td><td>Seal-chain check failed</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">This sample does not include a pass-threshold for each floor. Names follow the public floor list and the kernel's own L10–L13 labels.</p>
+
+        <h3>Early usage signal</h3>
+        <p>The HERMES Telegram interface displayed <strong>9 monthly users</strong> in a platform-generated metric captured in October 2026.</p>
+        <p>Composition is unverified. The public wording does not claim nine distinct external humans, recurring users, customers or pilot participants.</p>
+
+        <h3>Commercial state</h3>
+        <div class="scroll">
+          <table>
+            <caption>Commercial state, 2026-10-11. Zero here is a count that was checked, not a blank.</caption>
+            <thead>
+              <tr><th>Field</th><th>State</th><th>Value</th><th>Source</th><th>Limitation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Paying customers</td><td>Measured pass, honest zero</td><td>0</td><td>Billing and CRM channels queried</td><td>Count of zero is observed, not assumed.</td></tr>
+              <tr><td>Formal pilots</td><td>Measured pass, honest zero</td><td>0</td><td>Federation engagement log</td><td>Same.</td></tr>
+              <tr><td>Signed contracts</td><td>Measured pass, honest zero</td><td>0</td><td>CRM channels queried</td><td>Same.</td></tr>
+              <tr><td>Attributable revenue</td><td>Measured pass, honest zero</td><td>USD 0</td><td>Finance ledger</td><td>Same.</td></tr>
+              <tr><td>Independent benchmark</td><td>Measured pass, honest zero</td><td>none</td><td>Public benchmark index</td><td>No federation-led benchmark is published yet.</td></tr>
+              <tr><td>Formal external security audit</td><td>Measured pass, honest zero</td><td>none completed</td><td>Security disclosure register</td><td>External findings have been received; remediation is tracked in the claim registry.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="evidence-public" aria-labelledby="evp-h">
+        <h2 id="evp-h">Public evidence</h2>
+        <ul>
+          <li><a href="https://github.com/ariffazil/arifOS">arifOS repository</a> — AGPL-3.0; canonical contract.</li>
+          <li><a href="https://github.com/ariffazil/AAA-federation">AAA federation</a> — attention plane.</li>
+          <li><a href="https://github.com/ariffazil/A-FORGE">A-FORGE execution</a> — bounded capability fabric.</li>
+          <li><a href="/arifos/dashboard/">Observatory</a> — runtime evidence.</li>
+          <li><a href="/.well-known/security.txt">Security policy</a> — disclosure route.</li>
+          <li><a href="/canon/file-authority.yaml">Authority register</a> — file-class governance.</li>
+        </ul>
+      </section>
+
+      <section id="institutions" aria-labelledby="inst-h">
+        <h2 id="inst-h">For institutions</h2>
+        <p class="label">Exploratory · not a customer claim · no existing pilot implied</p>
+        <ol>
+          <li><strong>Agent Governance Readiness Assessment</strong> — read-only assessment of an external agent stack against the four-gap closing program.</li>
+          <li><strong>Reference-Monitor Prototype Evaluation</strong> — bounded runtime mediator evaluation.</li>
+          <li><strong>Independent Evidence and Reconstruction Exercise</strong> — third-party reconstruction trial.</li>
+        </ol>
+      </section>
+
+      <section id="roadmap" aria-labelledby="rm-h">
+        <h2 id="rm-h">Roadmap</h2>
+        <ol>
+          <li>Verified actor binding — Ed25519 signed action envelope.</li>
+          <li>Faithful governance receipts — telemetry carries verdict, separate from outcome.</li>
+          <li>Sink reconciliation — ledger checksums match cross-ledger.</li>
+          <li>Independent reconstruction — outsider can replay without federation access.</li>
+        </ol>
+      </section>
+
+      <section id="origin" aria-labelledby="or-h">
+        <h2 id="or-h">Human origin</h2>
+        <p>arifOS emerged from evidence-heavy geoscience and irreversible operational decisions. The system does not predict its human's future role; it does not claim machine personhood; it does not equate the operator with the system.</p>
+      </section>
+
+      <section id="start" aria-labelledby="start-h">
+        <h2 id="start-h">Start here</h2>
+        <div class="cards two">
+          <article>
+            <h3>For a developer</h3>
+            <ul>
+              <li><a href="https://github.com/ariffazil/arifOS">Repository</a></li>
+              <li><a href="/mcp/">Quickstart</a></li>
+              <li><a href="/mcp/#verbs">Eight canonical verbs</a></li>
+              <li><a href="/mcp/#safe-request">Safe read-only request</a></li>
+            </ul>
+          </article>
+          <article>
+            <h3>For a reviewer</h3>
+            <ul>
+              <li><a href="#current-state">Current state</a></li>
+              <li><a href="/arifos/dashboard/">Observatory</a></li>
+              <li><a href="/.well-known/security.txt">Known gaps and disclosure</a></li>
+              <li><a href="https://github.com/ariffazil/arifOS">Reproduction guide</a></li>
+            </ul>
+          </article>
+          <article>
+            <h3>For an institution</h3>
+            <ul>
+              <li><a href="#institutions">Assessment outline</a></li>
+              <li><a href="/.well-known/security.txt">Threat disclosure</a></li>
+              <li><a href="https://github.com/ariffazil/arifOS">Decision packet</a></li>
+              <li><a href="mailto:hello@arif-fazil.com">Contact</a></li>
+            </ul>
+          </article>
+          <article>
+            <h3>For an agent</h3>
+            <ul>
+              <li><a href="https://arifos.arif-fazil.com/.well-known/agent-card.json">Public agent card</a></li>
+              <li><a href="/mcp/#verbs">Authority ceiling</a></li>
+              <li><a href="/mcp/#safe-request">Read-only discovery</a></li>
+              <li><a href="/.well-known/security.txt">Actions requiring human authorization</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Floor rows were read from kernel health at 2026-10-11T03:02:02Z. They are an observation of that moment, not a seal. The rest of this page is the public statement published the same morning. File register: <a href="/canon/file-authority.yaml">file-authority</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>

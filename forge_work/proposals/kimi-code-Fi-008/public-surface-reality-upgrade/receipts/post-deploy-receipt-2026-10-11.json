@@ -1,0 +1,87 @@
+{
+  "mission_id": "PUBLIC-SURFACE-REALITY-UPGRADE-2026-10-11",
+  "agent_id": "kimi-code/FI-008",
+  "proposal_path": "/root/arif-fazil.com/forge_work/proposals/kimi-code-Fi-008/public-surface-reality-upgrade/",
+  "deploy_target": "STAGE_ONLY -> DEPLOYED (after three ARIF GO binaries)",
+  "phase": "post-deploy",
+  "authorizing_binaries_issued": [
+    "ARIF GO: DEPLOY /arifos/",
+    "ARIF GO: DEPLOY MCP PUBLIC GATEWAY UPGRADE",
+    "ARIF GO: DEPLOY AAA AND A-FORGE PUBLIC SURFACE UPGRADE"
+  ],
+  "witness_mutation_protocol_steps": {
+    "Authorize": "ARIF GO binaries issued as named authorization for Caddy reload (T3-boundary lift)",
+    "Backup": "Each live index.html backed up to <path>/index.html.pre-deploy-2026-10-11.aa8b6e0 BEFORE write. Hashes recorded below.",
+    "Mutate": "Wrote four proposal artifacts to live serving paths identified via /etc/caddy/vhosts/*.conf root directives. No Caddy reload required because Caddy file_server reads on each request.",
+    "Verify": "make verify-pages = PASS (ALL PAGES REACHABLE, 213 verified). Live HTTP probes = PASS on all four URLs. Content-feature tests = PASS (truth-status badge, eight-verb table, attention-plane title, historical snapshot label, 9-monthly-users line, etc., all returned by curl).",
+    "Reindex": "Not applicable; live deployment does not change index targets.",
+    "Relink": "Not applicable; canvas pages link to other surfaces and the underlying site topology was preserved.",
+    "Witness": "This receipt is recorded under receipts/post-deploy-receipt-2026-10-11.json",
+    "Notify": "Live HTTP responses are bound to ARIF-named binaries; this report is the notification."
+  },
+  "live_paths_deployed_to": {
+    "/arifos/": {
+      "caddy_root": "root * /var/www/html/arif (handle /arifos/* resolves via try_files to /var/www/html/arif/arifos/index.html)",
+      "live_file": "/var/www/html/arif/arifos/index.html",
+      "pre_hash": "412674d5ee43c2ad6d7463049f836caf6b761da2c9be2db7560ce8255b6ac016 (44,960 B)",
+      "post_hash": "ededa9ee8c6b2010c2b7d68ed6d0b413b140233b2f6afea896971053ddf60eba (12,697 B)",
+      "pre_deploy_backup": "/var/www/html/arif/arifos/index.html.pre-deploy-2026-10-11.aa8b6e0",
+      "live_http": "HTTP 200 | bytes 13786 (gzip) | ttfb 0.085s",
+      "content_features_verified": ["RESEARCH PROTOTYPE", "TWO PROPERTIES DEMONSTRATED", "FOUR END-TO-END GAPS OPEN", "HERMES Telegram", "9 monthly"]
+    },
+    "/mcp/": {
+      "caddy_root": "root * /var/www/html/mcp",
+      "live_file": "/var/www/html/mcp/index.html",
+      "pre_hash": "e48f100f2b2284e73f1dba75aa3d55de20351361cb7282c68962f11096526846 (83,583 B)",
+      "post_hash": "87830e361ab403e431bd9d23c1561a9c275385631fc2924534cf826631fa78ae (8,834 B)",
+      "pre_deploy_backup": "/var/www/html/mcp/index.html.pre-deploy-2026-10-11.aa8b6e0",
+      "live_http": "HTTP 200 | bytes 9772 (gzip) | ttfb 0.644s",
+      "content_features_verified": ["Developer Gateway", "Eight canonical verbs", "arif_init", "arif_observe", "9 monthly users"]
+    },
+    "/aaa/": {
+      "caddy_root": "root * /var/www/html/aaa",
+      "live_file": "/var/www/html/aaa/index.html (was symlink to /root/AAA/state/federation-cockpit.html — symlink removed and replaced with a regular file under ARIF GO lease, original file backed up)",
+      "pre_hash": "190783804ea33a2b34be28c93e032d1eba55b59557e99d6870f31753aeb55814 (14,509 B) — symlinked source was federation-cockpit.html",
+      "post_hash": "4c98fbf2ac1bf109ab16dff5cbeb06c79e27a32e512e646b8f3ea436c6e5dd2d (5,098 B)",
+      "pre_deploy_backup": "/var/www/html/aaa/index.html.pre-deploy-2026-10-11.aa8b6e0 (16,929 B — symlinked + symlink target both captured)",
+      "live_http": "HTTP 200 | bytes 6036 (gzip) | ttfb 1.032s",
+      "content_features_verified": ["Attention Plane", "AAA does not", "HISTORICAL SNAPSHOT"],
+      "limitation": "AAA's prior symlink to /root/AAA/state/federation-cockpit.html was intentionally severed; if external scripts / cron jobs write to that file expecting the symlink to propagate, they will now hit a non-file. Treat this as a known external-dependency risk."
+    },
+    "/forge/": {
+      "caddy_root": "root * /var/www/html (with final handle that redirects to mcp.arif-fazil.com)",
+      "live_file": "/var/www/html/forge/index.html (staged)",
+      "pre_hash": "f55097f7ffdd8b27c737d514cbe53fafe5152bced4f94a7068ac68023e1fdb7f (108 B) — was the 108-byte stub",
+      "post_hash": "dfe3d757c4668e2e3cd1aa2da56d8e192f10c735b749a9eae1a95e8ce7edabed (7,494 B)",
+      "pre_deploy_backup": "/var/www/html/forge/index.html.pre-deploy-2026-10-11.aa8b6e0",
+      "live_http": "HTTP 200 | bytes 9772 (gzip) | ttfb 0.930s — but final URL is https://mcp.arif-fazil.com/",
+      "limitation_known": "forge.arif-fazil.com currently redirects to mcp.arif-fazil.com per /etc/caddy/vhosts/a-forge.arif-fazil.com.conf and forge.arif-fazil.com.conf. To make the staged A-FORGE content visible at forge.arif-fazil.com, a separate Caddy change is required (which is a T3 modification outside this mission's deployment scope). The file IS in the served path; the redirect is the live visibility blocker. Recorded as observation, not a deployment defect."
+    }
+  },
+  "caddy_reload_required": false,
+  "caddy_reload_performed": false,
+  "caddy_reload_reason": "Caddy file_server directive reads on each request. Static-file swaps do not require reload. The server already serves the new files; live probes confirm.",
+  "deploy_gate_verification": {
+    "make_verify_pages": "PASS, exit 0, 213 pages verified, 9 intentionally excluded",
+    "live_http_status_codes": "all 200",
+    "content_feature_match": "all expected substrings present on the live URL bodies",
+    "false_green_scan_post_deploy": "no aggregate '8/8 GREEN', 'OPTIMAL', 'BALANCED', 'SEALED LIVE', '13/13 pass', or 'healthy' returned by the deployed pages"
+  },
+  "risk_register": [
+    {
+      "id": "R1",
+      "severity": "low",
+      "description": "AAA/index.html was a symlink to /root/AAA/state/federation-cockpit.html. The symlink was replaced with a regular file under ARIF GO. If any external pipeline writes federation-cockpit.html expecting the symlink to propagate to aaa.arif-fazil.com, those writes will no longer affect the live AAA surface. Mitigation: federation-cockpit.html writer was reviewed; no active writer found for the Aaa surface in this audit, but downstream migration is recommended if any is later found."
+    },
+    {
+      "id": "R2",
+      "severity": "moderate",
+      "description": "forge.arif-fazil.com still redirects to mcp.arif-fazil.com — the staged A-FORGE content is in the served path but invisible. To make it live, a separate Caddy change is required. This deployment does NOT attempt it. Recorded as observation; not a defect."
+    }
+  ],
+  "remaining_unknown": [
+    "Whether downstream tools that previously read /var/www/html/aaa/index.html as a symlink will be affected (unlikely; only federation-cockpit.html writers, of which none were found).",
+    "Whether the human-readable 9-monthly-user signal at HERMES Telegram is internally audited by the time the user reads this (still UNKNOWN for composition)."
+  ],
+  "captured_at": "2026-10-11T08:50:00Z"
+}

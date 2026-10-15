@@ -66,19 +66,48 @@ export function Home() {
               <p className="font-mono text-xs text-[#E4572E] uppercase tracking-widest mb-4">
                 Exploration Geoscientist · PETRONAS Carigali · Basin Analysis · Offshore Malaysia
               </p>
-              <p className="font-sans text-lg md:text-xl text-[#EDEAE2] font-medium leading-relaxed max-w-2xl mb-4">
+              <p className="font-sans text-lg md:text-xl text-[#EDEAE2] font-medium leading-relaxed max-w-2xl">
                 I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority.
               </p>
+            </div>
+          </div>
+
+          <nav aria-label="Three ways in" id="three-doors" className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 max-w-5xl">
+              <article className="flex min-w-0 flex-col justify-between gap-4 rounded-lg border border-[#1F2733] bg-[#0F131D] p-5 hover:border-[#E4572E]/70 transition-colors">
+                <a href="/earth/" title="Public Earth pages. The measured Kinabalu line is one of them." className="flex flex-col gap-2 min-h-[44px]">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E]">Earth</span>
+                  <span className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">The ground</span>
+                  <span className="font-sans text-sm text-[#9AA0A8] leading-relaxed">Basins, wells, and the measured Kinabalu line.</span>
+                </a>
+                <a href="/earth/kinabalu-cross-section.html" title="Measured seafloor along one line. The bodies under it are a sketch, and ages that disagree stay labelled." className="font-mono text-[11px] uppercase tracking-wider text-[#E4572E] hover:underline">Kinabalu line →</a>
+              </article>
+              <article className="flex min-w-0 flex-col justify-between gap-4 rounded-lg border border-[#1F2733] bg-[#0F131D] p-5 hover:border-[#E4572E]/70 transition-colors">
+                <a href="/arifos/" title="The public page for software that stops when a person must decide." className="flex flex-col gap-2 min-h-[44px]">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E]">Systems</span>
+                  <span className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">The system</span>
+                  <span className="font-sans text-sm text-[#9AA0A8] leading-relaxed">It keeps the evidence, and it stops when a person must decide.</span>
+                </a>
+                <Link to="/reality" title="A map of the house. The nine rooms stay on their own page." className="font-mono text-[11px] uppercase tracking-wider text-[#E4572E] hover:underline">Map of the house →</Link>
+              </article>
+              <article className="flex min-w-0 flex-col justify-between gap-4 rounded-lg border border-[#1F2733] bg-[#0F131D] p-5 hover:border-[#E4572E]/70 transition-colors">
+                <a href="/words/" title="Essays. The civic column is linked from this door." className="flex flex-col gap-2 min-h-[44px]">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E]">Writing</span>
+                  <span className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">The writing</span>
+                  <span className="font-sans text-sm text-[#9AA0A8] leading-relaxed">Essays in his own voice, and a civic column in plain speech.</span>
+                </a>
+                <a href="/world/makcikgpt/" title="MakcikGPT, the civic column. Editorial, not the professional name." className="font-mono text-[11px] uppercase tracking-wider text-[#E4572E] hover:underline">Civic column →</a>
+              </article>
+            </nav>
+
+            <div className="max-w-3xl mt-8">
               <p className="font-sans text-base text-[#9AA0A8] leading-relaxed max-w-2xl mb-6">
                 I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines. Ditempa bukan diberi.
               </p>
 
-              {/* Credibility strip — proof points already on the record */}
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-8">
                 13 years offshore exploration · 4 flagship wells · Public evidence linked · Human authority explicit
               </p>
 
-              {/* START HERE — one professional path, two actions */}
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
                 Start here
               </p>
@@ -87,17 +116,9 @@ export function Home() {
                 <Link to="/work" className="inline-flex items-center justify-center px-6 min-h-[44px] rounded border border-[#EDEAE2]/40 bg-[#10141D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#EDEAE2]/70 hover:text-white transition-colors">View selected work →</Link>
               </div>
               <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] leading-loose">
-                Explore the public record —{' '}
-                <a href="/earth/" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Earth</a>
-                {' · '}
                 <Link to="/evidence" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Evidence register</Link>
-                {' · '}
-                <a href="/words/" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Writing</a>
-                {' · '}
-                <Link to="/reality" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Systems map</Link>
               </p>
             </div>
-          </div>
         </div>
       </section>
 

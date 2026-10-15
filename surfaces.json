@@ -591,14 +591,26 @@
       "description": "Public PETRONAS VITALS on apex (not system health cosplay). Canonical soft path /vitals/; /wealth/vitals/ 308s here. Distinct organ-style chrome is intentional for capital dashboard. Post-audit-fix (2026-09-17): VITALS_* namespaced score bands (BUFFERED/WATCH/STRESSED/CRITICAL — distinct from arifOS constitutional verdicts); Tripwire #1 renamed to Post-Dividend Residual Cash (PDRC) with audited FCF def = RM43.6B framing; Tripwire #8 WITHHELD_PENDING with primary-sourced governance citation at /makcikgpt/petronas-bod-evolution/; 5-tier epistemic taxonomy (OBS/DER/HYP/INT/SPEC); 4 counter-hypotheses ledger; dual-clock drift overlay (sealed FY2025 audited vs 1H26 declared-not-audited); AUTO-ESCALATE/REVIEW REQUIRED replaces AUTO-INTERVENTION framing; PacemakerAction JSON-LD action 'DIVIDEND_STOP_PUBLIC_ADVISORY_ESCALATION'; AMEND-2026-08-03-001 preserved verbatim; audit baseline canon/vitals_audit_baseline.json."
     },
     {
-      "path": "/malaysia/",
-      "title": "Malaysia — Civic & Political Hub",
-      "mission": "interpret",
+      "path": "/wealth/malaysia/",
+      "title": "Malaysia — sovereign pulse",
+      "mission": "monitor",
       "status": "live",
       "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Civic and political intelligence hub for Malaysia"
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "Malaysia pulse. Canonical page. /malaysia/ redirects here. Linked with /vitals/, /oil/, /gas/, /world/, and /gold/. Pulse composite 45 HOLD remains the 24 July 2026 seal."
+    },
+    {
+      "path": "/malaysia/",
+      "title": "Malaysia (redirect to /wealth/malaysia/)",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Short path. Lands on the Malaysia pulse.",
+      "redirects_to": "/wealth/malaysia/"
     },
     {
       "path": "/pulse/",

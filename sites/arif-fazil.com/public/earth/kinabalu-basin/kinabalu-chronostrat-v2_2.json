@@ -1,0 +1,4405 @@
+{
+  "data": {
+    "meta": {
+      "title": "Kinabalu Basin Chronostratigraphic & Tectonostratigraphic Chart",
+      "version": "2.2-CANDIDATE",
+      "date": "2026-10-12",
+      "status": "v2.2 CANDIDATE - WORKING MODEL, NOT SEALED",
+      "authority": "GEOX computes and contrasts (local Python runtime; geox-direct MCP unavailable this session). ARIF / arifOS adjudicates.",
+      "classification": "PETRONAS INTERNAL",
+      "law": [
+        "Surfaces are the stored objects; stages are derived intervals between surfaces.",
+        "Every age is model-scoped (PROJECT_2026, LEGACY_TB, LEGACY_RECAL). No silent averaging.",
+        "Biostratigraphy calibrates surfaces as age windows, it does not create surfaces.",
+        "No data is not nondeposition. Hiatus bodies are drawn only where wells or published charts show missing section.",
+        "Facies bodies are basin-scale synthesis, not measured thickness. Horizontal axis is domain position, not distance."
+      ],
+      "convention_note": "PROJECT_2026 ages (Unified GEOX table / Phase I) are TOP-of-stage ages; LEGACY_TB ages (A-R master penetration chart, Shell TB-cycle scheme) are BASE-of-stage ages. Both name the same physical surfaces: Top III = Base IVA = DRU; Top IVA = Base IVB = LIU; Top IVB = Base IVC = UIU; Top IVC = Base IVD = SRU; Top IVD = Base IVE = Horizon III; Top IVE = Base IVF = Horizon II; Top IVF = Base IVG = Horizon I.",
+      "rendered_from": "kinabalu_chronostrat_v2.json + kinabalu_chronostrat_v2_2_ext.json",
+      "v2_2_laws": [
+        "Apparent K-Ar age is not automatically crystallisation, eruption or emplacement age.",
+        "Regional analogues increase plausibility but do not prove local plumbing continuity.",
+        "Present-day stress compatibility is a permissibility constraint, not age evidence.",
+        "AVO is an interface response, not a unique lithology or age classifier.",
+        "Never transform an open hypothesis into a canonical event merely to simplify rendering."
+      ]
+    },
+    "models": {
+      "P": {
+        "name": "PROJECT_2026",
+        "desc": "Top-of-stage ages from Kinabalu_Basin_Unified_Stratigraphic_Chart_GEOX.xlsx / Phase I marker standard (GTS2012-type nannofossil calibration).",
+        "src": [
+          "SRC-UNI",
+          "SRC-P1"
+        ]
+      },
+      "L": {
+        "name": "LEGACY_TB",
+        "desc": "Base-of-stage ages printed in the A-R master penetration chart; tied to Shell TB cycles (Sheet1: B.S IVA = TB2.4 = DRU, B.S IVD = TB3.2 = SRU). 1980s-1990s timescale.",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      "R": {
+        "name": "LEGACY_RECAL",
+        "desc": "Hypothesis: each legacy surface is the nannofossil zone boundary it is drawn against in the pen chart, re-dated with GTS2012 (Backman et al. 2012). Where the legacy age is not a zone boundary, the legacy age is kept.",
+        "src": [
+          "SRC-PEN",
+          "L-BACK12",
+          "L-BKSA95"
+        ]
+      }
+    },
+    "sources": [
+      {
+        "id": "SRC-PEN",
+        "kind": "DATA",
+        "title": "Well Penetration Chart - Kinabalu Basin.xlsx (A-R MASTER PEN_CHART, Sheet1, pintasan-sukaugaya)",
+        "class": "PETRONAS internal",
+        "note": "Well NN zones, EOD and surface picks; legacy stage-base ages; TB-to-stage mapping."
+      },
+      {
+        "id": "SRC-UNI",
+        "kind": "DATA",
+        "title": "Kinabalu_Basin_Unified_Stratigraphic_Chart_GEOX.xlsx (Key_Boundaries)",
+        "class": "PETRONAS internal",
+        "note": "Project marker ages IVF 2.0 / IVE 3.1 / IVD 8.11 / IVC 9.53 / IVB 10.46 / IVA 11.63 / III 14.2 / II 23.13 / I 34.1."
+      },
+      {
+        "id": "SRC-P1",
+        "kind": "DATA",
+        "title": "IBS Kinabalu Basin (Miocene Play) Phase I - Tectonostratigraphic Framework (TAC, May 2026)",
+        "class": "PETRONAS internal",
+        "note": "p8: Stage IVe = NN16-NN11, IVd = NN11-NN10, IVc = NN9; NN8 and below out of scope. p10: marker system mandatory."
+      },
+      {
+        "id": "SRC-NOM",
+        "kind": "DATA",
+        "title": "KINABALU_BASIN_NOMENCLATURE_CORRECTIONS.xlsx",
+        "class": "PETRONAS internal",
+        "note": "NN label hygiene and EOD legend (HIN 0-30 m ... Lower Bathyal 1000-2000 m)."
+      },
+      {
+        "id": "SRC-MEMO",
+        "kind": "DATA",
+        "title": "KL2_KINABALU_VALIDATION_MEMO.md (2026-09-07)",
+        "class": "internal",
+        "note": "KL2V2 roster real; NN re-datum to Stratigraphic Chart of Malaysia V1.2024; velocity uncertainty +-200-500 m."
+      },
+      {
+        "id": "SRC-IMG1",
+        "kind": "DATA",
+        "title": "PETRONAS Chronostratigraphic Chart (2023) - KL8/KL5/KL1/KL3 transects",
+        "class": "PETRONAS (Open)",
+        "note": "Sabah Platform carbonates (Falkon, Nuri, Merak, Cenderawasih), Setap/Melingan NN5, Belait, Liang, Temburong/Crocker NP23, toe thrust, Sabah pre-rift sequence NP14."
+      },
+      {
+        "id": "SRC-IMG2",
+        "kind": "DATA",
+        "title": "South China Sea Events - TTE internal chart (PETRONAS-TotalEnergies; after Le Pourhiet et al. 2018, Pubellier et al. 2018)",
+        "class": "Confidential - authorised for external distribution",
+        "note": "ROU, IRU, BU, BMU, RU/MMU; onset spreading 30.8 Ma, ridge jump 23.8 Ma, end spreading 16 Ma. Ages read from figure (+-0.5 Ma)."
+      },
+      {
+        "id": "SRC-IMG3",
+        "kind": "DATA",
+        "title": "Kinabalu Basin Geological Setting - Neogene stratigraphy IV-A to IV-G (SB412 slide)",
+        "class": "Confidential - authorised for external distribution",
+        "note": "DRU, LIU, UIU, SRU; NSPW (North Sabah-Pagasa Wedge), Kudat Wedge; Kalutan & Mantanani limestones; tectonic stages."
+      },
+      {
+        "id": "SRC-CP01",
+        "kind": "PRIOR",
+        "title": "Copilot Kinabalu Earth-Event Chart v0.1 (json/csv/png)",
+        "class": "internal",
+        "note": "Audited - superseded."
+      },
+      {
+        "id": "SRC-CP11",
+        "kind": "PRIOR",
+        "title": "Copilot Kinabalu Visual Chronostratigraphic Chart v1.1 (png)",
+        "class": "internal",
+        "note": "Audited - see contradictions C14."
+      },
+      {
+        "id": "L-GTS2020",
+        "kind": "LIT",
+        "title": "Gradstein et al. (2020) Geologic Time Scale 2020",
+        "note": "Stage boundaries."
+      },
+      {
+        "id": "L-BACK12",
+        "kind": "LIT",
+        "title": "Backman et al. (2012) Newsl. Stratigr. 45 - Neogene nannofossil zonation & GTS2012 calibration",
+        "note": "NN base ages used here."
+      },
+      {
+        "id": "L-BKSA95",
+        "kind": "LIT",
+        "title": "Berggren et al. (1995) SEPM SP54 - Cenozoic geochronology",
+        "note": "Legacy calibration: base NN5 15.6, base NN10 9.4, base NN11 8.6, base NN16 3.83."
+      },
+      {
+        "id": "L-HAQ",
+        "kind": "LIT",
+        "title": "Haq, Hardenbol & Vail (1987/88) - TB cycle chart",
+        "note": "TB2.4 ~15.5, TB3.1 ~10.5, TB3.4 ~5.5 Ma (old timescale)."
+      },
+      {
+        "id": "L-LEV87",
+        "kind": "LIT",
+        "title": "Levell (1987) GSM Bull. 21 - Sabah Stage IV subdivision",
+        "note": "Stage IV A-G scheme."
+      },
+      {
+        "id": "L-HT93",
+        "kind": "LIT",
+        "title": "Hazebroek & Tan (1993) - Tertiary tectonic evolution of NW Sabah continental margin",
+        "note": "DRU, SRU, inboard/outboard belts."
+      },
+      {
+        "id": "L-HUT05",
+        "kind": "LIT",
+        "title": "Hutchison (2005) Geology of North-West Borneo",
+        "note": "Sarawak Orogeny (~37 Ma), Rajang/Crocker, Sabah Orogeny."
+      },
+      {
+        "id": "L-HALL13",
+        "kind": "LIT",
+        "title": "Hall (2013); Hall & Breitfeld (2017) - Borneo/SE Asia tectonics",
+        "note": "Proto-SCS subduction ended Early Miocene; DG crust underthrust beneath Sabah."
+      },
+      {
+        "id": "L-COT10",
+        "kind": "LIT",
+        "title": "Cottam et al. (2010) J. Geol. Soc. 167 - Kinabalu granite U-Pb",
+        "note": "Pluton emplaced 7.85-7.22 Ma."
+      },
+      {
+        "id": "L-DG",
+        "kind": "LIT",
+        "title": "Hinz & Schlueter (1985); Franke et al. (2008) - Dangerous Grounds rifting & carbonates",
+        "note": "Rifted continental blocks, Oligo-Miocene platforms, drowning ~MMU."
+      },
+      {
+        "id": "L-LI14",
+        "kind": "LIT",
+        "title": "Li et al. (2014) IODP Exp. 349 - SCS spreading history",
+        "note": "Spreading ceased ~15-16 Ma."
+      },
+      {
+        "id": "L-DWFTB",
+        "kind": "LIT",
+        "title": "Ingram et al. (2004); Morley et al. (2011); Hesse et al. (2009) - NW Borneo deepwater fold-thrust belt",
+        "note": "Gravity-driven toe-thrusts, mobile shale, minibasins; Late Miocene-Recent."
+      },
+      {
+        "id": "SRC-LL1-AGES",
+        "kind": "DATA",
+        "title": "Layang-Layang-1 apparent-age table (6 K-Ar, 1 U-Pb lower intercept)",
+        "class": "PETRONAS internal",
+        "note": "Encoded exactly as transcribed in ARIF instruction 2026-10-12. Enterprise provenance reported AVAILABLE (SRC-ENT-LL1 via SRC-ENT-DOSSIER); local provenance PARTIAL - see provenance_manifest.json."
+      },
+      {
+        "id": "SRC-BIOREV",
+        "kind": "DATA",
+        "title": "Sabah Kinabalu Basin biostratigraphic review (16.06.2026)",
+        "class": "PETRONAS internal",
+        "note": "Rule: long-ranging species expressed as 'not older than' / 'not younger than' / 'and/or older' / 'and/or younger'. Review file not present in the working directory; rule applied as stated by ARIF."
+      },
+      {
+        "id": "SRC-ARIF-PHC",
+        "kind": "INT",
+        "title": "ARIF Phase C framing (2026-10-12): candidate post-16 Ma magmatic or hydrothermal reactivation; Models A/B/C; confidence ladder",
+        "class": "internal",
+        "note": "Interpretive framework supplied by ARIF; not an observation."
+      },
+      {
+        "id": "SRC-ENT-DOSSIER",
+        "kind": "PRIOR",
+        "title": "Enterprise validation dossier (M365 Copilot review, 2026-10-12)",
+        "class": "PETRONAS internal",
+        "note": "Reports that the LL-1 table, the mixed-mineral caveat and the dyke/sill vs volcaniclastic alternatives come from the enterprise sources below. Not verified in the working folder."
+      },
+      {
+        "id": "SRC-ENT-LL1",
+        "kind": "DATA",
+        "title": "Layang-Layang-1 Post Drill Geological Study.pdf",
+        "class": "PETRONAS internal (enterprise)",
+        "note": "Reported primary source for the six K-Ar results, fractions, 2σ, radiogenic 40Ar and mixed-mineral caveat. Not in working folder; checksum and page reference not retrieved."
+      },
+      {
+        "id": "SRC-ENT-PKK-WCR",
+        "kind": "DATA",
+        "title": "Pekaka-1 Well Completion Report.pdf",
+        "class": "PETRONAS internal (enterprise)",
+        "note": "Referenced by the enterprise dossier. Not in working folder."
+      },
+      {
+        "id": "SRC-ENT-PKK-BIO",
+        "kind": "DATA",
+        "title": "APPENDIX 7 PEKAKA-1 BIOSTRATIGRAPHY REPORT.pdf",
+        "class": "PETRONAS internal (enterprise)",
+        "note": "Referenced by the enterprise dossier. Not in working folder."
+      }
+    ],
+    "tiers": {
+      "DATA": "Observed in a project file or well record listed in sources.",
+      "LIT": "Published literature, cited from model knowledge; not re-read in this session - verify before external use.",
+      "INT": "Geological interpretation consistent with DATA + LIT.",
+      "SPEC": "Speculative / placeholder; low constraint.",
+      "COMP": "Computed by this build from encoded data."
+    },
+    "scale": {
+      "max_age": 66,
+      "segments": [
+        [
+          0,
+          24,
+          0.72
+        ],
+        [
+          24,
+          66,
+          0.28
+        ]
+      ],
+      "note": "Piecewise-linear: 0-24 Ma occupies 72% of height, 24-66 Ma 28%. Linear inside each segment; break marked."
+    },
+    "gts": {
+      "periods": [
+        {
+          "name": "Quaternary",
+          "old": 2.58,
+          "young": 0
+        },
+        {
+          "name": "Neogene",
+          "old": 23.03,
+          "young": 2.58
+        },
+        {
+          "name": "Paleogene",
+          "old": 66.0,
+          "young": 23.03
+        }
+      ],
+      "epochs": [
+        {
+          "name": "Pleistocene",
+          "old": 2.58,
+          "young": 0.0117,
+          "c": "#f9f281"
+        },
+        {
+          "name": "Holo.",
+          "old": 0.0117,
+          "young": 0,
+          "c": "#fef2e0"
+        },
+        {
+          "name": "Pliocene",
+          "old": 5.333,
+          "young": 2.58,
+          "c": "#ffff99"
+        },
+        {
+          "name": "Miocene",
+          "old": 23.03,
+          "young": 5.333,
+          "c": "#ffff00"
+        },
+        {
+          "name": "Oligocene",
+          "old": 33.9,
+          "young": 23.03,
+          "c": "#feC07a"
+        },
+        {
+          "name": "Eocene",
+          "old": 56.0,
+          "young": 33.9,
+          "c": "#fdb46c"
+        },
+        {
+          "name": "Paleocene",
+          "old": 66.0,
+          "young": 56.0,
+          "c": "#fda75f"
+        }
+      ],
+      "stages": [
+        {
+          "name": "Chib.",
+          "old": 0.774,
+          "young": 0,
+          "c": "#fff2c7"
+        },
+        {
+          "name": "Calab.",
+          "old": 1.8,
+          "young": 0.774,
+          "c": "#ffefaf"
+        },
+        {
+          "name": "Gelas.",
+          "old": 2.58,
+          "young": 1.8,
+          "c": "#ffedb3"
+        },
+        {
+          "name": "Piacenz.",
+          "old": 3.6,
+          "young": 2.58,
+          "c": "#ffffbf"
+        },
+        {
+          "name": "Zancl.",
+          "old": 5.333,
+          "young": 3.6,
+          "c": "#ffffb3"
+        },
+        {
+          "name": "Messin.",
+          "old": 7.246,
+          "young": 5.333,
+          "c": "#ffff73"
+        },
+        {
+          "name": "Tortonian",
+          "old": 11.63,
+          "young": 7.246,
+          "c": "#ffff66"
+        },
+        {
+          "name": "Serrav.",
+          "old": 13.82,
+          "young": 11.63,
+          "c": "#ffff59"
+        },
+        {
+          "name": "Langhian",
+          "old": 15.97,
+          "young": 13.82,
+          "c": "#ffff4d"
+        },
+        {
+          "name": "Burdigalian",
+          "old": 20.44,
+          "young": 15.97,
+          "c": "#ffff41"
+        },
+        {
+          "name": "Aquit.",
+          "old": 23.03,
+          "young": 20.44,
+          "c": "#ffff33"
+        },
+        {
+          "name": "Chattian",
+          "old": 27.29,
+          "young": 23.03,
+          "c": "#fee6aa"
+        },
+        {
+          "name": "Rupelian",
+          "old": 33.9,
+          "young": 27.29,
+          "c": "#fed99a"
+        },
+        {
+          "name": "Priab.",
+          "old": 37.71,
+          "young": 33.9,
+          "c": "#fdcda1"
+        },
+        {
+          "name": "Barton.",
+          "old": 41.03,
+          "young": 37.71,
+          "c": "#fdc091"
+        },
+        {
+          "name": "Lutetian",
+          "old": 48.07,
+          "young": 41.03,
+          "c": "#fcb482"
+        },
+        {
+          "name": "Ypresian",
+          "old": 56.0,
+          "young": 48.07,
+          "c": "#fca773"
+        },
+        {
+          "name": "Thanet.",
+          "old": 59.24,
+          "young": 56.0,
+          "c": "#fdbf6f"
+        },
+        {
+          "name": "Seland.",
+          "old": 61.66,
+          "young": 59.24,
+          "c": "#fec484"
+        },
+        {
+          "name": "Danian",
+          "old": 66.0,
+          "young": 61.66,
+          "c": "#fdb462"
+        }
+      ]
+    },
+    "nn_gts2012": {
+      "_src": "L-BACK12",
+      "_note": "Base ages (Ma) of Martini NN zones, GTS2012 calibration. Top of zone = base of next younger zone.",
+      "NN21": 0.29,
+      "NN20": 0.44,
+      "NN19": 1.93,
+      "NN18": 2.39,
+      "NN17": 2.53,
+      "NN16": 3.7,
+      "NN15": 3.92,
+      "NN14": 4.13,
+      "NN13": 5.12,
+      "NN12": 5.59,
+      "NN11": 8.29,
+      "NN10": 9.53,
+      "NN9": 10.55,
+      "NN8": 10.89,
+      "NN7": 11.9,
+      "NN6": 13.53,
+      "NN5": 14.91,
+      "NN4": 17.95,
+      "NN3": 19.03,
+      "NN2": 22.82,
+      "NN1": 23.13
+    },
+    "nn_bksa95": {
+      "_src": "L-BKSA95",
+      "_note": "Selected legacy base ages used to explain legacy stage ages. Values as commonly quoted; verify against PETRONAS Stratigraphic Chart of Malaysia V1.2024.",
+      "NN16": 3.83,
+      "NN12": 5.54,
+      "NN11": 8.6,
+      "NN10": 9.4,
+      "NN9": 10.7,
+      "NN6": 13.6,
+      "NN5": 15.6
+    },
+    "surfaces": [
+      {
+        "id": "H1",
+        "name": "Horizon I",
+        "def": "Top IVF / Base IVG",
+        "kind": "flooding/sequence",
+        "erosional": false,
+        "ages": {
+          "P": 2.0,
+          "L": 3.8,
+          "R": 3.7
+        },
+        "basis": {
+          "P": "Top IVF at NN18 (2.0 Ma)",
+          "L": "Base IVG 3.8 Ma (pen chart)",
+          "R": "if Base IVG = base NN16 (BKSA95 3.83) -> GTS2012 3.70"
+        },
+        "domains": [
+          "TRO",
+          "OUT",
+          "INB"
+        ],
+        "verdict": "HOLD",
+        "contra": [
+          "C6"
+        ]
+      },
+      {
+        "id": "H2",
+        "name": "Horizon II",
+        "def": "Top IVE / Base IVF",
+        "kind": "flooding/sequence",
+        "erosional": false,
+        "ages": {
+          "P": 3.1,
+          "L": 5.5,
+          "R": 5.59
+        },
+        "basis": {
+          "P": "Top IVE at NN16 (3.1 Ma)",
+          "L": "Base IVF drawn at NN12 / TB3.4 (~5.5 Ma; age not printed)",
+          "R": "if Base IVF = base NN12 -> GTS2012 5.59"
+        },
+        "domains": [
+          "TRO",
+          "OUT",
+          "INB"
+        ],
+        "verdict": "HOLD",
+        "contra": [
+          "C6"
+        ]
+      },
+      {
+        "id": "H3",
+        "name": "Horizon III",
+        "def": "Top IVD / Base IVE",
+        "kind": "flooding/sequence",
+        "erosional": false,
+        "ages": {
+          "P": 8.11,
+          "L": 6.7,
+          "R": 6.7
+        },
+        "basis": {
+          "P": "Top IVD at NN11 (8.11 Ma; not a GTS2012 zone boundary - base NN11 = 8.29)",
+          "L": "Base IVE 6.7 Ma (pen chart; TB3.3)",
+          "R": "no NN tie - legacy value kept"
+        },
+        "domains": [
+          "TRO",
+          "OUT",
+          "INB"
+        ],
+        "verdict": "HOLD",
+        "contra": [
+          "C5"
+        ]
+      },
+      {
+        "id": "SRU",
+        "name": "SRU - Shallow Regional Unconformity",
+        "def": "Top IVC / Base IVD",
+        "kind": "unconformity (inversion)",
+        "erosional": true,
+        "ages": {
+          "P": 9.53,
+          "L": 9.4,
+          "R": 9.53
+        },
+        "alt": {
+          "L": 8.5
+        },
+        "basis": {
+          "P": "Top IVC at top NN9 (9.53)",
+          "L": "Base IVD printed '8.5 / 9.4 Ma'; 9.4 = BKSA95 base NN10, 8.5-8.6 = BKSA95 base NN11",
+          "R": "base NN10 (LO D. hamatus) GTS2012 = 9.53"
+        },
+        "domains": [
+          "TRO",
+          "OUT",
+          "INB",
+          "ONS"
+        ],
+        "verdict": "~9.4 Ma (3 wells)",
+        "contra": [
+          "C2",
+          "C8"
+        ]
+      },
+      {
+        "id": "UIU",
+        "name": "UIU - Upper Intermediate Unconformity",
+        "def": "Top IVB / Base IVC",
+        "kind": "unconformity",
+        "erosional": true,
+        "ages": {
+          "P": 10.46,
+          "L": 10.6,
+          "R": 10.55
+        },
+        "basis": {
+          "P": "Top IVB, NN8/NN9 (10.46)",
+          "L": "Base IVC 10.6 Ma at NN9L (TB3.1)",
+          "R": "base NN9 (FO D. hamatus) GTS2012 = 10.55"
+        },
+        "domains": [
+          "OUT",
+          "INB"
+        ],
+        "verdict": "SUPPORTED",
+        "contra": [
+          "C3"
+        ]
+      },
+      {
+        "id": "LIU",
+        "name": "LIU - Lower Intermediate Unconformity",
+        "def": "Top IVA / Base IVB",
+        "kind": "unconformity",
+        "erosional": true,
+        "ages": {
+          "P": 11.63,
+          "L": 12.0,
+          "R": 11.9
+        },
+        "basis": {
+          "P": "Top IVA, NN7 (11.63)",
+          "L": "Base IVB 12 Ma at NN7 (near TB2.6)",
+          "R": "base NN7 (FO D. kugleri) GTS2012 = 11.90"
+        },
+        "domains": [
+          "OUT",
+          "INB"
+        ],
+        "verdict": "SUPPORTED (P)",
+        "contra": [
+          "C4"
+        ]
+      },
+      {
+        "id": "DRU",
+        "name": "DRU - Deep Regional Unconformity",
+        "def": "Top III / Base IVA",
+        "kind": "unconformity (collision)",
+        "erosional": true,
+        "ages": {
+          "P": 14.2,
+          "L": 15.4,
+          "R": 14.91
+        },
+        "basis": {
+          "P": "Top III at NN5 (14.2)",
+          "L": "Base IVA 15.4 Ma at base NN5 / SB5 / TB2.4",
+          "R": "base NN5 (LO H. ampliaperta; BKSA95 15.6) GTS2012 = 14.91"
+        },
+        "domains": [
+          "TRO",
+          "OUT",
+          "INB",
+          "ONS"
+        ],
+        "verdict": "HOLD-NARROWED",
+        "contra": [
+          "C1",
+          "C9"
+        ]
+      },
+      {
+        "id": "BMU",
+        "name": "BMU family / Base Stage III",
+        "def": "Top II / Base III",
+        "kind": "unconformity (deformation)",
+        "erosional": true,
+        "ages": {
+          "P": 23.13,
+          "L": 21.0,
+          "R": 21.0
+        },
+        "basis": {
+          "P": "Top II = BMU 23.13 (NP25/NN1)",
+          "L": "Base III = TB2.1 (~21 Ma; Sheet1)",
+          "R": "no NN tie"
+        },
+        "domains": [
+          "DG",
+          "TRO",
+          "OUT",
+          "INB",
+          "ONS"
+        ],
+        "verdict": "HOLD",
+        "contra": [
+          "C7"
+        ]
+      },
+      {
+        "id": "MMU",
+        "name": "RU/MMU - end of SCS spreading (Dangerous Grounds)",
+        "def": "DG-domain surface; not the DRU",
+        "kind": "rift-end / drowning",
+        "erosional": true,
+        "ages": {
+          "P": 16.0,
+          "L": 16.0,
+          "R": 16.0
+        },
+        "basis": {
+          "P": "TTE chart RU/MMU, 'end of spreading 16 Ma'",
+          "L": "same",
+          "R": "same"
+        },
+        "domains": [
+          "DG",
+          "TRO"
+        ],
+        "verdict": "INT",
+        "contra": [
+          "C9"
+        ]
+      },
+      {
+        "id": "BU",
+        "name": "BU - Breakup Unconformity",
+        "def": "onset SCS spreading",
+        "kind": "breakup",
+        "erosional": true,
+        "ages": {
+          "P": 30.8,
+          "L": 30.8,
+          "R": 30.8
+        },
+        "basis": {
+          "P": "TTE chart: onset spreading 30.8 Ma",
+          "L": "same",
+          "R": "same"
+        },
+        "domains": [
+          "DG",
+          "TRO"
+        ],
+        "verdict": "INT",
+        "contra": []
+      },
+      {
+        "id": "LEU",
+        "name": "Top Stage I / Rajang-Sarawak Orogeny family",
+        "def": "Top I / Base II",
+        "kind": "unconformity (orogenic)",
+        "erosional": true,
+        "ages": {
+          "P": 34.1,
+          "L": 34.4,
+          "R": 34.4
+        },
+        "basis": {
+          "P": "Stage I 34.1 (table label 'Late Oligocene (Priabonian)' is internally inconsistent: Priabonian = Late Eocene)",
+          "L": "34.4 Ma (pen chart)",
+          "R": "no NN tie"
+        },
+        "domains": [
+          "INB",
+          "ONS",
+          "OUT"
+        ],
+        "verdict": "INT",
+        "contra": [
+          "C11"
+        ]
+      },
+      {
+        "id": "ROU",
+        "name": "ROU - Rift Onset Unconformity",
+        "def": "onset of SCS-margin stretching",
+        "kind": "rift onset",
+        "erosional": true,
+        "ages": {
+          "P": 56.0,
+          "L": 56.0,
+          "R": 56.0
+        },
+        "basis": {
+          "P": "TTE chart ROU ~56 Ma (+-1)",
+          "L": "same",
+          "R": "same"
+        },
+        "domains": [
+          "DG",
+          "TRO"
+        ],
+        "verdict": "INT",
+        "contra": []
+      }
+    ],
+    "domains": [
+      {
+        "id": "DG",
+        "name": "Dangerous Grounds",
+        "sub": "rifted lower plate / Sabah platform",
+        "pos": "NW"
+      },
+      {
+        "id": "TRO",
+        "name": "NW Sabah Trough",
+        "sub": "flexed lower plate / foredeep",
+        "pos": ""
+      },
+      {
+        "id": "OUT",
+        "name": "Outboard",
+        "sub": "deepwater fold-thrust belt, minibasins",
+        "pos": ""
+      },
+      {
+        "id": "INB",
+        "name": "Inboard",
+        "sub": "shelf: progradation + inversion",
+        "pos": ""
+      },
+      {
+        "id": "ONS",
+        "name": "Onshore Crocker",
+        "sub": "uplifted prism = sediment source",
+        "pos": "SE"
+      }
+    ],
+    "facies": {
+      "BASE": {
+        "name": "Basement (continental / ophiolitic)",
+        "fill": "#9a8a7a",
+        "pat": "cross"
+      },
+      "CONT": {
+        "name": "Continental / fluvial",
+        "fill": "#c8963a"
+      },
+      "LACU": {
+        "name": "Lacustrine (syn-rift)",
+        "fill": "#76763f"
+      },
+      "LCP": {
+        "name": "Lower coastal plain",
+        "fill": "#8cc152"
+      },
+      "DELTA": {
+        "name": "Delta-coastal / inner shelf",
+        "fill": "#fff200"
+      },
+      "CHAN": {
+        "name": "Channel / coastal-plain sand",
+        "fill": "#f07f1a"
+      },
+      "SMSH": {
+        "name": "Shelf to upper-slope shale",
+        "fill": "#c9c9c9"
+      },
+      "DWSH": {
+        "name": "Deepwater shale (bathyal)",
+        "fill": "#858585"
+      },
+      "FAN": {
+        "name": "Deepwater fan / turbidite",
+        "fill": "#ecc95e"
+      },
+      "SMCARB": {
+        "name": "Shallow-marine carbonate",
+        "fill": "#3fa0d8",
+        "pat": "brick"
+      },
+      "DMCARB": {
+        "name": "Drowned / deep-marine carbonate",
+        "fill": "#1f4e79",
+        "pat": "brick"
+      },
+      "MOBSH": {
+        "name": "Mobile / overpressured shale",
+        "fill": "#5d5a6e",
+        "pat": "wave"
+      },
+      "ACCR": {
+        "name": "Accretionary deep-marine turbidites (Rajang/Crocker)",
+        "fill": "#a596bf",
+        "pat": "fold"
+      },
+      "VOLC": {
+        "name": "Volcanic / intrusive",
+        "fill": "#e53935"
+      },
+      "HIAT": {
+        "name": "Hiatus / erosion (evidenced)",
+        "fill": "#ffffff",
+        "pat": "hatch"
+      },
+      "UNK": {
+        "name": "Unresolved / not imaged",
+        "fill": "#eeeeee",
+        "pat": "dots"
+      }
+    },
+    "bodies": [
+      {
+        "d": "DG",
+        "f": "BASE",
+        "pts": [
+          [
+            0,
+            66
+          ],
+          [
+            1,
+            66
+          ],
+          [
+            1,
+            "ROU"
+          ],
+          [
+            0,
+            "ROU"
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-DG"
+        ],
+        "lab": "Pre-rift continental crust (Mesozoic)"
+      },
+      {
+        "d": "DG",
+        "f": "LACU",
+        "pts": [
+          [
+            0,
+            "ROU"
+          ],
+          [
+            0.45,
+            "ROU"
+          ],
+          [
+            0.45,
+            41
+          ],
+          [
+            0,
+            41
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DG",
+          "SRC-IMG2"
+        ],
+        "lab": "Syn-rift half-graben fill"
+      },
+      {
+        "d": "DG",
+        "f": "CONT",
+        "pts": [
+          [
+            0,
+            41
+          ],
+          [
+            0.45,
+            41
+          ],
+          [
+            0.45,
+            "BU"
+          ],
+          [
+            0,
+            "BU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DG"
+        ],
+        "lab": "Late syn-rift fluvial-deltaic"
+      },
+      {
+        "d": "DG",
+        "f": "HIAT",
+        "pts": [
+          [
+            0.45,
+            "ROU"
+          ],
+          [
+            1,
+            "ROU"
+          ],
+          [
+            1,
+            "BU"
+          ],
+          [
+            0.45,
+            "BU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-IMG1",
+          "SRC-IMG2"
+        ],
+        "lab": "Footwall highs: non-deposition / erosion (KL3 chart shows Sabah Platform high)"
+      },
+      {
+        "d": "DG",
+        "f": "SMSH",
+        "pts": [
+          [
+            0,
+            "BU"
+          ],
+          [
+            1,
+            "BU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            0,
+            "BMU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-IMG1"
+        ],
+        "lab": "Post-breakup marine clastics"
+      },
+      {
+        "d": "DG",
+        "f": "VOLC",
+        "pts": [
+          [
+            0.12,
+            29.8
+          ],
+          [
+            0.24,
+            29.8
+          ],
+          [
+            0.24,
+            28.6
+          ],
+          [
+            0.12,
+            28.6
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-IMG1"
+        ],
+        "lab": "Volcanics at ~NP23 level (PETRONAS KL3 chart, Sabah Platform)"
+      },
+      {
+        "d": "DG",
+        "f": "SMSH",
+        "pts": [
+          [
+            0,
+            "BMU"
+          ],
+          [
+            0.3,
+            "BMU"
+          ],
+          [
+            0.3,
+            "MMU"
+          ],
+          [
+            0,
+            "MMU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-IMG1"
+        ],
+        "lab": "Inter-platform marine shale"
+      },
+      {
+        "d": "DG",
+        "f": "SMCARB",
+        "pts": [
+          [
+            0.3,
+            "BMU"
+          ],
+          [
+            0.9,
+            "BMU"
+          ],
+          [
+            0.86,
+            "MMU"
+          ],
+          [
+            0.34,
+            "MMU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-IMG1",
+          "L-DG"
+        ],
+        "lab": "Carbonate platforms on rotated blocks (Falkon, Nuri, Merak, Cenderawasih - KL3 chart)"
+      },
+      {
+        "d": "DG",
+        "f": "DWSH",
+        "pts": [
+          [
+            0.9,
+            "BMU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            1,
+            "MMU"
+          ],
+          [
+            0.86,
+            "MMU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-IMG2"
+        ],
+        "lab": "Hyperextended margin deepening toward trough"
+      },
+      {
+        "d": "DG",
+        "f": "DMCARB",
+        "pts": [
+          [
+            0.34,
+            "MMU"
+          ],
+          [
+            0.86,
+            "MMU"
+          ],
+          [
+            0.8,
+            14.6
+          ],
+          [
+            0.4,
+            14.6
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DG",
+          "SRC-IMG2"
+        ],
+        "lab": "Drowned platform tops (rift-end subsidence)"
+      },
+      {
+        "d": "DG",
+        "f": "DWSH",
+        "pts": [
+          [
+            0,
+            "MMU"
+          ],
+          [
+            0.34,
+            "MMU"
+          ],
+          [
+            0.4,
+            14.6
+          ],
+          [
+            0.55,
+            14.6
+          ],
+          [
+            0.55,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DG"
+        ],
+        "lab": "Hemipelagic drape (condensed)"
+      },
+      {
+        "d": "DG",
+        "f": "DWSH",
+        "pts": [
+          [
+            0.86,
+            "MMU"
+          ],
+          [
+            1,
+            "MMU"
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0.7,
+            0
+          ],
+          [
+            0.7,
+            14.6
+          ],
+          [
+            0.8,
+            14.6
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DG"
+        ],
+        "lab": "Hemipelagic drape (condensed)"
+      },
+      {
+        "d": "DG",
+        "f": "SMCARB",
+        "pts": [
+          [
+            0.55,
+            14.6
+          ],
+          [
+            0.7,
+            14.6
+          ],
+          [
+            0.67,
+            0
+          ],
+          [
+            0.58,
+            0
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "L-DG"
+        ],
+        "lab": "Isolated atolls that kept pace (present-day Spratly reefs)"
+      },
+      {
+        "d": "TRO",
+        "f": "BASE",
+        "pts": [
+          [
+            0,
+            66
+          ],
+          [
+            1,
+            66
+          ],
+          [
+            1,
+            "ROU"
+          ],
+          [
+            0,
+            "ROU"
+          ]
+        ],
+        "t": "SPEC",
+        "src": [
+          "L-DG"
+        ],
+        "lab": "Thinned DG-type continental crust (inferred)"
+      },
+      {
+        "d": "TRO",
+        "f": "UNK",
+        "pts": [
+          [
+            0,
+            "ROU"
+          ],
+          [
+            1,
+            "ROU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            0,
+            "BMU"
+          ]
+        ],
+        "t": "SPEC",
+        "src": [],
+        "lab": "Pre-Miocene section poorly imaged beneath trough"
+      },
+      {
+        "d": "TRO",
+        "f": "SMCARB",
+        "pts": [
+          [
+            0,
+            "BMU"
+          ],
+          [
+            0.5,
+            "BMU"
+          ],
+          [
+            0.4,
+            "MMU"
+          ],
+          [
+            0,
+            "MMU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-IMG1"
+        ],
+        "lab": "Platform carbonates on lower plate (flexed down)"
+      },
+      {
+        "d": "TRO",
+        "f": "DWSH",
+        "pts": [
+          [
+            0.5,
+            "BMU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            1,
+            "DRU"
+          ],
+          [
+            0,
+            "DRU"
+          ],
+          [
+            0,
+            "MMU"
+          ],
+          [
+            0.4,
+            "MMU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-HALL13"
+        ],
+        "lab": "Deep-marine shale; lower plate entering trench"
+      },
+      {
+        "d": "TRO",
+        "f": "DWSH",
+        "pts": [
+          [
+            0,
+            "DRU"
+          ],
+          [
+            1,
+            "DRU"
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-HT93"
+        ],
+        "lab": "Flexural foredeep: hemipelagic mud"
+      },
+      {
+        "d": "TRO",
+        "f": "FAN",
+        "pts": [
+          [
+            0.55,
+            "SRU"
+          ],
+          [
+            0.95,
+            "SRU"
+          ],
+          [
+            0.95,
+            "H3"
+          ],
+          [
+            0.7,
+            "H3"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DWFTB"
+        ],
+        "lab": "Distal turbidites escaping the thrust front"
+      },
+      {
+        "d": "TRO",
+        "f": "FAN",
+        "pts": [
+          [
+            0.45,
+            "H2"
+          ],
+          [
+            0.92,
+            "H2"
+          ],
+          [
+            0.9,
+            "H1"
+          ],
+          [
+            0.6,
+            "H1"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DWFTB"
+        ],
+        "lab": "Trough-axis turbidites"
+      },
+      {
+        "d": "OUT",
+        "f": "UNK",
+        "pts": [
+          [
+            0,
+            66
+          ],
+          [
+            1,
+            66
+          ],
+          [
+            1,
+            "LEU"
+          ],
+          [
+            0,
+            "LEU"
+          ]
+        ],
+        "t": "SPEC",
+        "src": [],
+        "lab": "Buried substrate: DG crust vs Crocker prism unresolved"
+      },
+      {
+        "d": "OUT",
+        "f": "UNK",
+        "pts": [
+          [
+            0,
+            "LEU"
+          ],
+          [
+            0.4,
+            "LEU"
+          ],
+          [
+            0.4,
+            "BMU"
+          ],
+          [
+            0,
+            "BMU"
+          ]
+        ],
+        "t": "SPEC",
+        "src": [],
+        "lab": "Not imaged"
+      },
+      {
+        "d": "OUT",
+        "f": "ACCR",
+        "pts": [
+          [
+            0.4,
+            "LEU"
+          ],
+          [
+            1,
+            "LEU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            0.4,
+            "BMU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-HUT05",
+          "SRC-IMG1"
+        ],
+        "lab": "Crocker-equivalent accreted turbidites"
+      },
+      {
+        "d": "OUT",
+        "f": "MOBSH",
+        "pts": [
+          [
+            0,
+            "BMU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            1,
+            "DRU"
+          ],
+          [
+            0,
+            "DRU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-IMG3",
+          "L-HALL13"
+        ],
+        "lab": "North Sabah-Pagasa Wedge (Stage III): underthrust/accreted overpressured shale"
+      },
+      {
+        "d": "OUT",
+        "f": "DWSH",
+        "pts": [
+          [
+            0,
+            "DRU"
+          ],
+          [
+            1,
+            "DRU"
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Bathyal shale (Buluh-1: upper-middle bathyal NN11A-B)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.45,
+            "DRU>LIU @0.15"
+          ],
+          [
+            0.85,
+            "DRU>LIU @0.15"
+          ],
+          [
+            0.8,
+            "DRU>LIU @0.35"
+          ],
+          [
+            0.5,
+            "DRU>LIU @0.35"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Brown' fan level (base IVA / SB5)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.15,
+            "LIU"
+          ],
+          [
+            0.7,
+            "LIU"
+          ],
+          [
+            0.62,
+            "UIU"
+          ],
+          [
+            0.22,
+            "UIU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Kebabangan' fans (IVB)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.05,
+            "UIU"
+          ],
+          [
+            0.6,
+            "UIU"
+          ],
+          [
+            0.55,
+            "SRU"
+          ],
+          [
+            0.1,
+            "SRU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Kinarut' fans (IVC, H136)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.05,
+            "SRU"
+          ],
+          [
+            0.33,
+            "SRU"
+          ],
+          [
+            0.33,
+            "SRU>H3 @0.5"
+          ],
+          [
+            0.05,
+            "SRU>H3 @0.5"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Kamunsu' ponded fans (lower IVD, NN11A)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.5,
+            "SRU>H3 @0.3"
+          ],
+          [
+            0.74,
+            "SRU>H3 @0.3"
+          ],
+          [
+            0.74,
+            "H3"
+          ],
+          [
+            0.5,
+            "H3"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Pink' minibasin fans (IVD)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.05,
+            "H3"
+          ],
+          [
+            0.33,
+            "H3"
+          ],
+          [
+            0.33,
+            "H2"
+          ],
+          [
+            0.05,
+            "H2"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Yellow' ponded fans (IVE)"
+      },
+      {
+        "d": "OUT",
+        "f": "FAN",
+        "pts": [
+          [
+            0.5,
+            "H2"
+          ],
+          [
+            0.74,
+            "H2"
+          ],
+          [
+            0.74,
+            "H1"
+          ],
+          [
+            0.5,
+            "H1"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "'Lingan' fans (IVF)"
+      },
+      {
+        "d": "OUT",
+        "f": "MOBSH",
+        "pts": [
+          [
+            0.36,
+            "DRU"
+          ],
+          [
+            0.46,
+            "DRU"
+          ],
+          [
+            0.43,
+            "H2"
+          ],
+          [
+            0.39,
+            "H2"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DWFTB",
+          "SRC-IMG3"
+        ],
+        "lab": "Shale diapir / thrust-cored ridge"
+      },
+      {
+        "d": "OUT",
+        "f": "MOBSH",
+        "pts": [
+          [
+            0.76,
+            "DRU"
+          ],
+          [
+            0.86,
+            "DRU"
+          ],
+          [
+            0.83,
+            "H1"
+          ],
+          [
+            0.79,
+            "H1"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DWFTB",
+          "SRC-IMG3"
+        ],
+        "lab": "Shale diapir / thrust-cored ridge"
+      },
+      {
+        "d": "OUT",
+        "f": "HIAT",
+        "pts": [
+          [
+            0.36,
+            "H2"
+          ],
+          [
+            0.46,
+            "H2"
+          ],
+          [
+            0.44,
+            0
+          ],
+          [
+            0.38,
+            0
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DWFTB"
+        ],
+        "lab": "Crestal condensation / erosion over active ridge"
+      },
+      {
+        "d": "OUT",
+        "f": "HIAT",
+        "pts": [
+          [
+            0.76,
+            "H1"
+          ],
+          [
+            0.86,
+            "H1"
+          ],
+          [
+            0.84,
+            0
+          ],
+          [
+            0.78,
+            0
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "L-DWFTB"
+        ],
+        "lab": "Crestal condensation / erosion over active ridge"
+      },
+      {
+        "d": "INB",
+        "f": "BASE",
+        "pts": [
+          [
+            0,
+            66
+          ],
+          [
+            1,
+            66
+          ],
+          [
+            1,
+            52
+          ],
+          [
+            0,
+            52
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05"
+        ],
+        "lab": "Ophiolitic / accretionary basement"
+      },
+      {
+        "d": "INB",
+        "f": "ACCR",
+        "pts": [
+          [
+            0,
+            52
+          ],
+          [
+            1,
+            52
+          ],
+          [
+            1,
+            37.5
+          ],
+          [
+            0,
+            37.5
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05",
+          "SRC-IMG1"
+        ],
+        "lab": "Rajang Group / Sabah pre-rift sequence (NP14 level)"
+      },
+      {
+        "d": "INB",
+        "f": "HIAT",
+        "pts": [
+          [
+            0.55,
+            37.5
+          ],
+          [
+            1,
+            37.5
+          ],
+          [
+            1,
+            "LEU"
+          ],
+          [
+            0.55,
+            "LEU"
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05",
+          "SRC-IMG1"
+        ],
+        "lab": "Sarawak Orogeny (~37 Ma): Rajang Unconformity"
+      },
+      {
+        "d": "INB",
+        "f": "ACCR",
+        "pts": [
+          [
+            0,
+            37.5
+          ],
+          [
+            0.55,
+            37.5
+          ],
+          [
+            0.55,
+            "LEU"
+          ],
+          [
+            0,
+            "LEU"
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05"
+        ],
+        "lab": "Late Eocene turbidites"
+      },
+      {
+        "d": "INB",
+        "f": "ACCR",
+        "pts": [
+          [
+            0,
+            "LEU"
+          ],
+          [
+            1,
+            "LEU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            0,
+            "BMU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-IMG1",
+          "SRC-PEN"
+        ],
+        "lab": "Crocker / Temburong deep-marine (Balambangan-1: Crocker Fm)"
+      },
+      {
+        "d": "INB",
+        "f": "DWSH",
+        "pts": [
+          [
+            0,
+            "BMU"
+          ],
+          [
+            1,
+            "BMU"
+          ],
+          [
+            1,
+            "DRU"
+          ],
+          [
+            0,
+            "DRU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN",
+          "SRC-IMG3"
+        ],
+        "lab": "Stage III bathyal shale - Deluar-1, Ketam-1, South Lokan-1: BAT-HON below DRU (Kudat Wedge / Setap eq.)"
+      },
+      {
+        "d": "INB",
+        "f": "DELTA",
+        "pts": [
+          [
+            0.62,
+            "DRU"
+          ],
+          [
+            1,
+            "DRU"
+          ],
+          [
+            1,
+            "SRU"
+          ],
+          [
+            0.4,
+            "SRU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Stage IVA-IVC coastal-inner neritic (Deluar-1, Ketam-1 IVA: COL/HIN/LCP above bathyal III)"
+      },
+      {
+        "d": "INB",
+        "f": "SMSH",
+        "pts": [
+          [
+            0.45,
+            "DRU"
+          ],
+          [
+            0.62,
+            "DRU"
+          ],
+          [
+            0.4,
+            "SRU"
+          ],
+          [
+            0.25,
+            "SRU"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Prograding shelf edge / upper slope"
+      },
+      {
+        "d": "INB",
+        "f": "DWSH",
+        "pts": [
+          [
+            0,
+            "DRU"
+          ],
+          [
+            0.45,
+            "DRU"
+          ],
+          [
+            0.25,
+            "SRU"
+          ],
+          [
+            0,
+            "SRU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Bathyal IVA-IVC (Rusa Timur-1 BAT; Glayzer-3 HON-U.BAT; Gajah Hitam-1 H.BAT)"
+      },
+      {
+        "d": "INB",
+        "f": "SMCARB",
+        "pts": [
+          [
+            0.3,
+            "LIU"
+          ],
+          [
+            0.4,
+            "LIU"
+          ],
+          [
+            0.39,
+            "LIU>UIU @0.8"
+          ],
+          [
+            0.31,
+            "LIU>UIU @0.8"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN",
+          "SRC-P1"
+        ],
+        "lab": "Solisip-1: reefoid shallow-marine carbonate in IVB, then deep marine (tight; drowned)"
+      },
+      {
+        "d": "INB",
+        "f": "HIAT",
+        "pts": [
+          [
+            0.62,
+            14.91
+          ],
+          [
+            0.78,
+            14.91
+          ],
+          [
+            0.78,
+            "UIU"
+          ],
+          [
+            0.62,
+            "UIU"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Tiga Papan-2 high: NN9A directly on NN4-NN2; NN5-NN8 absent (DRU+LIU+UIU amalgamated, labelled 'MMU')"
+      },
+      {
+        "d": "INB",
+        "f": "HIAT",
+        "pts": [
+          [
+            0.8,
+            "SRU"
+          ],
+          [
+            0.9,
+            "LIU"
+          ],
+          [
+            1,
+            "LIU"
+          ],
+          [
+            1,
+            "H2"
+          ],
+          [
+            0.8,
+            "H2"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Inversion highs: SRU-family composite unconformity - IVF/G on IVA-IVB at Deluar-1, Ketam-1, South Lokan-1"
+      },
+      {
+        "d": "INB",
+        "f": "LCP",
+        "pts": [
+          [
+            0.45,
+            "SRU"
+          ],
+          [
+            0.8,
+            "SRU"
+          ],
+          [
+            0.8,
+            "H2"
+          ],
+          [
+            0.55,
+            "H2"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "IVD-IVE coastal plain (Samarang-1X/2: LCP/COF/FIN; Glayzer-1X: COL/LCP)"
+      },
+      {
+        "d": "INB",
+        "f": "DELTA",
+        "pts": [
+          [
+            0.25,
+            "SRU"
+          ],
+          [
+            0.45,
+            "SRU"
+          ],
+          [
+            0.55,
+            "H2"
+          ],
+          [
+            0.06,
+            "H2"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "IVD-IVE delta front / inner shelf (Rusa Timur-1 HIN-LCP above SRU; West Emirald-1 COF/HIN)"
+      },
+      {
+        "d": "INB",
+        "f": "DWSH",
+        "pts": [
+          [
+            0,
+            "SRU"
+          ],
+          [
+            0.25,
+            "SRU"
+          ],
+          [
+            0.06,
+            "H2"
+          ],
+          [
+            0,
+            "H2"
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Still bathyal at outer shelf (Gajah Hitam-1: BAT until IVE; shallows to HIN-HMN in IVE)"
+      },
+      {
+        "d": "INB",
+        "f": "DELTA",
+        "pts": [
+          [
+            0,
+            "H2"
+          ],
+          [
+            1,
+            "H2"
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN",
+          "SRC-IMG1"
+        ],
+        "lab": "IVF-IVG shelf / coastal (Saracen-1, Deluar-1 COL; Liang-type)"
+      },
+      {
+        "d": "INB",
+        "f": "SMCARB",
+        "pts": [
+          [
+            0.62,
+            "H2"
+          ],
+          [
+            0.72,
+            "H2"
+          ],
+          [
+            0.71,
+            0
+          ],
+          [
+            0.63,
+            0
+          ]
+        ],
+        "t": "DATA",
+        "src": [
+          "SRC-PEN",
+          "SRC-IMG3"
+        ],
+        "lab": "Kalutan Group limestones (Kudat-1: lower & upper Lst units)"
+      },
+      {
+        "d": "INB",
+        "f": "CHAN",
+        "pts": [
+          [
+            0.6,
+            "SRU>H3 @0.3"
+          ],
+          [
+            0.72,
+            "SRU>H3 @0.3"
+          ],
+          [
+            0.72,
+            "SRU>H3 @0.45"
+          ],
+          [
+            0.6,
+            "SRU>H3 @0.45"
+          ]
+        ],
+        "t": "INT",
+        "src": [
+          "SRC-PEN"
+        ],
+        "lab": "Fluvial-tidal channel sands"
+      },
+      {
+        "d": "ONS",
+        "f": "BASE",
+        "pts": [
+          [
+            0,
+            66
+          ],
+          [
+            1,
+            66
+          ],
+          [
+            1,
+            52
+          ],
+          [
+            0,
+            52
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05"
+        ],
+        "lab": "Ophiolite + Mesozoic basement"
+      },
+      {
+        "d": "ONS",
+        "f": "ACCR",
+        "pts": [
+          [
+            0,
+            52
+          ],
+          [
+            1,
+            52
+          ],
+          [
+            1,
+            37.5
+          ],
+          [
+            0,
+            37.5
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05"
+        ],
+        "lab": "Rajang Group / Trusmadi"
+      },
+      {
+        "d": "ONS",
+        "f": "HIAT",
+        "pts": [
+          [
+            0,
+            37.5
+          ],
+          [
+            1,
+            37.5
+          ],
+          [
+            1,
+            "LEU"
+          ],
+          [
+            0,
+            "LEU"
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05"
+        ],
+        "lab": "Sarawak Orogeny uplift & erosion"
+      },
+      {
+        "d": "ONS",
+        "f": "ACCR",
+        "pts": [
+          [
+            0,
+            "LEU"
+          ],
+          [
+            1,
+            "LEU"
+          ],
+          [
+            1,
+            20.0
+          ],
+          [
+            0,
+            20.0
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HUT05",
+          "SRC-IMG1"
+        ],
+        "lab": "Crocker Fm deep-marine turbidites (accreted)"
+      },
+      {
+        "d": "ONS",
+        "f": "HIAT",
+        "pts": [
+          [
+            0,
+            20.0
+          ],
+          [
+            1,
+            20.0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-HALL13",
+          "L-HUT05"
+        ],
+        "lab": "Crocker Range uplift: erosion - SEDIMENT SOURCE for Stage IV (no Neogene marine record)"
+      },
+      {
+        "d": "ONS",
+        "f": "VOLC",
+        "pts": [
+          [
+            0.35,
+            7.85
+          ],
+          [
+            0.65,
+            7.85
+          ],
+          [
+            0.65,
+            7.22
+          ],
+          [
+            0.35,
+            7.22
+          ]
+        ],
+        "t": "LIT",
+        "src": [
+          "L-COT10"
+        ],
+        "lab": "Kinabalu granite 7.85-7.22 Ma (U-Pb)"
+      }
+    ],
+    "events": [
+      {
+        "id": "E01",
+        "fam": "ASAS",
+        "name": "Mesozoic basement assembly",
+        "old": 66,
+        "young": 56,
+        "t": "LIT",
+        "src": [
+          "L-DG",
+          "L-HUT05"
+        ],
+        "txt": "Continental DG crust (NW) vs ophiolitic/accretionary Sabah basement (SE)."
+      },
+      {
+        "id": "E02",
+        "fam": "RETAK",
+        "name": "SCS-margin rifting (DG stretching)",
+        "old": "ROU",
+        "young": "BU",
+        "t": "DATA",
+        "src": [
+          "SRC-IMG2"
+        ],
+        "txt": "Stretching phase from ~56 Ma (ROU); half-grabens on DG."
+      },
+      {
+        "id": "E03",
+        "fam": "RETAK",
+        "name": "Proto-SCS subduction; Rajang/Crocker accretion",
+        "old": 52,
+        "young": 20,
+        "t": "LIT",
+        "src": [
+          "L-HALL13",
+          "L-HUT05"
+        ],
+        "txt": "SE-directed subduction beneath NW Borneo builds the Rajang-Crocker prism."
+      },
+      {
+        "id": "E04",
+        "fam": "RETAK",
+        "name": "Sarawak Orogeny",
+        "old": 37.5,
+        "young": "LEU",
+        "t": "LIT",
+        "src": [
+          "L-HUT05"
+        ],
+        "txt": "Late Eocene uplift; Rajang Unconformity."
+      },
+      {
+        "id": "E05",
+        "fam": "BELAH",
+        "name": "SCS breakup & spreading",
+        "old": "BU",
+        "young": "MMU",
+        "t": "DATA",
+        "src": [
+          "SRC-IMG2",
+          "L-LI14"
+        ],
+        "txt": "Onset 30.8 Ma; ridge jump 23.8 Ma; end ~16 Ma. SDG hyperextension continues to RU/MMU."
+      },
+      {
+        "id": "E06",
+        "fam": "BEBAS",
+        "name": "Crocker deformation / BMU",
+        "old": "BMU",
+        "young": "BMU>DRU @0.35",
+        "t": "INT",
+        "src": [
+          "SRC-UNI",
+          "SRC-IMG2"
+        ],
+        "txt": "Early Miocene uplift and erosion; event family, not one reflector."
+      },
+      {
+        "id": "E07",
+        "fam": "SENTUH",
+        "name": "DG crust enters trench; NSPW & Kudat wedges",
+        "old": 20.0,
+        "young": "DRU",
+        "t": "DATA",
+        "src": [
+          "SRC-IMG3",
+          "L-HALL13"
+        ],
+        "txt": "Collision of Dangerous Grounds with NW Borneo; Stage III wedges."
+      },
+      {
+        "id": "E08",
+        "fam": "LANGGAR",
+        "name": "DRU: collision climax / inversion",
+        "old": "DRU",
+        "young": "DRU",
+        "t": "DATA",
+        "src": [
+          "SRC-PEN",
+          "SRC-UNI",
+          "L-HT93"
+        ],
+        "txt": "Abrupt bathyal -> coastal shoaling across DRU at Deluar-1, Ketam-1, South Lokan-1."
+      },
+      {
+        "id": "E09",
+        "fam": "SABAR",
+        "name": "Post-collision NW-ward progradation (IVA-IVC)",
+        "old": "DRU",
+        "young": "SRU",
+        "t": "DATA",
+        "src": [
+          "SRC-PEN",
+          "SRC-IMG3"
+        ],
+        "txt": "Shelf edge advances NW; minor LIU/UIU events; strike-slip and gravity deformation on shelf."
+      },
+      {
+        "id": "E10",
+        "fam": "SENJA",
+        "name": "SRU: regional inversion & uplift",
+        "old": "SRU",
+        "young": "SRU",
+        "t": "COMP",
+        "src": [
+          "SRC-PEN"
+        ],
+        "txt": "Well windows place SRU in lower NN10 at 3 wells; deep erosion on inboard highs."
+      },
+      {
+        "id": "E11",
+        "fam": "REDUP",
+        "name": "Kinabalu granite emplacement",
+        "old": 7.85,
+        "young": 7.22,
+        "t": "LIT",
+        "src": [
+          "L-COT10"
+        ],
+        "txt": "Onshore magmatism and rapid exhumation follow SRU."
+      },
+      {
+        "id": "E12",
+        "fam": "REDUP",
+        "name": "Gravity-driven toe-thrusting & shale diapirism",
+        "old": "SRU",
+        "young": 0,
+        "t": "INT",
+        "src": [
+          "SRC-IMG3",
+          "L-DWFTB"
+        ],
+        "txt": "Delta loading drives outboard fold-thrust belt and minibasins; minor inversion inboard."
+      },
+      {
+        "id": "E13",
+        "fam": "MAGHRIB",
+        "name": "IVE-IVF shelf-margin progradation",
+        "old": "H3",
+        "young": "H1",
+        "t": "DATA",
+        "src": [
+          "SRC-PEN"
+        ],
+        "txt": "Bathyal outer-shelf wells (Gajah Hitam-1) shallow to neritic in IVE."
+      },
+      {
+        "id": "E14",
+        "fam": "MALAM",
+        "name": "IVG cover & continued deformation",
+        "old": "H1",
+        "young": 0,
+        "t": "INT",
+        "src": [
+          "SRC-IMG3"
+        ],
+        "txt": "Hemipelagic drape outboard; shelf and Kalutan carbonates inboard."
+      }
+    ],
+    "megaseq": [
+      {
+        "id": "TS0",
+        "name": "TS0 Basement",
+        "old": 66,
+        "young": "ROU",
+        "c": "#bfb3a6",
+        "dg": "Pre-rift continental",
+        "sb": "Ophiolite / accretionary"
+      },
+      {
+        "id": "TS1",
+        "name": "TS1 Syn-rift | Rajang accretion",
+        "old": "ROU",
+        "young": "BU",
+        "c": "#d8c6a0",
+        "dg": "Syn-rift",
+        "sb": "Syn-subduction prism"
+      },
+      {
+        "id": "TS2",
+        "name": "TS2 Drift | Crocker accretion",
+        "old": "BU",
+        "young": "BMU",
+        "c": "#cfd9b0",
+        "dg": "Breakup / early drift",
+        "sb": "Syn-subduction prism"
+      },
+      {
+        "id": "TS3",
+        "name": "TS3 Syn-collision (Stage III)",
+        "old": "BMU",
+        "young": "DRU",
+        "c": "#e8b5a8",
+        "dg": "Platforms -> drowning",
+        "sb": "Underthrusting, wedges"
+      },
+      {
+        "id": "TS4",
+        "name": "TS4 Post-collision progradation (IVA-IVC)",
+        "old": "DRU",
+        "young": "SRU",
+        "c": "#f3dc9c",
+        "dg": "Pelagic drape",
+        "sb": "Foreland shelf-slope"
+      },
+      {
+        "id": "TS5",
+        "name": "TS5 Inversion + gravity tectonics (IVD-IVG)",
+        "old": "SRU",
+        "young": 0,
+        "c": "#f6eec9",
+        "dg": "Pelagic drape",
+        "sb": "Toe-thrusts, minibasins"
+      }
+    ],
+    "fans": [
+      {
+        "name": "Lingan",
+        "old": "H2",
+        "young": "H1",
+        "stage": "IVF"
+      },
+      {
+        "name": "Yellow",
+        "old": "H3",
+        "young": "H2",
+        "stage": "IVE"
+      },
+      {
+        "name": "Pink",
+        "old": "SRU>H3 @0.5",
+        "young": "H3",
+        "stage": "IVD"
+      },
+      {
+        "name": "Kamunsu",
+        "old": "SRU",
+        "young": "SRU>H3 @0.5",
+        "stage": "IVD (NN11A)"
+      },
+      {
+        "name": "Kinarut",
+        "old": "UIU",
+        "young": "SRU",
+        "stage": "IVC (H136)"
+      },
+      {
+        "name": "Kebabangan",
+        "old": "LIU",
+        "young": "UIU",
+        "stage": "IVB"
+      },
+      {
+        "name": "Brown",
+        "old": "DRU",
+        "young": "DRU>LIU @0.3",
+        "stage": "base IVA / SB5"
+      }
+    ],
+    "formations": [
+      {
+        "name": "Liang",
+        "old": "H2",
+        "young": 0,
+        "note": "label position from PETRONAS KL3 chart (NN18)"
+      },
+      {
+        "name": "Kalutan Gp (Kudat)",
+        "old": "H2",
+        "young": 0,
+        "note": "Kudat-1 limestone units",
+        "lane": 1
+      },
+      {
+        "name": "Belait",
+        "old": "UIU",
+        "young": "H2",
+        "note": "KL3 chart labels at NN9-NN11 and NN16"
+      },
+      {
+        "name": "Bangau Gp (Kudat)",
+        "old": "SRU",
+        "young": "H3",
+        "note": "Kudat-1 U. Sst unit 793-1905 m",
+        "lane": 1
+      },
+      {
+        "name": "Setap / Melingan",
+        "old": "BMU>DRU @0.4",
+        "young": "LIU",
+        "note": "KL3 chart label at NN5"
+      },
+      {
+        "name": "Temburong / Crocker",
+        "old": "LEU",
+        "young": "BMU>DRU @0.4",
+        "note": "KL3 chart label at NP23"
+      },
+      {
+        "name": "Rajang Gp",
+        "old": 52,
+        "young": 37.5,
+        "note": "Hutchison 2005"
+      }
+    ],
+    "eod_rank": {
+      "_note": "Water-depth rank for EOD codes (SRC-NOM legend).",
+      "LCP": 0,
+      "COL": 1,
+      "FIN": 1,
+      "COF": 2,
+      "HIN": 2,
+      "HMN": 3,
+      "HON": 4,
+      "U.BAT": 5,
+      "BAT": 5,
+      "M.BAT": 6,
+      "L.BAT": 7,
+      "H.BAT": 6
+    },
+    "wells": [
+      {
+        "well": "GAJAH HITAM-1",
+        "wd": 157.9,
+        "dom": "INB (outer shelf)",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            445,
+            651.6,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            651.6,
+            1767.8,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            1767.8,
+            2167,
+            [
+              "NN9"
+            ]
+          ],
+          [
+            2167,
+            2590.7,
+            [
+              "NN9",
+              "NN8"
+            ]
+          ]
+        ],
+        "picks": [
+          [
+            "H3",
+            458,
+            "B.S IVE (HOR III)"
+          ],
+          [
+            "SRU",
+            1658,
+            "B.S IVD (S.R.U)"
+          ],
+          [
+            "UIU",
+            2406,
+            "B.S IVC (U.I.U)"
+          ]
+        ],
+        "eod": "HIN-HMN 458-958 / HON 958-1329 / BAT 1329-1658 / H.BAT 1658-2591"
+      },
+      {
+        "well": "TIGA PAPAN-2",
+        "wd": 55.8,
+        "dom": "INB",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            760,
+            810,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            860,
+            1628,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            1641.5,
+            1705,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            1711,
+            1782,
+            [
+              "NN9"
+            ]
+          ],
+          [
+            1785,
+            1850,
+            [
+              "NN9"
+            ]
+          ],
+          [
+            1960,
+            1960,
+            [
+              "NN4",
+              "NN3",
+              "NN2"
+            ]
+          ]
+        ],
+        "picks": [
+          [
+            "SRU",
+            1696.5,
+            "B.S IVD (SRU)"
+          ],
+          [
+            "DRU*",
+            1912,
+            "B.S IVC (DRU) - amalgamated; '(MMU)' noted"
+          ]
+        ],
+        "eod": "HIN 760-860 / HMN-HON 1490-1580 / HON-U.BAT 1618-1711"
+      },
+      {
+        "well": "MALIGAN-1",
+        "wd": 18.5,
+        "dom": "INB",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            670,
+            790,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            800,
+            870,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            880,
+            910,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            914,
+            1100,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            1110,
+            1180,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            1190,
+            1290,
+            [
+              "NN9"
+            ]
+          ],
+          [
+            1300,
+            1380,
+            [
+              "NN9"
+            ]
+          ]
+        ],
+        "excluded": [
+          [
+            510,
+            660,
+            "?NN10D above NN11D-C: stratigraphic reversal -> reworking flag; excluded"
+          ]
+        ],
+        "picks": [
+          [
+            "H3",
+            688,
+            "B.S IVE (within NN11D-NN11C)"
+          ],
+          [
+            "SRU",
+            1144,
+            "TOP S.IVC SEAL/SRU (within NN10A lower)"
+          ]
+        ],
+        "eod": "Mid sublittoral 510-820 / shallow outer sublittoral 830-914 / U.BAT 920-1110 / M.BAT 1110-1370"
+      },
+      {
+        "well": "SOLISIP-1",
+        "wd": null,
+        "dom": "INB (N Sabah)",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            777.5,
+            877.78,
+            [
+              "NN12",
+              "NN11"
+            ]
+          ],
+          [
+            877.78,
+            1100.27,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            1167.33,
+            1465.1,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            1499.24,
+            1637,
+            [
+              "NN9"
+            ]
+          ],
+          [
+            1885.71,
+            2021.64,
+            [
+              "NN7",
+              "NN6"
+            ]
+          ]
+        ],
+        "picks": [
+          [
+            "SRU",
+            1083.51,
+            "B.S IVD (NN11 recorded to 1100.27 MD, below the pick)"
+          ],
+          [
+            "UIU",
+            1883.57,
+            "B.S IVC"
+          ]
+        ],
+        "eod": "HON-BAT 1083-1653 / REEFOID SHALLOW MARINE 1670-1850 / DEEP MARINE 1850-1884 / HON-BAT 1884-2070"
+      },
+      {
+        "well": "GLAYZER-3",
+        "wd": 37,
+        "dom": "INB",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            1780,
+            1780,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            1800,
+            1990,
+            [
+              "NN11",
+              "NN10"
+            ]
+          ],
+          [
+            2010,
+            2010,
+            [
+              "NN10",
+              "NN9"
+            ]
+          ],
+          [
+            2060,
+            2110,
+            [
+              "NN9"
+            ]
+          ],
+          [
+            2120,
+            2580,
+            [
+              "NN8"
+            ]
+          ],
+          [
+            2600,
+            2860,
+            [
+              "NN8",
+              "NN7"
+            ]
+          ]
+        ],
+        "picks": [
+          [
+            "UIU",
+            2010,
+            "Base S.IVC / U.I.U"
+          ]
+        ],
+        "eod": "HIN-HMN 1200-1335 / HON-HMN 1350-1990 / HON 2010 / U.BAT 2030-2120 / HON-U.BAT 2140-2860"
+      },
+      {
+        "well": "RUSA TIMUR-1",
+        "wd": 113.4,
+        "dom": "INB",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            873,
+            1674,
+            [
+              "NN11",
+              "NN10"
+            ]
+          ],
+          [
+            1674,
+            1909,
+            [
+              "NN10",
+              "NN9"
+            ]
+          ],
+          [
+            1909,
+            2074,
+            [
+              "NN8"
+            ]
+          ]
+        ],
+        "excluded": [
+          [
+            463,
+            873,
+            "'NN1' - truncated label; excluded"
+          ]
+        ],
+        "picks": [
+          [
+            "SRU",
+            1674,
+            "B.S IVD (S.R.U)"
+          ],
+          [
+            "UIU",
+            1909,
+            "B.S IVC (U.I.U)"
+          ],
+          [
+            "LIU",
+            2074,
+            "B.S IVB (L.I.U)"
+          ]
+        ],
+        "eod": "HMN-HON 463-873 / HIN-LCP 873-1674 / HON-BAT 1674-1909 / BAT 1909-2260"
+      },
+      {
+        "well": "IMBOK-1",
+        "wd": 55,
+        "dom": "INB",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            640,
+            920,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            930,
+            1070,
+            [
+              "NN9",
+              "NN8"
+            ]
+          ],
+          [
+            1090,
+            1670,
+            [
+              "NN7"
+            ]
+          ],
+          [
+            1690,
+            1830,
+            [
+              "NN6"
+            ]
+          ]
+        ],
+        "excluded": [
+          [
+            308,
+            501,
+            "'Top UIU' 308 MD and 'Mid IVB' 501 MD sit above NN10 at 640-920 MD - datum/sidetrack conflict; excluded"
+          ]
+        ],
+        "picks": [
+          [
+            "LIU",
+            1303,
+            "Top Stage IVA (Uncon.)"
+          ]
+        ],
+        "eod": "inner sublittoral with local intertidal 750-1140 / (shallow) outer 1150-1839"
+      },
+      {
+        "well": "BULUH-1",
+        "wd": 1270,
+        "dom": "OUT",
+        "src": "SRC-PEN",
+        "nn": [
+          [
+            1970,
+            2050,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            2060,
+            2126.7,
+            [
+              "NN11"
+            ]
+          ],
+          [
+            2140,
+            2140,
+            [
+              "NN10"
+            ]
+          ],
+          [
+            2150,
+            2271,
+            [
+              "NN10"
+            ]
+          ]
+        ],
+        "picks": [],
+        "eod": "Upper bathyal 1970-2110 / middle bathyal 2120-2210 / shallow-water influence 2220-2271"
+      },
+      {
+        "well": "DELUAR-1",
+        "wd": 47.9,
+        "dom": "INB (high)",
+        "src": "SRC-PEN",
+        "nn": [],
+        "picks": [
+          [
+            "SRU*",
+            566,
+            "TOP S.IVA (S.R.U) - IVB-IVE absent"
+          ],
+          [
+            "DRU",
+            1319,
+            "B.S IVA (D.R.U)"
+          ]
+        ],
+        "eod": "COL seabed-566 / COL-HIN 566-771 / HIN-HON 771-1113 / COL-HIN 1112-1319 / BAT-HON 1319-1570"
+      },
+      {
+        "well": "KETAM-1",
+        "wd": 53,
+        "dom": "INB (high)",
+        "src": "SRC-PEN",
+        "nn": [],
+        "picks": [
+          [
+            "SRU*",
+            817,
+            "B.S IVF (S.R.U) - IVB-IVE absent"
+          ],
+          [
+            "DRU",
+            2307,
+            "B.S IVA (D.R.U)"
+          ],
+          [
+            "BMU?",
+            2560,
+            "B.S III; THRUST at ~2676 MD repeats S.IVA (2676-2917)"
+          ]
+        ],
+        "eod": "COL 383-817 / FIN-LCP-COF 817-2307 (IVA) / HON-BAT 2307-2560 (III)"
+      },
+      {
+        "well": "SOUTH LOKAN-1",
+        "wd": 49.3,
+        "dom": "INB (high)",
+        "src": "SRC-PEN",
+        "nn": [],
+        "picks": [
+          [
+            "SRU*",
+            403,
+            "B.S IVF/G? (SRU)"
+          ],
+          [
+            "UIU/LIU",
+            488.6,
+            "B.S IVB (UIU/LIU)"
+          ],
+          [
+            "DRU",
+            1036,
+            "B.S IVA (DRU)"
+          ]
+        ],
+        "eod": "HIN-HMN above / HMN-HON (IVA) / HMN-BAT, 'base of slope = basinal' (NN4-NN5)"
+      }
+    ],
+    "contradictions": [
+      {
+        "id": "C1",
+        "topic": "DRU age",
+        "state": "HOLD-NARROWED",
+        "models": "P 14.2 | L 15.4 | R 14.91",
+        "finding": "The 15.4-15.5 Ma legacy age is the old-timescale age of base NN5 (BKSA95 15.6). Re-dated with GTS2012 it becomes 14.91, so ~0.5 Ma of the 1.2 Ma gap is a calibration artefact. The residual 0.71 Ma is real: the project places DRU inside NN5, not at its base.",
+        "test": "No DRU pick in the pen chart has NN control (Deluar-1, Ketam-1, South Lokan-1 are EOD-only). Pull raw NN4/NN5 occurrences at these wells; if NN5 is present below the DRU pick, R (14.91) is falsified and P survives.",
+        "src": [
+          "SRC-PEN",
+          "SRC-UNI",
+          "L-BKSA95",
+          "L-BACK12"
+        ]
+      },
+      {
+        "id": "C2",
+        "topic": "SRU age (8.6 vs 9.4 vs 9.53)",
+        "state": "RESOLVED-PROVISIONAL: ~9.4 Ma (3 wells)",
+        "models": "P 9.53 | L 9.4 (alt 8.5) | R 9.53",
+        "finding": "At Gajah Hitam-1, Tiga Papan-2 and Maligan-1 the SRU pick lies inside NN10 (GTS2012 window 8.29-9.53 Ma). Constant-rate interpolation inside the bracketed NN10 span gives 9.41 / 9.36 / 9.38 Ma, so the legacy 9.4 Ma fits best. Project 9.53 is the base-NN10 approximation and sits on the window edge: it would need zero NN10 below the pick, but 8.5-110 m are observed. It is ~0.15 Ma too old, which does not matter for mapping. '8.6 Ma' is the BKSA95 age of base NN11. The hypothesis 'SRU = base NN11' (8.29 Ma GTS2012) is rejected because NN10 overlies the pick at all three wells. Solisip-1 is the outlier: NN11 lies below its B.S IVD pick (window 5.59-8.29), so either that pick is a younger surface or SRU is diachronous toward N Sabah.",
+        "test": "Re-tie Solisip-1 B.S IVD on seismic; trace SRU terminations from Maligan-1 / Tiga Papan-2 to Solisip-1 along KL2. Add more NN10-bracketed SRU picks to test the 9.4 Ma estimate.",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C3",
+        "topic": "UIU age",
+        "state": "SUPPORTED: 9.53-10.55 joint window",
+        "models": "P 10.46 | L 10.6 | R 10.55",
+        "finding": "The joint window from Gajah Hitam-1, Rusa Timur-1, Glayzer-3 and Solisip-1 is 9.53-10.55 Ma. Project 10.46 passes at all four wells. Legacy 10.6 fails at Glayzer-3, where NN9 is present below the pick. The recalibrated 10.55 sits on the edge, needing zero NN9 below the pick at Glayzer-3, where 50 m are observed.",
+        "test": "Confirm Glayzer-3 NN9 (2060-2110 MD) is in situ, not caved.",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C4",
+        "topic": "LIU age",
+        "state": "SUPPORTS PROJECT (1 well)",
+        "models": "P 11.63 | L 12.0 | R 11.90",
+        "finding": "Imbok-1 'Top Stage IVA (Uncon.)' at 1303 MD lies inside a 580 m NN7 span (1090-1670 MD): window 10.89-11.90 Ma, and interpolation gives 11.26 Ma. Project 11.63 passes, legacy 12.0 fails, and recalibrated 11.90 sits on the edge. With one well this is a single witness only.",
+        "test": "Check the Imbok-1 ST-1 datum (shallow IVB/UIU picks conflict with NN10 and are excluded). Find a second NN6/NN7-bracketed LIU pick.",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C5",
+        "topic": "Horizon III (Top IVD / Base IVE)",
+        "state": "HOLD",
+        "models": "P 8.11 | L 6.7",
+        "finding": "Both wells with picks (Gajah Hitam-1, Maligan-1) put Horizon III inside NN11 (5.59-8.29), so both models pass at zone level. Maligan-1 places it in NN11C-D (upper NN11), which favours the younger legacy 6.7 Ma. Also, 8.11 is not a GTS2012 zone boundary (base NN11 = 8.29); its source needs checking.",
+        "test": "Calibrate NN11 subzones (A-D) with the PETRONAS 2024 chart and re-read Horizon III at all NN11 wells.",
+        "src": [
+          "SRC-PEN",
+          "SRC-UNI"
+        ]
+      },
+      {
+        "id": "C6",
+        "topic": "Upper Stage IV definitions (IVE-IVG)",
+        "state": "HOLD - DEFINITIONAL",
+        "models": "Base IVF: P 3.1 vs L ~5.5 | Base IVG: P 2.0 vs L 3.8",
+        "finding": "Offsets of 1.7-2.4 Ma are far too large to be calibration. The project scheme (Phase I p8: IVE = NN16-NN11) stretches IVE to ~5 Myr and compresses IVF-IVG into the last 3.1 Myr; the legacy scheme keeps IVF = NN12-NN16 and IVG from 3.8 Ma. These are two different stage definitions under the same names.",
+        "test": "Decide which definition is canonical before Phase II mapping. Then rename one set (e.g. IVE-P vs IVE-L) in all data.",
+        "src": [
+          "SRC-UNI",
+          "SRC-P1",
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C7",
+        "topic": "Base Stage III / BMU",
+        "state": "HOLD",
+        "models": "P 23.13 (BMU) | L ~21 (TB2.1)",
+        "finding": "The project equates Top II with BMU at 23.13; the legacy chart puts Base III at TB2.1 (~21). Possibly two surfaces of one Early Miocene event family (22-20 Ma deformation).",
+        "test": "Out of Phase I scope (NN8 and below deferred). Carry both.",
+        "src": [
+          "SRC-UNI",
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C8",
+        "topic": "Composite unconformities on highs",
+        "state": "RULE ADOPTED",
+        "models": "single-name picks vs amalgamated surfaces",
+        "finding": "'SRU' is picked at top IVA (Deluar-1), base IVF (Ketam-1), base IVF/G (South Lokan-1), top IVC (Maligan-1) and base IVD (7 wells). 'DRU' is picked at base IVC at Tiga Papan-2 where NN5-NN8 is missing. On highs the names attach to whichever erosion surface is deepest.",
+        "test": "Tag such picks as composite (e.g. DRU+LIU+UIU) and exclude them from age calibration of the single surface.",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C9",
+        "topic": "MMU (DG) vs DRU (Sabah)",
+        "state": "HOLD",
+        "models": "RU/MMU ~16 Ma (end of spreading) vs DRU 14.2-15.4",
+        "finding": "Copilot merges 'DRU/MMU'. They are different physics in different domains: rift-end drowning on the lower plate versus collision and inversion in the upper plate. They may be linked (end of spreading as continental crust jams the trench) and near-coeval, but are not one surface. Tiga Papan-2's '(MMU)' label shows the term has leaked inboard.",
+        "test": "Trace both on a dip keyline across the trough; look for onlap of trough fill onto DG drowned platforms vs DRU truncation inboard.",
+        "src": [
+          "SRC-IMG2",
+          "SRC-PEN",
+          "SRC-CP01"
+        ]
+      },
+      {
+        "id": "C10",
+        "topic": "Kinarut fan stage",
+        "state": "UNKNOWN",
+        "models": "pen chart: Kinarut = Stage IVC (H136, NN10) | Copilot v1.1 (citing Atlas Ch.5): Kinarut in Stage IVE",
+        "finding": "The Atlas chapter was not available to this build. Fan names are package names, not chronostratigraphic units.",
+        "test": "Read Atlas_Chapter 5 Sabah_v1.1; resolve before using fan names in GDE maps.",
+        "src": [
+          "SRC-PEN",
+          "SRC-CP11"
+        ]
+      },
+      {
+        "id": "C11",
+        "topic": "Text QA in endorsed decks/tables",
+        "state": "FIX BEFORE IRS#1 (Oct 2026)",
+        "models": "-",
+        "finding": "(a) Phase I p8 calls the NN9 Stage IVc horizon a 'mid-Miocene' unconformity; NN9 is early Tortonian (Late Miocene). (b) p8 places thrust-belt initiation in 'Bunguran and Baram'; Bunguran is Natuna (Indonesia). (c) The unified table labels Stage I 'Late Oligocene (Priabonian)'; Priabonian is Late Eocene. (d) The table labels IVA (top 11.63) 'Late Miocene (Tortonian)'; IVA is Langhian-Serravallian.",
+        "test": "Editorial correction.",
+        "src": [
+          "SRC-P1",
+          "SRC-UNI"
+        ]
+      },
+      {
+        "id": "C12",
+        "topic": "Well-level QC flags",
+        "state": "OPEN",
+        "models": "-",
+        "finding": "Kudat-1: '?Crocker Fm' at 2336-2475 MD carries NN9a nannofossils (formation call or caving issue). Maligan-1: ?NN10D above NN11D-C (reversal -> reworking). Imbok-1: shallow UIU/IVB picks above NN10. Rusa Timur-1: 'NN1' at 463-873 MD (truncated label).",
+        "test": "Raw occurrence charts + abundance to separate in-situ vs reworked (C3 of Copilot v0.1).",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C13",
+        "topic": "Inboard palaeobathymetry",
+        "state": "CORRECTION",
+        "models": "Copilot: inboard deepwater shale until ~3 Ma; Stage IVA 'shallow-marine/deltaic'",
+        "finding": "Wells show both, but diachronously: Stage III is bathyal inboard (Deluar-1, Ketam-1, South Lokan-1); IVA is coastal on inversion highs but bathyal in the outer shelf (Rusa Timur-1, Gajah Hitam-1). The shelf edge then steps NW, reaching Rusa Timur at SRU time and Gajah Hitam in IVE. Shoaling is time-transgressive, not one horizontal facies switch.",
+        "test": "Plot EOD-vs-age for all 35+ biostrat wells to map shelf-edge trajectory.",
+        "src": [
+          "SRC-PEN"
+        ]
+      },
+      {
+        "id": "C14",
+        "topic": "Copilot v1.1 rendering",
+        "state": "SUPERSEDED",
+        "models": "-",
+        "finding": "Undeclared non-linear time axis; onshore Crocker drawn as Neogene depocentre (it was the eroding source); diapirs coloured as hiatus; unsourced volcanics; 'Base NN4' at 15.5 Ma (GTS2012 base NN4 = 17.95); stage blocks mix top- and base-of-stage conventions (e.g. 9.53-11.63 labelled IVC-IVB).",
+        "test": "-",
+        "src": [
+          "SRC-CP11"
+        ]
+      },
+      {
+        "id": "C15",
+        "topic": "Cause of the post-16 Ma apparent-age signals",
+        "state": "HOLD - THREE MODELS REMAIN LIVE",
+        "models": "A older magmatism + younger reworking (VIABLE, MED) | B polyphase magmatism (PLAUSIBLE, LOW-MED) | C apparent youth without new magma (VIABLE, MED)",
+        "finding": "Layang-Layang-1 gives young apparent ages (6.5-7.8 Ma, 13.6 Ma) interleaved with old ones (19.6-22.9 Ma) and no depth progression. Every young K-Ar result is either a low-radiogenic separate (5.0-5.2% 40Ar*) or a bulk sample; none is a primary-mineral crystallisation age. All three models fit the current data. Models A and C explain young apparent ages without a new magma pulse; Model B explains them by true younger emplacement. Bulk and fine-fraction K-Ar cannot separate them. No model is preferred.",
+        "test": "Promotion tests: (1) mineral-specific dating of screened primary igneous phases; (2) independent, well-tied cross-cutting seismic geometry."
+      },
+      {
+        "id": "C16",
+        "topic": "Apparent age vs crystallisation / emplacement age",
+        "state": "RULE ADOPTED",
+        "models": "K-Ar apparent age | crystallisation age | emplacement age",
+        "finding": "Aggregate K-Ar on >2 µm fractions and bulk samples mixes primary and secondary mineral domains. A K-Ar apparent age is a mixture age until the dated phase is shown to be primary and closed.",
+        "test": "No apparent age in this chart is labelled an emplacement age."
+      },
+      {
+        "id": "C17",
+        "topic": "Intrusion vs redeposited volcaniclastics",
+        "state": "HOLD - BOTH MAY OCCUR",
+        "models": "in-situ intrusion AND/OR redeposited volcaniclastics, determined body by body",
+        "finding": "Volcanogenic sediment deposition and reworking are supported; possible in-situ dyke or sill geometries are interpreted (both reported by the enterprise validation dossier from the LL-1 post-drill study; not verified in the working folder). The present evidence does not show that every volcanic-looking seismic body has the same origin. Rule: classify each body independently.",
+        "test": "Per body: well-tied seismic geometry; contact petrography; chilled margin or baking; clast vs coherent groundmass texture; chemostratigraphic continuity; thermal alteration of host sediment; age relationship between body and host."
+      },
+      {
+        "id": "C18",
+        "topic": "Local proof vs regional analogue",
+        "state": "RULE ADOPTED",
+        "models": "local apparent ages | Mt Kinabalu granite 7.85-7.22 Ma | SCS spreading cessation 16-20 Ma (preliminary)",
+        "finding": "Regional Late Miocene magmatism (Mt Kinabalu) and post-spreading timing make a young local event plausible, but they are different domains and different plumbing. They are kept in a separate analogue ledger and never plotted as local evidence.",
+        "test": "Only local, mineral-specific ages promote Phase C (see confidence ladder)."
+      }
+    ],
+    "phase_c": {
+      "verdict": "HOLD for causal interpretation",
+      "canonical": false,
+      "confidence": "LOW-MED",
+      "tier": "INTERPRET constrained by DATA",
+      "summary": "Local apparent-age evidence exists; emplacement age unresolved.",
+      "warning": "Aggregate K-Ar measurements include mixed primary and secondary mineral domains. Apparent ages must not be treated as emplacement ages without petrographic separation and mineral-specific dating.",
+      "depth_order_note": "Depth order does not produce a simple age progression: 7.8, 6.5, 22.9, 7.3, 19.6, 13.6, 17.0 Ma from 4077 to 4293 m MD.",
+      "samples": [
+        {
+          "depth_md": 4077.2,
+          "method": "K-Ar",
+          "fraction": ">2 µm; disintegrated",
+          "apparent_age": 7.8,
+          "sigma_2": 6.1,
+          "range_2sigma": [
+            1.7,
+            13.9
+          ],
+          "rad_40ar_pct": 5.0,
+          "confidence": "LOW",
+          "treatment": "LOW confidence; weak radiogenic fraction"
+        },
+        {
+          "depth_md": 4080.3,
+          "method": "K-Ar",
+          "fraction": ">2 µm; soft",
+          "apparent_age": 6.5,
+          "sigma_2": 4.5,
+          "range_2sigma": [
+            2.0,
+            11.0
+          ],
+          "rad_40ar_pct": 5.2,
+          "confidence": "LOW",
+          "treatment": "LOW confidence; weak radiogenic fraction"
+        },
+        {
+          "depth_md": 4119.7,
+          "method": "K-Ar",
+          "fraction": ">2 µm; disintegrated",
+          "apparent_age": 22.9,
+          "sigma_2": 2.4,
+          "range_2sigma": [
+            20.5,
+            25.3
+          ],
+          "rad_40ar_pct": 38.8,
+          "confidence": "MED-HIGH",
+          "treatment": "MED-HIGH as apparent age"
+        },
+        {
+          "depth_md": 4170.0,
+          "method": "K-Ar",
+          "fraction": "bulk; hard sample",
+          "apparent_age": 7.3,
+          "sigma_2": 1.3,
+          "range_2sigma": [
+            6.0,
+            8.6
+          ],
+          "rad_40ar_pct": 19.6,
+          "confidence": "MEDIUM",
+          "treatment": "MEDIUM; strongest local young apparent-age signal"
+        },
+        {
+          "depth_md": 4179.0,
+          "method": "K-Ar",
+          "fraction": "bulk; disintegrated",
+          "apparent_age": 19.6,
+          "sigma_2": 1.9,
+          "range_2sigma": [
+            17.7,
+            21.5
+          ],
+          "rad_40ar_pct": 44.2,
+          "confidence": "MED-HIGH",
+          "treatment": "MED-HIGH as apparent age"
+        },
+        {
+          "depth_md": 4210.0,
+          "method": "K-Ar",
+          "fraction": "bulk; hard sample",
+          "apparent_age": 13.6,
+          "sigma_2": 0.8,
+          "range_2sigma": [
+            12.8,
+            14.4
+          ],
+          "rad_40ar_pct": 56.5,
+          "confidence": "MEDIUM",
+          "treatment": "MEDIUM apparent age; possible mixed or intermediate system"
+        },
+        {
+          "depth_md": 4292.5,
+          "method": "U-Pb lower intercept",
+          "fraction": "secondary carbonate",
+          "apparent_age": 17.0,
+          "sigma_2": 22.0,
+          "range_2sigma": [
+            0.0,
+            39.0
+          ],
+          "rad_40ar_pct": null,
+          "confidence": "VERY LOW",
+          "treatment": "VERY LOW; disturbed Pb-rich system"
+        }
+      ],
+      "models": [
+        {
+          "id": "A",
+          "name": "Model A — Older magmatism plus younger drape / reworking",
+          "status": "VIABLE",
+          "confidence": "MED",
+          "description": "The old K-Ar population (19.6-22.9 Ma), volcaniclastic deposition and younger fossil signals without any new magma.",
+          "falsifier": "Replicated younger-than-16 Ma crystallisation ages from pristine primary minerals or chilled margins."
+        },
+        {
+          "id": "B",
+          "name": "Model B — Genuine polyphase magmatism",
+          "status": "PLAUSIBLE",
+          "confidence": "LOW-MED",
+          "description": "An older Early Miocene system plus a discrete post-spreading pulse.",
+          "requirements": [
+            "primary-mineral young ages",
+            "a young cross-cutting intrusion",
+            "a coherent younger geochemical population"
+          ],
+          "falsifier": "Young ages occur only in secondary alteration phases and no young cross-cutting geometry exists."
+        },
+        {
+          "id": "C",
+          "name": "Model C — Apparent youth without new magma",
+          "status": "VIABLE",
+          "confidence": "MED",
+          "description": "Alteration, partial isotopic resetting, hydrothermal circulation, redeposition or fault reactivation produce young signals.",
+          "falsifier": "A concordant young crystallisation age from a pristine primary mineral, fresh groundmass, zircon or baddeleyite confirmed to be primary."
+        }
+      ],
+      "confidence_ladder": {
+        "current": {
+          "level": "LOW-MED",
+          "criteria": [
+            "local apparent-age signals younger than 16 Ma",
+            "older 19.6-22.9 Ma apparent-age population",
+            "regional younger-magmatism analogues",
+            "ambiguous mineral domains and geometry"
+          ]
+        },
+        "gate_med": {
+          "level": "MED",
+          "criteria": "EITHER concordant younger-than-16 Ma primary-mineral crystallisation ages from two screened in-situ samples OR one well-tied intrusion demonstrably younger than a secure post-16 Ma horizon"
+        },
+        "gate_med_high": {
+          "level": "MED-HIGH",
+          "criteria": "BOTH independent tests above"
+        }
+      },
+      "regional_analogues": [
+        {
+          "name": "Mount Kinabalu granite crystallisation",
+          "source": "Cottam et al. (2010) J. Geol. Soc. 167 - Kinabalu granite U-Pb",
+          "value": "7.85 ± 0.08 to 7.22 ± 0.07 Ma",
+          "local_proof": false,
+          "caveat": "Onshore Crocker domain. No direct plumbing to Layang-Layang or Pekaka is implied."
+        },
+        {
+          "name": "South China Sea spreading cessation",
+          "source": "Li et al. (2014) IODP Exp. 349 - SCS spreading history",
+          "value": "preliminary 16-20 Ma range (IODP Expedition 349), pending refinement by post-cruise work",
+          "local_proof": false,
+          "caveat": "Regional plate-scale timing. Constrains plausibility of post-spreading magmatism; does not date any local body."
+        }
+      ],
+      "rock_physics": {
+        "avo": {
+          "status": "UNKNOWN: actual interface-average elastic properties not encoded",
+          "rule": "No AVO class (e.g. IIp, IV) is attached to a rock body. AVO is an interface response, not a lithology or age classifier.",
+          "requirements": [
+            "exact interface",
+            "top or base",
+            "incident direction",
+            "polarity convention",
+            "wavelet phase",
+            "Vp above / below",
+            "Vs above / below",
+            "RHOB above / below",
+            "uncertainty range",
+            "interface thickness",
+            "measured vs modelled status",
+            "tuning risk",
+            "anisotropy caveat"
+          ]
+        },
+        "mechanics": {
+          "status": "UNKNOWN: no stress, pore-pressure or fault-property data encoded",
+          "rule": "Present-day stress is a permissibility constraint only. It never dates a Miocene intrusion.",
+          "requirements": [
+            "palaeostress and its uncertainty",
+            "effective stress",
+            "pore or magma pressure",
+            "fault orientation",
+            "mechanical properties",
+            "timing uncertainty"
+          ]
+        },
+        "seismic_relative_timing": {
+          "status": "UNKNOWN: no candidate intrusive feature is encoded with mapped seismic geometry",
+          "rules": [
+            {
+              "relationship": "Dated sediment drapes the body",
+              "inequality": "age(body) > age(drape base) - body existed before the drape was deposited"
+            },
+            {
+              "relationship": "Intrusion cross-cuts a dated horizon",
+              "inequality": "age(intrusion) < age(crossed horizon) - intrusion is younger"
+            },
+            {
+              "relationship": "Forced fold deforms dated sediment",
+              "inequality": "age(deformation source) < age(youngest deformed package) - only if the causal link to the intrusion is demonstrated"
+            },
+            {
+              "relationship": "Multiple sill levels",
+              "inequality": "separate intrusive levels; NOT automatically separate ages"
+            },
+            {
+              "relationship": "Strata onlap the body",
+              "inequality": "age(body relief) >= age(oldest onlapping reflector) - write the inequality; onlap alone is not an age"
+            }
+          ]
+        }
+      },
+      "biostratigraphic_discipline": {
+        "rules": [
+          "Long-ranging species are expressed as 'not older than', 'not younger than', 'and/or older' or 'and/or younger'.",
+          "No long-ranging occurrence is turned into a zonal top or absolute age without the raw occurrence chart and assemblage support.",
+          "Reworking, caving, barren samples, abundance and preservation controls are carried where available.",
+          "Absence of evidence is not evidence of absence."
+        ],
+        "encoding_status": "PARTIAL - the v2 well windows use zone assignments as reported in the penetration chart. Raw occurrence charts, abundance, preservation and barren-sample flags are NOT encoded, so every window is a zone-level constraint, not a species-level age.",
+        "qc_flags": "See well 'excluded' entries and contradiction C12 (Maligan-1 reversal, Rusa Timur-1 truncated label, Imbok-1 datum conflict, Kudat-1 '?Crocker' with NN9a)."
+      }
+    },
+    "findings": [
+      {
+        "title": "Phase C is a candidate, not an event",
+        "key": "LOW–MED · non-canonical",
+        "body": "Layang-Layang-1 gives young apparent ages (6.5–7.8, 13.6 Ma) interleaved with old ones (19.6–22.9 Ma) and no depth progression. None is a primary-mineral crystallisation age. Models A, B and C all remain open (C15–C18)."
+      }
+    ]
+  },
+  "derived": {
+    "well_windows": [
+      {
+        "well": "GAJAH HITAM-1",
+        "domain": "INB (outer shelf)",
+        "surface": "H3",
+        "md": 458,
+        "pick_label": "B.S IVE (HOR III)",
+        "lo": 5.59,
+        "hi": 8.29,
+        "consistent": true,
+        "above": "445-651.6 NN11",
+        "below": "445-651.6 NN11",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS"
+        }
+      },
+      {
+        "well": "GAJAH HITAM-1",
+        "domain": "INB (outer shelf)",
+        "surface": "SRU",
+        "md": 1658,
+        "pick_label": "B.S IVD (S.R.U)",
+        "lo": 8.29,
+        "hi": 9.53,
+        "consistent": true,
+        "above": "651.6-1767.8 NN10",
+        "below": "651.6-1767.8 NN10",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": 9.41,
+        "eval": {
+          "P": "EDGE",
+          "L": "PASS",
+          "R": "EDGE",
+          "Lalt": "PASS"
+        }
+      },
+      {
+        "well": "GAJAH HITAM-1",
+        "domain": "INB (outer shelf)",
+        "surface": "UIU",
+        "md": 2406,
+        "pick_label": "B.S IVC (U.I.U)",
+        "lo": 9.53,
+        "hi": 10.89,
+        "consistent": true,
+        "above": "2167-2590.7 NN9/NN8",
+        "below": "2167-2590.7 NN9/NN8",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS"
+        }
+      },
+      {
+        "well": "TIGA PAPAN-2",
+        "domain": "INB",
+        "surface": "SRU",
+        "md": 1696.5,
+        "pick_label": "B.S IVD (SRU)",
+        "lo": 8.29,
+        "hi": 9.53,
+        "consistent": true,
+        "above": "1641.5-1705 NN10",
+        "below": "1641.5-1705 NN10",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": 9.36,
+        "eval": {
+          "P": "EDGE",
+          "L": "PASS",
+          "R": "EDGE",
+          "Lalt": "PASS"
+        }
+      },
+      {
+        "well": "MALIGAN-1",
+        "domain": "INB",
+        "surface": "H3",
+        "md": 688,
+        "pick_label": "B.S IVE (within NN11D-NN11C)",
+        "lo": 5.59,
+        "hi": 8.29,
+        "consistent": true,
+        "above": "670-790 NN11",
+        "below": "670-790 NN11",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS"
+        }
+      },
+      {
+        "well": "MALIGAN-1",
+        "domain": "INB",
+        "surface": "SRU",
+        "md": 1144,
+        "pick_label": "TOP S.IVC SEAL/SRU (within NN10A lower)",
+        "lo": 8.29,
+        "hi": 9.53,
+        "consistent": true,
+        "above": "1110-1180 NN10",
+        "below": "1110-1180 NN10",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": 9.38,
+        "eval": {
+          "P": "EDGE",
+          "L": "PASS",
+          "R": "EDGE",
+          "Lalt": "PASS"
+        }
+      },
+      {
+        "well": "SOLISIP-1",
+        "domain": "INB (N Sabah)",
+        "surface": "SRU",
+        "md": 1083.51,
+        "pick_label": "B.S IVD (NN11 recorded to 1100.27 MD, below the pick)",
+        "lo": 5.59,
+        "hi": 8.29,
+        "consistent": true,
+        "above": "877.78-1100.27 NN11",
+        "below": "877.78-1100.27 NN11",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "FAIL",
+          "L": "FAIL",
+          "R": "FAIL",
+          "Lalt": "FAIL"
+        }
+      },
+      {
+        "well": "SOLISIP-1",
+        "domain": "INB (N Sabah)",
+        "surface": "UIU",
+        "md": 1883.57,
+        "pick_label": "B.S IVC",
+        "lo": 9.53,
+        "hi": 13.53,
+        "consistent": true,
+        "above": "1499.24-1637 NN9",
+        "below": "1885.71-2021.64 NN7/NN6",
+        "gap_to_next_zone_below_m": 2.1,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS"
+        }
+      },
+      {
+        "well": "GLAYZER-3",
+        "domain": "INB",
+        "surface": "UIU",
+        "md": 2010,
+        "pick_label": "Base S.IVC / U.I.U",
+        "lo": 5.59,
+        "hi": 10.55,
+        "consistent": true,
+        "above": "1800-1990 NN11/NN10",
+        "below": "2060-2110 NN9",
+        "gap_to_next_zone_below_m": 50,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "FAIL",
+          "R": "EDGE"
+        }
+      },
+      {
+        "well": "RUSA TIMUR-1",
+        "domain": "INB",
+        "surface": "SRU",
+        "md": 1674,
+        "pick_label": "B.S IVD (S.R.U)",
+        "lo": 5.59,
+        "hi": 10.55,
+        "consistent": true,
+        "above": "873-1674 NN11/NN10",
+        "below": "1674-1909 NN10/NN9",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS",
+          "Lalt": "PASS"
+        }
+      },
+      {
+        "well": "RUSA TIMUR-1",
+        "domain": "INB",
+        "surface": "UIU",
+        "md": 1909,
+        "pick_label": "B.S IVC (U.I.U)",
+        "lo": 8.29,
+        "hi": 10.89,
+        "consistent": true,
+        "above": "1674-1909 NN10/NN9",
+        "below": "1909-2074 NN8",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS"
+        }
+      },
+      {
+        "well": "RUSA TIMUR-1",
+        "domain": "INB",
+        "surface": "LIU",
+        "md": 2074,
+        "pick_label": "B.S IVB (L.I.U)",
+        "lo": 10.55,
+        "hi": 99.0,
+        "consistent": true,
+        "above": "1909-2074 NN8",
+        "below": "",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": null,
+        "eval": {
+          "P": "PASS",
+          "L": "PASS",
+          "R": "PASS"
+        }
+      },
+      {
+        "well": "IMBOK-1",
+        "domain": "INB",
+        "surface": "LIU",
+        "md": 1303,
+        "pick_label": "Top Stage IVA (Uncon.)",
+        "lo": 10.89,
+        "hi": 11.9,
+        "consistent": true,
+        "above": "1090-1670 NN7",
+        "below": "1090-1670 NN7",
+        "gap_to_next_zone_below_m": 0.0,
+        "interp_age": 11.26,
+        "eval": {
+          "P": "PASS",
+          "L": "FAIL",
+          "R": "EDGE"
+        }
+      }
+    ],
+    "reconciliation": [
+      {
+        "surface": "H1",
+        "definition": "Top IVF / Base IVG",
+        "P_project_2026": 2.0,
+        "L_legacy_TB": 3.8,
+        "R_legacy_recal_GTS2012": 3.7,
+        "dP_L": 1.8,
+        "dP_R": 1.7,
+        "calibration_explains_pct": 6.0,
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "HOLD",
+        "contradictions": "C6"
+      },
+      {
+        "surface": "H2",
+        "definition": "Top IVE / Base IVF",
+        "P_project_2026": 3.1,
+        "L_legacy_TB": 5.5,
+        "R_legacy_recal_GTS2012": 5.59,
+        "dP_L": 2.4,
+        "dP_R": 2.49,
+        "calibration_explains_pct": -4.0,
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "HOLD",
+        "contradictions": "C6"
+      },
+      {
+        "surface": "H3",
+        "definition": "Top IVD / Base IVE",
+        "P_project_2026": 8.11,
+        "L_legacy_TB": 6.7,
+        "R_legacy_recal_GTS2012": 6.7,
+        "dP_L": 1.41,
+        "dP_R": 1.41,
+        "calibration_explains_pct": 0.0,
+        "well_tests": 2,
+        "pass_P": 2,
+        "pass_L": 2,
+        "pass_R": 2,
+        "joint_window_lo": 5.59,
+        "joint_window_hi": 8.29,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "HOLD",
+        "contradictions": "C5"
+      },
+      {
+        "surface": "SRU",
+        "definition": "Top IVC / Base IVD",
+        "P_project_2026": 9.53,
+        "L_legacy_TB": 9.4,
+        "R_legacy_recal_GTS2012": 9.53,
+        "dP_L": 0.13,
+        "dP_R": 0.0,
+        "calibration_explains_pct": 100.0,
+        "well_tests": 5,
+        "pass_P": 1,
+        "pass_L": 4,
+        "pass_R": 1,
+        "joint_window_lo": 8.29,
+        "joint_window_hi": 9.53,
+        "outliers_excluded": "SOLISIP-1",
+        "interp_estimates": "9.41;9.36;9.38",
+        "interp_mean": 9.38,
+        "verdict": "~9.4 Ma (3 wells)",
+        "contradictions": "C2;C8"
+      },
+      {
+        "surface": "UIU",
+        "definition": "Top IVB / Base IVC",
+        "P_project_2026": 10.46,
+        "L_legacy_TB": 10.6,
+        "R_legacy_recal_GTS2012": 10.55,
+        "dP_L": 0.14,
+        "dP_R": 0.09,
+        "calibration_explains_pct": 36.0,
+        "well_tests": 4,
+        "pass_P": 4,
+        "pass_L": 3,
+        "pass_R": 3,
+        "joint_window_lo": 9.53,
+        "joint_window_hi": 10.55,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "SUPPORTED",
+        "contradictions": "C3"
+      },
+      {
+        "surface": "LIU",
+        "definition": "Top IVA / Base IVB",
+        "P_project_2026": 11.63,
+        "L_legacy_TB": 12.0,
+        "R_legacy_recal_GTS2012": 11.9,
+        "dP_L": 0.37,
+        "dP_R": 0.27,
+        "calibration_explains_pct": 27.0,
+        "well_tests": 2,
+        "pass_P": 2,
+        "pass_L": 1,
+        "pass_R": 1,
+        "joint_window_lo": 10.89,
+        "joint_window_hi": 11.9,
+        "outliers_excluded": "",
+        "interp_estimates": "11.26",
+        "interp_mean": 11.26,
+        "verdict": "SUPPORTED (P)",
+        "contradictions": "C4"
+      },
+      {
+        "surface": "DRU",
+        "definition": "Top III / Base IVA",
+        "P_project_2026": 14.2,
+        "L_legacy_TB": 15.4,
+        "R_legacy_recal_GTS2012": 14.91,
+        "dP_L": 1.2,
+        "dP_R": 0.71,
+        "calibration_explains_pct": 41.0,
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "HOLD-NARROWED",
+        "contradictions": "C1;C9"
+      },
+      {
+        "surface": "BMU",
+        "definition": "Top II / Base III",
+        "P_project_2026": 23.13,
+        "L_legacy_TB": 21.0,
+        "R_legacy_recal_GTS2012": 21.0,
+        "dP_L": 2.13,
+        "dP_R": 2.13,
+        "calibration_explains_pct": 0.0,
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "HOLD",
+        "contradictions": "C7"
+      },
+      {
+        "surface": "MMU",
+        "definition": "DG-domain surface; not the DRU",
+        "P_project_2026": 16.0,
+        "L_legacy_TB": 16.0,
+        "R_legacy_recal_GTS2012": 16.0,
+        "dP_L": 0.0,
+        "dP_R": 0.0,
+        "calibration_explains_pct": "",
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "INT",
+        "contradictions": "C9"
+      },
+      {
+        "surface": "BU",
+        "definition": "onset SCS spreading",
+        "P_project_2026": 30.8,
+        "L_legacy_TB": 30.8,
+        "R_legacy_recal_GTS2012": 30.8,
+        "dP_L": 0.0,
+        "dP_R": 0.0,
+        "calibration_explains_pct": "",
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "INT",
+        "contradictions": ""
+      },
+      {
+        "surface": "LEU",
+        "definition": "Top I / Base II",
+        "P_project_2026": 34.1,
+        "L_legacy_TB": 34.4,
+        "R_legacy_recal_GTS2012": 34.4,
+        "dP_L": 0.3,
+        "dP_R": 0.3,
+        "calibration_explains_pct": 0.0,
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "INT",
+        "contradictions": "C11"
+      },
+      {
+        "surface": "ROU",
+        "definition": "onset of SCS-margin stretching",
+        "P_project_2026": 56.0,
+        "L_legacy_TB": 56.0,
+        "R_legacy_recal_GTS2012": 56.0,
+        "dP_L": 0.0,
+        "dP_R": 0.0,
+        "calibration_explains_pct": "",
+        "well_tests": 0,
+        "pass_P": 0,
+        "pass_L": 0,
+        "pass_R": 0,
+        "joint_window_lo": null,
+        "joint_window_hi": null,
+        "outliers_excluded": "",
+        "interp_estimates": "",
+        "interp_mean": "",
+        "verdict": "INT",
+        "contradictions": ""
+      }
+    ],
+    "validation": []
+  }
+}

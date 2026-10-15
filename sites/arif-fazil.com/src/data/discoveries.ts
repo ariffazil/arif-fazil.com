@@ -175,11 +175,30 @@ export const discoveries: Discovery[] = [
     evidence: [
       '13 constitutional floors (F1 Amanah to F13 Sovereign) with mathematical verification',
       '8 canonical kernel MCP verbs with Ed25519 cryptographic session leases',
-      'Full open-source kernel published on PyPI and GitHub'
+      'Full open-source kernel published on PyPI and GitHub',
+      'Approved into agentrust-io/awesome-ai-governance after maintainer review (PR #148, 2026-10-15, merge pending)'
     ],
     limits: 'Internal technical detail withheld.',
     link: 'https://arifos.arif-fazil.com',
     linkLabel: 'Visit Observatory ↗'
+  },
+  {
+    id: 'a-forge-executor',
+    title: 'A-FORGE',
+    category: 'systems',
+    categoryLabel: 'Computational Systems',
+    role: 'Creator & Sovereign Architect',
+    year: '2026–Present',
+    location: 'Governed Execution Plane',
+    summary: 'Governed execution engine for the same federation: performs file, service, and git mutations for AI agents limited by per-action-class budgets, accepting only HMAC-signed requests, and writing a receipt per run.',
+    evidence: [
+      'AGPL-3.0, open source at github.com/ariffazil/A-FORGE',
+      'Per-action-class budgets with HMAC-verified action ingress and receipted runs',
+      'Approved into agentrust-io/awesome-ai-governance alongside arifOS (PR #148, 2026-10-15, merge pending)'
+    ],
+    limits: 'Internal technical detail withheld.',
+    link: 'https://github.com/ariffazil/A-FORGE',
+    linkLabel: 'View A-FORGE Repo ↗'
   },
   {
     id: 'wealth-engine',

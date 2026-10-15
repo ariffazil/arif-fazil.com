@@ -9,7 +9,7 @@
   ],
   "canonical_url": "https://arif-fazil.com/",
   "route_model": {
-    "/": "human L1 — front door, nine rooms",
+    "/": "human L1 — front door, three doors, nine rooms",
     "/about": "who",
     "/human": "agent start-here",
     "/institution/": "institutional briefing",
@@ -19,6 +19,12 @@
     "/work/exploration-2013-2026/evidence/": "evidence ledger — claims, truth classes, publication classes",
     "/000/": "genesis and wisdom archive",
     "/999/": "trust and proof chamber",
+    "/vitals/": "PETRONAS cash against sellable barrels",
+    "/wealth/malaysia/": "Malaysia sovereign pulse. /malaysia/ redirects here",
+    "/oil/": "Brent board",
+    "/gas/": "Henry Hub board",
+    "/gold/": "gold board",
+    "/world/": "world house page",
     "/world/makcikgpt/": "MakcikGPT civic intelligence (editorial, optional)"
   },
   "content_scope": {
@@ -73,5 +79,5 @@
       "relationship": "earth intelligence apps"
     }
   ],
-  "last_updated": "2026-10-12"
+  "last_updated": "2026-10-15"
 }

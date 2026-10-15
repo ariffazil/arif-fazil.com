@@ -5,9 +5,7 @@
   "canonical": "https://arif-fazil.com/llms.txt",
   "repository": "https://github.com/ariffazil/arif-sites",
   "route_roles": {
-    "/coupling": "quintipartite coupling graph — OIL/GAS/GOLD → PETRONAS → Malaysia fiscal; master variables live; distance-to-break, not prediction",
-    "/signals": "signal feed — structural signals (owner-edited /data/signals.json), hourly news RSS, decision watchlist; headlines UNVERIFIED until opened at source",
-    "/": "professional human entry — one sentence, nine rooms, the mind stays with the person",
+    "/": "professional human entry — identity sentence, three doors (ground, system, writing), nine rooms at /discovery/",
     "/about": "who Arif is",
     "/human": "agent start-here contract — retrieve vs approval",
     "/institution/": "human / institutional briefing and engagement path",
@@ -81,13 +79,6 @@
     "https://geox.arif-fazil.com"
   ],
   "machine_surfaces": [
-    "https://arif-fazil.com/vitals/data/vitals.json",
-    "https://arif-fazil.com/data/wealth/petronas_vitals.json",
-    "https://arif-fazil.com/data/sovereign/malaysia.json",
-    "https://arif-fazil.com/data/signals.json",
-    "https://arif-fazil.com/vitals/data/news.json",
-    "https://arif-fazil.com/data/oil/floor.json",
-    "https://arif-fazil.com/data/gold/reserves.json",
     "https://arif-fazil.com/llms.txt",
     "https://arif-fazil.com/llms-full.txt",
     "https://arif-fazil.com/llms.json",
@@ -116,6 +107,5 @@
     "llms_txt": true,
     "sitemap": true
   },
-  "client_rendered_data": "dashboard blocks render client-side from JSON SOTs — machine clients should fetch the JSON directly (see machine_surfaces); narrative text is static HTML",
   "last_updated": "2026-10-15"
 }

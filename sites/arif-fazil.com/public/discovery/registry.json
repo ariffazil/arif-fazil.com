@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-10-12T05:49:26.890Z",
+  "generated_at": "2026-10-15T02:12:30.937Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -158,7 +158,7 @@
     },
     "wealth": {
       "verified": true,
-      "count": 15,
+      "count": 18,
       "tools": [
         {
           "name": "capital_primitive",
@@ -219,6 +219,18 @@
         {
           "name": "capital_civx",
           "desc": "Civilizational scenario intelligence — long-horizon resilience, sovereignty, intergenerati"
+        },
+        {
+          "name": "capital_read",
+          "desc": "Semantic concept layer: read ONE governed capital concept by id (e.g. commodity.brent.spot"
+        },
+        {
+          "name": "capital_rank_sources",
+          "desc": "Semantic concept layer: list the bindings backing ONE concept, ranked best-first by qualit"
+        },
+        {
+          "name": "capital_breakeven",
+          "desc": "Semantic concept layer: deductive fiscal-breakeven Brent for Malaysia. anchor='budget_bala"
         }
       ]
     },
@@ -269,5 +281,5 @@
       ]
     }
   },
-  "total_verified": 60
+  "total_verified": 63
 }

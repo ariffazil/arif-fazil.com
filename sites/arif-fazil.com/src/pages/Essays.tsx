@@ -40,12 +40,12 @@ function SeriesHeader({ label, n }: { label: string; n?: number }) {
 }
 
 function SeriesView({ entries }: { entries: Essay[] }) {
-  const sorted = [...entries].sort((a, b) => a.series.n - b.series.n);
+  const sorted = [...entries].sort((a, b) => (a.series?.n ?? 0) - (b.series?.n ?? 0));
   return (
     <div className="font-technical text-[0.75rem] leading-relaxed">
       {sorted.map(e => (
         <div key={e.id} className="grid grid-cols-[2.5rem_1fr_3.5rem] gap-2 py-1.5 border-b border-forge-iron/15 items-baseline">
-          <span className="text-forge-dim">#{e.series.n}</span>
+          <span className="text-forge-dim">#{e.series?.n ?? ''}</span>
           <span>
             {e.title}
             {e.note && <span className="block text-[0.6rem] text-forge-orange/70 italic mt-0.5">⚠ {e.note}</span>}
@@ -70,7 +70,7 @@ function SpineView({ entries }: { entries: Essay[] }) {
             {e.seal === '999' ? <span className="ml-1.5 text-[0.5rem] text-forge-gold uppercase">999</span> : ''}
           </span>
           <div className="flex items-center justify-end gap-2">
-            <span className="font-mono text-[0.55rem] text-forge-dim uppercase">{e.series.id}#{e.series.n}</span>
+            <span className="font-mono text-[0.55rem] text-forge-dim uppercase">{e.series?.id}{e.series?.n ?? ''}</span>
             <DestLink e={e} />
           </div>
         </div>

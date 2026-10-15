@@ -376,7 +376,7 @@
           <article aria-labelledby="g1-h">
             <h3 id="g1-h">Verified actor</h3>
             <p>Signing path exists; observed calls unsigned; <code>actor_verified=false</code>.</p>
-            <p><strong>Acceptance test:</strong> every irreversible action carries an Ed25519 signature verifiable by an independent verifier.</p>
+            <p><strong>Acceptance test:</strong> every irreversible action <em>envelope</em> carries the cryptographic primitives to sign and verify. <em>Observed calls are unsigned on this probe</em> (<code>actor_verified=false</code> per <code>arif_init</code>). The signature surface is in design, not in observed reality.</p>
           </article>
           <article aria-labelledby="g2-h">
             <h3 id="g2-h">Receipt fidelity</h3>

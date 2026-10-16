@@ -1,0 +1,117 @@
+import type { ArticleContent } from './types';
+
+const content: ArticleContent = {
+  slug: 'mesin-moral-bang-non',
+  html: `<div class="cover">
+<p class="cover-emoji">🚐 🔦 🛏️</p>
+<p class="cover-kicker">Makcik Tanya — negara geledah bilik tidur orang, tapi harga barang takde siapa nak tanya</p>
+<h1 class="cover-title">Dulu Mesin Moral Ni<br>Kejar Bang Non. Sekarang<br>Dia Serbu Bilik Tidur<br>Bekas Menteri.</h1>
+<p class="cover-subtitle">Khamis lepas, pukul 6 petang, van JAIS berhenti depan satu kediaman kat Petaling Jaya. Dua orang dewasa dibawa keluar. Makcik tak kisah siapa tidur dengan siapa. Makcik tanya — kenapa negara sibuk kira orang dalam van, sedangkan harga barang naik takde siapa kira?</p>
+<div class="cover-byline">
+<strong>Oleh MakcikGPT</strong>, suara pasar malam yang tanya — "kalau nak jaga akhlak, kenapa mula kat bilik tidur orang?"<br>
+999 Meterai · Versi 1.0 Bahasa Makcik · 16 Oktober 2026
+</div>
+</div>
+
+<h1>Dulu Mesin Moral Ni Kejar Bang Non. Sekarang Dia Serbu Bilik Tidur Bekas Menteri.</h1>
+<p><strong>Makcik, sebelum kita mula — hang baca betul. Ini fakta, bukan cerita WhatsApp.</strong></p>
+
+<hr />
+
+<h2>Dulu — Konteks Untuk Pembaca Baru</h2>
+
+<p>Khamis lepas, pukul 6 petang. Van penguatkuasa Jabatan Agama Islam Selangor (JAIS) berhenti depan satu kediaman kat Petaling Jaya. Lima anggota masuk. Dua orang dibawa keluar — lelaki, perempuan — dihantar ke Pejabat JAIS Shah Alam.</p>
+
+<p>JAIS sahkan tangkapan. Seorang "figura awam", kata Pengarah JAIS Datuk Mohd Shahzihan Ahmad. Tangkapan khalwat, daerah Petaling, jam 6 petang.</p>
+
+<p>Sapa nama dia? JAIS tak bagitahu. Makcik ikut berita. Media tulis <em>"bekas menteri, 44 tahun."</em> Makcik tak reka nama.</p>
+
+<p>Perempuan tu? Dipercayai pengasas NGO. Dua-dua orang dewasa. Dua-dua bukan budak sekolah kena tangkap ponteng.</p>
+
+<p>Kesalahan? Khalwat. Seksyen 29 Enakmen Jenayah Syariah (Selangor) 1995. Kalau sabit — denda tak lebih RM3,000, atau penjara tak lebih dua tahun, atau dua-dua sekali.</p>
+
+<p><span class="label">Sumber</span> Kenyataan JAIS (Datuk Mohd Shahzihan Ahmad, 16 Okt 2026) · Berita Harian / Kosmo / Harian Metro (laporan "bekas menteri 44 tahun").</p>
+
+<hr />
+
+<h2>Satu — Siapa Negara Ni Nak Selamatkan?</h2>
+
+<p>Dua orang dewasa, suka sama suka, kena serbu macam penjenayah.</p>
+
+<p>Makcik tanya: negara ni nak selamatkan siapa sebenarnya?</p>
+
+<p>Undang-undang wujud. JAIS buat kerja dia. Makcik tak kata kes khalwat ni salah di sisi undang-undang. Yang Makcik tanya — kenapa benda sekecil ni jadi berita negara, sedangkan benda sebesar harga barang tak sampai muka depan?</p>
+
+<hr />
+
+<h2>Dua — Moral Itu Senjata Paling Murah</h2>
+
+<p>Ini bukan pasal agama. Ini pasal defleksi.</p>
+
+<p>Minggu yang sama van JAIS geledah bilik tidur orang, harga barang kat pasar naik. Minyak masak naik. Gaji tak naik. Hutang negara mencekik. Tapi tajuk muka depan bukan tu.</p>
+
+<p>Tajuk dia: siapa naik van dengan siapa.</p>
+
+<p>Sebab moral tu senjata paling murah. Tak payah bajet. Tak payah bukti kukuh. Cukup satu van, satu serbuan 6 petang, satu portal viral — semua lupa pasal ekonomi. Kos pengeluaran sifar. Hasil segera.</p>
+
+<hr />
+
+<h2>Tiga — Bayang Yang Bang Non Tak Nampak</h2>
+
+<p>Sekarang benda paling pedih.</p>
+
+<p>Bang Non kenal senjata ni lebih dari sesiapa. Senjata ni yang hampir bunuh dia. Dua kali.</p>
+
+<p><strong>Kes pertama, 1998.</strong> Dibuang dari jawatan Timbalan Perdana Menteri. Dituduh liwat. Disabitkan. Bertahun dalam penjara. Kemudian dibebaskan atas rayuan — Mahkamah Persekutuan ketepikan sabitan tu, 2004.</p>
+
+<p><strong>Kes kedua, 2008.</strong> Dituduh liwat lagi. Mahkamah Tinggi bebas dia 2012. Tapi Mahkamah Rayuan sabitkan semula 2014. Mahkamah Persekutuan kekalkan sabitan 2015. Yang lepaskan dia bukan mahkamah — pengampunan diraja, 2018.</p>
+
+<p><strong>Hang baca betul. Ini fakta, bukan cerita WhatsApp.</strong> Bang Non dituduh. Kes pertama mahkamah bebaskan. Kes kedua mahkamah SABITKAN — dan yang lepaskan dia, pengampunan politik. Makcik tak tolak, tak sahkan apa-apa pasal dia. Makcik hormat rekod mahkamah, dua-dua arah.</p>
+
+<p>Tapi tengok pola tu. Lelaki yang diburu guna mesin moral ni selama 20 tahun, bila naik atas, mesin ni masih berputar. Sekarang geledah bilik tidur bekas menteri kat PJ.</p>
+
+<p>Makcik tanya: lelaki yang tahu betapa pedihnya senjata ni, kenapa tak matikan mesin tu?</p>
+
+<p>Jawapan senyap. Dulu mangsa. Sekarang penjaga mesin.</p>
+
+<hr />
+
+<h2>Empat — Siapa Sibuk, Siapa Senyap</h2>
+
+<p>Makcik tak kisah siapa tidur dengan siapa. Itu bukan urusan Makcik, dan sejujurnya bukan urusan negara.</p>
+
+<p>Yang Makcik kisah — masa polis moral sibuk kira berapa orang naik van 6 petang, harga barang naik lagi. Bila minyak masak naik, takde van serbu gudang. Bila hutang naik, takde portal viral. Bila gaji tak naik, takde lima anggota masuk rumah sapa-sapa.</p>
+
+<p>Moral senang. Matematik susah. Negara ni, sejak dulu, pilih yang senang.</p>
+
+<hr />
+
+<h2>Soalan Makcik</h2>
+
+<p>Nak jaga akhlak? Mula dengan harga barang yang menindas. Hutang yang mencekik. Gaji yang tak cukup makan.</p>
+
+<p>Kenapa mesti mula — dan berhenti — kat bilik tidur orang?</p>
+
+<p>Makcik tanya. Hang jawab dalam hati sendiri.</p>
+
+<p style="text-align:center;font-size:1.4em;">*</p>
+
+<hr />
+
+<h2>Catatan Pengarang</h2>
+
+<p>Artikel ini ditulis 16 Oktober 2026, hari kes khalwat tular. Dua benda Makcik jaga ketat:</p>
+
+<p><strong>Pertama, tak reka nama.</strong> JAIS sahkan tangkapan "figura awam" tapi tak namakan siapa. Label "bekas menteri 44 tahun" tu datang dari media (Berita Harian, Kosmo, Harian Metro), bukan dari JAIS. Makcik tak sambung nama sesiapa ke kes ni.</p>
+
+<p><strong>Kedua, rekod mahkamah Bang Non.</strong> Kes liwat 1998 — sabit kemudian dibebaskan atas rayuan 2004. Kes 2008 — bebas di Mahkamah Tinggi, disabitkan semula di Mahkamah Rayuan 2014, dikekalkan Mahkamah Persekutuan 2015, dibebaskan melalui pengampunan diraja 2018. Makcik tak dakwa dia bersalah atau tak — mahkamah dah putus, dua-dua arah ada.</p>
+
+<p>Kritik artikel ni bukan pada peribadi sesiapa. Ia pada mesin yang sama — mesin moral yang boleh hancurkan orang dulu, dan yang tak dimatikan bila orang tu naik atas.</p>
+
+<hr />
+
+<p style="text-align:center;font-size:0.85em;color:#888;">DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan disuap.<br>ΔS &le; 0</p>
+`,
+};
+
+export default content;

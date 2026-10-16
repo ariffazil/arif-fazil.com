@@ -1,5 +1,124 @@
 [
   {
+    "id": "m5-6",
+    "title": "Dulu Mesin Moral Ni Kejar Bang Non. Sekarang Dia Serbu Bilik Tidur Bekas Menteri.",
+    "date": "2026-10-16",
+    "lang": "bm",
+    "series": {
+      "id": "M5",
+      "n": 6
+    },
+    "tags": [
+      "anwar",
+      "bang-non",
+      "jais",
+      "khalwat",
+      "moral-policing",
+      "selangor",
+      "seksyen-29",
+      "propaganda",
+      "makcikgpt",
+      "malaysia",
+      "m5",
+      "series-m5"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/mesin-moral-bang-non"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C-MMB-001",
+        "text": "JAIS sahkan tangkapan khalwat membabitkan 'figura awam' di daerah Petaling, jam 6 petang, 15 Okt 2026.",
+        "tag": "OBS",
+        "source_id": "SRC-MMB-001",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-MMB-002",
+        "text": "JAIS TIDAK namakan identiti figura awam tersebut.",
+        "tag": "OBS",
+        "source_id": "SRC-MMB-001",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-MMB-003",
+        "text": "Label 'bekas menteri, 44 tahun' datang dari media, bukan dari kenyataan JAIS.",
+        "tag": "OBS",
+        "source_id": "SRC-MMB-002",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-MMB-004",
+        "text": "Kesalahan khalwat bawah Seksyen 29 Enakmen Jenayah Syariah (Selangor) 1995; denda ≤RM3,000 atau penjara ≤2 tahun atau kedua-duanya.",
+        "tag": "OBS",
+        "source_id": "SRC-MMB-001",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-MMB-005",
+        "text": "Anwar Ibrahim dituduh liwat (Sodomy I, 1998); disabitkan kemudian dibebaskan atas rayuan Mahkamah Persekutuan 2004.",
+        "tag": "OBS",
+        "source_id": "SRC-MMB-004",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-MMB-006",
+        "text": "Anwar Ibrahim dituduh liwat (Sodomy II, 2008); bebas Mahkamah Tinggi 2012, disabitkan Mahkamah Rayuan 2014, dikekalkan Mahkamah Persekutuan 2015, dibebaskan melalui pengampunan diraja 2018.",
+        "tag": "OBS",
+        "source_id": "SRC-MMB-005",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-MMB-007",
+        "text": "Artikel ini TIDAK mendakwa Anwar terlibat kes khalwat PJ 2026, dan TIDAK namakan individu yang ditangkap.",
+        "tag": "INT",
+        "source_id": "SRC-MMB-002",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-MMB-001",
+        "type": "official_statement",
+        "title": "Kenyataan Pengarah JAIS Datuk Mohd Shahzihan Ahmad — tangkapan khalwat figura awam, daerah Petaling, 6 petang",
+        "url": "https://www.kosmo.com.my/2026/10/16/bekas-menteri-ditangkap-khalwat-dengan-pengasas-ngo/"
+      },
+      {
+        "source_id": "SRC-MMB-002",
+        "type": "news",
+        "title": "Berita Harian — Bekas menteri ditahan khalwat di PJ",
+        "url": "https://www.bharian.com.my/berita/kes/2026/10/1672163/bekas-menteri-ditahan-khalwat-di-pj"
+      },
+      {
+        "source_id": "SRC-MMB-003",
+        "type": "news",
+        "title": "Harian Metro — Bekas menteri disyaki berkhalwat ditahan JAIS",
+        "url": "https://www.hmetro.com.my/utama/2026/10/1423752/bekas-menteri-disyaki-berkhalwat-ditahan-jais"
+      },
+      {
+        "source_id": "SRC-MMB-004",
+        "type": "court_record",
+        "title": "Anwar Ibrahim sodomy trials — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Anwar_Ibrahim_sodomy_trials"
+      },
+      {
+        "source_id": "SRC-MMB-005",
+        "type": "news",
+        "title": "The Guardian — Anwar Ibrahim guilty in sodomy case (10 Feb 2015)",
+        "url": "https://www.theguardian.com/world/2015/feb/10/anwar-ibrahim-guilty-in-sodomy-case"
+      },
+      {
+        "source_id": "SRC-MMB-006",
+        "type": "news",
+        "title": "Al Jazeera — Anwar Ibrahim released after getting full pardon (16 Mei 2018)",
+        "url": "https://www.aljazeera.com/news/2018/5/16/malaysia-anwar-ibrahim-released-after-getting-full-pardon"
+      }
+    ]
+  },
+  {
     "id": "m-dajjal-nampak-macam-efficiency",
     "title": "Dajjal Sudah Tiba \u2014 Dan Dia Nampak Macam Efficiency",
     "date": "2026-09-20",

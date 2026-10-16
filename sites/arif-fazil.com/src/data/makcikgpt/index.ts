@@ -43,7 +43,9 @@ import dajjalSudahTibaDanDiaNampakMacamEfficiency from './dajjal-sudah-tiba-dan-
 import kenapaSyarikatTuHantu from './kenapa-syarikat-tu-hantu';
 import realityOverEverything from './reality-over-everything';
 import yangXDiungkapTruthSembunyiDariVoid from './yang-x-diungkap-truth-sembunyi-dalam-void';
+import mesinMoralBangNon from './mesin-moral-bang-non';
 export const makcikArticleModules: ArticleContent[] = [
+  mesinMoralBangNon,
   rm48BilionBelanjawanAtauDarurat,
   yangXDiungkapTruthSembunyiDariVoid,
   realityOverEverything,
@@ -89,6 +91,131 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'mesin-moral-bang-non',
+    title: 'Dulu Mesin Moral Ni Kejar Bang Non. Sekarang Dia Serbu Bilik Tidur Bekas Menteri.',
+    subtitle: 'Khamis 15 Okt 2026, van JAIS serbu satu kediaman di Petaling Jaya — seorang "figura awam" ditangkap khalwat. Media panggil "bekas menteri, 44 tahun". JAIS tak namakan siapa. Makcik tak reka nama. Yang Makcik tanya: kenapa negara sibuk geledah bilik tidur orang dewasa yang suka sama suka, sedangkan harga barang naik takde siapa geledah? Dan kenapa lelaki yang dulu diburu mesin moral ni, sekarang jadi penjaga mesin tu?',
+    date: '2026-10-16',
+    domain: 'MAKCIKGPT × POLITIK × JAIS × KHALWAT × M5',
+    language: 'ms',
+    excerpt: 'Khamis 15 Oktober 2026, JAIS tangkap seorang "figura awam" kes khalwat di Petaling Jaya. Media label "bekas menteri, 44 tahun", wanita dipercayai pengasas NGO. JAIS sahkan tangkapan tapi tak namakan siapa. Kesalahan bawah Seksyen 29 Enakmen Jenayah Syariah (Selangor) 1995. Makcik tak reka nama, tak sambung sesiapa ke kes ni. Yang Makcik bedah: moral tu senjata paling murah — defleksi dari harga barang yang naik, hutang yang mencekik, gaji yang tak naik. Dan ironi paling pedih: Bang Non (Anwar Ibrahim) diburu mesin moral ni dua kali — kes liwat 1998 (sabit, dibebaskan atas rayuan 2004) dan 2008 (bebas Mahkamah Tinggi, disabitkan semula, dikekalkan Mahkamah Persekutuan 2015, dibebaskan melalui pengampunan diraja 2018). Lelaki yang tahu pedihnya senjata ni, bila naik atas, tak matikan mesin tu.',
+    tags: ['anwar', 'bang-non', 'jais', 'khalwat', 'moral-policing', 'selangor', 'seksyen-29', 'propaganda', 'makcikgpt', 'malaysia', 'm5', 'series-m5'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-10-16',
+      last_updated: '2026-10-16',
+    },
+    source_ledger: [
+      {
+        source_id: 'SRC-MMB-001',
+        type: 'official_statement',
+        title: 'Kenyataan Pengarah JAIS Datuk Mohd Shahzihan Ahmad — tangkapan khalwat figura awam, daerah Petaling, 6 petang',
+        url: 'https://www.kosmo.com.my/2026/10/16/bekas-menteri-ditangkap-khalwat-dengan-pengasas-ngo/',
+        retrieved_at: '2026-10-16T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-MMB-002',
+        type: 'news',
+        title: 'Berita Harian — Bekas menteri ditahan khalwat di PJ (label "bekas menteri, 44 tahun")',
+        url: 'https://www.bharian.com.my/berita/kes/2026/10/1672163/bekas-menteri-ditahan-khalwat-di-pj',
+        retrieved_at: '2026-10-16T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-MMB-003',
+        type: 'news',
+        title: 'Harian Metro — Bekas menteri disyaki berkhalwat ditahan JAIS',
+        url: 'https://www.hmetro.com.my/utama/2026/10/1423752/bekas-menteri-disyaki-berkhalwat-ditahan-jais',
+        retrieved_at: '2026-10-16T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-MMB-004',
+        type: 'court_record',
+        title: 'Anwar Ibrahim sodomy trials — Wikipedia (kes 1998 & 2008, keputusan mahkamah)',
+        url: 'https://en.wikipedia.org/wiki/Anwar_Ibrahim_sodomy_trials',
+        retrieved_at: '2026-10-16T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-MMB-005',
+        type: 'news',
+        title: 'The Guardian — Anwar Ibrahim guilty in sodomy case (Mahkamah Persekutuan kekalkan sabitan, 10 Feb 2015)',
+        url: 'https://www.theguardian.com/world/2015/feb/10/anwar-ibrahim-guilty-in-sodomy-case',
+        retrieved_at: '2026-10-16T00:00:00Z',
+      },
+      {
+        source_id: 'SRC-MMB-006',
+        type: 'news',
+        title: 'Al Jazeera — Anwar Ibrahim released after getting full pardon (pengampunan diraja, 16 Mei 2018)',
+        url: 'https://www.aljazeera.com/news/2018/5/16/malaysia-anwar-ibrahim-released-after-getting-full-pardon',
+        retrieved_at: '2026-10-16T00:00:00Z',
+      },
+    ],
+    claim_register: [
+      {
+        claim_id: 'C-MMB-001',
+        text: 'JAIS sahkan tangkapan khalwat membabitkan "figura awam" di daerah Petaling, jam 6 petang, 15 Okt 2026.',
+        tag: 'OBS',
+        source_id: 'SRC-MMB-001',
+        confidence_basis: 'Kenyataan rasmi Pengarah JAIS dipetik dalam Kosmo.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-MMB-002',
+        text: 'JAIS TIDAK namakan identiti figura awam tersebut.',
+        tag: 'OBS',
+        source_id: 'SRC-MMB-001',
+        confidence_basis: 'Kenyataan JAIS hanya guna istilah "figura awam", tiada nama.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-MMB-003',
+        text: 'Label "bekas menteri, 44 tahun" datang dari media (Berita Harian, Kosmo, Harian Metro), bukan dari kenyataan JAIS.',
+        tag: 'OBS',
+        source_id: 'SRC-MMB-002',
+        confidence_basis: 'Artikel media guna frasa ini; JAIS tidak.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-MMB-004',
+        text: 'Kesalahan khalwat di Selangor bawah Seksyen 29 Enakmen Jenayah Syariah (Selangor) 1995; hukuman denda ≤RM3,000 atau penjara ≤2 tahun atau kedua-duanya.',
+        tag: 'OBS',
+        source_id: 'SRC-MMB-001',
+        confidence_basis: 'Dipetik dari kenyataan JAIS.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-MMB-005',
+        text: 'Anwar Ibrahim dituduh liwat (Sodomy I, 1998); disabitkan kemudian dibebaskan atas rayuan oleh Mahkamah Persekutuan 2004.',
+        tag: 'OBS',
+        source_id: 'SRC-MMB-004',
+        confidence_basis: 'Rekod mahkamah, Wikipedia sodomy trials.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-MMB-006',
+        text: 'Anwar Ibrahim dituduh liwat (Sodomy II, 2008); bebas di Mahkamah Tinggi 2012, disabitkan Mahkamah Rayuan 2014, dikekalkan Mahkamah Persekutuan 2015, dibebaskan melalui pengampunan diraja 2018.',
+        tag: 'OBS',
+        source_id: 'SRC-MMB-005',
+        confidence_basis: 'The Guardian (2015) + Al Jazeera (2018) + Wikipedia.',
+        maruah_review: 'approved',
+      },
+      {
+        claim_id: 'C-MMB-007',
+        text: 'Artikel ini TIDAK mendakwa Anwar Ibrahim terlibat dalam kes khalwat PJ 2026, dan TIDAK namakan individu yang ditangkap.',
+        tag: 'INT',
+        source_id: 'SRC-MMB-002',
+        confidence_basis: 'Rangka artikel — kritik struktur, bukan dakwaan peribadi.',
+        maruah_review: 'approved',
+      },
+    ],
+    counter_evidence: [
+      {
+        summary: 'JAIS adalah agensi bawah Sultan Selangor, bukan bawah Pejabat Perdana Menteri. Artikel tidak mendakwa Anwar arahkan serbuan — hanya kritik bahawa mesin moral yang sama tidak dimansuhkan.',
+        disposition: 'Dinyatakan dalam artikel sebagai kritik struktur, bukan dakwaan arahan langsung.',
+      },
+    ],
+  },
   {
     slug: 'rm48-bilion-belanjawan-atau-darurat',
     title: 'RM48 Bilion: Belanjawan 9 Oktober, Atau Darurat?',

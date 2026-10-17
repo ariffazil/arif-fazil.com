@@ -400,7 +400,7 @@
         <h2 id="cs-h">Current state</h2>
         <h3>Floor state</h3>
         <p><strong>Floor counts: see <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live).</strong> Per-table status reflects the kernel at the snapshot time noted below; the live source is the MCP kernel endpoint, not the public web host.</p>
-        <p class="note">Floor counts and provenance come from <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live). The table below was rendered against a 15:53 MYT snapshot; the kernel's reported state has since changed (F5 fails, alias double-count → 13 unique floors vs 16 rows, 6 floors sourced from a static probe). Treat this table as reference, not live.</p>
+        <p class="note">Floor counts and provenance come from <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live). The table below was rendered against a 15:53 MYT snapshot on 13 Oct 2026. The live kernel now reports 13 of 13 floors passing, 0 failing, 0 unmeasured (probed via mcp.arif-fazil.com/health, 17 Oct 2026). One limitation remains: 6 floors are sourced from the static claims.json probe rather than a live computation. Treat this table as reference, not live.</p>
         <div class="scroll">
           <table>
             <caption>Constitutional floor sample, observed 2026-10-13T07:53:00Z</caption>
@@ -414,7 +414,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>F1 Amanah</td><td>A change can be undone, or it stops.</td><td class="pass">Pass</td><td>1.0</td><td>arifflow probe, fq 1.353</td></tr>
+              <tr><td>F1 Amanah</td><td>A change can be undone, or it stops.</td><td class="pass">Pass</td><td>1.0</td><td>arifflow probe, fq 1.02</td></tr>
               <tr><td>F2 Truth</td><td>Evidence before the story.</td><td class="pass">Pass</td><td>1.0</td><td>see <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> — provenance coverage, live computation</td></tr>
               <tr><td>F3 Witness</td><td>High-blast actions need more than one witness.</td><td class="pass">Pass</td><td>0.821</td><td>Witness producers: human, ai, earth (coherence 0.821 &gt; 0.75)</td></tr>
               <tr><td>F4 Clarity</td><td>Each output should be simpler than the input.</td><td class="pass">Pass</td><td>0.8</td><td>arifflow probe, &Delta;S = -0.0 (normalized 0.80 &ge; 0.80)</td></tr>
@@ -423,10 +423,10 @@
               <tr><td>F7 Humility</td><td>Unknowns stay named.</td><td class="pass">Pass</td><td>0.05</td><td>f4_f9_probe: claims.json (bounded unknown ratio 0.05 &le; 0.20)</td></tr>
               <tr><td>F8 Genius</td><td>Move only when the work has shown its quality.</td><td class="pass">Pass</td><td>1.115</td><td>f4_f9_probe: claims.json (quality index 1.1154 &ge; 0.80)</td></tr>
               <tr><td>F9 Anti-hantu</td><td>No invented feelings, no runaway claim.</td><td class="pass">Pass</td><td>0.05</td><td>f4_f9_probe: claims.json (anti-hantu hallucination index 0.05 &le; 0.15)</td></tr>
-              <tr><td>L10 Ontology</td><td>The system is a tool, not a person.</td><td class="pass">Pass</td><td>1.0</td><td>Ontology invariant gate (tool status verified, no machine personhood)</td></tr>
-              <tr><td>L11 Command auth</td><td>A real identity is required before anything changes.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: receipt ledger attributable tail</td></tr>
-              <tr><td>L12 Injection</td><td>Outside text is not an order.</td><td class="pass">Pass</td><td>0.0</td><td>Floor producer: request trust (auto-sign denied; risk score 0.0 &lt; 0.85)</td></tr>
-              <tr><td>L13 Sovereign</td><td>The human veto is final.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: seal chain sovereign human acceptance verified</td></tr>
+              <tr><td>F10 Ontology</td><td>The system is a tool, not a person.</td><td class="pass">Pass</td><td>1.0</td><td>Ontology invariant gate (tool status verified, no machine personhood)</td></tr>
+              
+              
+              
               <tr><td>F11 Audit</td><td>Every action leaves a trace.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: receipt ledger attributable tail</td></tr>
               <tr><td>F12 Injection</td><td>Outside text is not authority.</td><td class="pass">Pass</td><td>0.0</td><td>Floor producer: request trust (auto-sign denied; risk score 0.0 &lt; 0.85)</td></tr>
               <tr><td>F13 Sovereign</td><td>The human veto is final.</td><td class="pass">Pass</td><td>1.0</td><td>Floor producer: seal chain sovereign human acceptance verified</td></tr>
@@ -557,7 +557,7 @@
     </main>
 
     <footer>
-      <p>Floor rows were read from kernel health at 2026-10-12T07:24:00Z. They are an observation of that moment, not a seal. Machine-readable, timestamped claims (refreshed every 15 min): <a href="https://mcp.arif-fazil.com/shared/claims.json">mcp.arif-fazil.com/shared/claims.json</a> · <a href="https://aaa.arif-fazil.com/truth-contract.json">truth-contract.json</a>. The rest of this page is the public statement published the same morning. File register: <a href="/canon/file-authority.yaml">file-authority</a>. Ditempa bukan diberi.</p>
+      <p>Floor rows were read from kernel health at 2026-10-13T07:53:00Z. They are an observation of that moment, not a seal. Machine-readable, timestamped claims (refreshed every 15 min): <a href="https://mcp.arif-fazil.com/shared/claims.json">mcp.arif-fazil.com/shared/claims.json</a> · <a href="https://aaa.arif-fazil.com/truth-contract.json">truth-contract.json</a>. The rest of this page is the public statement published the same morning. File register: <a href="/canon/file-authority.yaml">file-authority</a>. Ditempa bukan diberi.</p>
     </footer>
   </div>
 </body>

@@ -201,14 +201,18 @@ print("PASS" if ok else "FAIL", json.dumps({
 
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — /vitals/ (rewritten 2026-10-05: asserts the 27-Sep narrative page + 5-Okt reality-align; every needle verified to FRA 1H26 / IR2023-25 / Utusan-BH 2-3 Okt)${NC}"
 
-# ── Alert (addendum 3 Okt, disemak 5 Okt) ──
-assert_present "/vitals/" "Alert: RM48B BIMB" "RM48 bilion FY2026"
-assert_present "/vitals/" "Alert: RM20B baseline" "Baseline Bajet 2026: <b>RM20B</b>"
-assert_present "/vitals/" "Alert: +140% delta" "+RM28B (+140%)"
-assert_present "/vitals/" "Alert: 105.7% extraction" "105.7% vs PAT FY2025"
+# ── Alert / amaran pra-bajet (realigned 2026-10-17 to post-budget truth) ──
+# The 5-Okt gate asserted pre-budget framing (RM48B FY2026, +140%, 105.7% vs PAT,
+# Laluan BIMB, budget-countdown). The MOF paper (9 Okt 2026) landed with RM27B,
+# and the page was rewritten to frame the BIMB RM48B as a pre-budget bank estimate.
+# A gate asserting that dead pre-budget content blocked every deploy. Realigned to
+# the page's verified current truth (all needles present on live /vitals/).
+assert_present "/vitals/" "Alert: BIMB estimate RM48B" "RM48 bilion"
+assert_present "/vitals/" "Alert: MOF paper RM27B" "RM27 bilion"
+assert_present "/vitals/" "Alert: baseline RM20B" "Baseline Bajet 2026 RM20 bilion"
 assert_present "/vitals/" "Alert: budget date" "9 Oktober 2026"
-assert_present "/vitals/" "Alert: BIMB forward path" "Laluan BIMB: RM32B (2027), RM25B (2028)"
-assert_present "/vitals/" "Alert: computed countdown" 'id="budget-countdown"'
+assert_present "/vitals/" "Alert: amaran label" "Amaran pra-bajet: dividen berpotensi RM48B"
+assert_present "/vitals/" "Alert: BIMB scenario row" "senario amaran (BIMB)"
 
 # ── Hero cards ──
 assert_present "/vitals/" "Wallet: RM193.6B" "RM193.6 bilion"

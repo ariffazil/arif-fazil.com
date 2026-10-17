@@ -1,0 +1,39 @@
+receipt: kinabalu-sabah-reality-refresh
+date: 2026-10-15
+actor: kimi-code/FI-008 (warga-aaa)
+authority: sovereign directive 2026-10-15 ("update and upgrade the site with latest Sabah Basin earth reality. REALITY > EVERYTHING")
+mutation_class: DERIVED (earth/ pages, not CANON)
+protocol: Authorize -> Backup -> Mutate -> Verify -> Reindex -> Relink -> Witness -> Notify
+
+backups:
+  - /root/arif-fazil.com/backups/kinabalu-cross-section.html.bak-20261015
+  - /root/arif-fazil.com/backups/kinabalu-basin-index.html.bak-20261015
+
+files_mutated:
+  - sites/arif-fazil.com/public/earth/kinabalu-cross-section.html  (v4, KL2_PAGE_REV 2026-10-15-v10)
+  - sites/arif-fazil.com/public/earth/kinabalu-basin/index.html
+
+reality_sourced (public record, dated):
+  Megah-1: 2025 (was 2024 on page), Block 3K, 200-300 MMboe INDUSTRY ESTIMATE (no official PETRONAS figure) — World Oil 2026-03-12 (MPM keynote), Oilprice 2026-10-07
+  Megah-2: appraisal campaign Q4 2026 — rig CONTESTED: Noble Viking (GEN 2026-10-07) vs West Capella (Oilprice/Splash247 2026-10-07); both carried, not merged
+  TGS: ~514 km2 3D FWI + depth imaging, Jul 2026 -> final Apr 2027 (Oilprice 2026-10-07; TGS 2026-10-01)
+  Limbayong: FID + Excalibur FPSO (MISC); Fugro AUV geohazard survey done 2026-09-28 (GEN 2026-10-07)
+  Jambuk-1: TotalEnergies wildcat, Block 2K, Oligo-Miocene carbonate trend (GEN 2026-10-07)
+  Tepat-1: corrected to public record 2018 Total/TotalEnergies Oligo-Miocene carbonate (Westwood 2019, MPM); older fold-thrust-2025 reading retained as CONTESTED
+  Megah play: CONTESTED (Oligocene carbonate vs Miocene turbidite) — was asserted single-facies; upgrade path named (Megah-2 + TGS FWI Apr 2027)
+  GEOX: basin route re-probed 2026-10-15 (200, was 404 on 13 Oct); geox_basin receipts geox:ANON-e9bbdeadbf4:geox_basin:3cc083d6b1bd
+  Elevation: 3,951 m DEM sample vs 4,095.2 m geodetic Low's Peak — now stated consistently on both pages
+
+unified_skill:
+  path: /root/.hermes/skills/geo-delivery-flow/SKILL.md
+  note: /root/AAA/skills is chattr +i (O-2 open loop) — placed in hermes skill home; verified on disk (grep PASS)
+
+verification:
+  make verify-pages: PASS (213 pages, 9 intentional exclusions)
+  live byte match: public == /var/www/html (both files, diff -q clean)
+  vision QA (native-resolution element shots): 3/3 clean — wells card, Sabah reality card, Megah disc card
+  vision QA false positive logged: tall downscaled screenshot pass reported "clipping" that native-res + DOM overflow check disproved (doc scrollWidth == clientWidth = 1440)
+  sync: scripts/sync-serving-roots.sh OK, backup /var/www/html/.split-roots-backup-20261015-162314
+  NOT run: make deploy reload (Caddy reload = T3 without naming); git commit/push not requested
+
+failures_reported: none blocking

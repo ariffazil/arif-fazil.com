@@ -1,0 +1,52 @@
+receipt: malay-kinabalu-staleness-sweep
+date: 2026-10-15
+actor: kimi-code/FI-008 (warga-aaa)
+authority: sovereign directive 2026-10-15 ("now what to update on this site? and also malay basin site")
+mutation_class: DERIVED (earth/ pages)
+protocol: Authorize -> Backup -> Mutate -> Verify -> Reindex -> Relink -> Witness -> Notify
+skill_flow: /root/.hermes/skills/geo-delivery-flow/SKILL.md (P0 intake -> P3 vision QA -> P5 forensics)
+
+backups:
+  - /root/arif-fazil.com/backups/malay-basin-cross-section.html.bak-20261015
+  - (kinabalu backups from same-day earlier receipt: 2026-10-15-kinabalu-sabah-reality-refresh.yaml)
+
+files_mutated:
+  - public/earth/malay-basin-cross-section.html  (v1 -> v2)
+  - public/earth/malay-basin/index.html
+  - public/earth/kinabalu-cross-section.html
+  - public/earth/kinabalu-basin/index.html
+
+defects_found_and_fixed:
+  D1 well-year drift (malay xs): BEKANTAN-1 2018->2024, PUTERI BASEMENT-1 2020->2017
+     — SVG well blocks, info card, map JS. Canon: earth/data/wells.json (corrected
+     2026-10-12 vs sovereign portfolio). Cross-check: malay-basin/index.html JS already
+     had 2024/2017; its DISC CARDS said 2018/2020 — page contradicted its own script. Fixed.
+  D2 wrong show color (malay xs): PUTERI basement shows drawn as oil (pink) — canon says
+     basement WATER-bearing, HC in overlying K-5 sands. Now blue water shows + oil in K-5.
+  D3 stale PDF link (kinabalu xs + dossier): /earth/kinabalu-basin.pdf = July v1;
+     v2 (Oct 2026) at /earth/kinabalu-basin/dossier-v2.pdf. Links repointed; v1 marked superseded.
+  D4 Tepat-1 map popup asserted the contested 2025 fold-thrust reading flat — now flagged
+     CONTESTED with both readings + dates.
+  D5 Megah-2 status: updated to mid-Oct 2026 (drillship lined up to spud, Upstream 6 Oct
+     "imminent"); rig contest kept BOTH (Noble Viking GEN vs West Capella Oilprice/Splash247/
+     IndexBox); explicit "no spud confirmation in public record yet".
+
+reality_added:
+  malay xs new card "Malay Basin · what changed by Oct 2026": MBR 2026 (launched 10 Feb 2026,
+  9 blocks + 6 DROs, near-field Malay new-play blocks — OGJ 11 Feb 2026) · Lebah Emas-1
+  (PM6/12, drilled May-Jun 2025, 11 HC intervals Group H/I/J, landmark per PETRONAS Activity
+  Outlook 2026-2028, NST Jan 2026) · Bunga Tasbih-1 MBR+ Round I SFA PSC 26 Jul 2024.
+  Upgrade-path named (appraisal + well-tied line). Epistemic: OBS / not a drilling rec.
+  malay dossier: open questions stamped 2026-10, Western Hinge question updated with MBR 2026.
+
+verification:
+  make verify-pages: PASS (213 pages, 9 intentional exclusions)
+  live byte match: public == /var/www/html (4/4 files)
+  DOM overflow check: 0 elements overflowing, doc scrollWidth == clientWidth (1440)
+  vision QA (native-res element shots): 3/3 clean — founder wells card (years read back
+  exactly 2025/2024/2020/2017), malay reality card, kinabalu reality card v2 (both rig
+  names present, spud explicitly unconfirmed)
+  sync: sync-serving-roots.sh OK, backup /var/www/html/.split-roots-backup-20261015-164708
+  NOT run: make deploy reload (Caddy = T3); git commit/push not requested
+
+failures_reported: none blocking. One vision misread logged (OBS tags read as "08S") — cosmetic, not acted on.

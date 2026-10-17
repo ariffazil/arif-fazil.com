@@ -79,3 +79,6 @@ sites/arif-fazil.com/public/gold/index.html
 sites/arif-fazil.com/public/gold/vendor/
 sites/arif-fazil.com/public/oil/index.html
 sites/arif-fazil.com/public/oil/world/
+
+# ephemeral deploy backups (21M, 679 files) — never committed
+sites/*/.backups/

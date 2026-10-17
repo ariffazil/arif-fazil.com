@@ -38,7 +38,7 @@ from typing import Any
 
 import yaml
 
-ROOT = Path("/root/arif-sites")
+ROOT = Path("/root/arif-fazil.com")
 CONTENT_DIR = ROOT / "content" / "essays"
 ESSAYS_DATA_DIR = ROOT / "sites" / "arif-fazil.com" / "src" / "data" / "essays"
 

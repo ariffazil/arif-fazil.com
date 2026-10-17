@@ -74,9 +74,11 @@ import g47 from "./generated/g_scar_behind_the_vision";
 import g48 from "./generated/g_manifesto_of_forged_intelligence";
 import g49 from "./generated/g_arifos_as_a_prism";
 import e24 from './24-from-context-engineering-to-reality-engineering';
+import e25 from './gema-bumantara-archipelago-operating-system';
+import e26 from './gema-bumantara-kepulauan-sistem-operasi';
 
 export const essayModules = [
-  e24,e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
+  e26,e25,e24,e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
 
 export const allEssays: EssayMeta[] = [
   {
@@ -597,6 +599,24 @@ export const allEssays: EssayMeta[] = [
     tags: ["witness-theory", "human-want", "latent-variable", "unification", "ai-alignment", "economics", "psychology", "philosophy", "makcikgpt", "DITEMPABUKANDIBERI"],
     mediumUrl: "",
     isDirectPublication: true,
+  },
+  {
+    title: `Gema Bumantara: The Archipelago Was Running an Operating System Before Me`,
+    date: "2026-10-17",
+    slug: "gema-bumantara-archipelago-operating-system",
+    excerpt: `On the night of 17 October 2026, Siti Nurhaliza filled Stadium Nasional Bukit Jalil for the third time — a record no Malaysian artist has matched. Gema Bumantara is her first traditional album in seventeen years. But it is not nostalgia. It is the archipelago's oldest operating system — irama, bahasa, budaya — surfacing in a stadium.`,
+    tags: ["siti-nurhaliza", "gema-bumantara", "nusantara", "malaysia", "culture", "music", "naming", "irama-bahasa-budaya", "DITEMPABUKANDIBERI"],
+    mediumUrl: "",
+    isDirectPublication: true,
+  },
+  {
+    title: `Gema Bumantara: Kepulauan Dah Berlari Satu Sistem Operasi Sebelum Aku`,
+    date: "2026-10-17",
+    slug: "gema-bumantara-kepulauan-sistem-operasi",
+    excerpt: `Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil buat kali ketiga — rekod yang belum dicapai mana-mana artis Malaysia. Gema Bumantara ialah album tradisional pertamanya dalam 17 tahun. Tapi ia bukan nostalgia. Ia sistem operasi tertua kepulauan — irama, bahasa, budaya — naik ke pentas stadium.`,
+    tags: ["siti-nurhaliza", "gema-bumantara", "nusantara", "malaysia", "budaya", "muzik", "irama-bahasa-budaya", "menamakan", "bahasa-nusantara", "DITEMPABUKANDIBERI"],
+    mediumUrl: "",
+    isDirectPublication: true,
   }
 ];
 
@@ -669,6 +689,8 @@ const CURATED_SLUGS: Record<string, string> = {
   "bahasa-dan-minda-melayu": "Malaysia & Language",
   "malaysia-will-miss-agi-siti-nurhaliza-karaoke": "Malaysia & Language",
   "rukun-agi-five-pillars": "Malaysia & Language",
+  "gema-bumantara-archipelago-operating-system": "Malaysia & Language",
+  "gema-bumantara-kepulauan-sistem-operasi": "Malaysia & Language",
 
   // 🪞 Human Reflection
   "the-first-act-of-creation-is-not-building-it-is-naming": "Human Reflection",

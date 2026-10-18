@@ -52,7 +52,11 @@ jobs:
         run: |
           set -euo pipefail
           cd "${SITE_DIR}"
-          npm ci
+          # eslint@^10.9.1 vs eslint-plugin-react-hooks@^7 peer range (^3..^9)
+          # is an unresolved conflict; --legacy-peer-deps matches sites-ci.yml,
+          # deploy.yml and sentinel-premerge-gate.yml so the frozen lockfile
+          # installs instead of aborting with ERESOLVE.
+          npm ci --legacy-peer-deps
           echo "✅ npm ci completed — package-lock.json is the resolver authority"
 
       - name: Record lockfile SHA-256

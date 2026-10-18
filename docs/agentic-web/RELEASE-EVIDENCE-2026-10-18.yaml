@@ -1,0 +1,39 @@
+# Release evidence / deploy receipt. NOT a kernel SEAL.
+# Produced per /root/arif-fazil.com/AGENTS.md §14.
+release_candidate:
+  commit: "b87685a674bb76e7b38adf9f0c7495dabdb462b6"
+  branch: site/claude-2026-10-15
+  environment: production_public_html
+  changed_routes:
+    - "/arifos/ (arifOS page — 3 factual corrections, 3 lines)"
+  public_effect:
+    - "Live claim corrected: 12 of 13 floors passing, F8 Genius failing (was: 13 of 13 passing, 0 failing, sourced from a 17 Oct probe)."
+    - "Gap 1 (Verified actor): re-probe date added — actor_verified=false unchanged 18 Oct 2026."
+    - "Gap 3 (Sink agreement): ledger-integrity findings disclosed — arifFlow receipt ledger 100x batch re-append (9,919 duplicate lines) and one malformed vault-ledger line recorded not-repaired-by-design."
+    - "Provenance limitation corrected: 7 floors (F4-F10) from static claims.json probe (was stated as 6)."
+    - "Deployed by single-file sync: dist/arifos/index.html -> /var/www/html/arif/arifos/index.html. No rsync --delete. No Caddy reload."
+  tests:
+    verify_pages: "PASS — 217 pages verified, 10 intentionally excluded; 1 pre-existing 301 warning on /.well-known/mcp/server.json"
+    build: "npm run build — target page built correctly; overall exit non-zero from stale-asset scanner on sibling's UNCOMMITTED public/geox/cockpit/index.html (maplibre-CqkleIqs.js / d3-CHGNpSdI.js have no current counterpart) — pre-existing in-flight work, deliberately untouched"
+    live_reprobe: "PASS — https://arif-fazil.com/arifos/ serves the corrected claim post-sync; '13 of 13 floors passing' string count = 0"
+    doctor_before: not_run
+    doctor_after: not_run
+    doctor_fail_set_delta: not_run
+    playwright_home: not_run
+    playwright_human: not_run
+    playwright_institution: not_run
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: "PASS — 0 matches on staged diff (api_key|secret|token|password|PRIVATE KEY|ghp_|sk-)"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+    caddy_note: "Content-only change; no routing touched, therefore no reload required or performed (AGENTS.md rule 9)."
+  rollback:
+    backup: "Pre-change bytes recoverable from git: git checkout b87685a^ -- sites/arif-fazil.com/public/arifos/index.html, rebuild, re-copy single file to /var/www/html/arif/arifos/index.html"
+    git: "git revert b87685a674bb76e7b38adf9f0c7495dabdb462b6"
+  provenance_notes:
+    kernel_source: "mcp.arif-fazil.com/health public envelope + 127.0.0.1:8088/health full envelope (floors_failing: F8, provenance f4_f9_probe:claims.json:2026-10-18T04:20:01Z)"
+    actor: "kimi-code/FI-008"
+    witness_protocol: "Authorize (owner request 2026-10-18) -> Backup (git) -> Mutate (3 scoped edits) -> Verify (verify-pages PASS + live re-probe) -> Witness (this record) -> Notify (report to owner). Not self-SEALed."

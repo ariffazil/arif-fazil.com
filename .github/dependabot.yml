@@ -3,9 +3,8 @@
 # Forged 2026-08-10 — F13 verdict, CI governance repair (static-site adapter)
 # ═══════════════════════════════════════════════════════════════════════════
 #
-# arif-fazil.com is a multi-site monorepo:
+# arif-fazil.com monorepo:
 #   - sites/arif-fazil.com/  — main Vite/React site (npm)
-#   - sites/geox-landing-src/ — GEOX landing page (npm)
 # Resolver authority: package.json + package-lock.json (npm).
 #
 # Per F13 directive (2026-08-10):
@@ -52,30 +51,13 @@ updates:
           - "@tanstack/*"
       # NOTE: constitutional npm packages stay un-grouped.
 
-  # ── GEOX landing source (sites/geox-landing-src) ─────────────────────────
-  - package-ecosystem: "npm"
-    directory: "/sites/geox-landing-src"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Asia/Kuala_Lumpur"
-    cooldown:
-      default-days: 3
-    open-pull-requests-limit: 3
-    labels:
-      - "deps"
-      - "dependencies"
-    commit-message:
-      prefix: "chore(deps)"
-      include: "scope"
-    groups:
-      dev-stack:
-        patterns:
-          - "eslint"
-          - "prettier"
-          - "vite"
-          - "tailwindcss"
+  # ── GEOX landing source: retired ─────────────────────────────────────────
+  # `/sites/geox-landing-src` was removed from this repo in 9bd9c8f1
+  # ("quarantine stale artifacts — legacy dirs, dead sub-sites"), so the npm
+  # updater aborted every run with dependency_file_not_found. The surviving
+  # GEOX surface (sites/geox.arif-fazil.com) is static and carries no
+  # package.json, so there is nothing left to update here. Restore this block
+  # (pointing at the real path) if a GEOX npm project returns.
 
   # ── GitHub Actions versions ──────────────────────────────────────────────
   - package-ecosystem: "github-actions"

@@ -9,6 +9,9 @@ permissions:
   contents: read
   pull-requests: read
   issues: write
+  # gh run list below reads workflow runs; without actions:read it 403s and the
+  # digest silently reported "none" for CI failures.
+  actions: read
 
 concurrency:
   group: arif-sites-hygiene
@@ -33,8 +36,13 @@ jobs:
 
           POLICY=".github/repo-policy.yml"
           if [ -f "$POLICY" ]; then
-            TIER=$(grep "^tier:" "$POLICY" | awk '{print $2}')
-            POLICY_STATUS="present (tier=$TIER)"
+            # tier is nested under repo_policy: (`  tier: "site"`), not a
+            # top-level key. The old `grep "^tier:"` matched nothing, so with
+            # `set -e` + pipefail the assignment returned 1 and killed the
+            # whole digest with no output. Match the nested two-space key and
+            # never let a missing key fail the run.
+            TIER=$(awk '/^  tier:/{gsub(/"/,"",$2); print $2; exit}' "$POLICY" 2>/dev/null || true)
+            POLICY_STATUS="present (tier=${TIER:-undeclared})"
           else
             POLICY_STATUS="MISSING"
           fi

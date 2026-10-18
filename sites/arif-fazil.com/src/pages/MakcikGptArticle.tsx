@@ -168,7 +168,7 @@ export function MakcikGptArticle() {
         <RealityReceiptPanel meta={meta} />
 
         {/* Article Body (Clean, comfortable reading experience without duplicate cover) */}
-        <article className="prose prose-invert max-w-none font-sans text-base md:text-lg leading-relaxed text-[#EDEAE2]/90 space-y-6">
+        <article id="main-content" className="prose prose-invert max-w-none font-sans text-base md:text-lg leading-relaxed text-[#EDEAE2]/90 space-y-6">
           <div
             dangerouslySetInnerHTML={{ __html: cleanHtml }}
             className="space-y-6 [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[#EDEAE2] [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#1F2733] [&>h3]:font-serif [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-[#D9A62E] [&>h3]:mt-8 [&>h3]:mb-3 [&>p]:leading-relaxed [&>blockquote]:border-l-4 [&>blockquote]:border-[#D9A62E] [&>blockquote]:bg-[#11151C] [&>blockquote]:p-4 [&>blockquote]:italic [&>blockquote]:text-[#EDEAE2] [&>strong]:text-[#D9A62E] [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-2"

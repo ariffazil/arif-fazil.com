@@ -2027,7 +2027,7 @@ fetch("/earth/data/studies.json")
        <h3>${esc(s.title)}</h3>
        <div class="meta">${[s.year,s.basin].filter(v=>v!=null).map(esc).join(" · ")}</div>
        <p>${esc(s.abstract||"")}</p>
-       ${s.link?`<a class="go" href="${esc(s.link)}">▸ READ THE STUDY</a>`:`<span class="tag gold" style="margin-top:1rem">PROPRIETARY · EXISTENCE ONLY</span>`}
+       ${s.link?('<a class="go" href="' + esc(s.link) + '">▸ READ THE STUDY</a>'):'<span class="tag gold" style="margin-top:1rem">PROPRIETARY · EXISTENCE ONLY</span>'}
      </div>`).join("")}</div>`;
  }).catch(()=>{
    $("studyMount").innerHTML=`<div class="study-empty"><div class="n">UNVERIFIED</div>

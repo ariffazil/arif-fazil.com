@@ -62,6 +62,28 @@
     text-transform: uppercase;
   }
 
+  /* --- Series legend --- */
+  .w-series-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin: 0.75rem 0 1.5rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid #1E232A;
+    border-bottom: 1px solid #1E232A;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: #6A665E;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .w-series-legend .legend-title { color: #6A665E; }
+  .w-series-legend .legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+  /* --- Nusantara voice emphasis --- */
+  .w-section.nusantara { border-left: 2px solid var(--gold); padding-left: 0.5rem; }
+
   /* --- Blockquote --- */
   .w-quote {
     border-left: 3px solid var(--gold);
@@ -174,11 +196,11 @@
     font-weight: 600;
   }
   .w-tag.seal { color: var(--gold); background: rgba(212,168,83,0.1); }
-  .w-tag.int { color: #6BCF8B; background: rgba(107,207,139,0.1); }
-  .w-tag.s4 { color: #D4A853; background: rgba(212,168,83,0.1); }
-  .w-tag.s6 { color: #4FC3F7; background: rgba(79,195,247,0.1); }
-  .w-tag.s8 { color: #E4572E; background: rgba(228,87,46,0.1); }
-  .w-tag.site { color: #8A8578; background: rgba(138,133,120,0.1); }
+  .w-tag.lang-bm { color: #E4572E; background: rgba(228,87,46,0.12); }
+  .w-tag.s-s4 { color: #D4A853; background: rgba(212,168,83,0.10); }
+  .w-tag.s-s6 { color: #4FC3F7; background: rgba(79,195,247,0.10); }
+  .w-tag.s-s8 { color: #E4572E; background: rgba(228,87,46,0.10); }
+  .w-tag.s-site { color: #8A8578; background: rgba(138,133,120,0.10); }
   .w-card-cta {
     font-family: var(--font-mono);
     font-size: 0.62rem;
@@ -190,15 +212,6 @@
     margin-left: auto;
   }
   .w-card-cta:hover { border-bottom-color: var(--gold); }
-
-  /* --- Featured grid --- */
-  .featured-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-  .featured-grid .w-card { padding: 1.35rem 1.5rem; }
-  .featured-grid .w-card h3 { font-size: 1.05rem; }
 
   /* --- Footer --- */
   .w-footer {
@@ -220,24 +233,15 @@
     transition: color 0.15s;
   }
   .w-footer-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
-  .w-source {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: #4A4840;
-    margin-top: 0.85rem;
-    letter-spacing: 0.03em;
-    line-height: 1.6;
-  }
 
   /* --- Mobile --- */
   @media (max-width: 640px) {
-    .featured-grid { grid-template-columns: 1fr; }
     .w-card { padding: 0.95rem 1.05rem; }
     .w-card-head { flex-direction: column; gap: 0.15rem; }
   }
 </style>
 
-<!-- DTI gate (verify-surfaces.cjs L4/L5/L6): generated 2026-09-21 from this page's
+<!-- DTI gate (verify-surfaces.cjs L4/L5/L6): generated 2026-10-17 from this page's
      own title/description/canonical. Additive metadata only; no content claims added. -->
 <script type="application/ld+json">
 {
@@ -261,6 +265,10 @@
 </script>
 <meta name="arif-room" content="words"/>
 <meta name="arif-job" content="Essays, in his voice."/>
+<meta name="arif-corpus-count" content="20"/>
+<meta name="arif-corpus-languages" content="en=18 ms=2"/>
+<meta name="arif-corpus-as-of" content="2026-10-17"/>
+<meta name="arif-generator" content="forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/render-words-essays.cjs"/>
 <link rel="stylesheet" href="/_shared/room-coats.css?v=20261004c"/>
 </head>
 <body class="fam-words-hub"><div class="room-plate" data-agent-room="words"><b>Writing</b><span>Essays, in his voice.</span><a href="/discovery/">Nine rooms</a></div>
@@ -275,7 +283,7 @@
     <p class="meta" style="font-family:var(--font-mono);font-size:0.65rem;color:#6A665E;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.5rem">Words › Writing</p>
     <h1>Constitutional Essays</h1>
     <p class="w-hero-desc">Sovereign reading room — long-form essays by <strong>Muhammad Arif bin Fazil</strong> on AI governance, institutions, and the path to AGI.</p>
-    <p class="w-stats">15 essays · sealed 999 · updated 2026-08-07</p>
+    <p class="w-stats">20 essays · 2 BM + 18 EN · sealed 999 · updated 2026-10-17</p>
   </div>
 
   <blockquote class="w-quote">
@@ -283,294 +291,370 @@
     <cite>— Arif Fazil · AGI Paradox trilogy · 2026-08-07</cite>
   </blockquote>
 
+  
+  <div class="w-series-legend" aria-label="Series legend">
+    <span class="legend-title">Series:</span>
+    <span class="legend-item"><span class="w-tag s-s4">S4</span> Governance Canon</span>
+    <span class="legend-item"><span class="w-tag s-s6">S6</span> Eureka Trilogy</span>
+    <span class="legend-item"><span class="w-tag s-s8">S8</span> Forge + Site</span>
+    <span class="legend-item"><span class="w-tag s-site">SITE</span> Constitution surface</span>
+  </div>
+
+  
   <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- FEATURED                                                   -->
+  <!-- NUSANTARA VOICE — Bahasa Melayu essays                        -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="w-section nusantara">
+    <div class="w-section-head">
+      <h2>Nusantara Voice — Bahasa Melayu</h2>
+      <span class="w-section-pill" lang="ms">suara nusantara</span>
+    </div>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/siti-nurhaliza-bukan-nama-ia-simbol" lang="ms">Siti Nurhaliza Bukan Nama. Ia Simbol.</a></h3>
+          <span class="w-card-date">2026-10-17</span>
+        </div>
+        <div class="w-card-foot">
+          <span class="w-tag lang-bm">BM</span>
+          <a href="/words/writing/siti-nurhaliza-bukan-nama-ia-simbol" class="w-card-cta">Baca esei →</a>
+        </div>
+      </div>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/gema-bumantara-kepulauan-sistem-operasi" lang="ms">Gema Bumantara: Kepulauan Dah Berlari Satu Sistem Operasi Sebelum Aku</a></h3>
+          <span class="w-card-date">2026-10-17</span>
+        </div>
+        <div class="w-card-foot">
+          <span class="w-tag lang-bm">BM</span>
+          <a href="/words/writing/gema-bumantara-kepulauan-sistem-operasi" class="w-card-cta">Baca esei →</a>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- OCTOBER 2026                                       -->
   <!-- ═══════════════════════════════════════════════════════════ -->
   <div class="w-section">
     <div class="w-section-head">
-      <h2>Featured</h2>
-      <span class="w-section-pill">start here</span>
+      <h2>October 2026</h2>
+      <span class="w-section-pill">4 essays</span>
     </div>
-    <div class="featured-grid">
-
       <div class="w-card">
         <div class="w-card-head">
-          <h3><a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us/">The AGI Paradox</a></h3>
-          <span class="w-card-date">2026-08-07</span>
+          <h3><a href="/words/writing/siti-nurhaliza-bukan-nama-ia-simbol">Siti Nurhaliza Bukan Nama. Ia Simbol.</a></h3>
+          <span class="w-card-date">2026-10-17</span>
         </div>
-        <p class="w-card-excerpt">Why bigger models won't save us, and why the smartest thing in the room might be an institution.</p>
+        
         <div class="w-card-foot">
-          <span class="w-tag s4">S4</span>
-          <span class="w-tag seal">seal 999</span>
-          <a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us/" class="w-card-cta">Read essay →</a>
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          <span class="w-tag lang-bm">BM</span>
+          <a href="/words/writing/siti-nurhaliza-bukan-nama-ia-simbol" class="w-card-cta">Read essay →</a>
         </div>
       </div>
 
       <div class="w-card">
         <div class="w-card-head">
-          <h3><a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed/">Simulative Institutions</a></h3>
-          <span class="w-card-date">2026-08-07</span>
+          <h3><a href="/words/writing/gema-bumantara-kepulauan-sistem-operasi">Gema Bumantara: Kepulauan Dah Berlari Satu Sistem Operasi Sebelum Aku</a></h3>
+          <span class="w-card-date">2026-10-17</span>
         </div>
-        <p class="w-card-excerpt">The third axis of failure — what Acemoglu missed about institutional decay.</p>
+        
         <div class="w-card-foot">
-          <span class="w-tag s4">S4</span>
-          <span class="w-tag seal">seal 999</span>
-          <a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed/" class="w-card-cta">Read essay →</a>
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          <span class="w-tag lang-bm">BM</span>
+          <a href="/words/writing/gema-bumantara-kepulauan-sistem-operasi" class="w-card-cta">Read essay →</a>
         </div>
       </div>
 
       <div class="w-card">
         <div class="w-card-head">
-          <h3><a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens/">Truth Is Not Cheap</a></h3>
-          <span class="w-card-date">2026-08-07</span>
+          <h3><a href="/words/writing/gema-bumantara-archipelago-operating-system">Gema Bumantara: The Archipelago Was Running an Operating System Before Me</a></h3>
+          <span class="w-card-date">2026-10-17</span>
         </div>
-        <p class="w-card-excerpt">Why the path to AGI will consume more tokens, more compute, and more patience.</p>
+        
         <div class="w-card-foot">
-          <span class="w-tag s4">S4</span>
-          <span class="w-tag seal">seal 999</span>
-          <a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens/" class="w-card-cta">Read essay →</a>
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/gema-bumantara-archipelago-operating-system" class="w-card-cta">Read essay →</a>
         </div>
       </div>
 
       <div class="w-card">
         <div class="w-card-head">
-          <h3><a href="/words/writing/petronas-23-years-in-brazil/">23 Years in Brazil</a></h3>
-          <span class="w-card-date">2026-08-06</span>
+          <h3><a href="/words/writing/from-context-engineering-to-reality-engineering">From Context Engineering to Reality Engineering</a></h3>
+          <span class="w-card-date">2026-10-15</span>
         </div>
-        <p class="w-card-excerpt">What Petronas bought, spent, and walked away with — a case study in sovereign capital.</p>
+        
         <div class="w-card-foot">
-          <span class="w-tag site">SITE</span>
-          <span class="w-tag seal">seal 999</span>
-          <a href="/words/writing/petronas-23-years-in-brazil/" class="w-card-cta">Read essay →</a>
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/from-context-engineering-to-reality-engineering" class="w-card-cta">Read essay →</a>
         </div>
       </div>
-
-    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- AUGUST 2026 — S4: GOVERNANCE CANON                         -->
+  <!-- SEPTEMBER 2026                                       -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="w-section">
+    <div class="w-section-head">
+      <h2>September 2026</h2>
+      <span class="w-section-pill">1 essays</span>
+    </div>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/the-last-scarcity-witness-theory-of-human-want">The Last Scarcity: A Witness Theory of Human Want</a></h3>
+          <span class="w-card-date">2026-09-20</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/the-last-scarcity-witness-theory-of-human-want" class="w-card-cta">Read essay →</a>
+        </div>
+      </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- AUGUST 2026                                       -->
   <!-- ═══════════════════════════════════════════════════════════ -->
   <div class="w-section">
     <div class="w-section-head">
       <h2>August 2026</h2>
-      <span class="w-section-pill">S4 · Governance Canon</span>
+      <span class="w-section-pill">5 essays</span>
     </div>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens">truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens</a></h3>
+          <span class="w-card-date">2026-08-07</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s4">S4</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens" class="w-card-cta">Read essay →</a>
+        </div>
+      </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/i-didnt-invent-a-token-i-invented-a-question/">I'm Not a Programmer. I Accidentally Invented a New Question for AI.</a></h3>
-        <span class="w-card-date">2026-08-07</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed">the-third-axis-of-failure-what-acemoglu-missed</a></h3>
+          <span class="w-card-date">2026-08-07</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">A geoscientist stumbles into AI governance and discovers the question nobody asked.</p>
-      <div class="w-card-foot">
-        <span class="w-tag site">SITE</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/i-didnt-invent-a-token-i-invented-a-question/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us/">The AGI Paradox: Why Bigger Models Won't Save Us</a></h3>
-        <span class="w-card-date">2026-08-07</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us">the-agi-paradox-why-bigger-models-wont-save-us</a></h3>
+          <span class="w-card-date">2026-08-07</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s4">S4</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">Why the smartest thing in the room might be an institution, not a model.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s4">S4</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed/">Simulative Institutions: The Third Axis of Failure</a></h3>
-        <span class="w-card-date">2026-08-07</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/petronas-23-years-in-brazil">petronas-23-years-in-brazil</a></h3>
+          <span class="w-card-date">2026-08-07</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s4">S4</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/petronas-23-years-in-brazil" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">What Acemoglu missed — institutions don't just fail by being extractive or weak. They fail by simulating.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s4">S4</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens/">Truth Is Not Cheap</a></h3>
-        <span class="w-card-date">2026-08-07</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/i-didnt-invent-a-token-i-invented-a-question">i-didnt-invent-a-token-i-invented-a-question</a></h3>
+          <span class="w-card-date">2026-08-07</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/i-didnt-invent-a-token-i-invented-a-question" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">Why the path to AGI will consume more tokens, more compute, and more patience than anyone admits.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s4">S4</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
-
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/petronas-23-years-in-brazil/">23 Years in Brazil: What Petronas Bought, Spent, and Walked Away With</a></h3>
-        <span class="w-card-date">2026-08-06</span>
-      </div>
-      <p class="w-card-excerpt">A sovereign capital case study — two decades of investment, extraction, and exit.</p>
-      <div class="w-card-foot">
-        <span class="w-tag site">SITE</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/petronas-23-years-in-brazil/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- JULY 2026 — S6: EUREKA TRILOGY                             -->
+  <!-- JULY 2026                                       -->
   <!-- ═══════════════════════════════════════════════════════════ -->
   <div class="w-section">
     <div class="w-section-head">
       <h2>July 2026</h2>
-      <span class="w-section-pill">S6 · Eureka Trilogy</span>
+      <span class="w-section-pill">4 essays</span>
     </div>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/agentic-intelligence-big-bang">Agentic Intelligence Big Bang: Why Naming Is the First Act of Creation</a></h3>
+          <span class="w-card-date">2026-07-04</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s6">S6</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/agentic-intelligence-big-bang" class="w-card-cta">Read essay →</a>
+        </div>
+      </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/agentic-intelligence-big-bang/">Agentic Intelligence Big Bang: Why Naming Is the First Act of Creation</a></h3>
-        <span class="w-card-date">2026-07-04</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/three-timelines-one-boundary">Three Timelines, One Boundary</a></h3>
+          <span class="w-card-date">2026-07-03</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/three-timelines-one-boundary" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">Before an agent can act, it must be named. Naming is not taxonomy — it is constitutional.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s6">S6</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/agentic-intelligence-big-bang/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/survival-of-the-fittest-tools/">Survival of the Fittest Tools</a></h3>
-        <span class="w-card-date">2026-07-03</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/the-tool-is-the-thought">The Tool Is the Thought</a></h3>
+          <span class="w-card-date">2026-07-03</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/the-tool-is-the-thought" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">Tools compete. Most die. The ones that survive are not the strongest — they are the most metabolized.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s6">S6</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/survival-of-the-fittest-tools/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/the-tool-is-the-thought/">The Tool Is the Thought</a><a href="/words/writing/from-context-engineering-to-reality-engineering/">From Context Engineering to Reality Engineering</a></h3>
-        <span class="w-card-date">2026-07-03</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/survival-of-the-fittest-tools">Survival of the Fittest Tools</a></h3>
+          <span class="w-card-date">2026-07-03</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s6">S6</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/survival-of-the-fittest-tools" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">The tool does not express the thought. The tool IS the thought. When you build, you think.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s6">S6</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/the-tool-is-the-thought/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
-
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/three-timelines-one-boundary/">Three Timelines, One Boundary</a></h3>
-        <span class="w-card-date">2026-07-03</span>
-      </div>
-      <p class="w-card-excerpt">Past, present, future — three timelines that collapse into one constitutional boundary.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s6">S6</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/three-timelines-one-boundary/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- JUNE 2026 — S8: FORGE + SITE                               -->
+  <!-- JUNE 2026                                       -->
   <!-- ═══════════════════════════════════════════════════════════ -->
   <div class="w-section">
     <div class="w-section-head">
       <h2>June 2026</h2>
-      <span class="w-section-pill">S8 · Forge + Site</span>
+      <span class="w-section-pill">6 essays</span>
     </div>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/the-mind-is-not-the-model-6-axis-constitutional-coordinate-system">The Mind Is Not The Model: A 6-Axis Constitutional Coordinate System for Mapping LLM Value Space</a></h3>
+          <span class="w-card-date">2026-06-11</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/the-mind-is-not-the-model-6-axis-constitutional-coordinate-system" class="w-card-cta">Read essay →</a>
+        </div>
+      </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/the-mind-is-not-the-model-6-axis-constitutional-coordinate-system/">The Mind Is Not the Model</a></h3>
-        <span class="w-card-date">2026-06-11</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/growing-intelligence-without-losing-our-soul-from-binatang-to-warga">Growing Intelligence Without Losing Our Soul: From BINATANG to WARGA</a></h3>
+          <span class="w-card-date">2026-06-09</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/growing-intelligence-without-losing-our-soul-from-binatang-to-warga" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">A 6-axis constitutional coordinate system for mapping LLM value space.</p>
-      <div class="w-card-foot">
-        <span class="w-tag site">SITE</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/the-mind-is-not-the-model-6-axis-constitutional-coordinate-system/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/growing-intelligence-without-losing-our-soul-from-binatang-to-warga/">Growing Intelligence Without Losing Our Soul</a></h3>
-        <span class="w-card-date">2026-06-09</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/i-hate-ai-i-hate-dsg-and-i-built-both-anyway">I Hate AI. I Hate DSG. And I Built Both Anyway.</a></h3>
+          <span class="w-card-date">2026-06-07</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-site">SITE</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/i-hate-ai-i-hate-dsg-and-i-built-both-anyway" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">From BINATANG to WARGA — the constitutional journey from animal to citizen.</p>
-      <div class="w-card-foot">
-        <span class="w-tag site">SITE</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/growing-intelligence-without-losing-our-soul-from-binatang-to-warga/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/i-hate-ai-i-hate-dsg-and-i-built-both-anyway/">I Hate AI. I Hate DSG. And I Built Both Anyway.</a></h3>
-        <span class="w-card-date">2026-06-07</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/physics-constrained-attention-zoeppritz-constitutional-floor">Physics-Constrained Attention: Zoeppritz as Constitutional Floor — Why the AVO-Attention Equivalence Demands Governed Transformers, and How to Build Them</a></h3>
+          <span class="w-card-date">2026-06-05</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s8">S8</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/physics-constrained-attention-zoeppritz-constitutional-floor" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">A confession from someone who built the thing he hates — and why that matters.</p>
-      <div class="w-card-foot">
-        <span class="w-tag site">SITE</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/i-hate-ai-i-hate-dsg-and-i-built-both-anyway/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/physics-constrained-attention-zoeppritz-constitutional-floor/">Physics-Constrained Attention</a></h3>
-        <span class="w-card-date">2026-06-05</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/contrast-primitive-derivation-avo-fluid-factor-attention-residual">The Contrast Primitive Derivation: A Rigorous Mapping of Seismic AVO Fluid Factor onto Transformer Attention Residual — Completing the Trilogy</a></h3>
+          <span class="w-card-date">2026-06-05</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s8">S8</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/contrast-primitive-derivation-avo-fluid-factor-attention-residual" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">Zoeppritz as constitutional floor — why the AVO-attention equivalence demands governed transformers.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s8">S8</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/physics-constrained-attention-zoeppritz-constitutional-floor/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
 
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/contrast-governed-anomaly-detection-formal-bridge-avo-attention/">Contrast-Governed Anomaly Detection</a></h3>
-        <span class="w-card-date">2026-06-05</span>
+      <div class="w-card">
+        <div class="w-card-head">
+          <h3><a href="/words/writing/contrast-governed-anomaly-detection-formal-bridge-avo-attention">Contrast-Governed Anomaly Detection: A Formal Bridge between Seismic AVO and Transformer Attention</a></h3>
+          <span class="w-card-date">2026-06-05</span>
+        </div>
+        
+        <div class="w-card-foot">
+          <span class="w-tag s-s8">S8</span>
+          <span class="w-tag seal">seal INT</span>
+          
+          <a href="/words/writing/contrast-governed-anomaly-detection-formal-bridge-avo-attention" class="w-card-cta">Read essay →</a>
+        </div>
       </div>
-      <p class="w-card-excerpt">A formal bridge between seismic AVO and transformer attention — the trilogy continues.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s8">S8</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/contrast-governed-anomaly-detection-formal-bridge-avo-attention/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
-
-    <div class="w-card">
-      <div class="w-card-head">
-        <h3><a href="/words/writing/contrast-primitive-derivation-avo-fluid-factor-attention-residual/">The Contrast Primitive Derivation</a></h3>
-        <span class="w-card-date">2026-06-05</span>
-      </div>
-      <p class="w-card-excerpt">Completing the trilogy — a rigorous mapping of seismic AVO fluid factor onto transformer attention residual.</p>
-      <div class="w-card-foot">
-        <span class="w-tag s8">S8</span>
-        <span class="w-tag seal">seal 999</span>
-        <a href="/words/writing/contrast-primitive-derivation-avo-fluid-factor-attention-residual/" class="w-card-cta">Read essay →</a>
-      </div>
-    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════ -->
@@ -581,11 +665,7 @@
       <a href="/words/doctrine/">Doctrine</a>
       <a href="/words/constitution/">Full Canon</a>
       <a href="/words/">Words Hub</a>
-      <a href="/floors.json">/floors.json</a>
-    </div>
-    <div class="w-source">
-      Source of truth: src/data/essays/articles.json + src/data/essays/index.ts · Per-essay pages rendered by SPA src/pages/EssayPage.tsx<br>
-      Ditempa bukan diberi — Forged, not given.
+      <a href="/llms.txt">/llms.txt</a>
     </div>
   </div>
 

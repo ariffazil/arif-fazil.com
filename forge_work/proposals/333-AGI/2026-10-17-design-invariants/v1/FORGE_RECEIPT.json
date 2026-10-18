@@ -1,0 +1,40 @@
+{
+  "mission_id": "333-AGI/2026-10-17-design-invariants/v1",
+  "agent": "333-AGI (OpenCode)",
+  "authority": "PROPOSAL",
+  "state": "awaiting_f13_review",
+  "created_at": {
+    "utc": "2026-10-17T09:37:30Z",
+    "myt": "2026-10-17T17:37:30+08:00",
+    "tz": "Asia/Kuala_Lumpur",
+    "iso_week": "2026-W42"
+  },
+  "subject": {
+    "intended_target_path": "sites/arif-fazil.com/DESIGN_INVARIANTS.md",
+    "intended_state": "CANON",
+    "intended_owner": "ARIF",
+    "intended_allowed_mutators": ["A-FORGE", "ARIF"],
+    "promotion_requirement": "F13 SOVEREIGN seal (file-authority.yaml lease model)"
+  },
+  "rationale": "Per arif-sites-content-ops scar 2026-08-11: 'The fix is three layers deep: 1. Canonical SOT — /root/arif-fazil.com/sites/arif-fazil.com/DESIGN_INVARIANTS.md declares what is and isn't allowed in visual surfaces.' This proposal fills the missing-canon hole.",
+  "files_in_proposal": [
+    {
+      "path": "forge_work/proposals/333-AGI/2026-10-17-design-invariants/v1/DESIGN_INVARIANTS.md",
+      "role": "rulebook"
+    },
+    {
+      "path": "forge_work/proposals/333-AGI/2026-10-17-design-invariants/v1/README.md",
+      "role": "doctrine-note"
+    },
+    {
+      "path": "forge_work/proposals/333-AGI/2026-10-17-design-invariants/v1/FORGE_RECEIPT.json",
+      "role": "audit-trail"
+    }
+  ],
+  "compliance": {
+    "file_authority_yaml": "FAIL-CLOSED respected. Authoring inside proposal zone; no CANON file modified.",
+    "site_AGENTS_md_witness_mutation_protocol_step_3_authorize_pending": "awaiting F13 explicit promotion seal",
+    "site_AGENTS_md_step_4_reindex_pending": "if promoted, surfaces.json and sitemap.xml updated to reflect new CANON file's presence"
+  },
+  "observation_link": "scar:DESIGN-INVARIANTS-MISSING-2026-08-11 (per /root/AAA/skills/arif-fazil-site-ops)"
+}

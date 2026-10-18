@@ -76,9 +76,10 @@ import g49 from "./generated/g_arifos_as_a_prism";
 import e24 from './24-from-context-engineering-to-reality-engineering';
 import e25 from './gema-bumantara-archipelago-operating-system';
 import e26 from './gema-bumantara-kepulauan-sistem-operasi';
+import e27 from './siti-nurhaliza-bukan-nama-ia-simbol';
 
 export const essayModules = [
-  e26,e25,e24,e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
+  e26,e25,e24,e27,e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
 
 export const allEssays: EssayMeta[] = [
   {
@@ -617,6 +618,15 @@ export const allEssays: EssayMeta[] = [
     tags: ["siti-nurhaliza", "gema-bumantara", "nusantara", "malaysia", "budaya", "muzik", "irama-bahasa-budaya", "menamakan", "bahasa-nusantara", "DITEMPABUKANDIBERI"],
     mediumUrl: "",
     isDirectPublication: true,
+  },
+  {
+    title: `Siti Nurhaliza Bukan Nama. Ia Simbol.`,
+    date: "2026-10-17",
+    slug: "siti-nurhaliza-bukan-nama-ia-simbol",
+    excerpt: `Setiap orang Melayu kenal Siti Nurhaliza. Hampir tiada siapa kenal Siti Nurhaliza. Di antara dua ayat itu, satu bangsa menyimpan semua yang ia belum selesai tentang dirinya sendiri — dan ini peta kepada yang tersimpan itu.`,
+    tags: ["siti-nurhaliza", "simbol", "bayang", "paradoks", "persona", "archetype", "budaya", "melayu", "malaysia", "identiti", "DITEMPABUKANDIBERI"],
+    mediumUrl: "",
+    isDirectPublication: true,
   }
 ];
 
@@ -698,6 +708,7 @@ const CURATED_SLUGS: Record<string, string> = {
   "the-human-ai-time-paradox": "Human Reflection",
   "second-brain-forged-from-scars": "Human Reflection",
   "the-last-scarcity-witness-theory-of-human-want": "Human Reflection",
+  "siti-nurhaliza-bukan-nama-ia-simbol": "Human Reflection",
 };
 
 const DOMAIN_ORDER = [

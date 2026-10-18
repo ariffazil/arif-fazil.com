@@ -5,7 +5,7 @@ const content: EssayContent = {
   date: '2026-10-17',
   slug: 'gema-bumantara-archipelago-operating-system',
   tags: [`siti-nurhaliza`, `gema-bumantara`, `nusantara`, `malaysia`, `culture`, `music`, `naming`, `irama-bahasa-budaya`, `DITEMPABUKANDIBERI`],
-  excerpt: `On the night of 17 October 2026, Siti Nurhaliza filled Stadium Nasional Bukit Jalil for the third time — a record no Malaysian artist has matched. Gema Bumantara is her first traditional album in seventeen years. But it is not nostalgia. It is the archipelago's oldest operating system — irama, bahasa, budaya — surfacing in a stadium.`,
+  excerpt: `On the night of 17 October 2026, Siti Nurhaliza filled Stadium Nasional Bukit Jalil for her first traditional-music concert at that venue, following her Legacy 30 showcase last January. Gema Bumantara is her first traditional album in seventeen years. But it is not nostalgia. It is the archipelago's oldest operating system — irama, bahasa, budaya — surfacing in a stadium.`,
   mediumUrl: '',
   isDirectPublication: true,
   html: `<article>
@@ -15,7 +15,7 @@ const content: EssayContent = {
 </p>
 
 <p class="lede">
-On the night of 17 October 2026, Siti Nurhaliza fills Stadium Nasional Bukit Jalil for the third time &mdash; a record no Malaysian artist has matched. <em>Gema Bumantara</em> is her first traditional album in seventeen years. It is not nostalgia. It is the archipelago&rsquo;s oldest operating system &mdash; irama, bahasa, budaya &mdash; surfacing in a stadium.
+On the night of 17 October 2026, Siti Nurhaliza filled Stadium Nasional Bukit Jalil for her first traditional-music concert at that venue, following her Legacy 30 showcase last January. <em>Gema Bumantara</em> is her first traditional album in seventeen years. It is not nostalgia. It is the archipelago&rsquo;s oldest operating system &mdash; irama, bahasa, budaya &mdash; surfacing in a stadium.
 </p>
 
 <h2>The 17-Year Silence</h2>
@@ -32,9 +32,9 @@ On the night of 17 October 2026, Siti Nurhaliza fills Stadium Nasional Bukit Jal
 
 <p>Everyone assumes &ldquo;Bumantara&rdquo; is poetic vagueness &mdash; <em>gema</em> (echo) plus some soft word for &ldquo;the world.&rdquo; It is not vague. It has an author, a date, and a fight behind it.</p>
 
-<p>In September 1985, at the Southeast Asian Writers Conference in Bali, the Indonesian thinker <strong>Sutan Takdir Alisjahbana</strong> proposed the name. <em>Bumi</em> (earth) plus <em>antara</em> (between): the earth between. A name for the whole region &mdash; Burma to the Philippines, Malaysia to Indonesia &mdash; the civilizational unit standing between China to the east and India to the west. The proposal was later published as <em>&ldquo;Bumantara: Kesatuan Asia Tenggara dan Tugasnya di Masa Depan&rdquo;</em> (Jurnal Ilmu dan Budaya, 1988), but the idea dates to that 1985 speech marking two decades of ASEAN.</p>
+<p>In 1985, at the Southeast Asian Writers Conference, the Indonesian thinker <strong>Sutan Takdir Alisjahbana</strong> proposed the name &mdash; a counter to the colonial taxonomies that had cast Southeast Asia as a periphery. <em>Bumi</em> (earth) plus <em>antara</em> (between): the earth between. A name for the whole region &mdash; Burma to the Philippines, Malaysia to Indonesia &mdash; the civilizational unit standing between China to the east and India to the west. The idea was later developed in his academic writings.</p>
 
-<p>He was not being romantic. He was answering a specific insult. The anthropologist Egon von Eickstedt had classified the peoples of Southeast Asia as <em>weak</em> &mdash; losers in the struggle for survival. Alisjahbana spent decades demolishing that claim. He pointed to the Melayu who crossed open ocean to reach Easter Island and Madagascar.</p>
+<p>He was not being romantic. He was answering a specific insult. The anthropologist Egon von Eickstedt had classified the peoples of Southeast Asia as <em>weak</em> &mdash; losers in the struggle for survival. Alisjahbana spent decades demolishing that claim. He pointed to the Austronesian peoples who crossed open ocean &mdash; from Madagascar in the west to Easter Island in the east &mdash; reaching further than any early European sea empire.</p>
 
 <blockquote><p>Weak peoples do not sail to the edge of the Pacific and the Indian Ocean.</p></blockquote>
 
@@ -42,11 +42,11 @@ On the night of 17 October 2026, Siti Nurhaliza fills Stadium Nasional Bukit Jal
 
 <h2>The Ticket Names Gave It Away</h2>
 
-<p>Look at the seating categories. They are not &ldquo;Platinum&rdquo; and &ldquo;Gold.&rdquo; They are songs: <strong>Cindai, Kesuma, Nirmala, Balqis, Rencong</strong> &mdash; and, in the middle, <strong>Kaparinyo</strong>.</p>
+<p>Look at the seating categories. They are not &ldquo;Platinum&rdquo; and &ldquo;Gold.&rdquo; They are songs: <strong>Cindai, Kesuma, Nirmala, Balqis, Rencong, Kaparinyo</strong> &mdash; from the most expensive tier (RM1,699) down to the cheapest (RM200).</p>
 
-<p>Every price band is named after Siti Nurhaliza&rsquo;s own traditional repertoire, stretching back to <em>Cindai</em> in 1997. The most expensive seat is <em>Cindai</em> &mdash; the album that started it all, the song that taught a generation of Malaysians that their own traditional music could be arena-scale. And there sits Kaparinyo, built around a single line: <em>&ldquo;Kapa rinyo?&rdquo;</em> &mdash; <em>apa rupanya?</em> &mdash; &ldquo;What does it actually look like?&rdquo;</p>
+<p>Every price band is named after Siti Nurhaliza&rsquo;s own traditional repertoire, stretching back to <em>Cindai</em> in 1997. The most expensive seat is <em>Cindai</em> &mdash; the album that started it all, the song that taught a generation of Malaysians that their own traditional music could be arena-scale. At the bottom of that range sits <em>Kaparinyo</em> &mdash; RM200, the lowest tier, the ticket for those who could only afford to stand at the edge. The title, in Minangkabau, means <em>&ldquo;what does it look like?&rdquo;</em> The song itself is a pantun of advice on matching worth, not an empty promise of romance &mdash; the region&rsquo;s oldest governance question, dressed as a stadium ticket category.</p>
 
-<p>Not &ldquo;what does the narrative say.&rdquo; Not &ldquo;what does the marketing promise.&rdquo; What does the thing actually look like? It is the oldest governance question the region ever asked, dressed as a pop lyric.</p>
+<p>Not &ldquo;what does the narrative say.&rdquo; Not &ldquo;what does the marketing promise.&rdquo; What does the thing actually look like?</p>
 
 <h2>What the Archipelago Knew</h2>
 
@@ -54,7 +54,7 @@ On the night of 17 October 2026, Siti Nurhaliza fills Stadium Nasional Bukit Jal
 
 <p><strong>Irama &mdash; rhythm grounds the body.</strong> Repetitive, percussive rhythm does not ask the brain to understand; it asks the body to feel. That is grounding, and it is not a metaphor.</p>
 
-<p><strong>Bahasa &mdash; naming creates reality.</strong> Siti Nurhaliza sang it directly: <em>&ldquo;Aku menamakanmu cinta&rdquo;</em> &mdash; I name you love. Not <em>mencintaimu</em>, loving you, but <em>menamakan</em> &mdash; naming it. To name is to affirm, to hold, to make something real. The distinction between loving a thing and naming it is everything. A name is architecture, not decoration.</p>
+<p><strong>Bahasa &mdash; naming creates reality.</strong> This is not empty rhetoric: Siti Nurhaliza&rsquo;s recent single is titled <em>&ldquo;Menamakanmu Cinta&rdquo;</em> &mdash; I Name You Love &mdash; a duet with Ade Govinda. An act of naming, not an act of loving. Not <em>mencintaimu</em>, loving you, but <em>menamakan</em> &mdash; naming it. To name is to affirm, to hold, to make something real. The distinction between loving a thing and naming it is everything. A name is architecture, not decoration.</p>
 
 <p><strong>Budaya &mdash; culture bears witness.</strong> Pantun, gotong-royong, adat: they survive not because they were written but because they were witnessed &mdash; passed mouth to mouth and held accountable in the passing. A rule written once is a cage. A covenant witnessed continuously is a constitution.</p>
 
@@ -77,7 +77,7 @@ On the night of 17 October 2026, Siti Nurhaliza fills Stadium Nasional Bukit Jal
 <hr/>
 
 <p class="font-mono text-xs text-forge-dim">
-  Sources: Ticket2u (event listing), Harian Metro, UtusanTV, Hype.my, Gempak, Suara.tv, Wikipedia (&ldquo;Gema Bumantara&rdquo;), and Mohamed Nazreen Shahul Hamid, &ldquo;Mengartikulasikan Cinta, Adab dan Ketauhidan,&rdquo; Melayu: Jurnal Antarabangsa Dunia Melayu (2026).
+  Sources: Ticket2u (event listing), Harian Metro, New Straits Times (17 October 2026, concert coverage), Hype.my (ticket prices &amp; tiers), Astro Gempak, Malay Mail, Wikipedia (&ldquo;Gema Bumantara&rdquo;), and Mohamed Nazreen Shahul Hamid, &ldquo;Mengartikulasikan Cinta, Adab dan Ketauhidan: Analisis Lirik Lagu dalam Album Tradisional Melayu Siti Nurhaliza <em>Gema Bumantara</em> (2025),&rdquo; <em>Melayu: Jurnal Antarabangsa Dunia Melayu</em>, 19(2), 2026 (DOI: 10.37052/jm.19(2)no6).
 </p>
 
 </article>`,

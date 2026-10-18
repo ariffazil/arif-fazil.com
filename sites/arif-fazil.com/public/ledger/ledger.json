@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-10-07T17:36:41Z",
+ "generated_at": "2026-10-17T09:33:01Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",
@@ -16,7 +16,7 @@
   "path": "/root/VAULT999/RECEIPTS",
   "count": 81,
   "total_bytes": 298865,
-  "newest": "2026-10-05T17:10:56Z",
+  "newest": "2026-10-16T05:19:10Z",
   "superseded_retained": 1,
   "superseded_names": [
    "2026-09-18-wscar-gate-v2-seal.json.superseded"
@@ -373,8 +373,8 @@
    {
     "name": "fitness-voice_synthesis-20260910T180726.json",
     "bytes": 743,
-    "mtime": "2026-09-10T18:07:26Z",
-    "sha256": "898a4f25cd93d45cc4bc54c949d9e7b8"
+    "mtime": "2026-10-16T05:19:10Z",
+    "sha256": "fbcb80d5e3f165b60a68ca140fafcc9f"
    },
    {
     "name": "fitness-voice_synthesis-20260911T000908.json",
@@ -513,34 +513,34 @@
  "gate": {
   "state": "PRESENT",
   "path": "/root/.hermes/logs/reality_claim_gate.log",
-  "sha256": "c45f9bbbc71fc03519fd69a221be3a63",
-  "lines": 1557,
+  "sha256": "99886abf4d3fb77f3e6ebd1615b79d5e",
+  "lines": 2211,
   "first_verdict": "2026-09-04T05:13:05Z",
-  "last_verdict": "2026-10-07T17:35:39Z",
+  "last_verdict": "2026-10-17T09:31:00Z",
   "by_class": {
-   "NARRATIVE_EMITTED_AS_OBSERVATION": 549,
-   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 504,
-   "UNGROUNDED_CLAIM": 230,
+   "NARRATIVE_EMITTED_AS_OBSERVATION": 862,
+   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 755,
+   "UNGROUNDED_CLAIM": 262,
+   "PHANTOM_SOVEREIGNTY": 102,
    "WARN": 77,
    "BLOCK_CANDIDATE": 75,
-   "PHANTOM_SOVEREIGNTY": 70,
-   "BASELINE_MISSING_MEASURED": 43,
-   "NARRATIVE_MARKERS_IN_MEASURED": 7,
+   "BASELINE_MISSING_MEASURED": 56,
+   "NARRATIVE_MARKERS_IN_MEASURED": 20,
    "BASELINE_MISSING_MECHANISM": 1,
    "BASELINE_MISSING_PATTERN": 1
   },
   "top_markers": {
-   "paling": 448,
-   "best": 37,
-   "terbaik": 34,
-   "blood": 10,
-   "chosen": 5,
-   "takdir": 4,
-   "sememangnya": 1,
-   "worst": 1
+   "paling": 740,
+   "best": 48,
+   "terbaik": 37,
+   "chosen": 16,
+   "blood": 12,
+   "takdir": 7,
+   "worst": 2,
+   "sememangnya": 1
   },
-  "multi_token_markers_suppressed": 16,
-  "privacy": "Marker statistics only. Multi-word fragments captured from messages (16 occurrences) are never published.",
+  "multi_token_markers_suppressed": 18,
+  "privacy": "Marker statistics only. Multi-word fragments captured from messages (18 occurrences) are never published.",
   "blocks": 0,
   "blocking_enabled": false,
   "note": "Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered."
@@ -556,15 +556,15 @@
  "seal_chain": {
   "state": "PRESENT",
   "path": "/root/VAULT999/SEALED_EVENTS.jsonl",
-  "sha256": "7adffdb48a71bc3ab5efa982e5efbaed",
-  "lines": 1346,
-  "bytes": 1852263,
-  "last_append": "2026-10-03T10:31:50Z",
-  "days_since_append": 4,
-  "head_id": 971,
+  "sha256": "56241e935f3a0d07b3120bb873ac4cbc",
+  "lines": 1356,
+  "bytes": 1880018,
+  "last_append": "2026-10-15T14:40:03Z",
+  "days_since_append": 1,
+  "head_id": 982,
   "twin_copy": {
    "path": "/root/arifOS/VAULT999/SEALED_EVENTS.jsonl",
-   "sha256": "7adffdb48a71bc3ab5efa982e5efbaed",
+   "sha256": "56241e935f3a0d07b3120bb873ac4cbc",
    "identical": true
   },
   "note": "Witness grows, chain does not move. The seal chain is the only append-only hash-linked record; it is reported here exactly as found, including how stale it is."
@@ -613,21 +613,21 @@
   {
    "id": "D1",
    "title": "The output gate detects but does not stop",
-   "evidence": "1557 verdicts, 0 blocks, blocking_enabled=false",
+   "evidence": "2211 verdicts, 0 blocks, blocking_enabled=false",
    "consequence": "A flagged sentence reached its reader anyway. A cop, not a door.",
    "owner": "F13 (promotion to Phase 2 NO)"
   },
   {
    "id": "D2",
    "title": "The narrative detector fires on one word",
-   "evidence": "marker 'paling' fired 448 times = 82% of narrative flags (549 narrative verdicts total)",
+   "evidence": "marker 'paling' fired 740 times = 86% of narrative flags (862 narrative verdicts total)",
    "consequence": "Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.",
    "owner": "mechanical (marker set + threshold)"
   },
   {
    "id": "D3",
    "title": "The seal chain is frozen while witnesses keep appending",
-   "evidence": "last append 2026-10-03T10:31:50Z (4d ago); head id=971",
+   "evidence": "last append 2026-10-15T14:40:03Z (1d ago); head id=982",
    "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
    "owner": "F13 (kernel seal path)"
   },

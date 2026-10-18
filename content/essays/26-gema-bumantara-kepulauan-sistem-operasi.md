@@ -15,7 +15,7 @@ isDirectPublication: true
 </p>
 
 <p class="lede">
-Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil buat kali ketiga &mdash; rekod yang belum dicapai mana-mana artis Malaysia. <em>Gema Bumantara</em> ialah album tradisional pertamanya dalam 17 tahun. Tapi ia bukan nostalgia. Ia sistem operasi tertua kepulauan &mdash; irama, bahasa, budaya &mdash; naik ke pentas stadium.
+Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil untuk konsert tradisional sulungnya di venue itu, selepas Showcase Legacy 30 pada Januari 2026. <em>Gema Bumantara</em> ialah album tradisional pertamanya dalam 17 tahun. Tapi ia bukan nostalgia. Ia sistem operasi tertua kepulauan &mdash; irama, bahasa, budaya &mdash; naik ke pentas stadium.
 </p>
 
 <h2>Senyap 17 Tahun</h2>
@@ -32,9 +32,9 @@ Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil
 
 <p>Semua orang sangka &ldquo;Bumantara&rdquo; itu kabur puitis &mdash; <em>gema</em> ditambah satu perkataan lembut untuk &ldquo;dunia.&rdquo; Ia tidak kabur. Ia ada pengarang, ada tarikh, dan ada satu pergaduhan di belakangnya.</p>
 
-<p>Pada September 1985, di Persidangan Penulis Asia Tenggara di Bali, pemikir Indonesia <strong>Sutan Takdir Alisjahbana</strong> mencadangkan nama itu. <em>Bumi</em> tambah <em>antara</em>: bumi di antara. Nama untuk seluruh rantau &mdash; Burma ke Filipina, Malaysia ke Indonesia &mdash; unit tamadun yang berdiri di antara China di timur dan India di barat. Cadangan itu kemudian diterbitkan sebagai <em>&ldquo;Bumantara: Kesatuan Asia Tenggara dan Tugasnya di Masa Depan&rdquo;</em> (Jurnal Ilmu dan Budaya, 1988), tapi idea itu lahir dari ucapan 1985 menandai dua dekad ASEAN.</p>
+<p>Pada Pertemuan Penulis Asia Tenggara 1985, pemikir Indonesia <strong>Sutan Takdir Alisjahbana</strong> mencadangkan nama itu &mdash; satu tandingan kepada taksonomi kolonial yang menolak Asia Tenggara sebagai pinggiran. <em>Bumi</em> tambah <em>antara</em>: bumi di antara. Nama untuk seluruh rantau &mdash; Burma ke Filipina, Malaysia ke Indonesia &mdash; unit tamadun yang berdiri di antara China di timur dan India di barat. Idea itu kemudiannya dikembangkan dalam tulisan akademik beliau.</p>
 
-<p>Dia bukan bersikap romantik. Dia menjawab satu penghinaan yang spesifik. Ahli antropologi Egon von Eickstedt pernah mengklasifikasikan bangsa Asia Tenggara sebagai <em>lemah</em> &mdash; kalah dalam perjuangan hidup. Alisjahbana menghabiskan puluhan tahun meruntuhkan dakwaan itu. Dia tunjuk kepada orang Melayu yang merentasi lautan terbuka sampai ke Pulau Easter dan Madagascar.</p>
+<p>Dia bukan bersikap romantik. Dia menjawab satu penghinaan yang spesifik. Ahli antropologi Egon von Eickstedt pernah mengklasifikasikan bangsa Asia Tenggara sebagai <em>lemah</em> &mdash; kalah dalam perjuangan hidup. Alisjahbana menghabiskan puluhan tahun meruntuhkan dakwaan itu. Dia tunjuk kepada keluarga Austronesia yang merentasi lautan terbuka &mdash; dari Madagascar di barat hingga Pulau Easter di timur &mdash; menjangkau jauh sebelum mana-mana empayar laut Eropah awal.</p>
 
 <blockquote><p>Bangsa lemah tidak belayar ke hujung Pasifik dan Lautan Hindi.</p></blockquote>
 
@@ -42,11 +42,11 @@ Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil
 
 <h2>Nama Tiket Membongkar Semua</h2>
 
-<p>Lihat kategori tempat duduk. Bukan &ldquo;Platinum&rdquo; dan &ldquo;Gold.&rdquo; Ia lagu: <strong>Cindai, Kesuma, Nirmala, Balqis, Rencong</strong> &mdash; dan di tengahnya, <strong>Kaparinyo</strong>.</p>
+<p>Lihat kategori tempat duduk. Bukan &ldquo;Platinum&rdquo; dan &ldquo;Gold.&rdquo; Ia lagu: <strong>Cindai, Kesuma, Nirmala, Balqis, Rencong, Kaparinyo</strong> &mdash; dari tier termahal (RM1,699) ke termurah (RM200).</p>
 
-<p>Setiap band harga dinamakan sempena repertoir tradisional Siti Nurhaliza sendiri, menjangkau balik ke <em>Cindai</em> 1997. Tempat duduk paling mahal ialah <em>Cindai</em> &mdash; album yang memulakan segalanya, lagu yang mengajar satu generasi rakyat Malaysia bahawa muzik tradisional mereka boleh berdiri di skala stadium. Dan di situ duduk Kaparinyo, dibina atas satu baris: <em>&ldquo;Kapa rinyo?&rdquo;</em> &mdash; <em>apa rupanya?</em> &mdash; &ldquo;Apa rupanya benda ni sebenarnya?&rdquo;</p>
+<p>Setiap band harga dinamakan sempena repertoir tradisional Siti Nurhaliza sendiri, menjangkau balik ke <em>Cindai</em> 1997. Tempat duduk paling mahal ialah <em>Cindai</em> &mdash; album yang memulakan segalanya, lagu yang mengajar satu generasi rakyat Malaysia bahawa muzik tradisional mereka boleh berdiri di skala stadium. Di hujung bawah senarai itu duduk <em>Kaparinyo</em> &mdash; RM200, tier paling rendah, tiket untuk mereka yang hanya mampu hadir berdiri di tepi. Judulnya dalam bahasa Minangkabau bermaksud <em>&ldquo;apa rupanya?&rdquo;</em> Lagu itu sendiri sebuah pantun nasehat tentang padanan budi, bukan janji percintaan kosong &mdash; soalan falsafah tertua rantau ini, dibungkus sebagai kategori tiket stadium.</p>
 
-<p>Bukan &ldquo;apa kata naratif.&rdquo; Bukan &ldquo;apa janji pemasaran.&rdquo; Apa rupanya benda itu sebenarnya? Ia soalan tertua rantau ini, dibungkus sebagai lirik pop.</p>
+<p>Bukan &ldquo;apa kata naratif.&rdquo; Bukan &ldquo;apa janji pemasaran.&rdquo; Apa rupanya benda itu sebenarnya?</p>
 
 <h2>Apa Yang Kepulauan Dah Tahu</h2>
 
@@ -54,7 +54,7 @@ Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil
 
 <p><strong>Irama &mdash; ritma mengikat tubuh.</strong> Ritma yang berulang dan perkusif tidak meminta otak memahami; ia meminta tubuh merasa. Itu pengikat, dan ia bukan metafora.</p>
 
-<p><strong>Bahasa &mdash; menamakan mencipta realiti.</strong> Siti Nurhaliza menyanyikannya terus: <em>&ldquo;Aku menamakanmu cinta.&rdquo;</em> Bukan <em>mencintaimu</em>, mencintai kamu, tetapi <em>menamakan</em> &mdash; memberinya nama. Menamakan adalah mengesahkan, memegang, menjadikan sesuatu nyata. Beza antara mencintai dan menamakan adalah segalanya. Nama itu seni bina, bukan hiasan.</p>
+<p><strong>Bahasa &mdash; menamakan mencipta realiti.</strong> Baris itu bukan retorik kosong: single Siti Nurhaliza yang terbaharu berjudul <em>&ldquo;Menamakanmu Cinta&rdquo;</em> (berduet dengan Ade Govinda) &mdash; tindakan menamakan, bukan tindakan mencintai. Bukan <em>mencintaimu</em>, bukan <em>mencintai kamu</em>, tetapi <em>menamakan</em> &mdash; memberinya nama. Menamakan adalah mengesahkan, memegang, menjadikan sesuatu nyata. Beza antara mencintai dan menamakan adalah segalanya. Nama itu seni bina, bukan hiasan.</p>
 
 <p><strong>Budaya &mdash; budaya menyaksikan.</strong> Pantun, gotong-royong, adat: ia bertahan bukan kerana ditulis tetapi kerana disaksikan &mdash; dihantar dari mulut ke mulut dan dipertanggungjawabkan dalam penghantaran. Peraturan yang ditulis sekali itu sangkar. Janji yang disaksikan berterusan itu perlembagaan.</p>
 
@@ -77,7 +77,7 @@ Pada malam 17 Oktober 2026, Siti Nurhaliza memenuhi Stadium Nasional Bukit Jalil
 <hr/>
 
 <p class="font-mono text-xs text-forge-dim">
-  Sumber: Ticket2u (senarai acara), Harian Metro, UtusanTV, Hype.my, Gempak, Suara.tv, Wikipedia (&ldquo;Gema Bumantara&rdquo;), dan Mohamed Nazreen Shahul Hamid, &ldquo;Mengartikulasikan Cinta, Adab dan Ketauhidan,&rdquo; Melayu: Jurnal Antarabangsa Dunia Melayu (2026).
+  Sumber: Ticket2u (senarai acara), Harian Metro, NST (17 Oktober 2026, liputan konsert), Hype.my (harga tiket &amp; tier), Astro Gempak, Malay Mail, Wikipedia (&ldquo;Gema Bumantara&rdquo;), dan Mohamed Nazreen Shahul Hamid, &ldquo;Mengartikulasikan Cinta, Adab dan Ketauhidan: Analisis Lirik Lagu dalam Album Tradisional Melayu Siti Nurhaliza <em>Gema Bumantara</em> (2025),&rdquo; <em>Melayu: Jurnal Antarabangsa Dunia Melayu</em>, 19(2), 2026 (DOI: 10.37052/jm.19(2)no6).
 </p>
 
 </article>

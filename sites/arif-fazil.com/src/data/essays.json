@@ -5392,5 +5392,28 @@
       "path": "words/writing/from-context-engineering-to-reality-engineering/"
     },
     "seal": "direct"
+  },
+  {
+    "id": 25,
+    "slug": "siti-nurhaliza-bukan-nama-ia-simbol",
+    "title": "Siti Nurhaliza Bukan Nama. Ia Simbol.",
+    "date": "2026-10-17",
+    "lang": "ms",
+    "tags": [
+      "siti-nurhaliza",
+      "simbol",
+      "bayang",
+      "paradoks",
+      "persona",
+      "archetype",
+      "budaya",
+      "melayu",
+      "malaysia",
+      "identiti"
+    ],
+    "dest": {
+      "path": "words/writing/siti-nurhaliza-bukan-nama-ia-simbol/"
+    },
+    "seal": "direct"
   }
 ]

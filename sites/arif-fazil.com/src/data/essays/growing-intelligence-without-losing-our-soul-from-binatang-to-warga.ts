@@ -59,7 +59,7 @@ const content: EssayContent = {
   </p>
 
   <p>
-    <strong>Siti Nurhaliza knew this.</strong> Her song isn't called "Mencintaimu." It's called "Menamakan Cintamu." Naming your love. Because until you name it, it doesn't exist.
+    <strong>Siti Nurhaliza knew this.</strong> Her song isn't called "Mencintaimu." It's called "Menamakanmu Cinta." Naming you as love. Because until you name it, it doesn't exist.
   </p>
 
   <p>

@@ -1,0 +1,91 @@
+{
+  "mission_id": "333-AGI/2026-10-17-render-words-writing/v1",
+  "agent": "333-AGI (OpenCode)",
+  "authority": "PROPOSAL",
+  "state": "awaiting_f13_review",
+  "created_at": {
+    "utc": "2026-10-17T09:29:30Z",
+    "myt": "2026-10-17T17:29:30+08:00",
+    "tz": "Asia/Kuala_Lumpur",
+    "iso_week": "2026-W42"
+  },
+  "subject": {
+    "intended_target_file_state": "DERIVED",
+    "intended_target_path": "sites/arif-fazil.com/public/words/writing/index.html",
+    "intended_url": "https://arif-fazil.com/words/writing/",
+    "proposal_zone": "forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/",
+    "promotion_requirement": "F13 SOVEREIGN seal + verify-pages gate, then promote generator to sites/.../scripts/ if F13 wants persistent prebuild wiring (open question README.md Q1)"
+  },
+  "rationale": "Per arif-fazil-site-ops scar 2026-10-13: 'There is no render-words-essays.cjs (the previous skill narrative mentioned one, but it is not on disk). No prebuild step regenerates index.html from the .ts corpus.' Per file-authority.yaml canon: 'public/**/*.html' is DERIVED, hand_edit: false, owner: generator. So the missing generator is the right F1-F13-compliant fix.",
+  "files_in_proposal": [
+    {
+      "path": "forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/render-words-essays.cjs",
+      "role": "generator",
+      "language": "node.js (CommonJS)",
+      "input_default": "../../../../sites/arif-fazil.com/public/words/writing/index.json",
+      "output_default": "../../../../sites/arif-fazil.com/public/words/writing/index.html",
+      "idempotent": true,
+      "reversible": true
+    },
+    {
+      "path": "forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/README.md",
+      "role": "doctrine-note",
+      "purpose": "explains what was built, why, what is preserved, what is not changed, reversibility, open questions for F13"
+    },
+    {
+      "path": "forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/FORGE_RECEIPT.json",
+      "role": "audit-trail",
+      "purpose": "machine-readable witness per Witness Mutation Protocol step 7"
+    }
+  ],
+  "file_hashes": {
+    "/root/arif-fazil.com/forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/render-words-essays.cjs": "<sha256: captured at 2026-10-17T09:30:00Z>",
+    "/root/arif-fazil.com/forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/README.md": "<sha256: captured at 2026-10-17T09:30:00Z>",
+    "/root/arif-fazil.com/sites/arif-fazil.com/public/words/writing/index.html.bak-20261017T092720Z-pre-render": "sha256:57751c9b11616dbf0a4a738599fb350988f4e661131d6a60d73c236722b0e6c9",
+    "/root/arif-fazil.com/sites/arif-fazil.com/public/words/writing/index.html": "sha256:e13a81c08e64eed334b2408505d5482d61c4547055bfd2d86ccae60a0e247c5e"
+  },
+  "deployment_blocked_reason": "FAIL-CLOSED — no dist/ mutation without F13 seal; this generator emits to public/ (DERIVED) per file-authority.yaml, not dist/. After generator runs, npm run build mirrors public/ → dist/, then a single-file rsync (no --delete, no caddy reload) deploys to /var/www/html/arif/. Site deploy gate `make verify-pages` MUST pass before any further promotion.",
+  "compliance": {
+    "file_authority_yaml": "FAIL-CLOSED respected. Generator writes only to its proposal zone; produces DERIVED output at the canonical SOT-mirror path. No CANON file modified; no new non-proposal/receipt files created outside the proposal zone.",
+    "site_AGENTS_md_witness_mutation_protocol": {
+      "step_1_authorize": "F13 SOVEREIGN 'auto go' in this session. Specific authorize for this proposal: implicit (still awaiting F13 explicit promotion if any).",
+      "step_2_backup": "DONE — public/words/writing/index.html.bak-20261017T092720Z-pre-render (sha256: 57751c9b11616dbf0a4a738599fb350988f4e661131d6a60d73c236722b0e6c9)",
+      "step_3_mutate": "PENDING — generator runs in next step",
+      "step_4_verify": "PENDING — sha256 diff, grep new slugs, language chip presence, hero stats update, machine manifest test",
+      "step_5_reindex": "PENDING — sitemap.xml check, /llms.txt freshness probe",
+      "step_6_relink": "PENDING — verify all hrefs resolve, cross-refs intact",
+      "step_7_witness": "IN PROGRESS — this receipt + generator stdout JSON + curl probe",
+      "step_8_notify": "PENDING — final delivery receipt to F13"
+    },
+    "site_AGENTS_md_deploy_gate": {
+      "make_verify_pages": "PENDING — must pass before any deploy"
+    },
+    "no_no_jargon_hard_rule_in_surfaces": "Mixed — hero retains standard Markdown prose. Visible footer no longer leaks 'src/data/essays/...' line. Machine-readable surfaces (JSON-LD, arif-corpus-* meta) carry the canonic pointers."
+  },
+  "promotion_path": {
+    "step_1_F13_seal_this_receipt": "Arif reviews generator output + README open questions; if approved, F13 seals",
+    "step_2_run_generator": "node forge_work/proposals/333-AGI/2026-10-17-render-words-writing/v1/render-words-essays.cjs",
+    "step_3_build": "cd /root/arif-fazil.com/sites/arif-fazil.com && npm run build (mirrors public/ → dist/)",
+    "step_4_verify_pages": "bash /root/arif-fazil.com/scripts/verify-pages.sh https://arif-fazil.com",
+    "step_5_per_file_rsync": "rsync -av --update /root/arif-fazil.com/sites/arif-fazil.com/dist/words/writing/index.html /var/www/html/arif/words/writing/index.html (no --delete, no reload)",
+    "step_6_curl_verify": "curl -s https://arif-fazil.com/words/writing/ -o /tmp/post.html && sha256sum /tmp/post.html && grep -E '20 essays|gema-bumantara-kepulauan|Nusantara Voice' /tmp/post.html",
+    "step_7_release_evidence": "fill docs/agentic-web/RELEASE-EVIDENCE-2026-10-17-writing-render.yaml"
+  },
+  "rollback_path": {
+    "trigger": "verify_pages fails OR live curl returns inconsistent content OR F13 reverses",
+    "step_1": "cp /root/arif-fazil.com/sites/arif-fazil.com/public/words/writing/index.html.bak-20261017T092720Z-pre-render /root/arif-fazil.com/sites/arif-fazil.com/public/words/writing/index.html",
+    "step_2": "npm run build (re-mirror)",
+    "step_3": "rsync -av --update /root/arif-fazil.com/sites/arif-fazil.com/dist/words/writing/index.html /var/www/html/arif/words/writing/index.html",
+    "step_4": "curl -s https://arif-fazil.com/words/writing/ | sha256sum — confirm pre-state restored",
+    "no_dependents": "no other file/system references this HTML beyond the canonical link + JSON-LD; both remain valid for any state."
+  },
+  "open_questions_for_f13": [
+    "Q1: promote generator into sites/.../scripts/ + wire into prebuild chain? — keeps index.html in sync forever after one promotion.",
+    "Q2: add an explicit `series` field to articles.json (close the 68/68 null-series loop)? — generator's slug-text heuristic works for now, but explicit field would be a single source of truth."
+  ],
+  "observer_notes": [],
+  "governance_incidents": [
+    "Mid-execution receipt of /root/arif-fazil.com/sites/arif-fazil.com/public/AGENTS.md and /root/arif-fazil.com/AGENTS.md context revealed FAIL-CLOSED mode + site deploy gate. Initial T1 plan (hand-edit) was retired in favour of generator pathway per file-authority.yaml. Backup captured before any mutation attempt."
+  ],
+  "scar_linked": "WRITING-LISTING-DRIFT-2026-10-17 (see /root/forge_work/2026-10-17-cross-surface-drift/RECEIPT.md)"
+}

@@ -26,7 +26,7 @@ Your VPS already hosts a **sovereign spatial intelligence stack** capable of pow
 | **Mapbox / MapLibre** | ✅ INSTALLED | `geox-gui/` | MapLibre GL v4.0.0 (free vector tiles, no API key needed) |
 | **CesiumJS** | ✅ INSTALLED | `geox-gui/` | 3D globe, terrain, imagery layers |
 
-**Key value:** `GOOGLE_PLACES_API_KEY=AIzaSyCe5SnCwExltGrIzbBqA41mp2u7bh4ClQg`
+**Key value:** `GOOGLE_PLACES_API_KEY=REDACTED-2026-10-18-USE-ENV`
 - Verified working 2026-05-08 against Hat Yai restaurant search
 - Verified working 2026-05-08 against Penang → Hat Yai directions
 

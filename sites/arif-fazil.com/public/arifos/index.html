@@ -376,7 +376,7 @@
           <article aria-labelledby="g1-h">
             <h3 id="g1-h">Verified actor</h3>
             <p>Signing path exists; observed calls unsigned; <code>actor_verified=false</code>.</p>
-            <p><strong>Acceptance test:</strong> every irreversible action <em>envelope</em> carries the cryptographic primitives to sign and verify. <em>Observed calls are unsigned on this probe</em> (<code>actor_verified=false</code> per <code>arif_init</code>). The signature surface is in design, not in observed reality.</p>
+            <p><strong>Acceptance test:</strong> every irreversible action <em>envelope</em> carries the cryptographic primitives to sign and verify. <em>Observed calls are unsigned on this probe</em> (<code>actor_verified=false</code> per <code>arif_init</code>; re-probed 18 Oct 2026 — unchanged). The signature surface is in design, not in observed reality.</p>
           </article>
           <article aria-labelledby="g2-h">
             <h3 id="g2-h">Receipt fidelity</h3>
@@ -385,7 +385,7 @@
           </article>
           <article aria-labelledby="g3-h">
             <h3 id="g3-h">Sink agreement</h3>
-            <p>One failed ledger event was omitted by organ counters.</p>
+            <p>One failed ledger event was omitted by organ counters. Also measured (16–18 Oct 2026): a 100-receipt batch was re-appended 100× in the arifFlow receipt ledger (9,919 duplicate lines), and one malformed vault-ledger line (two receipts glued) is recorded as not-repaired-by-design.</p>
             <p><strong>Acceptance test:</strong> ledger sinks agree on the same set of failure events; checksums match cross-ledger.</p>
           </article>
           <article aria-labelledby="g4-h">
@@ -400,7 +400,7 @@
         <h2 id="cs-h">Current state</h2>
         <h3>Floor state</h3>
         <p><strong>Floor counts: see <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live).</strong> Per-table status reflects the kernel at the snapshot time noted below; the live source is the MCP kernel endpoint, not the public web host.</p>
-        <p class="note">Floor counts and provenance come from <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live). The table below was rendered against a 15:53 MYT snapshot on 13 Oct 2026. The live kernel now reports 13 of 13 floors passing, 0 failing, 0 unmeasured (probed via mcp.arif-fazil.com/health, 17 Oct 2026). One limitation remains: 6 floors are sourced from the static claims.json probe rather than a live computation. Treat this table as reference, not live.</p>
+        <p class="note">Floor counts and provenance come from <a href="https://mcp.arif-fazil.com/health">mcp.arif-fazil.com/health</a> (live). The table below was rendered against a 15:53 MYT snapshot on 13 Oct 2026. <strong>The live kernel reports 12 of 13 floors passing, 1 failing (F8 Genius — below its quality-index threshold in the claims probe), 0 unmeasured; the constitutional layer is degraded and execution readiness is held</strong> (probed via mcp.arif-fazil.com/health, 18 Oct 2026). One limitation remains: 7 floors (F4–F10) are sourced from the static claims.json probe rather than a live computation. Treat this table as reference, not live.</p>
         <div class="scroll">
           <table>
             <caption>Constitutional floor sample, observed 2026-10-13T07:53:00Z</caption>

@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-10-18T12:27:51.966099+00:00",
+  "base_url": "https://arif-fazil.com",
+  "verified_surfaces": 76,
+  "passed_surfaces": 76,
+  "failed_surfaces": 0,
+  "skipped_dynamic_templates": 3,
+  "dti_gates_evaluated": 36,
+  "dti_gates_passed": 36,
+  "dti_gates_failed": 0,
+  "status": "ALL_SURFACES_PASSED",
+  "command": "node scripts/verify-surfaces.cjs --base=https://arif-fazil.com"
+}

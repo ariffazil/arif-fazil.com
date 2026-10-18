@@ -1,0 +1,236 @@
+schema: arifos.site_artifact_registry.v1
+version: 1.0.0
+domain: arif-fazil.com
+generated_at_utc: '2026-10-18T12:28:24.840313+00:00'
+ontology:
+  layers:
+  - layer: human_surface
+    name: Nine-Room Information Architecture
+    description: Human-facing decision spaces and discovery surfaces (/discovery/).
+      Lead by Human-First doctrine.
+    rooms:
+    - name: Court
+      verb: Judges
+      route: /999/
+    - name: Roll
+      verb: Identity / Who is here
+      route: /human
+    - name: Workshop
+      verb: Executes work after approval
+      route: /work/
+    - name: Earth
+      verb: Reads the physical ground
+      route: /earth/
+    - name: Health
+      verb: Assesses readiness of person and machine
+      route: /vitals/
+    - name: Money
+      verb: Counts capital and commodities
+      route: /economics
+    - name: Record
+      verb: Records permanent history and essays
+      route: /words/
+    - name: Measure
+      verb: Watches for drift and anomalies
+      route: /ledger
+    - name: Voice
+      verb: Carries the word out (MakcikGPT)
+      route: /world/makcikgpt/
+  - layer: federation_organs
+    name: Federation Subdomain Fleet
+    description: Decoupled autonomous organs of the arifOS federation.
+    subdomains:
+    - organ: arifOS
+      url: https://arifos.arif-fazil.com
+      role: Kernel, constitutional governance, F1-F13 floors
+    - organ: AAA
+      url: https://aaa.arif-fazil.com
+      role: Autonomous Agentic Architecture, musyawarah runtime
+    - organ: GEOX
+      url: https://geox.arif-fazil.com
+      role: Subsurface earth intelligence, basin models, well analytics
+    - organ: WEALTH
+      url: https://wealth.arif-fazil.com
+      role: Capital primitives, commodities, macro signals
+    - organ: WELL
+      url: https://well.arif-fazil.com
+      role: Biological, somatic, and machine homeostasis
+    - organ: SYEDOS
+      url: https://syedos.arif-fazil.com
+      role: Autonomous trading and execution terminal
+    - organ: CHRON
+      url: https://chron.arif-fazil.com
+      role: Temporal calibration, prediction market ledger
+    - organ: FORGE
+      url: https://forge.arif-fazil.com
+      role: VPS infrastructure, container orchestration, CI/CD
+    - organ: WIKI
+      url: https://wiki.arif-fazil.com
+      role: Federation documentation and knowledge base
+    - organ: MCP
+      url: https://mcp.arif-fazil.com
+      role: Machine-to-Machine MCP Streamable HTTP Gateway
+  - layer: execution_and_access
+    name: Ingress & Backend Microservices
+    description: Reverse proxy ingress and containerized execution units.
+    services:
+    - name: Caddy Ingress
+      endpoints:
+      - '80'
+      - '443'
+      config: /etc/caddy/vhosts/arif-fazil.com.conf
+    - name: Commodity API Gold
+      port: 3456
+      route: /gold/api/*
+      health: /health
+    - name: Commodity API Oil
+      port: 3457
+      route: /oil/api/*
+      health: /health
+    - name: Commodity API Gas
+      port: 3458
+      route: /gas/api/*
+      health: /health
+    - name: MCP Gateway
+      port: 8100
+      host: mcp.arif-fazil.com
+  - layer: observatory_and_witness
+    name: Cryptographic Witness & Audit
+    description: Immutable ledger and seal proofs.
+    endpoints:
+    - route: /ledger
+      source: /var/lib/arifos/reality_ledger
+    - route: /999/verify
+      source: VAULT999
+artifacts:
+- id: site.home
+  class: hybrid-shell-spa
+  canonical_url: https://arif-fazil.com/
+  source_repository: github.com/ariffazil/arif-fazil.com
+  source_path: sites/arif-fazil.com/src/pages/Home.tsx
+  deployment_unit: /var/www/html/arif/index.html
+  runtime_dependency: caddy + cloudflare
+  owner: arif
+  health_probe: https://arif-fazil.com/
+  rollback_unit: git + /root/arif-fazil.com/backups/
+  authority: public-read
+  evidence:
+    build_sha: 139ae1eadbbf25a985e2e7057a4f6be807ec4048
+    deployed_file: /var/www/html/arif/index.html
+    content_sha256: 26688800a2ab267e3029b05af011c9845c1e0176521e0eb503fc514c55d20079
+- id: site.gold
+  class: hybrid-terminal
+  canonical_url: https://arif-fazil.com/gold/
+  source_repository: github.com/ariffazil/WEALTH + arif-fazil.com
+  source_path: /var/www/html/gold/index.html
+  deployment_unit: /var/www/html/gold/
+  runtime_dependency: gold-api (:3456) + TradingView widgets
+  owner: WEALTH
+  health_probe: https://arif-fazil.com/gold/api/snapshot
+  rollback_unit: /var/www/html/gold/index.html.bak-*
+  authority: public-read
+  evidence:
+    build_sha: 139ae1eadbbf25a985e2e7057a4f6be807ec4048
+    deployed_file: /var/www/html/gold/index.html
+    content_sha256: 3a6d25a69d44efaee116e1d855951262264f46914542083f97a75b97a0b0d3fa
+    routing_structure: clean directory /var/www/html/gold/gold/ with index.html symlink,
+      zero recursive links
+- id: site.oil
+  class: hybrid-terminal
+  canonical_url: https://arif-fazil.com/oil/
+  source_repository: github.com/ariffazil/WEALTH + arif-fazil.com
+  source_path: /var/www/html/oil/index.html
+  deployment_unit: /var/www/html/oil/
+  runtime_dependency: oil-api (:3457)
+  owner: WEALTH
+  health_probe: https://arif-fazil.com/oil/api/snapshot
+  rollback_unit: /var/www/html/oil/index.html.bak-*
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/oil/index.html
+    content_sha256: 7a9d2702d964e0c6096def2f64c0ba8f5e86eb96ce130c5bd11fea7a47a05054
+- id: site.gas
+  class: hybrid-terminal
+  canonical_url: https://arif-fazil.com/gas/
+  source_repository: github.com/ariffazil/WEALTH + arif-fazil.com
+  source_path: /var/www/html/gas/index.html
+  deployment_unit: /var/www/html/gas/
+  runtime_dependency: gas-api (:3458)
+  owner: WEALTH
+  health_probe: https://arif-fazil.com/gas/api/snapshot
+  rollback_unit: /var/www/html/gas/index.html.bak-*
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/gas/index.html
+    content_sha256: 47a84daa2388fc8adf9f7cf2264e77c76bfadf198e98452fe5c7c4a4ca0bf51c
+- id: site.earth
+  class: static-shell-geo
+  canonical_url: https://arif-fazil.com/earth/
+  source_repository: github.com/ariffazil/GEOX + arif-fazil.com
+  source_path: sites/arif-fazil.com/public/earth/
+  deployment_unit: /var/www/html/arif/earth/
+  runtime_dependency: macrostrat-tiles
+  owner: GEOX
+  health_probe: https://arif-fazil.com/earth/
+  rollback_unit: git
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/arif/earth/index.html
+    content_sha256: c0ca800e859e08c280d29687d5e5f8821b2158cf6031a663374700afe83f5684
+- id: site.vitals
+  class: capital-dashboard
+  canonical_url: https://arif-fazil.com/vitals/
+  source_repository: github.com/ariffazil/arif-fazil.com
+  source_path: sites/arif-fazil.com/src/pages/vitals/
+  deployment_unit: /var/www/html/arif/vitals/
+  runtime_dependency: react-spa
+  owner: arif
+  health_probe: https://arif-fazil.com/vitals/
+  rollback_unit: git
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/arif/vitals/index.html
+    content_sha256: b28a07bb3de776f15ec72cd2f57386c322b6d82ba9fb03323cc41c738944c6b2
+- id: site.makcikgpt
+  class: editorial-publication
+  canonical_url: https://arif-fazil.com/world/makcikgpt/
+  source_repository: github.com/ariffazil/arif-fazil.com
+  source_path: sites/arif-fazil.com/public/world/makcikgpt/
+  deployment_unit: /var/www/html/arif/world/makcikgpt/
+  runtime_dependency: static-shells + react-spa
+  owner: arif
+  health_probe: https://arif-fazil.com/world/makcikgpt/
+  rollback_unit: git
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/arif/world/makcikgpt/index.html
+    content_sha256: 450e6283ce1c17876f464a388056d951f91bc53b5080de8cd345c50dc7e387bc
+    canonical_articles_count: 43
+- id: site.discovery.llms_txt
+  class: machine-discovery
+  canonical_url: https://arif-fazil.com/llms.txt
+  source_repository: github.com/ariffazil/arif-fazil.com
+  source_path: sites/arif-fazil.com/public/llms.txt
+  deployment_unit: /var/www/html/arif/llms.txt
+  runtime_dependency: caddy static server
+  owner: arifOS / AAA
+  health_probe: https://arif-fazil.com/llms.txt
+  rollback_unit: git
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/arif/llms.txt
+    content_sha256: 01ce31295b5edb804a9844647fecf800989193f2f740f87153010528d5c0bf03
+- id: site.discovery.surfaces_json
+  class: machine-catalog
+  canonical_url: https://arif-fazil.com/surfaces.json
+  source_repository: github.com/ariffazil/arif-fazil.com
+  source_path: sites/arif-fazil.com/surfaces.json
+  deployment_unit: /var/www/html/arif/surfaces.json
+  runtime_dependency: caddy static server
+  owner: arifOS
+  health_probe: https://arif-fazil.com/surfaces.json
+  rollback_unit: git
+  authority: public-read
+  evidence:
+    deployed_file: /var/www/html/arif/surfaces.json
+    content_sha256: 9cbbe8d6c1266000399784a2cd6d5cb6289cfb2b0cb889963e6bad5c49fa3ed4

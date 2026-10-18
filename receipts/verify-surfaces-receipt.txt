@@ -1,0 +1,125 @@
+Verifyingd 79 surfaces against https://arif-fazil.com...
+
+DTI gate (L1 robots/L3 H1/L4 JSON-LD/L5 og/L6 canonical): ENABLED for type=page + type=document
+
+  ✓ / → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /earth/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="The DynamicEarth."
+  ✓ /pilot/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Your AI agents can act.Who approves the actions?"
+  ✓ /institution/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Work together,inspect first."
+  ✓ /earth/kinabalu-basin/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Kinabalu Basin.One of three."
+  ✓ /earth/malay-basin/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Malay Basin.Home waters."
+  ✓ /earth/kinabalu-cross-section.html → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Kinabalu line — section and chart"
+  ✓ /earth/kinabalu-basin.pdf → HTTP 200  [expected: 2xx]
+  ✓ /earth/malay-basin-cross-section.html → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Malay Basin — NW–SE Transect"
+  ✓ /economics/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  SKIP (dynamic): /economics/article/:slug — needs real params
+  ✓ /work/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /work/exploration-2013-2026/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /work/exploration-2013-2026/evidence/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /work/exploration-2013-2026/portfolio.pdf → HTTP 200  [expected: 2xx]
+  ✓ /world/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="World"
+  ✓ /world/makcikgpt/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="MakcikGPT"
+  SKIP (dynamic): /world/makcikgpt/:slug — needs real params
+  ✓ /world/oil/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /world/gas/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /world/gold/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Arif Fazil"
+  ✓ /world/politics/ns-election/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Negeri SembilanLive Interactive GIS Map & 9 Invariants"
+  ✓ /world/politics/ns-election/compare/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Seat-by-Seat: 2023 vs 2026"
+  ✓ /writing/ → HTTP 308  [expected: 3xx]
+  ✓ /words/writing/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Constitutional Essays"
+  ✓ /words/ → HTTP 200  [expected: 2xx]
+  ✓ /words/essays/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Essays"
+  ✓ /words/wiki/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Wiki &amp; Knowledge Base"
+  ✓ /words/makcikgpt/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="MakcikGPT"
+  SKIP (dynamic): /writing/:slug — needs real params
+  ✓ /doctrine/ → HTTP 308  [expected: 3xx]
+  ✓ /words/doctrine/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="13 Floors."
+  ✓ /000/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="There is a human at position zero."
+  ✓ /999/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Don't trust this site. Verify it."
+  ✓ /999/verify → HTTP 200  [expected: 2xx]
+  ✓ /map/ → HTTP 200  [expected: 2xx]
+  ✓ /machine/ → HTTP 200  [expected: 2xx]
+  ✓ /rss/ → HTTP 301  [expected: 3xx]
+  ✓ /canon/ → HTTP 301  [expected: 3xx]
+  ✓ /constellation/ → HTTP 301  [expected: 3xx]
+  ✓ /federation/ → HTTP 301  [expected: 3xx]
+  ✓ /discoveries/ → HTTP 301  [expected: 3xx]
+  ✓ /wealth/ → HTTP 308  [expected: 3xx]
+  ✓ /wealth/article/:slug → HTTP 301  [expected: 3xx]
+  ✓ /essays/ → HTTP 308  [expected: 3xx]
+  ✓ /essays/:slug → HTTP 301  [expected: 3xx]
+  ✓ /wealth/makcikgpt/ → HTTP 301  [expected: 3xx]
+  ✓ /wealth/makcikgpt/:slug → HTTP 301  [expected: 3xx]
+  ✓ /economics/makcikgpt/ → HTTP 301  [expected: 3xx]
+  ✓ /economics/makcikgpt/:slug → HTTP 301  [expected: 3xx]
+  ✓ /genesis/ → HTTP 301  [expected: 3xx]
+  ✓ /oil/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Oil"
+  ✓ /gas/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Gas"
+  ✓ /gold/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Gold"
+  ✓ /makcikgpt/ → HTTP 301  [expected: 3xx]
+  ✓ /makcikgpt/:slug → HTTP 301  [expected: 3xx]
+  ✓ /vitals/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Dompet hari ini.Tangki masa depan."
+  ✓ /malaysia/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="One nation. Three pillars. Nine tripwires.INTERPRET"
+  ✓ /pulse/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="⚡ Federation Pulse"
+  ✓ /forge/ → HTTP 301  [expected: 3xx]
+  ✓ /world/politics/shadow/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="PM Bayang"
+  ✓ /world/politics/shadow/anwar-ibrahim/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="33 BayangAnwar Ibrahim"
+  ✓ /surfaces.json → HTTP 200  [expected: 2xx]
+  ✓ /llms-full.txt → HTTP 200  [expected: 2xx]
+  ✓ /llms.txt → HTTP 200  [expected: 2xx]
+  ✓ /llms.json → HTTP 200  [expected: 2xx]
+  ✓ /page.json → HTTP 200  [expected: 2xx]
+  ✓ /missions.json → HTTP 200  [expected: 2xx]
+  ✓ /sitemap.xml → HTTP 200  [expected: 2xx]
+  ✓ /feed.xml → HTTP 200  [expected: 2xx]
+  ✓ /robots.txt → HTTP 200  [expected: 2xx]
+  ✓ /rsl.xml → HTTP 200  [expected: 2xx]
+  ✓ /soul.json → HTTP 200  [expected: 2xx]
+  ✓ /.well-known/agent-card.json → HTTP 301  [expected: 3xx]
+  ✓ /read/ → HTTP 301  [expected: 3xx]
+  ✓ /read → HTTP 301  [expected: 3xx]
+  ✓ /machines/ → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="For machines"
+  ✓ /ledger → HTTP 200  [expected: 2xx]
+    ✓ DTI: H1="Witness Ledger"
+  ✓ /ledger/ledger.json → HTTP 200  [expected: 2xx]
+
+───
+Verified: 76 | Passed: 76 | Failed: 0 | Skipped: 3
+DTI gates: 36 | Passed: 36 | Failed: 0
+
+All verifiable surfaces pass + DTI gates green. Catalog is truthful.

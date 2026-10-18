@@ -1,0 +1,425 @@
+{
+  "suite": "arif-fazil.com Contract & Architecture Verification",
+  "tested_at_utc": "2026-10-18T12:30:27.857027+00:00",
+  "base": "https://arif-fazil.com",
+  "results": [
+    {
+      "category": "canonical_page",
+      "path": "/",
+      "url": "https://arif-fazil.com/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 73.61,
+      "content_sha256": "6ee8ea5f4064074293b9f287220a7c4358569a2fe905277336d4ce0443dec9ff",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/earth/",
+      "url": "https://arif-fazil.com/earth/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 109.83,
+      "content_sha256": "3c362cc1bf4ea190dea193054a6959f8890d7a5bfc4af7b251a406bcadce1ecb",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/vitals/",
+      "url": "https://arif-fazil.com/vitals/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 98.44,
+      "content_sha256": "dcd10fafcaf5a497a25337ad3d28bcff165c0da1dcad1c5b2022dca6f37885fd",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/words/",
+      "url": "https://arif-fazil.com/words/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 83.86,
+      "content_sha256": "2ebebb764596818811d89b6b0086bc25ffcc5ba99bdf912cedd0b2d8d115e0da",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/world/makcikgpt/",
+      "url": "https://arif-fazil.com/world/makcikgpt/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 920.83,
+      "content_sha256": "2e4f8273459a4f588f1ffb8dcd4f9cfaf19876275d708a6e0906e06cc1de48d7",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/gold/",
+      "url": "https://arif-fazil.com/gold/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 131.91,
+      "content_sha256": "c121d70e7ce2aff482bbfa0dfb7725fa4a577962a5373239dfbe1c925d2159e1",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/oil/",
+      "url": "https://arif-fazil.com/oil/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 86.58,
+      "content_sha256": "9ef82972a0f8e2be7e23338303fb8e8c333d7dcb7d604c5ed26079fa0f1bd849",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/gas/",
+      "url": "https://arif-fazil.com/gas/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 87.68,
+      "content_sha256": "5c6ac5a2cac5f150f0b3228c3ff8c878f230a39d4829d85093be965136e9fc48",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/discovery/",
+      "url": "https://arif-fazil.com/discovery/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 1015.88,
+      "content_sha256": "e8b632573a1cb61456722182aea982c1617fda01e61117efacb26a8f87a756e4",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/institution/",
+      "url": "https://arif-fazil.com/institution/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 937.96,
+      "content_sha256": "fd363823d7b9fe4ef98c092ecd0dc31208c0f9006075cf5e2454360826647f69",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/human",
+      "url": "https://arif-fazil.com/human",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 1071.01,
+      "content_sha256": "38a9477e8bc3a6bc44f1d085de1e0cd05129664a36677eaf3ee3290d893afd02",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/000/",
+      "url": "https://arif-fazil.com/000/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 114.57,
+      "content_sha256": "a762dec58cea961aabb4a8f3f0c5052159b605cc06b3d80a09d70e1601ef75d8",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/999/",
+      "url": "https://arif-fazil.com/999/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 1019.35,
+      "content_sha256": "5a20db735629c724ce4d25ad6f75dcf9d3b22be1307072a791d7f503f3b8f118",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "canonical_page",
+      "path": "/ledger",
+      "url": "https://arif-fazil.com/ledger",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 652.49,
+      "content_sha256": "c024269869bc6d43bf2d5e3fe13be4aec349e2d475bd952a93d7a143aeda4407",
+      "ssr_checks": {
+        "has_h1": true,
+        "has_jsonld": true,
+        "has_og": true,
+        "has_canonical": true
+      },
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "redirect_policy",
+      "path": "/propa/",
+      "url": "https://arif-fazil.com/propa/",
+      "expected_status": 301,
+      "actual_status": 301,
+      "latency_ms": 109.75,
+      "location": "/vitals/",
+      "passed": true,
+      "error": "HTTP Error 301: Moved Permanently"
+    },
+    {
+      "category": "redirect_policy",
+      "path": "/wealth/",
+      "url": "https://arif-fazil.com/wealth/",
+      "expected_status": 308,
+      "actual_status": 308,
+      "latency_ms": 633.19,
+      "location": "/vitals/",
+      "passed": true,
+      "error": "HTTP Error 308: Permanent Redirect"
+    },
+    {
+      "category": "redirect_policy",
+      "path": "/essays/",
+      "url": "https://arif-fazil.com/essays/",
+      "expected_status": 308,
+      "actual_status": 308,
+      "latency_ms": 974.52,
+      "location": "/words/writing/",
+      "passed": true,
+      "error": "HTTP Error 308: Permanent Redirect"
+    },
+    {
+      "category": "redirect_policy",
+      "path": "/writing/",
+      "url": "https://arif-fazil.com/writing/",
+      "expected_status": 308,
+      "actual_status": 308,
+      "latency_ms": 681.51,
+      "location": "/words/writing/",
+      "passed": true,
+      "error": "HTTP Error 308: Permanent Redirect"
+    },
+    {
+      "category": "redirect_policy",
+      "path": "/genesis/",
+      "url": "https://arif-fazil.com/genesis/",
+      "expected_status": 301,
+      "actual_status": 301,
+      "latency_ms": 90.24,
+      "location": "/000/",
+      "passed": true,
+      "error": "HTTP Error 301: Moved Permanently"
+    },
+    {
+      "category": "redirect_policy",
+      "path": "/canon/",
+      "url": "https://arif-fazil.com/canon/",
+      "expected_status": 301,
+      "actual_status": 301,
+      "latency_ms": 660.15,
+      "location": "/doctrine",
+      "passed": true,
+      "error": "HTTP Error 301: Moved Permanently"
+    },
+    {
+      "category": "discovery_artifact",
+      "path": "/llms.txt",
+      "url": "https://arif-fazil.com/llms.txt",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 629.46,
+      "content_sha256": "01ce31295b5edb804a9844647fecf800989193f2f740f87153010528d5c0bf03",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "discovery_artifact",
+      "path": "/llms.json",
+      "url": "https://arif-fazil.com/llms.json",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 902.34,
+      "content_sha256": "627cb5b2792944b4a0d71158825e8e6917820f3972ad1973e831d6df7a90a41a",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "discovery_artifact",
+      "path": "/page.json",
+      "url": "https://arif-fazil.com/page.json",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 993.04,
+      "content_sha256": "73d529bcef0ced5d48e2d5fc65073c8c53329c5e81860198d00c3687d75b07a1",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "discovery_artifact",
+      "path": "/sitemap.xml",
+      "url": "https://arif-fazil.com/sitemap.xml",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 75.62,
+      "content_sha256": "5bf14cc0db150256cd5e53bcfd6bd3d7ae9cbdf3f5f07e7165855209488c9034",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "discovery_artifact",
+      "path": "/.well-known/ard.json",
+      "url": "https://arif-fazil.com/.well-known/ard.json",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 970.87,
+      "content_sha256": "5f4e20f73a5faa3841f8092c28299067e6fb165e550a35e1457a1d2d85d91a1f",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "discovery_artifact",
+      "path": "/.well-known/ai-catalog.json",
+      "url": "https://arif-fazil.com/.well-known/ai-catalog.json",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 84.23,
+      "content_sha256": "5f4e20f73a5faa3841f8092c28299067e6fb165e550a35e1457a1d2d85d91a1f",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "commodity_backend",
+      "path": "/gold/api/snapshot",
+      "url": "https://arif-fazil.com/gold/api/snapshot",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 702.73,
+      "asset_verified": "gold",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "commodity_backend",
+      "path": "/oil/api/snapshot",
+      "url": "https://arif-fazil.com/oil/api/snapshot",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 837.14,
+      "asset_verified": "oil",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "commodity_backend",
+      "path": "/gas/api/snapshot",
+      "url": "https://arif-fazil.com/gas/api/snapshot",
+      "expected_status": 200,
+      "actual_status": 200,
+      "latency_ms": 1003.55,
+      "asset_verified": "gas",
+      "passed": true,
+      "error": null
+    },
+    {
+      "category": "routing_safety",
+      "path": "/gold/gold/",
+      "url": "https://arif-fazil.com/gold/gold/",
+      "expected_status": 404,
+      "actual_status": 404,
+      "description": "Ensure /gold/gold/ returns 404 and does not trigger recursive loop",
+      "passed": true,
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "summary": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0
+  }
+}

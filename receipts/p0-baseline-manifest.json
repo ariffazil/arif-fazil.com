@@ -1,0 +1,17 @@
+{
+  "captured_at_utc": "2026-10-18T12:17:18.904841+00:00",
+  "git_sha": "139ae1eadbbf25a985e2e7057a4f6be807ec4048",
+  "git_status": "?? receipts/audit-evidence-p0-probes.json\n?? sites/arif-fazil.com/.backups/\n?? sites/syedos.arif-fazil.com/",
+  "live_symlinks": {
+    "/var/www/html/gold/gold": "."
+  },
+  "caddy_pid": "1123\n613528",
+  "caddy_config_file": "/etc/caddy/Caddyfile",
+  "live_webroots": {
+    "arif": 117,
+    "gold": 6,
+    "oil": 5,
+    "gas": 5,
+    "well-known": 37
+  }
+}

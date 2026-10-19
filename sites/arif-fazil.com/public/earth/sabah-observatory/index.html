@@ -207,6 +207,61 @@ details[open] summary{margin-bottom:.6rem}
   </div>
 
   <div class="panel">
+    <div class="panel-head"><h3>Model-space integrity — geometry hashes</h3><span class="note" id="integrityVerdict">checking…</span></div>
+    <div style="padding:.6rem .85rem .7rem">
+      <p style="font-size:.74rem;color:var(--text-secondary);margin-bottom:.5rem">
+        Every model's crustal architecture (Moho surface + topography + basement) is hashed at runtime. Two models sharing a hash share the same crust — they differ only in what is added on top. That is allowed, but it must be <b>declared</b>, never implied.
+      </p>
+      <table>
+        <thead><tr><th>#</th><th>Model</th><th>Crust hash</th><th>Full hash</th><th>Shares crust with</th></tr></thead>
+        <tbody id="hashTable"></tbody>
+      </table>
+      <div class="cap" id="integrityNote" style="margin-top:.5rem"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><h3>Falsification tests — numbers, not adjectives</h3><span class="note">each test can kill its model</span></div>
+    <div style="padding:.2rem .4rem .4rem;overflow-x:auto">
+    <table>
+      <thead><tr><th>Model</th><th>Predicted observable</th><th>Pass window</th><th>What kills it</th></tr></thead>
+      <tbody id="testTable"></tbody>
+    </table>
+    </div>
+    <div style="padding:0 .85rem .7rem" class="cap">
+      Pass windows are the ranges implied by the published constraints summarised in each model's card. They are <b>test specifications</b>, not measurements. No value on this page has been fitted to survey data.
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><h3>Isostasy check — can a mountain sit on thin crust?</h3><span class="note">computed live · Airy, ρc 2800 / ρm 3300 kg·m⁻³</span></div>
+    <div style="padding:.7rem .85rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1rem" id="isoWrap">
+      <div>
+        <div style="font-family:var(--mono);font-size:.66rem;color:var(--text-secondary);margin-bottom:.5rem">
+          e = ((ρ<sub>m</sub> − ρ<sub>c</sub>) / ρ<sub>m</sub>) · (t − t₀)
+        </div>
+        <label style="font-size:.72rem;color:var(--text-secondary);display:block;margin-bottom:.25rem">
+          Crustal thickness t (km, t₀ = 30 km at sea level)
+        </label>
+        <input id="isoInput" type="range" min="18" max="70" step="1" value="30" style="width:100%">
+        <div style="font-family:var(--mono);font-size:.8rem;margin-top:.5rem">
+          t = <b id="isoT">30</b> km &nbsp;→&nbsp; supports <b id="isoE">0.00</b> km elevation
+        </div>
+        <div id="isoVerdict" style="font-size:.72rem;margin-top:.5rem;color:var(--text-secondary)"></div>
+      </div>
+      <div>
+        <table>
+          <thead><tr><th>Crust</th><th>Supports</th><th>Kinabalu 4.095 km?</th></tr></thead>
+          <tbody id="isoTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <div style="padding:0 .85rem .7rem" class="cap">
+      Flat-plate Airy isostasy, constant densities. It ignores flexural strength and dynamic (mantle) support — which is exactly the point: a summit that Airy cannot support on the local crust is evidence that <b>something other than crustal thickness is holding it up</b>. Flexural support with T<sub>e</sub> 8–17 km helps over ~20–35 km wavelengths, not 2.5–5 km deficits.
+    </div>
+  </div>
+
+  <div class="panel">
     <div class="panel-head"><h3>Control points — 11 stations, WGS84 geodesic chainage</h3><span class="note">L0 · recomputable</span></div>
     <div style="padding:.2rem .4rem .4rem;overflow-x:auto">
     <table>
@@ -384,7 +439,8 @@ M.R={key:"R",name:"Thin-skin, flat 30 km Moho",short:"rejected framing",status:"
  det:6.0,canopy:false,suture:true,moho:[[0,30],[262,30],[484.9,30],[833,30]]};
 
 var ORDER=["A","F","B","C","D","E","R"];
-var STAT={best:["c-best","BEST SUPPORTED"],supp:["c-supp","SUPPORTED · PARTIAL"],test:["c-test","TESTABLE · UNRESOLVED"],rej:["c-rej","REJECTED"]};
+var STAT={best:["c-best","MOST CONSTRAINED · NOT VALIDATED"],supp:["c-supp","PARTIALLY CONSTRAINED"],
+          test:["c-test","TESTABLE · UNRESOLVED"],rej:["c-rej","FALSIFIED"]};
 var COL={best:"#34d399",supp:"#38bdf8",test:"#fbbf24",rej:"#f87171"};
 
 /* ---------- axes ---------- */
@@ -576,6 +632,8 @@ function drawCard(m){
   var el=document.getElementById("card");
   document.getElementById("cardTitle").textContent="Model "+m.key;
   var st=STAT[m.status];
+  var hs=hashes[m.key];
+  var shares=(crustGroups[hs.crust]||[]).filter(function(k){return k!==m.key;});
   var h="";
   h+='<span class="chip '+st[0]+'">'+st[1]+"</span>";
   h+='<p class="card-h">'+m.name+"</p>";
@@ -583,6 +641,9 @@ function drawCard(m){
   h+='<div class="sec"><h4>Evidence for</h4><ul>'+m.forv.map(function(x){return "<li>"+x+"</li>";}).join("")+"</ul></div>";
   h+='<div class="sec"><h4>Evidence against</h4><ul>'+m.against.map(function(x){return "<li>"+x+"</li>";}).join("")+"</ul></div>";
   h+='<div class="sec"><h4>Kill criterion</h4><div class="kill"><p>'+m.kill+"</p></div></div>";
+  h+='<div class="sec"><h4>Geometry identity</h4><p class="mono" style="font-size:.68rem;color:#8b949e">crust '+hs.crust+
+     (shares.length?(' · shares crust with <b style="color:#fbbf24">'+shares.join(", ")+"</b> — differs only in the added body"):" · unique crust")+
+     '<br>full '+hs.full+"</p></div>";
   h+='<div class="tierrow">geometry L2 · claims sourced · status is a judgement, not a measurement</div>';
   el.innerHTML=h;
 }
@@ -624,6 +685,115 @@ function buildStations(){
       "</td><td class='m'>"+lon[i].toFixed(2)+"</td><td class='m'>"+st[0].toFixed(1)+"</td>";
     tb.appendChild(tr);
   });
+}
+
+/* ---------- geometry identity ---------- */
+function djb2(str){
+  var h=5381;
+  for(var i=0;i<str.length;i++){ h=((h<<5)+h+str.charCodeAt(i))|0; }
+  return (h>>>0).toString(16).padStart(8,"0");
+}
+var hashes={}, crustGroups={};
+function computeHashes(){
+  ORDER.forEach(function(k){
+    var m=M[k];
+    var crustSig=JSON.stringify([TOPO,BASE,m.moho,m.det]);
+    var fullSig=JSON.stringify([TOPO,BASE,m.moho,m.det,
+      !!m.canopy,!!m.ophiolite,!!m.obduct,!!m.drip,!!m.slab,!!m.suture,!!m.mantle,
+      m.top||null,m.base||null]);
+    hashes[k]={crust:djb2(crustSig),full:djb2(fullSig)};
+    (crustGroups[hashes[k].crust]=crustGroups[hashes[k].crust]||[]).push(k);
+  });
+}
+function drawIntegrity(){
+  var tb=document.getElementById("hashTable"); tb.innerHTML="";
+  var dupCrust=0, dupFull=0, fullSeen={};
+  ORDER.forEach(function(k){
+    var m=M[k], hs=hashes[k];
+    var same=(crustGroups[hs.crust]||[]).filter(function(x){return x!==k;});
+    if(same.length)dupCrust++;
+    if(fullSeen[hs.full])dupFull++; else fullSeen[hs.full]=k;
+    var tr=document.createElement("tr");
+    tr.innerHTML="<td class='m'>"+k+"</td><td>"+m.name+"</td>"+
+      "<td class='m'>"+hs.crust+"</td><td class='m'>"+hs.full+"</td>"+
+      "<td class='m'"+(same.length?" style='color:#fbbf24'":"")+">"+(same.length?same.join(", "):"—")+"</td>";
+    tb.appendChild(tr);
+  });
+  var v=document.getElementById("integrityVerdict");
+  var note=document.getElementById("integrityNote");
+  if(dupFull>0){
+    v.textContent="FAIL · duplicate geometry"; v.style.color="#f87171";
+    note.innerHTML="<b style='color:#f87171'>Two models share identical full geometry.</b> That is a defect, not an alias.";
+  } else if(dupCrust>0){
+    v.textContent="PASS · "+dupCrust+" declared shared-crust"; v.style.color="#fbbf24";
+    note.innerHTML="<b>PASS with declarations.</b> "+dupCrust+" models share a crustal architecture and are labelled as such in their cards. "+
+      "This is honest aliasing, not a bug: <b>C</b> adds a mantle annotation to A's crust, <b>F</b> adds an ophiolite sheet to A's crust — the crust itself is the same hypothesis.";
+  } else {
+    v.textContent="PASS · all unique"; v.style.color="#34d399";
+    note.innerHTML="<b>PASS.</b> Every model has a distinct crustal architecture.";
+  }
+}
+
+/* ---------- falsification test specification ---------- */
+var TESTS=[
+ ["A","Moho beneath the Crocker Range (receiver functions)","55–62 km","< 50 km, or a flat Moho across the transect"],
+ ["A","Lower-crust Vp (wide-angle / OBS)","6.0–6.6 km/s in a thickened layer","6.7–7.2 km/s in a thin layer with a sharp Moho → oceanic"],
+ ["F","Shallow high-density sheet above a 60 km Moho (joint inversion)","Density-alone inversion cannot fit the gravity field","Density absorbs the misfit at fixed crustal thickness → F collapses to A"],
+ ["B","Basal detachment depth (area–depth–strain)","5.0–8.7 km below seabed, dip ~1.9° landward","Restored area needs basement shortening → B insufficient"],
+ ["B","Mini-basin fill load","up to ~4 km of clastics pre-canopy","No mini-basin loading → mechanism absent"],
+ ["C","Teleseismic fast anomaly","250–400 km depth, elongated and continuous","No slab continuity → replaced by a drip"],
+ ["D","Local Moho depression beneath the summit","8–12 km low over ~40–60 km width","Flat Moho under the summit → D loses its mechanism"],
+ ["E","Ophiolite U–Pb zircon + MORB vs SSZ affinity","One terrane, obducted sheet continuous along strike","Two terranes, or sheet absent from the section corridor"],
+ ["E","Position along A–A′","Telupid 567.5 km — east of Kinabalu, Sandakan Division","Any claim that Telupid underlies the Crocker axis"],
+ ["R","Moho depth","32.8–52.5 km (gravity inversion), ~60 km under Crocker","Already falsified — retained only for audit"]
+];
+
+function drawTests(){
+  var tb=document.getElementById("testTable"); tb.innerHTML="";
+  TESTS.forEach(function(t){
+    var tr=document.createElement("tr");
+    var col=COL[M[t[0]].status];
+    tr.innerHTML="<td class='m' style='color:"+col+"'>"+t[0]+"</td><td>"+t[1]+"</td><td class='m'>"+t[2]+"</td><td>"+t[3]+"</td>";
+    tb.appendChild(tr);
+  });
+}
+
+/* ---------- isostasy ---------- */
+function drawIso(){
+  var RC=2800, RM=3300, T0=30, TARGET=4.095;
+  function elev(t){ return ((RM-RC)/RM)*(t-T0); }
+  function need(e){ return T0 + e/((RM-RC)/RM); }
+  var inp=document.getElementById("isoInput");
+  function upd(){
+    var t=+inp.value, e=elev(t);
+    document.getElementById("isoT").textContent=t;
+    document.getElementById("isoE").textContent=e.toFixed(2);
+    var v=document.getElementById("isoVerdict");
+    var deficit=TARGET-e;
+    if(deficit<=0){
+      v.innerHTML="<span style='color:#34d399'>Isostatically sufficient</span> — this thickness can hold 4.095 km without help.";
+    } else {
+      v.innerHTML="<span style='color:#fbbf24'>Deficit "+deficit.toFixed(2)+" km</span> — Airy cannot hold the summit here. Something else (flexure, dynamic support) must be doing the work.";
+    }
+  }
+  inp.addEventListener("input",upd);
+  var tb=document.getElementById("isoTable"); tb.innerHTML="";
+  [24,40,50,57,60,65].forEach(function(t){
+    var e=elev(t);
+    var d=TARGET-e;
+    var ok=d<=0.005;
+    var tr=document.createElement("tr");
+    tr.innerHTML="<td class='m'>"+t+" km</td><td class='m'>"+e.toFixed(2)+" km</td><td class='m' style='color:"+
+      (ok?"#34d399":"#f87171")+"'>"+(ok?"YES"+(d>-0.005&&d<=0.005?" (marginal)":""):"NO — deficit "+d.toFixed(2)+" km")+"</td>";
+    tb.appendChild(tr);
+  });
+  upd();
+  var need_t=need(TARGET);
+  var note=document.createElement("div");
+  note.className="cap";
+  note.style.marginTop=".5rem";
+  note.innerHTML="Kinabalu needs <b>"+need_t.toFixed(1)+" km</b> of crust to be supported by Airy isostasy alone (density-dependent range 51–68 km).";
+  document.getElementById("isoWrap").parentNode.insertBefore(note, document.getElementById("isoWrap").nextSibling);
 }
 
 /* ---------- render ---------- */
@@ -692,7 +862,8 @@ function copyLink(){
   });
   var h=(location.hash||"").replace("#","").toUpperCase();
   if(M[h])current=h;
-  buildStations();drawCompare();render();
+  computeHashes();
+  buildStations();drawCompare();drawIntegrity();drawTests();drawIso();render();
 })();
 </script>
 </body>

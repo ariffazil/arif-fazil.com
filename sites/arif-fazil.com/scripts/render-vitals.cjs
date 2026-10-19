@@ -58,6 +58,25 @@ if (!fs.existsSync(resolvedJson)) {
 
 const data = JSON.parse(fs.readFileSync(resolvedJson, 'utf8'));
 let html = fs.readFileSync(SOURCE_HTML, 'utf8');
+
+// ───────────── shell sync (2026-10-19) ─────────────
+// /vitals/ now shares the article design language (Fraunces + Newsreader, forge
+// palette, site-frame, article header/footer). The article CSS is a hashed build
+// artifact (assets/index-<hash>.css); copy the current one to a stable path under
+// /vitals/_shell/ so the page never drifts with a build hash change.
+try {
+  const assetsDir = path.join(ROOT, 'dist/assets');
+  const cssName = fs.readdirSync(assetsDir).filter((f) => /^index-.*\.css$/.test(f)).sort().pop();
+  if (cssName) {
+    const shellDir = path.join(ROOT, 'dist/vitals/_shell');
+    fs.mkdirSync(shellDir, { recursive: true });
+    fs.copyFileSync(path.join(assetsDir, cssName), path.join(shellDir, 'article.css'));
+    console.log(`render-vitals: shell css synced from ${cssName}`);
+  }
+} catch (e) {
+  console.log(`render-vitals: shell css sync skipped (${e.message})`);
+}
+
 if (!html.includes('<!--B11-A:GRID9-MARKER:BEGIN-->')) {
   console.log('render-vitals: human page has no tripwire markers — leaving it untouched');
   process.exit(0);

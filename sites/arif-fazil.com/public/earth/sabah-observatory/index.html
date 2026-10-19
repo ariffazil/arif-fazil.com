@@ -224,12 +224,13 @@ details[open] summary{margin-bottom:.6rem}
     <div class="panel-head"><h3>Falsification tests — numbers, not adjectives</h3><span class="note">each test can kill its model</span></div>
     <div style="padding:.2rem .4rem .4rem;overflow-x:auto">
     <table>
-      <thead><tr><th>Model</th><th>Predicted observable</th><th>Pass window</th><th>What kills it</th></tr></thead>
+      <thead><tr><th>Model</th><th>Predicted observable</th><th>Pass window</th><th>Basis</th><th>What kills it</th></tr></thead>
       <tbody id="testTable"></tbody>
     </table>
     </div>
     <div style="padding:0 .85rem .7rem" class="cap">
-      Pass windows are the ranges implied by the published constraints summarised in each model's card. They are <b>test specifications</b>, not measurements. No value on this page has been fitted to survey data.
+      Pass windows are the ranges implied by the published constraints summarised in each model's card. They are <b>test specifications</b>, not measurements. No value on this page has been fitted to survey data.<br>
+      <b>Basis</b> — <b>COMPUTED</b>: derived on this page from the equation shown. <b>PUBLISHED</b>: taken from a cited source. <b>UNKNOWN</b>: no constraint exists, so no window is drawn.
     </div>
   </div>
 
@@ -248,6 +249,18 @@ details[open] summary{margin-bottom:.6rem}
           t = <b id="isoT">30</b> km &nbsp;→&nbsp; supports <b id="isoE">0.00</b> km elevation
         </div>
         <div id="isoVerdict" style="font-size:.72rem;margin-top:.5rem;color:var(--text-secondary)"></div>
+        <div style="margin-top:.7rem;border-top:1px solid var(--border-dim);padding-top:.6rem">
+          <div style="font-family:var(--mono);font-size:.58rem;letter-spacing:.8px;color:var(--text-dim);text-transform:uppercase;margin-bottom:.35rem">
+            T₀ sensitivity — the reference is a parameter, so show it
+          </div>
+          <table>
+            <thead><tr><th>T₀ (km)</th><th>t needed</th><th>valid for</th></tr></thead>
+            <tbody id="isoT0"></tbody>
+          </table>
+          <div class="cap" style="margin-top:.35rem">
+            T₀ is not free: it is fixed by the density pair. ρ<sub>c</sub>=2800 with T₀=6 km would place a 6 km granitic column at sea level, which is wrong by ~3.6 km. Oceanic crust (ρ<sub>c</sub>≈2900) does need T₀≈39 km for the same reason. The range above is what continental T₀ can legitimately be.
+          </div>
+        </div>
       </div>
       <div>
         <table>
@@ -736,24 +749,30 @@ function drawIntegrity(){
 
 /* ---------- falsification test specification ---------- */
 var TESTS=[
- ["A","Moho beneath the Crocker Range (receiver functions)","55–62 km","< 50 km, or a flat Moho across the transect"],
- ["A","Lower-crust Vp (wide-angle / OBS)","6.0–6.6 km/s in a thickened layer","6.7–7.2 km/s in a thin layer with a sharp Moho → oceanic"],
- ["F","Shallow high-density sheet above a 60 km Moho (joint inversion)","Density-alone inversion cannot fit the gravity field","Density absorbs the misfit at fixed crustal thickness → F collapses to A"],
- ["B","Basal detachment depth (area–depth–strain)","5.0–8.7 km below seabed, dip ~1.9° landward","Restored area needs basement shortening → B insufficient"],
- ["B","Mini-basin fill load","up to ~4 km of clastics pre-canopy","No mini-basin loading → mechanism absent"],
- ["C","Teleseismic fast anomaly","250–400 km depth, elongated and continuous","No slab continuity → replaced by a drip"],
- ["D","Local Moho depression beneath the summit","8–12 km low over ~40–60 km width","Flat Moho under the summit → D loses its mechanism"],
- ["E","Ophiolite U–Pb zircon + MORB vs SSZ affinity","One terrane, obducted sheet continuous along strike","Two terranes, or sheet absent from the section corridor"],
- ["E","Position along A–A′","Telupid 567.5 km — east of Kinabalu, Sandakan Division","Any claim that Telupid underlies the Crocker axis"],
- ["R","Moho depth","32.8–52.5 km (gravity inversion), ~60 km under Crocker","Already falsified — retained only for audit"]
+ ["A","Moho beneath the Crocker Range (receiver functions)","55–62 km","PUBLISHED","< 50 km, or a flat Moho across the transect"],
+ ["A","Lower-crust Vp (wide-angle / OBS)","6.0–6.6 km/s in a thickened layer","PUBLISHED","6.7–7.2 km/s in a thin layer with a sharp Moho → oceanic"],
+ ["F","Shallow high-density sheet above a 60 km Moho (joint inversion)","Density-alone inversion cannot fit the gravity field","UNKNOWN","Density absorbs the misfit at fixed crustal thickness → F collapses to A"],
+ ["B","Basal detachment depth (area–depth–strain)","5.0–8.7 km below seabed, dip ~1.9° landward","PUBLISHED","Restored area needs basement shortening → B insufficient"],
+ ["B","Mini-basin fill load","up to ~4 km of clastics pre-canopy","PUBLISHED","No mini-basin loading → mechanism absent"],
+ ["C","Teleseismic fast anomaly","250–400 km depth, elongated and continuous","PUBLISHED","No slab continuity → replaced by a drip"],
+ ["D","Local Moho depression beneath the summit","8–12 km low over ~40–60 km width","UNKNOWN","Flat Moho under the summit → D loses its mechanism"],
+ ["E","Ophiolite U–Pb zircon + MORB vs SSZ affinity","One terrane, obducted sheet continuous along strike","UNKNOWN","Two terranes, or sheet absent from the section corridor"],
+ ["E","Position along A–A′","Telupid 567.5 km — east of Kinabalu, Sandakan Division","COMPUTED","Any claim that Telupid underlies the Crocker axis"],
+ ["R","Moho depth","32.8–52.5 km (gravity inversion), ~60 km under Crocker","PUBLISHED","Already falsified — retained only for audit"],
+ ["—","Moho depth directly beneath the Kinabalu summit","no per-station receiver-function pick on this line","UNKNOWN","This is the single measurement that decides A/F vs D — it does not yet exist"]
 ];
+
+var BASIS_COL={COMPUTED:"#38bdf8",PUBLISHED:"#34d399",UNKNOWN:"#8b949e"};
 
 function drawTests(){
   var tb=document.getElementById("testTable"); tb.innerHTML="";
   TESTS.forEach(function(t){
     var tr=document.createElement("tr");
-    var col=COL[M[t[0]].status];
-    tr.innerHTML="<td class='m' style='color:"+col+"'>"+t[0]+"</td><td>"+t[1]+"</td><td class='m'>"+t[2]+"</td><td>"+t[3]+"</td>";
+    var col=M[t[0]]?COL[M[t[0]].status]:"#8b949e";
+    tr.innerHTML="<td class='m' style='color:"+col+"'>"+t[0]+"</td><td>"+t[1]+
+      "</td><td class='m'>"+t[2]+
+      "</td><td class='m' style='color:"+BASIS_COL[t[3]]+";font-size:.58rem'>"+t[3]+
+      "</td><td>"+t[4]+"</td>";
     tb.appendChild(tr);
   });
 }
@@ -789,6 +808,13 @@ function drawIso(){
   });
   upd();
   var need_t=need(TARGET);
+  var t0tb=document.getElementById("isoT0"); t0tb.innerHTML="";
+  [[25,"rifted continental"],[30,"continental reference (empirical)"],[35,"thick shield"]].forEach(function(p){
+    var n=p[0]+4.095/((RM-RC)/RM);
+    var tr=document.createElement("tr");
+    tr.innerHTML="<td class='m'>"+p[0]+"</td><td class='m'>"+n.toFixed(1)+" km</td><td style='font-size:.7rem'>"+p[1]+"</td>";
+    t0tb.appendChild(tr);
+  });
   var note=document.createElement("div");
   note.className="cap";
   note.style.marginTop=".5rem";

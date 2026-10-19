@@ -63,7 +63,7 @@ const body = `
   <h1>Kinabalu Basin</h1>
   <p class="sub">Offshore NW Sabah, Malaysia — a geological dossier</p>
   <p class="meta">Version 3 · October 2026 · Prepared for Arif Fazil<br>Public sources only. No proprietary well, seismic or company data.</p>
-  <div class="box"><b>What changed in v3.</b> The regional section now runs from the Dangerous Grounds to East Sabah and the Sulu Sea (~830 km) and carries four competing working models of the tectonic driver, including a new, untested hypothesis: a basaltic ridge along the Sabah Trough. Errors in v2 are corrected (Section 10).</div>
+  <div class="box"><b>What changed in v3.</b> The regional section now runs from the Dangerous Grounds to East Sabah and the Sulu Sea (~830 km) and carries four competing working models of the tectonic driver, including a new, untested hypothesis: possible rift-axis intrusions along an inherited thinned axis beneath the Sabah Trough. Errors in v2 are corrected (Section 10).</div>
 </section>
 
 <h2>1. What is the Kinabalu Basin?</h2>
@@ -112,13 +112,13 @@ const body = `
     <li><b>Section 2 (Tectonic evolution):</b> Balaguru &amp; Hall 2009; Hutchison 2005; Briais et al. 1993; Rangin &amp; Silver 1991.</li>
     <li><b>Section 4 (Kinabalu field):</b> Bait 2003 (GSM Bulletin 47).</li>
     <li><b>Section 6 (Recent discoveries):</b> Ab Ghani et al. EAGE 2026; Choi et al. EAGE 2026; Cornwell et al. JGR 2025.</li>
-    <li><b>Section 8 (Model A — magmatic ridge):</b> Author's untested hypothesis; no public support yet.</li>
+    <li><b>Section 8 (Model A — rift-axis intrusions?):</b> Author's untested hypothesis; no public support yet.</li>
     <li><b>Section 8 (Model B — mud canopy):</b> Morley et al. 2023, <i>Geosphere</i> 19(1): 291–326.</li>
     <li><b>Section 8 (Model C — underthrust):</b> Hinz et al. 1989; Hazebroek &amp; Tan 1993; Hutchison 2005.</li>
     <li><b>Section 8 (Model D — slab + gravity):</b> Hall 2013; Cottam et al. 2010, 2013; King et al. 2010; Cornwell et al. 2025.</li>
     <li><b>Background:</b> PETRONAS MPM 2025; Geological Survey of Malaysia Memoir 19.</li>
   </ul>
-  <p class="note">No proprietary well, seismic or company data. No picks. No internal chronostratigraphy. Public sources only.</p>
+  <p class="note">No proprietary well, seismic or company data. No picks. No internal chronostratigraphy. Public sources only. Interpretive schematic hand-plotted from published values - not machine-derived from survey data or a canonical transect pipeline.</p>
 </section>
 
 <h2>8. Four working models</h2>

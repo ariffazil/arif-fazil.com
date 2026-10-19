@@ -1,7 +1,7 @@
 // AUTO-GENERATED from /root/web-canon/canon/navigation.json (generate-nav-canon.cjs)
 // DERIVED — never hand-edit. Edit canon, regenerate.
 // F2: this file must match canon exactly. Drift = entropy.
-// canon version: 7.3.0 · as_of: 2026-10-01 · trinity: DRAFT_FUTURE
+// canon version: 7.4.0 · as_of: 2026-10-03 · trinity: DRAFT_FUTURE
 
 export interface NavItem {
   label: string;
@@ -18,33 +18,39 @@ export const brand = {
 
 export const primaryNav: NavItem[] = [
   {
-    "label": "About",
-    "href": "/about",
+    "label": "Home",
+    "href": "/",
     "mode": "spa",
     "external": false
   },
   {
-    "label": "Work",
-    "href": "/work/",
-    "mode": "static",
-    "external": false
-  },
-  {
     "label": "Earth",
-    "href": "/earth/",
+    "href": "/earth",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "Words",
+    "href": "/words",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "MakcikGPT",
+    "href": "/makcikgpt",
+    "mode": "spa",
+    "external": false
+  },
+  {
+    "label": "World",
+    "href": "/world",
     "mode": "static",
     "external": false
   },
   {
-    "label": "Writing",
-    "href": "/words/",
-    "mode": "static",
-    "external": false
-  },
-  {
-    "label": "Briefing",
-    "href": "/institution/",
-    "mode": "static",
+    "label": "Work",
+    "href": "/work",
+    "mode": "spa",
     "external": false
   }
 ];
@@ -69,14 +75,14 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
-    "label": "Column",
-    "href": "/world/makcikgpt/",
-    "mode": "static",
+    "label": "World",
+    "href": "/world/",
+    "mode": "spa",
     "external": false
   },
   {
     "label": "PETRONAS",
-    "href": "/vitals/",
+    "href": "/propa/",
     "mode": "static",
     "external": false
   },
@@ -88,7 +94,7 @@ export const secondaryNav: NavItem[] = [
   },
   {
     "label": "Politics",
-    "href": "/world/politics/",
+    "href": "/politics/",
     "mode": "static",
     "external": false
   },
@@ -105,8 +111,20 @@ export const secondaryNav: NavItem[] = [
     "external": false
   },
   {
-    "label": "Research",
+    "label": "Institution",
+    "href": "/institution/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Vitals",
     "href": "/vitals/",
+    "mode": "static",
+    "external": false
+  },
+  {
+    "label": "Proof",
+    "href": "/999/",
     "mode": "static",
     "external": false
   }
@@ -151,9 +169,21 @@ export const machineNav: NavItem[] = [
   },
   {
     "label": "arifOS",
-    "href": "/canon/",
-    "mode": "spa",
-    "external": false
+    "href": "https://arifos.arif-fazil.com/",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "A-FORGE",
+    "href": "https://a-forge.arif-fazil.com/",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "AAA",
+    "href": "https://aaa.arif-fazil.com/",
+    "mode": "external",
+    "external": true
   },
   {
     "label": "GEOX",
@@ -172,6 +202,18 @@ export const machineNav: NavItem[] = [
     "href": "https://well.arif-fazil.com",
     "mode": "external",
     "external": true
+  },
+  {
+    "label": "arifFlow",
+    "href": "https://arifflow.arif-fazil.com/",
+    "mode": "external",
+    "external": true
+  },
+  {
+    "label": "Agent contract",
+    "href": "/human",
+    "mode": "static",
+    "external": false
   }
 ];
 

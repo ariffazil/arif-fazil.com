@@ -69,6 +69,7 @@ def _writable_ephemeral_root() -> Path:
             continue
     raise OSError(f"no writable ephemeral root ({last_err})")
 
+
 # Content-truth markers: 200 alone is a soft-404 lie (F2)
 # SPA routes: shell HTML will not contain React text — markers checked in JS bundle.
 TRUTH_MARKERS: dict[str, list[str]] = {
@@ -266,7 +267,9 @@ def cmd_sense(args: argparse.Namespace) -> Report:
         r.add(
             "caddy.sources_scanned",
             True,
-            f"{len(sources)} files: " + ", ".join(s.name for s in sources[:5]) + ("..." if len(sources) > 5 else ""),
+            f"{len(sources)} files: "
+            + ", ".join(s.name for s in sources[:5])
+            + ("..." if len(sources) > 5 else ""),
         )
     else:
         r.add("caddyfile", False, f"missing {CADDYFILE}", "ORANGE")
@@ -276,7 +279,9 @@ def cmd_sense(args: argparse.Namespace) -> Report:
     # Do not recommend systemctl start when the unit is already up.
     for port, name in [(3456, "gold"), (3457, "oil"), (3458, "gas")]:
         h_code, h_body, _ = fetch(f"http://127.0.0.1:{port}/health", timeout=5)
-        a_code, a_body, err = fetch(f"http://127.0.0.1:{port}/api/{name}/apex", timeout=5)
+        a_code, a_body, err = fetch(
+            f"http://127.0.0.1:{port}/api/{name}/apex", timeout=5
+        )
         unit_up = h_code == 200
         compute_ok = a_code == 200 and "ENOENT" not in (a_body or "")
         if compute_ok:
@@ -401,6 +406,10 @@ def cmd_orphan(args: argparse.Namespace) -> Report:
     deleting = [ln for ln in out.splitlines() if ln.startswith("deleting ")]
     r.meta["delete_count"] = len(deleting)
     r.meta["delete_sample"] = deleting[:40]
+    # 2026-10-19 (333-AGI): senarai PENUH untuk pengelas rujukan pengguna
+    # (site-audit-metabolism). delete_sample truncate pada 40 — pengelas perlu
+    # semua calon untuk kiraan tepat. Additive; tiada perubahan kelakuan alat.
+    r.meta["delete_all"] = deleting
     # Heuristic: any delete of non-trivial paths → HOLD signal
     hold = len(deleting) > 0
     r.add(
@@ -594,18 +603,32 @@ def cmd_preflight(_args: argparse.Namespace) -> Report:
     ↔ /world/ footer) diverges. deploy-vps.sh calls this BEFORE any webroot
     mutation or Caddy reload. Fix source — never bypass the gate.
     """
-    r = Report(mode="preflight", ts=datetime.now(timezone.utc).isoformat(timespec="seconds"), ok=True)
+    r = Report(
+        mode="preflight",
+        ts=datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        ok=True,
+    )
     P = SITE_PUBLIC
 
     def need(rel: str, markers: list[str]) -> None:
         p = P / rel
         if not p.is_file():
-            r.add(f"preflight.{rel}", False, "FATAL: AGENTIC_WEB_VIOLATION — missing in source tree", "RED")
+            r.add(
+                f"preflight.{rel}",
+                False,
+                "FATAL: AGENTIC_WEB_VIOLATION — missing in source tree",
+                "RED",
+            )
             return
         body = p.read_text(encoding="utf-8", errors="replace")
         missing = [m for m in markers if m not in body]
         if missing:
-            r.add(f"preflight.{rel}", False, f"FATAL: AGENTIC_WEB_VIOLATION — missing markers {missing}", "RED")
+            r.add(
+                f"preflight.{rel}",
+                False,
+                f"FATAL: AGENTIC_WEB_VIOLATION — missing markers {missing}",
+                "RED",
+            )
         else:
             r.add(f"preflight.{rel}", True, f"present ({len(body)}B)")
 
@@ -621,13 +644,21 @@ def cmd_preflight(_args: argparse.Namespace) -> Report:
     if ws.is_file() and idx.is_file():
         sha = hashlib.sha256(ws.read_bytes()).hexdigest()
         bound = sha in idx.read_text(encoding="utf-8", errors="replace")
-        r.add("preflight.integrity-binding", bound,
-              (f"sha256(world-state.json) [{sha[:12]}…] bound in /world/ footer"
-               if bound else "FATAL: AGENTIC_WEB_VIOLATION — /world/ footer hash does not bind world-state.json"),
-              "GREEN" if bound else "RED")
+        r.add(
+            "preflight.integrity-binding",
+            bound,
+            (
+                f"sha256(world-state.json) [{sha[:12]}…] bound in /world/ footer"
+                if bound
+                else "FATAL: AGENTIC_WEB_VIOLATION — /world/ footer hash does not bind world-state.json"
+            ),
+            "GREEN" if bound else "RED",
+        )
 
-    r.meta["agent_next"] = ("Deploy allowed only when preflight OK. Any RED = "
-                            "FATAL: AGENTIC_WEB_VIOLATION — fix source, never bypass.")
+    r.meta["agent_next"] = (
+        "Deploy allowed only when preflight OK. Any RED = "
+        "FATAL: AGENTIC_WEB_VIOLATION — fix source, never bypass."
+    )
     return r
 
 

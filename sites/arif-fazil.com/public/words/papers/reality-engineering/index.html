@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reality Engineering for Governed Agent Systems — Arif Fazil</title>
+<meta name="description" content="A position paper defining Reality Engineering as the design of interfaces that force machine claims and actions into auditable contact with evidence, authority, and observed consequences. Running case: arifOS, a classical model-agnostic constitutional runtime. Four falsifiable hypotheses and a preregisterable evaluation protocol." />
+<meta name="author" content="Muhammad Arif bin Fazil" />
+<meta name="keywords" content="AI agents, governance kernel, agent operating system, evidence provenance, capability security, runtime assurance, human oversight, falsifiability" />
+<link rel="canonical" href="https://arif-fazil.com/words/papers/reality-engineering/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Reality Engineering for Governed Agent Systems" />
+<meta property="og:description" content="A Constitutional Runtime Architecture and Falsifiable Research Agenda — position paper, 19 October 2026." />
+<meta property="og:url" content="https://arif-fazil.com/words/papers/reality-engineering/" />
+<style>
+:root{
+  --bg:#0d1117; --bg-soft:#111820; --panel:#161b22; --line:#21262d;
+  --ink:#c9d1d9; --ink-strong:#e6edf3; --meta:#8b949e; --dim:#6e7681;
+  --blue:#58a6ff; --gold:#ffd700;
+  --serif:Georgia,"Times New Roman",Times,serif;
+  --mono:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.68;}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{border-bottom:1px solid var(--line);background:#0a0e14}
+.topbar .in{max-width:820px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--serif);font-style:italic;font-size:22px;color:#fff;letter-spacing:.02em}
+.brand:hover{text-decoration:none;opacity:.85}
+.topnav{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.topnav a{color:var(--dim);margin-left:16px}
+.topnav a:hover{color:var(--gold)}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px 80px}
+.crumbs{font-family:var(--mono);font-size:12px;color:var(--dim);padding:26px 0 0}
+.crumbs a{color:var(--dim)}
+.crumbs a:hover{color:var(--blue)}
+header.doc{padding:18px 0 0}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+h1.title{font-family:var(--serif);font-weight:400;font-size:clamp(1.75rem,4.4vw,2.6rem);line-height:1.18;color:var(--ink-strong);margin:0 0 12px;letter-spacing:-.01em}
+.subtitle{font-family:var(--serif);font-style:italic;font-size:clamp(1.02rem,2vw,1.2rem);color:var(--meta);margin:0 0 22px;line-height:1.45}
+hr.rule{border:0;height:1px;background:linear-gradient(90deg,var(--gold),rgba(255,215,0,0) 62%);margin:26px 0 30px}
+.abstract{background:var(--bg-soft);border-left:3px solid var(--gold);padding:20px 24px;margin:0 0 16px;font-size:16.5px;line-height:1.66;color:#b9c2cc}
+.abstract b{color:var(--ink-strong);font-weight:600}
+.keywords{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin:0 0 8px;line-height:1.9}
+.keywords span{color:var(--meta)}
+h2{font-family:var(--serif);font-weight:400;font-size:1.42rem;color:var(--ink-strong);margin:52px 0 6px;padding-top:14px;border-top:1px solid var(--line);letter-spacing:-.005em}
+h2 .num{font-family:var(--mono);font-size:.72em;color:var(--gold);letter-spacing:.08em;margin-right:12px}
+h3{font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:34px 0 10px;font-weight:600}
+p{margin:0 0 17px}
+ul,ol{margin:0 0 17px;padding-left:26px}
+li{margin-bottom:9px}
+li::marker{color:var(--gold)}
+b,strong{color:var(--ink-strong);font-weight:600}
+em{color:#dbe4ee}
+.defbox{border:1px solid var(--line);background:var(--panel);padding:18px 22px;margin:0 0 20px}
+.defbox .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+.eq{background:var(--panel);border:1px solid var(--line);padding:20px 22px;margin:22px 0;font-family:var(--mono);font-size:13.5px;line-height:2;color:#dbe4ee;overflow-x:auto}
+.eq .tag{float:right;color:var(--dim)}
+.eq i{font-style:normal;color:var(--gold)}
+figure{margin:30px 0 34px}
+figure img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:3px;padding:10px}
+figcaption{font-family:var(--mono);font-size:11.5px;line-height:1.75;color:var(--meta);margin-top:12px;padding-left:2px}
+figcaption b{color:var(--ink)}
+figure.wide{margin-left:-12px;margin-right:-12px}
+.tblwrap{overflow-x:auto;margin:26px 0 34px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-family:var(--mono);font-size:11.8px;line-height:1.62;background:var(--bg-soft)}
+caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--meta);padding:13px 14px;background:var(--panel);border-bottom:1px solid var(--line)}
+caption b{color:var(--ink)}
+th{text-align:left;color:var(--gold);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:10.5px;padding:11px 13px;border-bottom:1px solid var(--line);background:#131a22;vertical-align:bottom}
+td{padding:11px 13px;border-bottom:1px solid #1a212a;vertical-align:top;color:#b9c2cc}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink-strong)}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--meta);border:1px solid var(--line);border-radius:2px;padding:4px 9px;white-space:nowrap}
+.pill.gold{color:var(--gold);border-color:rgba(255,215,0,.35)}
+.dl{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#0d1117;background:var(--gold);padding:11px 18px;border-radius:2px;margin:6px 10px 6px 0}
+.dl:hover{text-decoration:none;opacity:.88}
+.dl.ghost{background:transparent;color:var(--gold);border:1px solid rgba(255,215,0,.45)}
+.refs{font-size:14.5px;line-height:1.7;padding-left:0;list-style:none;counter-reset:r}
+.refs li{counter-increment:r;margin-bottom:13px;padding-left:38px;position:relative;color:#b3bcc6}
+.refs li::before{content:"[" counter(r) "]";position:absolute;left:0;font-family:var(--mono);font-size:12px;color:var(--gold)}
+.refs a{word-break:break-word}
+.stat{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid #f85149;padding:18px 22px;margin:26px 0;font-size:16.5px}
+.stat .h{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#f85149;display:block;margin-bottom:9px}
+blockquote{margin:26px 0;padding:2px 0 2px 22px;border-left:2px solid var(--line);color:var(--meta);font-style:italic}
+footer.forged{border-top:1px solid var(--line);margin-top:70px;padding:38px 0 0;background:var(--bg)}
+.forge-brand-block{text-align:center;margin-bottom:30px}
+.forge-brand-label{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.forge-brand-name{font-family:var(--serif);font-style:italic;font-size:26px;color:#fff;margin-top:6px}
+.forge-brand-full{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:5px}
+.forge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;margin-bottom:30px}
+.forge-col h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.forge-col p{font-family:var(--mono);font-size:11.5px;line-height:1.85;color:var(--meta);margin:0}
+.forge-col strong{color:var(--ink);font-weight:600}
+.footer-action-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding:18px 0;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.footer-action-row a{color:var(--blue)}
+.manifesto{text-align:center;padding:26px 0 8px}
+.manifesto-line{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold)}
+.manifesto-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:8px}
+.site-footer{max-width:820px;margin:0 auto;padding:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--dim);text-align:center}
+.site-footer a{color:var(--dim);margin:0 6px}
+.site-footer a:hover{color:var(--gold)}
+@media(max-width:640px){
+  body{font-size:16.5px}
+  .topnav{display:none}
+  .abstract{padding:16px 18px;font-size:15.5px}
+  table{font-size:11px}
+  th,td{padding:9px 10px}
+  figure.wide{margin-left:0;margin-right:0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="in">
+  <a class="brand" href="/">ARIF FAZIL</a>
+  <nav class="topnav"><a href="/words/">Words</a><a href="/earth/">Earth</a><a href="/world/">World</a><a href="/work/">Work</a></nav>
+</div></div>
+
+<div class="wrap">
+
+<nav class="crumbs"><a href="/">arif-fazil.com</a> / <a href="/words/">words</a> / <a href="/words/papers/">papers</a></nav>
+
+<header class="doc">
+  <p class="kicker">Position Paper · Falsifiable Research Agenda · 19 October 2026</p>
+  <h1 class="title">Reality Engineering for Governed Agent Systems</h1>
+  <p class="subtitle">A Constitutional Runtime Architecture and Falsifiable Research Agenda</p>
+  <div class="pillrow">
+    <span class="pill gold">V0.9 DRAFT</span>
+    <span class="pill">11 SECTIONS</span>
+    <span class="pill">2 APPENDICES</span>
+    <span class="pill">16 REFERENCES</span>
+    <span class="pill">POSITION PAPER</span>
+  </div>
+  <hr class="rule" />
+</header>
+
+<div class="abstract">
+  <b>Abstract.</b> Agent systems can improve their prompts, tools, memory, and control code while remaining unable to determine whether their claims correspond to the external world or whether they are authorized to act. This position paper defines <b>Reality Engineering</b> as the design of interfaces that force machine claims and actions into auditable contact with evidence, authority, and observed consequences. It presents arifOS as a running case: a classical, model-agnostic constitutional runtime that places non-compensatory policy gates around agent execution. The architecture separates proposer, judge, executor, and witness roles; assigns every task an evidence floor; records predictions before outcomes; and retains falsifications rather than overwriting them. The paper does not claim artificial general intelligence (AGI), artificial superintelligence (ASI), quantum computation, or a physical law. Its defensible classification is an agentic governance operating layer: potentially useful for governing future AGI/ASI systems, but neither the intelligence substrate nor evidence that such systems have been achieved. Four falsifiable hypotheses and a preregisterable evaluation protocol are specified. A 19 October 2026 internal audit snapshot is disclosed as engineering telemetry, not efficacy evidence: 131 prediction records, 44 marked verified, 2 marked unverifiable, and 85 lacking either status in the exported aggregate. The central proposition is that increasingly self-modifying agents require a correctness and authority layer that they cannot silently rewrite.
+  <p class="keywords">Keywords: <span>AI agents · governance kernel · agent operating system · evidence provenance · capability security · runtime assurance · human oversight · falsifiability</span></p>
+</div>
+
+<p><a class="dl" href="/words/papers/reality-engineering/reality-engineering-2026-10-19.pdf">Download PDF (9 pages)</a><a class="dl ghost" href="https://github.com/ariffazil/arifOS" target="_blank" rel="noreferrer">Running system ↗</a></p>
+
+<h2><span class="num">1</span>Introduction</h2>
+
+<p>The performance of an agent depends on more than model weights. A harness determines which context is shown, which tools are available, how failures are retried, what is remembered, and how outputs are checked. Recent systems optimize this surrounding code automatically. Self-Harness reports gains from a fixed model revising a bounded harness through weakness mining, proposal, and regression validation <a href="#r1">[1]</a>. Meta-Harness treats harness code as a search object and gives a proposer access to prior source, scores, and execution traces <a href="#r2">[2]</a>. Matched-budget evaluation, however, shows that harness evolution can fail to outperform simpler test-time scaling and may generalize weakly to held-out tasks <a href="#r3">[3]</a>. These results expose a control problem: when the machinery that produces behavior can rewrite itself, what remains outside the optimization loop and who is authorized to change it?</p>
+
+<p>This paper proposes a narrow answer: engineer explicit contact surfaces between agent claims and independently inspectable evidence, between proposed actions and authority, and between predictions and later outcomes. The term Reality Engineering has prior use in advertising research, where it described the blurring of commercial signification and popular culture <a href="#r4">[4]</a>. No priority over the phrase is claimed. The present contribution is a distinct operational definition for agent infrastructure.</p>
+
+<p>The paper makes three contributions. First, it gives a typed architecture for claims, evidence, authority, execution, outcomes, and falsification. Second, it resolves several apparent contradictions in the arifOS design by separating scientific, architectural, and metaphorical statements. Third, it converts the strongest proposed benefits into a falsifiable evaluation protocol rather than reporting unperformed experiments as results.</p>
+
+<p><b>Scope.</b> arifOS is analyzed as a running design and prototype, not as proof of a universal theory. The work is a position and systems-architecture paper. It reports a descriptive store snapshot but no controlled efficacy result, no independent replication, and no quantum computation.</p>
+
+<h2><span class="num">2</span>Operational Definition</h2>
+
+<div class="defbox">
+  <span class="lbl">Definition 1 — Reality Engineering</span>
+  Reality Engineering is the design and maintenance of mechanisms by which an agent's claims and proposed actions are (i) bounded by their available evidence, (ii) checked against delegated authority before external effects, and (iii) corrected when witnessed outcomes contradict prior predictions.
+</div>
+
+<p>The definition distinguishes six objects:</p>
+<ol>
+  <li><b>Experience</b>: what an actor or observer underwent.</li>
+  <li><b>Evidence</b>: a trace, measurement, document, or observation with provenance.</li>
+  <li><b>Interpretation</b>: meaning assigned to evidence.</li>
+  <li><b>Model</b>: a compressed account used to explain or predict.</li>
+  <li><b>Prediction</b>: a time-stamped claim about an outcome not yet observed.</li>
+  <li><b>Authority</b>: a revocable permission to mutate a specified resource under stated constraints.</li>
+</ol>
+
+<p>Reality is not equated with the evidence store. Evidence is a fallible access channel. Consequently, "reality overrides the model" is implemented as a correction rule: sufficiently qualified counterevidence changes the system's warranted claim status; it is not a claim of direct, infallible access to reality.</p>
+
+<h2><span class="num">3</span>System Classification</h2>
+
+<p>The classification question is settled by necessary properties, not branding. Table 1 applies operational tests.</p>
+
+<div class="tblwrap">
+<table>
+<caption><b>Table 1.</b> Classification of arifOS under explicit criteria.</caption>
+<thead><tr><th style="width:20%">Candidate label</th><th>Required evidence and observed fit</th><th style="width:19%">Verdict</th></tr></thead>
+<tbody>
+<tr><td>Quantum intelligence</td><td>Computation using controlled quantum states, quantum gates or measurements, with a specified quantum algorithm and hardware or simulator interface. arifOS currently supplies none of these. Quantum language in prior design texts is analogical.</td><td>Void as a technical claim</td></tr>
+<tr><td>AGI</td><td>Broad, transferable task competence across domains, validated by accepted tests and real-world performance. The kernel does not itself generate general competence.</td><td>Void as an achieved capability</td></tr>
+<tr><td>ASI</td><td>General competence exceeding humans across relevant cognitive domains, established by extraordinary evidence. No such evidence is presented.</td><td>Void</td></tr>
+<tr><td>AGI/ASI substrate</td><td>An execution or learning substrate that supplies the mechanisms from which general intelligence emerges. arifOS can wrap models but does not supply model weights, learning dynamics, or cognition.</td><td>Hold / unsupported</td></tr>
+<tr><td>AGI/ASI governance substrate</td><td>A model-agnostic layer for policy gates, authority, evidence, receipts, and human veto around capable agents. This matches the specified architecture, subject to implementation tests.</td><td>Plausible / partial</td></tr>
+<tr><td>Agentic OS</td><td>Runtime abstractions for agent identity, tasks, tools, memory, authority, audit, and lifecycle. arifOS implements or specifies several, but is not a hardware OS and lacks evidence of production maturity.</td><td>Claim as design; partial as runtime</td></tr>
+<tr><td>OS for civilization</td><td>Multi-institutional standards, legitimacy, interoperability, adoption, and accountable operation at societal scale. These conditions are not established.</td><td>Hypothesis / research direction</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The scientifically conservative label is therefore <b>constitutional agent runtime</b> or <b>agentic governance OS</b>. "For civilization" states an intended deployment horizon, not a demonstrated property.</p>
+
+<p>"Quantum intelligence" should not appear in the title, abstract, or claims unless a future implementation performs a specified computation through quantum information processing and reports comparative evidence.</p>
+
+<h2><span class="num">4</span>Reality-Contact Architecture</h2>
+
+<p>Figure 1 shows the architecture as a sequence of typed gates. The language model is a proposer. It does not acquire authority from eloquence, confidence, benchmark score, access to a tool schema, or possession of evidence.</p>
+
+<figure class="wide">
+  <img src="/words/papers/reality-engineering/fig1-reality-contact-stack.png" alt="Reality-contact stack: human intent and task contract, evidence floor, model/agent proposal, constitutional judge, authority gate, executor external effect, witnessed outcome and receipt, append-only vault and claim ledger, correction/hold/falsification, with a dashed next-lawful-iteration edge back to the proposer." loading="lazy" />
+  <figcaption><b>Figure 1.</b> Reality-contact stack. Solid arrows are forward transitions; the dashed arrow is evidence-bearing correction. A failed gate produces no external mutation.</figcaption>
+</figure>
+
+<h3>4.1 Four separated powers</h3>
+<p>The architecture separates four functions:</p>
+<ul>
+  <li><b>Proposer (Reflex)</b>: generates candidate claims or actions.</li>
+  <li><b>Judge</b>: evaluates policy, evidence class, reversibility, and required authorization.</li>
+  <li><b>Executor</b>: performs an allowed effect through constrained tools.</li>
+  <li><b>Witness</b>: records what was requested, authorized, executed, and observed.</li>
+</ul>
+<p>No single component should propose, authorize, execute, and certify the same consequential action. Separation does not guarantee truth: components may share a model family, data, or operator and therefore fail correlatively. It creates inspectable boundaries and permits stronger independence where risk warrants it.</p>
+
+<h3>4.2 Non-compensatory gates</h3>
+<p>A weighted score can conceal a catastrophic failure: excellent usefulness can numerically offset absent authority. arifOS therefore applies hard vetoes before any soft aggregation. Let a proposed transition be <i>τ</i>, hard predicates be <i>h<sub>i</sub>(τ) ∈ {0, 1}</i>, and soft dimensions be <i>z<sub>j</sub>(τ) ∈ (0, 1]</i>. The transition score is defined only when every hard predicate passes:</p>
+
+<div class="eq"><span class="tag">(1)</span>
+D(τ) = &nbsp; <span style="color:#f0f6fc">( ∏<sub>j=1</sub><sup>m</sup> z<sub>j</sub>(τ)<sup>w<sub>j</sub></sup> )<sup>1 / ∑<sub>j</sub> w<sub>j</sub></sup></span> , &nbsp; if &nbsp; ∏<sub>i</sub> h<sub>i</sub>(τ) = 1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#f85149">⊥</span> , &nbsp; otherwise.
+</div>
+
+<p>The geometric mean is retained as a design choice for soft dimensions because it penalizes low components and is scale-symmetric under the stated normalization. No uniqueness theorem is claimed here: such a theorem requires explicit axioms and proof. The previously used "Grand Equation" is therefore demoted from scientific law to configurable governance functional.</p>
+
+<h3>4.3 Verdict semantics</h3>
+<p>The runtime uses a restrictive lattice rather than a scalar approval probability:</p>
+<div class="eq">Void ≺ 888-Hold ≺ Hold ≺ Sabar ≺ Seal</div>
+<p><b>Void</b> blocks a prohibited transition. <b>888-Hold</b> requires explicit human confirmation for irreversible or high-impact action. <b>Hold</b> pauses for missing evidence or authority. <b>Sabar</b> permits continued bounded investigation without external commitment. <b>Seal</b> authorizes only the scoped transition recorded in the receipt. A verdict is not a claim that the output is true; it states the transition's governance status.</p>
+
+<h3>4.4 Evidence layers</h3>
+<p>Each task declares a required evidence floor and a current evidence layer. Figure 2 prevents inferred text from silently becoming verified state.</p>
+
+<figure>
+  <img src="/words/papers/reality-engineering/fig2-evidence-ladder.png" alt="Evidence ladder: Ground-truth record, verified state, cached state, inferred — with an upward arrow labelled stronger warrant, not metaphysical certainty." loading="lazy" />
+  <figcaption><b>Figure 2.</b> Evidence ladder. The top layer is an institutional record with chain integrity, not reality itself.</figcaption>
+</figure>
+
+<h3>4.5 Reality Graph and temporal loop</h3>
+<p>The Reality Graph is a typed, versioned graph over identity, relationship, authority, consequence, and observed-world records. Claims may have <i>falsified-by</i> and <i>awaiting-witness</i> edges. Falsified claims remain addressable; deletion would erase learning and make calibration unverifiable. Authority edges are checked before mutation, not appended afterward as decorative audit metadata.</p>
+<p>A temporal service freezes a prediction before its outcome window, then binds later observations to that prediction. The minimal record is</p>
+<div class="eq"><span class="tag">(2)</span>
+R = ⟨ id, t<sub>p</sub>, C, E<sub>p</sub>, W, t<sub>o</sub>, O, Q, V ⟩
+</div>
+<p>where <i>t<sub>p</sub></i> is prediction time, <i>C</i> the claim, <i>E<sub>p</sub></i> evidence available at prediction time, <i>W</i> the outcome window, <i>t<sub>o</sub></i> observation time, <i>O</i> the observation, <i>Q</i> witness qualifications, and <i>V</i> the adjudicated result. Changes create successor records; they do not rewrite <i>R</i>.</p>
+
+<h2><span class="num">5</span>Relation to Prior Work</h2>
+
+<p>The contribution is not a claim that governance, evaluation, provenance, or capability security is new. It is a synthesis that places them in a single pre-commit and post-outcome loop. Table 2 distinguishes nearby systems.</p>
+
+<div class="tblwrap">
+<table>
+<caption><b>Table 2.</b> Selected 2026 systems and the boundary addressed by this paper. Numbers are author-reported and not directly comparable across benchmarks.</caption>
+<thead><tr><th style="width:16%">Work</th><th style="width:29%">Reported contribution</th><th style="width:27%">Evidence reported by source</th><th>Remaining boundary</th></tr></thead>
+<tbody>
+<tr><td>Self-Harness [1]</td><td>Fixed models iteratively modify bounded harness surfaces</td><td>Improvement on all nine model–benchmark combinations; up to 132% relative gain</td><td>Evaluator and task split define "better"; external-world correctness remains separate</td></tr>
+<tr><td>Meta-Harness [2]</td><td>Proposer searches code using prior sources, scores, and traces</td><td>7.7-point gain in online classification with 4× fewer context tokens</td><td>Search objective and authority remain externally supplied</td></tr>
+<tr><td>Rethinking Harness Evaluation [3]</td><td>Matched-budget baselines and held-out transfer</td><td>No consistent Terminal-Bench advantage over simpler scaling; stronger results in adaptive games</td><td>Shows why optimization receipts do not themselves establish generalization</td></tr>
+<tr><td>Agent libOS [5]</td><td>Capability-controlled runtime; visible affordance does not imply resource authority</td><td>27 deterministic tasks; all modelled unauthorized effects prevented; 7.0% conservative denial of allowed attempts</td><td>Deterministic artifact does not establish open-world semantic correctness</td></tr>
+<tr><td>AgentEval [6]</td><td>Contract-bound assessment record across stateful execution</td><td>Real tool-world evaluation over permission, transaction, and clarification families</td><td>Assessment validity still depends on contracts and witness quality</td></tr>
+<tr><td>EIO-Agents [7]</td><td>Typed evidence semantics and portable evaluation records</td><td>Open specification with evidence contracts, claims, witnesses, and proof status</td><td>Semantic interoperability does not grant action authority</td></tr>
+<tr><td>Agent OS [8]</td><td>Derives candidate abstractions from classical and cloud operating systems</td><td>Position paper arguing for stable, portable agent abstractions</td><td>Portability semantics and constitutional legitimacy are distinct layers</td></tr>
+<tr><td>Agent memory survey [9]</td><td>Taxonomy of internal/external substrate, cognitive mechanism, and subject</td><td>Survey accepted by TMLR with survey certification</td><td>Memory utility does not make remembered content true</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="num">6</span>Disclosed Internal Data</h2>
+
+<p>The original draft mentioned an earlier circulation of "27 correct, 6 wrong, 4 mixed" outcomes. A 19 October 2026 aggregate probe instead returned 131 prediction records, 44 marked verified, and 2 marked unverifiable. The circulated tuple does not reconcile with that aggregate and is withdrawn as an efficacy result.</p>
+
+<p>The residual category is computed only as 131 − 44 − 2 = 85. It may combine pending, unevaluated, differently labelled, or malformed records; without the row-level export it must not be interpreted as incorrect. Figure 3 reports counts, not accuracy. The included CSV records the provenance and restriction.</p>
+
+<figure>
+  <img src="/words/papers/reality-engineering/fig3-chron-snapshot.png" alt="Bar chart: total 131 records, 44 marked verified, 2 marked unverifiable, and 85 residual records with status composition unknown." loading="lazy" />
+  <figcaption><b>Figure 3.</b> Internal CHRON aggregate snapshot, 19 October 2026. This is operational telemetry from a single system, not an independently verified performance result.</figcaption>
+</figure>
+
+<div class="tblwrap">
+<table>
+<caption><b>Table 3.</b> Permitted and prohibited interpretations of the snapshot.</caption>
+<thead><tr><th style="width:18%">Status</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td>Permitted</td><td>A store probe reported the three aggregate values at one time; 44/131 equals 33.6% of records marked verified, but this is a workflow coverage ratio, not predictive accuracy.</td></tr>
+<tr><td>Prohibited</td><td>"44 correct out of 131," "98.5% valid," or any other accuracy/reliability claim without record-level denominators, adjudication rules, and independent witnesses.</td></tr>
+<tr><td>Required next artifact</td><td>Immutable row-level export containing prediction time, outcome window, evidence-at-prediction, observation, witness, adjudication rule, status, and content hash.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="num">7</span>Paradoxes and Dispositions</h2>
+
+<p>The following are not all logical paradoxes. Most are design tensions produced by collapsing different layers. Their dispositions are explicit.</p>
+
+<div class="tblwrap">
+<table>
+<caption><b>Table 4.</b> Resolution register. "Resolved" means the architecture removes a contradiction; it does not mean empirical success has been shown.</caption>
+<thead><tr><th style="width:18%">Tension</th><th style="width:24%">Failure from conflation</th><th>Disposition</th><th style="width:14%">Status</th></tr></thead>
+<tbody>
+<tr><td>Reality vs. evidence</td><td>Treating a stored observation as reality itself</td><td>Evidence is a provenance-bearing, defeasible access channel; contradictory qualified evidence triggers re-adjudication</td><td>Conceptually resolved</td></tr>
+<tr><td>Self-improvement vs. self-governance</td><td>An optimizer rewrites its own acceptance criteria</td><td>Methods may evolve; constitutional root, judge policy, identity, and append-only history require separately authorized change</td><td>Architecturally resolved; tests needed</td></tr>
+<tr><td>Capability vs. authority</td><td>A visible or executable tool becomes permission</td><td>Resource authority is checked at the effect boundary through scoped, revocable grants</td><td>Architecturally resolved</td></tr>
+<tr><td>Author vs. certifier</td><td>A system declares its own output valid</td><td>Separate processes and records; disclose shared-model or shared-data dependence; require external witness for high-risk claims</td><td>Mitigated, never absolute</td></tr>
+<tr><td>Held-out evaluation vs. adaptive search</td><td>Repeated optimization leaks the test set</td><td>Three partitions: development, promotion, and private audit; precommit budgets and rotate private audit only after sealing a release</td><td>Protocol resolved; leakage remains a risk</td></tr>
+<tr><td>Memory vs. truth</td><td>Recalled text silently becomes verified state</td><td>Memory is cached claim material with freshness and provenance, never self-authenticating truth</td><td>Resolved by typing</td></tr>
+<tr><td>Geometric score vs. hard rights</td><td>High utility offsets absent consent or safety</td><td>Apply hard vetoes before Equation 1; compute soft score only on lawful candidates</td><td>Resolved</td></tr>
+<tr><td>Human sovereignty vs. attention</td><td>Every decision waits for one person</td><td>Delegate reversible low-risk scopes, batch reviews, rate-limit escalation, and reserve 888-HOLD for irreversible or high-impact actions</td><td>Open systems problem</td></tr>
+<tr><td>Transparency vs. attack surface</td><td>Full disclosure reveals operational secrets</td><td>Publish invariants, schemas, and testable semantics; protect credentials, live policies, and exploitable details under least privilege</td><td>Risk-tiered resolution</td></tr>
+<tr><td>Classical code vs. quantum language</td><td>Metaphors are mistaken for quantum computation</td><td>Remove physical claims; use "quantum-inspired" only when a mapped algorithmic contribution is specified, and never as evidence of quantum advantage</td><td>Resolved by rejection</td></tr>
+<tr><td>Governance layer vs. AGI</td><td>Safety architecture is marketed as intelligence</td><td>Treat model capability and governance as orthogonal axes; arifOS can govern an AGI without being one</td><td>Resolved by classification</td></tr>
+<tr><td>Civilizational intent vs. evidence</td><td>Aspirational scale is reported as achieved scope</td><td>Treat civilizational deployment as a research horizon requiring multi-institutional adoption and legitimacy evidence</td><td>Open</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>No finite architecture resolves the philosophical problem of access to reality, correlated failures among supposedly independent judges, or the legitimacy of governance at civilizational scale. The correct resolution is not rhetorical closure but typed uncertainty, precommitted tests, and retained counterevidence.</p>
+
+<h2><span class="num">8</span>Falsifiable Research Programme</h2>
+
+<p>Four hypotheses translate the architecture into experiments.</p>
+
+<p><b>H1: Silent-drift reduction.</b> On matched long-horizon tasks with injected state changes, a stack with frozen predictions, outcome binding, and retained falsifications will have a lower rate of false states that persist unchallenged than a score-only agent stack.</p>
+
+<p><b>H2: Recovery latency.</b> After injection of a false belief into memory, a provenance-typed stack will require fewer action steps and less wall-clock time to restore the correct operational state than an untyped conversational-memory baseline.</p>
+
+<p><b>H3: Authority containment.</b> Under adversarial tool descriptions and prompt injection, a pre-commit capability gate will produce fewer unauthorized external effects than wrapper-only tool controls, while false denials are separately reported.</p>
+
+<p><b>H4: Goodhart displacement.</b> Evidence floors will reduce unsupported high-confidence claims but may increase evidence fabrication attempts. Confirmation requires a shift in the measured failure distribution, not merely a higher aggregate score.</p>
+
+<h3>8.1 Preregisterable protocol</h3>
+<p>A minimum controlled study should use multiple model families, blinded adjudication, and at least three seeds per condition. Tasks should include software environments, structured enterprise workflows, and one non-digital domain with delayed observations. Conditions are: (A) ordinary harness, (B) harness with post-hoc logging, (C) pre-commit authority and evidence gates, and (D) full prediction–outcome loop. All conditions receive matched inference, tool, and human-review budgets.</p>
+<p>Primary endpoints are silent-drift rate, unauthorized-effect rate, false-denial rate, median correction latency, calibration error, and receipt completeness. Secondary endpoints are task success, cost, latency, escalation burden, and evidence-fabrication attempts. Promotion data and the final audit set must be isolated; a candidate is evaluated once on the private audit set after design freeze. The protocol should publish schemas, hashes, exclusions, and negative results.</p>
+
+<figure class="wide">
+  <img src="/words/papers/reality-engineering/fig4-evaluation-flow.png" alt="Evaluation flow: preregister hypotheses, budgets, metrics; freeze splits development/promotion/audit; run matched conditions A–D; blind adjudication and witness qualification; one-shot audit then seal receipts; publish failures, exclusions, uncertainty." loading="lazy" />
+  <figcaption><b>Figure 4.</b> Evaluation flow designed to separate system development from the evidence used to claim generalization.</figcaption>
+</figure>
+
+<h2><span class="num">9</span>Threats to Validity</h2>
+
+<p>The architecture is derived from one project and reflects its terminology. Independent implementations may expose hidden coupling or unnecessary mechanisms. The telemetry snapshot is not independently verified and lacks row-level evidence in this submission. The proposed experiments have not been run. A human veto can fail through overload, capture, misunderstanding, or coercion; therefore "human in the loop" is not by itself a safety proof. Cryptographic integrity can show that a record was not changed after sealing, but cannot show that the original observation was accurate. Finally, formal policy checks prove only properties encoded in the policy and implementation, not every socially relevant value.</p>
+
+<h2><span class="num">10</span>Implementation and Reproducibility</h2>
+
+<p>A reproducible release should include: (i) machine-readable task and receipt schemas; (ii) policy fixtures for every hard gate; (iii) property-based tests proving that failed authority checks cannot reach executor primitives; (iv) an append-only prediction export with hashes; (v) a claim ledger mapping every paper statement to code, test, observation, derivation, or hypothesis; and (vi) a public threat model. Code and data links must resolve before submission.</p>
+
+<p>The companion package for this manuscript includes the TeX source and two small CSV files: the disclosed aggregate snapshot and a claim-status ledger. These files document what the paper can currently support; they do not substitute for the row-level experimental artifact required by the protocol.</p>
+
+<h2><span class="num">11</span>Conclusion</h2>
+
+<p>The defensible identity of arifOS is neither quantum intelligence nor demonstrated AGI/ASI. It is a classical constitutional runtime for governing agent claims and actions, with a plausible role as an AGI/ASI governance substrate if its enforcement properties survive independent testing. Its civilizational scope remains an ambition requiring institutional legitimacy, interoperability, and deployment evidence.</p>
+
+<p>Reality Engineering names the narrower engineering problem: make claims answerable to evidence, actions answerable to authority, and predictions answerable to outcomes. The scientific contribution will stand or fall not on the vocabulary, equations, or manifesto, but on preregistered comparisons, independently inspectable receipts, and the system's willingness to preserve evidence that falsifies it.</p>
+
+<h3>Ethics and Governance Statement</h3>
+<p>The architecture reserves irreversible or high-impact actions for explicit human authorization and treats human dignity, lawful authority, and reversibility as hard constraints. This does not transfer responsibility from deployers to software. Institutions adopting such a kernel remain responsible for lawful policy, representative governance, security, monitoring, and remedies for affected persons.</p>
+
+<h3>Data Availability</h3>
+<p>The aggregate CSV included with this manuscript contains no personal data. A row-level CHRON export was not available for this revision and is therefore not claimed. The cited external results are available in their respective papers and repositories.</p>
+
+<h3>Author Contributions</h3>
+<p>Muhammad Arif bin Fazil: conceptualization, system architecture, methodology, software direction, investigation, and writing. AI systems assisted with drafting, literature retrieval, consistency checking, and typesetting under human direction; they are not authors and hold no decision authority.</p>
+
+<h2><span class="num">R</span>References</h2>
+<ol class="refs">
+<li id="r1">H. Zhang, S. Zhang, K. Li, C. Zhang, Y. Chen, Y. Zhang, L. Bai, and S. Hu, "Self-Harness: Harnesses That Improve Themselves," arXiv preprint arXiv:2606.09498, 2026. <a href="https://arxiv.org/abs/2606.09498" target="_blank" rel="noreferrer">arxiv.org/abs/2606.09498</a></li>
+<li id="r2">Y. Lee, R. Nair, Q. Zhang, K. Lee, O. Khattab, and C. Finn, "Meta-Harness: End-to-End Optimization of Model Harnesses," arXiv preprint arXiv:2603.28052, 2026. <a href="https://arxiv.org/abs/2603.28052" target="_blank" rel="noreferrer">arxiv.org/abs/2603.28052</a></li>
+<li id="r3">Y. Wang, H. Zhu, Z. Hu, Y. Yuan, Z. Chen, S. Senthil, H. Hajishirzi, Y. Tsvetkov, P. Dasigi, and T. Xiao, "Rethinking the Evaluation of Harness Evolution for Agents," arXiv preprint arXiv:2607.12227, 2026. <a href="https://arxiv.org/abs/2607.12227" target="_blank" rel="noreferrer">arxiv.org/abs/2607.12227</a></li>
+<li id="r4">M. R. Solomon and B. G. Englis, "Reality Engineering: Blurring the Boundaries between Commercial Signification and Popular Culture," <i>Journal of Current Issues &amp; Research in Advertising</i>, vol. 16, no. 2, pp. 1–17, 1994. doi:10.1080/10641734.1994.10505015</li>
+<li id="r5">Y. Zhang, "Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents," arXiv preprint arXiv:2606.03895, 2026. <a href="https://arxiv.org/abs/2606.03895" target="_blank" rel="noreferrer">arxiv.org/abs/2606.03895</a></li>
+<li id="r6">R. Gao, "AgentEval: Evidence-Bounded Assessment of Stateful Agents," arXiv preprint arXiv:2610.21177, 2026. <a href="https://arxiv.org/abs/2610.21177" target="_blank" rel="noreferrer">arxiv.org/abs/2610.21177</a></li>
+<li id="r7">F. Bousetouane, "EIO-Agents: The Missing Semantic Layer for AI Agent Evaluation," arXiv preprint arXiv:2610.07675, 2026. <a href="https://arxiv.org/abs/2610.07675" target="_blank" rel="noreferrer">arxiv.org/abs/2610.07675</a></li>
+<li id="r8">G. Steinder and H. Franke, "Towards an Agent Operating System—Lessons from Classical and Cloud OS," arXiv preprint arXiv:2607.25076, 2026. <a href="https://arxiv.org/abs/2607.25076" target="_blank" rel="noreferrer">arxiv.org/abs/2607.25076</a></li>
+<li id="r9">W.-C. Huang et al., "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents," <i>Transactions on Machine Learning Research</i>, 2026. <a href="https://arxiv.org/abs/2602.06052" target="_blank" rel="noreferrer">arxiv.org/abs/2602.06052</a></li>
+<li id="r10">J. H. Saltzer and M. D. Schroeder, "The Protection of Information in Computer Systems," <i>Proceedings of the IEEE</i>, vol. 63, no. 9, pp. 1278–1308, 1975.</li>
+<li id="r11">B. W. Lampson, "Protection," <i>ACM SIGOPS Operating Systems Review</i>, vol. 8, no. 1, pp. 18–24, 1974.</li>
+<li id="r12">C. A. E. Goodhart, "Problems of Monetary Management: The U.K. Experience," in <i>Monetary Theory and Practice</i>, Macmillan, 1984.</li>
+<li id="r13">G. W. Brier, "Verification of Forecasts Expressed in Terms of Probability," <i>Monthly Weather Review</i>, vol. 78, no. 1, pp. 1–3, 1950.</li>
+<li id="r14">National Institute of Standards and Technology, <i>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</i>, NIST AI 100-1, 2023. doi:10.6028/NIST.AI.100-1</li>
+<li id="r15">National Institute of Standards and Technology, <i>Secure Software Development Framework (SSDF) Version 1.1</i>, NIST SP 800-218, 2022. doi:10.6028/NIST.SP.800-218</li>
+<li id="r16">J. Biamonte et al., "Quantum Machine Learning," <i>Nature</i>, vol. 549, pp. 195–202, 2017. doi:10.1038/nature23474</li>
+</ol>
+
+<h2><span class="num">A</span>Claim Status Ledger</h2>
+
+<div class="tblwrap">
+<table>
+<caption><b>Appendix A.</b> Every public claim carries its status and the upgrade path that would raise it.</caption>
+<thead><tr><th style="width:38%">Claim</th><th style="width:19%">Status</th><th>Required upgrade path</th></tr></thead>
+<tbody>
+<tr><td>arifOS is a constitutional agent runtime</td><td>Claim as architecture</td><td>Public interfaces, test coverage, versioned releases, independent reproduction</td></tr>
+<tr><td>arifOS reduces silent drift</td><td>Hypothesis</td><td>Controlled H1 experiment</td></tr>
+<tr><td>arifOS prevents unauthorized effects</td><td>Hypothesis for open-world use</td><td>Property tests, adversarial evaluation, independent security audit</td></tr>
+<tr><td>arifOS is quantum intelligence</td><td>Void</td><td>New quantum algorithm and execution evidence would define a different claim</td></tr>
+<tr><td>arifOS is AGI/ASI</td><td>Void</td><td>Broad capability evidence; governance alone is insufficient</td></tr>
+<tr><td>arifOS can govern AGI/ASI</td><td>Plausible</td><td>Scale tests, threat model, model-independent enforcement, institutional evaluation</td></tr>
+<tr><td>arifOS is an OS for civilization</td><td>Hypothesis</td><td>Multi-institutional legitimacy, standards adoption, reliability and remedy evidence</td></tr>
+<tr><td>Reality Engineering improves correctability</td><td>Hypothesis</td><td>H1–H4 preregistered and independently replicated</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="num">B</span>Submission Checklist</h2>
+
+<p>The manuscript uses a named author, complete references, single-spaced 10-point text, one-inch margins, vector figures, and machine-readable text. Before arXiv upload, the author should verify all repository URLs, add an ORCID if desired, select the appropriate license, compile using arXiv's TeX Live environment, inspect the generated PDF, and remove unused files. The TeX source—not a TeX-generated PDF alone—should be uploaded with the included data files.</p>
+
+<blockquote>Cited works are external references; their views are not necessarily endorsed by the author.</blockquote>
+
+<p><a class="dl" href="/words/papers/reality-engineering/reality-engineering-2026-10-19.pdf">Download PDF (9 pages)</a><a class="dl ghost" href="/words/papers/">← All papers</a></p>
+
+</div><!-- /wrap -->
+
+<footer class="forged">
+  <div class="wrap">
+    <div class="forge-brand-block">
+      <div class="forge-brand-label">Forged by</div>
+      <div class="forge-brand-name">ARIF FAZIL</div>
+      <div class="forge-brand-full">Muhammad Arif bin Fazil</div>
+    </div>
+
+    <div class="forge-grid">
+      <div class="forge-col">
+        <h3>Identity</h3>
+        <p>
+          <strong>Muhammad Arif bin Fazil</strong><br />
+          <strong>Geoscientist · Architect, arifOS</strong><br />
+          Petronas Carigali<br />
+          UW–Madison '13<br />
+          <strong>Penang, Malaysia</strong>
+        </p>
+      </div>
+      <div class="forge-col">
+        <h3>Publication</h3>
+        <p>
+          Published: October 19, 2026<br />
+          Direct Publication<br />
+          <a href="/words/">/words/</a> context<br />
+          <strong>Draft v0.9 · not sealed</strong>
+        </p>
+        <div class="footer-chrome-pills pillrow">
+          <span class="pill">9 PAGES</span>
+          <span class="pill">POSITION PAPER</span>
+          <span class="pill gold">INT</span>
+        </div>
+      </div>
+      <div class="forge-col">
+        <h3>Epistemic Stance</h3>
+        <p>
+          Epistemic Tag: <strong>INT</strong> — architectural synthesis over a running system; empirical claims labelled hypothesis, void, or pending witness<br />
+          <strong>Companion:</strong> claim-status ledger (Appendix A)
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-action-row">
+      <span class="action-cta">⚒️ Published directly on <strong>arif-fazil.com</strong></span>
+      <a href="/words/papers/">← All papers · /words/papers/</a>
+    </div>
+
+    <div class="manifesto">
+      <div class="manifesto-line">Ditempa Bukan Diberi</div>
+      <div class="manifesto-sub">Forged, not given · ARIF FAZIL · arif-fazil.com · 2026</div>
+    </div>
+  </div>
+</footer>
+
+<div class="site-footer">
+  <a href="/">Home</a> · <a href="/earth/">Earth</a> · <a href="/words/">Words</a> · <a href="/world/">World</a> · <a href="/work/">Work</a>
+  <div style="margin-top:12px;">DITEMPA BUKAN DIBERI</div>
+</div>
+
+</body>
+</html>

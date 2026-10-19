@@ -42,7 +42,11 @@ import dajjalSudahTibaDanDiaNampakMacamEfficiency from './dajjal-sudah-tiba-dan-
 import kenapaSyarikatTuHantu from './kenapa-syarikat-tu-hantu';
 import realityOverEverything from './reality-over-everything';
 import yangXDiungkapTruthSembunyiDariVoid from './yang-x-diungkap-truth-sembunyi-dalam-void';
+import gentari15Benda from './gentari-15-benda-bangang';
+import gentariDossier from './gentari-dossier';
 export const makcikArticleModules: ArticleContent[] = [
+  gentari15Benda,
+  gentariDossier,
   yangXDiungkapTruthSembunyiDariVoid,
   realityOverEverything,
   dajjalSudahTibaDanDiaNampakMacamEfficiency,
@@ -1946,6 +1950,32 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     excerpt: 'Amanah PETRONAS dikhianati. Lembaga Pengarah diam. PETROS ambil gas Sarawak senyap-senyap. VSS/MSS ~5,000 pekerja. OSA bisu whistleblower.',
     tags: ['petronas', 'petros', 'searah', 'whistleblower', 'osa', 'vss', 'malaysia'],
     seal: '999',
+  },
+  {
+    slug: 'gentari-15-benda-bangang',
+    title: 'Gentari: 15 Benda Yang Tak Masuk Akal',
+    subtitle: 'Syarikat tenaga bersih milik PETRONAS. Aset RM17.63 bilion, hasil RM805 juta, rugi setiap tahun. Dan tahun ini ia menjual.',
+    date: '2026-10-19',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × PETRONAS × GENTARI × GOVERNANS × TENAGA',
+    language: 'ms',
+    excerpt: 'Gentari milik penuh PETRONAS, tapi ia tidak terbitkan penyata kewangannya sendiri, tiada lembaga bebas, dan kini menjual sebahagian asetnya tanpa mendedahkan harga. Angka 9.1 gigawatt yang selalu disebut ialah kapasiti dipasang campur dalam pembinaan, bukan kapasiti beroperasi. Malaysia dapat 257 megawatt daripada 9.1 gigawatt. KKR masuk sebagai pembiayaan dengan opsyen saham, bukan pemegang saham terus. Lima belas benda, semua ada dalam dokumen rasmi.',
+    tags: ['gentari', 'petronas', 'tenaga-boleh-diperbaharui', 'kkr', 'india', 'hidrogen', 'ev', 'governans', 'dividen', 'makcikgpt'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-10-19', last_updated: '2026-10-19' },
+  },
+  {
+    slug: 'gentari-dossier',
+    title: 'Gentari: Dossier Realiti',
+    subtitle: 'Apa dia, siapa punya, berapa besar, dan di mana ia boleh pecah.',
+    date: '2026-10-19',
+    domain: 'MAKCIKGPT × DOSSIER × PETRONAS × GENTARI × KEWANGAN × GOVERNANS',
+    language: 'ms',
+    excerpt: 'Dossier penuh Gentari: badan syarikat dan sejarah namanya, tiga tiang perniagaan, angka penyata SSM FY2024 sampai sen, taburan geografi, kronologi duit besar, struktur governans, enam titik risiko, dan sambungannya kepada aliran tunai PETRONAS 2026. Setiap angka membawa darjah keyakinannya sendiri.',
+    tags: ['gentari', 'petronas', 'dossier', 'ctos', 'ssm', 'kkr', 'hidrogen', 'governans', 'dividen', 'makcikgpt'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-10-19', last_updated: '2026-10-19' },
   },
 ];
 

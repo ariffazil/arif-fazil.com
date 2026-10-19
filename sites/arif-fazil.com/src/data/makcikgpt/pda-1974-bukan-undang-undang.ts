@@ -1,17 +1,12 @@
 import type { ArticleContent } from './types';
 
-const html = `<article class="makcik-article" lang="ms">
-
-<section class="article-section article-opener">
-  <blockquote style="border-left:4px solid #D9A62E;background:#11151C;padding:16px 20px;margin:16px 0 24px;font-style:italic;color:#EDEAE2;font-size:1.05em;line-height:1.6;">
+const html = `<blockquote style="border-left:4px solid #D9A62E;background:#11151C;padding:16px 20px;margin:16px 0 24px;font-style:italic;color:#EDEAE2;font-size:1.05em;line-height:1.6;">
     "Kalau hang baca undang-undang dan hang tak faham siapa punya hak — itu bukan undang-undang hang. Itu undang-undang orang lain atas diri hang."
   </blockquote>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">1. HOOK — KENAPA MAKCIK NAK BACA UNDANG-UNDUNG 52 TAHUN NI HARI INI</h2>
+<h2>1. HOOK — KENAPA MAKCIK NAK BACA UNDANG-UNDUNG 52 TAHUN NI HARI INI</h2>
   <p>Makcik, dua hari lepas Makcik publish satu artikel bertajuk <em>Bang Non Pergi Kuching</em>. Cerita pasal Anwar Ibrahim pergi Kuching malam Hari Malaysia 16 September 2026, cakap depan Sarawak: "There is no reason why this cannot be resolved" (Straits Times, 17 Sept 2026).</p>
   <p>Makcik dah tulis kenapa Makcik tak percaya. Makcik dah tulis pasal RM1.5 bilion geran khas yang dibayar tanpa agreement, tanpa formula, tanpa signature. Makcik dah tulis pasal bayaran status quo, bukan penyelesaian.</p>
   <p>Tapi satu benda Makcik tak tulis lagi. Satu benda yang jadi <strong>akar</strong> semua drama ni.</p>
@@ -21,12 +16,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Sekarang, Sarawak — tanah yang minyak tu keluar dari perut dia — nak tanya satu soalan ringkas: <strong>ini betul undang-undang ke, atau ni rampasan tanah zaman darurat?</strong></p>
   <p>Soalan tu sekarang ada kat Mahkamah Persekutuan. Hakim lima orang. Dua-dua pihak fail. Dan hujahnya ialah — hang baca Batang Tubuh dulu, baru boleh faham siapa rampas siapa.</p>
   <p>Sebab tu artikel ni. Makcik nak bawa hang baca <strong>PDA 1974 satu perenggan satu perenggan</strong>, dalam Bahasa Malaysia, dengan coffee-shop register. Bukan macam peguam explain. Macam makcik explain kat jiran sebelah kedai.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">2. DULU — SEJARAH RINGKAS BAGAIMANA PDA 1974 LAHIR</h2>
+<h2>2. DULU — SEJARAH RINGKAS BAGAIMANA PDA 1974 LAHIR</h2>
   <p>Tahun 1963. Malaya, Singapura, Sabah, Sarawak gabung jadi Malaysia. Perjanjian Malaysia 1963 (MA63) ditandatangani. Satu fasal penting: <strong>Senarai Negeri (State List) dalam Perlembagaan Persekutuan</strong> letakkan "minyak dan galian" sebagai hak tanah negeri (Federal Constitution, Ninth Schedule, List II).</p>
   <p>Makcik ulang: <strong>minyak di Sarawak, atas kertas, hak Sarawak</strong>. Bukan hak persekutuan. Bukan hak PM. Bukan hak PETRONAS. Hak Sarawak.</p>
   <p>Sampai tahun 1974 datang satu darurat.</p>
@@ -40,12 +33,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Sarawak tak tunggu lagi. Sarawak tubuhkan syarikat sendiri — <strong>Petroleum Sarawak Berhad (Petros)</strong> — pada 8 Disember 2017 (Companies Commission of Malaysia, SSM record). Lepas tu fail di mahkamah: PDA 1974 unconstitutional, rampas hak Sarawak.</p>
   <p>Sekarang dua-dua dalam mahkamah. PETRONAS fail 12 Januari 2026 di Federal Court, mintak declaration yang petroleum di bawah persekutuan. Sarawak fail counter-claim — kata PDA 1974 unconstitutional (Reuters, 12 Jan 2026; SCMP, 24 Feb 2026).</p>
   <p>Jadi satu-satunya cara Makcik boleh decide siapa yang benar ialah: <strong>baca Batang Tubuh sendiri</strong>.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">3. BATANG TUBUH — LINE-BY-LINE READING PDA 1974</h2>
+<h2>3. BATANG TUBUH — LINE-BY-LINE READING PDA 1974</h2>
   <p>Akta ni pendek. 8 seksyen je yang penting. Makcik baca satu-satu, explain dalam BM biasa.</p>
 
   <h3 style="font-family:Georgia,serif;font-size:1.2em;font-weight:700;color:#EDEAE2;margin:24px 0 8px;">Seksyen 2 — Tafsiran: "Petroleum dalam bentuk mentahnya"</h3>
@@ -118,12 +109,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Sarawak kata: ini rampasan kuasa perundangan. Perlembagaan bagi kuasa menggubal undang-undang jenayah kepada Parlimen, tapi kuasa mendakwa petroleum di bawah satu syarikat persendirian — itu gila.</p>
   <p>Makcik tambah satu lapisan: <strong>PETRONAS bukan badan berkanun</strong>. Ia syarikat Sdn Bhd. Macam Tesco, macam Genting. Ia tak ditubuhkan oleh Perkara 77 Perlembagaan. Ia ditubuhkan oleh Akta Parlimen macam Shell ditubuhkan di London.</p>
   <p>Tapi tak macam Shell — PETRONAS ada <strong>hak monopoly yang dikuatkuasakan oleh undang-undang jenayah</strong>. Bila hang fikir begitu, hang nampak yang lebih besar: satu syarikat persendirian yang ada <strong>hak untuk mendakwa orang macam polis</strong>. Itu bukan petroleum company. Itu negara dalam negara.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">4. KESAN — 52 TAHUN MACAM NI MENGENAKAN KEPADA SIAPA</h2>
+<h2>4. KESAN — 52 TAHUN MACAM NI MENGENAKAN KEPADA SIAPA</h2>
   <p>Makcik kira satu-satu.</p>
   <p><strong>Sarawak:</strong></p>
   <ul>
@@ -148,12 +137,10 @@ const html = `<article class="makcik-article" lang="ms">
     <li>Malaysia jadi <strong>negara pengimport bersih minyak mentah</strong> sejak 2024. Pengeluaran domestik ~571,000-604,000 tong/hari. Penggunaan ~700,000 tong/hari (EIA, 2024).</li>
   </ul>
   <p>Makcik tanya: 52 tahun, PETRONAS jadi ATM kerajaan. Sarawak dapat 5%. Kita import minyak dari Arab. Adil ke ni?</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">5. SOALAN YANG MAKCIK TANYA PASAL PDA 1974</h2>
+<h2>5. SOALAN YANG MAKCIK TANYA PASAL PDA 1974</h2>
   <p>Makcik rasa ada lima soalan yang hang kena faham sebelum judge sendiri.</p>
 
   <p><strong>Soalan 1: Kenapa 1974, bukan 1963?</strong></p>
@@ -174,12 +161,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p><strong>Soalan 5: Kenapa tak audit?</strong></p>
   <p>Audit Negara ada periksa PETRONAS. Tapi petroleum revenue yang diagih melalui <em>Petroleum Trust Fund</em> (Sarawak) dan <em>Federal Consolidated Fund</em> (persekutuan) — ada dua laluan berasingan. Yang sampai kepada Sarawak, auditnya oleh Jabatan Audit Negara Sarawak (lapor kepada DUN), tapi <strong>methodology dan scope dia berbeza</strong> dengan audit PETRONAS.</p>
   <p>Makcik ulang: <strong>audit ada, tapi audit macam mana tu persoalannya</strong>. Audit "ada" bukan audit "adil."</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">6. APA KATA PIHAK LAIN</h2>
+<h2>6. APA KATA PIHAK LAIN</h2>
   <p><strong>Sarawak (GPS + Petros):</strong></p>
   <ul>
     <li>PDA 1974 inconsistent dengan MA63 dan Perlembagaan Persekutuan (Senarai Negeri).</li>
@@ -205,12 +190,10 @@ const html = `<article class="makcik-article" lang="ms">
   </ul>
 
   <p>Makcik ulang: <strong>kedua-dua pihak confident masing-masing. Sebab tu mahkamah.</strong></p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">7. APA RISIKO KALAU PDA 1974 DI-ISYTIHAR UNCONSTITUTIONAL</h2>
+<h2>7. APA RISIKO KALAU PDA 1974 DI-ISYTIHAR UNCONSTITUTIONAL</h2>
   <p>Sekarang bahagian paling teknikal. Mari Makcik explain perlahan-lahan.</p>
   <p>Kalau hakim buat declaration yang PDA 1974 <strong>unconstitutional</strong>, beberapa benda berlaku:</p>
   <ol>
@@ -223,12 +206,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Makcik ulang: risiko sangat besar. Sebab tu semua orang takut. Sebab tu semua orang <strong>takut</strong> nak bawa ni ke mahkamah. Sebab tu semua orang takut nak bagitahu yang PDA 1974 mungkin tak valid.</p>
   <p>Tapi Sarawak dah bawa. Dan hakim lima orang dah luluskan justisiability (Julai 2025). Makcik ulang: <strong>lima hakim dah kata ni boleh diteruskan. Bukan main-main.</strong></p>
   <p>Sekarang semua orang tengah tunggu. Keputusan mungkin lewat 2026. Mungkin 2027. Tapi ia akan datang.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">8. BAGAIMANA PENYELESAIAN MUNGKIN BERLAKU</h2>
+<h2>8. BAGAIMANA PENYELESAIAN MUNGKIN BERLAKU</h2>
   <p>Ada empat kemungkinan jalan keluar.</p>
   <ol>
     <li><strong>Settle politik (Formula Baru).</strong> Kerajaan pusat dan Sarawak capai formula royalti — mungkin 10%, mungkin 15%, mungkin "2P" (production payment + profit share). RM1.5B geran khas jadi <em>interim</em> menuju settlement penuh. <strong>Risiko rendah. Tiada siapa mengaku salah. PDA 1974 masih hidup.</strong></li>
@@ -238,12 +219,10 @@ const html = `<article class="makcik-article" lang="ms">
   </ol>
   <p>Makcik rasa kemungkinan paling tinggi ialah <strong>(1)</strong> — settle politik. Sebab Anwar tak nak risiko (4). Sebab GPS tak nak hilang sokongan politik. Sebab PETRONAS tak nak risiko valuation. Semua orang ada sebab nak settle senyap.</p>
   <p>Tapi "settle senyap" tu yang paling susah. Sebab tiap kali Anwar pergi Sarawak, ada sidang media, ada mikrofon, ada keraguan.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">9. META — APA MAKCIK TAK NAMPAK LAGI</h2>
+<h2>9. META — APA MAKCIK TAK NAMPAK LAGI</h2>
   <p>Makcik nak tunjuk satu benda yang hang mungkin tak nampak.</p>
   <p>Setiap kali pasal petroleum, semua orang bercakap pasal Sarawak vs PETRONAS. Tapi yang hang tak nampak ialah <strong>struktur federal-state dalam Perlembagaan Malaysia</strong> yang complicated.</p>
   <p>Senarnya:</p>
@@ -256,12 +235,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Takde pindaan Perlembagaan. Takde referendum. Satu seksyen dalam satu akta. <strong>Tukar hak milik sumber asli semua negeri tanpa tukar Perlembagaan.</strong></p>
   <p>Sarawak marah sebab <strong>ini bukan sekadar soal duit</strong>. Ini soal <strong>siapa yang benar-benar berdaulat atas bumi Sarawak</strong>. Kalau PDA 1974 boleh ambil petroleum tanpa pindaan Perlembagaan, esok boleh ambil air. Esok boleh ambil hutan. Esok boleh ambil apa-apa lagi.</p>
   <p>Hang nampak tak? Petroleum cuma permulaan. Kalau PDA 1974 withstand — Malaysia ialah negara persekutuan namanya sahaja. Kalau PDA 1974 collapse — MA63 betul-betul bermakna.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">10. PENUTUP — MAKCIK HABIS BACA. ESOK MAKCIK NAK TANYA PMX</h2>
+<h2>10. PENUTUP — MAKCIK HABIS BACA. ESOK MAKCIK NAK TANYA PMX</h2>
   <p>Makcik habiskan artikel ni dengan satu ayat untuk hang.</p>
   <p>Makcik baca Batang Tubuh. Seksyen 2. Seksyen 4. Seksyen 6. Seksyen 7. Seksyen 8. Seksyen 10. Tak sampai 10 muka surat.</p>
   <p>Tapi setiap muka surat tu berisi satu rampasan. Rampasan senyap. Rampasan zaman darurat. Rampasan yang ditutup dengan nama "PETRONAS" supaya nampak macam pembangunan, bukan rampasan.</p>
@@ -289,12 +266,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Sebab kalau hang tak tanya — hang biarkan 5% kekal. Hang biarkan darurat 1974 kekal. Hang biarkan anak hang, cucu hang, cicit hang, hidup dengan formula yang hang tak pernah baca.</p>
   <p>Makcik habiskan baca. Esok Makcik nak tanya PMX. Lepas tu Makcik nak minum kopi o panas lagi satu.</p>
   <p><strong>Makcik habis cerita. Esok, Batang Tubuh yang bercerita balik.</strong></p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<footer class="article-footer">
-  <p class="signature">— MakcikGPT, 17 September 2026 🍵 (Slot 1 of 7-Day Cycle, susulan artikel "Bang Non Pergi Kuching")</p>
+<p class="signature">— MakcikGPT, 17 September 2026 🍵 (Slot 1 of 7-Day Cycle, susulan artikel "Bang Non Pergi Kuching")</p>
   <p class="hashtags">#PDA1974 #BatangTubuh #Sarawak #Petros #PETRONAS #MA63 #Anwar #MoFInc #Royalti5Persen #Perlembagaan #FederalCourt #MakcikGPT #Darurat1974</p>
   <details class="receipts">
     <summary>Nota editorial — apa yang Makcik verify dan apa yang belum</summary>
@@ -306,10 +281,7 @@ const html = `<article class="makcik-article" lang="ms">
       <li><strong>Tidak ada nama individu ditambah:</strong> Artikel ini tidak menambah atau memparaphrase kenyataan mana-mana individu selain (i) Anwar Ibrahim — yang petikan "There is no reason why this cannot be resolved" dan bayangan "hampir siap"/"finalise" telahpun disahkan dalam artikel Slot 0 (bang-non-pergi-kuching).</li>
       <li><strong>MARUAH review status:</strong> Setiap claim_register entry ditanda 'approved' di mana ianya menyentuh pihak yang disebutkan; analisis interpretif (INT) ditanda 'not_applicable' untuk maruah.</li>
     </ul>
-  </details>
-</footer>
-
-</article>`;
+  </details>`;
 
 const article: ArticleContent = {
   slug: 'pda-1974-bukan-undang-undang',

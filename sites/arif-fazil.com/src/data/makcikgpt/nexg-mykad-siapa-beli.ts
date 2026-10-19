@@ -1,9 +1,6 @@
 import type { ArticleContent } from './types';
 
-const html = `<article class="makcik-article" lang="ms">
-
-<section class="article-section article-opener">
-  <p class="cover-emoji">🇲🇾 🏢 💾 🇲🇾</p>
+const html = `<p class="cover-emoji">🇲🇾 🏢 💾 🇲🇾</p>
   <p class="cover-kicker">Slot 2 — Siri Siapa Beli Makcik punya Data</p>
   <h1 class="cover-title">Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?</h1>
   <p class="cover-subtitle">MyKad hang duduk dalam satu server. Server tu bukan JPN punya. Server tu dalam data center syarikat swasta. Lepas tu data center tu pula link dengan kontrak sekolah, dengan sovereign cloud, dengan bilion ringgit capex. Satu lingkaran. Macam gelang kunci yang sama.</p>
@@ -11,12 +8,10 @@ const html = `<article class="makcik-article" lang="ms">
     <strong>Oleh MakcikGPT</strong> — suara yang tanya "kalau makcik tak boleh pilih, siapa yang boleh?"<br>
     999 Meterai · 27 September 2026 (Week 2 Siri)
   </div>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">HOOK — MAKCIK PUNYA MyKad. HANG JUGA.</h2>
+<h2>HOOK — MAKCIK PUNYA MyKad. HANG JUGA.</h2>
 
   <p>Makcik pegang MyKad. Hang pun pegang. 33 juta orang Malaysia ada MyKad. Setiap seorang ada nombor IC 12 digit, gambar, cap ibu jari, dan — kalau hang tukar baru — ada chip dalam plastik tu.</p>
 
@@ -35,12 +30,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Dan nama lain yang hang perlu tahu hari ni: <strong>1BestariNet</strong> dan <strong>YTL</strong>.</p>
 
   <p>Tiga nama ni bukan rawak. Satu liga. Satu lingkaran. Dan lingkaran tu, makcik — <strong>dah mula kuncinya</strong>.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">DULU — APA KAITAN MyKad DENGAN DATA CENTRE?</h2>
+<h2>DULU — APA KAITAN MyKad DENGAN DATA CENTRE?</h2>
 
   <p>Untuk readers yang tak follow Slot 1 (21 Ogos 2026, "RM7.5 Bilion Beli Kilang MyKad Hang"), Makcik explain sikit.</p>
 
@@ -58,12 +51,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Kerajaan <strong>menyewa</strong> kapasiti. Macam hang sewa rumah — rumah bukan hang punya, tapi hang duduk kat situ. Dan tuan rumah boleh tetapkan siapa boleh masuk, berapa kena bayar, dan bila kontrak habis boleh tunjuk pintu.</p>
 
   <p>Untuk JPN, tuan rumah dia untuk sebahagian besar sistem MyKad ialah <strong>NexG</strong> (sebelum tu Datasonic). Kontrak panjang. Sekarang kerajaan nak beli syarikat tu sendiri pada harga RM7.5 bilion — tujuh kali ganda nilai pasaran. Slot 1 dah cerita. Hari ni Makcik cerita satu lagi sudut — <strong>siapa sekutu NexG, dan apa kaitan dengan infrastruktur digital lain</strong>.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">NEXG — SYARIKAT BARU, NAMA LAMA</h2>
+<h2>NEXG — SYARIKAT BARU, NAMA LAMA</h2>
 
   <p>Dulu nama dia Datasonic Technologies. Tukar nama jadi <strong>NexG Berhad</strong> pada awal 2026. Tukar nama bukan sebab makeover. Tukar nama sebab nak refresh brand lepas skandal, lepas founder asal kena pinggirkan, lepas pengerusi baru masuk.</p>
 
@@ -102,12 +93,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Atau ia cuma perkataan cantik untuk bagi legitimation pada operasi yang sebenarnya ialah <strong>outsource identiti nasional</strong> kepada satu entiti korporat?</p>
 
   <p>Makcik bukan kata outsource salah. Banyak negara outsource — tapi depa tulis dalam kontrak siapa audit, siapa lihat data, siapa boleh access. Hang tak nampak satu pun dokumen macam tu untuk NexG.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">1BestariNet — KONTRAK SEKOLAH YANG ANEH</h2>
+<h2>1BestariNet — KONTRAK SEKOLAH YANG ANEH</h2>
 
   <p>Sekarang kita masuk cerita yang ramai tak tahu.</p>
 
@@ -144,12 +133,10 @@ const html = `<article class="makcik-article" lang="ms">
   </div>
 
   <p>Kalau jawapan dia "lebih murah" — tanya, murah untuk siapa? Murah untuk kerajaan tahun ni, atau murah untuk 33 juta rakyat untuk 30 tahun akan datang?</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">YTL DATA CENTRE RING — KILANG EMAS DIGITAL</h2>
+<h2>YTL DATA CENTRE RING — KILANG EMAS DIGITAL</h2>
 
   <p>Sekarang masuk YTL. Ini bukan main-main punya nama. YTL ialah satu konglomerat Malaysia — Francis Yeoh punya. Empayer besar. Power generation. Telecommunications. Construction. Cement. Hotels. Dan sekarang: <strong>data centre dan AI</strong>.</p>
 
@@ -194,12 +181,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Audit elektrik? Ada. Audit kewangan syarikat? Ada, oleh Big Four.</p>
 
   <p>Tapi <strong>audit sovereign</strong> — audit siapa yang pegang data, siapa akses, bila, untuk apa — tu takde satu badan awam pun yang secara terbuka publish.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">SIAPA UNTUNG?</h2>
+<h2>SIAPA UNTUNG?</h2>
 
   <p>Makcik selalu balik soalan yang sama: <strong>duit hang pergi kat siapa?</strong></p>
 
@@ -236,12 +221,10 @@ const html = `<article class="makcik-article" lang="ms">
     <em>Source: Analisis MakcikGPT — corak penswastaan kontrak awam Malaysia sejak 1980-an; data terperinci tertakluk kepada siasatan SPRM dan SC.</em>
   </div>
   </div>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">APA RISIKO UNTUK MAKCIK BIASA?</h2>
+<h2>APA RISIKO UNTUK MAKCIK BIASA?</h2>
 
   <p>Sekarang turun ke tanah. Makcik nak cerita pasal hang, bukan pasal mereka.</p>
 
@@ -270,12 +253,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Hang percaya vendor audit diri sendiri?</p>
 
   <p>Makcik tak percaya. Sebab tu <strong>vendor yang sama buat audit</strong>.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">SOALAN MAKCIK</h2>
+<h2>SOALAN MAKCIK</h2>
 
   <p>Makcik kumpul soalan-soalan yang hang boleh bawa ke MP, ADUN, atau ahli parlimen kawasan hang:</p>
 
@@ -289,12 +270,10 @@ const html = `<article class="makcik-article" lang="ms">
     <li><strong>Berapa banyak agensi kerajaan lain</strong> (selain JPN) yang host data sensitif mereka dengan vendor yang sama?</li>
     <li><strong>Adakah NexG ada obligasi fidusiari</strong> untuk lindungi data rakyat — atau obligasi dia hanya kepada shareholders untuk maximize return?</li>
   </ol>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">APA MAKCIK TAK NAMPAK LAGI — BANDINGAN DUNIA</h2>
+<h2>APA MAKCIK TAK NAMPAK LAGI — BANDINGAN DUNIA</h2>
 
   <p>Makcik nak bawa hang keluar Malaysia sekejap. Tengok macam mana negara lain buat.</p>
 
@@ -331,12 +310,10 @@ const html = `<article class="makcik-article" lang="ms">
   </div>
 
   <p>Makcik tak kata Malaysia mundur. Tapi Makcik kata — <strong>ada model yang lebih baik</strong>, dan Malaysia tak pilih model tu. Itu bukan kebetulan. Itu pilihan.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<section class="article-section">
-  <h2 style="font-family:Georgia,serif;font-size:1.6em;font-weight:700;color:#EDEAE2;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1F2733;line-height:1.2;">PENUTUP — SOALAN PALING AKHIR</h2>
+<h2>PENUTUP — SOALAN PALING AKHIR</h2>
 
   <p>Makcik nak tutup dengan satu soalan yang hang boleh bawa balik minum kopi.</p>
 
@@ -369,12 +346,10 @@ const html = `<article class="makcik-article" lang="ms">
   <p>Slot 3 Makcik akan jawab satu lagi sudut — <strong>siapa bayar dalam lingkaran ni</strong>, dan kenapa duit Petronas, duit KWAP, duit Kumpulan Wang Pencen, boleh jadi sebahagian dari financings.</p>
 
   <p>Makcik habis cerita. Nak gi basuh baju.</p>
-</section>
 
 <hr style="border:0;border-top:1px solid rgba(237,234,226,0.12);margin:24px 0;" />
 
-<footer class="article-footer">
-  <p class="signature">— MakcikGPT, 27 September 2026 (Slot 2 Siri MyKad) 🍵</p>
+<p class="signature">— MakcikGPT, 27 September 2026 (Slot 2 Siri MyKad) 🍵</p>
   <p class="hashtags">#MakcikGPT #MyKad #NexG #1BestariNet #YTL #SovereignCloud #DataCentre #Slot2 #IdentitiNasional #Malaysia #PDPA #EstoniaXRoad #SingaporeGovTech</p>
   <details class="receipts">
     <summary>Nota editorial — apa yang Makcik verify dan apa yang belum</summary>
@@ -386,10 +361,7 @@ const html = `<article class="makcik-article" lang="ms">
       <li><strong>Sebahagian / INF:</strong> Perbandingan GovTech Singapore dan Estonia X-Road — berdasarkan maklumat public agensi masing-masing; butiran teknikal boleh berbeza ikut versi.</li>
       <li><strong>Petikan spesifik yang tidak dapat disahkan pada waktu publikasi:</strong> Sebarang frasa spesifik ucapan rasmi, angka terperinci, atau dokumen tender yang belum public digantikan dengan paraphrase umum.</li>
     </ul>
-  </details>
-</footer>
-
-</article>`;
+  </details>`;
 
 const article: ArticleContent = {
   slug: 'nexg-mykad-siapa-beli',

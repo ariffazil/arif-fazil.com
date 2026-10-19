@@ -557,6 +557,42 @@
       "aliases": [
         "gold"
       ]
+    },
+    {
+      "site": "syedos",
+      "source": "sites/syedos.arif-fazil.com",
+      "webroot": "syedos",
+      "owner": "arif-sites",
+      "batch": true,
+      "batch_order": 140,
+      "build": {
+        "kind": "npm",
+        "install": [
+          "npm",
+          "ci",
+          "--quiet",
+          "--legacy-peer-deps"
+        ],
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "output": "dist"
+      },
+      "required_artifacts": [
+        "index.html"
+      ],
+      "probe": {
+        "url": "https://syedos.arif-fazil.com/",
+        "accepted_codes": [
+          200
+        ]
+      },
+      "overlays": [],
+      "aliases": [
+        "syedos"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-20",
+  "version": "2026-10-18",
   "domain": "arif-fazil.com",
   "doctrine": {
     "title": "Single canonical surface catalog. All machine catalogs are generated views of this file.",
@@ -226,31 +226,37 @@
       "path": "/world/oil/",
       "title": "Oil Dashboard — Brent Crude Cognitive View",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Brent crude oil cognitive dashboard with live data"
+      "description": "Brent crude oil cognitive dashboard with live data. Measured 2026-10-18: serves 308 → /oil/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/oil/"
     },
     {
       "path": "/world/gas/",
       "title": "Gas Dashboard — Natural Gas Intelligence",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Natural gas dashboard with live data"
+      "description": "Natural gas dashboard with live data. Measured 2026-10-18: serves 308 → /gas/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/gas/"
     },
     {
       "path": "/world/gold/",
       "title": "Gold Dashboard — XAUUSD Trading Synthesis",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Gold trading synthesis and technical analysis dashboard"
+      "description": "Gold trading synthesis and technical analysis dashboard. Measured 2026-10-18: serves 308 → /gold/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/gold/"
     },
     {
       "path": "/world/politics/ns-election/",
@@ -328,11 +334,13 @@
       "path": "/words/makcikgpt/",
       "title": "Words — MakcikGPT (column)",
       "mission": "interpret",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.65,
       "changefreq": "weekly",
-      "description": "Peer subpage of the /words/ hub. A civic column inside the writing hub, NOT a peer of the personal / professional identity. Canonical article archive and full reception remain at /world/makcikgpt/. Doctrine unchanged. Added 2026-10-01."
+      "description": "Peer subpage of the /words/ hub. A civic column inside the writing hub, NOT a peer of the personal / professional identity. Canonical article archive and full reception remain at /world/makcikgpt/. Doctrine unchanged. Added 2026-10-01. Measured 2026-10-18: serves 301 → /world/makcikgpt/; catalog corrected from status=live.",
+      "code": 301,
+      "redirects_to": "/world/makcikgpt/"
     },
     {
       "path": "/writing/:slug",
@@ -594,11 +602,13 @@
       "path": "/malaysia/",
       "title": "Malaysia — Civic & Political Hub",
       "mission": "interpret",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Civic and political intelligence hub for Malaysia"
+      "description": "Civic and political intelligence hub for Malaysia. Measured 2026-10-18: serves 308 → /wealth/malaysia/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/wealth/malaysia/"
     },
     {
       "path": "/pulse/",
@@ -804,6 +814,264 @@
       "priority": 0.7,
       "changefreq": "weekly",
       "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
+    },
+    {
+      "path": "/about",
+      "title": "About — Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Personal about page. Canonical URL is /about (no trailing slash) per its own rel=canonical."
+    },
+    {
+      "path": "/arifos/",
+      "title": "arifOS Observatory — Reality Witness",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "arifOS observatory surface — federation reality witness served from the main domain."
+    },
+    {
+      "path": "/charter/",
+      "title": "/charter — Federation Charter",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Federation charter — constitutional text of the arifOS federation."
+    },
+    {
+      "path": "/connect/",
+      "title": "Connect — arifOS MCP Gateway",
+      "mission": "build",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Connection instructions for agents reaching the arifOS MCP gateway."
+    },
+    {
+      "path": "/discovery/",
+      "title": "Discovery — Peta Federasi",
+      "mission": "investigate",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Federation discovery map — organs, surfaces, and how they interlock."
+    },
+    {
+      "path": "/human/",
+      "title": "Start here — agents",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "description": "Entry point for agents and humans meeting the federation for the first time."
+    },
+    {
+      "path": "/laws/",
+      "title": "Laws",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Laws index — the constitutional and operational rules governing the federation."
+    },
+    {
+      "path": "/mcp/",
+      "title": "arifOS MCP — Constitutional AI Gateway",
+      "mission": "build",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "MCP gateway documentation surface on the main domain."
+    },
+    {
+      "path": "/receipts/",
+      "title": "Receipts — Arif Fazil",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Receipts index — sealed records and their provenance."
+    },
+    {
+      "path": "/sanctuary/",
+      "title": "/000 — Genesis · Sovereign Anchor",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Genesis surface — the sovereign anchor of the federation."
+    },
+    {
+      "path": "/verify/",
+      "title": "/verify — Kernel Identity Proof",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Kernel identity verification surface — proof-of-identity for the arifOS kernel."
+    },
+    {
+      "path": "/witness-theory/",
+      "title": "Witness Theory of Human Want",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Witness theory essay — how human want is witnessed rather than modelled."
+    },
+    {
+      "path": "/world/2027/",
+      "title": "AI Agents 2027: Five Engines of Chaos, One Missing Layer",
+      "mission": "investigate",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Long-form 2027 forecast on AI agents."
+    },
+    {
+      "path": "/world/2027/malaysia/",
+      "title": "Malaysia 2027: Tenant of the AI Economy",
+      "mission": "investigate",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Malaysia-focused companion to the AI Agents 2027 forecast."
+    },
+    {
+      "path": "/world/2027/receipts/",
+      "title": "Receipts · AI Agents 2027",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Evidence and receipt surface backing the AI Agents 2027 forecast."
+    },
+    {
+      "path": "/world/2027/ai-agents-2027-dossier.pdf",
+      "title": "AI Agents 2027 — Dossier (PDF)",
+      "mission": "investigate",
+      "status": "live",
+      "type": "document",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Downloadable PDF dossier accompanying the AI Agents 2027 forecast.",
+      "format": "application/pdf"
+    },
+    {
+      "path": "/world/politics/ns-election/playbook/",
+      "title": "Strategi PRN NS 2026 — Agentic Playbook",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Agentic playbook for the Negeri Sembilan state election."
+    },
+    {
+      "path": "/aaa/",
+      "redirects_to": "https://aaa.arif-fazil.com/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Main-domain alias for the AAA control-plane subdomain. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/constitution/",
+      "redirects_to": "/words/constitution/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Legacy constitution path — canonical is /words/constitution/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/geox/",
+      "redirects_to": "https://geox.arif-fazil.com/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Main-domain alias for the GEOX organ subdomain. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/klci/",
+      "redirects_to": "/world/economics/klci/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Legacy KLCI path — canonical is /world/economics/klci/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/makcikgpt-md/",
+      "redirects_to": "/world/makcikgpt/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Markdown variant of the MakcikGPT path — canonical is /world/makcikgpt/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/missions/",
+      "redirects_to": "/work/missions/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Legacy missions path — canonical is /work/missions/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/politics/",
+      "redirects_to": "/world/politics/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Legacy politics path — canonical is /world/politics/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/proof/",
+      "redirects_to": "/work/proof/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Legacy proof path — canonical is /work/proof/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/usdmyr/",
+      "redirects_to": "/world/economics/usdmyr/",
+      "status": "redirect",
+      "code": 308,
+      "type": "redirect",
+      "description": "Legacy USD/MYR path — canonical is /world/economics/usdmyr/. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/wiki/",
+      "redirects_to": "https://wiki.arif-fazil.com/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Main-domain alias for the wiki subdomain. Added 2026-10-18 to close catalog/reality drift."
+    },
+    {
+      "path": "/audit/",
+      "title": "Audit (retired)",
+      "status": "gone",
+      "type": "gone",
+      "description": "Retired audit surface. Measured 2026-10-18: HTTP 410 Gone. Vault proof lives at /999/."
     }
   ],
   "federation_subdomains": [
@@ -852,6 +1120,6 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-10-01T00:00:00Z",
-  "last_updated": "2026-10-02"
+  "as_of": "2026-10-18T14:13:47Z",
+  "last_updated": "2026-10-18"
 }

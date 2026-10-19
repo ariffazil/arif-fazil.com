@@ -21,6 +21,7 @@ import e20 from "./20-survival-of-the-fittest-tools";
 import e21 from "./21-three-timelines-one-boundary";
 import e22 from "./22-agentic-intelligence-big-bang";
 import e23 from "./23-the-last-scarcity-witness-theory-of-human-want";
+import e24 from "./24-reality-engineering-governed-agent-systems";
 
 // Lightweight Medium-linked essay modules (auto-generated from articles.json)
 import g0 from "./generated/g_fifteen_dollar_bouncer";
@@ -74,9 +75,18 @@ import g47 from "./generated/g_scar_behind_the_vision";
 import g48 from "./generated/g_manifesto_of_forged_intelligence";
 import g49 from "./generated/g_arifos_as_a_prism";
 
-export const essayModules = [e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
+export const essayModules = [e24, e01, e02, e03, e04, e05, e06, e07, e08, e09, e10, e11, e12, e13, e15, e18, e19, e20, e21, e22, e23, g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33, g34, g35, g36, g37, g38, g39, g40, g41, g42, g43, g44, g45, g46, g47, g48, g49];
 
 export const allEssays: EssayMeta[] = [
+  {
+    title: `Reality Engineering for Governed Agent Systems: A Constitutional Runtime Architecture and Falsifiable Research Agenda`,
+    date: "2026-10-19",
+    slug: "reality-engineering-governed-agent-systems",
+    excerpt: `A position paper that turns the vocabulary of a running constitutional kernel into falsifiable claims — and states plainly what the current evidence can and cannot support.`,
+    tags: ["ai-governance", "arifos", "reality-engineering", "agents", "evidence", "falsifiability"],
+    mediumUrl: "",
+    isDirectPublication: true,
+  },
   {
     title: `I Stopped Writing Prompts. Here's What Replaces Them: AREP`,
     date: "2026-06-04",

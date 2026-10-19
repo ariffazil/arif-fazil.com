@@ -5256,5 +5256,443 @@
         "retrieved_at": "2026-02-24T00:00:00Z"
       }
     ]
+  },
+  {
+    "id": "m6-6",
+    "title": "Gentari: 15 Benda Yang Tak Masuk Akal",
+    "date": "2026-10-19",
+    "lang": "bm",
+    "series": {
+      "id": "M6",
+      "n": 6
+    },
+    "tags": [
+      "gentari",
+      "petronas",
+      "tenaga-boleh-diperbaharui",
+      "kkr",
+      "india",
+      "hidrogen",
+      "ev",
+      "governans",
+      "dividen",
+      "makcikgpt"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/gentari-15-benda-bangang"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "served_paths": null,
+    "pdf_dest": null,
+    "word_count_target": null,
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-10-19",
+      "last_updated": "2026-10-19"
+    },
+    "session_ref": "/root/AAA/forge_work/2026-10-19-gentari/",
+    "claim_register": [
+      {
+        "claim_id": "C-GEN-D01",
+        "text": "Gentari Sdn Bhd, no. pendaftaran 199301005062, 100 peratus milik PETRONAS. Modal dibayar RM13,290,081,700.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "CTOS/SSM tabulasi, laporan 1 Okt 2025",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D02",
+        "text": "FY2024 disatukan: hasil RM805,399,000; rugi sebelum cukai RM500,982,000; rugi selepas cukai RM454,968,000.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "CTOS/SSM income statement FY2024",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D03",
+        "text": "FY2024: jumlah aset RM17,631,822,000; jumlah liabiliti RM6,151,271,000; nilai bersih RM11,480,551,000.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "CTOS/SSM balance sheet FY2024",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D04",
+        "text": "Aritmetik ekuiti: modal saham RM12,998,898,000 tolak rizab negatif RM1,713,956,000 tambah kepentingan minoriti RM195,609,000 = RM11,480,551,000. Jurang modal dibayar lawan nilai bersih ialah RM1.81 bilion.",
+        "tag": "DER",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "Aritmetik terus dari baris CTOS; draf awal menulis RM1.71b dan dibetulkan",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D05",
+        "text": "PETRONAS Integrated Report 2025: kapasiti 9.1GW ialah dipasang DAN dalam pembinaan, bukan kapasiti beroperasi. Laporan tidak menerbitkan pecahan berapa yang sudah beroperasi.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "Grep penuh IR2025 — hanya 9.1GW muncul, tiada angka 4.2GW",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D06",
+        "text": "Nota kaki IR2025: untuk 2024 dan sebelumnya, ukuran ialah kapasiti tenaga boleh diperbaharui saja; untuk 2025, ukuran ialah kapasiti tenaga boleh diperbaharui dan storan.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "IR2025 hlm. 66, nota 1 dan 2, verbatim",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D07",
+        "text": "Segmen Corporate and Others FY2025: hasil RM13.2 bilion (FY2024: RM14.0 bilion); rugi selepas cukai RM0.5 bilion (FY2024: RM0.8 bilion); belanja modal RM5.7 bilion dengan Gentari 44 peratus.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "IR2025 segment review, Corporate and Others",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D08",
+        "text": "Kerajaan meletakkan dividen PETRONAS RM27 bilion untuk 2026 dan RM32 bilion untuk 2027 dalam anggaran hasil. Lembaga PETRONAS mengisytihar RM20 bilion untuk 2026.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-003",
+        "confidence_basis": "MoF Fiscal Outlook 2027, 9 Okt 2026; angka lembaga 27 Feb 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D09",
+        "text": "KKR memasukkan lebih Rs 6,000 crore (kira-kira RM2.6 bilion) ke Gentari Renewable India Pte Ltd sebagai pembiayaan dengan opsyen membeli saham kemudian; kelulusan CCI belum diperoleh.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-004",
+        "confidence_basis": "Economic Times dan The Edge, 19 Okt 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D10",
+        "text": "Jualan sehingga 50 peratus perniagaan India: nilai perusahaan US$2-2.5 bilion, nilai ekuiti US$600-700 juta kerana hutang.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-005",
+        "confidence_basis": "Livemint, Jan 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D11",
+        "text": "Term sheet 21 tahun untuk 680MWac suria campur BESS 4 jam di Perak, hasil kasar melebihi RM10 bilion, operasi komersial 2029.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-006",
+        "confidence_basis": "Bursa Malaysia, Gamuda dan SD Guthrie, 29 Sep 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D12",
+        "text": "H2biscus dan H2ornbill dikecilkan; kos pengeluaran Sarawak bawah RM20/kg tetapi kos terkirim ke Jepun sekitar RM50/kg.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-007",
+        "confidence_basis": "Nikkei Asia, Borneo Post, Malay Mail 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D13",
+        "text": "Belanja modal kumpulan PETRONAS turun dari RM54.2 bilion (2024) ke RM41.6 bilion (2025); belanja modal Gentari turun dari sekitar RM6.1 bilion (2023) ke sekitar RM2.5 bilion (2025).",
+        "tag": "DER",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "IR2025 capex disclosure; pecahan Gentari dikira dari bahagian peratus segmen",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-D14",
+        "text": "Tesis bahawa penjualan aset Gentari berlaku di luar pandangan awam dan boleh menangkap nilai negara ialah bacaan, bukan fakta yang diukur.",
+        "tag": "INT",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "Tafsiran penulis, perlu diuji dengan setiap urus niaga yang ditutup",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-GEN-001",
+        "type": "company_registry",
+        "title": "CTOS / SSM — Gentari Sdn Bhd (199301005062) financial statements FY2020-FY2024, directors, shareholders, subsidiaries",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-002",
+        "type": "official_report",
+        "title": "PETRONAS Integrated Report 2025 — renewable capacity metric, footnote on 2025 measurement change (renewable energy and storage), Corporate and Others capex RM5.7b / Gentari 44 per cent",
+        "url": "https://www.petronas.com/integrated-report-2025/",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-003",
+        "type": "official_report",
+        "title": "Kementerian Kewangan — Fiscal Outlook and Federal Government Revenue Estimates 2027 (9 Oct 2026): PETRONAS dividend RM27b (2026), RM32b (2027)",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-004",
+        "type": "news",
+        "title": "The Economic Times (19 Oct 2026) and The Edge Malaysia — KKR over Rs 6,000 crore (RM2.6b) into Gentari Renewable India, option structure, CCI filing by Sapphire US Holdco LLC",
+        "url": "https://theedgemalaysia.com/node/822240",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-005",
+        "type": "news",
+        "title": "Livemint (Jan 2026) — Gentari seeks 50 per cent partner in India business, enterprise value US$2-2.5b, equity value US$600-700m",
+        "url": "https://www.livemint.com/companies/global-pes-strategics-to-bid-for-stake-in-gentaris-india-biz-renewable-energy-actis-macquarie-sembcorp-11768391023831.html",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-006",
+        "type": "exchange_filing",
+        "title": "Bursa Malaysia — Gamuda and SD Guthrie announcements 29 Sep 2026: 21-year BESC term sheet, 680MWac hybrid solar + 4-hour BESS, Perak, gross revenue exceeding RM10b, COD 2029",
+        "url": "https://www.klsescreener.com/v2/announcements/view/11675019",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-007",
+        "type": "news",
+        "title": "Nikkei Asia / Borneo Post / Malay Mail (Apr-Sep 2026) — H2biscus and H2ornbill scaled down, Sarawak production below RM20/kg vs about RM50/kg delivered Japan",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-008",
+        "type": "news",
+        "title": "The Star / NST (30 Sep 2026) — LNG Canada Phase 2 FID C$33 billion",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-009",
+        "type": "market_data",
+        "title": "ECB / IRS yearly average USD-INR — 2021: 73.945 | 2024: 83.677 | Oct 2026: about 95",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      }
+    ],
+    "claim_register_summary": {
+      "obs": 11,
+      "der": 3,
+      "int": 1,
+      "spec": 0,
+      "total": 14
+    }
+  },
+  {
+    "id": "m6-7",
+    "title": "Gentari: Dossier Realiti — Apa Dia, Siapa Punya, Berapa Besar",
+    "date": "2026-10-19",
+    "lang": "bm",
+    "series": {
+      "id": "M6",
+      "n": 7
+    },
+    "tags": [
+      "gentari",
+      "petronas",
+      "tenaga-boleh-diperbaharui",
+      "kkr",
+      "india",
+      "hidrogen",
+      "ev",
+      "governans",
+      "dividen",
+      "makcikgpt"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/gentari-dossier"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "served_paths": null,
+    "pdf_dest": null,
+    "word_count_target": null,
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-10-19",
+      "last_updated": "2026-10-19"
+    },
+    "session_ref": "/root/AAA/forge_work/2026-10-19-gentari/",
+    "claim_register": [
+      {
+        "claim_id": "C-GEN-B01",
+        "text": "Modal dibayar Gentari RM13.29 bilion, semuanya dari PETRONAS; tiada pemegang saham lain.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "CTOS/SSM share capital",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B02",
+        "text": "FY2024 rugi selepas cukai RM454,968,000. Nilai bersih hujung tahun RM11.48 bilion, jadi jurang dengan modal dibayar RM1.81 bilion; baris rizab negatif RM1.714 bilion.",
+        "tag": "DER",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "CTOS/SSM; draf awal menulis RM1.71b sebagai jurang dan dibetulkan",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B03",
+        "text": "Hasil RM805.4 juta atas aset RM17.63 bilion — RM4.60 hasil bagi setiap RM100 aset.",
+        "tag": "DER",
+        "source_id": "SRC-GEN-001",
+        "confidence_basis": "Aritmetik dari penyata FY2024",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B04",
+        "text": "Angka 9.1GW dalam IR2025 bermaksud dipasang dan dalam pembinaan. Laporan tidak memberi pecahan berapa yang sudah jual elektrik.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "IR2025, grep penuh; tiada angka kapasiti beroperasi diterbitkan",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B05",
+        "text": "Takrif ukuran berubah pada 2025: bateri dimasukkan dalam kiraan. Berapa banyak kenaikan 8.0 ke 9.1GW yang datang dari bateri tidak didedahkan.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "Nota kaki IR2025 hlm. 66",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B06",
+        "text": "Daripada 9.1GW, hanya 257MW di Malaysia, lebih kurang 2.8 peratus.",
+        "tag": "DER",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "Pecahan geografi Gentari; peratus dikira",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B07",
+        "text": "Sasaran 30-40GW menjelang 2030 berbanding 9.1GW pada 2025 memerlukan lebih 5GW setahun; Ketua Strategi Gentari berkata sasaran bergantung kepada pulangan pasaran.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "Bernama, April 2026; kiraan kadar dari angka IR2025",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B08",
+        "text": "Gentari duduk dalam segmen Corporate and Others bersama hartanah dan perbendaharaan. Segmen itu FY2025 hasil RM13.2 bilion dan rugi selepas cukai RM0.5 bilion.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-002",
+        "confidence_basis": "IR2025 segment review",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B09",
+        "text": "Nilai perusahaan India US$2-2.5 bilion tetapi nilai ekuiti US$600-700 juta — beza itu hutang.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-005",
+        "confidence_basis": "Livemint, Jan 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B10",
+        "text": "KKR masuk sebagai pembiayaan dengan opsyen saham, bukan pemegang saham terus; harga opsyen tidak didedahkan.",
+        "tag": "OBS",
+        "source_id": "SRC-GEN-004",
+        "confidence_basis": "Economic Times, 19 Okt 2026",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B11",
+        "text": "Rs 6,000 crore pada kadar Oktober 2026 (sekitar 95 rupee sedolar) keluar kira-kira US$632 juta. Angka US$814.8 juta hanya masuk pada kadar 73.6 rupee sedolar, iaitu kadar sekitar 2021. Pada purata 2024 (83.677) kiraan sama keluar kira-kira US$717 juta.",
+        "tag": "DER",
+        "source_id": "SRC-GEN-009",
+        "confidence_basis": "ECB/IRS purata tahunan; draf awal mendakwa 73.6 ialah kadar 2024 dan dibetulkan",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B12",
+        "text": "Belanja modal kumpulan PETRONAS turun RM54.2b ke RM41.6b (2024 ke 2025) sementara kerajaan menuntut dividen lebih tinggi (RM27b untuk 2026, RM32b untuk 2027) berbanding RM20b yang diisytihar lembaga.",
+        "tag": "DER",
+        "source_id": "SRC-GEN-003",
+        "confidence_basis": "IR2025 + MoF Fiscal Outlook 2027",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C-GEN-B13",
+        "text": "Kesimpulan bahawa aliran tunai yang ketat menjadikan Gentari penjual yang terdesa, dan pembeli yang menetapkan harga, ialah bacaan bukan fakta yang diukur.",
+        "tag": "INT",
+        "source_id": "SRC-GEN-003",
+        "confidence_basis": "Tafsiran penulis",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-GEN-001",
+        "type": "company_registry",
+        "title": "CTOS / SSM — Gentari Sdn Bhd (199301005062) financial statements FY2020-FY2024, directors, shareholders, subsidiaries",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-002",
+        "type": "official_report",
+        "title": "PETRONAS Integrated Report 2025 — renewable capacity metric, footnote on 2025 measurement change (renewable energy and storage), Corporate and Others capex RM5.7b / Gentari 44 per cent",
+        "url": "https://www.petronas.com/integrated-report-2025/",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-003",
+        "type": "official_report",
+        "title": "Kementerian Kewangan — Fiscal Outlook and Federal Government Revenue Estimates 2027 (9 Oct 2026): PETRONAS dividend RM27b (2026), RM32b (2027)",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-004",
+        "type": "news",
+        "title": "The Economic Times (19 Oct 2026) and The Edge Malaysia — KKR over Rs 6,000 crore (RM2.6b) into Gentari Renewable India, option structure, CCI filing by Sapphire US Holdco LLC",
+        "url": "https://theedgemalaysia.com/node/822240",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-005",
+        "type": "news",
+        "title": "Livemint (Jan 2026) — Gentari seeks 50 per cent partner in India business, enterprise value US$2-2.5b, equity value US$600-700m",
+        "url": "https://www.livemint.com/companies/global-pes-strategics-to-bid-for-stake-in-gentaris-india-biz-renewable-energy-actis-macquarie-sembcorp-11768391023831.html",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-006",
+        "type": "exchange_filing",
+        "title": "Bursa Malaysia — Gamuda and SD Guthrie announcements 29 Sep 2026: 21-year BESC term sheet, 680MWac hybrid solar + 4-hour BESS, Perak, gross revenue exceeding RM10b, COD 2029",
+        "url": "https://www.klsescreener.com/v2/announcements/view/11675019",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-007",
+        "type": "news",
+        "title": "Nikkei Asia / Borneo Post / Malay Mail (Apr-Sep 2026) — H2biscus and H2ornbill scaled down, Sarawak production below RM20/kg vs about RM50/kg delivered Japan",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-008",
+        "type": "news",
+        "title": "The Star / NST (30 Sep 2026) — LNG Canada Phase 2 FID C$33 billion",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-GEN-009",
+        "type": "market_data",
+        "title": "ECB / IRS yearly average USD-INR — 2021: 73.945 | 2024: 83.677 | Oct 2026: about 95",
+        "url": "",
+        "retrieved_at": "2026-10-19T00:00:00Z"
+      }
+    ],
+    "claim_register_summary": {
+      "obs": 8,
+      "der": 4,
+      "int": 1,
+      "spec": 0,
+      "total": 13
+    }
   }
 ]

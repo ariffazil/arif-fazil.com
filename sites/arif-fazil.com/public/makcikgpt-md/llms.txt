@@ -11,7 +11,7 @@
   - HYPOTHESIS: Analytical model or open question for public scrutiny.
   - UNKNOWN: Material information unverified or absent from public record.
 - Seal 999 Meaning: Records authorship, Merkle content integrity, and revision lineage in VAULT999. It does NOT constitute independent judicial certification of empirical claims.
-- Corpus Statistics: 43 canonical articles. Latest update: 2026-10-17.
+- Corpus Statistics: 44 canonical articles. Latest update: 2026-10-19.
 
 ## Discovery Endpoints
 - Canonical Web Landing: https://arif-fazil.com/world/makcikgpt/
@@ -19,8 +19,9 @@
 - RSS Syndication: https://arif-fazil.com/feed.xml
 - Root AI Map: https://arif-fazil.com/llms.txt
 
-## Canonical Articles (43)
-- [Dulu Mesin Moral Ni Kejar Bang Non. Sekarang Dia Serbu Bilik Tidur Bekas Menteri.](https://arif-fazil.com/world/makcikgpt/mesin-moral-bang-non) (2026-10-16 · Series M5)
+## Canonical Articles (44)
+- [Gentari: Dossier Realiti — Apa Dia, Siapa Punya, Berapa Besar](https://arif-fazil.com/world/makcikgpt/gentari-dossier) (2026-10-19 · Series M6)
+- [Gentari: 15 Benda Yang Tak Masuk Akal](https://arif-fazil.com/world/makcikgpt/gentari-15-benda-bangang) (2026-10-19 · Series M6)
 - [Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay](https://arif-fazil.com/world/makcikgpt/taufik-pergi-mana) (2026-10-05 · Series M6)
 - [Hang Beli MyKad Hang Sendiri Ke, Atau Ishak Beli Depa?](https://arif-fazil.com/world/makcikgpt/nexg-mykad-siapa-beli) (2026-09-27 · Series M2)
 - [Yang x Diungkap: Kenapa Truth Sembunyi dalam Void](https://arif-fazil.com/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void) (2026-09-22 · Series GENESIS)

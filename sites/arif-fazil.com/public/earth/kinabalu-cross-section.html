@@ -8,7 +8,7 @@
 <meta name="description" content="Regional cross-section from the Dangerous Grounds across the Sabah Trough, Kinabalu Basin, Crocker Range and Central Sabah to the Sandakan Basin and Sulu Sea. Four competing working models of what drives the deformation, each with predictions and falsifiers. Public sources only.">
 <link rel="canonical" href="https://arif-fazil.com/earth/kinabalu-cross-section.html">
 <meta property="og:title" content="Kinabalu Basin — Dangerous Grounds to East Sabah, four working models">
-<meta property="og:description" content="One section, four competing tectonic drivers: a Sabah Trough magmatic ridge (Arif Fazil hypothesis), a Miocene mud canopy (Morley et al. 2023), continental underthrusting, and slab-remnant plus gravity tectonics.">
+<meta property="og:description" content="One section, four working explanations: possible rift-axis transtensional intrusions (Arif Fazil hypothesis, untested), a Miocene mud canopy (Morley et al. 2023), continental underthrusting, and slab-remnant plus gravity tectonics.">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,14 +123,14 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
 </div>
 
 <div class="panel">
-  <div class="panel-head"><h3>◈ Locator · section A–A′</h3><span class="note">Line and stations are schematic. Ridge axis drawn approximately along the Sabah Trough.</span></div>
+  <div class="panel-head"><h3>◈ Locator · section A–A′</h3><span class="note">Line and stations are schematic. Axis line drawn approximately along the Sabah Trough.</span></div>
   <div id="xsMap" role="img" aria-label="Map of the section line from the Dangerous Grounds to the Sulu Sea"></div>
 </div>
 
 <div class="panel" id="xsPanel">
   <div class="panel-head"><h3>◈ Cross-section A–A′ · pick a working model</h3><span class="note" id="modelNote"></span></div>
   <div class="read-guide" role="note" aria-label="How to read this cross-section">
-    <b>How to read this.</b> The shallow geometry (basins, granite, unconformities) is the same in every model. Press a button to switch what sits <i>under</i> the Deep Regional Unconformity and below ~15 km: <b>A</b> magmatic ridge, <b>B</b> overpressured mud canopy, <b>C</b> underthrust Dangerous Grounds, <b>D</b> slab remnant + gravity tectonics. Model <b>A</b> is the author's untested working hypothesis — drawn at equal weight so it can be argued with, not because it is established.
+    <b>How to read this.</b> The shallow geometry (basins, granite, unconformities) is the same in every model. Press a button to switch what sits <i>under</i> the Deep Regional Unconformity and below ~15 km: <b>A</b> rift-axis intrusions?, <b>B</b> overpressured mud canopy, <b>C</b> underthrust Dangerous Grounds, <b>D</b> slab remnant + gravity tectonics. Model <b>A</b> is the author's untested working hypothesis — drawn at equal weight so it can be argued with, not because it is established. These explanations address different depths and processes and can coexist; they are not four mutually exclusive whole-Earth models.
   </div>
   <div class="models" id="modelBtns" role="group" aria-label="Working model"></div>
   <div class="xs-wrap"><svg id="xs" role="img" aria-label="Geological cross-section"></svg></div>
@@ -162,8 +162,8 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
 </div>
 
 <div class="attribution">
-  <b>Read this honestly.</b> Topography and bathymetry are schematic profiles from published values (Mt Kinabalu 4,095 m; Sabah Trough ~2.9 km). Bodies are interpretive schematics, not seismic picks; depths of deep crust and Moho are approximate. Model A is a new working hypothesis by Arif Fazil and is <b>untested</b>: it is drawn at the same weight as the published models so that it can be argued with, not because it is established.<br>
-  <a href="https://arif-fazil.com/earth/kinabalu-basin/">◂ BACK TO DOSSIER</a> · <a href="/earth/kinabalu-basin.pdf">DOWNLOAD PDF ↓</a> · <a href="https://geox.arif-fazil.com/basins/kinabalu/">LAUNCH GEOX ↗</a>
+  <b>Read this honestly.</b> Topography and bathymetry are schematic profiles from published values (Mt Kinabalu 4,095 m; Sabah Trough ~2.9 km). Bodies are interpretive schematics, not seismic picks; depths of deep crust and Moho are approximate. Dips on the upper panel are exaggerated (about 17x vertical scale): a true 5 degree dip is drawn near 56 degrees - read shapes, not angles. Present-day heat flow is not a record of past heating: an old intrusion can leave a maturity anomaly after its heat anomaly is gone. Lineage: this figure is an interpretive schematic hand-plotted from published values - it is not machine-derived from survey data or a canonical transect pipeline. Model A is a new working hypothesis by Arif Fazil and is <b>untested</b>: it is drawn at the same weight as the published models so that it can be argued with, not because it is established.<br>
+  <a href="https://arif-fazil.com/earth/kinabalu-basin/">◂ BACK TO DOSSIER</a> · <a href="/earth/sabah-observatory/">SEVEN-MODEL OBSERVATORY ↗</a> · <a href="/earth/kinabalu-basin.pdf">DOWNLOAD PDF ↓</a> · <a href="https://geox.arif-fazil.com/basins/kinabalu/">LAUNCH GEOX ↗</a>
 </div>
 </div>
 </main>
@@ -214,7 +214,7 @@ const XS = {
     ASTH:  {name: "Asthenosphere / upwelling", fill: "#4a1d12"},
     MOBSH: {name: "Overpressured mobile shale", fill: "#334155"},
     CANOPY:{name: "Mud canopy / mud-volcano complex", fill: "#94a3b8"},
-    BASALT:{name: "Basaltic ridge / dykes / sills", fill: "#dc2626"},
+    BASALT:{name: "Possible intrusions (sills/dykes) — untested", fill: "#dc2626"},
     SLAB:  {name: "Subducted slab remnant", fill: "#0e7490"}
   },
   /* shared bodies (all models) */
@@ -265,40 +265,36 @@ const SHARED_EVENTS = [
   {a: 20, b: 15, lab: "Sulu Sea back-arc opening", tip: "Early–Middle Miocene (Rangin & Silver 1991)"},
   {a: 15.5, b: 15.5, lab: "DRU", tip: "Deep Regional Unconformity, ~15.5 Ma in published charts"},
   {a: 9.5, b: 8.5, lab: "SRU", tip: "Shallow Regional Unconformity, ~9.5–8.5 Ma depending on calibration"},
-  {a: 7.85, b: 7.22, lab: "Kinabalu granite", tip: "U-Pb zircon 7.85–7.22 Ma (Cottam et al. 2010)"}
+  {a: 7.85, b: 7.22, lab: "Kinabalu granite", tip: "U-Pb zircon 7.85–7.22 Ma (Cottam et al. 2010)"},
+      {a: 0, b: 0, lab: "Ranau 2015 · normal faulting", tip: "Mw 6.0 shallow normal (oblique) fault near Ranau — a local present-day extension constraint, not a whole-margin verdict"}
 ];
 const MODELS = [
   {
-    id: "A", color: "#f43f5e", key: "Model A · new hypothesis", title: "Sabah Trough magmatic ridge",
-    short: "A basaltic ridge along the trough pushes both ways",
-    who: "Working hypothesis · Arif Fazil · 2026", status: "UNTESTED",
-    thesis: "An extensional basaltic ridge runs along the Sabah Trough, on a strike line through the Tepat-1 area. Magmatic accretion along that axis pushed outward in both directions: north-west into the Dangerous Grounds, reactivating fault blocks and lifting carbonate highs, and south-east into the Kinabalu outboard, adding a driver for toe-thrust and wedge shortening. If real, this is a tectonic event that no current tectonostratigraphic chart records.",
-    mechanism: "Ridge push / magmatic wedging from an axial dyke complex fed by mantle upwelling beneath the trough.",
+    id: "A", color: "#f43f5e", key: "A · rift-axis intrusions?", title: "Failed-rift axis + possible transtensional intrusions",
+    short: "Sparse intrusions may exploit an inherited thinned axis — no push claimed",
+    who: "Working hypothesis · Arif Fazil · 2026", status: "UNTESTED WORKING HYPOTHESIS",
+    thesis: "An inherited zone of thinned crust runs along the Sabah Trough; potential-field work suggests crustal thinning beneath the trough axis predating basin fill. If that axis carried any magmatism, it would most plausibly be sparse sills and dykes fed by transtensional reactivation of inherited faults — not a spreading ridge. Whether such intrusions exist is untested; the deep oil-beneath-gas maturation question is the practical reason to look.",
+    mechanism: "No plate-driving push is claimed. Candidate mechanism: localised melting or fluid migration along reactivated rift faults and transfer zones; slab-window or flexural-hinge sources remain possible but unproven.",
     timing: "Not yet constrained. Two windows to test: (1) Oligocene–Early Miocene, at the end of rifting; (2) Middle–Late Miocene, coeval with DRU–SRU deformation.",
-    strengths: "Would give the outboard belt an internal driver independent of delta loading; would add a heat source relevant to the new deep oil (oil beneath gas); would tie volcanic or high-standing features along the trough into one structure.",
-    problems: "No published magnetic lineations, gravity high or dated basalt along the trough axis. The trough is usually read as a flexural foredeep, which predicts a cold, gravity-low axis — the opposite of a ridge. Ridge push is of order 10¹² N/m even for mature ocean ridges and smaller for a narrow young one; a stress budget is needed to show it can move a 100-km fold-thrust belt.",
-    kill: "No axial magnetic and gravity high along the strike line, and no dated basalt in trough-flank wells → reject.",
+    strengths: "Would provide a local heat source relevant to the deep oil beneath gas; would tie any dated intrusions along the trough into one testable body class. It is not offered as an explanation of the regional deformation budget.",
+    problems: "No published magnetic lineation, dated basalt or heat-flow high on the trough axis. Published potential-field work reports a gravity low along the axis with inferred crustal thinning; any intrusion configuration must fit that field with a proper forward model, not a slab approximation. High-velocity bodies offshore are non-unique (carbonate or older Crocker blocks are alternatives). Detectability of small sills at regional-grid resolution has not yet been assessed.",
+    kill: "Reject only a parameterised intrusion configuration whose required bodies are excluded by adequately resolved seismic and potential-field coverage; insufficient coverage yields INCONCLUSIVE. Finding no intrusions would not by itself prove burial-only maturation; finding intrusions would not by itself prove a slab-window origin.",
     refs: ["TS02"],
     bodies: [
       {f: "MOBSH", pts: SUBDRU, tip: "Stage II–III wedge (North Sabah–Pagasa Wedge) beneath the DRU"},
-      {f: "BASALT", pts: [[247,8.6],[278,8.6],[272,5.8],[263,4.7],[254,5.8]], tip: "Hypothesised basaltic ridge edifice on the trough axis, buried by trough fill"},
-      {f: "BASALT", pts: [[268,4.85],[290,5.05],[289,5.25],[268,5.1]], tip: "Hypothesised sill in trough fill"},
-      {f: "BASALT", pts: [[232,4.9],[250,5.05],[250,5.25],[232,5.1]], tip: "Hypothesised sill in trough fill"},
-      {f: "BASALT", pts: [[254,8.6],[271,8.6],[274,15],[251,15]], tip: "Axial dyke complex (feeder)"},
-      {f: "CCRUST", pts: [[0,15],[251,15],[249,17.5],[230,18],[150,22],[0,25]], tip: "Thinned continental crust"},
-      {f: "BASALT", pts: [[251,15],[274,15],[277,21],[248,21]], tip: "Magmatic crust beneath the axis"},
+      {f: "CCRUST", pts: [[0,15],[251,15],[249,17.5],[230,18],[150,22],[0,25]], tip: "Thinned continental crust (possible inherited rift axis — untested)"},
       {f: "SABCRUST", pts: [[274,15],[790,15],[790,16],[740,24],[650,28],[540,32],[430,30],[300,22],[277,21]], tip: "Sabah crust"},
-      {f: "ASTH", pts: [[195,60],[205,42],[240,27],[262,22],[285,27],[322,42],[332,60]], tip: "Mantle upwelling beneath the hypothesised ridge"}
+      {f: "BASALT", pts: [[252,7.9],[272,8.0],[271,8.3],[252,8.25]], tip: "Possible sill (untested) — size, depth and existence unconstrained"},
+      {f: "BASALT", pts: [[262,9.2],[276,9.3],[275,9.55],[262,9.5]], tip: "Possible sill (untested) — size, depth and existence unconstrained"},
+      {f: "BASALT", pts: [[263,8.3],[265,8.3],[265,12.5],[263,12.5]], tip: "Possible melt pathway along reactivated fault (untested)"}
     ],
     arrows: [
-      {from: [248,7.0], to: [175,7.0], lab: "push NW → DG blocks", c: "#f43f5e"},
-      {from: [278,7.4], to: [352,7.4], lab: "push SE → outboard", c: "#f43f5e"},
-      {from: [262,34], to: [262,23], lab: "melt", c: "#fb923c"}
+      {from: [264,12.2], to: [264,8.6], lab: "possible melt pathway", c: "#fb923c"}
     ],
-    labels: [{x: 262, y: 10.7, t: "magmatic ridge?", c: "#fecaca"}],
+    labels: [{x: 262, y: 11.6, t: "possible intrusions (untested)?", c: "#fecaca"}],
     events: [
-      {a: 30, b: 20, lab: "Ridge · window 1 (test)", dash: true, tip: "Oligocene–Early Miocene magmatism along the trough axis"},
-      {a: 16, b: 8, lab: "Ridge push · window 2 (test)", dash: true, tip: "Middle–Late Miocene push coeval with DRU–SRU deformation"}
+      {a: 30, b: 20, lab: "Intrusions? · window 1 (test)", dash: true, tip: "Oligocene–Early Miocene magmatism along the trough axis"},
+      {a: 16, b: 8, lab: "Intrusions? · window 2 (test)", dash: true, tip: "Middle–Late Miocene intrusions? coeval with DRU–SRU deformation"}
     ]
   },
   {
@@ -381,7 +377,7 @@ const MODELS = [
       {f: "CCRUST", pts: [[262,8.0],[300,10.5],[380,15],[262,15]], tip: "Dangerous Grounds crust (former lower plate)"},
       {f: "CCRUST", pts: [[0,15],[380,15],[380,24],[300,22],[230,18],[150,22],[0,25]], tip: "Continental crust"},
       {f: "SABCRUST", pts: [[380,15],[790,15],[790,16],[740,24],[650,28],[540,33],[430,31],[380,24]], tip: "Sabah crust"},
-      {f: "SLAB", pts: [[430,45],[520,47],[575,52],[600,57],[588,59],[560,55],[510,51],[428,49]], tip: "Detached slab remnant imaged at 45–55 km (Cornwell et al. 2025)"},
+      {f: "SLAB", pts: [[430,45],[520,47],[575,52],[600,57],[588,59],[560,55],[510,51],[428,49]], tip: "Gently west-dipping discontinuity at 45–55 km, interpreted as a detached slab remnant and associated there with Celebes Sea subduction (Cornwell et al. 2025) — interpretation, not a measured slab"},
       {f: "ASTH", pts: [[425,60],[450,44],[470,38],[485,35],[500,38],[520,44],[545,60]], tip: "Post-subduction mantle upwelling beneath the Crocker Range"}
     ],
     faultsExtra: [
@@ -396,7 +392,7 @@ const MODELS = [
     ],
     labels: [{x: 515, y: 53, t: "slab remnant", c: "#a5f3fc"}],
     events: [
-      {a: 21, b: 18, lab: "Subduction ends · slab detaches", tip: "Early Miocene"},
+      {a: 21, b: 18, lab: "Subduction ends · slab detachment timing unresolved", tip: "End of subduction Early Miocene (Hall 2013); when any slab detached is not constrained by the cited imaging"},
       {a: 15, b: 0, lab: "Rollback-driven extension (debated)", dash: true, tip: "Hall (2013)"},
       {a: 9, b: 0, lab: "Delta loading → toe-thrusts", tip: "Gravity-driven, linked by shale detachment"}
     ]
@@ -407,13 +403,13 @@ const MATRIX = [
   {q: "Dated basalt / dolerite in trough-flank wells", p: {A: "y", B: "u", C: "u", D: "u"}, obs: "open"},
   {q: "Sills, saucer intrusions, hydrothermal vents in trough fill (3D seismic)", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
   {q: "Heat flow / maturity peaks on the trough axis", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
-  {q: "Mud-volcano canopy and pipes at Middle Miocene level", p: {A: "u", B: "y", C: "n", D: "u"}, obs: "done", src: "Morley et al. 2023"},
+  {q: "3D-seismic pipes/chambers/mini-basins at Middle Miocene level (interpreted as mobile shale)", p: {A: "u", B: "y", C: "n", D: "u"}, obs: "done", src: "Morley et al. 2023"},
   {q: "Outboard shortening exceeds shelf extension", p: {A: "y", B: "u", C: "y", D: "n"}, obs: "open", src: "contested; King et al. 2010"},
-  {q: "Slab remnant at 45–55 km beneath Sabah", p: {A: "u", B: "u", C: "y", D: "y"}, obs: "done", src: "Cornwell et al. 2025"},
+  {q: "West-dipping discontinuity at 45–55 km (interpreted as detached slab remnant)", p: {A: "u", B: "u", C: "y", D: "y"}, obs: "done", src: "Cornwell et al. 2025"},
   {q: "Granite 7.85–7.22 Ma with rapid exhumation", p: {A: "u", B: "u", C: "u", D: "y"}, obs: "done", src: "Cottam et al. 2010, 2013"}
 ];
 const REFS = {
-  TS02: "Fazil, A. (2026). Sabah Trough magmatic-ridge hypothesis. Working note, this page (untested).",
+  TS02: "Fazil, A. (2026). Sabah Trough rift-axis intrusion hypothesis (renamed 2026-10 from 'rift-axis intrusions'; ridge-push mechanism withdrawn). Working note, this page (untested).",
   MOR23: "Morley, C.K. et al. (2023). A major Miocene deepwater mud canopy system: the North Sabah–Pagasa Wedge, northwestern Borneo. Geosphere 19(1): 291.",
   HIN89: "Hinz, K. et al. (1989). Thrust tectonics along the north-western continental margin of Sabah/Borneo. Geologische Rundschau 78: 705–730.",
   HT93: "Hazebroek, H.P. & Tan, D.N.K. (1993). Tertiary tectonic evolution of the NW Sabah continental margin. Bulletin of the Geological Society of Malaysia 33: 195–210.",
@@ -422,7 +418,7 @@ const REFS = {
   COT10: "Cottam, M.A. et al. (2010). Pulsed emplacement of the Mount Kinabalu granite, northern Borneo. Journal of the Geological Society 167: 49–60.",
   COT13: "Cottam, M.A. et al. (2013). Neogene rock uplift and erosion in northern Borneo: evidence from the Kinabalu granite, Mount Kinabalu. Journal of the Geological Society 170: 805–816.",
   KING10: "King, R.C. et al. (2010). Balancing deformation in NW Borneo: quantifying plate-scale vs. gravitational tectonics in a delta and deepwater fold-thrust belt system. Marine and Petroleum Geology 27: 238–246.",
-  COR25: "Cornwell et al. (2025). Journal of Geophysical Research — teleseismic receiver functions beneath Sabah (as cited in the dossier; full reference to be confirmed).",
+  COR25: "Cornwell, D.G., Gilligan, A., Rawlinson, N., Tongkul, F., Pilia, S., et al. (2025). Migrated teleseismic P wave receiver functions reveal intricate post-subduction crust and upper mantle structure of northern Borneo (Sabah), Malaysia. JGR Solid Earth 130(11), e2025JB031466.",
   BH09: "Balaguru, A. & Hall, R. (2009). Tectonic evolution and sedimentation of Sabah, North Borneo. AAPG Search and Discovery #30084.",
   BAL03: "Balaguru, A., Nichols, G. & Hall, R. (2003). The origin of the 'circular basins' of Sabah. Bulletin of the Geological Society of Malaysia 46: 335–351.",
   MJ22: "Madon, M. & Jong, J. (2022). Structural-stratigraphic framework and petroleum systems of the Sandakan Basin. Bulletin of the Geological Society of Malaysia 74: 135–160.",
@@ -594,7 +590,7 @@ const REFS = {
     XS.stations.forEach((s, i) => window.L.circleMarker([s.lat, s.lng], {radius: 4, color: "#fbbf24", fillOpacity: 1})
       .bindTooltip(`${s.name} · ${s.km} km`, {direction: i % 2 ? "bottom" : "top"}).addTo(map));
     ridgeLine = window.L.polyline(XS.ridgeAxis, {color: "#f43f5e", weight: 2.5, dashArray: "6 6", opacity: cur.id === "A" ? 1 : .25})
-      .bindTooltip("Hypothesised magmatic-ridge axis along the Sabah Trough (Model A, schematic)").addTo(map);
+      .bindTooltip("Possible inherited thinned axis along the Sabah Trough (Model A, schematic)").addTo(map);
     map.fitBounds(window.L.latLngBounds(pts).pad(0.12));
   }
 

@@ -20,37 +20,172 @@
 <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-base: #070709;
-  --bg-surface: #0f1015;
-  --bg-card: #14151e;
-  --bg-card-hover: #191b26;
-  --border-subtle: #1f2230;
-  --border-strong: #2f3448;
-  --text-main: #f5f5f7;
-  --text-muted: #9fa4b8;
-  --text-dim: #656a80;
-  --yellow: #f2b705;
-  --red: #e0301e;
-  --blue: #1f3fd4;
-  --green: #27ae60;
+  /* Site palette — same paper/ink/gold as the rest of arif-fazil.com (2026-10-19) */
+  --bg-base: #0A0B0D;
+  --bg-surface: #0F1116;
+  --bg-card: #13161C;
+  --bg-card-hover: #171B22;
+  --border-subtle: #1F2733;
+  --border-strong: #2C3644;
+  --text-main: #EDE9E0;
+  --text-muted: #9AA3B2;
+  --text-dim: #6B7484;
+  --yellow: #C9A227;
+  --red: #E4572E;
+  --blue: #4AA8FF;
+  --green: #31C48D;
+  --font-display: 'Cabinet Grotesk', 'Satoshi', Inter, sans-serif;
+  --font-body: 'Satoshi', Inter, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   background: var(--bg-base);
   color: var(--text-main);
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Canonical site header (same as /words/, /work/, /vitals/) ───────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 11, 13, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.site-header .bar {
+  max-width: 1360px;
+  margin: 0 auto;
+  height: 56px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-header .brand .psi {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+.site-header .brand:hover { color: var(--yellow); }
+.site-header nav { display: flex; align-items: center; gap: 18px; }
+.site-header nav a {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  padding-bottom: 2px;
+}
+.site-header nav a:hover { color: var(--text-main); }
+.site-header nav a.active {
+  color: var(--text-main);
+  font-weight: 600;
+  border-bottom: 2px solid var(--green);
+}
+.site-header .clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-left: 12px;
+  border-left: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+.site-header .clock .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+}
+@media (max-width: 900px) {
+  .site-header nav { display: none; }
+  .site-header .clock { display: none; }
+}
+
+/* ── Canonical site footer ───────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 72px;
+}
+.site-footer .inner { max-width: 1360px; margin: 0 auto; padding: 56px 24px; }
+.site-footer .creed {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 36px;
+}
+.site-footer .cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 28px;
+}
+.site-footer .col-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.site-footer ul { list-style: none; }
+.site-footer li { margin-bottom: 7px; font-size: 14px; }
+.site-footer li a { color: var(--text-muted); text-decoration: none; }
+.site-footer li a:hover { color: var(--text-main); }
+.site-footer li span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+}
+.site-footer .base {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+.site-footer .base a { color: var(--text-muted); text-decoration: none; }
+.site-footer .base a:hover { color: var(--text-main); }
+
 .nav-strip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -73,7 +208,7 @@ body {
 .wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
 
 .eyebrow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.22em;
@@ -86,7 +221,7 @@ body {
 .eyebrow::before { content: ""; display: inline-block; width: 16px; height: 2px; background: var(--yellow); }
 
 h1.page-title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: 48px;
   line-height: 1.05;
   margin-bottom: 12px;
@@ -127,7 +262,7 @@ p.page-desc {
   gap: 8px;
 }
 .lead-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -141,14 +276,14 @@ p.page-desc {
   padding: 28px 32px 32px;
 }
 .lead-title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: 28px;
   color: #ffffff;
   margin-bottom: 8px;
   line-height: 1.15;
 }
 .lead-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-body);
   font-size: 18px;
   color: var(--yellow);
   margin-bottom: 16px;
@@ -183,7 +318,7 @@ p.page-desc {
   transform: translateY(-2px);
 }
 .triad-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -192,7 +327,7 @@ p.page-desc {
   text-transform: uppercase;
 }
 .triad-heading {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: 16px;
   color: #ffffff;
   margin-bottom: 6px;
@@ -204,7 +339,7 @@ p.page-desc {
   flex: 1;
 }
 .triad-action {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   color: var(--yellow);
   margin-top: 12px;
@@ -213,7 +348,7 @@ p.page-desc {
 
 /* Section Headers */
 h2.surface-header {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: 24px;
   color: #ffffff;
   margin: 48px 0 20px;
@@ -225,7 +360,7 @@ h2.surface-header {
 }
 h2.surface-header .num {
   color: var(--yellow);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
   background: rgba(242, 183, 5, 0.1);
   padding: 2px 8px;
@@ -260,7 +395,7 @@ h2.surface-header .num {
 .surface-item.yellow { border-left-color: var(--yellow); }
 
 .item-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -268,7 +403,7 @@ h2.surface-header .num {
   margin-bottom: 8px;
 }
 .item-title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: 17px;
   color: #ffffff;
   margin-bottom: 8px;
@@ -280,7 +415,7 @@ h2.surface-header .num {
   margin-bottom: 12px;
 }
 .item-link {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   color: var(--yellow);
   font-weight: 600;
@@ -291,7 +426,7 @@ h2.surface-header .num {
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--border-subtle);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -337,20 +472,20 @@ h2.surface-header .num {
 </head>
 <body>
 
-<nav class="nav-strip">
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/earth/">Earth</a>
-    <a href="/economics/">Economics</a>
-    <a href="/world/" class="active">World</a>
-    <a href="/politics/">Politics</a>
-    <a href="/read/">Read</a>
-    <a href="/writing/">Writing</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/"><span class="psi">Ψ</span><span>ARIF FAZIL</span></a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/earth/">Earth</a>
+      <a href="/words/">Words</a>
+      <a href="/world/makcikgpt/">MakcikGPT</a>
+      <a href="/world/" class="active" aria-current="page">World</a>
+      <a href="/work/">Work</a>
+    </nav>
+    <div class="clock"><span class="dot"></span><span id="sclock">--:--:--</span><span style="opacity:.6">MYT</span></div>
   </div>
-  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--yellow);">
-    WORLD SURFACE · v2026.09
-  </div>
-</nav>
+</header>
 
 <main class="wrap">
 
@@ -397,7 +532,7 @@ h2.surface-header .num {
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 16px;">
         <a href="/world/2027/ai-agents-2027-dossier.pdf" class="triad-action" style="background: var(--yellow); color: #070709; padding: 8px 16px; border-radius: 4px; text-decoration: none;" download>Download Full 15-Page Dossier (PDF 223 KB) ↓</a>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim);">SEALED: 2026-09-18 · arifOS Federation</span>
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">SEALED: 2026-09-18 · arifOS Federation</span>
       </div>
     </div>
   </div>
@@ -464,14 +599,78 @@ h2.surface-header .num {
     <span><a href="/world/2027/">AI Agents 2027</a> · <a href="/earth/">Earth Surface</a> · <a href="/economics/">Economics</a></span>
   </div>
 
-  <footer class="integrity" style="margin-top: 2rem; padding: 1rem; border-top: 1px solid #2a2a3a; font-family: monospace; font-size: 0.75rem; color: #8a8378;">
+  <footer class="integrity" style="margin-top: 2rem; padding: 1rem; border-top: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">
     <p><strong>INTEGRITY — world-state.json</strong> (generated <time datetime="2026-09-06T21:22:00Z">2026-09-06 21:22 UTC</time>)</p>
     <p>sha256: <code>aaea39b2202a2e6e70f6d3f04ef292ec0444bf87c8321fd816297ef34d65dbe8</code></p>
     <p>Brent <data value="96.28">USD 96.28</data> · USD/MYR <data value="4.04">4.04</data> · KLCI RSI-14 <data value="42.56">42.56</data> — organ-live, receipts 4a35c5f1 / ff2aa60e (VAULT999 wealth ledger, 2026-09-06).</p>
-    <p>Integrity hash above; mismatch = tampered. Verification and witness state live at <a href="/vitals/" style="color:#c9a84c;">/vitals/</a> and <a href="/machine/" style="color:#c9a84c;">/machine/</a>.</p>
+    <p>Integrity hash above; mismatch = tampered. Verification and witness state live at <a href="/vitals/" style="color:var(--yellow);">/vitals/</a> and <a href="/machine/" style="color:var(--yellow);">/machine/</a>.</p>
   </footer>
 
 </main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p class="creed">Forged, not given.</p>
+    <div class="cols">
+      <div>
+        <p class="col-label">Territories</p>
+        <ul>
+          <li><a href="/about">About</a><span>Who he is</span></li>
+          <li><a href="/earth/">Earth</a><span>The ground</span></li>
+          <li><a href="/vitals/">Research</a><span>PETRONAS, in public numbers</span></li>
+          <li><a href="/words/">Writing</a><span>Essays</span></li>
+          <li><a href="/world/makcikgpt/">Column</a><span>MakcikGPT</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="col-label">World</p>
+        <ul>
+          <li><a href="/world/">Atlas</a><span>Situational surface</span></li>
+          <li><a href="/world/2027/">AI Agents 2027</a><span>Dossier</span></li>
+          <li><a href="/malaysia/">Malaysia</a><span>Sovereign pulse</span></li>
+          <li><a href="/oil/">Oil</a><span>Terminal</span></li>
+          <li><a href="/gas/">Gas</a><span>Terminal</span></li>
+          <li><a href="/gold/">Gold</a><span>Terminal</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="col-label">Federation</p>
+        <ul>
+          <li><a href="/000/">000 · Genesis</a><span>Sovereign anchor</span></li>
+          <li><a href="/999/">999 · Proof</a><span>Sealed vault</span></li>
+          <li><a href="/arifos/">arifOS</a><span>The kernel</span></li>
+          <li><a href="/machine/">Machines</a><span>Agent door</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="col-label">For machines</p>
+        <ul>
+          <li><a href="/llms.txt">llms.txt</a><span>Site overview</span></li>
+          <li><a href="/missions.json">missions.json</a><span>Mission catalog</span></li>
+          <li><a href="/surfaces.json">surfaces.json</a><span>Surface registry</span></li>
+          <li><a href="/feed.xml">feed.xml</a><span>Writing feed</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>Ditempa bukan diberi — Forged, not given</span>
+      <span>Muhammad Arif bin Fazil · Kuala Lumpur</span>
+      <span>© 2026 · arif-fazil.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var el = document.getElementById('sclock');
+  if (!el) return;
+  function tick() {
+    el.textContent = new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Kuala_Lumpur', hour12: false });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 
 </body>
 </html>

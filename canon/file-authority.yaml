@@ -80,6 +80,23 @@ derived:
     state: DERIVED
     owner: generator
     hand_edit: false
+    # 2026-10-20 (F13 lease, Arif "fix all"): this blanket rule sent agents hunting
+    # for a generator that does not exist. Only these have named generators:
+    #   politics/ns-election/compare/index.html -> generate-ns-compare.cjs
+    # Everything else under public/**/index.html is AUTHORED source that
+    # copy-static-html.js copies verbatim. Authoritative list lives here.
+    authored_exceptions:
+      - "public/000/index.html"
+      - "public/999/index.html"
+      - "public/sanctuary/index.html"
+      - "public/words/**"
+      - "public/index.html"
+      - "public/institution/**"
+      - "public/human/**"
+      - "public/earth/**"
+    state_authored: CANON
+    owner_authored: ARIF
+    allowed_mutators_authored: [A-FORGE, ARIF, 333-AGI-with-lease]
   "sites/arif-fazil.com/dist/**":
     state: DERIVED
     owner: build

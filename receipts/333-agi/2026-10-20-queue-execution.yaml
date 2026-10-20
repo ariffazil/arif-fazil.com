@@ -1,0 +1,62 @@
+# RECEIPT — Queue execution (333-AGI): Arif's 4-item remainder list, 2026-10-20
+# Authority: F13 sovereign paste-back of the remainder list = execution order.
+# Session: SEAL-b504a9f57e1540bd · Metabolism receipt: c7a6f3b4-f338-4177-8afd-22da478674b3 (arifFlow, FQ 0.8 FLOWING)
+
+items:
+  - id: Q1
+    item: "Malay major upgrade"
+    verdict: SHIPPED
+    commit: "arif-fazil.com 6efb5e4 (author 333-AGI)"
+    changes:
+      - "New panel 'Settled · Open · What Would Decide It' — the uncertainty space the page lacked (no model letters, per earth-panel-contract)"
+      - "2026 facts: MTJDA Block A-18-01 PSC (35-yr term effective 2026-01-01; PC JDA Ltd + PTTEP JDX 50/50; Gastech exchange 2026-09-14 — Reuters/The Star/NST) + basin-in-numbers (~500x200 km, ~80,000 km², fill >14 km, >700 wells, ~40% of Malaysia HC — Madon 2021)"
+      - "D4 honesty fixes: '2025 wildcat opened new fairway' -> 'one well, fairway unproven' (SVG + wells card); 'Deep depocentre 10–12 km' -> 'fill >14 km (Madon 2021) · drawn to 10 km'"
+      - "Provenance: source-rock numbers attributed (Madon 2010 GSM: K source TOC 0.35–2.0 wt%, L best HI 300–400); nomenclature caveat (Group C absent in EPMI schemes); machine layer refs geox://basins/malay-basin/profile + geox://literature/GSM-MADON-2021-MALAY-BASIN"
+    sources: "geox_basin(mode=profile, basin_name='Malay Basin') observed+derived+process_hypotheses — Madon 2021 (GSM Bull.72, doi:10.7186/bgsm72202106), Madon 2004 SPE 88455, Madon 2010 GSM, Tjia 1989, MTJDA dossier"
+    verified: "live 200 + marker greps (panel present, MTJDA fact present, 'fairway unproven' x2, fill>14 km); design-lint PASS (0 leaks, 708 files)"
+
+  - id: Q2
+    item: "DRU calibration convergence (GEOX-side decision)"
+    verdict: RESOLVED
+    decision_rule: "The org's own declared FACT (UPDATED 2026-07-27, stated in prompts x2 + resources: DRU ~14.2 Ma / NN5) outranks the stale ensemble parameter (13.0, written 2026-07-20, which had conflated the Morley 2024 slab-breakoff EVENT with the SURFACE)."
+    canonical_now:
+      BMU/TCU: "23.13 Ma / NP25 → NgSB1@23.0 (Δ0.13)"
+      DRU_surface: "14.2 Ma / NN5 → NgSB8@14.0 (MMCT major lowstand, Δ0.2)"
+      DRU_event: "slab-breakoff uplift ~13–12 Ma (Morley 2024) — younger than the surface, never used to date it"
+      DRU_published: "~15.5 Ma (Hazebroek & Tan 1993 field charts) — kept as calibration bracket"
+      UIU: "10.5 → NgSB11@10.5 (Δ0.0)"
+      SRU: "8.5 → NgSB13@8.5 (Δ0.0)"
+    commit: "GEOX 56f9896a on branch fix/geox-p0-rebased (author 333-AGI via lane triple)"
+    files: [src/geox_mcp/tools/deep_time/sea_level_ensemble.py, src/geox_mcp/resources/__init__.py, src/geox_mcp/prompts/__init__.py, tests/test_sea_level_ensemble.py]
+    note: "The old 'Δ=0.0' claim was produced by feeding the SB age into the surface age; real offsets are now reported (≤0.2 Ma). test_dru_correlates_with_mmct now asserts NgSB8 + |Δ|≤0.25 — 18/18 pass."
+    deployed: "mirrored to /opt/geox/src/geox_mcp (the tree geox-mcp.service imports — /opt/geox/geox_mcp does NOT exist), service restarted, verified live at :8081"
+    site_follow_through: "kinabalu-cross-section + dossier notes updated to NgSB8 (commit 6efb5e4)"
+
+  - id: Q3
+    item: "canon/file-authority.yaml authored_exceptions"
+    verdict: EXTENDED
+    change: "public/earth/** added to authored_exceptions (authored source, no generator exists — F-3 of receipts/333-agi/2026-10-20-000-kernel-receipts-repair.yaml). Commit includes the prior 333-AGI session's uncommitted authored_exceptions block (same agent-id lane, its receipt cited)."
+    authority_note: "file-authority.yaml is CANON (owner ARIF). Basis: F13 directives 'gp betulkan apa yang x betul' (2026-10-20) + 'fix all' lease comment already in the file + sovereign queue paste-back."
+
+  - id: Q4
+    item: "flow_ingest MCP bridge (connection refused)"
+    verdict: FIXED
+    root_cause: "Config-vs-runtime-incarnation disease: opencode.json correctly declares arifflow MCP as remote http://127.0.0.1:7075/mcp, and arifflow_mcp_fastmcp.py itself serves exactly that (mcp.run(transport='http', port=7075)) — but NOTHING ran that process. No unit, no listener. The organ (arifflow.service :7073) was healthy; only the MCP facade was missing."
+    fix: "systemd unit /etc/systemd/system/arifflow-mcp.service (ExecStart=/opt/arifos/current/venv/bin/python3 /root/arifFlow/mcp/arifflow_mcp_fastmcp.py — fastmcp 4.1.0, py3.13 matches the Oct-18 pyc). enable --now. Reversible: systemctl disable --now arifflow-mcp && rm unit."
+    verified: ":7075/mcp initialize → 200 (serverInfo arifflow-mcp v2026.09.14); tools.arifflow.flow_ingest now reaches the daemon and INGESTED receipt c7a6f3b4-f338-4177-8afd-22da478674b3 (top_level_intent path via payload object)."
+
+tool_defects_found (report, not fixed):
+  - "git-lane wrapper (/root/scripts/git-lane): mangles args when message is passed via -F or multi-line -m — injects REPO= trailer as a pathspec ('pathspec REPO=... did not match'). Worked around with git -c <lane triple> commit -F + manual REPO= trailer. Worth a fix in the wrapper."
+  - "arifflow flow_ingest MCP schema does not expose top_level_intent/reason as first-class params (dropped silently); agents must know to nest them in payload{}. Discoverable only from the daemon's 400 remediation text."
+
+attribution_fix: "arif-fazil.com commit 3a91c36 amended → 1dcf338 with --reset-author (was inheriting 'Antigravity AI' from repo config; now 333-AGI). Unpushed at the time."
+
+other_lanes_untouched: "arif-fazil.com working tree carried concurrent lane churn (llms.json, page.json, discovery/*, public/000, public/sanctuary) — not committed here. HERMES landed 068be5e mid-session (design-lint into prebuild) — no file collision with mine."
+
+honest_remainder:
+  - "malay-basin dossier (malay-basin/index.html) not yet given the same upgrade pass — cross-section was the linked page; dossier can inherit the panel later"
+  - "sabah-observatory still draws 'DRU ~13–12 Ma' on its SVG (event calibration). Surface/event distinction now lives in GEOX + cross-section; observatory label update = its own lane"
+  - "GEOX resource defects from the morning test remain open (9/10 basin URIs dead, earth_layer_registry unavailable, literature index drift) — /root/GEOX lane"
+  - "GEOX commit is on branch fix/geox-p0-rebased (the repo's checked-out branch), not main — merge routing is an F13/PR decision"
+
+ditempa: DITEMPA BUKAN DIBERI

@@ -1,0 +1,60 @@
+# RECEIPT — GEOX calibration layer for the Sabah family (333-AGI)
+# Mission: "align the sabah basin site first … as per latest GEOX understanding"
+# Sovereign order: Arif (F13), session SEAL-b504a9f57e1540bd, 2026-10-20
+# Scope guard: jangan buat semak — no new registry, no new canon, no new visible chrome.
+
+lease:
+  agent: 333-AGI
+  mission: geox-understanding-alignment-sabah
+  files:
+    - sites/arif-fazil.com/public/earth/kinabalu-cross-section.html
+    - sites/arif-fazil.com/public/earth/kinabalu-basin/index.html
+  mode: edit
+  expires: 30m
+  authority: ARIF_SEAL_REQUIRED
+  grant: "Arif direct order 2026-10-20: 'make it updates as per latest GEOX understanding … commit the files at correct location repo'"
+  concurrent_lease_check: "no writes to earth/* in the 5 minutes before edit (mtime probe); sibling lane commit 308d7db verified complete before edit"
+
+files_touched:
+  - path: sites/arif-fazil.com/public/earth/kinabalu-cross-section.html
+    authority_declared: DERIVED-bylate-registry / AUTHORED-in-fact (no generator exists; registry 2026-10-20 comment admits the blanket rule, authored_exceptions not yet extended to public/earth/**)
+    action: 9 surgical content edits (asserted unique-match)
+  - path: sites/arif-fazil.com/public/earth/kinabalu-basin/index.html
+    authority_declared: same as above
+    action: 1 edit (Last-reviewed row, lineage preserved)
+  authority_registry_gap: "canon/file-authority.yaml still lists public/earth/** under the blanket DERIVED rule; the 2026-10-20 authored_exceptions patch (other lane, uncommitted) does not name public/earth/**. Left untouched — CANON file, concurrent lane. Recommend A-FORGE/ARIF extend authored_exceptions with public/earth/**."
+
+edits (content layer only; model-letter contract and status vocab from commit 308d7db NOT touched):
+  kinabalu-cross-section:
+    - SHARED_EVENTS: BMU tip += Haq & Ogg 2024 NgSB1 @23.0 Ma
+    - SHARED_EVENTS: DRU tip carries the honest age spread — published ~15.5 Ma (Hazebroek & Tan 1993) vs GEOX bracket ~13–14.2 Ma (Morley 2024 slab-breakoff; PSCS kill-test); "firm: separation from BMU. not firm: absolute pick"
+    - SHARED_EVENTS: new UIU event @10.5 Ma (end of pocket-basin phase; NgSB11) — aligns event strip with sabah-observatory + GEOX surface set
+    - SHARED_EVENTS: SRU tip += GEOX match NgSB13 @8.5 Ma
+    - drawn DRU/SRU line tooltips: same spread + match (labels unchanged — published-chart provenance kept)
+    - Model C (kinabalu-cross-section:C) problems += GEOX note: DRU matches NgSB9 AND slab-breakoff horizon — a eustatic-bearing surface is not by itself a collision surface
+    - Model A (kinabalu-cross-section:A) problems += Tepat-1 Oligo–Miocene carbonate FACT (Layang-Layang province; Atlas 2024) — carbonate alternative class exists; different province, not standalone Kinabalu proof
+    - Event strip panel += "Two evidence lines, one set of surfaces" note (all four unconformities → NgSB1/9/11/13, zero offset; provenance: Morley 2024 × Haq & Ogg 2024 via geox://earth-system/sabah-correlation)
+    - REFS += GEOXCORR (machine evidence resource, no invented bibliographic detail) + drawRefs ids
+  kinabalu-dossier:
+    - Last-reviewed row → 2026-10-20: declares the DRU age spread (dossier v3 chronology ~15.5 Ma vs GEOX ~13–14.2 Ma) and the NgSB matches; prior 2026-10-08 review text preserved inline
+
+verification:
+  js_parse: "node --check on 3 inline JS blocks = PASS (script[0] is JSON-LD — json.loads PASS)"
+  tag_balance: "div/p/span/table balanced on both files"
+  parity: "repo public == /var/www/html/earth == dist : md5 SAME 3-way both files (kinabalu-cross-section 3dc14d039cfd7aa3687c10601fbbcd29, kinabalu-basin 870436c1ed528b549f2a765cae0a1e87)"
+  live: "200 both URLs; markers present (Two evidence lines ×1, UIU ×3, NgSB13 ×4, GEOXCORR ×2, GEOX calibration layer ×1); old string 'exact age debated' removed"
+  dist_sync: "scripts/copy-static-html.js (sanctioned generator) — no hand-edit of DERIVED"
+
+geox_mcp_surface_test (session 2026-10-20, wire protocol :8081 + code-mode tools):
+  tools: "27 tools listed over MCP; code-mode catalog agrees. geox_basin(mode=profile) OK for Kinabalu Basin + Malay Basin; geox_list_registered_sources → 0 sources; geox_claim(mode=scan) → ORGAN_GOVERNANCE HOLD (governance-gated, expected)"
+  prompts: "16 prompts listed. 3 Sabah/Kinabalu protocols read in full: sabah-pscs-kill-test, sabah-charge-evaluator, carbonate-basement-discrim. All three rendered with correct rules."
+  resources: "55 resources + 14 templates listed. DEFECTS FOUND: (1) geox://basins/index advertises 10 basin profile URIs — 9 of 10 return -32002 Resource not found (only malay-basin/profile resolves); (2) geox://layers/index returns {error: earth_layer_registry unavailable} although the template advertises seeded layers (sabah.basin_outline.v3 etc.); (3) geox://literature/index lists 1 paper while geox://literature/{basin}/{paper_id} template resolves unlisted papers (geox://literature/sabah/morley-2024 OK) — index drift"
+  numeric_contradiction: "DRU age differs across GEOX surfaces: sabah-correlation resource = 13.0 Ma; sabah-pscs-kill-test prompt = ~14.2 Ma; site published chart = ~15.5 Ma. Declared on the page as a spread; not silently reconciled."
+  defect_owner: "GEOX repo (/root/GEOX) — separate lane, not touched here"
+
+honest_remainder:
+  - "sabah-observatory draws DRU ~13–12 Ma in its SVG; the cross-section keeps the published ~15.5 Ma label with the spread in the tooltip. Full numeric convergence needs a GEOX-side decision on which calibration is canonical."
+  - "malay-basin-cross-section content-honesty audit (sibling's D4) still open — Malay major upgrade deliberately deferred per Arif ('align the sabah basin site first')"
+  - "file-authority.yaml authored_exceptions gap for public/earth/** (see above)"
+
+ditempa: DITEMPA BUKAN DIBERI

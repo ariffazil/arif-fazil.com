@@ -148,7 +148,7 @@ ${items}
 
 <h1>🌍 MakcikGPT — Civic Intelligence</h1>
 <p>Civic journalism in Bahasa Makcik. Malaysian sovereignty, resource governance, institutional integrity, and technology accountability.</p>
-<p>Canonical landing: <a href="/world/makcikgpt/">/world/makcikgpt/</a> · ${pieces.length} articles · updated ${escapeHtml(today)}</p>
+<p>Read the full series at <a href="/world/makcikgpt/">/world/makcikgpt/</a> · ${pieces.length} articles · updated ${escapeHtml(today)}</p>
 
 <!-- ZEN PULSE — answers 3 questions in 3 seconds. Required by AGENTS.md §14.3. -->
 <aside class="zen-pulse" aria-label="Sacred navigation">
@@ -181,7 +181,7 @@ ${sectionsHtml}
 ${listItems}
 </ul>
 
-<p class="meta">Source of truth: <code>src/data/essays.json</code>. Rendered by <code>scripts/generate-makcik-index.cjs</code>. <em>Ditempa bukan diberi.</em></p>
+<p class="meta">Every piece above comes from one essay archive, kept in sync automatically. <em>Ditempa bukan diberi.</em></p>
 </body>
 </html>
 `;

@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-10-20T13:25:32Z",
+ "generated_at": "2026-10-20T13:27:58Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",

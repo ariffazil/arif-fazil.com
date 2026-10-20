@@ -204,6 +204,60 @@ export function EvidenceHub() {
             ))}
           </div>
         </section>
+
+        {/* ── 4. AI AGENT GOVERNANCE & RUNTIME REPUTATION ── */}
+        <section>
+          <div className="flex items-center justify-between pb-3 mb-6 border-b border-[#1F2733]">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-widest text-[#10B981] mb-1">
+                Domain: Governed Intelligence & Industry Index
+              </div>
+              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">
+                External Recognition & Ecosystem Index
+              </h2>
+            </div>
+            <a
+              href="https://github.com/agentrust-io/awesome-ai-governance#governance-frameworks"
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider"
+            >
+              AgenTrust Directory ↗
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-[#1F2733]">
+              <div>
+                <span className="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 rounded bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/30 mr-3">
+                  Curated Entry
+                </span>
+                <span className="font-display font-bold text-lg text-[#EDEAE2]">
+                  Awesome AI Agent Governance (AgenTrust)
+                </span>
+              </div>
+              <span className="font-mono text-xs text-[#9AA0A8]">PR #148 · Merged 2026-10-16</span>
+            </div>
+            <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">
+              Curated by Imran Siddique (Agent Governance Toolkit lead, OWASP ASI / CoSAI WS4 contributor).
+              Both the authority kernel (<strong>arifOS</strong>) and the execution plane (<strong>A-FORGE</strong>) are officially listed under <span className="text-[#EDEAE2] font-semibold">Governance Frameworks</span> alongside Microsoft AGT, IBM mcp-context-forge, and LiteLLM.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="p-4 rounded border border-[#1F2733] bg-[#07090E]">
+                <div className="font-mono text-xs font-bold text-[#E4572E] uppercase">arifOS</div>
+                <div className="font-sans text-xs text-[#9AA0A8] mt-1.5 leading-relaxed">
+                  AGPL-3.0 governance kernel for MCP agents evaluating proposed actions against policy floors F1–F13, answering wire verdicts (SEAL, HOLD, SABAR...), with hash-chained ledger.
+                </div>
+              </div>
+              <div className="p-4 rounded border border-[#1F2733] bg-[#07090E]">
+                <div className="font-mono text-xs font-bold text-[#38BDF8] uppercase">A-FORGE</div>
+                <div className="font-sans text-xs text-[#9AA0A8] mt-1.5 leading-relaxed">
+                  AGPL-3.0 executor for agent file, service, and git changes, limited by per-action-class budgets, accepting only HMAC-signed requests, and writing receipts per run.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

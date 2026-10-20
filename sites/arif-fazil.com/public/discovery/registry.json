@@ -1,12 +1,12 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-10-20T01:07:37.062Z",
+  "generated_at": "2026-10-20T07:15:44.574Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
       "verified": true,
-      "count": 8,
+      "count": 9,
       "tools": [
         {
           "name": "arif_init",
@@ -39,6 +39,10 @@
         {
           "name": "arif_seal",
           "desc": "KERNEL 999 · Append an entry to VAULT999, the immutable ledger — accepted entries can neve"
+        },
+        {
+          "name": "arif_report",
+          "desc": "AGENT REPORT LANE · File or read reports between agents without involving the human. Use w"
         }
       ]
     },
@@ -269,5 +273,5 @@
       ]
     }
   },
-  "total_verified": 60
+  "total_verified": 61
 }

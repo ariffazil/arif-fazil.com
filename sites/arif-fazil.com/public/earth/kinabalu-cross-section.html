@@ -152,7 +152,7 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
   <div class="card">
     <h3>What would decide it · discriminating observations</h3>
     <table class="mx" id="matrix"></table>
-    <p style="margin-top:.6rem;font-size:.7rem;color:var(--text-dim)"><span class="y">✓</span> predicted · <span class="n">✗</span> contradicted / not expected · <span class="u">○</span> silent. “Observed” means published; “open” means the decisive data exist in industry but are not public.</p>
+    <p style="margin-top:.6rem;font-size:.7rem;color:var(--text-dim)"><span class="y">✓</span> predicted · <span class="n">✗</span> contradicted / not expected · <span class="u">○</span> silent. “Observed” means published; “open” means the decisive data exist in industry but are not public.<br>Two rules for reading this table near the magnetic equator: (1) mafic bodies skew to magnetic lows here and weak-susceptibility intrusions can fall below detection — so the magnetic row can support a model but can never kill one alone; (2) heat-flow and magnetics results are local — domains pass and fail independently along the transect, no single result decides the section.</p>
   </div>
 </div>
 
@@ -284,7 +284,7 @@ const MODELS = [
     mechanism: "No plate-driving push is claimed. Candidate mechanism: localised melting or fluid migration along reactivated rift faults and transfer zones; slab-window or flexural-hinge sources remain possible but unproven.",
     timing: "Not yet constrained. Two windows to test: (1) Oligocene–Early Miocene, at the end of rifting; (2) Middle–Late Miocene, coeval with DRU–SRU deformation.",
     strengths: "Would provide a local heat source relevant to the deep oil beneath gas; would tie any dated intrusions along the trough into one testable body class. It is not offered as an explanation of the regional deformation budget.",
-    problems: "No published magnetic lineation, dated basalt or heat-flow high on the trough axis. Published potential-field work reports a gravity low along the axis with inferred crustal thinning; any intrusion configuration must fit that field with a proper forward model, not a slab approximation. High-velocity bodies offshore are non-unique (carbonate or older Crocker blocks are alternatives). Detectability of small sills at regional-grid resolution has not yet been assessed. Tepat-1 proves the carbonate alternative class exists in the region (Oligo–Miocene carbonate, Layang-Layang province; Atlas 2024) — a different province, so not standalone proof about Kinabalu bodies, but a high-velocity body is not proof of intrusion.",
+    problems: "No published magnetic lineation (a weak test at this latitude — low-latitude magnetics need analytic-signal / RTE treatment), no dated basalt, and no published heat-flow high on the trough axis (present-day heat flow is the wrong clock anyway — see the matrix). Published potential-field work reports a gravity low along the axis with inferred crustal thinning; any intrusion configuration must fit that field with a proper forward model, not a slab approximation. High-velocity bodies offshore are non-unique (carbonate or older Crocker blocks are alternatives). Detectability of small sills at regional-grid resolution has not yet been assessed. Tepat-1 proves the carbonate alternative class exists in the region (Oligo–Miocene carbonate, Layang-Layang province; Atlas 2024) — a different province, so not standalone proof about Kinabalu bodies, but a high-velocity body is not proof of intrusion.",
     kill: "Reject only a parameterised intrusion configuration whose required bodies are excluded by adequately resolved seismic and potential-field coverage; insufficient coverage yields INCONCLUSIVE. Finding no intrusions would not by itself prove burial-only maturation; finding intrusions would not by itself prove a slab-window origin.",
     refs: ["TS02"],
     bodies: [
@@ -406,10 +406,10 @@ const MODELS = [
   }
 ];
 const MATRIX = [
-  {q: "Linear magnetic + gravity high along the trough axis (Tepat-1 strike line)", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
+  {q: "Corrected magnetic signature (analytic signal / reduction-to-the-equator) + gravity high along the trough axis (Tepat-1 strike line) — raw TMI highs are the wrong criterion at this latitude", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
   {q: "Dated basalt / dolerite in trough-flank wells", p: {A: "y", B: "u", C: "u", D: "u"}, obs: "open"},
   {q: "Sills, saucer intrusions, hydrothermal vents in trough fill (3D seismic)", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
-  {q: "Heat flow / maturity peaks on the trough axis", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
+  {q: "Local paleo-thermal spikes (Ro / Tmax) on or below the trough axis — present-day heat flow is a weak test: an old intrusion leaves a maturity anomaly after its heat anomaly is gone", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
   {q: "3D-seismic pipes/chambers/mini-basins at Middle Miocene level (interpreted as mobile shale)", p: {A: "u", B: "y", C: "n", D: "u"}, obs: "done", src: "Morley et al. 2023"},
   {q: "Outboard shortening exceeds shelf extension", p: {A: "y", B: "u", C: "y", D: "n"}, obs: "open", src: "contested; King et al. 2010"},
   {q: "West-dipping discontinuity at 45–55 km (interpreted as detached slab remnant)", p: {A: "u", B: "u", C: "y", D: "y"}, obs: "done", src: "Cornwell et al. 2025"},

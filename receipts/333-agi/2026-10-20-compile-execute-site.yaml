@@ -1,0 +1,75 @@
+# RECEIPT — "compile all remaining site and auto execute" (333-AGI, 2026-10-20)
+# Session SEAL-b504a9f57e1540bd · Sovereign order: compile + auto-execute, no permission asks.
+# Sources compiled: session remainders + QUEUE SOT /root/work/tasks.json (site-related open items).
+
+compiled_queue:
+  - id: S1
+    item: "malay-basin dossier upgrade (honesty + 2026 facts + attribution)"
+    result: DONE
+    detail: "'opened a new play fairway/proved the play works' -> first-well-in-play wording; TOC attributed (Madon 2010); open-questions bumped 2026-07 -> 2026-10 + MTJDA A-18-01 PSC (effective 2026-01-01, PC JDA + PTTEP JDX 50/50). Structure preserved (no new panels)."
+    commit_note: "content absorbed by concurrent lane checkpoint 32539b4 (same agent-id, 333-AGI) — verified intact in HEAD (3 malay markers) and live==HEAD md5."
+  - id: S2
+    item: "sabah-observatory DRU label surface/event alignment"
+    result: DONE
+    detail: "SVG label 'DRU ~13–12 Ma' -> 'DRU ~14.2 Ma surface · breakoff 13–12'. Display only; numeric tests + status vocab + panel contract untouched. Follows GEOX 56f9896a canon. Absorbed by checkpoint 32539b4; marker verified live."
+  - id: S3
+    item: "tasks.json p3-world-discoveries-dup (World links Discoveries -> redirects to Earth)"
+    result: VERIFIED_STALE
+    detail: "case-insensitive grep for href=*discover* and 'Discoveries' across public/world/ + src/pages + src/components = zero hits. Caddy already 308s /discoveries -> /earth. Nothing to fix; recommend closing the task with this evidence."
+  - id: G1
+    item: "GEOX basins/index advertised 9 dead profile URIs (morning test)"
+    result: FIXED
+    detail: "new parametric template geox://basins/{basin_id}/profile serves resources/basins/<id>/basin_profile.yaml; 9/10 basins resolve real content; east-sabah-dg-models (has models.json, no basin_profile.yaml) now honestly PROFILE_PENDING in the index; unknown basin_id -> LookupError, never a stub."
+    commit: "geox 9fae7f7d (branch fix/geox-p0-rebased)"
+  - id: G2
+    item: "GEOX literature index drift (+ stub template discovered)"
+    result: FIXED
+    detail: "geox://literature/index now lists what exists + declares the parametric template STUB_ONLY (paper store /var/arifos/geox-resources/literature/ empty; the template answered ANY paper_id with a stub body — not citable evidence, F2)."
+    commit: "geox 9fae7f7d"
+  - id: G3
+    item: "tasks.json p2-geox-degraded — GEOX /health degraded + HOLD"
+    result: RESOLVED_WITH_MEASURED_CAUSE
+    cause_a: "GEOX-side probe miscalibration (FIXED): _probe_arifos_deployment_drift compared live /root/arifOS repo HEAD vs build sha — in an active repo HEAD always moves past the build, so drift was false-always. arifOS software_release._field_semantics explicitly say source_commit is the BUILD-TIME sha. Now reads arifOS /health software_release; repo-HEAD-moved surfaced separately (repo_head_moved_since_build=true). Verified live: drift=false, status=aligned."
+    cause_b: "Remaining degraded is an HONEST MIRROR, not a GEOX defect: arifOS layer_health.constitutional — floors_failing=[F8], floors_unmeasured=[F5,F6] (10/13 pass). _kernel_ok = (arifOS status==healthy) -> GEOX degraded. Owner: arifOS kernel lane. (Morning: F1+F8 failing; by afternoon F1 recovered — floor state moves.)"
+    note: "'MCP health alias' sub-item left as-is (task owner's separate small fix)."
+  - id: G4
+    item: "GEOX geox://layers/index 'earth_layer_registry unavailable' (morning test)"
+    result: RESOLVED_NO_CODE_CHANGE
+    detail: "measured cause: stale pre-restart process (warnings 08:39/08:41 from pid 1157548). Module imports cleanly in the service venv+CWD (verified: contracts.schemas.earth_layer_registry -> /opt/geox/... 20973B file present in both trees). Post-restart layers/index serves count=4. Falsifier for future: warning text 'earth_layer_registry seed failed' in journalctl -u geox-mcp."
+  - id: G5
+    item: "tasks.json resources-py-drift-deploy (source edited 2026-10-18, F0 deploy flow pending)"
+    result: DONE
+    detail: "the pending resources edits shipped inside geox 56f9896a + 9fae7f7d and were mirrored to /opt/geox/src/geox_mcp (the tree geox-mcp.service imports) with service restart + live verification. Task can close; reopen only if the intended fix was outside resources/__init__.py."
+  - id: V1
+    item: "tasks.json p2-generator-dry-run (discovery generator, temp + diff, never live)"
+    result: DONE
+    detail: "both discovery generators dry-run with fs.writeFileSync redirected to /tmp/disc-dry; git status proves live untouched. Diff vs current: index.json = generated_at only; registry.json = generated_at + REAL drift (arifos tool count 8 -> 9 — new arif_report tool not yet in registry; next hourly agentic-web run picks it up); generate-discovery.cjs self-reported 'unchanged: page.json, surfaces.json'."
+  - id: V2
+    item: "site deploy gate (site AGENTS.md non-bypassable)"
+    result: PASS
+    detail: "bash scripts/verify-pages.sh https://arif-fazil.com sites/arif-fazil.com/dist — 261 pages verified (9 intentionally excluded), VERDICT: PASS. Pre-existing 301 on /.well-known/mcp/server.json (not introduced here). Plus per-page: tag balance, JS parse (node --check), md5 repo==webroot==dist parity, marker greps, design-lint PASS (0 leaks / 708 files)."
+  - id: N1
+    item: "tasks.json p1-site-old-bundle-keep"
+    result: COMPLIANT
+    detail: "keep-instruction honoured: no bundle, backup, or live-only HTML removed this session."
+  - id: N2
+    item: "tasks.json p2-oil-gas-root-split"
+    result: NOT_EXECUTABLE_HERE
+    detail: "fix requires a Caddy root edit + reload; task itself says 'Do not reload', site rules forbid Caddy edits/reloads for agents. Left open — owner: ops/sovereign."
+  - id: N3
+    item: "tasks.json p2-dirty-trees-classify (classify, do not blob-commit)"
+    result: DONE_INLINE
+    detail: "all commits pathspec-scoped per lane: arif-fazil.com {earth pages, canon/file-authority, receipts}, GEOX {sea_level_ensemble, resources/__init__.py, prompts/__init__.py, tests, server.py}, zero blob commits. Concurrent lanes (HERMES 068be5e, checkpoint 32539b4, geox 1fead744) landed mid-session — no content loss, all markers re-verified after each."
+
+commits_this_round:
+  - "geox 9fae7f7d — honest resource surface + deployment-drift probe semantics"
+  - "site content absorbed by 32539b4 (checkpoint, same lane) — S1+S2 markers verified in HEAD + live"
+
+honest_remainder:
+  - "arifOS constitutional floor F8 failing + F5/F6 unmeasured — root of kernel degraded; kernel lane work (GEOX merely mirrors)"
+  - "registry.json arif_report drift will self-heal on next hourly generator run (or run generate-discovery-graph.cjs normally)"
+  - "GEOX branch fix/geox-p0-rebased now carries 56f9896a + 9fae7f7d — merge to main = PR/F13 routing decision"
+  - "east-sabah-dg-models basin profile (models.json exists, basin_profile.yaml missing) — GEOX content lane can promote it to AVAILABLE"
+  - "well summary template + paper store remain stub/empty (declared honestly now) — GEOX content lane"
+
+ditempa: DITEMPA BUKAN DIBERI

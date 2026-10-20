@@ -72,7 +72,7 @@ async function fetchBody(url) {
       redirect: "follow",
       signal: controller.signal,
       headers: {
-        "User-Agent": "arifOS-verify-surfaces/1.0 (DTI gate)",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) arifOS-verify-surfaces/1.0 (DTI gate)",
         "Accept": "text/html,application/xhtml+xml,*/*;q=0.8"
       },
     });

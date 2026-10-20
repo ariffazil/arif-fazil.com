@@ -1,0 +1,77 @@
+# Release evidence — NOT a kernel SEAL (site AGENTS.md rule 10).
+# Authority: F13 SOVEREIGN directive (Arif, 2026-10-20) "gp betulkan apa yang x betul"
+# Agent: 333-AGI · Zone: receipts/<agent-id>/ (file-authority.yaml proposal_zones)
+release_candidate:
+  commit: "working-tree edit — not committed (site repo, uncommitted by design for webroot sync)"
+  branch: main
+  environment: production_public_html
+  changed_routes:
+    - /000/
+    - /sanctuary/   # source file patched; live route serves a different rendering (see findings)
+  public_effect:
+    - "§8 Kernel Receipts: stale BLAKE3 anchor relabelled SUPERSEDED GENERATION (kept, not deleted)"
+    - "§8: added Current Identity Anchors with per-value algorithm + file + measured date"
+    - "§8: removed an impossible verification instruction (compare 64-hex BLAKE3 against 16-hex sha256[:16])"
+    - "§8: verification recipe replaced with one that reproduces on this host"
+  tests:
+    doctor_before: "not run (targeted claim repair, not a design change)"
+    doctor_after: "not run"
+    doctor_fail_set_delta: "n/a"
+  deploy_gate:
+    command: "make verify-pages"
+    result: "PASS — 261 pages verified (9 intentionally excluded)"
+    warning: "301 /.well-known/mcp/server.json (pre-existing, not introduced by this change)"
+  served_verification:
+    method: "curl from outside the working tree (https), then marker grep"
+    route_000:
+      http: 200
+      bytes: 43239
+      marker_SUPERSEDED: present
+      marker_current_anchor_ef33a612: present
+      marker_health_digest_4e819be3: present
+      marker_algorithm_label: present
+      old_instruction_compare: absent
+      old_instruction_updated_at_each_change: absent
+    route_sanctuary:
+      http: 200
+      bytes: 9423
+      note: "serves a rendering that never carried the §8 receipts block; no stale claim present"
+
+findings:
+  - id: F-1
+    class: STALE_ANCHOR
+    verdict: CONFIRMED
+    detail: >
+      The published 64-hex value 632a3b46… IS a genuine BLAKE3, reproduced on this host:
+      it is BLAKE3(identity.toml) at arifOS commit e7e9df13 (2026-07-23). It went stale at
+      commit b4dbcbf4 (2026-07-26) and the repo copy has since become a superseded stub
+      pointing at /root/AAA/identity.toml.
+    evidence: "blake3(identity.toml@e7e9df13) == 632a3b46… (recomputed); blake3(identity.toml@HEAD) == 73a284a6…"
+  - id: F-2
+    class: IMPOSSIBLE_VERIFICATION_RECIPE
+    verdict: CONFIRMED
+    detail: >
+      The page instructed: fetch /health, check identity_hash, compare to the BLAKE3.
+      get_identity_hash() returns sha256(agent_id|canonical_commit|identity_marker)[:16]
+      (16 hex). A 64-hex BLAKE3 of file bytes can never equal it. The recipe could not succeed
+      for anyone, ever — the "receipt" was decorative.
+    evidence: "arifosmcp/runtime/identity.py:get_identity_hash(); /health.identity_hash = 4e819be3fa269103"
+  - id: F-3
+    class: GOVERNANCE_MISCLASSIFICATION
+    verdict: OPEN — reported, not fixed
+    detail: >
+      canon/file-authority.yaml declares public/**/*.html as DERIVED / owner: generator /
+      hand_edit:false. No generator exists for /000/index.html or /sanctuary/index.html
+      (only copy-static-html.js copies them). An authored page classified DERIVED sends any
+      agent to look for an upstream SOT that does not exist.
+    owner: WEB_ATLAS / ARIF
+    proposed_fix: "narrow the blanket rule to the files that actually have named generators"
+
+verification_reproduced:
+  - "b3sum-equivalent BLAKE3 over 6 historical identity.toml blobs; exactly one matched the published anchor"
+  - "all 4 §8 live endpoints return HTTP 200 (arifos /health, /999/verify, /mcp, /llms.txt)"
+  - "JSON-LD block present in served /000/ (1 block) as §6 claims"
+
+not_verified:
+  - "§3 ZKPC seven-dimension table — philosophical attestation, not a machine-checkable receipt; left untouched (public doctrine register)"
+  - "whether /var/www/html/000/index.html (44233b) is the file Caddy serves for /000/; its §8 block was patched identically regardless"

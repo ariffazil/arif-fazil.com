@@ -425,9 +425,14 @@
   <p>Everything this page claims is backed by an artifact in the public repo or a live endpoint. These are not declarations — they are receipts.</p>
 
   <div class="loop-diagram">
-    <span class="hl">Identity Hash (BLAKE3)</span><br>
+    <span class="hl">Identity Hash (BLAKE3) — SUPERSEDED GENERATION</span><br>
     <code style="color:var(--gold-dim);word-break:break-all;font-size:0.65rem;">632a3b46d0ad192b9db4277851bc59755e8b7af83a15b405ed9844ee781a9631</code><br>
-    <span style="color:var(--text-muted);font-size:0.65rem;">BLAKE3 of <code>identity.toml</code> (updated at each identity change) · committed to <code>ariffazil/arifOS</code> · live at <a href="https://arifos.arif-fazil.com/health" style="color:var(--gold-dim);">/health</a></span><br>
+    <span style="color:var(--text-muted);font-size:0.65rem;">BLAKE3 of <code>identity.toml</code> at commit <code>e7e9df13</code> (2026-07-23). Reproduced 2026-10-20 by recomputing BLAKE3 over that exact blob. Superseded when the file changed at <code>b4dbcbf4</code> (2026-07-26). Kept labelled, not deleted — a stale anchor is a finding, not a hole.</span><br>
+    <br>
+    <span class="hl">Current Identity Anchors — measured 2026-10-20</span><br>
+    <span style="color:var(--text-muted);font-size:0.65rem;">BLAKE3 <code>/root/AAA/identity.toml</code> (canonical SOT) = <code style="word-break:break-all;">ef33a6127d0ccce94f859a6b4e3bdff50228450c0c92a1b1a670f51d043f7c56</code></span><br>
+    <span style="color:var(--text-muted);font-size:0.65rem;">BLAKE3 <code>/root/arifOS/identity.toml</code> (repo copy — now a superseded stub) = <code style="word-break:break-all;">73a284a66578e7f58b823a373455c610237e33f13e0fb352397ff152e6833719</code></span><br>
+    <span style="color:var(--text-muted);font-size:0.65rem;"><code>/health</code> <code>identity_hash</code> = <code>4e819be3fa269103</code> — derived as <code>sha256(agent_id|canonical_commit|identity_marker)</code> truncated to 16 hex. It is a different quantity, not a BLAKE3 of any file.</span><br>
     <br>
     <span class="hl">Live Endpoints</span><br>
     <span class="arrow">→</span> <a href="https://arifos.arif-fazil.com/health" style="color:var(--gold-dim);">arifos.arif-fazil.com/health</a> — identity + vault status<br>
@@ -436,11 +441,11 @@
     <span class="arrow">→</span> <a href="/llms.txt" style="color:var(--gold-dim);">/llms.txt</a> — agent discovery index
   </div>
 
-  <p>The human at position zero attests this identity hash. The BLAKE3 hash of <code>identity.toml</code> — the machine-readable declaration that <code>authority = "F13_SOVEREIGN"</code> and <code>arifOS is the root — no upstream</code> — is publicly committed and independently verifiable. Fetch <code>/health</code>. Check the <code>identity_hash</code> field. Compare. This is ZKPC applied to infrastructure.</p>
+  <p>The human at position zero attests this anchor chain. The machine-readable declaration that <code>authority = "F13_SOVEREIGN"</code> and <code>arifOS is the root — no upstream</code> is publicly committed and independently verifiable. Two digests are published above and they measure different things: a BLAKE3 over file bytes, and a 16-hex digest derived from a three-field identity payload. They cannot be compared to each other, and earlier versions of this page instructed readers to do exactly that. Corrected 2026-10-20 after the comparison was reproduced and found to be impossible.</p>
 
   <div class="block attest" style="margin-top:1.5rem;">
     <div class="block-label">Verification</div>
-    <p>To verify this claim without trusting this server: clone <code>github.com/ariffazil/arifOS</code>, compute BLAKE3 of <code>identity.toml</code>, compare against the hash above. They must match. A mismatch means the page or the repo has drifted — and that is itself a finding worth reporting.</p>
+    <p>To verify without trusting this server: fetch the named file and recompute the digest with the named algorithm. <code>b3sum /root/AAA/identity.toml</code> must equal <code>ef33a612&hellip;</code>. To reproduce the historical anchor, check out <code>arifOS@e7e9df13</code> and BLAKE3 that <code>identity.toml</code> &mdash; it must equal <code>632a3b46&hellip;</code>. The <code>/health</code> <code>identity_hash</code> is computed from <code>agent_id|canonical_commit|identity_marker</code>, so it is verified by recomputing that payload hash, not by comparing it to a file digest. Any mismatch means the page or the repo has drifted &mdash; that is a finding worth reporting, and it is how the stale anchor above was found.</p>
   </div>
 </section>
 

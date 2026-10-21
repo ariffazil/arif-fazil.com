@@ -109,7 +109,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+.atlas-section {
+  padding: 2.75rem 0; scroll-margin-top: 72px; }
 body {
   background: var(--bg-deep);
   color: var(--text-main);
@@ -235,6 +237,7 @@ body {
 
 /* Hero Section */
 .hero {
+  padding: 2.5rem 0 2rem;
   padding: 3.5rem 0 2.5rem;
   border-bottom: 2px solid var(--border-dim);
   background: radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.05) 0%, transparent 60%), var(--bg-surface);
@@ -361,6 +364,7 @@ h1.hero-title {
 
 /* Section styling */
 section.atlas-section {
+  padding: 2.75rem 0;
   padding: 3.5rem 0;
   border-bottom: 1px solid var(--border-dim);
 }
@@ -1158,11 +1162,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/openai.jpg" alt="Portrait of Sam Altman" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/openai.jpg" alt="Portrait of Sam Altman" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/openai.svg" alt="OpenAI official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/openai.svg" alt="OpenAI official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1249,11 +1253,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/anthropic.jpg" alt="Portrait of Dario Amodei" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/anthropic.jpg" alt="Portrait of Dario Amodei" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/anthropic.svg" alt="Anthropic official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/anthropic.svg" alt="Anthropic official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1340,23 +1344,23 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/deepmind.jpg" alt="Portrait of Demis Hassabis" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/deepseek.svg" alt="Portrait / Emblem for Google DeepMind" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/deepmind.svg" alt="Google DeepMind official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/deepseek.svg" alt="Google DeepMind logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
               <strong class="anchor-name">Demis Hassabis</strong>
-              <span class="anchor-role">Co-Founder & CEO, Google DeepMind</span>
+              <span class="anchor-role">Key Figure</span>
             </div>
           </div>
         </div>
 
         <h3 class="card-title" id="heading-google-deepmind">Google DeepMind</h3>
         <div class="card-models"><span class="label-dim">Model Family:</span> Gemini 1.5 Pro, Gemini 1.5 Flash, Gemma 2 (open weights), AlphaFold 3</div>
-        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Demis Hassabis → Google DeepMind → Gemini Integration</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Google DeepMind Foundation Lab</div>
         <p class="card-persona">Pioneering responsibly to build safe, beneficial AI that advances science, transforms productivity, and solves humanity's hardest challenges.</p>
       </header>
 
@@ -1431,11 +1435,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/xai.jpg" alt="Portrait of Elon Musk" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/xai.jpg" alt="Portrait of Elon Musk" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/xai.svg" alt="xAI official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/xai.svg" alt="xAI official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1522,11 +1526,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/meta.jpg" alt="Portrait of Mark Zuckerberg" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/meta.jpg" alt="Portrait of Mark Zuckerberg" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/meta.svg" alt="Meta Platforms official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/meta.svg" alt="Meta Platforms official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1613,11 +1617,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/microsoft.jpg" alt="Portrait of Satya Nadella" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/microsoft.jpg" alt="Portrait of Satya Nadella" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/microsoft.svg" alt="Microsoft official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/microsoft.svg" alt="Microsoft official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1704,11 +1708,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/mistral.png" alt="Portrait of Arthur Mensch" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/mistral.png" alt="Portrait of Arthur Mensch" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/mistral.svg" alt="Mistral AI official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/mistral.svg" alt="Mistral AI official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1795,11 +1799,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/cohere.jpg" alt="Portrait of Aidan Gomez" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/cohere.jpg" alt="Portrait of Aidan Gomez" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/cohere.svg" alt="Cohere official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/cohere.svg" alt="Cohere official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1886,11 +1890,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/deepseek.svg" alt="Emblem of DeepSeek Leadership" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/deepseek.svg" alt="Emblem of DeepSeek Leadership" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/deepseek.svg" alt="DeepSeek official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/deepseek.svg" alt="DeepSeek official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>
@@ -1977,11 +1981,11 @@ footer.site-footer {
         <!-- Visual Attention Anchor: Logo + Portrait -->
         <div class="visual-anchor-strip">
           <div class="anchor-portrait-frame">
-            <img src="/world/ai/shadow/assets/portraits/alibaba.jpg" alt="Portrait of Jack Ma (Alibaba Founder)" class="anchor-portrait-img" loading="lazy">
+            <img src="/world/ai/shadow/assets/portraits/alibaba.jpg" alt="Portrait of Jack Ma (Alibaba Founder)" class="anchor-portrait-img">
           </div>
           <div class="anchor-meta">
             <div class="anchor-logo-frame">
-              <img src="/world/ai/shadow/assets/logos/alibaba.svg" alt="Alibaba Cloud official logo" class="anchor-logo-img" loading="lazy">
+              <img src="/world/ai/shadow/assets/logos/alibaba.svg" alt="Alibaba Cloud official logo" class="anchor-logo-img">
             </div>
             <div class="anchor-figure-block">
               <span class="anchor-label">Associated Key Figure / Founder:</span>

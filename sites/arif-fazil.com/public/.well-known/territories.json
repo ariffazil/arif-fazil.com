@@ -40,7 +40,7 @@
       "tags": ["makcikgpt", "civics", "politics", "bm"],
       "humans": "MakcikGPT civic journalism in BM · commodities · politics.",
       "machines": "Makcik markdown mirrors, politics telemetry, commodity dashboards.",
-      "machine_index": ["/world", "/world/makcikgpt/", "/politics/ns-election/", "/feed.xml"]
+      "machine_index": ["/world", "/world/makcikgpt/", "/world/ai/shadow/", "/world/ai/shadow/index.json", "/politics/ns-election/", "/feed.xml"]
     },
     {
       "id": "doctrine",

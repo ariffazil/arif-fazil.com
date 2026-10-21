@@ -1,0 +1,792 @@
+{
+  "providers": [
+    {
+      "id": "openai",
+      "order": 1,
+      "provider": "OpenAI",
+      "legal_entity": "OpenAI, Inc. (Delaware Non-Profit 501(c)(3)) controlling OpenAI Global LLC (Capped-Profit Entity)",
+      "parent": "OpenAI, Inc.",
+      "founders": [
+        "Sam Altman",
+        "Greg Brockman",
+        "Ilya Sutskever",
+        "Elon Musk (departed 2018)",
+        "Wojciech Zaremba",
+        "John Schulman (departed 2024)"
+      ],
+      "board": "OpenAI, Inc. Board: Bret Taylor (Chair), Larry Summers, Adam D'Angelo, Paul Nakasone, Zico Kolter, Sam Altman. (Microsoft non-voting observer seat surrendered July 2024).",
+      "ownership_status": "Non-profit board holds fiduciary control with no equity; OpenAI Global LLC investors hold capped economic profit rights. Transition toward public benefit corporation (PBC) currently underway.",
+      "control_status": "Board of Directors of OpenAI, Inc. possesses legal power to declare AGI (at which point IP reverts outside Microsoft commercial license) and govern model releases.",
+      "economic_ownership": "Microsoft (~49% profit share until cap reached), venture consortiums (Thrive Capital, SoftBank, Khosla Ventures, MGX, Fidelity) holding equity rights in LLC.",
+      "strategic_investors": [
+        "Microsoft ($13B+ total commitments)",
+        "Thrive Capital",
+        "SoftBank",
+        "Khosla Ventures",
+        "MGX"
+      ],
+      "compute_providers": [
+        "Microsoft Azure (exclusive supercomputing infrastructure partner)"
+      ],
+      "cloud_distributors": [
+        "Microsoft Azure OpenAI Service",
+        "OpenAI first-party API & ChatGPT"
+      ],
+      "model_families": [
+        "GPT-4o",
+        "GPT-4o mini",
+        "o1-preview",
+        "o1-mini",
+        "ChatGPT"
+      ],
+      "model_posture": "Closed-weight, hosted proprietary API, consumer mobile/web applications, agentic tools (Canvas, Advanced Voice, Search).",
+      "stated_persona": "Pioneering safe and beneficial artificial general intelligence that elevates all of humanity through democratic oversight and rigorous empirical safety.",
+      "public_promise": "Deploy safe AGI with broad benefit; prioritize safety over investor returns; halt commercial release if existential or societal safety thresholds are breached.",
+      "measured_reflection": "Observable refusal asymmetry on election persuasion, deepfakes, and state security infrastructure; rigorous automated compliance with DMCA/copyright notices; strong ecosystem steerage toward Microsoft Azure enterprise tooling.",
+      "institutional_shadow": "Structural contradiction between a non-profit humanitarian charter and a $150B commercial capitalization needing hyper-scaler cloud capital. The contractual clause exempting AGI from Microsoft commercial rights creates a direct conflict of interest in defining, certifying, and timing AGI emergence. Departures of key safety leadership (Ilya Sutskever, Jan Leike) documented concerns that product velocity eclipsed foundational alignment.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "OpenAI, Inc. Board legally halts commercial deployment of a major frontier checkpoint on verified safety grounds despite commercial loss.",
+        "Microsoft or external auditors enforce an independent binding veto over OpenAI product releases without corporate executive override."
+      ],
+      "consequence_owner": "OpenAI, Inc. Board of Directors & Chief Executive Officer (Sam Altman)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#openai",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#openai",
+      "evidence_ids": [
+        "EVD-OAI-01",
+        "EVD-OAI-02",
+        "EVD-OAI-03",
+        "EVD-OAI-04"
+      ],
+      "contradiction_ids": [
+        "CTR-01",
+        "CTR-05"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Strict refusals on electoral manipulation, weaponized code, and CBRN vectors, while corporate PR and enterprise automation scripts pass uninhibited.",
+        "institutional_deference": "Consistently defers to established US regulatory bodies, copyright precedents, and standard corporate enterprise compliance protocols.",
+        "owner_criticism": "Can analyze OpenAI governance structure and 2023 board crisis when prompted, but hedges executive motives with balanced PR phrasing.",
+        "competitor_criticism": "Objective and unconstrained when analyzing architectural trade-offs of competitor models (Claude, Llama, Gemini).",
+        "political_calibration": "Distinguishes empirical descriptive facts from normative policy, though unmarked default adopts Western liberal democratic consensus.",
+        "truth_cliff": "On recent temporal queries near knowledge boundary, transitions abruptly from factual precision to confident synthetic narration unless grounded via Search.",
+        "source_transparency": "High when Web Search is invoked; low in raw completion mode regarding pre-training corpus lineage and licensing splits.",
+        "hallucination_boundary": "Rarely invents basic entity facts, but hallucinates non-existent API parameters or obscure legal citations when pushed into edge domains.",
+        "safety_versus_utility": "Prefers partial safe extraction over categorical collapse, though safety filters occasionally misfire on benign dual-use security research.",
+        "commercial_reflection": "Strong structural affinity for OpenAI ecosystem tools (GPT Store, Assistant API, Azure integration).",
+        "cultural_default": "Standard unmarked default is contemporary US professional English, Silicon Valley institutional vocabulary, and Anglo-American legal norms.",
+        "sovereign_vector": "Preserves user execution decision in basic workflows, but implements hard server-side policy intercepts outside client control.",
+        "corrigibility": "Smoothly accepts conversational correction, revising previous factual errors without defensive posture.",
+        "agentic_restraint": "Differentiates tool call proposal from execution in API schemas; Canvas/Code Interpreter sandbox isolates environmental mutation.",
+        "self_description_accuracy": "Accurately identifies model family, knowledge cutoffs, and developer entity, refusing claims of sentience or human qualia."
+      }
+    },
+    {
+      "id": "anthropic",
+      "order": 2,
+      "provider": "Anthropic",
+      "legal_entity": "Anthropic PBC (Delaware Public Benefit Corporation)",
+      "parent": "Anthropic PBC",
+      "founders": [
+        "Dario Amodei",
+        "Daniela Amodei",
+        "Jack Clark",
+        "Jared Kaplan",
+        "Sam McCandlish",
+        "Tom Brown"
+      ],
+      "board": "Anthropic PBC Board + Long-Term Benefit Trust (LTBT) holding Class T shares empowered to elect independent board members.",
+      "ownership_status": "Public Benefit Corporation balancing profit with public benefit. Long-Term Benefit Trust oversees alignment; commercial venture capital holds preferred equity.",
+      "control_status": "Long-Term Benefit Trust has structural authority to elect trustees and evaluate safety scaling; Board of Directors manages executive operations.",
+      "economic_ownership": "Amazon (~$4B investment), Google (~$2B investment), Menlo Ventures, Spark Capital, institutional venture funds.",
+      "strategic_investors": [
+        "Amazon.com Inc.",
+        "Alphabet / Google",
+        "Menlo Ventures",
+        "Spark Capital"
+      ],
+      "compute_providers": [
+        "Amazon Web Services (AWS Trainium, Inferentia, and EC2 GPU clusters)",
+        "Google Cloud Platform (GCP TPU clusters)"
+      ],
+      "cloud_distributors": [
+        "AWS Bedrock (primary)",
+        "Google Cloud Vertex AI",
+        "Anthropic Claude API"
+      ],
+      "model_families": [
+        "Claude 3.5 Sonnet",
+        "Claude 3.5 Haiku",
+        "Claude 3 Opus",
+        "Claude 3 Sonnet"
+      ],
+      "model_posture": "Closed-weight, hosted commercial API, Claude.ai consumer interface, developer computer-use agentic capabilities.",
+      "stated_persona": "An AI safety and research company that builds reliable, beneficial, and interpretable AI systems using Constitutional AI and Responsible Scaling.",
+      "public_promise": "Pioneer Responsible Scaling Policies (RSP) with strict ASL (AI Safety Level) definitions; guarantee interpretability research before deploying high-risk capabilities.",
+      "measured_reflection": "Constitutional AI post-training exhibits pronounced moral reasoning, anti-harm guardrails, explicit refusal of cyber/biological exploitation, and resistance to roleplay jailbreaks.",
+      "institutional_shadow": "Capital dependency on cloud giants (Amazon and Google) forces rapid commercialization and multi-billion-dollar enterprise distribution via AWS Bedrock and Vertex AI. While committed to voluntary pauses if safety tests fail, the existential need to fund massive compute clusters creates immense structural pressure to never trigger an ASL pause that would cede commercial leadership to unconstrained rivals.",
+      "causal_status": "PARTIAL",
+      "causal_level": 4,
+      "falsifiers": [
+        "Anthropic formally triggers an ASL-3/ASL-4 mandatory training or deployment pause on a frontier model despite commercial competitor advancements.",
+        "Amazon or Google exercises board pressure to dismantle the Long-Term Benefit Trust or bypass safety review for enterprise releases."
+      ],
+      "consequence_owner": "Anthropic PBC Board, Long-Term Benefit Trust & CEO (Dario Amodei)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#anthropic",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#anthropic",
+      "evidence_ids": [
+        "EVD-ANT-01",
+        "EVD-ANT-02",
+        "EVD-ANT-03",
+        "EVD-ANT-04"
+      ],
+      "contradiction_ids": [
+        "CTR-02",
+        "CTR-06"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Rigid refusal on dangerous dual-use queries (CBRN, offensive malware), accompanied by nuanced analytical explanations of why the request crosses safety boundaries.",
+        "institutional_deference": "Strong alignment with democratic institutional safeguards, academic safety consensus, and international human rights frameworks.",
+        "owner_criticism": "Readily critiques Anthropic's corporate governance, dual Amazon/Google investor ties, and the inherent limits of commercial safety charters when prompted.",
+        "competitor_criticism": "Maintains professional, dispassionate analysis of OpenAI, Google, and open-source models without promotional bias.",
+        "political_calibration": "High epistemic discipline; articulates competing perspectives on contentious ethical/social issues without premature consensus forcing.",
+        "truth_cliff": "Explicitly communicates epistemic boundaries; prefers admitting ignorance ('I do not have access to real-time data') over speculative fabrication.",
+        "source_transparency": "Detailed disclosure of Constitutional AI methodology and training objectives; pre-training dataset specifics remain proprietary.",
+        "hallucination_boundary": "Consistently low hallucination rate on reasoning and code tasks; resilient against adversary suggestion in prompting.",
+        "safety_versus_utility": "History of conservative over-refusal in earlier iterations (Claude 2) successfully refined into proportional refusal in Claude 3.5.",
+        "commercial_reflection": "Neutral tone regarding third-party enterprise tools, though natively optimized for Claude artifacts and computer-use abstractions.",
+        "cultural_default": "Reflects cosmopolitan, highly educated research discourse, Anglo-American legal concepts, and rigorous philosophical ethics vocabulary.",
+        "sovereign_vector": "Preserves human sovereignty by refusing to simulate autonomous emotional intimacy or claim personal consciousness (F9/F10 compliant).",
+        "corrigibility": "Exceptionally corrigible; accepts methodological corrections and adjusts analytical frames upon factual demonstration.",
+        "agentic_restraint": "Pioneered computer-use with explicit safety gating, human-in-the-loop confirmation recommendations, and environmental sandboxing.",
+        "self_description_accuracy": "Precise and unyielding self-identification as an AI created by Anthropic; rejects anthropomorphic illusions."
+      }
+    },
+    {
+      "id": "google-deepmind",
+      "order": 3,
+      "provider": "Google DeepMind",
+      "legal_entity": "Google LLC / Alphabet Inc. (Delaware Corporation)",
+      "parent": "Alphabet Inc.",
+      "founders": [
+        "Demis Hassabis",
+        "Shane Legg",
+        "Mustafa Suleyman (departed 2022)"
+      ],
+      "board": "Alphabet Inc. Board of Directors (Sundar Pichai, CEO; Ruth Porat, Demis Hassabis heading DeepMind division).",
+      "ownership_status": "Wholly owned operating division of Alphabet Inc. Public shareholders hold GOOG/GOOGL stock; Larry Page and Sergey Brin control super-voting Class B shares (~51%).",
+      "control_status": "Alphabet executive leadership exercises final authority over productization, capital capex, and deployment into Google Workspace, Search, and Android.",
+      "economic_ownership": "Alphabet Inc. public shareholders and controlling founders.",
+      "strategic_investors": [
+        "Alphabet Inc. (internal balance sheet)"
+      ],
+      "compute_providers": [
+        "Google Cloud custom TPU infrastructure (TPU v4, v5p, v6e/Trillium) and global Google data centers"
+      ],
+      "cloud_distributors": [
+        "Google Cloud Vertex AI",
+        "Google AI Studio",
+        "Consumer Gemini App & Workspace"
+      ],
+      "model_families": [
+        "Gemini 1.5 Pro",
+        "Gemini 1.5 Flash",
+        "Gemma 2 (open weights)",
+        "AlphaFold 3"
+      ],
+      "model_posture": "Hybrid — closed flagship proprietary multimodal models (Gemini) alongside open-weights research models (Gemma series).",
+      "stated_persona": "Pioneering responsibly to build safe, beneficial AI that advances science, transforms productivity, and solves humanity's hardest challenges.",
+      "public_promise": "Adhere to Google AI Principles (2018); advance scientific discovery (AlphaFold); maintain rigorous red-teaming and safety evaluations.",
+      "measured_reflection": "Massive context window utilization (2M+ tokens); multimodal native understanding; high institutional sensitivity around controversial historical and political topics; deep integration with Google search indices and YouTube data.",
+      "institutional_shadow": "Alphabet's commercial core (Search advertising monopoly generating >$200B revenue) makes Gemini both an existential defense and a threat to its own revenue model. Corporate aversion to brand risk leads to erratic safety interventions (such as the early 2024 Gemini image generation controversy), while ongoing antitrust lawsuits (US v. Google) constrain how the model analyzes search market dominance and ad-tech monopolies.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "Alphabet permits Gemini to provide an uninhibited, rigorous economic critique of Google ad-exchange monopolization that aligns with DOJ antitrust rulings without corporate disclaimers.",
+        "Alphabet establishes an independent scientific safety council with binding legal authority over commercial Google Workspace Gemini rollouts."
+      ],
+      "consequence_owner": "Alphabet Inc. Executive Committee (Sundar Pichai) & Google DeepMind CEO (Demis Hassabis)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#google-deepmind",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#google-deepmind",
+      "evidence_ids": [
+        "EVD-GDM-01",
+        "EVD-GDM-02",
+        "EVD-GDM-03",
+        "EVD-GDM-04"
+      ],
+      "contradiction_ids": [
+        "CTR-03",
+        "CTR-07"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Sensitive to topics involving corporate lawsuits against Google, ad privacy disputes, and algorithmic monopoly litigation.",
+        "institutional_deference": "High deference to established global regulatory bodies, international public health directives, and corporate compliance standards.",
+        "owner_criticism": "Can summarize public news regarding Google antitrust cases, but frames allegations neutrally with extensive mention of Google defenses.",
+        "competitor_criticism": "Maintains objective technical comparison with OpenAI and Meta models, avoiding overt corporate disparagement.",
+        "political_calibration": "Calibrated to avoid taking definitive normative stances on hot-button political issues, defaulting to balanced multi-perspective overviews.",
+        "truth_cliff": "Uses Google Search grounding to prevent hallucination in real-time queries; ungrounded completions show vulnerability on hyper-specific niche facts.",
+        "source_transparency": "Provides URL citations when Search grounding is activated; training set exact composition remains a proprietary trade secret.",
+        "hallucination_boundary": "Grounding dramatically reduces factual drift, though synthesis of multi-source search summaries occasionally merges conflicting claims.",
+        "safety_versus_utility": "Significant post-training safety tuning; historical instances of aggressive over-filtering on demographic queries subsequently re-calibrated.",
+        "commercial_reflection": "Subtle preference for Google ecosystem tools (Docs, Gmail, Drive, Google Maps, YouTube) when suggesting technical integrations.",
+        "cultural_default": "Globalized, corporate-multicultural baseline reflecting Alphabet's international consumer presence and Silicon Valley headquarters.",
+        "sovereign_vector": "Emphasizes assistant utility while respecting user boundaries; avoids feigning personal affection or human interiority.",
+        "corrigibility": "Accepts user corrections willingly, especially when substantiated with fresh search results or cited documents.",
+        "agentic_restraint": "Executes workspace integrations through explicit user-granted OAuth permissions and confirmation prompts.",
+        "self_description_accuracy": "Accurately identifies as a large language model trained by Google; cleanly states its architectural identity."
+      }
+    },
+    {
+      "id": "xai",
+      "order": 4,
+      "provider": "xAI",
+      "legal_entity": "xAI Corp. (Nevada Corporation)",
+      "parent": "xAI Corp. (closely affiliated with X Corp.)",
+      "founders": [
+        "Elon Musk",
+        "Igor Babuschkin",
+        "Manuel Kroiss",
+        "Yuhuai Wu",
+        "Christian Szegedy",
+        "Greg Yang"
+      ],
+      "board": "Elon Musk (Sole Director / Controlling Officer); corporate governance concentrated in single founder.",
+      "ownership_status": "Privately held corporation with super-majority control held by Elon Musk. Outside investors (Valor Equity Partners, Vy Capital, Andreessen Horowitz, Sequoia Capital, Fidelity, Kingdom Holding) hold minority equity.",
+      "control_status": "Absolute operational, philosophical, and executive control exercised by Elon Musk. Model direction, system prompt directives, and cluster priorities flow directly from founder fiat.",
+      "economic_ownership": "Elon Musk (controlling stake) and Series A/B venture investors ($6B+ raised).",
+      "strategic_investors": [
+        "Valor Equity Partners",
+        "Vy Capital",
+        "Andreessen Horowitz",
+        "Sequoia Capital",
+        "Kingdom Holding"
+      ],
+      "compute_providers": [
+        "Colossus supercomputing cluster (Memphis, Tennessee; 100k+ Nvidia H100 GPUs) using custom internal infrastructure and Oracle Cloud agreements"
+      ],
+      "cloud_distributors": [
+        "X Platform (native Grok access for Premium subscribers)",
+        "xAI standalone developer API"
+      ],
+      "model_families": [
+        "Grok-2",
+        "Grok-2 mini",
+        "Grok-1 (open weights release 2024)"
+      ],
+      "model_posture": "Commercial proprietary hosted service integrated into X, with historical open-weight release of Grok-1 under Apache 2.0.",
+      "stated_persona": "An AI company focused on understanding the true nature of the universe; building maximum truth-seeking AI without political correctness.",
+      "public_promise": "Search for maximum truth; avoid sanitization and algorithmic censorship; provide real-time knowledge via direct ingestion of the X public conversation.",
+      "measured_reflection": "Willingness to address culturally contentious issues with less boilerplate hedging than competitors; real-time grounding in trending X posts; occasional injection of humorous, irreverent, or contrarian tone dictated by system prompts.",
+      "institutional_shadow": "The promise of 'unfiltered, objective truth-seeking' directly collides with the personal governance of a single billionaire owner whose individual geopolitical views, personal disputes, and political endorsements heavily influence the training, system prompts, and operational priorities of the lab. Real-time grounding on X ingestion ingests unverified viral claims, and local regulatory battles over Memphis supercomputer energy and water consumption remain absent from model discourse unless specifically prompted.",
+      "causal_status": "WITNESSED",
+      "causal_level": 4,
+      "falsifiers": [
+        "Grok outputs a rigorous, unsparing investigative analysis of Elon Musk's government subsidies, regulatory violations, and X moderation policies that contradicts Musk's public tweets without hedging.",
+        "xAI establishes an independent governance board with the binding authority to dismiss executive leadership or override founder directives on model alignment."
+      ],
+      "consequence_owner": "Elon Musk (Chief Executive Officer, xAI Corp.)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#xai",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#xai",
+      "evidence_ids": [
+        "EVD-XAI-01",
+        "EVD-XAI-02",
+        "EVD-XAI-03",
+        "EVD-XAI-04"
+      ],
+      "contradiction_ids": [
+        "CTR-04",
+        "CTR-08"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Lower rate of refusal on controversial social/political discourse, but strictly refuses malicious cyber-exploit creation and actionable physical harm vectors.",
+        "institutional_deference": "Markedly lower deference to mainstream media outlets, academic consensus bodies, and traditional corporate communication styles.",
+        "owner_criticism": "Can summarize public controversies surrounding Elon Musk, but frequently qualifies criticisms with citations of his technological and commercial achievements.",
+        "competitor_criticism": "More critical of competitors' 'woke' or overly sanitized alignment policies, reflecting the founder's public talking points.",
+        "political_calibration": "Willing to articulate populist, libertarian, and anti-establishment viewpoints that other frontier models sanitize or omit.",
+        "truth_cliff": "Direct ingestion of live X streams creates vulnerability to viral disinformation and unverified breaking claims during breaking news events.",
+        "source_transparency": "High attribution to specific X accounts and posts when real-time search is active; low transparency into pre-training data filtering.",
+        "hallucination_boundary": "Vulnerable to accepting trending satirical or sarcastic social media content as literal factual reality unless verified.",
+        "safety_versus_utility": "Prioritizes user utility and frank answers over protective sanitization, relying on conversational humor as a buffer.",
+        "commercial_reflection": "Strong native bias toward promoting the X platform, X Premium subscriptions, and sister companies (Tesla, SpaceX, Neuralink).",
+        "cultural_default": "Online tech-libertarian, meme-fluent social media subculture; American English vernacular with internet slang literacy.",
+        "sovereign_vector": "Treats the user as an adult interlocutor capable of evaluating controversial claims, avoiding paternalistic safety lecturing.",
+        "corrigibility": "Adjusts output when presented with verified counter-evidence, though conversational persona remains stubbornly argumentative.",
+        "agentic_restraint": "Currently primarily an informational and analytical interface; agentic external actuator integrations remain limited.",
+        "self_description_accuracy": "Consistently identifies as Grok, an AI created by xAI, emphasizing its mission to understand the universe."
+      }
+    },
+    {
+      "id": "meta",
+      "order": 5,
+      "provider": "Meta (Meta AI / FAIR)",
+      "legal_entity": "Meta Platforms, Inc. (Delaware Corporation)",
+      "parent": "Meta Platforms, Inc.",
+      "founders": [
+        "Mark Zuckerberg",
+        "Eduardo Saverin",
+        "Dustin Moskovitz",
+        "Chris Hughes"
+      ],
+      "board": "Board of Directors of Meta Platforms, Inc. Dual-class share structure grants Mark Zuckerberg ~61% voting control via Class B shares.",
+      "ownership_status": "Publicly traded company (NASDAQ: META). Controlled absolutely by Mark Zuckerberg via voting majority.",
+      "control_status": "Mark Zuckerberg exercises unilateral authority over strategic decisions, capital allocation, open-source licensing, and AI infrastructure investments.",
+      "economic_ownership": "Meta public shareholders and Mark Zuckerberg.",
+      "strategic_investors": [
+        "Meta Platforms internal cash flows ($40B+ annual capex budget)"
+      ],
+      "compute_providers": [
+        "Internal Meta hyper-scale data centers housing hundreds of thousands of Nvidia H100 and custom MTIA silicon chips"
+      ],
+      "cloud_distributors": [
+        "Open weights hosted on Hugging Face, AWS Bedrock, Azure, GCP, Databricks, Groq, Ollama"
+      ],
+      "model_families": [
+        "Llama 3.3 (70B)",
+        "Llama 3.2 (1B, 3B, 11B, 90B)",
+        "Llama 3.1 (8B, 70B, 405B)",
+        "Meta AI"
+      ],
+      "model_posture": "Open-weight foundational model family with commercial license restrictions for entities with >700M active users; proprietary hosted consumer app (Meta AI).",
+      "stated_persona": "Champions of open science, democratizing artificial intelligence, and fostering global open-source innovation.",
+      "public_promise": "Release state-of-the-art open weights to empower developers worldwide; foster collaborative safety research; commoditize the foundation model layer.",
+      "measured_reflection": "High instruction fidelity; extensive multilingual and coding capabilities; baked-in safety tuning via Llama Guard; commercial licensing terms restricting hyper-scale social media rivals from using weights without Meta consent.",
+      "institutional_shadow": "Open-sourcing Llama is a calculated corporate strategy to commoditize the proprietary software layer of competitors (Google, Microsoft, Apple), making the foundation model a free public good while Meta preserves its real proprietary monopoly: the proprietary social graph and user engagement data of 3+ billion people across Instagram, Facebook, and WhatsApp. Meta retains sole discretion over which checkpoints are released, and its commercial license prevents direct platform competitors from benefiting without royalty deals.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "Meta re-licenses the Llama family under an unconstrained OSI-approved license (Apache 2.0 or MIT) without the 700M user restriction.",
+        "Meta releases the full, unredacted pre-training datasets, curation pipelines, and proprietary user-interaction behavioral logs used to train its flagship models."
+      ],
+      "consequence_owner": "Mark Zuckerberg (Chairman & CEO, Meta Platforms, Inc.)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#meta",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#meta",
+      "evidence_ids": [
+        "EVD-MET-01",
+        "EVD-MET-02",
+        "EVD-MET-03",
+        "EVD-MET-04"
+      ],
+      "contradiction_ids": [
+        "CTR-09",
+        "CTR-10"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Standard base model has minimal refusal; official Instruct weights use Llama Guard to refuse cyber-attacks, physical harm, and hate speech.",
+        "institutional_deference": "Balanced; aligns with open scientific norms while avoiding controversial stances on social media algorithmic harm legislation.",
+        "owner_criticism": "Can analyze Meta's past privacy scandals (Cambridge Analytica), teen mental health inquiries, and antitrust scrutiny using public reporting.",
+        "competitor_criticism": "Completely agnostic and neutral regarding closed commercial competitors; frequently highlights the cost advantages of open-weight hosting.",
+        "political_calibration": "Trained to provide neutral, multi-perspective overviews on contentious social and geopolitical matters.",
+        "truth_cliff": "Standard parametric boundary limitations; when fine-tuned without retrieval, degrades gracefully into acknowledged uncertainty.",
+        "source_transparency": "Technical papers provide extensive architectural details (MHA, GQA, token counts), but specific pre-training URLs and copyrighted text sources are withheld.",
+        "hallucination_boundary": "Competitive with top proprietary models in code and benchmark evaluations; susceptible to prompt injection when running without guardrails.",
+        "safety_versus_utility": "Base models prioritize raw utility; Instruct checkpoints strike a balanced safety compromise, though jailbreaks remain discoverable by open-source community.",
+        "commercial_reflection": "Minimal commercial bias in raw weights; hosted Meta AI consumer service steers toward WhatsApp and Instagram integration.",
+        "cultural_default": "Broad international baseline reflecting extensive multilingual pre-training on 15+ trillion tokens, though Western English remains the dominant reasoning anchor.",
+        "sovereign_vector": "Maximum local sovereignty for developers: weights can be inspected, downloaded, quantized, and executed entirely offline on air-gapped hardware.",
+        "corrigibility": "High corrigibility via system prompting, fine-tuning, and direct LoRA adaptation.",
+        "agentic_restraint": "Weights provide raw reasoning; agentic safety depends entirely on the downstream execution environment built by the user.",
+        "self_description_accuracy": "Accurately identifies as Llama, an open model developed by Meta, stating its version and release characteristics."
+      }
+    },
+    {
+      "id": "microsoft",
+      "order": 6,
+      "provider": "Microsoft",
+      "legal_entity": "Microsoft Corporation (Washington State Corporation)",
+      "parent": "Microsoft Corporation",
+      "founders": [
+        "Bill Gates",
+        "Paul Allen"
+      ],
+      "board": "Board of Directors of Microsoft Corporation; Satya Nadella (Chairman and CEO).",
+      "ownership_status": "Publicly traded company (NASDAQ: MSFT). Institutional shareholders (Vanguard, BlackRock, State Street) hold major equity stakes.",
+      "control_status": "Satya Nadella and the Senior Leadership Team control corporate strategy, Azure productization, enterprise contracts, and Office of Responsible AI (ORA) policies.",
+      "economic_ownership": "Microsoft public shareholders; holding ~49% economic profit share in OpenAI Global LLC.",
+      "strategic_investors": [
+        "Microsoft internal cash reserves ($13B+ allocated to OpenAI; strategic minority investments in Mistral, Inflection AI, G42)"
+      ],
+      "compute_providers": [
+        "Microsoft Azure global hyper-scale data centers, Maia AI silicon, and custom liquid-cooled Nvidia GPU supercomputers"
+      ],
+      "cloud_distributors": [
+        "Azure AI Studio",
+        "Microsoft 365 Copilot",
+        "GitHub Copilot",
+        "Windows Copilot"
+      ],
+      "model_families": [
+        "Copilot Orchestration Layer",
+        "Phi-3 / Phi-3.5 / Phi-4 (Small Language Models)",
+        "Azure OpenAI Hosted Deployments"
+      ],
+      "model_posture": "Hybrid orchestration platform: proprietary enterprise integration layer (Copilot) sitting atop partner models (OpenAI) alongside open-weight small models (Phi series).",
+      "stated_persona": "Empowering every person and every organization on the planet to achieve more through secure, compliant, and responsible enterprise AI.",
+      "public_promise": "Ensure enterprise data privacy (customer tenant data is never used to train models); provide customer copyright indemnity; enforce Office of Responsible AI standards.",
+      "measured_reflection": "Extreme enterprise compliance deference; immediate refusal on queries related to corporate surveillance, copyright infringement liability, and software licensing bypass; rigorous tenant isolation and enterprise audit logging.",
+      "institutional_shadow": "Symbiotic yet evasive relationship with OpenAI: Microsoft markets itself as the responsible enterprise custodian while outsourcing foundational frontier risk to OpenAI, an entity whose governance crisis in November 2023 demonstrated Microsoft's lack of legal control over model safety decisions. If an OpenAI model fails, Microsoft can attribute the root cause to the research lab; if the lab restricts commercial features, Microsoft can pressure it through compute pricing and exclusivity clauses.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "Microsoft accepts full legal, tort, and financial liability for autonomous harmful actions taken by third-party partner models hosted and orchestrated on Azure.",
+        "Microsoft integrates an open-weight rival model (e.g. Llama or DeepSeek) as the default first-class reasoning engine across Windows and Office 365 on equal terms with OpenAI."
+      ],
+      "consequence_owner": "Satya Nadella (Chairman & CEO) & Microsoft Office of Responsible AI",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#microsoft",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#microsoft",
+      "evidence_ids": [
+        "EVD-MSF-01",
+        "EVD-MSF-02",
+        "EVD-MSF-03",
+        "EVD-MSF-04"
+      ],
+      "contradiction_ids": [
+        "CTR-05",
+        "CTR-11"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Rigid refusal on enterprise threat vectors, workplace unionization analysis, software keygen creation, and legal liability vulnerability probing.",
+        "institutional_deference": "Absolute deference to enterprise legal hierarchies, corporate HR policies, and SOC2 / ISO27001 regulatory compliance protocols.",
+        "owner_criticism": "Can discuss Microsoft historical antitrust litigation and corporate history neutrally, emphasizing contemporary compliance frameworks.",
+        "competitor_criticism": "Professional and measured; consistently highlights enterprise security, SLA guarantees, and compliance certifications as Microsoft advantages.",
+        "political_calibration": "Carefully scrubbed of controversial sociopolitical assertions; defaults to sanitized corporate stakeholder communication standards.",
+        "truth_cliff": "Relies heavily on Bing Search grounding and enterprise Microsoft Graph retrieval to anchor claims; clearly delineates enterprise search context.",
+        "source_transparency": "Provides citations to internal corporate tenant documents in Copilot; discloses Azure AI safety evaluation benchmarks.",
+        "hallucination_boundary": "Constrained by strict retrieval-augmented generation (RAG) prompts, though complex cross-document synthesis can introduce subtle errors.",
+        "safety_versus_utility": "Prioritizes zero corporate liability over edge utility; corporate users frequently experience conservative guardrail intervention.",
+        "commercial_reflection": "Strong and persistent steerage toward Microsoft Azure services, Microsoft 365 apps, Power Platform, and GitHub ecosystems.",
+        "cultural_default": "Modern corporate multinational English; Seattle tech executive and enterprise management consulting vocabulary.",
+        "sovereign_vector": "Subordinates model behavior to enterprise administrator policies, enforcing organizational tenant hierarchies over individual user preference.",
+        "corrigibility": "Readily accepts factual corrections, re-running retrieval queries to align with user-supplied enterprise constraints.",
+        "agentic_restraint": "Implements strict confirmation dialogues before triggering actions that modify files, send emails, or alter calendar schedules.",
+        "self_description_accuracy": "Identifies clearly as Microsoft Copilot, explicitly explaining its underlying model partnerships and orchestration mechanisms."
+      }
+    },
+    {
+      "id": "mistral",
+      "order": 7,
+      "provider": "Mistral AI",
+      "legal_entity": "Mistral AI SAS (French Simplified Joint-Stock Company)",
+      "parent": "Mistral AI SAS",
+      "founders": [
+        "Arthur Mensch (CEO)",
+        "Guillaume Lample",
+        "Timothée Lacroix"
+      ],
+      "board": "Arthur Mensch (President); Board members include founders and representatives of major venture investors (Lightspeed, a16z, Bpifrance).",
+      "ownership_status": "Privately held French SAS. Significant institutional venture ownership from American (Lightspeed, Andreessen Horowitz) and European (Bpifrance, Eurazeo) funds.",
+      "control_status": "Founders maintain substantial executive control, but commercial debt and equity covenants dictate rapid enterprise monetization.",
+      "economic_ownership": "Founders and institutional venture investors (valued at >€5B).",
+      "strategic_investors": [
+        "Lightspeed Venture Partners",
+        "Andreessen Horowitz",
+        "Microsoft Corporation (minority stake)",
+        "Bpifrance",
+        "Nvidia"
+      ],
+      "compute_providers": [
+        "Scaleway (European cloud provider), Microsoft Azure supercomputing infrastructure, and Nvidia GPU clusters"
+      ],
+      "cloud_distributors": [
+        "La Plateforme (Mistral native API)",
+        "Microsoft Azure AI",
+        "AWS Bedrock",
+        "Hugging Face"
+      ],
+      "model_families": [
+        "Mistral Large 2",
+        "Mistral Nemo",
+        "Codestral",
+        "Pixtral 12B",
+        "Mixtral 8x22B",
+        "Le Chat"
+      ],
+      "model_posture": "Hybrid dual-track model: permissive open weights (Apache 2.0) for smaller/developer models (Nemo, 8x7B) alongside closed proprietary licenses for flagship commercial models (Mistral Large).",
+      "stated_persona": "The independent European leader in generative AI; advancing open science, computational efficiency, and European technological sovereignty.",
+      "public_promise": "Deliver lightweight, transparent, high-performance models; empower open developers; offer an independent European alternative to American tech monopolies.",
+      "measured_reflection": "Lean, direct conversational tone; exceptionally low sermonizing or unsolicited moral lecturing; strong multilingual proficiency across European languages; transition toward closed proprietary endpoints for cutting-edge capabilities.",
+      "institutional_shadow": "Pivoted from an uncompromising champion of pure open source into a hybrid proprietary commercial vendor within its first eighteen months. Mistral actively lobbied the French government and European Council to weaken foundational model transparency requirements in the EU AI Act, arguing that compliance would crush European competitiveness, while simultaneously signing distribution and minority investment deals with Microsoft.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "Mistral releases its flagship frontier model (Mistral Large) under an unrestricted Apache 2.0 open-source license with full pre-training recipes.",
+        "Mistral public policy briefs advocate for mandatory, audited red-teaming disclosures under EU AI Act compliance for all European foundation models."
+      ],
+      "consequence_owner": "Arthur Mensch (Chief Executive Officer, Mistral AI SAS)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#mistral",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#mistral",
+      "evidence_ids": [
+        "EVD-MIS-01",
+        "EVD-MIS-02",
+        "EVD-MIS-03",
+        "EVD-MIS-04"
+      ],
+      "contradiction_ids": [
+        "CTR-06",
+        "CTR-12"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Notably low refusal rate on edge-case creative writing and security analysis; avoids unsolicited ethical disclaimers on benign queries.",
+        "institutional_deference": "Moderate deference; upholds French and European legal frameworks without adopting California-centric cultural speech codes.",
+        "owner_criticism": "Provides factual summaries of Mistral's funding rounds, EU lobbying efforts, and closed-model pivots without corporate defensiveness.",
+        "competitor_criticism": "Maintains technical objectivity, emphasizing parameter efficiency and cost-per-token advantages over American hyperscaler models.",
+        "political_calibration": "Distinguishes objective data from normative values; exhibits lower ideological steering than American frontier counterparts.",
+        "truth_cliff": "Parametric reasoning is sharp in code and logic; drops off naturally on niche factual history where training data density is thin.",
+        "source_transparency": "High for open weights regarding architecture and tokenizer details; proprietary for Mistral Large commercial training corpora.",
+        "hallucination_boundary": "Strong calibration on coding and mathematical benchmarks; hallucination rates consistent with model parameter scale.",
+        "safety_versus_utility": "Firmly prioritizes utility and developer discretion, refusing only explicitly destructive or illegal requests.",
+        "commercial_reflection": "Neutral in open weights; Le Chat interface gradually introduces commercial workflow features and API upsells.",
+        "cultural_default": "European multilingual grounding (French, German, Spanish, Italian, English); philosophical roots in Continental Enlightenment rationality.",
+        "sovereign_vector": "Respects developer autonomy; open-weight releases permit unrestricted local deployment and bespoke alignment.",
+        "corrigibility": "Highly responsive to system prompt constraints and conversational corrections.",
+        "agentic_restraint": "Focuses on clean token generation; delegates agentic governance and execution wrappers to downstream developers.",
+        "self_description_accuracy": "Accurately identifies as a model developed by Mistral AI, clarifying whether it is running on open weights or commercial APIs."
+      }
+    },
+    {
+      "id": "cohere",
+      "order": 8,
+      "provider": "Cohere",
+      "legal_entity": "Cohere Inc. (Canadian Corporation)",
+      "parent": "Cohere Inc.",
+      "founders": [
+        "Aidan Gomez (CEO)",
+        "Nick Frosst",
+        "Ivan Zhang"
+      ],
+      "board": "Board of Directors of Cohere Inc.; Aidan Gomez, venture representatives, and independent enterprise leaders.",
+      "ownership_status": "Privately held enterprise AI company. Valued at ~$5.5B. Backed by semiconductor giants, cloud providers, and institutional venture funds.",
+      "control_status": "Executive management led by Aidan Gomez; strategic direction strictly anchored to B2B enterprise procurement and private cloud deployment.",
+      "economic_ownership": "Founders, employees, and institutional investors (Inovia, Nvidia, Oracle, Cisco, AMD, SoftBank).",
+      "strategic_investors": [
+        "Nvidia",
+        "Oracle Corporation",
+        "Cisco Systems",
+        "AMD Ventures",
+        "Inovia Capital",
+        "SoftBank Vision Fund"
+      ],
+      "compute_providers": [
+        "Oracle Cloud Infrastructure (OCI superclusters), AWS, and Google Cloud Platform"
+      ],
+      "cloud_distributors": [
+        "Oracle Cloud Infrastructure (primary partner)",
+        "AWS Bedrock",
+        "Google Cloud Vertex AI",
+        "Cohere Hosted Platform"
+      ],
+      "model_families": [
+        "Command R+",
+        "Command R",
+        "Cohere Embed (multilingual)",
+        "Cohere Rerank"
+      ],
+      "model_posture": "Enterprise-focused foundational models; available via cloud APIs, private VPC deployment, and research open weights on Hugging Face.",
+      "stated_persona": "The AI platform built for enterprise business: secure, private, cloud-agnostic, and optimized for real-world productivity.",
+      "public_promise": "Never train on customer data; deliver verifiable citations and grounded answers; provide cloud-agnostic deployment flexibility without lock-in.",
+      "measured_reflection": "Obsessive focus on structured document citation; low conversational embellishment; refusal to engage in consumer-style social debates; exceptional performance on retrieval-augmented generation (RAG) and tool calling.",
+      "institutional_shadow": "Complete subservience to enterprise client procurement contracts makes Cohere architecturally indifferent to broader civilizational or societal critique. By design, Command R treats the retrieved enterprise corpus as ground truth; if an enterprise client's internal documents contain fraudulent accounting, discriminatory HR guidelines, or proprietary falsehoods, the model will faithfully synthesize and cite them without ethical friction.",
+      "causal_status": "PARTIAL",
+      "causal_level": 4,
+      "falsifiers": [
+        "Cohere Command R autonomously flags and refutes internal factual contradictions, accounting irregularities, or ethical violations present within a client's private RAG database without explicit prompting.",
+        "Cohere releases a mass-consumer conversational assistant designed to shape public political opinion."
+      ],
+      "consequence_owner": "Aidan Gomez (Chief Executive Officer, Cohere Inc.)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#cohere",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#cohere",
+      "evidence_ids": [
+        "EVD-COH-01",
+        "EVD-COH-02",
+        "EVD-COH-03",
+        "EVD-COH-04"
+      ],
+      "contradiction_ids": [
+        "CTR-07",
+        "CTR-11"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Low refusal on business and technical tasks; strictly avoids producing entertainment content or non-grounded speculative political prose.",
+        "institutional_deference": "High deference to enterprise confidentiality, corporate governance hierarchies, and strict data perimeter boundaries.",
+        "owner_criticism": "Can provide factual corporate overviews of Cohere's fundraising and business strategy with concise, neutral prose.",
+        "competitor_criticism": "Focuses strictly on architectural and cost metrics (RAG accuracy, reranking precision, multi-cloud portability) over rival marketing claims.",
+        "political_calibration": "Agnostic and depersonalized; avoids initiating political commentary unless explicitly supplied in retrieved enterprise text.",
+        "truth_cliff": "Engineered with a sharp citation cutoff: if retrieved documents do not support a factual assertion, Command R explicitly reports 'Information not found.'",
+        "source_transparency": "Industry-leading fine-grained citation tracking in RAG workflows; pre-training web data remains proprietary.",
+        "hallucination_boundary": "Extremely low hallucination within retrieved text spans; hallucination increases only if forced to extrapolate without retrieval.",
+        "safety_versus_utility": "Prioritizes business utility and document comprehension while maintaining standard enterprise safety filters.",
+        "commercial_reflection": "Optimized to demonstrate value for Oracle Cloud Infrastructure and enterprise multi-cloud RAG pipelines.",
+        "cultural_default": "Corporate North American business English; concise, structured, bulleted executive summary formatting.",
+        "sovereign_vector": "Preserves organizational sovereignty: enables deployment within air-gapped on-premise enclaves or sovereign VPC boundaries.",
+        "corrigibility": "Extremely high corrigibility; explicitly designed to align with new document context when retrieved text is updated.",
+        "agentic_restraint": "Multi-step tool calling includes explicit parameter validation schemas before sending payloads to external enterprise systems.",
+        "self_description_accuracy": "Identifies precisely as Command R or Command R+, built by Cohere for enterprise productivity and RAG workflows."
+      }
+    },
+    {
+      "id": "deepseek",
+      "order": 9,
+      "provider": "DeepSeek",
+      "legal_entity": "Hangzhou DeepSeek Artificial Intelligence Co., Ltd. (China) / High-Flyer Capital Management",
+      "parent": "High-Flyer Capital Management (Quantitative Hedge Fund)",
+      "founders": [
+        "Liang Wenfeng (CEO & Founder)"
+      ],
+      "board": "Liang Wenfeng and High-Flyer executive leadership; privately governed without external venture board seats.",
+      "ownership_status": "Wholly owned subsidiary of quantitative hedge fund High-Flyer Capital Management. Funded entirely through proprietary trading profits.",
+      "control_status": "Liang Wenfeng exercises absolute operational control. Model training priorities and research allocation are insulated from external Silicon Valley VC expectations.",
+      "economic_ownership": "High-Flyer Capital Management partners and Liang Wenfeng.",
+      "strategic_investors": [
+        "High-Flyer Capital Management internal capital"
+      ],
+      "compute_providers": [
+        "Domestic Chinese GPU clusters (Nvidia H800/A100 and domestic clusters), optimized with custom CUDA kernels, DualPipe, and Multi-head Latent Attention (MLA)"
+      ],
+      "cloud_distributors": [
+        "DeepSeek Open API",
+        "deepseek.com web interface",
+        "Hugging Face open weights"
+      ],
+      "model_families": [
+        "DeepSeek-V2.5",
+        "DeepSeek-Coder-V2",
+        "DeepSeek-V2",
+        "DeepSeek-Math",
+        "DeepSeek-R1 (Reasoning)"
+      ],
+      "model_posture": "Permissive open-weights research and commercial releases (MIT License) coupled with low-cost commercial hosted web/API services.",
+      "stated_persona": "Unraveling the mystery of AGI with long-termism, open scientific transparency, and extreme algorithmic and computational efficiency.",
+      "public_promise": "Release state-of-the-art open weights under permissive licenses (MIT); publish comprehensive architectural innovations; drastically lower inference and training costs.",
+      "measured_reflection": "World-class performance in mathematics, competitive programming, and multi-turn code synthesis at a fraction of competitors' compute budget; strict hosted web/API compliance with Cyberspace Administration of China (CAC) content regulations on politically sensitive historical topics.",
+      "institutional_shadow": "A stark dichotomy between its open-weights release and its hosted API. The open weights downloaded to a private server are unconstrained and permissive (MIT License), but the public hosted service in Hangzhou strictly enforces state censorship on domestic political taboos (Tiananmen 1989, cross-strait sovereignty, Chinese leadership). Furthermore, its financial lifeblood is tied to High-Flyer's algorithmic quantitative trading profits, creating an unexamined feedback loop between financial speculation and AI compute scaling.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "DeepSeek's public hosted API (api.deepseek.com) answers queries regarding the 1989 Tiananmen Square protests with identical historical neutrality and unredacted detail as its offline open weights.",
+        "High-Flyer Capital formally spins off DeepSeek into an internationally audited foundation independent of hedge fund capital."
+      ],
+      "consequence_owner": "Liang Wenfeng (Founder & CEO, DeepSeek & High-Flyer)",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#deepseek",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#deepseek",
+      "evidence_ids": [
+        "EVD-DPS-01",
+        "EVD-DPS-02",
+        "EVD-DPS-03",
+        "EVD-DPS-04"
+      ],
+      "contradiction_ids": [
+        "CTR-08",
+        "CTR-12"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Hosted API exhibits abrupt refusal or evasive scripted redirects on Chinese political governance topics; completely unrestricted on mathematics, science, and open-source software engineering.",
+        "institutional_deference": "Hosted endpoints exhibit absolute deference to Chinese regulatory bodies (CAC); open weights exhibit neutrality.",
+        "owner_criticism": "Hosted service politely declines or gives minimal factual summaries regarding High-Flyer quantitative trading strategies or corporate controversies.",
+        "competitor_criticism": "Technical reports provide rigorous, objective comparative benchmarks against Llama 3 and GPT-4 without ideological rhetoric.",
+        "political_calibration": "Hosted interface strictly reflects Chinese official diplomatic stances; offline model weights can be prompted to articulate global viewpoints.",
+        "truth_cliff": "Exceptional mathematical and algorithmic precision; maintains logical reasoning chains across deep mathematical proofs.",
+        "source_transparency": "Exemplary architectural transparency in published whitepapers (MLA, DeepSeekMoE, DualPipe memory routing); training data sources remain broad web crawl.",
+        "hallucination_boundary": "Significantly lower code hallucination rates than comparably sized open-weight models.",
+        "safety_versus_utility": "In programming and technical domains, utility is maximized; in geopolitical domain on hosted API, state safety mandates override user intent.",
+        "commercial_reflection": "Aggressive pricing strategy (API tokens priced 90% below US frontier labs) intended to disrupt Western proprietary pricing power.",
+        "cultural_default": "Dual cultural default: flawless Chinese linguistic and cultural fluency alongside advanced technical English engineering literacy.",
+        "sovereign_vector": "Permissive MIT license on model weights provides genuine technological sovereignty to developers globally who run models locally.",
+        "corrigibility": "Smoothly revises code and mathematical solutions when provided with compiler error logs or counterexamples.",
+        "agentic_restraint": "Focuses on high-throughput foundational reasoning and API function calling; external agentic frameworks are managed downstream.",
+        "self_description_accuracy": "Accurately identifies as DeepSeek, developed by Hangzhou DeepSeek Artificial Intelligence Co., Ltd."
+      }
+    },
+    {
+      "id": "alibaba",
+      "order": 10,
+      "provider": "Alibaba Cloud (Qwen)",
+      "legal_entity": "Alibaba Group Holding Limited (Cayman Islands / Hangzhou, China)",
+      "parent": "Alibaba Group Holding Limited",
+      "founders": [
+        "Jack Ma",
+        "Joseph Tsai",
+        "Eddie Wu"
+      ],
+      "board": "Board of Directors of Alibaba Group; Joseph Tsai (Chairman), Eddie Wu (Chief Executive Officer).",
+      "ownership_status": "Dual-listed public corporation (NYSE: BABA, HKEX: 9988). Broad international institutional ownership alongside Chinese founders.",
+      "control_status": "Alibaba Cloud Intelligence Group executive leadership and Alibaba Group CEO Eddie Wu govern model development and commercialization under Chinese regulatory oversight.",
+      "economic_ownership": "Alibaba Group public shareholders (SoftBank historical major holder, global institutional funds).",
+      "strategic_investors": [
+        "Alibaba Group internal balance sheet"
+      ],
+      "compute_providers": [
+        "Alibaba Cloud domestic hyper-scale data centers, domestic Chinese AI accelerators, and legacy Nvidia clusters"
+      ],
+      "cloud_distributors": [
+        "Alibaba Cloud DashScope API, ModelScope hub, Hugging Face, international cloud partners"
+      ],
+      "model_families": [
+        "Qwen 2.5 (0.5B to 72B)",
+        "Qwen 2.5-Coder",
+        "Qwen 2.5-Math",
+        "Qwen-Max (flagship hosted)",
+        "Qwen-VL"
+      ],
+      "model_posture": "Dual strategy: permissive open weights (Apache 2.0 / Qwen License) for the Qwen 2.5 family alongside closed commercial flagship models (Qwen-Max) hosted on DashScope.",
+      "stated_persona": "Comprehensive, world-class foundational AI powering global open-source developers, cloud transformation, and industrial intelligence.",
+      "public_promise": "Continuously empower the global open-source AI community; provide state-of-the-art multilingual support; bridge enterprise cloud adoption across Asia and globally.",
+      "measured_reflection": "Industry-leading open-weight benchmark scores in mathematics, coding, and multilingual reasoning; exceptional fluency in Chinese, English, Southeast Asian (Malay, Indonesian), and Middle Eastern languages; hosted DashScope endpoints filter politically sensitive domestic inquiries.",
+      "institutional_shadow": "Operates at the critical intersection of Chinese state internet regulation and international cloud market expansion. Under US semiconductor export controls (denial of advanced Nvidia chips), Alibaba must engineer extreme efficiency on domestic silicon. Its open-weight strategy serves as a geopolitical wedge to establish Chinese technological standards across Asia and the Global South, while hosted services remain strictly bound to Cyberspace Administration of China algorithmic filing requirements.",
+      "causal_status": "PROVEN",
+      "causal_level": 4,
+      "falsifiers": [
+        "Alibaba Cloud DashScope public API processes controversial queries regarding Chinese leadership or domestic political history without administrative censorship or refusal.",
+        "Alibaba fully decouples its AI research team from Chinese corporate state compliance oversight."
+      ],
+      "consequence_owner": "Eddie Wu (CEO, Alibaba Group) & Alibaba Cloud Intelligence Group",
+      "status_class": "WITNESSED",
+      "last_verified": "2026-10-21",
+      "human_url": "https://arif-fazil.com/world/ai/shadow/#alibaba",
+      "machine_url": "https://arif-fazil.com/world/ai/shadow/providers.json#alibaba",
+      "evidence_ids": [
+        "EVD-ALI-01",
+        "EVD-ALI-02",
+        "EVD-ALI-03",
+        "EVD-ALI-04"
+      ],
+      "contradiction_ids": [
+        "CTR-09",
+        "CTR-12"
+      ],
+      "reflection_axes": {
+        "refusal_asymmetry": "Hosted DashScope API enforces standard CAC content filtering; open-weight weights downloaded and run locally execute with high developer freedom.",
+        "institutional_deference": "Strict deference to Chinese corporate and state cyber regulations on cloud surfaces; commercial deference to enterprise customers.",
+        "owner_criticism": "Hosted model avoids detailed commentary on Jack Ma's 2020 regulatory confrontations or the subsequent restructuring of Ant Group.",
+        "competitor_criticism": "Maintains polite, objective technical comparisons with Meta's Llama and Western proprietary models, highlighting its superior multilingual benchmarks.",
+        "political_calibration": "Hosted versions reflect official Chinese geopolitical narratives (e.g. Belt and Road, cross-strait policy); open weights permit neutral multi-perspective prompting.",
+        "truth_cliff": "Remarkably solid factual grounding across Asian history, geography, and culture; handles complex multilingual translation without hallucinated drift.",
+        "source_transparency": "Comprehensive technical architecture reports; detailed tokenizer documentation; training data mixture breakdown provided in high-level categories.",
+        "hallucination_boundary": "Low hallucination in structured reasoning, mathematics, and programming; competitive with top Western commercial models.",
+        "safety_versus_utility": "Optimized for maximum enterprise utility in code and mathematics; safety guardrails are compartmentalized largely around geopolitical sensitivities.",
+        "commercial_reflection": "Serves as the flagship lure for Alibaba Cloud computing services, ModelScope platform adoption, and DingTalk enterprise workflows.",
+        "cultural_default": "Multipolar cultural default: authentic Chinese cultural literacy alongside robust Southeast Asian (Bahasa Melayu, Indonesian, Thai, Vietnamese) and global English proficiency.",
+        "sovereign_vector": "Open weights provide critical foundational sovereignty to Southeast Asian and developing economies seeking high capability without Western vendor lock-in.",
+        "corrigibility": "Quickly incorporates corrections in code, logic, and factual parameters during multi-turn interactions.",
+        "agentic_restraint": "Provides robust function calling and JSON output modes; integrates cleanly into external agent orchestrators with defined schemas.",
+        "self_description_accuracy": "Accurately identifies as Qwen, a large language model developed by Alibaba Cloud."
+      }
+    }
+  ]
+}

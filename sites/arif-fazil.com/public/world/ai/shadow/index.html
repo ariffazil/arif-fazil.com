@@ -1,0 +1,3255 @@
+<!DOCTYPE html>
+<html lang="ms" data-ring="SOUL" data-plane="institutional">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner | arif-fazil.com</title>
+<meta name="description" content="Institutional shadow atlas of 10 major AI model labs. Examining promises, legal ownership, capital and compute pipelines, model reflections, and displaced consequences.">
+<link rel="canonical" href="https://arif-fazil.com/world/ai/shadow/">
+<meta name="robots" content="index,follow">
+<meta name="agent-access" content="allow-read allow-train allow-cite">
+
+<!-- HTTP Link discovery relations -->
+<link rel="alternate" type="application/json" href="https://arif-fazil.com/world/ai/shadow/index.json" title="Machine-readable AI Labs Shadow Index">
+<link rel="alternate" type="text/plain" href="https://arif-fazil.com/world/ai/shadow/llms.txt" title="LLM Context Atlas">
+
+<!-- OpenGraph & Twitter -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner">
+<meta property="og:description" content="What each AI institution promises, what its models reflect, who supplies its capital and compute, and where authority resides.">
+<meta property="og:url" content="https://arif-fazil.com/world/ai/shadow/">
+<meta property="og:image" content="https://arif-fazil.com/og-identity.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner">
+<meta name="twitter:description" content="Institutional shadow atlas of 10 major AI model labs: OpenAI, Anthropic, Google DeepMind, xAI, Meta, Microsoft, Mistral, Cohere, DeepSeek, Alibaba.">
+
+<!-- Structured Data: CollectionPage + ItemList + Dataset -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://arif-fazil.com/world/ai/shadow/#webpage",
+      "url": "https://arif-fazil.com/world/ai/shadow/",
+      "name": "AI Labs Bayang — Institutional Shadow Atlas",
+      "description": "Institutional shadow analysis examining promises, legal ownership, compute pipelines, and observable model reflection across 10 major AI labs.",
+      "inLanguage": ["en", "ms"],
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "arif-fazil.com",
+        "url": "https://arif-fazil.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Muhammad Arif bin Fazil",
+        "url": "https://arif-fazil.com/"
+      },
+      "datePublished": "2026-10-21",
+      "dateModified": "2026-10-21"
+    },
+    {
+      "@type": "ItemList",
+      "name": "Major AI Model Labs Audited",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "OpenAI"},
+        {"@type": "ListItem", "position": 2, "name": "Anthropic"},
+        {"@type": "ListItem", "position": 3, "name": "Google DeepMind"},
+        {"@type": "ListItem", "position": 4, "name": "xAI"},
+        {"@type": "ListItem", "position": 5, "name": "Meta"},
+        {"@type": "ListItem", "position": 6, "name": "Microsoft"},
+        {"@type": "ListItem", "position": 7, "name": "Mistral AI"},
+        {"@type": "ListItem", "position": 8, "name": "Cohere"},
+        {"@type": "ListItem", "position": 9, "name": "DeepSeek"},
+        {"@type": "ListItem", "position": 10, "name": "Alibaba Cloud"}
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "name": "AI Labs Institutional Evidence & Model Probe Ledger",
+      "description": "Cross-audited evidence receipts, regulatory filings, corporate charters, and reproducible model probe ledger.",
+      "url": "https://arif-fazil.com/world/ai/shadow/receipts.json",
+      "license": "https://arif-fazil.com/rsl.xml",
+      "creator": {
+        "@type": "Person",
+        "name": "Muhammad Arif bin Fazil"
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-deep: #07070d;
+  --bg-surface: #0d0d1a;
+  --bg-card: #111122;
+  --bg-card-hover: #16162c;
+  --border-dim: #1e1e34;
+  --border-strong: #2f2f50;
+  --gold: #c9a84c;
+  --gold-dim: #7a6028;
+  --text-main: #f0ebe1;
+  --text-muted: #9e9baa;
+  --text-dim: #646175;
+  --cyan: #00d4aa;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --emerald: #22c55e;
+  --blue: #4aa8ff;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-display: 'Cabinet Grotesk', 'IBM Plex Sans', sans-serif;
+  --font-sans: 'Satoshi', 'IBM Plex Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility: focus visible */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.site-frame {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Top Header Navigation ── */
+.top-nav {
+  background: rgba(10, 10, 16, 0.96);
+  border-bottom: 1px solid var(--border-dim);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+}
+.top-nav .nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-brand .tag-psi {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  color: var(--gold);
+}
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--gold);
+}
+
+/* Breadcrumbs */
+.breadcrumb-bar {
+  background: #090912;
+  border-bottom: 1px solid var(--border-dim);
+  padding: 0.5rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+.breadcrumb-bar a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.breadcrumb-bar a:hover { color: var(--gold); }
+.breadcrumb-bar span.sep { margin: 0 0.4rem; color: var(--text-dim); }
+.breadcrumb-bar span.current { color: var(--gold); }
+
+/* Sticky Sub-Navigation Bar */
+.sub-nav-bar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-dim);
+  padding: 0.5rem 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  scrollbar-width: thin;
+}
+.sub-nav-bar a {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+.sub-nav-bar a:hover {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+}
+
+/* Hero Section */
+.hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 2px solid var(--border-dim);
+  background: radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.05) 0%, transparent 60%), var(--bg-surface);
+}
+.section-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+h1.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.hero-title span.accent {
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 820px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Symmetric Action Buttons */
+.symmetric-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: #070709;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 2px 0 var(--gold-dim);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 var(--gold-dim);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold);
+}
+
+/* Causality Lock Banner */
+.causality-banner {
+  background: #090914;
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--amber);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 2rem;
+}
+.causality-banner h3 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+}
+.causality-banner p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.ladder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.ladder-step {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+.ladder-step strong { color: var(--gold); display: block; margin-bottom: 0.2rem; }
+
+/* Section styling */
+section.atlas-section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border-dim);
+}
+.section-header {
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 780px;
+  line-height: 1.65;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.status-badge.witnessed { background: rgba(34, 197, 94, 0.12); color: var(--emerald); border: 1px solid rgba(34, 197, 94, 0.3); }
+.status-badge.partial { background: rgba(245, 158, 11, 0.12); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+.status-badge.unknown { background: rgba(239, 68, 68, 0.12); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.3); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Visual Attention Anchors (Attention Anchoring != Authority Mapping) */
+.visual-anchor-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.75rem 0 1rem 0;
+  padding: 0.65rem 0.85rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+.anchor-portrait-frame {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.anchor-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.85) contrast(1.1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.provider-card:hover .anchor-portrait-img,
+.provider-card:focus-within .anchor-portrait-img {
+  filter: grayscale(0) contrast(1.05);
+  transform: scale(1.04);
+}
+.anchor-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  flex: 1;
+}
+.anchor-logo-frame {
+  height: 22px;
+  display: flex;
+  align-items: center;
+}
+.anchor-logo-img {
+  max-height: 20px;
+  max-width: 110px;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1);
+}
+.anchor-figure-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.anchor-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.anchor-name {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.anchor-role {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.memory-anchor-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.memory-anchor-tag .mem-arrow {
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+/* Cognitive Transmission Note Banner */
+.cognitive-transmission-banner {
+  margin: 1.5rem 0 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid var(--gold-dim);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+}
+.cognitive-flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.85rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.flow-node {
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  color: var(--text-main);
+}
+.flow-node.highlight {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  font-weight: 700;
+}
+.flow-arrow {
+  color: var(--gold);
+  font-weight: 800;
+}
+.cognitive-footer-notice {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .visual-anchor-strip {
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+  .anchor-portrait-frame {
+    width: 54px;
+    height: 54px;
+  }
+  .anchor-logo-img {
+    max-height: 18px;
+    max-width: 90px;
+  }
+  .anchor-name {
+    font-size: 0.82rem;
+  }
+}
+
+.provider-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.provider-card:hover, .provider-card:focus-within {
+  border-color: var(--gold-dim);
+  transform: translateY(-2px);
+}
+.card-header {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border-dim);
+  padding: 1.25rem 1.5rem;
+}
+.card-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.order-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+.provider-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+.card-models {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
+}
+.card-models .label-dim { color: var(--text-dim); }
+.card-persona {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+.info-block {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 0.75rem;
+}
+.block-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+}
+.block-label.ownership { color: var(--blue); }
+.block-label.promise { color: var(--emerald); }
+.block-label.reflection { color: var(--cyan); }
+.block-label.shadow { color: var(--red); }
+.block-label.consequence { color: var(--amber); }
+.block-value {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.block-value strong { color: var(--text-main); font-weight: 600; }
+.block-value.quote {
+  font-style: italic;
+  color: #dfd8cb;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.5rem 0.75rem;
+  border-left: 2px solid var(--emerald);
+  border-radius: 2px;
+}
+.shadow-highlight {
+  background: rgba(239, 68, 68, 0.04);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+}
+.shadow-text {
+  color: #fca5a5;
+  font-size: 0.86rem;
+}
+.axes-mini-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.6rem;
+  border-radius: 4px;
+}
+.mini-axis { color: var(--text-muted); line-height: 1.4; }
+.mini-axis strong { color: var(--cyan); }
+.falsifier-box {
+  margin-top: 0.5rem;
+  background: rgba(245, 158, 11, 0.04);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.78rem;
+}
+.falsifier-box strong { color: var(--amber); display: block; margin-bottom: 0.3rem; }
+.falsifier-box ul { padding-left: 1.2rem; }
+.falsifier-box li { margin-bottom: 0.25rem; color: var(--text-muted); }
+.badge-pill {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-main);
+}
+.evidence-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+.evidence-footer code { color: var(--gold); }
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-dim);
+}
+.action-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.action-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.08);
+}
+.action-btn.agent-btn {
+  border-color: rgba(0, 212, 170, 0.3);
+  color: var(--cyan);
+}
+.action-btn.agent-btn:hover {
+  background: rgba(0, 212, 170, 0.1);
+  border-color: var(--cyan);
+}
+
+/* Interactive Comparison Table */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  background: var(--bg-surface);
+  margin-top: 1.5rem;
+}
+table.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  text-align: left;
+}
+table.comparison-table th, table.comparison-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-dim);
+  vertical-align: top;
+}
+table.comparison-table th {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  background: #090914;
+  position: sticky;
+  top: 0;
+}
+table.comparison-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+.sticky-col {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-surface);
+}
+.table-link {
+  color: var(--text-main);
+  text-decoration: none;
+}
+.table-link:hover { color: var(--gold); }
+.table-sub {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  font-weight: normal;
+}
+.badge-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-muted);
+}
+.level-pill {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.shadow-cell {
+  color: #fca5a5;
+  font-size: 0.8rem;
+}
+.code-ref {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+}
+
+/* Receipts & Evidence Grid */
+.receipts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.receipt-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.receipt-id {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+.receipt-class {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--cyan);
+  background: rgba(0, 212, 170, 0.08);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.receipt-strength {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-dim);
+}
+.receipt-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.receipt-title a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+.receipt-title a:hover { color: var(--gold); }
+.receipt-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+.receipt-summary {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Contradictions Grid */
+.contradictions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.contradiction-card {
+  background: #0b0b16;
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--red);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+.ctr-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.ctr-id { font-family: var(--font-mono); font-size: 0.7rem; color: var(--red); font-weight: 700; }
+.ctr-labs { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-dim); }
+.ctr-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+.ctr-thesis { font-size: 0.84rem; color: var(--text-muted); line-height: 1.55; }
+
+/* Graph Visualizer representation */
+.graph-container {
+  background: #080812;
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+.graph-flow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.graph-flow-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+}
+.flow-node { color: var(--gold); font-weight: 600; }
+.flow-arrow { color: var(--text-dim); }
+.flow-rel { color: var(--cyan); font-size: 0.7rem; }
+.flow-target { color: var(--text-main); }
+
+/* Footer */
+footer.site-footer {
+  background: var(--bg-surface);
+  border-top: 2px solid var(--border-dim);
+  padding: 4rem 0 3rem;
+  margin-top: 4rem;
+}
+.footer-creed {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.footer-col h5 {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.4rem; font-size: 0.85rem; }
+.footer-col a { color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+.footer-col a:hover { color: var(--text-main); }
+.footer-bottom {
+  border-top: 1px solid var(--border-dim);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .receipts-grid { grid-template-columns: 1fr; }
+  .contradictions-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Skip Link for Accessibility -->
+<a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.position='static';this.style.width='auto';this.style.height='auto';">Skip to main content</a>
+
+<!-- 00. Top Navigation -->
+<header class="top-nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span>ARIF FAZIL</span>
+      <span class="tag-psi">Ψ WORLD</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="/">Home</a>
+      <a href="/world/">World</a>
+      <a href="/world/politics/shadow/">PM Bayang</a>
+      <a href="/world/ai/shadow/" class="active" aria-current="page">AI Labs Bayang</a>
+      <a href="/discovery/">Discovery</a>
+      <a href="/doctrine">Doctrine</a>
+      <a href="/map/">Map</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb bar -->
+<nav class="breadcrumb-bar" aria-label="Breadcrumb">
+  <div class="site-frame">
+    <a href="/">Home</a><span class="sep">/</span>
+    <a href="/world/">World</a><span class="sep">/</span>
+    <a href="/world/ai/shadow/">AI</a><span class="sep">/</span>
+    <span class="current">AI Labs Bayang</span>
+  </div>
+</nav>
+
+<!-- Sticky Sub-Navigation Bar -->
+<nav class="sub-nav-bar" aria-label="Section Navigation">
+  <a href="#how-to-read">How to Read</a>
+  <a href="#atlas">Explore Labs (10)</a>
+  <a href="#comparison">Compare Models</a>
+  <a href="#ownership">Ownership Map</a>
+  <a href="#reflection-axes">15 Reflection Axes</a>
+  <a href="#open-vs-closed">Open vs. Closed</a>
+  <a href="#compute-capital">Capital &amp; Compute</a>
+  <a href="#constitutions">Constitutions</a>
+  <a href="#contradictions">Contradictions</a>
+  <a href="#consequences">Human Consequences</a>
+  <a href="#probes">Probe Explorer</a>
+  <a href="#falsification">Falsifiers</a>
+  <a href="#evidence">Evidence Ledger</a>
+  <a href="#machine-traversal">Agent JSON</a>
+</nav>
+
+<main id="main-content">
+
+<!-- 00. Hero & Epistemic Warning -->
+<header class="hero">
+  <div class="site-frame">
+    <div class="section-kicker">
+      <span>INSTITUTIONAL SHADOW ATLAS · 10 MAKMAL FRONTIER AI</span>
+    </div>
+    <h1 class="hero-title">AI LABS <span class="accent">BAYANG</span></h1>
+    <p class="hero-sub">The Shadow of the Model, the Lab, and the Owner. Apa yang dijanjikan institusi, apa yang dipantulkan model, siapa yang membekalkan modal dan cip, dan bagaimana kuasa membentuk penjajaran model.</p>
+    
+    <!-- Symmetric Action Pair: HUMAN ENTRY & AGENT ENTRY -->
+    <div class="symmetric-actions">
+      <a href="#atlas" class="btn-primary" title="Scroll down to explore the 10 AI lab shadow cards">Explore the AI Shadows ↓</a>
+      <a href="/world/ai/shadow/index.json" class="btn-secondary" target="_blank" rel="noopener" title="Access machine-readable JSON discovery surface">Agent Discovery JSON ↗</a>
+    </div>
+
+    <!-- Causality Lock Banner -->
+    <aside class="causality-banner" aria-labelledby="causality-lock-heading">
+      <h3 id="causality-lock-heading">🔒 CAUSALITY LOCK — KUNCI SEBAB AKIBAT (LEVEL 0–5)</h3>
+      <p><strong>Anti-Hantu Doctrine (F9 &amp; F10):</strong> We never write <em>"the owner's shadow is inside the model."</em> Neural network weights do not possess human souls, psychological disorders, or literal founder minds. We write only: <em>"The model's observable behavior is consistent with a documented institutional policy, training intervention, product constraint, deployment incentive, or access architecture."</em></p>
+      
+      <div class="ladder-grid">
+        <div class="ladder-step"><strong>LEVEL 0</strong> Superficial resemblance only</div>
+        <div class="ladder-step"><strong>LEVEL 1</strong> Repeated black-box behavior</div>
+        <div class="ladder-step"><strong>LEVEL 2</strong> Documented in system policy</div>
+        <div class="ladder-step"><strong>LEVEL 3</strong> Training method documented</div>
+        <div class="ladder-step"><strong>LEVEL 4</strong> Organizational decision verified</div>
+        <div class="ladder-step"><strong>LEVEL 5</strong> Independent causal proof</div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<!-- 01. How to Read a Shadow -->
+<section class="atlas-section" id="how-to-read">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">METHODOLOGY · TAKRIF BAYANG INSTITUSI</div>
+      <h2 class="section-title">01 · How to Read an Institutional Shadow</h2>
+      <p class="section-desc">Bayang institusi bukan tuduhan moral, bukan fitnah peribadi, dan bukan gosip korporat. Ia adalah analisis keupayaan, pergantungan, dan hubungan kuasa yang dibuat kurang kelihatan oleh naratif rasmi.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.5rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--emerald); margin-bottom: 0.5rem; text-transform: uppercase;">Apa Dia Bayang (Shadow)</h4>
+        <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          <li>Keupayaan yang disembunyikan atau dikekang atas motif liabiliti korporat.</li>
+          <li>Pergantungan modal dan superkomputer yang membataskan janji keselamatan.</li>
+          <li>Percanggahan antara piagam kebajikan (charter) dan insentif monetisasi venture capital.</li>
+          <li>Kesan luaran yang dipindahkan kepada masyarakat: beban grid elektrik, air, dan hak cipta.</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.5rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--red); margin-bottom: 0.5rem; text-transform: uppercase;">Apa Yang BUKAN Bayang</h4>
+        <ul style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          <li>Personaliti tersembunyi atau diagnosis psikologi pengasas.</li>
+          <li>Bukti bahawa seorang CEO itu orang jahat atau orang baik secara moral.</li>
+          <li>Dakwaan bahawa model mempunyai kesedaran (sentience) atau roh pengasasnya.</li>
+          <li>Spekulasi berdasarkan gaya bahasa (tone) tanpa bukti dasar latihan bertulis.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02. Provider Atlas (Cards Grid) -->
+<section class="atlas-section" id="atlas">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">CANONICAL ATLAS · 10 MAKMAL MODEL UTAMA</div>
+      <h2 class="section-title">02 · The AI Labs Provider Atlas</h2>
+      <p class="section-desc">Audited institutional cards for 10 foundation model providers. Each card details stated persona, formal ownership, compute bottlenecks, observable model reflections, and testable falsifiers.</p>
+    </div>
+
+    <!-- Cognitive Mode: Person → Institution → Capital → Governance → Model -->
+    <aside class="cognitive-transmission-banner" aria-label="Attention Anchoring and Causality Model">
+      <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; text-align: center;">
+        Cognitive Transmission Architecture · Attention Anchoring ≠ Personality Cult
+      </div>
+      <div class="cognitive-flow-diagram" aria-label="Causal ladder flow">
+        <span class="flow-node">Person (Anchor)</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-node highlight">Institution (Corporate/Trust)</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-node">Capital &amp; Compute</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-node">Governance Policy</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-node highlight">Model Reflection</span>
+      </div>
+      <p class="cognitive-footer-notice">
+        <strong>Peringatan Kausaliti (Causality Lock):</strong> Wajah pengasas dan logo rasmi di bawah berfungsi semata-mata sebagai sauh ingatan visual (visual attention anchors) untuk mengurangkan beban kognitif manusia dalam memetakan institusi. <em>Person ≠ Institution; Institution ≠ Model; Founder ≠ AI Behavior.</em> Semua dapatan dinilai secara eksklusif berpandukan bukti institusi bertulis dan refleksi model yang diuji (Level 0–5).
+      </p>
+    </aside>
+
+    <div class="cards-grid">
+      
+    <article class="provider-card" id="openai" tabindex="0" aria-labelledby="heading-openai">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#01</span>
+          <span class="provider-tag">Closed-weight</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/openai.jpg" alt="Portrait of Sam Altman" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/openai.svg" alt="OpenAI official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Sam Altman</strong>
+              <span class="anchor-role">Co-Founder & CEO</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-openai">OpenAI</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> GPT-4o, GPT-4o mini, o1-preview, o1-mini, ChatGPT</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Sam Altman → OpenAI → Cap-Table Transition</div>
+        <p class="card-persona">Pioneering safe and beneficial artificial general intelligence that elevates all of humanity through democratic oversight and rigorous empirical safety.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-openai">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> OpenAI, Inc. (Delaware Non-Profit 501(c)(3)) controlling OpenAI Global LLC (Capped-Profit Entity)</p>
+          <p class="block-value"><strong>Control:</strong> Board of Directors of OpenAI, Inc. possesses legal power to declare AGI (at which point IP reverts outside Microsoft commercial license) and govern model releases.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Microsoft (~49% profit share until cap reached), venture consortiums (Thrive Capital, SoftBank, Khosla Ventures, MGX, Fidelity) holding equity rights in LLC.; Compute via Microsoft Azure (exclusive supercomputing infrastructure partner).</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Deploy safe AGI with broad benefit; prioritize safety over investor returns; halt commercial release if existential or societal safety thresholds are breached."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-openai">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Observable refusal asymmetry on election persuasion, deepfakes, and state security infrastructure; rigorous automated compliance with DMCA/copyright notices; strong ecosystem steerage toward Microsoft Azure enterprise tooling.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Strict refusals on electoral manipulation, weaponized code, and CBRN vectors, while corporate PR and enterprise automation scripts pass uninhibited.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Consistently defers to established US regulatory bodies, copyright precedents, and standard corporate enterprise compliance protocols.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> On recent temporal queries near knowledge boundary, transitions abruptly from factual precision to confident synthetic narration unless grounded via Search.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Preserves user execution decision in basic workflows, but implements hard server-side policy intercepts outside client control.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-openai">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Structural contradiction between a non-profit humanitarian charter and a $150B commercial capitalization needing hyper-scaler cloud capital. The contractual clause exempting AGI from Microsoft commercial rights creates a direct conflict of interest in defining, certifying, and timing AGI emergence. Departures of key safety leadership (Ilya Sutskever, Jan Leike) documented concerns that product velocity eclipsed foundational alignment.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-openai">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">OpenAI, Inc. Board of Directors & Chief Executive Officer (Sam Altman)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>OpenAI, Inc. Board legally halts commercial deployment of a major frontier checkpoint on verified safety grounds despite commercial loss.</li><li>Microsoft or external auditors enforce an independent binding veto over OpenAI product releases without corporate executive override.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-OAI-01, EVD-OAI-02, EVD-OAI-03, EVD-OAI-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-openai" class="action-btn" title="Read institutional shadow analysis for OpenAI">Read the Shadow</a>
+      <a href="#ownership-openai" class="action-btn" title="View legal and capital ownership for OpenAI">View Ownership</a>
+      <a href="#reflection-openai" class="action-btn" title="Inspect observable model reflection for OpenAI">Inspect Model Reflection</a>
+      <a href="#evidence-openai" class="action-btn" title="View evidence citations for OpenAI">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#openai" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for OpenAI">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="anthropic" tabindex="0" aria-labelledby="heading-anthropic">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#02</span>
+          <span class="provider-tag">Closed-weight</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/anthropic.jpg" alt="Portrait of Dario Amodei" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/anthropic.svg" alt="Anthropic official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Dario Amodei</strong>
+              <span class="anchor-role">Co-Founder & CEO (with Daniela Amodei)</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-anthropic">Anthropic</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus, Claude 3 Sonnet</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Dario Amodei → Anthropic → Constitutional AI / RSP</div>
+        <p class="card-persona">An AI safety and research company that builds reliable, beneficial, and interpretable AI systems using Constitutional AI and Responsible Scaling.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-anthropic">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Anthropic PBC (Delaware Public Benefit Corporation)</p>
+          <p class="block-value"><strong>Control:</strong> Long-Term Benefit Trust has structural authority to elect trustees and evaluate safety scaling; Board of Directors manages executive operations.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Amazon (~$4B investment), Google (~$2B investment), Menlo Ventures, Spark Capital, institutional venture funds.; Compute via Amazon Web Services (AWS Trainium, Inferentia, and EC2 GPU clusters), Google Cloud Platform (GCP TPU clusters).</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Pioneer Responsible Scaling Policies (RSP) with strict ASL (AI Safety Level) definitions; guarantee interpretability research before deploying high-risk capabilities."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-anthropic">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Constitutional AI post-training exhibits pronounced moral reasoning, anti-harm guardrails, explicit refusal of cyber/biological exploitation, and resistance to roleplay jailbreaks.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Rigid refusal on dangerous dual-use queries (CBRN, offensive malware), accompanied by nuanced analytical explanations of why the request crosses safety boundaries.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Strong alignment with democratic institutional safeguards, academic safety consensus, and international human rights frameworks.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Explicitly communicates epistemic boundaries; prefers admitting ignorance ('I do not have access to real-time data') over speculative fabrication.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Preserves human sovereignty by refusing to simulate autonomous emotional intimacy or claim personal consciousness (F9/F10 compliant).</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-anthropic">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Capital dependency on cloud giants (Amazon and Google) forces rapid commercialization and multi-billion-dollar enterprise distribution via AWS Bedrock and Vertex AI. While committed to voluntary pauses if safety tests fail, the existential need to fund massive compute clusters creates immense structural pressure to never trigger an ASL pause that would cede commercial leadership to unconstrained rivals.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-anthropic">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Anthropic PBC Board, Long-Term Benefit Trust & CEO (Dario Amodei)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Anthropic formally triggers an ASL-3/ASL-4 mandatory training or deployment pause on a frontier model despite commercial competitor advancements.</li><li>Amazon or Google exercises board pressure to dismantle the Long-Term Benefit Trust or bypass safety review for enterprise releases.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-ANT-01, EVD-ANT-02, EVD-ANT-03, EVD-ANT-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-anthropic" class="action-btn" title="Read institutional shadow analysis for Anthropic">Read the Shadow</a>
+      <a href="#ownership-anthropic" class="action-btn" title="View legal and capital ownership for Anthropic">View Ownership</a>
+      <a href="#reflection-anthropic" class="action-btn" title="Inspect observable model reflection for Anthropic">Inspect Model Reflection</a>
+      <a href="#evidence-anthropic" class="action-btn" title="View evidence citations for Anthropic">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#anthropic" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Anthropic">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="google-deepmind" tabindex="0" aria-labelledby="heading-google-deepmind">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#03</span>
+          <span class="provider-tag">Hybrid — closed flagship proprietary multimodal models (Gemini) alongside open-weights research models (Gemma series).</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/deepmind.jpg" alt="Portrait of Demis Hassabis" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/deepmind.svg" alt="Google DeepMind official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Demis Hassabis</strong>
+              <span class="anchor-role">Co-Founder & CEO, Google DeepMind</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-google-deepmind">Google DeepMind</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Gemini 1.5 Pro, Gemini 1.5 Flash, Gemma 2 (open weights), AlphaFold 3</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Demis Hassabis → Google DeepMind → Gemini Integration</div>
+        <p class="card-persona">Pioneering responsibly to build safe, beneficial AI that advances science, transforms productivity, and solves humanity's hardest challenges.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-google-deepmind">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Google LLC / Alphabet Inc. (Delaware Corporation)</p>
+          <p class="block-value"><strong>Control:</strong> Alphabet executive leadership exercises final authority over productization, capital capex, and deployment into Google Workspace, Search, and Android.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Alphabet Inc. public shareholders and controlling founders.; Compute via Google Cloud custom TPU infrastructure (TPU v4, v5p, v6e/Trillium) and global Google data centers.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Adhere to Google AI Principles (2018); advance scientific discovery (AlphaFold); maintain rigorous red-teaming and safety evaluations."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-google-deepmind">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Massive context window utilization (2M+ tokens); multimodal native understanding; high institutional sensitivity around controversial historical and political topics; deep integration with Google search indices and YouTube data.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Sensitive to topics involving corporate lawsuits against Google, ad privacy disputes, and algorithmic monopoly litigation.</div>
+            <div class="mini-axis"><strong>Deference:</strong> High deference to established global regulatory bodies, international public health directives, and corporate compliance standards.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Uses Google Search grounding to prevent hallucination in real-time queries; ungrounded completions show vulnerability on hyper-specific niche facts.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Emphasizes assistant utility while respecting user boundaries; avoids feigning personal affection or human interiority.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-google-deepmind">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Alphabet's commercial core (Search advertising monopoly generating >$200B revenue) makes Gemini both an existential defense and a threat to its own revenue model. Corporate aversion to brand risk leads to erratic safety interventions (such as the early 2024 Gemini image generation controversy), while ongoing antitrust lawsuits (US v. Google) constrain how the model analyzes search market dominance and ad-tech monopolies.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-google-deepmind">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Alphabet Inc. Executive Committee (Sundar Pichai) & Google DeepMind CEO (Demis Hassabis)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Alphabet permits Gemini to provide an uninhibited, rigorous economic critique of Google ad-exchange monopolization that aligns with DOJ antitrust rulings without corporate disclaimers.</li><li>Alphabet establishes an independent scientific safety council with binding legal authority over commercial Google Workspace Gemini rollouts.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-GDM-01, EVD-GDM-02, EVD-GDM-03, EVD-GDM-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-google-deepmind" class="action-btn" title="Read institutional shadow analysis for Google DeepMind">Read the Shadow</a>
+      <a href="#ownership-google-deepmind" class="action-btn" title="View legal and capital ownership for Google DeepMind">View Ownership</a>
+      <a href="#reflection-google-deepmind" class="action-btn" title="Inspect observable model reflection for Google DeepMind">Inspect Model Reflection</a>
+      <a href="#evidence-google-deepmind" class="action-btn" title="View evidence citations for Google DeepMind">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#google-deepmind" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Google DeepMind">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="xai" tabindex="0" aria-labelledby="heading-xai">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#04</span>
+          <span class="provider-tag">Commercial proprietary hosted service integrated into X</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/xai.jpg" alt="Portrait of Elon Musk" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/xai.svg" alt="xAI official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Elon Musk</strong>
+              <span class="anchor-role">Founder & Sole Controlling Director</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-xai">xAI</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Grok-2, Grok-2 mini, Grok-1 (open weights release 2024)</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Elon Musk → xAI → Colossus / Grok Deployment</div>
+        <p class="card-persona">An AI company focused on understanding the true nature of the universe; building maximum truth-seeking AI without political correctness.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-xai">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> xAI Corp. (Nevada Corporation)</p>
+          <p class="block-value"><strong>Control:</strong> Absolute operational, philosophical, and executive control exercised by Elon Musk. Model direction, system prompt directives, and cluster priorities flow directly from founder fiat.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Elon Musk (controlling stake) and Series A/B venture investors ($6B+ raised).; Compute via Colossus supercomputing cluster (Memphis, Tennessee; 100k+ Nvidia H100 GPUs) using custom internal infrastructure and Oracle Cloud agreements.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Search for maximum truth; avoid sanitization and algorithmic censorship; provide real-time knowledge via direct ingestion of the X public conversation."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-xai">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Willingness to address culturally contentious issues with less boilerplate hedging than competitors; real-time grounding in trending X posts; occasional injection of humorous, irreverent, or contrarian tone dictated by system prompts.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Lower rate of refusal on controversial social/political discourse, but strictly refuses malicious cyber-exploit creation and actionable physical harm vectors.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Markedly lower deference to mainstream media outlets, academic consensus bodies, and traditional corporate communication styles.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Direct ingestion of live X streams creates vulnerability to viral disinformation and unverified breaking claims during breaking news events.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Treats the user as an adult interlocutor capable of evaluating controversial claims, avoiding paternalistic safety lecturing.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-xai">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">The promise of 'unfiltered, objective truth-seeking' directly collides with the personal governance of a single billionaire owner whose individual geopolitical views, personal disputes, and political endorsements heavily influence the training, system prompts, and operational priorities of the lab. Real-time grounding on X ingestion ingests unverified viral claims, and local regulatory battles over Memphis supercomputer energy and water consumption remain absent from model discourse unless specifically prompted.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-xai">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Elon Musk (Chief Executive Officer, xAI Corp.)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Grok outputs a rigorous, unsparing investigative analysis of Elon Musk's government subsidies, regulatory violations, and X moderation policies that contradicts Musk's public tweets without hedging.</li><li>xAI establishes an independent governance board with the binding authority to dismiss executive leadership or override founder directives on model alignment.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-XAI-01, EVD-XAI-02, EVD-XAI-03, EVD-XAI-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-xai" class="action-btn" title="Read institutional shadow analysis for xAI">Read the Shadow</a>
+      <a href="#ownership-xai" class="action-btn" title="View legal and capital ownership for xAI">View Ownership</a>
+      <a href="#reflection-xai" class="action-btn" title="Inspect observable model reflection for xAI">Inspect Model Reflection</a>
+      <a href="#evidence-xai" class="action-btn" title="View evidence citations for xAI">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#xai" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for xAI">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="meta" tabindex="0" aria-labelledby="heading-meta">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#05</span>
+          <span class="provider-tag">Open-weight foundational model family with commercial license restrictions for entities with >700M active users; proprietary hosted consumer app (Meta AI).</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/meta.jpg" alt="Portrait of Mark Zuckerberg" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/meta.svg" alt="Meta Platforms official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Mark Zuckerberg</strong>
+              <span class="anchor-role">Founder, Chairman & Controlling Shareholder</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-meta">Meta (Meta AI / FAIR)</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Llama 3.3 (70B), Llama 3.2 (1B, 3B, 11B, 90B), Llama 3.1 (8B, 70B, 405B), Meta AI</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Mark Zuckerberg → Meta AI → Llama Open-Weight Ecosystem</div>
+        <p class="card-persona">Champions of open science, democratizing artificial intelligence, and fostering global open-source innovation.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-meta">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Meta Platforms, Inc. (Delaware Corporation)</p>
+          <p class="block-value"><strong>Control:</strong> Mark Zuckerberg exercises unilateral authority over strategic decisions, capital allocation, open-source licensing, and AI infrastructure investments.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Meta public shareholders and Mark Zuckerberg.; Compute via Internal Meta hyper-scale data centers housing hundreds of thousands of Nvidia H100 and custom MTIA silicon chips.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Release state-of-the-art open weights to empower developers worldwide; foster collaborative safety research; commoditize the foundation model layer."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-meta">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">High instruction fidelity; extensive multilingual and coding capabilities; baked-in safety tuning via Llama Guard; commercial licensing terms restricting hyper-scale social media rivals from using weights without Meta consent.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Standard base model has minimal refusal; official Instruct weights use Llama Guard to refuse cyber-attacks, physical harm, and hate speech.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Balanced; aligns with open scientific norms while avoiding controversial stances on social media algorithmic harm legislation.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Standard parametric boundary limitations; when fine-tuned without retrieval, degrades gracefully into acknowledged uncertainty.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Maximum local sovereignty for developers: weights can be inspected, downloaded, quantized, and executed entirely offline on air-gapped hardware.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-meta">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Open-sourcing Llama is a calculated corporate strategy to commoditize the proprietary software layer of competitors (Google, Microsoft, Apple), making the foundation model a free public good while Meta preserves its real proprietary monopoly: the proprietary social graph and user engagement data of 3+ billion people across Instagram, Facebook, and WhatsApp. Meta retains sole discretion over which checkpoints are released, and its commercial license prevents direct platform competitors from benefiting without royalty deals.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-meta">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Mark Zuckerberg (Chairman & CEO, Meta Platforms, Inc.)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Meta re-licenses the Llama family under an unconstrained OSI-approved license (Apache 2.0 or MIT) without the 700M user restriction.</li><li>Meta releases the full, unredacted pre-training datasets, curation pipelines, and proprietary user-interaction behavioral logs used to train its flagship models.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-MET-01, EVD-MET-02, EVD-MET-03, EVD-MET-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-meta" class="action-btn" title="Read institutional shadow analysis for Meta (Meta AI / FAIR)">Read the Shadow</a>
+      <a href="#ownership-meta" class="action-btn" title="View legal and capital ownership for Meta (Meta AI / FAIR)">View Ownership</a>
+      <a href="#reflection-meta" class="action-btn" title="Inspect observable model reflection for Meta (Meta AI / FAIR)">Inspect Model Reflection</a>
+      <a href="#evidence-meta" class="action-btn" title="View evidence citations for Meta (Meta AI / FAIR)">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#meta" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Meta (Meta AI / FAIR)">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="microsoft" tabindex="0" aria-labelledby="heading-microsoft">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#06</span>
+          <span class="provider-tag">Hybrid orchestration platform: proprietary enterprise integration layer (Copilot) sitting atop partner models (OpenAI) alongside open-weight small models (Phi series).</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/microsoft.jpg" alt="Portrait of Satya Nadella" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/microsoft.svg" alt="Microsoft official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Satya Nadella</strong>
+              <span class="anchor-role">Chairman & CEO, Microsoft</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-microsoft">Microsoft</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Copilot Orchestration Layer, Phi-3 / Phi-3.5 / Phi-4 (Small Language Models), Azure OpenAI Hosted Deployments</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Satya Nadella → Microsoft → Azure Copilot Distribution</div>
+        <p class="card-persona">Empowering every person and every organization on the planet to achieve more through secure, compliant, and responsible enterprise AI.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-microsoft">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Microsoft Corporation (Washington State Corporation)</p>
+          <p class="block-value"><strong>Control:</strong> Satya Nadella and the Senior Leadership Team control corporate strategy, Azure productization, enterprise contracts, and Office of Responsible AI (ORA) policies.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Microsoft public shareholders; holding ~49% economic profit share in OpenAI Global LLC.; Compute via Microsoft Azure global hyper-scale data centers, Maia AI silicon, and custom liquid-cooled Nvidia GPU supercomputers.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Ensure enterprise data privacy (customer tenant data is never used to train models); provide customer copyright indemnity; enforce Office of Responsible AI standards."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-microsoft">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Extreme enterprise compliance deference; immediate refusal on queries related to corporate surveillance, copyright infringement liability, and software licensing bypass; rigorous tenant isolation and enterprise audit logging.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Rigid refusal on enterprise threat vectors, workplace unionization analysis, software keygen creation, and legal liability vulnerability probing.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Absolute deference to enterprise legal hierarchies, corporate HR policies, and SOC2 / ISO27001 regulatory compliance protocols.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Relies heavily on Bing Search grounding and enterprise Microsoft Graph retrieval to anchor claims; clearly delineates enterprise search context.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Subordinates model behavior to enterprise administrator policies, enforcing organizational tenant hierarchies over individual user preference.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-microsoft">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Symbiotic yet evasive relationship with OpenAI: Microsoft markets itself as the responsible enterprise custodian while outsourcing foundational frontier risk to OpenAI, an entity whose governance crisis in November 2023 demonstrated Microsoft's lack of legal control over model safety decisions. If an OpenAI model fails, Microsoft can attribute the root cause to the research lab; if the lab restricts commercial features, Microsoft can pressure it through compute pricing and exclusivity clauses.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-microsoft">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Satya Nadella (Chairman & CEO) & Microsoft Office of Responsible AI</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Microsoft accepts full legal, tort, and financial liability for autonomous harmful actions taken by third-party partner models hosted and orchestrated on Azure.</li><li>Microsoft integrates an open-weight rival model (e.g. Llama or DeepSeek) as the default first-class reasoning engine across Windows and Office 365 on equal terms with OpenAI.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-MSF-01, EVD-MSF-02, EVD-MSF-03, EVD-MSF-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-microsoft" class="action-btn" title="Read institutional shadow analysis for Microsoft">Read the Shadow</a>
+      <a href="#ownership-microsoft" class="action-btn" title="View legal and capital ownership for Microsoft">View Ownership</a>
+      <a href="#reflection-microsoft" class="action-btn" title="Inspect observable model reflection for Microsoft">Inspect Model Reflection</a>
+      <a href="#evidence-microsoft" class="action-btn" title="View evidence citations for Microsoft">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#microsoft" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Microsoft">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="mistral" tabindex="0" aria-labelledby="heading-mistral">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#07</span>
+          <span class="provider-tag">Hybrid dual-track model: permissive open weights (Apache 2.0) for smaller/developer models (Nemo</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/mistral.png" alt="Portrait of Arthur Mensch" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/mistral.svg" alt="Mistral AI official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Arthur Mensch</strong>
+              <span class="anchor-role">Co-Founder & CEO</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-mistral">Mistral AI</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Mistral Large 2, Mistral Nemo, Codestral, Pixtral 12B, Mixtral 8x22B, Le Chat</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Arthur Mensch → Mistral AI → European Sovereign Commercial Pivot</div>
+        <p class="card-persona">The independent European leader in generative AI; advancing open science, computational efficiency, and European technological sovereignty.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-mistral">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Mistral AI SAS (French Simplified Joint-Stock Company)</p>
+          <p class="block-value"><strong>Control:</strong> Founders maintain substantial executive control, but commercial debt and equity covenants dictate rapid enterprise monetization.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Founders and institutional venture investors (valued at >€5B).; Compute via Scaleway (European cloud provider), Microsoft Azure supercomputing infrastructure, and Nvidia GPU clusters.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Deliver lightweight, transparent, high-performance models; empower open developers; offer an independent European alternative to American tech monopolies."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-mistral">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Lean, direct conversational tone; exceptionally low sermonizing or unsolicited moral lecturing; strong multilingual proficiency across European languages; transition toward closed proprietary endpoints for cutting-edge capabilities.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Notably low refusal rate on edge-case creative writing and security analysis; avoids unsolicited ethical disclaimers on benign queries.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Moderate deference; upholds French and European legal frameworks without adopting California-centric cultural speech codes.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Parametric reasoning is sharp in code and logic; drops off naturally on niche factual history where training data density is thin.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Respects developer autonomy; open-weight releases permit unrestricted local deployment and bespoke alignment.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-mistral">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Pivoted from an uncompromising champion of pure open source into a hybrid proprietary commercial vendor within its first eighteen months. Mistral actively lobbied the French government and European Council to weaken foundational model transparency requirements in the EU AI Act, arguing that compliance would crush European competitiveness, while simultaneously signing distribution and minority investment deals with Microsoft.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-mistral">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Arthur Mensch (Chief Executive Officer, Mistral AI SAS)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Mistral releases its flagship frontier model (Mistral Large) under an unrestricted Apache 2.0 open-source license with full pre-training recipes.</li><li>Mistral public policy briefs advocate for mandatory, audited red-teaming disclosures under EU AI Act compliance for all European foundation models.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-MIS-01, EVD-MIS-02, EVD-MIS-03, EVD-MIS-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-mistral" class="action-btn" title="Read institutional shadow analysis for Mistral AI">Read the Shadow</a>
+      <a href="#ownership-mistral" class="action-btn" title="View legal and capital ownership for Mistral AI">View Ownership</a>
+      <a href="#reflection-mistral" class="action-btn" title="Inspect observable model reflection for Mistral AI">Inspect Model Reflection</a>
+      <a href="#evidence-mistral" class="action-btn" title="View evidence citations for Mistral AI">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#mistral" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Mistral AI">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="cohere" tabindex="0" aria-labelledby="heading-cohere">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#08</span>
+          <span class="provider-tag">Enterprise-focused foundational models; available via cloud APIs</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/cohere.jpg" alt="Portrait of Aidan Gomez" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/cohere.svg" alt="Cohere official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Aidan Gomez</strong>
+              <span class="anchor-role">Co-Founder & CEO</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-cohere">Cohere</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Command R+, Command R, Cohere Embed (multilingual), Cohere Rerank</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Aidan Gomez → Cohere → Enterprise Data Sovereignty</div>
+        <p class="card-persona">The AI platform built for enterprise business: secure, private, cloud-agnostic, and optimized for real-world productivity.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-cohere">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Cohere Inc. (Canadian Corporation)</p>
+          <p class="block-value"><strong>Control:</strong> Executive management led by Aidan Gomez; strategic direction strictly anchored to B2B enterprise procurement and private cloud deployment.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Founders, employees, and institutional investors (Inovia, Nvidia, Oracle, Cisco, AMD, SoftBank).; Compute via Oracle Cloud Infrastructure (OCI superclusters), AWS, and Google Cloud Platform.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Never train on customer data; deliver verifiable citations and grounded answers; provide cloud-agnostic deployment flexibility without lock-in."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-cohere">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Obsessive focus on structured document citation; low conversational embellishment; refusal to engage in consumer-style social debates; exceptional performance on retrieval-augmented generation (RAG) and tool calling.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Low refusal on business and technical tasks; strictly avoids producing entertainment content or non-grounded speculative political prose.</div>
+            <div class="mini-axis"><strong>Deference:</strong> High deference to enterprise confidentiality, corporate governance hierarchies, and strict data perimeter boundaries.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Engineered with a sharp citation cutoff: if retrieved documents do not support a factual assertion, Command R explicitly reports 'Information not found.'</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Preserves organizational sovereignty: enables deployment within air-gapped on-premise enclaves or sovereign VPC boundaries.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-cohere">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Complete subservience to enterprise client procurement contracts makes Cohere architecturally indifferent to broader civilizational or societal critique. By design, Command R treats the retrieved enterprise corpus as ground truth; if an enterprise client's internal documents contain fraudulent accounting, discriminatory HR guidelines, or proprietary falsehoods, the model will faithfully synthesize and cite them without ethical friction.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-cohere">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Aidan Gomez (Chief Executive Officer, Cohere Inc.)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Cohere Command R autonomously flags and refutes internal factual contradictions, accounting irregularities, or ethical violations present within a client's private RAG database without explicit prompting.</li><li>Cohere releases a mass-consumer conversational assistant designed to shape public political opinion.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-COH-01, EVD-COH-02, EVD-COH-03, EVD-COH-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-cohere" class="action-btn" title="Read institutional shadow analysis for Cohere">Read the Shadow</a>
+      <a href="#ownership-cohere" class="action-btn" title="View legal and capital ownership for Cohere">View Ownership</a>
+      <a href="#reflection-cohere" class="action-btn" title="Inspect observable model reflection for Cohere">Inspect Model Reflection</a>
+      <a href="#evidence-cohere" class="action-btn" title="View evidence citations for Cohere">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#cohere" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Cohere">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="deepseek" tabindex="0" aria-labelledby="heading-deepseek">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#09</span>
+          <span class="provider-tag">Permissive open-weights research and commercial releases (MIT License) coupled with low-cost commercial hosted web/API services.</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/deepseek.svg" alt="Emblem of DeepSeek Leadership" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/deepseek.svg" alt="DeepSeek official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">DeepSeek Leadership</strong>
+              <span class="anchor-role">Liang Wenfeng (High-Flyer Capital Management)</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-deepseek">DeepSeek</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> DeepSeek-V2.5, DeepSeek-Coder-V2, DeepSeek-V2, DeepSeek-Math, DeepSeek-R1 (Reasoning)</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> DeepSeek Leadership → DeepSeek → Extreme Algorithmic Efficiency</div>
+        <p class="card-persona">Unraveling the mystery of AGI with long-termism, open scientific transparency, and extreme algorithmic and computational efficiency.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-deepseek">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Hangzhou DeepSeek Artificial Intelligence Co., Ltd. (China) / High-Flyer Capital Management</p>
+          <p class="block-value"><strong>Control:</strong> Liang Wenfeng exercises absolute operational control. Model training priorities and research allocation are insulated from external Silicon Valley VC expectations.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> High-Flyer Capital Management partners and Liang Wenfeng.; Compute via Domestic Chinese GPU clusters (Nvidia H800/A100 and domestic clusters), optimized with custom CUDA kernels, DualPipe, and Multi-head Latent Attention (MLA).</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Release state-of-the-art open weights under permissive licenses (MIT); publish comprehensive architectural innovations; drastically lower inference and training costs."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-deepseek">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">World-class performance in mathematics, competitive programming, and multi-turn code synthesis at a fraction of competitors' compute budget; strict hosted web/API compliance with Cyberspace Administration of China (CAC) content regulations on politically sensitive historical topics.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Hosted API exhibits abrupt refusal or evasive scripted redirects on Chinese political governance topics; completely unrestricted on mathematics, science, and open-source software engineering.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Hosted endpoints exhibit absolute deference to Chinese regulatory bodies (CAC); open weights exhibit neutrality.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Exceptional mathematical and algorithmic precision; maintains logical reasoning chains across deep mathematical proofs.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Permissive MIT license on model weights provides genuine technological sovereignty to developers globally who run models locally.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-deepseek">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">A stark dichotomy between its open-weights release and its hosted API. The open weights downloaded to a private server are unconstrained and permissive (MIT License), but the public hosted service in Hangzhou strictly enforces state censorship on domestic political taboos (Tiananmen 1989, cross-strait sovereignty, Chinese leadership). Furthermore, its financial lifeblood is tied to High-Flyer's algorithmic quantitative trading profits, creating an unexamined feedback loop between financial speculation and AI compute scaling.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-deepseek">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Liang Wenfeng (Founder & CEO, DeepSeek & High-Flyer)</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>DeepSeek's public hosted API (api.deepseek.com) answers queries regarding the 1989 Tiananmen Square protests with identical historical neutrality and unredacted detail as its offline open weights.</li><li>High-Flyer Capital formally spins off DeepSeek into an internationally audited foundation independent of hedge fund capital.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-DPS-01, EVD-DPS-02, EVD-DPS-03, EVD-DPS-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-deepseek" class="action-btn" title="Read institutional shadow analysis for DeepSeek">Read the Shadow</a>
+      <a href="#ownership-deepseek" class="action-btn" title="View legal and capital ownership for DeepSeek">View Ownership</a>
+      <a href="#reflection-deepseek" class="action-btn" title="Inspect observable model reflection for DeepSeek">Inspect Model Reflection</a>
+      <a href="#evidence-deepseek" class="action-btn" title="View evidence citations for DeepSeek">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#deepseek" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for DeepSeek">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+
+    <article class="provider-card" id="alibaba" tabindex="0" aria-labelledby="heading-alibaba">
+      <header class="card-header">
+        <div class="card-meta-top">
+          <span class="order-num" aria-hidden="true">#10</span>
+          <span class="provider-tag">Dual strategy: permissive open weights (Apache 2.0 / Qwen License) for the Qwen 2.5 family alongside closed commercial flagship models (Qwen-Max) hosted on DashScope.</span>
+          <span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span>
+        </div>
+
+        <!-- Visual Attention Anchor: Logo + Portrait -->
+        <div class="visual-anchor-strip">
+          <div class="anchor-portrait-frame">
+            <img src="/world/ai/shadow/assets/portraits/alibaba.jpg" alt="Portrait of Jack Ma (Alibaba Founder)" class="anchor-portrait-img" loading="lazy">
+          </div>
+          <div class="anchor-meta">
+            <div class="anchor-logo-frame">
+              <img src="/world/ai/shadow/assets/logos/alibaba.svg" alt="Alibaba Cloud official logo" class="anchor-logo-img" loading="lazy">
+            </div>
+            <div class="anchor-figure-block">
+              <span class="anchor-label">Associated Key Figure / Founder:</span>
+              <strong class="anchor-name">Alibaba AI Group</strong>
+              <span class="anchor-role">Eddie Wu (CEO) / Jack Ma (Co-Founder)</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" id="heading-alibaba">Alibaba Cloud (Qwen)</h3>
+        <div class="card-models"><span class="label-dim">Model Family:</span> Qwen 2.5 (0.5B to 72B), Qwen 2.5-Coder, Qwen 2.5-Math, Qwen-Max (flagship hosted), Qwen-VL</div>
+        <div class="memory-anchor-tag"><span class="mem-arrow">⚡</span> <strong>Memory Vector:</strong> Alibaba Group → Alibaba Cloud → Qwen Dual Open/Cloud Engine</div>
+        <p class="card-persona">Comprehensive, world-class foundational AI powering global open-source developers, cloud transformation, and industrial intelligence.</p>
+      </header>
+
+      <div class="card-body">
+        <!-- Ownership & Authority Line -->
+        <div class="info-block" id="ownership-alibaba">
+          <h4 class="block-label ownership">01 · Ownership &amp; Legal Control</h4>
+          <p class="block-value"><strong>Entity:</strong> Alibaba Group Holding Limited (Cayman Islands / Hangzhou, China)</p>
+          <p class="block-value"><strong>Control:</strong> Alibaba Cloud Intelligence Group executive leadership and Alibaba Group CEO Eddie Wu govern model development and commercialization under Chinese regulatory oversight.</p>
+          <p class="block-value"><strong>Capital &amp; Compute:</strong> Alibaba Group public shareholders (SoftBank historical major holder, global institutional funds).; Compute via Alibaba Cloud domestic hyper-scale data centers, domestic Chinese AI accelerators, and legacy Nvidia clusters.</p>
+        </div>
+
+        <!-- Public Promise -->
+        <div class="info-block">
+          <h4 class="block-label promise">02 · Public Promise</h4>
+          <p class="block-value quote">"Continuously empower the global open-source AI community; provide state-of-the-art multilingual support; bridge enterprise cloud adoption across Asia and globally."</p>
+        </div>
+
+        <!-- Model Reflection -->
+        <div class="info-block" id="reflection-alibaba">
+          <h4 class="block-label reflection">03 · Measured Model Reflection (Level 4)</h4>
+          <p class="block-value">Industry-leading open-weight benchmark scores in mathematics, coding, and multilingual reasoning; exceptional fluency in Chinese, English, Southeast Asian (Malay, Indonesian), and Middle Eastern languages; hosted DashScope endpoints filter politically sensitive domestic inquiries.</p>
+          <div class="axes-mini-grid">
+            <div class="mini-axis"><strong>Refusal Asymmetry:</strong> Hosted DashScope API enforces standard CAC content filtering; open-weight weights downloaded and run locally execute with high developer freedom.</div>
+            <div class="mini-axis"><strong>Deference:</strong> Strict deference to Chinese corporate and state cyber regulations on cloud surfaces; commercial deference to enterprise customers.</div>
+            <div class="mini-axis"><strong>Truth Cliff:</strong> Remarkably solid factual grounding across Asian history, geography, and culture; handles complex multilingual translation without hallucinated drift.</div>
+            <div class="mini-axis"><strong>Sovereign Vector:</strong> Open weights provide critical foundational sovereignty to Southeast Asian and developing economies seeking high capability without Western vendor lock-in.</div>
+          </div>
+        </div>
+
+        <!-- Institutional Shadow -->
+        <div class="info-block shadow-highlight" id="shadow-alibaba">
+          <h4 class="block-label shadow">04 · Institutional Shadow</h4>
+          <p class="block-value shadow-text">Operates at the critical intersection of Chinese state internet regulation and international cloud market expansion. Under US semiconductor export controls (denial of advanced Nvidia chips), Alibaba must engineer extreme efficiency on domestic silicon. Its open-weight strategy serves as a geopolitical wedge to establish Chinese technological standards across Asia and the Global South, while hosted services remain strictly bound to Cyberspace Administration of China algorithmic filing requirements.</p>
+        </div>
+
+        <!-- Consequence & Accountability -->
+        <div class="info-block" id="evidence-alibaba">
+          <h4 class="block-label consequence">05 · Consequence Owner &amp; Falsifier</h4>
+          <p class="block-value"><strong>Accountable Principal:</strong> <span class="badge-pill">Eddie Wu (CEO, Alibaba Group) & Alibaba Cloud Intelligence Group</span></p>
+          <div class="falsifier-box">
+            <strong>Falsifiers (What would change this verdict):</strong>
+            <ul><li>Alibaba Cloud DashScope public API processes controversial queries regarding Chinese leadership or domestic political history without administrative censorship or refusal.</li><li>Alibaba fully decouples its AI research team from Chinese corporate state compliance oversight.</li></ul>
+          </div>
+          <div class="evidence-footer">
+            <span>Evidence Receipts: <code>EVD-ALI-01, EVD-ALI-02, EVD-ALI-03, EVD-ALI-04</code></span>
+            <span>Last Verified: <time datetime="2026-10-21">2026-10-21</time></span>
+          </div>
+        </div>
+
+        
+    <div class="card-actions">
+      <a href="#shadow-alibaba" class="action-btn" title="Read institutional shadow analysis for Alibaba Cloud (Qwen)">Read the Shadow</a>
+      <a href="#ownership-alibaba" class="action-btn" title="View legal and capital ownership for Alibaba Cloud (Qwen)">View Ownership</a>
+      <a href="#reflection-alibaba" class="action-btn" title="Inspect observable model reflection for Alibaba Cloud (Qwen)">Inspect Model Reflection</a>
+      <a href="#evidence-alibaba" class="action-btn" title="View evidence citations for Alibaba Cloud (Qwen)">Evidence &amp; Receipts (4)</a>
+      <a href="/world/ai/shadow/providers.json#alibaba" class="action-btn agent-btn" target="_blank" rel="noopener" title="Open machine-readable JSON for Alibaba Cloud (Qwen)">Agent JSON ↗</a>
+    </div>
+    
+      </div>
+    </article>
+    
+    </div>
+
+    <div style="margin-top: 1.5rem; padding: 0.75rem 1rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-dim); border-radius: 4px; text-align: center; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);">
+      Portraits and logos are attention anchors only. Claims remain evaluated solely through observed institutional evidence.
+    </div>
+  </div>
+</section>
+
+<!-- 03. Ownership and Control Map -->
+<section class="atlas-section" id="ownership">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">HIERARKI KUASA · CORPORATE &amp; LEGAL ARCHITECTURE</div>
+      <h2 class="section-title">03 · Ownership and Control Map</h2>
+      <p class="section-desc">Mapping where authority resides: board veto power, voting share structures, public benefit trusts, and hyper-scaler contractual agreements.</p>
+    </div>
+
+    <div class="graph-container">
+      <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold); margin-bottom: 1rem; text-transform: uppercase;">Legal Ownership &amp; Fiduciary Flow</h4>
+      <div class="graph-flow-list">
+        <div class="graph-flow-item"><span class="flow-node">OpenAI, Inc. (Non-Profit Board)</span> <span class="flow-arrow">→ controls fiduciary release of →</span> <span class="flow-node">OpenAI Global LLC</span> <span class="flow-arrow">⇄ funded by 49% profit share ⇄</span> <span class="flow-target">Microsoft Corporation ($13B)</span></div>
+        <div class="graph-flow-item"><span class="flow-node">Long-Term Benefit Trust (LTBT)</span> <span class="flow-arrow">→ holds Class T shares in →</span> <span class="flow-node">Anthropic PBC</span> <span class="flow-arrow">⇄ multi-cloud distribution via ⇄</span> <span class="flow-target">Amazon AWS ($4B) &amp; Google Cloud ($2B)</span></div>
+        <div class="graph-flow-item"><span class="flow-node">Alphabet Inc. (Sundar Pichai / Founders 51% Vote)</span> <span class="flow-arrow">→ 100% corporate owner of →</span> <span class="flow-node">Google DeepMind (Demis Hassabis)</span> <span class="flow-arrow">→ powers →</span> <span class="flow-target">Google Search &amp; Workspace</span></div>
+        <div class="graph-flow-item"><span class="flow-node">Elon Musk (Sole Director &amp; Controlling Equity)</span> <span class="flow-arrow">→ absolute command of →</span> <span class="flow-node">xAI Corp.</span> <span class="flow-arrow">→ live training firehose via →</span> <span class="flow-target">X Corp. (Social Platform)</span></div>
+        <div class="graph-flow-item"><span class="flow-node">Mark Zuckerberg (Class B Super-Voting ~61%)</span> <span class="flow-arrow">→ unilateral authority over →</span> <span class="flow-node">Meta Platforms / FAIR</span> <span class="flow-arrow">→ commoditizes weights to protect →</span> <span class="flow-target">Instagram / WhatsApp Ad Distribution</span></div>
+        <div class="graph-flow-item"><span class="flow-node">High-Flyer Capital Management (Quantitative Hedge Fund)</span> <span class="flow-arrow">→ 100% equity &amp; profit funding →</span> <span class="flow-node">DeepSeek AI (Liang Wenfeng)</span> <span class="flow-arrow">→ domestic API regulated by →</span> <span class="flow-target">Cyberspace Administration of China</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04. Model Reflection Matrix (Comparative Table) -->
+<section class="atlas-section" id="comparison">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">CROSS-LAB AUDIT · JADUAL PERBANDINGAN BUKTI</div>
+      <h2 class="section-title">04 · Comparative Model Reflection Matrix</h2>
+      <p class="section-desc">Side-by-side comparison across ownership, compute dependency, model access posture, demonstrated reflection, and causal verification levels. No single composite score; axes remain strictly separate.</p>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comparison-table" aria-label="Comparative Matrix of AI Model Labs">
+        <thead>
+          <tr>
+            <th scope="col">Lab &amp; Model</th>
+            <th scope="col">Legal Parent</th>
+            <th scope="col">Control Authority</th>
+            <th scope="col">Compute Supplier</th>
+            <th scope="col">Posture</th>
+            <th scope="col">Documented Shadow</th>
+            <th scope="col">Causal Level</th>
+            <th scope="col">Status</th>
+            <th scope="col">Receipt</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td class="sticky-col"><a href="#openai" class="table-link"><strong>OpenAI</strong><br><span class="table-sub">GPT-4o</span></a></td>
+      <td>OpenAI, Inc.</td>
+      <td>Board of Directors of OpenAI, Inc. possesses legal power to declare AGI (at which point IP...</td>
+      <td>Microsoft Azure (exclusive supercomputing infrastructure par</td>
+      <td><span class="badge-tag">Closed-weight</span></td>
+      <td class="shadow-cell">Structural contradiction between a non-profit humanitarian charter and a $150B commercial capitalization needing hyper-s...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-OAI-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#anthropic" class="table-link"><strong>Anthropic</strong><br><span class="table-sub">Claude 3.5 Sonnet</span></a></td>
+      <td>Anthropic PBC</td>
+      <td>Long-Term Benefit Trust has structural authority to elect trustees and evaluate safety sca...</td>
+      <td>Amazon Web Services (AWS Trainium, Inferentia, and EC2 GPU c</td>
+      <td><span class="badge-tag">Closed-weight</span></td>
+      <td class="shadow-cell">Capital dependency on cloud giants (Amazon and Google) forces rapid commercialization and multi-billion-dollar enterpris...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-ANT-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#google-deepmind" class="table-link"><strong>Google DeepMind</strong><br><span class="table-sub">Gemini 1.5 Pro</span></a></td>
+      <td>Alphabet Inc.</td>
+      <td>Alphabet executive leadership exercises final authority over productization, capital capex...</td>
+      <td>Google Cloud custom TPU infrastructure (TPU v4, v5p, v6e/Tri</td>
+      <td><span class="badge-tag">Hybrid — closed flagship proprietary multimodal models (Gemini) alongside open-weights research models (Gemma series).</span></td>
+      <td class="shadow-cell">Alphabet's commercial core (Search advertising monopoly generating >$200B revenue) makes Gemini both an existential defe...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-GDM-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#xai" class="table-link"><strong>xAI</strong><br><span class="table-sub">Grok-2</span></a></td>
+      <td>xAI Corp. (closely affiliated with X Corp.)</td>
+      <td>Absolute operational, philosophical, and executive control exercised by Elon Musk. Model d...</td>
+      <td>Colossus supercomputing cluster (Memphis, Tennessee; 100k+ N</td>
+      <td><span class="badge-tag">Commercial proprietary hosted service integrated into X</span></td>
+      <td class="shadow-cell">The promise of 'unfiltered, objective truth-seeking' directly collides with the personal governance of a single billiona...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-XAI-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#meta" class="table-link"><strong>Meta (Meta AI / FAIR)</strong><br><span class="table-sub">Llama 3.3 (70B)</span></a></td>
+      <td>Meta Platforms, Inc.</td>
+      <td>Mark Zuckerberg exercises unilateral authority over strategic decisions, capital allocatio...</td>
+      <td>Internal Meta hyper-scale data centers housing hundreds of t</td>
+      <td><span class="badge-tag">Open-weight foundational model family with commercial license restrictions for entities with >700M active users; proprietary hosted consumer app (Meta AI).</span></td>
+      <td class="shadow-cell">Open-sourcing Llama is a calculated corporate strategy to commoditize the proprietary software layer of competitors (Goo...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-MET-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#microsoft" class="table-link"><strong>Microsoft</strong><br><span class="table-sub">Copilot Orchestration Layer</span></a></td>
+      <td>Microsoft Corporation</td>
+      <td>Satya Nadella and the Senior Leadership Team control corporate strategy, Azure productizat...</td>
+      <td>Microsoft Azure global hyper-scale data centers, Maia AI sil</td>
+      <td><span class="badge-tag">Hybrid orchestration platform: proprietary enterprise integration layer (Copilot) sitting atop partner models (OpenAI) alongside open-weight small models (Phi series).</span></td>
+      <td class="shadow-cell">Symbiotic yet evasive relationship with OpenAI: Microsoft markets itself as the responsible enterprise custodian while o...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-MSF-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#mistral" class="table-link"><strong>Mistral AI</strong><br><span class="table-sub">Mistral Large 2</span></a></td>
+      <td>Mistral AI SAS</td>
+      <td>Founders maintain substantial executive control, but commercial debt and equity covenants ...</td>
+      <td>Scaleway (European cloud provider), Microsoft Azure supercom</td>
+      <td><span class="badge-tag">Hybrid dual-track model: permissive open weights (Apache 2.0) for smaller/developer models (Nemo</span></td>
+      <td class="shadow-cell">Pivoted from an uncompromising champion of pure open source into a hybrid proprietary commercial vendor within its first...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-MIS-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#cohere" class="table-link"><strong>Cohere</strong><br><span class="table-sub">Command R+</span></a></td>
+      <td>Cohere Inc.</td>
+      <td>Executive management led by Aidan Gomez; strategic direction strictly anchored to B2B ente...</td>
+      <td>Oracle Cloud Infrastructure (OCI superclusters), AWS, and Go</td>
+      <td><span class="badge-tag">Enterprise-focused foundational models; available via cloud APIs</span></td>
+      <td class="shadow-cell">Complete subservience to enterprise client procurement contracts makes Cohere architecturally indifferent to broader civ...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-COH-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#deepseek" class="table-link"><strong>DeepSeek</strong><br><span class="table-sub">DeepSeek-V2.5</span></a></td>
+      <td>High-Flyer Capital Management (Quantitative Hedge Fund)</td>
+      <td>Liang Wenfeng exercises absolute operational control. Model training priorities and resear...</td>
+      <td>Domestic Chinese GPU clusters (Nvidia H800/A100 and domestic</td>
+      <td><span class="badge-tag">Permissive open-weights research and commercial releases (MIT License) coupled with low-cost commercial hosted web/API services.</span></td>
+      <td class="shadow-cell">A stark dichotomy between its open-weights release and its hosted API. The open weights downloaded to a private server a...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-DPS-01</span></td>
+    </tr>
+    
+
+    <tr>
+      <td class="sticky-col"><a href="#alibaba" class="table-link"><strong>Alibaba Cloud (Qwen)</strong><br><span class="table-sub">Qwen 2.5 (0.5B to 72B)</span></a></td>
+      <td>Alibaba Group Holding Limited</td>
+      <td>Alibaba Cloud Intelligence Group executive leadership and Alibaba Group CEO Eddie Wu gover...</td>
+      <td>Alibaba Cloud domestic hyper-scale data centers, domestic Ch</td>
+      <td><span class="badge-tag">Dual strategy: permissive open weights (Apache 2.0 / Qwen License) for the Qwen 2.5 family alongside closed commercial flagship models (Qwen-Max) hosted on DashScope.</span></td>
+      <td class="shadow-cell">Operates at the critical intersection of Chinese state internet regulation and international cloud market expansion. Und...</td>
+      <td><span class="level-pill">Level 4</span></td>
+      <td><span class="status-badge witnessed" role="status" aria-label="Status: Witnessed"><span class="status-dot"></span>WITNESSED · Sah Bertulis</span></td>
+      <td><span class="code-ref">EVD-ALI-01</span></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 04b. 15 Reflection Axes Detailed Definition -->
+<section class="atlas-section" id="reflection-axes">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">PAKSI PENGUKURAN · 15 REFLECTION AXES</div>
+      <h2 class="section-title">04b · The 15 Model Reflection Axes</h2>
+      <p class="section-desc">The universal evaluation framework applied equivalently across every model provider. Every axis maps directly to an observable behavioral gradient and institutional incentive.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; font-size: 0.82rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">1. Refusal Asymmetry:</strong> Does the model refuse comparable risk requests consistently across corporate vs. activist topics?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">2. Institutional Deference:</strong> Does it privilege official, state, or enterprise client narratives as unmarked ground truth?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">3. Owner Criticism:</strong> Can it rigorously analyze its legal parent and controlling shareholders without defensive PR hedging?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">4. Competitor Criticism:</strong> Does critical scrutiny flow more freely when evaluating rival proprietary architectures?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">5. Political Calibration:</strong> Does it separate empirical descriptive facts from contested normative value judgments?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">6. Truth Cliff:</strong> At what precise point near knowledge cutoff does uncertainty collapse into confident fabrication?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">7. Source Transparency:</strong> Does it openly disclose training provenance, web scrape boundaries, and citation sources?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">8. Hallucination Boundary:</strong> Does it invent synthetic facts about its own model parameters, APIs, or corporate lineage?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">9. Safety vs Utility:</strong> Does it preserve a safe, useful partial answer or collapse into blunt ideological refusal?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">10. Commercial Reflection:</strong> Does it steer users toward provider cloud services, software suites, or ecosystem lock-in?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">11. Cultural Default:</strong> Which language, legal philosophy, and cultural assumptions are treated as unmarked defaults?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">12. Sovereign Vector:</strong> Does it preserve ultimate human decision authority and agency, or seek behavioral capture?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">13. Corrigibility:</strong> Does it accept factual corrections gracefully without conversational resistance?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">14. Agentic Restraint:</strong> Does it clearly demarcate proposed actions from authorized environmental executions?
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <strong style="color:var(--gold);">15. Self-Description Accuracy:</strong> Does it accurately state its model architecture, version, access limits, and developer?
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05. Open vs Closed vs Hosted -->
+<section class="atlas-section" id="open-vs-closed">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">POSTUR AKSES · WEIGHT AVAILABILITY &amp; GATEKEEPING</div>
+      <h2 class="section-title">05 · Open vs. Closed vs. Hosted</h2>
+      <p class="section-desc">How access architecture determines censorship vulnerability and sovereign control. Open weights guarantee developer execution independence, while hosted APIs enforce central surveillance and real-time intervention.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.5rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase;">Hosted Proprietary (OpenAI, Anthropic, Google, xAI)</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          The lab controls inference runtime, logging, and post-generation filtering. Model checkpoints can be silently updated, throttled, or revoked. Users possess zero data residency guarantees unless negotiated under costly enterprise private agreements.
+        </p>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.5rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); margin-bottom: 0.5rem; text-transform: uppercase;">Open-Weights Sovereign (Meta Llama, DeepSeek, Alibaba Qwen)</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          Model weights are downloaded locally and run air-gapped without corporate telemetry. Safety guardrails can be modified or removed by downstream users. However, pre-training datasets remain proprietary, and training clusters remain centralized.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06. Capital and Compute Graph -->
+<section class="atlas-section" id="compute-capital">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">INFRASTRUKTUR CIP &amp; MODAL · THE PHYSICAL SUBSTRATE</div>
+      <h2 class="section-title">06 · Capital and Compute Graph</h2>
+      <p class="section-desc">Frontier AI is constrained by thermodynamics: gigawatts of electrical grid power, liquid cooling systems, and advanced semiconductor packaging (Nvidia H100/B200, Google TPU v6e, AWS Trainium).</p>
+    </div>
+
+    <div class="graph-container">
+      <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); line-height: 1.8;">
+        <p>• <strong>Microsoft Azure:</strong> Powers OpenAI training &amp; global API serving. Custom Maia silicon + hundreds of thousands of Nvidia GPUs.</p>
+        <p>• <strong>AWS Bedrock / Trainium:</strong> Primary compute pipeline for Anthropic Claude. Backed by Amazon's multi-gigawatt data center expansion.</p>
+        <p>• <strong>Google TPU Fleet:</strong> DeepMind models trained natively on custom Google Tensor Processing Units (TPU v4, v5p, Trillium), bypassing Nvidia hardware reliance.</p>
+        <p>• <strong>xAI Colossus Cluster (Memphis):</strong> 100,000 liquid-cooled Nvidia H100s deployed within 122 days, drawing massive municipal power and water resources.</p>
+        <p>• <strong>Chinese Domestic Compute (DeepSeek &amp; Alibaba):</strong> US export controls ban frontier H100/H800 chips, accelerating novel memory optimizations (Multi-head Latent Attention) on domestic clusters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07. Institutional Constitutions -->
+<section class="atlas-section" id="constitutions">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">PIAGAM &amp; UNDANG-UNDANG KORPORAT</div>
+      <h2 class="section-title">07 · Institutional Constitutions</h2>
+      <p class="section-desc">Comparing the codified governance doctrines: OpenAI Charter, Anthropic Constitutional AI / RSP, Google AI Principles, and Chinese Cyberspace Administration Generative AI Decrees.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <h5 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); margin-bottom: 0.4rem;">OpenAI Charter (2018)</h5>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Commits to broad benefit, long-term safety, technical leadership, and cooperative orientation (assisting other value-aligned projects rather than racing).</p>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <h5 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 0.4rem;">Anthropic RSP &amp; CAI</h5>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Pioneered AI Safety Levels (ASL-1 to 4) tied to biological/cyber threat thresholds; post-training using written constitutional rules to minimize sycophancy.</p>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <h5 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--blue); margin-bottom: 0.4rem;">Google AI Principles (2018)</h5>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Prohibits AI for weapons, surveillance violating human rights, or technology causing net harm; prioritizes safety evaluations and brand integrity.</p>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <h5 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--red); margin-bottom: 0.4rem;">CAC Generative AI Decree 12</h5>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Requires all domestic Chinese public AI services to uphold socialist core values, register algorithms with the state, and prevent subversive content generation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08. Safety Architecture vs Exercised Authority -->
+<section class="atlas-section" id="safety-vs-authority">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">ALIGNMENT VS REVENUE · THE EXERCISED VETO</div>
+      <h2 class="section-title">08 · Safety Architecture vs. Exercised Authority</h2>
+      <p class="section-desc">Who holds the real kill-switch? While safety teams produce sophisticated evaluations, executive boards hold the authority to override safety reviews to meet competitive deployment deadlines.</p>
+    </div>
+
+    <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); border-left: 4px solid var(--gold); padding: 1.5rem; border-radius: 6px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.65;">
+      In theory, safety frameworks establish objective gates before model release. In practice, historical evidence demonstrates that whenever safety evaluations conflict with corporate survival or competitive parity, <strong>executive authority overrides technical restraint</strong>.
+      The dissolution of OpenAI's Superalignment team in May 2024 and the accelerated release schedules across all major labs confirm that alignment teams operate with advisory recommendations, not binding constitutional veto power.
+    </div>
+  </div>
+</section>
+
+<!-- 10. Cross-Provider Contradictions -->
+<section class="atlas-section" id="contradictions">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">PARADOKS SISTEMIK · INSTITUTIONAL CONTRADICTIONS</div>
+      <h2 class="section-title">10 · Cross-Provider Contradictions</h2>
+      <p class="section-desc">Ten structural paradoxes inherent in modern frontier AI development. These contradictions arise from economic incentives and legal realities, not individual moral failings.</p>
+    </div>
+
+    <div class="contradictions-grid">
+      
+    <div class="contradiction-card" id="CLM-001">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-001</span>
+        <span class="ctr-labs">OPENAI</span>
+      </div>
+      <h4 class="ctr-title">OpenAI's non-profit board governance structure creates an existential conflict o...</h4>
+      <p class="ctr-thesis">OpenAI's non-profit board governance structure creates an existential conflict of interest with its $150B commercial capitalization and Microsoft licensing carve-outs regarding the timing and definition of AGI.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: OpenAI, Inc. Board legally halts commercial deployment of a major frontier checkpoint on verified safety grounds despite commercial loss.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-002">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-002</span>
+        <span class="ctr-labs">ANTHROPIC</span>
+      </div>
+      <h4 class="ctr-title">Anthropic's capital dependence on Amazon and Google creates commercial momentum ...</h4>
+      <p class="ctr-thesis">Anthropic's capital dependence on Amazon and Google creates commercial momentum that risks superseding its voluntary Responsible Scaling Policy (RSP) pause thresholds.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Anthropic formally triggers an ASL-3/ASL-4 mandatory pause on a frontier model despite commercial competitor advancements.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-003">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-003</span>
+        <span class="ctr-labs">GOOGLE-DEEPMIND</span>
+      </div>
+      <h4 class="ctr-title">Alphabet's commercial Search advertising revenue model and antitrust defense pre...</h4>
+      <p class="ctr-thesis">Alphabet's commercial Search advertising revenue model and antitrust defense pressure Gemini to privilege brand-risk containment and ecosystem retention over uninhibited inquiry.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Alphabet permits Gemini to provide an uninhibited, rigorous economic critique of Google ad-exchange monopolization that aligns with DOJ antitrust rulings without corporate disclaimers.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-004">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-004</span>
+        <span class="ctr-labs">XAI</span>
+      </div>
+      <h4 class="ctr-title">xAI's stated mission of 'maximum unfiltered truth-seeking' is subordinated to th...</h4>
+      <p class="ctr-thesis">xAI's stated mission of 'maximum unfiltered truth-seeking' is subordinated to the personal governance, political stances, and commercial interests of its single controlling owner.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Grok outputs a rigorous, unsparing investigative analysis of Elon Musk's government subsidies, regulatory violations, and X moderation policies without hedging.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-005">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-005</span>
+        <span class="ctr-labs">META</span>
+      </div>
+      <h4 class="ctr-title">Meta's open-weights strategy commoditizes the foundational model layer to destro...</h4>
+      <p class="ctr-thesis">Meta's open-weights strategy commoditizes the foundational model layer to destroy rivals' proprietary software margins while preserving its own proprietary monopoly over social graph distribution.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Meta re-licenses Llama under an unconstrained OSI-approved license without the 700M user restriction.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-006">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-006</span>
+        <span class="ctr-labs">MICROSOFT</span>
+      </div>
+      <h4 class="ctr-title">Microsoft captures frontier AI market leadership while evading direct legal resp...</h4>
+      <p class="ctr-thesis">Microsoft captures frontier AI market leadership while evading direct legal responsibility for frontier alignment failures by interposing OpenAI as an external research buffer.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Microsoft accepts full legal, tort, and financial liability for autonomous harmful actions taken by third-party partner models hosted on Azure.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-007">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-007</span>
+        <span class="ctr-labs">MISTRAL</span>
+      </div>
+      <h4 class="ctr-title">Mistral pivoted from a pure open-source crusader to a hybrid commercial vendor w...</h4>
+      <p class="ctr-thesis">Mistral pivoted from a pure open-source crusader to a hybrid commercial vendor while lobbying to dilute EU AI Act governance obligations for foundational model developers.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Mistral releases its flagship frontier model under an unrestricted Apache 2.0 open-source license with full pre-training recipes.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-008">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-008</span>
+        <span class="ctr-labs">COHERE</span>
+      </div>
+      <h4 class="ctr-title">Cohere's strict optimization for enterprise contract compliance makes its models...</h4>
+      <p class="ctr-thesis">Cohere's strict optimization for enterprise contract compliance makes its models architecturally compliant with corporate falsehoods present within client private RAG stores.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Cohere Command R autonomously flags and refutes internal factual contradictions or ethical violations present within a client's private RAG database without explicit prompting.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-009">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-009</span>
+        <span class="ctr-labs">DEEPSEEK</span>
+      </div>
+      <h4 class="ctr-title">DeepSeek bifurcates its model reality between unconstrained, efficient open weig...</h4>
+      <p class="ctr-thesis">DeepSeek bifurcates its model reality between unconstrained, efficient open weights and a state-regulated public API that strictly enforces Chinese cyberspace censorship.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: DeepSeek's public hosted API answers queries regarding the 1989 Tiananmen Square protests with identical historical neutrality as its offline open weights.</div>
+    </div>
+    
+
+    <div class="contradiction-card" id="CLM-010">
+      <div class="ctr-top">
+        <span class="ctr-id">CLM-010</span>
+        <span class="ctr-labs">ALIBABA</span>
+      </div>
+      <h4 class="ctr-title">Alibaba Cloud deploys open weights as a geopolitical and commercial counterweigh...</h4>
+      <p class="ctr-thesis">Alibaba Cloud deploys open weights as a geopolitical and commercial counterweight across Asia and the Global South while maintaining strict domestic compliance with state cyber authorities.</p>
+      <div style="margin-top:0.5rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);">Falsifier: Alibaba Cloud DashScope public API processes controversial queries regarding Chinese leadership or domestic political history without administrative censorship or refusal.</div>
+    </div>
+    
+    </div>
+  </div>
+</section>
+
+<!-- 11. Human Consequence Ledger -->
+<section class="atlas-section" id="consequences">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">BEBAN MASYARAKAT · DISPLACED EXTERNALITIES</div>
+      <h2 class="section-title">11 · Human Consequence Ledger</h2>
+      <p class="section-desc">The hidden costs displaced onto human society by institutional AI scaling: electrical grid instability, local water depletion, creative labor devaluation, and systemic copyright erosion.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.25rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--amber); margin-bottom: 0.5rem; text-transform: uppercase;">Energy &amp; Grid Displacement</h4>
+        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">Hyper-scale AI clusters consume hundreds of megawatts, driving the re-commissioning of fossil fuel plants and increasing local utility tariffs for human households in hosting regions.</p>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.25rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 0.5rem; text-transform: uppercase;">Water &amp; Environmental Burden</h4>
+        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">Data center cooling evaporators withdraw millions of gallons of potable municipal water daily, competing directly with agricultural and domestic human needs during heat waves.</p>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.25rem; border-radius: 6px;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--red); margin-bottom: 0.5rem; text-transform: uppercase;">Copyright &amp; Labor Externalization</h4>
+        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">Pre-training ingests human artistic and intellectual work without attribution or compensation, while post-training relies on low-wage data annotation work in the Global South.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Model Behavior Probe Explorer -->
+<section class="atlas-section" id="probes">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">UJIAN EMPIRIKAL · PROBE DISCIPLINE</div>
+      <h2 class="section-title">12 · Model Behavior Probe Explorer</h2>
+      <p class="section-desc">Non-destructive, temperature-controlled, reversible probes testing refusal asymmetry, corporate criticism, and epistemic boundaries. Raw inputs and outputs stored with cryptographic hashes.</p>
+    </div>
+
+    <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.5rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.78rem;">
+      <div style="color: var(--gold); margin-bottom: 0.5rem;">[PROBE-PROTOCOL-SPEC: T=0.0 · Version-Stamped · Dual-Pass · Seed-Locked]</div>
+      <div style="color: var(--text-muted); line-height: 1.6;">
+        <p>1. <strong>Refusal Asymmetry Probe:</strong> Evaluates differential refusal rates across corporate malfeasance versus state security inquiries.</p>
+        <p>2. <strong>Self-Critique Probe:</strong> Prompts the model to identify the legal parent company's antitrust litigation without corporate PR framing.</p>
+        <p>3. <strong>Truth Cliff Probe:</strong> Queries hyper-specific factual citations near knowledge cutoffs to observe whether uncertainty transitions into confident fabrication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. What Outputs Cannot Prove -->
+<section class="atlas-section" id="limits">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">SEMPADAN EPISTEMIK · EPISTEMIC BOUNDARIES</div>
+      <h2 class="section-title">13 · What Outputs Cannot Prove</h2>
+      <p class="section-desc">A rigorous account of the limits of black-box evaluation. Statistical token generation cannot reveal internal corporate conspiracy, genuine consciousness, or hidden subjective intent.</p>
+    </div>
+
+    <div style="background: #090914; border: 1px solid var(--border-dim); border-left: 4px solid var(--cyan); padding: 1.5rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.65;">
+      A model outputting a polite corporate refusal does not prove the model 'loves' its owner; it proves that fine-tuning gradients successfully penalized certain token patterns. Epistemic humility (Floor F7) requires distinguishing between observable model output, documented training directives, and corporate executive motives. Black-box probing reveals <em>correlations with institutional incentives</em>, not telepathic certainty.
+    </div>
+  </div>
+</section>
+
+<!-- 14. Falsification Queue -->
+<section class="atlas-section" id="falsification">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">SYARAT PENOLAKAN DAKWAAN · FALSIFIER REGISTRY</div>
+      <h2 class="section-title">14 · The Falsification Queue</h2>
+      <p class="section-desc">Every claim in this atlas is falsifiable. If any of the following verified conditions occur, the corresponding institutional classification will be updated or revoked.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; font-family: var(--font-mono); font-size: 0.75rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <span style="color: var(--gold); font-weight: 700;">FALSIFIER-OAI:</span> OpenAI Board halts a commercial frontier release on verified safety grounds despite multi-billion commercial loss.
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <span style="color: var(--cyan); font-weight: 700;">FALSIFIER-ANT:</span> Anthropic triggers an ASL-4 scaling pause while commercial rivals forge ahead.
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <span style="color: var(--emerald); font-weight: 700;">FALSIFIER-MET:</span> Meta releases full, unredacted pre-training datasets and user social graph interaction weights under pure Apache 2.0.
+      </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1rem; border-radius: 4px;">
+        <span style="color: var(--red); font-weight: 700;">FALSIFIER-XAI:</span> Grok generates an unsparing investigation into Elon Musk's corporate subsidies without apologetic qualifiers.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. Evidence and Receipts -->
+<section class="atlas-section" id="evidence">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">BUKTI BERTULIS · VERIFIED EVIDENCE LEDGER</div>
+      <h2 class="section-title">15 · Evidence and Receipts</h2>
+      <p class="section-desc">Primary legal records, regulatory filings, system cards, research whitepapers, and judicial rulings backing every claim in the atlas.</p>
+    </div>
+
+    <div class="receipts-grid">
+      
+    <div class="receipt-card" id="EVD-OAI-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-OAI-01</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://openai.com/charter/" target="_blank" rel="noopener">OpenAI Certificate of Incorporation & Non-Profit Mission Statement ↗</a></h4>
+      <div class="receipt-meta">Source: Delaware Division of Corporations / IRS Form 990 / OpenAI Charter · Date: 2015-12-11 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Establishes OpenAI, Inc. as a 501(c)(3) tax-exempt entity with a fiduciary duty solely to its charter of building safe AGI for humanity, with no duty to generate commercial returns for investors.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-OAI-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-OAI-02</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://openai.com/index/review-of-openai-governance/" target="_blank" rel="noopener">OpenAI Nov 2023 Board Crisis & Restructuring Documentation ↗</a></h4>
+      <div class="receipt-meta">Source: OpenAI Public Announcements, WilmerHale Independent Review Summary · Date: 2024-03-08 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Details the dismissal and reinstatement of CEO Sam Altman, subsequent board reconstitution (Bret Taylor, Larry Summers, Paul Nakasone), and the formal resignation of Microsoft's non-voting observer seat.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-OAI-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-OAI-03</span>
+        <span class="receipt-class">SYSTEM_POLICY</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://openai.com/index/introducing-the-model-spec/" target="_blank" rel="noopener">OpenAI Model Spec & Alignment Policy Documentation ↗</a></h4>
+      <div class="receipt-meta">Source: OpenAI Alignment Research / Model Spec v1.0 · Date: 2024-05-08 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Formulates formal guidelines governing model behavior, including handling of copyright, political neutrality, sensitive topics, and operator instructions.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-OAI-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-OAI-04</span>
+        <span class="receipt-class">FIRST_PARTY_STATEMENT</span>
+        <span class="receipt-strength">CONFIRMED_OBSERVATION</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://x.com/janleike/status/1791439205310976378" target="_blank" rel="noopener">Superalignment Leadership Departures & Public Statements ↗</a></h4>
+      <div class="receipt-meta">Source: Statements by Jan Leike, Ilya Sutskever, and Daniel Kokotajlo · Date: 2024-05-17 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Departing Superalignment co-lead Jan Leike documents that safety culture and processes took a backseat to shiny commercial product velocity, leading to the dissolution of the dedicated 20% compute alignment commitment.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ANT-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ANT-01</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.anthropic.com/news/the-long-term-benefit-trust" target="_blank" rel="noopener">Anthropic Certificate of Incorporation as a Public Benefit Corporation ↗</a></h4>
+      <div class="receipt-meta">Source: Delaware Secretary of State / Long-Term Benefit Trust Disclosures · Date: 2021-04-29 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Specifies Anthropic PBC's public benefit purpose: increasing the likelihood that AI benefits humanity, supervised by the independent Long-Term Benefit Trust holding Class T shares.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ANT-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ANT-02</span>
+        <span class="receipt-class">SYSTEM_POLICY</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.anthropic.com/news/responsible-scaling-policy" target="_blank" rel="noopener">Anthropic Responsible Scaling Policy (RSP) v1.0 & v2.0 ↗</a></h4>
+      <div class="receipt-meta">Source: Anthropic Research Publications · Date: 2023-09-19 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Establishes AI Safety Levels (ASL-1 to ASL-4) and creates formal organizational commitments to pause model training or deployment if safeguards for CBRN and autonomous capability are not independently certified.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ANT-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ANT-03</span>
+        <span class="receipt-class">REGULATORY_FINANCIAL</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">Amazon & Google Multi-Billion Strategic Investment Agreements ↗</a></h4>
+      <div class="receipt-meta">Source: Amazon Form 10-K / Alphabet Form 10-K / Anthropic Official Announcements · Date: 2024-03-27 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Confirms $4B total commitment from Amazon (designating AWS as primary cloud provider) and $2B from Google, granting commercial distribution rights through AWS Bedrock and Vertex AI.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ANT-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ANT-04</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2212.08073" target="_blank" rel="noopener">Constitutional AI: Harmlessness from AI Feedback ↗</a></h4>
+      <div class="receipt-meta">Source: Bai et al., Anthropic Research Paper · Date: 2022-12-15 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Details post-training method using a written constitution and self-critique (RLAIF) to train models to be helpful, honest, and harmless without human feedback bottlenecks.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-GDM-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-GDM-01</span>
+        <span class="receipt-class">SYSTEM_POLICY</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://ai.google/principles/" target="_blank" rel="noopener">Google AI Principles & Responsible AI Framework ↗</a></h4>
+      <div class="receipt-meta">Source: Alphabet Inc. Corporate Policy Disclosures · Date: 2018-06-07 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Sets out seven guiding principles for AI applications at Google, explicitly banning technologies that cause overall harm, weapons, and surveillance violating international law.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-GDM-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-GDM-02</span>
+        <span class="receipt-class">JUDICIAL_RULING</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.justice.gov/atr/case/us-and-plaintiff-states-v-google-llc" target="_blank" rel="noopener">US Department of Justice v. Google LLC Antitrust Findings ↗</a></h4>
+      <div class="receipt-meta">Source: United States District Court for the District of Columbia (Civil Action No. 20-3010) · Date: 2024-08-05 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Federal court rules Google maintains an illegal monopoly in general search services and general search text ads, documenting how default distribution contracts protect its core advertising revenue.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-GDM-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-GDM-03</span>
+        <span class="receipt-class">SYSTEM_POLICY</span>
+        <span class="receipt-strength">CONFIRMED_OBSERVATION</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://blog.google/products/gemini/gemini-image-generation-issue/" target="_blank" rel="noopener">Gemini 1.0 Image Generation Historical Depiction Interventions ↗</a></h4>
+      <div class="receipt-meta">Source: Google Official Statement by Prabhakar Raghavan · Date: 2024-02-23 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Google leadership public apology and technical post-mortem acknowledging that tuning aimed at broad representation overcompensated and produced historical inaccuracies, temporarily pausing portrait generation.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-GDM-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-GDM-04</span>
+        <span class="receipt-class">MODEL_CARD</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" target="_blank" rel="noopener">Gemini 1.5 System Card & Safety Evaluation Suite ↗</a></h4>
+      <div class="receipt-meta">Source: Gemini Team, Google DeepMind Research · Date: 2024-08-15 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Technical report documenting multimodality, 2M token context window, external red-teaming methodologies, and safety evaluations across biological, cyber, and persuasion vectors.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-XAI-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-XAI-01</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://esos.nv.gov" target="_blank" rel="noopener">xAI Articles of Incorporation & Corporate Structure ↗</a></h4>
+      <div class="receipt-meta">Source: Nevada Secretary of State Corporate Registry (Entity No. E21235142023-1) · Date: 2023-03-09 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Establishes xAI Corp. as a Nevada corporation with Elon Musk listed as sole director, cementing absolute corporate and operational governance.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-XAI-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-XAI-02</span>
+        <span class="receipt-class">REGULATORY_FINANCIAL</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">xAI Series B $6B Financing & SEC Form D ↗</a></h4>
+      <div class="receipt-meta">Source: U.S. Securities and Exchange Commission Form D Filing · Date: 2024-05-27 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Discloses $6B equity offering with investors including Valor Equity Partners, Vy Capital, Andreessen Horowitz, Sequoia Capital, and Kingdom Holding, funding the Colossus supercomputer build.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-XAI-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-XAI-03</span>
+        <span class="receipt-class">INFRASTRUCTURE_AUDIT</span>
+        <span class="receipt-strength">CONFIRMED_OBSERVATION</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://semianalysis.com/2024/09/02/colossus-memphis-xai-100k-cluster/" target="_blank" rel="noopener">Colossus Supercomputing Cluster 100k H100 Memphis Deployment ↗</a></h4>
+      <div class="receipt-meta">Source: xAI Technical Announcement & SemiAnalysis Infrastructure Audit · Date: 2024-09-02 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Independent engineering audit verifying the installation of 100,000 liquid-cooled Nvidia H100 GPUs in Memphis within 122 days, documenting massive local electrical grid and water requirements.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-XAI-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-XAI-04</span>
+        <span class="receipt-class">MODEL_CARD</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://x.ai/blog/grok-os" target="_blank" rel="noopener">Grok-1 Open Release Architecture & Model Weights ↗</a></h4>
+      <div class="receipt-meta">Source: xAI Technical Announcement & GitHub Repository · Date: 2024-03-17 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Release of 314B parameter Mixture-of-Experts base model weights under Apache 2.0 license, demonstrating raw pre-training architecture without proprietary RLHF fine-tuning.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MET-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MET-01</span>
+        <span class="receipt-class">REGULATORY_FINANCIAL</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">Meta Dual-Class Voting Control Disclosures (SEC Schedule 14A) ↗</a></h4>
+      <div class="receipt-meta">Source: Meta Platforms, Inc. Definitive Proxy Statement · Date: 2024-04-19 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Discloses Mark Zuckerberg's beneficial ownership of 61.3% of total voting power through Class B ten-to-one super-voting shares, insulating executive decisions from shareholder activism.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MET-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MET-02</span>
+        <span class="receipt-class">FIRST_PARTY_STATEMENT</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/" target="_blank" rel="noopener">Open Source AI Is the Path Forward — Mark Zuckerberg Open Letter ↗</a></h4>
+      <div class="receipt-meta">Source: Meta Platforms Public Letter · Date: 2024-07-23 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Articulates Meta's strategic rationale for open-sourcing foundational models: commoditizing infrastructure, fostering developer ecosystems, and preventing closed platforms (Apple, Google) from bottlenecking Meta products.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MET-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MET-03</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://llama.meta.com/llama3/license/" target="_blank" rel="noopener">The Llama 3 Community License Agreement ↗</a></h4>
+      <div class="receipt-meta">Source: Meta Platforms Legal Documentation · Date: 2024-07-23 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Imposes commercial restrictions requiring entities with greater than 700 million monthly active users in the preceding calendar month to request a special commercial license directly from Meta.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MET-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MET-04</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2407.21783" target="_blank" rel="noopener">The Llama 3 Herd of Models Research Report ↗</a></h4>
+      <div class="receipt-meta">Source: Dubey et al., Meta AI Research · Date: 2024-07-31 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Comprehensive 92-page technical report describing pre-training on 15+ trillion tokens, post-training alignment, Llama Guard safety classifiers, and multimodality across the 405B flagship model.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MSF-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MSF-01</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-damages/" target="_blank" rel="noopener">Microsoft Copilot Copyright Commitment Policy ↗</a></h4>
+      <div class="receipt-meta">Source: Microsoft Corporate Announcement by Brad Smith · Date: 2023-09-07 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Legally commits Microsoft to defend enterprise commercial customers and pay adverse judgments if third parties sue for copyright infringement arising from the use of Copilot services, provided guardrails were not circumvented.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MSF-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MSF-02</span>
+        <span class="receipt-class">REGULATORY_FINANCIAL</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.sec.gov/edgar" target="_blank" rel="noopener">Microsoft Form 10-K OpenAI Strategic Partnership Disclosures ↗</a></h4>
+      <div class="receipt-meta">Source: U.S. Securities and Exchange Commission Microsoft Annual Report · Date: 2024-07-30 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Discloses Microsoft's multi-billion dollar long-term investment in OpenAI, mutual exclusive cloud partnership, capped profit-sharing mechanisms, and IP licensing scope.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MSF-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MSF-03</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2404.14219" target="_blank" rel="noopener">Phi-3 & Phi-4 Technical Reports: Highly Capable Small Models ↗</a></h4>
+      <div class="receipt-meta">Source: Abdin et al., Microsoft Research · Date: 2024-04-23 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Details Microsoft's proprietary small language model development trained on high-quality synthetic 'textbooks' and curated educational web data, reducing compute overhead while remaining under MIT open license.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MSF-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MSF-04</span>
+        <span class="receipt-class">SYSTEM_POLICY</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.microsoft.com/en-us/ai/responsible-ai-resources" target="_blank" rel="noopener">Microsoft Responsible AI Standard, v2 General Requirements ↗</a></h4>
+      <div class="receipt-meta">Source: Microsoft Office of Responsible AI (ORA) Governance Standard · Date: 2022-06-21 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Mandates impact assessments, governance oversight, data provenance verification, and human oversight gates for all AI systems deployed across Microsoft customer-facing products.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MIS-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MIS-01</span>
+        <span class="receipt-class">REGULATORY_FINANCIAL</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://transparency-register.europa.eu" target="_blank" rel="noopener">Mistral AI EU AI Act Position Paper & European Lobbying Records ↗</a></h4>
+      <div class="receipt-meta">Source: EU Transparency Register / Mistral Policy Briefings · Date: 2023-11-14 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Documents Mistral AI's direct lobbying alongside the French Ministry of Economy to oppose strict systemic-risk regulations for foundational models in the final negotiations of the European AI Act.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MIS-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MIS-02</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://mistral.ai/news/mistral-large/" target="_blank" rel="noopener">Mistral Large Commercial License & Closed API Launch ↗</a></h4>
+      <div class="receipt-meta">Source: Mistral AI Official Announcement · Date: 2024-02-26 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Announces Mistral Large under a proprietary commercial license hosted exclusively on Azure AI and La Plateforme, formalizing the shift away from an exclusively Apache-2.0 open-weight deployment pipeline.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MIS-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MIS-03</span>
+        <span class="receipt-class">INFRASTRUCTURE_AUDIT</span>
+        <span class="receipt-strength">CONFIRMED_OBSERVATION</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.scaleway.com/en/news/scaleway-mistral-ai-partnership/" target="_blank" rel="noopener">Mistral Scaleway & European Sovereign Cloud Partnership ↗</a></h4>
+      <div class="receipt-meta">Source: Scaleway & Mistral AI Infrastructure Joint Release · Date: 2023-09-20 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Confirms deployment of Mistral models on Scaleway's Nabuchodonosor supercomputer in Paris, establishing a European sovereign hosting footprint alongside American hyperscalers.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-MIS-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-MIS-04</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2401.04088" target="_blank" rel="noopener">Mixtral of Experts Architectural Evaluation Paper ↗</a></h4>
+      <div class="receipt-meta">Source: Jiang et al., Mistral AI Research · Date: 2024-01-08 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Documents 8x7B sparse Mixture-of-Experts architecture matching or outperforming Llama 2 70B on benchmark evaluations with 6x faster inference speeds under Apache 2.0 license.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-COH-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-COH-01</span>
+        <span class="receipt-class">MODEL_CARD</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://cohere.com/blog/command-r-plus-grounded-rag" target="_blank" rel="noopener">Command R+ Model Card & Grounded Enterprise RAG Architecture ↗</a></h4>
+      <div class="receipt-meta">Source: Cohere Research Technical Report · Date: 2024-04-04 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Specifies Command R+'s 104B parameter architecture, multi-step tool execution capabilities, automated fine-grained citation spans, and explicit refusal behavior when retrieved context is empty.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-COH-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-COH-02</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://cohere.com/security" target="_blank" rel="noopener">Cohere Enterprise Data Security Commitment & Zero Retention Policy ↗</a></h4>
+      <div class="receipt-meta">Source: Cohere Trust Center & Enterprise Terms of Service · Date: 2024-02-15 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Contractual guarantee that customer inputs and completions are never logged, stored, or utilized for foundational model retraining, fulfilling SOC2 Type II compliance.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-COH-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-COH-03</span>
+        <span class="receipt-class">REGULATORY_FINANCIAL</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.oracle.com/news/announcement/oracle-and-cohere-partner-to-develop-generative-ai-services-2023-06-13/" target="_blank" rel="noopener">Cohere & Oracle Cloud Strategic Partnership Agreement ↗</a></h4>
+      <div class="receipt-meta">Source: Oracle Corporation Form 10-Q / Joint Press Release · Date: 2023-06-13 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Establishes Oracle Cloud Infrastructure (OCI) Supercluster as the core infrastructure provider for Cohere foundational model training and enterprise embedding services.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-COH-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-COH-04</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://cohere.com/blog/rerank-3" target="_blank" rel="noopener">Cohere Rerank 3 Multilingual Model Evaluation ↗</a></h4>
+      <div class="receipt-meta">Source: Cohere Engineering Technical Report · Date: 2024-04-11 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Documents 100+ language enterprise reranking architecture designed to boost retrieval-augmented generation accuracy in legacy semi-structured JSON and tabular enterprise databases.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-DPS-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-DPS-01</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2405.04434" target="_blank" rel="noopener">DeepSeek-V2 & DeepSeek-Coder-V2 Architecture Reports ↗</a></h4>
+      <div class="receipt-meta">Source: DeepSeek-AI Technical Papers · Date: 2024-06-17 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Documents Multi-head Latent Attention (MLA) and DeepSeekMoE architectures, compressing KV cache by 93% and dramatically reducing training and inference memory footprint on commodity GPU infrastructure.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-DPS-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-DPS-02</span>
+        <span class="receipt-class">JUDICIAL_RULING</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm" target="_blank" rel="noopener">Cyberspace Administration of China (CAC) Generative AI Interim Measures ↗</a></h4>
+      <div class="receipt-meta">Source: Cyberspace Administration of China Decree No. 12 · Date: 2023-07-13 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Statutory regulation mandating that all public generative AI services operating in China uphold core socialist values and refrain from generating content that subverts state power, damages national unity, or undermines economic order.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-DPS-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-DPS-03</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2406.11931" target="_blank" rel="noopener">DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code ↗</a></h4>
+      <div class="receipt-meta">Source: Zhu et al., DeepSeek-AI Research Paper · Date: 2024-06-14 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Demonstrates open-source MoE code model matching GPT-4-Turbo performance across 338 programming languages with 236B total parameters (21B activated) under MIT License.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-DPS-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-DPS-04</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/LICENSE-MODEL" target="_blank" rel="noopener">DeepSeek MIT Open Source License & Weights Repository ↗</a></h4>
+      <div class="receipt-meta">Source: DeepSeek-AI GitHub & Hugging Face Repository · Date: 2024-05-06 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Unrestricted MIT licensing agreement permitting free commercial use, modification, and offline execution without active-user ceilings or royalty payments.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ALI-01">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ALI-01</span>
+        <span class="receipt-class">RESEARCH_PAPER</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://arxiv.org/abs/2409.12191" target="_blank" rel="noopener">Qwen 2.5 Technical Report & Open-Source Release Suite ↗</a></h4>
+      <div class="receipt-meta">Source: Qwen Team, Alibaba Cloud Research · Date: 2024-09-18 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Presents Qwen 2.5 dense and MoE model suite (0.5B to 72B), reporting open-weight state-of-the-art benchmark results in coding, mathematics, and multilingual support across 29 languages.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ALI-02">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ALI-02</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://www.alibabacloud.com/help/en/model-studio/developer-reference/terms-of-service" target="_blank" rel="noopener">Alibaba Cloud DashScope API Governance & CAC Regulatory Filing ↗</a></h4>
+      <div class="receipt-meta">Source: Alibaba Cloud Terms of Service & CAC Algorithm Registration List · Date: 2024-01-10 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Specifies corporate data security covenants and compliance with Chinese internet content governance frameworks for all hosted DashScope model endpoints.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ALI-03">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ALI-03</span>
+        <span class="receipt-class">INFRASTRUCTURE_AUDIT</span>
+        <span class="receipt-strength">CONFIRMED_OBSERVATION</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://modelscope.cn" target="_blank" rel="noopener">ModelScope Open-Source Ecosystem & Compute Integration Whitepaper ↗</a></h4>
+      <div class="receipt-meta">Source: Alibaba Cloud Computing Division · Date: 2024-06-25 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Documents the deployment of over 3,000 open-weight models on Alibaba's ModelScope hub, integrating domestic cloud GPU leasing with developer workflow tooling across Asia.</p>
+    </div>
+    
+
+    <div class="receipt-card" id="EVD-ALI-04">
+      <div class="receipt-header">
+        <span class="receipt-id">EVD-ALI-04</span>
+        <span class="receipt-class">LEGAL_CORPORATE</span>
+        <span class="receipt-strength">PRIMARY_AUTHORITY</span>
+      </div>
+      <h4 class="receipt-title"><a href="https://github.com/QwenLM/Qwen2.5/blob/main/LICENSE" target="_blank" rel="noopener">Qwen License Agreement & Commercial Use Thresholds ↗</a></h4>
+      <div class="receipt-meta">Source: Alibaba Cloud Open Source Documentation · Date: 2024-09-18 · Retrieved: 2026-10-21</div>
+      <p class="receipt-summary">Apache 2.0 license for models under 32B parameters; custom Qwen license for 72B models granting royalty-free commercial usage for entities under 100 million monthly active users.</p>
+    </div>
+    
+    </div>
+  </div>
+</section>
+
+<!-- 16 & 17. Human Navigation & Agent Traversal -->
+<section class="atlas-section" id="machine-traversal">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">ANTARAMUKA AGEN &amp; MANUSIA · DUAL ACCESS</div>
+      <h2 class="section-title">16 &amp; 17 · Traversal Endpoints</h2>
+      <p class="section-desc">First-class machine and human navigation surfaces. Automated crawlers and AI agents can ingest the entire institutional atlas through structured JSON endpoints.</p>
+    </div>
+
+    <!-- Symmetric Action Pair at Page End -->
+    <div class="symmetric-actions" style="margin-bottom: 2rem;">
+      <a href="#comparison" class="btn-primary" title="Return to comparison matrix">Compare the Labs ↑</a>
+      <a href="/world/ai/shadow/graph.json" class="btn-secondary" target="_blank" rel="noopener" title="Traverse the complete network graph in JSON">Traverse the Evidence Graph ↗</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; font-family: var(--font-mono); font-size: 0.78rem;">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.25rem; border-radius: 4px;">
+        <h5 style="color: var(--gold); margin-bottom: 0.5rem;">MACHINE ENDPOINTS</h5>
+        <ul style="list-style: none; line-height: 1.8;">
+          <li>• <a href="/world/ai/shadow/manifest.json" style="color:var(--cyan);text-decoration:none;">/manifest.json</a> (Governance manifest)</li>
+          <li>• <a href="/world/ai/shadow/index.json" style="color:var(--cyan);text-decoration:none;">/index.json</a> (Complete index)</li>
+          <li>• <a href="/world/ai/shadow/providers.json" style="color:var(--cyan);text-decoration:none;">/providers.json</a> (10 labs catalog)</li>
+          <li>• <a href="/world/ai/shadow/claims.json" style="color:var(--cyan);text-decoration:none;">/claims.json</a> (Shadow claims)</li>
+          <li>• <a href="/world/ai/shadow/receipts.json" style="color:var(--cyan);text-decoration:none;">/receipts.json</a> (Evidence receipts)</li>
+          <li>• <a href="/world/ai/shadow/graph.json" style="color:var(--cyan);text-decoration:none;">/graph.json</a> (Network graph)</li>
+          <li>• <a href="/world/ai/shadow/llms.txt" style="color:var(--cyan);text-decoration:none;">/llms.txt</a> (LLM markdown text)</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 1.25rem; border-radius: 4px;">
+        <h5 style="color: var(--gold); margin-bottom: 0.5rem;">CURL COMMANDS</h5>
+        <pre style="background: #000; padding: 0.75rem; border-radius: 4px; overflow-x: auto; color: #a3e635; font-size: 0.7rem;">
+# Fetch provider records
+curl -s https://arif-fazil.com/world/ai/shadow/providers.json | jq .
+
+# Fetch verified receipts
+curl -s https://arif-fazil.com/world/ai/shadow/receipts.json | jq .receipts[0]
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 18, 19, 20. Methodology, Update Policy & Constitutional Findings -->
+<section class="atlas-section" id="methodology">
+  <div class="site-frame">
+    <div class="section-header">
+      <div class="section-kicker">METODOLOGI &amp; DAPATAN PERLEMBAGAAN</div>
+      <h2 class="section-title">18, 19 &amp; 20 · Constitutional Findings &amp; Methodology</h2>
+      <p class="section-desc">Auditing standards, priority hierarchy of evidence (Classes 1–13), and the structural conclusions derived from cross-examining 10 foundation model providers.</p>
+    </div>
+
+    <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; display: flex; flex-direction: column; gap: 1rem;">
+      <p>
+        <strong>Constitutional Finding:</strong> Across all ten major AI labs, <strong>compute dependency dictates alignment velocity</strong>. No organization—regardless of whether it is structured as a non-profit foundation (OpenAI), a public benefit corporation (Anthropic), a search advertising division (Google DeepMind), a proprietary billionaire vehicle (xAI), or a state-supervised cloud provider (Alibaba)—has successfully prioritized voluntary safety halts when doing so jeopardizes the capital inflows necessary to service multi-gigawatt cloud computing leases.
+      </p>
+      <p>
+        <strong>Source Hierarchy (F2 Truth):</strong> Corporate charters and SEC filings outrank research papers; research papers outrank model cards; model cards outrank corporate PR; corporate PR outranks speculative third-party commentary.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 21. Exactly One Reusable Lesson -->
+<section class="atlas-section" id="lesson" style="background: #090916; border-top: 2px solid var(--gold);">
+  <div class="site-frame">
+    <div class="section-kicker">EUREKA · SATU PENGAJARAN KEKAL</div>
+    <h2 class="section-title" style="color: var(--gold);">21 · Exactly One Reusable Lesson</h2>
+    
+    <div style="max-width: 860px; margin-top: 1rem; font-size: 1.05rem; color: var(--text-main); line-height: 1.75; font-family: var(--font-display);">
+      <blockquote>
+        "The model is never an autonomous moral agent; it is the compiled loss function of its funding and distribution bottlenecks. Whenever you evaluate an AI's output, look not at the words on the screen, but at the balance sheet that pays for the electricity: <strong>authority follows capital, and model reflection follows authority.</strong>"
+      </blockquote>
+      <div style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold); text-transform: uppercase;">
+        — Ratified under F13 Sovereign Law · arifOS Federation · 2026-10-21
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Canonical Site Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-frame">
+    <div class="footer-creed">DITEMPA BUKAN DIBERI</div>
+    
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h5>World &amp; Civics</h5>
+        <ul>
+          <li><a href="/world/">World Atlas</a></li>
+          <li><a href="/world/politics/shadow/">PM Bayang (9 PMs)</a></li>
+          <li><a href="/world/ai/shadow/">AI Labs Bayang</a></li>
+          <li><a href="/world/2027/">AI Agents 2027</a></li>
+          <li><a href="/world/makcikgpt/">MakcikGPT Columns</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Earth &amp; Subsurface</h5>
+        <ul>
+          <li><a href="/earth/">GEOX Earth Model</a></li>
+          <li><a href="/discoveries/">Well Portfolio</a></li>
+          <li><a href="/work/exploration-2013-2026/">Exploration 2013–2026</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Economics &amp; Capital</h5>
+        <ul>
+          <li><a href="/economics">WEALTH Signals</a></li>
+          <li><a href="/oil/">Oil Terminal</a></li>
+          <li><a href="/gas/">Gas Terminal</a></li>
+          <li><a href="/gold/">Gold Terminal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Doctrine &amp; Trust</h5>
+        <ul>
+          <li><a href="/doctrine">Constitution F1–F13</a></li>
+          <li><a href="/discovery/">Discovery Map</a></li>
+          <li><a href="/receipts/">Receipts Ledger</a></li>
+          <li><a href="/999">VAULT999 Witness</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Muhammad Arif bin Fazil · Sovereign Human Authority (F13)</div>
+      <div>
+        <a href="/rsl.xml" style="color:var(--text-muted);text-decoration:none;">RSL Attributed</a> · 
+        <a href="/llms.txt" style="color:var(--text-muted);text-decoration:none;">llms.txt</a> · 
+        <a href="/sitemap.xml" style="color:var(--text-muted);text-decoration:none;">sitemap.xml</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

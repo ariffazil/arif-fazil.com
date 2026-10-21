@@ -1,0 +1,30 @@
+# AI LABS BAYANG — Institutional Shadow Atlas
+> Canonical URL: https://arif-fazil.com/world/ai/shadow/
+> Schema: arifos.ai-shadow-manifest.v1
+> Authority: ARIF, Human Sovereign (F13)
+> Doctrine: Evidence before narrative. The model reflects its institutional substrate.
+
+## Overview
+This atlas audits the institutional shadow of 10 major AI model labs.
+Shadow is defined as a capability, consequence, dependency, incentive, contradiction, or authority relation made less visible by the institution's preferred public narrative.
+Under the Causality Lock, we never claim 'the owner's shadow is inside the model.' We state only that observable model behavior is consistent with documented policies, training interventions, product incentives, or corporate access architectures.
+
+## Canonical Providers Audited
+1. OpenAI (GPT-4o, o1, ChatGPT) — Non-profit 501(c)(3) board vs. capped-profit LLC commercial capitalization & Microsoft AGI carve-out. [Level 4 - PROVEN]
+2. Anthropic (Claude 3.5, Opus) — Public Benefit Corporation & Long-Term Benefit Trust vs. hyper-scaler compute dependencies (Amazon/Google). [Level 4 - PARTIAL]
+3. Google DeepMind (Gemini 1.5, Gemma) — Scientific research division within Alphabet Inc.; search ad-monopoly preservation & brand-risk over-correction. [Level 4 - PROVEN]
+4. xAI (Grok-2) — Nevada Corp. under sole directorship of Elon Musk; truth-seeking branding vs. single-proprietor ideological alignment & X firehose. [Level 4 - WITNESSED]
+5. Meta (Llama 3.3, Meta AI) — Dual-class shareholding (Mark Zuckerberg ~61% vote); strategic open-weight commoditization to weaken closed proprietary software moats. [Level 4 - PROVEN]
+6. Microsoft (Copilot, Phi-4, Azure AI) — Enterprise compliance and copyright defense while insulating itself from frontier safety liability via OpenAI partnerships. [Level 4 - PROVEN]
+7. Mistral AI (Mistral Large, Le Chat) — French European champion; pivot from Apache 2.0 to closed commercial endpoints & lobbying against EU AI Act rules. [Level 4 - PROVEN]
+8. Cohere (Command R+, Embed, Rerank) — B2B enterprise private deployment; fine-grained document citation paired with indifference to client-side accounting/ethical flaws. [Level 4 - WITNESSED]
+9. DeepSeek (DeepSeek-V2.5, Coder) — Quantitative hedge fund parentage (High-Flyer); extreme algorithmic efficiency (MLA/MoE) paired with domestic Chinese state cyber-filtering. [Level 4 - PROVEN]
+10. Alibaba Cloud (Qwen 2.5, Qwen-Max) — Global open-weight developer distribution across Asia paired with strict domestic Cyberspace Administration compliance. [Level 4 - PROVEN]
+
+## Machine API Endpoints
+- Manifest: https://arif-fazil.com/world/ai/shadow/manifest.json
+- Complete Index: https://arif-fazil.com/world/ai/shadow/index.json
+- Providers Catalog: https://arif-fazil.com/world/ai/shadow/providers.json
+- Claims & Causality: https://arif-fazil.com/world/ai/shadow/claims.json
+- Evidence & Receipts: https://arif-fazil.com/world/ai/shadow/receipts.json
+- Authority & Compute Graph: https://arif-fazil.com/world/ai/shadow/graph.json

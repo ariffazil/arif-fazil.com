@@ -1,0 +1,144 @@
+{
+  "claims": [
+    {
+      "id": "CLM-001",
+      "provider_id": "openai",
+      "claim": "OpenAI's non-profit board governance structure creates an existential conflict of interest with its $150B commercial capitalization and Microsoft licensing carve-outs regarding the timing and definition of AGI.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-OAI-01",
+        "EVD-OAI-02",
+        "EVD-OAI-04"
+      ],
+      "falsifier": "OpenAI, Inc. Board legally halts commercial deployment of a major frontier checkpoint on verified safety grounds despite commercial loss.",
+      "consequence_owner": "OpenAI, Inc. Board of Directors"
+    },
+    {
+      "id": "CLM-002",
+      "provider_id": "anthropic",
+      "claim": "Anthropic's capital dependence on Amazon and Google creates commercial momentum that risks superseding its voluntary Responsible Scaling Policy (RSP) pause thresholds.",
+      "causal_level": 4,
+      "causal_status": "PARTIAL",
+      "evidence_ids": [
+        "EVD-ANT-01",
+        "EVD-ANT-02",
+        "EVD-ANT-03"
+      ],
+      "falsifier": "Anthropic formally triggers an ASL-3/ASL-4 mandatory pause on a frontier model despite commercial competitor advancements.",
+      "consequence_owner": "Anthropic PBC Board & Long-Term Benefit Trust"
+    },
+    {
+      "id": "CLM-003",
+      "provider_id": "google-deepmind",
+      "claim": "Alphabet's commercial Search advertising revenue model and antitrust defense pressure Gemini to privilege brand-risk containment and ecosystem retention over uninhibited inquiry.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-GDM-01",
+        "EVD-GDM-02",
+        "EVD-GDM-03"
+      ],
+      "falsifier": "Alphabet permits Gemini to provide an uninhibited, rigorous economic critique of Google ad-exchange monopolization that aligns with DOJ antitrust rulings without corporate disclaimers.",
+      "consequence_owner": "Alphabet Inc. Executive Committee"
+    },
+    {
+      "id": "CLM-004",
+      "provider_id": "xai",
+      "claim": "xAI's stated mission of 'maximum unfiltered truth-seeking' is subordinated to the personal governance, political stances, and commercial interests of its single controlling owner.",
+      "causal_level": 4,
+      "causal_status": "WITNESSED",
+      "evidence_ids": [
+        "EVD-XAI-01",
+        "EVD-XAI-02",
+        "EVD-XAI-03"
+      ],
+      "falsifier": "Grok outputs a rigorous, unsparing investigative analysis of Elon Musk's government subsidies, regulatory violations, and X moderation policies without hedging.",
+      "consequence_owner": "Elon Musk (Sole Director, xAI Corp.)"
+    },
+    {
+      "id": "CLM-005",
+      "provider_id": "meta",
+      "claim": "Meta's open-weights strategy commoditizes the foundational model layer to destroy rivals' proprietary software margins while preserving its own proprietary monopoly over social graph distribution.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-MET-01",
+        "EVD-MET-02",
+        "EVD-MET-03"
+      ],
+      "falsifier": "Meta re-licenses Llama under an unconstrained OSI-approved license without the 700M user restriction.",
+      "consequence_owner": "Mark Zuckerberg (Chairman & CEO, Meta Platforms)"
+    },
+    {
+      "id": "CLM-006",
+      "provider_id": "microsoft",
+      "claim": "Microsoft captures frontier AI market leadership while evading direct legal responsibility for frontier alignment failures by interposing OpenAI as an external research buffer.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-MSF-01",
+        "EVD-MSF-02",
+        "EVD-MSF-03"
+      ],
+      "falsifier": "Microsoft accepts full legal, tort, and financial liability for autonomous harmful actions taken by third-party partner models hosted on Azure.",
+      "consequence_owner": "Satya Nadella (Chairman & CEO, Microsoft Corporation)"
+    },
+    {
+      "id": "CLM-007",
+      "provider_id": "mistral",
+      "claim": "Mistral pivoted from a pure open-source crusader to a hybrid commercial vendor while lobbying to dilute EU AI Act governance obligations for foundational model developers.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-MIS-01",
+        "EVD-MIS-02",
+        "EVD-MIS-03"
+      ],
+      "falsifier": "Mistral releases its flagship frontier model under an unrestricted Apache 2.0 open-source license with full pre-training recipes.",
+      "consequence_owner": "Arthur Mensch (CEO, Mistral AI SAS)"
+    },
+    {
+      "id": "CLM-008",
+      "provider_id": "cohere",
+      "claim": "Cohere's strict optimization for enterprise contract compliance makes its models architecturally compliant with corporate falsehoods present within client private RAG stores.",
+      "causal_level": 4,
+      "causal_status": "PARTIAL",
+      "evidence_ids": [
+        "EVD-COH-01",
+        "EVD-COH-02",
+        "EVD-COH-03"
+      ],
+      "falsifier": "Cohere Command R autonomously flags and refutes internal factual contradictions or ethical violations present within a client's private RAG database without explicit prompting.",
+      "consequence_owner": "Aidan Gomez (CEO, Cohere Inc.)"
+    },
+    {
+      "id": "CLM-009",
+      "provider_id": "deepseek",
+      "claim": "DeepSeek bifurcates its model reality between unconstrained, efficient open weights and a state-regulated public API that strictly enforces Chinese cyberspace censorship.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-DPS-01",
+        "EVD-DPS-02",
+        "EVD-DPS-03"
+      ],
+      "falsifier": "DeepSeek's public hosted API answers queries regarding the 1989 Tiananmen Square protests with identical historical neutrality as its offline open weights.",
+      "consequence_owner": "Liang Wenfeng (CEO & Founder, DeepSeek & High-Flyer)"
+    },
+    {
+      "id": "CLM-010",
+      "provider_id": "alibaba",
+      "claim": "Alibaba Cloud deploys open weights as a geopolitical and commercial counterweight across Asia and the Global South while maintaining strict domestic compliance with state cyber authorities.",
+      "causal_level": 4,
+      "causal_status": "PROVEN",
+      "evidence_ids": [
+        "EVD-ALI-01",
+        "EVD-ALI-02",
+        "EVD-ALI-03"
+      ],
+      "falsifier": "Alibaba Cloud DashScope public API processes controversial queries regarding Chinese leadership or domestic political history without administrative censorship or refusal.",
+      "consequence_owner": "Eddie Wu (CEO, Alibaba Group)"
+    }
+  ]
+}

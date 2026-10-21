@@ -73,6 +73,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/world/politics/shadow/anwar-ibrahim/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/board/`, priority: 0.65, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/derita/`, priority: 0.65, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/world/ai/shadow/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/writing`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/doctrine`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
@@ -192,6 +193,9 @@ The /words/ hub now exposes three peer subpages. Discovery parity with the React
 - [Shadow Board](https://arif-fazil.com/world/politics/shadow/board/): Comparative board view of all nine PM shadow profiles.
 - [Peta Derita](https://arif-fazil.com/world/politics/shadow/derita/): Suffering-index map companion surface.
 
+## World — AI Labs Shadow
+- [AI Labs Bayang](https://arif-fazil.com/world/ai/shadow/): Institutional shadow atlas of 10 major AI model labs — promises, ownership, compute, model reflection, and displaced consequences. Structure and causality ladder (Level 0–5). Fully machine-traversable (index.json, providers.json, claims.json, receipts.json, graph.json, manifest.json).
+
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml
 - RSS (editorial): https://arif-fazil.com/feed.xml
@@ -215,6 +219,7 @@ function buildLlmsJson(pieces) {
       "MakcikGPT civic intelligence — BM articles on sovereignty, governance, technology accountability (canonical landing)",
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",
     "/world/politics/shadow/anwar-ibrahim/": "33 Bayang Anwar Ibrahim — three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 public sources, editorial psychology analysis",
+    "/world/ai/shadow/": "AI Labs Bayang — institutional shadow atlas of major AI model labs (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Microsoft, Mistral, Cohere, DeepSeek, Alibaba) — promises, ownership, compute, model reflection, and displaced consequences",
   };
   for (const p of pieces) {
     routeRoles[p.dest.path] = `MakcikGPT article — ${p.title}`;

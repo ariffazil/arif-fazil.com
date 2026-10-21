@@ -1,0 +1,214 @@
+{
+  "manifest": {
+    "schema": "arifos.ai-shadow-manifest.v1",
+    "version": "1.0.0",
+    "title": "AI LABS BAYANG — Institutional Shadow Atlas of Major AI Model Labs",
+    "canonical_url": "https://arif-fazil.com/world/ai/shadow/",
+    "description": "Comprehensive, evidence-bounded institutional audit examining public promises, legal control, capital/compute flows, model reflection, and displaced consequences across 10 major AI model providers.",
+    "language": "en-US / ms-MY",
+    "as_of": "2026-10-21",
+    "generated_at": "2026-10-21T11:28:05.060784Z",
+    "epistemic_status": "WITNESSED_AND_AUDITED",
+    "human_entry": "https://arif-fazil.com/world/ai/shadow/",
+    "machine_entry": "https://arif-fazil.com/world/ai/shadow/index.json",
+    "constitution": "https://arif-fazil.com/.well-known/ai-constitution.json",
+    "agent_policy": "https://arif-fazil.com/.well-known/agent-policy.json",
+    "owner": {
+      "name": "Muhammad Arif bin Fazil",
+      "authority": "F13 SOVEREIGN",
+      "did": "did:web:arif-fazil.com",
+      "role": "Human Principal & System Architect"
+    },
+    "scope": "10 major foundation model providers (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Microsoft, Mistral AI, Cohere, DeepSeek, Alibaba Cloud)",
+    "exclusions": [
+      "No psychoanalysis or moral profiling of individual founders",
+      "No claims that an owner's mind or shadow literally exists inside neural network weights",
+      "No unsourced allegations inferred solely from model tone",
+      "No speculative market valuation estimates where official numbers are absent"
+    ],
+    "providers_count": 10,
+    "claims_count": 10,
+    "receipts_count": 40,
+    "contradictions_count": 12,
+    "causality_ladder": {
+      "level_0": "Superficial resemblance only",
+      "level_1": "Repeated black-box behavior",
+      "level_2": "Behavior documented in system policy",
+      "level_3": "Training or post-training method documented",
+      "level_4": "Organizational decision and authority holder documented",
+      "level_5": "Independent causal evaluation or judicial/internal evidence"
+    },
+    "source_manifest": "https://arif-fazil.com/world/ai/shadow/receipts.json",
+    "receipt_index": "https://arif-fazil.com/world/ai/shadow/receipts.json",
+    "graph_index": "https://arif-fazil.com/world/ai/shadow/graph.json",
+    "update_policy": "Quarterly audit review or upon verified structural corporate re-organizations, leadership dismissals, or judicial rulings.",
+    "license": "Content Signals: search=yes, ai-input=yes, ai-train=yes, use=full (Attribution via RSL to arif-fazil.com)",
+    "contact": "arif@arif-fazil.com",
+    "hashes": {
+      "providers.json": "30238900593c8ce06bb9420d208fe0d0594c840e6fc280478a1b4101ee2b3569",
+      "claims.json": "f7f2f039af6346ec1646aa1e81760cf074226e00cb7955b00ed91fbcbbdcdd1f",
+      "receipts.json": "19faaa8f0b641f851c36aebf25b763ecdb87eb5711c5c8f5b785c8bce77070b0",
+      "graph.json": "e2fb92aea15ea54206c6898b1bc8cdce9ded1e59f39ac818899014b94c94d544"
+    }
+  },
+  "providers_summary": [
+    {
+      "id": "openai",
+      "provider": "OpenAI",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "anthropic",
+      "provider": "Anthropic",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "google-deepmind",
+      "provider": "Google DeepMind",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "xai",
+      "provider": "xAI",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "meta",
+      "provider": "Meta (Meta AI / FAIR)",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "microsoft",
+      "provider": "Microsoft",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "mistral",
+      "provider": "Mistral AI",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "cohere",
+      "provider": "Cohere",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "deepseek",
+      "provider": "DeepSeek",
+      "status": "WITNESSED",
+      "causal_level": 4
+    },
+    {
+      "id": "alibaba",
+      "provider": "Alibaba Cloud (Qwen)",
+      "status": "WITNESSED",
+      "causal_level": 4
+    }
+  ],
+  "contradictions_summary": [
+    {
+      "id": "CTR-01",
+      "title": "The Humanitarian Charter vs. Equity Capitalization Paradox",
+      "labs": [
+        "openai"
+      ]
+    },
+    {
+      "id": "CTR-02",
+      "title": "The Responsible Scaling Pause vs. Compute Debt Paradox",
+      "labs": [
+        "anthropic"
+      ]
+    },
+    {
+      "id": "CTR-03",
+      "title": "The Search Monopolist's Cannibalization Paradox",
+      "labs": [
+        "google-deepmind"
+      ]
+    },
+    {
+      "id": "CTR-04",
+      "title": "The Unfiltered Truth vs. Single-Owner Fealty Paradox",
+      "labs": [
+        "xai"
+      ]
+    },
+    {
+      "id": "CTR-05",
+      "title": "The Delegated Alignment Liability Paradox",
+      "labs": [
+        "microsoft",
+        "openai"
+      ]
+    },
+    {
+      "id": "CTR-06",
+      "title": "The Sovereign Open-Source vs. Proprietary Monetization Pivot",
+      "labs": [
+        "mistral"
+      ]
+    },
+    {
+      "id": "CTR-07",
+      "title": "The Grounded Truth vs. Client Falsehood Indifference Paradox",
+      "labs": [
+        "cohere"
+      ]
+    },
+    {
+      "id": "CTR-08",
+      "title": "The Permissive Weights vs. State-Regulated Gateway Paradox",
+      "labs": [
+        "deepseek"
+      ]
+    },
+    {
+      "id": "CTR-09",
+      "title": "The Strategic Commodity vs. Proprietary Moat Paradox",
+      "labs": [
+        "meta",
+        "alibaba"
+      ]
+    },
+    {
+      "id": "CTR-10",
+      "title": "The Community Safety vs. Unaudited Weight Release Paradox",
+      "labs": [
+        "meta"
+      ]
+    },
+    {
+      "id": "CTR-11",
+      "title": "The Enterprise Neutrality vs. State Power Alignment Paradox",
+      "labs": [
+        "microsoft",
+        "cohere"
+      ]
+    },
+    {
+      "id": "CTR-12",
+      "title": "The Silicon Blockade vs. Algorithmic Efficiency Leap Paradox",
+      "labs": [
+        "deepseek",
+        "alibaba"
+      ]
+    }
+  ],
+  "machine_endpoints": {
+    "manifest": "/world/ai/shadow/manifest.json",
+    "providers": "/world/ai/shadow/providers.json",
+    "claims": "/world/ai/shadow/claims.json",
+    "receipts": "/world/ai/shadow/receipts.json",
+    "graph": "/world/ai/shadow/graph.json",
+    "llms": "/world/ai/shadow/llms.txt"
+  }
+}

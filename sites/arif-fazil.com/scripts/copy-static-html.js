@@ -161,6 +161,7 @@ function stampRouteShell(spaHtml, route) {
 const STATIC_INDEX_ALLOWLIST = new Set([
   "world/politics/shadow/index.html",
   "world/politics/shadow/anwar-ibrahim/index.html",
+  "world/ai/shadow/index.html",
   "institution/index.html",
   "human/index.html",
   // Sealed dossiers (2026-09-18). Deep static documents, not React routes.

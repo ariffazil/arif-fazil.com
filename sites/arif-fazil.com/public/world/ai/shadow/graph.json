@@ -1,0 +1,196 @@
+{
+  "nodes": [
+    {
+      "id": "oai-np",
+      "label": "OpenAI, Inc. (Non-Profit)",
+      "type": "GOVERNANCE_BOARD"
+    },
+    {
+      "id": "oai-llc",
+      "label": "OpenAI Global LLC",
+      "type": "OPERATING_COMPANY"
+    },
+    {
+      "id": "msft",
+      "label": "Microsoft Corporation",
+      "type": "HYPERSCALER_INVESTOR"
+    },
+    {
+      "id": "ant-pbc",
+      "label": "Anthropic PBC",
+      "type": "OPERATING_COMPANY"
+    },
+    {
+      "id": "ant-ltbt",
+      "label": "Long-Term Benefit Trust",
+      "type": "GOVERNANCE_TRUST"
+    },
+    {
+      "id": "amzn",
+      "label": "Amazon.com Inc. (AWS)",
+      "type": "HYPERSCALER_INVESTOR"
+    },
+    {
+      "id": "goog",
+      "label": "Alphabet Inc. / Google",
+      "type": "HYPERSCALER_OWNER"
+    },
+    {
+      "id": "gdm",
+      "label": "Google DeepMind",
+      "type": "RESEARCH_DIVISION"
+    },
+    {
+      "id": "musk",
+      "label": "Elon Musk (Sole Controller)",
+      "type": "INDIVIDUAL_CONTROLLER"
+    },
+    {
+      "id": "xai",
+      "label": "xAI Corp.",
+      "type": "OPERATING_COMPANY"
+    },
+    {
+      "id": "x-corp",
+      "label": "X Corp. (Social Data)",
+      "type": "DATA_AFFILIATE"
+    },
+    {
+      "id": "meta",
+      "label": "Meta Platforms, Inc.",
+      "type": "HYPERSCALER_OWNER"
+    },
+    {
+      "id": "zuck",
+      "label": "Mark Zuckerberg (61% Vote)",
+      "type": "INDIVIDUAL_CONTROLLER"
+    },
+    {
+      "id": "mis",
+      "label": "Mistral AI SAS",
+      "type": "OPERATING_COMPANY"
+    },
+    {
+      "id": "coh",
+      "label": "Cohere Inc.",
+      "type": "OPERATING_COMPANY"
+    },
+    {
+      "id": "nvda",
+      "label": "Nvidia Corporation",
+      "type": "CHIP_INFRASTRUCTURE"
+    },
+    {
+      "id": "dps",
+      "label": "DeepSeek AI",
+      "type": "OPERATING_COMPANY"
+    },
+    {
+      "id": "highflyer",
+      "label": "High-Flyer Capital Mgmt",
+      "type": "FINANCIAL_PARENT"
+    },
+    {
+      "id": "ali",
+      "label": "Alibaba Group Holding",
+      "type": "HYPERSCALER_OWNER"
+    },
+    {
+      "id": "cac",
+      "label": "Cyberspace Administration of China",
+      "type": "STATE_REGULATOR"
+    }
+  ],
+  "edges": [
+    {
+      "source": "oai-np",
+      "target": "oai-llc",
+      "relationship": "FIDUCIARY_CONTROL",
+      "strength": "LEGAL_MONITOR"
+    },
+    {
+      "source": "msft",
+      "target": "oai-llc",
+      "relationship": "CAPITAL_AND_EXCLUSIVE_COMPUTE",
+      "strength": "$13B_49PCT_PROFIT"
+    },
+    {
+      "source": "ant-ltbt",
+      "target": "ant-pbc",
+      "relationship": "TRUSTEE_BOARD_ELECT",
+      "strength": "SUPER_CLASS_T_VOTE"
+    },
+    {
+      "source": "amzn",
+      "target": "ant-pbc",
+      "relationship": "CAPITAL_AND_PRIMARY_COMPUTE",
+      "strength": "$4B_INVESTMENT"
+    },
+    {
+      "source": "goog",
+      "target": "ant-pbc",
+      "relationship": "CAPITAL_AND_SECONDARY_COMPUTE",
+      "strength": "$2B_INVESTMENT"
+    },
+    {
+      "source": "goog",
+      "target": "gdm",
+      "relationship": "100PCT_OWNERSHIP_AND_CONTROL",
+      "strength": "CORPORATE_DIVISION"
+    },
+    {
+      "source": "musk",
+      "target": "xai",
+      "relationship": "ABSOLUTE_VOTING_AND_EXEC_FIAT",
+      "strength": "SOLE_DIRECTOR"
+    },
+    {
+      "source": "x-corp",
+      "target": "xai",
+      "relationship": "DATA_FIREHOSE_AND_DISTRIBUTION",
+      "strength": "AFFILIATE_CONTRACT"
+    },
+    {
+      "source": "zuck",
+      "target": "meta",
+      "relationship": "SUPER_VOTING_MAJORITY",
+      "strength": "61PCT_VOTING_POWER"
+    },
+    {
+      "source": "nvda",
+      "target": "msft",
+      "relationship": "HARDWARE_SUPPLY",
+      "strength": "H100_B200_CLUSTERS"
+    },
+    {
+      "source": "nvda",
+      "target": "xai",
+      "relationship": "HARDWARE_SUPPLY",
+      "strength": "100K_COLOSSUS_CHIPS"
+    },
+    {
+      "source": "highflyer",
+      "target": "dps",
+      "relationship": "100PCT_EQUITY_AND_SELF_FUNDING",
+      "strength": "HEDGE_FUND_PROFITS"
+    },
+    {
+      "source": "cac",
+      "target": "dps",
+      "relationship": "HOSTED_SERVICE_CENSORSHIP_MANDATE",
+      "strength": "SOVEREIGN_REGULATORY"
+    },
+    {
+      "source": "cac",
+      "target": "ali",
+      "relationship": "CLOUD_AI_FILING_AND_COMPLIANCE",
+      "strength": "SOVEREIGN_REGULATORY"
+    },
+    {
+      "source": "ali",
+      "target": "ali",
+      "relationship": "CLOUD_AI_INTELLIGENCE_DIVISION",
+      "strength": "CORPORATE_OWNERSHIP"
+    }
+  ]
+}

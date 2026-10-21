@@ -44,7 +44,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/`, priority: 1.0, changefreq: "monthly", lastmod: "2026-09-13" },
     { loc: `${SITE_BASE}/pilot/`, priority: 0.9, changefreq: "weekly" },
     { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
-    { loc: `${SITE_BASE}/human`, priority: 0.85, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/human/`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/earth/`, priority: 0.8, changefreq: "monthly" },
     { loc: `${SITE_BASE}/vitals/`, priority: 0.9, changefreq: "weekly", lastmod: "2026-09-27" },
@@ -60,22 +60,20 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/words/makcikgpt/`, priority: 0.65, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/`, priority: 0.6, changefreq: "monthly" },
     { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
-    { loc: `${SITE_BASE}/klci/`, priority: 0.85, changefreq: "daily" },
-    { loc: `${SITE_BASE}/usdmyr/`, priority: 0.85, changefreq: "daily" },
+    { loc: `${SITE_BASE}/world/economics/klci/`, priority: 0.85, changefreq: "daily" },
+    { loc: `${SITE_BASE}/world/economics/usdmyr/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/gold/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/oil/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/gas/`, priority: 0.85, changefreq: "daily" },
-    { loc: `${SITE_BASE}/world`, priority: 0.7, changefreq: "daily" },
+    { loc: `${SITE_BASE}/world/`, priority: 0.7, changefreq: "daily" },
     { loc: `${SITE_BASE}/world/politics/ns-election/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/ns-election/compare/`, priority: 0.75, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/ns-election/playbook/`, priority: 0.75, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/shadow/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/anwar-ibrahim/`, priority: 0.7, changefreq: "monthly" },
-    { loc: `${SITE_BASE}/world/politics/shadow/board/`, priority: 0.65, changefreq: "monthly" },
-    { loc: `${SITE_BASE}/world/politics/shadow/derita/`, priority: 0.65, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/ai/shadow/`, priority: 0.8, changefreq: "weekly" },
-    { loc: `${SITE_BASE}/writing`, priority: 0.8, changefreq: "weekly" },
-    { loc: `${SITE_BASE}/doctrine`, priority: 0.9, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/words/writing/`, priority: 0.8, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/words/doctrine/`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
     // 2026-09-20 — public accountability surface: receipts, gate verdicts,
     // seal-chain state and the defect register. See /root/forge_work/witness-ledger/.
@@ -190,8 +188,6 @@ The /words/ hub now exposes three peer subpages. Discovery parity with the React
 ## World — Politics
 - [PM Bayang](https://arif-fazil.com/world/politics/shadow/): Jungian shadow analysis of all 9 Malaysian Prime Ministers — Persona / Bayang / Tragedi / Legasi. Framework analysis from public records; editorial, not biographical fact.
 - [Anwar Ibrahim — 33 Bayang](https://arif-fazil.com/world/politics/shadow/anwar-ibrahim/): Three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 cited public sources, editorial psychology analysis.
-- [Shadow Board](https://arif-fazil.com/world/politics/shadow/board/): Comparative board view of all nine PM shadow profiles.
-- [Peta Derita](https://arif-fazil.com/world/politics/shadow/derita/): Suffering-index map companion surface.
 
 ## World — AI Labs Shadow
 - [AI Labs Bayang](https://arif-fazil.com/world/ai/shadow/): Institutional shadow atlas of 10 major AI model labs — promises, ownership, compute, model reflection, and displaced consequences. Structure and causality ladder (Level 0–5). Fully machine-traversable (index.json, providers.json, claims.json, receipts.json, graph.json, manifest.json).

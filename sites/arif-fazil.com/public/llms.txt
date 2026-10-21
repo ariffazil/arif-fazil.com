@@ -67,8 +67,9 @@ The /words/ hub now exposes three peer subpages. Discovery parity with the React
 ## World — Politics
 - [PM Bayang](https://arif-fazil.com/world/politics/shadow/): Jungian shadow analysis of all 9 Malaysian Prime Ministers — Persona / Bayang / Tragedi / Legasi. Framework analysis from public records; editorial, not biographical fact.
 - [Anwar Ibrahim — 33 Bayang](https://arif-fazil.com/world/politics/shadow/anwar-ibrahim/): Three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 cited public sources, editorial psychology analysis.
-- [Shadow Board](https://arif-fazil.com/world/politics/shadow/board/): Comparative board view of all nine PM shadow profiles.
-- [Peta Derita](https://arif-fazil.com/world/politics/shadow/derita/): Suffering-index map companion surface.
+
+## World — AI Labs Shadow
+- [AI Labs Bayang](https://arif-fazil.com/world/ai/shadow/): Institutional shadow atlas of 10 major AI model labs — promises, ownership, compute, model reflection, and displaced consequences. Structure and causality ladder (Level 0–5). Fully machine-traversable (index.json, providers.json, claims.json, receipts.json, graph.json, manifest.json).
 
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml

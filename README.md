@@ -55,24 +55,30 @@ graph TB
 
 ## 🌐 Unified Path Structure
 
+Measured 2026-10-22 against live routing (curl, status + redirect target):
+
 ```
 https://arif-fazil.com/
 ├── /               ← React 19 Cockpit (SPA)
-├── /000/           ← Genesis / Identity
-├── /999/           ← Seal Verification
-├── /arifos/        ← Observatory & Proof
-├── /aaa/           ← Control Plane Cockpit
-├── /geox/          ← Earth Intelligence Lab
-├── /wealth/        ← Capital Intelligence
-├── /well/          ← Human Readiness
-├── /forge/         ← Execution Surface
-├── /mcp/           ← MCP Connection Guide
-├── /wiki/          ← Constitutional Wiki
-├── /oil/ /gas/ /gold/ ← Commodity Dashboards
-├── /earth/         ← Earth Evidence
-├── /essays/        ← Sovereign Essays
-├── /federation/    ← Federation State
-├── /proof/         ← Proof Pack
+├── /000/           ← Genesis / Identity                      [200]
+├── /999/           ← Seal Verification                        [200]
+├── /arifos/        ← Observatory & Proof                      [200, apex path]
+├── /aaa/           → 301  https://aaa.arif-fazil.com/         (subdomain serves it)
+├── /geox/          → 308  https://geox.arif-fazil.com/        (subdomain serves it)
+├── /wealth/        → 308  /vitals/                            (capital pulse lives at /vitals/)
+├── /well/          ← Human Readiness                          [200, apex path]
+├── /forge/         → 301  https://forge.arif-fazil.com/       (subdomain; MCP edge)
+├── /mcp/           → 307  /mcp  (protocol door — GET returns 405; POST JSON-RPC only)
+├── /wiki/          → 301  https://wiki.arif-fazil.com/        (subdomain serves it)
+├── /world/         ← World hub: Atlas · Keluarga Bayang · Markets (KLCI/USD-MYR) · Oil/Gas/Gold
+├── /world/politics/shadow/   ← PM Bayang                      [200, registry live]
+├── /world/ai/shadow/         ← AI Labs Bayang                 [200, registry live]
+├── /world/petronas/shadow/   ← Kerusi Bayang                  [200, registry live]
+├── /oil/ /gas/ /gold/        ← Commodity Dashboards           [200]
+├── /earth/         ← Earth Evidence                           [200]
+├── /words/writing/ ← Sovereign Essays (canonical — /essays/ 308s here)
+├── /doctrine/      ← Doctrine (canonical — /federation/ 301s here)
+├── /work/proof/    ← Proof Pack (canonical — /proof/ 308s here)
 └── /_shared/       ← Design System & Assets
 ```
 
@@ -80,16 +86,22 @@ https://arif-fazil.com/
 
 ## 🔄 Legacy Subdomain Redirects
 
-| Legacy | → | Unified |
-|--------|---|---------|
-| `arifos.arif-fazil.com` | → | `/arifos/` |
-| `aaa.arif-fazil.com` | → | `/aaa/` |
-| `geox.arif-fazil.com` | → | `/geox/` |
-| `wealth.arif-fazil.com` | → | `/wealth/` |
-| `well.arif-fazil.com` | → | `/well/` |
-| `forge.arif-fazil.com` | → | `/forge/` |
-| `mcp.arif-fazil.com` | → | `/mcp/` |
-| `wiki.arif-fazil.com` | → | `/wiki/` |
+Organ surfaces live on their own subdomains; apex paths redirect TO them
+(direction is subdomain-ward, measured 2026-10-22):
+
+| Apex path | → | Organ home | Status |
+|-----------|---|------------|--------|
+| `/aaa/` | → | `aaa.arif-fazil.com` | 301 |
+| `/geox/` | → | `geox.arif-fazil.com` | 308 |
+| `/forge/` | → | `forge.arif-fazil.com` | 301 |
+| `/wiki/` | → | `wiki.arif-fazil.com` | 301 |
+| `/mcp/` | → | protocol door (POST JSON-RPC; GET 405) | 307 |
+
+Apex-native paths (serve directly, no subdomain): `/arifos/`, `/well/`, `/earth/`,
+`/world/*`, `/words/*`, `/work/*`, `/vitals/`, `/oil/`, `/gas/`, `/gold/`, `/000/`, `/999/`.
+
+Subdomain → apex legacy aliases that still resolve (200): `arifos`, `wealth` (→ `/vitals/`),
+`well`, `mcp` subdomains all respond; none were broken.
 
 ---
 
@@ -108,9 +120,16 @@ arif-fazil.com/
 ├── apps/                     # Dynamic product UIs
 ├── infra/                    # Constitutional manifests, domain routing
 ├── scripts/                  # Deployment & audit scripts
+├── surfaces.json             # ⭐ CANONICAL surface registry (repo root, 2026-10-22) —
+│                             #    112 entries (74 live / 37 redirect / 1 gone); sitemap,
+│                             #    discovery views and DTI gates generate from this
 ├── deploy-vps.sh             # VPS deployment script
 └── verify-pages.sh           # ⛔ Deploy gate — must pass before seal
 ```
+
+**Registry rule (2026-10-22):** if a surface is not in `surfaces.json`, it is not
+served to machines. Adding a page = register it here first; sitemap and discovery
+views regenerate from this one source.
 
 ---
 

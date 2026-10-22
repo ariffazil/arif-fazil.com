@@ -16,6 +16,7 @@
     "/world/makcikgpt/": "MakcikGPT civic intelligence — BM articles on sovereignty, governance, technology accountability (canonical landing)",
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",
     "/world/politics/shadow/anwar-ibrahim/": "33 Bayang Anwar Ibrahim — three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 public sources, editorial psychology analysis",
+    "/world/ai/shadow/": "AI Labs Bayang — institutional shadow atlas of major AI model labs (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Microsoft, Mistral, Cohere, DeepSeek, Alibaba) — promises, ownership, compute, model reflection, and displaced consequences",
     "/world/makcikgpt/gentari-dossier": "MakcikGPT article — Gentari: Dossier Realiti — Apa Dia, Siapa Punya, Berapa Besar",
     "/world/makcikgpt/gentari-15-benda-bangang": "MakcikGPT article — Gentari: 15 Benda Yang Tak Masuk Akal",
     "/world/makcikgpt/taufik-pergi-mana": "MakcikGPT article — Taufik Lepas Ni Pergi Mana? Empat Sebab CEO Takut, Satu Sebab Dia Stay",
@@ -103,5 +104,5 @@
     "llms_txt": true,
     "sitemap": true
   },
-  "last_updated": "2026-10-20"
+  "last_updated": "2026-10-21"
 }

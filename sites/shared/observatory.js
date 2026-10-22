@@ -645,8 +645,8 @@
     { id: 'P1-3', scope: 'TypeScript client', status: 'SEALED' },
     { id: 'P1-B', scope: 'PAI ↔ arifFLOW bridge', status: 'SEALED' },
     { id: 'P1-4', scope: 'AAA emitReceipt wiring', status: 'SEALED LIVE' },
-    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'HOLD / planned' },
-    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'NEXT / AF-1 canary' },
+    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'CANARY LIVE' },
+    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'CANARY LIVE' },
     { id: 'P1-7', scope: 'deprecation flags', status: 'pending' },
   ];
   const p1Snapshot = (data) => {
@@ -685,8 +685,8 @@
     const flow = flowSnapshot(data).value;
     const gate = unwrap(firstPresent(data.next_mutation_gate, flow && flow.next_mutation_gate));
     const fallback = {
-      status: 'HOLD', authority: 'ARIF GO required', canary: 'P1-6 AF-1 telemetry.ts logEvent() canary',
-      follow_up: 'P1-5f Executor receipt canary', fallback: 'local fallback preserved', risk: 'low, additive-only',
+      status: 'HOLD', authority: 'ARIF GO required (next: executor full hook + P1-7)', canary: 'P1-5f + P1-6 canaries PASSED 2026-09-09',
+      follow_up: 'executor full receipt hook + P1-7 deprecation flags', fallback: 'local fallback preserved', risk: 'low, additive-only',
     };
     const values = {};
     Object.entries(fallback).forEach(([key, value]) => {
@@ -801,8 +801,8 @@
       receipt_produced: 'yes', telemetry_produced: 'yes', overall: 'SEALED LIVE', overlay_ref: 'P1-4',
     },
     {
-      source: 'A-FORGE', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'pending AF-110',
-      receipt_produced: 'pending P1-5', telemetry_produced: 'pending AF-110', overall: 'HOLD', overlay_ref: 'AF-110 / P1-5',
+      source: 'A-FORGE', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'canary P1-5f 2026-09-09',
+      receipt_produced: 'canary live (P1-5f)', telemetry_produced: 'live via telemetry.ts /ingest (P1-6)', overall: 'CANARY LIVE', overlay_ref: 'AF-110 / P1-5',
     },
     {
       source: 'arifOS', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'pending OS-1',

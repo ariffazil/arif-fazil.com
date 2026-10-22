@@ -72,6 +72,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/world/politics/shadow/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/shadow/anwar-ibrahim/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/ai/shadow/`, priority: 0.8, changefreq: "weekly" },
+    { loc: `${SITE_BASE}/world/petronas/shadow/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/words/writing/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/words/doctrine/`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },

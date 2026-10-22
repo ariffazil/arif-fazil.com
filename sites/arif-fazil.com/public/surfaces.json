@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18",
+  "version": "2026-10-22",
   "domain": "arif-fazil.com",
   "doctrine": {
     "title": "Single canonical surface catalog. All machine catalogs are generated views of this file.",
@@ -257,6 +257,36 @@
       "description": "Gold trading synthesis and technical analysis dashboard. Measured 2026-10-18: serves 308 → /gold/; catalog corrected from status=live.",
       "code": 308,
       "redirects_to": "/gold/"
+    },
+    {
+      "path": "/world/petronas/shadow/",
+      "title": "Kerusi Bayang — Every PETRONAS Chairman & Chief Executive, 1974–2026",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "Every PETRONAS chairman and CEO 1974–2026: mandate, what they brought, what they got, scars, transition, verdict — claim register + source ledger. Keluarga Bayang. JSON-LD added 2026-10-22."
+    },
+    {
+      "path": "/world/economics/klci/",
+      "title": "FBM KLCI — Bursa Malaysia Signal Terminal",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "daily",
+      "description": "Live Bursa Malaysia composite index signal terminal with WEALTH cognitive briefing. Restored 2026-10-22; og tags + H1 added same day."
+    },
+    {
+      "path": "/world/economics/usdmyr/",
+      "title": "USD/MYR — Ringgit FX Signal Terminal",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "daily",
+      "description": "Live USD/MYR ringgit FX terminal with WEALTH cognitive briefing. Restored 2026-10-22; og tags added same day."
     },
     {
       "path": "/world/politics/ns-election/",
@@ -1121,5 +1151,5 @@
     "did": "did:web:arif-fazil.com"
   },
   "as_of": "2026-10-18T14:13:47Z",
-  "last_updated": "2026-10-18"
+  "last_updated": "2026-10-22"
 }

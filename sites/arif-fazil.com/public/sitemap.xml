@@ -157,6 +157,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://arif-fazil.com/world/petronas/shadow/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://arif-fazil.com/words/writing/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

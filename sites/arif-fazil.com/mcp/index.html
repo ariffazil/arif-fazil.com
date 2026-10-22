@@ -1,22 +1,1778 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-ring="MIND">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCP moved — use mcp.arif-fazil.com</title>
-  <meta name="robots" content="noindex, follow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>arifOS MCP — Sovereign Developer Gateway</title>
+  <meta name="description" content="Public Streamable-HTTP Model Context Protocol (MCP) gateway for the arifOS kernel. 8 canonical verbs, 13 constitutional floors, 7 federation organs. Governed AI with cryptographic evidence.">
   <link rel="canonical" href="https://mcp.arif-fazil.com/">
-  <meta http-equiv="refresh" content="0; url=https://mcp.arif-fazil.com/">
+  
+  <!-- Social & Search Identity -->
+  <meta property="og:title" content="arifOS MCP — Sovereign Developer Gateway">
+  <meta property="og:description" content="Public Streamable-HTTP Model Context Protocol gateway for arifOS. 8 canonical verbs, 13 constitutional floors, triadic witness.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mcp.arif-fazil.com/">
+  <meta property="og:image" content="https://arif-fazil.com/og-identity.png">
+  <meta property="og:site_name" content="arif-fazil.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="arifOS MCP — Sovereign Developer Gateway">
+  <meta name="twitter:description" content="Public Streamable-HTTP Model Context Protocol gateway for arifOS. Bounded, observable, reality-grounded AI.">
+  <meta name="twitter:image" content="https://arif-fazil.com/og-identity.png">
+  
+  <!-- Machine Discovery Links -->
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="llms-full.txt">
+  <link rel="alternate" type="application/json" href="/.well-known/mcp/server.json" title="MCP Server Manifest">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ω</text></svg>">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/_shared/design-system/tokens.css">
+  
+  <!-- Schema.org SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "arifOS MCP Gateway",
+    "description": "Bounded, observable Model Context Protocol endpoint for the arifOS kernel.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux",
+    "url": "https://mcp.arif-fazil.com/",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Person",
+      "name": "Muhammad Arif bin Fazil",
+      "url": "https://arif-fazil.com"
+    },
+    "featureList": [
+      "Streamable HTTP MCP Transport (2024-11-05 spec)",
+      "8 Canonical Kernel Verbs",
+      "13 Constitutional Floors (F1–F13)",
+      "Federation Discovery & Multi-Organ Mesh",
+      "VAULT999 Cryptographic Evidence Ledger"
+    ]
+  }
+  </script>
+
   <style>
-    body{font-family:system-ui,sans-serif;background:#0d0c0b;color:#d4d2ce;display:grid;place-items:center;min-height:100dvh;margin:0;padding:1.5rem;text-align:center}
-    a{color:#3a9ea8}
-    p{color:#9b9995;max-width:36ch}
+    :root {
+      --bg: #07090e;
+      --bg-surface: #0e121a;
+      --bg-elevated: #141a24;
+      --bg-card: #101520;
+      --border: #1e2638;
+      --border-focus: #2d3b55;
+      --text: #e6edf3;
+      --text-muted: #8b98a8;
+      --text-faint: #526075;
+      --gold: #D4A853;
+      --gold-dim: rgba(212, 168, 83, 0.15);
+      --cyan: #00D4AA;
+      --cyan-dim: rgba(0, 212, 170, 0.12);
+      --green: #22c55e;
+      --green-dim: rgba(34, 197, 94, 0.15);
+      --red: #ef4444;
+      --red-dim: rgba(239, 68, 68, 0.15);
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.15);
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+      --maxw: 1140px;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
+    }
+    
+    a { color: var(--gold); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: #f3ce7b; text-decoration: underline; }
+    code, pre { font-family: var(--font-mono); }
+    
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    
+    /* Navigation Bar */
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    .brand span.tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-style: normal;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,170,0.3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+    }
+    .nav-links a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    /* Status Badge Chip */
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+    .dot.amber { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+    .dot.red { background: var(--red); box-shadow: 0 0 8px var(--red); }
+    
+    /* Hero Section */
+    .hero {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,170,0.3);
+      color: var(--cyan);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-family: var(--font-mono);
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .hero p.lede {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 780px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #07090e;
+    }
+    .btn-primary:hover {
+      background: #e2ba66;
+      color: #07090e;
+      text-decoration: none;
+      box-shadow: 0 0 16px rgba(212, 168, 83, 0.4);
+    }
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-elevated);
+      border-color: var(--border-focus);
+      text-decoration: none;
+      color: #fff;
+    }
+    .endpoint-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--cyan);
+    }
+    
+    /* Live Telemetry Strip */
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 32px 0 0;
+    }
+    .telemetry-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .telemetry-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-faint);
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+    }
+    .telemetry-val {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .telemetry-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-head {
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 720px;
+    }
+    
+    /* Quickstart Tabs (Smithery / Glama Pattern) */
+    .tabs-wrapper {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .tab-bar {
+      display: flex;
+      overflow-x: auto;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 8px 0;
+      gap: 4px;
+    }
+    .tab-btn {
+      padding: 10px 16px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--gold);
+      border-color: var(--border);
+      font-weight: 600;
+    }
+    .tab-pane {
+      display: none;
+      padding: 24px;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    .code-box {
+      position: relative;
+      background: #05070a;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+    .code-box pre {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #c9d1d9;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 6px 12px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .copy-btn:hover {
+      background: var(--border-focus);
+      color: #fff;
+    }
+    .step-guide {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .step-num {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border-radius: 50%;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .step-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Verbs Grid */
+    .verbs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .verbs-grid { grid-template-columns: 1fr; }
+    }
+    .verb-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .verb-card:hover {
+      border-color: var(--border-focus);
+    }
+    .verb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .verb-name {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stage-tag {
+      font-size: 10px;
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .badge-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .badge-observe { background: var(--cyan-dim); color: var(--cyan); border: 1px solid rgba(0,212,170,0.3); }
+    .badge-rw { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(212,168,83,0.3); }
+    .badge-judge { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-mutate { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+    .badge-seal { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+    .badge-void { background: var(--red-dim); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+    
+    .verb-purpose {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .verb-meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+    .verb-meta-table th {
+      text-align: left;
+      padding: 6px 8px;
+      color: var(--text-faint);
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+    .verb-meta-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    
+    /* Interactive Console / Playground (Glama Inspector) */
+    .console-box {
+      background: #040609;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .console-header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .console-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .console-select {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .console-btn {
+      background: var(--cyan);
+      color: #040609;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .console-btn:hover { background: #19ffcf; }
+    .console-body {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .console-body { grid-template-columns: 1fr; }
+    }
+    .console-editor {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--gold);
+      min-height: 180px;
+      white-space: pre-wrap;
+    }
+    .console-output {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #c9d1d9;
+      min-height: 180px;
+      max-height: 320px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    /* Federation Map & Organs */
+    .organs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .organ-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .organ-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .organ-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .organ-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .organ-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .organ-endpoint {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--cyan);
+      background: var(--bg-card);
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    /* Evidence & Gaps Callouts */
+    .gaps-box {
+      background: var(--bg-surface);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+    .gaps-box h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--amber);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gaps-list {
+      padding-left: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    
+    .evidence-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 640px) {
+      .evidence-cards { grid-template-columns: 1fr; }
+    }
+    .evidence-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .evidence-card h3 {
+      font-size: 15px;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .evidence-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      padding: 48px 0 24px;
+      border-top: 1px solid var(--border);
+      margin-top: 64px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-byline {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-faint);
+      border-left: 2px solid var(--gold);
+      padding-left: 12px;
+      line-height: 1.7;
+    }
+    .sovereign-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Canonical MCP Gateway</h1>
-    <p>This path is not indexed. The single public MCP door is <a href="https://mcp.arif-fazil.com/">mcp.arif-fazil.com</a>.</p>
-  </main>
+
+  <!-- Top Navigation Bar -->
+  <nav class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="https://arif-fazil.com" class="brand">
+        ARIF FAZIL <span class="tag">mcp.gateway</span>
+      </a>
+      <div class="nav-links">
+        <a href="#connect">Connect</a>
+        <a href="#verbs">8 Verbs</a>
+        <a href="#playground">Console</a>
+        <a href="#map">Federation</a>
+        <a href="#evidence">Evidence</a>
+        <a href="/health" target="_blank">Health</a>
+        <a href="/llms.txt" target="_blank">llms.txt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-badge">
+        <span class="dot" id="live-dot"></span>
+        <span id="live-header-status">Streamable HTTP (2024-11-05) · Verified</span>
+      </div>
+      
+      <h1>arifOS MCP — Sovereign Developer Gateway</h1>
+      <p class="lede">
+        Bounded, observed Model Context Protocol endpoint for reality-aligned AI.
+        Connect any autonomous agent to 8 canonical kernel verbs, 13 constitutional floors, 
+        and the 7-organ federation with cryptographic proof.
+      </p>
+
+      <div class="hero-actions">
+        <div class="endpoint-pill">
+          <span style="color:var(--text-faint);font-size:11px;">POST</span>
+          <span id="endpoint-text">https://mcp.arif-fazil.com/mcp</span>
+        </div>
+        <button class="btn btn-primary" onclick="copyEndpoint()">Copy URL</button>
+        <a href="#connect" class="btn btn-secondary">Connect in 60s ↓</a>
+        <a href="#playground" class="btn btn-secondary">Test Live Request →</a>
+      </div>
+
+      <!-- Live Telemetry Strip (#status) -->
+      <section id="status" class="telemetry-grid" style="border:none;padding:0;" aria-labelledby="status-h">
+        <div class="telemetry-card">
+          <div class="telemetry-label">Transport Protocol</div>
+          <div class="telemetry-val">
+            <span class="dot"></span> Streamable HTTP
+          </div>
+          <div class="telemetry-sub">JSON-RPC 2.0 via POST /mcp</div>
+        </div>
+        
+        <div class="telemetry-card">
+          <div class="telemetry-label">Runtime Attestation</div>
+          <div class="telemetry-val" id="telemetry-commit">
+            a3e5132 · Live
+          </div>
+          <div class="telemetry-sub" id="telemetry-freshness">Fresh snapshot verified</div>
+        </div>
+        
+        <div class="telemetry-card">
+          <div class="telemetry-label">Constitutional Floors</div>
+          <div class="telemetry-val" style="color:var(--cyan);">
+            13 Floors Bound
+          </div>
+          <div class="telemetry-sub">F1 Amanah → F13 Sovereign</div>
+        </div>
+        
+        <div class="telemetry-card">
+          <div class="telemetry-label">Observation Contract</div>
+          <div class="telemetry-val">
+            <a href="/shared/claims.json" target="_blank" style="font-family:var(--font-mono);font-size:13px;">claims.json ↗</a>
+          </div>
+          <div class="telemetry-sub">Live health at <a href="/health">/health</a></div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- Section B · Connect in 60 seconds (Smithery / Glama Pattern) -->
+  <section id="connect" aria-labelledby="connect-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="connect-h">B · Connect in 60 seconds</h2>
+        <p>Verified client configurations. Select your agentic harness to install the arifOS MCP gateway immediately.</p>
+      </div>
+
+      <div class="tabs-wrapper">
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="switchTab('claude')">Claude Desktop</button>
+          <button class="tab-btn" onclick="switchTab('cursor')">Cursor</button>
+          <button class="tab-btn" onclick="switchTab('claude-code')">Claude Code CLI</button>
+          <button class="tab-btn" onclick="switchTab('windsurf')">Windsurf</button>
+          <button class="tab-btn" onclick="switchTab('cline')">Cline / Roo</button>
+          <button class="tab-btn" onclick="switchTab('zed')">Zed</button>
+          <button class="tab-btn" onclick="switchTab('goose')">Goose CLI</button>
+          <button class="tab-btn" onclick="switchTab('curl')">cURL Direct</button>
+          <button class="tab-btn" onclick="switchTab('python')">Python SDK</button>
+        </div>
+
+        <!-- Claude Desktop -->
+        <div id="tab-claude" class="tab-pane active">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Add to your <code>claude_desktop_config.json</code>:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-claude')">Copy Config</button>
+            <pre><code id="code-claude">{
+  "mcpServers": {
+    "arifos": {
+      "transport": "http",
+      "url": "https://mcp.arif-fazil.com/mcp"
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Cursor -->
+        <div id="tab-cursor" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Add to <code>.cursor/mcp.json</code> or project Settings → Features → MCP:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-cursor')">Copy Config</button>
+            <pre><code id="code-cursor">{
+  "mcpServers": {
+    "arifos": {
+      "url": "https://mcp.arif-fazil.com/mcp"
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Claude Code CLI -->
+        <div id="tab-claude-code" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Run in terminal to register the gateway globally in Claude Code:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-claude-code')">Copy Command</button>
+            <pre><code id="code-claude-code">claude mcp add --transport http arifos https://mcp.arif-fazil.com/mcp</code></pre>
+          </div>
+        </div>
+
+        <!-- Windsurf -->
+        <div id="tab-windsurf" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Add to <code>~/.codeium/windsurf/mcp_config.json</code>:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-windsurf')">Copy Config</button>
+            <pre><code id="code-windsurf">{
+  "mcpServers": {
+    "arifos": {
+      "serverUrl": "https://mcp.arif-fazil.com/mcp"
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Cline / Roo -->
+        <div id="tab-cline" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Add to <code>cline_mcp_settings.json</code>:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-cline')">Copy Config</button>
+            <pre><code id="code-cline">{
+  "mcpServers": {
+    "arifos": {
+      "url": "https://mcp.arif-fazil.com/mcp",
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Zed -->
+        <div id="tab-zed" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Add to Zed editor <code>settings.json</code>:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-zed')">Copy Config</button>
+            <pre><code id="code-zed">{
+  "context_servers": {
+    "arifos": {
+      "endpoint": "https://mcp.arif-fazil.com/mcp"
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Goose CLI -->
+        <div id="tab-goose" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Run in terminal for Block Goose agent:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-goose')">Copy Command</button>
+            <pre><code id="code-goose">goose configure --add-extension --name arifos --uri https://mcp.arif-fazil.com/mcp</code></pre>
+          </div>
+        </div>
+
+        <!-- cURL Direct -->
+        <div id="tab-curl" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Probe directly via terminal JSON-RPC 2.0:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-curl')">Copy cURL</button>
+            <pre><code id="code-curl">curl -X POST https://mcp.arif-fazil.com/mcp   -H "Content-Type: application/json"   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'</code></pre>
+          </div>
+        </div>
+
+        <!-- Python SDK -->
+        <div id="tab-python" class="tab-pane">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">
+            Official Python MCP Client implementation:
+          </p>
+          <div class="code-box">
+            <button class="copy-btn" onclick="copySnippet('code-python')">Copy Python</button>
+            <pre><code id="code-python">import asyncio
+from mcp import ClientSession
+from mcp.client.streamable_http import streamable_http_client
+
+async def main():
+    async with streamable_http_client("https://mcp.arif-fazil.com/mcp") as (read, write):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            tools = await session.list_tools()
+            print(f"Connected! Loaded {len(tools.tools)} canonical tools.")
+
+asyncio.run(main())</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Onboarding Recipe -->
+      <div class="step-guide">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title">Initialize Session</div>
+          <div class="step-desc">Call <code>arif_init</code> with your agent identity. The kernel binds F1–F13 constitutional floors and returns a session Continuity Token (SCT).</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title">Discover Capabilities</div>
+          <div class="step-desc">Call <code>tools/list</code> and <code>resources/list</code> without authentication to discover all 8 kernel verbs and 82 federation resources.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title">Safe Read-Only Operations</div>
+          <div class="step-desc">Execute <code>arif_observe</code> with <code>mode="vitals"</code>. Unsealed mutations are strictly prevented by deterministic gate.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section C · Eight Canonical Verbs -->
+  <section id="verbs" aria-labelledby="verbs-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="verbs-h">C · Eight Canonical Verbs</h2>
+        <p>The core execution contract of the arifOS kernel. Every verb carries strict authority ceilings, mutation classifications, and audit bindings.</p>
+      </div>
+
+      <div class="verbs-grid">
+        <!-- 000 arif_init -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_init</span>
+              <span class="stage-tag">000 · INIT</span>
+            </div>
+            <span class="badge-pill badge-observe">OBSERVE_ONLY</span>
+          </div>
+          <p class="verb-purpose">
+            Binds actor identity and constitutional floors F1–F13 for a governed session. Returns the <code>session_id</code> and Session Continuity Token (SCT).
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>None (Session Binding)</td><th>Risk Tier</th><td>T0 (Safe)</td></tr>
+            <tr><th>Modes</th><td colspan="3">init, light, resume, validate, canary, preflight, triage, epoch_open, epoch_seal, opt_out, opt_out_profiling</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>actor_id</code>, <code>intent</code>, <code>mode</code>, <code>sovereign_id</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_init')">Load in Console ↗</button>
+        </article>
+
+        <!-- 111 arif_observe -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_observe</span>
+              <span class="stage-tag">111 · OBSERVE</span>
+            </div>
+            <span class="badge-pill badge-observe">OBSERVE</span>
+          </div>
+          <p class="verb-purpose">
+            Read-only evidence collection against reality. Queries literature, fetches URLs with provenance, inspects vitals, and measures system entropy (dS).
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>None (Read-Only)</td><th>Risk Tier</th><td>T1 (Safe Read)</td></tr>
+            <tr><th>Modes</th><td colspan="3">search, fetch, hybrid_discovery, ingest, compass, atlas, entropy_dS, vitals</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>mode</code>, <code>query</code>, <code>session_id</code>, <code>url</code>, <code>layers</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_observe')">Load in Console ↗</button>
+        </article>
+
+        <!-- 333 arif_think -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_think</span>
+              <span class="stage-tag">333 · THINK</span>
+            </div>
+            <span class="badge-pill badge-observe">OBSERVE</span>
+          </div>
+          <p class="verb-purpose">
+            Structured reasoning with truth-class labels. Multi-step plan generation, epistemic hypothesis formulation, contradiction detection, and simulation.
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>None (Cognitive State)</td><th>Risk Tier</th><td>T1 (Reasoning)</td></tr>
+            <tr><th>Modes</th><td colspan="3">reason, reflect, verify, axioms, plan, plan_review, plan_approve, refactor_plan, metabolize, simulate, wonder, atlas, dag, branches, clarify</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>mode</code>, <code>query</code>, <code>session_id</code>, <code>plan_id</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_think')">Load in Console ↗</button>
+        </article>
+
+        <!-- 444 arif_route -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_route</span>
+              <span class="stage-tag">444 · ROUTE</span>
+            </div>
+            <span class="badge-pill badge-observe">OBSERVE</span>
+          </div>
+          <p class="verb-purpose">
+            Intent classification and dispatch to the designated target organ in the federation (GEOX, WEALTH, WELL, A-FORGE, AAA).
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>None (Routing Vector)</td><th>Risk Tier</th><td>T1 (Routing)</td></tr>
+            <tr><th>Modes</th><td colspan="3">route, bridge</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>intent</code>, <code>organ</code>, <code>task</code>, <code>session_id</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_route')">Load in Console ↗</button>
+        </article>
+
+        <!-- 555 arif_memory -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_memory</span>
+              <span class="stage-tag">555 · MEMORY</span>
+            </div>
+            <span class="badge-pill badge-rw">READ_WRITE</span>
+          </div>
+          <p class="verb-purpose">
+            Memory Governor for tiered persistent recall (L1 Working to L6 Episodic). Recalls, remembers, promotes, and audits memory traces under declared content class.
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>Memory Store Mutation</td><th>Risk Tier</th><td>T2 (Governed RW)</td></tr>
+            <tr><th>Modes</th><td colspan="3">recall, inspect, attest, remember, promote, revise, forget, audit, metabolize</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>mode</code>, <code>tier</code>, <code>content</code>, <code>memory_id</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_memory')">Load in Console ↗</button>
+        </article>
+
+        <!-- 666 arif_judge -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_judge</span>
+              <span class="stage-tag">666 · JUDGE</span>
+            </div>
+            <span class="badge-pill badge-judge">JUDGE</span>
+          </div>
+          <p class="verb-purpose">
+            Binding constitutional arbitration. Evaluates candidate actions against F1–F13 and emits formal verdicts: <code>SEAL</code>, <code>HOLD</code>, <code>SABAR</code>, or <code>VOID</code>.
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>None (Emits Verdict Hash)</td><th>Risk Tier</th><td>T4 (Constitutional)</td></tr>
+            <tr><th>Modes</th><td colspan="3">intercept, judge, validate, hold, escalate, score, collapse</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>candidate</code>, <code>action_tier</code>, <code>reversibility_level</code>, <code>blast_radius</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_judge')">Load in Console ↗</button>
+        </article>
+
+        <!-- 777 arif_forge -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_forge</span>
+              <span class="stage-tag">777 · FORGE</span>
+            </div>
+            <span class="badge-pill badge-mutate">MUTATE</span>
+          </div>
+          <p class="verb-purpose">
+            Governed code and state mutation through A-FORGE execution gate. Unsealed writes are refused; strictly requires prior 666 SEAL verdict hash.
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>State & Code Mutation</td><th>Risk Tier</th><td>T3 (Execute Gate)</td></tr>
+            <tr><th>Modes</th><td colspan="3">engineer, query, write, generate, commit, recall, dry_run</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>manifest</code>, <code>seal_verdict_id</code>, <code>judge_state_hash</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_forge')">Load in Console ↗</button>
+        </article>
+
+        <!-- 999 arif_seal -->
+        <article class="verb-card">
+          <div class="verb-header">
+            <div class="verb-name">
+              <span>arif_seal</span>
+              <span class="stage-tag">999 · SEAL</span>
+            </div>
+            <span class="badge-pill badge-seal">IRREVERSIBLE</span>
+          </div>
+          <p class="verb-purpose">
+            Append-only terminal anchoring to VAULT999 immutable cryptographic ledger. History cannot be rewritten. Requires <code>ack_irreversible=true</code>.
+          </p>
+          <table class="verb-meta-table">
+            <tr><th>Mutation</th><td>Permanent Ledger Append</td><th>Risk Tier</th><td>T5 (Permanent)</td></tr>
+            <tr><th>Modes</th><td colspan="3">seal, verify, ledger, changelog, audit, session_close</td></tr>
+            <tr><th>Key Parameters</th><td colspan="3"><code>payload</code>, <code>judge_state_hash</code>, <code>ack_irreversible</code></td></tr>
+          </table>
+          <button class="btn btn-secondary" style="font-size:11px;padding:4px 10px;" onclick="loadPlayground('arif_seal')">Load in Console ↗</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Live Console / Playground (Glama Inspector) -->
+  <section id="playground" aria-labelledby="playground-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="playground-h">Live In-Browser Console</h2>
+        <p>Direct live probe to <code>https://mcp.arif-fazil.com/mcp</code>. Test JSON-RPC 2.0 payloads right from your browser.</p>
+      </div>
+
+      <div class="console-box">
+        <div class="console-header">
+          <div class="console-controls">
+            <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-faint);">Method:</span>
+            <select id="preset-selector" class="console-select" onchange="applyPreset()">
+              <option value="tools_list">tools/list (Public Discovery)</option>
+              <option value="prompts_list">prompts/list (Prompts Catalog)</option>
+              <option value="resources_list">resources/list (Resources Map)</option>
+              <option value="arif_init">tools/call · arif_init (Session Ignition)</option>
+              <option value="arif_observe">tools/call · arif_observe (Vitals Probe)</option>
+            </select>
+          </div>
+          <button class="console-btn" onclick="executePlayground()">
+            <span>▶ Execute Live Request</span>
+          </button>
+        </div>
+
+        <div class="console-body">
+          <div>
+            <div style="font-size:11px;font-family:var(--font-mono);color:var(--text-faint);margin-bottom:6px;">REQUEST PAYLOAD (JSON-RPC 2.0)</div>
+            <textarea id="console-req" class="console-editor" spellcheck="false">{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/list",
+  "params": {}
+}</textarea>
+          </div>
+          <div>
+            <div style="font-size:11px;font-family:var(--font-mono);color:var(--text-faint);margin-bottom:6px;display:flex;justify-content:space-between;">
+              <span>RESPONSE <span id="resp-timing" style="color:var(--cyan);"></span></span>
+              <span id="resp-status" style="color:var(--text-muted);">Idle</span>
+            </div>
+            <div id="console-res" class="console-output">Click "Execute Live Request" to probe https://mcp.arif-fazil.com/mcp directly...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section D & E · Evidence, Gaps, and Reality -->
+  <section id="what" aria-labelledby="what-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="what-h">D · What the Gateway Proves & E · Known Gaps</h2>
+        <p>Constitutional AI requires total epistemic honesty. We publish what is proven alongside what is still unmeasured.</p>
+      </div>
+
+      <!-- Proven Evidence -->
+      <div class="evidence-cards">
+        <div class="evidence-card">
+          <h3>Deterministic Rejection Verified</h3>
+          <p>Hard-deterministic governance gates are observed and enforced. When an unauthenticated or invalid mutation is attempted, the kernel refutes it immediately with <code>llm_consulted=false</code>.</p>
+        </div>
+        <div class="evidence-card">
+          <h3>Unauthorized Mutation Prevented</h3>
+          <p>Triadic Witness and Execution Gate actively rejected unsealed mutations not bound to sovereign authority. Execution without prior SEAL verdict is impossible.</p>
+        </div>
+      </div>
+
+      <!-- Known Gaps (#gaps) -->
+      <div id="gaps" class="gaps-box" aria-labelledby="gaps-h">
+        <h3 id="gaps-h">⚠️ E · What It Does Not Yet Prove (Open Gaps)</h3>
+        <ol class="gaps-list">
+          <li><strong>Verified actor:</strong> Unsigned calls are permitted in OBSERVE_ONLY band; cryptographic key-attestation is not yet mandatory for anonymous public reads.</li>
+          <li><strong>Receipt fidelity:</strong> Public telemetry lacks complete governance debug fields; one HOLD was persisted as <code>ok:true</code> in legacy logger.</li>
+          <li><strong>Sink agreement:</strong> One failed ledger event was omitted by secondary organ counters during high-load reconciler pass.</li>
+          <li><strong>Independent reconstruction:</strong> External third-party auditor verifier has not yet bound into the automatic continuous CI seal chain.</li>
+        </ol>
+      </div>
+
+      <!-- Current State (#current) -->
+      <div id="current" style="margin-top:28px;" aria-labelledby="cs-h">
+        <h3 id="cs-h" style="font-size:16px;color:#fff;margin-bottom:8px;">F · Measured Current State</h3>
+        <p style="font-size:14px;color:var(--text-muted);">
+          Evaluation Set: <span style="color:var(--green);font-weight:600;">15 Pass</span> · 
+          <span style="color:var(--red);font-weight:600;">1 Fail (F5 Memory Calibration)</span> · 
+          <span style="color:var(--amber);font-weight:600;">0 Unmeasured</span>.
+          <em>Unmeasured is never counted as a pass.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section G · Safe Request Example -->
+  <section id="safe-request" aria-labelledby="safe-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="safe-h">G · Try a Safe Request</h2>
+        <p>Read-only first. The following call discovers available tools without requiring prior session initialization.</p>
+      </div>
+
+      <div class="code-box">
+        <button class="copy-btn" onclick="copySnippet('code-safe-sample')">Copy Command</button>
+        <pre><code id="code-safe-sample">curl -X POST https://mcp.arif-fazil.com/mcp   -H 'Content-Type: application/json'   -H 'Accept: application/json, text/event-stream'   -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/list",
+    "params": {}
+  }'</code></pre>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">
+        Expected response contains the complete <code>result.tools</code> array defining all 8 canonical verbs and their live Pydantic input schemas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section H · Governed Workflow -->
+  <section id="workflow" aria-labelledby="wf-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="wf-h">H · Governed Workflow</h2>
+        <p>The sovereign state-transition sequence. Calling a stage does not imply authorization.</p>
+      </div>
+
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center;">
+        <pre style="font-size:14px;color:var(--cyan);letter-spacing:1px;font-family:var(--font-mono);overflow-x:auto;">init (000) ──> observe (111) ──> think (333) ──> route (444) ──> memory (555) ──> judge (666) ──> forge (777) ──> seal (999)</pre>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">
+        A session identifier does not prove sovereign approval. Execution and human acceptance remain separate by law.
+      </p>
+    </div>
+  </section>
+
+  <!-- Federation Architecture Map (#map) -->
+  <section id="map" aria-labelledby="map-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="map-h">Federation Discovery Surface: Seven Organs, Two Boundary Services</h2>
+        <p>One unified system of governed intelligence. Seven specialized organs coordinated under separation of powers.</p>
+      </div>
+
+      <div class="organs-grid">
+        <!-- arifOS -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot"></span> arifOS Kernel</div>
+            <span class="organ-badge badge-observe">The Court</span>
+          </div>
+          <div class="organ-desc">Constitutional execution gate, session continuity, F1–F13 floors, and sovereign arbitration.</div>
+          <div class="organ-endpoint">https://mcp.arif-fazil.com/mcp</div>
+        </div>
+
+        <!-- AAA -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot"></span> AAA Plane</div>
+            <span class="organ-badge badge-observe">The Roll</span>
+          </div>
+          <div class="organ-desc">Federation state plane, agent identity registry, A2A gateway, and authority routing.</div>
+          <div class="organ-endpoint">https://aaa.arif-fazil.com/</div>
+        </div>
+
+        <!-- A-FORGE -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot"></span> A-FORGE</div>
+            <span class="organ-badge badge-mutate">The Workshop</span>
+          </div>
+          <div class="organ-desc">Execution shell. Performs code & system mutations only after SEAL verdict, emitting FlowReceipts.</div>
+          <div class="organ-endpoint">https://forge.arif-fazil.com/</div>
+        </div>
+
+        <!-- GEOX -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot"></span> GEOX</div>
+            <span class="organ-badge badge-observe">Earth Intelligence</span>
+          </div>
+          <div class="organ-desc">Subsurface reasoning, seismic interpretation, petrophysics, and basin geomechanics.</div>
+          <div class="organ-endpoint">https://geox.arif-fazil.com/mcp</div>
+        </div>
+
+        <!-- WELL -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot amber"></span> WELL</div>
+            <span class="organ-badge badge-void">Health & Vitality</span>
+          </div>
+          <div class="organ-desc">Sovereign homeostasis, triadic state (human × machine × governance) readiness assessment.</div>
+          <div class="organ-endpoint">https://well.arif-fazil.com/mcp</div>
+        </div>
+
+        <!-- WEALTH -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot"></span> WEALTH</div>
+            <span class="organ-badge badge-rw">Capital Engine</span>
+          </div>
+          <div class="organ-desc">Sovereign capital synthesis, market telemetry (Gold, Oil, Gas, KLCI), and power topology.</div>
+          <div class="organ-endpoint">https://wealth.arif-fazil.com/mcp</div>
+        </div>
+
+        <!-- arifFlow -->
+        <div class="organ-card">
+          <div class="organ-top">
+            <div class="organ-name"><span class="dot"></span> arifFlow</div>
+            <span class="organ-badge badge-seal">The Record</span>
+          </div>
+          <div class="organ-desc">Metabolic ledger tracking FlowReceipts and verify-versus-execute ratios across organs.</div>
+          <div class="organ-endpoint">https://arif-fazil.com/999/flow</div>
+        </div>
+      </div>
+
+      <!-- Boundary Services & Relational Laws -->
+      <div style="margin-top:24px;background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;padding:20px;">
+        <h3 style="font-size:15px;color:#fff;margin-bottom:12px;">Two Boundary Services & Relational Invariants</h3>
+        <ul style="font-size:13px;color:var(--text-muted);line-height:1.8;padding-left:20px;">
+          <li><strong>HERMES (The Voice):</strong> Carries words across the human/agent boundary; verifies meaning and dignity before emission.</li>
+          <li><strong>FRAME / CHRON (The Measure):</strong> Independent observer measuring temporal drift and state variance without emitting verdicts.</li>
+          <li><strong>PROPOSES → JUDGES:</strong> GEOX, WEALTH, and WELL propose; arifOS judges (strict separation of powers).</li>
+          <li><strong>SEALED EXECUTION:</strong> A-FORGE executes only after a kernel SEAL verdict.</li>
+          <li><strong>SOVEREIGN VETO (F13):</strong> Human Principal Arif holds absolute, untransferable veto over all autonomous actions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section I · Evidence and Reproduction -->
+  <section id="evidence" aria-labelledby="ev-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="ev-h">I · Evidence and Reproduction</h2>
+        <p>Direct references to source files, verified test suites, schemas, and security disclosure policies.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+        <div class="step-card">
+          <div class="step-title"><a href="https://arif-fazil.com/arifos/#evidence">Current Verified State ↗</a></div>
+          <div class="step-desc">First-party empirical test receipts and cryptographic hash ledger.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-title"><a href="https://arif-fazil.com/canon/file-authority.yaml">Claim Registry ↗</a></div>
+          <div class="step-desc">Sovereign authority mapping of canonical files and mutable boundaries.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-title"><a href="/llms.txt">LLM Discovery (llms.txt) ↗</a></div>
+          <div class="step-desc">Machine-readable structural index for autonomous search crawlers.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-title"><a href="https://github.com/ariffazil/arifOS">Source Repository ↗</a></div>
+          <div class="step-desc">Public kernel codebase, test suites, and constitutional floor implementations.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-title"><a href="/.well-known/security.txt">Security Disclosure ↗</a></div>
+          <div class="step-desc">RFC 9116 compliant security contact and vulnerability reporting policy.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-title"><a href="https://arif-fazil.com/arifos/#gaps">Known Gaps Register ↗</a></div>
+          <div class="step-desc">Continuous audit discrepancies and open four-gap closing program.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section J · Early Usage Caveat -->
+  <section id="usage" aria-labelledby="usage-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="usage-h">J · Early Usage Disclosure</h2>
+      </div>
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;padding:20px;font-size:13px;color:var(--text-muted);line-height:1.7;">
+        <p><strong>FEDERATION USAGE SIGNAL:</strong> HERMES Telegram displayed 9 monthly active users in October 2026. Audience composition, distinct external-user count, and commercial customer status are not independently verified.</p>
+        <p style="margin-top:8px;">The MCP gateway does not promote this metric as a customer claim. It does not assert product–market fit or commercial adoption.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section K · Developer Next Steps -->
+  <section id="dev-next" aria-labelledby="next-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="next-h">K · Developer Next Steps</h2>
+        <p>Recommended sequence for integrating with the arifOS federation.</p>
+      </div>
+
+      <ol style="padding-left:20px;font-size:14px;color:var(--text-muted);line-height:2;">
+        <li>Connect read-only — run <code>tools/list</code> or <code>arif_observe</code> via the <a href="#playground">Console</a>.</li>
+        <li>Inspect resources — examine <code>arifos://vitals</code> and <code>kernel.floors.summary</code>.</li>
+        <li>Reproduce refusal gates locally — inspect test cases in the kernel repository.</li>
+        <li>Inspect the evidence packet — verify against the <a href="/shared/claims.json">claims.json</a> observation contract.</li>
+        <li>Contribute a verifier — join the open gap closing program.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Section L · External Witness Ledger -->
+  <section id="external-witness" aria-labelledby="witness-h" style="border-top:1px solid var(--border);padding:40px 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="witness-h">L · External Witnesses &amp; Third-Party Citations</h2>
+        <p>Witness &gt; Narrative. References originating strictly outside arifOS-controlled surfaces, classified by evidentiary function.</p>
+      </div>
+
+      <!-- Governing Principles -->
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:13px;color:var(--text-muted);line-height:1.7;">
+        <strong style="color:#fff;">Governing Invariants:</strong> Claim ≠ Witness · Listing ≠ Endorsement · Indexing ≠ Validation · Reality remains the final judge.<br>
+        <span style="color:var(--cyan);font-family:var(--font-mono);">Maturity Progression: Discover (W1/W2) → Observe (W3) → Analyze (W3) → Verify (W5) → Trust</span>
+      </div>
+
+      <!-- External Footprint & Discovery Status Panel -->
+      <div class="evidence-card" style="margin-bottom:24px;border-left:4px solid var(--cyan);">
+        <h3 style="font-size:15px;color:#fff;margin-bottom:8px;">External Footprint &amp; Discovery Status (Audited: 2026-10-22)</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;">
+          <span class="organ-badge badge-seal">VERIFIED · GitHub Public Repo</span>
+          <span class="organ-badge badge-seal">VERIFIED · PyPI Packages</span>
+          <span class="organ-badge badge-seal">VERIFIED · MCP Directories</span>
+          <span class="organ-badge badge-seal">VERIFIED · External Catalogs</span>
+          <span class="organ-badge badge-rw">CONFIRMED · Tom Rochette + Hapax (verified) · other candidates pending</span>
+          <span class="organ-badge badge-void">NOT BOUND · Independent CI Verifier</span>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.6;margin:0;">
+          Discoverability confirms public indexability, packaging, and reproducibility pathways; it does not constitute independent validation, endorsement, certification, or commercial adoption. See <a href="https://github.com/ariffazil/arifOS/blob/main/docs/EXTERNAL_WITNESS_LEDGER.md" target="_blank" rel="noopener">External Witness Ledger</a>.
+        </p>
+      </div>
+
+      <!-- Badge Strip -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;font-family:var(--font-mono);font-size:12px;">
+        <span class="organ-badge badge-seal" style="padding:6px 10px;">GitHub Repository ✅</span>
+        <span class="organ-badge badge-seal" style="padding:6px 10px;">PyPI Package ✅</span>
+        <span class="organ-badge badge-seal" style="padding:6px 10px;">MCP Registries ✅</span>
+        <span class="organ-badge badge-seal" style="padding:6px 10px;">Independent Catalogs ✅</span>
+        <span class="organ-badge badge-seal" style="padding:6px 10px;">Architecture Reviews ✅</span>
+        <span class="organ-badge badge-rw" style="padding:6px 10px;">Community Adoption ⚠️</span>
+        <span class="organ-badge badge-void" style="padding:6px 10px;">Independent Verifier ⛔</span>
+        <span class="organ-badge badge-void" style="padding:6px 10px;">Academic Citation ⛔</span>
+      </div>
+
+      <!-- Witness Cards Grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px;">
+        <!-- W1 -->
+        <div class="evidence-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h4 style="font-size:14px;color:#fff;margin:0;">Tier W1 · Public Registries</h4>
+            <span class="badge badge-seal" style="font-size:11px;">Discoverability</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin:0;">
+            • <strong>PyPI:</strong> <code>arifos</code> &amp; <code>arifosmcp</code> packages published.<br>
+            • <strong>GitHub:</strong> <code>ariffazil/arifOS</code> public repository &amp; audit trails.<br>
+            • <strong>MCP Namespace:</strong> <code>io.github.ariffazil/aaa-mcp</code> catalog declaration.
+          </p>
+        </div>
+
+        <!-- W2 -->
+        <div class="evidence-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h4 style="font-size:14px;color:#fff;margin:0;">Tier W2 · Independent Catalogs</h4>
+            <span class="badge badge-seal" style="font-size:11px;">External Indexing</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin:0;">
+            • <strong>Glama.ai:</strong> Live MCP server index &amp; floor description.<br>
+            • <strong>LobeHub:</strong> Agent skills &amp; induction guide indexed.<br>
+            • <strong>Marketplaces:</strong> G2 (Responsible AI), Loomal, Skills Playground, Willow.
+          </p>
+        </div>
+
+        <!-- W3 -->
+        <div class="evidence-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h4 style="font-size:14px;color:#fff;margin:0;">Tier W3 · Independent Analysis</h4>
+            <span class="badge badge-seal" style="font-size:11px;">External Interpretation</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin:0;">
+            • <strong>Agentrust:</strong> Listed in <em>Awesome AI Governance</em>.<br>
+            • <strong>Tom Rochette:</strong> Architectural deep-dive on separation of powers &amp; self-audit.<br>
+            • <strong>Hapax Systems:</strong> Comparative benchmark on runtime axiom enforcement.
+          </p>
+        </div>
+
+        <!-- W4 & W5 -->
+        <div class="evidence-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h4 style="font-size:14px;color:#fff;margin:0;">Tier W4 &amp; W5 · Community &amp; Audit</h4>
+            <span class="badge badge-void" style="font-size:11px;">Open Gap</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin:0;">
+            • <strong>Community (W4):</strong> 12 forks, 54 stars, ~750 monthly PyPI downloads.<br>
+            • <strong>Verification (W5):</strong> Standalone CI verifier kit not yet bound (Open Gap 4).<br>
+            • <strong>Academic:</strong> No peer-reviewed paper or DOI published yet.
+          </p>
+        </div>
+      </div>
+
+      <p style="font-size:13px;color:var(--text-muted);text-align:right;">
+        Complete audited breakdown: <a href="https://github.com/ariffazil/arifOS/blob/main/docs/EXTERNAL_WITNESS_LEDGER.md" target="_blank" rel="noopener">EXTERNAL_WITNESS_LEDGER.md ↗</a> · Machine-readable: <a href="/shared/claims.json">claims.json ↗</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Unified Sovereign Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-content">
+      <div class="footer-row">
+        <div class="sovereign-mark">
+          <span>ARIF FAZIL</span> · <span>DITEMPA BUKAN DIBERI 🇲🇾</span>
+        </div>
+        <div style="display:flex;gap:16px;font-family:var(--font-mono);font-size:12px;">
+          <a href="/llms.txt">llms.txt</a>
+          <a href="/health">/health</a>
+          <a href="https://arif-fazil.com">arif-fazil.com</a>
+        </div>
+      </div>
+      
+      <div class="footer-byline">
+        Muhammad Arif bin Fazil<br>
+        Geoscientist · Architect, arifOS · Petronas Carigali · UW–Madison '13<br>
+        Penang, Malaysia · Epistemic Tag: INT — Governed Developer Gateway<br>
+        Authority: DERIVED from Public Observation Contract · Live Health at <a href="/health">/health</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Tabs, Playground, Copying, Health Poll -->
+  <script>
+    // Tab Switcher
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      
+      const btn = event.target;
+      if (btn) btn.classList.add('active');
+      const pane = document.getElementById('tab-' + tabId);
+      if (pane) pane.classList.add('active');
+    }
+
+    // Copy Helper
+    function copySnippet(elementId) {
+      const code = document.getElementById(elementId);
+      if (!code) return;
+      navigator.clipboard.writeText(code.innerText).then(() => {
+        const btn = event.target;
+        const orig = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = orig, 2000);
+      });
+    }
+
+    function copyEndpoint() {
+      navigator.clipboard.writeText('https://mcp.arif-fazil.com/mcp').then(() => {
+        const btn = event.target;
+        const orig = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = orig, 2000);
+      });
+    }
+
+    // Interactive Playground Presets
+    const PRESETS = {
+      tools_list: {
+        jsonrpc: "2.0",
+        id: 1,
+        method: "tools/list",
+        params: {}
+      },
+      prompts_list: {
+        jsonrpc: "2.0",
+        id: 2,
+        method: "prompts/list",
+        params: {}
+      },
+      resources_list: {
+        jsonrpc: "2.0",
+        id: 3,
+        method: "resources/list",
+        params: {}
+      },
+      arif_init: {
+        jsonrpc: "2.0",
+        id: 4,
+        method: "tools/call",
+        params: {
+          name: "arif_init",
+          arguments: {
+            actor_id: "guest/developer",
+            intent: "interactive console probe",
+            mode: "init"
+          }
+        }
+      },
+      arif_observe: {
+        jsonrpc: "2.0",
+        id: 5,
+        method: "tools/call",
+        params: {
+          name: "arif_observe",
+          arguments: {
+            mode: "vitals"
+          }
+        }
+      }
+    };
+
+    function applyPreset() {
+      const sel = document.getElementById('preset-selector');
+      if (!sel) return;
+      const val = sel.value;
+      if (PRESETS[val]) {
+        document.getElementById('console-req').value = JSON.stringify(PRESETS[val], null, 2);
+      }
+    }
+
+    function loadPlayground(verb) {
+      const selector = document.getElementById('preset-selector');
+      if (!selector) return;
+      if (verb === 'arif_init') selector.value = 'arif_init';
+      else if (verb === 'arif_observe') selector.value = 'arif_observe';
+      else selector.value = 'tools_list';
+      applyPreset();
+      document.getElementById('playground').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function executePlayground() {
+      const reqText = document.getElementById('console-req').value;
+      const outBox = document.getElementById('console-res');
+      const statusSpan = document.getElementById('resp-status');
+      const timingSpan = document.getElementById('resp-timing');
+      
+      let payload;
+      try {
+        payload = JSON.parse(reqText);
+      } catch (e) {
+        outBox.textContent = "Error: Invalid JSON payload\n" + e.message;
+        statusSpan.textContent = "Parse Error";
+        statusSpan.style.color = "var(--red)";
+        return;
+      }
+
+      statusSpan.textContent = "Probing /mcp...";
+      statusSpan.style.color = "var(--amber)";
+      outBox.textContent = "Sending request to https://mcp.arif-fazil.com/mcp ...";
+      
+      const t0 = performance.now();
+      try {
+        const res = await fetch('/mcp', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json, text/event-stream, */*'
+          },
+          body: JSON.stringify(payload)
+        });
+        
+        const elapsed = Math.round(performance.now() - t0);
+        timingSpan.textContent = `(${elapsed}ms)`;
+        
+        const data = await res.json();
+        outBox.textContent = JSON.stringify(data, null, 2);
+        
+        if (res.ok) {
+          statusSpan.textContent = `HTTP ${res.status} OK`;
+          statusSpan.style.color = "var(--green)";
+        } else {
+          statusSpan.textContent = `HTTP ${res.status}`;
+          statusSpan.style.color = "var(--amber)";
+        }
+      } catch (err) {
+        const elapsed = Math.round(performance.now() - t0);
+        timingSpan.textContent = `(${elapsed}ms)`;
+        outBox.textContent = "Connection Error:\n" + err.message + "\n\nNote: If testing cross-origin or offline, ensure transport to /mcp is reachable.";
+        statusSpan.textContent = "Network Error";
+        statusSpan.style.color = "var(--red)";
+      }
+    }
+
+    // Live Health Probe & Telemetry Update
+    async function updateTelemetry() {
+      try {
+        const res = await fetch('/health');
+        if (res.ok) {
+          const h = await res.json();
+          if (h.release_tag) {
+            document.getElementById('telemetry-commit').textContent = h.release_tag;
+          }
+          if (h.constitutional) {
+            document.getElementById('telemetry-freshness').textContent = 
+              (() => {
+              const tgt = h.constitutional.floors_target || 13;
+              const pass = h.constitutional.floors_pass;
+              const bounded = Math.min(pass, tgt);
+              return pass > tgt ? `${bounded}/${tgt} floors active (${pass} measured)` : `${pass}/${tgt} floors active`;
+            })();
+          }
+        }
+      } catch (e) {
+        // Fallback to /shared/claims.json
+        try {
+          const cres = await fetch('/shared/claims.json');
+          if (cres.ok) {
+            const cdata = await cres.json();
+            const commitClaim = cdata.claims?.find(c => c.metric_id === 'arifos_runtime_commit');
+            if (commitClaim) {
+              document.getElementById('telemetry-commit').textContent = commitClaim.value;
+            }
+          }
+        } catch (_) {}
+      }
+    }
+
+    // Run telemetry update on load
+    updateTelemetry();
+  </script>
 </body>
 </html>

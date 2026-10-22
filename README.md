@@ -172,6 +172,19 @@ This repo follows the federation's CI governance pattern (replicated from `ariff
 
 DITEMPA BUKAN DIBERI — governance is forged, not given.
 
+## External Footprint & Discovery
+
+arif-fazil.com is the public ingress and federation web constellation entry point.
+
+- **Discoverable:** YES (Public web domains, Caddy gateway)
+- **Installable / Callable:** YES (Web pages, client configs, public `/llms.txt`)
+- **Inspectable & Forkable:** YES
+- **Independent Validation:** NOT YET ESTABLISHED
+
+Canonical Witness Ledger: [EXTERNAL_WITNESS_LEDGER.md](https://github.com/ariffazil/arifOS/blob/main/docs/EXTERNAL_WITNESS_LEDGER.md)
+
+---
+
 ## 📜 Sovereignty & License
 
 - **License:** GNU Affero General Public License v3.0 (**AGPL-3.0**)

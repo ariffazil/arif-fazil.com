@@ -712,7 +712,8 @@
     geox: { label: 'GEOX', ring: 'SOUL', port: ':8081', role: 'Earth Intelligence' },
     wealth: { label: 'WEALTH', ring: 'BODY', port: ':18082', role: 'Capital Intelligence' },
     well: { label: 'WELL', ring: 'SOUL', port: ':18083', role: 'Human Readiness' },
-    aaa: { label: 'AAA', ring: 'BODY', port: ':3001', role: 'Control Plane' },
+    aaa: { label: 'AAA', ring: 'BODY', port: ':3001', role: 'A2A reachable' },
+    aaamcp: { label: 'AAA MCP', ring: 'BODY', port: ':3002', role: 'FastMCP · 4 tools · read-only' },
     aforge: { label: 'A-FORGE', ring: 'MIND', port: ':7071/:7072', role: 'Execution Shell' },
     mcpgateway: { label: 'MCP Gateway', ring: 'MIND', port: '', role: 'Canonical Routing' },
     arifflow: { label: 'arifFLOW', ring: 'MIND', port: ':7073', role: 'Receipt Flow Plane' },
@@ -783,7 +784,42 @@
           <span>arifFLOW: ${esc(flowMeta === undefined ? (flow.value ? 'federation metadata available' : UNAVAILABLE) : compactValue(flowMeta))}</span>
         </div>
       </article>`;
-    }).join('');
+    }).join('') + renderDeclaredSurfaces(organs);
+  }
+
+  function renderDeclaredSurfaces(organs) {
+    if (!organMetadata.aaamcp) return '';
+    const present = isRecord(organs) && Object.keys(organs).some((key) => {
+      const row = unwrap(organs[key]);
+      return isRecord(row) && normalizeKey(firstPresent(row.organ_id, key)) === 'aaamcp';
+    });
+    if (present) return '';
+    const meta = organMetadata.aaamcp;
+    const rows = [
+      ['LIVENESS', { value: 'live', state: 'healthy', source: 'manual probe 2026-10-24 · systemd aaa-mcp.service pid 1991169', confidence: 0.9 }],
+      ['CAPABILITY', { value: '4 tools · read-only', state: 'healthy', source: 'manual tools/list probe 2026-10-24T04:45Z · aaa_health, aaa_agent_card, aaa_federation_manifest, aaa_discovery', confidence: 0.9 }],
+      ['READINESS', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['GOVERNANCE', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['AUTHORIZATION', { value: 'loopback-only · no public route', state: 'healthy', source: 'Caddyfile shared_assets + ss -ltn 2026-10-24', confidence: 0.9 }],
+      ['RECEIPT', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['CONSTITUTIONAL', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+    ];
+    return `<article class="organ-card organ-card--unknown" data-ring="${meta.ring}" data-organ="aaamcp" data-overall="unknown">
+      <div class="organ-head"><span class="organ-name">${esc(meta.label)}</span><span class="ring-badge ring-${meta.ring.toLowerCase()}">${meta.ring}</span></div>
+      <div class="organ-port">${esc(meta.port)}</div><div class="organ-role">${esc(meta.role)}</div>
+      <div class="organ-signals">${rows.map((pair) => {
+        const record = pair[1];
+        return `<div class="organ-signal" data-signal="${pair[0]}">
+          <span class="organ-signal-name">${pair[0]}</span><span class="organ-signal-value">${badge(record)}</span>
+          <span class="organ-signal-meta">${esc(record.source)}</span>
+        </div>`;
+      }).join('')}</div>
+      <div class="organ-facts">
+        <span>evidence: manual probe 2026-10-24 (FI-008)</span>
+        <span>drift: ${UNAVAILABLE}</span>
+        <span>arifFLOW: ${UNAVAILABLE}</span>
+      </div>
+    </article>`;
   }
 
   /* ── Federation edges + declared flow overlays ──────────── */

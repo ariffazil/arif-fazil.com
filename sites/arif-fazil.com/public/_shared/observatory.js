@@ -512,8 +512,19 @@
           record,
           definition.id === 'F13' ? { source: 'declared boundary' } : undefined,
         );
-        const score = parts.score == null ? '—' : parts.score.toFixed(2);
-        const status = parts.status === UNAVAILABLE ? 'status: unavailable' : `status: ${parts.status}`;
+        // 2026-10-24 F13: a raw risk score read as a mark confuses everyone.
+        // F12 measures injection RISK — low is good. Say so in words and keep
+        // the number in the same line. Same information, no false failure.
+        const IS_RISK_FLOOR = definition.id === 'F12';
+        const riskWord = (parts.score == null) ? null
+          : (parts.score <= 0.34 ? 'rendah' : parts.score <= 0.66 ? 'sederhana' : 'tinggi');
+        const score = IS_RISK_FLOOR && riskWord ? riskWord
+          : (parts.score == null ? '—' : parts.score.toFixed(2));
+        const status = parts.status === UNAVAILABLE
+          ? 'status: unavailable'
+          : (IS_RISK_FLOOR
+              ? `risiko suntikan · nilai ${parts.score == null ? '—' : parts.score.toFixed(2)} (rendah = baik) · ${parts.status}`
+              : `status: ${parts.status}`);
         const fieldObservedAt = record === undefined ? null : data.observed_at;
         return `<div class="floor-cell floor-cell--${paletteClass(parts.state)}" data-floor="${definition.id}" data-measurement="${esc(parts.measurement)}">
           <div class="floor-header"><span class="floor-num">${definition.id}</span><span class="floor-name">${definition.name}</span></div>
@@ -578,6 +589,32 @@
     '/receipt/emit', '/receipt/verify', '/receipt/query', '/telemetry/log',
     '/cooling/emit', '/transition/emit', '/state/*',
   ];
+  function buildFleet(state) {
+    const fl = (state && state.fleet) || {};
+    const organs = (state && state.organs) || {};
+    let live = 0;
+    let total = 0;
+    for (const o of Object.values(organs)) {
+      if (!o || typeof o !== 'object') continue;
+      total += 1;
+      const l = o.liveness || o.transport;
+      const v = l && typeof l === 'object' ? (l.value !== undefined ? l.value : l.state) : l;
+      if (String(v || '').toLowerCase() === 'live') live += 1;
+    }
+    const held = fl.held;
+    const actors = Array.isArray(fl.held_actors) ? fl.held_actors : [];
+    const parts = [];
+    parts.push(total ? `${live}/${total} organ hidup` : 'organ UNKNOWN');
+    parts.push(held == null ? 'tertahan UNKNOWN' : `${held} tertahan`);
+    if (held > 0 && actors.length) parts.push(`(${actors.join(', ')})`);
+    return {
+      value: parts.join(' · '),
+      state: held == null ? 'unknown' : 'measured',
+      source: fl.source || 'ariflow:7073/health :: fq.per_actor',
+      reason: fl.reason || null,
+    };
+  }
+
   const formatEndpoints = (record) => {
     const endpoints = unwrap(record);
     if (Array.isArray(endpoints)) return endpoints.length ? endpoints.map((item) => compactValue(item)).join(' · ') : UNAVAILABLE;
@@ -624,7 +661,20 @@
     setFlow('health', health);
     setFlow('receipts', receipts);
     setFlow('chain', chain);
-    setFlow('fq', fq);
+    // ── 2026-10-24 F13: FQ leaves the face of the page ──────────────────────
+    // The daemon deprecates the scalar as a health indicator and it moves every
+    // cycle (four readings in forty minutes across three surfaces). A number that
+    // dances teaches readers to distrust every other number on the page. Publish
+    // three stable facts instead: tracked, held, and why. The scalar is untouched
+    // in the payload — only its display is removed.
+    const fleet = buildFleet(data);
+    setFlow('fq', fleet, (f) => f.value);
+    {
+      const k = $('#flow-fq .k');
+      if (k) k.textContent = 'fleet';
+      const m = $('#flow-fq-meta');
+      if (m && fleet.reason) m.textContent = fleet.reason;
+    }
     setFlow('endpoints', endpointRecord, formatEndpoints);
     const source = $('#flow-source-value');
     if (source) source.textContent = sourceValue(flow.envelope) ? `source: ${sourceValue(flow.envelope)}` : 'source: missing';
@@ -712,7 +762,8 @@
     geox: { label: 'GEOX', ring: 'SOUL', port: ':8081', role: 'Earth Intelligence' },
     wealth: { label: 'WEALTH', ring: 'BODY', port: ':18082', role: 'Capital Intelligence' },
     well: { label: 'WELL', ring: 'SOUL', port: ':18083', role: 'Human Readiness' },
-    aaa: { label: 'AAA', ring: 'BODY', port: ':3001', role: 'Control Plane' },
+    aaa: { label: 'AAA', ring: 'BODY', port: ':3001', role: 'A2A reachable' },
+    aaamcp: { label: 'AAA MCP', ring: 'BODY', port: ':3002', role: 'FastMCP · 4 tools · read-only' },
     aforge: { label: 'A-FORGE', ring: 'MIND', port: ':7071/:7072', role: 'Execution Shell' },
     mcpgateway: { label: 'MCP Gateway', ring: 'MIND', port: '', role: 'Canonical Routing' },
     arifflow: { label: 'arifFLOW', ring: 'MIND', port: ':7073', role: 'Receipt Flow Plane' },
@@ -783,7 +834,42 @@
           <span>arifFLOW: ${esc(flowMeta === undefined ? (flow.value ? 'federation metadata available' : UNAVAILABLE) : compactValue(flowMeta))}</span>
         </div>
       </article>`;
-    }).join('');
+    }).join('') + renderDeclaredSurfaces(organs);
+  }
+
+  function renderDeclaredSurfaces(organs) {
+    if (!organMetadata.aaamcp) return '';
+    const present = isRecord(organs) && Object.keys(organs).some((key) => {
+      const row = unwrap(organs[key]);
+      return isRecord(row) && normalizeKey(firstPresent(row.organ_id, key)) === 'aaamcp';
+    });
+    if (present) return '';
+    const meta = organMetadata.aaamcp;
+    const rows = [
+      ['LIVENESS', { value: 'live', state: 'healthy', source: 'manual probe 2026-10-24 · systemd aaa-mcp.service pid 1991169', confidence: 0.9 }],
+      ['CAPABILITY', { value: '4 tools · read-only', state: 'healthy', source: 'manual tools/list probe 2026-10-24T04:45Z · aaa_health, aaa_agent_card, aaa_federation_manifest, aaa_discovery', confidence: 0.9 }],
+      ['READINESS', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['GOVERNANCE', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['AUTHORIZATION', { value: 'loopback-only · no public route', state: 'healthy', source: 'Caddyfile shared_assets + ss -ltn 2026-10-24', confidence: 0.9 }],
+      ['RECEIPT', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['CONSTITUTIONAL', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+    ];
+    return `<article class="organ-card organ-card--unknown" data-ring="${meta.ring}" data-organ="aaamcp" data-overall="unknown">
+      <div class="organ-head"><span class="organ-name">${esc(meta.label)}</span><span class="ring-badge ring-${meta.ring.toLowerCase()}">${meta.ring}</span></div>
+      <div class="organ-port">${esc(meta.port)}</div><div class="organ-role">${esc(meta.role)}</div>
+      <div class="organ-signals">${rows.map((pair) => {
+        const record = pair[1];
+        return `<div class="organ-signal" data-signal="${pair[0]}">
+          <span class="organ-signal-name">${pair[0]}</span><span class="organ-signal-value">${badge(record)}</span>
+          <span class="organ-signal-meta">${esc(record.source)}</span>
+        </div>`;
+      }).join('')}</div>
+      <div class="organ-facts">
+        <span>evidence: manual probe 2026-10-24 (FI-008)</span>
+        <span>drift: ${UNAVAILABLE}</span>
+        <span>arifFLOW: ${UNAVAILABLE}</span>
+      </div>
+    </article>`;
   }
 
   /* ── Federation edges + declared flow overlays ──────────── */

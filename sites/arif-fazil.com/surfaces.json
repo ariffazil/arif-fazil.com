@@ -640,13 +640,13 @@
     },
     {
       "path": "/vitals/",
-      "title": "PETRONAS · VITALS — Financial capacity and resilience",
+      "title": "PETRONAS VITALS (retired 2026-10-23)",
       "mission": "monitor",
-      "status": "live",
+      "status": "redirect",
       "type": "page",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Public PETRONAS VITALS on apex (not system health cosplay). Canonical soft path /vitals/; /wealth/vitals/ 308s here. Distinct organ-style chrome is intentional for capital dashboard. Post-audit-fix (2026-09-17): VITALS_* namespaced score bands (BUFFERED/WATCH/STRESSED/CRITICAL — distinct from arifOS constitutional verdicts); Tripwire #1 renamed to Post-Dividend Residual Cash (PDRC) with audited FCF def = RM43.6B framing; Tripwire #8 WITHHELD_PENDING with primary-sourced governance citation at /makcikgpt/petronas-bod-evolution/; 5-tier epistemic taxonomy (OBS/DER/HYP/INT/SPEC); 4 counter-hypotheses ledger; dual-clock drift overlay (sealed FY2025 audited vs 1H26 declared-not-audited); AUTO-ESCALATE/REVIEW REQUIRED replaces AUTO-INTERVENTION framing; PacemakerAction JSON-LD action 'DIVIDEND_STOP_PUBLIC_ADVISORY_ESCALATION'; AMEND-2026-08-03-001 preserved verbatim; audit baseline canon/vitals_audit_baseline.json."
+      "description": "Moved to /world/petronas/. Legacy path serves a meta-refresh redirect."
     },
     {
       "path": "/malaysia/",
@@ -1122,6 +1122,26 @@
       "status": "gone",
       "type": "gone",
       "description": "Retired audit surface. Measured 2026-10-18: HTTP 410 Gone. Vault proof lives at /999/."
+    },
+    {
+      "path": "/world/petronas/gentari/",
+      "title": "Gentari — Dossier Realiti",
+      "mission": "Sovereign dossier on Gentari Sdn Bhd — PETRONAS clean energy arm: measured CAPEX, segment losses, capacity growth, hydrogen stall, KKR India deal. 12 sourced claims with falsifiers.",
+      "status": "live",
+      "type": "dossier",
+      "priority": "0.6",
+      "changefreq": "weekly",
+      "description": "Keluarga Bayang surface. 12 claims (7 PROVEN / 4 PARTIAL / 1 UNKNOWN), machine data at claims.json + index.json."
+    },
+    {
+      "path": "/world/petronas/",
+      "title": "PETRONAS — Dompet hari ini, tangki masa depan (Hub)",
+      "mission": "PETRONAS family hub: wallet-and-tank financial reality (ex-/vitals/), Kerusi Bayang leadership archive, Gentari clean-energy dossier. Bahasa Melayu.",
+      "status": "live",
+      "type": "hub",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "description": "Keluarga Bayang PETRONAS hub. Children: /world/petronas/shadow/ + /world/petronas/gentari/. Replaces /vitals/ (2026-10-23)."
     }
   ],
   "federation_subdomains": [

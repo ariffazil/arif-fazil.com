@@ -1,140 +1,136 @@
 {
-  "schema": "arifos.federation.v1",
-  "generated_at": "2026-07-18T00:00:00Z",
-  "note": "One federation identity, distinct organ identities. Federation binds; it does not collapse.",
-  "federation_identity": {
-    "name": "arifOS Federation",
-    "url": "https://arif-fazil.com/federation/"
-  },
-  "sovereign_identity": {
-    "name": "Arif Fazil",
-    "url": "https://arif-fazil.com/"
-  },
-  "sovereign_root": "https://arif-fazil.com/",
-  "handoff_schema": "arifos.handoff.v1",
-  "governance": {
-    "name": "arifOS",
-    "website": "https://arifos.arif-fazil.com/",
-    "mcp": "https://mcp.arif-fazil.com/mcp",
-    "public_state": "https://arifos.arif-fazil.com/api/public-state",
-    "observatory": "https://arifos.arif-fazil.com/"
-  },
-  "organs": [
-    {
-      "id": "geox",
-      "organ_id": "GEOX",
-      "domain": "earth",
-      "label": "GEOX",
-      "nav_label": "Earth",
-      "role": "evidence",
-      "website": "https://geox.arif-fazil.com/",
-      "mcp": "https://geox.arif-fazil.com/mcp",
-      "authority": "advisory",
-      "doctrine": "Is it real?",
-      "ownership": ["geology", "earth_measurement", "prospect_physics", "well_evidence"],
-      "non_ownership": ["capital_allocation", "human_diagnosis", "execution"],
-      "schema_version": "geox.public.v1",
-      "evidence_url": "https://arifos.arif-fazil.com/organs/geox/",
-      "secondary_nav": [
-        { "label": "Overview", "href": "https://geox.arif-fazil.com/" },
-        { "label": "Basins", "href": "https://geox.arif-fazil.com/map/" },
-        { "label": "Wells", "href": "https://arif-fazil.com/wells" },
-        { "label": "Evidence", "href": "https://arifos.arif-fazil.com/organs/geox/" },
-        { "label": "Methods", "href": "https://geox.arif-fazil.com/theory/" },
-        { "label": "MCP", "href": "https://geox.arif-fazil.com/mcp" }
-      ]
+  "federation": "arifOS",
+  "version": "2.0.0",
+  "protocol": "A2A v1.0.0",
+  "domain": "arif-fazil.com",
+  "genesis_did": "did:web:arif-fazil.com",
+  "constitutional_floors": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11",
+    "F12",
+    "F13"
+  ],
+  "verdict_authority": "888_JUDGE",
+  "vault": "VAULT999",
+  "governance_root": "https://arif-fazil.com/.well-known/arifos-federation.json",
+  "domains": {
+    "arifOS": {
+      "url": "https://arifos.arif-fazil.com",
+      "mcp_endpoint": "https://arifos.arif-fazil.com/mcp",
+      "health_url": "https://arifos.arif-fazil.com/health",
+      "role": "Constitutional governance kernel",
+      "authority_ceiling": "JUDGE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
     },
-    {
-      "id": "wealth",
-      "organ_id": "WEALTH",
-      "domain": "capital",
-      "label": "WEALTH",
-      "nav_label": "Capital",
-      "role": "computation",
-      "website": "https://wealth.arif-fazil.com/",
-      "mcp": "https://wealth.arif-fazil.com/mcp",
-      "authority": "advisory",
-      "doctrine": "Is it worth it?",
-      "ownership": ["capital_computation", "npv", "risk_scenario", "fiscal_model"],
-      "non_ownership": ["geology", "execution", "human_diagnosis"],
-      "schema_version": "wealth.public.v1",
-      "evidence_url": "https://arifos.arif-fazil.com/organs/wealth/",
-      "secondary_nav": [
-        { "label": "Overview", "href": "https://wealth.arif-fazil.com/" },
-        { "label": "Markets", "href": "https://arif-fazil.com/wealth" },
-        { "label": "Gold", "href": "https://arif-fazil.com/gold" },
-        { "label": "Oil & Gas", "href": "https://arif-fazil.com/oil" },
-        { "label": "Scenarios", "href": "https://wealth.arif-fazil.com/" },
-        { "label": "Methods", "href": "https://wealth.arif-fazil.com/" },
-        { "label": "MCP", "href": "https://wealth.arif-fazil.com/mcp" }
-      ]
+    "AAA": {
+      "url": "https://aaa.arif-fazil.com",
+      "a2a_endpoint": "https://aaa.arif-fazil.com/a2a",
+      "agents_registry": "https://aaa.arif-fazil.com/a2a/agents.json",
+      "health_url": "https://aaa.arif-fazil.com/health",
+      "role": "Control plane, A2A coordination, and agent directory",
+      "authority_ceiling": "DISPLAY_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "A2A v1.0.0",
+      "status": "active"
     },
-    {
-      "id": "well",
-      "organ_id": "WELL",
-      "domain": "human-substrate",
-      "label": "WELL",
-      "nav_label": "Human",
-      "role": "witness",
-      "website": "https://well.arif-fazil.com/",
-      "mcp": "https://well.arif-fazil.com/mcp",
-      "authority": "reflect-only",
-      "doctrine": "Is the human steady?",
-      "ownership": ["human_readiness", "vitality_reflection", "dignity_boundary"],
-      "non_ownership": ["diagnosis", "capital_allocation", "execution", "geology"],
-      "schema_version": "well.public.v1",
-      "evidence_url": "https://arifos.arif-fazil.com/organs/well/",
-      "secondary_nav": [
-        { "label": "Overview", "href": "https://well.arif-fazil.com/" },
-        { "label": "Human", "href": "https://well.arif-fazil.com/#human" },
-        { "label": "Machine", "href": "https://well.arif-fazil.com/#machine" },
-        { "label": "Coupled State", "href": "https://well.arif-fazil.com/#coupled-state" },
-        { "label": "Privacy", "href": "https://well.arif-fazil.com/#privacy" },
-        { "label": "Methods", "href": "https://well.arif-fazil.com/" },
-        { "label": "MCP", "href": "https://well.arif-fazil.com/mcp" }
-      ]
+    "GEOX": {
+      "url": "https://geox.arif-fazil.com",
+      "mcp_endpoint": "https://geox.arif-fazil.com/mcp",
+      "health_url": "https://geox.arif-fazil.com/health",
+      "human_surface": "https://arif-fazil.com/earth/",
+      "role": "Earth and geoscience intelligence",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "WEALTH": {
+      "organ": "WEALTH",
+      "federation": "arifOS",
+      "url": "https://wealth.arif-fazil.com",
+      "mcp_endpoint": "https://wealth.arif-fazil.com/mcp",
+      "tools_url": "https://wealth.arif-fazil.com/tools",
+      "health_url": "https://wealth.arif-fazil.com/health",
+      "markets_registry_url": "https://wealth.arif-fazil.com/api/markets/registry",
+      "markets_hub_url": "https://wealth.arif-fazil.com/markets/",
+      "agent_card": "https://wealth.arif-fazil.com/.well-known/agent-card.json",
+      "llms_txt": "https://wealth.arif-fazil.com/llms.txt",
+      "human_surface": "https://arif-fazil.com/economics/",
+      "vitals_surface": "https://arif-fazil.com/vitals/",
+      "world_state_url": "https://arif-fazil.com/world-state.json",
+      "role": "Capital Intelligence",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "identity_hash": "d1ff40d030547572e57c7c5fe70423fe2d006635b60320786dec12878dd42395",
+      "tools_count": 15,
+      "protocol": "MCP",
+      "status": "active",
+      "note": "Computes and witnesses capital reality. Never judges, allocates capital, or issues sovereign SEAL."
+    },
+    "WELL": {
+      "url": "https://well.arif-fazil.com",
+      "mcp_endpoint": "https://well.arif-fazil.com/mcp",
+      "health_url": "https://well.arif-fazil.com/health",
+      "role": "Human readiness and vitality guard",
+      "authority_ceiling": "REFLECT_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "A-FORGE": {
+      "url": "https://mcp.arif-fazil.com",
+      "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
+      "health_url": "https://mcp.arif-fazil.com/health",
+      "role": "Governed engineering execution shell",
+      "authority_ceiling": "EXECUTE_AFTER_SEAL",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "CHRON": {
+      "url": "https://chron.arif-fazil.com",
+      "mcp_endpoint": "https://chron.arif-fazil.com/mcp",
+      "role": "Temporal consequence and calibration tracker",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
     }
-  ],
-  "control_plane": {
-    "id": "aaa",
-    "organ_id": "AAA",
-    "label": "AAA",
-    "role": "operator control plane",
-    "website": "https://aaa.arif-fazil.com/",
-    "public_nav": false,
-    "non_ownership": ["public_knowledge_domain"]
   },
-  "execution": {
-    "id": "aforge",
-    "organ_id": "A-FORGE",
-    "label": "A-FORGE",
-    "role": "execution surface",
-    "website": "https://forge.arif-fazil.com/",
-    "public_nav": false,
-    "requires": ["judgment_evidence", "lease"]
+  "doctrine": {
+    "GEOX": "Is it real?",
+    "WEALTH": "Is it worth it?",
+    "WELL": "Is the human steady?",
+    "arifOS": "Is it governed?",
+    "888_JUDGE": "Do I approve?"
   },
-  "verification": "https://arif-fazil.com/999/",
-  "genesis": "https://arif-fazil.com/000/",
-  "canon": "https://arif-fazil.com/canon/",
-  "mcp_gateway": "https://mcp.arif-fazil.com/",
-  "observatory": "https://arifos.arif-fazil.com/",
-  "github": "https://github.com/ariffazil/arifOS",
-  "nav_primary": [
-    { "id": "arif", "label": "Arif", "href": "https://arif-fazil.com/" },
-    { "id": "geox", "label": "GEOX", "href": "https://geox.arif-fazil.com/" },
-    { "id": "wealth", "label": "WEALTH", "href": "https://wealth.arif-fazil.com/" },
-    { "id": "well", "label": "WELL", "href": "https://well.arif-fazil.com/" },
-    { "id": "arifos", "label": "arifOS", "href": "https://arif-fazil.com/arifos/" },
-    { "id": "observatory", "label": "Observatory", "href": "https://arifos.arif-fazil.com/" }
-  ],
-  "footer_rows": [
-    { "domain": "EARTH", "name": "GEOX", "href": "https://geox.arif-fazil.com/" },
-    { "domain": "CAPITAL", "name": "WEALTH", "href": "https://wealth.arif-fazil.com/" },
-    { "domain": "SUBSTRATE", "name": "WELL", "href": "https://well.arif-fazil.com/" },
-    { "domain": "GOVERNANCE", "name": "arifOS", "href": "https://arifos.arif-fazil.com/" },
-    { "domain": "CONTROL", "name": "AAA", "href": "https://aaa.arif-fazil.com/" },
-    { "domain": "EXECUTION", "name": "A-FORGE", "href": "https://forge.arif-fazil.com/" },
-    { "domain": "PROOF", "name": "Observatory · /999", "href": "https://arif-fazil.com/999/" }
-  ],
-  "authority_line": "One federation identity, distinct organ identities. Domain organs advise or witness. The human remains the final authority."
+  "links": {
+    "human_identity": "https://arif-fazil.com/000/",
+    "seal_verification": "https://arif-fazil.com/999/",
+    "did_document": "https://arif-fazil.com/.well-known/did.json",
+    "did_configuration": "https://arif-fazil.com/.well-known/did-configuration.json"
+  },
+  "as_of": "2026-10-23",
+  "final_authority": "ARIF",
+  "sovereign": "Muhammad Arif bin Fazil (F13 SOVEREIGN)",
+  "reality_loop": {
+    "chain": "WORLD (Observe) -> WEALTH/GEOX/WELL (Compute & Sense) -> AAA (Coordinate) -> arifOS (Judge) -> ARIF (Decide)",
+    "world_state": "https://arif-fazil.com/world-state.json",
+    "markets_registry": "https://wealth.arif-fazil.com/api/markets/registry",
+    "capabilities_manifest": "https://arif-fazil.com/.well-known/capabilities.json",
+    "agent_registry": "https://arif-fazil.com/.well-known/agent-registry.json"
+  },
+  "canonical_url": "https://arif-fazil.com/.well-known/arifos-federation.json",
+  "compatibility_alias": "https://arif-fazil.com/federation/identity.json"
 }

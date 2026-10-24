@@ -1,7 +1,7 @@
 {
   "schema": "arifos.agent-registry.v1",
   "version": "1.0.0",
-  "as_of": "2026-08-04",
+  "as_of": "2026-10-23",
   "domain": "arif-fazil.com",
   "title": "Public Agent & Tool Registry",
   "owner": {
@@ -68,7 +68,16 @@
       "access_scope": "JUDGE_ONLY",
       "risk_tier": "R1_query",
       "url": "https://arifos.arif-fazil.com",
-      "public_tools": ["arif_init", "arif_observe", "arif_think", "arif_route", "arif_memory", "arif_judge", "arif_forge", "arif_seal"],
+      "public_tools": [
+        "arif_init",
+        "arif_observe",
+        "arif_think",
+        "arif_route",
+        "arif_memory",
+        "arif_judge",
+        "arif_forge",
+        "arif_seal"
+      ],
       "status": "live"
     },
     {
@@ -89,11 +98,35 @@
       "name": "WEALTH",
       "owner": "Arif Fazil",
       "mission": "interpret",
-      "access_scope": "COMPUTE_ONLY",
+      "access_scope": "555_COMPUTE_ONLY",
       "risk_tier": "R1_query",
       "url": "https://wealth.arif-fazil.com",
       "human_surface": "https://arif-fazil.com/economics",
-      "status": "live"
+      "status": "live",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "mcp_endpoint": "https://wealth.arif-fazil.com/mcp",
+      "tools_url": "https://wealth.arif-fazil.com/tools",
+      "markets_registry": "https://wealth.arif-fazil.com/api/markets/registry",
+      "agent_card": "https://wealth.arif-fazil.com/.well-known/agent-card.json",
+      "public_tools": [
+        "capital_primitive",
+        "capital_health",
+        "capital_diagnose",
+        "capital_market",
+        "capital_ledger",
+        "capital_registry",
+        "capital_claims",
+        "capital_entropy",
+        "wealth_judge_handoff",
+        "capital_indicator",
+        "capital_backtest",
+        "capital_entry_plan",
+        "wealth_synthesize",
+        "capital_polix",
+        "capital_civx"
+      ],
+      "tools_count": 15
     },
     {
       "id": "organ:well",
@@ -115,7 +148,9 @@
       "access_scope": "DISPLAY_ONLY_public",
       "risk_tier": "R1_query",
       "url": "https://aaa.arif-fazil.com",
-      "status": "live"
+      "status": "live",
+      "a2a_endpoint": "https://aaa.arif-fazil.com/a2a",
+      "agents_directory": "https://aaa.arif-fazil.com/a2a/agents.json"
     },
     {
       "id": "organ:a-forge",
@@ -161,7 +196,11 @@
       "access_scope": "public_read + governed_query",
       "risk_tier": "R1_query",
       "url": "https://arif-fazil.com/earth",
-      "entity_examples": ["basin:malay", "basin:kinabalu", "tool:geox"],
+      "entity_examples": [
+        "basin:malay",
+        "basin:kinabalu",
+        "tool:geox"
+      ],
       "status": "live"
     },
     {
@@ -195,7 +234,10 @@
       "access_scope": "public_read",
       "risk_tier": "R0_read",
       "url": "https://arif-fazil.com/doctrine",
-      "entity_examples": ["doctrine:f2-truth", "doctrine:f13-sovereign"],
+      "entity_examples": [
+        "doctrine:f2-truth",
+        "doctrine:f13-sovereign"
+      ],
       "status": "live"
     }
   ],

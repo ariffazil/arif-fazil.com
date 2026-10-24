@@ -1,0 +1,136 @@
+{
+  "federation": "arifOS",
+  "version": "2.0.0",
+  "protocol": "A2A v1.0.0",
+  "domain": "arif-fazil.com",
+  "genesis_did": "did:web:arif-fazil.com",
+  "constitutional_floors": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11",
+    "F12",
+    "F13"
+  ],
+  "verdict_authority": "888_JUDGE",
+  "vault": "VAULT999",
+  "governance_root": "https://arif-fazil.com/.well-known/arifos-federation.json",
+  "domains": {
+    "arifOS": {
+      "url": "https://arifos.arif-fazil.com",
+      "mcp_endpoint": "https://arifos.arif-fazil.com/mcp",
+      "health_url": "https://arifos.arif-fazil.com/health",
+      "role": "Constitutional governance kernel",
+      "authority_ceiling": "JUDGE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "AAA": {
+      "url": "https://aaa.arif-fazil.com",
+      "a2a_endpoint": "https://aaa.arif-fazil.com/a2a",
+      "agents_registry": "https://aaa.arif-fazil.com/a2a/agents.json",
+      "health_url": "https://aaa.arif-fazil.com/health",
+      "role": "Control plane, A2A coordination, and agent directory",
+      "authority_ceiling": "DISPLAY_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "A2A v1.0.0",
+      "status": "active"
+    },
+    "GEOX": {
+      "url": "https://geox.arif-fazil.com",
+      "mcp_endpoint": "https://geox.arif-fazil.com/mcp",
+      "health_url": "https://geox.arif-fazil.com/health",
+      "human_surface": "https://arif-fazil.com/earth/",
+      "role": "Earth and geoscience intelligence",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "WEALTH": {
+      "organ": "WEALTH",
+      "federation": "arifOS",
+      "url": "https://wealth.arif-fazil.com",
+      "mcp_endpoint": "https://wealth.arif-fazil.com/mcp",
+      "tools_url": "https://wealth.arif-fazil.com/tools",
+      "health_url": "https://wealth.arif-fazil.com/health",
+      "markets_registry_url": "https://wealth.arif-fazil.com/api/markets/registry",
+      "markets_hub_url": "https://wealth.arif-fazil.com/markets/",
+      "agent_card": "https://wealth.arif-fazil.com/.well-known/agent-card.json",
+      "llms_txt": "https://wealth.arif-fazil.com/llms.txt",
+      "human_surface": "https://arif-fazil.com/economics/",
+      "vitals_surface": "https://arif-fazil.com/vitals/",
+      "world_state_url": "https://arif-fazil.com/world-state.json",
+      "role": "Capital Intelligence",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "identity_hash": "d1ff40d030547572e57c7c5fe70423fe2d006635b60320786dec12878dd42395",
+      "tools_count": 15,
+      "protocol": "MCP",
+      "status": "active",
+      "note": "Computes and witnesses capital reality. Never judges, allocates capital, or issues sovereign SEAL."
+    },
+    "WELL": {
+      "url": "https://well.arif-fazil.com",
+      "mcp_endpoint": "https://well.arif-fazil.com/mcp",
+      "health_url": "https://well.arif-fazil.com/health",
+      "role": "Human readiness and vitality guard",
+      "authority_ceiling": "REFLECT_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "A-FORGE": {
+      "url": "https://mcp.arif-fazil.com",
+      "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
+      "health_url": "https://mcp.arif-fazil.com/health",
+      "role": "Governed engineering execution shell",
+      "authority_ceiling": "EXECUTE_AFTER_SEAL",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    },
+    "CHRON": {
+      "url": "https://chron.arif-fazil.com",
+      "mcp_endpoint": "https://chron.arif-fazil.com/mcp",
+      "role": "Temporal consequence and calibration tracker",
+      "authority_ceiling": "555_COMPUTE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "MCP",
+      "status": "active"
+    }
+  },
+  "doctrine": {
+    "GEOX": "Is it real?",
+    "WEALTH": "Is it worth it?",
+    "WELL": "Is the human steady?",
+    "arifOS": "Is it governed?",
+    "888_JUDGE": "Do I approve?"
+  },
+  "links": {
+    "human_identity": "https://arif-fazil.com/000/",
+    "seal_verification": "https://arif-fazil.com/999/",
+    "did_document": "https://arif-fazil.com/.well-known/did.json",
+    "did_configuration": "https://arif-fazil.com/.well-known/did-configuration.json"
+  },
+  "as_of": "2026-10-23",
+  "final_authority": "ARIF",
+  "sovereign": "Muhammad Arif bin Fazil (F13 SOVEREIGN)",
+  "reality_loop": {
+    "chain": "WORLD (Observe) -> WEALTH/GEOX/WELL (Compute & Sense) -> AAA (Coordinate) -> arifOS (Judge) -> ARIF (Decide)",
+    "world_state": "https://arif-fazil.com/world-state.json",
+    "markets_registry": "https://wealth.arif-fazil.com/api/markets/registry",
+    "capabilities_manifest": "https://arif-fazil.com/.well-known/capabilities.json",
+    "agent_registry": "https://arif-fazil.com/.well-known/agent-registry.json"
+  },
+  "canonical_url": "https://arif-fazil.com/.well-known/arifos-federation.json",
+  "compatibility_alias": "https://arif-fazil.com/federation/identity.json"
+}

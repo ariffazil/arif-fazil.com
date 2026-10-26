@@ -174,6 +174,95 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
   <p style="margin-top:.85rem;font-size:.78rem;color:var(--text-secondary);line-height:1.55"><b>Two evidence lines, one set of surfaces.</b> All four regional unconformities — BMU/TCU, DRU, UIU, SRU — match global sequence boundaries in the Haq &amp; Ogg (2024) chart (NgSB1, NgSB8, NgSB11, NgSB13; Δ ≤ 0.2 Ma in GEOX's correlation). Tectonics alone does not produce that coincidence: these surfaces carry a eustatic signal as well as a tectonic one. That is why "the DRU records the collision" is a claim to test, not a given — GEOX rule: DRU ≠ collision onset without structural evidence. Provenance: Morley (2024) tectonics × Haq &amp; Ogg (2024) eustasy, relayed by GEOX <span style="font-family:var(--mono)">geox://earth-system/sabah-correlation</span>.</p>
 </div>
 
+<div class="panel" id="panelBB" style="margin-top:1.25rem">
+  <div class="panel-head"><h3>◈ Section B–B′ · NW–SE margin transect — conceptual, with explicit gaps</h3><span class="note">Schematic. Not a depth-converted seismic line, not a balanced restoration, not measured geometry.</span></div>
+  <div class="read-guide" role="note">Read the gap, not the shapes: offshore shortening is documented; its connection to hinterland extension is <b>not</b>. The central feature of this panel is the hatched UNKNOWN — the connecting mechanism is never drawn as an observed structure.</div>
+  <svg viewBox="0 0 1000 430" role="img" aria-label="Conceptual NW-SE margin transect: Sabah Trough, deepwater fold-thrust belt, shelf, Crocker hinterland, with explicit gap for the landward connection" style="width:100%;height:auto;display:block;font-family:var(--mono)">
+    <!-- water + seafloor -->
+    <rect x="20" y="60" width="330" height="70" fill="#0c2a4a"/>
+    <text x="30" y="52" font-size="11" fill="#7dd3fc">SOUTH CHINA SEA</text>
+    <path d="M20,130 L120,138 L220,150 L320,160 L350,130 L420,120 L500,118 L560,110 L620,95 L700,80 L780,60 L860,40 L980,20 L980,130 L20,130 Z" fill="none"/>
+    <path d="M20,130 L120,138 L220,150 L320,160 L350,130 L420,120 L500,118 L560,110 L620,95 L700,80 L780,60 L860,40 L980,20" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="150" y="176" font-size="10" fill="#7dd3fc">Sabah Trough (~2.9 km)</text>
+    <!-- sedimentary wedge -->
+    <path d="M60,132 L320,160 L350,130 L420,120 L470,119 L470,180 L350,190 L200,185 L60,160 Z" fill="#3f4a5c" opacity="0.85"/>
+    <path d="M120,150 L320,172 M90,142 L280,164" stroke="#94a3b8" stroke-width="0.7" opacity="0.5" fill="none"/>
+    <text x="90" y="205" font-size="10" fill="#cbd5e1">Neogene wedge (drape + toe fill)</text>
+    <!-- DWFTB thrusts (schematic, with teeth) -->
+    <g stroke="#f59e0b" stroke-width="1.4" fill="none">
+      <path d="M180,185 L210,150"/><path d="M240,188 L270,152"/><path d="M300,190 L330,158"/>
+    </g>
+    <g fill="#f59e0b">
+      <path d="M205,152 l6,3 -5,4 z"/><path d="M265,154 l6,3 -5,4 z"/><path d="M325,160 l6,3 -5,4 z"/>
+    </g>
+    <text x="170" y="222" font-size="11" fill="#fbbf24">DEEPWATER FOLD–THRUST BELT</text>
+    <text x="170" y="236" font-size="9" fill="#94a3b8">seismic-documented; geometry varies along strike</text>
+    <!-- interpreted basal detachment (dashed, query) -->
+    <path d="M80,188 Q250,205 430,196" stroke="#f472b6" stroke-width="1.6" stroke-dasharray="7 5" fill="none"/>
+    <text x="90" y="252" font-size="10" fill="#f472b6">- - interpreted basal detachment - - ?</text>
+    <!-- shelf / coast -->
+    <text x="430" y="145" font-size="10" fill="#7dd3fc">shelf · coast</text>
+    <!-- GAP zone -->
+    <rect x="470" y="150" width="150" height="115" fill="url(#hatchGap)" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <defs><pattern id="hatchGap" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="8" stroke="#f87171" stroke-width="1" opacity="0.35"/></pattern></defs>
+    <text x="478" y="196" font-size="11" font-weight="700" fill="#f87171">LANDWARD CONNECTION</text>
+    <text x="478" y="212" font-size="11" font-weight="700" fill="#f87171">NOT ESTABLISHED</text>
+    <text x="478" y="232" font-size="9" fill="#fca5a5">sedimentary detachment vs deeper</text>
+    <text x="478" y="244" font-size="9" fill="#fca5a5">involvement: unresolved for this transect</text>
+    <!-- hinterland topography (schematic) -->
+    <path d="M620,95 L700,80 L780,60 L860,40 L980,20 L980,120 L620,120 Z" fill="#57534e" opacity="0.75"/>
+    <text x="700" y="112" font-size="11" fill="#e7e5e4">CROCKER HINTERLAND</text>
+    <text x="880" y="16" font-size="10" fill="#f9a8d4">Mt Kinabalu 4,095 m</text>
+    <!-- onshore normal faults (Wang 2017): NW-dipping, ticks -->
+    <g stroke="#4ade80" stroke-width="1.4" fill="none">
+      <path d="M820,30 L760,95"/><path d="M880,22 L830,72"/>
+    </g>
+    <g stroke="#4ade80" stroke-width="1.2">
+      <path d="M806,44 l-9,1"/><path d="M792,59 l-9,1"/><path d="M778,74 l-9,1"/><path d="M866,35 l-8,1"/><path d="M852,50 l-8,1"/>
+    </g>
+    <text x="640" y="285" font-size="10" fill="#4ade80">active normal-fault system (~200 km, E-flank Crocker;</text>
+    <text x="640" y="298" font-size="10" fill="#4ade80">2015 Mw 6.0 blind NW-dipping fault — Wang et al. 2017)</text>
+    <!-- rift-axis intrusions (Arif element) -->
+    <path d="M860,120 L845,60 M860,120 L875,55 M862,120 L860,40" stroke="#db2777" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+    <path d="M845,45 q15,-20 30,0 q-15,14 -30,0 z" fill="#db2777" opacity="0.9"/>
+    <text x="893" y="48" font-size="10" fill="#f9a8d4">Kinabalu pluton ~8–7 Ma</text>
+    <rect x="620" y="315" width="365" height="66" rx="6" fill="#1a1a1a" stroke="#db2777" stroke-width="0.8" opacity="0.92"/>
+    <text x="632" y="333" font-size="10" font-weight="700" fill="#f9a8d4">RIFT-AXIS INTRUSIONS — HYPOTHESIS (no push claimed)</text>
+    <text x="632" y="349" font-size="9" fill="#e7e5e4">Sparse intrusions may exploit an inherited thinned axis (failed-rift?</text>
+    <text x="632" y="362" font-size="9" fill="#e7e5e4">transtensional at ~8 Ma unproven). Intrusions are passengers of structure,</text>
+    <text x="632" y="375" font-size="9" fill="#e7e5e4">not drivers of deformation — no causal arrow to offshore shortening.</text>
+    <!-- deep crust box -->
+    <rect x="20" y="315" width="580" height="66" rx="6" fill="#111" stroke="#475569" stroke-width="0.8"/>
+    <text x="32" y="333" font-size="10" font-weight="700" fill="#94a3b8">DEEP CRUST — DELIBERATELY NOT DRAWN</text>
+    <text x="32" y="349" font-size="9" fill="#cbd5e1">No offshore-to-onshore Moho profile for this transect · no continuous regional</text>
+    <text x="32" y="362" font-size="9" fill="#cbd5e1">décollement assumed · no active underthrust slab geometry imposed.</text>
+    <text x="32" y="375" font-size="9" fill="#64748b">M1 (external forcing) and M3 (internally driven) are end-members, not mutually exclusive truths.</text>
+    <!-- mechanical questions -->
+    <text x="20" y="404" font-size="9.5" fill="#7dd3fc">MECHANICAL QUESTIONS: what drives shortening on THIS segment? · how much is wedge-internal? · is hinterland linkage demonstrated? · what boundary forcing, if any?</text>
+    <text x="20" y="422" font-size="8.5" fill="#64748b">DRU omitted from geometry: literature ages span ~15.5–12 Ma (bracket, not a point; diachroneity untested). A balanced budget shows compatibility, never unique causation.</text>
+  </svg>
+  <div class="panel-head" style="margin-top:1rem"><h3>◈ Regional deep context — kept separate from B–B′</h3><span class="note">3-D evidence; projecting it beneath one transect would manufacture geometric connection</span></div>
+  <svg viewBox="0 0 1000 150" role="img" aria-label="Regional interpretive context: western slab remnant and eastern drip, coupling to NW offshore unproven" style="width:100%;height:auto;display:block;font-family:var(--mono)">
+    <rect x="20" y="15" width="290" height="80" rx="6" fill="#111" stroke="#475569"/>
+    <text x="35" y="38" font-size="10.5" fill="#93c5fd">WESTERN SABAH</text>
+    <text x="35" y="56" font-size="9" fill="#cbd5e1">High-velocity upper-mantle anomaly</text>
+    <text x="35" y="70" font-size="9" fill="#cbd5e1">= interpreted PSCS slab remnant (INT)</text>
+    <text x="35" y="86" font-size="8.5" fill="#64748b">Pilia et al. — interpretation of seismic evidence</text>
+    <rect x="690" y="15" width="290" height="80" rx="6" fill="#111" stroke="#475569"/>
+    <text x="705" y="38" font-size="10.5" fill="#fdba74">EASTERN SABAH</text>
+    <text x="705" y="56" font-size="9" fill="#cbd5e1">Lithospheric downwelling = drip (INT+model)</text>
+    <text x="705" y="70" font-size="9" fill="#cbd5e1">modelled potential for adjacent thinning</text>
+    <text x="705" y="86" font-size="8.5" fill="#64748b">Pilia et al. 2023 — mechanism possible, cause not established</text>
+    <path d="M310,55 L440,55" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+    <path d="M690,55 L560,55" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="445" y="50" font-size="12" fill="#f87171">? ? ?</text>
+    <text x="380" y="80" font-size="9.5" fill="#fca5a5">Coupling to NW offshore deformation = hypothesis requiring tests</text>
+    <text x="20" y="122" font-size="8.5" fill="#64748b">Keep each study's location, method and tectonic attribution separate — not every deep feature is "the slab". Cornwell et al. 2025 image an uppermost-mantle discontinuity</text>
+    <text x="20" y="136" font-size="8.5" fill="#64748b">attributed to a Celebes-related remnant: a different province, a different question. Deep-structure constraints rest largely on one 2018–2020 onshore campaign (several methods, one acquisition).</text>
+  </svg>
+  <p style="margin-top:.7rem;font-size:.72rem;color:var(--text-dim)">Panel lineage: conceptual section after an external audit (Perplexity, 2026-10-26) reconciled against the federation audit register; rift-axis intrusion element after Arif Fazil. Refs for this panel: Pilia et al. 2023 <i>Nat. Geosci.</i> (drip) · Cornwell et al. 2025 <i>JGR</i> 10.1029/2025JB031466 (migrated RF) · Wang et al. 2017 <i>Geosci. Lett.</i> (Kinabalu earthquake, normal-fault system) · Geosphere 16(1):329 (triangle-zone DWFTB) · mixed-deformation DWFTB study (d-nb.info/1269312944). Schematic throughout — shapes carry no measured geometry.</p>
+</div>
+
 <div class="card" style="margin-top:1.25rem">
   <h3>Sources</h3>
   <ul class="refs" id="refs"></ul>

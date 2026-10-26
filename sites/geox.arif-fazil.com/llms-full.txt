@@ -21,7 +21,7 @@
 - WebMCP manifest: GET https://geox.arif-fazil.com/.well-known/mcp.json
 - Port: 8081 (bound) — stateless core, sealed ledger sidecar, horizontal scale behind gateway
 
-## Tool Catalog (42 tools, geox.* namespace)
+## Tool Catalog (namespace listing — 42 names shown; canonical PUBLIC count is generated from the registry and served live at /health · tools/list — currently 27)
 
 Subsurface & Basin:
   geox.basin_screen, geox.play_chance, geox.stoiip, geox.volumetrics,

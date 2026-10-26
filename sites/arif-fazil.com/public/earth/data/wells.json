@@ -2,6 +2,14 @@
   "schema": "geox-wells/v1",
   "generated_from": "sovereign handover 2026-07-20 (DATA GATE answered in writing)",
   "epistemic": "All four wells tier=existence by sovereign ruling 2026-07-20. Existence tier carries NO coordinates, depths, or results. Markers are rendered at jittered basin-level positions client-side; basin anchors are coarse public geography, not well locations.",
+  "tier_policy_amendment_proposed": {
+    "proposed_at": "2026-10-26",
+    "proposed_by": "kimi-code/FI-008 (sovereign-directed claim audit)",
+    "status": "PROPOSED_PENDING_SOVEREIGN_RATIFICATION — data values NOT modified; this flag records the contradiction and the proposed resolution",
+    "contradiction": "The 2026-07-20 ruling declares existence tier = 'no results', yet per-well fields `status` and `significance` carry outcome narrative (e.g. 'shallowest flowing oil'). Pages previously published both the ruling text and outcome-flavoured cards, so the declared disclosure policy and the displayed content disagreed.",
+    "resolution": "Two named tiers: EXISTENCE (name only — no coordinates, depths, results) and ATTESTED (name + founder-signed narrative, every rendering labelled PRIVATE WITNESS · NOT PUBLICLY AUDITABLE, coordinates always jittered). Public pages aligned to the ATTESTED label on 2026-10-26 (earth/index, earth/malay-basin). If the sovereign prefers the stricter single-tier reading, delete `significance` from this file and the outcome sentences from the cards — the page labels already permit either.",
+    "sovereign_decision_needed": "ratify ATTESTED tier, or order outcome-field deletion"
+  },
   "basin_anchors": {
     "Malay Basin": {
       "lat": 4.0,

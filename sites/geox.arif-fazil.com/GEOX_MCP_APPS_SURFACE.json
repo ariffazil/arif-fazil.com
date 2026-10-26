@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-09-17T21:51:50.766847+00:00",
+  "generated_at": "2026-10-26T00:00:00+00:00 (mirror refresh from GEOX registry; live truth: /health · tools/list)",
   "organ": "GEOX",
-  "total_canonical_tools": 32,
+  "total_canonical_tools": 27,
   "total_ui_resources": 24,
   "active_ui_resources": 20,
   "deprecated_ui_resources": 3,

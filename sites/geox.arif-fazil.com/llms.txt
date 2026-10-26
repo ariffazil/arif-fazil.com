@@ -53,7 +53,7 @@ Business Source License 1.1; converts to Apache 2.0 on 2029-06-29.
 ## Links
 
 - Site: https://geox.arif-fazil.com/
-- Platform (42 tools): https://geox.arif-fazil.com/platform
+- Platform (canonical public tool count is generated from registry.py and served live at /health · tools/list): https://geox.arif-fazil.com/platform
 - MCP Apps (18 widgets): https://geox.arif-fazil.com/mcp-apps
 - MCP door: https://geox.arif-fazil.com/mcp (public HTML WebMCP console is not exposed)
 - Federation: https://geox.arif-fazil.com/federation

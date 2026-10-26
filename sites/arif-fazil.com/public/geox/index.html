@@ -242,17 +242,45 @@
             </div>
         </section>
 
-        <div class="status-bar">
-            <div><span class="status-pulse"></span> SYSTEM_LIVE: <span id="server-version">v0.1.0-AAA</span></div>
-            <div style="font-family: monospace; color: var(--accent-gold);">VAULT_999_CONNECTED</div>
-            <div id="last-updated">2026.04.15 // 10:00:00</div>
+        <div class="status-bar" id="geoxStatus">
+            <div><span class="status-pulse"></span> <span id="geoxState">RUNTIME STATUS: UNAVAILABLE — this page asserts no health without a measured response</span></div>
+            <div style="font-family: monospace; color: var(--accent-gold);" id="geoxDeps">FEDERATION DEPS: UNMEASURED</div>
+            <div id="last-updated">checked: —</div>
         </div>
+        <script>
+        (function () {
+          var el = function (id) { return document.getElementById(id); };
+          function paint() {
+            fetch('https://geox.arif-fazil.com/health', { cache: 'no-store' })
+              .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
+              .then(function (h) {
+                var owner = (h.owner_summary && h.owner_summary.color) || 'UNKNOWN';
+                el('geoxState').textContent = 'RUNTIME: ' + String(h.status || '?').toUpperCase() +
+                  ' · kernel ' + String(h.kernel_verdict || '?') + ' · owner ' + owner +
+                  ' · tools ' + (h.tools_loaded != null ? h.tools_loaded + '/' + h.canonical_tools + ' canonical' : 'unreported') +
+                  ' · ' + (h.version || '?') + ' (' + (h.git_version || '?') + ')';
+                var sd = h.surface_drift || {}, dd = h.deployment_drift || {};
+                el('geoxDeps').textContent = 'FEDERATION DEPS: surface-drift ' + (sd.ok === true ? 'ok' : sd.ok === false ? 'DRIFT(' + sd.drift_count + ')' : 'UNMEASURED') +
+                  ' · kernel-deploy ' + (dd.drift === true ? 'DRIFT (reported)' : dd.drift === false ? 'ok' : 'UNMEASURED') +
+                  ' · authority ' + (h.authority_ceiling || 'UNREPORTED') + ' · final ' + (h.final_authority || 'ARIF');
+                var f = h.freshness || {};
+                el('last-updated').textContent = 'health checked: ' + (f.checked_at_utc || 'n/a') + ' · age ' + (f.age_seconds != null ? f.age_seconds + 's' : '?');
+              })
+              .catch(function () {
+                el('geoxState').textContent = 'RUNTIME STATUS: UNREACHABLE — not a claim of health; treat advertised capabilities as unverified';
+                el('geoxDeps').textContent = 'FEDERATION DEPS: UNMEASURED';
+                el('last-updated').textContent = 'checked: failed';
+              });
+          }
+          paint(); setInterval(paint, 60000);
+        })();
+        </script>
 
         <section class="cockpit-grid">
             <a href="/apps/prospect-ui/" class="cockpit-card">
                 <span class="tag">GEOX // AAA-Grade</span>
                 <h3>Prospect Forge</h3>
-                <p>The definitive cockpit for prospect maturation. Integrates Georeferencing, B_cog Bias Referee, and Governed Verdicts.</p>
+                <p>Prospect maturation surface: georeferencing, B_cog bias referee, and evidence envelopes. GEOX reports <b>compatible · incompatible · unresolved · insufficient coverage</b> — admissibility, verdicts and authorization belong to arifOS and the human, never to this cockpit.</p>
                 <div style="font-size: 0.75rem; color: var(--accent-cyan);">→ Open Decision Surface</div>
             </a>
             <a href="/apps/well-desk/" class="cockpit-card">
@@ -270,7 +298,7 @@
             <a href="/basins/kinabalu/index.html" class="cockpit-card">
                 <span class="tag">GEOX // LC-001 // NSPW-Corrected</span>
                 <h3>Kinabalu Basin Synthesis</h3>
-                <p>8-stage tectonostratigraphic column · PSCS subduction model (5/8 kill tests) · 4 basement hypotheses · 8-well KL2 dataset · Layang-Tepat-Solisip-Megah prospect verdicts.</p>
+                <p>8-stage tectonostratigraphic column · PSCS subduction model (5/8 kill tests) · 4 basement hypotheses · 8-well KL2 dataset · Layang-Tepat-Solisip-Megah prospect evidence envelopes — GEOX computes; verdicts are made by arifOS and the human.</p>
                 <div style="font-size: 0.75rem; color: var(--accent-cyan);">→ Analyze Basin Intelligence</div>
             </a>
         </section>
@@ -293,7 +321,7 @@
                 <div class="bridge-node">
                     <div class="icon">💰</div>
                     <div class="label">Sovereignty</div>
-                    <div class="desc">CapitalX Valuation & Decision Closure</div>
+                    <div class="desc">CapitalX Valuation &amp; Decision Support — closure is a human act (888_HOLD)</div>
                 </div>
             </div>
             

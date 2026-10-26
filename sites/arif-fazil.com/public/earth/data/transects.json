@@ -1,0 +1,92 @@
+{
+  "$schema_note": "Canonical transect registry for the EARTH observatory pages. Every public cross-section MUST be registered here before it is cited by another page. One row per displayed line. Coordinates are endpoint/pick coordinates in WGS84; chainage is recomputed on the great circle unless stated otherwise.",
+  "purpose": "Prevent silent cross-domain transfer: a transect may only calibrate interpretations inside its geographic_domain. Outside that domain it is REGIONAL CONTEXT or MECHANICAL ANALOGUE ONLY, never local calibration.",
+  "last_updated": "2026-10-26",
+  "domain_tags": {
+    "LOCAL_CALIBRATION": "may set geometry, depth or timing for features inside geographic_domain",
+    "REGIONAL_CONTEXT": "frames the tectonic setting; no numeric transfer",
+    "MECHANICAL_ANALOGUE_ONLY": "process style may inspire hypotheses elsewhere; shortening, detachment depth, drivers and crustal architecture must NOT be transferred without local seismic calibration"
+  },
+  "transects": [
+    {
+      "transect_id": "T-KIN-XS-833",
+      "displayed_on": ["earth/kinabalu-cross-section.html", "earth/kinabalu-basin/"],
+      "name": "Kinabalu regional cross-section (dog-leg), Dangerous Grounds → Sabah Trough → Kinabalu Basin → Crocker → Central Sabah → Sandakan → Sulu Sea",
+      "geographic_domain": "NW Sabah — Kinabalu Basin and Sabah Trough family",
+      "length_km": 832.84,
+      "chainage_control": "11 WGS84 control points; chainage recomputed 2026-10 geodesically (484.90 km to Mt Kinabalu)",
+      "azimuth_by_segment": "dog-leg — not a single azimuth; segment azimuths published on the page footer",
+      "vertical_exaggeration": "≈17× on the upper structural panel",
+      "interpretation_scale": "regional (~10 km features)",
+      "geometry_lineage": "hand-plotted interpretive schematic from published values; NOT machine-derived from survey data; no Moho drawn between 230–540 km chainage (data gap stated on page)",
+      "data_sources": ["GEBCO 2026 (bathymetry context)", "published literature values (see page references)"],
+      "permitted_analogue_domain": ["NW Sabah crustal-evolution hypotheses"],
+      "prohibited_transfer_domain": ["Sarawak / NW Borneo fold belts", "Balabac", "Sulu Archipelago"],
+      "calibration_status": "hypothesis board — not a calibrated Earth section",
+      "internal_calibrator": "KL2 project 8-key-line grid (proprietary seismic; public pages are the hypothesis/boundary-condition layer it tests)",
+      "domain_tag": "REGIONAL_CONTEXT for Sabah; not usable outside Sabah"
+    },
+    {
+      "transect_id": "T-SAB-OBS-833",
+      "displayed_on": ["earth/sabah-observatory/"],
+      "name": "NW Sabah multi-model crustal transect",
+      "geographic_domain": "NW Sabah crustal/mantle model space (Dangerous Grounds → Sabah Trough → Crocker → Central Sabah → Sulu Sea)",
+      "length_km": 832.84,
+      "chainage_control": "shares the station chain of T-KIN-XS-833 (11 control points, 484.90 km to Mt Kinabalu)",
+      "vertical_exaggeration": "depth panel 0–70 km, true-scale depth axis",
+      "interpretation_scale": "regional",
+      "geometry_lineage": "model geometries are parameterised crust/Moho surfaces with runtime geometry hashes; L2 polygons everywhere except sampled topography/bathymetry",
+      "data_sources": ["see page Sources (Gilligan et al. 2026; Pilia et al. 2023; Morley et al. 2023; Cottam et al. 2013; Hall 2013; Sidek et al. 2016; Madon et al. 2025; Tongkul 1997; Tsikouras et al. 2021)"],
+      "permitted_analogue_domain": ["Sabah crustal model discrimination"],
+      "prohibited_transfer_domain": ["Sarawak / NW Borneo fold belts"],
+      "calibration_status": "falsification engine running on shared crustal base states — see claims_ledger.json for per-observation georeference state",
+      "nested_modifier_note": "Models A, F, C share one crustal hash: A = base crust, F = A + shallow ophiolitic sheet, C = A + mantle slab-remnant annotation. They are nested modifiers, not independent Earth states.",
+      "domain_tag": "LOCAL_CALIBRATION for NW Sabah model space only"
+    },
+    {
+      "transect_id": "T-BNW-DIP-BB",
+      "displayed_on": ["earth/borneo-sections.html"],
+      "name": "Deepwater NW Borneo dip transect B–B′",
+      "geographic_domain": "Baram–North Luconia / NW Borneo fold-thrust belt → NW Borneo Trough → Dangerous Grounds",
+      "length_km": 487.0,
+      "endpoints": [{ "lat": 3.85, "lon": 115.3 }, { "lat": 7.1, "lon": 112.35 }],
+      "azimuth_by_segment": "initial azimuth 318.0° (great circle, 701 sample points)",
+      "vertical_exaggeration": "stated on page",
+      "interpretation_scale": "regional",
+      "data_sources": ["GEBCO/global bathymetry 1 arc-min", "Sandwell & Smith V34.1 free-air gravity", "published seismic literature (Hinz 1989; Hutchison 2005; Ogawa & Back 2023; Madon et al. 2015; Morley 2024)"],
+      "geometry_lineage": "bathymetry and gravity sampled at real coordinates (L0); interpreted structure from literature ranges (L2); fault shapes representative, not seismic picks",
+      "permitted_analogue_domain": ["gravity-translation / detachment mechanics as a mechanical analogue", "regional setting of the NW Borneo trough"],
+      "prohibited_transfer_domain": ["shortening balance to Kinabalu Basin", "detachment depth to Kinabalu Basin", "subduction driver arguments to Kinabalu Basin", "Sarawak cycle boundaries to SB4–SB8 sequence boundaries without the KL2 crosswalk"],
+      "calibration_status": "valid southern framework; MECHANICAL ANALOGUE ONLY for Kinabalu/Sabah Trough work",
+      "domain_tag": "MECHANICAL_ANALOGUE_ONLY for Sabah; LOCAL_CALIBRATION for NW Borneo province"
+    },
+    {
+      "transect_id": "T-BNW-STRIKE-AA",
+      "displayed_on": ["earth/borneo-sections.html"],
+      "name": "Deepwater NW Borneo strike transect A–A′",
+      "geographic_domain": "NW Borneo fold-thrust belt (subparallel to thrust strike)",
+      "length_km": 295.1,
+      "endpoints": [{ "lat": 5.3, "lon": 113.2 }, { "lat": 7.0, "lon": 115.25 }],
+      "azimuth_by_segment": "50.1°",
+      "vertical_exaggeration": "n/a — strike profile",
+      "interpretation_scale": "regional",
+      "data_sources": ["Sandwell & Smith V34.1", "bathymetry grids as above"],
+      "geometry_lineage": "strike line is subparallel to thrust strike: it MUST NOT be structurally restored or read as a dip section (stated on page)",
+      "permitted_analogue_domain": ["along-strike gravity architecture of the fold belt"],
+      "prohibited_transfer_domain": ["dip-domain restorations anywhere", "Kinabalu Basin"],
+      "calibration_status": "crustal-thickness gradient signal — compatible with, not confirmatory of, the dip-section architecture (non-unique potential field)",
+      "domain_tag": "REGIONAL_CONTEXT"
+    },
+    {
+      "transect_id": "T-KL2-INTERNAL",
+      "displayed_on": [],
+      "name": "KL2 Kinabalu project key-line grid (8 key lines, 80+ wells)",
+      "geographic_domain": "Kinabalu Basin (internal)",
+      "length_km": null,
+      "data_sources": ["proprietary 3D/2D seismic and well databank — NOT public"],
+      "geometry_lineage": "industry seismic lines; the only legitimate local calibration source for Kinabalu geometry",
+      "public_role": "the three public pages are the hypothesis and regional boundary-condition layer this grid tests; they do not replace it",
+      "domain_tag": "LOCAL_CALIBRATION (internal only)"
+    }
+  ]
+}

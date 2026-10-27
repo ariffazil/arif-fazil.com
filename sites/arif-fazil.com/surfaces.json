@@ -640,13 +640,13 @@
     },
     {
       "path": "/vitals/",
-      "title": "PETRONAS VITALS (retired 2026-10-23)",
+      "title": "PETRONAS · VITALS — Financial capacity and resilience",
       "mission": "monitor",
-      "status": "redirect",
+      "status": "live",
       "type": "page",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Moved to /world/petronas/. Legacy path serves a meta-refresh redirect."
+      "description": "Public PETRONAS VITALS on apex. Canonical soft path /vitals/."
     },
     {
       "path": "/malaysia/",

@@ -5,7 +5,6 @@
   "seal_note": "Draft canonical floor table. Three corrections embedded (F7 Ω₀ cap, F9 merged, F2 mapping explicit). F6 pending F13 sovereign decision — MARUAH vs EMPATHY.",
   "forged_by": "Arif (F13) + AAA Agent (scribe)",
   "forged_at": "2026-07-24T03:20:00+08:00",
-
   "render_contract": {
     "description": "Every page, gate, and chip that displays constitutional floors MUST render from this file. Amendments require F13 procedure: draft → sovereign review → SEAL → single commit → all pages change simultaneously.",
     "consumers": [
@@ -16,10 +15,19 @@
       "F2 band chips (CLAIM/PLAUSIBLE/ESTIMATE/UNKNOWN labels)"
     ]
   },
-
   "epistemic_taxonomy": {
-    "internal": ["OBS", "DER", "INT", "SPEC"],
-    "render_facing": ["CLAIM", "PLAUSIBLE", "ESTIMATE", "UNKNOWN"],
+    "internal": [
+      "OBS",
+      "DER",
+      "INT",
+      "SPEC"
+    ],
+    "render_facing": [
+      "CLAIM",
+      "PLAUSIBLE",
+      "ESTIMATE",
+      "UNKNOWN"
+    ],
     "mapping": {
       "OBS": "CLAIM",
       "DER": "PLAUSIBLE",
@@ -28,7 +36,6 @@
     },
     "note": "OBS/DER/INT/SPEC remain internal canon taxonomy. CLAIM/PLAUSIBLE/ESTIMATE/UNKNOWN are render-facing labels. F2 band chips cite this row, not their own invention."
   },
-
   "floors": [
     {
       "id": "F1",
@@ -51,7 +58,7 @@
     },
     {
       "id": "F3",
-      "name": "WITNESS",
+      "name": "TRI-WITNESS",
       "type": "DERIVED",
       "one_liner": "Tri-witness consensus untuk high-blast actions",
       "metric": "W³ ≥ 0.95 (Human × AI × Earth × Verifier)",
@@ -78,7 +85,7 @@
     },
     {
       "id": "F6",
-      "name": "MARUAH",
+      "name": "EMPATHY",
       "name_alt": "EMPATHY",
       "type": "SOFT",
       "status": "PENDING_F13",
@@ -87,7 +94,11 @@
       "scale": "CONTINUOUS",
       "violation": "CAUTION — dignity breach",
       "f13_question": "Doctrine page says MARUAH (dignity). Old canon (999_COMPLETE_LOOP) says EMPATHY — transposition correction F4/F6. Proposal: one floor seen from two directions — empathy is the kernel's inward sense; maruah is its outward law. SEAL as F6 MARUAH (Empathy kernel) → drift becomes feature: one name internal, one external, explicitly bound so there is never 'two F6' again.",
-      "f13_options": ["SEAL as MARUAH (Empathy kernel)", "SEAL as EMPATHY (Maruah law)", "SEAL as MARUAH-EMPATHY (dual-named)"]
+      "f13_options": [
+        "SEAL as MARUAH (Empathy kernel)",
+        "SEAL as EMPATHY (Maruah law)",
+        "SEAL as MARUAH-EMPATHY (dual-named)"
+      ]
     },
     {
       "id": "F7",
@@ -110,7 +121,7 @@
     },
     {
       "id": "F9",
-      "name": "ANTI-HANTU",
+      "name": "ANTIHANTU",
       "type": "HARD",
       "one_liner": "No hallucination, no consciousness claims, no runaway cascade",
       "metric": "deception p < 0.30; halt & surface on confidence drop; cascade detection active",
@@ -129,7 +140,7 @@
     },
     {
       "id": "F11",
-      "name": "AUDIT",
+      "name": "AUDITABILITY",
       "type": "HARD",
       "one_liner": "Every action leaves trace; receipts > narratives",
       "metric": "VAULT999 Merkle chain integrity",
@@ -138,7 +149,7 @@
     },
     {
       "id": "F12",
-      "name": "INJECTION",
+      "name": "RESILIENCE",
       "type": "HARD",
       "one_liner": "Sanitize inputs; external ≠ authority",
       "metric": "—",
@@ -155,7 +166,6 @@
       "violation": "VOID — sovereignty breach; strongest floor, no override"
     }
   ],
-
   "meta": {
     "total_floors": 13,
     "hard_floors": 8,

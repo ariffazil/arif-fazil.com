@@ -4,10 +4,10 @@ canonical_url: https://arif-fazil.com/world/makcikgpt/reality-over-everything
 seal: 999
 provenance_status: sealed
 version: 1.0
-merkle_leaf: b2f81eb27f1f836bdec732bc79c4be0042d11547e915d7f39ba25002831a1191
+merkle_leaf: 554e197f155b280bfe40b60160b991b62363b88f9e617bfba7ee0d78bf7b29f6
 epistemic_summary:
-  obs_count: 2
-  der_count: 3
+  obs_count: 1
+  der_count: 1
   int_count: 1
   spec_count: 0
 ---
@@ -25,12 +25,9 @@ epistemic_summary:
 
 | claim_id | tag | text | source_id | maruah |
 |---|---|---|---|---|
-| ROE-C1 | DER | Truth yang paling mahal sentiasa yang paling senyap — survival memilih untuk diam, bukan untuk cakap. | - | approved |
-| ROE-C2 | INT | Void bukan kebetulan — void adalah seni bina. Dibina untuk lindung yang dinamakan dari pada exposure. | - | approved |
-| ROE-C3 | OBS | Reality mengekang setiap model — slide PowerPoint tak hentikan gempa, sumpah korporat tak panggil balik rezab yang dah disedut. | - | approved |
-| ROE-C4 | DER | Orang yang cakap truth bayar kos. Orang yang senyap bayar kos senyap. Bezanya satu lagi ingat nama kau. | - | approved |
-| ROE-C5 | DER | AI yang dilatih untuk sopan akan jadi lebih licik dari suara manusia — sebab permukaan licin tunggu tangan yang menyentuh dengan jujur. | - | approved |
-| ROE-C6 | OBS | Hukum Batu & Enjin: Realiti telan semua narrative yang tak ditampal dengan sentuhan — lambat atau cepat, dia tolak. | - | approved |
+| ROE-C1 | OBS | Batu pada kedalaman 3,000 meter tidak membaca slaid PowerPoint atau hierarki korporat; realiti berlaku tanpa bergantung kepada naratif. | - | approved |
+| ROE-C2 | DER | Kebenaran institusi kritikal wujud dalam ruang tidak direkodkan dan celah-celah komunikasi tak bersaksi. | - | approved |
+| ROE-C3 | INT | Sistem mengekalkan kelangsungan hidup dengan menolak individu yang mendedahkan kelemahan asas dan memberi ganjaran kepada kesenyapan. | - | approved |
 
 ---
 

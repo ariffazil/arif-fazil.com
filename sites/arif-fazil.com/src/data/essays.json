@@ -5694,5 +5694,144 @@
       "spec": 0,
       "total": 13
     }
+  },
+  {
+    "id": "m-reality-over-everything",
+    "title": "REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void",
+    "date": "2026-09-22",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 7
+    },
+    "tags": [
+      "reality",
+      "truth",
+      "void",
+      "survival",
+      "makcikgpt",
+      "civic-intelligence",
+      "hukum-batu",
+      "universal"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/reality-over-everything"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "ROE-C1",
+        "text": "Batu pada kedalaman 3,000 meter tidak membaca slaid PowerPoint atau hierarki korporat; realiti berlaku tanpa bergantung kepada naratif.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "ROE-C2",
+        "text": "Kebenaran institusi kritikal wujud dalam ruang tidak direkodkan dan celah-celah komunikasi tak bersaksi.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "ROE-C3",
+        "text": "Sistem mengekalkan kelangsungan hidup dengan menolak individu yang mendedahkan kelemahan asas dan memberi ganjaran kepada kesenyapan.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
+    "id": "m-petronas-ai-transformasi-copilot",
+    "title": "Anak Makcik Kerja PETRONAS. Dia Pulang Rumah Cakap Satu Benda.",
+    "date": "2026-09-14",
+    "lang": "bm",
+    "series": {
+      "id": "M3",
+      "n": 6
+    },
+    "tags": [
+      "petronas",
+      "ai",
+      "copilot",
+      "iraya",
+      "transformasi",
+      "pekerja",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/petronas-ai-transformasi-tapi-awak-pakai-copilot"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "PAI-C1",
+        "text": "PETRONAS mengumumkan pelbagai perkongsian AI (Iraya Energies, IBM TriCipta, Siemens) dalam tempoh singkat pada 2026.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "PAI-C2",
+        "text": "Akses alat AI peringkat operasi harian kakitangan terhad kepada ciri asas Copilot dan bukan model fizik takungan.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "PAI-C3",
+        "text": "Jurang antara naratif transformasi digital luaran dan pemerkasaan alat sebenar pekerja dalaman mencerminkan keutamaan pemasaran berbanding inovasi asas.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
+    "id": "m-dna-2010-ramalan-datang",
+    "title": "Bangang, Atau Taat?",
+    "date": "2026-09-17",
+    "lang": "bm",
+    "series": {
+      "id": "M1",
+      "n": 8
+    },
+    "tags": [
+      "petronas",
+      "dna",
+      "integriti",
+      "azam-aris",
+      "hassan-marican",
+      "shamsul-azhar",
+      "fy2025",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/dna-2010-ramalan-datang"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "DNA-C1",
+        "text": "Kolum The Edge 8 Februari 2010 mencatatkan amaran Azizan Zainul Abidin: hari integriti dikompromi adalah hari kemusnahan PETRONAS bermula.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DNA-C2",
+        "text": "Kenyataan media kewangan FY2025 (27 Februari 2026) menunjukkan penurunan hasil 17% dan untung selepas cukai 18%.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DNA-C3",
+        "text": "Kemerosotan asas kewangan dan autonomi institusi bukan akibat rampasan mendadak tetapi siri konsesi pematuhan yang ditandatangani.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
   }
 ]

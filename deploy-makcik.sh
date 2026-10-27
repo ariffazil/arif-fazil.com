@@ -57,7 +57,7 @@ if $VERIFY_ONLY; then
   exec "$SITE_DIR/scripts/verify-makcik-deploy.sh" 2>/dev/null || {
     # Inline verification
     TOTAL_FAIL=0
-    DIST_JS=$(ls -t "$SITE_DIR/dist/assets/"*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "")
+    DIST_JS=$(ls -t "$SITE_DIR/dist/assets/"index-*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "")
     LIVE_JS=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 "https://arif-fazil.com/" 2>/dev/null | grep -oP 'index-[A-Za-z0-9]+\.js' || echo "")
     if [ -n "$DIST_JS" ] && [ "$DIST_JS" = "$LIVE_JS" ]; then pass "JS bundle: $DIST_JS"; else fail "JS bundle mismatch"; TOTAL_FAIL=$((TOTAL_FAIL+1)); fi
 
@@ -206,7 +206,7 @@ fi
 header "PHASE 6: Verify"
 
 # 6a: JS bundle hash
-DIST_JS=$(ls -t "$SITE_DIR/dist/assets/"*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "no-dist")
+DIST_JS=$(ls -t "$SITE_DIR/dist/assets/"index-*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "no-dist")
 LIVE_JS=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 "https://arif-fazil.com/" 2>/dev/null | grep -oP 'index-[A-Za-z0-9]+\.js' || echo "no-live")
 if [ -n "$DIST_JS" ] && [ -n "$LIVE_JS" ] && [ "$DIST_JS" = "$LIVE_JS" ]; then
   pass "JS bundle: $DIST_JS (live matches dist)"

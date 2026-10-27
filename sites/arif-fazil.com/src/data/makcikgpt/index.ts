@@ -44,9 +44,13 @@ import realityOverEverything from './reality-over-everything';
 import yangXDiungkapTruthSembunyiDariVoid from './yang-x-diungkap-truth-sembunyi-dalam-void';
 import gentari15Benda from './gentari-15-benda-bangang';
 import gentariDossier from './gentari-dossier';
+import petronasAiTransformasi from './petronas-ai-transformasi-tapi-awak-pakai-copilot';
+import dna2010RamalanDatang from './dna-2010-ramalan-datang';
 export const makcikArticleModules: ArticleContent[] = [
   gentari15Benda,
   gentariDossier,
+  petronasAiTransformasi,
+  dna2010RamalanDatang,
   yangXDiungkapTruthSembunyiDariVoid,
   realityOverEverything,
   dajjalSudahTibaDanDiaNampakMacamEfficiency,
@@ -1976,6 +1980,45 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     seal: '999',
     provenance_status: 'sealed',
     version_lineage: { version: '1.0', published: '2026-10-19', last_updated: '2026-10-19' },
+  },
+  {
+    slug: 'reality-over-everything',
+    title: 'REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void',
+    subtitle: 'Truth yang paling berharga ialah truth yang paling senyap. Bukan sebab takde orang tahu. Tapi sebab yang tahu bayar harga yang lain tak mau bayar.',
+    date: '2026-09-22',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × REALITY × TRUTH × VOID',
+    language: 'ms',
+    excerpt: 'Batu tak baca slaid PowerPoint. Truth penting hidup dalam celah-celah yang tak direkodkan, dalam komunikasi yang terang tapi tak witnessed. Sistem ada satu hukum yang lebih tua dari undang-undang: survival memilih untuk diam.',
+    tags: ['reality', 'truth', 'void', 'survival', 'makcikgpt', 'civic-intelligence', 'hukum-batu', 'universal'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-09-22', last_updated: '2026-09-22' },
+  },
+  {
+    slug: 'petronas-ai-transformasi-tapi-awak-pakai-copilot',
+    title: 'Anak Makcik Kerja PETRONAS. Dia Pulang Rumah Cakap Satu Benda.',
+    subtitle: '"Mak, syarikat announce AI setiap minggu. Tapi aku pakai Copilot untuk chat je. Itu ke transformasi?"',
+    date: '2026-09-14',
+    domain: 'MAKCIKGPT × PETRONAS × AI × TRANSFORMASI × REALITI',
+    language: 'ms',
+    excerpt: 'Syarikat announce AI setiap minggu — Iraya Energies, IBM TriCipta, Siemens. Tapi staf dalaman buka Copilot untuk chat je. Pengumuman untuk investor luar, bukan alat untuk staf cari minyak.',
+    tags: ['petronas', 'ai', 'copilot', 'iraya', 'transformasi', 'pekerja', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-09-14', last_updated: '2026-09-14' },
+  },
+  {
+    slug: 'dna-2010-ramalan-datang',
+    title: 'Bangang, Atau Taat?',
+    subtitle: '2010, seorang pekerja PETRONAS tulis: "rasa macam anak yatim." 2026, ayat tu jadi dasar rasmi. Makcik tanya: siapa yang bunuh DNA tu — pencuri, atau penandatangan?',
+    date: '2026-09-17',
+    domain: 'MAKCIKGPT × PETRONAS × DNA × INTEGRITI × SEJARAH',
+    language: 'ms',
+    excerpt: '8 Februari 2010: "Hari kita kompromi integriti — hari itu kita tengok PETRONAS musnah." Enam belas tahun lepas amaran Azizan Zainul Abidin diberi. 2026: hasil turun 17%, untung turun 18%, kemalangan naik, emisi naik. Siapa yang bunuh DNA tu?',
+    tags: ['petronas', 'dna', 'integriti', 'azam-aris', 'hassan-marican', 'shamsul-azhar', 'fy2025', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-09-17', last_updated: '2026-09-17' },
   },
 ];
 

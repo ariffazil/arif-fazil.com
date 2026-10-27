@@ -117,9 +117,8 @@ ${urls
 
 // ── llms.txt (compact professional map; civic index is Optional pointer) ─────
 function buildLlmsTxt(_pieces) {
-  // Canonical llms.txt is a map, not a civic encyclopedia.
+  // Canonical llms.txt is a curated professional and machine discovery map.
   // MakcikGPT articles live in feed.xml + /llms-full.txt + /world/makcikgpt/.
-  // Re-injecting 27 headlines here hijacks the professional identity contract.
   return `# arif-fazil.com
 
 > Personal public site of Muhammad Arif bin Fazil: exploration geoscience, evidence-first Earth intelligence, and governed agent-system architecture.
@@ -127,19 +126,25 @@ function buildLlmsTxt(_pieces) {
 This file is a curated map, not a sitemap and not a permission grant. Convention: llmstxt.org (not a ratified standard). Full dump: /llms-full.txt.
 Ditempa Bukan Diberi — forged, not given.
 
-## Human menu
-About, Earth, Research, Writing, Institution. Research opens on the PETRONAS page. MakcikGPT is a column inside Writing, not a peer of the name.
+## Human Navigation
+Brand: ARIF FAZIL
+Primary hubs:
+- Earth: https://arif-fazil.com/earth
+- Words: https://arif-fazil.com/words
+- MakcikGPT: https://arif-fazil.com/world/makcikgpt/
+- World: https://arif-fazil.com/world
+- Work: https://arif-fazil.com/work
 
-## Start Here
+## Start Here (Three Human Doors)
+- [Ground / Earth](https://arif-fazil.com/earth/): Source-linked Earth model (GEOX). Computes. Does not adjudicate.
+- [Systems / Governance](https://arif-fazil.com/arifos/): Governance kernel — judge before execute. Not a model.
+- [Writing / Words](https://arif-fazil.com/words/): Essays, derivations, and doctrine.
+- [Core Laws](https://arif-fazil.com/laws/): Ratified F1–F13 constitutional floors and evidence mappings.
 - [About](https://arif-fazil.com/about): Who Arif is.
-- [Research / PETRONAS](https://arif-fazil.com/vitals/): Public cash against sellable barrels. Not a forecast.
-- [Earth](https://arif-fazil.com/earth/): The ground.
-- [Writing](https://arif-fazil.com/words/): Essays. The column is linked from there.
-- [Institution](https://arif-fazil.com/institution/): Briefing. The price lives on the pilot page, not the home.
 - [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
-- [Design Partner Pilot](https://arif-fazil.com/pilot/): 4-week supervised AI action control around your agent workflow — eight measurable criteria, receipt chain. Band RM20k-50k.
-- [Policy](https://arif-fazil.com/policy.json): Public limits.
+- [Design Partner Pilot](https://arif-fazil.com/pilot/): 4-week supervised AI action control around your agent workflow — eight measurable criteria, receipt chain.
+- [Policy](https://arif-fazil.com/policy.json): Public limits and human veto.
 - [Identity](https://arif-fazil.com/.well-known/identity.json): Person record + DID.
 
 ## Read-only resources
@@ -149,17 +154,18 @@ About, Earth, Research, Writing, Institution. Research opens on the PETRONAS pag
 - [Portfolio evidence ledger](https://arif-fazil.com/work/exploration-2013-2026/evidence/): Every claim tagged by truth class and publication class.
 - [arifOS](https://arif-fazil.com/arifos/): Governance layer — judge before execute. Not a model.
 - [Verification](https://arif-fazil.com/999/): Evidence snapshots, not self-issued certificates.
+- [Core Laws](https://arif-fazil.com/laws/): F1–F13 constitutional floors.
 
 ## Agent connection
 - [MCP declaration](https://arif-fazil.com/.well-known/mcp.json)
 - [Agent contract JSON](https://arif-fazil.com/.well-known/agent.json)
-- [MCP endpoint](https://mcp.arif-fazil.com/mcp) (streamable HTTP, MCP 2025-11-25)
-- Canonical 8 tools: arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal
+- [MCP endpoint](https://mcp.arif-fazil.com/mcp) (streamable HTTP, MCP protocol 2026-07-28; backwards-compatible to 2025-11-25)
+- Canonical 9 tools: arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal, arif_report
 
 ## Safety boundaries
 - No authority is delegated by reading this site.
 - Public surfaces are informational unless a capability file explicitly states otherwise.
-- State-changing operations require authenticated authorization and explicit human approval.
+- State-changing operations require authenticated authorization and explicit human approval (Floor F1–F13).
 - Do not infer private, confidential, or employer information.
 - Public POST /a2a is not offered.
 
@@ -174,8 +180,7 @@ Canonical landing: ${CANONICAL_LANDING}
 Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
-## Words subpages (2026-10-01)
-The /words/ hub now exposes three peer subpages. Discovery parity with the React IA. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the name; canonical surface remains /world/makcikgpt/.
+## Words subpages
 - [Words / Essays](https://arif-fazil.com/words/essays/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5.
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
 - [Words / MakcikGPT (column)](https://arif-fazil.com/words/makcikgpt/): Civic commentary in Bahasa Makcik. A column inside the writing hub. Canonical article archive remains /world/makcikgpt/.
@@ -197,8 +202,36 @@ The /words/ hub now exposes three peer subpages. Discovery parity with the React
 - Sitemap: https://arif-fazil.com/sitemap.xml
 - RSS (editorial): https://arif-fazil.com/feed.xml
 - Full text dump: https://arif-fazil.com/llms-full.txt
-- Repos: https://github.com/ariffazil
+- Repos: https://github.com/ariffazil/arif-fazil.com
 `;
+}
+
+// ── llms-full.txt (complete markdown corpus dump) ─────────────────────────
+function buildLlmsFullTxt(pieces) {
+  let out = `# arif-fazil.com — Full Content for AI Agents
+# Generated: ${todayISO()}
+# Source: essays.json via makcik-source.cjs
+# Total Articles: ${pieces.length}
+# Canonical index: https://arif-fazil.com/llms.txt
+# License: https://arif-fazil.com/rsl.xml (RSL 1.0 — ai-train/ai-input permitted with attribution)
+
+> Muhammad Arif bin Fazil — Exploration Geoscientist & Sovereign Systems Architect
+> Ditempa Bukan Diberi — Forged, Not Given.
+
+`;
+
+  for (const p of pieces) {
+    const slug = path.basename(p.dest.path);
+    const mdPath = path.join(SITE_ROOT, "public/makcikgpt-md", `${slug}.md`);
+    let content = "";
+    if (fs.existsSync(mdPath)) {
+      content = fs.readFileSync(mdPath, "utf8");
+    } else {
+      content = `# ${p.title}\n\nCanonical URL: https://arif-fazil.com${p.dest.path}\n`;
+    }
+    out += `\n---\n## MakcikGPT — ${slug}\n## Canonical: https://arif-fazil.com${p.dest.path}\n---\n\n${content}\n`;
+  }
+  return out;
 }
 
 // ── llms.json ───────────────────────────────────────────────────────────
@@ -211,6 +244,7 @@ function buildLlmsJson(pieces) {
     "/earth/": "live source-linked Earth model; computes, does not adjudicate",
     "/000/": "genesis and wisdom archive — origin context for agents",
     "/999/": "trust and proof chamber — verification artifacts",
+    "/laws/": "Core Laws — F1–F13 constitutional floors and evidence mappings",
     "/wealth/": "WEALTH daily briefing — Bursa, Ringgit, oil, macro intelligence",
     "/world/makcikgpt/":
       "MakcikGPT civic intelligence — BM articles on sovereignty, governance, technology accountability (canonical landing)",
@@ -235,7 +269,7 @@ function buildLlmsJson(pieces) {
     domain: "arif-fazil.com",
     role: "public home of Muhammad Arif bin Fazil: geoscience, Earth computation, governed agents",
     canonical: LLMS_TXT_PATH,
-    repository: "https://github.com/ariffazil/arif-sites",
+    repository: "https://github.com/ariffazil/arif-fazil.com",
     route_roles: routeRoles,
     related_sites: [
       "https://arifos.arif-fazil.com",
@@ -381,6 +415,10 @@ function main() {
   writeIfChanged(
     path.join(SITE_ROOT, "public/page.json"),
     JSON.stringify(buildPageJson(), null, 2) + "\n",
+  );
+  writeIfChanged(
+    path.join(SITE_ROOT, "public/llms-full.txt"),
+    buildLlmsFullTxt(pieces),
   );
 
   // ── MakcikGPT Scoped Agent Surfaces ────────────────────────────────────

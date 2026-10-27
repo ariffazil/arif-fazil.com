@@ -19,13 +19,13 @@
       "https://forge.arif-fazil.com/mcp"
     ],
     "canonical_endpoint": "https://mcp.arif-fazil.com/mcp",
-    "canonical_authority": "arifOS kernel (port 8088) — 8 canonical verbs",
+    "canonical_authority": "arifOS FastMCP kernel (port 8088) — 9 canonical verbs (arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal, arif_report)",
     "discovery_chain": [
-      "https://arif-fazil.com/.well-known/mcp/server.json → 301 → https://arifos.arif-fazil.com/.well-known/mcp/server.json → 200 (from https://mcp.arif-fazil.com/.well-known/mcp/server.json)",
+      "https://arif-fazil.com/.well-known/mcp/server.json → 301 → https://mcp.arif-fazil.com/.well-known/mcp/server.json → 200",
       "Per MCP 2025-11-25 §.well-known/mcp/server.json is the spec canonical discovery path. The 301 chain is documented and spec-compliant."
     ],
     "transport": "streamable-http",
-    "protocol_version": "MCP 2025-11-25 (server supports up to 2026-07-28)",
+    "protocol_version": "2026-07-28 (server supports 2026-07-28, 2025-11-25, 2025-06-18)",
     "negotiation": "Clients SHOULD follow 301 redirects. Naive clients should bind directly to https://mcp.arif-fazil.com/mcp.",
     "prior_field_was": [
       "https://mcp.arif-fazil.com/mcp"

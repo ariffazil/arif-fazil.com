@@ -3,7 +3,7 @@
   "domain": "arif-fazil.com",
   "role": "public home of Muhammad Arif bin Fazil: geoscience, Earth computation, governed agents",
   "canonical": "https://arif-fazil.com/llms.txt",
-  "repository": "https://github.com/ariffazil/arif-sites",
+  "repository": "https://github.com/ariffazil/arif-fazil.com",
   "route_roles": {
     "/": "professional human entry — three doors (Arif / GEOX / arifOS) plus briefing",
     "/about": "who Arif is",
@@ -12,6 +12,7 @@
     "/earth/": "live source-linked Earth model; computes, does not adjudicate",
     "/000/": "genesis and wisdom archive — origin context for agents",
     "/999/": "trust and proof chamber — verification artifacts",
+    "/laws/": "Core Laws — F1–F13 constitutional floors and evidence mappings",
     "/wealth/": "WEALTH daily briefing — Bursa, Ringgit, oil, macro intelligence",
     "/world/makcikgpt/": "MakcikGPT civic intelligence — BM articles on sovereignty, governance, technology accountability (canonical landing)",
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",

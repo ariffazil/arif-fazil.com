@@ -444,3 +444,147 @@ No deploy · no publish · no key generation, rotation or export · no new route
 registration · no MCP exposure change · no A-FORGE mutation · no service restart · no second
 Agent Card published · no second capability registry · no self-seal.
 Every value above is a `curl` against a live URL or a local recomputation.
+
+---
+
+# ADDENDUM 2 · 2026-10-28c — the eight risks, tested against the live surface
+
+The angel/devil frame is correct as reasoning. What it lacks is a scoreboard: which of the
+eight devil risks are *already true on this federation, today*. That is measurable, so it was
+measured. Probes only — nothing published, no route added, no key touched, no restart.
+
+## D1–D8 · risk → live state → verdict
+
+| # | Risk | Measured, live | Verdict |
+|---|---|---|---|
+| D1 | Reconnaissance | The A2A card reveals almost nothing (105 B). `/api/public-state` reveals **92,610 B** of organ names, endpoints, findings, drift. `mcp/auth` names every public/authenticated/irreversible tool. `llms.txt` lists 9 verbs + email + GitHub. | **REALISED — but not via the card.** The card is the *least* revealing surface; the observatory is the disclosure. |
+| D2 | Capability exaggeration | Draft card advertising `/a2a` (301 → HTML). `capabilities.json` aliasing different bytes. | **REALISED — two live instances** (Addendum 1, §A2 and §T3). |
+| D3 | Identity mistaken for authority | The 105-byte stub puts `authority_ceiling` **inside a discovery document**. AAA's `_membrane` self-declares `authority: THINK` while the extension one layer away says `aaa_ceiling: DISPLAY_ONLY`. | **REALISED — the two smallest and the largest cards both commit it.** |
+| D4 | Prompt injection via metadata | Channel exists and is live (`llms.txt` is 6 KB of imperatives addressed to agents). Content is currently benign; no mechanism distinguishes the two. | **CHANNEL LIVE, BENIGN.** Honest state: untested, not safe. |
+| D5 | Judge advertised as executor | Checked all 8 AAA skills. `FORGE-route-task` — *"Routing is not execution."* `arifos.session.seal` — *"AAA does not write VAULT999."* `APEX-enforce-sovereign-veto` — veto, sovereign side. | **NOT realised on skills.** Every risky verb carries an inline refusal. This is the angel side, and it is already built. |
+| D6 | Stale cards as authoritative-looking lies | **ArifOS card: no freshness field at all. AAA card: no document-level freshness field.** AAA's `_membrane.timestamp` is a frozen snapshot re-served byte-identical forever. | **REALISED — structurally.** Half the discovery layer cannot be aged (§A5). |
+| D7 | Review intake as attack amplifier | `request_bounded_review` exists only as a **draft in a file**. There is no transport (Addendum 1, §A2). | **NOT realised — because it was not built.** Risk arrives with the endpoint, not before. |
+| D8 | Sovereignty → attention bottleneck | `mcp/auth`: `human_ack_required_for_irreversible: true`, `session_id_is_authentication: false`. No queue or rate surface probed. | **UNMEASURED.** Stated policy is correct; no mechanism found for volume. |
+
+**Scoreboard: 4 realised (D1, D2, D3, D6) · 1 clean (D5) · 1 channel unguarded (D4) · 1 not built (D7) ·
+1 unmeasured (D8).**
+
+## E1 · The AAA signature is dead — and the mechanism is now known
+
+Addendum 1 reported this as UNKNOWN: seven canonicalization recipes, none reproducing
+`3f0840e0…`. This addendum closes it.
+
+```
+tried every subset exclusion of {signatures, _membrane, schema, $schema}  = 16 combinations
+result: NO MATCH
+```
+
+Two clocks in the same document:
+
+```
+signatures[0].created    2026-08-25T03:43:48Z
+_membrane.timestamp      2026-10-27T20:02:41.848Z      ← 63 days later
+```
+
+**The card mutated after it was signed.** Since no exclusion subset recovers the declared
+hash, the signed content is not present in the served bytes at all. Therefore:
+
+> `Ed25519Signature2020` on `aaa.arif-fazil.com` **does not cover the document that is being
+> served today.** It is decorative over current content.
+
+Honest boundary (F7): without an archive of the signed version this proves *current ≠ signed*.
+It does **not** prove who changed what, or intent. But "signed" is now a claim that fails on
+inspection, which is worse than carrying no signature — an unverified signature invites trust
+it has not earned.
+
+Contrast, measured this session: the observatory snapshot **verifies end to end** (§A4). The
+federation already knows how to do this correctly. The card does not.
+
+## E2 · The `_membrane` block is the devil, and it is live
+
+`aaa.arif-fazil.com/.well-known/agent-card.json` carries, inside a static public discovery file:
+
+```
+_membrane.membrane_version  0.3
+_membrane.actor             {"organ": "UNKNOWN"}
+_membrane.authority         THINK              ← while an extension says aaa_ceiling: DISPLAY_ONLY
+_membrane.verdict           UNKNOWN
+_membrane.floors_checked    []                 ← zero floors checked
+_membrane.witness           {human:0, ai:0.5, external:0, W3:0}   ← W3 = 0
+_membrane.receipt           {sealed: false, parent_id: "seal-58"}
+_membrane._membrane_warnings  "Paradox P11/P12/P13 matured … Route to 888-APEX for
+                               constitutional review."
+```
+
+Read that as a machine would. A discovery document — the least-trusted artefact class, read
+instead of tested — is carrying a **governance envelope about itself**:
+
+- actor **UNKNOWN**
+- authority `THINK`, contradicting the `DISPLAY_ONLY` ceiling stated one layer away
+- verdict **UNKNOWN**
+- **floors checked: none**
+- tri-witness consensus **W3 = 0**
+- receipt **unsealed**
+- and its own warnings say **route to 888-APEX for constitutional review**
+
+That last line is the whole finding. The block asserts that its governance has *not happened*,
+inside the artefact that would be read as a governance statement. A caller who parses
+`_membrane.verdict` gets nothing. A caller who parses `authority: THINK` gets a claim the same
+document contradicts. A caller who ignores it is reading an unsigned governance stamp that is
+re-served forever with a timestamp that only ever ages upward.
+
+This is the deepest point of the essay made literal — **an Agent Card is a map offered by the
+territory it describes** — and here the territory has stamped the map with its own verdict.
+
+It is also author = judge. The federation's Gödel lock exists to prevent exactly this.
+
+**Note the sharpest part: `_membrane` appears on 1 of 9 live card documents.** It is not a
+convention; it is a one-off. So a caller cannot assume governance metadata is present anywhere,
+cannot assume it means the same thing, and cannot assume it was checked.
+
+## E3 · Nine card documents, nine schemas
+
+Probed every `/​.well-known/agent-card.json` and `/​.well-known/agent.json` across 8 hosts:
+
+| Host | agent-card.json | agent.json | `_membrane` | signed |
+|---|---|---|---|---|
+| `geox` | 17 keys | 25 keys | no | no |
+| `wealth` | 41 keys | 38 keys | no | **yes** |
+| `well` | 30 keys | — | no | **yes** |
+| `aaa` | 17 keys | 16 keys | **yes** | **yes** (fails, §E1) |
+| `arifos` | **4 keys** | — | no | no |
+| `mcp` | 11 keys | — | no | no |
+| `forge` | — | 15 keys | no | no |
+| apex | 301 → arifos stub | — | — | — |
+
+Nine documents. Key counts **4 / 11 / 15 / 16 / 17 / 25 / 30 / 38 / 41**. No two alike.
+One carries a governance membrane. Three claim signatures. The apex pointer lands on the
+**smallest document in the federation**.
+
+This is the semantic fragmentation stated plainly: there is no federation-wide card schema,
+no shared freshness field, no common signature recipe, and no rule about which document is
+canonical when two host the same concept.
+
+## What is already right — do not rebuild it
+
+1. **Skill-level refusals.** D5 is the only devil risk that measures clean, and it is clean
+   because someone wrote the refusal *into the skill description*. That is the pattern to keep.
+2. **`mcp/auth`** — 1,098 bytes, states public vs authenticated vs irreversible, and explicitly
+   denies that a session id authenticates. The most honest artefact on the surface.
+3. **The observatory snapshot** — full ed25519 verification, stated canonicalization, stated
+   signed object, `verification_url`. The recipe the card needs already exists in-house.
+
+## The one invariant that survives all eight
+
+> Discoverability should increase access to evidence faster than it increases access to power.
+
+Measured against that: the federation's **evidence** surfaces (snapshot, mcp/auth, llms.txt)
+are in better shape than its **power** surfaces (cards, membrane, aliases). The direction is
+right. The card layer is the part crediting itself with governance it has not performed.
+
+## Prohibited actions — confirmed not taken
+
+No deploy · no publish · no key generation, rotation or export · no new route · no WebMCP
+registration · no MCP exposure change · no A-FORGE mutation · no service restart · no second
+Agent Card published · no second capability registry · no self-seal.
+All values are `curl` against live URLs or local recomputation.

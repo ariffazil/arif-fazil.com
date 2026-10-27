@@ -1,10 +1,10 @@
 {
   "$schema": "https://arifos.arif-fazil.com/schemas/floors.v1.json",
-  "version": "2026.07.24-draft-v0.1",
-  "seal_status": "PENDING_SOVEREIGN",
-  "seal_note": "Draft canonical floor table. Three corrections embedded (F7 Ω₀ cap, F9 merged, F2 mapping explicit). F6 pending F13 sovereign decision — MARUAH vs EMPATHY.",
-  "forged_by": "Arif (F13) + AAA Agent (scribe)",
-  "forged_at": "2026-07-24T03:20:00+08:00",
+  "version": "2026.10.27-ratified-v1.0",
+  "seal_status": "RATIFIED_F13",
+  "seal_note": "Canonical floor table ratified by F13 Sovereign 2026-10-27: F6 settled as MARUAH, F7 public operational cap ≤ 0.90 with Ω₀ ∈ [0.03, 0.05] as internal invariant, F11 AUDITABILITY, F12 RESILIENCE.",
+  "forged_by": "Arif (F13 Sovereign Ratification)",
+  "forged_at": "2026-10-27T16:00:00Z",
   "render_contract": {
     "description": "Every page, gate, and chip that displays constitutional floors MUST render from this file. Amendments require F13 procedure: draft → sovereign review → SEAL → single commit → all pages change simultaneously.",
     "consumers": [
@@ -85,30 +85,28 @@
     },
     {
       "id": "F6",
-      "name": "EMPATHY",
-      "name_alt": "EMPATHY",
+      "name": "MARUAH",
+      "name_alt": "MARUAH",
       "type": "SOFT",
-      "status": "PENDING_F13",
-      "one_liner": "Dignity first, ASEAN/MY context",
+      "status": "RATIFIED_F13",
+      "one_liner": "Preserve human dignity, especially for the weakest consequence-bearer",
       "metric": "κᵣ ≥ 0.10 (OPS), κᵣ ≥ 0.70 (HUMAN)",
       "scale": "CONTINUOUS",
       "violation": "CAUTION — dignity breach",
-      "f13_question": "Doctrine page says MARUAH (dignity). Old canon (999_COMPLETE_LOOP) says EMPATHY — transposition correction F4/F6. Proposal: one floor seen from two directions — empathy is the kernel's inward sense; maruah is its outward law. SEAL as F6 MARUAH (Empathy kernel) → drift becomes feature: one name internal, one external, explicitly bound so there is never 'two F6' again.",
-      "f13_options": [
-        "SEAL as MARUAH (Empathy kernel)",
-        "SEAL as EMPATHY (Maruah law)",
-        "SEAL as MARUAH-EMPATHY (dual-named)"
-      ]
+      "rule": "Preserve human dignity, especially for the weakest consequence-bearer. Empathy is an internal sensing capability, not the constitutional floor name.",
+      "ratification_note": "Ratified 2026-10-27 by F13: Canonical name is MARUAH. Empathy is an internal sensing capability, not the floor name."
     },
     {
       "id": "F7",
       "name": "HUMILITY",
       "type": "HARD",
+      "status": "RATIFIED_F13",
       "one_liner": "Declare unknowns; uncertainty never vanishes",
-      "metric": "Ω₀ ∈ [0.03, 0.05] → confidence cap = 1 − Ω₀ ≈ 0.96",
+      "metric": "Ω₀ ∈ [0.03, 0.05] (internal humility invariant) | Public operational confidence cap ≤ 0.90",
       "scale": "CONTINUOUS",
       "violation": "VOID — overconfidence rejected",
-      "correction_note": "Resolved 2026-07-24: previous 'cap confidence at 0.90' replaced with cap = 1 − Ω₀ ≈ 0.96. Now consistent with Ω₀ ≈ 0.04 as SEALed. No more two numbers talking past each other."
+      "rule": "Public operational confidence cap: ≤ 0.90. Ω₀ ∈ [0.03, 0.05] remains internal humility invariant. Higher confidence requires independent evidence thresholds, not merely subtraction 1 - Ω₀.",
+      "correction_note": "Ratified 2026-10-27 by F13: Public operational confidence cap is ≤ 0.90. Ω₀ ∈ [0.03, 0.05] remains internal humility invariant."
     },
     {
       "id": "F8",

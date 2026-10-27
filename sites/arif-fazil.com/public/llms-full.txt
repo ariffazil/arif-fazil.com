@@ -15,29 +15,41 @@
 ---
 
 ---
-article_id: unregistered-anak-jantan-punya-tanah
+article_id: m6-9
 canonical_url: https://arif-fazil.com/world/makcikgpt/anak-jantan-punya-tanah
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/anak-jantan-punya-tanah.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: cb5b3b4d8776375207e1ce5f20fa72423ec6f95170c67818c10c92a55939c373
 epistemic_summary:
-  obs_count: 0
+  obs_count: 8
   der_count: 0
-  int_count: 0
+  int_count: 1
   spec_count: 0
 ---
 
-# anak-jantan-punya-tanah
+# Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/anak-jantan-punya-tanah.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/anak-jantan-punya-tanah
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/anak-jantan-punya-tanah
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| TJT-C1 | OBS | PDA 1974 memberi PETRONAS pemilikan mutlak dan hak eksklusif ke atas petroleum di darat dan luar pantai. | s1 | approved |
+| TJT-C2 | OBS | Royalti kasar 5% kepada Persekutuan dan 5% kepada negeri pengeluar; baki 90% dikawal dalam PSC (70% cost oil, 20% profit oil). | s1 | approved |
+| TJT-C3 | OBS | Sarawak memegang ~60% rizab gas negara dan ~90% eksport LNG Malaysia. | s3 | approved |
+| TJT-C4 | OBS | Shell MDS menerima invois berganda daripada PETRONAS dan Petros untuk gas yang sama; Mahkamah Rayuan arahkan bayaran tunggakan hampir RM1 bilion diteruskan kepada PETRONAS sehingga kes selesai. | s7 | approved |
+| TJT-C5 | OBS | PETRONAS mengumumkan pengurangan ~10% tenaga kerja (~5,000 pekerja daripada 50,000–52,000) melalui Transition Council dan People Development Committees. | s14 | approved |
+| TJT-C6 | OBS | Sektor Minyak, Gas & Tenaga adalah satu daripada enam sektor yang dikecualikan daripada keperluan Surat Sokongan Agensi dalam ESD Guidebook Imigresen V6 2025. | s10 | approved |
+| TJT-C7 | OBS | Kategori Pas Penggajian ekspatriat diukur semata-mata mengikut gaji asas bulanan (Kategori I RM10k+) tanpa tapisan kepakaran teknikal luaran. | s10 | approved |
+| TJT-C8 | OBS | Kesemua 9 ahli Executive Leadership Team PETRONAS di laman rasmi adalah warganegara Malaysia. | s12 | approved |
+| TJT-C9 | INT | Pihak yang bekerja di pelantar tidak menentukan terma; bila margin tertekan anak watan disorong MSS manakala kontrak ekspatriat disambung di bawah cop business-critical. | - | approved |
 
 ---
 

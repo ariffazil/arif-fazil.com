@@ -1,0 +1,175 @@
+{
+  "tracker_id": "sea-upstream-deal-tracker",
+  "updated_at": "2026-10-27T23:15:00Z",
+  "artifact": {
+    "issue": "01",
+    "title": "South-east Asia Upstream Deal Tracker",
+    "published_at": "2026-10-27",
+    "url": "https://arif-fazil.com/research/sea-upstream-deal-tracker/SEA-Upstream-Deal-Tracker-Issue-01.pdf",
+    "sha256": "67c3a928882665a5be2443c3e174d8c272f6b2885eaf6488d6306797a9dc8c15"
+  },
+  "items": [
+    {
+      "id": "enquest-petronas-farmout",
+      "title": "EnQuest × PETRONAS Sarawak & PM Farmout (Reverse Takeover)",
+      "state": "CORRECTED",
+      "effective_at": "2027-01-01",
+      "observed_at": "2026-10-27",
+      "summary": "EnQuest acquiring operating interests in Balingian, SK8, D35-D21-J4 (Sarawak) and non-operating interest in PM6-12 (Peninsular Malaysia). Max consideration USD 833M (USD 554M at completion). Adds ~57.4 kboepd net to EnQuest (enlarged group >100 kboepd). Net 2P reserves 138.0 MMboe, net 2C resources 208.3 MMboe (31 March 2026 basis). All conditions precedent including PETRONAS Farmout Approval and shareholder approval (99.97% vote) satisfied as of 12 August 2026. Legal completion scheduled for 31 December 2026; economic effective date 1 January 2027; expected readmission on or around 4 January 2027.",
+      "evidence": [
+        "EnQuest PLC RNS: Package 2 Pre-emption Waiver (10 July 2026)",
+        "EnQuest PLC Combined Circular and Prospectus (24 July 2026)",
+        "EnQuest PLC GM Results: 99.97% Vote Approval (11 August 2026)",
+        "EnQuest PLC RNS: Satisfaction of All Conditions Precedent (12 August 2026)",
+        "Law.asia: PETRONAS farmout cross-border review (16 June 2026)"
+      ],
+      "interpretation": "Classified as reverse takeover under UK listing rules. The shareholder condition was completed on 11 August 2026 and all conditions precedent were satisfied on 12 August 2026. Production attributable to acquired Malaysian assets is ~57.4 kboepd; the >100 kboepd headline refers to the enlarged EnQuest group post-completion.",
+      "next_signals": [
+        "Formal completion announcement (expected 31 December 2026)",
+        "Final cash consideration settlement at closing",
+        "Operatorship handover execution",
+        "Economic effective date confirmation (1 January 2027)",
+        "EnQuest share readmission on LSE (on or around 4 January 2027)",
+        "Post-completion asset baseline production report"
+      ],
+      "correction_ids": [
+        "CORRECTION-001",
+        "CORRECTION-002",
+        "CORRECTION-003",
+        "CORRECTION-004"
+      ]
+    },
+    {
+      "id": "petronas-v-sarawak-court",
+      "title": "PETRONAS v Sarawak Federal Court Constitutional Challenge",
+      "state": "UNVERIFIED",
+      "effective_at": "2027-01-25",
+      "observed_at": "2026-10-27",
+      "summary": "Federal Court hearing scheduled 25–29 January 2027 on competing petitions regarding legislative competence and the validity of the Petroleum Development Act 1974, Continental Shelf Act 1966, and Petroleum Mining Act 1966 as applied to Sarawak. Submissions due 11 January 2027; case management on 12 January 2027; reply submissions due 18 January 2027. Petitions to be heard in filing order. Claim that both parties applied for separate hearings is UNVERIFIED.",
+      "evidence": [
+        "Federal Court Case Management Registry Directions (September/October 2026)",
+        "New Straits Times (1 October 2026)",
+        "The Edge Malaysia (8 June 2026)",
+        "Reuters (23 February 2026)"
+      ],
+      "interpretation": "Unconsolidated petitions are listed in order of filing. Whether Sarawak's preliminary OIC issue is taken first remains for the hearing panel to decide. Both parties have flagged requests for an enlarged 9 or 11 judge panel. Procedural non-consolidation does not establish that the court will split rather than resolve the core constitutional questions.",
+      "next_signals": [
+        "Principal submissions filed by 11 January 2027",
+        "Case management directions on 12 January 2027",
+        "Reply submissions filed by 18 January 2027",
+        "Panel size determination (5 vs 9 or 11 judges)",
+        "Five-day hearing beginning 25 January 2027",
+        "Interim order or final reserved judgment"
+      ],
+      "correction_ids": [
+        "CORRECTION-005"
+      ]
+    },
+    {
+      "id": "sea-upstream-market-flow",
+      "title": "Southeast Asia Upstream Asset Supply & Valuation Metrics",
+      "state": "CURRENT",
+      "effective_at": "2026-10-05",
+      "observed_at": "2026-10-27",
+      "summary": "USD 9.6B of upstream assets on offer across Southeast Asia through 2027. Sellers: majors USD 3.6B, independents USD 3.7B, national oil companies USD 1.4B. USD 6.7B transacted in 2025. Development asset clearance metric: USD 9.8/boe. Pre-FID resource clearance metric: > USD 3/boe (vs 6-year averages of USD 6-7/boe and USD 1.5/boe).",
+      "evidence": [
+        "Rystad Energy Market Intelligence Report (5 October 2026)"
+      ],
+      "interpretation": "Capital cycle has transitioned from distress/exit to strategic entry and optionality repricing in the Southeast Asian basin.",
+      "next_signals": [
+        "Q4 2026 M&A volume updates",
+        "Pre-FID project sanction milestones",
+        "NOC portfolio rationalisation progress"
+      ],
+      "correction_ids": []
+    },
+    {
+      "id": "completed-deals-q3-2026",
+      "title": "Q3 2026 Completed Upstream Transactions in Southeast Asia",
+      "state": "CURRENT",
+      "effective_at": "2026-09-30",
+      "observed_at": "2026-10-27",
+      "summary": "Seven material transactions completed in Q3 2026: INPEX 85% Block 2E Malaysia (operatorship, USD 350M, 8.5% Marjoram); Prima Energy 28.3% Jadestone Energy; INPEX 50% Agung I & II deepwater Indonesia; Conrad Asia/WNEL 75% Duyung PSC farmdown (+USD 4M); Vista Energy 2.5% Seram Non-Bula; TIMOR GAP 10% Greater Sunrise (to 66.56%); PT Rukun Raharja 5% PT Layar Nusantara Gas / Kasuri (USD 43.7M).",
+      "evidence": [
+        "Kawi Energy Research Southeast Asia Tracker (1 October 2026)",
+        "Company regulatory filings (INPEX, Conrad Asia, Jadestone, TIMOR GAP)"
+      ],
+      "interpretation": "Asian regional independents and NOCs (INPEX, TIMOR GAP, Prima) actively consolidating equity and operatorship across mature and appraisal blocks.",
+      "next_signals": [
+        "Duyung PSC commercial GSA execution",
+        "Kasuri upstream development farm-down"
+      ],
+      "correction_ids": []
+    },
+    {
+      "id": "shell-mds-bintulu-interpleader",
+      "title": "Shell MDS Bintulu Interpleader & Gas Aggregator Dispute",
+      "state": "CURRENT",
+      "effective_at": "2025-09-22",
+      "observed_at": "2026-10-27",
+      "summary": "Court of Appeal ruled on 22 September 2025 ordering Shell MDS to pay PETRONAS ~RM1B including interest, with Petros liable for costs. Gas aggregator status and invoicing mandate remain contested under state versus federal regulatory frameworks.",
+      "evidence": [
+        "Court of Appeal Judgment (22 September 2025)",
+        "The Edge Malaysia (September 2025 / June 2026)"
+      ],
+      "interpretation": "Interpleader eliminated double-payment jeopardy for Shell MDS, but fundamental statutory demarcation between federal Petroleum Development Act 1974 and Sarawak Distribution of Gas Ordinance 2016 remains unaligned.",
+      "next_signals": [
+        "Sarawak High Court ongoing proceedings",
+        "PETROS sole gas aggregator implementation timeline"
+      ],
+      "correction_ids": []
+    },
+    {
+      "id": "malaysia-bid-round-2026",
+      "title": "Malaysia Bid Round (MBR) 2026",
+      "state": "CURRENT",
+      "effective_at": "2026-02-11",
+      "observed_at": "2026-10-27",
+      "summary": "PETRONAS launched MBR 2026 offering 9 exploration blocks (Sandakan frontier, West Sarawak, Malay Basin near-field) plus 6 Discovered Resource Opportunities (DRO).",
+      "evidence": [
+        "PETRONAS Malaysia Petroleum Management (MPM) Official Launch (11 February 2026)"
+      ],
+      "interpretation": "Exploration acreage licensing pace maintained across both frontier deepwater and mature near-field clusters.",
+      "next_signals": [
+        "MBR 2026 awards announcement and PSC signings",
+        "Participation breakdown by international oil companies"
+      ],
+      "correction_ids": []
+    },
+    {
+      "id": "barokah-1-discovery",
+      "title": "Barokah-1 Offshore Discovery, North Ketapang PSC",
+      "state": "CURRENT",
+      "effective_at": "2026-03-12",
+      "observed_at": "2026-10-27",
+      "summary": "PC Ketapang II Ltd announced oil and gas discovery at Barokah-1 exploration well on 12 March 2026. Spudded 30 November 2025, reached total depth 3,315.3m TVDSS. Post-drill evaluation in progress.",
+      "evidence": [
+        "SKK Migas Official Release (12 March 2026)",
+        "PETRONAS Upstream Corporate Announcement (March 2026)"
+      ],
+      "interpretation": "Proves working petroleum system in East Java basin frontier acreage.",
+      "next_signals": [
+        "Appraisal drilling programme submission",
+        "Plan of Development (POD) schedule"
+      ],
+      "correction_ids": []
+    },
+    {
+      "id": "criterium-bulu-psc",
+      "title": "Criterium Energy Bulu PSC Acquisition",
+      "state": "CURRENT",
+      "effective_at": "2023-12-01",
+      "observed_at": "2026-10-27",
+      "summary": "Oldest outstanding tracked deal. Announced December 2023 for 42.5% non-operated interest in Bulu PSC (Lengo gas field). Transaction has neither closed nor formally terminated in public filings.",
+      "evidence": [
+        "Criterium Energy Corporate Presentations & Regulatory Filings (2024–2026)"
+      ],
+      "interpretation": "Protracted regulatory approval process in Indonesia demonstrates transaction timing friction for junior operators.",
+      "next_signals": [
+        "Formal extension announcement or deal termination",
+        "Indonesian regulatory approval verdict"
+      ],
+      "correction_ids": []
+    }
+  ]
+}

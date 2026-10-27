@@ -1,0 +1,124 @@
+{
+  "tracker_id": "sea-upstream-deal-tracker",
+  "updated_at": "2026-10-27T23:15:00Z",
+  "artifact": {
+    "issue": "01",
+    "title": "South-east Asia Upstream Deal Tracker",
+    "published_at": "2026-10-27",
+    "url": "https://arif-fazil.com/research/sea-upstream-deal-tracker/SEA-Upstream-Deal-Tracker-Issue-01.pdf",
+    "sha256": "67c3a928882665a5be2443c3e174d8c272f6b2885eaf6488d6306797a9dc8c15"
+  },
+  "corrections": [
+    {
+      "correction_id": "CORRECTION-001",
+      "published_at": "2026-10-27T23:15:00Z",
+      "original_issue": "01",
+      "original_statement": "shareholder approval is a live condition, not a formality.",
+      "corrected_state": "Package 2 pre-emption waiver was announced on 10 July 2026. The combined circular and prospectus was published on 24 July 2026. The shareholder resolution passed on 11 August 2026 with 99.97% voting in favour (~997 million votes). On 12 August 2026, EnQuest announced that all conditions precedent had been satisfied, including PETRONAS Farmout Approval. Legal completion remains scheduled for 31 December 2026.",
+      "classification": "CORRECTED",
+      "reason": "The original publication on 27 October 2026 described shareholder approval as open even though that condition had already been completed in August 2026.",
+      "consequence": "Readers received a stale transaction state for the deal described as the issue's most important transaction.",
+      "evidence": [
+        "EnQuest PLC RNS Announcement: Package 2 Pre-emption Waiver (10 July 2026)",
+        "EnQuest PLC Combined Circular and Prospectus (24 July 2026)",
+        "EnQuest PLC General Meeting Results: 99.97% Approval (11 August 2026)",
+        "EnQuest PLC RNS: Satisfaction of All Conditions Precedent (12 August 2026)"
+      ],
+      "human_review": false,
+      "supersedes": null,
+      "next_signals": [
+        "completion announcement",
+        "actual completion date",
+        "final consideration",
+        "transfer of operatorship",
+        "economic effective date",
+        "readmission",
+        "post-completion production disclosure"
+      ]
+    },
+    {
+      "correction_id": "CORRECTION-002",
+      "published_at": "2026-10-27T23:15:00Z",
+      "original_issue": "01",
+      "original_statement": "On completion EnQuest assumes a portfolio producing more than 100,000 boe/d.",
+      "corrected_state": "The acquired Malaysian interests are expected to add approximately 57.4 kboepd. The figure of 'more than 100,000 boe/d' refers to the enlarged EnQuest group post-acquisition (UK North Sea + Malaysia), not production attributable to the acquired Malaysian assets alone.",
+      "classification": "CORRECTED",
+      "reason": "The publication conflated acquired-asset production with enlarged-group production.",
+      "consequence": "The sentence overstated the production represented by the acquired portfolio and could distort transaction and asset valuation interpretation.",
+      "evidence": [
+        "EnQuest Investor Presentation (June 2026)",
+        "EnQuest Combined Circular and Prospectus (24 July 2026, Part I)"
+      ],
+      "human_review": false,
+      "supersedes": null,
+      "next_signals": [
+        "completion production baseline",
+        "post-completion group guidance",
+        "acquired-asset net production",
+        "operatorship transition disclosure"
+      ]
+    },
+    {
+      "correction_id": "CORRECTION-003",
+      "published_at": "2026-10-27T23:15:00Z",
+      "original_issue": "01",
+      "original_statement": "Watchlist focused on expected completion on 31 December 2026 but omitted the separate economic effective date and expected readmission.",
+      "corrected_state": "Expected legal completion: 31 December 2026; economic effective date: 1 January 2027; expected readmission: on or around 4 January 2027.",
+      "classification": "CORRECTED_BY_ADDITION",
+      "reason": "These are distinct transaction milestones and must not be collapsed into one date.",
+      "consequence": "Readers lacked visibility on the separate economic cutoff date versus legal and market readmission dates.",
+      "evidence": [
+        "EnQuest Combined Circular and Prospectus (24 July 2026, Transaction Timetable)"
+      ],
+      "human_review": false,
+      "supersedes": null,
+      "next_signals": [
+        "completion confirmation",
+        "economic transfer confirmation",
+        "readmission confirmation",
+        "any variance from the stated dates"
+      ]
+    },
+    {
+      "correction_id": "CORRECTION-004",
+      "published_at": "2026-10-27T23:15:00Z",
+      "original_issue": "01",
+      "original_statement": "local knowledge, on a short clock, from someone who was in the room when the decisions were made.",
+      "corrected_state": "Under editorial review by sovereign authority ARIF. Proposed replacement: 'Every operator transition creates demand for rapidly assembled local context: public regulatory history, basin knowledge, asset chronology and disciplined interpretation.' Original PDF preserved immutable; sentence flagged and withheld from derivative summaries, metadata, and structured data pending Arif's explicit decision.",
+      "classification": "HUMAN_REVIEW_REQUIRED",
+      "reason": "The sentence may reasonably be read as implying non-public or internal access concerning a PETRONAS transaction, while the Method statement says that nothing in the issue comes from a non-public source.",
+      "consequence": "Risk of implying non-public access. Bounded proposed replacement staged for Arif's explicit review.",
+      "evidence": [
+        "Issue 01 Text, Section 3 vs Method Section 6"
+      ],
+      "human_review": true,
+      "supersedes": null,
+      "next_signals": [
+        "Arif sovereign editorial determination"
+      ]
+    },
+    {
+      "correction_id": "CORRECTION-005",
+      "published_at": "2026-10-27T23:15:00Z",
+      "original_issue": "01",
+      "original_statement": "In September 2026 both parties applied for separate hearings, which means the matter may split rather than resolve.",
+      "corrected_state": "The petitions are scheduled to be heard in filing order. The petitions were not consolidated at the reported directions stage; the hearing panel will decide whether Sarawak's preliminary OIC issue should be heard first; both parties intended to request an enlarged panel of nine or eleven judges; Sarawak indicated an intended Rule 23 application. The claim that 'both parties applied for separate hearings' is UNVERIFIED; lack of consolidation does not warrant the inference that the matter may split.",
+      "classification": "UNVERIFIED",
+      "reason": "The statement asserted separate hearing applications and split proceedings as fact without primary court record verification.",
+      "consequence": "Unverified procedural speculation presented as factual base case.",
+      "evidence": [
+        "Federal Court Case Management Records (September/October 2026)",
+        "The Edge (8 June 2026)",
+        "New Straits Times (1 October 2026)"
+      ],
+      "human_review": false,
+      "supersedes": null,
+      "next_signals": [
+        "11 January 2027 principal submissions",
+        "12 January 2027 case management",
+        "18 January 2027 reply submissions",
+        "25-29 January 2027 hearing panel composition and order of arguments"
+      ]
+    }
+  ]
+}

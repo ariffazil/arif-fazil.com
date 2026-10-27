@@ -80,9 +80,12 @@ for d in human institution connect laws verify discovery research; do
   if [ -d "$DIST/$d" ]; then
     mkdir -p "$BK"
     [ -d "$TOP/$d" ] && cp -a "$TOP/$d" "$BK/$d"
-    mkdir -p "$TOP/$d" "$TOP/arif/$d"
+    mkdir -p "$TOP/$d"
     rsync -a "$DIST/$d/" "$TOP/$d/"
-    rsync -a "$DIST/$d/" "$TOP/arif/$d/"
+    if [ "$DIST" != "$TOP/arif" ]; then
+      mkdir -p "$TOP/arif/$d"
+      rsync -a "$DIST/$d/" "$TOP/arif/$d/"
+    fi
     echo "$LOG_PREFIX synced $d/ ($(find "$TOP/$d" -type f | wc -l) files)"
   else
     echo "$LOG_PREFIX WARN: no $d/ in dist — skipping" >&2
@@ -96,8 +99,10 @@ for f in "${ROOT_STATIC_FILES[@]}"; do
   if [ -f "$DIST/$f" ]; then
     [ -f "$TOP/$f" ] && cp -a "$TOP/$f" "$BK/${f}.bak"
     cp -a "$DIST/$f" "$TOP/$f"
-    mkdir -p "$TOP/arif"
-    cp -a "$DIST/$f" "$TOP/arif/$f"
+    if [ "$DIST" != "$TOP/arif" ]; then
+      mkdir -p "$TOP/arif"
+      cp -a "$DIST/$f" "$TOP/arif/$f"
+    fi
     synced=$((synced+1))
   fi
 done

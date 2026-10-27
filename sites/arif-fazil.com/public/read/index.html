@@ -38,7 +38,11 @@
     h2{font-size:1.15rem;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.06em}
     .meta{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
     .card{border:1px solid #2a2a3a;border-radius:8px;padding:1rem 1.15rem;margin:.75rem 0;background:rgba(255,255,255,.02)}
-    .nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1.5rem 0;font-family:var(--font-mono,monospace);font-size:.72rem;text-transform:uppercase}
+    .nav{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1rem 0 1.5rem;font-family:var(--font-mono,monospace);font-size:.75rem;letter-spacing:0.08em;text-transform:uppercase}
+    .nav-brand{font-family:var(--font-display,serif);font-size:0.95rem;font-weight:bold;color:var(--text-primary,#F5F5F7);text-decoration:none;margin-right:auto;text-transform:none}
+    .nav a:not(.nav-brand){color:#9CA3AF;text-decoration:none;transition:color 0.2s}
+    .nav a:not(.nav-brand):hover{color:var(--gold-sovereign,#E8B84B)}
+    .nav a.here{color:var(--gold-sovereign,#E8B84B);font-weight:600}
     ul{padding-left:1.2rem} li{margin:.35rem 0}
     .note{font-size:.85rem;color:#9a958c;border-left:2px solid #2a2a3a;padding-left:.85rem;margin-top:2rem}
 
@@ -47,16 +51,12 @@
 <body>
   <div class="frame">
     <nav class="nav" aria-label="Primary">
-      <a href="/">Home</a>
+      <a href="/" class="nav-brand">ARIF FAZIL</a>
       <a href="/earth">Earth</a>
-      <a href="/economics">Economics</a>
+      <a href="/words">Words</a>
+      <a href="/world/makcikgpt/">MakcikGPT</a>
       <a href="/world">World</a>
-      <a href="/writing">Writing</a>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/missions">Missions</a>
-      <a href="/999/">999</a>
-      <a href="/vitals/">VITALS</a>
-      <a href="/llms.txt">llms.txt</a>
+      <a href="/work">Work</a>
     </nav>
 
     <p class="meta">Reading room · agent-readable</p>

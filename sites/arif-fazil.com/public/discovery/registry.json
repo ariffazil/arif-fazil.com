@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-10-21T12:18:48.398Z",
+  "generated_at": "2026-10-27T14:36:19.778Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -22,7 +22,7 @@
         },
         {
           "name": "arif_route",
-          "desc": "KERNEL 444 · Intent→organ router: classifies a natural-language intent and dispatches it t"
+          "desc": "KERNEL 444 · Intent→organ router: classifies a natural-language intent and prepares a disp"
         },
         {
           "name": "arif_memory",
@@ -80,7 +80,7 @@
         },
         {
           "name": "geox_seismic_ingest",
-          "desc": "SEG-Y I/O, header inspection, export. Use when: Use when you need seismic ingest evidence."
+          "desc": "SEG-Y I/O, header inspection, export. Use when: you need seismic ingest evidence."
         },
         {
           "name": "geox_seismic_interpret",

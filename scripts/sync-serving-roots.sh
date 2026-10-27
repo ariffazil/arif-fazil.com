@@ -76,7 +76,7 @@ fi
 #     root at /var/www/html, NOT /var/www/html/arif). Without this copy,
 #     @spa_routes try_files falls through /human to the SPA shell (2026-09-13).
 #     No --delete: inspect before purge. Also mirror to $TOP/arif to avoid drift.
-for d in human institution connect laws verify discovery research; do
+for d in human institution connect laws verify discovery research .well-known; do
   if [ -d "$DIST/$d" ]; then
     mkdir -p "$BK"
     [ -d "$TOP/$d" ] && cp -a "$TOP/$d" "$BK/$d"

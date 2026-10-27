@@ -11,154 +11,193 @@
 <meta property="og:description" content="Authority, evidence and audit for AI systems. Fail closed by design." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0B0D'/><text x='50' y='72' font-size='62' font-family='Georgia,serif' text-anchor='middle' fill='%23E4572E'>A</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0B0D'/><path d='M50 18 L86 80 L14 80 Z' fill='%23E4572E'/></svg>" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
 
-<!-- Token source of truth. v1.1 pending: display / body / mono re-pointed per Arif 2026-10-28. -->
-<link rel="stylesheet" href="../../sites/shared/tokens.css" />
+<!-- Token source of truth, production URL. Resolves to the sealed
+     ROOT DESIGN CONSTITUTION (sha caf7b140). The live homepage does NOT
+     link this file; this prototype intentionally does, and the receipt
+     records that divergence. -->
+<link rel="stylesheet" href="/_shared/tokens.css" />
 
 <style>
-/* ── v2 overrides: three families, one accent, one curve ───────────────── */
+/* ── v3 · primary-colour geometry, dark ground ─────────────────────────
+   Colour = plane.  Shape = role.
+   Red/yellow/blue and their mixes only. No gradients, no shadows.
+   ───────────────────────────────────────────────────────────────────── */
 :root{
+  /* type */
   --font-display:'Fraunces',Georgia,serif;
   --font-sans:'Cabinet Grotesk','Space Grotesk',system-ui,sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,monospace;
-  --accent:#E4572E; --accent-dim:#8a2f13; --accent-bg:rgba(228,87,46,.09);
-  --paper:#0A0B0D; --paper-2:#0F1218; --paper-3:#12161D;
-  --ink-s:#9AA0A8; --ink-xs:#5C636C;
-  --sec:clamp(64px,9vw,120px);
+
+  /* ground */
+  --paper:#0A0B0D; --paper-2:#101319; --paper-3:#141920;
+  --ink:#EDEAE2; --ink-s:#9AA0A8; --ink-xs:#5C636C;
+  --line:#1F2733; --line-2:#2A3342;
+
+  /* primary mixes */
+  --c-ry:#E4572E;   /* red + yellow  → public accent (SEALED) */
+  --c-y:#E3B341;    /* yellow        → caution / interpret */
+  --c-yb:#31C48D;   /* yellow + blue → seal / verified */
+  --c-b:#4AA8FF;    /* blue          → APEX signal, semantic only */
+  --c-rb:#8B6FD4;   /* red + blue    → consequence */
+
+  --sec:clamp(64px,9vw,116px);
+  --ease:.18s cubic-bezier(.4,0,.2,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--font-sans);font-size:17px;line-height:1.62;
+  font-family:var(--font-sans);font-size:17px;line-height:1.6;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 section{border-top:1px solid var(--line);padding:var(--sec) 0}
 section:first-of-type{border-top:0}
 
-/* type */
+/* ── geometry ─────────────────────────────────────────────────────── */
+.shape{display:inline-block;flex:none;width:9px;height:9px}
+.s-tri{clip-path:polygon(50% 0,100% 100%,0 100%)}
+.s-sq{border-radius:1px}
+.s-cir{border-radius:50%}
+.s-dia{transform:rotate(45deg)}
+.s-bar{height:3px;width:16px;border-radius:0}
+.f-ry{background:var(--c-ry)} .f-y{background:var(--c-y)} .f-yb{background:var(--c-yb)}
+.f-b{background:var(--c-b)}  .f-rb{background:var(--c-rb)}
+
 .label{
   font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-xs);margin:0 0 var(--sp-3);display:flex;gap:10px;align-items:center;
+  color:var(--ink-xs);margin:0 0 18px;display:flex;gap:10px;align-items:center;
 }
-.label b{color:var(--accent);font-weight:700}
-h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
-h1{font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1.02;letter-spacing:-.03em;font-weight:900;max-width:24ch}
-h2{font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.12;max-width:30ch}
-h3{font-size:1.18rem;line-height:1.3;letter-spacing:-.005em}
-p{margin:0 0 var(--sp-3);max-width:64ch;color:var(--ink-s)}
-p.lead{font-size:clamp(1.05rem,1.7vw,1.32rem);color:var(--ink);line-height:1.5;max-width:56ch}
+.label b{color:var(--c-ry);font-weight:700}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.02;letter-spacing:-.03em;font-weight:900}
+h2{font-size:clamp(1.65rem,3.1vw,2.5rem);line-height:1.12;max-width:30ch}
+h3{font-size:1.14rem;line-height:1.3}
+p{margin:0 0 18px;max-width:64ch;color:var(--ink-s)}
+p.lead{font-size:clamp(1.04rem,1.6vw,1.3rem);color:var(--ink);line-height:1.5;max-width:54ch}
 strong{color:var(--ink);font-weight:700}
 
-/* hero */
-.hero{padding-top:clamp(56px,8vw,104px)}
-.hero h1{max-width:19ch}
-.hero .lead{margin-top:var(--sp-4)}
-.cta-row{display:flex;flex-wrap:wrap;gap:var(--sp-4);align-items:center;margin-top:var(--sp-5)}
+/* ── hero with geometric composition ──────────────────────────────── */
+.hero{padding-top:clamp(48px,7vw,92px);padding-bottom:var(--sec)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center}
+.comp{position:relative;aspect-ratio:1;max-width:400px;margin-left:auto;width:100%}
+.comp i{position:absolute;display:block}
+.comp .t{width:52%;height:52%;left:4%;top:6%;background:var(--c-ry);clip-path:polygon(50% 0,100% 100%,0 100%);opacity:.92}
+.comp .q{width:44%;height:44%;right:6%;top:16%;background:var(--c-y);opacity:.9}
+.comp .c{width:46%;height:46%;left:26%;bottom:4%;background:var(--c-b);border-radius:50%;opacity:.85}
+.comp .r{width:30%;height:30%;right:12%;bottom:12%;border:3px solid var(--c-yb);border-radius:50%}
+.comp .x{width:2px;height:100%;left:50%;top:0;background:var(--line-2)}
+.comp .y{width:100%;height:2px;left:0;top:50%;background:var(--line-2)}
+.comp .lbl{position:absolute;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:var(--ink-xs);text-transform:uppercase}
+.comp .lbl.a{left:2%;top:0}
+.comp .lbl.b{right:0;bottom:0}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;margin-top:32px}
 .btn{
   display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
-  background:var(--accent);color:#0A0B0D;font-family:var(--font-sans);font-weight:700;
-  font-size:.95rem;padding:15px 28px;border-radius:var(--r);border:1px solid var(--accent);
-  text-decoration:none;transition:transform var(--ease),background var(--ease);
+  background:var(--c-ry);color:#0A0B0D;font-family:var(--font-sans);font-weight:700;
+  font-size:.95rem;padding:15px 28px;border-radius:8px;border:1px solid var(--c-ry);
+  text-decoration:none;transition:background var(--ease),transform var(--ease);
 }
 .btn:hover{background:#f06a3f;transform:translateY(-1px)}
 .btn-ghost{
-  background:none;border:0;color:var(--ink);font-family:var(--font-mono);font-size:.82rem;
-  letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:3px;
-  transition:border-color var(--ease),color var(--ease);white-space:nowrap;
+  background:none;border:0;color:var(--ink);font-family:var(--font-mono);font-size:.8rem;
+  letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--line-2);
+  padding-bottom:3px;white-space:nowrap;transition:border-color var(--ease),color var(--ease);
 }
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost:hover{border-color:var(--c-ry);color:var(--c-ry)}
 
-/* grids */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5)}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
-.cell{background:var(--paper-2);padding:var(--sp-4)}
+/* ── layout blocks ────────────────────────────────────────────────── */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cell{background:var(--paper-2);padding:26px}
+.cell h3{margin-bottom:8px}
+.cell p{margin:0;font-size:.93rem;line-height:1.55}
 
-/* problem list */
-ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:0}
-ul.plain li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink-s);display:flex;gap:14px}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:15px 0;border-bottom:1px solid var(--line);color:var(--ink-s);display:flex;gap:14px;align-items:center}
 ul.plain li:last-child{border-bottom:0}
-ul.plain li::before{content:"—";color:var(--accent);font-family:var(--font-mono);flex:none}
 
-/* pipeline */
-.chain{display:flex;flex-direction:column;gap:0;margin-top:var(--sp-4);max-width:560px}
+/* pipeline — shape carries the role */
+.chain{display:flex;flex-direction:column;max-width:600px;margin-top:24px}
 .node{
-  border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;background:var(--paper-2);
-  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  border:1px solid var(--line);border-radius:10px;padding:15px 20px;background:var(--paper-2);
+  display:flex;align-items:center;gap:14px;
 }
-.node b{font-family:var(--font-mono);font-size:.95rem;letter-spacing:.03em;color:var(--ink);font-weight:700}
-.node span{font-size:.85rem;color:var(--ink-xs);text-align:right}
-.node.seal{border-color:rgba(49,196,141,.45);background:rgba(49,196,141,.06)}
-.node.seal b{color:var(--seal)}
-.down{height:22px;margin-left:26px;border-left:1px solid var(--line2)}
+.node .id{font-family:var(--font-mono);font-size:.9rem;letter-spacing:.03em;color:var(--ink);font-weight:700;flex:none}
+.node .role{font-size:.85rem;color:var(--ink-xs);margin-left:auto;text-align:right}
+.node.seal-node{border-color:rgba(49,196,141,.45);background:rgba(49,196,141,.05)}
+.node.seal-node .id{color:var(--c-yb)}
+.down{height:20px;margin-left:24px;border-left:1px solid var(--line-2)}
 
 /* products */
-.prod{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--sp-4);display:flex;flex-direction:column;gap:8px}
-.prod b{font-family:var(--font-mono);font-size:.92rem;color:var(--ink);letter-spacing:.02em}
-.prod span{font-size:.92rem;color:var(--ink-s);line-height:1.5}
+.prod{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:7px}
+.prod b{font-family:var(--font-mono);font-size:.9rem;color:var(--ink);letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+.prod span{font-size:.9rem;color:var(--ink-s);line-height:1.5}
 
 /* compare */
-table{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:var(--sp-3)}
-th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
-thead th{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-xs);font-weight:700}
-thead th:last-child{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.94rem;margin-top:18px}
+th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-xs);font-weight:700}
+thead th:last-child{color:var(--c-ry)}
 td:first-child{color:var(--ink-s)}
 td:last-child{color:var(--ink);font-weight:500}
 tbody tr:last-child td{border-bottom:0}
 
 /* objections */
-.obj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:var(--sp-5);padding:var(--sp-4) 0;border-bottom:1px solid var(--line)}
+.obj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:clamp(20px,4vw,48px);padding:26px 0;border-bottom:1px solid var(--line)}
 .obj:last-of-type{border-bottom:0}
-.obj h3{font-family:var(--font-display);font-weight:700;color:var(--ink)}
 .obj p{margin:0}
-.q{color:var(--accent);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:8px}
+.q{color:var(--c-ry);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;display:flex;gap:8px;align-items:center;margin-bottom:9px}
 
 /* faq */
-details{border-bottom:1px solid var(--line);padding:18px 0}
+details{border-bottom:1px solid var(--line);padding:17px 0}
 details:last-of-type{border-bottom:0}
 summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--accent);font-family:var(--font-mono);font-size:1.1rem;flex:none}
+summary::after{content:"+";color:var(--c-ry);font-family:var(--font-mono);font-size:1.05rem;flex:none}
 details[open] summary::after{content:"–"}
-details p{margin:12px 0 0;font-size:.95rem}
+details p{margin:11px 0 0;font-size:.94rem}
 
 /* proof */
-.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;margin-top:var(--sp-3)}
-.stat{background:var(--paper-2);padding:var(--sp-3) var(--sp-3)}
-.stat b{display:block;font-family:var(--font-display);font-size:1.9rem;line-height:1;color:var(--ink);font-weight:900}
-.stat span{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-xs);margin-top:8px}
-.links{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:var(--sp-4)}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:20px}
+.stat{background:var(--paper-2);padding:22px 20px}
+.stat b{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.85rem;line-height:1;color:var(--ink);font-weight:900}
+.stat span{display:block;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-xs);margin-top:9px}
+.links{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:28px}
 
-/* close */
-.close{text-align:left;border-top:1px solid var(--line)}
-.close h2{max-width:22ch}
-footer{border-top:1px solid var(--line);padding:var(--sp-4) 0 var(--sp-5);font-family:var(--font-mono);font-size:.74rem;color:var(--ink-xs)}
+.close h2{max-width:23ch}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-family:var(--font-mono);font-size:.73rem;color:var(--ink-xs)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
 footer a{color:var(--ink-xs);text-decoration:none;border-bottom:1px solid transparent}
-footer a:hover{color:var(--ink);border-color:var(--line2)}
+footer a:hover{color:var(--ink);border-color:var(--line-2)}
 
 @media (max-width:900px){
-  .two,.obj{grid-template-columns:1fr;gap:var(--sp-3)}
+  .hero-grid{grid-template-columns:1fr}
+  .comp{max-width:300px;margin:0 auto 8px;order:-1}
+  .two,.obj{grid-template-columns:1fr;gap:18px}
   .g3{grid-template-columns:1fr}
   .proof{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:560px){
   body{font-size:16px}
   .wrap{padding:0 20px}
-  .cta-row{gap:16px}
-  .node{flex-direction:column;align-items:flex-start;gap:4px}
-  .node span{text-align:left}
+  .node{flex-wrap:wrap}
+  .node .role{margin-left:0;width:100%;text-align:left}
   .proof{grid-template-columns:repeat(2,1fr)}
-  table{font-size:.88rem}
-  th,td{padding:12px 10px}
+  table{font-size:.87rem}
+  th,td{padding:11px 9px}
 }
 </style>
 </head>
@@ -166,13 +205,21 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 
 <!-- 01 · HERO -->
 <section class="hero">
-  <div class="wrap">
-    <p class="label"><b>01</b> arifOS · constitutional runtime</p>
-    <h1>Governed intelligence for humans, agents and organisations</h1>
-    <p class="lead">AI systems act long before anyone asks who allowed them to. arifOS is the layer that asks first: it decides who may act, records what happened, and fails closed when it cannot prove either.</p>
-    <div class="cta-row">
-      <a class="btn" href="/sanctuary">Explore arifOS →</a>
-      <a class="btn-ghost" href="/proof">View the evidence</a>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="label"><span class="shape s-tri f-ry"></span><b>01</b> arifOS · constitutional runtime</p>
+      <h1>Governed intelligence for humans, agents and organisations</h1>
+      <p class="lead">AI systems act long before anyone asks who allowed them to. arifOS is the layer that asks first: it decides who may act, records what happened, and fails closed when it cannot prove either.</p>
+      <div class="cta-row">
+        <a class="btn" href="/sanctuary">Explore arifOS →</a>
+        <a class="btn-ghost" href="/proof">View the evidence</a>
+      </div>
+    </div>
+    <div class="comp" aria-hidden="true">
+      <i class="x"></i><i class="y"></i>
+      <i class="t"></i><i class="q"></i><i class="c"></i><i class="r"></i>
+      <span class="lbl a">propose</span>
+      <span class="lbl b">judge</span>
     </div>
   </div>
 </section>
@@ -180,13 +227,13 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 02 · THE PROBLEM -->
 <section id="problem">
   <div class="wrap">
-    <p class="label"><b>02</b> the problem</p>
+    <p class="label"><span class="shape s-sq f-y"></span><b>02</b> the problem</p>
     <h2>Most AI systems cannot answer three questions</h2>
-    <div class="two" style="margin-top:var(--sp-4)">
+    <div class="two" style="margin-top:26px">
       <ul class="plain">
-        <li>Who authorised this action?</li>
-        <li>What evidence did it rest on?</li>
-        <li>Can you prove what actually ran?</li>
+        <li><span class="shape s-cir f-ry"></span>Who authorised this action?</li>
+        <li><span class="shape s-cir f-ry"></span>What evidence did it rest on?</li>
+        <li><span class="shape s-cir f-ry"></span>Can you prove what actually ran?</li>
       </ul>
       <div>
         <p>When none of the three can be answered, you do not have an agent. You have an unattributed actor with a network connection.</p>
@@ -199,13 +246,13 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 03 · THE THESIS -->
 <section id="thesis">
   <div class="wrap">
-    <p class="label"><b>03</b> the thesis</p>
+    <p class="label"><span class="shape s-cir f-yb"></span><b>03</b> the thesis</p>
     <h2>arifOS is not a chatbot, and not a framework</h2>
-    <p class="lead" style="margin-top:var(--sp-3)">It is the runtime that sits between a model and the world.</p>
-    <div class="g3" style="margin-top:var(--sp-4)">
-      <div class="cell"><h3>Constitutional runtime</h3><p style="margin:10px 0 0;font-size:.94rem">Thirteen floors the system must satisfy before it may mutate anything.</p></div>
-      <div class="cell"><h3>Governance layer</h3><p style="margin:10px 0 0;font-size:.94rem">Separation of powers: the author of an action is never its judge.</p></div>
-      <div class="cell"><h3>Coordination substrate</h3><p style="margin:10px 0 0;font-size:.94rem">Agents route, judge, execute and seal against one shared ledger.</p></div>
+    <p class="lead" style="margin-top:20px">It is the runtime that sits between a model and the world.</p>
+    <div class="g3" style="margin-top:32px">
+      <div class="cell"><h3>Constitutional runtime</h3><p>Thirteen floors the system must satisfy before it may mutate anything.</p></div>
+      <div class="cell"><h3>Governance layer</h3><p>Separation of powers: the author of an action is never its judge.</p></div>
+      <div class="cell"><h3>Coordination substrate</h3><p>Agents route, judge, execute and seal against one shared ledger.</p></div>
     </div>
   </div>
 </section>
@@ -213,37 +260,37 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 04 · HOW IT WORKS -->
 <section id="how">
   <div class="wrap">
-    <p class="label"><b>04</b> how it works</p>
+    <p class="label"><span class="shape s-dia f-rb"></span><b>04</b> how it works</p>
     <h2>Every action walks the same chain</h2>
-    <div class="chain" style="margin-top:var(--sp-4)">
-      <div class="node"><b>HUMAN</b><span>sets intent · holds veto</span></div>
+    <div class="chain">
+      <div class="node"><span class="shape s-cir f-ry"></span><span class="id">HUMAN</span><span class="role">sets intent · holds veto</span></div>
       <div class="down"></div>
-      <div class="node"><b>333 · THINK</b><span>proposes · decomposes</span></div>
+      <div class="node"><span class="shape s-tri f-ry"></span><span class="id">333 · THINK</span><span class="role">proposes · decomposes</span></div>
       <div class="down"></div>
-      <div class="node"><b>555 · VERIFY</b><span>gathers evidence · declares unknowns</span></div>
+      <div class="node"><span class="shape s-sq f-y"></span><span class="id">555 · VERIFY</span><span class="role">gathers evidence · declares unknowns</span></div>
       <div class="down"></div>
-      <div class="node"><b>888 · JUDGE</b><span>SEAL · HOLD · SABAR · VOID</span></div>
+      <div class="node"><span class="shape s-cir f-b"></span><span class="id">888 · JUDGE</span><span class="role">SEAL · HOLD · SABAR · VOID</span></div>
       <div class="down"></div>
-      <div class="node seal"><b>SEAL</b><span>hash-chained · permanent</span></div>
+      <div class="node seal-node"><span class="shape s-dia f-yb"></span><span class="id">SEAL</span><span class="role">hash-chained · permanent</span></div>
       <div class="down"></div>
-      <div class="node"><b>A-FORGE · EXECUTE</b><span>runs only against a verdict</span></div>
+      <div class="node"><span class="shape s-bar f-ry"></span><span class="id">A-FORGE · EXECUTE</span><span class="role">runs only against a verdict</span></div>
     </div>
-    <p style="margin-top:var(--sp-4)">No verdict, no execution. The author of an action can never be the one who approves it.</p>
+    <p style="margin-top:26px">No verdict, no execution. The author of an action can never be the one who approves it.</p>
   </div>
 </section>
 
 <!-- 05 · PRODUCTS -->
 <section id="products">
   <div class="wrap">
-    <p class="label"><b>05</b> the stack</p>
-    <h2>Four parts, one loop</h2>
-    <div class="g3" style="margin-top:var(--sp-4)">
-      <div class="prod"><b>arifOS</b><span>The kernel. Holds the floors, mints authority, keeps the ledger.</span></div>
-      <div class="prod"><b>AAA</b><span>The institution. Routes intent, binds identity, remembers outcomes.</span></div>
-      <div class="prod"><b>A-FORGE</b><span>The hands. Executes shell, files, git, network — and only against a seal.</span></div>
-      <div class="prod"><b>Kabarkan</b><span>The telemetry plane. Constitutional verdicts, kept as a ledger.</span></div>
-      <div class="prod"><b>GEOX</b><span>Earth intelligence. Seismic, wells, petrophysics, prospect risk.</span></div>
-      <div class="prod"><b>WEALTH</b><span>Capital intelligence. Computes. Never authorises.</span></div>
+    <p class="label"><span class="shape s-sq f-ry"></span><b>05</b> the stack</p>
+    <h2>Six parts, one loop</h2>
+    <div class="g3" style="margin-top:32px">
+      <div class="prod"><b><span class="shape s-cir f-yb"></span>arifOS</b><span>The kernel. Holds the floors, mints authority, keeps the ledger.</span></div>
+      <div class="prod"><b><span class="shape s-sq f-y"></span>AAA</b><span>The institution. Routes intent, binds identity, remembers outcomes.</span></div>
+      <div class="prod"><b><span class="shape s-bar f-ry"></span>A-FORGE</b><span>The hands. Executes shell, files, git, network — only against a seal.</span></div>
+      <div class="prod"><b><span class="shape s-cir f-b"></span>Kabarkan</b><span>The telemetry plane. Constitutional verdicts, kept as a ledger.</span></div>
+      <div class="prod"><b><span class="shape s-tri f-rb"></span>GEOX</b><span>Earth intelligence. Seismic, wells, petrophysics, prospect risk.</span></div>
+      <div class="prod"><b><span class="shape s-dia f-yb"></span>WEALTH</b><span>Capital intelligence. Computes. Never authorises.</span></div>
     </div>
   </div>
 </section>
@@ -251,7 +298,7 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 06 · WHY DIFFERENT -->
 <section id="different">
   <div class="wrap">
-    <p class="label"><b>06</b> why different</p>
+    <p class="label"><span class="shape s-dia f-b"></span><b>06</b> why different</p>
     <h2>Where the default stack and this one diverge</h2>
     <table>
       <thead><tr><th>Default AI stack</th><th>arifOS</th></tr></thead>
@@ -269,9 +316,9 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 07 · WHO IT IS FOR -->
 <section id="who">
   <div class="wrap">
-    <p class="label"><b>07</b> who this is for</p>
+    <p class="label"><span class="shape s-sq f-yb"></span><b>07</b> who this is for</p>
     <h2>Built for people who will be asked to justify it later</h2>
-    <div class="g3" style="margin-top:var(--sp-4)">
+    <div class="g3" style="margin-top:32px">
       <div class="cell">AI labs shipping agents that touch real systems</div>
       <div class="cell">Enterprises where an auditor will read the logs</div>
       <div class="cell">Government programmes that cannot fail open</div>
@@ -285,19 +332,19 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 08–10 · OBJECTIONS -->
 <section id="objections">
   <div class="wrap">
-    <p class="label"><b>08</b> objections</p>
+    <p class="label"><span class="shape s-tri f-y"></span><b>08</b> objections</p>
     <h2>The three questions I get asked most</h2>
-    <div style="margin-top:var(--sp-4)">
+    <div style="margin-top:24px">
       <div class="obj">
-        <h3><span class="q">08</span>“Is this another agent framework?”</h3>
+        <h3><span class="q"><span class="shape s-tri f-ry"></span>08</span>“Is this another agent framework?”</h3>
         <p>No. A framework helps you build agents. arifOS decides which agent is permitted to act, on whose authority, and what has to be true before it may. Frameworks are upstream of the problem this solves.</p>
       </div>
       <div class="obj">
-        <h3><span class="q">09</span>“Is this replacing the model?”</h3>
+        <h3><span class="q"><span class="shape s-tri f-ry"></span>09</span>“Is this replacing the model?”</h3>
         <p>No. It sits above the model the way an operating system sits above a CPU. The model still reasons. It simply no longer grants itself permission.</p>
       </div>
       <div class="obj">
-        <h3><span class="q">10</span>“Why governance before capability?”</h3>
+        <h3><span class="q"><span class="shape s-tri f-ry"></span>10</span>“Why governance before capability?”</h3>
         <p>Because the binding constraint on AI is not intelligence, it is authority. A system that is smarter than its permission model is a liability with better prose.</p>
       </div>
     </div>
@@ -307,9 +354,9 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 11 · FAQ -->
 <section id="faq">
   <div class="wrap">
-    <p class="label"><b>11</b> questions</p>
+    <p class="label"><span class="shape s-cir f-rb"></span><b>11</b> questions</p>
     <h2>Plain answers</h2>
-    <div style="margin-top:var(--sp-3);max-width:820px">
+    <div style="margin-top:18px;max-width:820px">
       <details><summary>What is AAA?</summary><p>The institution layer. It routes intent to the right organ, binds each actor to an identity, and carries outcomes forward so the next session inherits them.</p></details>
       <details><summary>What does SEAL mean?</summary><p>A verdict: the action passed judgement and is recorded permanently on a hash chain. Once sealed, it cannot be quietly edited.</p></details>
       <details><summary>What does HOLD mean?</summary><p>A verdict, not a state. The system refuses to proceed because something cannot be proven — an irreversible step, a missing witness, or a human decision that has not been made.</p></details>
@@ -324,14 +371,14 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
 <!-- 12 · REALITY PROOF -->
 <section id="proof">
   <div class="wrap">
-    <p class="label"><b>12</b> reality proof</p>
+    <p class="label"><span class="shape s-dia f-yb"></span><b>12</b> reality proof</p>
     <h2>Not testimonials. Artifacts you can open.</h2>
-    <p style="margin-top:var(--sp-3)">Anyone can claim a governance layer. The claim is only worth what you can independently inspect.</p>
+    <p style="margin-top:20px">Anyone can claim a governance layer. The claim is only worth what you can independently inspect.</p>
     <div class="proof">
-      <div class="stat"><b>6</b><span>organs answering health</span></div>
-      <div class="stat"><b>13</b><span>constitutional floors</span></div>
-      <div class="stat"><b>4</b><span>verdict classes</span></div>
-      <div class="stat"><b>1</b><span>hash-chained ledger</span></div>
+      <div class="stat"><b><span class="shape s-cir f-yb"></span>6</b><span>organs answering health</span></div>
+      <div class="stat"><b><span class="shape s-sq f-y"></span>13</b><span>constitutional floors</span></div>
+      <div class="stat"><b><span class="shape s-tri f-ry"></span>4</b><span>verdict classes</span></div>
+      <div class="stat"><b><span class="shape s-dia f-b"></span>1</b><span>hash-chained ledger</span></div>
     </div>
     <div class="links">
       <a class="btn-ghost" href="/proof">Pass/fail record →</a>
@@ -343,10 +390,10 @@ footer a:hover{color:var(--ink);border-color:var(--line2)}
   </div>
 </section>
 
-<!-- 12b · CLOSE -->
+<!-- close -->
 <section class="close">
   <div class="wrap">
-    <p class="label"><b>↳</b> start here</p>
+    <p class="label"><span class="shape s-bar f-ry"></span><b>↳</b> start here</p>
     <h2>The veto stays with the human. Everything else can be delegated.</h2>
     <div class="cta-row">
       <a class="btn" href="/sanctuary">Explore arifOS →</a>

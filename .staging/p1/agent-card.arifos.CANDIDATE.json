@@ -1,0 +1,89 @@
+{
+  "_staged_meta": {
+    "status": "CANDIDATE — NOT PUBLISHED — NOT A SECOND CARD",
+    "authored": "2026-10-28",
+    "author": "claude-code-kvm8 (FI-002)",
+    "target": "https://arifos.arif-fazil.com/.well-known/agent-card.json",
+    "replaces_now": "4-field stub: {id, name, protocolVersion, authority_ceiling}",
+    "read_before_publishing": [
+      "The federation already serves a complete, extension-rich Agent Card at",
+      "https://aaa.arif-fazil.com/.well-known/agent-card.json — 8 skills, oauth2 +",
+      "bearer, 8 extensions, Ed25519 signature block. The cheaper reconciliation is",
+      "to point the apex 301 at THAT card and retire this stub, not to enrich it.",
+      "This candidate exists because the P1 brief asked for one. It is the second-best option."
+    ],
+    "unknown_and_left_absent": [
+      "supportedInterfaces.url for arifos itself (no JSON-RPC endpoint probed; only MCP transport known)",
+      "capabilities.streaming / pushNotifications (not measured)",
+      "securitySchemes for this surface (oauth flows exist at aaa.arif-fazil.com/oauth/*, not here)",
+      "skills beyond judging (the 9 kernel verbs are MCP tools, not A2A skills)"
+    ],
+    "remove_before_publish": ["_staged_meta", "_verification_status"]
+  },
+  "_verification_status": {
+    "provider": "OBSERVED — https://arif-fazil.com/about returns 200",
+    "did": "OBSERVED — https://arif-fazil.com/.well-known/did.json, id did:web:arif-fazil.com, 1 Multikey ed25519-pub",
+    "mcp_endpoint": "OBSERVED — https://mcp.arif-fazil.com/mcp returns 405 on GET (POST-only transport)",
+    "a2a_endpoint": "UNKNOWN — not probed, not claimed",
+    "signature": "UNKNOWN — cannot sign; DID key custody belongs to Arif"
+  },
+
+  "protocolVersion": "1.0",
+  "name": "arifOS Constitutional Kernel",
+  "description": "Judges whether a proposed action may happen. Holds the F1-F13 floors, mints bounded authority and keeps the hash-chained ledger. It does not execute: A-FORGE executes, only against a verdict.",
+  "version": "2026.10.28-candidate",
+  "url": "https://arifos.arif-fazil.com",
+  "provider": {
+    "organization": "arifOS Federation",
+    "url": "https://arif-fazil.com"
+  },
+  "documentationUrl": "https://arif-fazil.com/human",
+  "iconUrl": "https://arif-fazil.com/og-identity.png",
+  "defaultInputModes": ["application/json", "text/plain"],
+  "defaultOutputModes": ["application/json"],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "https://arif-fazil.com/a2a/extensions/verdict-grammar/v1",
+        "description": "arifOS 888 JUDGE verdict grammar. SEAL | HOLD | SABAR | VOID.",
+        "required": false,
+        "params": {
+          "verdicts": ["SEAL", "HOLD", "SABAR", "VOID"],
+          "judge_tool": "arif_judge",
+          "judge_endpoint": "https://mcp.arif-fazil.com/mcp"
+        }
+      },
+      {
+        "uri": "https://arif-fazil.com/a2a/extensions/arifos-authority/v1",
+        "description": "Private arifOS vocabulary. Not a standard A2A field; an outside client will not understand it without this contract.",
+        "required": false,
+        "params": {
+          "authority_ceiling": "JUDGE_ONLY",
+          "may_execute": false,
+          "may_self_authorize": false,
+          "may_seal": "F13 only (human)",
+          "floors": ["F1", "F2", "F4", "F7", "F9", "F11", "F13"],
+          "kernel_verbs": [
+            "arif_init", "arif_observe", "arif_think", "arif_route",
+            "arif_memory", "arif_judge", "arif_forge", "arif_seal", "arif_report"
+          ]
+        }
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "arifos.evaluate_authorization_request",
+      "name": "Evaluate an authorization request",
+      "description": "Return SEAL, HOLD, SABAR or VOID for a bounded proposal, given current evidence and authority. A SEAL permits execution by another actor; it does not execute anything itself.",
+      "tags": ["judgment", "authorization", "non-execution"],
+      "examples": [
+        "Evaluate this verified plan for bounded execution."
+      ],
+      "inputModes": ["application/json"],
+      "outputModes": ["application/json"]
+    }
+  ]
+}

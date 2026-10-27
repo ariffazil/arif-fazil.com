@@ -59,11 +59,52 @@
 </head>
 <body>
     <section class="hero">
-        <div class="eyebrow gold">999 · THE PROOF CHAMBER</div>
+        <div class="eyebrow gold">999 · PROOF BOUNDARY & RECEIPT VERIFICATION</div>
         <div class="seal"><div class="seal-inner">SEAL</div></div>
-        <p class="font-mono" style="font-size: 12px; color: rgba(201,162,39,0.7);">ΔΩ∞ · EVERY CLAIM SEALED · arif-fazil.com ·</p>
+        <p class="font-mono" style="font-size: 12px; color: rgba(201,162,39,0.7);">RECORD PRESERVATION & VERIFICATION STATE</p>
         <h1>Don't trust this site. Verify it.</h1>
-        <p style="max-width: 56ch; color: #9AA0A8;">Everything claimed can be checked — against public records, machine-readable documents, and the seals below.</p>
+        <p style="max-width: 64ch; color: #9AA0A8; margin: 0 auto 24px;">/999 preserves governed records and their verification state. A recorded event is not automatically a verified claim. A successful command is not automatically a successful world outcome.</p>
+
+        <!-- Dynamic Live Chain Status -->
+        <div id="chain-status-banner" style="max-width: 540px; margin: 0 auto; padding: 16px 20px; border: 1px solid rgba(201,162,39,0.3); background: #0A0B0D; border-radius: 6px; font-family: monospace; font-size: 12px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="color: #9AA0A8;">CHAIN VERIFICATION:</span>
+                <span id="chain-status-val" style="color: #F59E0B; font-weight: 700;">PROBING / DYNAMIC</span>
+            </div>
+            <div style="color: #6B7280; font-size: 11px;">
+                Endpoint: <code>/999/verify</code> · <span id="chain-status-desc">Probing live verification state...</span>
+            </div>
+        </div>
+        <script>
+        (function() {
+            fetch('/999/verify')
+                .then(r => r.json())
+                .then(d => {
+                    const val = document.getElementById('chain-status-val');
+                    const desc = document.getElementById('chain-status-desc');
+                    if (!val || !desc) return;
+                    if (d.verified === true) {
+                        val.textContent = 'VERIFIED';
+                        val.style.color = '#31C48D';
+                        desc.textContent = 'Audit chain verified, zero gaps detected.';
+                    } else if (d.chain_status === 'gaps-found') {
+                        val.textContent = 'GAPS DETECTED (' + (d.gap_count || 'UNKNOWN') + ')';
+                        val.style.color = '#E4572E';
+                        desc.textContent = 'Chain status: gaps-found (' + (d.gap_count || 0) + ' gaps recorded in audit ledger).';
+                    } else {
+                        val.textContent = d.chain_status || 'UNKNOWN';
+                        val.style.color = '#F59E0B';
+                        desc.textContent = 'Observed state: ' + (d.chain_status || 'unverified');
+                    }
+                })
+                .catch(err => {
+                    const val = document.getElementById('chain-status-val');
+                    const desc = document.getElementById('chain-status-desc');
+                    if (val) { val.textContent = 'UNKNOWN'; val.style.color = '#9AA0A8'; }
+                    if (desc) { desc.textContent = 'Verification endpoint unavailable at request time.'; }
+                });
+        })();
+        </script>
     </section>
 
     <section class="section">
@@ -78,7 +119,7 @@
                 <div class="claim-row"><p class="claim-text">13 years at PETRONAS (2013–present), exploration geoscientist</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><span style="font-size: 12px; color: #9AA0A8;">Public record</span></div>
                 <div class="claim-row"><p class="claim-text">BEKANTAN-1 — shallowest flowing oil discovery in the Malay Basin</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><span style="font-size: 12px; color: #9AA0A8;">Well record</span></div>
                 <div class="claim-row"><p class="claim-text">Every exploration well led has flowed</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><a href="/earth" style="font-size: 12px;">Well ledger ↗</a></div>
-                <div class="claim-row"><p class="claim-text">arifOS v2026.08.01 — 13 Constitutional Floors, 8 MCP tools</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><a href="https://pypi.org/project/arifos/" style="font-size: 12px;">PyPI ↗</a></div>
+                <div class="claim-row"><p class="claim-text">arifOS — 13 Constitutional Floors, dynamic tool registry</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-sealed">SEALED</span><a href="https://pypi.org/project/arifos/" style="font-size: 12px;">PyPI ↗</a></div>
                 <div class="claim-row"><p class="claim-text">$750M scenario — labelled simulation</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[SPEC]</span><span class="status status-unsealed">UNSEALED</span><span style="font-size: 12px; color: #9AA0A8;">Speculative by design</span></div>
                 <div class="claim-row"><p class="claim-text">"PETRONAS collapse" — claim found circulating online</p><span class="font-mono" style="color: #9AA0A8; font-size: 11px;">[OBS]</span><span class="status status-refuted">REFUTED</span><span style="font-size: 12px; color: #9AA0A8;">Not supported by any record</span></div>
             </div>
@@ -96,7 +137,7 @@
                 <a href="/000/genesis-statement.json" class="artifact-card"><p class="artifact-name">/000/genesis-statement.json</p><p class="artifact-desc">The sovereign attestation: signed statement binding the domain to a human operator.</p><p class="artifact-link">OPEN ↗</p></a>
                 <a href="/000/claims.json" class="artifact-card"><p class="artifact-name">/000/claims.json</p><p class="artifact-desc">The claims registry: every assertion with its epistemic tag.</p><p class="artifact-link">OPEN ↗</p></a>
                 <a href="/llms.txt" class="artifact-card"><p class="artifact-name">/llms.txt</p><p class="artifact-desc">Plain instructions for language models visiting this site.</p><p class="artifact-link">OPEN ↗</p></a>
-                <a href="https://mcp.arif-fazil.com/mcp" class="artifact-card"><p class="artifact-name">mcp.arif-fazil.com/mcp</p><p class="artifact-desc">The public MCP endpoint: 8 tools, governed by 13 floors.</p><p class="artifact-link">OPEN ↗</p></a>
+                <a href="https://mcp.arif-fazil.com/mcp" class="artifact-card"><p class="artifact-name">mcp.arif-fazil.com/mcp</p><p class="artifact-desc">The public MCP endpoint: FastMCP gateway governed by 13 constitutional floors.</p><p class="artifact-link">OPEN ↗</p></a>
                 <a href="https://pypi.org/project/arifos/" class="artifact-card"><p class="artifact-name">pypi.org/project/arifos</p><p class="artifact-desc">The arifOS package.</p><p class="artifact-link">OPEN ↗</p></a>
                 <a href="https://github.com/ariffazil" class="artifact-card"><p class="artifact-name">github.com/ariffazil</p><p class="artifact-desc">The source. arifOS, A-FORGE, AAA, GEOX, WEALTH, WELL.</p><p class="artifact-link">OPEN ↗</p></a>
             </div>
@@ -104,8 +145,8 @@
     </section>
 
     <section class="veto-section">
-        <blockquote class="veto-quote">"Floor 13: SOVEREIGN. The human veto is absolute. Every system on this site — including this site — answers to a person."</blockquote>
-        <p class="veto-meta">— ARIF FAZIL · KUALA LUMPUR · SEALED THIS DAY, 8 SEPTEMBER 2026</p>
+        <blockquote class="veto-quote">"Root responsibility for the federation rests with Arif Fazil. Bounded refusal standing belongs to the humans who bear material consequences within their scope. Machines are strictly prohibited from self-creating authority."</blockquote>
+        <p class="veto-meta">— CONSTITUTIONAL INVARIANT · RATIFIED 2026-10-28</p>
     </section>
 
     <section style="padding: 0 24px 112px 24px; text-align: center;">

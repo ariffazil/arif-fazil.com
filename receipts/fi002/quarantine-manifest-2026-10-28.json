@@ -1,0 +1,522 @@
+[
+ {
+  "name": "2026-09-19-vault-sot-three-paths",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/2026-09-19-vault-sot-three-paths.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/2026-09-19-vault-sot-three-paths.md",
+  "sha256_before": "2012ed2f23a045c442715aa422cca7dea0159a3e3911fdb42844f8e0aa4d3566",
+  "sha256_after": "2012ed2f23a045c442715aa422cca7dea0159a3e3911fdb42844f8e0aa4d3566",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/2026-09-19-vault-sot-three-paths.md /root/.claude/projects/-root/memory/2026-09-19-vault-sot-three-paths.md"
+ },
+ {
+  "name": "9-tool-audit-forge-cycle-2026-06-29",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/9-tool-audit-forge-cycle-2026-06-29.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/9-tool-audit-forge-cycle-2026-06-29.md",
+  "sha256_before": "fa9e8b632af45aa7954e76a52d700ac9885f7ea78362a89ba11b41c35f041673",
+  "sha256_after": "fa9e8b632af45aa7954e76a52d700ac9885f7ea78362a89ba11b41c35f041673",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/9-tool-audit-forge-cycle-2026-06-29.md /root/.claude/projects/-root/memory/9-tool-audit-forge-cycle-2026-06-29.md"
+ },
+ {
+  "name": "arifos-forge-order-status-2026-06-02",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/arifos-forge-order-status-2026-06-02.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/arifos-forge-order-status-2026-06-02.md",
+  "sha256_before": "87da3578dd901a91d07927639b6ff06bedec08306f1b6c7649384e903dc29ffe",
+  "sha256_after": "87da3578dd901a91d07927639b6ff06bedec08306f1b6c7649384e903dc29ffe",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/arifos-forge-order-status-2026-06-02.md /root/.claude/projects/-root/memory/arifos-forge-order-status-2026-06-02.md"
+ },
+ {
+  "name": "arifos-tool-migration-complete-2026-06-22",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/arifos-tool-migration-complete-2026-06-22.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/arifos-tool-migration-complete-2026-06-22.md",
+  "sha256_before": "5c9a6c7dff8bfafe40b353bea1f0c195aea1806cbfb678b2fdff127f3224e3cb",
+  "sha256_after": "5c9a6c7dff8bfafe40b353bea1f0c195aea1806cbfb678b2fdff127f3224e3cb",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/arifos-tool-migration-complete-2026-06-22.md /root/.claude/projects/-root/memory/arifos-tool-migration-complete-2026-06-22.md"
+ },
+ {
+  "name": "art-governor-autonomous-fix-2026-06-22",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/art-governor-autonomous-fix-2026-06-22.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/art-governor-autonomous-fix-2026-06-22.md",
+  "sha256_before": "fb95295789c4d6c6d442d723df841704203ae7efc9474782729be2ff7f2fbe0a",
+  "sha256_after": "fb95295789c4d6c6d442d723df841704203ae7efc9474782729be2ff7f2fbe0a",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/art-governor-autonomous-fix-2026-06-22.md /root/.claude/projects/-root/memory/art-governor-autonomous-fix-2026-06-22.md"
+ },
+ {
+  "name": "atlas333-deep-research-init",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/atlas333-deep-research-init.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/atlas333-deep-research-init.md",
+  "sha256_before": "61e9908cf1b9182dd7dc50ff2355125d73d5e54bf801c9857eb44332ce5af99a",
+  "sha256_after": "61e9908cf1b9182dd7dc50ff2355125d73d5e54bf801c9857eb44332ce5af99a",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/atlas333-deep-research-init.md /root/.claude/projects/-root/memory/atlas333-deep-research-init.md"
+ },
+ {
+  "name": "atlas333-next-layer-init",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/atlas333-next-layer-init.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/atlas333-next-layer-init.md",
+  "sha256_before": "bf6977817068f909161cfb5fcb93a517f4c2b6918121cba9346b67a8808c7099",
+  "sha256_after": "bf6977817068f909161cfb5fcb93a517f4c2b6918121cba9346b67a8808c7099",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/atlas333-next-layer-init.md /root/.claude/projects/-root/memory/atlas333-next-layer-init.md"
+ },
+ {
+  "name": "deepseek-v4-config-audit-2026-08-27",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/deepseek-v4-config-audit-2026-08-27.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/deepseek-v4-config-audit-2026-08-27.md",
+  "sha256_before": "b297f40344ac23df79622428a74e68555a7ad22523676d7276fbc337b11a5fe3",
+  "sha256_after": "b297f40344ac23df79622428a74e68555a7ad22523676d7276fbc337b11a5fe3",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/deepseek-v4-config-audit-2026-08-27.md /root/.claude/projects/-root/memory/deepseek-v4-config-audit-2026-08-27.md"
+ },
+ {
+  "name": "f13-trigger-already-live-2026-06-03",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/f13-trigger-already-live-2026-06-03.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/f13-trigger-already-live-2026-06-03.md",
+  "sha256_before": "35ba104628318c2396cfe66a5e4efe3b68f1a7cee00a3e1f49916ca7cf410d55",
+  "sha256_after": "35ba104628318c2396cfe66a5e4efe3b68f1a7cee00a3e1f49916ca7cf410d55",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/f13-trigger-already-live-2026-06-03.md /root/.claude/projects/-root/memory/f13-trigger-already-live-2026-06-03.md"
+ },
+ {
+  "name": "g13-machine-domain-router-fix-2026-06-29",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/g13-machine-domain-router-fix-2026-06-29.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/g13-machine-domain-router-fix-2026-06-29.md",
+  "sha256_before": "58646d2b72b44aeac0e1d3e9050feb6155d9b857a94d21a126db12a78bbe85f5",
+  "sha256_after": "58646d2b72b44aeac0e1d3e9050feb6155d9b857a94d21a126db12a78bbe85f5",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/g13-machine-domain-router-fix-2026-06-29.md /root/.claude/projects/-root/memory/g13-machine-domain-router-fix-2026-06-29.md"
+ },
+ {
+  "name": "geox-next-init-scaffold-2026-07-13",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/geox-next-init-scaffold-2026-07-13.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/geox-next-init-scaffold-2026-07-13.md",
+  "sha256_before": "d296c2057a52eb42a7b0b262871fac462d243d900f06da900b783b6f36fc3964",
+  "sha256_after": "d296c2057a52eb42a7b0b262871fac462d243d900f06da900b783b6f36fc3964",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/geox-next-init-scaffold-2026-07-13.md /root/.claude/projects/-root/memory/geox-next-init-scaffold-2026-07-13.md"
+ },
+ {
+  "name": "kernel-test-scaffold-2026-07-15",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/kernel-test-scaffold-2026-07-15.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/kernel-test-scaffold-2026-07-15.md",
+  "sha256_before": "3c94858593f5f7b3920322d69aae9bb12d37cf5e21c91c79202247647d06e1b3",
+  "sha256_after": "3c94858593f5f7b3920322d69aae9bb12d37cf5e21c91c79202247647d06e1b3",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/kernel-test-scaffold-2026-07-15.md /root/.claude/projects/-root/memory/kernel-test-scaffold-2026-07-15.md"
+ },
+ {
+  "name": "mcp-initialize-caddy-fix-2026-06-29",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/mcp-initialize-caddy-fix-2026-06-29.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/mcp-initialize-caddy-fix-2026-06-29.md",
+  "sha256_before": "2272a1cc31e00857c4c28f4dd0f2b2f515ad97b595a90356d6d5d0d704e74e9a",
+  "sha256_after": "2272a1cc31e00857c4c28f4dd0f2b2f515ad97b595a90356d6d5d0d704e74e9a",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/mcp-initialize-caddy-fix-2026-06-29.md /root/.claude/projects/-root/memory/mcp-initialize-caddy-fix-2026-06-29.md"
+ },
+ {
+  "name": "next-init-agentic-recursive-intelligence-2026-07-15",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/next-init-agentic-recursive-intelligence-2026-07-15.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/next-init-agentic-recursive-intelligence-2026-07-15.md",
+  "sha256_before": "b5f7255f0d88da59dd3c0ff51d6d314123861e669c6f36faf11b2aabe1323680",
+  "sha256_after": "b5f7255f0d88da59dd3c0ff51d6d314123861e669c6f36faf11b2aabe1323680",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/next-init-agentic-recursive-intelligence-2026-07-15.md /root/.claude/projects/-root/memory/next-init-agentic-recursive-intelligence-2026-07-15.md"
+ },
+ {
+  "name": "next-session-init-2026-07-09",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/next-session-init-2026-07-09.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/next-session-init-2026-07-09.md",
+  "sha256_before": "8962a426b64faec955fbb000240d4fe3c5e1f15441142f5d1e969712930fa68c",
+  "sha256_after": "8962a426b64faec955fbb000240d4fe3c5e1f15441142f5d1e969712930fa68c",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/next-session-init-2026-07-09.md /root/.claude/projects/-root/memory/next-session-init-2026-07-09.md"
+ },
+ {
+  "name": "next-session-init-2026-07-30",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/next-session-init-2026-07-30.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/next-session-init-2026-07-30.md",
+  "sha256_before": "d54e90627e32fa8567ba179929e456e7acdd1e41702333ec88aa45c71fefba0a",
+  "sha256_after": "d54e90627e32fa8567ba179929e456e7acdd1e41702333ec88aa45c71fefba0a",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/next-session-init-2026-07-30.md /root/.claude/projects/-root/memory/next-session-init-2026-07-30.md"
+ },
+ {
+  "name": "node3-a2a-live-2026-07-15",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/node3-a2a-live-2026-07-15.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/node3-a2a-live-2026-07-15.md",
+  "sha256_before": "59a9fc19e3d5188d05e2073ef3e798566a0721f5180a732de144843c713fa2e3",
+  "sha256_after": "59a9fc19e3d5188d05e2073ef3e798566a0721f5180a732de144843c713fa2e3",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/node3-a2a-live-2026-07-15.md /root/.claude/projects/-root/memory/node3-a2a-live-2026-07-15.md"
+ },
+ {
+  "name": "reclaimable-cache-map-2026-08-20",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/reclaimable-cache-map-2026-08-20.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/reclaimable-cache-map-2026-08-20.md",
+  "sha256_before": "65eeb89a98d5849c5eb808e530421cd429dcc95dfa2552b47eb4b2fb4d3d7df0",
+  "sha256_after": "65eeb89a98d5849c5eb808e530421cd429dcc95dfa2552b47eb4b2fb4d3d7df0",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/reclaimable-cache-map-2026-08-20.md /root/.claude/projects/-root/memory/reclaimable-cache-map-2026-08-20.md"
+ },
+ {
+  "name": "sense111-convergence-2026-07-15",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/sense111-convergence-2026-07-15.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/sense111-convergence-2026-07-15.md",
+  "sha256_before": "4c4f788eba9471fe13c5ba3e80c793b99c94d156432cd3b3ecadef3dd486d3f9",
+  "sha256_after": "4c4f788eba9471fe13c5ba3e80c793b99c94d156432cd3b3ecadef3dd486d3f9",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/sense111-convergence-2026-07-15.md /root/.claude/projects/-root/memory/sense111-convergence-2026-07-15.md"
+ },
+ {
+  "name": "well-state-2026-07-12",
+  "state": "QUARANTINED",
+  "original": "/root/.claude/projects/-root/memory/well-state-2026-07-12.md",
+  "quarantine": "/root/_to_delete/memory-prune-2026-10-28/well-state-2026-07-12.md",
+  "sha256_before": "ebc6bc864c35a835fb117b86faad6a2860fc3431aac702da6482f19368d9bec1",
+  "sha256_after": "ebc6bc864c35a835fb117b86faad6a2860fc3431aac702da6482f19368d9bec1",
+  "reason": "one-shot session scaffold / next-session init prompt / completed micro-receipt; fully unreferenced",
+  "restore": "mv /root/_to_delete/memory-prune-2026-10-28/well-state-2026-07-12.md /root/.claude/projects/-root/memory/well-state-2026-07-12.md"
+ },
+ {
+  "name": "2026-06-28-asal-v1-governance-geometry",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/2026-06-28-asal-v1-governance-geometry.md",
+  "quarantine": null,
+  "sha256_before": "32170d6d2417c36328967cb1a72b85bbe7a59841bd3b32f895105edbb2264181",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "USER",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/USER.md",
+  "quarantine": null,
+  "sha256_before": "eb5844ae35b03c93b98a38edb5f860a4b3489eab691cbf7badef7fdf3ab20e7e",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "aaa-claude-warga-v1-schemas-2026-09-12",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/aaa-claude-warga-v1-schemas-2026-09-12.md",
+  "quarantine": null,
+  "sha256_before": "654e80ebfc848b051072202434b119a2244001c9f3c6367bde9849c2e48de392",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "aaa-supabase-record-doctrine",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/aaa-supabase-record-doctrine.md",
+  "quarantine": null,
+  "sha256_before": "72b6770961e1a2b6dd5cdf1ebbe4275c120d4ea16fae09b801dd28f764f80e81",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "agentic-web-research-2026-07-16",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/agentic-web-research-2026-07-16.md",
+  "quarantine": null,
+  "sha256_before": "7f1e3ce7e2a021412037db8bd2a6cf3e9d03578dda331f24e3854dbed0af7245",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "ariffazil-pmbayang-alignment-2026-08-24",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/ariffazil-pmbayang-alignment-2026-08-24.md",
+  "quarantine": null,
+  "sha256_before": "0464242832e852edcca2e9643b00434024df89940d8cc080a3e36f64d5c7cd74",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "atlas333-bridge-map-2026-07-15",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/atlas333-bridge-map-2026-07-15.md",
+  "quarantine": null,
+  "sha256_before": "d3cca7695c7b607235b2a3d902074f1395ee0fc31f1c91cc24be1427f05fc15e",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "atlas333-intelligence-flow-2026-07-15",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/atlas333-intelligence-flow-2026-07-15.md",
+  "quarantine": null,
+  "sha256_before": "172cbc868e2abfa9761b9f0a04d2def35a2812ea14a169ee2ccc4a0a0a631691",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "audit-2026-10-06-selection-layer-dormant",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/audit-2026-10-06-selection-layer-dormant.md",
+  "quarantine": null,
+  "sha256_before": "363372829630a4f9a9a40b4a4541b55aabf1ead022184a3fa82371a42fa603c5",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "capability-spine-repair-2026-06-26",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/capability-spine-repair-2026-06-26.md",
+  "quarantine": null,
+  "sha256_before": "99d05398e9a47695b08c1e5cf9e169353984749b7126f1d6cae9422f3c69be09",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "ecw-canary-deployed-2026-10-02",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/ecw-canary-deployed-2026-10-02.md",
+  "quarantine": null,
+  "sha256_before": "b16bc8d4d48d83084e5ea68361a999ea1c1dfcb8739a0174237b3f50bb3ecf23",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "eureka-agent-directives-2026-07-30",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/eureka-agent-directives-2026-07-30.md",
+  "quarantine": null,
+  "sha256_before": "084aa5b182376ef867e0f48daf090caefc4eed249578ae7ec74f0d04cb386b67",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "eureka-design-contrast-2026-07-31",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/eureka-design-contrast-2026-07-31.md",
+  "quarantine": null,
+  "sha256_before": "ff5cbc2ec504c21fc7981f68eddbbd7be77bfcea56f65a96702a9f54ad548166",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "federation-organ-architecture-v1",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/federation-organ-architecture-v1.md",
+  "quarantine": null,
+  "sha256_before": "4b112ea49ffc10ce751d56a809ff90ebefa85701f1ede4d39d08c80d6c52d3ae",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "forge-telegram-send-design-2026-08-20",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/forge-telegram-send-design-2026-08-20.md",
+  "quarantine": null,
+  "sha256_before": "d39a7d9b4ee5dbdead44cc84c989e331076d0d4356c20bc06272d53462b4a800",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "geox-paleobiodb-tool-staged-2026-08-26",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/geox-paleobiodb-tool-staged-2026-08-26.md",
+  "quarantine": null,
+  "sha256_before": "baf4185e77b1506a9a9fad6abeeec3230743a5901f134e6fc26757eb803c200e",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "geox-timescale-pr-2026-08-26",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/geox-timescale-pr-2026-08-26.md",
+  "quarantine": null,
+  "sha256_before": "9dce3fa1ac2d1573b8f9b686a4203acb7b057d8001146325974397821fb048fc",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "hermes-sovereignty-musyawarah-2026-09-18",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/hermes-sovereignty-musyawarah-2026-09-18.md",
+  "quarantine": null,
+  "sha256_before": "e3dd93f438eefe6a7b71975c75ec0a5b691698b942685155a04dd79dc738eaaf",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "hud-next-execution-path-2026-10-02",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/hud-next-execution-path-2026-10-02.md",
+  "quarantine": null,
+  "sha256_before": "bd63a09362149d9af324d02b9552d5307d724fb543cba4b27460a97bae5f37f4",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "kvm-terminal-audit-2026-09-08",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/kvm-terminal-audit-2026-09-08.md",
+  "quarantine": null,
+  "sha256_before": "77c52e05729b87fd5f00f53e2984a98421611e3cde4a4a3fa8468dbdadcb9593",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "live-physics-verdict-2026-09-27-CORRECTION-333AGI",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/live-physics-verdict-2026-09-27-CORRECTION-333AGI.md",
+  "quarantine": null,
+  "sha256_before": "f00e95309179636d6f41182c9f4ae2e0058763e72edb64ece30fd90a509145f3",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "lowrisk-cleanup-zero-recovery-2026-08-20",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/lowrisk-cleanup-zero-recovery-2026-08-20.md",
+  "quarantine": null,
+  "sha256_before": "ec2b38a66f3ac2e326042bbf21f8918f985ab8eca93f4aeeb6864358cd0e91b7",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "nspw-geox-zen-2026-07-16",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/nspw-geox-zen-2026-07-16.md",
+  "quarantine": null,
+  "sha256_before": "8e660258d0784ed50a845bcc310e0174afd033aac1c736e747c9823055e6279f",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "observatory-p0-attestation",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/observatory-p0-attestation.md",
+  "quarantine": null,
+  "sha256_before": "9ce74fe2c094a13771051c180cc14c05c7d82957cedc745cbf63e9dd3ab34ceb",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "qqq-recommendation-doctrine",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/qqq-recommendation-doctrine.md",
+  "quarantine": null,
+  "sha256_before": "b82c8b83f7b57cb59a23cf469cba2a71cf2f274cb2fd92038a9c71d06f96b98c",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "refactor-session-sealed-2026-09-08",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/refactor-session-sealed-2026-09-08.md",
+  "quarantine": null,
+  "sha256_before": "32de876197099153cc6390804b1d2a5fb15c5f0a56dfd894644a5da26abbb74d",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "scar-2026-09-30-musyawarah-convergent-fix-deadlock",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/scar-2026-09-30-musyawarah-convergent-fix-deadlock.md",
+  "quarantine": null,
+  "sha256_before": "8f378c56b3a3c8f35d641ef0ed96632618981136e71e1c716200c88c04506e8d",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "scar-2026-10-01-snapshot-habit-saves-shared-tree",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/scar-2026-10-01-snapshot-habit-saves-shared-tree.md",
+  "quarantine": null,
+  "sha256_before": "c56e883a9f43b4b2c5ab003b78f709142d7969ad072c7a77d3840060fedbc2b8",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "session-state-rsi-hold",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/session-state-rsi-hold.md",
+  "quarantine": null,
+  "sha256_before": "3b0e81626c0c02d6c6c0a5f9f5f8210bba94bad4eb5770586be030def7ce14b2",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "site-chaos-doctrine-2026-09-17",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/site-chaos-doctrine-2026-09-17.md",
+  "quarantine": null,
+  "sha256_before": "88f440f12b9cd934e1863492f4329cdca296b96fb30854c31f1d6d5023531dc5",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "wealth-5site-charts-forecast-2026-07-24",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/wealth-5site-charts-forecast-2026-07-24.md",
+  "quarantine": null,
+  "sha256_before": "e71b766498e1c03add641863fe1ce3a0c4519b0e9683ee01afede892749d8969",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ },
+ {
+  "name": "zen-pass-validation-protocol",
+  "state": "UNRESOLVED",
+  "original": "/root/.claude/projects/-root/memory/zen-pass-validation-protocol.md",
+  "quarantine": null,
+  "sha256_before": "94566605c7c15bef04d6e63b8e623e143fd862d83663f530d0ad06973997815a",
+  "sha256_after": null,
+  "reason": "fully unreferenced; not read; no classification performed",
+  "restore": null
+ }
+]

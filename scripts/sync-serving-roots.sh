@@ -75,13 +75,14 @@ fi
 # ── 1c. trinity static tops (Caddy handle /human/* and /institution/*
 #     root at /var/www/html, NOT /var/www/html/arif). Without this copy,
 #     @spa_routes try_files falls through /human to the SPA shell (2026-09-13).
-#     No --delete: inspect before purge.
-for d in human institution connect laws verify discovery; do
+#     No --delete: inspect before purge. Also mirror to $TOP/arif to avoid drift.
+for d in human institution connect laws verify discovery research; do
   if [ -d "$DIST/$d" ]; then
     mkdir -p "$BK"
     [ -d "$TOP/$d" ] && cp -a "$TOP/$d" "$BK/$d"
-    mkdir -p "$TOP/$d"
+    mkdir -p "$TOP/$d" "$TOP/arif/$d"
     rsync -a "$DIST/$d/" "$TOP/$d/"
+    rsync -a "$DIST/$d/" "$TOP/arif/$d/"
     echo "$LOG_PREFIX synced $d/ ($(find "$TOP/$d" -type f | wc -l) files)"
   else
     echo "$LOG_PREFIX WARN: no $d/ in dist — skipping" >&2
@@ -89,15 +90,18 @@ for d in human institution connect laws verify discovery; do
 done
 
 # ── 2. root-static files (@root_static handler) ────────────────────────────
+# Synced to BOTH $TOP and $TOP/arif so no request path ever sees stranded files.
 synced=0
 for f in "${ROOT_STATIC_FILES[@]}"; do
   if [ -f "$DIST/$f" ]; then
     [ -f "$TOP/$f" ] && cp -a "$TOP/$f" "$BK/${f}.bak"
     cp -a "$DIST/$f" "$TOP/$f"
+    mkdir -p "$TOP/arif"
+    cp -a "$DIST/$f" "$TOP/arif/$f"
     synced=$((synced+1))
   fi
 done
-echo "$LOG_PREFIX synced $synced root-static files"
+echo "$LOG_PREFIX synced $synced root-static files (to $TOP and $TOP/arif)"
 
 # ── 3. F2 local-byte verification ──────────────────────────────────────────
 # NOTE: We probe LOCAL files rather than HTTPS URLs because Cloudflare caches

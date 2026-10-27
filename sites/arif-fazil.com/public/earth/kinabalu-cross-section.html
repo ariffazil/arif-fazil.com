@@ -146,7 +146,7 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
 <div class="panel" id="xsPanel">
   <div class="panel-head"><h3>◈ Cross-section A–A′ · pick a working model</h3><span class="note" id="modelNote"></span></div>
   <div class="read-guide" role="note" aria-label="How to read this cross-section">
-    <b>How to read this.</b> The shallow geometry (basins, granite, unconformities) is the same in every model. Press a button to switch what sits <i>under</i> the Deep Regional Unconformity and below ~15 km: <b>A</b> rift-axis intrusions?, <b>B</b> overpressured mud canopy, <b>C</b> underthrust Dangerous Grounds, <b>D</b> slab remnant + gravity tectonics. Model <b>A</b> is the author's untested working hypothesis — drawn at equal weight so it can be argued with, not because it is established. These explanations address different depths and processes and can coexist; they are not four mutually exclusive whole-Earth models. <b>What is drawn and what is inferred.</b> One extension mechanism is drawn: delta-load extension at the shelf (shallow, amber). Post-subduction crustal thinning is <i>inferred</i> from petrology, thermal history and receiver functions — it is not imaged on this section, so it is not drawn as a horizontal glyph. <b>Moho:</b> the dashed line is schematic. The published constraint is ~60 km beneath the Crocker Range and ~24 km in central Sabah (Gilligan et al. 2026); the Crocker root is shown as an unattached dashed constraint, not fitted to the schematic Moho, and the 230–540 km stretch has no drawn Moho at all. That gap is the honest state of the data, not an omission to be papered over. What Model D does show deep is the vertical mantle driver above the slab. <b>Time slice:</b> the rock geometry is present-day; the ages on the event bar below are history, not a claim that extension is active now.
+    <b>How to read this.</b> The shallow geometry (basins, granite, unconformities) is the same in every model. Press a button to switch what sits <i>under</i> the Deep Regional Unconformity and below ~15 km: <b>A</b> rift-axis intrusions?, <b>B</b> overpressured mud canopy, <b>C</b> underthrust Dangerous Grounds, <b>D</b> slab remnant + gravity tectonics. Model <b>A</b> is the author's untested working hypothesis — drawn at equal weight so it can be argued with, not because it is established. These explanations address different depths and processes and can coexist; they are not four mutually exclusive whole-Earth models. <b>Read them as stacked hypothesis families, not a model picker:</b> <b>H1 sedimentary mechanics</b> (B — switchable above every crustal state), <b>H2 crustal architecture</b> (C), <b>H3 mantle state</b> (D's slab component), <b>H4 thermal plumbing</b> (A). A valid regional Earth state selects one admissible option <i>per layer</i> — e.g. mud canopy + underthrust crust + remnant slab + no proven intrusion is a legal combination. Machine-readable: transect registry <a href="/earth/data/transects.json">/earth/data/transects.json</a> · per-claim evidence ledger <a href="/earth/data/claims_ledger.json">/earth/data/claims_ledger.json</a>. This page is the hypothesis and boundary-condition layer; local geometry is calibrated by the KL2 eight-key-line program (internal seismic), not by these public schematics. <b>What is drawn and what is inferred.</b> One extension mechanism is drawn: delta-load extension at the shelf (shallow, amber). Post-subduction crustal thinning is <i>inferred</i> from petrology, thermal history and receiver functions — it is not imaged on this section, so it is not drawn as a horizontal glyph. <b>Moho:</b> the dashed line is schematic. The published constraint is ~60 km beneath the Crocker Range and ~24 km in central Sabah (Gilligan et al. 2026); the Crocker root is shown as an unattached dashed constraint, not fitted to the schematic Moho, and the 230–540 km stretch has no drawn Moho at all. That gap is the honest state of the data, not an omission to be papered over. What Model D does show deep is the vertical mantle driver above the slab. <b>Time slice:</b> the rock geometry is present-day; the ages on the event bar below are history, not a claim that extension is active now.
   </div>
   <div class="models" id="modelBtns" role="group" aria-label="Working model"></div>
   <div class="xs-hint" role="note">◂ ▸ <span><b>Swipe the section horizontally</b> — it is 1,100 px wide; the whole transect does not fit a phone screen.</span></div>
@@ -172,6 +172,98 @@ html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
   <div class="panel-head"><h3>◈ Event strip · 35 Ma to present</h3><span class="note">Shared events (grey) and the selected model's events (colour)</span></div>
   <div class="timeline"><svg id="tl" role="img" aria-label="Tectonic event timeline" style="width:100%;height:auto;display:block"></svg></div>
   <p style="margin-top:.85rem;font-size:.78rem;color:var(--text-secondary);line-height:1.55"><b>Two evidence lines, one set of surfaces.</b> All four regional unconformities — BMU/TCU, DRU, UIU, SRU — match global sequence boundaries in the Haq &amp; Ogg (2024) chart (NgSB1, NgSB8, NgSB11, NgSB13; Δ ≤ 0.2 Ma in GEOX's correlation). Tectonics alone does not produce that coincidence: these surfaces carry a eustatic signal as well as a tectonic one. That is why "the DRU records the collision" is a claim to test, not a given — GEOX rule: DRU ≠ collision onset without structural evidence. Provenance: Morley (2024) tectonics × Haq &amp; Ogg (2024) eustasy, relayed by GEOX <span style="font-family:var(--mono)">geox://earth-system/sabah-correlation</span>.</p>
+</div>
+
+<div class="panel" id="panelBB" style="margin-top:1.25rem">
+  <div class="panel-head"><h3>◈ Section B–B′ · NW–SE margin transect — conceptual, with explicit gaps</h3><span class="note">Schematic. Not a depth-converted seismic line, not a balanced restoration, not measured geometry.</span></div>
+  <div class="read-guide" role="note">Read the gap, not the shapes: offshore shortening is documented; its connection to hinterland extension is <b>not</b>. The central feature of this panel is the hatched UNKNOWN — the connecting mechanism is never drawn as an observed structure.</div>
+  <svg viewBox="0 0 1000 430" role="img" aria-label="Conceptual NW-SE margin transect: Sabah Trough, deepwater fold-thrust belt, shelf, Crocker hinterland, with explicit gap for the landward connection" style="width:100%;height:auto;display:block;font-family:var(--mono)">
+    <!-- water + seafloor -->
+    <rect x="20" y="60" width="330" height="70" fill="#0c2a4a"/>
+    <text x="30" y="52" font-size="11" fill="#7dd3fc">SOUTH CHINA SEA</text>
+    <path d="M20,130 L120,138 L220,150 L320,160 L350,130 L420,120 L500,118 L560,110 L620,95 L700,80 L780,60 L860,40 L980,20 L980,130 L20,130 Z" fill="none"/>
+    <path d="M20,130 L120,138 L220,150 L320,160 L350,130 L420,120 L500,118 L560,110 L620,95 L700,80 L780,60 L860,40 L980,20" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="60" y="105" font-size="10" fill="#7dd3fc">Sabah Trough (~2.9 km)</text>
+    <!-- sedimentary wedge -->
+    <path d="M60,132 L320,160 L350,130 L420,120 L470,119 L470,180 L350,190 L200,185 L60,160 Z" fill="#3f4a5c" opacity="0.85"/>
+    <path d="M120,150 L320,172 M90,142 L280,164" stroke="#94a3b8" stroke-width="0.7" opacity="0.5" fill="none"/>
+    <text x="90" y="205" font-size="10" fill="#cbd5e1">Neogene wedge (drape + toe fill)</text>
+    <!-- DWFTB thrusts (schematic, with teeth) -->
+    <g stroke="#f59e0b" stroke-width="1.4" fill="none">
+      <path d="M180,185 L210,150"/><path d="M240,188 L270,152"/><path d="M300,190 L330,158"/>
+    </g>
+    <g fill="#f59e0b">
+      <path d="M205,152 l6,3 -5,4 z"/><path d="M265,154 l6,3 -5,4 z"/><path d="M325,160 l6,3 -5,4 z"/>
+    </g>
+    <text x="170" y="222" font-size="11" fill="#fbbf24">DEEPWATER FOLD–THRUST BELT</text>
+    <text x="170" y="236" font-size="9" fill="#94a3b8">seismic-documented; geometry varies along strike</text>
+    <!-- interpreted basal detachment (dashed, query) -->
+    <path d="M80,188 Q250,205 430,196" stroke="#f472b6" stroke-width="1.6" stroke-dasharray="7 5" fill="none"/>
+    <text x="90" y="252" font-size="10" fill="#f472b6">- - interpreted basal detachment - - ?</text>
+    <!-- shelf / coast -->
+    <text x="430" y="145" font-size="10" fill="#7dd3fc">shelf · coast</text>
+    <!-- GAP zone -->
+    <rect x="470" y="150" width="150" height="115" fill="url(#hatchGap)" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <defs><pattern id="hatchGap" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="8" stroke="#f87171" stroke-width="1" opacity="0.35"/></pattern></defs>
+    <text x="478" y="196" font-size="11" font-weight="700" fill="#f87171">LANDWARD CONNECTION</text>
+    <text x="478" y="212" font-size="11" font-weight="700" fill="#f87171">NOT ESTABLISHED</text>
+    <text x="478" y="232" font-size="8" fill="#fca5a5">detachment vs deeper</text>
+    <text x="478" y="244" font-size="8" fill="#fca5a5">involvement: unresolved</text>
+    <!-- hinterland topography (schematic) -->
+    <path d="M620,95 L700,80 L780,60 L860,40 L980,20 L980,120 L620,120 Z" fill="#57534e" opacity="0.75"/>
+    <text x="700" y="112" font-size="11" fill="#e7e5e4">CROCKER HINTERLAND</text>
+    <text x="880" y="16" font-size="10" fill="#f9a8d4">Mt Kinabalu 4,095 m</text>
+    <!-- onshore normal faults (Wang 2017): NW-dipping, ticks -->
+    <g stroke="#4ade80" stroke-width="1.4" fill="none">
+      <path d="M820,30 L760,95"/><path d="M880,22 L830,72"/>
+    </g>
+    <g stroke="#4ade80" stroke-width="1.2">
+      <path d="M806,44 l-9,1"/><path d="M792,59 l-9,1"/><path d="M778,74 l-9,1"/><path d="M866,35 l-8,1"/><path d="M852,50 l-8,1"/>
+    </g>
+    <text x="640" y="285" font-size="10" fill="#4ade80">active normal-fault system (~200 km, E-flank Crocker;</text>
+    <text x="640" y="298" font-size="10" fill="#4ade80">2015 Mw 6.0 blind NW-dipping fault — Wang et al. 2017)</text>
+    <!-- rift-axis intrusions (Arif element) -->
+    <path d="M860,120 L845,60 M860,120 L875,55 M862,120 L860,40" stroke="#db2777" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
+    <path d="M845,45 q15,-20 30,0 q-15,14 -30,0 z" fill="#db2777" opacity="0.9"/>
+    <text x="985" y="68" text-anchor="end" font-size="10" fill="#f9a8d4">Kinabalu pluton ~8–7 Ma</text>
+    <rect x="620" y="315" width="365" height="85" rx="6" fill="#1a1a1a" stroke="#db2777" stroke-width="0.8" opacity="0.92"/>
+    <text x="632" y="333" font-size="10" font-weight="700" fill="#f9a8d4">RIFT-AXIS INTRUSIONS — HYPOTHESIS (no push claimed)</text>
+    <text x="632" y="349" font-size="9" fill="#e7e5e4">Sparse intrusions may exploit an inherited thinned</text>
+    <text x="632" y="362" font-size="9" fill="#e7e5e4">axis (failed-rift?); transtensional at ~8 Ma unproven.</text>
+    <text x="632" y="375" font-size="9" fill="#e7e5e4">Intrusions are passengers of structure, not drivers</text>
+    <text x="632" y="388" font-size="9" fill="#e7e5e4">of deformation — no causal arrow to offshore shortening.</text>
+    <!-- deep crust box -->
+    <rect x="20" y="315" width="580" height="66" rx="6" fill="#111" stroke="#475569" stroke-width="0.8"/>
+    <text x="32" y="333" font-size="10" font-weight="700" fill="#94a3b8">DEEP CRUST — DELIBERATELY NOT DRAWN</text>
+    <text x="32" y="349" font-size="9" fill="#cbd5e1">No offshore-to-onshore Moho profile for this transect · no continuous regional</text>
+    <text x="32" y="362" font-size="9" fill="#cbd5e1">décollement assumed · no active underthrust slab geometry imposed.</text>
+    <text x="32" y="375" font-size="9" fill="#64748b">M1 (external forcing) and M3 (internally driven) are end-members, not mutually exclusive truths.</text>
+    <!-- mechanical questions -->
+    <text x="20" y="404" font-size="9.5" fill="#7dd3fc">MECHANICAL QUESTIONS: what drives shortening on THIS segment? · how much is wedge-internal? · is hinterland linkage demonstrated? · what boundary forcing, if any?</text>
+    <text x="20" y="422" font-size="8.5" fill="#64748b">DRU omitted from geometry: literature ages span ~15.5–12 Ma (bracket, not a point; diachroneity untested). A balanced budget shows compatibility, never unique causation.</text>
+  </svg>
+  <div class="panel-head" style="margin-top:1rem"><h3>◈ Regional deep context — kept separate from B–B′</h3><span class="note">3-D evidence; projecting it beneath one transect would manufacture geometric connection</span></div>
+  <svg viewBox="0 0 1000 160" role="img" aria-label="Regional interpretive context: western slab remnant and eastern drip, coupling to NW offshore unproven" style="width:100%;height:auto;display:block;font-family:var(--mono)">
+    <rect x="20" y="15" width="290" height="80" rx="6" fill="#111" stroke="#475569"/>
+    <text x="35" y="38" font-size="10.5" fill="#93c5fd">WESTERN SABAH</text>
+    <text x="35" y="56" font-size="9" fill="#cbd5e1">High-velocity upper-mantle anomaly</text>
+    <text x="35" y="70" font-size="9" fill="#cbd5e1">= interpreted PSCS slab remnant (INT)</text>
+    <text x="35" y="86" font-size="8.5" fill="#64748b">Pilia et al. — interpretation of seismic evidence</text>
+    <rect x="690" y="15" width="290" height="92" rx="6" fill="#111" stroke="#475569"/>
+    <text x="705" y="38" font-size="10.5" fill="#fdba74">EASTERN SABAH</text>
+    <text x="705" y="56" font-size="9" fill="#cbd5e1">Lithospheric downwelling = drip (INT+model)</text>
+    <text x="705" y="70" font-size="9" fill="#cbd5e1">modelled potential for adjacent thinning</text>
+    <text x="705" y="84" font-size="8.5" fill="#64748b">Pilia et al. 2023 — mechanism possible,</text>
+    <text x="705" y="96" font-size="8.5" fill="#64748b">cause not established</text>
+    <path d="M310,55 L440,55" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+    <path d="M690,55 L560,55" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="445" y="50" font-size="12" fill="#f87171">? ? ?</text>
+    <text x="380" y="80" font-size="9.5" fill="#fca5a5">Coupling to NW offshore = hypothesis needing tests</text>
+    <text x="20" y="122" font-size="8.5" fill="#64748b">Keep each study's location, method and tectonic attribution separate — not every deep feature is "the slab". Cornwell et al. 2025 image an uppermost-mantle discontinuity</text>
+    <text x="20" y="136" font-size="8.5" fill="#64748b">attributed to a Celebes-related remnant: a different province, a different question.</text>
+    <text x="20" y="150" font-size="8.5" fill="#64748b">Deep-structure constraints rest largely on one 2018–2020 onshore campaign (several methods, one acquisition).</text>
+  </svg>
+  <p style="margin-top:.7rem;font-size:.72rem;color:var(--text-dim)">Panel lineage: conceptual section after an external audit (Perplexity, 2026-10-26) reconciled against the federation audit register; rift-axis intrusion element after Arif Fazil. Refs for this panel: Pilia et al. 2023 <i>Nat. Geosci.</i> (drip) · Cornwell et al. 2025 <i>JGR</i> 10.1029/2025JB031466 (migrated RF) · Wang et al. 2017 <i>Geosci. Lett.</i> (Kinabalu earthquake, normal-fault system) · Geosphere 16(1):329 (triangle-zone DWFTB) · mixed-deformation DWFTB study (d-nb.info/1269312944). Schematic throughout — shapes carry no measured geometry.</p>
 </div>
 
 <div class="card" style="margin-top:1.25rem">
@@ -297,11 +389,14 @@ const MODELS = [
     id: "A", color: "#f43f5e", key: "A · rift-axis intrusions?", title: "Failed-rift axis + possible transtensional intrusions",
     short: "Sparse intrusions may exploit an inherited thinned axis — no push claimed",
     who: "Working hypothesis · Arif Fazil · 2026", status: "UNTESTED WORKING HYPOTHESIS",
+    family: "H4 · THERMAL PLUMBING (stackable — does not describe the whole Earth)",
+    admissible: "PHYSICALLY PERMITTED — no published observation contradicts it",
+    maturity: "EMPIRICALLY OPEN — SPEC: no dated basalt, no corrected low-latitude magnetic lineation, no seismic-imaged sill, no public paleo-thermal spike on the axis (ledger: CL-INTRUSION-AXIS)",
     thesis: "An inherited zone of thinned crust runs along the Sabah Trough; potential-field work suggests crustal thinning beneath the trough axis predating basin fill. If that axis carried any magmatism, it would most plausibly be sparse sills and dykes fed by transtensional reactivation of inherited faults — not a spreading ridge. Whether such intrusions exist is untested; the deep oil-beneath-gas maturation question is the practical reason to look.",
     mechanism: "No plate-driving push is claimed. Candidate mechanism: localised melting or fluid migration along reactivated rift faults and transfer zones; slab-window or flexural-hinge sources remain possible but unproven.",
     timing: "Not yet constrained. Two windows to test: (1) Oligocene–Early Miocene, at the end of rifting; (2) Middle–Late Miocene, coeval with DRU–SRU deformation.",
     strengths: "Would provide a local heat source relevant to the deep oil beneath gas; would tie any dated intrusions along the trough into one testable body class. It is not offered as an explanation of the regional deformation budget.",
-    problems: "No published magnetic lineation (a weak test at this latitude — low-latitude magnetics need analytic-signal / RTE treatment), no dated basalt, and no published heat-flow high on the trough axis (present-day heat flow is the wrong clock anyway — see the matrix). Published potential-field work reports a gravity low along the axis with inferred crustal thinning; any intrusion configuration must fit that field with a proper forward model, not a slab approximation. High-velocity bodies offshore are non-unique (carbonate or older Crocker blocks are alternatives). Detectability of small sills at regional-grid resolution has not yet been assessed. Tepat-1 proves the carbonate alternative class exists in the region (Oligo–Miocene carbonate, Layang-Layang province; Atlas 2024) — a different province, so not standalone proof about Kinabalu bodies, but a high-velocity body is not proof of intrusion.",
+    problems: "No published magnetic lineation (a weak test at this latitude — low-latitude magnetics need analytic-signal / RTE treatment), no dated basalt, and no published heat-flow high on the trough axis (present-day heat flow is the wrong clock anyway — see the matrix). Published potential-field work reports a gravity low along the axis with inferred crustal thinning; any intrusion configuration must fit that field with a proper forward model, not a slab approximation. High-velocity bodies offshore are non-unique (carbonate or older Crocker blocks are alternatives). Detectability of small sills at regional-grid resolution has not yet been assessed. Tepat-1 attests that the carbonate alternative class exists in the region (Oligo–Miocene carbonate, Layang-Layang province; public operator release, Atlas 2024) — a different province, so not standalone proof about Kinabalu bodies, but a high-velocity body is not proof of intrusion.",
     kill: "Reject only a parameterised intrusion configuration whose required bodies are excluded by adequately resolved seismic and potential-field coverage; insufficient coverage yields INCONCLUSIVE. A configuration that fits the potential field is PERMITTED, not proven — potential-field solutions are non-unique; call it real only with a second independent line (local Ro/Tmax spikes, or sills imaged in 3D seismic). Finding no intrusions would not by itself prove burial-only maturation; finding intrusions would not by itself prove a slab-window origin.",
     refs: ["TS02"],
     bodies: [
@@ -325,6 +420,9 @@ const MODELS = [
     id: "B", color: "#a78bfa", key: "Model B · Morley et al. 2023", title: "Miocene mud canopy (NSPW)",
     short: "The wedge is mobile shale, loaded and vented",
     who: "Morley et al. (2023) · Geosphere 19(1): 291 · 3D seismic + wells", status: "PUBLISHED",
+    family: "H1 · SEDIMENTARY MECHANICS (switchable above every crustal/mantle state — it does not decide the deep architecture)",
+    admissible: "OBSERVED — imaged in 3D seismic; strongest empirical maturity on this board",
+    maturity: "OBS (ledger: CL-NSPW-SHALE)",
     thesis: "The North Sabah–Pagasa Wedge is not mainly an accretionary wedge. After collision it was a body of overpressured shale, loaded by up to ~4 km of clastics in mini-basins. A short burst of mud volcanism then built a submarine mud canopy: about 50 mud-volcano centres, each 4–80 km², with ~1,900 km² of dense canopy — the largest and most complex such system described.",
     mechanism: "Differential sedimentary loading of overpressured shale → shale mobility, mud pipes, chambers and volcanoes.",
     timing: "Middle Miocene, after collision.",
@@ -358,6 +456,9 @@ const MODELS = [
     id: "C", color: "#38bdf8", key: "Model C · classic", title: "Continental underthrusting",
     short: "Dangerous Grounds crust dives under Sabah",
     who: "Hinz et al. (1989); Hazebroek & Tan (1993); Hutchison (2005)", status: "CLASSIC",
+    family: "H2 · CRUSTAL ARCHITECTURE (one admissible crustal state; coexists with H1 shale and any H3 mantle state)",
+    admissible: "CONSTRAINED — consistent with potential-field geometry; not imaged locally on this line",
+    maturity: "CONSTRAINED (potential-field + classic 2D interpretations; DRU–NgSB8 eustatic match recorded in CL-DRU-142 weakens collision-onset reading)",
     thesis: "As the proto-South China Sea closed, Dangerous Grounds continental crust was carried south-east beneath NW Borneo. The Sabah Trough is the flexural foredeep, or remnant trench, on the down-going plate; the North Sabah–Pagasa Wedge is an accretionary thrust wedge; the DRU records the collision.",
     mechanism: "Plate convergence and crustal underthrusting; flexural loading of the lower plate.",
     timing: "Early to Middle Miocene collision; flexural loading continues.",
@@ -389,6 +490,9 @@ const MODELS = [
     id: "D", color: "#34d399", key: "Model D · post-subduction", title: "Slab remnant + gravity tectonics",
     short: "Mantle lifts the mountains, gravity moves the delta",
     who: "Hall (2013); Cottam et al. (2010, 2013); King et al. (2010); Cornwell et al. (2025)", status: "PUBLISHED",
+    family: "H3 · MANTLE STATE + H1 gravity component (the slab and the deltas are separate claims; neither decides the crust)",
+    admissible: "PARTLY OBSERVED — a 45–55 km discontinuity is imaged; its slab identity is interpretation (CL-SLAB-DISC-45-55)",
+    maturity: "CONSTRAINED / OPEN by sub-claim: uplift+gravity tectonics OBS-supported; drip family verdict now split D1 contradicted · D2 supported · D3 HOLD (see observatory)",
     thesis: "Subduction stopped in the Early Miocene, but a detached slab remnant still sits 45–55 km beneath Sabah. Post-subduction mantle flow and rollback of the Celebes Sea slab to the south-east drive uplift (Crocker Range, Kinabalu granite) and extension. The eroding mountains feed deltas whose weight drives shelf extension linked, through a shale detachment, to outboard toe-thrusts.",
     mechanism: "Vertical mantle forces + rollback-driven extension + gravitational collapse of the delta wedge.",
     timing: "Early Miocene end of subduction; Late Miocene to present uplift, granite and gravity tectonics.",
@@ -580,20 +684,25 @@ const REFS = {
     document.getElementById("legend").innerHTML = [...used].map(k => `<span><span class="sw" style="background:${XS.facies[k].fill}"></span>${esc(XS.facies[k].name)}</span>`).join("") +
       ln("#fbbf24", "DRU") + ln("#f87171", "SRU") + ln("#2dd4bf", "RU/MMU") + ln("#fb7185", "Detachment", 1) + ln("#e2e8f0", "Moho", 1);
     document.querySelectorAll("#modelBtns .mbtn").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === m.id));
-    // Ring grid: one ring per model, filled by status and discrimination matrix
-    const ring = (c) => {
+    // Ring grid: PER-MODEL discrimination. Former defect (fixed 2026-10-26): the ring showed the
+    // dataset-wide observed/total count (3/8) identically on every card — a rendering artifact
+    // that read as a model score and created false equivalence. Now the ring is the model's own
+    // support among OBSERVED rows, and each card carries family / admissibility / maturity fields.
+    const ring = (x, dy, doneRows) => {
       const r = 24, cx = 32, cy = 32, circ = 2 * Math.PI * r;
-      const done = MATRIX.filter(x => x.obs === "done").length;
-      const total = MATRIX.length;
-      const fill = total ? done / total : 0;
+      const fill = doneRows ? dy / doneRows : 0;
       const dash = (circ * fill).toFixed(2);
-      return `<svg viewBox="0 0 64 64" role="img" aria-label="status ring"><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="4"/><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${c}" stroke-width="4" stroke-dasharray="${dash} ${circ.toFixed(2)}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/><text x="${cx}" y="${cy + 4}" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="${c}">${done}/${total}</text></svg>`;
+      return `<svg viewBox="0 0 64 64" role="img" aria-label="decisive support ring"><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="4"/><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${x.color}" stroke-width="4" stroke-dasharray="${dash} ${circ.toFixed(2)}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/><text x="${cx}" y="${cy + 4}" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="${x.color}">${dy}/${doneRows}</text></svg>`;
     };
     document.getElementById("ringGrid").innerHTML = MODELS.map(x => {
-      const y = MATRIX.filter(r => r.p[x.id] === "y").length;
-      const n = MATRIX.filter(r => r.p[x.id] === "n").length;
-      const u = MATRIX.filter(r => r.p[x.id] === "u").length;
-      return `<div class="ring-card"><div>${ring(x.color)}</div><div class="meta"><div class="label">${esc(x.key)}</div><div class="title">${esc(x.title)}</div><span class="stat" style="color:${x.color}">${esc(x.status)}</span><span class="stat" style="color:#15803d">✓ ${y}</span><span class="stat" style="color:#b91c1c">✗ ${n}</span><span class="stat" style="color:#9aa1a9">○ ${u}</span></div></div>`;
+      const doneRows = MATRIX.filter(q => q.obs === "done").length;
+      const dy = MATRIX.filter(q => q.obs === "done" && q.p[x.id] === "y").length;
+      const dn = MATRIX.filter(q => q.obs === "done" && q.p[x.id] === "n").length;
+      const open = MATRIX.filter(q => q.obs !== "done" && q.p[x.id] !== "u").length;
+      const y = MATRIX.filter(q => q.p[x.id] === "y").length;
+      const n = MATRIX.filter(q => q.p[x.id] === "n").length;
+      const u = MATRIX.filter(q => q.p[x.id] === "u").length;
+      return `<div class="ring-card"><div>${ring(x, dy, doneRows)}</div><div class="meta"><div class="label">${esc(x.key)}</div>${x.family ? `<div style="font-size:.66rem;color:${x.color};font-weight:700;margin:.1rem 0">${esc(x.family)}</div>` : ""}<div class="title">${esc(x.title)}</div><span class="stat" style="color:${x.color}">${esc(x.status)}</span><span class="stat" style="color:#15803d">✓ ${y}</span><span class="stat" style="color:#b91c1c">✗ ${n}</span><span class="stat" style="color:#9aa1a9">○ ${u}</span><span class="stat" style="color:#fbbf24" title="decisive tests passed / failed among OBSERVED rows; open = discriminating tests not yet observed">obs ✓${dy} ✗${dn} of ${doneRows} · open tests ${open}</span>${x.admissible ? `<div style="font-size:.66rem;color:#cbd5e1;margin-top:.3rem;line-height:1.45"><b style="color:#93c5fd">Admissible:</b> ${esc(x.admissible)}<br><b style="color:#93c5fd">Maturity:</b> ${esc(x.maturity)}</div>` : ""}</div></div>`;
     }).join("");
   }
 

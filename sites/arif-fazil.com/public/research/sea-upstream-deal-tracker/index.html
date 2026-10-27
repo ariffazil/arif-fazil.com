@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>South-east Asia Upstream Deal Tracker — CHRON — arif-fazil.com</title>
+<meta name="description" content="Minimal governed upstream deal tracker and correction-preserving CHRON for Southeast Asian upstream assets."/>
+<link rel="canonical" href="https://arif-fazil.com/research/sea-upstream-deal-tracker/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="South-east Asia Upstream Deal Tracker — CHRON" />
+<meta property="og:description" content="Minimal governed upstream deal tracker: verified current state, what changed, append-only correction ledger, and decision signals." />
+<meta property="og:url" content="https://arif-fazil.com/research/sea-upstream-deal-tracker/" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "headline": "South-east Asia Upstream Deal Tracker — CHRON",
+  "url": "https://arif-fazil.com/research/sea-upstream-deal-tracker/",
+  "datePublished": "2026-10-27T00:00:00Z",
+  "dateModified": "2026-10-27T23:15:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "Muhammad Arif bin Fazil",
+    "url": "https://arif-fazil.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "arifOS Research",
+    "url": "https://arif-fazil.com"
+  }
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0B0D;color:#EDEAE2;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;max-width:58rem;margin:0 auto;padding:2rem 1.5rem}
+.nav{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem 1.25rem;margin:0 0 2rem;font-family:monospace;font-size:.8rem;letter-spacing:0.08em;text-transform:uppercase}
+.nav-brand{font-size:0.95rem;font-weight:bold;color:#F5F5F7;text-decoration:none;margin-right:auto;text-transform:none}
+.nav a:not(.nav-brand){color:#9CA3AF;text-decoration:none;transition:color 0.2s}
+.nav a:not(.nav-brand):hover{color:#E8B84B}
+.header-badge{font-family:ui-monospace,monospace;font-size:0.75rem;color:#E8B84B;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.5rem}
+h1{font-size:2.2rem;font-weight:300;letter-spacing:0.03em;margin-bottom:0.5rem;color:#EDEAE2}
+.subtitle{font-size:1.05rem;color:#9AA0A8;margin-bottom:2rem;line-height:1.5}
+h2{font-size:1.25rem;font-weight:600;margin:2.5rem 0 1rem;color:#818cf8;border-bottom:1px solid #1F2733;padding-bottom:0.5rem;letter-spacing:0.04em}
+h3{font-size:1.05rem;font-weight:600;margin:1.25rem 0 0.5rem;color:#EDEAE2}
+p{margin-bottom:1rem;color:#C9CBD0}
+a{color:#E8B84B;text-decoration:none}
+a:hover{text-decoration:underline}
+.card{background:#11141B;border:1px solid #1F2733;border-radius:8px;padding:1.25rem;margin-bottom:1.25rem}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem}
+.pill{font-family:ui-monospace,monospace;font-size:0.7rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em}
+.pill-current{background:rgba(52,211,153,0.15);color:#34D399;border:1px solid rgba(52,211,153,0.3)}
+.pill-corrected{background:rgba(232,184,75,0.15);color:#E8B84B;border:1px solid rgba(232,184,75,0.3)}
+.pill-unverified{background:rgba(239,68,68,0.15);color:#EF4444;border:1px solid rgba(239,68,68,0.3)}
+.pill-review{background:rgba(192,132,252,0.15);color:#C084FC;border:1px solid rgba(192,132,252,0.3)}
+.meta-row{font-family:ui-monospace,monospace;font-size:0.75rem;color:#8A8F98;margin-bottom:0.75rem;display:flex;flex-wrap:wrap;gap:1rem}
+.original-box{background:#161313;border-left:3px solid #EF4444;padding:0.75rem 1rem;margin:0.75rem 0;font-size:0.875rem;color:#FCA5A5}
+.corrected-box{background:#121816;border-left:3px solid #34D399;padding:0.75rem 1rem;margin:0.75rem 0;font-size:0.875rem;color:#A7F3D0}
+.field-title{font-weight:600;color:#EDEAE2;margin-right:0.25rem}
+ul{margin:0.5rem 0 1rem 1.5rem;color:#C9CBD0;font-size:0.9rem}
+li{margin-bottom:0.35rem}
+.machine-tray{background:#11141B;border:1px solid #1F2733;border-radius:8px;padding:1rem;margin:2rem 0;font-family:ui-monospace,monospace;font-size:0.8rem;display:flex;flex-wrap:wrap;gap:1.5rem}
+.artifact-box{background:#141721;border:1px solid #2B3347;border-radius:8px;padding:1.25rem;margin:1.5rem 0}
+footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid #1F2733;font-size:0.8rem;color:#6B7280;font-family:monospace}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <a href="/" class="nav-brand">ARIF FAZIL</a>
+  <a href="/earth">Earth</a>
+  <a href="/words">Words</a>
+  <a href="/world/makcikgpt/">MakcikGPT</a>
+  <a href="/world">World</a>
+  <a href="/work">Work</a>
+</nav>
+
+<div class="header-badge">arifOS Research · Public Upstream CHRON</div>
+<h1>South-east Asia Upstream Deal Tracker</h1>
+<p class="subtitle">A governed, minimal, correction-preserving reality tracker for material Southeast Asian upstream M&amp;A, farmouts, and fiscal milestones.</p>
+
+<div class="machine-tray">
+  <div><strong>Machine State:</strong> <a href="state.json">state.json</a></div>
+  <div><strong>Correction Ledger:</strong> <a href="corrections.json">corrections.json</a></div>
+  <div><strong>Historical Seed:</strong> <a href="SEA-Upstream-Deal-Tracker-Issue-01.pdf">Issue 01 PDF</a></div>
+</div>
+
+<!-- 1. CURRENT STATE -->
+<h2>1 · Current State: What Is True Now?</h2>
+<p>Each material transaction and legal milestone tracked against verified public primary records:</p>
+
+<div class="card">
+  <div class="card-header">
+    <h3>EnQuest × PETRONAS Sarawak &amp; PM Farmout (Reverse Takeover)</h3>
+    <span class="pill pill-corrected">Corrected</span>
+  </div>
+  <div class="meta-row">
+    <span>Status: <strong>Conditions Precedent Satisfied</strong></span>
+    <span>Legal Completion: <strong>31 Dec 2026</strong></span>
+    <span>Economic Effective Date: <strong>1 Jan 2027</strong></span>
+    <span>Expected Readmission: <strong>~4 Jan 2027</strong></span>
+  </div>
+  <p>EnQuest is acquiring operating interests in Balingian, SK8, D35-D21-J4 (Sarawak) and a non-operating interest in PM6-12 (Peninsular Malaysia). Maximum consideration is USD 833 million (USD 554 million payable at completion). Net 2P reserves: 138.0 MMboe; net 2C resources: 208.3 MMboe (31 March 2026 basis date).</p>
+  <p><strong>Baseline Truth:</strong> All conditions precedent—including PETRONAS Farmout Approval and shareholder approval (passed with 99.97% of votes on 11 August 2026)—were formally satisfied as of 12 August 2026. Acquired Malaysian production addition is approximately <strong>57.4 kboepd</strong>; the headline figure of <em>more than 100,000 boe/d</em> refers strictly to the enlarged EnQuest group post-completion.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>PETRONAS v Sarawak (Federal Court Constitutional Challenge)</h3>
+    <span class="pill pill-unverified">Partially Unverified</span>
+  </div>
+  <div class="meta-row">
+    <span>Hearing Dates: <strong>25–29 Jan 2027</strong></span>
+    <span>Principal Submissions: <strong>11 Jan 2027</strong></span>
+    <span>Case Management: <strong>12 Jan 2027</strong></span>
+    <span>Replies: <strong>18 Jan 2027</strong></span>
+  </div>
+  <p>Competing original jurisdiction petitions regarding legislative competence and the constitutional validity of the Petroleum Development Act 1974, Continental Shelf Act 1966, and Petroleum Mining Act 1966 as applied to Sarawak.</p>
+  <p><strong>Baseline Truth:</strong> Petitions are listed to be heard in filing order. They were not consolidated at the directions stage. The bench will determine whether Sarawak's preliminary OIC issue is argued first. Both parties have indicated intention to request an enlarged panel of 9 or 11 judges. <em>The claim that both parties applied for separate hearings is UNVERIFIED; non-consolidation does not establish that the court will split rather than resolve the dispute.</em></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Regional Asset Supply &amp; Valuation Metrics</h3>
+    <span class="pill pill-current">Current</span>
+  </div>
+  <div class="meta-row">
+    <span>Supply: <strong>USD 9.6B through 2027</strong></span>
+    <span>Development Clearance: <strong>USD 9.8/boe</strong></span>
+    <span>Pre-FID Clearance: <strong>&gt; USD 3.0/boe</strong></span>
+  </div>
+  <p>Rystad Energy reports USD 9.6B in Southeast Asian upstream assets offered through 2027. Seller distribution: Majors USD 3.6B, Independents USD 3.7B, NOCs USD 1.4B. Strategic entry optionality is driving transactions above 6-year historical averages (USD 6–7/boe for development, USD 1.5/boe for pre-FID).</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Completed Q3 2026 Regional Transactions</h3>
+    <span class="pill pill-current">Current</span>
+  </div>
+  <ul>
+    <li><strong>INPEX / TotalEnergies:</strong> INPEX acquires 85% and operatorship of Block 2E, offshore Malaysia (USD 350M, 8.5% net Marjoram). Completed 2 July 2026.</li>
+    <li><strong>Prima Energy / Jadestone:</strong> Acquired 28.3% secondary stake from Tyrus Capital funds. Completed early September 2026.</li>
+    <li><strong>INPEX / BP:</strong> Acquired 50% in Agung I &amp; II deepwater PSCs, Indonesia (BP retains operatorship). Completed early September 2026.</li>
+    <li><strong>Conrad Asia &amp; WNEL / PT Nations Natuna Barat:</strong> 75% farmdown in Duyung PSC (+USD 4M completion payment). Completed mid-September 2026.</li>
+    <li><strong>Vista Energy / Lion Energy:</strong> 2.5% indirect stake in Seram Non-Bula PSC. Completed September 2026.</li>
+    <li><strong>TIMOR GAP / Osaka Gas:</strong> Acquired 10% in Greater Sunrise (TIMOR GAP interest now 66.56%; Woodside 33.44% operator). Completed early September 2026.</li>
+    <li><strong>PT Rukun Raharja / Genting LNG:</strong> Acquired 5% in PT Layar Nusantara Gas for USD 43.7M (Kasuri FLNG). Completed September 2026.</li>
+  </ul>
+</div>
+
+<!-- 2. WHAT CHANGED -->
+<h2>2 · What Changed Since Issue 01</h2>
+<p>Reconciliations and factual state updates since initial publication on 27 October 2026:</p>
+<ul>
+  <li><strong>Conditions Precedent Reconciled:</strong> The EnQuest UK shareholder approval vote was confirmed as passed on 11 August 2026 (99.97% vote), and all conditions precedent were satisfied on 12 August 2026. The transaction state is updated from <em>"live condition"</em> to <em>"conditions satisfied; awaiting closing"</em>.</li>
+  <li><strong>Production Scope Disambiguated:</strong> Production from the acquired Malaysian portfolio was clarified as ~57.4 kboepd. The >100 kboepd metric represents the combined enlarged group post-acquisition.</li>
+  <li><strong>Transaction Milestones Added:</strong> Added the economic effective date (1 January 2027) and expected LSE readmission (on or around 4 January 2027) alongside legal completion (31 December 2026).</li>
+  <li><strong>Hearing-Separation Claim Restrained:</strong> Marked the claim that <em>"both parties applied for separate hearings"</em> as UNVERIFIED; retained verified procedural timetable and filing-order directions only.</li>
+  <li><strong>Editorial Boundary Flagged:</strong> Flagged authorial phrasing implying non-public access for sovereign editorial determination; staged bounded replacement.</li>
+</ul>
+
+<!-- 3. CORRECTIONS -->
+<h2>3 · Append-Only Correction Ledger</h2>
+<p>In accordance with arifOS governance (F2 Truth, F11 Auditability), no historical publication is silently overwritten. Every error, stale statement, or ambiguous claim is recorded in this public ledger:</p>
+
+<div class="card">
+  <div class="card-header">
+    <h3>CORRECTION-001: EnQuest Conditions Precedent</h3>
+    <span class="pill pill-corrected">Corrected</span>
+  </div>
+  <div class="meta-row"><span>Published: 2026-10-27T23:15:00Z</span> <span>Issue: 01 § 3</span></div>
+  <div class="original-box">
+    <div class="field-title">Original Statement:</div>
+    “It is a reverse takeover under UK listing rules, so shareholder approval is a live condition, not a formality.”
+  </div>
+  <div class="corrected-box">
+    <div class="field-title">Corrected State:</div>
+    Package 2 pre-emption waiver was announced on 10 July 2026. The combined circular and prospectus was published on 24 July 2026. The shareholder resolution passed on 11 August 2026 (99.97% in favour; ~997M votes). On 12 August 2026, EnQuest announced that all conditions precedent had been satisfied, including PETRONAS Farmout Approval. Completion remains scheduled for 31 December 2026.
+  </div>
+  <p><strong>Reason:</strong> The original publication on 27 October 2026 described shareholder approval as an open condition even though that condition had already been completed in August 2026.<br/>
+  <strong>Consequence:</strong> Readers received a stale transaction state for the deal described as the issue's most important transaction.<br/>
+  <strong>Primary Evidence:</strong> EnQuest PLC RNS announcements (10 July 2026, 11 August 2026, 12 August 2026); Combined Circular and Prospectus (24 July 2026).</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>CORRECTION-002: Production Figure Context</h3>
+    <span class="pill pill-corrected">Corrected</span>
+  </div>
+  <div class="meta-row"><span>Published: 2026-10-27T23:15:00Z</span> <span>Issue: 01 § 3</span></div>
+  <div class="original-box">
+    <div class="field-title">Original Statement:</div>
+    “On completion EnQuest assumes a portfolio producing more than 100,000 boe/d...”
+  </div>
+  <div class="corrected-box">
+    <div class="field-title">Corrected State:</div>
+    The acquired Malaysian interests are expected to add approximately 57.4 kboepd. The figure of 'more than 100,000 boe/d' refers to the enlarged EnQuest group post-acquisition (UK North Sea + Malaysia), not production attributable to the acquired Malaysian assets alone.
+  </div>
+  <p><strong>Reason:</strong> The publication conflated acquired-asset production with enlarged-group production.<br/>
+  <strong>Consequence:</strong> The sentence overstated the production represented by the acquired portfolio and could distort transaction and asset valuation interpretation.<br/>
+  <strong>Primary Evidence:</strong> EnQuest Investor Presentation (June 2026); EnQuest Combined Circular and Prospectus (24 July 2026, Part I).</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>CORRECTION-003: Distinct Transaction Milestones</h3>
+    <span class="pill pill-corrected">Corrected by Addition</span>
+  </div>
+  <div class="meta-row"><span>Published: 2026-10-27T23:15:00Z</span> <span>Issue: 01 § 5</span></div>
+  <div class="original-box">
+    <div class="field-title">Original Statement:</div>
+    Watchlist focused on expected completion on 31 December 2026 but omitted the separate economic effective date and expected readmission.
+  </div>
+  <div class="corrected-box">
+    <div class="field-title">Corrected State:</div>
+    Expected legal completion: 31 December 2026; economic effective date: 1 January 2027; expected readmission: on or around 4 January 2027.
+  </div>
+  <p><strong>Reason:</strong> These are distinct transaction milestones and must not be collapsed into one date.<br/>
+  <strong>Consequence:</strong> Readers lacked visibility on the separate economic cutoff date versus legal and market readmission dates.<br/>
+  <strong>Primary Evidence:</strong> EnQuest Combined Circular and Prospectus (24 July 2026, Transaction Timetable).</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>CORRECTION-004: Internal-Access Implication</h3>
+    <span class="pill pill-review">Human Review Required</span>
+  </div>
+  <div class="meta-row"><span>Published: 2026-10-27T23:15:00Z</span> <span>Issue: 01 § 3</span></div>
+  <div class="original-box">
+    <div class="field-title">Original Statement:</div>
+    “local knowledge, on a short clock, from someone who was in the room when the decisions were made.”
+  </div>
+  <div class="corrected-box">
+    <div class="field-title">Current Status &amp; Proposed Replacement:</div>
+    <strong>UNDER EDITORIAL REVIEW BY SOVEREIGN AUTHORITY ARIF.</strong><br/>
+    The original PDF remains preserved immutable. The sentence has been withheld from all derivative summaries, metadata, and structured feeds. Staged proposed replacement for Arif's determination:<br/>
+    <em>“Every operator transition creates demand for rapidly assembled local context: public regulatory history, basin knowledge, asset chronology and disciplined interpretation.”</em>
+  </div>
+  <p><strong>Reason:</strong> The sentence may reasonably be read as implying non-public or internal access concerning a PETRONAS transaction, while the Method statement affirms that nothing comes from a non-public source.<br/>
+  <strong>Consequence:</strong> Potential ambiguity regarding confidential access. Replacement remains a proposal until Arif explicitly accepts it.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>CORRECTION-005: Hearing-Separation Claim</h3>
+    <span class="pill pill-unverified">Unverified</span>
+  </div>
+  <div class="meta-row"><span>Published: 2026-10-27T23:15:00Z</span> <span>Issue: 01 § 4</span></div>
+  <div class="original-box">
+    <div class="field-title">Original Statement:</div>
+    “In September 2026 both parties applied for separate hearings, which means the matter may split rather than resolve.”
+  </div>
+  <div class="corrected-box">
+    <div class="field-title">Corrected State:</div>
+    The petitions are listed to be heard in filing order. The petitions were not consolidated at the reported directions stage; the hearing panel will decide whether Sarawak's preliminary OIC issue is argued first; both parties intended to request an enlarged panel of nine or eleven judges; Sarawak indicated an intended Rule 23 application. The claim that 'both parties applied for separate hearings' is UNVERIFIED; non-consolidation does not establish that the dispute will split.
+  </div>
+  <p><strong>Reason:</strong> The statement asserted separate hearing applications and split proceedings as fact without primary court record verification.<br/>
+  <strong>Consequence:</strong> Procedural non-consolidation was conflated with party applications for separate hearings and split adjudication.<br/>
+  <strong>Primary Evidence:</strong> Federal Court Case Management Records (September/October 2026); NST (1 October 2026); The Edge (8 June 2026).</p>
+</div>
+
+<!-- 4. WATCH NEXT -->
+<h2>4 · Watch Next: Decision-Changing Signals</h2>
+<p>Only decision-changing milestones are tracked. General noise and non-transactional news are discarded:</p>
+<ul>
+  <li><strong>EnQuest / PETRONAS Completion:</strong> Formal completion announcement on or before 31 December 2026; actual consideration paid; transfer of operatorship for Balingian, SK8, and D35-D21-J4.</li>
+  <li><strong>EnQuest Economic Handover &amp; Readmission:</strong> Confirmation of 1 January 2027 economic effective cutoff; LSE readmission confirmation on or around 4 January 2027; post-completion group guidance versus acquired Malaysian net production.</li>
+  <li><strong>PETRONAS v Sarawak Court Filings:</strong> Filing of principal submissions by 11 January 2027; case management directions on 12 January 2027; reply submissions by 18 January 2027.</li>
+  <li><strong>Federal Court Hearing Panel:</strong> Determination on 9-judge vs 11-judge enlarged bench; determination on preliminary OIC argument sequencing during the 25–29 January 2027 hearing.</li>
+  <li><strong>Regional Upstream Transactions:</strong> Duyung PSC gas sales agreement; Kasuri upstream development farmdown; MBR 2026 block awards.</li>
+</ul>
+
+<!-- 5. ISSUE 01 ARTIFACT -->
+<h2>5 · Issue 01 Historical Artifact</h2>
+<div class="artifact-box">
+  <div style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">South-east Asia Upstream Deal Tracker — Issue 01 (Seed Artifact)</div>
+  <div class="meta-row">
+    <span>Publication Date: <strong>27 October 2026</strong></span>
+    <span>File Size: <strong>28,600 bytes</strong></span>
+    <span>Format: <strong>PDF (2 pages)</strong></span>
+  </div>
+  <p style="font-family:ui-monospace,monospace;font-size:0.75rem;color:#818cf8;word-break:break-all;margin:0.5rem 0;">
+    SHA-256: 67c3a928882665a5be2443c3e174d8c272f6b2885eaf6488d6306797a9dc8c15
+  </p>
+  <p style="font-size:0.875rem;margin-bottom:1rem;">
+    This historical document is preserved immutable in the public record. In accordance with arifOS governance, historical publications are never edited or overwritten retroactively.
+  </p>
+  <div>
+    <a href="SEA-Upstream-Deal-Tracker-Issue-01.pdf" download class="pill pill-current" style="padding:0.4rem 0.8rem;text-decoration:none;">Download Original Issue 01 PDF →</a>
+  </div>
+</div>
+
+<!-- 6. METHOD -->
+<h2>6 · Method &amp; Epistemic Discipline</h2>
+<p>This CHRON operates under strict arifOS epistemic floors (F1 Amanah, F2 Truth, F11 Auditability):</p>
+<ul>
+  <li><strong>Zero Non-Public Information:</strong> Every tracked figure, milestone, or legal fact is strictly grounded in publicly accessible corporate filings, court registries, stock exchange notices, or verified research notes. Nothing comes from non-public or confidential sources.</li>
+  <li><strong>OBS / DER / INT Separation:</strong> Observed data (OBS, e.g. statutory filings, court dates) is strictly separated from derived calculations (DER, e.g. $/boe clearance metrics) and analytical interpretations (INT).</li>
+  <li><strong>Correction Preservation:</strong> When a prior statement is found to be stale, conflated, or inaccurate, it is preserved verbatim in the Correction Ledger alongside the verified state, reason, and consequence. History is never overwritten.</li>
+  <li><strong>Publication Gates:</strong> Updates occur only when an event alters ownership, operatorship, consideration, closing date, legal decision path, or the correctness of an existing public claim.</li>
+</ul>
+
+<footer>
+  arifOS Research · South-east Asia Upstream Deal Tracker CHRON · Single Source of Truth: state.json &middot; corrections.json
+</footer>
+
+</body>
+</html>

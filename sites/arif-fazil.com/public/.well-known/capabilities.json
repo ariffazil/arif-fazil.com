@@ -145,7 +145,7 @@
         {
           "name": "observatory_snapshot",
           "description": "Full federation observatory state (110KB JSON)",
-          "protocol": "mcp",
+          "protocol": "http",
           "path": "/api/observatory/v1/snapshot"
         },
         {

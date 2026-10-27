@@ -1,0 +1,212 @@
+{
+  "$schema_note": "Spatial evidence ledger for the EARTH observatory pages. One row per load-bearing observation or claim. A public page may cite a claim only by claim_id. Verdicts on pages must trace to rows here. Epistemic labels: OBS = directly observed/measured, DER = derived by stated calculation, INT = interpretation of observations, SPEC = speculative working hypothesis, EXT = external cross-check awaiting a georeferenced primary source.",
+  "purpose": "Answer four questions for every body, number and verdict: Where exactly? Measured by what? At what resolution? What observation can kill it? Fields the source does not publish are null with an explicit gap flag — null is honest, inferred coordinates are not.",
+  "last_updated": "2026-10-26",
+  "claims": [
+    {
+      "claim_id": "CL-MOHO-KMY-328",
+      "claim": "Moho depth 32.8 ± 2.5 km at the KMY broadband station",
+      "label": "OBS",
+      "method": "P-to-S receiver function H-kappa stacking (Zhu & Kanamori 2000)",
+      "lat": 5.98, "lon": 116.07,
+      "georeference_status": "RESOLVED 2026-10-26 — station = transect control point 'Kota Kinabalu', chainage 429.9 km (coordinates published in evidence_chain.json OBS-SABAH-RF-001)",
+      "collocation": "A/D discrimination predictions defined at chainage 520.0 km → 90.1 km along-chain / 82.5 km straight-line from station — outside RF footprint (~20–30 km). Verdict: INDETERMINATE at prediction point; observation decides only the ~430 km (KK) domain",
+      "depth_interval_km": [30.3, 35.3],
+      "resolution_footprint": "Fresnel-zone scale (~20–30 km) at 33 km depth, 0.2–0.5 Hz",
+      "interface_definition": "Moho from H-kappa stacking, Vp/Vs 1.73",
+      "uncertainty": "±2.5 km",
+      "source": "Sidek et al. 2016 (doi:10.7186/bgsm62201607); Madon et al. 2025",
+      "transect_ref": "T-SAB-OBS-833 (station = CP index 5)",
+      "models_contradicted": ["none at 520 km — original Model-D kill WITHDRAWN as collocation error (evidence_chain.json audit_amendment_2026_10_26)"],
+      "models_supported": ["~30–35 km Moho in the Kota Kinabalu (430 km) domain"],
+      "kill_power": "DECISIVE only for predictions within its footprint. Decisive observation to unblock D3: broadband station ≤ ~25 km from the 520 km prediction point (per the run's own on_indeterminate consequence)."
+    },
+    {
+      "claim_id": "CL-MOHO-CROCKER-60",
+      "claim": "Moho near 60 km beneath the Crocker Range",
+      "label": "OBS/INT (receiver-function estimate)",
+      "method": "teleseismic P-wave receiver functions / tomography",
+      "lat": null, "lon": null,
+      "georeference_status": "REGIONAL — 'beneath Crocker Range'; chainage ≈ 485 km on the Sabah transect family, footprint broad",
+      "resolution_footprint": "tens of km",
+      "interface_definition": "crust–mantle velocity step (RF) — different estimator than CL-MOHO-KMY-328",
+      "uncertainty": "not published on page",
+      "source": "Gilligan et al. 2026 (doi:10.1029/2025JB031499) as cited on the pages; observatory Model-R panel cites receiver functions near 60 km beneath Crocker",
+      "transect_ref": "T-SAB-OBS-833, T-KIN-XS-833",
+      "models_supported": ["crustal thickening under Crocker (Models A/C/D crust panels)"],
+      "kill_power": "SUPPORTS a thickened root at Crocker; cannot be compared pointwise with CL-MOHO-KMY-328 — different station, estimator, and resolution. Not a contradiction between them; an un-normalised comparison."
+    },
+    {
+      "claim_id": "CL-MOHO-CENTRAL-24",
+      "claim": "Moho ~24 km in central Sabah",
+      "label": "OBS/INT",
+      "method": "regional geophysical (as cited)",
+      "lat": null, "lon": null,
+      "georeference_status": "REGIONAL — 'central Sabah' province label, no point",
+      "resolution_footprint": "regional",
+      "uncertainty": "not published on page",
+      "source": "Gilligan et al. 2026, as cited on earth/kinabalu-cross-section.html",
+      "transect_ref": "T-KIN-XS-833 (mid-section domain)",
+      "kill_power": "NON-DECISIVE against any single model — spatially distinct from the Crocker and KMY points; all three can coexist in a heterogeneous Moho field."
+    },
+    {
+      "claim_id": "CL-MOHO-GRAV-32-52",
+      "claim": "Gravity-inversion Moho 32.8–52.5 km range",
+      "label": "DER",
+      "method": "joint gravity inversion",
+      "lat": null, "lon": null,
+      "georeference_status": "along the transect family, smoothed",
+      "resolution_footprint": "regional grid",
+      "uncertainty": "range reflects inversion non-uniqueness (density–thickness trade-off)",
+      "source": "Madon et al. 2025 (as cited on the observatory Model-R panel)",
+      "transect_ref": "T-SAB-OBS-833",
+      "models_contradicted": ["Model R flat 30 km Moho (disfavoured at the thick end)"],
+      "kill_power": "CONSTRAINS, NEVER CONFIRMS — potential-field solutions are non-unique; a fit is PERMITTED, not proven."
+    },
+    {
+      "claim_id": "CL-MOHO-SUMMIT-GAP",
+      "claim": "There is no direct Moho control beneath the Mt Kinabalu summit",
+      "label": "OBS (of absence)",
+      "method": "network inspection",
+      "lat": 5.963, "lon": 116.537,
+      "resolution_footprint": "point",
+      "uncertainty": "asymmetric — future station may fill it",
+      "source": "declared Missing panel, earth/sabah-observatory/",
+      "transect_ref": "T-SAB-OBS-833 at 484.9 km chainage",
+      "kill_power": "BLOCKS any kill verdict whose spatial prediction is summit-specific; the section must keep the gap open (kinabalu-cross-section.html already leaves 230–540 km Moho undrawn)."
+    },
+    {
+      "claim_id": "CL-SW-CRUST-25-55",
+      "claim": "Regional surface-wave tomography: Sabah crustal thickness ~25–55 km; average LAB ~100 km; localized lithospheric thinning in southeastern Sabah — not wholesale removal",
+      "label": "EXT",
+      "method": "surface-wave tomography (published)",
+      "lat": null, "lon": null,
+      "georeference_status": "AWAITING-CITATION — entered from the 2026-10-26 enterprise cross-check; a named, georeferenced primary reference must be attached before any page states it as fact",
+      "resolution_footprint": "smoothing length not recorded",
+      "uncertainty": "not recorded",
+      "source": "enterprise audit 2026-10-26 (external literature pass)",
+      "transect_ref": null,
+      "models_supported": ["D2 — localized SE Sabah lithosphere instability/thinning"],
+      "models_contradicted": ["D1 — wholesale Sabah lithosphere removal"],
+      "kill_power": "Kills only the Sabah-WIDE removal variant, not every localized drip. Model-family verdicts must be split D1/D2/D3 accordingly."
+    },
+    {
+      "claim_id": "CL-SLAB-DISC-45-55",
+      "claim": "A west-dipping discontinuity exists at 45–55 km depth offshore NW Sabah; it is interpreted as a detached slab remnant (and associated with Celebes Sea subduction)",
+      "label": "OBS (discontinuity) + INT (slab identity)",
+      "method": "migrated teleseismic P-wave receiver functions",
+      "lat": null, "lon": null,
+      "georeference_status": "offshore NW Sabah, on the transect family; footprint broad",
+      "resolution_footprint": "not published on page",
+      "uncertainty": "interpretation of body identity is contested",
+      "source": "Cornwell et al. 2025, JGR Solid Earth 130(11) e2025JB031466",
+      "transect_ref": "T-KIN-XS-833 Model D body, T-SAB-OBS-833 Model C annotation",
+      "kill_power": "The discontinuity supports a slab-like body; it does NOT prove drip dynamics, slab breakoff timing, or crustal architecture."
+    },
+    {
+      "claim_id": "CL-DRU-142",
+      "claim": "Deep Regional Unconformity surface age ~14.2 Ma (NN5); deliberately kept separate from the hypothesized slab-breakoff episode (~13–12 Ma, Morley 2024); DRU must not be auto-read as collision onset",
+      "label": "INT (correlation)",
+      "method": "biostratigraphic sequence correlation",
+      "uncertainty": "±sub-mycr; correlation-based",
+      "source": "GEOX Sabah unconformity correlation (geox://earth-system/sabah-correlation); Morley 2024 for breakoff window",
+      "transect_ref": "T-KIN-XS-833 event bar",
+      "kill_power": "NON-DECISIVE for dynamics; separates age-evidence from event-interpretation."
+    },
+    {
+      "claim_id": "CL-GRANITE-7.85-7.22",
+      "claim": "Mt Kinabalu granite is a dated Late Miocene pluton (7.85–7.22 Ma emplacement pulses with rapid exhumation)",
+      "label": "OBS (published geochronology)",
+      "method": "U–Pb geochronology",
+      "lat": 6.0, "lon": 116.55,
+      "resolution_footprint": "outcrop/cored scale",
+      "source": "Cottam et al. 2010 (JGS 167:49–60); Cottam et al. 2013 (JGS 170:805–816)",
+      "transect_ref": "T-KIN-XS-833, T-SAB-OBS-833 at ~485 km",
+      "kill_power": "GENETIC FIREWALL: this dated onshore pluton does NOT date or validate any hypothesized offshore trough-axis intrusion; similar timing would still not prove a common source or pathway."
+    },
+    {
+      "claim_id": "CL-INTRUSION-AXIS",
+      "claim": "Sparse transtensional sills/dykes may exploit an inherited thinned crustal axis beneath the Sabah Trough",
+      "label": "SPEC (untested working hypothesis; ridge-push mechanism withdrawn 2026-10)",
+      "method": "none yet",
+      "lat": null, "lon": null,
+      "georeference_status": "along the Sabah Trough axis (schematic polyline 5.75N 113.95E → 7.70N 115.75E)",
+      "source": "Fazil 2026 working note, kinabalu-cross-section.html Model A; potential-field thinning as motivating OBS",
+      "physical_admissibility": "PERMITTED — no published observation contradicts it",
+      "empirical_maturity": "OPEN — no dated basalt, no corrected low-latitude magnetic lineation, no seismic-imaged sill, no localized paleo-thermal spike yet public",
+      "kill_power": "Kill test: adequately-resolved seismic + potential-field coverage excluding required body geometries ⇒ reject that configuration; insufficient coverage ⇒ INCONCLUSIVE. A potential-field fit ⇒ PERMITTED, never proven."
+    },
+    {
+      "claim_id": "CL-NSPW-SHALE",
+      "claim": "A Miocene mobile-shale mud canopy (North Sabah–Pagasa Wedge) exists, imaged by 3D seismic pipes, saucers and mini-basins",
+      "label": "OBS (published)",
+      "method": "3D seismic attribute interpretation + wells",
+      "source": "Morley et al. 2023 (Geosphere 19(1):291, doi:10.1130/GES02518.1)",
+      "transect_ref": "T-SAB-OBS-833 Model B; applies as an upper-crustal SEDIMENTARY layer over any admissible crustal architecture",
+      "layer": "H1 SEDIMENTARY_MECHANICS — switchable independently of crust/mantle states",
+      "kill_power": "Strongest empirical maturity of the four displayed families."
+    },
+    {
+      "claim_id": "CL-BO-GRAV-SWING-131",
+      "claim": "Free-air gravity along the B–B′ dip transect swings 131 mGal: +94 mGal (Borneo hinterland) → −37 mGal (trough/fold belt) → +20 mGal (Dangerous Grounds)",
+      "label": "OBS (L0, grid-sampled at real coordinates)",
+      "method": "Sandwell & Smith V34.1 satellite free-air, 1 arc-min",
+      "lat": null, "lon": null,
+      "georeference_status": "defined by T-BNW-DIP-BB endpoints",
+      "resolution_footprint": "1 arc-min (~2 km); onshore land-compilation values carry higher uncertainty",
+      "uncertainty": "stated indicative for the far-left (onshore) peak",
+      "source": "earth/borneo-sections.html gravity panels",
+      "models_supported": ["first-order thick→thin→thick crustal transition (COMPATIBLE WITH)"],
+      "interpretation_firewall": "Free-air response is also produced by bathymetry, sediment load and basement relief. Without Bouguer correction + forward model (water, sediments, upper/lower crust, mantle, Moho-depth & density sensitivity) this is COMPATIBILITY, not confirmation. The phrase 'independent check on the whole section' is withdrawn.",
+      "kill_power": "NON-DECISIVE alone — potential-field non-uniqueness."
+    },
+    {
+      "claim_id": "CL-BO-YOUNG-MORPH",
+      "claim": "Seafloor expression on the youngest folds of the deepwater fold-thrust belt",
+      "label": "OBS",
+      "method": "bathymetric morphology at real coordinates (230–330 km chainage)",
+      "source": "earth/borneo-sections.html",
+      "interpretation_firewall": "Demonstrates geologically YOUNG deformation. It does NOT by itself date present slip. 'Active now' requires modern seismicity, geodesy, growth strata reaching the seabed, or repeat bathymetry.",
+      "kill_power": "NON-DECISIVE for current activity."
+    },
+    {
+      "claim_id": "CL-BO-FOSSIL-TRENCH",
+      "claim": "The NW Borneo Trough is a fossil subduction trench, choked by Dangerous Grounds continental crust in the Middle Miocene",
+      "label": "INT (recognized regional model; geometry, timing and Proto-SCS consumption continuity remain model-dependent)",
+      "source": "Hinz et al. 1989; Hazebroek & Tan 1993; Hutchison 2005; Morley 2024 — as cited on the page",
+      "tag_rule": "page must render 'is a fossil trench' as 'interpreted as a fossil trench (model)'",
+      "kill_power": "NON-DECISIVE; historical interpretation, not observation."
+    },
+    {
+      "claim_id": "CL-SAB-ACTIVE-STRESS",
+      "claim": "Present-day Sabah deformation includes both compression and extension: WNW–ESE shortening, active NE–SW thrusts, NW–SE strike-slip, normal faulting around the Crocker–Kinabalu uplift; SE Sabah shows deeper thrust-faulting seismicity",
+      "label": "OBS (seismicity/focal mechanisms) + INT (stress partitioning)",
+      "method": "focal mechanisms, hypocentres; GPS where published",
+      "source": "Tongkul 1994/1997 (as cited on observatory Sources); 2026 regional seismicity study (enterprise audit pass — attach DOI to page)",
+      "kill_power": "Requires a present-day kinematics panel on the observatory; inherited structure ≠ current slip mode."
+    },
+    {
+      "claim_id": "CL-SW-CYCLES-CROSSWALK",
+      "claim": "Sarawak Cycles I–VIII are NOT formally calibrated against Sabah stages (IVA–IVE) or the Kinabalu SB4–SB8 sequence-boundary scheme",
+      "label": "OBS (of absence — internal project state)",
+      "source": "Kinabalu Basin project records (internal; biostrat/sequence-boundary assignments still unresolved)",
+      "firewall": "No cycle-to-SB crosswalk may be published from the Borneo page into Kinabalu usage until KL2 resolves it with the 80+ well databank. Confidence-bearing crosswalk is a KL2 deliverable, not a public-page assertion.",
+      "kill_power": "BLOCKS stratigraphic transfer between provinces."
+    },
+    {
+      "claim_id": "CL-AIRY-ROOT-229",
+      "claim": "Airy isostatic root for 4,095 m relief = 22.9 km at the stated densities (reference crust 30 km); flexure and dynamic support omitted",
+      "label": "DER (valid only under declared flat-plate/air-load assumptions)",
+      "method": "analytical Airy calculation shown on page",
+      "source": "earth/sabah-observatory/ Derived panel",
+      "kill_power": "NON-DECISIVE — end-member calculation; a flexed or dynamically supported crust does not have to reach it."
+    }
+  ],
+  "verdict_rules": {
+    "R1": "No model-family verdict may be rendered DECISIVE unless the killing claim has georeference_status containing a point or a declared footprint that overlaps the prediction, AND matching interface_definition.",
+    "R2": "Scores must be per-model. Dataset-wide status counts shown identically on every model card are a rendering defect, not evidence.",
+    "R3": "Potential-field fits are PERMITTED; only a second independent line (imaged body, dated material, diagnostic thermal anomaly) upgrades them to SUPPORTED.",
+    "R4": "Young morphology ≠ present activity. Model-dependent history statements carry INT tags.",
+    "R5": "Cross-domain transfer of numbers between transects is prohibited except through the analogue firewall in transects.json."
+  }
+}

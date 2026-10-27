@@ -8,21 +8,35 @@
 
 ## Endpoints
 
-- MCP endpoint (SSE transport): https://geox.arif-fazil.com/mcp
+- MCP endpoint: https://geox.arif-fazil.com/mcp — **streamable HTTP**, MCP protocol
+  2025-03-26 (POST JSON-RPC; GET returns the transport descriptor). Register the
+  `/mcp` path itself — the bare domain serves the human landing page, not the MCP surface.
 - Health: https://geox.arif-fazil.com/health
 - Agent profile: https://geox.arif-fazil.com/profile
 - Scenarios: https://geox.arif-fazil.com/scenarios
-- WebMCP manifest: https://geox.arif-fazil.com/.well-known/mcp.json
+- Agent discovery: https://geox.arif-fazil.com/.well-known/mcp.json · /well-known/mcp/server.json · /ai-catalog.json
+
+## Connectors (edge behaviour verified 2026-10-26, any model/platform)
+
+- No API key needed to initialize, list tools (27), list resources (52),
+  templates (14) or prompts (16), or to call read-tier tools anonymously.
+- Mutation-class tools return `AUTHORITY_GATE · verdict=HOLD` for unauthenticated
+  sessions — the authority ladder rides the open internet on purpose.
+- CORS preflight answers 204 with `Mcp-Session-Id`, `X-MCP-Client-Id`,
+  `MCP-Protocol-Version` allowed; `Accept: application/json` alone is accepted;
+  requests with no `Accept` header get a spec-correct 406.
+- Works from any MCP client: Perplexity, ChatGPT, Claude, Codex, LangChain,
+  or plain curl (see Quickstart).
 
 ## Capabilities
 
-- 31 governed MCP tools (geox.* namespace): basin screening, STOIIP/volumetrics,
-  seismic attribute review, flood-risk triage, route viability, infrastructure
-  watch, hazard escalation, risk matrix, verdict console, VAULT999 sealing.
-- 20 MCP App widgets (SEP-1865 GUI, active with live bindings): WellDesk,
-  Seismic Vision, Earth Volume, Risk Console, Judge Console, Basin Explorer,
-  Prospect Studio, Geoprobe, GravMag Studio, and more. (8 additional Apps
-  held as 'planned' awaiting F13 resurrection of ghosted tools; 3 deprecated.)
+- 27 canonical public MCP tools (underscore namespace, e.g. `geox_basin`,
+  `geox_petrophysics`, `geox_seismic_interpret`, `geox_claim`) — the live,
+  authoritative list is `tools/list` at `/mcp` or `/health`. 39 internal
+  (forge-scope) tools are registry-filtered, not advertised for public calls.
+- MCP App UI resources (SEP-1865 bindings): live enumeration in
+  GEOX_MCP_APPS_SURFACE.json; standalone app surfaces at /apps (WellDesk,
+  Earth Volume, Judge Console, Prospect UI, Seismic Vision, Geoprobe, Analog Digitizer…).
 - A2A negotiation via AAA control plane (:3001).
 
 ## Epistemic Contract (E1–E5)
@@ -30,7 +44,9 @@
 - E1 Every response includes `epistemic_layer: OBS | DER | INT | SPEC`.
 - E2 SPEC outputs are capped by RASA ≤ 0.90 and labeled hypothesis.
 - E3 Irreversible/high-risk calls return `status: 888_HOLD` until sovereign human release (F13).
-- E4 Agents may seal any result to VAULT999 via `geox.seal_vault999()`.
+- E4 Results carry an evidence envelope with a content SHA-256. Sealing to
+  VAULT999 is an arifOS kernel act (888_JUDGE / F13) — GEOX never seals
+  (authority ceiling: 555_COMPUTE_ONLY).
 - E5 Ω₀ ≈ 0.04 — the Earth keeps its humility band; your model should too.
 
 ## Governance
@@ -40,11 +56,21 @@ F13 — Sovereign Human Veto (888_HOLD) — is load-bearing: a human can always
 stop the machine. Federation organs: arifOS :8088, A-FORGE :7071/:7072,
 AAA :3001, GEOX :8081, WEALTH :18082, WELL :18083, HERMES :8644.
 
-## Quickstart (60 seconds)
+## Quickstart (60 seconds, any MCP client)
 
-1. Point your MCP client at `https://geox.arif-fazil.com/mcp` (SSE).
-2. Call a tool, e.g. `geox.stoiip({ prospect: "KINABALU-N", p50_area_km2: 42 })`.
-3. Render an app, e.g. register `geox.app.welldesk` as an SEP-1865 inline widget.
+Plain clients (Perplexity / ChatGPT / Claude / SDKs): server URL
+`https://geox.arif-fazil.com/mcp`, transport `streamable-http`, no auth header
+for the read tier. Raw JSON-RPC sequence if you script it yourself:
+
+1. `POST /mcp` `{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"you","version":"1"}}}`
+   with headers `Accept: application/json, text/event-stream` + `Content-Type: application/json` → capture the `mcp-session-id` response header.
+2. `POST /mcp` `{"jsonrpc":"2.0","method":"notifications/initialized"}` with that session header.
+3. `tools/list`, `resources/list`, `prompts/list`, then e.g.
+   `{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"geox_surface_status","arguments":{"mode":"registry"}}}`.
+
+Tool arguments are in `arguments` (not `params`), and mode-selecting tools use
+`mode` (not `action`). Workspace context (`geox_workspace`, mode=set) must be
+set before basin-profile calls or they honestly return `EVIDENCE_SCHEMA_VIOLATION`.
 
 ## License
 
@@ -53,8 +79,8 @@ Business Source License 1.1; converts to Apache 2.0 on 2029-06-29.
 ## Links
 
 - Site: https://geox.arif-fazil.com/
-- Platform (42 tools): https://geox.arif-fazil.com/platform
-- MCP Apps (18 widgets): https://geox.arif-fazil.com/mcp-apps
+- Platform (canonical public tool count is generated from registry.py and served live at /health · tools/list): https://geox.arif-fazil.com/platform
+- MCP Apps (live register): https://geox.arif-fazil.com/apps · https://geox.arif-fazil.com/GEOX_MCP_APPS_SURFACE.json
 - MCP door: https://geox.arif-fazil.com/mcp (public HTML WebMCP console is not exposed)
 - Federation: https://geox.arif-fazil.com/federation
 - Deploy: https://geox.arif-fazil.com/deploy

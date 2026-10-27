@@ -169,6 +169,19 @@
         "on_model_2_win": "Delamination confirmed. Shift exploration focus to deep thermal pulse and late-stage trap breach.",
         "on_indeterminate": "Acquire dense teleseismic broadband array across Crocker axis before drilling deep targets."
       }
+    },
+    "audit_amendment_2026_10_26": {
+      "amended_by": "kimi-code/FI-008 (sovereign-directed claim-language audit)",
+      "session": "SEAL-e7c44f72932a4b7c",
+      "finding": "COLLOCATION DEFECT — the deterministic PASS/KILL results above evaluate a point observation against a prediction defined at a different location. Station KMY_BROADBAND (5.98 N, 116.07 E) is the transect control point labelled 'Kota Kinabalu' at chainage 429.9 km. Both PRED-A-MOHO-CROCKER and PRED-D-MOHO-CROCKER sit at chainage 520.0 km. Along-strike separation: 90.1 km — far outside a receiver-function Fresnel footprint (~20–30 km at Moho depth for 0.2–0.5 Hz). The 32.8 ± 2.5 km observation therefore CANNOT adjudicate the 520 km predictions in either direction.",
+      "second_finding": "IDENTITY DEFECT — MODEL-A-UNDERTHRUST here expects 30–35 km Moho at 520 km, while the observatory's display Model A geometry (moho array) draws ~60 km at 484.9 km. These are different crustal states sharing a label; 'Model A' must resolve to one geometry hash before PASS verdicts are meaningful.",
+      "scoped_restatement": {
+        "MODEL-A-UNDERTHRUST": "INDETERMINATE AT PREDICTION POINT (collocation not satisfied); observation is COMPATIBLE with a ~33 km Moho at 429.9 km (Kota Kinabalu domain)",
+        "MODEL-D-DRIP": "UNRESOLVED at the 520 km Crocker-axis prediction — kill_triggered above is WITHDRAWN as a collocation error, not as a disproven mechanism",
+        "verdict_grammar": "GEOX outputs compatible · incompatible · unresolved · insufficient coverage; admissibility belongs to arifOS/human"
+      },
+      "decisive_observation_required": "Broadband station within ~25 km of 520 km chainage (or a dense array across the Crocker axis) with matching Moho interface definition — exactly the on_indeterminate outcome the original run already specified.",
+      "records_preserved": true
     }
   }
 }

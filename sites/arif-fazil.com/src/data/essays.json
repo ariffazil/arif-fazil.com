@@ -1,5 +1,98 @@
 [
   {
+    "id": "m6-9",
+    "title": "Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur",
+    "date": "2026-10-27",
+    "lang": "bm",
+    "series": {
+      "id": "DOSSIER",
+      "n": 9
+    },
+    "tags": [
+      "petronas",
+      "sarawak",
+      "petros",
+      "pda-1974",
+      "royalti",
+      "mss",
+      "tenaga-kerja",
+      "ekspatriat",
+      "esd-imigresen",
+      "federalisme",
+      "makcikgpt"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/anak-jantan-punya-tanah"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "TJT-C1",
+        "text": "PDA 1974 memberi PETRONAS pemilikan mutlak dan hak eksklusif ke atas petroleum di darat dan luar pantai.",
+        "tag": "OBS",
+        "source_id": "s1",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C2",
+        "text": "Royalti kasar 5% kepada Persekutuan dan 5% kepada negeri pengeluar; baki 90% dikawal dalam PSC (70% cost oil, 20% profit oil).",
+        "tag": "OBS",
+        "source_id": "s1",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C3",
+        "text": "Sarawak memegang ~60% rizab gas negara dan ~90% eksport LNG Malaysia.",
+        "tag": "OBS",
+        "source_id": "s3",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C4",
+        "text": "Shell MDS menerima invois berganda daripada PETRONAS dan Petros untuk gas yang sama; Mahkamah Rayuan arahkan bayaran tunggakan hampir RM1 bilion diteruskan kepada PETRONAS sehingga kes selesai.",
+        "tag": "OBS",
+        "source_id": "s7",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C5",
+        "text": "PETRONAS mengumumkan pengurangan ~10% tenaga kerja (~5,000 pekerja daripada 50,000–52,000) melalui Transition Council dan People Development Committees.",
+        "tag": "OBS",
+        "source_id": "s14",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C6",
+        "text": "Sektor Minyak, Gas & Tenaga adalah satu daripada enam sektor yang dikecualikan daripada keperluan Surat Sokongan Agensi dalam ESD Guidebook Imigresen V6 2025.",
+        "tag": "OBS",
+        "source_id": "s10",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C7",
+        "text": "Kategori Pas Penggajian ekspatriat diukur semata-mata mengikut gaji asas bulanan (Kategori I RM10k+) tanpa tapisan kepakaran teknikal luaran.",
+        "tag": "OBS",
+        "source_id": "s10",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C8",
+        "text": "Kesemua 9 ahli Executive Leadership Team PETRONAS di laman rasmi adalah warganegara Malaysia.",
+        "tag": "OBS",
+        "source_id": "s12",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "TJT-C9",
+        "text": "Pihak yang bekerja di pelantar tidak menentukan terma; bila margin tertekan anak watan disorong MSS manakala kontrak ekspatriat disambung di bawah cop business-critical.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
     "id": "m-dajjal-nampak-macam-efficiency",
     "title": "Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency",
     "date": "2026-09-20",
@@ -5694,5 +5787,144 @@
       "spec": 0,
       "total": 13
     }
+  },
+  {
+    "id": "m-reality-over-everything",
+    "title": "REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void",
+    "date": "2026-09-22",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 7
+    },
+    "tags": [
+      "reality",
+      "truth",
+      "void",
+      "survival",
+      "makcikgpt",
+      "civic-intelligence",
+      "hukum-batu",
+      "universal"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/reality-over-everything"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "ROE-C1",
+        "text": "Batu pada kedalaman 3,000 meter tidak membaca slaid PowerPoint atau hierarki korporat; realiti berlaku tanpa bergantung kepada naratif.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "ROE-C2",
+        "text": "Kebenaran institusi kritikal wujud dalam ruang tidak direkodkan dan celah-celah komunikasi tak bersaksi.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "ROE-C3",
+        "text": "Sistem mengekalkan kelangsungan hidup dengan menolak individu yang mendedahkan kelemahan asas dan memberi ganjaran kepada kesenyapan.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
+    "id": "m-petronas-ai-transformasi-copilot",
+    "title": "Anak Makcik Kerja PETRONAS. Dia Pulang Rumah Cakap Satu Benda.",
+    "date": "2026-09-14",
+    "lang": "bm",
+    "series": {
+      "id": "M3",
+      "n": 6
+    },
+    "tags": [
+      "petronas",
+      "ai",
+      "copilot",
+      "iraya",
+      "transformasi",
+      "pekerja",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/petronas-ai-transformasi-tapi-awak-pakai-copilot"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "PAI-C1",
+        "text": "PETRONAS mengumumkan pelbagai perkongsian AI (Iraya Energies, IBM TriCipta, Siemens) dalam tempoh singkat pada 2026.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "PAI-C2",
+        "text": "Akses alat AI peringkat operasi harian kakitangan terhad kepada ciri asas Copilot dan bukan model fizik takungan.",
+        "tag": "DER",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "PAI-C3",
+        "text": "Jurang antara naratif transformasi digital luaran dan pemerkasaan alat sebenar pekerja dalaman mencerminkan keutamaan pemasaran berbanding inovasi asas.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
+  },
+  {
+    "id": "m-dna-2010-ramalan-datang",
+    "title": "Bangang, Atau Taat?",
+    "date": "2026-09-17",
+    "lang": "bm",
+    "series": {
+      "id": "M1",
+      "n": 8
+    },
+    "tags": [
+      "petronas",
+      "dna",
+      "integriti",
+      "azam-aris",
+      "hassan-marican",
+      "shamsul-azhar",
+      "fy2025",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/dna-2010-ramalan-datang"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "DNA-C1",
+        "text": "Kolum The Edge 8 Februari 2010 mencatatkan amaran Azizan Zainul Abidin: hari integriti dikompromi adalah hari kemusnahan PETRONAS bermula.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DNA-C2",
+        "text": "Kenyataan media kewangan FY2025 (27 Februari 2026) menunjukkan penurunan hasil 17% dan untung selepas cukai 18%.",
+        "tag": "OBS",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "DNA-C3",
+        "text": "Kemerosotan asas kewangan dan autonomi institusi bukan akibat rampasan mendadak tetapi siri konsesi pematuhan yang ditandatangani.",
+        "tag": "INT",
+        "maruah_review": "approved"
+      }
+    ]
   }
 ]

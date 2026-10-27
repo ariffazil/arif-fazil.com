@@ -46,7 +46,9 @@ import gentari15Benda from './gentari-15-benda-bangang';
 import gentariDossier from './gentari-dossier';
 import petronasAiTransformasi from './petronas-ai-transformasi-tapi-awak-pakai-copilot';
 import dna2010RamalanDatang from './dna-2010-ramalan-datang';
+import anakJantanPunyaTanah from './anak-jantan-punya-tanah';
 export const makcikArticleModules: ArticleContent[] = [
+  anakJantanPunyaTanah,
   gentari15Benda,
   gentariDossier,
   petronasAiTransformasi,
@@ -95,6 +97,19 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'anak-jantan-punya-tanah',
+    title: 'Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur',
+    subtitle: 'Bila untung berbilion, semua orang berebut mengaku wira negara. Bila harga minyak goyang, capex bengkak, dan mahkamah panggil — anak watan tempatan disuruh ambil MSS (undur-undur!), tapi kontrak ekspatriat terus disambung atas nama business-critical. Tanah anak jantan punya, ijazah anak tempatan punya, tapi siapa sebenarnya yang pegang kunci pintu?',
+    date: '2026-10-27',
+    domain: 'MAKCIKGPT × DOSSIER × PETROLEUM × SARAWAK × TENAGA KERJA × FEDERALISME × KETELUSAN',
+    language: 'ms',
+    excerpt: 'Dossier awam penyatuan: Dari PDA 1974, royalti 5%, saman gas Shell MDS dan pertikaian Petros, kepada pemotongan 10% tenaga kerja (~5,000 orang melalui MSS/Transition Council) sementara sektor minyak & gas dikecualikan daripada Surat Sokongan Agensi Imigresen. Di mana kepakaran diukur hanya dengan gaji yang syarikat sendiri letak.',
+    tags: ['petronas', 'sarawak', 'petros', 'pda-1974', 'royalti', 'mss', 'tenaga-kerja', 'ekspatriat', 'esd-imigresen', 'makcikgpt', 'malaysia', 'dossier'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-10-27', last_updated: '2026-10-27' },
+  },
   {
     slug: 'yang-x-diungkap-truth-sembunyi-dalam-void',
     title: 'Yang x Diungkap: Kenapa Truth Sembunyi dalam Void',

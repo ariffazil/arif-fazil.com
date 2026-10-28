@@ -198,12 +198,42 @@
     const value = unwrap(input);
     return value == null ? '' : String(value);
   };
+  /* -- semantic vocabulary ---------------------------------------------
+   * 2026-10-28 (333-AGI): HOLD is a governance circuit-breaker, not a
+   * breakdown. Reading it as "down" painted a LIVE organ red (GEOX:
+   * transport live, 27 tools, identity VERIFIED, governance HOLD) - a false
+   * alarm on the public surface. HOLD/SABAR now read as amber (constrained);
+   * fail / error / blocked / critical stay red.
+   *
+   * Classification also stops guessing health from the DISPLAY string.
+   * The producer ships a measured `state` beside every value; values like
+   * "http 200" or "27 public tools" are not health tokens, so the record's
+   * own state is the honest source. A value that IS a health token still
+   * wins (HOLD stays HOLD).
+   */
+  const UNKNOWN_TOKENS = /^(unknown|unavailable|missing|null|none|not measured|unmeasured|unverified|n\/a|—)$/;
+  const DOWN_TOKENS = /\b(void|down|fail|failed|false|error|critical|blocked|denied|breach|retak|killed)\b/;
+  const DEGRADED_TOKENS = /\b(hold|held|holding|warn|warning|degraded|partial|amber|sabar|limited|stale|pending|planned|next|queued|incomplete)\b/;
+  const HEALTHY_TOKENS = /\b(true|up|healthy|pass|passed|seal|sealed|alive|live|fresh|ready|full|aligned|verified|kukuh|amanah|bijaksana|selamat|stable|optimal|active|measured|loaded)\b/;
+  const classifyToken = (token) => {
+    if (!token || UNKNOWN_TOKENS.test(token)) return null;
+    if (DOWN_TOKENS.test(token)) return 'down';
+    if (DEGRADED_TOKENS.test(token)) return 'degraded';
+    if (HEALTHY_TOKENS.test(token)) return 'healthy';
+    return null;
+  };
   const semanticState = (input) => {
     const token = stateToken(input).trim().toLowerCase();
-    if (!token || /^(unknown|unavailable|missing|null|none|not measured|unmeasured|unverified|n\/a|—)$/.test(token)) return 'unknown';
-    if (/\b(hold|void|down|fail|failed|false|error|critical|blocked|denied|breach|retak|killed)\b/.test(token)) return 'down';
-    if (/\b(warn|warning|degraded|partial|amber|sabar|limited|stale|pending|planned|next|queued|incomplete)\b/.test(token)) return 'degraded';
-    if (/\b(true|up|healthy|pass|passed|seal|sealed|alive|live|fresh|ready|full|aligned|verified|kukuh|amanah|bijaksana|selamat|stable|optimal|active|measured|loaded)\b/.test(token)) return 'healthy';
+    const direct = classifyToken(token);
+    if (direct) return direct;
+    if (!isRecord(input)) return 'unknown';
+    const value = unwrap(input);
+    if (hasOwn(input, 'value') && (value == null || value === '')) return 'unknown';
+    const declared = unwrap(input.status) != null ? unwrap(input.status) : unwrap(input.state);
+    if (typeof declared === 'string') {
+      const state = classifyToken(declared.trim().toLowerCase());
+      if (state) return state;
+    }
     return 'unknown';
   };
   const stateClass = semanticState;
@@ -512,14 +542,33 @@
           record,
           definition.id === 'F13' ? { source: 'declared boundary' } : undefined,
         );
-        const score = parts.score == null ? '—' : parts.score.toFixed(2);
-        const status = parts.status === UNAVAILABLE ? 'status: unavailable' : `status: ${parts.status}`;
+        // 2026-10-24 F13: a raw risk score read as a mark confuses everyone.
+        // F12 measures injection RISK — low is good. Say so in words and keep
+        // the number in the same line. Same information, no false failure.
+        const IS_RISK_FLOOR = definition.id === 'F12';
+        const riskWord = (parts.score == null) ? null
+          : (parts.score <= 0.34 ? 'rendah' : parts.score <= 0.66 ? 'sederhana' : 'tinggi');
+        const score = IS_RISK_FLOOR && riskWord ? riskWord
+          : (parts.score == null ? '—' : parts.score.toFixed(2));
+        const status = parts.status === UNAVAILABLE
+          ? 'status: unavailable'
+          : (IS_RISK_FLOOR
+              ? `risiko suntikan · nilai ${parts.score == null ? '—' : parts.score.toFixed(2)} (rendah = baik) · ${parts.status}`
+              : `status: ${parts.status}`);
+        // KX-010 five-field contract for the one physics-labelled floor name that
+        // renders a number to a human. PEACE² (F5) declares itself a POLICY_CONSTANT
+        // in the /health contract: unit 1, no monotonic drivers, no falsifier by
+        // construction. Say exactly that, instead of letting a bare score imply
+        // a measurement that does not exist.
+        const physicsContract = definition.id === 'F5'
+          ? ' · unit 1 · POLICY_CONSTANT (not measured) · method: telemetry.peace2 from kernel structural baseline · falsifier: none — constant'
+          : '';
         const fieldObservedAt = record === undefined ? null : data.observed_at;
         return `<div class="floor-cell floor-cell--${paletteClass(parts.state)}" data-floor="${definition.id}" data-measurement="${esc(parts.measurement)}">
           <div class="floor-header"><span class="floor-num">${definition.id}</span><span class="floor-name">${definition.name}</span></div>
           <div class="floor-score">${esc(score)}</div>
           <div class="floor-status">${esc(parts.measurement)} · ${esc(status)}</div>
-          <div class="floor-meta">${esc(metadataLine(sourceRecord, fieldObservedAt))}</div>
+          <div class="floor-meta">${esc(metadataLine(sourceRecord, fieldObservedAt))}${esc(physicsContract)}</div>
         </div>`;
       }).join('');
     }
@@ -578,6 +627,32 @@
     '/receipt/emit', '/receipt/verify', '/receipt/query', '/telemetry/log',
     '/cooling/emit', '/transition/emit', '/state/*',
   ];
+  function buildFleet(state) {
+    const fl = (state && state.fleet) || {};
+    const organs = (state && state.organs) || {};
+    let live = 0;
+    let total = 0;
+    for (const o of Object.values(organs)) {
+      if (!o || typeof o !== 'object') continue;
+      total += 1;
+      const l = o.liveness || o.transport;
+      const v = l && typeof l === 'object' ? (l.value !== undefined ? l.value : l.state) : l;
+      if (String(v || '').toLowerCase() === 'live') live += 1;
+    }
+    const held = fl.held;
+    const actors = Array.isArray(fl.held_actors) ? fl.held_actors : [];
+    const parts = [];
+    parts.push(total ? `${live}/${total} organ hidup` : 'organ UNKNOWN');
+    parts.push(held == null ? 'tertahan UNKNOWN' : `${held} tertahan`);
+    if (held > 0 && actors.length) parts.push(`(${actors.join(', ')})`);
+    return {
+      value: parts.join(' · '),
+      state: held == null ? 'unknown' : 'measured',
+      source: fl.source || 'ariflow:7073/health :: fq.per_actor',
+      reason: fl.reason || null,
+    };
+  }
+
   const formatEndpoints = (record) => {
     const endpoints = unwrap(record);
     if (Array.isArray(endpoints)) return endpoints.length ? endpoints.map((item) => compactValue(item)).join(' · ') : UNAVAILABLE;
@@ -624,7 +699,20 @@
     setFlow('health', health);
     setFlow('receipts', receipts);
     setFlow('chain', chain);
-    setFlow('fq', fq);
+    // ── 2026-10-24 F13: FQ leaves the face of the page ──────────────────────
+    // The daemon deprecates the scalar as a health indicator and it moves every
+    // cycle (four readings in forty minutes across three surfaces). A number that
+    // dances teaches readers to distrust every other number on the page. Publish
+    // three stable facts instead: tracked, held, and why. The scalar is untouched
+    // in the payload — only its display is removed.
+    const fleet = buildFleet(data);
+    setFlow('fq', fleet, (f) => f.value);
+    {
+      const k = $('#flow-fq .k');
+      if (k) k.textContent = 'fleet';
+      const m = $('#flow-fq-meta');
+      if (m && fleet.reason) m.textContent = fleet.reason;
+    }
     setFlow('endpoints', endpointRecord, formatEndpoints);
     const source = $('#flow-source-value');
     if (source) source.textContent = sourceValue(flow.envelope) ? `source: ${sourceValue(flow.envelope)}` : 'source: missing';
@@ -735,13 +823,16 @@
     }
     return undefined;
   };
-  const aggregateSignals = (signals) => {
+  const aggregateWithCoverage = (signals) => {
     const states = signals.map((signal) => semanticState(signal));
-    if (states.includes('down')) return 'down';
-    if (states.includes('degraded')) return 'degraded';
-    if (states.includes('unknown')) return 'unknown';
-    return states.length && states.every((state) => state === 'healthy') ? 'healthy' : 'unknown';
+    const measured = states.filter((state) => state !== 'unknown').length;
+    let state = 'unknown';
+    if (states.includes('down')) state = 'down';
+    else if (states.includes('degraded')) state = 'degraded';
+    else if (states.length && states.every((one) => one === 'healthy')) state = 'healthy';
+    return { state, measured, total: states.length };
   };
+  const aggregateSignals = (signals) => aggregateWithCoverage(signals).state;
 
   function renderOrgans(data) {
     const organs = unwrap(data.organs);
@@ -976,8 +1067,11 @@
       const organKey = isRecord(organs) ? Object.keys(organs).find((candidate) => normalizeKey(candidate) === key) : null;
       const organ = organKey ? unwrap(organs[organKey]) : null;
       const records = isRecord(organ) ? ['transport', 'dependency', 'capability', 'governance', 'identity', 'last_receipt', 'contract'].map((field) => organ[field]) : [];
-      const state = aggregateSignals(records);
-      return `<div class="pulse-cell pulse-cell--${paletteClass(state)}"><div class="pulse-name">${name}</div><div class="pulse-signal">${signal}</div><div class="pulse-status">${state.toUpperCase()}</div></div>`;
+      const { state, measured, total } = aggregateWithCoverage(records);
+      const label = !total ? 'UNKNOWN'
+        : (state === 'unknown' ? `${measured}/${total} MEASURED`
+          : (measured < total ? `${state.toUpperCase()} ${measured}/${total}` : state.toUpperCase()));
+      return `<div class="pulse-cell pulse-cell--${paletteClass(state)}"><div class="pulse-name">${name}</div><div class="pulse-signal">${signal}</div><div class="pulse-status">${label}</div></div>`;
     }).join('');
   }
 

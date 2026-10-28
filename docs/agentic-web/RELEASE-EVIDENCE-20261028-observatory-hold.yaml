@@ -1,0 +1,43 @@
+# Release evidence — Observatory truth-drift fix (HOLD != DOWN) · 2026-10-28 · 333-AGI
+# External name: release evidence / deploy receipt.
+# Do not call this a kernel SEAL.
+release_candidate:
+  commit: "a53bed89c0a39aa05eff5f386462547ce571c50a"
+  branch: main
+  environment: production_public_html
+  changed_routes:
+    - "/_shared/observatory.js"
+    - "/arifos/"
+  public_effect:
+    - "GEOX pulse cell: DOWN (red) -> DEGRADED 5/7 (amber). GEOX is live (transport live, 27 public tools, identity VERIFIED); only its governance verdict is HOLD, which is a gate, not a breakdown."
+    - "arifOS pulse: UNKNOWN -> 5/7 MEASURED; A-FORGE/WEALTH/WELL: UNKNOWN -> 4/7 MEASURED; AAA: UNKNOWN -> 3/7 MEASURED."
+    - "READINESS (http 200) and CAPABILITY (N public tools) badges: grey/unknown -> green/healthy (producer's measured state is now trusted)."
+    - "Real failures stay red: fail / error / blocked / critical (F1 AMANAH 0.00 still renders as a failure)."
+    - "No false green: WEALTH and arifOS remain unknown where governance/receipt are genuinely unmeasured."
+  tests:
+    doctor_before: "not_run (single-file static change; no whole-site build, no Caddy reload)"
+    doctor_after: "not_run (same reason)"
+    doctor_fail_set_delta: "n/a"
+    build: "not_run (no Vite build; sites/shared canonical source mirrored byte-identically into public/_shared, public/arifos/_shared, dist/_shared and the two live paths)"
+    playwright_home: "PASS - live render https://arif-fazil.com/arifos/ (2026-10-28): pulse cells + per-signal semanticState probe read in a real browser"
+    playwright_human: "not_run (no /human page touched)"
+    playwright_institution: "not_run (no /institution page touched)"
+    axe: not_run
+    lighthouse: not_run
+  verification:
+    differential_proof: "PASS - node differential_proof.js on the real /api/public-state payload: GEOX DOWN 3/7 -> DEGRADED 5/7, arifOS 3/7 -> 5/7, no false green. ASSERTIONS: PASS"
+    parity_gate: "PASS - scripts/check_observatory_parity.sh: all three tracked renderer surfaces byte-identical (sha 346af725c3bc27b0); it reported drift before this work"
+    served_bytes: "PASS - curl https://arif-fazil.com/_shared/observatory.js?v=20261028-holdtruth == on-disk /var/www/html/_shared/observatory.js (sha 346af725c3bc27b0)"
+    repo_test: "PARTIAL - tests/observatory-renderer.test.cjs test 1 (source contract + mirror sync) passes; test 2 cannot run here (Playwright Chromium binary not installed: Executable doesn't exist at /root/.cache/ms-playwright/chromium_headless_shell-1234/...). Pre-existing environment gap, reproduced independently of this change; live render verified with the MCP Playwright browser instead."
+  security:
+    secrets_scan: "not_run (no new dependency, no credential, no config value; single static JS file)"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: "/root/forge_work/receipts/observatory-hold-fix-20261028/backups/ (pre-fix live bytes sha 5a9e6f2f06b07494, pre-fix canonical sha 40e79b1866, pre-fix page html) + *.pre-holdfix-20261028 beside every written file"
+    steps: "restore the pre-fix bytes for /var/www/html/_shared/observatory.js and the four tracked repo files, restore the old ?v= marker, no Caddy reload needed"
+  notes:
+    - "Cache: origin sends cache-control: max-age=14400, so the page's ?v= was bumped to 20261028-holdtruth to bust it."
+    - "Residual filed: p1-observatory-snapshot-envelope-no-health-tokens (producer-side: observatory.v1 organ envelope carries raw values + epistemic state labels, so the pulse can only measure 1-3/7 when the snapshot source is used)."
+    - "No arifOS kernel change, no VAULT999 append, no DNS/secret touch, no make deploy (whole-site build + Caddy reload = T3 and unnecessary for a single-file static change)."

@@ -112,6 +112,14 @@
   .colophon .tag{font-style:italic}
   .colophon nav a{color:var(--dim);margin-left:1.1rem;font-style:italic}
   .colophon nav a:hover{color:var(--ink)}
+  .graf{border-top:1px solid var(--hair);padding:2rem 0;border-bottom:1px solid var(--hair)}
+  .graf+.graf{border-top:none}
+  .graf .gt{font-style:italic;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem}
+  .graf .gs{font-size:.9rem;color:var(--dim);margin-bottom:1.2rem}
+  .graf svg{width:100%;height:auto;display:block}
+  .graf figcaption{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);margin-top:1rem;line-height:1.7}
+  svg text{font-family:'IBM Plex Mono',monospace;fill:var(--dim)}
+  svg .gv{fill:var(--ink)} svg .ga{fill:var(--accent)}
   @media (max-width:640px){
     .row{grid-template-columns:1fr}
     .row .val{white-space:normal}
@@ -234,7 +242,94 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">V.</span>Apa yang kita tidak tahu</h2>
+    <h2 class="display"><span class="no">V.</span>Dalam bentuk graf</h2>
+    <p class="dim">Empat lukisan daripada nombor yang sama halaman ini. Tiada paksi disorok; yang dipotong diberitahu. Emas = perkara yang menekan.</p>
+
+    <figure class="graf">
+      <div class="gt">Tangki menyusut — dan penggantiannya jatuh lebih cepat</div>
+      <div class="gs">Rizab 2P net entitlement (bar kelabu) dan nisbah penggantian RRR 1P purata tiga tahun (bar emas), 1 Januari setiap tahun.</div>
+      <svg viewBox="0 0 640 260" role="img" aria-label="Rizab turun 9.35 ke 7.92 bilion boe; RRR jatuh 1.6 ke 0.3">
+        <text x="580" y="16" font-size="11" text-anchor="end">Tong boleh jual (bilion boe)</text>
+        <rect x="100" y="28.1" width="90" height="116.9" fill="#9aa0a8"/>
+        <rect x="275" y="37" width="90" height="108" fill="#9aa0a8"/>
+        <rect x="450" y="46" width="90" height="99" fill="#9aa0a8"/>
+        <text x="138" y="20" font-size="13" class="gv">9.35</text>
+        <text x="313" y="29" font-size="13" class="gv">8.64</text>
+        <text x="488" y="38" font-size="13" class="ga">7.92</text>
+        <text x="138" y="163" font-size="11">2024</text>
+        <text x="313" y="163" font-size="11">2025</text>
+        <text x="488" y="163" font-size="11">2026</text>
+        <line x1="60" y1="145" x2="580" y2="145" stroke="#1f2733" stroke-width="1"/>
+        <text x="580" y="196" font-size="11" text-anchor="end">Penggantian (RRR 1P, purata 3 thn)</text>
+        <rect x="100" y="174.2" width="90" height="60.8" fill="#c9a227"/>
+        <rect x="275" y="204.6" width="90" height="30.4" fill="#c9a227"/>
+        <rect x="450" y="223.6" width="90" height="11.4" fill="#c9a227"/>
+        <text x="141" y="192" font-size="13" fill="#0a0c10">1.6</text>
+        <text x="316" y="222" font-size="13" fill="#0a0c10">0.8</text>
+        <text x="491" y="217" font-size="13" class="ga">0.3</text>
+        <line x1="60" y1="235" x2="580" y2="235" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>Tong turun 15% dalam dua tahun — tetapi kadar gantinya jatuh 81%. Yang runtuh dahulu ialah pengganti, bukan stok. Sumber: Integrated Report 2025 PETRONAS.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Tuntutan ke atas dompet naik semula ke paras puncak</div>
+      <div class="gs">Dividen: yang dibayar (kelabu) berbanding yang diunjurkan kerajaan (emas), RM bilion.</div>
+      <svg viewBox="0 0 640 200" role="img" aria-label="Dividen dibayar 32B 2025; isytihar 20B 2026; unjuran 27B dan 32B">
+        <rect x="70" y="37" width="80" height="128" fill="#9aa0a8"/>
+        <rect x="210" y="85" width="80" height="80" fill="#9aa0a8"/>
+        <rect x="350" y="57" width="80" height="108" fill="#c9a227"/>
+        <rect x="490" y="37" width="80" height="128" fill="#c9a227"/>
+        <text x="92" y="29" font-size="13" class="gv">32</text>
+        <text x="237" y="77" font-size="13" class="gv">20</text>
+        <text x="377" y="49" font-size="13" class="ga">27</text>
+        <text x="517" y="29" font-size="13" class="ga">32</text>
+        <text x="70" y="184" font-size="11">2025 dibayar</text>
+        <text x="210" y="184" font-size="11">2026 isytihar</text>
+        <text x="350" y="184" font-size="11">2026 unjuran</text>
+        <text x="490" y="184" font-size="11">2027 unjuran</text>
+        <line x1="60" y1="165" x2="590" y2="165" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>2026 nampak lega pada RM20B — sehingga Belanjawan menaikkannya. Unjuran ialah angka Kementerian Kewangan, bukan keputusan lembaga PETRONAS. Sumber: 2027 Fiscal Outlook.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Enam bulan ini, wang keluar melebihi wang masuk</div>
+      <div class="gs">Aliran tunai operasi (CFFO) berbanding pelaburan modal + dividen dibayar, 1H 2026, RM bilion.</div>
+      <svg viewBox="0 0 640 200" role="img" aria-label="CFFO 47.5 berbanding keluar 49.4 — 104 peratus">
+        <rect x="160" y="55.7" width="110" height="109.3" fill="#9aa0a8"/>
+        <rect x="340" y="51.4" width="110" height="113.6" fill="#c9a227"/>
+        <text x="176" y="47" font-size="13" class="gv">CFFO 47.5</text>
+        <text x="330" y="43" font-size="13" class="ga">Keluar 49.4</text>
+        <text x="160" y="184" font-size="11">masuk dari operasi</text>
+        <text x="340" y="184" font-size="11">capex 41.4 + dividen 8.0</text>
+        <line x1="60" y1="165" x2="580" y2="165" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>104%. Lebihan dibiayai simpanan, pelupusan aset dan pinjaman — satu separuh tahun, bukan trend terbukti. Sumber: Laporan Interim 1H 2026.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Pengeluaran turun tiga kali berturut</div>
+      <div class="gs">Purata pengeluaran harian, ribu boe/sehari. Paksi dipotong 2,200–2,500 supaya arah kelihatan — dinyatakan secara terbuka.</div>
+      <svg viewBox="0 0 640 170" role="img" aria-label="Pengeluaran 2451 ke 2423 ke 2341 ribu boe sehari">
+        <polyline points="120,29.6 320,40.8 520,73.6" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+        <circle cx="120" cy="29.6" r="4" fill="#c9a227"/>
+        <circle cx="320" cy="40.8" r="4" fill="#c9a227"/>
+        <circle cx="520" cy="73.6" r="4" fill="#c9a227"/>
+        <text x="100" y="20" font-size="13" class="gv">2,451</text>
+        <text x="300" y="31" font-size="13" class="gv">2,423</text>
+        <text x="500" y="66" font-size="13" class="ga">2,341</text>
+        <text x="104" y="150" font-size="11">2024</text>
+        <text x="304" y="150" font-size="11">2025</text>
+        <text x="496" y="150" font-size="11">1H 2026</text>
+        <line x1="60" y1="130" x2="580" y2="130" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>Penurunan 4.5% dalam tempoh sama dengan tangki menyusut. Sumber: kenyataan tahunan &amp; interim PETRONAS.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">VI.</span>Apa yang kita tidak tahu</h2>
     <ul class="plain">
       <li>Tahun tunggal berapa tong diganti tidak diterbitkan. Yang ada hanya purata tiga tahun, dan ia jatuh ke 0.3.</li>
       <li>Apa yang PETRONAS dapat sebagai ganti tong yang tidak lagi dimiliki — belum ada bukti sewa atau hak jual yang naik.</li>
@@ -247,7 +342,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">VI.</span>Siapa memegang keputusan</h2>
+    <h2 class="display"><span class="no">VII.</span>Siapa memegang keputusan</h2>
     <p>Angka di atas tidak memutuskan apa-apa; lembaga yang memutuskan. Semakan 28 Oktober 2026 pada laman rasmi PETRONAS: Mohd Jukris Abdul Wahab disenaraikan sebagai Executive Director — serentak Chief Operating Officer dan EVP &amp; CEO Upstream. Tiga daripada lapan pengarah kini eksekutif: PGCEO, COO merangkap ketua Upstream, dan CFO. Orang yang memiliki masalah upstream kini mengundi di lembaga yang menilai masalah itu. Tarikh rasmi pelantikannya sebagai pengarah, dan mandat yang menyertainya, belum berdokumen awam.</p>
     <p>Dua jadual lain berjalan di luar jadual akaun. Di Mahkamah Persekutuan: rujukan PETRONAS (10 Januari 2026) tentang konflik PDA 1974 dengan Distribution of Gas Ordinance 2016 Sarawak, dan petisyen Sarawak mencabar PDA 1974, Continental Shelf Act 1966 dan Petroleum Mining Act 1966. Di Sabah: mahkamah mengakui hak 40% hasil; bayaran interim RM1.5 bilion dibayar Jun 2026, jauh daripada tuntutan RM5–23 bilion setahun. Kedua-duanya menekan dompet yang sama yang diminta membayar dividen.</p>
     <p class="src">Sumber: <a href="https://www.petronas.com/about-us/our-leaders">petronas.com — Our Leaders</a> (semakan 28 Okt 2026) · The Edge, 18 Jan 2026 · The Star, 3 Jun 2026 · Batas: komposisi lembaga bukan bukti keputusan; jawatan luar seseorang pengarah bukan bukti arahan mengundi.</p>
@@ -259,7 +354,7 @@
   </div>
 
   <section>
-    <h2 class="display"><span class="no">VII.</span>Ramalan berdaftar — diuji masa, bukan dipercaya</h2>
+    <h2 class="display"><span class="no">VIII.</span>Ramalan berdaftar — diuji masa, bukan dipercaya</h2>
     <p class="dim">Dua ramalan berdaftar dalam lejar CHRON pada 28 Oktober 2026. Pendaftaran bukan pengesahan; hanya hasil yang disahkan mengubah skor.</p>
     <ul class="toc" style="margin-top:1.6rem">
       <li><span class="d">0.63</span><span class="t">RRR (1P) purata 3 tahun pada 1.1.2027 kekal &lt; 0.8 — falsifikasi: Integrated Report 2026 mencetak 0.8 atau lebih</span><span class="dash"></span><span class="d">31 Mac 2027</span></li>
@@ -270,7 +365,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">VIII.</span>Nombor yang dicetak</h2>
+    <h2 class="display"><span class="no">IX.</span>Nombor yang dicetak</h2>
     <p class="dim" style="margin-bottom:1.6rem">Ini bukan ramalan. Ini apa yang laporan syarikat cetak.</p>
     <div class="fineprint">
       <p>Tunai 30 Jun 2026: RM193.6 bilion. Disember 2025: RM204.4 bilion. Hutang kumpulan 30 Jun: RM126.8 bilion. Gearing 21.2 peratus, termasuk jaminan. Nota dan bon ada dalam hutang itu. Tunai bersih selepas hutang: RM66.8 bilion.</p>

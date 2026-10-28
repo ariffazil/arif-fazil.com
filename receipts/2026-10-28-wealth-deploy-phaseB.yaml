@@ -1,0 +1,86 @@
+schema: receipt/v1
+receipt_id: 2026-10-28-wealth-deploy-phaseB
+phase: "B"
+depends_on: 2026-10-28-wealth-caddy-soft200-repair
+actor: claude-code-kvm8
+agent_id: FI-002
+lane: engineer
+authority: "F13 AUTHORIZATION: LIMITED TWO-PHASE EXECUTION (Phase B, conditional) — all gates passed before apply"
+deploy_receipt: /root/forge_work/deployments/wealth/20261028T043825304753922Z/receipt.json
+deploy_status: live
+outcome: "SHIPPED, then REGRESSION DETECTED and RECOVERED from F1 snapshot"
+
+gates_before_apply:
+  dry_run: pass
+  validate_build: "isolated build validation passed"
+  gate_1f_doctor: pass
+  gate_1f2_soft200: "pass (garbage path returned HTTP 404, not 200)"
+
+what_shipped_correctly:
+  - { path: /vitals/,        before: "zombie link (served homepage 35889b)", after: "real page 55328b" }
+  - { path: /malaysia/,      content: "reconciled live->source, checksum MATCH" }
+  - overlay: ".well-known/agent.json preserved (wealth-organ-identity, preserve-live)"
+
+regression:
+  detected_after_apply: true
+  cause: "deploy-site.sh replaces the wealth webroot with source; source has no markets/, api/, robots.txt, .well-known/{agent-card,mcp}.json, so 22 live-only files disappeared"
+  impact_observed:
+    - "/markets/ and all /markets/*/ -> 404 (were 200)"
+    - "/.well-known/agent-card.json -> gone (agent discovery surface)"
+    - "/.well-known/mcp.json -> gone"
+    - "/robots.txt -> gone"
+    - "/api/markets/*.json -> gone"
+  gate_blind_spot: "Gate 1f2 probes only one garbage path on the homepage; no gate asserts live-only artefacts survive a deploy"
+  files_lost: 22
+  files_list: [".well-known/agent-card.json", ".well-known/mcp.json", "README.md",
+   "api/markets/gas/latest.json", "api/markets/gold/latest.json", "api/markets/klci/latest.json",
+   "api/markets/oil/latest.json", "api/markets/registry.json", "api/markets/usdmyr/latest.json",
+   "index.html.bak-20261004-boards", "markets/gas/index.html", "markets/gas/index.md",
+   "markets/gold/index.html", "markets/gold/index.md", "markets/index.html",
+   "markets/klci/index.html", "markets/klci/index.md", "markets/oil/index.html",
+   "markets/oil/index.md", "markets/usdmyr/index.html", "markets/usdmyr/index.md", "robots.txt"]
+
+recovery:
+  method: "restore from pre-deploy F1 snapshot, non-clobbering (cp -a -n), then chown www-data"
+  snapshot: /root/_archive/wealth-live-20261028  (27 files, taken before any mutation)
+  deploy_previous_dir: /root/forge_work/deployments/wealth/20261028T043825304753922Z/previous
+  restored_files: 22
+  remaining_missing: 0
+
+verification_after_recovery:
+  positive:
+    - { path: /,                            code: 200, bytes: 35889 }
+    - { path: /gold/,                       code: 200, bytes: 67960 }
+    - { path: /oil/,                        code: 200, bytes: 33344 }
+    - { path: /vitals/,                     code: 200, bytes: 55328 }
+    - { path: /markets/,                    code: 200, bytes: 11148 }
+    - { path: /markets/gold/,               code: 200, bytes: 9011 }
+    - { path: /markets/oil/,                code: 200, bytes: 9013 }
+    - { path: /markets/gas/,                code: 200, bytes: 9060 }
+    - { path: /markets/klci/,               code: 200, bytes: 9014 }
+    - { path: /markets/usdmyr/,             code: 200, bytes: 9035 }
+    - { path: /robots.txt,                  code: 200, bytes: 286 }
+    - { path: /.well-known/agent-card.json, code: 200, bytes: 10771, type: application/json }
+    - { path: /.well-known/mcp.json,        code: 200, bytes: 2923,  type: application/json }
+    - { path: /api/markets/registry.json,   code: 200, bytes: 7903 }
+  negative:
+    - { path: /__non_existent_path_soft200_check__, code: 404 }
+    - { path: /__missing_<nonce>__,                 code: 404 }
+  source_to_live_checksums: "index.html, llms.txt, sitemap.xml, malaysia/index.html, vitals/index.html all MATCH"
+
+open_defect_requires_decision:
+  id: WEALTH-DEPLOY-DESTRUCTIVE
+  summary: "deploy-site.sh wealth --apply is destructive for live-only artefacts; a repeat will wipe the same 22 files"
+  proposed_fix: "add preserve-live overlays for markets, api, robots.txt, .well-known, README.md in infra/runtime-overlays.json"
+  status: NOT APPLIED (outside the granted Phase A/B authorization scope)
+  needs: ARIF
+
+not_done:
+  - did not touch /gold/ or /oil/ links
+  - did not deploy GEOX, WELL, AAA
+  - did not delete quarantined files (/root/_to_delete/wealth-superseded-20261028, 5 files)
+  - did not modify other Caddy vhosts
+  - did not weaken Gate 1f2
+
+self_sealed: false
+final_acceptance: ARIF

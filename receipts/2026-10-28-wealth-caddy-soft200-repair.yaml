@@ -1,0 +1,60 @@
+schema: receipt/v1
+receipt_id: 2026-10-28-wealth-caddy-soft200-repair
+phase: "A"
+actor: claude-code-kvm8
+agent_id: FI-002
+lane: engineer
+authority: "F13 AUTHORIZATION: LIMITED TWO-PHASE EXECUTION (Phase A), relayed by ARIF 2026-10-28"
+scope: "close WEALTH soft-200 fallback; do not touch content, other vhosts, or /gold//oil/ links"
+verdict: PASS
+
+target:
+  file: /etc/caddy/vhosts/wealth.arif-fazil.com.conf
+  backup: /etc/caddy/vhosts/wealth.arif-fazil.com.conf.bak-20261028T043714Z-soft200
+  sha256_before: dde99f5ade21de77f6e59478c36268596a0074e63973ed502e68ac9a5c2d0461
+  backup_cmp_source_identical: true
+
+mutation:
+  line: 245
+  occurrences_found: 1
+  occurrences_expected: 1
+  removed: 'try_files {path} {path}/index.html /index.html'
+  added: 'try_files {path} {path}/index.html =404'
+  note: "precondition via anchored whitespace-tolerant regex; a first attempt with grep -x matched 0 and HOLDed (leading tabs) — guard worked, pattern corrected"
+  caddy_validate: "Valid configuration"
+  reload: "systemctl reload caddy"
+  caddy_active: true
+  active_enter_timestamp_unchanged: "Tue 2026-10-27 00:46:42 +08 (reload, not restart)"
+
+verification:
+  negative_routes:
+    - path: /__non_existent_path_soft200_check__
+      expected: 404
+      observed: 404
+      result: PASS
+    - path: /__missing_1793162273__
+      expected: 404
+      observed: 404
+      result: PASS
+  positive_routes:
+    - { path: /,               code: 200, result: PASS }
+    - { path: /gold/,          code: 200, result: PASS }
+    - { path: /oil/,           code: 200, result: PASS }
+    - { path: /markets/,       code: 200, result: PASS }
+    - { path: /markets/gold/,  code: 200, result: PASS }
+    - { path: /markets/oil/,   code: 200, result: PASS }
+    - { path: /markets/gas/,   code: 200, result: PASS }
+    - { path: /markets/klci/,  code: 200, result: PASS }
+    - { path: /markets/usdmyr/,code: 200, result: PASS }
+
+not_done:
+  - link changes to /gold/ or /oil/ (explicitly out of scope)
+  - content deploy (Phase B, separate receipt)
+  - any other Caddy vhost
+  - Gate 1f2 weakening (gate left intact and now passes on merit)
+
+rollback_available: true
+rollback_command: "cp -a /etc/caddy/vhosts/wealth.arif-fazil.com.conf.bak-20261028T043714Z-soft200 /etc/caddy/vhosts/wealth.arif-fazil.com.conf && caddy validate --config /etc/caddy/Caddyfile && systemctl reload caddy"
+
+self_sealed: false
+final_acceptance: ARIF

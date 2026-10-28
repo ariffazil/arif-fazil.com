@@ -39,18 +39,29 @@ def sha256(path: str) -> str:
 
 
 def walk(root: str) -> dict[str, str]:
-    """Return {relative_path: abs_path} for regular files under root."""
+    """Return {relative_path: abs_path} for regular files AND symlinks under root.
+
+    Symlinks are included deliberately: a webroot can be a symlink farm into live
+    runtime state (e.g. /var/www/html/aaa/index.html -> /root/AAA/state/*.html).
+    rsync -a --delete replaces a symlink with a regular file or removes it, so an
+    unnoticed symlink is a silent functional regression. Skipping them would be a
+    gate blind spot.
+    """
     out: dict[str, str] = {}
     if not os.path.isdir(root):
         return out
     for dirpath, _dirnames, filenames in os.walk(root):
         for name in filenames:
             abs_path = os.path.join(dirpath, name)
-            if os.path.islink(abs_path) or not os.path.isfile(abs_path):
+            if not (os.path.isfile(abs_path) or os.path.islink(abs_path)):
                 continue
             rel = os.path.relpath(abs_path, root).replace(os.sep, "/")
             out[rel] = abs_path
     return out
+
+
+def is_symlink(path: str) -> bool:
+    return os.path.islink(path)
 
 
 def covered_by_overlay(rel: str, overlays: list[str]) -> str | None:
@@ -125,13 +136,31 @@ def main() -> int:
             would_delete_unknown.append(rel)
 
     source_owned_added = sorted(set(src) - set(live))
-    source_owned_changed = [
-        rel
-        for rel in sorted(set(src) & set(live))
-        if sha256(src[rel]) != sha256(live[rel])
-    ]
+    source_owned_changed = []
+    type_mismatch = []
+    for rel in sorted(set(src) & set(live)):
+        if is_symlink(src[rel]) != is_symlink(live[rel]):
+            type_mismatch.append(
+                {
+                    "path": rel,
+                    "source_kind": "symlink" if is_symlink(src[rel]) else "file",
+                    "live_kind": "symlink" if is_symlink(live[rel]) else "file",
+                }
+            )
+        elif not is_symlink(live[rel]):
+            if sha256(src[rel]) != sha256(live[rel]):
+                source_owned_changed.append(rel)
 
-    ok = not would_delete_known and not would_delete_unknown
+    live_symlinks = sorted(
+        [{"path": rel, "target": os.readlink(live[rel])} for rel in live if is_symlink(live[rel])],
+        key=lambda d: d["path"],
+    )
+
+    # A live symlink replaced by a source regular file is a functional regression
+    # even though no file "disappears" — fail closed on that direction.
+    broken_symlinks = [t for t in type_mismatch if t["live_kind"] == "symlink"]
+
+    ok = not would_delete_known and not would_delete_unknown and not broken_symlinks
     report = {
         "gate": "LIVE_OWNERSHIP_PRESERVATION",
         "site": args.site,
@@ -147,6 +176,9 @@ def main() -> int:
             "would_delete_obsolete": len(would_delete_obsolete),
             "would_delete_known": len(would_delete_known),
             "would_delete_unknown": len(would_delete_unknown),
+            "live_symlinks": len(live_symlinks),
+            "would_break_symlink": len(broken_symlinks),
+            "type_mismatch": len(type_mismatch),
         },
         "source_owned_added": source_owned_added,
         "source_owned_changed": source_owned_changed,
@@ -155,6 +187,9 @@ def main() -> int:
         "would_delete_obsolete": would_delete_obsolete,
         "would_delete_known": would_delete_known,
         "would_delete_unknown": would_delete_unknown,
+        "live_symlinks": live_symlinks,
+        "would_break_symlink": broken_symlinks,
+        "type_mismatch": type_mismatch,
     }
 
     if args.json:
@@ -166,6 +201,13 @@ def main() -> int:
         print(f"  overlays={len(overlays)}")
         for key, val in report["counts"].items():
             print(f"  {key:24} {val}")
+        for s in report["live_symlinks"]:
+            print(f"  SYMLINK {s['path']} -> {s['target']}")
+        for t in report["would_break_symlink"]:
+            print(
+                f"  BREAK[would_break_symlink] {t['path']} "
+                f"(live {t['live_kind']} <-> source {t['source_kind']})"
+            )
         for label in ("would_delete_known", "would_delete_unknown"):
             for rel in report[label]:
                 print(f"  LOSS[{label}] {rel}")

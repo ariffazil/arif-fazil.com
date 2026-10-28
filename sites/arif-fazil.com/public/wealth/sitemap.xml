@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wealth.arif-fazil.com/</loc></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/gold/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/oil/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/gas/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/klci/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/usdmyr/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/gold/index.md</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/oil/index.md</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/gas/index.md</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/klci/index.md</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/markets/usdmyr/index.md</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/llms.txt</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/tools</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/.well-known/agent-card.json</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://wealth.arif-fazil.com/api/markets/registry</loc><lastmod>2026-10-28</lastmod></url>
 </urlset>

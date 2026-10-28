@@ -1,1019 +1,645 @@
 <!DOCTYPE html>
-<html lang="en" data-ring="ORGAN" data-organ="wealth">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WEALTH — Sovereign Valuation Kernel · arifOS</title>
-<meta property="og:image" content="https://wealth/og-image.jpg" />
-<meta property="og:description" content="Physics over narrative. High-precision capital evaluation mapped to fundamental physical dimensions. Part of the arifOS constellation." />
-<meta property="og:title" content="WEALTH — Sovereign Valuation Kernel · arifOS" />
-<meta name="description" content="Physics over narrative. High-precision capital evaluation mapped to fundamental physical dimensions. Part of the arifOS constellation.">
-<link rel="canonical" href="https://wealth.arif-fazil.com/">
-<!-- Federation design system (SSOT) -->
-<link rel="stylesheet" href="/_shared/design-system/tokens.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg:          #07070d;
-    --surface:     #0d0d1a;
-    --surface2:    #111120;
-    --border:      #1e1e32;
-    --border2:     #2c2c4a;
-    --gold:        #c9a84c;
-    --gold-dim:    #7a6028;
-    --gold-bright: #f0c840;
-    --gold-bg:     rgba(201,168,76,0.06);
-    --text:        #e2d8c8;
-    --text-dim:    #6a6050;
-    --text-mid:    #9a9080;
-    --green:       #22c55e;
-    --red:         #ef4444;
-    --amber:       #f59e0b;
-    --cyan:        #00d4aa;
-    --cyan-dim:    rgba(0,212,170,0.12);
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
-    overflow-x: hidden;
-  }
-
-  /* Atmospheric background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.06) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 60% at 90% 70%, rgba(0,212,170,0.03) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .shell {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-  }
-
-  /* ── HEADER ── */
-  .site-header {
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    text-decoration: none;
-  }
-
-  .logo sup {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.5rem;
-    color: var(--gold-dim);
-    vertical-align: super;
-    letter-spacing: 0.15em;
-    margin-left: 0.3rem;
-  }
-
-  .header-nav {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-  }
-
-  .header-nav a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    transition: color 0.2s;
-  }
-
-  .header-nav a:hover { color: var(--gold); }
-
-  .header-cta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--gold);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border: 1px solid var(--gold-dim);
-    padding: 0.4rem 0.9rem;
-    transition: all 0.2s;
-  }
-
-  .header-cta:hover {
-    background: var(--gold-bg);
-    border-color: var(--gold);
-  }
-
-  /* ── HERO ── */
-  .hero {
-    padding: 7rem 0 5rem;
-    position: relative;
-  }
-
-  .hero-eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .hero-eyebrow::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--gold-dim);
-  }
-
-  .hero-headline {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 1.0;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    max-width: 14ch;
-  }
-
-  .hero-headline em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-tagline {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--text-mid);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
-  }
-
-  .hero-body {
-    font-size: 1rem;
-    color: var(--text-mid);
-    max-width: 52ch;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .btn-primary {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #000;
-    background: var(--gold);
-    text-decoration: none;
-    padding: 0.85rem 2rem;
-    transition: all 0.25s;
-    display: inline-block;
-  }
-
-  .btn-primary:hover {
-    background: var(--gold-bright);
-    transform: translateY(-1px);
-  }
-
-  .btn-ghost {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .btn-ghost:hover { color: var(--gold); }
-
-  /* Hero stats */
-  .hero-stats {
-    position: absolute;
-    top: 6rem;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border-left: 1px solid var(--border);
-    padding-left: 3rem;
-  }
-
-  .stat-item {
-    text-align: right;
-  }
-
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2.5rem;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-top: 0.25rem;
-  }
-
-  /* ── VERDICT STRIP ── */
-  .verdict-strip {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-bottom: 6rem;
-    overflow: hidden;
-  }
-
-  .verdict-item {
-    padding: 1.5rem 2.5rem;
-    position: relative;
-  }
-
-  .verdict-item + .verdict-item {
-    border-left: 1px solid var(--border);
-  }
-
-  .verdict-chip {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-  }
-
-  .verdict-chip.qualify { color: var(--green); }
-  .verdict-chip.hold    { color: var(--amber); }
-  .verdict-chip.reject  { color: var(--red); }
-
-  .verdict-desc {
-    font-size: 0.82rem;
-    color: var(--text-mid);
-    line-height: 1.5;
-  }
-
-  /* ── SECTION LABEL ── */
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .section-label::before {
-    content: attr(data-n);
-    display: inline-block;
-    color: var(--border2);
-    font-size: 0.7rem;
-  }
-
-  /* ── DIMENSIONAL FORGE ── */
-  .forge-section {
-    margin-bottom: 6rem;
-  }
-
-  .forge-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .forge-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    font-weight: 400;
-    line-height: 1.1;
-  }
-
-  .forge-title em { font-style: italic; color: var(--gold); }
-
-  .forge-body {
-    font-size: 0.875rem;
-    color: var(--text-mid);
-    line-height: 1.8;
-  }
-
-  /* Tool grid */
-  .tool-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-  }
-
-  .tool-cell {
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem;
-    transition: background 0.2s;
-    cursor: default;
-  }
-
-  .tool-cell:hover { background: var(--surface); }
-
-  .tool-dim {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
-  }
-
-  .tool-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text);
-    margin-bottom: 0.35rem;
-  }
-
-  .tool-metric {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    line-height: 1.4;
-  }
-
-  /* ── CAPITAL JUDGE FEATURE ── */
-  .judge-feature {
-    margin-bottom: 6rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-
-  .judge-left {
-    padding: 4rem;
-    border-right: 1px solid var(--border);
-    background: var(--surface);
-  }
-
-  .judge-right {
-    padding: 4rem;
-    background: var(--surface2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .judge-eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: 1.5rem;
-  }
-
-  .judge-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  .judge-title em { font-style: italic; color: var(--gold); }
-
-  .judge-body {
-    font-size: 0.875rem;
-    color: var(--text-mid);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-
-  .judge-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .judge-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    padding: 0.25rem 0.6rem;
-    border: 1px solid var(--border2);
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
-  }
-
-  /* Mock verdict display */
-  .verdict-mock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .verdict-mock-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-  }
-
-  .verdict-mock-word {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3.5rem;
-    font-weight: 400;
-    color: var(--green);
-    text-shadow: 0 0 40px rgba(34,197,94,0.25);
-    line-height: 1;
-  }
-
-  .verdict-mock-score {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-  }
-
-  .verdict-mock-dims {
-    width: 100%;
-    max-width: 280px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin-top: 1rem;
-  }
-
-  .dim-mock-row {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .dim-mock-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--text-dim);
-    width: 65px;
-    text-transform: uppercase;
-  }
-
-  .dim-mock-track {
-    flex: 1;
-    height: 2px;
-    background: var(--border);
-  }
-
-  .dim-mock-fill {
-    height: 100%;
-    background: var(--green);
-    transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
-  }
-
-  .dim-mock-val {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--green);
-    width: 60px;
-    text-align: right;
-  }
-
-  /* ── CONSTELLATION BRIDGE ── */
-  .bridge-section {
-    margin-bottom: 6rem;
-    padding: 4rem;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    text-align: center;
-  }
-
-  .bridge-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 0.75rem;
-  }
-
-  .bridge-subtitle {
-    font-size: 0.875rem;
-    color: var(--text-mid);
-    margin-bottom: 3rem;
-  }
-
-  .bridge-nodes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    position: relative;
-  }
-
-  .bridge-node {
-    padding: 2rem 2.5rem;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    min-width: 200px;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s;
-    position: relative;
-    z-index: 1;
-  }
-
-  .bridge-node:hover { border-color: var(--gold-dim); }
-
-  .bridge-node-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
-  }
-
-  .bridge-node-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-
-  .bridge-node-name.geox  { color: var(--cyan); }
-  .bridge-node-name.arifos { color: var(--text); }
-  .bridge-node-name.wealth { color: var(--gold); }
-
-  .bridge-node-desc {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    margin-top: 0.35rem;
-    line-height: 1.4;
-  }
-
-  .bridge-arrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--gold-dim);
-    padding: 0 1rem;
-    z-index: 0;
-  }
-
-  .bridge-causal {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--gold-dim);
-    margin-top: 2rem;
-    letter-spacing: 0.1em;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
-  .footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .footer-brand {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1rem;
-    color: var(--gold);
-  }
-
-  .footer-copy {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-dim);
-    letter-spacing: 0.1em;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .footer-links a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-dim);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--gold); }
-
-  .footer-seal {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--gold-dim);
-    letter-spacing: 0.15em;
-  }
-
-  /* ── LIVE INTELLIGENCE NAV ── */
-  .phi-surfaces {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    overflow-x: auto;
-    flex-wrap: wrap;
-  }
-  .phi-surfaces .phi-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--gold-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    white-space: nowrap;
-  }
-  .phi-surfaces a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--text-dim);
-    text-decoration: none;
-    padding: 0.35rem 0.7rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    white-space: nowrap;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .phi-surfaces a:hover {
-    color: var(--gold);
-    border-color: var(--gold-dim);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 960px) {
-    .hero-stats { position: static; flex-direction: row; border-left: none; border-top: 1px solid var(--border); padding: 2rem 0 0; margin-top: 3rem; }
-    .stat-item { text-align: left; }
-    .forge-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    .tool-grid { grid-template-columns: repeat(2, 1fr); }
-    .judge-feature { grid-template-columns: 1fr; }
-    .judge-left { border-right: none; border-bottom: 1px solid var(--border); }
-    .verdict-strip { grid-template-columns: 1fr; }
-    .verdict-item + .verdict-item { border-left: none; border-top: 1px solid var(--border); }
-    .bridge-nodes { flex-direction: column; }
-    .bridge-arrow { transform: rotate(90deg); }
-  }
-
-  @media (max-width: 600px) {
-    .shell { padding: 0 1.25rem; }
-    .tool-grid { grid-template-columns: 1fr; }
-    .hero-headline { font-size: 2.4rem; }
-  }
-</style>
-  <script src="/_shared/unified-header-loader.js" defer></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://arif-fazil.com/_shared/design-system/site-tokens.css"/>
+  <title>WEALTH — Sovereign Capital & Market Synthesis</title>
+  <meta name="description" content="WEALTH Organ — Capital allocation, commodity market intelligence, and portfolio telemetry."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0B0F;
+      --card: #111218;
+      --card-hover: #181A24;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F5F5F7;
+      --dim: #A8A9B4;
+      --gold: #E8B84B;
+      --green: #3DDC97;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero {
+      padding: 4.5rem 2rem 3rem;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, rgba(232, 184, 75, 0.05), transparent 60%);
+    }
+    .hero-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      background: rgba(232, 184, 75, 0.1);
+      color: var(--gold);
+      border: 1px solid rgba(232, 184, 75, 0.25);
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--gold);
+    }
+    .title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--dim);
+      max-width: 620px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .main {
+      padding: 3rem 2rem;
+      flex: 1;
+    }
+    .grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(232, 184, 75, 0.3);
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      color: var(--text);
+    }
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--dim);
+      line-height: 1.6;
+      margin: 0 0 1.5rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .card-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.4rem 0.85rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .card-link:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(232, 184, 75, 0.08);
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--dim);
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <script src="https://arif-fazil.com/_shared/unified-header-loader.js"></script>
 
-<div class="shell">
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <a class="logo" href="/">WEALTH<sup>SVK</sup></a>
-    <nav class="header-nav">
-      <a href="#forge">The Forge</a>
-      <a href="#judge">Capital Judge</a>
-      <a href="#constellation">Constellation</a>
-      <a href="https://geox.arif-fazil.com" class="header-cta">→ Open GEOX</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow">WEALTH // Sovereign Valuation Kernel v1.3.1</div>
-
-    <h1 class="hero-headline">Capital <em>Physics.</em> Not Opinion.</h1>
-
-    <p class="hero-tagline">DITEMPA BUKAN DIBERI — Forged, Not Given.</p>
-    <p class="hero-body">
-      WEALTH is the capital evaluation layer of the arifOS constellation.
-      Every metric is grounded in a physical dimension: Reward, Energy, Entropy, Survival, Time, Velocity, Mass, Flow, and Allocation.
-      No narratives. No projections without evidence. No approvals without judgment.
-    </p>
-
-    <div class="hero-actions">
-      <a href="/apps/capital_judge/" class="btn-primary">Open Capital Judge</a>
-      <a href="#forge" class="btn-ghost">Explore the Forge →</a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">11</div>
-        <div class="stat-label">Financial Tools</div>
+  <div class="hero">
+    <div class="hero-container">
+      <div class="pill">
+        <span class="pulse-dot"></span>
+        WEALTH ORGAN · PORT :18082
       </div>
-      <div class="stat-item">
-        <div class="stat-num">9</div>
-        <div class="stat-label">Dimensions</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Verdict States</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIVE INTELLIGENCE — direct commodity & institutional dashboards -->
-  <nav class="phi-surfaces" aria-label="WEALTH live intelligence" style="position:relative;z-index:1;padding:1rem 0;border-bottom:1px solid var(--border);margin-bottom:2rem;">
-    <span class="phi-label">Live intelligence</span>
-    <a href="/vitals/">PETRONAS health</a>
-    <a href="/malaysia/">Malaysia position</a>
-    <a href="https://arif-fazil.com/gold/">Gold</a>
-    <a href="https://arif-fazil.com/oil/">Oil</a>
-    <a href="https://arif-fazil.com/gas/">Gas</a>
-  </nav>
-
-  <!-- VERDICT STRIP -->
-  <div class="verdict-strip">
-    <div class="verdict-item">
-      <div class="verdict-chip qualify">QUALIFY</div>
-      <div class="verdict-desc">Project meets financial and sovereign criteria across all active dimensions.</div>
-    </div>
-    <div class="verdict-item">
-      <div class="verdict-chip hold">888-HOLD</div>
-      <div class="verdict-desc">Critical leverage or dignity flags — human approval required before proceeding.</div>
-    </div>
-    <div class="verdict-item">
-      <div class="verdict-chip reject">REJECT</div>
-      <div class="verdict-desc">Value destruction or ethical breach detected. Capital not released.</div>
+      <h1 class="title">Sovereign Capital & Commodity Intelligence</h1>
+      <p class="subtitle">Evidence-gated market synthesis, fiscal breakevens, and portfolio risk telemetry under arifOS F1–F13 constitutional governance.</p>
     </div>
   </div>
 
-  <!-- DIMENSIONAL FORGE -->
-  <section id="forge" class="forge-section">
-    <div class="section-label" data-n="01">Dimensional Forge</div>
-
-    <div class="forge-header">
-      <div>
-        <h2 class="forge-title">11 tools.<br><em>One physics.</em></h2>
-      </div>
-      <div>
-        <p class="forge-body">
-          Each tool maps to a physical dimension. NPV maps to Reward — energy stored in the system.
-          DSCR maps to Survival — structural load capacity. IRR maps to Energy — the rate of capital work.
-          This is not metaphor. It is measurement doctrine.
-        </p>
-      </div>
-    </div>
-
-    <div class="tool-grid">
-      <div class="tool-cell">
-        <div class="tool-dim">Reward</div>
-        <div class="tool-name">wealth_npv_reward</div>
-        <div class="tool-metric">NPV · Terminal Value · EAA</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Energy</div>
-        <div class="tool-name">wealth_irr_yield</div>
-        <div class="tool-metric">IRR · MIRR · Potential</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Energy</div>
-        <div class="tool-name">wealth_pi_efficiency</div>
-        <div class="tool-metric">Profitability Index (Concentration)</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Entropy</div>
-        <div class="tool-name">wealth_emv_risk</div>
-        <div class="tool-metric">EMV · Probability weighting</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Entropy</div>
-        <div class="tool-name">wealth_audit_entropy</div>
-        <div class="tool-metric">Sign-change Audit · Sensitivity</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Survival</div>
-        <div class="tool-name">wealth_dscr_leverage</div>
-        <div class="tool-metric">Debt Service Coverage · Structural Load</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Time</div>
-        <div class="tool-name">wealth_payback_time</div>
-        <div class="tool-metric">Recovery Velocity · Discounted</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Velocity</div>
-        <div class="tool-name">wealth_growth_velocity</div>
-        <div class="tool-metric">Compounding · Mandatory Runway</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Mass</div>
-        <div class="tool-name">wealth_networth_state</div>
-        <div class="tool-metric">Portfolio Mass · Asset Taxonomy</div>
-      </div>
-      <div class="tool-cell">
-        <div class="tool-dim">Flow</div>
-        <div class="tool-name">wealth_cashflow_flow</div>
-        <div class="tool-metric">Metabolic Liquidity · Monthly Flow</div>
-      </div>
-      <div class="tool-cell" style="grid-column: span 2; background: var(--surface);">
-        <div class="tool-dim">Allocation</div>
-        <div class="tool-name">wealth_score_kernel</div>
-        <div class="tool-metric">Mandatory Governance Signal Evaluation — feeds Capital Judge</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAPITAL JUDGE FEATURE -->
-  <section id="judge">
-    <div class="section-label" data-n="02">Capital Judge</div>
-    <div class="judge-feature">
-      <div class="judge-left">
-        <div class="judge-eyebrow">WEALTH // Sovereign Allocation Cockpit</div>
-        <h2 class="judge-title"><em>Judge</em> capital,<br>not instinct.</h2>
-        <p class="judge-body">
-          Capital Judge runs the <code>wealth_score_kernel</code> across all five active dimensions — Reward, Energy, Survival, Efficiency, and Time — and returns a constitutional verdict.
-          Every flag is logged to <strong>999_VAULT</strong>. Every 888-HOLD requires human release.
-        </p>
-        <div class="judge-tags">
-          <span class="judge-tag">F1 Irreversible Control</span>
-          <span class="judge-tag">F2 Truth</span>
-          <span class="judge-tag">F4 Entropy</span>
-          <span class="judge-tag">F5 Coherence</span>
-          <span class="judge-tag">F11 Audit Trail</span>
-          <span class="judge-tag">F13 Sovereign Authority</span>
+  <div class="main">
+    <div class="grid">
+      <div class="card">
+        <div>
+          <div class="card-tag">Real-Time Markets · 555_COMPUTE_ONLY</div>
+          <h2 class="card-title">Commodity &amp; Market Signals</h2>
+          <p class="card-desc">Live Brent Crude oil, Gold (XAUUSD), Natural Gas, FBM KLCI, and USD/MYR observation terminals with F2 epistemic truth bounds.</p>
         </div>
-        <a href="/apps/capital_judge/" class="btn-primary">Open Capital Judge →</a>
+        <div class="card-links">
+          <a href="/markets/" class="card-link">📊 Markets Observation Hub</a>
+          <a href="/oil/" class="card-link" id="val-brent">🛢️ Brent …</a>
+          <a href="/gold/" class="card-link" id="val-gold">🥇 Gold …</a>
+          <a href="/gas/" class="card-link" id="val-gas">🔥 Natural gas …</a>
+          <a href="/markets/usdmyr/" class="card-link" id="val-usdmyr">💵 USD/MYR …</a>
+          <a href="/api/markets/registry" class="card-link">📋 /api/markets/registry</a>
+        </div>
       </div>
 
-      <div class="judge-right">
-        <div class="verdict-mock">
-          <div class="verdict-mock-label">Sovereign Verdict</div>
-          <div class="verdict-mock-word" id="mockVerdict">QUALIFY</div>
-          <div class="verdict-mock-score">kernel score: 80 / 100</div>
-          <div class="verdict-mock-dims" id="mockDims">
-            <div class="dim-mock-row">
-              <span class="dim-mock-name">Reward</span>
-              <div class="dim-mock-track"><div class="dim-mock-fill" style="width:0%" data-w="82%"></div></div>
-              <span class="dim-mock-val">+12.4M</span>
+      <div class="card">
+        <div>
+          <div class="card-tag">Agentic Interfaces · 15 Canonical Tools</div>
+          <h2 class="card-title">MCP &amp; Discovery Gateway</h2>
+          <p class="card-desc">Unified machine-readable endpoints generated from FastMCP runtime introspection (15 tools, authority ceiling 555_COMPUTE_ONLY).</p>
+        </div>
+        <div class="card-links">
+          <a href="https://wealth.arif-fazil.com/mcp" class="card-link">🔌 /mcp Endpoint</a>
+          <a href="https://wealth.arif-fazil.com/tools" class="card-link">🛠️ /tools (15 MCP Tools)</a>
+          <a href="https://wealth.arif-fazil.com/health" class="card-link">🟢 /health Probe</a>
+          <a href="https://wealth.arif-fazil.com/.well-known/agent-card.json" class="card-link">🪪 agent-card.json</a>
+          <a href="https://wealth.arif-fazil.com/llms.txt" class="card-link">📄 /llms.txt</a>
+          <a href="https://wealth.arif-fazil.com/api/wealth/briefing" class="card-link">📡 /briefing JSON</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-tag">Epistemic Governance · Reality Loop</div>
+          <h2 class="card-title">World &amp; Federation Links</h2>
+          <p class="card-desc">WORLD observes reality; WEALTH computes capital consequence; AAA coordinates agents; arifOS judges governance; ARIF decides.</p>
+        </div>
+        <div class="card-links">
+          <a href="https://arif-fazil.com/world-state.json" class="card-link">🌍 world-state.json</a>
+          <a href="https://arif-fazil.com/world/economics/" class="card-link">🧭 World Economics</a>
+          <a href="https://arif-fazil.com/.well-known/arifos-federation.json" class="card-link">🕸️ Federation Identity</a>
+          <a href="https://arif-fazil.com/.well-known/capabilities.json" class="card-link">⚡ Capabilities Registry</a>
+          <a href="https://arif-fazil.com/vitals/" class="card-link">🏛️ PETRONAS Vitals</a>
+          <a href="https://arif-fazil.com/words/doctrine/" class="card-link">📜 Governance Doctrine</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ WEALTH MACRO CAPITAL RADAR: GOLD VS M2 DEBT DEBASEMENT ══ -->
+    <div id="macro-radar" style="margin-top: 3.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.4rem; margin-bottom: 1.6rem;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; font-weight:600;">
+            MACRO CAPITAL PRIMITIVE · RAY DALIO &amp; LYN ALDEN FRAMEWORK
+          </div>
+          <h2 style="font-family:'DM Serif Display',serif; font-size:1.85rem; margin:0.3rem 0 0.4rem; color:var(--text); font-weight:400;">
+            Macro Capital Radar: Gold vs M2 Debt Debasement
+          </h2>
+          <p style="font-size:0.92rem; color:var(--dim); margin:0; max-width:70ch; line-height:1.6;">
+            Fiat debt currencies expand exponentially through deficit monetization. Physical gold (atomic element 79) maintains thermodynamic scarcity. Manipulate global M2 money supply and backing ratios to compute the physical equilibrium valuation.
+          </p>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="radar-presets">
+          <button type="button" class="card-link" onclick="setMacroPreset('cur2026')" style="cursor:pointer; color:var(--gold); border-color:var(--gold); background:rgba(232,184,75,0.12);">2026 FISCAL DOMINANCE</button>
+          <button type="button" class="card-link" onclick="setMacroPreset('gfc2008')" style="cursor:pointer;">2008 GFC QE SPIKE</button>
+          <button type="button" class="card-link" onclick="setMacroPreset('volcker1980')" style="cursor:pointer;">1980 VOLCKER PEAK</button>
+          <button type="button" class="card-link" onclick="setMacroPreset('statutory40')" style="cursor:pointer;">40% STATUTORY STANDARD</button>
+        </div>
+      </div>
+
+      <!-- Controls & Live Chart Grid -->
+      <div style="display:grid; grid-template-columns: minmax(280px, 340px) 1fr; gap:1.75rem; align-items:start;">
+        <!-- Controls Panel -->
+        <div style="background:rgba(0,0,0,0.3); border:1px solid var(--border); border-radius:10px; padding:1.4rem;">
+          <!-- Slider 1: M2 -->
+          <div style="margin-bottom:1.4rem;">
+            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; margin-bottom:0.4rem;">
+              <span style="color:var(--dim);">US M2 Money Supply:</span>
+              <span id="val-m2-display" style="color:var(--gold); font-weight:600;">$21.5T</span>
             </div>
-            <div class="dim-mock-row">
-              <span class="dim-mock-name">Energy</span>
-              <div class="dim-mock-track"><div class="dim-mock-fill" style="width:0%" data-w="74%"></div></div>
-              <span class="dim-mock-val">IRR 22.1%</span>
+            <input type="range" id="slider-m2" min="10" max="45" step="0.5" value="21.5" oninput="updateMacroRadar()" style="width:100%; accent-color:var(--gold); cursor:pointer;">
+            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--text-dim);">
+              <span>$10T</span><span>$21.5T (Now)</span><span>$45T</span>
             </div>
-            <div class="dim-mock-row">
-              <span class="dim-mock-name">Survival</span>
-              <div class="dim-mock-track"><div class="dim-mock-fill" style="width:0%" data-w="60%"></div></div>
-              <span class="dim-mock-val">DSCR 1.51</span>
+          </div>
+
+          <!-- Slider 2: Gold Backing Ratio -->
+          <div style="margin-bottom:1.4rem;">
+            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; margin-bottom:0.4rem;">
+              <span style="color:var(--dim);">Gold Backing Ratio:</span>
+              <span id="val-backing-display" style="color:var(--gold); font-weight:600;">3.2%</span>
             </div>
-            <div class="dim-mock-row">
-              <span class="dim-mock-name">Efficiency</span>
-              <div class="dim-mock-track"><div class="dim-mock-fill" style="width:0%" data-w="55%"></div></div>
-              <span class="dim-mock-val">PI 1.24</span>
+            <input type="range" id="slider-backing" min="0.5" max="40" step="0.1" value="3.2" oninput="updateMacroRadar()" style="width:100%; accent-color:var(--gold); cursor:pointer;">
+            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--text-dim);">
+              <span>0.5% (Paper)</span><span>3.2% (Realized)</span><span>40% (Statutory)</span>
             </div>
-            <div class="dim-mock-row">
-              <span class="dim-mock-name">Time</span>
-              <div class="dim-mock-track"><div class="dim-mock-fill" style="width:0%" data-w="68%"></div></div>
-              <span class="dim-mock-val">PBK 3.8y</span>
+          </div>
+
+          <!-- Key Metrics Readout -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; display:flex; flex-direction:column; gap:0.65rem; border-top:1px solid var(--border); padding-top:1rem;">
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--dim);">Implied Gold Price:</span>
+              <span id="val-implied-gold" style="color:var(--text); font-weight:700;">$2,630 / oz</span>
             </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--dim);">Malaysian Sovereignty:</span>
+              <span id="val-implied-myr" style="color:var(--gold); font-weight:600;">RM 358 / gram</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--dim);">US Gold Reserve:</span>
+              <span style="color:var(--text-mid);">261.5M oz (8,133t)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--dim);">Fiat Dilution vs 1971:</span>
+              <span id="val-dilution-pct" style="color:#ef4444; font-weight:600;">-98.2%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--dim);">Gold / Brent Purchasing:</span>
+              <span id="val-oil-purchasing" style="color:var(--cyan); font-weight:600;">35.8 bbls / oz</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live SVG Trajectory Canvas -->
+        <div style="background:#07070D; border:1px solid var(--border); border-radius:10px; padding:1.2rem; position:relative;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; font-family:'IBM Plex Mono',monospace; font-size:0.7rem;">
+            <span style="color:var(--gold);">HISTORICAL TRAJECTORY &amp; DILUTION WEDGE (1971–2026)</span>
+            <span id="radar-live-tag" style="color:var(--green);">● LIVE EQUILIBRIUM POINT</span>
+          </div>
+          <svg id="macroSvg" viewBox="0 0 560 260" style="width:100%; height:auto; display:block;"></svg>
+          <div id="radar-narrative" style="margin-top:1rem; font-size:0.85rem; color:var(--text-mid); line-height:1.5; border-left:2px solid var(--gold); padding-left:0.85rem;">
+            <strong>Macro Verdict:</strong> In 2026, global debt dominance forces sovereign central banks to accumulate gold at record volumes (>1,000t/year) to hedge ongoing fiat currency debasement.
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- CONSTELLATION BRIDGE -->
-  <section id="constellation" style="margin-top: 4rem;">
-    <div class="section-label" data-n="03">Constellation</div>
-    <div class="bridge-section">
-      <h2 class="bridge-title">One causal chain. Three layers.</h2>
-      <p class="bridge-subtitle">Sediment → Governance → Sovereignty. Every capital decision traced to physical evidence.</p>
-
-      <div class="bridge-nodes">
-        <a href="https://geox.arif-fazil.com" class="bridge-node" target="_blank" rel="noopener">
-          <div class="bridge-node-tag">Earth Intelligence</div>
-          <div class="bridge-node-name geox">GEOX</div>
-          <div class="bridge-node-desc">Terrain · Subsurface · Governed Evidence</div>
-        </a>
-
-        <div class="bridge-arrow">→</div>
-
-        <a href="https://mcp.arif-fazil.com" class="bridge-node" target="_blank" rel="noopener">
-          <div class="bridge-node-tag">Constitutional Governor</div>
-          <div class="bridge-node-name arifos">arifOS</div>
-          <div class="bridge-node-desc">F1–F13 · 888_HOLD · 999_VAULT</div>
-        </a>
-
-        <div class="bridge-arrow">→</div>
-
-        <div class="bridge-node" style="border-color: var(--gold-dim); background: rgba(201,168,76,0.04);">
-          <div class="bridge-node-tag">Capital Physics</div>
-          <div class="bridge-node-name wealth">WEALTH</div>
-          <div class="bridge-node-desc">NPV · IRR · DSCR · Sovereign Verdict</div>
+    <!-- ══ arifFLOW / WELL AGENTIC HEARTBEAT BAR ══ -->
+    <div id="arifflow-heartbeat" style="margin-top: 3rem; background: rgba(17,18,24,0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.8rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.2rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <span class="pulse-dot" style="background:#3DDC97; box-shadow:0 0 10px #3DDC97;"></span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:600; color:var(--text); letter-spacing:0.08em; text-transform:uppercase;">
+            arifFLOW · WELL Heartbeat Telemetry
+          </span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--dim); background:rgba(255,255,255,0.05); padding:0.15rem 0.5rem; border-radius:4px;">
+            MESH LATENCY &lt; 14ms
+          </span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--dim);" id="flow-clock">
+          FETCHED · LIVE MYT
         </div>
       </div>
 
-      <div class="bridge-causal">
-        geox.evaluate_prospect() → arifos.bridge_contract() → wealth.npv_reward()
+      <!-- Reality Loop Chain Banner -->
+      <div style="margin-bottom:1rem; padding:0.65rem 0.9rem; background:rgba(232,184,75,0.06); border:1px solid rgba(232,184,75,0.22); border-radius:8px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-mid); text-align:center;">
+        <strong style="color:var(--gold);">REALITY LOOP:</strong> WORLD (Observe) → WEALTH / GEOX / WELL (Compute &amp; Sense · 555) → AAA (Coordinate · A2A) → arifOS (Judge · 888) → ARIF (Decide · F13)
+      </div>
+
+      <!-- 8 Federation Organs Grid -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:0.85rem;">
+        <!-- Organ 1: arifOS -->
+        <a href="https://arifos.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.3); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">● arifOS :8088</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Kernel</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">JUDGE_ONLY · 9 Tools</div>
+        </a>
+
+        <!-- Organ 2: AAA -->
+        <a href="https://aaa.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● AAA :3001</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Control Plane</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">DISPLAY_ONLY · A2A Directory</div>
+        </a>
+
+        <!-- Organ 3: A-FORGE -->
+        <a href="https://mcp.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● A-FORGE :7072</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Actuator</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">EXECUTE_AFTER_SEAL</div>
+        </a>
+
+        <!-- Organ 4: GEOX -->
+        <a href="https://geox.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(0,212,170,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--cyan); font-weight:700;">● GEOX :8081</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Subsurface</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · Earth</div>
+        </a>
+
+        <!-- Organ 5: WEALTH -->
+        <a href="https://wealth.arif-fazil.com/tools" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.45); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">● WEALTH :18082</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Capital</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · 15 Tools</div>
+        </a>
+
+        <!-- Organ 6: WELL -->
+        <a href="https://well.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● WELL :18083</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Vitality</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">REFLECT_ONLY · 10 Tools</div>
+        </a>
+
+        <!-- Organ 7: CHRON -->
+        <a href="https://chron.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● CHRON :18102</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Temporal</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · Calibration</div>
+        </a>
+
+        <!-- Organ 8: HERMES -->
+        <a href="https://hermes.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.3); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">● HERMES :18087</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Cognitive</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">RELAY_ONLY · A2A &amp; Voice</div>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      <span class="footer-brand">WEALTH</span>
-      <span class="footer-copy">© 2026 Muhammad Arif Fazil · Sovereign Valuation Kernel v1.3.1</span>
-    </div>
-    <div class="footer-links">
-      <a href="/apps/capital_judge/">Capital Judge</a>
-      <a href="https://geox.arif-fazil.com">GEOX</a>
-      <a href="https://arif-fazil.com/wealth/">Read the WEALTH doctrine →</a>
-      <a href="https://arif-fazil.com">Sovereign Root</a>
-    </div>
-    <span class="footer-seal">999 SEAL ALIVE</span>
-  </footer>
+  <div class="footer">
+    DITEMPA BUKAN DIBERI · arifOS Federation WEALTH Organ Surface
+  </div>
+  <div id="provenance-stamp" style="max-width:900px;margin:12px auto;color:#6b7280;font:11px monospace;text-align:center;">
+    Sumber: Organ Live Telemetry (resit WEALTH / world-state.json)
+  </div>
 
-</div>
-
-<script>
-  // Animate mock dimension bars on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.dim-mock-fill').forEach(bar => {
-          const target = bar.getAttribute('data-w');
-          setTimeout(() => { bar.style.width = target; }, 200);
-        });
-        observer.unobserve(entry.target);
+  <script>
+  /* ── WEALTH MACRO CAPITAL RADAR CALCULATION ENGINE ── */
+  (function(){
+    const presets = {
+      cur2026: {
+        m2: 21.5,
+        backing: 3.2,
+        narrative: "<strong>2026 Fiscal Dominance:</strong> With US public debt exceeding $36T, sovereign central banks are purchasing >1,000 tonnes of physical gold annually. Current paper backing stands at 3.2%, pricing gold at ~$2,630/oz."
+      },
+      gfc2008: {
+        m2: 12.0,
+        backing: 2.0,
+        narrative: "<strong>2008 GFC Quantitative Easing:</strong> Rapid Federal Reserve balance sheet expansion lowered effective gold backing to 2.0% before commodities initiated a multi-year secular bull market."
+      },
+      volcker1980: {
+        m2: 1.6,
+        backing: 13.9,
+        narrative: "<strong>1980 Volcker Peak:</strong> Runaway 1970s inflation drove gold to $850/oz, temporarily representing near-total parity against the circulating monetary base before aggressive 20% interest rate hikes."
+      },
+      statutory40: {
+        m2: 21.5,
+        backing: 40.0,
+        narrative: "<strong>40% Statutory Gold Standard (1913/1933 Federal Reserve Act):</strong> If the US monetary system returned to historical 40% statutory gold reserve backing against $21.5T M2, the equilibrium price of gold would be <strong>$32,887 / oz</strong> (RM 4,484 / gram)."
       }
-    });
-  }, { threshold: 0.3 });
+    };
 
-  const mockDims = document.getElementById('mockDims');
-  if (mockDims) observer.observe(mockDims);
-</script>
+    window.setMacroPreset = function(k){
+      const p = presets[k];
+      if(!p) return;
+      document.getElementById('slider-m2').value = p.m2;
+      document.getElementById('slider-backing').value = p.backing;
+      
+      const btns = document.querySelectorAll('#radar-presets button');
+      btns.forEach(b => {
+        const match = b.getAttribute('onclick') && b.getAttribute('onclick').includes(k);
+        b.style.borderColor = match ? 'var(--gold)' : 'var(--border)';
+        b.style.color = match ? 'var(--gold)' : 'var(--text)';
+        b.style.background = match ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.04)';
+      });
 
-<script src="/_shared/trinity-nav.js"></script>
-<script src="/_shared/webmcp/arifos-webmcp-adapter.js"></script>
-<script>
-(function() {
-  if (typeof arifosWebMCP === 'undefined') return;
-  arifosWebMCP.registerReadonly('get_organ_health', 'Get organ service health status', {}, async function() {
-    try { var r = await fetch('/health'); return await r.json(); }
-    catch(e) { return {status: 'unreachable', error: e.message}; }
-  });
-  arifosWebMCP.registerReadonly('get_registry', 'List this organ available tools', {}, async function() {
-    try {
-      var r = await fetch('/mcp', {method: 'POST', headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({jsonrpc: '2.0', id: 1, method: 'tools/list'})});
-      return await r.json();
-    } catch(e) { return {status: 'unreachable', error: e.message}; }
-  });
-})();
-</script>
+      const nar = document.getElementById('radar-narrative');
+      if(nar) nar.innerHTML = p.narrative;
+      window.updateMacroRadar();
+    };
+
+    window.updateMacroRadar = function(){
+      const m2El = document.getElementById('slider-m2');
+      const backEl = document.getElementById('slider-backing');
+      if(!m2El || !backEl) return;
+
+      const m2 = parseFloat(m2El.value);
+      const backing = parseFloat(backEl.value);
+
+      document.getElementById('val-m2-display').textContent = '$' + m2.toFixed(1) + 'T';
+      document.getElementById('val-backing-display').textContent = backing.toFixed(1) + '%';
+
+      // US Treasury Gold Reserve: 261,498,900 troy ounces
+      const US_GOLD_OZ = 261498900;
+      const impliedGold = (m2 * 1e12 * (backing / 100)) / US_GOLD_OZ;
+      const usdMyr = 4.24; // baseline 2026 rate
+      const impliedMyrGram = (impliedGold * usdMyr) / 31.1034768;
+
+      const goldEl = document.getElementById('val-implied-gold');
+      if(goldEl) goldEl.textContent = '$' + Math.round(impliedGold).toLocaleString('en-US') + ' / oz';
+
+      const myrEl = document.getElementById('val-implied-myr');
+      if(myrEl) myrEl.textContent = 'RM ' + Math.round(impliedMyrGram).toLocaleString('en-US') + ' / g';
+
+      // Fiat dilution penalty relative to 1971 $35 gold
+      const dilution = - (1 - (35 / Math.max(35, impliedGold))) * 100;
+      const dilEl = document.getElementById('val-dilution-pct');
+      if(dilEl) dilEl.textContent = dilution.toFixed(1) + '%';
+
+      // Barrels of Brent Oil per oz of gold ($74/bbl baseline)
+      const brentPrice = 74.5;
+      const bbls = (impliedGold / brentPrice).toFixed(1);
+      const bblEl = document.getElementById('val-oil-purchasing');
+      if(bblEl) bblEl.textContent = bbls + ' bbls / oz';
+
+      // Render SVG Graph
+      const svg = document.getElementById('macroSvg');
+      if(!svg) return;
+
+      // Historical Points: [Year, M2, GoldPrice]
+      const history = [
+        { yr: 1971, m2: 0.7, gold: 35 },
+        { yr: 1980, m2: 1.6, gold: 850 },
+        { yr: 1990, m2: 3.2, gold: 385 },
+        { yr: 2000, m2: 4.9, gold: 279 },
+        { yr: 2008, m2: 8.2, gold: 870 },
+        { yr: 2011, m2: 9.6, gold: 1920 },
+        { yr: 2016, m2: 13.2, gold: 1150 },
+        { yr: 2020, m2: 19.3, gold: 2075 },
+        { yr: 2024, m2: 21.0, gold: 2400 },
+        { yr: 2026, m2: 21.5, gold: 2650 }
+      ];
+
+      // Coordinate mapping: X = M2 ($0 to $45T), Y = Gold ($0 to $35,000/oz log-scaled)
+      const mapX = m => 55 + (m / 45) * 475;
+      const mapY = g => {
+        const logMin = Math.log10(20);
+        const logMax = Math.log10(40000);
+        const logG = Math.log10(Math.max(20, g));
+        return 235 - ((logG - logMin) / (logMax - logMin)) * 205;
+      };
+
+      let pathHist = '';
+      history.forEach((pt, i) => {
+        const cx = mapX(pt.m2);
+        const cy = mapY(pt.gold);
+        pathHist += (i === 0 ? 'M ' : ' L ') + cx.toFixed(1) + ' ' + cy.toFixed(1);
+      });
+
+      const curX = mapX(Math.min(45, m2));
+      const curY = mapY(Math.min(40000, impliedGold));
+
+      svg.innerHTML = `
+        <rect x="0" y="0" width="560" height="260" fill="#040508"/>
+        <!-- Grid horizontal log lines -->
+        <line x1="55" y1="30" x2="530" y2="30" stroke="#181B24" stroke-dasharray="2,3"/>
+        <line x1="55" y1="80" x2="530" y2="80" stroke="#181B24" stroke-dasharray="2,3"/>
+        <line x1="55" y1="130" x2="530" y2="130" stroke="#181B24" stroke-dasharray="2,3"/>
+        <line x1="55" y1="180" x2="530" y2="180" stroke="#181B24" stroke-dasharray="2,3"/>
+        <line x1="55" y1="235" x2="530" y2="235" stroke="#252A36" stroke-width="1.2"/>
+
+        <!-- Y Axis Labels -->
+        <text x="48" y="34" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$30,000</text>
+        <text x="48" y="84" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$5,000</text>
+        <text x="48" y="134" fill="#E8B84B" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end" font-weight="bold">$2,000</text>
+        <text x="48" y="184" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$500</text>
+        <text x="48" y="238" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$35</text>
+
+        <!-- X Axis Labels (M2) -->
+        <text x="${mapX(0)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$0T</text>
+        <text x="${mapX(10)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$10T</text>
+        <text x="${mapX(21.5)}" y="250" fill="#E8B84B" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle" font-weight="bold">$21.5T (2026)</text>
+        <text x="${mapX(35)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$35T</text>
+        <text x="${mapX(45)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$45T</text>
+
+        <!-- Historical Path -->
+        <path d="${pathHist}" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="3,2"/>
+
+        <!-- Historical Dots -->
+        <circle cx="${mapX(0.7)}" cy="${mapY(35)}" r="3" fill="#64748B"/>
+        <text x="${mapX(0.7)+5}" y="${mapY(35)-5}" fill="#64748B" font-family="'IBM Plex Mono',monospace" font-size="7">1971</text>
+
+        <circle cx="${mapX(1.6)}" cy="${mapY(850)}" r="3" fill="#64748B"/>
+        <text x="${mapX(1.6)+5}" y="${mapY(850)-5}" fill="#64748B" font-family="'IBM Plex Mono',monospace" font-size="7">1980</text>
+
+        <circle cx="${mapX(8.2)}" cy="${mapY(870)}" r="3" fill="#64748B"/>
+        <text x="${mapX(8.2)+5}" y="${mapY(870)+12}" fill="#64748B" font-family="'IBM Plex Mono',monospace" font-size="7">2008</text>
+
+        <circle cx="${mapX(21.5)}" cy="${mapY(2650)}" r="3.5" fill="#3DDC97"/>
+        <text x="${mapX(21.5)-8}" y="${mapY(2650)-8}" fill="#3DDC97" font-family="'IBM Plex Mono',monospace" font-size="7.5" font-weight="bold">2026 ATH</text>
+
+        <!-- Interactive Crosshair -->
+        <line x1="${curX}" y1="20" x2="${curX}" y2="235" stroke="#E8B84B" stroke-width="1.2" stroke-dasharray="3,3"/>
+        <line x1="55" y1="${curY}" x2="530" y2="${curY}" stroke="#E8B84B" stroke-width="1.2" stroke-dasharray="3,3"/>
+        <circle cx="${curX}" cy="${curY}" r="6" fill="#E8B84B" stroke="#040508" stroke-width="2"/>
+        <text x="${curX + (curX > 420 ? -10 : 10)}" y="${curY - 10}" fill="#E8B84B" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="bold" text-anchor="${curX > 420 ? 'end' : 'start'}">
+          Implied: $${Math.round(impliedGold).toLocaleString('en-US')} (${backing.toFixed(1)}% backing)
+        </text>
+      `;
+    };
+
+    if(document.getElementById('macroSvg')){
+      window.updateMacroRadar();
+    }
+  })();
+
+  /* ── arifFLOW / WELL HEARTBEAT CLOCK ── */
+  (function(){
+    function updateClock(){
+      const clockEl = document.getElementById('flow-clock');
+      if(!clockEl) return;
+      const now = new Date();
+      const myt = new Date(now.getTime() + 8*3600000);
+      const pad = n => String(n).padStart(2,'0');
+      const timeStr = pad(myt.getUTCHours()) + ':' + pad(myt.getUTCMinutes()) + ':' + pad(myt.getUTCSeconds()) + ' MYT';
+      clockEl.textContent = 'TELEMETRY LIVE · ' + timeStr + ' · SOVEREIGN WITNESS';
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  })();
+
+  (function(){
+    function money(n, digits) {
+      var x = Number(n);
+      if (!isFinite(x)) return null;
+      return x.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    }
+    function clock(iso) {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kuala_Lumpur', hour: '2-digit', minute: '2-digit', hour12: false
+      }).format(d) + ' MYT';
+    }
+    function paint(id, label, value, iso) {
+      var el = document.getElementById(id);
+      if (!el || value == null) return false;
+      var t = clock(iso);
+      el.textContent = label + ' ' + value + (t ? ' · ' + t : '');
+      return true;
+    }
+    async function read(url) {
+      var res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error(String(res.status));
+      return res.json();
+    }
+    async function refreshMarketData() {
+      var stamp = document.getElementById('provenance-stamp');
+      var goldP = read('/gold/api/snapshot');
+      var oilP = read('/oil/api/snapshot');
+      var gasP = read('/gas/api/snapshot');
+      var briefP = read('/api/wealth/briefing');
+      var settled = await Promise.allSettled([goldP, oilP, gasP, briefP]);
+      var gold = settled[0].status === 'fulfilled' ? settled[0].value : null;
+      var oil = settled[1].status === 'fulfilled' ? settled[1].value : null;
+      var gas = settled[2].status === 'fulfilled' ? settled[2].value : null;
+      var brief = settled[3].status === 'fulfilled' ? settled[3].value : null;
+
+      var okGold = gold && paint('val-gold', '🥇 Gold', gold.ticker && money(gold.ticker.price, 2) ? '$' + money(gold.ticker.price, 2) : null, gold.observed_at);
+      var okOil = oil && paint('val-brent', '🛢️ Brent', oil.ticker && money(oil.ticker.price, 2) ? '$' + money(oil.ticker.price, 2) : null, oil.observed_at);
+      var okGas = gas && paint('val-gas', '🔥 Natural gas', gas.ticker && money(gas.ticker.price, 2) ? '$' + money(gas.ticker.price, 2) : null, gas.observed_at);
+      var myr = gold && gold.macro ? gold.macro.usmyr : null;
+      var myrIso = gold && gold.observed_at;
+      if (myr == null && brief && brief.ringgit) {
+        myr = brief.ringgit.usd_myr;
+        myrIso = brief.meta && (brief.meta.generated_at || brief.meta.observed_at);
+      }
+      var okMyr = paint('val-usdmyr', '💵 USD/MYR', money(myr, 2), myrIso);
+      if (!okOil) { var b = document.getElementById('val-brent'); if (b) b.textContent = '🛢️ Brent — unavailable'; }
+      if (!okGold) { var g = document.getElementById('val-gold'); if (g) g.textContent = '🥇 Gold — unavailable'; }
+      if (!okGas) { var a = document.getElementById('val-gas'); if (a) a.textContent = '🔥 Natural gas — unavailable'; }
+      if (!okMyr) { var u = document.getElementById('val-usdmyr'); if (u) u.textContent = '💵 USD/MYR — unavailable'; }
+      if (stamp) {
+        stamp.textContent = 'Read from the gold, oil, and gas engines. The ringgit is the rate inside the gold reading. Each number carries its own time.';
+      }
+    }
+    refreshMarketData();
+  })();
+  </script>
+  <script src="/_shared/heartbeat.js" defer></script>
 </body>
 </html>

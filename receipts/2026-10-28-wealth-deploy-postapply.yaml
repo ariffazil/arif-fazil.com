@@ -72,11 +72,20 @@ postconditions:
 cross_organ:
   geox: { files_modified_since_deploy: 0, host: 200 }
   well: { files_modified_since_deploy: 0, host: 200 }
-  aaa:  { files_modified_since_deploy: 2, host: 200,
-          files: [claims.json, truth-contract.json],
-          writer: compile_truth_contract,
-          generated_at: "2026-10-28T04:57:56Z",
-          verdict: "AAA runtime write, 3s BEFORE deploy start (04:58:41Z) — not caused by this deploy" }
+  aaa:
+    observation:
+      files: [claims.json, truth-contract.json]
+      modified_at: "2026-10-28T04:57:56Z"
+      wealth_deploy_started_at: "2026-10-28T04:58:41Z"
+    interpretation:
+      wealth_deploy_causation: "unlikely by timing"
+    attribution:
+      generator_reported_in_file: compile_truth_contract
+      verified_actor: UNKNOWN
+      note: >
+        Timestamp separation is not actor proof. No PID, unit, command line,
+        parent process, invocation log or before/after hash was captured.
+        Correct status is UNKNOWN, not "not caused by this deploy".
 
 # ── 6. ROLLBACK POINTERS ──────────────────────────────────────────────────────
 rollback:

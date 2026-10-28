@@ -202,6 +202,21 @@ for ((i = 0; i < ${#OVERLAY_PATHS[@]}; i++)); do
   done
 done
 
+# Gate 1h: LIVE_OWNERSHIP_PRESERVATION (2026-10-28)
+# Fail-closed: refuse to deploy when source would delete a live artifact that no
+# overlay preserves and no rule classifies. Opt-in per site via "ownership_gate": true.
+if [[ "$(jq -r '.ownership_gate // false' <<<"$ENTRY")" == "true" ]]; then
+  log "Gate 1h: LIVE_OWNERSHIP_PRESERVATION check..."
+  OWNER_PY="/usr/bin/python3"
+  [[ -x "$OWNER_PY" ]] || OWNER_PY="python3"
+  if ! "$OWNER_PY" "$REPO_ROOT/scripts/deploy-ownership-gate.py" \
+        --registry "$REGISTRY" --site "$SITE_NAME" \
+        --repo-root "$REPO_ROOT" --html-root "$HTML_ROOT"; then
+    die "Gate 1h FAILED: deploy would delete live artifacts with no ownership rule"
+  fi
+  log "  ✅ Gate 1h passed (no unintended deletion)"
+fi
+
 TEMP_DIRS=()
 SWAP_ACTIVE=0
 OLD_STAGE=""

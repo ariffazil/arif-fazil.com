@@ -287,11 +287,45 @@
           200
         ]
       },
+      "ownership_gate": true,
+      "deploy_generated": [
+        "build-info.json"
+      ],
+      "obsolete_patterns": [
+        "*.bak",
+        "*.bak-*",
+        "*.bak.*"
+      ],
       "overlays": [
         {
           "path": ".well-known/agent.json",
           "owner": "wealth-organ-identity",
-          "strategy": "preserve-live"
+          "strategy": "preserve-live",
+          "reason": "organ-generated agent identity (A2A card, pre-existing)"
+        },
+        {
+          "path": ".well-known/agent-card.json",
+          "owner": "wealth-organ-identity",
+          "strategy": "preserve-live",
+          "reason": "organ-generated discovery artifact"
+        },
+        {
+          "path": ".well-known/mcp.json",
+          "owner": "wealth-organ-identity",
+          "strategy": "preserve-live",
+          "reason": "organ-generated MCP discovery artifact"
+        },
+        {
+          "path": "markets",
+          "owner": "wealth-markets-cron",
+          "strategy": "preserve-live",
+          "reason": "runtime-generated market surfaces (build_markets_surface.py, daily 03:17)"
+        },
+        {
+          "path": "api/markets",
+          "owner": "wealth-markets-engine",
+          "strategy": "preserve-live",
+          "reason": "runtime-generated market data (sync_manifest.py / build_markets_surface.py)"
         }
       ],
       "aliases": [

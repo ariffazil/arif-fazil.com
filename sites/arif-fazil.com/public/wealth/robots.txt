@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Agentic Resource Discovery (ARD v0.91 / Lighthouse 13.5)
+Agentmap: https://wealth.arif-fazil.com/.well-known/ard.json
+Agentmap: https://wealth.arif-fazil.com/.well-known/ai-catalog.json
+
+# LLM Discoverability
+Sitemap: https://wealth.arif-fazil.com/sitemap.xml

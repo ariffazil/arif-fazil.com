@@ -13,15 +13,19 @@
     "publish_commit": "5c86b14e545ad[REDACTED:CARD]dae0f0cb1c"
   },
   "corrected_document": {
-    "url": "https://arif-fazil.com/world/2027/ai-agents-2027-dossier-20261029.pdf",
-    "sha256": "e6ed8d5448aca0e7bd673aaed368a21abadd443428f265406b720210d40f59fa",
-    "bytes": 174532,
+    "url": "https://arif-fazil.com/world/2027/ai-agents-2027-dossier-dfaaa03c75d4.pdf",
+    "sha256": "dfaaa03c75d47300fc1382576a18d538ed6b96b5a7154704d4c94d8afb0b28ad",
+    "bytes": 241523,
     "pages": 16,
-    "errata_appended_utc": "2026-10-29T13:29:00Z"
+    "errata_appended_utc": "2026-10-29T13:29:00Z",
+    "content_addressed_filename": "ai-agents-2027-dossier-dfaaa03c75d4.pdf"
   },
   "false_claim": {
     "text_en": "Your children will enter a labour market shaped by 2027.",
-    "also": ["Your children face an unforgiving market", "Ia datang melalui anak hang"],
+    "also": [
+      "Your children face an unforgiving market",
+      "Ia datang melalui anak hang"
+    ],
     "location": "PDF sheet 12 of the original 15; printed folio '8 / 10'",
     "occurrences_of_exact_phrase": 1,
     "occurrences_of_'Your_children'": 2,
@@ -37,7 +41,7 @@
     "original_text_retained": true,
     "rewrite": false,
     "method": "append-only - one errata page added as final page; pages 1-15 unmodified",
-    "verification": "pdftotext of pages 1-15 of the corrected file is byte-identical to the original (sha256 01be5dd599fa0460dba27237adb73d402bd028e44858d03fee7fff6409074efe); per-page check 15/15 identical"
+    "verification": "pdftotext pages 1-15 byte-identical to original (sha256 01be5dd599fa0460dba27237adb73d402bd028e44858d03fee7fff6409074efe); per-page text check 15/15; PDF content-stream hash of pages 1-15 identical to original for all 15 pages; rasterised render of p1 and p12 identical to original"
   },
   "scope_note": "The second-person phrase 'anak hang' in unrelated columns on this site addresses a generic reader, not the publisher, and is not part of this correction.",
   "independent_review": {
@@ -54,6 +58,13 @@
     "method": "additive file writes + per-file .bak copies; no --delete, no caddy reload, no site build",
     "link_repoint": "7 live HTML links repointed to the versioned URL so the edge serves the corrected file without a purge",
     "cloudflare": "purge_cache not available to the current API token (401 on POST, token verified active for zone read) - versioned URL used instead; original URL still resolves and now serves the corrected bytes at origin",
-    "edge_note": "the legacy URL may still be served from edge cache for up to max-age 14400s; all site links now point at the versioned URL"
-  }
+    "edge_note": "Cloudflare purge_cache is not available to this token (401 on POST while /user/tokens/verify returns active). The corrected PDF is therefore published at a content-addressed URL - a fresh URL is an edge MISS, so visitors receive the corrected bytes immediately. All 7 live HTML links point there; /llms.txt and /surfaces.json updated; sitemap lists the errata route.",
+    "split_root_note": "/llms.txt and /surfaces.json are served from /var/www/html (root static handler), not /var/www/html/arif; both roots updated."
+  },
+  "correction_itself_checked": {
+    "finding": "the first errata draft said the false sentence appears twice. Measured: the exact sentence appears once; 'Your children' appears twice (sentence + section heading).",
+    "action": "count corrected before shipping, in the PDF page 16, both receipts pages and the landing banner",
+    "verified_live_occurrences_of_miscount": 0
+  },
+  "errata_page": "https://arif-fazil.com/world/2027/errata/"
 }

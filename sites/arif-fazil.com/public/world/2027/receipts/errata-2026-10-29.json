@@ -1,0 +1,59 @@
+{
+  "receipt_type": "errata_correction",
+  "subject": "AI Agents 2027 dossier, arif-fazil.com",
+  "issued_utc": "2026-10-29T13:42:00Z",
+  "issued_myt": "2026-10-29 21:42 MYT",
+  "authorized_by": "F13 sovereign (Arif), 29 Oct 2026 - 'Go and spawn coding agents to execute next'",
+  "original_document": {
+    "url": "https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf",
+    "sha256": "3675654885a59deba1e2dd03614cd86ad8716cc897e609051e181ee720c5ab57",
+    "bytes": 223094,
+    "pages": 15,
+    "published": "2026-09-18",
+    "publish_commit": "5c86b14e545ad[REDACTED:CARD]dae0f0cb1c"
+  },
+  "corrected_document": {
+    "url": "https://arif-fazil.com/world/2027/ai-agents-2027-dossier-20261029.pdf",
+    "sha256": "e6ed8d5448aca0e7bd673aaed368a21abadd443428f265406b720210d40f59fa",
+    "bytes": 174532,
+    "pages": 16,
+    "errata_appended_utc": "2026-10-29T13:29:00Z"
+  },
+  "false_claim": {
+    "text_en": "Your children will enter a labour market shaped by 2027.",
+    "also": ["Your children face an unforgiving market", "Ia datang melalui anak hang"],
+    "location": "PDF sheet 12 of the original 15; printed folio '8 / 10'",
+    "occurrences_of_exact_phrase": 1,
+    "occurrences_of_'Your_children'": 2,
+    "occurrences_of_'anak_hang'": 1
+  },
+  "fact": "The dossier's sole addressee has no children. Attested by the subject on 29 Oct 2026.",
+  "cause": {
+    "primary": "No attestation step for personal claims about a human anywhere in the authoring chain.",
+    "secondary": "The publish commit recorded 'Split per APEX: personal-stakes + constructive-answer pages held from public surface' - a hold decision that never reached the shipped artefact (pages 8 and 9 of the public PDF are exactly the sections marked held).",
+    "class": "provenance failure / self-application gap"
+  },
+  "preservation": {
+    "original_text_retained": true,
+    "rewrite": false,
+    "method": "append-only - one errata page added as final page; pages 1-15 unmodified",
+    "verification": "pdftotext of pages 1-15 of the corrected file is byte-identical to the original (sha256 01be5dd599fa0460dba27237adb73d402bd028e44858d03fee7fff6409074efe); per-page check 15/15 identical"
+  },
+  "scope_note": "The second-person phrase 'anak hang' in unrelated columns on this site addresses a generic reader, not the publisher, and is not part of this correction.",
+  "independent_review": {
+    "lane": "apex-judge isolate, doer=HERMES judge=OPENCLAW",
+    "independence_class": "KERNEL_ARBITER",
+    "effective_verdict": "HOLD",
+    "reason": "Effective verdict HOLD dominates intercept decision",
+    "session_id": "SEAL-b3447f3b6eff4c84",
+    "call_hash": "sha256:801c085381d444da78643bb5048b08a8cd0d9685981382bfbac07713c1747331",
+    "receipt_path": "/root/forge_work/apex_receipts/SEAL-b3447f3b6eff4c84_sha256_801c085381d444da78643bb5048b08a8cd0d9685981382bfbac07713c1747331.json",
+    "disposition": "HOLD cleared by explicit F13 approval on 29 Oct 2026"
+  },
+  "deploy": {
+    "method": "additive file writes + per-file .bak copies; no --delete, no caddy reload, no site build",
+    "link_repoint": "7 live HTML links repointed to the versioned URL so the edge serves the corrected file without a purge",
+    "cloudflare": "purge_cache not available to the current API token (401 on POST, token verified active for zone read) - versioned URL used instead; original URL still resolves and now serves the corrected bytes at origin",
+    "edge_note": "the legacy URL may still be served from edge cache for up to max-age 14400s; all site links now point at the versioned URL"
+  }
+}

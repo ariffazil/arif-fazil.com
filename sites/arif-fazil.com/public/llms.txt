@@ -68,7 +68,7 @@ Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-ful
 - [Global dossier](https://arif-fazil.com/world/2027/): Five engines of chaos, ranked by likelihood × impact. What agentic AI actually does to trust, money, labour, and Malaysia.
 - [Malaysia slice](https://arif-fazil.com/world/2027/malaysia/): Tenant of the AI economy — energy, water, on-ramp.
 - [Receipts & grades](https://arif-fazil.com/world/2027/receipts/): Permanent citations page, 19 graded receipts.
-- [PDF](https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf): Full 15-page A4 dossier.
+- [PDF](https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf): Full 16-page A4 dossier (15 pages + appended errata, 29 Oct 2026).
 
 ## World — Politics
 - [PM Bayang](https://arif-fazil.com/world/politics/shadow/): Jungian shadow analysis of all 9 Malaysian Prime Ministers — Persona / Bayang / Tragedi / Legasi. Framework analysis from public records; editorial, not biographical fact.

@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>arifOS Observatory — Reality Witness</title>
-<meta property="og:image" content="https://arifos observatory/og-image.jpg" />
+<meta property="og:image" content="https://arif-fazil.com/arifos/images/og-seal-1200x630.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta property="og:description" content="Read-only constitutional witness. One signed server-side snapshot drives every visible status. Every status carries source, timestamp, freshness, evidence class, confidence, namespace, drill-down, trace, receipt." />
 <meta property="og:title" content="arifOS Observatory — Public evidence for governed AI" />
 <meta name="description" content="Read-only constitutional witness. One signed server-side snapshot drives every visible status. Every status carries source, timestamp, freshness, evidence class, confidence, namespace, drill-down, trace, receipt.">
@@ -83,7 +84,7 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
 
  <!-- ZEN PULSE -->
  <div class="zen-pulse">
-  <div class="zp-item"><span class="zp-ask">Where am I?</span><span class="zp-val">arifOS · Observatory</span></div>
+   <span class="zp-val"><a href="/" style="color:inherit">arif-fazil.com</a> · arifOS Observatory</span>
   <div class="zp-item"><span class="zp-ask">Why care?</span><span class="zp-val gold">You want to <em>verify</em> the federation is governed and alive.</span></div>
   <div class="zp-item"><span class="zp-ask">What next?</span><span class="zp-val">Pick a verb below ↓</span></div>
  </div>
@@ -116,14 +117,15 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
 
 <header class="header">
  <div class="logo">
-  <div class="logo-mark">Ω</div>
+  <div class="logo-mark"><img src="/arifos/images/seal-emblem-256.png" alt="Ω" width="30" height="30" style="display:block;width:30px;height:30px;border-radius:6px" /></div>
   <div>
    <div class="logo-text">arifOS Observatory</div>
-   <div class="logo-sub">Reality Witness · F13 2026-07-16</div>
+   <div class="logo-sub">Reality Witness · F13 2026-07-16 · <span id="obs-age" style="opacity:.75">observed —</span></div>
   </div>
  </div>
  <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
-  <span id="tier-pill" class="tier-pill" data-tier-active="false">tier: public</span>
+   <a href="/" title="arif-fazil.com" style="color:var(--text-muted);text-decoration:none;font-size:.78rem;border:1px solid var(--border);padding:4px 10px;border-radius:1rem">← arif-fazil.com</a>
+   <span id="tier-pill" class="tier-pill" data-tier-active="false">tier: public</span>
   <button id="tier-btn" type="button" style="background:transparent;border:1px solid var(--border);color:var(--text-muted);font-size:.75rem;padding:4px 10px;border-radius:1rem;cursor:pointer">elevate tier</button>
  </div>
 </header>
@@ -368,6 +370,13 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
     } catch(e) { console.error('WebMCP kernel tools request failed:', e); return {status: 'unreachable', error: 'request failed'}; }
   });
 })();
+</script>
+<script>
+(function(){var el=document.getElementById('obs-age');if(!el)return;
+function upd(){var t=document.body.getAttribute('data-observed-at');if(!t){el.textContent='observed —';return;}
+var s=(Date.now()-new Date(t.replace(' ','T')+(t.endsWith('Z')?'':'Z')).getTime())/1000;
+el.textContent = s<90? 'observed just now' : s<5400? 'observed '+Math.round(s/60)+'m ago' : 'observed '+Math.round(s/3600)+'h ago';}
+upd();setInterval(upd,30000);})();
 </script>
 </body>
 </html>

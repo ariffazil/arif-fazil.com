@@ -1,0 +1,79 @@
+# Release evidence — /vitals/ reality update (article prose only, no routing change)
+release_candidate:
+  commit: "1833824"
+  branch: main
+  environment: production_public_html
+  changed_routes: ["/vitals/"]
+  public_effect:
+    - "dividen: asing isytihar RM20B / dibayar RM8B / unjuran Kewangan RM27B(2026)+RM32B(2027)"
+    - "RM14.8B dilabel item bukan tunai (pengiktirafan terkumpul bahagian rugi PRefChem), bukan rugi tunai baharu"
+    - "rizab: label 2P net entitlement bilion boe @1 Jan; RRR 1P purata 3 tahun; sel 2027 'belum diterbitkan' bukan 'kosong'"
+    - "bahagian baharu: Siapa memegang keputusan (Jukris ED/COO, 3/8 eksekutif; PDA vs DGO di Persekutuan; Sabah 40%)"
+    - "bahagian baharu: Ramalan berdaftar CHRON (pred-748f889ea86c, pred-0fd054b36ad4) dengan keyakinan + falsifikasi"
+    - "hidup/mati -> disokong/dilemahkan; Mac 2027 tidak lagi dibentang sebagai penyelesai semua soalan"
+    - "tunai bersih RM66.8B (-16B/6 bulan) dipapar di samping tunai kasar RM193.6B"
+  tests:
+    render: "copy-static-html.js -> DIST IN SYNC; render-vitals.cjs no-op (tiada marker, dijangka)"
+    parity_vitals: "FAIL 10/12 — PRA-SEDIA: kontrak B11 lapuk (grid9/fan/JSON-LD dari dashboard lama); gagal sama sebelum edit; tiada regresi (2 lulus sebelum & selepas)"
+    verify_pages_gate: "PASS — 274 halaman HTTP 200 (9 excluded), 2026-10-28"
+    live_probe: "curl https://arif-fazil.com/vitals/ HTTP 200; 7 padanan bahagian baharu disahkan"
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: "tiada bahan dalaman (emel/CTOS) diterbitkan — hanya sauh awam"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: sites/arif-fazil.com/public/vitals/index.html.bak-20261028
+    git: "git revert 1833824"
+    webroot: "cp dari backup ke /var/www/html/arif/vitals/index.html"
+  governance:
+    file_authority: "public/vitals/index.html = authored CANON (owner ARIF)"
+    lease: "ARIF direct instruction, sesi 2026-10-28 (mission: vitals reality update)"
+    json_data_untouched: "petronas_vitals.json (DERIVED, WEALTH cron) tidak disunting"
+  requested_action: "none"
+  approver: ""
+
+# ─── Addendum 2026-10-28 (same day, F13 named): canonical flip /vitals → /petronas ───
+addendum_petronas_flip:
+  commit: "53727c7"
+  routes:
+    - "/petronas/ → 200 (canonical; was 308 → /vitals/ since 2026-09-12)"
+    - "/vitals, /vitals/ → 308 → /petronas/"
+    - "/wealth, /wealth/ → 308 → /petronas/ (chain killed)"
+    - "/vitals/tangki.jpg, /vitals/_shell/article.css → 200 (assets intentionally stay)"
+    - "preview PNGs: /petronas/preview/v2-{desktop,phone}-full.png (200)"
+  caddy:
+    file: /etc/caddy/vhosts/arif-fazil.com.conf
+    backup: .bak-20261028-petronas-flip
+    validate: PASS
+    reload: "systemctl reload caddy — named change (F13 demand in-session)"
+    leftover_known: "handle /wealth/vitals/* masih menghidangkan salinan lama dari /var/www/html/arif/wealth/vitals/ — duplikat, disahkan sedia wujud sebelum kerja ini; belum disentuh (di luar skop)"
+  git: "git mv public/vitals/index.html → public/petronas/index.html (sejarah terpelihara); label VITALS→PETRONAS/φ REALITI; canonical URL"
+  verify_pages_gate: "PASS — 274 pages, 2026-10-28"
+  telegram: "PNG preview links dihantar (message_id 6494, chat ariffazil)"
+  canon_drift_noted: "canon/redirects.yaml alias '/petronas → /institution/petronas' adalah pelan tidak terlaksana; pelaksanaan sebenar: /petronas kanon terus. Patching canon dicadangkan, belum dilakukan."
+  rollback: "git revert 53727c7 1833824; restore Caddyfile dari .bak-20261028-petronas-flip; systemctl reload caddy"
+
+# ─── Addendum 2: v2 page-shaped redesign deployed (web-surface-design-fidelity) ───
+addendum_v2_design:
+  commit: "4a26f44"
+  skill: web-surface-design-fidelity
+  composition:
+    - "satu elemen kuat: tangki 9.35→8.64→7.92 emas, kontras skala ~14:1 vs kapsyen"
+    - "Fraunces opsz 144 weight 300 (disahkan resolve pada render, bukan fallback)"
+    - "Newsreader prosa ~65ch; IBM Plex Mono hanya untuk data kecil/sumber"
+    - "hairline menggantikan 7 kad bersempadan; sifar border-radius"
+    - "dotted leaders untuk senarai tonton; pull-quote ayat batas"
+  content_parity: "penuh — semua seksyen versi 1833824 dikekalkan (termasuk Nombor yang dicetak); tiada pemadatan"
+  contrast_measured: {ink: "15.0:1", dim: "7.5:1", accent: "8.1:1", verdict: "AA lulus semua saiz"}
+  palette_derivation: "paper #0a0c10 · hair #1f2733 · dim #9aa0a8 · accent #c9a227 — daripada sistem halaman sendiri; tiada palet haram"
+  renders: "final-desktop.png 1280px · final-phone.png 430px (Chrome headless sistem; diperiksa dengan vision termasuk zum)"
+  js: "tiada JS pada halaman — tiada apa untuk dibuktikan"
+  tests:
+    live_probe: "curl /petronas/ 200; 7 padanan penanda v2"
+    verify_pages_gate: "PASS — 274 pages"
+  telegram: "nota deploy dihantar (message_id 6495)"
+  backup: "public/petronas/index.html.bak-v2-pre-20261028"
+  rollback: "git revert 4a26f44"

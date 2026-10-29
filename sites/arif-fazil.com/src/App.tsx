@@ -43,6 +43,8 @@ const ExplorationPortfolio = lazy(() => import('@/pages/work/ExplorationPortfoli
 const PortfolioEvidence = lazy(() => import('@/pages/work/PortfolioEvidence').then(m => ({ default: m.PortfolioEvidence })));
 const RealityOverview = lazy(() => import('@/pages/RealityOverview').then(m => ({ default: m.RealityOverview })));
 const NotFound = lazy(() => import('@/pages/NotFound').then(m => ({ default: m.NotFound })));
+const Privacy = lazy(() => import('@/pages/Legal').then(m => ({ default: m.Privacy })));
+const Terms = lazy(() => import('@/pages/Legal').then(m => ({ default: m.Terms })));
 
 export function App() {
   return (
@@ -276,6 +278,12 @@ export function App() {
             <Route path="/compliance/" element={<Navigate to="/institution" replace />} />
             <Route path="/discoveries" element={<Navigate to="/earth" replace />} />
             <Route path="/discoveries/" element={<Navigate to="/earth" replace />} />
+
+            {/* Legal — plain-language, probed facts only */}
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/privacy/" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/terms/" element={<Terms />} />
 
             {/* Feeds & 404 */}
             <Route path="/rss" element={<Navigate to="/feed.xml" replace />} />

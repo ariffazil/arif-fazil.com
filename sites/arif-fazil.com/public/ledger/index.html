@@ -30,7 +30,7 @@
   "name": "Muhammad Arif bin Fazil",
   "url": "https://arif-fazil.com"
  },
- "dateModified": "2026-10-26T07:38:19Z",
+ "dateModified": "2026-10-27T18:31:11Z",
  "variableMeasured": [
   {
    "@type": "PropertyValue",
@@ -40,7 +40,7 @@
   {
    "@type": "PropertyValue",
    "name": "gate_verdicts",
-   "value": 2996
+   "value": 3100
   },
   {
    "@type": "PropertyValue",
@@ -55,7 +55,7 @@
   {
    "@type": "PropertyValue",
    "name": "defects_on_record",
-   "value": 5
+   "value": 6
   }
  ],
  "distribution": [
@@ -96,7 +96,7 @@ code{background:#f0eee9;padding:2px 5px;font-size:13px}
 footer{margin-top:60px;border-top:1px solid var(--line);padding-top:14px;color:var(--mut);font-size:12.5px}
 </style></head><body><main>
 <h1>Witness Ledger</h1>
-<div class=sub>arifOS Federation &middot; generated 2026-10-26T07:38:19Z &middot; schema arifos.witness_ledger.v1</div>
+<div class=sub>arifOS Federation &middot; generated 2026-10-27T18:31:11Z &middot; schema arifos.witness_ledger.v1</div>
 
 <p>This page is a record of what this system did, including what it got wrong.
 It exists for one reason: <b>accountability is only worth something when someone
@@ -126,19 +126,19 @@ practice, not yet a pattern — the count is published so it can be judged.</p>
 
 <h2>Output gate verdicts</h2>
 <div class=k>
-<div><b>2996</b><span>verdicts</span></div>
+<div><b>3100</b><span>verdicts</span></div>
 <div><b>0</b><span>messages blocked</span></div>
 <div><b>2026-09-04T05:13:05Z</b><span>earliest</span></div>
-<div><b>2026-10-26T07:34:33Z</b><span>latest</span></div>
+<div><b>2026-10-27T18:19:38Z</b><span>latest</span></div>
 </div>
 <div class=note>Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered.</div>
-<table><tr><th>class</th><th class=n>count</th></tr><tr><td>NARRATIVE_EMITTED_AS_OBSERVATION</td><td class=n>1296</td></tr><tr><td>UNCLASSIFIED_EMITTED_AS_OBSERVATION</td><td class=n>1051</td></tr><tr><td>UNGROUNDED_CLAIM</td><td class=n>283</td></tr><tr><td>PHANTOM_SOVEREIGNTY</td><td class=n>111</td></tr><tr><td>WARN</td><td class=n>77</td></tr><tr><td>BLOCK_CANDIDATE</td><td class=n>75</td></tr><tr><td>BASELINE_MISSING_MEASURED</td><td class=n>67</td></tr><tr><td>NARRATIVE_MARKERS_IN_MEASURED</td><td class=n>32</td></tr><tr><td>BASELINE_MISSING_PATTERN</td><td class=n>2</td></tr><tr><td>BASELINE_MISSING_MECHANISM</td><td class=n>1</td></tr><tr><td>NARRATIVE_MARKERS_IN_MECHANISM</td><td class=n>1</td></tr></table>
+<table><tr><th>class</th><th class=n>count</th></tr><tr><td>NARRATIVE_EMITTED_AS_OBSERVATION</td><td class=n>1353</td></tr><tr><td>UNCLASSIFIED_EMITTED_AS_OBSERVATION</td><td class=n>1088</td></tr><tr><td>UNGROUNDED_CLAIM</td><td class=n>289</td></tr><tr><td>PHANTOM_SOVEREIGNTY</td><td class=n>111</td></tr><tr><td>WARN</td><td class=n>77</td></tr><tr><td>BLOCK_CANDIDATE</td><td class=n>75</td></tr><tr><td>BASELINE_MISSING_MEASURED</td><td class=n>71</td></tr><tr><td>NARRATIVE_MARKERS_IN_MEASURED</td><td class=n>32</td></tr><tr><td>BASELINE_MISSING_PATTERN</td><td class=n>2</td></tr><tr><td>BASELINE_MISSING_MECHANISM</td><td class=n>1</td></tr><tr><td>NARRATIVE_MARKERS_IN_MECHANISM</td><td class=n>1</td></tr></table>
 
 <h2>Seal chain</h2>
 <div class=k>
 <div><b>1361</b><span>sealed events</span></div>
 <div><b>1792931640</b><span>head id</span></div>
-<div><b>0d</b><span>since last append</span></div>
+<div><b>2d</b><span>since last append</span></div>
 </div>
 <p class=mono>sha256 4c49b72d23cc01d128a3b2f8a3f122b7<br>/root/VAULT999/SEALED_EVENTS.jsonl<br>twin copy identical: True</p>
 <div class=note>Witness grows, chain does not move. The seal chain is the only append-only hash-linked record; it is reported here exactly as found, including how stale it is.</div>
@@ -146,7 +146,7 @@ practice, not yet a pattern — the count is published so it can be judged.</p>
 <h2>Defects on record</h2>
 <p>This is the part that makes the rest worth anything. A system that cannot lose
 and keep the record cannot be audited across time.</p>
-<ol><li><b>The output gate detects but does not stop</b><div class=mono>2996 verdicts, 0 blocks, blocking_enabled=false</div><div>A flagged sentence reached its reader anyway. A cop, not a door.</div><div class=owner>owner: F13 (promotion to Phase 2 NO)</div></li><li><b>The narrative detector fires on one word</b><div class=mono>marker &#x27;paling&#x27; fired 1148 times = 89% of narrative flags (1296 narrative verdicts total)</div><div>Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.</div><div class=owner>owner: mechanical (marker set + threshold)</div></li><li><b>A sub-ledger went quiet without being retired</b><div class=mono>reality_claim_refusals.jsonl: 152 entries, last 2026-09-14T10:23:28Z</div><div>Two ledgers for one gate; one is stale. Readers cannot tell which is live.</div><div class=owner>owner: mechanical (retire or re-wire)</div></li><li><b>Open loops accumulate faster than they close</b><div class=mono>0 open loops of 0 entries; oldest None</div><div>A backlog stated as policy. The stated count is the audit.</div><div class=owner>owner: ongoing</div></li><li><b>Half the quality of this system is judged by this system</b><div class=mono>Peace^2, DITING, RASA gates all run inside the same issuer as the output they judge</div><div>An internal judge cannot witness its own issuer. Independent observation requires an external seat.</div><div class=owner>owner: structural / open</div></li></ol>
+<ol><li><b>The output gate detects but does not stop</b><div class=mono>3100 verdicts, 0 blocks, blocking_enabled=false</div><div>A flagged sentence reached its reader anyway. A cop, not a door.</div><div class=owner>owner: F13 (promotion to Phase 2 NO)</div></li><li><b>The narrative detector fires on one word</b><div class=mono>marker &#x27;paling&#x27; fired 1198 times = 89% of narrative flags (1353 narrative verdicts total)</div><div>Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.</div><div class=owner>owner: mechanical (marker set + threshold)</div></li><li><b>The seal chain is frozen while witnesses keep appending</b><div class=mono>last append 2026-10-25T12:34:00Z (2d ago); head id=1792931640</div><div>Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.</div><div class=owner>owner: F13 (kernel seal path)</div></li><li><b>A sub-ledger went quiet without being retired</b><div class=mono>reality_claim_refusals.jsonl: 152 entries, last 2026-09-14T10:23:28Z</div><div>Two ledgers for one gate; one is stale. Readers cannot tell which is live.</div><div class=owner>owner: mechanical (retire or re-wire)</div></li><li><b>Open loops accumulate faster than they close</b><div class=mono>0 open loops of 0 entries; oldest None</div><div>A backlog stated as policy. The stated count is the audit.</div><div class=owner>owner: ongoing</div></li><li><b>Half the quality of this system is judged by this system</b><div class=mono>Peace^2, DITING, RASA gates all run inside the same issuer as the output they judge</div><div>An internal judge cannot witness its own issuer. Independent observation requires an external seat.</div><div class=owner>owner: structural / open</div></li></ol>
 
 <h2>Open loops</h2>
 <p class=mono>0 open &middot; 0 closed &middot; 0 total entries &middot; oldest open None</p>

@@ -59,7 +59,7 @@ function NavItemLink({
   const hint = navHints[hrefNorm]
   const base =
     className ??
-    'font-mono text-[11px] lg:text-[12px] uppercase tracking-[0.06em] transition-colors text-ink-soft hover:text-ink'
+    'inline-flex items-center min-h-[24px] font-mono text-[11px] lg:text-[12px] uppercase tracking-[0.06em] transition-colors text-ink-soft hover:text-ink'
   const active =
     activeClassName ??
     `text-ink font-semibold underline ${accent} decoration-2 underline-offset-8`

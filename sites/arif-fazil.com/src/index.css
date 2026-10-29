@@ -599,8 +599,19 @@
   }
 }
 
-/* Touch targets: compact footer/utility links gain a 44px hit area on coarse pointers */
+/* Target size (WCAG 2.2 AA 2.5.8): 24x24 minimum for non-inline links,
+   44x44 on coarse pointers. Inline links inside a sentence are exempt —
+   these selectors only hit links that sit in their own list slot. */
+header nav a,
+footer li a,
+.utility-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+
 @media (pointer: coarse) {
+  header nav a,
   footer a,
   .utility-link {
     display: inline-flex;

@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-10-26T07:38:19Z",
+ "generated_at": "2026-10-27T18:31:11Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6",
@@ -525,35 +525,35 @@
  "gate": {
   "state": "PRESENT",
   "path": "/root/.hermes/logs/reality_claim_gate.log",
-  "sha256": "db068d5497b9d82c327406a26ee94cad",
-  "lines": 2996,
+  "sha256": "7432101133d88da3f3c6ebabbb29f910",
+  "lines": 3100,
   "first_verdict": "2026-09-04T05:13:05Z",
-  "last_verdict": "2026-10-26T07:34:33Z",
+  "last_verdict": "2026-10-27T18:19:38Z",
   "by_class": {
-   "NARRATIVE_EMITTED_AS_OBSERVATION": 1296,
-   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 1051,
-   "UNGROUNDED_CLAIM": 283,
+   "NARRATIVE_EMITTED_AS_OBSERVATION": 1353,
+   "UNCLASSIFIED_EMITTED_AS_OBSERVATION": 1088,
+   "UNGROUNDED_CLAIM": 289,
    "PHANTOM_SOVEREIGNTY": 111,
    "WARN": 77,
    "BLOCK_CANDIDATE": 75,
-   "BASELINE_MISSING_MEASURED": 67,
+   "BASELINE_MISSING_MEASURED": 71,
    "NARRATIVE_MARKERS_IN_MEASURED": 32,
    "BASELINE_MISSING_PATTERN": 2,
    "BASELINE_MISSING_MECHANISM": 1,
    "NARRATIVE_MARKERS_IN_MECHANISM": 1
   },
   "top_markers": {
-   "paling": 1148,
-   "best": 59,
-   "terbaik": 53,
+   "paling": 1198,
+   "best": 63,
+   "terbaik": 54,
    "chosen": 16,
-   "blood": 15,
+   "blood": 16,
    "takdir": 11,
    "terpilih": 3,
    "worst": 2
   },
-  "multi_token_markers_suppressed": 19,
-  "privacy": "Marker statistics only. Multi-word fragments captured from messages (19 occurrences) are never published.",
+  "multi_token_markers_suppressed": 20,
+  "privacy": "Marker statistics only. Multi-word fragments captured from messages (20 occurrences) are never published.",
   "blocks": 0,
   "blocking_enabled": false,
   "note": "Phase 1 DETECT. Promotes to NO (blocking) only by F13 under the gate-promotion doctrine. Every verdict in this ledger was emitted AND the message that triggered it was still delivered."
@@ -573,7 +573,7 @@
   "lines": 1361,
   "bytes": 1903638,
   "last_append": "2026-10-25T12:34:00Z",
-  "days_since_append": 0,
+  "days_since_append": 2,
   "head_id": 1792931640,
   "twin_copy": {
    "path": "/root/arifOS/VAULT999/SEALED_EVENTS.jsonl",
@@ -626,16 +626,23 @@
   {
    "id": "D1",
    "title": "The output gate detects but does not stop",
-   "evidence": "2996 verdicts, 0 blocks, blocking_enabled=false",
+   "evidence": "3100 verdicts, 0 blocks, blocking_enabled=false",
    "consequence": "A flagged sentence reached its reader anyway. A cop, not a door.",
    "owner": "F13 (promotion to Phase 2 NO)"
   },
   {
    "id": "D2",
    "title": "The narrative detector fires on one word",
-   "evidence": "marker 'paling' fired 1148 times = 89% of narrative flags (1296 narrative verdicts total)",
+   "evidence": "marker 'paling' fired 1198 times = 89% of narrative flags (1353 narrative verdicts total)",
    "consequence": "Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.",
    "owner": "mechanical (marker set + threshold)"
+  },
+  {
+   "id": "D3",
+   "title": "The seal chain is frozen while witnesses keep appending",
+   "evidence": "last append 2026-10-25T12:34:00Z (2d ago); head id=1792931640",
+   "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
+   "owner": "F13 (kernel seal path)"
   },
   {
    "id": "D4",

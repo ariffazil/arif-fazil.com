@@ -177,7 +177,87 @@
       },
       "overlays": [
         {
-          "path": "_state",
+          "path": ".well-known",
+          "owner": "aaa-identity",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "000",
+          "owner": "aaa-stage-000",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "999",
+          "owner": "aaa-stage-999",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "README.md",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "a2a",
+          "owner": "aaa-a2a-runtime",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "assets",
+          "owner": "aaa-build-assets",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "audio",
+          "owner": "aaa-media",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "claims.json",
+          "owner": "aaa-runtime-state",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "cockpit",
+          "owner": "aaa-runtime-cockpit",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "federation_state.json",
+          "owner": "aaa-runtime-state",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "index.html",
+          "owner": "aaa-runtime-projection",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "index.html.new",
+          "owner": "aaa-runtime-projection",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "state-freshness-witness.js",
+          "owner": "aaa-runtime-state",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "state.json",
+          "owner": "aaa-runtime-projection",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "status.json",
+          "owner": "aaa-cockpit-cron",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "toolbench",
+          "owner": "aaa-toolbench",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "truth-contract.json",
           "owner": "aaa-runtime-state",
           "strategy": "preserve-live"
         }
@@ -185,6 +265,14 @@
       "aliases": [
         "aaa",
         "aaa.arif-fazil.com"
+      ],
+      "ownership_gate": true,
+      "deploy_generated": [],
+      "obsolete_patterns": [
+        "*.bak",
+        "*.bak-*",
+        "*.bak.*",
+        "*.pre-deploy-*"
       ]
     },
     {

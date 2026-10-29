@@ -37,7 +37,16 @@ export function RevealOnScroll({ children, delay = 0, className = '', direction 
       { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
     )
     observer.observe(el)
-    return () => observer.disconnect()
+
+    // Fallback: content must never stay invisible because an observer did not
+    // fire (print, full-page capture, headless QA, odd viewport). Reveal after
+    // 1.2s regardless. The animation is decoration; the content is the page.
+    const fallback = window.setTimeout(() => setVisible(true), 1200)
+
+    return () => {
+      observer.disconnect()
+      window.clearTimeout(fallback)
+    }
   }, [])
 
   const translate = {

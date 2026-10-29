@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ms" data-ring="BODY">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PETRONAS — dompet hari ini, tangki masa depan — Arif Fazil | arifOS</title>
+<meta name="theme-color" content="#0A0B0D" />
+<meta name="description" content="PETRONAS masih ada tunai dan untung. Dalam laporan mereka sendiri, tong yang boleh dijual turun dua tahun berturut-turut. Kita belum tahu sama ada itu diganti." />
+<meta name="agent-identity" content="WEALTH · PETRONAS institution health" />
+<meta property="og:title" content="PETRONAS · dompet hari ini, tangki masa depan" />
+<meta property="og:description" content="Keadaan kewangan PETRONAS dalam angka yang dicetak: tunai, rizab, dividen, dan apa yang belum diterbitkan." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arif-fazil.com/petronas/" />
+<meta property="og:image" content="https://arif-fazil.com/canon/atlas.png" />
+<meta property="og:site_name" content="arifOS · Federation Intelligence" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://arif-fazil.com/petronas/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ψ</text></svg>" />
+<style>
+  /* Palette derived from this surface's own system (vitals/_shell + canon tokens.css):
+     paper #0a0c10 · hairline #1f2733 · ink #edeae2 · dim #9aa0a8 · accent #c9a227.
+     Contrast vs paper: ink ≈15.0:1 · dim ≈7.5:1 · accent ≈8.1:1 (AA pass, incl. small text). */
+  :root{ --paper:#0a0c10; --ink:#edeae2; --dim:#9aa0a8; --hair:#1f2733; --accent:#c9a227; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:var(--paper)}
+  body{ background:var(--paper); color:var(--ink);
+    font-family:'Newsreader',Georgia,serif; font-size:1.14rem; line-height:1.72;
+    -webkit-font-smoothing:antialiased; }
+  .display{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 144,"SOFT" 0,"WONK" 0;font-weight:300}
+  .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:var(--accent)}
+  .wrap{max-width:46rem;margin:0 auto;padding:0 1.4rem}
+  .wide{max-width:64rem;margin:0 auto;padding:0 1.4rem}
+
+  .mast{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.6rem;
+    padding:1.6rem 0 1.1rem;border-bottom:1px solid var(--hair)}
+  .mast .word{font-family:'Fraunces',serif;font-variation-settings:"opsz" 60;font-weight:400;font-size:1.05rem;letter-spacing:.02em}
+  .mast nav{font-size:.82rem;font-style:italic;color:var(--dim)}
+  .mast nav a{color:var(--dim);margin-left:1.1rem}
+  .mast nav a:hover{color:var(--ink)}
+
+  .kicker{font-style:italic;color:var(--dim);font-size:.95rem;margin:4.2rem 0 1.6rem}
+  h1.hero{font-size:clamp(3.2rem,8.4vw,7.6rem);line-height:.98;letter-spacing:-.015em;margin-bottom:2.2rem}
+  .lede{font-size:clamp(1.25rem,2.1vw,1.55rem);line-height:1.5;max-width:34rem;margin-bottom:1.2rem}
+  .lede em{font-style:italic;color:var(--accent)}
+  figure.tank-img{margin:0 0 1rem}
+  figure.tank-img img{width:100%;display:block;filter:grayscale(1) contrast(1.05)}
+  figure.tank-img figcaption{font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.8rem}
+
+  .tank{margin:clamp(4.5rem,9vw,7.5rem) 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    padding:clamp(2.5rem,6vw,4.5rem) 0}
+  .tank .seq{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .tank .yr{font-size:.95rem;font-style:italic;color:var(--dim);display:block;margin-bottom:.5rem}
+  .tank .n{font-variant-numeric:tabular-nums;line-height:.9}
+  .tank .n1{font-size:clamp(2.2rem,5vw,4.2rem);color:var(--dim)}
+  .tank .n2{font-size:clamp(3rem,7vw,6rem);color:var(--dim)}
+  .tank .n3{font-size:clamp(4.2rem,10.5vw,9rem);color:var(--accent)}
+  .tank .cap{margin-top:2.2rem;font-size:.92rem;color:var(--dim);font-style:italic}
+  .tank .unpub{margin-top:1.6rem;display:flex;align-items:baseline;gap:.9rem;font-size:.95rem;color:var(--dim)}
+  .tank .unpub .dash{flex:1;border-bottom:1px dashed var(--hair);transform:translateY(-.3em)}
+
+  section{margin:clamp(4.5rem,9vw,7rem) 0}
+  h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:2rem}
+  h2 .no{color:var(--accent);font-style:italic;margin-right:.8rem;font-size:.7em;vertical-align:.15em}
+  p{margin-bottom:1.15rem}
+  .dim{color:var(--dim)}
+
+  .rows{border-top:1px solid var(--hair)}
+  .row{display:grid;grid-template-columns:1fr auto;gap:.4rem 2rem;align-items:baseline;
+    padding:1.5rem 0;border-bottom:1px solid var(--hair)}
+  .row .lbl{font-style:italic;color:var(--dim);font-size:.98rem}
+  .row .val{font-family:'Fraunces',serif;font-variation-settings:"opsz" 100;font-weight:300;
+    font-size:clamp(1.9rem,4vw,3rem);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .row .sub{grid-column:1/-1;font-size:.95rem;color:var(--dim);max-width:36rem}
+
+  .road{padding:1.8rem 0;border-bottom:1px solid var(--hair)}
+  .road h3{font-family:'Fraunces',serif;font-variation-settings:"opsz" 80;font-weight:400;font-size:1.35rem;margin-bottom:.45rem}
+  .road h3 .st{font-family:'Newsreader',serif;font-style:italic;font-size:.85rem;color:var(--accent);margin-left:.9rem}
+  .road h3 .st.dim2{color:var(--dim)}
+  .road p{font-size:1rem;color:var(--dim);max-width:38rem;margin:0}
+
+  .toc{list-style:none;border-top:1px solid var(--hair)}
+  .toc li{display:flex;align-items:baseline;gap:.8rem;padding:1.05rem 0;border-bottom:1px solid var(--hair);flex-wrap:wrap}
+  .toc .d{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--accent);white-space:nowrap}
+  .toc .dash{flex:1;border-bottom:1px dotted var(--hair);transform:translateY(-.35em)}
+  .toc .t{font-size:.98rem;max-width:26rem}
+
+  .pull{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    padding:clamp(3rem,7vw,5rem) 0;text-align:center;margin:clamp(4rem,9vw,7rem) 0}
+  .pull p{font-family:'Fraunces',serif;font-variation-settings:"opsz" 120;font-style:italic;font-weight:300;
+    font-size:clamp(1.7rem,4.2vw,3.1rem);line-height:1.25;max-width:44rem;margin:0 auto}
+  .pull .who{margin-top:1.4rem;font-family:'Newsreader',serif;font-style:normal;font-size:.9rem;color:var(--dim)}
+
+  ul.plain{list-style:none}
+  ul.plain li{padding:.55rem 0 .55rem 1.4rem;position:relative;color:var(--dim);font-size:1rem}
+  ul.plain li:before{content:"—";position:absolute;left:0;color:var(--hair)}
+
+  .fineprint{font-size:.98rem;color:var(--dim);border-top:1px solid var(--hair);padding-top:2rem}
+  .fineprint p{margin-bottom:1rem}
+  .fineprint strong{color:var(--ink);font-weight:600}
+
+  .src{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);line-height:1.8;
+    border-top:1px solid var(--hair);padding-top:1.4rem;margin-top:3rem}
+  .src a{color:var(--dim);text-decoration:underline;text-decoration-color:var(--hair)}
+  .src a:hover{color:var(--accent)}
+  .colophon{border-top:1px solid var(--hair);margin-top:5rem;padding:2rem 0 4rem;
+    font-size:.85rem;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  .colophon .tag{font-style:italic}
+  .colophon nav a{color:var(--dim);margin-left:1.1rem;font-style:italic}
+  .colophon nav a:hover{color:var(--ink)}
+  .graf{border-top:1px solid var(--hair);padding:2rem 0;border-bottom:1px solid var(--hair)}
+  .graf+.graf{border-top:none}
+  .graf .gt{font-style:italic;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem}
+  .graf .gs{font-size:.9rem;color:var(--dim);margin-bottom:1.2rem}
+  .graf svg{width:100%;height:auto;display:block}
+  .graf figcaption{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);margin-top:1rem;line-height:1.7}
+  svg text{font-family:'IBM Plex Mono',monospace;fill:var(--dim)}
+  svg .gv{fill:var(--ink)} svg .ga{fill:var(--accent)}
+  @media (max-width:640px){
+    .row{grid-template-columns:1fr}
+    .row .val{white-space:normal}
+    .toc .t{max-width:none}
+    .mast nav a{margin-left:.8rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="wide">
+  <div class="mast">
+    <span class="word">Arif Fazil</span>
+    <nav><a href="/">Home</a><a href="/earth/">Earth</a><a href="/words/">Words</a><a href="/world/makcikgpt/">MakcikGPT</a><a href="/world/">World</a><a href="/work/">Work</a></nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <p class="kicker">World · Petronas · Bahasa Melayu — dikemas kini 28 Oktober 2026</p>
+  <h1 class="hero display">Dompet hari ini.<br>Tangki masa depan.</h1>
+  <p class="lede">PETRONAS masih ada duit. Tong yang boleh dijual sudah turun dua tahun. Minyak tinggal di bawah. Ruang di atas kosong. <em>Itu tangki masa depan. Bukan ramalan bankrap.</em></p>
+  <figure class="tank-img">
+    <img src="/vitals/tangki.jpg" alt="Dalam tangki besar, minyak tinggal di bawah. Ruang di atas kosong." />
+    <figcaption>Tangki. Isi di bawah, ruang di atas.</figcaption>
+  </figure>
+</div>
+
+<div class="wide">
+  <div class="tank">
+    <div class="seq display">
+      <div><span class="yr">2024 · 1 Jan</span><span class="n n1">9.35</span></div>
+      <div><span class="yr">2025 · 1 Jan</span><span class="n n2">8.64</span></div>
+      <div><span class="yr">2026 · 1 Jan</span><span class="n n3">7.92</span></div>
+    </div>
+    <div class="unpub"><span>2027</span><span class="dash"></span><span>belum diterbitkan</span></div>
+    <p class="cap">Rizab 2P net entitlement, bilion tong setara minyak (boe), pada 1 Januari setiap tahun. Belum terbit bukan bermaksud kosong.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <p>Duit turun sedikit. Tangki turun dua kali. Nombor rizab 2027 belum diterbitkan. Akaun penuh sekitar Februari 2027 akan menjawab soalan tunai — bukan soalan rizab, bukan soalan mahkamah. Jadual ketiga-tiganya berbeza.</p>
+    <p>9 Oktober lepas, kerajaan menaikkan jangkaan dividen PETRONAS: RM27 bilion untuk 2026 — lebih daripada RM20 bilion yang PETRONAS sendiri isytiharkan — dan RM32 bilion untuk 2027. Jalan D disokong. Tetapi itu unjuran Kementerian Kewangan, bukan keputusan lembaga PETRONAS.</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">I.</span>Empat jalan, dan apa yang mengujinya</h2>
+    <p class="dim" style="margin-bottom:2rem">Bukan niat sesiapa. Hanya apa yang laporan boleh sokong, lemahkan, atau belum dapat bezakan.</p>
+    <div class="rows">
+      <div class="road">
+        <h3>A. Tong baru dijumpai <span class="st dim2">keyakinan rendah · menunggu semakan</span></h3>
+        <p>Disokong jika semakan berikutnya mengganti apa yang diangkat. Dilemahkan jika tong terus turun dan penggantian kekal di bawah 1.</p>
+      </div>
+      <div class="road">
+        <h3>B. Kurang milik, lebih kuasa jual <span class="st dim2">belum terbukti</span></h3>
+        <p>Disokong jika hak jual atau margin naik bersama aliran. Setakat ini gas mengalir lebih, hak jual tidak naik. Untung RM5 bilion ialah untung melepas milik, bukan sewa.</p>
+      </div>
+      <div class="road">
+        <h3>C. Lebih kecil, masih untung <span class="st">paling hampir dengan buku hari ini</span></h3>
+        <p>Tong turun, penggantian 0.3, belanja cari telaga hampir rata, kakitangan sedang dikecilkan. Jalan ini yang paling hampir dengan buku hari ini. Dilemahkan jika tong berhenti turun.</p>
+      </div>
+      <div class="road">
+        <h3>D. Tuai hari ini <span class="st">disokong · 9 Oktober</span></h3>
+        <p>Belanjawan 9 Oktober meletakkan jangkaan RM27 bilion untuk 2026 dan RM32 bilion untuk 2027, lebih daripada RM20 bilion yang sudah diisytihar — tetapi itu unjuran Kementerian Kewangan, bukan keputusan lembaga PETRONAS.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">II.</span>Apa yang berubah 9 Oktober, dan apa yang tidak</h2>
+    <p>Belanjawan 2027 dibentang 9 Oktober. Kertas Kementerian Kewangan menaikkan dividen PETRONAS untuk 2026 daripada RM20 bilion kepada RM27 bilion, dan meletakkan RM32 bilion untuk 2027. The Edge menulis yang sama: RM32 bilion itu RM5 bilion, atau 18.5 peratus, lebih tinggi daripada RM27 bilion untuk 2026. Ia 8.4 peratus daripada hasil persekutuan yang diunjur RM380.8 bilion.</p>
+    <p>Kertas yang sama andaikan minyak mentah 2027 pada US$78 setong, turun daripada US$85 untuk 2026. Hasil berkaitan petroleum 2027: RM61.2 bilion, 16.1 peratus daripada jumlah, naik sedikit daripada 15.1 peratus.</p>
+    <p>Harga sekarang jauh di atas andaian itu. Brent pada 19 Oktober sekitar US$108 setong; penutup Jumaat 109.86, tertinggi sejak 19 Mei. Aliran minyak mentah Teluk yang dipantau Kpler sekitar 8.5 juta tong sehari minggu itu, turun daripada lebih 20 juta. Sebahagian tunai tambahan itu ialah harga perang, bukan hasil kerja baru.</p>
+    <p>RM32 bilion itu unjuran Kementerian Kewangan, bukan keputusan lembaga PETRONAS. Ia juga masih perlu dibayar daripada 7.92 bilion tong yang boleh dijual, dengan penggantian terbukti 0.3. Tangki tidak berubah. Tiada nombor rizab 2027 diterbitkan. Masih tiada bukti hak jual atau sewa naik untuk mengganti tong yang sudah dijual. Dompet naik, tangki turun.</p>
+    <p>Pada 7 Oktober, Mahkamah Tinggi Malaya meluluskan penyusunan semula dalaman PETRONAS Gas: pemprosesan gas, pengangkutan gas dan utiliti berpindah ke PG Gas Processing, PG TransCo dan PG Utilities East — aset dipisahkan, bukan ditambah (Bursa Malaysia GA1-07102026-00089).</p>
+    <p class="src">Sumber: <a href="https://belanjawan.mof.gov.my/pdf/belanjawan2027/revenue/fiscal_outlook_2027.pdf">Kementerian Kewangan — 2027 Fiscal Outlook</a> · <a href="https://theedgemalaysia.com/node/821106">The Edge, 9 Oktober 2026</a> · Bursa Malaysia GA1-07102026-00089</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">III.</span>Apa yang perlu ditonton seterusnya</h2>
+    <p class="dim">Jangan tonton niat orang. Jangan tonton skor sifar lama. Jangan tonton satu harga minyak sebagai kebenaran. Tonton benda ini, dan tulis apa yang laporan cetak, bukan apa yang terasa.</p>
+    <ul class="toc" style="margin-top:1.6rem">
+      <li><span class="d">9 Okt 2026</span><span class="t">Sudah berlaku. Belanjawan meletakkan jangkaan RM27 bilion untuk 2026 dan RM32 bilion untuk 2027. Jalan D disokong. <a href="https://belanjawan.mof.gov.my/pdf/belanjawan2027/revenue/fiscal_outlook_2027.pdf">Sumber: Kementerian Kewangan</a></span><span class="dash"></span></li>
+      <li><span class="d">31 Dis 2026</span><span class="t">Syarat terdahulu dilaporkan dipenuhi; penyempurnaan EnQuest dijangka, dengan ekonomi efektif 1 Januari 2027. Belum siap = jangan tulis “sudah dijual”.</span><span class="dash"></span></li>
+      <li><span class="d">Feb 2027</span><span class="t">Akaun penuh. Tunai. Dividen benar-benar dibayar. Adakah loji PRefChem sudah masuk kumpulan, dan berapa rugi lama yang masih tinggal.</span><span class="dash"></span></li>
+      <li><span class="d">1H 2027</span><span class="t">Jika gas yang mengalir naik, adakah gas yang boleh dijual naik sekali? Naik bersama = jalan B mula ada bukti. Tidak naik = jalan B gagal lagi.</span><span class="dash"></span></li>
+      <li><span class="d">Semakan rizab</span><span class="t">Adakah 7.92 turun selepas pindah 31 Mei dikira? Adakah penggantian kekal di bawah 0.8 — paras 1 Januari 2025 — atau kembali melepasinya? Ini yang menyokong atau melemahkan jalan A dan C.</span><span class="dash"></span></li>
+      <li><span class="d">M. Persekutuan</span><span class="t">Jadualnya sendiri, bukan jadual akaun: konflik PDA 1974 dengan undang-undang gas Sarawak. Keputusan boleh mengubah halaman ini lebih daripada mana-mana angka.</span><span class="dash"></span></li>
+      <li><span class="d">30 Sep 2027</span><span class="t">Akaun pertama syarikat London rakan kongsi itu patut ada. Sebelum tarikh itu, kenyataan akhbar bukan kunci kira-kira.</span><span class="dash"></span></li>
+    </ul>
+    <p class="dim" style="margin-top:1.6rem">Satu tahun penggantian masih tidak diterbitkan. Purata tiga tahun 0.3 menyembunyikan tahun mana yang jatuh. Jangan reka tahun itu.</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">IV.</span>Apa yang kita tahu</h2>
+    <div class="rows">
+      <div class="row">
+        <span class="lbl">Tunai · 30 Jun 2026</span>
+        <span class="val">RM193.6B</span>
+        <span class="sub">31 Dis 2025: RM204.4B. Hutang kumpulan 30 Jun: RM126.8B. Gearing 21.2%, dan nota kaki mereka masukkan jaminan. Tunai bersih selepas hutang: RM66.8B — susut sekitar RM16B dalam enam bulan; tunai kasar susut RM10.8B. Dua ukuran, dua kadar.</span>
+      </div>
+      <div class="row">
+        <span class="lbl">Untung · 6 bulan 2026</span>
+        <span class="val">RM27.2B</span>
+        <span class="sub">Huluan RM28.1B termasuk keuntungan pelupusan Searah RM5.0B. Gas dan maritim RM16.7B.</span>
+      </div>
+      <div class="row">
+        <span class="lbl">Dividen keluar · 6 bulan</span>
+        <span class="val">RM8B</span>
+        <span class="sub">Daripada RM20B diisytihar PETRONAS untuk 2026. Anggaran Kementerian Kewangan: RM27B (2026) dan RM32B (2027) — unjuran kerajaan, bukan isytihar syarikat.</span>
+      </div>
+      <div class="row">
+        <span class="lbl">Rugi downstream</span>
+        <span class="val">RM15.2B</span>
+        <span class="sub">RM15.2B = rugi segmen hiliran. RM14.8B = pengiktirafan terkumpul bahagian rugi PRefChem yang sebelum ini direkod di peringkat usaha sama — item bukan tunai, timbul apabila suntikan modal membawa loji itu masuk kiraan kumpulan. Ia bukan rugi tunai baharu, dan bukan keseluruhan rugi PRefChem. Tanpa item itu, hiliran untung RM7.0B.</span>
+      </div>
+    </div>
+    <p class="src" style="border-top:none;margin-top:2rem">Tarikh, bukan skor: 9 Okt 2026 ucapan Belanjawan 2027 (Kementerian Kewangan) → 31 Dis 2026 EnQuest dijangka siap → 1 Jan 2027 ekonomi EnQuest → sekitar Feb 2027 akaun diaudit → semakan rizab seterusnya ialah kali pertama stok Januari dan pindah 31 Mei terpaksa bertemu → keputusan Mahkamah Persekutuan (PDA lawan undang-undang gas Sarawak) berjalan pada jadualnya sendiri.</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">V.</span>Dalam bentuk graf</h2>
+    <p class="dim">Empat lukisan daripada nombor yang sama halaman ini. Tiada paksi disorok; yang dipotong diberitahu. Emas = perkara yang menekan.</p>
+
+    <figure class="graf">
+      <div class="gt">Tangki menyusut — dan penggantiannya jatuh lebih cepat</div>
+      <div class="gs">Rizab 2P net entitlement (bar kelabu) dan nisbah penggantian RRR 1P purata tiga tahun (bar emas), 1 Januari setiap tahun.</div>
+      <svg viewBox="0 0 640 260" role="img" aria-label="Rizab turun 9.35 ke 7.92 bilion boe; RRR jatuh 1.6 ke 0.3">
+        <text x="580" y="16" font-size="11" text-anchor="end">Tong boleh jual (bilion boe)</text>
+        <rect x="100" y="28.1" width="90" height="116.9" fill="#9aa0a8"/>
+        <rect x="275" y="37" width="90" height="108" fill="#9aa0a8"/>
+        <rect x="450" y="46" width="90" height="99" fill="#9aa0a8"/>
+        <text x="138" y="20" font-size="13" class="gv">9.35</text>
+        <text x="313" y="29" font-size="13" class="gv">8.64</text>
+        <text x="488" y="38" font-size="13" class="ga">7.92</text>
+        <text x="138" y="163" font-size="11">2024</text>
+        <text x="313" y="163" font-size="11">2025</text>
+        <text x="488" y="163" font-size="11">2026</text>
+        <line x1="60" y1="145" x2="580" y2="145" stroke="#1f2733" stroke-width="1"/>
+        <text x="580" y="196" font-size="11" text-anchor="end">Penggantian (RRR 1P, purata 3 thn)</text>
+        <rect x="100" y="174.2" width="90" height="60.8" fill="#c9a227"/>
+        <rect x="275" y="204.6" width="90" height="30.4" fill="#c9a227"/>
+        <rect x="450" y="223.6" width="90" height="11.4" fill="#c9a227"/>
+        <text x="141" y="192" font-size="13" fill="#0a0c10">1.6</text>
+        <text x="316" y="222" font-size="13" fill="#0a0c10">0.8</text>
+        <text x="491" y="217" font-size="13" class="ga">0.3</text>
+        <line x1="60" y1="235" x2="580" y2="235" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>Tong turun 15% dalam dua tahun — tetapi kadar gantinya jatuh 81%. Yang runtuh dahulu ialah pengganti, bukan stok. Sumber: Integrated Report 2025 PETRONAS.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Tuntutan ke atas dompet naik semula ke paras puncak</div>
+      <div class="gs">Dividen: yang dibayar (kelabu) berbanding yang diunjurkan kerajaan (emas), RM bilion.</div>
+      <svg viewBox="0 0 640 200" role="img" aria-label="Dividen dibayar 32B 2025; isytihar 20B 2026; unjuran 27B dan 32B">
+        <rect x="70" y="37" width="80" height="128" fill="#9aa0a8"/>
+        <rect x="210" y="85" width="80" height="80" fill="#9aa0a8"/>
+        <rect x="350" y="57" width="80" height="108" fill="#c9a227"/>
+        <rect x="490" y="37" width="80" height="128" fill="#c9a227"/>
+        <text x="92" y="29" font-size="13" class="gv">32</text>
+        <text x="237" y="77" font-size="13" class="gv">20</text>
+        <text x="377" y="49" font-size="13" class="ga">27</text>
+        <text x="517" y="29" font-size="13" class="ga">32</text>
+        <text x="70" y="184" font-size="11">2025 dibayar</text>
+        <text x="210" y="184" font-size="11">2026 isytihar</text>
+        <text x="350" y="184" font-size="11">2026 unjuran</text>
+        <text x="490" y="184" font-size="11">2027 unjuran</text>
+        <line x1="60" y1="165" x2="590" y2="165" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>2026 nampak lega pada RM20B — sehingga Belanjawan menaikkannya. Unjuran ialah angka Kementerian Kewangan, bukan keputusan lembaga PETRONAS. Sumber: 2027 Fiscal Outlook.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Enam bulan ini, wang keluar melebihi wang masuk</div>
+      <div class="gs">Aliran tunai operasi (CFFO) berbanding pelaburan modal + dividen dibayar, 1H 2026, RM bilion.</div>
+      <svg viewBox="0 0 640 200" role="img" aria-label="CFFO 47.5 berbanding keluar 49.4 — 104 peratus">
+        <rect x="160" y="55.7" width="110" height="109.3" fill="#9aa0a8"/>
+        <rect x="340" y="51.4" width="110" height="113.6" fill="#c9a227"/>
+        <text x="176" y="47" font-size="13" class="gv">CFFO 47.5</text>
+        <text x="330" y="43" font-size="13" class="ga">Keluar 49.4</text>
+        <text x="160" y="184" font-size="11">masuk dari operasi</text>
+        <text x="340" y="184" font-size="11">capex 41.4 + dividen 8.0</text>
+        <line x1="60" y1="165" x2="580" y2="165" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>104%. Lebihan dibiayai simpanan, pelupusan aset dan pinjaman — satu separuh tahun, bukan trend terbukti. Sumber: Laporan Interim 1H 2026.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Pengeluaran turun tiga kali berturut</div>
+      <div class="gs">Purata pengeluaran harian, ribu boe/sehari. Paksi dipotong 2,200–2,500 supaya arah kelihatan — dinyatakan secara terbuka.</div>
+      <svg viewBox="0 0 640 170" role="img" aria-label="Pengeluaran 2451 ke 2423 ke 2341 ribu boe sehari">
+        <polyline points="120,29.6 320,40.8 520,73.6" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+        <circle cx="120" cy="29.6" r="4" fill="#c9a227"/>
+        <circle cx="320" cy="40.8" r="4" fill="#c9a227"/>
+        <circle cx="520" cy="73.6" r="4" fill="#c9a227"/>
+        <text x="100" y="20" font-size="13" class="gv">2,451</text>
+        <text x="300" y="31" font-size="13" class="gv">2,423</text>
+        <text x="500" y="66" font-size="13" class="ga">2,341</text>
+        <text x="104" y="150" font-size="11">2024</text>
+        <text x="304" y="150" font-size="11">2025</text>
+        <text x="496" y="150" font-size="11">1H 2026</text>
+        <line x1="60" y1="130" x2="580" y2="130" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>Penurunan 4.5% dalam tempoh sama dengan tangki menyusut. Sumber: kenyataan tahunan &amp; interim PETRONAS.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">VI.</span>Apa yang kita tidak tahu</h2>
+    <ul class="plain">
+      <li>Tahun tunggal berapa tong diganti tidak diterbitkan. Yang ada hanya purata tiga tahun, dan ia jatuh ke 0.3.</li>
+      <li>Apa yang PETRONAS dapat sebagai ganti tong yang tidak lagi dimiliki — belum ada bukti sewa atau hak jual yang naik.</li>
+      <li>Pindah ke rakan kongsi pada 31 Mei belum masuk dalam gambar tong 7.92. Gambar itu diambil 1 Januari.</li>
+      <li>Satu perjanjian ladang belum siap. Ia dijangka 31 Disember, bukan sudah berlaku.</li>
+      <li>Pulangan atas modal besar Gentari — 9.1 GW kapasiti, 4.2 GW beroperasi per 30 Jun 2026 — kerana akaun anak syarikat itu tidak diterbitkan.</li>
+      <li>Tarikh rasmi pelantikan pengarah eksekutif baharu dan mandatnya — belum berdokumen awam.</li>
+      <li>Tiada tarikh syarikat kehabisan duit. Tiada tarikh syarikat runtuh.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">VII.</span>Siapa memegang keputusan</h2>
+    <p>Angka di atas tidak memutuskan apa-apa; lembaga yang memutuskan. Semakan 28 Oktober 2026 pada laman rasmi PETRONAS: Mohd Jukris Abdul Wahab disenaraikan sebagai Executive Director — serentak Chief Operating Officer dan EVP &amp; CEO Upstream. Tiga daripada lapan pengarah kini eksekutif: PGCEO, COO merangkap ketua Upstream, dan CFO. Orang yang memiliki masalah upstream kini mengundi di lembaga yang menilai masalah itu. Tarikh rasmi pelantikannya sebagai pengarah, dan mandat yang menyertainya, belum berdokumen awam.</p>
+    <p>Dua jadual lain berjalan di luar jadual akaun. Di Mahkamah Persekutuan: rujukan PETRONAS (10 Januari 2026) tentang konflik PDA 1974 dengan Distribution of Gas Ordinance 2016 Sarawak, dan petisyen Sarawak mencabar PDA 1974, Continental Shelf Act 1966 dan Petroleum Mining Act 1966. Di Sabah: mahkamah mengakui hak 40% hasil; bayaran interim RM1.5 bilion dibayar Jun 2026, jauh daripada tuntutan RM5–23 bilion setahun. Kedua-duanya menekan dompet yang sama yang diminta membayar dividen.</p>
+    <p class="src">Sumber: <a href="https://www.petronas.com/about-us/our-leaders">petronas.com — Our Leaders</a> (semakan 28 Okt 2026) · The Edge, 18 Jan 2026 · The Star, 3 Jun 2026 · Batas: komposisi lembaga bukan bukti keputusan; jawatan luar seseorang pengarah bukan bukti arahan mengundi.</p>
+  </section>
+
+  <div class="pull">
+    <p>“Tekanan tunai dan perubahan portfolio boleh diperhatikan. Sebab keputusan lembaga serta kesannya terhadap keupayaan masa depan masih belum dapat dipastikan.”</p>
+    <div class="who">— batas kesimpulan halaman ini</div>
+  </div>
+
+  <section>
+    <h2 class="display"><span class="no">VIII.</span>Ramalan berdaftar — diuji masa, bukan dipercaya</h2>
+    <p class="dim">Dua ramalan berdaftar dalam lejar CHRON pada 28 Oktober 2026. Pendaftaran bukan pengesahan; hanya hasil yang disahkan mengubah skor.</p>
+    <ul class="toc" style="margin-top:1.6rem">
+      <li><span class="d">0.63</span><span class="t">RRR (1P) purata 3 tahun pada 1.1.2027 kekal &lt; 0.8 — falsifikasi: Integrated Report 2026 mencetak 0.8 atau lebih</span><span class="dash"></span><span class="d">31 Mac 2027</span></li>
+      <li><span class="d">0.61</span><span class="t">CAPEX + dividen dibayar &gt; CFFO untuk FY2026 — falsifikasi: Laporan Kewangan FY2026 menunjukkan sebaliknya</span><span class="dash"></span><span class="d">31 Mac 2027</span></li>
+    </ul>
+    <p class="dim" style="margin-top:1.4rem">Ramalan lain berkaitan PETRONAS turut berdaftar: keputusan Mahkamah Persekutuan, penyempurnaan EnQuest, dividen FY2027.</p>
+    <p class="src">Sumber: lejar ramalan CHRON, federasi arifOS (pred-748f889ea86c, pred-0fd054b36ad4) — semakan 28 Okt 2026.</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">IX.</span>Nombor yang dicetak</h2>
+    <p class="dim" style="margin-bottom:1.6rem">Ini bukan ramalan. Ini apa yang laporan syarikat cetak.</p>
+    <div class="fineprint">
+      <p>Tunai 30 Jun 2026: RM193.6 bilion. Disember 2025: RM204.4 bilion. Hutang kumpulan 30 Jun: RM126.8 bilion. Gearing 21.2 peratus, termasuk jaminan. Nota dan bon ada dalam hutang itu. Tunai bersih selepas hutang: RM66.8 bilion.</p>
+      <p>Untung enam bulan: RM27.2 bilion. Daripada itu, RM5.0 bilion ialah untung melepas milik ke rakan kongsi pada 31 Mei. Gas dan maritim: RM16.7 bilion.</p>
+      <p>Dividen dibayar sepanjang 2025: RM32 bilion, atas untung RM45.4 bilion. Dividen diisytihar 26 Februari 2026: RM20 bilion. RM8 bilion sudah dibayar menjelang 30 Jun. Anggaran Kementerian Kewangan: RM27 bilion untuk 2026, RM32 bilion untuk 2027 — unjuran, bukan isytihar.</p>
+      <p>Tong yang boleh dijual (rizab 2P net entitlement, bilion boe): 9.35 pada 1 Januari 2024, 8.64 pada 1 Januari 2025, 7.92 pada 1 Januari 2026. Penggantian terbukti (RRR 1P, purata tiga tahun): 1.6, kemudian 0.8, kemudian 0.3. Tahun tunggal tidak diterbitkan. Angka 2027 belum diterbitkan.</p>
+      <p>Gas yang mengalir separuh tahun ini naik. Gas yang boleh dijual tidak naik.</p>
+      <p>Belanja cari telaga hampir rata. Belanja besar separuh tahun ini ialah cek loji, bukan telaga baru. Rugi bahagian loji RM15.2 bilion. Daripada itu, RM14.8 bilion ialah item bukan tunai — pengiktirafan terkumpul bahagian rugi PRefChem apabila loji itu dibawa masuk kiraan kumpulan. Tanpa item itu, bahagian itu untung RM7.0 bilion.</p>
+      <p>Harga minyak pada halaman lama tidak dipakai. Harga yang masuk akaun separuh tahun ialah purata Brent US$92.31.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="wide">
+  <div class="colophon">
+    <span class="tag">“Ditempa bukan diberi — Forged, not given.”</span>
+    <span class="mono" style="font-size:.72rem">arifOS · WEALTH · MIXED — angka laporan diaudit; jalan A–D ialah bacaan, bukan ramalan · diterbitkan 19 Okt, dikemas kini 28 Okt 2026</span>
+    <nav><a href="/wealth/malaysia/">Malaysia</a><a href="/world/">World</a><a href="/words/writing/petronas-23-years-in-brazil/">23 Years in Brazil</a><a href="/feed.xml">feed.xml</a></nav>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — dompet hari ini, tangki masa depan","dateModified":"2026-10-28","inLanguage":"ms","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2027 figure is not yet published. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/petronas/"}
+</script>
+</body>
+</html>

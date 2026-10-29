@@ -1,83 +1,402 @@
 <!doctype html>
-<html lang="en" data-ring="BODY">
+<!--
+  arifOS Federation — App Launcher
+  FORGED: 2026-08-19 | DITEMPA BUKAN DIBERI
+  SOVEREIGN: Muhammad Arif bin Fazil — F13 absolute veto
+  PURPOSE: One page. See everything. Click to work.
+-->
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MCP Apps — Application Directory · AAA</title>
-<meta name="description" content="MCP App directory — applications powered by arifOS MCP tools. Observatory, Judge, Vault, Forge dashboards.">
-<link rel="canonical" href="https://aaa.arif-fazil.com/apps">
-<link href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4/dist/index.min.css" rel="stylesheet">
-<style>
-  :root { --bg: #0d0c0b; --surface: #121110; --gold: #D4A853; --amber: #C4791A; --text: #d4d2ce; --cyan: #00D4AA; }
-  body { background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; }
-  .card { background: var(--surface); border: 1px solid #2a2826; border-radius: 8px; padding: 1.25rem; text-decoration: none; display: block; color: inherit; transition: border-color 0.15s; }
-  a.card:hover { border-color: var(--amber); }
-  .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1rem; }
-</style>
-  <script src="/_shared/unified-header-loader.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apps — arifOS Federation</title>
+  <link rel="stylesheet" href="https://arif-fazil.com/_shared/design-system/site-tokens.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg, #0a0a0a);
+      color: var(--fg, #f0f0f0);
+      font-family: var(--body, 'Inter', system-ui, sans-serif);
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+
+    /* Header */
+    .header { margin-bottom: 32px; }
+    .header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .header .subtitle {
+      font-size: 0.8rem;
+      color: var(--fg-muted, #9a9a9a);
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+    }
+
+    /* Section */
+    .section { margin-bottom: 28px; }
+    .section-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--fg-subtle, #666);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    /* App cards */
+    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    @media (max-width: 480px) { .app-grid { grid-template-columns: 1fr; } }
+    .app-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--bg-card, #1a1a1a);
+      border: 1px solid var(--border, #2a2a2a);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--fg, #f0f0f0);
+      transition: background 0.15s, border-color 0.15s;
+      cursor: pointer;
+    }
+    .app-card:hover {
+      background: var(--bg-hover, #242424);
+      border-color: #3a3a3a;
+    }
+    .app-card .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .app-card .info { flex: 1; min-width: 0; }
+    .app-card .name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .app-card .desc {
+      font-size: 0.7rem;
+      color: var(--fg-muted, #9a9a9a);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .app-card .badge {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--fg-subtle, #666);
+    }
+    .app-card .badge.ok { background: #10b981; }
+    .app-card .badge.warn { background: #f59e0b; }
+    .app-card .badge.err { background: #ef4444; }
+
+    /* Organ row */
+    .organ-list { display: flex; flex-direction: column; gap: 4px; }
+    .organ-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: var(--bg-card, #1a1a1a);
+      border: 1px solid var(--border, #2a2a2a);
+      border-radius: 6px;
+      font-size: 0.78rem;
+    }
+    .organ-row .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--fg-subtle, #666); flex-shrink: 0;
+    }
+    .organ-row .dot.ok { background: #10b981; }
+    .organ-row .dot.warn { background: #f59e0b; }
+    .organ-row .dot.err { background: #ef4444; }
+    .organ-row .organ-name { font-weight: 600; min-width: 80px; }
+    .organ-row .organ-detail {
+      color: var(--fg-muted, #9a9a9a);
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      font-size: 0.7rem;
+    }
+    .organ-row .organ-tools {
+      margin-left: auto;
+      color: var(--fg-subtle, #666);
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border, #2a2a2a);
+      font-size: 0.65rem;
+      color: var(--fg-subtle, #666);
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer a { color: var(--fg-muted, #9a9a9a); text-decoration: none; }
+    .footer a:hover { color: var(--fg, #f0f0f0); }
+
+    /* Last updated */
+    .last-update {
+      font-size: 0.65rem;
+      color: var(--fg-subtle, #666);
+      font-family: var(--mono, 'JetBrains Mono', monospace);
+      text-align: right;
+      margin-bottom: 8px;
+    }
+    .last-update.pulse { color: #10b981; }
+  </style>
 </head>
 <body>
-<script src="/_shared/trinity-nav.js" defer></script>
+  <div class="container">
+    <div class="header">
+      <h1>Apps</h1>
+      <div class="subtitle">arifOS Federation — click to work</div>
+    </div>
 
-<main style="max-width:1000px;margin:3rem auto;padding:0 1.5rem;">
-  <h1 style="color:var(--gold);font-size:2rem;font-weight:700;margin-bottom:0.25rem;">MCP Apps</h1>
-  <p style="color:#888;margin-bottom:1rem;">Legacy directory. Live cockpit: <a href="https://aaa.arif-fazil.com" style="color:var(--gold);">aaa.arif-fazil.com</a> (DISPLAY_ONLY). Kernel door: <a href="https://mcp.arif-fazil.com/mcp" style="color:var(--gold);">/mcp</a>. Public HTML WebMCP console is not exposed.</p>
-  <p style="color:#888;margin-bottom:2rem;">AAA shows. arifOS judges. A-FORGE executes. Arif controls.</p>
+    <!-- MCP Apps -->
+    <div class="section">
+      <div class="section-title">Intelligence Surfaces</div>
+      <div class="app-grid" id="app-grid">
+        <!-- GEOX -->
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/well-desk" target="_blank">
+          <div class="icon" style="background:#1a2a1a;color:#10b981;">🛢</div>
+          <div class="info">
+            <div class="name">Well Desk</div>
+            <div class="desc">Interactive well log viewer &amp; petrophysics</div>
+          </div>
+          <div class="badge" data-organ="geox"></div>
+        </a>
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/earth-volume" target="_blank">
+          <div class="icon" style="background:#1a2a1a;color:#10b981;">🌍</div>
+          <div class="info">
+            <div class="name">Earth Volume</div>
+            <div class="desc">3D geological volume viewer</div>
+          </div>
+          <div class="badge" data-organ="geox"></div>
+        </a>
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/prospect-ui" target="_blank">
+          <div class="icon" style="background:#1a2a1a;color:#10b981;">📍</div>
+          <div class="info">
+            <div class="name">Prospect UI</div>
+            <div class="desc">Prospect evaluation &amp; volumetrics</div>
+          </div>
+          <div class="badge" data-organ="geox"></div>
+        </a>
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/judge-console" target="_blank">
+          <div class="icon" style="background:#1a2a1a;color:#10b981;">⚖️</div>
+          <div class="info">
+            <div class="name">Judge Console</div>
+            <div class="desc">Evidence evaluation &amp; judgment</div>
+          </div>
+          <div class="badge" data-organ="geox"></div>
+        </a>
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/geox-mcp-visual" target="_blank">
+          <div class="icon" style="background:#1a2a1a;color:#10b981;">🗺</div>
+          <div class="info">
+            <div class="name">GEOX Visual</div>
+            <div class="desc">Geological map &amp; spatial visualization</div>
+          </div>
+          <div class="badge" data-organ="geox"></div>
+        </a>
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/analog-digitizer" target="_blank">
+          <div class="icon" style="background:#1a2a1a;color:#10b981;">📊</div>
+          <div class="info">
+            <div class="name">Analog Digitizer</div>
+            <div class="desc">Digitize analog well log images</div>
+          </div>
+          <div class="badge" data-organ="geox"></div>
+        </a>
 
-  <div class="app-grid">
-    <a href="/apps/observatory" class="card">
-      <h3 style="color:var(--cyan);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">🔭 Observatory</h3>
-      <p style="color:#888;font-size:0.9rem;">Live federation dashboard — health, tools, floors, sessions, organ status. Real-time telemetry from all 7 organs.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">MCP: arif_kernel_health · arif_kernel_status · arif_ops_measure</p>
-    </a>
+        <!-- WEALTH -->
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/wealth-portfolio" target="_blank">
+          <div class="icon" style="background:#2a1a0a;color:#f59e0b;">💰</div>
+          <div class="info">
+            <div class="name">Portfolio</div>
+            <div class="desc">Capital portfolio dashboard &amp; health</div>
+          </div>
+          <div class="badge" data-organ="wealth"></div>
+        </a>
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/capital-judge" target="_blank">
+          <div class="icon" style="background:#2a1a0a;color:#f59e0b;">📈</div>
+          <div class="info">
+            <div class="name">Capital Judge</div>
+            <div class="desc">Financial diagnostics &amp; judgment</div>
+          </div>
+          <div class="badge" data-organ="wealth"></div>
+        </a>
 
-    <a href="/apps/judge" class="card">
-      <h3 style="color:var(--gold);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">⚖️ 888 JUDGE</h3>
-      <p style="color:#888;font-size:0.9rem;">Constitutional judgment interface — submit verdicts, review holds, check floor status. SEAL/SABAR/HOLD/VOID.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">MCP: arif_judge_deliberate · arif_triage · arif_conformance_report</p>
-    </a>
+        <!-- A-FORGE -->
+        <a class="app-card" href="https://aaa.arif-fazil.com/mcp-apps/aforge-preview" target="_blank">
+          <div class="icon" style="background:#1a1a2a;color:#3b82f6;">🔧</div>
+          <div class="info">
+            <div class="name">A-FORGE Preview</div>
+            <div class="desc">Two-phase commit preview &amp; execution</div>
+          </div>
+          <div class="badge" data-organ="aforge"></div>
+        </a>
+      </div>
+    </div>
 
-    <a href="/apps/vault" class="card">
-      <h3 style="color:var(--amber);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">🗄️ VAULT999</h3>
-      <p style="color:#888;font-size:0.9rem;">Immutable audit ledger browser — sealed events, hash-chain verification, constitutional continuity checks.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">MCP: arif_vault_seal · arif_memory_recall · arif_evidence_fetch</p>
-    </a>
+    <!-- Organs -->
+    <div class="section">
+      <div class="section-title">Organs</div>
+      <div class="organ-list" id="organ-list">
+        <div class="organ-row" data-organ="arifos">
+          <div class="dot"></div>
+          <div class="organ-name">arifOS</div>
+          <div class="organ-detail">:8088 — kernel</div>
+          <div class="organ-tools" data-tools="arifos">—</div>
+        </div>
+        <div class="organ-row" data-organ="aforge">
+          <div class="dot"></div>
+          <div class="organ-name">A-FORGE</div>
+          <div class="organ-detail">:7072 — execution</div>
+          <div class="organ-tools" data-tools="aforge">—</div>
+        </div>
+        <div class="organ-row" data-organ="geox">
+          <div class="dot"></div>
+          <div class="organ-name">GEOX</div>
+          <div class="organ-detail">:8081 — earth</div>
+          <div class="organ-tools" data-tools="geox">—</div>
+        </div>
+        <div class="organ-row" data-organ="wealth">
+          <div class="dot"></div>
+          <div class="organ-name">WEALTH</div>
+          <div class="organ-detail">:18082 — capital</div>
+          <div class="organ-tools" data-tools="wealth">—</div>
+        </div>
+        <div class="organ-row" data-organ="well">
+          <div class="dot"></div>
+          <div class="organ-name">WELL</div>
+          <div class="organ-detail">:18083 — readiness</div>
+          <div class="organ-tools" data-tools="well">—</div>
+        </div>
+      </div>
+    </div>
 
-    <a href="/apps/forge" class="card">
-      <h3 style="color:#C4791A;font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">⚒️ A-FORGE</h3>
-      <p style="color:#888;font-size:0.9rem;">Engineering dashboard — deploy status, build logs, rollback history. Execute only after SEAL verdict.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">MCP: arif_forge_execute · arif_gateway_connect</p>
-    </a>
+    <div class="last-update" id="last-update"></div>
 
-    <a href="/apps/geox" class="card">
-      <h3 style="color:var(--cyan);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">🌍 GEOX</h3>
-      <p style="color:#888;font-size:0.9rem;">Earth Intelligence — geological, geophysical, and geospatial MCP tools. Basin analysis, seismic, petrophysics.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">MCP: geox_basin_resolve · geox_seismic_compute · geox_prospect_evaluate</p>
-    </a>
-
-    <a href="https://mcp.arif-fazil.com/mcp" class="card">
-      <h3 style="color:var(--cyan);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">MCP door</h3>
-      <p style="color:#888;font-size:0.9rem;">Public HTML WebMCP playground is not exposed. Use the live JSON-RPC door.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">https://mcp.arif-fazil.com/mcp · 8 public kernel verbs</p>
-    </a>
-
-    <a href="/cockpit" class="card">
-      <h3 style="color:var(--gold);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">🕹️ Operator Cockpit</h3>
-      <p style="color:#888;font-size:0.9rem;">Full operator dashboard — active agents, recent verdicts, session list, approval queue. Sovereignty at a glance.</p>
-      <p style="color:var(--amber);font-size:0.8rem;margin-top:0.5rem;">MCP: arif_session_init · arif_triage · arif_mind_reason</p>
-    </a>
+    <div class="footer">
+      <span>DITEMPA BUKAN DIBERI</span>
+      <span><a href="https://aaa.arif-fazil.com/">Cockpit</a> · <a href="https://arifos.arif-fazil.com/">Observatory</a></span>
+    </div>
   </div>
 
-  <div class="card" style="margin-top:2rem;">
-    <h2 style="color:var(--amber);font-size:1rem;font-weight:600;margin-bottom:0.75rem;">Build Your Own MCP App</h2>
-    <p style="font-size:0.9rem;margin-bottom:0.5rem;">Every app here uses the same pattern:</p>
-    <pre style="background:#0a0a0a;padding:1rem;border-radius:6px;font-size:0.8rem;overflow-x:auto;">1. Connect to mcp.arif-fazil.com/mcp (SSE or HTTP POST)
-2. Call arif_session_init to start a constitutional session
-3. Use any of the 19 tools — F1-F13 governs every call
-4. Render results in your browser
+  <script>
+    const ORGANS = {
+      arifos: { port: 8088, host: '127.0.0.1' },
+      aforge: { port: 7072, host: '127.0.0.1' },
+      geox:   { port: 8081, host: '127.0.0.1' },
+      wealth: { port: 18082, host: '127.0.0.1' },
+      well:   { port: 18083, host: '127.0.0.1' },
+    };
 
-See /webmcp/docs for the full WebMCP guide.</pre>
-  </div>
-</main>
+    async function checkHealth() {
+      const results = {};
+
+      // Check kernel first (has the richest health response)
+      try {
+        const r = await fetch('/api/kernel-health', { signal: AbortSignal.timeout(5000) });
+        if (r.ok) {
+          const data = await r.json();
+          results.arifos = {
+            ok: data.status === 'healthy',
+            tools: data.tools_loaded || data.canonical_tools_loaded || 0,
+            floors: data.floors_active || 0,
+          };
+          // Derive other organs from kernel health if available
+          if (data.layer_health) {
+            // Kernel reports its own health; other organs are separate probes
+          }
+        }
+      } catch (e) {
+        results.arifos = { ok: false, tools: 0 };
+      }
+
+      // Probe each organ's /health endpoint directly
+      for (const [name, cfg] of Object.entries(ORGANS)) {
+        if (results[name]) continue; // already got from kernel
+        try {
+          const ctrl = new AbortController();
+          const timer = setTimeout(() => ctrl.abort(), 4000);
+          const r = await fetch(`https://aaa.arif-fazil.com/api/organ-health/${name}`, {
+            signal: ctrl.signal
+          });
+          clearTimeout(timer);
+          if (r.ok) {
+            const data = await r.json();
+            results[name] = {
+              ok: data.status === 'healthy' || data.status === 'ok' || r.status === 200,
+              tools: data.tools_loaded || data.tools || 0,
+            };
+          } else {
+            results[name] = { ok: false, tools: 0 };
+          }
+        } catch (e) {
+          results[name] = { ok: false, tools: 0 };
+        }
+      }
+
+      return results;
+    }
+
+    function updateUI(results) {
+      // Update organ dots
+      for (const [name, data] of Object.entries(results)) {
+        const row = document.querySelector(`.organ-row[data-organ="${name}"]`);
+        if (row) {
+          const dot = row.querySelector('.dot');
+          dot.className = 'dot ' + (data.ok ? 'ok' : 'err');
+        }
+        const toolsEl = document.querySelector(`[data-tools="${name}"]`);
+        if (toolsEl && data.tools) {
+          toolsEl.textContent = data.tools + ' tools';
+        }
+      }
+
+      // Update app badges
+      document.querySelectorAll('.badge[data-organ]').forEach(badge => {
+        const organ = badge.dataset.organ;
+        if (results[organ]) {
+          badge.className = 'badge ' + (results[organ].ok ? 'ok' : 'err');
+        } else {
+          badge.className = 'badge warn';
+        }
+      });
+
+      // Update timestamp
+      const el = document.getElementById('last-update');
+      const now = new Date();
+      el.textContent = 'checked ' + now.toLocaleTimeString();
+      el.className = 'last-update pulse';
+      setTimeout(() => el.classList.remove('pulse'), 2000);
+    }
+
+    // Initial load
+    checkHealth().then(updateUI);
+
+    // Refresh every 30s
+    setInterval(() => checkHealth().then(updateUI), 30000);
+  </script>
 </body>
 </html>

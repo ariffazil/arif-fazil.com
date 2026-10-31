@@ -1,5 +1,5 @@
 # arif-fazil.com — Full Content for AI Agents
-# Generated: 2026-10-27
+# Generated: 2026-10-29
 # Source: essays.json via makcik-source.cjs
 # Total Articles: 48
 # Canonical index: https://arif-fazil.com/llms.txt

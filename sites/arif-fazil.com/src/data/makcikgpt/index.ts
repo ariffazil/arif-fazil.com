@@ -47,7 +47,9 @@ import gentariDossier from './gentari-dossier';
 import petronasAiTransformasi from './petronas-ai-transformasi-tapi-awak-pakai-copilot';
 import dna2010RamalanDatang from './dna-2010-ramalan-datang';
 import anakJantanPunyaTanah from './anak-jantan-punya-tanah';
+import hukumKeretaSentuhanTakDinamai from './hukum-kereta-sentuhan-tak-dinamai';
 export const makcikArticleModules: ArticleContent[] = [
+  hukumKeretaSentuhanTakDinamai,
   anakJantanPunyaTanah,
   gentari15Benda,
   gentariDossier,
@@ -97,6 +99,23 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'hukum-kereta-sentuhan-tak-dinamai',
+    title: 'Hukum Kereta: Sentuhan yang Tak Dinamai',
+    subtitle: 'Tentang abang-abang yang boleh angkat 150 kilo tapi tak boleh minta dipeluk. Dan pasal satu eksperimen tikus yang dunia salah baca selama 50 tahun.',
+    date: '2026-10-30',
+    domain: 'MAKCIKGPT × MANUSIA × SENTUHAN × BAYANG',
+    language: 'ms',
+    excerpt: 'Makcik betulkan salah baca 50 tahun pasal eksperimen tikus Universe 25: yang membunuh bukan kepadatan — ia interaksi tak dipilih dan peranan yang habis. Lalu cerita abang-abang sado yang lapar sentuhan tapi tak berani minta, jurang keintiman lelaki (kajian 2024), Kinsey dan garis kontinuum, dan bayang Jung yang tak dinamai. Tutup dengan tiga perbuatan: peluk sekali, makan tanpa nama, dan pindahkan yang tarik diri ke dunia dengan kerusi kosong.',
+    tags: ['sentuhan', 'lelaki', 'universe-25', 'calhoun', 'jung', 'bayang', 'kinsey', 'keintiman', 'makcikgpt', 'manusia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-10-30',
+      last_updated: '2026-10-30',
+    },
+  },
   {
     slug: 'anak-jantan-punya-tanah',
     title: 'Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur',

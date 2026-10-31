@@ -196,13 +196,12 @@
   </url>
   <url>
     <loc>https://arif-fazil.com/world/2027/receipts/</loc>
-  <loc>https://arif-fazil.com/world/2027/errata/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <lastmod>2026-09-18</lastmod>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/2027/ai-agents-2027-dossier-dfaaa03c75d4.pdf</loc>
+    <loc>https://arif-fazil.com/world/2027/ai-agents-2027-dossier.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-09-18</lastmod>

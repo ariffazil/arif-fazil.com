@@ -18,6 +18,12 @@
   'use strict';
 
   const PUBLIC_STATE_LIVE = '/api/public-state';
+  // 2026-10-31: the Observatory page is served from arif-fazil.com, but the live
+  // public-state contract is served by the kernel host. Relative '/api/public-state'
+  // therefore resolved against the WRONG origin (503) and the page silently fell
+  // through to a legacy snapshot shape — which is why organs rendered 0/5 MEASURED
+  // while every organ answered 200. Name the kernel host explicitly.
+  const PUBLIC_STATE_KERNEL = 'https://arifos.arif-fazil.com/api/public-state';
   const PUBLIC_STATE_MIRROR = '/.well-known/public-state.json';
   const SNAPSHOT_MIRROR = '/.well-known/observatory-snapshot-latest.json';
   const SNAPSHOT_LIVE = '/api/observatory/v1/snapshot';
@@ -237,7 +243,9 @@
     return 'unknown';
   };
   const stateClass = semanticState;
-  const paletteClass = (input) => ({ healthy: 'green', degraded: 'amber', down: 'red', unknown: 'grey' }[semanticState(input)]);
+  const paletteClass = (input) => ({
+    healthy: 'green', degraded: 'amber', down: 'red', unknown: 'grey', held: 'amber', unmeasured: 'grey',
+  }[input] || { healthy: 'green', degraded: 'amber', down: 'red', unknown: 'grey', held: 'amber', unmeasured: 'grey' }[semanticState(input)]);
   const badge = (input, label) => {
     const shown = label == null ? compactValue(input) : compactValue(label);
     const semantic = semanticState(input);
@@ -376,15 +384,40 @@
     const cpuPercent = isRecord(cpuValue) ? firstPresent(cpuValue.percent, cpuValue.cpu_percent) : firstPresent(unwrap(substrate.cpu_percent), cpuValue);
     const governance = effectiveGovernance(data.governance || {});
     const metabolism = asArray(data.metabolism);
-    const sources = asArray(data.evidence && data.evidence.sources_used);
-    const authorization = data.authority && data.authority.effective_action_authority;
-    const authorized = isRecord(unwrap(authorization)) ? unwrap(authorization).authorized : unwrap(authorization);
+    // 2026-10-31 reconcile: public-state.v1 carries provenance under
+    // runtime_identity / organs[].* / receipt — NOT under legacy `substrate`,
+    // `evidence` or `authority` blocks. The legacy reads returned undefined and
+    // the strip printed "unavailable" beside live data: a projection defect,
+    // not a measurement gap. Count what is actually present.
+    const organRows = Object.values(unwrap(data.organs) || {}).map((row) => unwrap(row)).filter(isRecord);
+    const measuredSources = [];
+    organRows.forEach((row) => {
+      Object.values(row).forEach((record) => {
+        if (isRecord(record) && typeof record.source === 'string' && record.source.trim()) measuredSources.push(record.source);
+      });
+    });
+    const identityMeta = data.runtime_identity || {};
+    if (typeof identityMeta.source === 'string' && identityMeta.source.trim()) measuredSources.push(identityMeta.source);
+    const probedOrgans = organRows.filter((row) => {
+      const transport = unwrap(row.transport || row.liveness);
+      return isRecord(transport) ? Boolean(firstPresent(transport.value, transport.state)) : Boolean(transport);
+    }).length;
+    const planes = data.planes || {};
+    const authorizationRecord = data.authority && data.authority.effective_action_authority;
+    const authorized = isRecord(unwrap(authorizationRecord)) ? unwrap(authorizationRecord).authorized : unwrap(authorizationRecord);
+    const authorizationText = firstPresent(planes.authorization, authorized);
 
-    set('substrate', cpuPercent != null ? `${cpuPercent}% CPU` : UNAVAILABLE, substrate.cpu);
+    set('substrate', cpuPercent != null
+      ? `${cpuPercent}% CPU`
+      : (probedOrgans ? `${probedOrgans}/${organRows.length} organs probed` : UNAVAILABLE),
+      cpuPercent != null ? substrate.cpu : (probedOrgans ? 'live tcp/http probe' : undefined));
     set('governance', governance.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : governance.verdict, governance.verdict);
     set('intelligence', metabolism.length ? `${metabolism.length} stages` : UNAVAILABLE, metabolism.length ? 'measured' : 'unknown');
-    set('evidence', sources.length ? `${sources.length} sources` : UNAVAILABLE, sources.length ? 'measured' : 'unknown');
-    set('authority', authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : UNAVAILABLE), authorized);
+    set('evidence', measuredSources.length ? `${measuredSources.length} sourced fields` : UNAVAILABLE, measuredSources.length ? 'measured' : 'unknown');
+    set('authority', authorizationText != null && authorizationText !== ''
+      ? compactValue(authorizationText)
+      : UNAVAILABLE,
+      authorizationText != null && authorizationText !== '' ? 'declared authority plane' : undefined);
   }
 
   function renderMeta(data) {
@@ -487,7 +520,14 @@
     const states = {
       LIVENESS: { value: memoryPercent != null ? `${(100 - Number(memoryPercent)).toFixed(0)}% memory free` : UNAVAILABLE, state: data.substrate && data.substrate.memory },
       READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage) },
-      CAPABILITY: { value: unwrap(capabilities.declared_count) != null ? `${compactValue(capabilities.invocable_count, '0')}/${compactValue(capabilities.declared_count)}` : UNAVAILABLE, state: capabilities.state || capabilities.status },
+      // 2026-10-31: "8/8" beside a 9-row matrix is not a data contradiction, it is
+      // an unnamed denominator. State the namespace and the population.
+      CAPABILITY: {
+        value: unwrap(capabilities.declared_count) != null
+          ? `${compactValue(capabilities.invocable_count, '0')} invocable / ${compactValue(capabilities.declared_count)} declared · ${compactValue(capabilities.tested_count, '0')} tested fresh · ${asArray(capabilities.matrix).length} matrix rows`
+          : UNAVAILABLE,
+        state: capabilities.state || capabilities.status,
+      },
       GOVERNANCE: { value: governance.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : governance.verdict, state: governance.verdict },
       AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : UNAVAILABLE), state: authorized },
       RECEIPT: { value: compactValue(data.receipts && data.receipts.last_receipt_tier), state: data.receipts && data.receipts.last_receipt_tier },
@@ -564,10 +604,20 @@
           ? ' · unit 1 · POLICY_CONSTANT (not measured) · method: telemetry.peace2 from kernel structural baseline · falsifier: none — constant'
           : '';
         const fieldObservedAt = record === undefined ? null : data.observed_at;
+        // 2026-10-31 reconcile: a floor can PASS on presence alone, and the
+        // payload already says so (verdict_decomposition[*].proof_class). A bare
+        // "pass" beside 1.00 reads as full sovereignty. Name the proof class.
+        const decompRaw = unwrap(governance.verdict_decomposition) || {};
+        const decompKey = isRecord(decompRaw)
+          ? Object.keys(decompRaw).find((k) => k.toLowerCase().startsWith(String(definition.id).toLowerCase() + '_'))
+          : null;
+        const decompValue = decompKey ? unwrap(decompRaw[decompKey]) : null;
+        const proofClass = isRecord(decompValue) ? decompValue.proof_class : null;
+        const proofNote = proofClass ? ` · proof: ${proofClass}` : '';
         return `<div class="floor-cell floor-cell--${paletteClass(parts.state)}" data-floor="${definition.id}" data-measurement="${esc(parts.measurement)}">
           <div class="floor-header"><span class="floor-num">${definition.id}</span><span class="floor-name">${definition.name}</span></div>
           <div class="floor-score">${esc(score)}</div>
-          <div class="floor-status">${esc(parts.measurement)} · ${esc(status)}</div>
+          <div class="floor-status">${esc(parts.measurement)} · ${esc(status)}${esc(proofNote)}</div>
           <div class="floor-meta">${esc(metadataLine(sourceRecord, fieldObservedAt))}${esc(physicsContract)}</div>
         </div>`;
       }).join('');
@@ -834,6 +884,57 @@
   };
   const aggregateSignals = (signals) => aggregateWithCoverage(signals).state;
 
+  /* ── AXIS SEPARATION (2026-10-31 reconcile) ───────────────────────────────
+     Measured on the live public-state payload: aggregating TRANSPORT (a
+     liveness axis) together with GOVERNANCE (a verdict axis) and RECEIPT (an
+     evidence axis) yields "unknown" for 5 of 6 organs and "degraded" for GEOX,
+     while every one of those organs answers HTTP 200 on a live probe.
+
+     A governance HOLD is not a dead service. A missing receipt is not a dead
+     service. One label cannot carry three axes without lying about two of them.
+     Service axis decides the card colour; the other axes are named beside it.
+     ──────────────────────────────────────────────────────────────────────── */
+  const SERVICE_FIELDS = ['transport', 'liveness', 'dependency', 'readiness', 'capability'];
+  const httpStateOf = (record) => {
+    const value = unwrap(record);
+    const text = String(isRecord(value) ? firstPresent(value.value, value.state, '') : (value == null ? '' : value)).trim().toLowerCase();
+    const match = text.match(/^http\s*(\d{3})$/);
+    if (match) {
+      const code = Number(match[1]);
+      if (code >= 200 && code < 400) return 'healthy';
+      if (code >= 400 && code < 500) return 'degraded';
+      if (code >= 500) return 'down';
+    }
+    return semanticState(record);
+  };
+  const serviceStateOf = (organ) => aggregateSignals(
+    SERVICE_FIELDS
+      .filter((field) => isRecord(organ) && hasOwn(organ, field))
+      .map((field) => (field === 'dependency' || field === 'readiness'
+        ? httpStateOf(organ[field])
+        : semanticState(recordState(organ[field])))),
+  );
+  const governanceStateOf = (organ) => {
+    if (!isRecord(organ)) return 'unknown';
+    const record = firstPresent(organ.governance, organ.constitutional);
+    if (record == null) return 'unknown';
+    const text = String(stateToken(record)).trim().toUpperCase();
+    if (/^(SEAL|OK|PASS|ALLOW|LIVE|HEALTHY)/.test(text)) return 'healthy';
+    if (/^(HOLD|SABAR|PARTIAL|DEGRADED)/.test(text)) return 'held';
+    if (/^(VOID|DENY|FAIL|DOWN)/.test(text)) return 'down';
+    return 'unknown';
+  };
+  const receiptStateOf = (organ) => {
+    if (!isRecord(organ)) return 'unknown';
+    const record = firstPresent(organ.receipt, organ.last_receipt);
+    if (record == null) return 'unmeasured';
+    return semanticState(record);
+  };
+  const axisLabel = (state) => ({
+    healthy: 'LIVE', degraded: 'DEGRADED', down: 'DOWN',
+    held: 'HOLD', unmeasured: 'UNMEASURED', unknown: 'UNKNOWN',
+  }[state] || 'UNKNOWN');
+
   function renderOrgans(data) {
     const organs = unwrap(data.organs);
     const grid = $('#organs-grid');
@@ -856,12 +957,16 @@
       const names = ['LIVENESS', 'READINESS', 'CAPABILITY', 'GOVERNANCE', 'AUTHORIZATION', 'RECEIPT', 'CONSTITUTIONAL'];
       const signals = names.map((name) => signalRecord(key, organ, name));
       const overall = aggregateSignals(signals);
+      const svcAxis = serviceStateOf(organ);
+      const govAxis = governanceStateOf(organ);
+      const rcptAxis = receiptStateOf(organ);
       const evidence = organ.evidence;
       const drift = organ.drift;
       const flowMeta = firstPresent(organ.arifFLOW, organ.arifflow, organ.flow);
-      return `<article class="organ-card organ-card--${paletteClass(overall)}" data-ring="${meta.ring}" data-organ="${esc(canonical)}" data-organ-canonical="true" data-overall="${overall}">
+      return `<article class="organ-card organ-card--${paletteClass(svcAxis)}" data-ring="${meta.ring}" data-organ="${esc(canonical)}" data-organ-canonical="true" data-overall="${svcAxis}" data-governance="${govAxis}" data-receipt="${rcptAxis}">
         <div class="organ-head"><span class="organ-name">${esc(meta.label)}</span><span class="ring-badge ring-${meta.ring.toLowerCase()}">${meta.ring}</span></div>
         <div class="organ-port">${esc(meta.port || UNAVAILABLE)}</div><div class="organ-role">${esc(meta.role)}</div>
+        <div class="organ-axis" data-axis="service">service: ${esc(axisLabel(svcAxis))} · governance: ${esc(axisLabel(govAxis))} · receipt: ${esc(axisLabel(rcptAxis))}</div>
         <div class="organ-signals">${names.map((name, index) => {
           const record = signals[index];
           return `<div class="organ-signal" data-signal="${name}">
@@ -1066,12 +1171,20 @@
     grid.innerHTML = pulse.map(([name, key, signal]) => {
       const organKey = isRecord(organs) ? Object.keys(organs).find((candidate) => normalizeKey(candidate) === key) : null;
       const organ = organKey ? unwrap(organs[organKey]) : null;
-      const records = isRecord(organ) ? ['transport', 'dependency', 'capability', 'governance', 'identity', 'last_receipt', 'contract'].map((field) => organ[field]) : [];
-      const { state, measured, total } = aggregateWithCoverage(records);
+      // 2026-10-31: pulse reports the SERVICE axis; governance and receipt are
+      // printed beside it, never averaged into it. See the axis section above.
+      const svcSignals = SERVICE_FIELDS
+        .filter((field) => isRecord(organ) && hasOwn(organ, field))
+        .map((field) => (field === 'dependency' || field === 'readiness'
+          ? httpStateOf(organ[field])
+          : semanticState(recordState(organ[field]))));
+      const { state, measured, total } = aggregateWithCoverage(svcSignals);
+      const govAxis = governanceStateOf(organ);
+      const rcptAxis = receiptStateOf(organ);
       const label = !total ? 'UNKNOWN'
         : (state === 'unknown' ? `${measured}/${total} MEASURED`
           : (measured < total ? `${state.toUpperCase()} ${measured}/${total}` : state.toUpperCase()));
-      return `<div class="pulse-cell pulse-cell--${paletteClass(state)}"><div class="pulse-name">${name}</div><div class="pulse-signal">${signal}</div><div class="pulse-status">${label}</div></div>`;
+      return `<div class="pulse-cell pulse-cell--${paletteClass(state)}"><div class="pulse-name">${name}</div><div class="pulse-signal">${signal}</div><div class="pulse-status">${label}</div><div class="pulse-axis">gov: ${esc(axisLabel(govAxis))} · rcpt: ${esc(axisLabel(rcptAxis))}</div></div>`;
     }).join('');
   }
 
@@ -1205,6 +1318,7 @@
     // the renderer skips it and falls through to the next source.
     const sources = [
       { url: PUBLIC_STATE_LIVE, label: 'public-state.v1 live', freshnessCheck: true },
+      { url: PUBLIC_STATE_KERNEL, label: 'public-state.v1 kernel host', freshnessCheck: true },
       { url: PUBLIC_STATE_MIRROR, label: 'public-state.v1 mirror', freshnessCheck: true },
       { url: SNAPSHOT_MIRROR, label: 'observatory.v1 mirror' },
       { url: SNAPSHOT_LIVE, label: 'observatory.v1 live' },

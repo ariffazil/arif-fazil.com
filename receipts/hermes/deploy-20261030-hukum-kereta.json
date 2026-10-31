@@ -1,0 +1,27 @@
+{
+  "agent": "hermes",
+  "date": "2026-10-30T01:35+08:00",
+  "action": "additive-makcikgpt-publish",
+  "slug": "hukum-kereta-sentuhan-tak-dinamai",
+  "files_deployed": [
+    "world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai/index.html (SPA shell)",
+    "makcikgpt-md/hukum-kereta-sentuhan-tak-dinamai.md (bot lane)",
+    "makcikgpt-md/hukum-kereta-sentuhan-tak-dinamai.html (md-mirror html)",
+    "makcikgpt-md/index.html (index entry)",
+    "assets/* (new bundle with article data)",
+    "world/makcikgpt/index.html (hub shell, new bundle)",
+    "vitals/ (render-vitals source fix 53727c7 follow-up)"
+  ],
+  "src_changes": [
+    "src/data/makcikgpt/hukum-kereta-sentuhan-tak-dinamai.ts (new)",
+    "src/data/makcikgpt/index.ts (import + module + metadata)",
+    "scripts/render-vitals.cjs (SOURCE_HTML -> public/petronas/index.html, follows canonical move 53727c7)"
+  ],
+  "gates": {
+    "human_shell_200": true,
+    "bot_md_200_title_ok": true,
+    "hub_new_bundle": true,
+    "old_articles_unbroken": true
+  },
+  "rsync_flags": "additive, --update, no --delete, no caddy reload"
+}

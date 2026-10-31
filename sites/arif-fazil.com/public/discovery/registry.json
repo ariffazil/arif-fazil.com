@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-10-27T18:31:12.493Z",
+  "generated_at": "2026-10-29T19:07:00.681Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -10,35 +10,35 @@
       "tools": [
         {
           "name": "arif_init",
-          "desc": "KERNEL 000 · Ignite a governed kernel session: binds actor identity, constitutional floors"
+          "desc": "Ignite or resume a governed session. Returns session_id and session_token required for sub"
         },
         {
           "name": "arif_observe",
-          "desc": "KERNEL 111 · Collect evidence — facts and sources with epistemic tags (OBS) and uncertaint"
+          "desc": "Collect evidence, reality observations, and operational facts with provenance. Modes: sear"
         },
         {
           "name": "arif_think",
-          "desc": "KERNEL 333 · Structured reasoning pass: decomposes a query and returns reasoning steps lab"
+          "desc": "Execute structured reasoning and plan formulation. Decomposes inquiries into verified deri"
         },
         {
           "name": "arif_route",
-          "desc": "KERNEL 444 · Intent→organ router: classifies a natural-language intent and prepares a disp"
+          "desc": "Classify intent and route tasks to domain organs (GEOX for Earth science, WEALTH for capit"
         },
         {
           "name": "arif_memory",
-          "desc": "KERNEL 555 · Governed memory of the kernel itself: six tiers (L1–L6) with per-mode gating."
+          "desc": "Access and maintain persistent institutional knowledge across sessions. Modes: recall (ret"
         },
         {
           "name": "arif_judge",
-          "desc": "KERNEL 666 · Binding constitutional arbitration: evaluates a candidate action or claim and"
+          "desc": "Evaluate proposed operations against policy and safety constraints. Weighs blast radius, r"
         },
         {
           "name": "arif_forge",
-          "desc": "KERNEL 777 · Governed execution: applies a mutation through A-FORGE only when carrying a s"
+          "desc": "Apply an authorized system modification. Requires a valid seal_verdict_id obtained from ar"
         },
         {
           "name": "arif_seal",
-          "desc": "KERNEL 999 · Append an entry to VAULT999, the immutable ledger — accepted entries can neve"
+          "desc": "Append verified outcome or lesson to the immutable audit ledger. Requires ack_irreversible"
         },
         {
           "name": "arif_report",

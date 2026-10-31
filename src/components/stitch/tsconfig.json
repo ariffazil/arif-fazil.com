@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "react": ["/root/AAA/telegram-miniapp/node_modules/.pnpm/@types+react@18.3.31/node_modules/@types/react/index.d.ts"],
+      "react/jsx-runtime": ["/root/AAA/telegram-miniapp/node_modules/.pnpm/@types+react@18.3.31/node_modules/@types/react/jsx-runtime.d.ts"]
+    }
+  },
+  "include": ["./*.ts", "./*.tsx"]
+}

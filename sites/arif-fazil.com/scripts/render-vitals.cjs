@@ -34,7 +34,7 @@ const path = require('node:path');
 const HERE = __dirname;
 const ROOT = path.resolve(HERE, '..');
 const SOURCE_JSON = path.join(ROOT, 'public/data/wealth/petronas_vitals.json');
-const SOURCE_HTML = path.join(ROOT, 'public/vitals/index.html');
+const SOURCE_HTML = path.join(ROOT, 'public/petronas/index.html'); // canonical move 53727c7: /vitals/ -> /petronas/
 const DIST_HTML = path.join(ROOT, 'dist/vitals/index.html');
 
 let resolvedJson = SOURCE_JSON;

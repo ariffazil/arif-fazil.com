@@ -1,0 +1,59 @@
+{
+  "project": "projects/16140634726050292847",
+  "title": "arifOS Sovereign Intelligence Constellation",
+  "design_system_asset_id": "assets/53930e338fa249e8bec7808f181df468",
+  "screens": [
+    {
+      "id": "762b29f79c11413ca78f93838ad599bd",
+      "title": "MakcikGPT Civic Archive - Dark Mode",
+      "width": "780",
+      "height": "4360",
+      "html_file": "/root/arif-fazil.com/stitch-export/makcikgpt-civic-archive-dark-mode.html",
+      "html_bytes": 28118,
+      "png_file": "/root/arif-fazil.com/stitch-export/makcikgpt-civic-archive-dark-mode.png",
+      "png_bytes": 1119319
+    },
+    {
+      "id": "51478576c3bd4d69a99aed126fd8d8d6",
+      "title": "Constellation Home (Portal Kedaulatan) - Dark Mode",
+      "width": "780",
+      "height": "3256",
+      "html_file": "/root/arif-fazil.com/stitch-export/constellation-home-portal-kedaulatan-dark-mode.html",
+      "html_bytes": 27874,
+      "png_file": "/root/arif-fazil.com/stitch-export/constellation-home-portal-kedaulatan-dark-mode.png",
+      "png_bytes": 879051
+    },
+    {
+      "id": "be4879ae2eff42f4a857e775df68a531",
+      "title": "arifOS Federation Observatory - Dark Mode",
+      "width": "780",
+      "height": "3584",
+      "html_file": "/root/arif-fazil.com/stitch-export/arifos-federation-observatory-dark-mode.html",
+      "html_bytes": 33815,
+      "png_file": "/root/arif-fazil.com/stitch-export/arifos-federation-observatory-dark-mode.png",
+      "png_bytes": 803898
+    },
+    {
+      "id": "77a8f5acbde6448089d7abb7808ae8a0",
+      "title": "GEOX Subsurface Cockpit - Dark Mode",
+      "width": "780",
+      "height": "3850",
+      "html_file": "/root/arif-fazil.com/stitch-export/geox-subsurface-cockpit-dark-mode.html",
+      "html_bytes": 31348,
+      "png_file": "/root/arif-fazil.com/stitch-export/geox-subsurface-cockpit-dark-mode.png",
+      "png_bytes": 867539
+    }
+  ],
+  "mode": "DARK_ONLY_PRIMARY_TRIAD_ORTHOGONAL_TOROIDAL_FRACTAL",
+  "primary_triad": {
+    "blue": "#38BDF8",
+    "red": "#EF4444",
+    "yellow": "#F59E0B",
+    "void": "#0A0C10"
+  },
+  "geometry": [
+    "orthogonal_0px_grid",
+    "fractal_subdivision",
+    "toroidal_manifold_svg"
+  ]
+}

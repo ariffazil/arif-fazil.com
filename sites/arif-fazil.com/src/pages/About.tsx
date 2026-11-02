@@ -38,22 +38,22 @@ export function About() {
           </h2>
           <div className="space-y-6 font-sans text-base md:text-lg text-[#9AA0A8] leading-relaxed">
             <p>
-              I am an exploration geoscientist with PETRONAS Carigali, specialising in
-              basin analysis, seismic interpretation, and prospect evaluation across
-              offshore Malaysia. My work spans the Malay Basin, Sarawak Basin, and
-              deepwater frontier targets.
+              For thirteen years, I worked as an exploration geoscientist across offshore
+              Malaysia with PETRONAS Carigali, specialising in basin analysis, seismic
+              interpretation, and deepwater prospect evaluation across the Malay Basin,
+              Sarawak Basin, and Sabah frontiers. Today, I build independently as a systems architect.
             </p>
             <p>
-              Thirteen years of subsurface work taught me one thing: the earth does not
-              care about your model. The data is always incomplete. The uncertainty is
-              the signal. My job is to read what the ground actually says — not what the
-              model wants it to say.
+              Thirteen years of subsurface drilling taught me an unbending truth: the earth does not
+              care about your computer model. A beautiful slide cannot save a well when the drill
+              bit hits dry rock. The data is always noisy and incomplete. You learn early to respect
+              ground truth, name uncertainty honestly, and refuse fake certainty.
             </p>
             <p>
-              That same discipline drove me to build arifOS — a constitutional AI
-              governance kernel with thirteen hard floors (F1–F13) that every
-              consequential machine call must pass. Humans decide. AI computes.
-              Evidence constrains.
+              That same discipline drove me to build arifOS and the federation: an architecture
+              that rejects both sycophantic flattery and corporate micromanagement. AI should serve
+              as a bridge back to human connection and physical reality, not a permanent substitute.
+              Humans decide. AI computes. Evidence constrains. Teks bukan manusia.
             </p>
           </div>
         </div>

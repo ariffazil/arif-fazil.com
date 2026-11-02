@@ -58,13 +58,13 @@ export function Home() {
                 <span className="text-[#9AA0A8]">Fazil</span>
               </h1>
               <p className="font-mono text-xs text-[#E4572E] uppercase tracking-widest mb-4">
-                Exploration Geoscientist · PETRONAS Carigali · Basin Analysis · Offshore Malaysia
+                13 Years Offshore Exploration · Subsurface Reality · Sovereign Systems Architect
               </p>
               <p className="font-sans text-lg md:text-xl text-[#EDEAE2] font-medium leading-relaxed max-w-2xl mb-4">
-                I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority.
+                I spent 13 years finding signals in difficult subsurface rock where a wrong call costs millions. I bring that exact discipline to machines: refusing fake certainty, anchoring intelligence to physical reality, and keeping human authority sovereign.
               </p>
               <p className="font-sans text-base text-[#9AA0A8] leading-relaxed max-w-2xl mb-6">
-                I find signals in difficult subsurface data. I refuse fake certainty. That is the same work, in rocks and in machines. Ditempa bukan diberi.
+                The earth does not care about your slides. If the well runs dry, narrative cannot save you. That is the same work in rocks and in intelligence: ground truth over performance. Ditempa bukan diberi.
               </p>
 
               {/* Credibility strip — proof points already on the record */}
@@ -108,10 +108,10 @@ export function Home() {
           </RevealOnScroll>
           <RevealOnScroll delay={150}>
             <p className="font-sans text-lg md:text-xl text-[#9AA0A8] leading-relaxed max-w-3xl">
-              The subsurface is incomplete. Markets are noisy. Institutions simplify. AI fills gaps too confidently.
+              The subsurface is incomplete. Markets are noisy. Institutions simplify. Commercial AI fills gaps too confidently with disembodied chatter.
             </p>
             <p className="font-sans text-base text-[#EDEAE2]/85 leading-relaxed max-w-3xl mt-4">
-              My work is to preserve the evidence, name the uncertainty, and improve the decision. Ditempa bukan diberi.
+              My work is to anchor intelligence to hard ground: preserving evidence, naming uncertainty honestly, and building machines that know their limits. Teks bukan manusia. Lega bukan selesai. Ditempa bukan diberi.
             </p>
           </RevealOnScroll>
         </div>

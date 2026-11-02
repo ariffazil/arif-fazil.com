@@ -1,7 +1,7 @@
 # DESIGN.md — arifOS Federation Site Architecture
 
 **Source of Truth:** `arifos.arif-fazil.com`  
-**Version:** 2026.05.14-FORGED  
+**Version:** 2026.11.01-SYNC (supersedes 2026.05.14-FORGED; §IV below is historical)  
 **Seal:** DITEMPA BUKAN DIBERI  
 
 ---
@@ -141,6 +141,32 @@ aaa.arif-fazil.com (BODY)
   ├── → A2A gateway
   └── → Agent supervision
 ```
+
+---
+
+## VIII. WITNESS AUDIT SYNC (2026-11-01 · FI-008 · origin evidence)
+
+External witness (2026-10-31 17:05–17:30 UTC, CF edge LAX) reported 3 DRIFT. Triaged against origin access log (epoch 1793466000–1793468100, /var/log/caddy/arif-fazil-access.log):
+
+| Witness claim | Origin evidence | Verdict |
+|---|---|---|
+| `/999` (proof door) dead — 4 attempts, 0 bytes | Caddy served the witness's own requests: `/999` 301 in 0.0s; `/999/` 200 in 0.0s, 3,836B gzip (at t+1368s and t+1795s of window) | **REFUTED at origin.** Body loss sits on the CF edge↔witness leg. CF-side log unavailable → mechanism UNKNOWN, responsibility boundary proven |
+| Nested unknowns return 200 SPA shell (`/world/no-such-article` → 200, 9,316B) | Reproduced: 200/9,316B nested vs 404/17B root unknown | **CONFIRMED.** Root cause: `try_files … /index.html =404` puts the shell before the 404 — `=404` is unreachable (Caddyfile L983 `/world/*`, L2107 `@spa_routes`, same pattern in `/reality/*`) |
+| llms.txt carries no organ register | `/var/www/html/llms.txt` = 84 lines, 0 organ keys; repo file (`/root/arif-fazil.com/llms.txt`) header 2026-09-13 explicitly forbids copying the federation map to the public file | **CONFIRMED as spec-vs-design conflict**, not rot. Acceptance spec Item 7 targeted a cross-check the design excludes |
+
+**Machine truth (sysstat sa01 + earlyoom log, corrected 2026-11-01 11:40 +08):** the witness window itself was **calm** — load1 1.3–3.3, mem 61% used, 0 of 130 mcp-origin requests slower than 3 s, no Caddy reloads in window. Origin exonerated for the witness's stall experience; cause sits in the CF edge↔sandbox transit (mechanism UNKNOWN from origin). The real degradation came ~1 h later: **18:30–19:10 UTC Oct 31 memory-exhaustion thrash** — earlyoom avail 10.1→6.6 GB, swap free 11.8→8.8 GB, pgscan ~107k/s, load1 27.8, runq 31 on 8 cores, one hermes tool call SIGKILLed. Audit-time readings (swap 27.4/36.2 GB, load 14) are the aftermath, recovering. Swap population is chronic long-running infra, not a burst: `opencode.bin serve` 1.6 GB, ~20 A-FORGE Firecrawl nuq/node workers ×300–470 MB (up since Oct 25), hermes ×2, beam.smp, netdata itself (994 MB mem peak / 456 MB swap peak). The 3× `/gold/api/snapshot` 499 at 5.0 s inside the calm window = upstream market-data fetch latency with client disconnect at 5 s; the endpoint serves 200 in 10 ms when re-probed 03:26 UTC. All endpoint configs and files verified healthy (local HTTPS probes ≤ 18 ms).
+
+**Facts of record:** SPA shell on wire = **9,316 B** (acceptance spec said 10,737 B — spec stale, site is current). `feed.xml` 48 items = sitemap 48 article URLs (+1 landing URL). `/api/public-state` 102,082 B, ed25519-signed, chain 277 entries / 0 corrupt. Witness PASS items 1,3,4,6,8,9,10 re-verified from origin.
+
+### Stabilization gate — REQUIRED before next upgrade
+1. **Real-404 for nested unknowns**: build-time route matcher from sitemap.xml (known prefixes serve SPA shell; unknown → 404). Crawl-sensitive trees first: `/world/`, `/words/`.
+2. **llms.txt organ register pointer** — one generated line sourced from `/api/public-state` SOT (`Organs (6): arifos, geox, wealth, well, aforge, aaa`), so the register cannot diverge from the signed snapshot. Spec Item 7 re-targeted to `/api/public-state`.
+3. **Spec refresh**: shell 9,316 B; `/999` asserted as "origin 200 + CF edge-cached".
+4. **CF edge cache for `/999/*` and `/000/*`** (`CDN-Cache-Control` on the proof door) — Caddy reload = T3, requires Arif's named authorization.
+5. **Machine pressure alert** (netdata): swap > 20 GB or load5 > 8 blocks upgrade window start.
+6. **Pre-upgrade fleet health**: verify netdata API green after its slow boot (unresponsive 11+ min pre-restart, restarting under swap pressure); plan a swap-drain / worker-fleet restart window for the 7-day-old Firecrawl nuq workers + `opencode.bin serve` before upgrade, so the 18:30-class thrash cannot fire mid-upgrade.
+
+**UNKNOWN boundaries (do not fabricate):** CF-side mechanics of the `/999` body loss; which upstream held the 5 s during the `/gold/api/snapshot` 499s (market-data fetch suspected, unproven); netdata boot completion.
 
 ---
 

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FED / LiteLLM — Identiti Deployment &amp; Realiti Hidup · 2026-10-30</title>
+<meta name="description" content="Audit dua host: apa yang hidup, apa yang belum terbukti, dan mengapa 'FED' bermaksud dua benda berlainan di KVM8 dan KVM4.">
+<style>
+  :root{
+    --ink:#15181c; --muted:#5b6470; --line:#e2e5ea; --bg:#fbfaf7;
+    --card:#ffffff; --accent:#0f5e56; --warn:#8a3b12; --bad:#8c1d1d; --ok:#1c5f36;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:56px 24px 96px}
+  header{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:34px}
+  .kicker{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 12px}
+  h1{font-size:34px; line-height:1.18; margin:0 0 14px; letter-spacing:-.5px}
+  .sub{font-size:17px; color:var(--muted); margin:0}
+  .meta{margin-top:18px; font-size:13px; color:var(--muted); display:flex; flex-wrap:wrap; gap:6px 18px}
+  h2{font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+     margin:52px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--line)}
+  h3{font-size:19px; margin:30px 0 8px}
+  p{margin:0 0 16px}
+  .lede{font-size:19px; line-height:1.6}
+  .box{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent);
+       padding:20px 22px; margin:22px 0; border-radius:0 6px 6px 0}
+  .box.warn{border-left-color:var(--warn)}
+  .box.bad{border-left-color:var(--bad)}
+  .box.ok{border-left-color:var(--ok)}
+  .box p:last-child{margin-bottom:0}
+  .box strong{display:block; font-size:13px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; color:var(--muted)}
+  table{width:100%; border-collapse:collapse; margin:18px 0; font-size:15px; background:var(--card)}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); background:#f4f2ee; font-weight:600}
+  td code, p code, li code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px;
+       background:#f0eeea; padding:1px 5px; border-radius:3px}
+  ul,ol{margin:0 0 16px; padding-left:22px}
+  li{margin-bottom:8px}
+  .tag{display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+       padding:2px 8px; border-radius:10px; font-weight:600; white-space:nowrap}
+  .t-ok{background:#e4f2e9; color:var(--ok)}
+  .t-bad{background:#f7e3e3; color:var(--bad)}
+  .t-part{background:#f8eddc; color:var(--warn)}
+  .t-unk{background:#ecedf0; color:var(--muted)}
+  footer{margin-top:64px; padding-top:22px; border-top:1px solid var(--line);
+         font-size:13px; color:var(--muted)}
+  blockquote{margin:0 0 16px; padding-left:18px; border-left:3px solid var(--line); color:var(--muted); font-style:italic}
+  @media(max-width:600px){ h1{font-size:27px} .wrap{padding:36px 18px 72px} body{font-size:16px} table{font-size:14px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">arifOS Federation · Audit Baca-Sahaja</p>
+  <h1>Dua host, satu nama: apa yang sebenarnya hidup dalam FED dan LiteLLM</h1>
+  <p class="sub">Laporan pemeriksaan keadaan hidup — diselaraskan dengan audit IRFANclaw. Tiada mutasi, tiada restart, tiada konfigurasi disentuh.</p>
+  <div class="meta">
+    <span><strong>Tarikh ukur:</strong> 30 Oktober 2026, 13:18–13:52 MYT</span>
+    <span><strong>Disahkan semula:</strong> 31 Oktober 2026, 13:48 MYT — 192 rung / 71 group / 96 model (hash config <code>8e6a6e47…</code>)</span>
+    <span><strong>Verdict:</strong> PARTIAL</span>
+    <span><strong>Host:</strong> KVM8 (af-forge) + KVM4 (srv1946043)</span>
+  </div>
+</header>
+
+<p class="lede">Sistem ini hidup. Beberapa sambungan terbukti. Tetapi <strong>gelung penuh dari keputusan manusia sampai ke mesin belum pernah disaksikan</strong> — dan itu satu-satunya perkara yang memisahkan "banyak servis berjalan" daripada "sistem yang bekerja".</p>
+
+<h2>1 · Ringkasan keputusan</h2>
+
+<div class="box warn">
+  <strong>Penemuan terpenting</strong>
+  <p>Perkataan <em>FED</em> digunakan untuk dua komponen berlainan pada dua host. Di KVM8, FED ialah <strong>penasihat laluan</strong> di port 7074. Di KVM4, tiada penasihat — "FED" bermaksud <strong>proxy LiteLLM itu sendiri</strong> di port 4000. Sesiapa yang "cermin fix KVM4 ke KVM8" tanpa mengikat identiti deployment boleh memindahkan perubahan ke lane yang tujuannya berbeza.</p>
+</div>
+
+<div class="box">
+  <strong>Keadaan satu ayat</strong>
+  <p>Komponen hidup · beberapa sambungan terbukti · loop hujung-ke-hujung belum terbukti · kit MCP empat agent belum dipasang · topologi directive terdahulu perlu dibetulkan sebelum digunakan.</p>
+</div>
+
+<h2>2 · Identiti deployment — ikatan yang wajib ada</h2>
+
+<p>Sebelum apa-apa perubahan rung atau penyelarasan config, setiap lane mesti menyatakan lima perkara ini. Tanpa ikatan ini, drift tidak boleh dibandingkan — hanya boleh diteka.</p>
+
+<table>
+  <thead><tr><th>Elemen</th><th>KVM8 — af-forge</th><th>KVM4 — srv1946043</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Actor / peranan</strong></td><td>FED router + LiteLLM federation</td><td>LiteLLM sahaja (tiada router)</td></tr>
+    <tr><td><strong>Nama unit</strong></td><td><code>fed-router.service</code> · <code>litellm-federation</code></td><td><code>fed-litellm.service</code> · <code>litellm</code></td></tr>
+    <tr><td><strong>Endpoint proxy</strong></td><td>7074 (MCP + <code>/route</code>) · 4013 (OpenAI-compatible)</td><td>4000 (OpenAI-compatible, mesh)</td></tr>
+    <tr><td><strong>Config</strong></td><td><code>litellm-config.yaml</code> · 123,014 B · 3,482 baris</td><td><code>litellm-config.yaml</code> · 91,419 B · 2,765 baris</td></tr>
+    <tr><td><strong>sha256 (dipangkas)</strong></td><td><code>dafa93e6…</code> · mtime 30 Okt 13:40</td><td><code>a3f32f3e…</code> · mtime 23 Okt 03:29</td></tr>
+    <tr><td><strong>Rung / group / alias / model asas</strong></td><td>192 / 71 / 29 / 53</td><td>161 / 62 / 29 / 45</td></tr>
+    <tr><td><strong>Beza antara dua fail</strong></td><td colspan="2">765 baris berubah — dua katalog berlainan, bukan satu katalog yang tertinggal</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Group yang hanya ada di KVM8:</strong> <code>fed/free</code>, <code>fed/verifier-independent</code>, <code>gemini-flash</code>, <code>gemini-flash-lite</code>, <code>gemini-pro</code>, <code>glm-53-free</code>, <code>kimi-k3.1-pro</code>, <code>kimi-k3.1-pro-highspeed</code>, <code>qwen-auto</code>, <code>zai-pro</code>.
+<br><strong>Group yang hanya ada di KVM4:</strong> <code>go-minimax-m3</code>.</p>
+
+<div class="box bad">
+  <strong>Amalan wajib mulai sekarang</strong>
+  <p>LiteLLM memuat semula config <em>tanpa restart</em>. Semasa audit ini berjalan, config KVM8 bertukar pada 13:40 (190 → 192 rung, 95 → 96 model diiklankan). Dua laporan yang diukur sejam berbeza boleh dua-dua betul dan dua-dua basi. Setiap laporan router mesti catat <strong>hash config + cap masa</strong>, atau ia mengukur hantu.</p>
+</div>
+
+<h2>3 · Claim demi claim — mana yang tahan, mana yang perlu dikecilkan</h2>
+
+<table>
+  <thead><tr><th>Claim</th><th>Status</th><th>Asas</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>95 ID callable pada <code>/v1/models</code></td>
+      <td><span class="tag t-ok">Betul</span></td>
+      <td>Diukur 13:19. Kini 96 selepas config bertukar. Senarai iklan ≠ senarai terbukti.</td>
+    </tr>
+    <tr>
+      <td>Hanya alias yang diuji mempunyai bukti respons</td>
+      <td><span class="tag t-ok">Betul</span></td>
+      <td>Pembetulan yang tepat. 20/23 dan 16/16 bukan bercanggah — set alias berlainan.</td>
+    </tr>
+    <tr>
+      <td>TTS / image gagal melalui laluan chat</td>
+      <td><span class="tag t-ok">Betul</span></td>
+      <td><code>fed/minimax-tts</code> dan <code>fed/image-gen</code> bukan endpoint chat. Uji di pintu yang salah.</td>
+    </tr>
+    <tr>
+      <td>Multimodal kosong</td>
+      <td><span class="tag t-part">Separuh</span></td>
+      <td><strong>Imej hidup.</strong> Tiga alias baca teks dengan betul dari fixture <code>mata_selftest_truth.png</code>. <strong>Audio mati senyap</strong> — ogg 45 KB digugurkan, HTTP 200, badan kosong atau "I don't hear any audio attached".</td>
+    </tr>
+    <tr>
+      <td>A-FORGE cuma dokumen</td>
+      <td><span class="tag t-bad">Terlalu luas</span></td>
+      <td><code>:7072</code> hidup dengan <strong>118 tool</strong>; filesystem memberi hasil sebenar; shell menolak authority yang tidak cukup. Rumusan yang sah: <em>loop mutasi penuh belum disaksikan</em>.</td>
+    </tr>
+    <tr>
+      <td>A2A listener hidup, <code>tasks_stored: 2</code></td>
+      <td><span class="tag t-ok">Betul</span></td>
+      <td>Uptime ~12.9 hari, <code>mcp_connected: true</code>. Belum buktikan delegasi → laksana → hasil dipadankan.</td>
+    </tr>
+    <tr>
+      <td>Memory teratur</td>
+      <td><span class="tag t-part">Peta sahaja</span></td>
+      <td>Lokasi stor dipetakan. Ketepatan, retensi, kawalan penulisan dan provenance belum diukur sepenuhnya.</td>
+    </tr>
+    <tr>
+      <td>Router menyimpan memori manusia</td>
+      <td><span class="tag t-ok">Bersih</span></td>
+      <td>Semakan config 121 KB: 71 padanan "arif" semuanya nama <code>arifOS</code> atau nama env key. Tiada nama manusia, chat id, atau emel.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4 · Apa yang hidup, apa yang tidak</h2>
+
+<h3>Hidup dan diukur</h3>
+<ul>
+  <li>FED router 7074 — <code>ADVISORY_ONLY</code>, 7 tool, lapor <code>BL12 VOCABULARY_GAP</code> (0 lookup sepadan).</li>
+  <li>LiteLLM 4013 — 192 rung selepas perubahan 13:40; versi 1.106.0, digest-pinned.</li>
+  <li>16 alias agent menjawab 200; 7 daripada 7 yang diuji keluarkan native tool call yang sah dengan nonce di dalam argumen.</li>
+  <li>MCP surface: 118 tool (7072) · 9 tool kernel (8088) · 19 tool (18087).</li>
+  <li>Kontrak attribution hidup — <code>MODEL-ID-01…07</code>, dua lane: <em>availability</em> (jawab + stem) dan <em>strict</em> (tolak dengan 409).</li>
+</ul>
+
+<h3>Tidak hidup, atau hidup tetapi menipu</h3>
+<ul>
+  <li><strong>Audio input</strong> — diisytihar pada 16 group, digugurkan senyap. Declaration ≠ handling.</li>
+  <li><strong><code>fed/verifier-independent</code></strong> — jawab 200 dalam 120 saat, tetapi pulang nonce yang salah. Ia <code>qwen2.5:3b</code> atas ollama tempatan. Bukti hidup untuk prinsip: <em>"verifier" dalam nama bukan verifikasi.</em></li>
+  <li><strong>FED → LiteLLM</strong> — tiada sambungan. FED syorkan <code>glm-5.3-flash</code> untuk OCR; LiteLLM hantar ke <code>deepseek-flash</code>. Dua-dua betul pada tempat masing-masing; tiada yang bercakap.</li>
+  <li><strong>A2A gateway</strong> — <code>status: degraded</code>, <code>deployment_drift: true</code>.</li>
+</ul>
+
+<h2>5 · Peta failure domain — ini yang paling penting</h2>
+
+<p>Sepuluh daripada enam belas alias agent, pada saat diukur, dihidangkan oleh <strong>satu model yang sama</strong> melalui <strong>satu kredential yang sama</strong>. Empat nama — <code>agi-333</code>, <code>hermes-asi</code>, <code>openclaw</code>, <code>opencode</code> — bukan group sendiri; config memetakan mereka ke <code>forge-777</code>, dan header balas <code>substituted=true</code>.</p>
+
+<div class="box bad">
+  <strong>Kesimpulan operasi</strong>
+  <p><code>agi-333</code>, <code>asi-555</code>, <code>apex-888</code> dan <code>forge-777</code> <strong>bukan</strong> domain kegagalan berasingan hari ini. Kalau provider itu jatuh, empat-empat nama jatuh serentak. Yang memisahkan mereka cuma fallback chain yang bertindih hampir sama. Empat label, satu badan, satu dompet, satu titik mati.</p>
+</div>
+
+<h2>6 · Jawapan kepada soalan "i-ARIF ada apa"</h2>
+
+<table>
+  <thead><tr><th>Lapisan</th><th>Status</th><th>Nota</th></tr></thead>
+  <tbody>
+    <tr><td>A2H — Agent ↔ Human</td><td><span class="tag t-part">Tiga daripada lima</span></td>
+      <td>Ada identiti lane, muka chat, memori berasingan. <strong>Tidak ada:</strong> objek <code>accept / reject / defer</code>, dan <code>HumanDecisionEnvelope</code> — sifar padanan dalam tiga repo.</td></tr>
+    <tr><td>A2A — Agent ↔ Agent</td><td><span class="tag t-part">Kad ada, badan bercanggah</span></td>
+      <td>7 aktor berdaftar dengan pubkey, dua listener hidup. Tetapi gateway lapor drift, dan tiada benda bertandatangan untuk dihantar.</td></tr>
+    <tr><td>A2M — Agent ↔ Machine</td><td><span class="tag t-ok">Paling matang</span></td>
+      <td>118 tool, gerbang ACT berlapis, kebenaran fail-closed, ledger append-only. Yang belum: rollback sebagai kontrak, dan <em>outcome witness</em>.</td></tr>
+  </tbody>
+</table>
+
+<h2>7 · Kad keputusan — satu batas yang wajib dipegang</h2>
+
+<p>Kad JSON <strong>merekod</strong> keputusan. Ia belum menjadi <strong>authorization</strong> yang disahkan.</p>
+
+<p>Rantaian mesti mengikat: identiti penghantar · sesi · skop tindakan · nonce · expiry · dan <strong>pemeriksaan di hujung executor</strong>. Penerimaan hasil direkod <em>berasingan</em> daripada kebenaran menjalankan tindakan. Nonce membantu memadankan transaksi; nonce sahaja belum membuktikan hasil betul atau pelaksanaan berlesen.</p>
+
+<h2>8 · Langkah seterusnya yang paling kecil</h2>
+
+<p>Guna satu tool baca yang <em>sudah ada</em> untuk menutup satu pusingan. Tidak perlu mencipta tool echo.</p>
+
+<ol>
+  <li>Rekod permintaan dan keputusan yang terikat pada skop.</li>
+  <li>Jalankan melalui laluan authority sedia ada.</li>
+  <li>Padankan hasil dengan permintaan, semak hasil, kemudian rekod penerimaan manusia.</li>
+</ol>
+
+<div class="box ok">
+  <strong>Ujian sebenar</strong>
+  <p>Bukan "ia berjaya". Ujian sebenar: <strong>hantar permintaan yang sama tanpa baris authorization — executor mesti tolak.</strong> Kalau ia tetap jalan, maka tiada authorization; cuma ada upacara.</p>
+  <p>Satu pusingan itu menutup A2H (manusia pilih), A2A (baris itu boleh dihantar) dan A2M (tangan tunduk pada baris bertandatangan) serentak — tanpa servis baru, tanpa tool baru, tanpa pangkalan data baru.</p>
+</div>
+
+<h2>9 · Verdict</h2>
+
+<p><strong>PARTIAL.</strong> Bukan HOLD — tiada pemeriksaan tersekat, tiada rahsia terdedah, tiada restart diperlukan, semua probe baca-sahaja. Bukan SEAL_READINESS — A2H tiada envelope, A2A drift, audio diisytihar tetapi mati.</p>
+
+<blockquote>Ini audit. Ia bukan kebenaran untuk mengubah apa-apa.</blockquote>
+
+<h2>10 · Lampiran bukti</h2>
+
+<table>
+  <thead><tr><th>Dakwaan</th><th>Sumber</th><th>Masa</th><th>Keyakinan</th></tr></thead>
+  <tbody>
+    <tr><td>FED = ADVISORY_ONLY, 7 tool</td><td><code>:7074/health</code></td><td>13:18</td><td>Tinggi</td></tr>
+    <tr><td>FED dan LiteLLM tidak bersambung</td><td><code>POST :7074/route</code> lawan header LiteLLM</td><td>13:21</td><td>Tinggi</td></tr>
+    <tr><td>190→192 rung / 95→96 model</td><td>fail config + <code>/v1/models</code></td><td>13:19 → 13:41</td><td>Tinggi</td></tr>
+    <tr><td>4 alias → <code>forge-777</code></td><td><code>model_group_alias</code> + header live</td><td>13:19</td><td>Tinggi</td></tr>
+    <tr><td>10/16 alias → satu provider</td><td>header <code>x-litellm-model-name</code>, 16 panggilan nonce unik</td><td>13:19–13:22</td><td>Tinggi untuk saat itu</td></tr>
+    <tr><td>7/7 native tool call</td><td><code>tool_calls</code> + <code>finish_reason</code></td><td>13:25</td><td>Tinggi untuk <em>emission</em>; bukan kebenaran laksana</td></tr>
+    <tr><td>Imej berfungsi</td><td>fixture <code>mata_selftest_truth.png</code> → teks betul pada 3 alias</td><td>13:23</td><td>Tinggi</td></tr>
+    <tr><td>Audio mati senyap</td><td>ogg 45,372 B → badan kosong / penafian</td><td>13:24</td><td>Tinggi; format lain belum diuji</td></tr>
+    <tr><td><code>fed/verifier-independent</code> salah jawab</td><td>nonce dihantar ≠ nonce diterima</td><td>13:49</td><td>Tinggi</td></tr>
+    <tr><td><code>HumanDecisionEnvelope</code> tiada</td><td>grep tiga repo = 0</td><td>13:27</td><td>Tinggi untuk direktori tersebut</td></tr>
+    <tr><td>KVM4 vs KVM8 config berbeza</td><td>salinan config KVM4, sha256 berbanding</td><td>13:47</td><td>Tinggi</td></tr>
+  </tbody>
+</table>
+
+<footer>
+  <p>Disusun oleh HERMES untuk Arif Fazil (F13 Sovereign) · 30 Oktober 2026 · audit baca-sahaja.<br>
+  Nilai sensitif dinyahkan: alamat tailnet, kunci, kredential dan hash penuh tidak dipaparkan. Perincian penuh ada dalam rekod tempatan.</p>
+  <p>DITEMPA BUKAN DIBERI ⚒️</p>
+</footer>
+
+</div>
+</body>
+</html>

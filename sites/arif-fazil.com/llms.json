@@ -18,6 +18,8 @@
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",
     "/world/politics/shadow/anwar-ibrahim/": "33 Bayang Anwar Ibrahim — three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 public sources, editorial psychology analysis",
     "/world/ai/shadow/": "AI Labs Bayang — institutional shadow atlas of major AI model labs (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Microsoft, Mistral, Cohere, DeepSeek, Alibaba) — promises, ownership, compute, model reflection, and displaced consequences",
+    "/world/makcikgpt/kenapa-ceo-tak-boleh-jadi-manusia-marhaen": "MakcikGPT article — Kenapa CEO Tak Boleh Jadi Manusia Marhaen Sangat: Kerusi Yang Menukar Orang, Bukan Orang Yang Menukar Kerusi",
+    "/world/makcikgpt/kenapa-manusia-suka-binasa": "MakcikGPT article — Kenapa Manusia Suka Binasa: Bayang Dalam Badan, Tuhan Dalam Dada, Kiamat Dalam Kepala",
     "/world/makcikgpt/anak-jantan-punya-tanah": "MakcikGPT article — Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur",
     "/world/makcikgpt/gentari-dossier": "MakcikGPT article — Gentari: Dossier Realiti — Apa Dia, Siapa Punya, Berapa Besar",
     "/world/makcikgpt/gentari-15-benda-bangang": "MakcikGPT article — Gentari: 15 Benda Yang Tak Masuk Akal",
@@ -109,5 +111,5 @@
     "llms_txt": true,
     "sitemap": true
   },
-  "last_updated": "2026-10-29"
+  "last_updated": "2026-11-02"
 }

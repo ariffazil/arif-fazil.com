@@ -84,6 +84,12 @@
           "owner": "fi-003-pulse-cron",
           "strategy": "preserve-live",
           "note": "2026-10-02: FI-003 consolidation cron (every 6h) writes live pulse telemetry; deploy must never clobber. index.html stays git-owned (DTI head fixed same day)."
+        },
+        {
+          "path": "world/makcikgpt/makcikgpt-md",
+          "owner": "makcikgpt-bot-mirror",
+          "strategy": "preserve-live",
+          "note": "Bot-lane md/html mirror (vhost @mk_article_bot root). NOT in dist layout — created by 2026-10-27/28 split-root migration. Wiped by rsync --delete 2026-11-02 deploy (restored same day). Must survive deploys."
         }
       ],
       "aliases": [

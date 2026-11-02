@@ -5926,5 +5926,144 @@
         "maruah_review": "approved"
       }
     ]
+  },
+  {
+    "id": "m-gen-siapa-akan-ketuk-pintu",
+    "title": "Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?",
+    "date": "2026-11-02",
+    "lang": "bm",
+    "series": {
+      "id": "M1",
+      "n": 9
+    },
+    "tags": [
+      "ai",
+      "manusia",
+      "maruah",
+      "privasi",
+      "jambatan",
+      "makcikgpt",
+      "ketuk-pintu"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/siapa-akan-ketuk-pintu"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Orang lebih bersedia mendedahkan hal memalukan atau menyakitkan kepada ejen automatik berbanding manusia — sebab tiada rasa malu dan tiada hutang budi.",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "RCT makmal (Lucas et al. 2014). Dirujuk kualitatif dalam artikel; angka peserta tidak dicetak."
+      },
+      {
+        "claim_id": "C002",
+        "text": "Menamakan perasaan dengan kata-kata (affect labeling) menurunkan tindak balas amygdala dan memberi kelegaan jangka pendek yang boleh diukur.",
+        "tag": "DER",
+        "source_id": "SRC-002",
+        "confidence_basis": "Kajian fMRI (Lieberman et al. 2007). Dirujuk kualitatif sahaja."
+      },
+      {
+        "claim_id": "C003",
+        "text": "Niat hanya meramal kira-kira 28 peratus varians tindakan sebenar — 82,107 peserta merentas 422 kajian.",
+        "tag": "OBS",
+        "source_id": "SRC-003",
+        "confidence_basis": "Disemak dengan sumber primer (Sheeran 2002, European Review of Social Psychology) pada 2 Nov 2026."
+      },
+      {
+        "claim_id": "C004",
+        "text": "Apabila rancangan baik diakui oleh orang lain, otak boleh rasa dah selesai — kurangkan usaha sebenar (premature social reality).",
+        "tag": "DER",
+        "source_id": "SRC-004",
+        "confidence_basis": "Siri eksperimen (Gollwitzer et al. 2009). Dirujuk kualitatif."
+      },
+      {
+        "claim_id": "C005",
+        "text": "Arahan yang mengawal (perangai bibik) mencetuskan reactance — manusia melawan, menyepi, atau pergi.",
+        "tag": "DER",
+        "source_id": "SRC-005",
+        "confidence_basis": "Teori reactance (Brehm 1966; Dillard & Shen 2005). Dirujuk kualitatif."
+      },
+      {
+        "claim_id": "C006",
+        "text": "Hubungan sosial yang kuat dikaitkan dengan peluang hidup lebih lama — meta-analisis 148 kajian, 308,849 peserta, purata tujuh setengah tahun.",
+        "tag": "OBS",
+        "source_id": "SRC-006",
+        "confidence_basis": "Disemak dengan sumber primer (Holt-Lunstad et al. 2010, PLoS Medicine) pada 2 Nov 2026. Pemerhatian, bukan kausal."
+      },
+      {
+        "claim_id": "C007",
+        "text": "Kehadiran fizikal manusia (jaga) menurunkan tindak balas ancaman fisiologi dengan cara maklumat semata tidak boleh.",
+        "tag": "DER",
+        "source_id": "SRC-007",
+        "confidence_basis": "Social Baseline Theory (Coan & Sbarra 2015). Dirujuk kualitatif."
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-001",
+        "type": "document",
+        "title": "Lucas et al. (2014) — Its only a computer: Virtual humans increase willingness to disclose. Computers in Human Behavior 37",
+        "url": "https://doi.org/10.1016/j.chb.2014.04.043",
+        "retrieved_at": "2026-11-02T00:00:00Z",
+        "content_hash": "sha256:not-retrieved"
+      },
+      {
+        "source_id": "SRC-002",
+        "type": "document",
+        "title": "Lieberman et al. (2007) — Putting feelings into words. Psychological Science 18(5)",
+        "url": "https://doi.org/10.1111/j.1467-9280.2007.01916.x",
+        "retrieved_at": "2026-11-02T00:00:00Z",
+        "content_hash": "sha256:not-retrieved"
+      },
+      {
+        "source_id": "SRC-003",
+        "type": "document",
+        "title": "Sheeran (2002) — Intention-Behaviour Relations. European Review of Social Psychology 12(1), 1-36",
+        "url": "https://doi.org/10.1080/14792772143000003",
+        "retrieved_at": "2026-11-02T05:55:00Z",
+        "content_hash": "sha256:primary-verified-2026-11-02"
+      },
+      {
+        "source_id": "SRC-004",
+        "type": "document",
+        "title": "Gollwitzer et al. (2009) — When intentions go public. Psychological Science 20(5)",
+        "url": "https://doi.org/10.1111/j.1467-9280.2009.02336.x",
+        "retrieved_at": "2026-11-02T00:00:00Z",
+        "content_hash": "sha256:not-retrieved"
+      },
+      {
+        "source_id": "SRC-005",
+        "type": "document",
+        "title": "Brehm (1966) Reactance theory; Dillard & Shen (2005) Communication Monographs 72(2)",
+        "url": "https://doi.org/10.1080/03637750500111815",
+        "retrieved_at": "2026-11-02T00:00:00Z",
+        "content_hash": "sha256:not-retrieved"
+      },
+      {
+        "source_id": "SRC-006",
+        "type": "document",
+        "title": "Holt-Lunstad et al. (2010) — Social Relationships and Mortality Risk. PLoS Medicine 7(7) e1000316",
+        "url": "https://doi.org/10.1371/journal.pmed.1000316",
+        "retrieved_at": "2026-11-02T05:55:00Z",
+        "content_hash": "sha256:primary-verified-2026-11-02"
+      },
+      {
+        "source_id": "SRC-007",
+        "type": "document",
+        "title": "Coan & Sbarra (2015) — Social Baseline Theory. Current Opinion in Psychology 1",
+        "url": "https://doi.org/10.1016/j.copsyc.2014.12.021",
+        "retrieved_at": "2026-11-02T00:00:00Z",
+        "content_hash": "sha256:not-retrieved"
+      }
+    ],
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-11-02",
+      "last_updated": "2026-11-02"
+    }
   }
 ]

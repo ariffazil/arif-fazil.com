@@ -1,0 +1,73 @@
+{
+  "design_system_asset": "assets/53930e338fa249e8bec7808f181df468",
+  "source_layer": "/root/arif-fazil.com/stitch-export/",
+  "target_directory": "/root/arif-fazil.com/src/components/stitch",
+  "verified_at": "2026-10-31T08:16:40.234336+00:00",
+  "tsc_validation": "PASS (0 errors, exit 0)",
+  "compliance": {
+    "zero_state_bloat": true,
+    "orthogonal_0px_corners": true,
+    "bone_text_palette": "#E2E2E8 on #0A0C10",
+    "primary_triad": [
+      "#38BDF8",
+      "#EF4444",
+      "#F59E0B"
+    ]
+  },
+  "components": [
+    {
+      "file": "/root/arif-fazil.com/src/components/stitch/LayoutGrid.tsx",
+      "export": "LayoutGrid",
+      "source": "DESIGN.md (assets/53930e338fa249e8bec7808f181df468)",
+      "bytes": 5952,
+      "lines": 119,
+      "sha256_16": "7d7c0ab00bb2bb2e",
+      "description": "Shared orthogonal fractal canvas grid, vector + crosshair markers, and SVG toroidal manifold overlay"
+    },
+    {
+      "file": "/root/arif-fazil.com/src/components/stitch/PortalKedaulatan.tsx",
+      "export": "PortalKedaulatan",
+      "source": "constellation-home-portal-kedaulatan-dark-mode.html",
+      "bytes": 18670,
+      "lines": 269,
+      "sha256_16": "d7b06ee184ab96dd",
+      "description": "Constellation Home \u2014 Portal Kedaulatan dark-triad sovereign workspace"
+    },
+    {
+      "file": "/root/arif-fazil.com/src/components/stitch/MakcikGPTArchive.tsx",
+      "export": "MakcikGPTArchive",
+      "source": "makcikgpt-civic-archive-dark-mode.html",
+      "bytes": 18380,
+      "lines": 270,
+      "sha256_16": "08461b49f5afb20b",
+      "description": "MakcikGPT Civic Archive \u2014 investigative treatise reader, claim ledger & evidence drawer"
+    },
+    {
+      "file": "/root/arif-fazil.com/src/components/stitch/GeoxCockpit.tsx",
+      "export": "GeoxCockpit",
+      "source": "geox-subsurface-cockpit-dark-mode.html",
+      "bytes": 19792,
+      "lines": 359,
+      "sha256_16": "dab81386bb16561f",
+      "description": "GEOX Subsurface Cockpit \u2014 Malay Basin seismic horizon & petrophysical telemetry"
+    },
+    {
+      "file": "/root/arif-fazil.com/src/components/stitch/FederationObservatory.tsx",
+      "export": "FederationObservatory",
+      "source": "arifos-federation-observatory-dark-mode.html",
+      "bytes": 23831,
+      "lines": 368,
+      "sha256_16": "aa167e508fbfb05f",
+      "description": "arifOS Federation Observatory \u2014 13 Constitutional Floors matrix, \u0394S/\u03a8/Peace\u00b2 & VAULT999 stream"
+    },
+    {
+      "file": "/root/arif-fazil.com/src/components/stitch/index.ts",
+      "export": "barrel",
+      "source": "manifest.json",
+      "bytes": 422,
+      "lines": 6,
+      "sha256_16": "c702cc68d9448388",
+      "description": "Type-safe module exports for all 5 Stitch React components"
+    }
+  ]
+}

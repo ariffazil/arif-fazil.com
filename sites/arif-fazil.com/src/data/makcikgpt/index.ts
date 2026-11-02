@@ -48,7 +48,9 @@ import petronasAiTransformasi from './petronas-ai-transformasi-tapi-awak-pakai-c
 import dna2010RamalanDatang from './dna-2010-ramalan-datang';
 import anakJantanPunyaTanah from './anak-jantan-punya-tanah';
 import hukumKeretaSentuhanTakDinamai from './hukum-kereta-sentuhan-tak-dinamai';
+import siapaAkanKetukPintu from './siapa-akan-ketuk-pintu';
 export const makcikArticleModules: ArticleContent[] = [
+  siapaAkanKetukPintu,
   hukumKeretaSentuhanTakDinamai,
   anakJantanPunyaTanah,
   gentari15Benda,
@@ -99,6 +101,23 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'siapa-akan-ketuk-pintu',
+    title: 'Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?',
+    subtitle: 'AI boleh dengar waktu semua orang tidur. Tapi mendengar bukan menemani, lega bukan selesai, dan teks bukan manusia.',
+    date: '2026-11-02',
+    domain: 'MAKCIKGPT × MANUSIA × AI × MARUAH',
+    language: 'ms',
+    excerpt: 'Orang zaman ni bercakap lebih dari bila-bila dalam sejarah — tapi dengan mesin. Lega itu betul; tapi lega bukan selesai, didengar bukan ditemani, dan sensor yang jadi hakim akan buat manusia berhenti jujur. Artikel ini hukum asas: AI ialah jambatan kepada manusia, bukan rumah yang ganti manusia.',
+    tags: ['ai', 'manusia', 'maruah', 'privasi', 'jambatan', 'makcikgpt', 'ketuk-pintu'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-11-02',
+      last_updated: '2026-11-02',
+    },
+  },
   {
     slug: 'hukum-kereta-sentuhan-tak-dinamai',
     title: 'Hukum Kereta: Sentuhan yang Tak Dinamai',

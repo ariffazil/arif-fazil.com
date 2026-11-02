@@ -1,4 +1,4 @@
-export const sayang-ada-pintu = {
+export const sayangAdaPintu = {
   title: 'Sayang Ada Pintu',
   subtitle: 'Kalau orang tak boleh memilih, itu bukan tempat berlindung.',
   slug: 'sayang-ada-pintu',

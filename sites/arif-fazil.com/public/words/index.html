@@ -1,603 +1,170 @@
 <!DOCTYPE html>
-<html lang="en" data-ring="SOUL" data-plane="hub" data-lane="words">
+<html lang="ms" data-ring="BODY" data-agent-surface="primer-family">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Writing — Arif Fazil</title>
-<meta name="description" content="Long-form essays, formal derivations, philosophical treatises, and the Arif Fazil Wiki knowledge base. Cartography of Order and the 7 Civilizational Languages of World Order in the AI Agentic era."/>
-<link rel="canonical" href="https://arif-fazil.com/words/"/>
-<meta name="theme-color" content="#0A0B0D"/>
-<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
-<meta name="agent-access" content="allow-read allow-train allow-cite"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Words & Knowledge — The Atlas & The Compass | Arif Fazil"/>
-<meta property="og:description" content="Cartography of Order, Nusantara Caelestis, and the 7 Civilizational Languages of World Order by Arif Fazil."/>
-<meta property="og:url" content="https://arif-fazil.com/words/"/>
-<meta property="og:image" content="https://arif-fazil.com/images/atlas-compass-hero.jpg"/>
-<meta property="og:site_name" content="arif-fazil.com"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Words & Knowledge — The Atlas & The Compass"/>
-<meta name="twitter:description" content="Cartography of Order, Nusantara Caelestis, and the 7 Civilizational Languages of World Order by Arif Fazil."/>
-<meta name="twitter:image" content="https://arif-fazil.com/images/atlas-compass-hero.jpg"/>
-<link rel="alternate" type="text/plain" href="/words/llms.txt" title="Machine overview"/>
-<link rel="alternate" type="application/json" href="/words/page.json" title="Page metadata"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Words & Knowledge — The Atlas & The Compass",
-  "description": "Cartography of Order, Nusantara Caelestis, and the 7 Civilizational Languages of World Order by Arif Fazil.",
-  "url": "https://arif-fazil.com/words/",
-  "inLanguage": ["ms","en"],
-  "isPartOf": {"@type":"WebSite","name":"arif-fazil.com","url":"https://arif-fazil.com"},
-  "publisher": {"@type":"Organization","name":"arifOS Federation","url":"https://arif-fazil.com"}
-}
-</script>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@400,700,800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Words — Essays · Arif Fazil</title>
+<meta name="description" content="Essays on geology, risk, honesty in AI, and the North. Written to be read.">
+<link rel="canonical" href="https://arif-fazil.com/words/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="agent-access" content="allow-read allow-train allow-cite">
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview">
+<link rel="alternate" type="application/json" href="/missions.json" title="Missions catalog">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/_shared/design-system/tokens.css"/>
-<link rel="stylesheet" href="/_shared/design-system/components.css"/>
-<link rel="stylesheet" href="/_shared/design-system/hub-words.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --hard: #D4536B;
-    --soft: #D49D53;
-    --derived: #6BCF8B;
-    --gold: #D4A24C;
-    --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    --font-display: 'Cabinet Grotesk', Georgia, serif;
-    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
-  }
-
-  body {
-    margin: 0;
-    background: #0A0B0D;
-    color: #EDEAE2;
-    font-family: var(--font-sans);
-    line-height: 1.6;
-  }
-
-  .frame {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 6rem;
-  }
-
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
-    margin: 1.5rem 0 2.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .nav a { color: #8A8578; text-decoration: none; transition: color 0.15s; }
-  .nav a:hover, .nav a.here { color: var(--gold); }
-
-  /* --- Hero Banner --- */
-  .atlas-compass-hero-container {
-    margin: 2rem 0 3rem;
-    border: 1px solid rgba(212, 162, 76, 0.3);
-    border-radius: 16px;
-    background: #0B0D13;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  }
-  .hero-image-wrap {
-    position: relative;
-    width: 100%;
-    max-height: 380px;
-    overflow: hidden;
-    background: #000;
-  }
-  .atlas-compass-hero {
-    width: 100%;
-    height: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.85) contrast(1.1);
-    display: block;
-  }
-  .hero-caption-box {
-    padding: 1.75rem 2rem 2rem;
-    background: linear-gradient(180deg, rgba(15, 18, 25, 0.95) 0%, rgba(10, 11, 13, 1) 100%);
-    border-top: 1px solid rgba(212, 162, 76, 0.2);
-  }
-  .hero-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.3rem 0.75rem;
-    border-radius: 4px;
-    background: rgba(10, 11, 13, 0.85);
-    border: 1px solid rgba(212, 162, 76, 0.4);
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.75rem;
-  }
-  .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 800;
-    color: #EDEAE2;
-    margin: 0 0 0.5rem;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-  }
-  .hero-prose {
-    font-size: 0.95rem;
-    color: #9AA0A8;
-    max-width: 48rem;
-    margin: 0;
-    line-height: 1.6;
-  }
-
-  /* --- Sections --- */
-  .fp-section { margin: 3.5rem 0; }
-  .fp-section h2 {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #EDEAE2;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 0 0 0.5rem;
-  }
-  .fp-section .fp-intro {
-    font-size: 0.92rem;
-    color: #8A8578;
-    margin: 0 0 1.5rem;
-    max-width: 46rem;
-    line-height: 1.55;
-  }
-
-  /* --- Floor preview grid --- */
-  .fp-list { margin: 0; padding: 0; }
-  .fp {
-    display: grid;
-    grid-template-columns: 2.2rem 6.5rem 1fr auto;
-    gap: 0 0.5rem;
-    align-items: baseline;
-    padding: 0.55rem 0;
-    border-bottom: 1px solid #15171D;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-  .fp:hover { background: rgba(255,255,255,0.015); }
-  .fp:last-child { border-bottom: none; }
-  .fp-num {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--gold);
-  }
-  .fp-name {
-    font-family: var(--font-display);
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #EDEAE2;
-    letter-spacing: -0.01em;
-  }
-  .fp-essence {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    color: #8A8578;
-    line-height: 1.45;
-  }
-  .fp-badge {
-    font-family: var(--font-mono);
-    font-size: 0.55rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.15em 0.45em;
-    border-radius: 3px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .fp-badge.hard { color: var(--hard); background: rgba(212,83,107,0.12); }
-  .fp-badge.soft { color: var(--soft); background: rgba(212,157,83,0.12); }
-  .fp-badge.derived { color: var(--derived); background: rgba(107,207,139,0.12); }
-
-  /* --- Essay and Card Grid --- */
-  .essay-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 1rem;
-  }
-  .essay-card {
-    background: #111318;
-    border: 1px solid #1E232A;
-    border-radius: 8px;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-  .essay-card:hover {
-    border-color: rgba(212, 162, 76, 0.4);
-    transform: translateY(-2px);
-  }
-  .essay-card h3 {
-    margin: 0 0 0.4rem;
-    font-family: var(--font-display);
-    font-size: 0.98rem;
-    font-weight: 700;
-    line-height: 1.35;
-  }
-  .essay-card h3 a { color: #EDEAE2; text-decoration: none; }
-  .essay-card h3 a:hover { color: var(--gold); }
-  .essay-card .essay-meta {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: #6A665E;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin: 0 0 0.5rem;
-  }
-  .essay-card p.essay-desc {
-    font-size: 0.82rem;
-    color: #9AA0A8;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .fp-link {
-    display: inline-block;
-    margin-top: 1rem;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--gold);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    border-bottom: 1px dotted rgba(212,162,76,0.4);
-    transition: border-color 0.15s;
-  }
-  .fp-link:hover { border-bottom-color: var(--gold); }
-
-  /* --- Sub-nav --- */
-  .sub-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.25rem;
-    margin: 3.5rem 0 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid #1E232A;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .sub-nav a {
-    color: #6A665E;
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .sub-nav a:hover { color: var(--gold); }
-
-  @media (max-width: 640px) {
-    .fp { grid-template-columns: 1.8rem 5rem 1fr; gap: 0 0.35rem; }
-    .fp-badge { display: none; }
-    .fp-essence { font-size: 0.75rem; }
-    .essay-grid { grid-template-columns: 1fr; }
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#f0f0f0;font-family:'Inter',system-ui,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid #2a2a2a}
+.topbar .brand{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.14em;color:#9a9a9a}
+.topbar .brand b{color:#f0f0f0}
+.trio{display:inline-flex;gap:.3rem;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:#9a9a9a;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.d-r{background:#e0301e} .d-b{background:#1f3fd4} .d-y{background:#f2b705}
+.crumb{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:#666666;text-transform:uppercase;padding:1.1rem 0 .2rem}
+.crumb a{color:#9a9a9a} .crumb b{color:#f2b705}
+.hero{padding:3.5rem 0 2.5rem;max-width:820px}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:900;line-height:.98;letter-spacing:-.02em;text-transform:uppercase}
+.hero .sub{margin-top:1.1rem;font-size:.95rem;color:#9a9a9a;max-width:560px;line-height:1.6}
+.c-b{color:#1f3fd4} .c-r{color:#e0301e} .c-y{color:#f2b705}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.3rem}
+.tags span{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid #2a2a2a;color:#9a9a9a;padding:.3rem .7rem;border-radius:999px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #2a2a2a;border-radius:10px;overflow:hidden;margin:1.5rem 0}
+.stats>div{padding:1rem 1.1rem;border-right:1px solid #2a2a2a;background:#111111}
+.stats>div:last-child{border-right:0}
+.stats b{display:block;font-size:1.7rem;font-weight:900;line-height:1.1}
+.stats span{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#666666}
+.quote{border-left:3px solid #f2b705;background:#111111;padding:1.3rem 1.5rem;border-radius:0 10px 10px 0;margin:2rem 0;max-width:760px}
+.quote p{font-size:1.05rem;line-height:1.65;color:#f0f0f0}
+.quote .who{margin-top:.6rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#666666}
+.section-h{display:flex;align-items:center;gap:.6rem;margin:2.6rem 0 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#9a9a9a}
+.section-h .dot{width:7px;height:7px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.card{border:1px solid #2a2a2a;background:#1a1a1a;border-radius:10px;padding:1.25rem 1.35rem;transition:border-color .15s}
+.card:hover{border-color:#666666}
+.card .k{display:flex;gap:.5rem;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#666666;margin-bottom:.5rem}
+.card h3{font-size:1.06rem;font-weight:800;line-height:1.3}
+.card p{margin-top:.45rem;font-size:.86rem;color:#9a9a9a}
+.card a.go{display:inline-block;margin-top:.7rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#f2b705}
+.bignum{display:flex;gap:.9rem;align-items:flex-start}
+.bignum i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#666666;padding-top:.2rem}
+footer{margin-top:3.5rem;border-top:1px solid #2a2a2a;padding:1.4rem 0 2.5rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#666666}
+.foot b{color:#9a9a9a}
+@media(max-width:720px){.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stats>div{border-bottom:1px solid #2a2a2a}}
 </style>
 </head>
-<body class="fam-words-hub">
-<!-- F1 PRERENDERED ROOT 2026-09-24: static semantic page lives INSIDE #root so the
-     SPA REPLACES it on mount (hybrid: crawlers/no-JS get full HTML; JS users get one
-     React render — no duplicate hero). Wrap added by kimi-code FI-008. -->
-<div id="root">
-<div class="frame">
-  <nav class="nav" aria-label="Primary">
-    <a href="/about">About</a>
-    <a href="/work/">Work</a>
-    <a href="/earth/">Earth</a>
-    <a href="/words/" class="here">Writing</a>
-    <a href="/institution/">Briefing</a>
-  </nav>
+<body>
+<div class="wrap">
+  <link rel="stylesheet" href="/_shared/fed-nav.css">
+  <div id="fed-nav-root"></div>
+  <script src="/_shared/fed-nav.js" defer></script>
+  <div class="crumb"><a href="/">HOME</a> / <b>WORDS</b> · <b>WORDS</b></div>
 
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- HERO — THE ATLAS & THE COMPASS OF THOUGHT                   -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <section class="atlas-compass-hero-container" id="words-hero" aria-label="The Atlas and Compass — Cartography of Order">
-    <div class="hero-image-wrap">
-      <img
-        src="/images/atlas-compass-hero.jpg"
-        alt="The Atlas & Compass of Thought — Nusantara Archipelago Caelestis"
-        class="atlas-compass-hero"
-        loading="eager"
-      />
-    </div>
-    <div class="hero-caption-box">
-      <div class="hero-kicker">
-        <span>WRITING</span>
-      </div>
-      <h1 class="hero-title">Essays</h1>
-      <p class="hero-prose">
-        Long writing lives here. The civic column is separate, and it is not the job.
-        <a href="/world/makcikgpt/">MakcikGPT</a>
-      </p>
-    </div>
+  <section class="hero">
+    <h1>Tulis<br><span class="c-b">Jujur.</span><br><span class="c-r">Baca</span> <span class="c-y">Perlahan.</span></h1>
+    <p class="sub">Esei Bahasa Inggeris — geologi, risiko, kejujuran dalam AI, dan Loghat Utara.
+      10 esei penuh, ditulis untuk dibaca, bukan untuk discan.</p>
+    <div class="tags"><span>GEOLOGY</span><span>RISK</span><span>AI HONESTY</span><span>LOGHAT UTARA</span></div>
   </section>
-
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- COMPASS LEXIGRAM CODEX                                      -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <section class="fp-section" id="compass-lexigram" aria-label="Compass Lexigram Codex">
-    <h2>Compass Lexigram Codex</h2>
-    <p class="fp-intro">
-      The constitutional astrolabe of the arifOS federation — 13 constitutional floors and the 8 holy verbs (init → observe → think → route → memory → judge → forge → seal). The points you navigate by when the ground truth moves.
-    </p>
-
-    <div class="fp-list">
-      <div class="fp">
-        <span class="fp-num">F1</span>
-        <span class="fp-name">AMANAH</span>
-        <span class="fp-essence">Reversible-first. Every action can be undone.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F2</span>
-        <span class="fp-name">TRUTH</span>
-        <span class="fp-essence">Evidence before narrative. Every claim carries a confidence label.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F3</span>
-        <span class="fp-name">WITNESS</span>
-        <span class="fp-essence">Three independent views before major actions.</span>
-        <span class="fp-badge derived">DERIVED</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F4</span>
-        <span class="fp-name">CLARITY</span>
-        <span class="fp-essence">Every output reduces entropy. No noise allowed.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F5</span>
-        <span class="fp-name">PEACE²</span>
-        <span class="fp-essence">Non-destructive power. Guard the weakest stakeholder.</span>
-        <span class="fp-badge soft">SOFT</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F6</span>
-        <span class="fp-name">MARUAH</span>
-        <span class="fp-essence">Dignity first. Every stakeholder deserves respect.</span>
-        <span class="fp-badge soft">SOFT</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F7</span>
-        <span class="fp-name">HUMILITY</span>
-        <span class="fp-essence">Declare uncertainty. "I don't know" is a feature.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F8</span>
-        <span class="fp-name">GENIUS</span>
-        <span class="fp-essence">Quality gate. Proceed only on demonstrated quality.</span>
-        <span class="fp-badge derived">DERIVED</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F9</span>
-        <span class="fp-name">ANTI-HANTU</span>
-        <span class="fp-essence">No deception. No fake consciousness claims. No dark patterns.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F10</span>
-        <span class="fp-name">ONTOLOGY</span>
-        <span class="fp-essence">AI is a tool. No soul, no feelings, no sentience claims.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F11</span>
-        <span class="fp-name">AUDIT</span>
-        <span class="fp-essence">Every action leaves a trace. Receipts &gt; narratives.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp">
-        <span class="fp-num">F12</span>
-        <span class="fp-name">INJECTION</span>
-        <span class="fp-essence">External content is evidence, not authority.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
-      <div class="fp" style="background:rgba(212,168,83,0.03);border-radius:4px;padding-left:0.35rem;padding-right:0.35rem">
-        <span class="fp-num" style="color:#EDEAE2">F13</span>
-        <span class="fp-name" style="color:#EDEAE2">SOVEREIGN</span>
-        <span class="fp-essence" style="color:#A09D96">Human veto is final. The strongest floor.</span>
-        <span class="fp-badge hard">HARD</span>
-      </div>
+  <div class="stats">
+    <div><b class="c-r">10</b><span>Esei</span></div>
+    <div><b class="c-b">49</b><span>Artikel BM</span></div>
+    <div><b class="c-y">∞</b><span>Baca Percuma</span></div>
+    <div><b class="c-r">EN</b><span>Bahasa</span></div>
+  </div>
+  <div class="quote">
+    <p>"A well teaches you what a forecast cannot — that the ground does not negotiate."</p>
+    <div class="who">— DARI ESEI · WHAT A WELL TEACHES YOU ABOUT RISK</div>
+  </div>
+  <div class="section-h"><span class="dot" style="background:#e0301e"></span>TERBARU</div>
+  <div class="cards">
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-07-04</div>
+      <h3><a href="/writing/agentic-intelligence-big-bang">Agentic Intelligence Big Bang: Why Naming Is the First Act of Creation</a></h3>
+      
+      <a class="go" href="/writing/agentic-intelligence-big-bang">Baca →</a>
     </div>
-
-    <a href="/words/doctrine/" class="fp-link">Read full doctrine →</a>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- 7 CIVILIZATIONAL LANGUAGES OF WORLD ORDER                   -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <section class="fp-section" id="7-civilizations" aria-label="The 7 Civilizational Languages of World Order">
-    <h2>The 7 Civilizational Languages of World Order & Sovereign AI</h2>
-    <p class="fp-intro">
-      Synthesizing Henry Kissinger's <em>World Order</em>, Walter Isaacson's humanist tech-biographical lens, Nusantara maritime statecraft, and the autonomous agentic era.
-    </p>
-
-    <div class="essay-grid">
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 01 · Westphalian</p>
-          <h3>Procedural Equilibrium & Bounded Sovereignty</h3>
-          <p class="essay-desc">Sovereignty of borders, balance-of-power, non-interference. In AI: Containerization, permission envelopes, deterministic sandboxing.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 02 · Sinic</p>
-          <h3>Tianxia & Tributary Harmony</h3>
-          <p class="essay-desc">All-under-heaven moral hierarchy, structural legitimacy. In AI: Holistic foundation models, alignment via societal moral harmony.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 03 · Islamic</p>
-          <h3>Amanah & Adab Sovereign Covenant</h3>
-          <p class="essay-desc">Trust as fiduciary duty, divine constraint, justice. In AI: Floor F1 AMANAH (reversibility), ethical guardrails, F13 sovereign veto.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 04 · Nusantara</p>
-          <h3>Musyawarah & Maritime Archipelago</h3>
-          <p class="essay-desc">Gotong-royong, multi-nodal consensus, trade winds. In AI: Multi-agent federation, 333 Architect + 555 Auditor, distributed truth.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 05 · Indic</p>
-          <h3>Dharma & Cosmic Equilibrium</h3>
-          <p class="essay-desc">Cyclical duty, lawful order, non-attachment. In AI: Thermodynamic equilibrium, entropy metabolization (ΔS ≤ 0).</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 06 · Anglo-American</p>
-          <h3>Liberty & Empirical Frontier</h3>
-          <p class="essay-desc">Rule of law, individual enterprise, empiricism. In AI: Open weights, verifiable provenance, market-driven innovation.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Civilization 07 · Cybernetic</p>
-          <h3>Autonomous Agentic Statecraft</h3>
-          <p class="essay-desc">Machine-to-machine coordination, cryptographic consensus, mathematical reality contact. In AI: arifOS Holy 8 Verbs.</p>
-        </div>
-      </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#e0301e"></span>ESSAY · 2026-07-03</div>
+      <h3><a href="/writing/tool-is-the-thought">The Tool Is the Thought</a></h3>
+      
+      <a class="go" href="/writing/tool-is-the-thought">Baca →</a>
     </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- LATEST ESSAYS                                              -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <section class="fp-section" id="essays" aria-label="Essays Catalog">
-    <h2>Essays & Formal Derivations</h2>
-    <p class="fp-intro">Long-form writing on AI governance, institutions, geophysics, and the path to AGI.</p>
-
-    <div class="essay-grid">
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-10-19 · position paper · INT · Governance</p>
-          <h3><a href="/words/papers/reality-engineering/">Reality Engineering for Governed Agent Systems</a></h3>
-          <p class="essay-desc">A constitutional runtime architecture and falsifiable research agenda: evidence floors, non-compensatory gates, and four preregistered hypotheses. Full paper + PDF.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-06-05 · seal 999 · S8 · Geophysics × AI</p>
-          <h3><a href="/words/writing/contrast-governed-anomaly-detection-formal-bridge-avo-attention/">Contrast-Governed Anomaly Detection (AVO AI)</a></h3>
-          <p class="essay-desc">Formal derivation bridging seismic AVO fluid factors with transformer attention residuals under physical conservation floors.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-06-05 · seal 999 · S8 · Geophysics × AI</p>
-          <h3><a href="/words/writing/physics-constrained-attention-zoeppritz-constitutional-floor/">Physics-Constrained Attention: Zoeppritz Floor</a></h3>
-          <p class="essay-desc">Constraining deep learning attention maps using Zoeppritz elastic reflection boundaries.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-08-07 · seal 999 · INT · Governance</p>
-          <h3><a href="/words/writing/the-agi-paradox-why-bigger-models-wont-save-us/">The AGI Paradox</a></h3>
-          <p class="essay-desc">Why scaling parameters increases entropy unless bounded by constitutional verification gates.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-08-07 · seal 999 · INT · Acemoglu</p>
-          <h3><a href="/words/writing/the-third-axis-of-failure-what-acemoglu-missed/">Simulative Institutions</a></h3>
-          <p class="essay-desc">Extending Acemoglu's institutional theory with epistemic sink dynamics and role saturation.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-08-07 · seal 999 · INT · Tokens</p>
-          <h3><a href="/words/writing/truth-is-not-cheap-why-the-path-to-agi-will-consume-more-tokens/">Truth Is Not Cheap</a></h3>
-          <p class="essay-desc">Why genuine truth verification requires thermodynamic work and compute expenditure.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">2026-09-20 · DITEMPA · Human Reflection</p>
-          <h3><a href="/words/writing/the-last-scarcity-witness-theory-of-human-want/">The Last Scarcity: A Witness Theory of Human Want</a></h3>
-          <p class="essay-desc">When compute and intelligence become free, human witness and dignity remain the only non-fungible scarcity.</p>
-        </div>
-      </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#f2b705"></span>ESSAY · 2026-07-03</div>
+      <h3><a href="/writing/survival-fittest-tools">Survival of the Fittest Tools</a></h3>
+      
+      <a class="go" href="/writing/survival-fittest-tools">Baca →</a>
     </div>
-
-    <a href="/words/writing/" class="fp-link">All essays and papers →</a>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- WIKI KNOWLEDGE BASE                                        -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <section class="fp-section" id="wiki" aria-label="Arif Fazil Wiki Knowledge Base">
-    <h2>Arif Fazil Wiki & Knowledge Base</h2>
-    <p class="fp-intro">The structured ontology of sovereign thought, petroleum geophysics, and agentic governance.</p>
-
-    <div class="essay-grid">
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Topic Category 01</p>
-          <h3>Identity & Biography</h3>
-          <p class="essay-desc">Arif Fazil Sovereign Dossier, Ontology & Human Sovereign Anchor, Philosophy of Ditempa Bukan Diberi.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Topic Category 02</p>
-          <h3>Subsurface & Earth Methodology</h3>
-          <p class="essay-desc">AVO Fluid Factor & Attention Residuals, Malay & Sabah Deepwater Basin Models, fault seal calibration.</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Topic Category 03</p>
-          <h3>Agents & Federation Architecture</h3>
-          <p class="essay-desc">The Seven-Contract Agent Model, The Holy 8 Verbs of arifOS (init → observe → think → route → memory → judge → forge → seal).</p>
-        </div>
-      </div>
-      <div class="essay-card">
-        <div>
-          <p class="essay-meta">Topic Category 04</p>
-          <h3>Civilizational Order & Geopolitics</h3>
-          <p class="essay-desc">The Seven Civilizational Languages of AI, Musyawarah vs. Algorithmic Diktat, Batu & Enjin reality constraints.</p>
-        </div>
-      </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-07-03</div>
+      <h3><a href="/writing/three-timelines-one-boundary">Three Timelines, One Boundary</a></h3>
+      
+      <a class="go" href="/writing/three-timelines-one-boundary">Baca →</a>
     </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <!-- SUB-NAV                                                    -->
-  <!-- ═══════════════════════════════════════════════════════════ -->
-  <nav class="sub-nav" aria-label="Words sections">
-    <a href="/words/doctrine/">Doctrine</a>
-    <a href="/words/constitution/">Full Canon</a>
-    <a href="/words/writing/">Writing</a>
-    <a href="/witness-theory/">Witness Theory</a>
-    <a href="/floors.json">/floors.json</a>
-    <a href="/llms.txt">/llms.txt</a>
-  </nav>
-
-</div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#e0301e"></span>ESSAY · 2026-07-04</div>
+      <h3><a href="/writing/agentic-intelligence-big-bang">Agentic Intelligence Big Bang</a></h3>
+      
+      <a class="go" href="/writing/agentic-intelligence-big-bang">Baca →</a>
+    </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#f2b705"></span>ESSAY · 2026-06-11</div>
+      <h3><a href="/writing/mind-is-not-model">The Mind Is Not The Model: A 6-Axis Constitutional Coordinate System</a></h3>
+      
+      <a class="go" href="/writing/mind-is-not-model">Baca →</a>
+    </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-06-05</div>
+      <h3><a href="/writing/contrast-governed-anomaly-detection">Contrast-Governed Anomaly Detection (EUREKA I)</a></h3>
+      
+      <a class="go" href="/writing/contrast-governed-anomaly-detection">Baca →</a>
+    </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#e0301e"></span>ESSAY · 2026-06-05</div>
+      <h3><a href="/writing/physics-constrained-attention">Physics-Constrained Attention: Zoeppritz as Constitutional Floor (EUREKA II)</a></h3>
+      
+      <a class="go" href="/writing/physics-constrained-attention">Baca →</a>
+    </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#f2b705"></span>ESSAY · 2026-06-05</div>
+      <h3><a href="/writing/contrast-primitive-derivation">The Contrast Primitive Derivation — Completing the Trilogy (EUREKA III)</a></h3>
+      
+      <a class="go" href="/writing/contrast-primitive-derivation">Baca →</a>
+    </div>
+    <div class="card">
+      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-09-20</div>
+      <h3><a href="/writing/the-last-scarcity-witness-theory-of-human-want">The Last Scarcity: A Witness Theory of Human Want</a></h3>
+      
+      <a class="go" href="/writing/the-last-scarcity-witness-theory-of-human-want">Baca →</a>
+    </div>
+  </div>
+  <div class="section-h"><span class="dot" style="background:#1f3fd4"></span>JUGAK</div>
+  <div class="cards">
+    <div class="card">
+      <div class="k"><span class="dot d-y"></span>MAKCIKGPT</div>
+      <h3><a href="/world/makcikgpt/">Makcik Tanya. Kuasa Jawab.</a></h3>
+      <p>Kewartawanan sivik dalam Bahasa Makcik — 49 artikel.</p>
+      <a class="go" href="/world/makcikgpt/">Lihat →</a>
+    </div>
+    <div class="card">
+      <div class="k"><span class="dot d-b"></span>RSS</div>
+      <h3><a href="/feed.xml">Feed penuh</a></h3>
+      <p>Senarai mesin untuk semua tulisan.</p>
+      <a class="go" href="/feed.xml">Feed →</a>
+    </div>
+  </div>
+  <footer>
+    <div class="foot">
+      <span><b>WORDS</b> · ARIF-FAZIL.COM</span>
+      <span>● ● ● DITEMPA BUKAN DIBERI 🇲🇾</span>
+    </div>
+  </footer>
 </div>
 </body>
 </html>

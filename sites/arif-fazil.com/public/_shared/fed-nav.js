@@ -1,6 +1,13 @@
 /* fed-nav.js — generated from canon/navigation.json (single source; regenerate via 333 session script 2026-11-04) */
 (function(){
   var ACTIVE = (document.currentScript && document.currentScript.getAttribute('data-active')) || '';
+  if (!ACTIVE) {
+    var p = location.pathname;
+    var slotPairs = [['/makcikgpt','makcikgpt'],['/earth','earth'],['/words','words'],['/world','world'],['/work','work']];
+    for (var i = 0; i < slotPairs.length; i++) {
+      if (p.indexOf(slotPairs[i][0]) === 0) { ACTIVE = slotPairs[i][1]; break; }
+    }
+  }
   var HTML = `<header class="fed-navbar" aria-label="Federation primary navigation">
   <a class="nav-brand" href="/">
     <span class="psi-badge">Ψ</span>

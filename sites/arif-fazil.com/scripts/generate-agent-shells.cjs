@@ -91,14 +91,9 @@ ${extraStyle}
 </head>
 <body>
   <div class="frame">
-${breadcrumb ? `    ${breadcrumb}\n` : ''}    <nav class="nav" aria-label="Primary">
-      <a href="/" class="nav-brand">ARIF FAZIL</a>
-      <a href="/earth">Earth</a>
-      <a href="/words">Words</a>
-      <a href="/world/makcikgpt/">MakcikGPT</a>
-      <a href="/world">World</a>
-      <a href="/work">Work</a>
-    </nav>
+${breadcrumb ? `    ${breadcrumb}\n` : ''}    <link rel="stylesheet" href="/_shared/fed-nav.css">
+    <div id="fed-nav-root"></div>
+    <script src="/_shared/fed-nav.js" defer></script>
 ${body}
     <p class="note">Content-first surface for humans and agents (no JavaScript required).
       Machine catalog: <a href="/missions.json">/missions.json</a> ·

@@ -109,11 +109,10 @@ function shell({ trail, trioWord, body, title, description, canonical }) {
 </head>
 <body>
 <div class="wrap">
-  <nav class="topbar" aria-label="Primary">
-    <a class="brand" href="/"><b>ARIF FAZIL</b></a>
-    <span class="trio"><span class="dot d-r"></span><span class="dot d-b"></span><span class="dot d-y"></span>&nbsp;${esc(trioWord)}</span>
-  </nav>
-  <div class="crumb">${trail}</div>
+  <link rel="stylesheet" href="/_shared/fed-nav.css">
+  <div id="fed-nav-root"></div>
+  <script src="/_shared/fed-nav.js" defer></script>
+  <div class="crumb">${trail}${trioWord ? ` · <b>${esc(trioWord)}</b>` : ''}</div>
 ${body}
   <footer>
     <div class="foot">

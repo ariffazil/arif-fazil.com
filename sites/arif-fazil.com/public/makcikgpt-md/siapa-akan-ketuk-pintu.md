@@ -1,27 +1,49 @@
 ---
-article_id: unregistered-siapa-akan-ketuk-pintu
+article_id: m-gen-siapa-akan-ketuk-pintu
 canonical_url: https://arif-fazil.com/world/makcikgpt/siapa-akan-ketuk-pintu
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/siapa-akan-ketuk-pintu.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 13c2c0d5da7cec6dcb3aa83156cbe5b10c6fd1526f8cdb059705268ad5af6591
 epistemic_summary:
-  obs_count: 0
-  der_count: 0
+  obs_count: 3
+  der_count: 4
   int_count: 0
   spec_count: 0
 ---
 
 # Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/siapa-akan-ketuk-pintu.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/siapa-akan-ketuk-pintu
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/siapa-akan-ketuk-pintu
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C001 | OBS | Orang lebih bersedia mendedahkan hal memalukan atau menyakitkan kepada ejen automatik berbanding manusia — sebab tiada rasa malu dan tiada hutang budi. | SRC-001 | n/a |
+| C002 | DER | Menamakan perasaan dengan kata-kata (affect labeling) menurunkan tindak balas amygdala dan memberi kelegaan jangka pendek yang boleh diukur. | SRC-002 | n/a |
+| C003 | OBS | Niat hanya meramal kira-kira 28 peratus varians tindakan sebenar — 82,107 peserta merentas 422 kajian. | SRC-003 | n/a |
+| C004 | DER | Apabila rancangan baik diakui oleh orang lain, otak boleh rasa dah selesai — kurangkan usaha sebenar (premature social reality). | SRC-004 | n/a |
+| C005 | DER | Arahan yang mengawal (perangai bibik) mencetuskan reactance — manusia melawan, menyepi, atau pergi. | SRC-005 | n/a |
+| C006 | OBS | Hubungan sosial yang kuat dikaitkan dengan peluang hidup lebih lama — meta-analisis 148 kajian, 308,849 peserta, purata tujuh setengah tahun. | SRC-006 | n/a |
+| C007 | DER | Kehadiran fizikal manusia (jaga) menurunkan tindak balas ancaman fisiologi dengan cara maklumat semata tidak boleh. | SRC-007 | n/a |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-001 | document | Lucas et al. (2014) — Its only a computer: Virtual humans increase willingness to disclose. Computers in Human Behavior 37 | https://doi.org/10.1016/j.chb.2014.04.043 |
+| SRC-002 | document | Lieberman et al. (2007) — Putting feelings into words. Psychological Science 18(5) | https://doi.org/10.1111/j.1467-9280.2007.01916.x |
+| SRC-003 | document | Sheeran (2002) — Intention-Behaviour Relations. European Review of Social Psychology 12(1), 1-36 | https://doi.org/10.1080/14792772143000003 |
+| SRC-004 | document | Gollwitzer et al. (2009) — When intentions go public. Psychological Science 20(5) | https://doi.org/10.1111/j.1467-9280.2009.02336.x |
+| SRC-005 | document | Brehm (1966) Reactance theory; Dillard & Shen (2005) Communication Monographs 72(2) | https://doi.org/10.1080/03637750500111815 |
+| SRC-006 | document | Holt-Lunstad et al. (2010) — Social Relationships and Mortality Risk. PLoS Medicine 7(7) e1000316 | https://doi.org/10.1371/journal.pmed.1000316 |
+| SRC-007 | document | Coan & Sbarra (2015) — Social Baseline Theory. Current Opinion in Psychology 1 | https://doi.org/10.1016/j.copsyc.2014.12.021 |
 
 ---
 

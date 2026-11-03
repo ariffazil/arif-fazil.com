@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-03T04:06:07.915Z",
+  "generated_at": "2026-11-03T21:30:35.367Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -14,19 +14,19 @@
         },
         {
           "name": "arif_observe",
-          "desc": "Collect evidence, reality observations, and operational facts with provenance. Modes: sear"
+          "desc": "Sense reality into sourced evidence — gather external facts with provenance, the kernel's "
         },
         {
           "name": "arif_think",
-          "desc": "Execute structured reasoning and plan formulation. Decomposes inquiries into verified deri"
+          "desc": "Structured reasoning and plan formulation — decomposes a question or claim into labeled de"
         },
         {
           "name": "arif_route",
-          "desc": "Classify intent and route tasks to domain organs (GEOX for Earth science, WEALTH for capit"
+          "desc": "Classify an intent and route it to the organ that owns it — GEOX (Earth science), WEALTH ("
         },
         {
           "name": "arif_memory",
-          "desc": "Access and maintain persistent institutional knowledge across sessions. Modes: recall (ret"
+          "desc": "Persistent institutional knowledge across sessions — store, recall, and curate lessons, de"
         },
         {
           "name": "arif_judge",

@@ -106,6 +106,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b bg-paper/95 backdrop-blur-md hairline">
       <div className="mx-auto flex h-14 max-w-[1360px] items-center justify-between gap-3 px-4 sm:px-6">
         {/* Brand */}
@@ -137,7 +138,7 @@ export default function Navbar() {
 
         {/* Mobile toggle button */}
         <button
-          className="font-mono text-[12px] uppercase tracking-[0.06em] text-ink-soft hover:text-ink md:hidden"
+          className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] font-mono text-[12px] uppercase tracking-[0.06em] text-ink-soft hover:text-ink md:hidden"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
         >
@@ -147,8 +148,10 @@ export default function Navbar() {
 
       {/* Thin rail accent */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-ember/30 to-transparent" aria-hidden />
+    </header>
 
-      {/* Mobile Drawer */}
+      {/* Drawer is a sibling of the header. backdrop-filter on the header
+          makes it a containing block, which trapped position:fixed inside a 58px bar. */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -156,16 +159,16 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] flex flex-col bg-[#0A0B0D] px-6 py-5 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-[80] flex flex-col bg-[#0A0B0D] px-6 py-5 md:hidden overflow-y-auto"
           >
             <div className="flex items-center justify-between">
               <span className="font-display text-[17px] font-semibold text-ink">{brand.label}</span>
               <button
-                className="font-mono text-[12px] uppercase tracking-[0.06em] text-ink-soft"
+                className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] font-mono text-[12px] uppercase tracking-[0.06em] text-ink-soft"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
               >
-                Close ✕
+                Close
               </button>
             </div>
 
@@ -181,7 +184,7 @@ export default function Navbar() {
                     item={l}
                     mobile
                     onClick={() => setOpen(false)}
-                    className="font-display text-2xl tracking-[-0.02em] text-ink"
+                    className="inline-flex items-center min-h-[44px] font-display text-2xl tracking-[-0.02em] text-ink"
                   />
                 </motion.div>
               ))}
@@ -194,6 +197,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }

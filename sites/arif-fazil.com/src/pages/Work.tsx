@@ -92,19 +92,19 @@ export function Work() {
           <div className="flex flex-wrap gap-3 pt-2">
             <a
               href="/institution/"
-              className="inline-flex items-center justify-center px-5 min-h-[40px] rounded bg-[#E4572E] text-[#07090E] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[#E4572E]/90 transition-colors"
+              className="inline-flex items-center justify-center px-5 min-h-[44px] rounded bg-[#E4572E] text-[#07090E] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[#E4572E]/90 transition-colors"
             >
               Request a briefing →
             </a>
             <a
               href="/earth/"
-              className="inline-flex items-center justify-center px-5 min-h-[40px] rounded border border-[#1F2733] bg-[#0F131D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#31C48D]/50 hover:text-[#31C48D] transition-colors"
+              className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#1F2733] bg-[#0F131D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#31C48D]/50 hover:text-[#31C48D] transition-colors"
             >
               3D Earth & Basins ↗
             </a>
             <Link
               to="/999"
-              className="inline-flex items-center justify-center px-5 min-h-[40px] rounded border border-[#1F2733] bg-[#0F131D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-colors"
+              className="inline-flex items-center justify-center px-5 min-h-[44px] rounded border border-[#1F2733] bg-[#0F131D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-colors"
             >
               Proof & Verification →
             </Link>

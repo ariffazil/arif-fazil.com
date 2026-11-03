@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil</title>
+<link rel="stylesheet" href="/_shared/fed-nav.css">
 <meta name="description" content="World surface of arif-fazil.com. Frontier AI agent systems, sovereign infrastructure corridors, commodity terminals, and civic intelligence." />
 <link rel="canonical" href="https://arif-fazil.com/world/" />
 <meta name="robots" content="index,follow" />
@@ -126,9 +127,28 @@ body {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--green);
 }
+.site-header .nav-toggle{
+  display:none;align-items:center;justify-content:center;
+  min-height:44px;min-width:44px;padding:0 8px;margin:0;
+  background:transparent;border:0;color:var(--text-muted);cursor:pointer;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+}
+.house-drawer[hidden]{display:none !important}
+.house-drawer{
+  position:fixed;top:56px;left:0;right:0;bottom:0;z-index:90;
+  background:#0A0B0D;display:flex;flex-direction:column;
+  padding:8px 20px 24px;overflow-y:auto;
+}
+.house-drawer a{
+  min-height:44px;display:flex;align-items:center;
+  font-family:var(--font-mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase;
+  color:#EDEAE2;text-decoration:none;border-bottom:1px solid #1F2733;
+}
+.house-drawer a.active{color:var(--text-main)}
 @media (max-width: 900px) {
   .site-header nav { display: none; }
   .site-header .clock { display: none; }
+  .site-header .nav-toggle { display: inline-flex; }
 }
 
 /* ── Canonical site footer ───────────────────────────────────────────── */
@@ -472,20 +492,8 @@ h2.surface-header .num {
 </head>
 <body>
 
-<header class="site-header">
-  <div class="bar">
-    <a class="brand" href="/"><span class="psi">Ψ</span><span>ARIF FAZIL</span></a>
-    <nav aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/earth/">Earth</a>
-      <a href="/words/">Words</a>
-      <a href="/world/makcikgpt/">MakcikGPT</a>
-      <a href="/world/" class="active" aria-current="page">World</a>
-      <a href="/work/">Work</a>
-    </nav>
-    <div class="clock"><span class="dot"></span><span id="sclock">--:--:--</span><span style="opacity:.6">MYT</span></div>
-  </div>
-</header>
+<div id="fed-nav-root"></div>
+<script src="/_shared/fed-nav.js" data-active="world" defer></script>
 
 <main class="wrap">
 
@@ -600,9 +608,9 @@ h2.surface-header .num {
   </div>
 
   <footer class="integrity" style="margin-top: 2rem; padding: 1rem; border-top: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">
-    <p><strong>INTEGRITY — world-state.json</strong> (generated <time datetime="2026-11-02T19:17:02Z">2026-11-02 19:17 UTC</time>)</p>
-    <p>sha256: <code style="word-break: break-all;">5315bc6886b713ba3088f00fc4d9f095879395b469ba169e2f815a0ae1470dcb</code></p>
-    <p>Brent <data value="104.53">USD 104.53</data> · USD/MYR <data value="4.054">4.054</data> · KLCI RSI-14 <data value="42.56">42.56</data> — organ-live, receipts 4a35c5f1 / ff2aa60e (VAULT999 wealth ledger, 2026-09-06).</p>
+    <p><strong>INTEGRITY — world-state.json</strong> (generated <time datetime="2026-11-03T19:17:01Z">2026-11-03 19:17 UTC</time>)</p>
+    <p>sha256: <code style="word-break: break-all;">f95c053c12eb186cfc039e1f4171aed90984e9d908d0ea6be14df80a7b2f519a</code></p>
+    <p>Brent <data value="103.59">USD 103.59</data> · USD/MYR <data value="4.068">4.068</data> · KLCI RSI-14 <data value="42.56">42.56</data> — organ-live, receipts 4a35c5f1 / ff2aa60e (VAULT999 wealth ledger, 2026-09-06).</p>
     <p>Integrity hash above; mismatch = tampered. Verification and witness state live at <a href="/vitals/" style="color:var(--yellow);">/vitals/</a> and <a href="/machine/" style="color:var(--yellow);">/machine/</a>.</p>
   </footer>
 
@@ -674,5 +682,8 @@ h2.surface-header .num {
 })();
 </script>
 
+<script>
+
+</script>
 </body>
 </html>

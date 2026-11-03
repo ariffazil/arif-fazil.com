@@ -1,0 +1,687 @@
+/* ── CANONICAL FEDERATION NAVBAR ── */
+.fed-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 1.5rem;
+  background: rgba(10, 11, 13, 0.95);
+  border-bottom: 1px solid #1F2733;
+  backdrop-filter: blur(12px);
+  font-family: "IBM Plex Mono", "Fira Code", ui-monospace, monospace;
+  box-sizing: border-box;
+}
+.fed-navbar .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cabinet Grotesk', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #EDEAE2;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.fed-navbar .nav-brand:hover { color: #E4572E; }
+.fed-navbar .nav-brand .psi-badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(154, 160, 168, 0.3);
+  color: #9AA0A8;
+}
+.fed-navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.fed-navbar .nav-links a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9AA0A8;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.fed-navbar .nav-links a:hover { color: #EDEAE2; }
+.fed-navbar .nav-links a.active {
+  color: #EDEAE2;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #E4572E;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+.fed-navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.fed-navbar .live-clock-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #9AA0A8;
+}
+.fed-navbar .live-clock-badge .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #31C48D;
+  display: inline-block;
+}
+.fed-navbar .agentic-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(154, 160, 168, 0.2);
+  background: rgba(154, 160, 168, 0.05);
+  color: #9AA0A8;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.fed-navbar .agentic-link:hover {
+  color: #EDEAE2;
+  border-color: rgba(154, 160, 168, 0.4);
+}
+
+/* ── ZEN FLOATING SUB-DOCK ── */
+.earth-zen-dock {
+  position: absolute;
+  top: 4.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  background: rgba(13, 15, 22, 0.88);
+  border: 1px solid #1F2733;
+  border-radius: 9999px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  max-width: 92vw;
+}
+.earth-zen-dock a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9AA0A8;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.earth-zen-dock a:hover {
+  color: #EDEAE2;
+  background: rgba(255, 255, 255, 0.06);
+}
+.earth-zen-dock a.active {
+  color: #C9A227;
+  background: rgba(201, 162, 39, 0.15);
+  font-weight: 600;
+}
+
+/* ── CARL SAGAN QUOTE ZEN CARD ── */
+.earth-sagan-quote {
+  margin-top: 1.1rem;
+  border-left: 2px solid #C9A227;
+  padding: 0.75rem 1rem;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #EDEAE2;
+  line-height: 1.5;
+  background: rgba(13, 15, 22, 0.85);
+  border-radius: 0 8px 8px 0;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  border-right: 1px solid rgba(201, 162, 39, 0.15);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+.earth-sagan-quote cite {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-size: 0.68rem;
+  color: #C9A227;
+  margin-top: 0.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.fed-navbar .nav-toggle{
+  display:none;align-items:center;justify-content:center;
+  min-height:44px;min-width:44px;padding:0 8px;margin:0;
+  background:transparent;border:0;color:#9AA0A8;cursor:pointer;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+}
+.house-drawer[hidden]{display:none !important}
+.house-drawer{
+  position:fixed;top:56px;left:0;right:0;bottom:0;z-index:90;
+  background:#0A0B0D;display:flex;flex-direction:column;
+  padding:8px 20px 24px;overflow-y:auto;
+}
+.house-drawer a{
+  min-height:44px;display:flex;align-items:center;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:14px;letter-spacing:.06em;text-transform:uppercase;
+  color:#EDEAE2;text-decoration:none;border-bottom:1px solid #1F2733;
+}
+.house-drawer a.active{color:#E4572E}
+@media(max-width:1100px) and (min-width:769px){
+  .hero-title{max-width:min(500px,calc(100vw - 360px))}
+}
+@media(max-width:768px){
+  .fed-navbar .nav-links{display:none}
+  .fed-navbar .live-clock-badge{display:none}
+  .fed-navbar .nav-toggle{display:inline-flex}
+  .earth-zen-dock{
+    position:relative;top:auto;left:auto;transform:none;
+    width:auto;max-width:none;margin:0;border-radius:0;
+    flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;
+  }
+  .earth-zen-dock a{min-height:44px;display:inline-flex;align-items:center}
+}
+
+/* ── GEOLOGICAL VISUALS & SUBSURFACE REALITY (2026-09-18) ── */
+.geo-visual-card {
+  background: #0f121d;
+  border: 1px solid #22293d;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 30px rgba(242, 183, 5, 0.05);
+}
+.geo-visual-card .img-wrap {
+  position: relative;
+  background: #05070a;
+}
+.geo-visual-card img.geo-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.geo-visual-caption {
+  padding: 1rem 1.4rem;
+  background: #141724;
+  border-top: 1px solid #22293d;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #9aa4b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.geo-visual-caption strong { color: #f2b705; font-weight: 700; letter-spacing: 0.05em; }
+.geo-visual-caption .badge {
+  background: rgba(242, 183, 5, 0.12);
+  color: #f2b705;
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+/* 4 Founder Wells Matrix */
+.founder-wells-box {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.6rem;
+  background: #0c0f18;
+  border: 1px solid #1f273b;
+  border-radius: 12px;
+}
+.founder-wells-header {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #1f273b;
+  padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.founder-wells-header h3 {
+  font-family: 'Archivo Black', Inter, sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.founder-wells-header .sovereign-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #f2b705;
+  background: rgba(242, 183, 5, 0.1);
+  border: 1px solid rgba(242, 183, 5, 0.3);
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.well-card {
+  background: #131722;
+  border: 1px solid #20273a;
+  border-radius: 8px;
+  padding: 1.1rem;
+  transition: all 0.2s;
+  border-left: 3px solid #20273a;
+}
+.well-card:hover {
+  border-color: #2f3b56;
+  border-left-color: #f2b705;
+  background: #171d2c;
+  transform: translateY(-2px);
+}
+.well-card.play-opener { border-left-color: #e0301e; }
+.well-card.basement { border-left-color: #38bdf8; }
+.well-card.stratigraphic { border-left-color: #22c55e; }
+
+.well-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.well-role {
+  font-size: 0.65rem;
+  color: #f2b705;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.well-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  margin: 3px 0;
+  color: #9aa4b8;
+}
+.well-spec-row span.val { color: #f5f5f7; font-weight: 600; }
+.well-desc {
+  font-size: 0.75rem;
+  color: #8b95a8;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #20273a;
+  line-height: 1.45;
+}
+
+/* Petroleum Systems Event Chart (PSEC) */
+.psec-container {
+  margin: 2rem 0;
+  background: #0d101a;
+  border: 1px solid #1f273b;
+  border-radius: 10px;
+  padding: 1.4rem;
+}
+.psec-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.95rem;
+  color: #f2b705;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.psec-desc {
+  font-size: 0.78rem;
+  color: #9aa4b8;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.psec-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  align-items: center;
+}
+.psec-row-k { color: #cbd5e1; font-weight: 600; text-transform: uppercase; }
+.psec-track {
+  position: relative;
+  background: #171c2a;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.psec-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #070709;
+  white-space: nowrap;
+}
+
+
+/* ─── GEOX GEOLOGICAL REALITY UPGRADE (2026-09-18 F13 SEAL) ─── */
+.geox-visual-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.geox-visual-card:hover {
+  border-color: var(--accent-gold);
+}
+.geox-visual-wrap {
+  position: relative;
+  background: #000;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.geox-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.geox-visual-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(10, 14, 23, 0.9);
+  border: 1px solid var(--border-dim);
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  color: var(--accent-cyan);
+}
+.geox-visual-badge.gold {
+  color: var(--accent-gold);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+.geox-visual-badge.right {
+  left: auto;
+  right: 14px;
+  color: #cbd5e1;
+  border-color: rgba(148, 163, 184, 0.35);
+  font-size: 0.62rem;
+  background: rgba(10, 14, 23, 0.92);
+}
+@media(max-width:640px) {
+  .geox-visual-badge.right {
+    top: auto;
+    bottom: 14px;
+  }
+}
+.geox-visual-caption {
+  padding: 1.2rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid var(--border-dim);
+}
+.geox-visual-caption strong {
+  color: var(--accent-gold);
+}
+
+/* Dynamic Acts Visual Grid */
+.acts-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+.act-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+.act-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+}
+.act-card-body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.act-card-body .no {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.act-card-body h3 {
+  font-family: 'Cabinet Grotesk', Inter, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.7rem;
+}
+.act-card-body p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* Petroleum System Event Chart (PSEC) */
+.psec-container {
+  margin-top: 2.2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+.psec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+.psec-title {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.psec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+.psec-table th, .psec-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+}
+.psec-table th {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.psec-bar-cell {
+  position: relative;
+  width: 48%;
+  height: 22px;
+}
+.psec-bar {
+  position: absolute;
+  top: 3px;
+  height: 16px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* 4 Founder Wells Grid */
+.founder-wells-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.well-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: all 0.2s ease;
+}
+.well-card:hover {
+  border-color: var(--accent-cyan);
+  border-left-color: var(--accent-cyan);
+  background: rgba(15, 23, 42, 1);
+  transform: translateY(-2px);
+}
+.well-badge {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.35rem;
+}
+.well-name {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #EDEAE2;
+  margin-bottom: 0.6rem;
+}
+.well-kv {
+  font-family: var(--mono);
+  font-size: 0.71rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.well-kv span {
+  color: var(--accent-cyan);
+}
+
+/* Chronostratigraphic Wheel / Matrix */
+.chrono-matrix {
+  margin-top: 1.8rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 1.6rem;
+}
+.chrono-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+}
+.chrono-label {
+  width: 150px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  color: #070709;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.chrono-desc {
+  flex: 1;
+  padding: 9px 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chrono-desc b {
+  color: var(--text-primary);
+}
+
+/* Cross-Section Banner Card */
+.xsection-banner {
+  background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(10,14,23,0.98));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.xsection-info h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin-bottom: 0.4rem;
+}
+.xsection-info p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.55;
+}

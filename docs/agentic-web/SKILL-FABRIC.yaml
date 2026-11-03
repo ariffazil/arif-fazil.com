@@ -1,9 +1,22 @@
 # Map proposed skill IDs → existing AAA catalog.
 # Do not mint SKILLS.json. Do not duplicate a skill that already works.
 schema: aaa.agentic_web.skill_fabric.v1
-as_of: 2026-09-13
+as_of: 2026-11-04
 catalog: /root/AAA/skills
 rule: load existing skill; only create a new SKILL.md when this table says GAP
+
+# FLOW LINK — stage → owner skill. This is the agentic-web-builder chain.
+# A session starts at stage 0, walks forward; each stage loads its owner skill.
+# Fabric maps every other capability on demand — never load all at once.
+flow:
+  - { stage: 0_brief,         owner: AGI-agentic-web-delivery }        # intake, roles, authority ladder, tiers
+  - { stage: 1_orient,        owner: FORGE-agentic-web-builder }       # OP0 doctor FIRST, orphan preview, scars
+  - { stage: 2_design,        owner: web-surface-design-fidelity }     # read target's own CSS, render-then-look, contrast
+  - { stage: 3_implement,     owner: FORGE-agentic-web-builder }       # OP9 surgical SPA patch — never make deploy
+  - { stage: 4_agent_surface, owner: AGI-web-optimization }            # llms.txt/llms.json, JSON-LD, OG, canonical, sitemap
+  - { stage: 5_render_test,   owner: browser-playwright-runner }       # journeys, ARIA, screenshots both viewports
+  - { stage: 6_audit,         owner: FORGE-agentic-web-builder }       # OP2 content-truth crawl + AGI-web-optimization checklist
+  - { stage: 7_ship,          owner: FORGE-agentic-web-builder }       # git evidence, OP6 lanes, post-verify origin+edge
 
 umbrella:
   - FORGE-agentic-web-builder   # doctor, orphan, deploy law, site scars
@@ -16,6 +29,7 @@ foundation:
   web-mission-intake: { skill: AGI-agentic-web-delivery, section: phase-000 }
   repo-orientation: { skill: FORGE-agentic-web-builder, extra: AUDIT-repo-reality }
   information-architecture: { skill: FORGE-design-intelligence }
+  design-fidelity: { skill: web-surface-design-fidelity, extra: FORGE-design-intelligence, note: "restyle/review fidelity gate — composition not recolour; state unfixed contrast" }
   human-attention-design: { skill: FORGE-design-intelligence, extra: human-state-estimation }
   content-truthfulness: { skill: WISDOM-reader, extra: ASI-fabrication-prevention }
   component-engineering: { skill: FORGE-react-spa-discipline, extra: FORGE-tailwind-tokens }

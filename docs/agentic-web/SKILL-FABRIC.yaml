@@ -17,6 +17,19 @@ flow:
   - { stage: 5_render_test,   owner: browser-playwright-runner }       # journeys, ARIA, screenshots both viewports
   - { stage: 6_audit,         owner: FORGE-agentic-web-builder }       # OP2 content-truth crawl + AGI-web-optimization checklist
   - { stage: 7_ship,          owner: FORGE-agentic-web-builder }       # git evidence, OP6 lanes, post-verify origin+edge
+  - { stage: 8_propagate,     owner: RSI-federation-mesh }             # IMPROVE — Step 5: lessons → federation-sync-queue
+
+# MESH LINK — how this fabric teaches the federation (RSI-federation-mesh §2).
+# A web mission is one node in the mesh: bind skills before cross-organ work,
+# inherit at session start, propagate at session end. Fabric is a site-local
+# map — never a parallel catalog.
+mesh:
+  binding:       { skill: ASI-skill-binding, note: "cross-organ compose (GEOX/WEALTH/WELL witness lanes) + subagent contracts; organs stay in their lane" }
+  session_start: { skill: rsi-federation-mesh, steps: [identity, inventory, reconcile] }
+  session_end:   { skill: rsi-federation-mesh, steps: [inherit, propagate] }
+  propagate_to:  /root/.local/share/arifos/federation-sync-queue.jsonl
+  canonical_catalog: /root/AAA/skills
+  iron_rule: AAA is the only catalog — fabric maps it, never forks it
 
 umbrella:
   - FORGE-agentic-web-builder   # doctor, orphan, deploy law, site scars

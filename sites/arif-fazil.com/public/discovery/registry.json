@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-02T06:30:17.843Z",
+  "generated_at": "2026-11-03T04:06:07.915Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -34,11 +34,11 @@
         },
         {
           "name": "arif_forge",
-          "desc": "Apply an authorized system modification. Requires a valid seal_verdict_id obtained from ar"
+          "desc": "Execute an action arif_judge has already SEALed — nothing runs without seal_verdict_id and"
         },
         {
           "name": "arif_seal",
-          "desc": "Append verified outcome or lesson to the immutable audit ledger. Requires ack_irreversible"
+          "desc": "Appends a receipt to the VAULT999 immutable ledger. This is NOT a verdict and does not aut"
         },
         {
           "name": "arif_report",

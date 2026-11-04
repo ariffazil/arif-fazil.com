@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-04T11:25:17.399Z",
+  "generated_at": "2026-11-04T11:31:10.369Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -47,17 +47,231 @@
       ]
     },
     "geox": {
-      "verified": false,
-      "note": "unreachable at build: The operation was aborted due to timeout"
+      "verified": true,
+      "count": 27,
+      "tools": [
+        {
+          "name": "geox_geomechanics",
+          "desc": "Geomechanical analysis: bulk/shear/young modulus, poisson ratio, acoustic impedance, stres"
+        },
+        {
+          "name": "geox_glof",
+          "desc": "Unified GLOF multi-phase cascade simulation. Multi-phase physics: solid dam → granular deb"
+        },
+        {
+          "name": "geox_paleobiodb_query",
+          "desc": "Query the Paleobiology Database (PBDB v1.2) for taxa, occurrences, and biozones. Modes: ta"
+        },
+        {
+          "name": "geox_observe",
+          "desc": "Canonical multimodal Earth observation umbrella (Earth Witness v1). Rock/outcrop/core/thin"
+        },
+        {
+          "name": "geox_well_ingest",
+          "desc": "Load well log data from LAS, SEG-Y, DST, deviation, or tops files. Auto-detects format. Us"
+        },
+        {
+          "name": "geox_well_qc",
+          "desc": "Quality control for well data: depth monotonicity, null %, physical range checks. Use when"
+        },
+        {
+          "name": "geox_petrophysics",
+          "desc": "Unified petrophysics: Vsh, porosity, Sw, permeability, net pay, LEM inference, QC. Modes: "
+        },
+        {
+          "name": "geox_seismic_ingest",
+          "desc": "SEG-Y I/O, header inspection, export. Use when: you need seismic ingest evidence."
+        },
+        {
+          "name": "geox_seismic_interpret",
+          "desc": "One semantic capability — propose geometry, physics-gate, compare hypotheses (NOT autonomo"
+        },
+        {
+          "name": "geox_basin",
+          "desc": "Unified basin intelligence: profile, resolve, macrostrat, backstrip, mass balance, thermal"
+        },
+        {
+          "name": "geox_prospect",
+          "desc": "Prospect evaluation: volumetrics, POS, EVOI, risk assessment. Modes: screen, evaluate. Use"
+        },
+        {
+          "name": "geox_contrast_metabolize",
+          "desc": "Unified anomalous contrast metabolic pipeline. Binds three stages into one call: ISOLATE ("
+        },
+        {
+          "name": "geox_temporal",
+          "desc": "Temporal analytics for petroleum basins. Modes: decline (decline curve analysis), rrr (res"
+        },
+        {
+          "name": "geox_map",
+          "desc": "Geological map pipeline. Modes: layers_list (list available layers for bbox), scene_plan ("
+        },
+        {
+          "name": "geox_source",
+          "desc": "Source rock and diagenesis evaluation. Modes: source_rock (TOC, kerogen, maturity, ΔlogR),"
+        },
+        {
+          "name": "geox_spatial",
+          "desc": "Spatial indexing and discovery. Modes: h3_index (H3 hexagonal spatial indexing), lancedb_s"
+        },
+        {
+          "name": "geox_deep_time",
+          "desc": "Deep-time Digital Earth reasoning. Modes: dde_reason (DDE Ontology + Macrostrat neuro-symb"
+        },
+        {
+          "name": "geox_claim",
+          "desc": "Unified claim engine. Modes: create/validate/challenge/seal/attach (claim lifecycle), fals"
+        },
+        {
+          "name": "geox_model",
+          "desc": "Subsurface and geological modeling. Modes: subsurface (joint inversion, gravity/mag, MT fo"
+        },
+        {
+          "name": "geox_well",
+          "desc": "Well operations. Modes: view (hydrate LAS curves into interactive tracks for WellDesk), de"
+        },
+        {
+          "name": "geox_seismic_compute",
+          "desc": "Seismic computation. Modes: avo_forward (AVO forward modeling: Zoeppritz, Shuey, LMR, Cast"
+        },
+        {
+          "name": "geox_surface_status",
+          "desc": "Federation-standard registry probe for GEOX."
+        },
+        {
+          "name": "geox_calibration_register_witness",
+          "desc": "Register a calibration witness for structural interpretation."
+        },
+        {
+          "name": "geox_extract_display_proxy",
+          "desc": "Extract a display-derived proxy from a raster seismic image."
+        },
+        {
+          "name": "geox_register_native_source",
+          "desc": "Register a native SEG-Y source for trace extraction."
+        },
+        {
+          "name": "geox_extract_native_trace",
+          "desc": "Extract a native seismic trace from a registered source."
+        },
+        {
+          "name": "geox_list_registered_sources",
+          "desc": "List all registered native seismic sources."
+        }
+      ]
     },
     "wealth": {
-      "verified": false,
-      "note": "unreachable at build: Unexpected token 'S', \"Service Unavailable\" is not valid JSO"
+      "verified": true,
+      "count": 15,
+      "tools": [
+        {
+          "name": "capital_primitive",
+          "desc": "Deductive capital math primitives — pure computation, no inference or governance verdict. "
+        },
+        {
+          "name": "capital_health",
+          "desc": "Financial health metrics — deductive computation from structured inputs, no inference or g"
+        },
+        {
+          "name": "capital_diagnose",
+          "desc": "Abductive institutional diagnostics — inference from partial evidence across stress, gover"
+        },
+        {
+          "name": "capital_market",
+          "desc": "Market data and commodity intelligence — observational with derived and interpreted fields"
+        },
+        {
+          "name": "capital_ledger",
+          "desc": "VAULT999 immutable ledger access — query read-only, write requires human acknowledgment. S"
+        },
+        {
+          "name": "capital_registry",
+          "desc": "WEALTH meta/introspection — registry status, tool schema, domain index, health check. Obse"
+        },
+        {
+          "name": "capital_claims",
+          "desc": "Named-entity claim gate — validates claims about real institutions/persons before publicat"
+        },
+        {
+          "name": "capital_entropy",
+          "desc": "Capital and institutional entropy analysis — measures information loss, consequence displa"
+        },
+        {
+          "name": "wealth_judge_handoff",
+          "desc": "Build or validate structured handoff envelope for arifOS governance review and 888_HOLD ju"
+        },
+        {
+          "name": "capital_indicator",
+          "desc": "Compute technical analysis indicators for any yfinance symbol. Indicators: ema, sma, rsi, "
+        },
+        {
+          "name": "capital_backtest",
+          "desc": "Run strategy backtest on XAUUSD using the proven indicator fusion (EMA alignment + ATR-sca"
+        },
+        {
+          "name": "capital_entry_plan",
+          "desc": "Compute S/R-aware entry zone, stop loss, and take profit targets for XAUUSD. Combines swin"
+        },
+        {
+          "name": "wealth_synthesize",
+          "desc": "Ω00 Cross-dimensional synthesis — collapses the 12 Ω-invariants (Ω01 conservation, Ω02 flo"
+        },
+        {
+          "name": "capital_polix",
+          "desc": "Power topology intelligence — incentive mapping, capture detection, rent extraction analys"
+        },
+        {
+          "name": "capital_civx",
+          "desc": "Civilizational scenario intelligence — long-horizon resilience, sovereignty, intergenerati"
+        }
+      ]
     },
     "well": {
-      "verified": false,
-      "note": "unreachable at build: Unexpected token 'S', \"Service Unavailable\" is not valid JSO"
+      "verified": true,
+      "count": 10,
+      "tools": [
+        {
+          "name": "well_machine_diagnose",
+          "desc": "M-WELL MACHINE DIAGNOSTIC -- Full VPS health with actionable recommendations."
+        },
+        {
+          "name": "well_machine_recommend",
+          "desc": "M-WELL RECOMMENDATION ENGINE -- Get specific fix commands for machine issues."
+        },
+        {
+          "name": "well_classify_substrate",
+          "desc": "Ω-WELL-01: Substrate classification and boundary sensing."
+        },
+        {
+          "name": "well_trace_lineage",
+          "desc": "Ω-WELL-02: Memory, trend, ledger, and vault chain tracing."
+        },
+        {
+          "name": "well_assess_homeostasis",
+          "desc": "Ω-WELL-06: Assess regulation, stability, and empathic balance under change."
+        },
+        {
+          "name": "well_check_repair",
+          "desc": "Ω-WELL-07: Check repair, recovery, resilience, and forge cycle integrity."
+        },
+        {
+          "name": "well_validate_vitality",
+          "desc": "Ω-WELL-08: Validate vitality, readiness, and NIAT. (Floor compliance removed -- arifOS adj"
+        },
+        {
+          "name": "well_assess_reliability",
+          "desc": "Ω-WELL-10: Assess machine, tool, institution, and operational reliability."
+        },
+        {
+          "name": "well_guard_dignity",
+          "desc": "Ω-WELL-12: Guard soul, personhood, meaning, and symbolic boundaries."
+        },
+        {
+          "name": "well_registry_status",
+          "desc": "WELL registry truth diagnostic -- blueprint canonical format."
+        }
+      ]
     }
   },
-  "total_verified": 9
+  "total_verified": 61
 }

@@ -443,6 +443,9 @@ table.receipts tr:hover td { background: rgba(255,255,255,0.02); }
   font-size: 11px;
   color: var(--dim, #656a80);
 }
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;-webkit-overflow-scrolling:touch}
+.table-scroll table{min-width:0}
 </style>
 <script type="application/ld+json">
 {
@@ -533,7 +536,7 @@ table.receipts tr:hover td { background: rgba(255,255,255,0.02); }
     <input type="text" class="search-input" id="search-box" placeholder="Search claims &amp; sources..." oninput="searchReceipts()">
   </div>
 
-  <table class="receipts" id="receipts-table">
+  <div class="table-scroll"><table class="receipts" id="receipts-table">
     <thead>
       <tr>
         <th style="width: 5%;">#</th>
@@ -678,7 +681,7 @@ table.receipts tr:hover td { background: rgba(255,255,255,0.02); }
         <td>2026</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <div class="errata-entry" id="errata-2026-10-29">
     <div class="errata-entry-head">

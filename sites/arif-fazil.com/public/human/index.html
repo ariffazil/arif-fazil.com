@@ -37,6 +37,9 @@ td:first-child{color:#EDEAE2}
 .card{border:1px solid #1F2733;background:#11151C;padding:1.1rem 1.2rem;margin:0.75rem 0;border-radius:8px}
 nav{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid #1F2733;font-size:0.85rem}
 nav a{margin-right:1.25rem;color:#9AA0A8}
+
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;-webkit-overflow-scrolling:touch}
+.table-scroll table{min-width:0}
 </style>
 </head>
 <body>
@@ -57,7 +60,7 @@ nav a{margin-right:1.25rem;color:#9AA0A8}
 
 <h2>Capability matrix</h2>
 <p>Compatibility is not an open invitation. State-changing work requires authenticated authorization and explicit human approval.</p>
-<table>
+<div class="table-scroll"><table>
   <thead>
     <tr>
       <th>Resource</th><th>Discover</th><th>Read</th><th>Write</th><th>Auth</th><th>Human approval</th><th>Audit</th>
@@ -71,7 +74,7 @@ nav a{margin-right:1.25rem;color:#9AA0A8}
     <tr><td>Deploy / execution</td><td>No</td><td>Limited</td><td>Yes</td><td>Strong</td><td>Required</td><td>Git + deploy receipt</td></tr>
     <tr><td>Public A2A POST /a2a</td><td>No</td><td>No</td><td>No</td><td>—</td><td>HOLD</td><td>Explicit 404</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2>Trust zones</h2>
 <div class="card">

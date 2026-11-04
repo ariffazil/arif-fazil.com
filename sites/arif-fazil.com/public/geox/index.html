@@ -209,13 +209,20 @@
         .rasa-card .label { font-size: 0.75rem; color: var(--accent-gold); text-transform: uppercase; margin-top: 0.5rem; }
         .rasa-card .desc { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; }
 
+        @media (max-width: 1100px) {
+            .cockpit-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             .cockpit-grid { grid-template-columns: 1fr; }
             .bridge-visual { flex-direction: column; gap: 2rem; }
             .bridge-visual::after { display: none; }
         }
-        @media (max-width: 1100px) {
-            .cockpit-grid { grid-template-columns: repeat(2, 1fr); }
+        .cockpit-card, .rasa-card { min-width: 0; overflow-wrap: anywhere; }
+        @media (max-width: 768px) {
+            .status-bar { flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; }
+            .container { padding: 0 1rem; }
+            header { flex-wrap: wrap; gap: 0.5rem; }
+            .nav-links a { margin-left: 0.75rem; }
         }
     </style>
   <script src="/_shared/unified-header-loader.js" defer></script>

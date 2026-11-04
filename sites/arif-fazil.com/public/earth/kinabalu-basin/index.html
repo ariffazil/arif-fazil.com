@@ -214,6 +214,11 @@ footer a:hover{color:var(--accent-cyan)}
   .toc a:hover{color:var(--accent-gold)}
   .toc a .num{color:var(--accent-cyan);margin-right:.4rem}
 }
+@media (max-width:768px){
+header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max-width:100vw}
+.nav-links{flex-wrap:wrap;gap:.5rem 1rem}
+}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 </style>
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
@@ -456,7 +461,7 @@ footer a:hover{color:var(--accent-cyan)}
     <h2><span class="num">03</span>What's in the section</h2>
     <p class="lede">Nine named units, plus the ophiolite basement. Lithologies from the Macrostrat pipe and the published Sabah geologic map. Thicknesses from seismic and well ties. Where the data are absent, the cells are empty — not invented.</p>
 
-    <table class="strat-tbl" aria-label="Stratigraphic column">
+    <div class="table-scroll"><table class="strat-tbl" aria-label="Stratigraphic column">
       <thead>
         <tr>
           <th>UNIT</th>
@@ -524,7 +529,7 @@ footer a:hover{color:var(--accent-cyan)}
           <td>Basement</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <details class="collapsible">
       <summary>For the curious — the Crocker Fan and the largest Paleogene deposit in SE Asia</summary>

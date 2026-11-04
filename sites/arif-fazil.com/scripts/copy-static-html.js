@@ -302,12 +302,20 @@ if (fs.existsSync(spaEntryPath)) {
       path.join(distRoot, "makcikgpt")
     ];
     let injectedCount = 0;
+    const CONTENT_FIRST_MARKER = 'id="content-first-body"';
     for (const slug of slugs) {
       if (!slug) continue;
       for (const baseDir of targetBaseDirs) {
         const slugDir = path.join(baseDir, slug);
         fs.mkdirSync(slugDir, { recursive: true });
         const slugFile = path.join(slugDir, "index.html");
+        // 2026-11-04 (T12): content-first shells from generate-agent-shells are
+        // the authority for their route — never clobber real pre-JS content
+        // with the empty SPA shell ("200 SPA-shell bukan bukti").
+        if (fs.existsSync(slugFile)) {
+          const existing = fs.readFileSync(slugFile, "utf8");
+          if (existing.includes(CONTENT_FIRST_MARKER)) continue;
+        }
         fs.writeFileSync(slugFile, spaHtml, "utf8");
         injectedCount++;
       }

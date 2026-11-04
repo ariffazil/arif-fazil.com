@@ -1,162 +1,233 @@
-<!doctype html>
-<html lang="en" data-ring="SOUL">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arif Fazil — Exploration Geoscientist & Sovereign Systems</title>
-    <meta name="theme-color" content="#0A0B0D" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
-    <meta
-      name="description"
-      content="I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority."
-    />
-    <meta name="author" content="Muhammad Arif bin Fazil" />
-    <link rel="canonical" href="https://arif-fazil.com/" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Arif Fazil — Exploration Geoscientist & Sovereign Systems" />
-    <meta
-      property="og:description"
-      content="I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://arif-fazil.com" />
-    <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="arif-fazil.com identity mark (AF monogram — no portrait)" />
-    <meta property="og:site_name" content="arif-fazil.com" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Arif Fazil — Exploration Geoscientist & Sovereign Systems" />
-    <meta
-      name="twitter:description"
-      content="Uncertain Earth data into defensible decisions. AI bounded by evidence and human authority."
-    />
-    <meta name="twitter:image" content="https://arif-fazil.com/og-identity.png" />
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://arif-fazil.com/#person",
-          "name": "Muhammad Arif bin Fazil",
-          "alternateName": "Arif Fazil",
-          "url": "https://arif-fazil.com",
-          "jobTitle": "Exploration Geoscientist",
-          "nationality": "Malaysian",
-          "description": "Turns uncertain Earth data into defensible decisions. Builds AI systems bounded by evidence and human authority.",
-          "sameAs": [
-            "https://github.com/ariffazil",
-            "https://t.me/ariffazil"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://arif-fazil.com/#website",
-          "url": "https://arif-fazil.com",
-          "name": "Arif Fazil",
-          "description": "Public site of Muhammad Arif bin Fazil: exploration geoscience, evidence-linked Earth computation, governed agent architecture.",
-          "author": {
-            "@type": "Person",
-            "name": "Muhammad Arif bin Fazil"
-          }
-        }
-      ]
-    }
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,700,800&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ψ</text></svg>" />
-
-    <!-- arifOS WebMCP Surface — Tier 2 Agent Tool Registration -->
-    <script src="/_shared/webmcp/arifos-webmcp-adapter.js"></script>
-    <script>
-      (function () {
-        if (typeof window.arifosWebMCP === 'undefined') return;
-
-        arifosWebMCP.registerReadonly(
-          'get_federation_status',
-          'Returns the arifOS federation manifest — live domain statuses, roles, and protocol declarations',
-          {},
-          async function () {
-            const res = await fetch('/.well-known/arifos-federation.json');
-            if (!res.ok) throw new Error('federation manifest unreachable');
-            return await res.json();
-          }
-        );
-
-        arifosWebMCP.registerReadonly(
-          'get_wealth_briefing',
-          'Returns the latest WEALTH daily briefing — Bursa, Ringgit, oil price, and macro signals (live or cached snapshot)',
-          {},
-          async function () {
-            const res = await fetch('/data/wealth/latest.json');
-            if (!res.ok) throw new Error('briefing snapshot unavailable');
-            return await res.json();
-          }
-        );
-
-        arifosWebMCP.registerReadonly(
-          'verify_did',
-          'Returns the W3C DID document for did:web:arif-fazil.com — cryptographic sovereign identity chain',
-          {},
-          async function () {
-            const res = await fetch('/.well-known/did.json');
-            if (!res.ok) throw new Error('DID document unreachable');
-            return await res.json();
-          }
-        );
-
-        arifosWebMCP.registerReadonly(
-          'get_constitution',
-          'Returns the arifOS constitutional floor definitions (F1–F13) — the governing law of the federation',
-          {},
-          async function () {
-            const res = await fetch('https://arifos.arif-fazil.com/constitution.json');
-            if (!res.ok) throw new Error('constitution unreachable');
-            return await res.json();
-          }
-        );
-      })();
-    </script>
-    <link rel="alternate" type="application/rss+xml" title="MakcikGPT — Civic Intelligence" href="/feed.xml" />
-      <!-- Agentic Resource Discovery (ARD v0.91 / Lighthouse 13.5) -->
-    <link rel="ard" type="application/json" href="/.well-known/ard.json" />
-    <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
-  <script type="module" crossorigin src="/assets/index-BASIvgqQ.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BsteIk_k.js">
-  <link rel="modulepreload" crossorigin href="/assets/proxy-DL__FoNw.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-bBuZC4RQ.css">
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEARAH Dah Beroperasi — Tapi Bocor Pun Dah Sampai Mahkamah</title>
+  <meta name="description" content="8 Jun 2024, 3:19 petang: bekas manager PETRONAS Khairul Akmal hantar e-mel sulit &#39;Q1 2024 Upstream Business Performance&#39; kepada CEO PETROS (Datuk Janin Girie) d">
+  <link rel="canonical" href="https://arif-fazil.com/world/makcikgpt/searah-followup/">
+  <meta name="last-modified" content="2026-07-01">
+  <style>
+    :root{--bg:#0A0B0D;--panel:#0F172A;--line:#1F2937;--ink:#EDEAE2;--dim:#9AA0A8;--gold:#E8B84B}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Newsreader,Georgia,serif;line-height:1.7}
+    .frame{max-width:760px;margin:0 auto;padding:1.25rem}
+    .crumb{font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:1rem}
+    .datechip{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:1rem}
+    article{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+    article img{max-width:100%;height:auto}
+    article pre{overflow-x:auto}
+    article table{display:block;overflow-x:auto;max-width:100%}
+    a{color:var(--gold)}
+    .note{font-size:.82rem;color:var(--dim);border-left:2px solid var(--line);padding-left:.85rem;margin-top:2rem}
+    #root{display:none}
+  </style>
+  <link rel="stylesheet" href="/_shared/fed-nav.css">
 </head>
-  <body class="bg-[#0A0B0D] text-[#EDEAE2]">
-    <a href="#main-content" class="sr-only">Skip to content</a>
-    <noscript>
-      <main id="main-content" data-noscript-fallback="true" style="padding:2rem;max-width:48rem;margin:0 auto;font-family:sans-serif;color:#EDEAE2;background:#0A0B0D;">
-        <h1>Arif Fazil</h1>
-        <p>I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority.</p>
-        <h2>Three doors</h2>
-        <ul>
-          <li><a href="/about" style="color:#E4572E;">Arif</a> — who. Exploration geoscientist. Incomplete ground, no fake certainty.</li>
-          <li><a href="/earth" style="color:#E4572E;">GEOX</a> — Earth. Computes. Does not adjudicate.</li>
-          <li><a href="/arifos/" style="color:#E4572E;">arifOS</a> — governance. Judge before execute. Not a model.</li>
-        </ul>
-        <p><a href="/institution/" style="color:#E4572E;">Request a briefing</a> — professional conversation path.</p>
-        <p>Agents: start at <a href="/human" style="color:#E4572E;">/human</a> and <a href="/llms.txt" style="color:#E4572E;">/llms.txt</a>. Do not POST to /a2a.</p>
-      </main>
-    </noscript>
+<body>
+  <div class="frame">
+    <nav class="crumb" aria-label="Breadcrumb">Arif Fazil / World / MakcikGPT / searah-followup</nav>
+    <div id="fed-nav-root"></div>
+    <script src="/_shared/fed-nav.js" defer></script>
+    <span class="datechip">dateModified: 2026-07-01</span>
+    <article id="content-first-body">
+<div class="cover">
+<p class="cover-emoji">🌏 🔥 ⚖️</p>
+<p class="cover-kicker">Cerita untuk Jiran-Jiran</p>
+<h1 class="cover-title">SEARAH Dah Beroperasi —<br>Tapi Bocor Pun Dah<br>Sampai Mahkamah</h1>
+<p class="cover-subtitle">1 Julai 2026, SEARAH mula operasi. Esoknya, mahkamah dengar: bekas manager PETRONAS bocorkan rahsia pada PETROS. CEO PETROS pun bekas PETRONAS. Makcik, siapa jaga gas kita?</p>
+<div class="cover-byline">
+<strong>Oleh Arif Fazil</strong>, anak Malaysia yang kerja kat PETRONAS dah lama<br>
+999 Meterai · Versi 1.0 Bahasa Makcik · 1 Julai 2026
+</div>
+</div>
+
+<h1>SEARAH Dah Beroperasi — Tapi Bocor Pun Dah Sampai Mahkamah</h1>
+<p><strong>1 Julai 2026, SEARAH mula operasi. Esoknya, mahkamah dengar: bekas manager PETRONAS bocorkan rahsia pada PETROS. CEO PETROS pun bekas PETRONAS. Makcik, siapa jaga gas kita?</strong></p>
+<p><strong>999 Meterai | Versi 1.0 Bahasa Makcik | 1 Julai 2026</strong></p>
+
+<hr />
+
+<h2>Hai Makcik! Ingat Cerita SEARAH?</h2>
+
+<p>Dalam artikel <strong>"Kenapa Gas Sarawak Punya Dah Masuk Tangan Orang Italy?"</strong>, Makcik cerita pasal satu syarikat baru — <strong>SEARAH LIMITED</strong> — 50% PETRONAS, 50% Eni Italy, daftar kat London, mula operasi <strong>1 Julai 2026</strong>.</p>
+
+<p>Hari ni dah 1 Julai. SEARAH dah mula.</p>
+
+<p>Tapi Makcik, sementara SEARAH start, ada satu cerita lain yang <strong>lebih panas</strong> sedang berlangsung kat Mahkamah Sesyen Kuala Lumpur. Cerita pasal <strong>bekas manager PETRONAS yang bocorkan rahsia syarikat pada PETROS</strong>.</p>
+
+<p>Mari Makcik cerita.</p>
+
+<hr />
+
+<h2>Cerita Bocor: Bekas Manager PETRONAS, Surat Kepada CEO PETROS</h2>
+
+<p>Nama dia <strong>Mohd Khairul Akmal Mohd Jasni</strong>, 41 tahun. Dulu <strong>Business Unit Performance Manager</strong> di PETRONAS — orang yang siapkan laporan prestasi kewangan dan operasi huluan PETRONAS.</p>
+
+<p>Pada <strong>8 Jun 2024, pukul 3:19 petang</strong>, dia hantar satu email dari akaun kerja PETRONAS dia. Kepada siapa?</p>
+
+<div class="fact-box">
+<div class="fact-box-title">▲ Kepada Dua Orang Kanan PETROS</div>
+<div class="fact-box-content">
+<strong>Datuk Janin Girie</strong> — CEO PETROS (bekas pekerja PETRONAS)<br>
+<strong>Mohd Azha Abdul Jalil</strong> — CFO PETROS (ketua kewangan)<br>
+<strong>Dokumen:</strong> "Q1 2024 Upstream Business Performance - Operational and Financial"<br>
+<strong>Kandungan:</strong> Prestasi kewangan, jumlah pengeluaran, isu HSE, penemuan minyak & gas, pelaburan projek, penjualan aset termasuk di Sudan
+</div>
+</div>
+
+<p>Dia guna <strong>email PETRONAS</strong>. Dari laptop PETRONAS. Pukul 3:19 petang, masa bekerja. Tak sembunyi langsung.</p>
+
+<p>Bila disedari, PETRONAS buat laporan polis. Khairul Akmal didakwa di bawah <strong>Seksyen 203A(1) Kanun Keseksaan</strong> — mendedahkan maklumat sulit. Maksimum denda RM1 juta atau penjara setahun.</p>
+
+<hr />
+
+<h2>Apa Dalam Dokumen Tu?</h2>
+
+<p>Dalam mahkamah, saksi pendakwaan — <strong>Syakirah Mustapa</strong>, General Manager PETRONAS — terangkan apa yang cuba dibocorkan:</p>
+
+<ul>
+<li><strong>Kekuatan kewangan</strong> — berapa duit PETRONAS ada</li>
+<li><strong>Jumlah pengeluaran</strong> — berapa tong minyak dan gas</li>
+<li><strong>Isu keselamatan dan alam sekitar</strong> — HSE issues</li>
+<li><strong>Penemuan minyak dan gas baru</strong> — siapa dapat apa</li>
+<li><strong>Pelaburan projek</strong> — duit pergi mana</li>
+<li><strong>Penjualan aset</strong> — termasuk di Sudan</li>
+</ul>
+
+<p>Ini semua nombor yang sangat sensitif. <strong>Kalau PETROS dapat nombor ni, depa tahu berapa kuat PETRONAS, berapa lemah, kat mana boleh tekan.</strong></p>
+
+<div class="pull-quote">
+"Leak of this information could jeopardise the negotiation process between Petronas and Petros, potentially leading to negotiations that are disadvantageous to Petronas."
+— Syakirah Mustapa, GM PETRONAS, dalam mahkamah, 26 Jun 2026
+</div>
+
+<p>Faham tak, Makcik? Bukan pasal jenayah semata. Tapi pasal <strong>rundingan PETRONAS vs PETROS</strong> yang sedang berlangsung — dan seorang bekas manager cuba bagi kelebihan pada sebelah pihak.</p>
+
+<hr />
+
+<h2>Yang Macam Lawak: CEO PETROS Pun Bekas PETRONAS</h2>
+
+<p>Makcik, ni yang Makcik geleng kepala.</p>
+
+<p>CEO PETROS — <strong>Datuk Janin Girie</strong> — adalah <strong>bekas pekerja PETRONAS</strong>. Sekarang dia jadi CEO syarikat negeri Sarawak yang nak ambil alih gas Sarawak dari PETRONAS.</p>
+
+<p>Dan dia adalah penerima email yang mengandungi rahsia PETRONAS dari bekas pekerja PETRONAS.</p>
+
+<p>PETROS kata depa <strong>"tak tahu"</strong> pasal kebocoran ni. Tapi surat tu sampai ke email CEO dan CFO. Macam mana CEO tak tahu email masuk?</p>
+
+<div class="fact-box">
+<div class="fact-box-title">▲ Rantaian Orang PETRONAS</div>
+<div class="fact-box-content">
+<strong>Khairul Akmal</strong> — manager PETRONAS, sekarang didakwa<br>
+<strong>Janin Girie</strong> — CEO PETROS, bekas PETRONAS, penerima bocoran<br>
+<strong>Azha Jalil</strong> — CFO PETROS, bekas PETRONAS, penerima bocoran<br>
+<strong>Syakirah</strong> — GM PETRONAS, saksi pendakwaan<br>
+<strong>Kesimpulan:</strong> PETRONAS lawan PETROS, tapi ramai orang PETRONAS kat kedua-dua belah. Macam main bola lawan adik sendiri.
+</div>
+</div>
+
+<hr />
+
+<h2>Sementara Tu, SEARAH Dah Mula</h2>
+
+<p>1 Julai 2026. SEARAH mula operasi. 19 ladang. 300,000 tong sehari. USD 20 bilion pelaburan 5 tahun. $6 billion credit facility dari bank antarabangsa.</p>
+
+<p>Dan PETRONAS-PETROS masih bertengkar kat Mahkamah Persekutuan. Dua kes sekali gus:</p>
+
+<ul>
+<li><strong>PETRONAS lawan Sarawak</strong> — cabar undang-undang negeri yang nak kawal gas</li>
+<li><strong>Sarawak lawan Persekutuan</strong> — cabar tiga akta petroleum persekutuan</li>
+</ul>
+
+<p>Bayangkan, Makcik: satu pihak komit aset ke SEARAH (syarikat London). Satu pihak masih gaduh kat mahkamah pasal siapa punya gas. Dan manager yang cuba bocorkan rahsia — kes dia bersambung 7 Julai 2026.</p>
+
+<p><strong>Semua ni jadi pada masa yang sama.</strong></p>
+
+<hr />
+
+<h2>Apa Maksud Semua Ni Untuk Makcik?</h2>
+
+<p>Makcik, Makcik cuba ringkaskan:</p>
+
+<ol>
+<li><strong>Gas Sarawak dah masuk SEARAH.</strong> Operasi dah mula. USD 20 bilion. London.</li>
+<li><strong>PETRONAS vs PETROS masih gaduh.</strong> Mahkamah Persekutuan, dua kes.</li>
+<li><strong>CEO PETROS dapat bocoran rahsia PETRONAS.</strong> Bekas manager PETRONAS hantar email. Kes kat mahkamah.</li>
+<li><strong>PETROS buka 30 stesen minyak.</strong> Sambil lawan, depa berkembang.</li>
+<li><strong>Semua ni jadi serentak.</strong> Bukan kebetulan.</li>
+</ol>
+
+<p>Makcik, ni bukan satu cerita. Ni <strong>tiga cerita dalam satu masa</strong> — SEARAH, PETROS, mahkamah — semuanya pasal gas Sarawak. Tiga peristiwa, satu soalan: <strong>siapa sebenarnya yang kontrol gas kita?</strong></p>
+
+<hr />
+
+<h2>Yang Makcik Rasa</h2>
+
+<p>Makcik rasa:</p>
+
+<ol>
+<li><strong>SEARAH dah jalan.</strong> Takde guna menangis. Tapi kena pantau: setahun dari sekarang, berapa hasil? Berapa duit balik ke Malaysia?</li>
+<li><strong>Kes bocor ni bukan kecil.</strong> Kalau seorang manager boleh hantar rahsia PETRONAS ke PETROS, maknanya <strong>sistem keselamatan PETRONAS ada lubang</strong>. Lubang besar.</li>
+<li><strong>CEO PETROS perlu jawab.</strong> Dia terima email tu. Dia tahu. Dia kena explain kenapa PETROS kata "tak tahu."</li>
+<li><strong>Parlimen kena tanya.</strong> Bila SEARAH mula, siapa audit? Siapa pantau? Siapa jawab kat rakyat?</li>
+</ol>
+
+<hr />
+
+<h2>Kronologi Ringkas — Untuk WhatsApp Group</h2>
+
+<div class="key-numbers">
+<span class="row"><span class="k">8 Jun 2024</span><span class="v">Khairul Akmal hantar email bocor ke CEO/CFO PETROS</span></span>
+<span class="row"><span class="k">16 Mac 2026</span><span class="v">Mahkamah Persekutuan izinkan PETRONAS cabar undang-undang Sarawak</span></span>
+<span class="row"><span class="k">20-21 Mei 2026</span><span class="v">Malaysia & Indonesia luluskan pemindahan aset ke SEARAH</span></span>
+<span class="row"><span class="k">10 Jun 2026</span><span class="v">Eni & PETRONAS lancar SEARAH secara rasmi</span></span>
+<span class="row"><span class="k">26 Jun 2026</span><span class="v">Saksi pendakwaan terangkan kesan bocoran dalam mahkamah</span></span>
+<span class="row"><span class="k">1 Julai 2026</span><span class="v">SEARAH mula operasi</span></span>
+<span class="row"><span class="k">7 Julai 2026</span><span class="v">Kes bocor sambung — saksi seterusnya</span></span>
+</div>
+
+<hr />
+
+<h2>Penutup — Untuk Makcik dan Pakcik</h2>
+
+<p>Makcik, zaman Makcik kecil dulu, gas Sarawak tu cerita jauh — "bukan urusan kita." Sekarang? Gas tu dah jadi milik syarikat London. Rahsia PETRONAS bocor ke PETROS. Mahkamah sibuk. Kerajaan senyap.</p>
+
+<p>Ini bukan cerita jauh. Ni cerita <strong>dapur kita</strong>. Bila PETRONAS lemah, dividen kurang. Bila dividen kurang, subsidi tarik. Bila subsidi tarik, harga barang naik. Bila harga barang naik — Makcik yang rasa.</p>
+
+<p>So Makcik pesan: <strong>jangan senyap.</strong></p>
+
+<ul>
+<li>Tanya Ahli Parlimen: "Encak, kes bocor PETRONAS-PETROS tu, siapa jawab?"</li>
+<li>Tanya kawan yang keje PETRONAS: "Betul ke sistem keselamatan senang sangat nak bocor?"</li>
+<li>Kongsi cerita ni — WhatsApp group jiran, group surau, group Rukun Tetangga.</li>
+</ul>
+
+<p>Sebab Makcik, gas ni bukan milik PETRONAS. Bukan milik PETROS. Bukan milik Eni. <strong>Gas ni milik kita — anak cucu kita.</strong> Kalau kita tak jaga, siapa lagi?</p>
+
+<p><em>Ditempa Bukan Diberi.</em></p>
+
+<hr />
+
+<h2>Rujukan</h2>
+<ul>
+<li>The Edge, 26 Jun 2026: "Witness: Leak of PETRONAS upstream and financial info could have undermined negotiations with Petros"</li>
+<li>Malay Mail, 26 Jun 2026: "Petronas manager's alleged leak of confidential report to Petros could jeopardise talks, court told"</li>
+<li>DayakDaily, 29 Jun 2026: "PETROS denies knowledge of alleged PETRONAS data leak amid court trial"</li>
+<li>The Edge, 19 Jun 2026: "Former PETRONAS manager sent confidential emails to senior Petros officers, testifies IR manager" — CEO Janin Girie dan CFO Azha Jalil dikenal pasti sebagai penerima</li>
+<li>Reuters, 27 Mei 2026: "Eni-Petronas JV seen reaching $2.7 billion net income in 2030"</li>
+<li>Reuters, 16 Mac 2026: "Malaysia's top court allows Petronas to challenge Sarawak laws"</li>
+<li>Reuters, 23 Feb 2026: "Sarawak files petition in Malaysia's top court challenging three federal petroleum laws"</li>
+<li>DayakDaily, 29 Jun 2026: "30 PETROS fuel stations under devt across S'wak"</li>
+<li>Rigzone, 10 Jun 2026: "Eni, Petronas Launch Southeast Asian Gas JV"</li>
+</ul>
+
+<p><em>DITEMPA BUKAN DIBERI — Yang benar dikorek, bukan diberi percuma.</em></p>
+<p><em>Meterai 999 — arifOS Perisikan Persekutuan, 1 Julai 2026.</em></p>
+    </article>
+    <p class="note">Content-first surface — kandungan penuh tanpa JavaScript.
+      Mesin: <a href="/llms.txt">/llms.txt</a> · <a href="/surfaces.json">/surfaces.json</a></p>
     <div id="root"></div>
-  </body>
+  </div>
+</body>
 </html>

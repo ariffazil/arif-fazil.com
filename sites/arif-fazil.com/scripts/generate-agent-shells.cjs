@@ -301,6 +301,7 @@ writeRoute(
 
 // ── World MakcikGPT ───────────────────────────────────────
 const { getMakcikSource } = require('./lib/makcik-source.cjs');
+const { renderContentFirstShell, readCanonicalHtml } = require('./lib/content-shell.cjs');
 let makcikPieces = [];
 try {
   makcikPieces = getMakcikSource().pieces;
@@ -325,6 +326,28 @@ const featuredBand = newestPiece ? `
       </div>
     </section>` : '';
 
+
+// Per-slug content-first article shells (T12/T13, 2026-11-04):
+// real article body in static HTML, fed-nav, dateModified, hydration slot.
+// copy-static-html.js respects the content-first marker and does not clobber.
+let contentFirstCount = 0;
+for (const piece of makcikPieces) {
+  const m = piece.dest && piece.dest.path ? piece.dest.path.match(/\/world\/makcikgpt\/([^/]+)\/?$/) : null;
+  const slug = m ? m[1] : (piece.id || '').replace(/^m-gen-/, '');
+  if (!slug) continue;
+  const bodyHtml = readCanonicalHtml(slug);
+  if (!bodyHtml) continue; // no canonical body → leave existing shell (fail-safe)
+  const html = renderContentFirstShell(`world/makcikgpt/${slug}`, {
+    title: piece.title,
+    description: (piece.claim_register && piece.claim_register[0] ? piece.claim_register[0].text : piece.title || '').slice(0, 160),
+    canonical: `https://arif-fazil.com/world/makcikgpt/${slug}/`,
+    breadcrumbTrail: 'Arif Fazil / World / MakcikGPT / ' + slug,
+    dateModified: piece.date || '',
+    bodyHtml,
+  });
+  if (html) { writeRoute(`world/makcikgpt/${slug}`, html); contentFirstCount++; }
+}
+console.log(`generate-agent-shells: ${contentFirstCount} content-first article shells emitted`);
 
 const leadPiece = makcikPieces[0];
 const remainingPieces = makcikPieces.slice(1);

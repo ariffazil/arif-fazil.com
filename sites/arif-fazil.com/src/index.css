@@ -620,3 +620,7 @@ footer li a,
     padding-inline: 0.25rem;
   }
 }
+
+/* mi-glyph — material-icon-name fallback (sovereign 2026-11-04: no Material Symbols
+   font; icon names render as small mono telemetry labels instead) */
+.mi-glyph { letter-spacing: 0.05em; opacity: 0.85; font-family: "IBM Plex Mono", "JetBrains Mono", monospace; }

@@ -45,6 +45,32 @@ module.exports = {
         telemetry: { 400: "#5FD68A", 500: "#3BAF66" },
         bone: { 100: "#EDEAE2", 400: "#9AA0A8", 600: "#5C636C" },
 
+        // PRIMER-1 canon bridge for Stitch components (sovereign 2026-11-04: canon wins)
+        // `sky` is aliased wholesale to institution blue — stitch components are its
+        // only consumer (verified grep 2026-11-04); amber/slate are NOT aliased
+        // (used elsewhere in app) — stitch files use human/forge tokens instead.
+        sky: {
+          300: "#7FA8C9", 400: "#5F8FB3", 500: "#2E5F8A", 600: "#244C6E", 700: "#1D3E59",
+        },
+        human: {
+          200: "#EFD9A0", 300: "#E8C468", 400: "#D9A62E", 500: "#B8892B", 600: "#966F22",
+        },
+        sovereign: {
+          300: "#DA8A80", 400: "#C24A3D", 500: "#B3362B", 600: "#8E2A22",
+        },
+        surface: {
+          DEFAULT: "#11151c",
+          "container-lowest": "#0a0c10",
+          "container-low": "#111318",
+          container: "#151a22",
+          "container-high": "#1a212b",
+          "container-highest": "#1f2733",
+        },
+        "on-surface": {
+          DEFAULT: "#e6edf3",
+          variant: "#8b98a8",
+        },
+
         primary: {
           DEFAULT: "#e6edf3",
           foreground: "#0a0c10",
@@ -70,12 +96,38 @@ module.exports = {
         mono: ['"IBM Plex Mono"', '"JetBrains Mono"', 'monospace'],
         technical: ['"IBM Plex Mono"', '"JetBrains Mono"', 'monospace'],
       },
+      // Stitch typography scale (PRIMER-1 skinned) — used as text-label-sm etc.
+      fontSize: {
+        'label-sm': ['0.625rem', { letterSpacing: '0.12em', fontWeight: '600' }],
+        'label-md': ['0.6875rem', { letterSpacing: '0.1em', fontWeight: '600' }],
+        'label-lg': ['0.75rem', { letterSpacing: '0.08em', fontWeight: '500' }],
+        'telemetry-sm': ['0.625rem', { letterSpacing: '0.12em' }],
+        'telemetry-md': ['0.75rem', { letterSpacing: '0.08em' }],
+        'telemetry-lg': ['0.875rem', { letterSpacing: '0.05em' }],
+        'body-sm': ['0.8125rem', { lineHeight: '1.5rem' }],
+        'body-md': ['0.9375rem', { lineHeight: '1.5rem' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'headline-sm': ['1.25rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em' }],
+        'headline-md': ['1.75rem', { lineHeight: '2.25rem', letterSpacing: '-0.01em' }],
+        'headline-lg': ['2.5rem', { lineHeight: '3rem', letterSpacing: '-0.015em' }],
+        'display-hero': ['3.5rem', { lineHeight: '4rem', letterSpacing: '-0.02em' }],
+      },
       borderRadius: {
         none: "0px",
         sm: "4px",
         md: "8px",
         lg: "12px",
         xl: "16px",
+        canon: "2px",
+      },
+      boxShadow: {
+        'brutalist': '0 1px 2px rgba(0, 0, 0, 0.4)',
+        'brutalist-hover': '0 8px 24px rgba(0, 0, 0, 0.35)',
+        'glow-green': '0 0 6px rgba(49, 196, 141, 0.25)',
+        'glow-orange': '0 0 6px rgba(176, 141, 87, 0.25)',
+        'glow-institution': '0 0 24px -4px rgba(46, 95, 138, 0.25), 0 0 0 1px rgba(46, 95, 138, 0.4)',
+        'glow-human': '0 0 24px -4px rgba(217, 166, 46, 0.25), 0 0 0 1px rgba(217, 166, 46, 0.4)',
+        'glow-sovereign': '0 0 24px -4px rgba(179, 54, 43, 0.3), 0 0 0 1px rgba(179, 54, 43, 0.5)',
       },
       borderWidth: {
         DEFAULT: '1px',

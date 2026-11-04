@@ -349,6 +349,45 @@ for (const piece of makcikPieces) {
 }
 console.log(`generate-agent-shells: ${contentFirstCount} content-first article shells emitted`);
 
+// ── /federation — static Observatory (sovereign D1 2026-11-04) ──────────
+// The static file is the serving authority on this path (@static_dirs wins
+// over @spa_routes); the SPA route renders the same observatory on
+// client-side navigation. Floors come from the canonical floors.json.
+(function emitFederationObservatory() {
+  const floorsJson = readJson(path.join(PUBLIC, 'floors.json'), null);
+  const floors = floorsJson && Array.isArray(floorsJson.floors) ? floorsJson.floors : [];
+  const rows = floors.map((fl) => `      <tr>
+        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">${esc(fl.id || '')}</td>
+        <td style="font-weight:700;">${esc(fl.name || '')}</td>
+        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">${esc(fl.type || '')}</td>
+        <td style="color:#9AA0A8;">${esc((fl.one_liner || '').slice(0, 110))}</td>
+      </tr>`).join('\n');
+  const bodyHtml = `<h2>arifOS Federation Observatory</h2>
+<p>Constitutional floors, organs, and evidence chains — observed, not adjudicated.
+Floors enforced by the arifOS kernel; halaman ini melapor, tidak mengadili.</p>
+<p>Sumber live: <a href="/status.json">/status.json</a> · <a href="/ledger">/ledger</a> ·
+<a href="/api/federation-probe">/api/federation-probe</a></p>
+<h3>Constitutional Floors (canon: /floors.json, ${floors.length} floors)</h3>
+<div style="overflow-x:auto;">
+<table style="border-collapse:collapse;width:100%;min-width:520px;">
+<thead><tr style="border-bottom:1px solid #2A3340;text-align:left;">
+<th style="padding:.4rem .6rem;">ID</th><th style="padding:.4rem .6rem;">Name</th><th style="padding:.4rem .6rem;">Type</th><th style="padding:.4rem .6rem;">One-liner</th>
+</tr></thead>
+<tbody style="color:#EDEAE2;">
+${rows}
+</tbody></table></div>`;
+  const html = renderContentFirstShell('federation', {
+    title: 'Federation Observatory — arifOS F1–F13 · Arif Fazil',
+    description: 'Constitutional floors and evidence chains, observed not adjudicated. Live canon: /floors.json.',
+    canonical: 'https://arif-fazil.com/federation/',
+    breadcrumbTrail: 'Arif Fazil / Federation',
+    dateModified: new Date().toISOString().slice(0, 10),
+    bodyHtml,
+  });
+  if (html) writeRoute('federation', html);
+})();
+
+
 const leadPiece = makcikPieces[0];
 const remainingPieces = makcikPieces.slice(1);
 

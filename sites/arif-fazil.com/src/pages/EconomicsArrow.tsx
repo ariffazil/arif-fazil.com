@@ -197,14 +197,14 @@ export function Economics() {
       <section ref={tableRef} className="border-t border-ink/10">
         <div className="mx-auto max-w-[1280px] px-6 py-24">
           <SectionHeader number="03" title="ENERGY, IN PLAIN NUMBERS" />
-          <div className="mt-12 border-y border-ink/15">
+          <div className="mt-12 border-y border-ink/15 overflow-hidden">
             {FACTS.map((f, i) => (
               <motion.div
                 key={f.claim}
                 initial={{ opacity: 0, x: 60 }}
                 animate={tableInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="grid gap-3 border-b border-ink/10 px-2 py-6 last:border-b-0 md:grid-cols-[1.6fr_1fr_auto] md:items-center md:gap-8"
+                className="grid gap-3 border-b border-ink/10 px-2 py-6 last:border-b-0 md:grid-cols-[1.6fr_1fr_auto] md:items-center md:gap-8 min-w-0 overflow-hidden"
               >
                 <p className="font-body text-[18px] leading-[1.55] text-ink">{f.claim}</p>
                 <p

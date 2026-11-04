@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useWebMCP } from '@/hooks/useWebMCP';
+import { FederationObservatory } from '@/components/stitch/FederationObservatory';
 
 const ORGANS = [
   {
@@ -56,6 +57,7 @@ export function Federation() {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
+      <FederationObservatory />
       <section className="py-24 border-b-2 border-forge-iron bg-forge-steel">
         <div className="site-frame">
           <div className="section-label">ΔΩΨ · Federation · Agent Gateway</div>

@@ -11,6 +11,7 @@ const About = lazy(() => import('@/pages/About').then(m => ({ default: m.About }
 const Sanctuary = lazy(() => import('@/pages/Sanctuary').then(m => ({ default: m.Sanctuary })));
 const Human = lazy(() => import('@/pages/Human').then(m => ({ default: m.Human })));
 const Home = lazy(() => import('@/pages/Home').then(m => ({ default: m.Home })));
+const Federation = lazy(() => import('@/pages/Federation').then(m => ({ default: m.Federation })));
 const MakcikGPTAlias = lazy(() => import('@/pages/MakcikGptAlias').then(m => ({ default: m.MakcikGPTAlias })));
 const RealityReceiptPage = lazy(() => import('@/pages/RealityReceiptPage').then(m => ({ default: m.RealityReceiptPage })));
 const MakcikGptArticle = lazy(() => import('@/pages/MakcikGptArticle').then(m => ({ default: m.MakcikGptArticle })));
@@ -227,8 +228,8 @@ export function App() {
             <Route path="/doctrine/" element={<Navigate to="/AAA" replace />} />
             <Route path="/canon" element={<Navigate to="/AAA" replace />} />
             <Route path="/canon/" element={<Navigate to="/AAA" replace />} />
-            <Route path="/federation" element={<Navigate to="/AAA" replace />} />
-            <Route path="/federation/" element={<Navigate to="/AAA" replace />} />
+            <Route path="/federation" element={<Federation />} />
+            <Route path="/federation/" element={<Federation />} />
 
             {/* Economics & Capital */}
             <Route path="/economics" element={<Economics />} />

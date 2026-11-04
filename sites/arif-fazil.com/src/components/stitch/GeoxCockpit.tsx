@@ -19,9 +19,9 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="flex flex-col gap-space-xs bg-surface-container-low p-space-md rounded-canon border border-sky-900/40 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
 <div className="flex items-center justify-between">
 <span className="font-mono text-label-sm text-sky-400/90 font-mono tracking-widest uppercase">GEOX SUBSURFACE TELEMETRY // SEISMIC v4.2</span>
-<div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-emerald-950/80 border border-emerald-500/50 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
-<span className="w-1.5 h-1.5 rounded-canon bg-emerald-400 animate-ping"></span>
-<span className="font-mono text-label-sm text-emerald-300 font-bold tracking-wide">SEISMIC INVERSION ONLINE</span>
+<div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-telemetry-950/80 border border-telemetry-500/50 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+<span className="w-1.5 h-1.5 rounded-canon bg-telemetry-400 animate-ping"></span>
+<span className="font-mono text-label-sm text-telemetry-300 font-bold tracking-wide">SEISMIC INVERSION ONLINE</span>
 </div>
 </div>
 <div className="flex flex-col mt-0.5">
@@ -142,9 +142,9 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="bg-[#07090f] rounded-canon p-2 overflow-hidden border border-outline-variant/40 shadow-inner flex flex-col">
 
 <div className="grid grid-cols-7 text-center font-mono text-label-sm pb-1 mb-1 border-b border-outline-variant/40">
-<div className="col-span-2 text-emerald-400 font-bold">
+<div className="col-span-2 text-telemetry-400 font-bold">
 <div>TRACK 1: GR</div>
-<div className="text-[9px] text-emerald-300/70 font-mono">0 - 150 GAPI</div>
+<div className="text-[9px] text-telemetry-300/70 font-mono">0 - 150 GAPI</div>
 </div>
 <div className="col-span-1 text-forge-white font-bold font-mono">
 <div>DEPTH</div>
@@ -254,16 +254,16 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 </div>
 </div>
 
-<div className="flex flex-col bg-surface-container-low text-on-surface rounded-canon p-space-md gap-space-sm border border-emerald-600/40 shadow-[0_6px_28px_rgba(0,0,0,0.55)]">
+<div className="flex flex-col bg-surface-container-low text-on-surface rounded-canon p-space-md gap-space-sm border border-telemetry-600/40 shadow-[0_6px_28px_rgba(0,0,0,0.55)]">
 <div className="flex items-start justify-between">
 <div className="flex flex-col">
 <div className="flex items-center gap-1.5">
-<span className="w-2 h-2 rounded-canon bg-emerald-400 shadow-[0_0_6px_#31c48d]"></span>
-<span className="font-mono text-label-sm text-emerald-400 font-bold tracking-wider uppercase font-mono">DRILLABLE PROSPECT EVALUATION</span>
+<span className="w-2 h-2 rounded-canon bg-telemetry-400 shadow-[0_0_6px_#31c48d]"></span>
+<span className="font-mono text-label-sm text-telemetry-400 font-bold tracking-wider uppercase font-mono">DRILLABLE PROSPECT EVALUATION</span>
 </div>
 <h4 className="font-display text-headline-sm font-semibold text-forge-white mt-0.5">Bunga Raya Deep Stratigraphic Trap</h4>
 </div>
-<div className="px-2.5 py-0.5 rounded bg-emerald-950 border border-emerald-400 text-emerald-300 font-mono text-label-sm font-bold shadow-[0_0_8px_rgba(16,185,129,0.3)] font-mono">
+<div className="px-2.5 py-0.5 rounded bg-telemetry-950 border border-telemetry-400 text-telemetry-300 font-mono text-label-sm font-bold shadow-[0_0_8px_rgba(16,185,129,0.3)] font-mono">
         TIER-1
       </div>
 </div>
@@ -288,7 +288,7 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 </div>
 
 <div className="bg-gradient-to-b from-[#78350f] to-[#451a03] border-2 border-human-400 text-human-200 p-2 rounded-canon flex flex-col items-center shadow-[0_0_16px_rgba(217,166,46,0.35)] relative overflow-hidden">
-<div className="absolute -top-1 -right-4 bg-human-400 text-stone-950 text-[8px] font-mono px-3 py-0.5 transform rotate-12 uppercase font-extrabold tracking-wider shadow">MODE</div>
+<div className="absolute -top-1 -right-4 bg-human-400 text-black text-[8px] font-mono px-3 py-0.5 transform rotate-12 uppercase font-extrabold tracking-wider shadow">MODE</div>
 <span className="font-mono text-label-sm text-human-200 font-mono font-bold">P50 (BEST)</span>
 <span className="font-display text-headline-sm font-extrabold text-human-300 font-mono drop-shadow">46.2</span>
 <span className="text-[9px] text-human-200 font-mono">MMboe</span>
@@ -305,11 +305,11 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="flex flex-col gap-1.5 pt-1 bg-surface-container/70 border border-outline-variant/30 p-2.5 rounded-canon">
 <div className="flex justify-between items-center">
 <span className="font-mono text-label-sm font-bold text-forge-white uppercase font-mono">Geological Chance of Success (GCoS)</span>
-<span className="font-mono text-label-md font-bold text-emerald-400 font-mono">38.6%</span>
+<span className="font-mono text-label-md font-bold text-telemetry-400 font-mono">38.6%</span>
 </div>
 
 <div className="w-full bg-[#0a0d14] border border-outline-variant/30 h-2.5 rounded-canon overflow-hidden flex">
-<div className="bg-gradient-to-r from-emerald-500 to-sky-400 h-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style={{ width: '38.6%' }}></div>
+<div className="bg-gradient-to-r from-telemetry-500 to-sky-400 h-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style={{ width: '38.6%' }}></div>
 </div>
 <div className="grid grid-cols-3 text-[10px] font-mono text-forge-dim text-center pt-0.5">
 <div>Reservoir: <strong className="text-sky-300">0.85</strong></div>
@@ -327,15 +327,15 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <span className="font-mono text-label-md tracking-wider uppercase font-semibold font-mono">Export LAS 2.0</span>
 </button>
 
-<button className="h-11 px-3 bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 active:from-red-700 active:to-rose-800 text-white border border-red-400/60 rounded-canon flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(239,68,68,0.4)] transition-all" id="btn-run-inversion">
+<button className="h-11 px-3 bg-gradient-to-r from-sovereign-600 to-sovereign-600 hover:from-sovereign-500 hover:to-sovereign-500 active:from-sovereign-600 active:to-sovereign-600 text-white border border-sovereign-400/60 rounded-canon flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(239,68,68,0.4)] transition-all" id="btn-run-inversion">
 <span className="mi-glyph text-[18px]">✺</span>
 <span className="font-mono text-label-md tracking-wider uppercase font-bold font-mono">Run ML Inversion</span>
 </button>
 </div>
 
-<div className="flex items-center justify-between p-space-sm bg-surface-container-low border border-red-500/30 rounded-canon">
+<div className="flex items-center justify-between p-space-sm bg-surface-container-low border border-sovereign-500/30 rounded-canon">
 <div className="flex items-center gap-2">
-<div className="w-7 h-7 rounded-canon bg-red-950/80 border border-red-500/50 text-red-400 flex items-center justify-center shadow-[0_0_8px_rgba(239,68,68,0.3)]">
+<div className="w-7 h-7 rounded-canon bg-sovereign-950/80 border border-sovereign-500/50 text-sovereign-400 flex items-center justify-center shadow-[0_0_8px_rgba(239,68,68,0.3)]">
 <span className="mi-glyph text-[18px]">⛨</span>
 </div>
 <div className="flex flex-col">
@@ -343,7 +343,7 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <span className="text-[10px] text-forge-dim font-mono">SHA256: e82f...a109 // UNMUTABLE ATT</span>
 </div>
 </div>
-<button className="h-8 px-3 bg-surface-container-highest border border-outline-variant/40 hover:bg-surface-variant hover:border-red-400/50 text-forge-white font-mono text-label-sm rounded-canon uppercase font-mono font-semibold" id="btn-inspect-hash">
+<button className="h-8 px-3 bg-surface-container-highest border border-outline-variant/40 hover:bg-surface-variant hover:border-sovereign-400/50 text-forge-white font-mono text-label-sm rounded-canon uppercase font-mono font-semibold" id="btn-inspect-hash">
         Inspect
       </button>
 </div>

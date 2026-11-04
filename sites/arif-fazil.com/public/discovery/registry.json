@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-04T10:30:39.654Z",
+  "generated_at": "2026-11-04T11:04:20.679Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -227,51 +227,9 @@
       ]
     },
     "well": {
-      "verified": true,
-      "count": 10,
-      "tools": [
-        {
-          "name": "well_machine_diagnose",
-          "desc": "M-WELL MACHINE DIAGNOSTIC -- Full VPS health with actionable recommendations."
-        },
-        {
-          "name": "well_machine_recommend",
-          "desc": "M-WELL RECOMMENDATION ENGINE -- Get specific fix commands for machine issues."
-        },
-        {
-          "name": "well_classify_substrate",
-          "desc": "Ω-WELL-01: Substrate classification and boundary sensing."
-        },
-        {
-          "name": "well_trace_lineage",
-          "desc": "Ω-WELL-02: Memory, trend, ledger, and vault chain tracing."
-        },
-        {
-          "name": "well_assess_homeostasis",
-          "desc": "Ω-WELL-06: Assess regulation, stability, and empathic balance under change."
-        },
-        {
-          "name": "well_check_repair",
-          "desc": "Ω-WELL-07: Check repair, recovery, resilience, and forge cycle integrity."
-        },
-        {
-          "name": "well_validate_vitality",
-          "desc": "Ω-WELL-08: Validate vitality, readiness, and NIAT. (Floor compliance removed -- arifOS adj"
-        },
-        {
-          "name": "well_assess_reliability",
-          "desc": "Ω-WELL-10: Assess machine, tool, institution, and operational reliability."
-        },
-        {
-          "name": "well_guard_dignity",
-          "desc": "Ω-WELL-12: Guard soul, personhood, meaning, and symbolic boundaries."
-        },
-        {
-          "name": "well_registry_status",
-          "desc": "WELL registry truth diagnostic -- blueprint canonical format."
-        }
-      ]
+      "verified": false,
+      "note": "unreachable at build: The operation was aborted due to timeout"
     }
   },
-  "total_verified": 61
+  "total_verified": 51
 }

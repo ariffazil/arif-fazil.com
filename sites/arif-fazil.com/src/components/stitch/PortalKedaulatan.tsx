@@ -19,8 +19,8 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <section className="w-full bg-[#111318] border border-forge-iron/90 rounded-canon p-space-sm flex flex-col gap-space-xs shadow-lg relative overflow-hidden">
 <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-human-500/5 pointer-events-none"></div>
 <div className="flex items-center justify-between relative z-10">
-<div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-emerald-950/60 border border-emerald-500/40 text-emerald-300">
-<span className="w-2 h-2 rounded-canon bg-emerald-400 animate-pulse shadow-[0_0_8px_#31c48d]"></span>
+<div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-telemetry-950/60 border border-telemetry-500/40 text-telemetry-300">
+<span className="w-2 h-2 rounded-canon bg-telemetry-400 animate-pulse shadow-[0_0_8px_#31c48d]"></span>
 <span className="font-mono text-label-sm tracking-wider font-semibold">SUBSTRATE HEALTHY</span>
 </div>
 <span className="font-mono text-label-sm text-primary/80 font-mono tracking-wider uppercase">SYNTH-NET v4.9</span>
@@ -48,7 +48,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
       </p>
 </div>
 
-<div className="bg-gradient-to-br from-[#111318] to-[#151d2c] border border-blue-900/40 rounded-canon p-space-md flex items-center justify-between gap-space-sm shadow-xl relative overflow-hidden">
+<div className="bg-gradient-to-br from-[#111318] to-[#151d2c] border border-sky-900/40 rounded-canon p-space-md flex items-center justify-between gap-space-sm shadow-xl relative overflow-hidden">
 <div className="flex items-center gap-space-sm z-10 min-w-0">
 <div className="relative shrink-0 w-16 h-16 rounded-canon overflow-hidden ring-2 ring-primary/40 shadow-[0_0_16px_rgba(56,189,248,0.25)] bg-[#0a0c10]">
 <img alt="Editorial studio portrait of Arif Fazil" className="w-full h-full object-cover filter contrast-105 brightness-95" src="/images/portal-portrait.jpg" />
@@ -92,8 +92,8 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <section className="flex flex-col gap-space-xs">
 <div className="flex items-center justify-between px-1">
 <span className="font-mono text-label-sm text-forge-dim uppercase tracking-wider font-semibold">Instrumental Vitality</span>
-<span className="font-mono text-label-sm text-emerald-400 flex items-center gap-1 font-mono">
-<span className="w-1.5 h-1.5 rounded-canon bg-emerald-400 animate-pulse shadow-[0_0_6px_#31c48d]"></span> REAL-TIME
+<span className="font-mono text-label-sm text-telemetry-400 flex items-center gap-1 font-mono">
+<span className="w-1.5 h-1.5 rounded-canon bg-telemetry-400 animate-pulse shadow-[0_0_6px_#31c48d]"></span> REAL-TIME
       </span>
 </div>
 <div className="grid grid-cols-3 gap-space-xs">
@@ -110,20 +110,20 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 </div>
 </div>
 
-<div className="bg-[#111318] border border-red-500/30 p-space-sm rounded-canon flex flex-col justify-between shadow-md min-w-0 relative overflow-hidden">
-<div className="absolute top-0 right-0 w-8 h-8 bg-red-500/10 rounded-bl-full pointer-events-none"></div>
+<div className="bg-[#111318] border border-sovereign-500/30 p-space-sm rounded-canon flex flex-col justify-between shadow-md min-w-0 relative overflow-hidden">
+<div className="absolute top-0 right-0 w-8 h-8 bg-sovereign-500/10 rounded-bl-full pointer-events-none"></div>
 <span className="font-mono text-label-sm text-forge-dim truncate">Floors Pass</span>
 <div className="my-1 flex items-baseline gap-1">
 <span className="font-metric-display text-[1.4rem] leading-none text-white font-semibold font-mono">12<span className="text-label-sm font-normal text-forge-dim">/13</span></span>
 </div>
-<div className="inline-flex items-center gap-1 text-red-400">
-<span className="w-1.5 h-1.5 rounded-canon bg-red-500 animate-pulse shadow-[0_0_6px_#c24a3d]"></span>
-<span className="font-mono text-label-sm font-semibold truncate tracking-tight text-red-400">F13 ARMED</span>
+<div className="inline-flex items-center gap-1 text-sovereign-400">
+<span className="w-1.5 h-1.5 rounded-canon bg-sovereign-500 animate-pulse shadow-[0_0_6px_#c24a3d]"></span>
+<span className="font-mono text-label-sm font-semibold truncate tracking-tight text-sovereign-400">F13 ARMED</span>
 </div>
 </div>
 
-<div className="bg-[#111318] border border-blue-500/30 p-space-sm rounded-canon flex flex-col justify-between shadow-md min-w-0 relative overflow-hidden">
-<div className="absolute top-0 right-0 w-8 h-8 bg-blue-500/10 rounded-bl-full pointer-events-none"></div>
+<div className="bg-[#111318] border border-sky-500/30 p-space-sm rounded-canon flex flex-col justify-between shadow-md min-w-0 relative overflow-hidden">
+<div className="absolute top-0 right-0 w-8 h-8 bg-sky-500/10 rounded-bl-full pointer-events-none"></div>
 <span className="font-mono text-label-sm text-forge-dim truncate">VAULT999</span>
 <div className="my-1 flex items-baseline truncate">
 <span className="font-mono text-label-sm text-primary font-mono font-semibold truncate">#0x8F9A...C4</span>
@@ -190,7 +190,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 </div>
 </div>
 
-<div className="bg-[#101828] border border-blue-500/35 text-forge-white rounded-canon p-space-md flex flex-col gap-space-xs shadow-lg relative overflow-hidden transition-all duration-200 hover:border-primary active:scale-[0.99] cursor-pointer group">
+<div className="bg-[#101828] border border-sky-500/35 text-forge-white rounded-canon p-space-md flex flex-col gap-space-xs shadow-lg relative overflow-hidden transition-all duration-200 hover:border-primary active:scale-[0.99] cursor-pointer group">
 <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-primary/10 to-transparent pointer-events-none"></div>
 <div className="flex items-center justify-between relative z-10">
 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-primary/15 border border-primary/30 text-primary">
@@ -239,9 +239,9 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 </div>
 </section>
 
-<section className="w-full bg-[#181116] border border-red-500/30 rounded-canon p-space-md flex items-center gap-space-sm shadow-xl relative overflow-hidden">
-<div className="absolute -right-6 -bottom-6 w-24 h-24 bg-red-600/10 rounded-canon blur-xl pointer-events-none"></div>
-<div className="shrink-0 w-11 h-11 rounded-canon bg-red-950/70 border border-red-500/40 text-red-400 flex items-center justify-center p-1 shadow-[0_0_12px_rgba(239,68,68,0.25)]">
+<section className="w-full bg-[#181116] border border-sovereign-500/30 rounded-canon p-space-md flex items-center gap-space-sm shadow-xl relative overflow-hidden">
+<div className="absolute -right-6 -bottom-6 w-24 h-24 bg-sovereign-600/10 rounded-canon blur-xl pointer-events-none"></div>
+<div className="shrink-0 w-11 h-11 rounded-canon bg-sovereign-950/70 border border-sovereign-500/40 text-sovereign-400 flex items-center justify-center p-1 shadow-[0_0_12px_rgba(239,68,68,0.25)]">
 
 <svg className="w-9 h-9" fill="currentColor" viewBox="0 0 100 100">
 <circle cx="50" cy="50" fill="none" r="46" stroke="currentColor" strokeDasharray="4 2" strokeWidth="3"></circle>
@@ -250,7 +250,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 </svg>
 </div>
 <div className="flex flex-col min-w-0 relative z-10">
-<div className="flex items-center gap-1 text-red-400 font-mono text-label-sm font-semibold uppercase tracking-wider font-mono">
+<div className="flex items-center gap-1 text-sovereign-400 font-mono text-label-sm font-semibold uppercase tracking-wider font-mono">
 <span className="mi-glyph text-[14px]">✓</span>
 <span>Immutable Seal: SHA-256 Verified</span>
 </div>

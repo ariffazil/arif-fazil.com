@@ -13,8 +13,8 @@
 | `/ledger` | via `@spa_routes` (:2426) | `/var/www/html/arif` (SPA fallback `/index.html`) | |
 | `/000` | :354 | `/var/www/html/arif/000` | |
 | `/999` | :368 | `/var/www/html/arif/999` | |
-| `/world/*` (politics, 2027, petronas) | :983 | `/var/www/html/arif/world/...` | curated `/world/index.html` PRESERVED |
-| `/world/makcikgpt/*` HUMAN lane | :971 | `/var/www/html/arif/world/makcikgpt/...` | UA split! |
+| `/world/*` (politics, 2027, petronas) | :983 | `/var/www/html/arif/world/...` | `/world/index.html` = hand-curated 156KB hub — repo `public/world/index.html` is the byte source (restored 2026-11-04, final review B1); `generate-agent-shells` PRESERVED_ROUTES + primer-shells guard protect it |
+| `/world/makcikgpt/*` HUMAN lane | :971 | `/var/www/html/arif/world/makcikgpt/...` | UA split! Sealed dossiers (petronas-leadership-1974-2026, petronas-full-reality-rakyat-dossier) = webroot-authoritative RESTORED into repo public/ 2026-11-04; `spa-inject-policy.cjs` guards them from shell injection |
 | `/world/makcikgpt/*` BOT lane | :955-970 | `/var/www/html/arif/world/makcikgpt/makcikgpt-md/` | bots/curl get md mirror |
 | `/world/petronas/` | :983 (phantom) | `/var/www/html/arif/world/petronas/` (to create) | zombie → real page (Task 17) |
 | `/words/*` (incl. `/words/doctrine/`) | :1023 | `/var/www/html/arif/words/...` | `/doctrine` 308→`/words/doctrine/` (:618) |

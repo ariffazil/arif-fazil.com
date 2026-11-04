@@ -62,3 +62,18 @@ test('no Google-hosted fonts or material symbols', () => {
     assert.ok(!s.includes('material-symbols'), `${f} uses Material Symbols (app standard: lucide)`);
   }
 });
+
+const ALLOWED_HUES = 'sky|human|sovereign|telemetry|forge|surface|on-surface|bone|paper|ink|ember|gold|ledger|brass|civic|graphite|cold|obsidian|basalt|strata|magma|primary|secondary|muted|accent|border|background|foreground|ring|input|white|black|transparent|current';
+
+test('no unregistered default-palette hue classes (canon families only)', () => {
+  const re = new RegExp('\\b(?:text|bg|border|ring|from|to|via|fill|stroke|decoration|outline|divide|shadow)-(' + ALLOWED_HUES + ')-', 'g');
+  for (const f2 of files) {
+    const s2 = fs.readFileSync(path.join(DIR, f2), 'utf8');
+    const bad = [];
+    for (const m of s2.matchAll(/\b(?:text|bg|border|ring|from|to|via|fill|stroke)-(?:[a-z]+)-\d+(?:\/\d+)?\b/g)) {
+      if (!re.test(m[0])) bad.push(m[0]);
+      re.lastIndex = 0;
+    }
+    assert.deepStrictEqual(bad, [], f2 + ' uses unregistered hue classes');
+  }
+});

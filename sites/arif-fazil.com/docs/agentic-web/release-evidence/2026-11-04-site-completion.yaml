@@ -60,3 +60,16 @@ rollback:
   webroot: "prior state recoverable from /root/_archive/webroot-baks-20261104/ + git dist history"
 
 witness: "DITEMPA BUKAN DIBERI — evidence only, no self-SEAL (F13: author ≠ judge)"
+
+fix_pass_final_review:  # 2026-11-04, reviewer agent-4 (glm-5.3, fresh eyes)
+  B1_critical_deploy_clobber:
+    finding: "T20 deploy copied repo dist over webroot-authoritative curated /world/ hub (156KB→7.5KB primer variant) + 2 sealed dossiers at both roots; generators were guarded, the deploy was not"
+    fix: "RESTORED live from archives (/root/_archive/world-index-pre-agentic-20261103.bak + .split-roots-backup-20261102-152016) and made the REPO the byte source (public/world/index.html + both dossiers restored; PRESERVED_ROUTES + spa-inject-policy now guard). Live-verified: /world/ 200 157KB curated title; both dossiers 200 with real titles (150,063B / 70,796B human lane)."
+  M1_injection_landmine:
+    finding: "copy-static-html 2b ignored STATIC_INDEX_ALLOWLIST — restored hand-authored pages would be re-clobbered on next build"
+    fix: "scripts/lib/spa-inject-policy.cjs (single predicate, allowlist passed in by caller — no drift); tests/spa-inject-policy.test.cjs 3/3 RED→GREEN"
+  M2_canon_false_pass:
+    finding: "canon test banned hex literals but default-palette classes shipped forbidden hues (emerald=Stitch greens, red=unrationed #ef4444, blue; sky-900/950 undefined → missing styles)"
+    fix: "test extended to ban unregistered hue families (7/7); 49 class mappings to sovereign/telemetry/sky tokens; sky+telemetry scales extended"
+  minors_deferred: "8 ledgered (esc() in featuredBand, build-stamped dateModified, canonical trailing slash, 2-tori home, stale LayoutGrid comment, decorative hero telemetry, duplicated sort expr, build dirties 4 tracked files)"
+  post_fix_gates: "build 0; suite 51/55 (4 pre-existing at base); mobile spot 4/4 incl restored /world/"

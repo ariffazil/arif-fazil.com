@@ -89,7 +89,7 @@ export const FederationObservatory: React.FC<{ className?: string }> = ({ classN
                   className="flex items-center justify-between p-2.5 bg-surface-container-low border border-outline-variant/50 rounded-canon"
                 >
                   <div className="flex items-center gap-space-sm min-w-0">
-                    <span className={`font-mono text-label-sm font-bold w-7 ${f.id === 'F13' ? 'text-red-400' : 'text-primary'}`}>{f.id}</span>
+                    <span className={`font-mono text-label-sm font-bold w-7 ${f.id === 'F13' ? 'text-sovereign-400' : 'text-primary'}`}>{f.id}</span>
                     <span className="font-body text-body-sm text-on-surface font-medium truncate">{f.name}</span>
                     {f.type && (
                       <span className="font-mono text-[9px] tracking-widest text-forge-dim border border-forge-iron px-1.5 py-0.5 rounded-canon">

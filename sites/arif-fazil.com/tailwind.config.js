@@ -42,7 +42,7 @@ module.exports = {
         basalt: { 950: "#0A0B0D", 900: "#111318", 800: "#1A1E24" },
         strata: { 700: "#2A2F37" },
         magma: { 500: "#E8733B", 400: "#F09A62" },
-        telemetry: { 400: "#5FD68A", 500: "#3BAF66" },
+        telemetry: { 300: "#7FE0A6", 400: "#5FD68A", 500: "#3BAF66", 600: "#2F9455", 950: "#0E2B1D" },
         bone: { 100: "#EDEAE2", 400: "#9AA0A8", 600: "#5C636C" },
 
         // PRIMER-1 canon bridge for Stitch components (sovereign 2026-11-04: canon wins)
@@ -50,13 +50,13 @@ module.exports = {
         // only consumer (verified grep 2026-11-04); amber/slate are NOT aliased
         // (used elsewhere in app) — stitch files use human/forge tokens instead.
         sky: {
-          300: "#7FA8C9", 400: "#5F8FB3", 500: "#2E5F8A", 600: "#244C6E", 700: "#1D3E59",
+          300: "#7FA8C9", 400: "#5F8FB3", 500: "#2E5F8A", 600: "#244C6E", 700: "#1D3E59", 900: "#16324A", 950: "#0F2436",
         },
         human: {
           200: "#EFD9A0", 300: "#E8C468", 400: "#D9A62E", 500: "#B8892B", 600: "#966F22",
         },
         sovereign: {
-          300: "#DA8A80", 400: "#C24A3D", 500: "#B3362B", 600: "#8E2A22",
+          300: "#DA8A80", 400: "#C24A3D", 500: "#B3362B", 600: "#8E2A22", 950: "#2A0F0C",
         },
         surface: {
           DEFAULT: "#11151c",

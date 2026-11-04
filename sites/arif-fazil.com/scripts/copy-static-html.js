@@ -309,13 +309,12 @@ if (fs.existsSync(spaEntryPath)) {
         const slugDir = path.join(baseDir, slug);
         fs.mkdirSync(slugDir, { recursive: true });
         const slugFile = path.join(slugDir, "index.html");
-        // 2026-11-04 (T12): content-first shells from generate-agent-shells are
-        // the authority for their route — never clobber real pre-JS content
-        // with the empty SPA shell ("200 SPA-shell bukan bukti").
-        if (fs.existsSync(slugFile)) {
-          const existing = fs.readFileSync(slugFile, "utf8");
-          if (existing.includes(CONTENT_FIRST_MARKER)) continue;
-        }
+        // 2026-11-04 (T12/M1): content-first shells AND allowlisted hand-authored
+        // pages are the authority for their route — never clobber. Policy lives
+        // in lib/spa-inject-policy.cjs (tested).
+        const relPath = path.join(path.basename(baseDir), slug, "index.html");
+        const existing = fs.existsSync(slugFile) ? fs.readFileSync(slugFile, "utf8") : null;
+        if (!shouldInjectSpaShell(existing, relPath, STATIC_INDEX_ALLOWLIST)) continue;
         fs.writeFileSync(slugFile, spaHtml, "utf8");
         injectedCount++;
       }

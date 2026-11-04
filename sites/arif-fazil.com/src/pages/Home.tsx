@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import { LiveClock } from '@/components/LiveClock'
-import { FederationConstellation } from '@/components/FederationConstellation'
 import { PageMeta } from '@/components/PageMeta'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
 import { ZenPulse } from '@/components/ZenPulse'
+import { PortalKedaulatan } from '@/components/stitch'
 import { discoveries } from '@/data/discoveries'
 import { agenticMirrors } from '@/components/ArrowNavbar'
 
@@ -31,71 +30,9 @@ export function Home() {
       />
 
       {/* ── HERO — who, what, why + Dual Chrono-Epigenetic Clock ─────── */}
-      <section className="relative overflow-hidden border-b border-[#1F2733] bg-[#07090E] py-16 md:py-24">
-        <FederationConstellation />
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #EDEAE2 1px, transparent 0)`,
-            backgroundSize: '36px 36px',
-          }}
-        />
+      {/* Portal Kedaulatan hero — Stitch structure, PRIMER-1 skin (sovereign 2026-11-04) */}
+      <PortalKedaulatan />
 
-        <div className="mx-auto max-w-[1360px] px-6 relative z-10">
-          {/* Status bar: context + live clock */}
-          <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#1F2733]">
-            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8]">
-              <span className="w-2 h-2 rounded-full bg-[#E4572E]" />
-              <span>EXPLORATION GEOSCIENCE · OFFSHORE MALAYSIA</span>
-            </div>
-            <LiveClock withDate className="text-[#9AA0A8]" />
-          </div>
-
-          <div className="max-w-3xl">
-            <div>
-              <h1 className="font-display font-black text-[clamp(2.8rem,6.5vw,5.2rem)] leading-[0.92] uppercase tracking-tight text-[#EDEAE2] mb-6">
-                Arif<br />
-                <span className="text-[#9AA0A8]">Fazil</span>
-              </h1>
-              <p className="font-mono text-xs text-[#E4572E] uppercase tracking-widest mb-4">
-                13 Years Offshore Exploration · Subsurface Reality · Sovereign Systems Architect
-              </p>
-              <p className="font-sans text-lg md:text-xl text-[#EDEAE2] font-medium leading-relaxed max-w-2xl mb-4">
-                I spent 13 years finding signals in difficult subsurface rock where a wrong call costs millions. I bring that exact discipline to machines: refusing fake certainty, anchoring intelligence to physical reality, and keeping human authority sovereign.
-              </p>
-              <p className="font-sans text-base text-[#9AA0A8] leading-relaxed max-w-2xl mb-6">
-                The earth does not care about your slides. If the well runs dry, narrative cannot save you. That is the same work in rocks and in intelligence: ground truth over performance. Ditempa bukan diberi.
-              </p>
-
-              {/* Credibility strip — proof points already on the record */}
-              <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-8">
-                13 years offshore exploration · 4 flagship wells · Public evidence linked · Human authority explicit
-              </p>
-
-              {/* START HERE — one professional path, two actions */}
-              <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
-                Start here
-              </p>
-              <div className="flex flex-wrap gap-3 mb-5">
-                <a href="/institution/" className="inline-flex items-center justify-center px-6 min-h-[44px] rounded bg-[#E4572E] text-[#07090E] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[#E4572E]/90 transition-colors">Request a briefing →</a>
-                <Link to="/work" className="inline-flex items-center justify-center px-6 min-h-[44px] rounded border border-[#EDEAE2]/40 bg-[#10141D] text-[#EDEAE2] font-mono text-xs uppercase tracking-wider font-semibold hover:border-[#EDEAE2]/70 hover:text-white transition-colors">View selected work →</Link>
-              </div>
-              <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] leading-loose">
-                Explore the public record —{' '}
-                <a href="/earth/" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Earth</a>
-                {' · '}
-                <Link to="/evidence" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Evidence register</Link>
-                {' · '}
-                <a href="/words/" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Writing</a>
-                {' · '}
-                <Link to="/reality" className="underline decoration-[#1F2733] underline-offset-4 hover:text-[#EDEAE2] transition-colors">Systems map</Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── DECISIONS UNDER NOISE — the governing idea ──────────────── */}
       <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0D14]" id="idea">
         <div className="mx-auto max-w-[1360px] px-6">
           <RevealOnScroll>

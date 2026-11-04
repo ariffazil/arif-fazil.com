@@ -27,7 +27,7 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="flex flex-col mt-0.5">
 <h2 className="font-display text-headline-sm text-forge-white">Malay Basin Subsurface Cockpit</h2>
 <div className="flex items-center gap-1.5 text-sky-400 mt-1 font-mono">
-<span className="mi-glyph text-[16px]">explore</span>
+<span className="mi-glyph text-[16px]">✦</span>
 <span className="font-mono text-label-md tracking-wide">PM307 Block // Depth: 3,420m TVDSS</span>
 </div>
 </div>
@@ -36,7 +36,7 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="flex flex-col bg-surface-container-low rounded-canon p-space-md gap-space-sm border border-outline-variant/30 shadow-[0_6px_28px_rgba(0,0,0,0.55)] relative overflow-hidden">
 <div className="flex items-center justify-between border-b border-outline-variant/30 pb-2">
 <div className="flex items-center gap-1.5">
-<span className="mi-glyph text-sky-400 text-[18px]">layers</span>
+<span className="mi-glyph text-sky-400 text-[18px]">≡</span>
 <span className="font-mono text-label-sm font-semibold tracking-wider text-forge-white uppercase">Sunda Shelf Tectonic &amp; Well Plane</span>
 </div>
 <span className="font-mono text-label-sm text-forge-dim font-mono">DATUM: WGS84 / UTM 48N</span>
@@ -323,12 +323,12 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="grid grid-cols-2 gap-space-sm">
 
 <button className="h-11 px-3 bg-surface-container border border-outline-variant/50 hover:bg-surface-container-high hover:border-sky-400/50 active:bg-surface-container-highest text-forge-white rounded-canon flex items-center justify-center gap-2 transition-all shadow-sm" id="btn-export-las">
-<span className="mi-glyph text-[18px] text-sky-400">download</span>
+<span className="mi-glyph text-[18px] text-sky-400">↓</span>
 <span className="font-mono text-label-md tracking-wider uppercase font-semibold font-mono">Export LAS 2.0</span>
 </button>
 
 <button className="h-11 px-3 bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 active:from-red-700 active:to-rose-800 text-white border border-red-400/60 rounded-canon flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(239,68,68,0.4)] transition-all" id="btn-run-inversion">
-<span className="mi-glyph text-[18px]">neurology</span>
+<span className="mi-glyph text-[18px]">✺</span>
 <span className="font-mono text-label-md tracking-wider uppercase font-bold font-mono">Run ML Inversion</span>
 </button>
 </div>
@@ -336,7 +336,7 @@ export const GeoxCockpit: React.FC<GeoxCockpitProps> = ({ className = '' }) => {
 <div className="flex items-center justify-between p-space-sm bg-surface-container-low border border-red-500/30 rounded-canon">
 <div className="flex items-center gap-2">
 <div className="w-7 h-7 rounded-canon bg-red-950/80 border border-red-500/50 text-red-400 flex items-center justify-center shadow-[0_0_8px_rgba(239,68,68,0.3)]">
-<span className="mi-glyph text-[18px]">verified_user</span>
+<span className="mi-glyph text-[18px]">⛨</span>
 </div>
 <div className="flex flex-col">
 <span className="font-mono text-label-sm font-bold text-forge-white font-mono">VAULT999 GEOLOGICAL SEAL</span>

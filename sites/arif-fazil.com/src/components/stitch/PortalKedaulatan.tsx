@@ -51,13 +51,13 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <div className="bg-gradient-to-br from-[#111318] to-[#151d2c] border border-blue-900/40 rounded-canon p-space-md flex items-center justify-between gap-space-sm shadow-xl relative overflow-hidden">
 <div className="flex items-center gap-space-sm z-10 min-w-0">
 <div className="relative shrink-0 w-16 h-16 rounded-canon overflow-hidden ring-2 ring-primary/40 shadow-[0_0_16px_rgba(56,189,248,0.25)] bg-[#0a0c10]">
-<img alt="Editorial studio portrait of Arif Fazil" className="w-full h-full object-cover filter contrast-105 brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA11ZmrL7f_2aJjqpenSF01aTlk2Vd2djqbhUFYWS56iUZkYNde83v6mq8U41gHd1_0d0zwOh0LUYbQ7UybZ5mxsozS2skFPUm9I_2iMKEi-Lszc1baiSXhy-KZPFBjc9exUyAwGUedwzu5sqlJYT2qgMDu2RSKFcpZ67FJWe9ttfytTU83Ec37XHZ-Wqh9efJ_YmtD8hObRE45KY2tzmKHQIjOyY8WeTSTD5l0FKg" />
+<img alt="Editorial studio portrait of Arif Fazil" className="w-full h-full object-cover filter contrast-105 brightness-95" src="/images/portal-portrait.jpg" />
 <div className="absolute inset-0 ring-1 ring-inset ring-human-400/30 rounded-canon pointer-events-none"></div>
 </div>
 <div className="flex flex-col min-w-0">
 <div className="flex items-center gap-1.5">
 <span className="font-display text-headline-sm text-white font-semibold truncate leading-tight">Arif Fazil</span>
-<span className="mi-glyph text-[16px] text-primary">verified</span>
+<span className="mi-glyph text-[16px] text-primary">✓</span>
 </div>
 <p className="font-mono text-label-sm text-forge-white truncate mt-0.5">Architect of arifOS &amp; GEOX Fellow</p>
 <div className="inline-flex items-center gap-1 mt-1">
@@ -79,11 +79,11 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 
 <div className="grid grid-cols-2 gap-space-sm pt-1">
 <button className="bg-[#d9a62e] text-[#0a0c10] rounded-canon py-2.5 px-3 flex items-center justify-center gap-1.5 font-mono text-label-md font-bold shadow-[0_0_16px_rgba(245,158,11,0.3)] hover:bg-[#e8c468] active:scale-[0.98] transition-all">
-<span className="mi-glyph text-[16px]">token</span>
+<span className="mi-glyph text-[16px]">◆</span>
 <span className="truncate tracking-wide uppercase">Enter Federation</span>
 </button>
 <button className="bg-[#182030] text-forge-white border border-forge-iron/80 hover:border-primary/50 hover:text-primary rounded-canon py-2.5 px-3 flex items-center justify-center gap-1.5 font-mono text-label-md font-medium active:scale-[0.98] transition-all shadow-md">
-<span className="mi-glyph text-[16px] text-primary">history_edu</span>
+<span className="mi-glyph text-[16px] text-primary">✎</span>
 <span className="truncate">Read Manifesto</span>
 </button>
 </div>
@@ -105,7 +105,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <span className="font-metric-display text-[1.4rem] leading-none text-human-300 font-semibold font-mono">1.26</span>
 </div>
 <div className="inline-flex items-center gap-1 text-human-400">
-<span className="mi-glyph text-[13px]">water_drop</span>
+<span className="mi-glyph text-[13px]">◗</span>
 <span className="font-mono text-label-sm font-semibold truncate tracking-tight">FLOWING</span>
 </div>
 </div>
@@ -129,7 +129,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <span className="font-mono text-label-sm text-primary font-mono font-semibold truncate">#0x8F9A...C4</span>
 </div>
 <div className="inline-flex items-center gap-1 text-primary">
-<span className="mi-glyph text-[13px]">verified_user</span>
+<span className="mi-glyph text-[13px]">⛨</span>
 <span className="font-mono text-label-sm font-semibold truncate tracking-tight">WITNESSED</span>
 </div>
 </div>
@@ -154,15 +154,15 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <div className="mt-1 relative z-10">
 <h3 className="font-display text-headline-sm font-semibold text-white flex items-center justify-between group-hover:text-human-300 transition-colors">
           MakcikGPT Civic Archive
-          <span className="mi-glyph text-[20px] text-human-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+          <span className="mi-glyph text-[20px] text-human-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
 </h3>
 <p className="font-body text-body-sm text-forge-white mt-1 leading-relaxed">
           Democratized public policy audit and civic discourse analysis under Malaysian jurisdictional context.
         </p>
 </div>
 <div className="pt-2 flex items-center gap-space-md text-forge-dim font-mono text-label-sm relative z-10">
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-human-400">balance</span> Sovereign Auditor</span>
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-human-400">folder_open</span> 2,410 Treatises</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-human-400">⚖</span> Sovereign Auditor</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-human-400">▤</span> 2,410 Treatises</span>
 </div>
 </div>
 
@@ -178,15 +178,15 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <div className="mt-1 relative z-10">
 <h3 className="font-display text-headline-sm font-semibold text-white flex items-center justify-between group-hover:text-sky-300 transition-colors">
           GEOX Subsurface Exploration
-          <span className="mi-glyph text-[20px] text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+          <span className="mi-glyph text-[20px] text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
 </h3>
 <p className="font-body text-body-sm text-forge-white mt-1 leading-relaxed">
           Subsurface seismic inversion, Malay Basin rift faults, and stratigraphic reservoir characterization.
         </p>
 </div>
 <div className="pt-2 flex items-center gap-space-md text-forge-dim font-mono text-label-sm relative z-10">
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-sky-400">layers</span> Malay Rift Model</span>
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-sky-400">sensors</span> 4,800m Stratum</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-sky-400">≡</span> Malay Rift Model</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-sky-400">◉</span> 4,800m Stratum</span>
 </div>
 </div>
 
@@ -202,15 +202,15 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <div className="mt-1 relative z-10">
 <h3 className="font-display text-headline-sm font-semibold text-white flex items-center justify-between group-hover:text-primary transition-colors">
           arifOS Observatory
-          <span className="mi-glyph text-[20px] text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+          <span className="mi-glyph text-[20px] text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
 </h3>
 <p className="font-body text-body-sm text-forge-white mt-1 leading-relaxed">
           13 Constitutional Floors matrix, federated AI node telemetry, and sovereign verification gates.
         </p>
 </div>
 <div className="pt-2 flex items-center gap-space-md text-forge-dim font-mono text-label-sm relative z-10">
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-primary">shield</span> Gatekeeper Active</span>
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-primary">device_hub</span> 8 Federated Nodes</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-primary">⛨</span> Gatekeeper Active</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-primary">⁂</span> 8 Federated Nodes</span>
 </div>
 </div>
 
@@ -226,15 +226,15 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <div className="mt-1 relative z-10">
 <h3 className="font-display text-headline-sm font-semibold text-white flex items-center justify-between group-hover:text-forge-white transition-colors">
           Personal Essays &amp; Biography
-          <span className="mi-glyph text-[20px] text-forge-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+          <span className="mi-glyph text-[20px] text-forge-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
 </h3>
 <p className="font-body text-body-sm text-forge-white mt-1 leading-relaxed">
           Reflections on technological sovereignty, cybernetic autonomy, and the craft of enduring systems.
         </p>
 </div>
 <div className="pt-2 flex items-center gap-space-md text-forge-dim font-mono text-label-sm relative z-10">
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-forge-dim">menu_book</span> Scholarly Tracts</span>
-<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-forge-dim">history</span> 2012–Present</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-forge-dim">▤</span> Scholarly Tracts</span>
+<span className="flex items-center gap-1"><span className="mi-glyph text-[14px] text-forge-dim">↺</span> 2012–Present</span>
 </div>
 </div>
 </section>
@@ -251,7 +251,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 </div>
 <div className="flex flex-col min-w-0 relative z-10">
 <div className="flex items-center gap-1 text-red-400 font-mono text-label-sm font-semibold uppercase tracking-wider font-mono">
-<span className="mi-glyph text-[14px]">verified</span>
+<span className="mi-glyph text-[14px]">✓</span>
 <span>Immutable Seal: SHA-256 Verified</span>
 </div>
 <p className="font-mono text-label-sm text-forge-white mt-0.5 leading-snug">

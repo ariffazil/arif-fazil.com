@@ -36,7 +36,7 @@ export const FederationObservatory: React.FC<FederationObservatoryProps> = ({ cl
 </div>
 
 <div className="flex items-center gap-2 p-2.5 bg-surface-container-low border border-outline-variant/60 rounded-canon overflow-x-auto text-nowrap mt-space-xs shadow-inner">
-<span className="mi-glyph text-[16px] text-human-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.6)]">all_inclusive</span>
+<span className="mi-glyph text-[16px] text-human-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.6)]">∞</span>
 <span className="font-mono text-label-sm text-human-300 font-medium">TORUS FEEDBACK: CYBERNETIC LOOP LOCKED</span>
 <span className="text-outline">•</span>
 <span className="font-mono text-label-sm text-on-surface-variant">HEURISTIC ENTHALPY: OPTIMAL</span>
@@ -123,7 +123,7 @@ export const FederationObservatory: React.FC<FederationObservatoryProps> = ({ cl
 <section className="flex flex-col gap-space-sm">
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-2">
-<span className="mi-glyph text-[18px] text-primary">security</span>
+<span className="mi-glyph text-[18px] text-primary">⛨</span>
 <h2 className="font-display text-headline-sm text-on-surface">13 Constitutional Floors</h2>
 </div>
 <span className="font-mono text-label-sm text-primary bg-[#0d1424] border border-primary/40 px-2 py-0.5 rounded-canon font-medium">13 / 13 ACTIVE</span>
@@ -284,12 +284,12 @@ export const FederationObservatory: React.FC<FederationObservatoryProps> = ({ cl
 <section className="flex flex-col gap-space-sm">
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-2">
-<span className="mi-glyph text-[18px] text-primary">receipt_long</span>
+<span className="mi-glyph text-[18px] text-primary">≡</span>
 <h2 className="font-display text-headline-sm text-on-surface">VAULT999 Receipt Log</h2>
 </div>
 <button className="font-mono text-label-sm text-primary hover:text-sky-300 uppercase flex items-center gap-1 transition-colors">
 <span>Block #409,122</span>
-<span className="mi-glyph text-[14px]">refresh</span>
+<span className="mi-glyph text-[14px]">↻</span>
 </button>
 </div>
 
@@ -350,7 +350,7 @@ export const FederationObservatory: React.FC<FederationObservatoryProps> = ({ cl
 </div>
 
 <button className="w-full h-14 bg-gradient-to-r from-red-700 via-red-600 to-red-700 hover:from-red-600 hover:to-red-600 text-white rounded-canon font-mono text-label-md tracking-wider uppercase flex items-center justify-center gap-space-sm shadow-[0_0_24px_rgba(239,68,68,0.45)] border border-red-400/50 transition-all active:scale-[0.98] select-none" id="vetoButton">
-<span className="mi-glyph text-[20px] drop-shadow">gavel</span>
+<span className="mi-glyph text-[20px] drop-shadow">⚖</span>
 <span className="font-bold tracking-wide">Assert Constitutional Veto (Floor 13)</span>
 </button>
 <div className="hidden p-3 bg-red-950/90 border border-red-500 text-red-200 rounded-canon text-center font-mono text-label-sm animate-pulse shadow-[0_0_16px_rgba(239,68,68,0.3)]" id="vetoModalNotification">

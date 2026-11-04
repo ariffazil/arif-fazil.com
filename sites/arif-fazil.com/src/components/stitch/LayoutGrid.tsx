@@ -17,16 +17,14 @@ export interface LayoutGridProps {
  * Design System Asset: assets/53930e338fa249e8bec7808f181df468
  */
 export const LayoutGrid: React.FC<LayoutGridProps> = ({
-  territory,
-  subtitle = 'Sovereign Intelligence Constellation',
-  substrateStatus = 'SUBSTRATE HEALTHY',
+  territory: _territory,
   showTorusAnchor = true,
   showFractalOverlay = true,
   children,
 }) => {
   return (
     <div
-      className="relative min-h-screen w-full bg-[#0a0c10] text-[#e6edf3] font-body antialiased selection:bg-[#5f8fb3]/25 selection:text-[#e6edf3] overflow-x-hidden rounded-canon"
+      className="relative w-full bg-[#0a0c10] text-[#e6edf3] font-body antialiased selection:bg-[#5f8fb3]/25 selection:text-[#e6edf3] overflow-x-hidden rounded-canon"
       style={{
         backgroundImage:
           'linear-gradient(to right, rgba(56, 189, 248, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(56, 189, 248, 0.06) 1px, transparent 1px)',
@@ -64,18 +62,6 @@ export const LayoutGrid: React.FC<LayoutGridProps> = ({
           </svg>
         </div>
       )}
-
-      {/* Territory eyebrow strip — non-fixed; the app shell owns the main nav
-          (sovereign 2026-11-04: no duplicate header) */}
-      <div className="px-5 pt-6 pb-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px]">
-        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-[#11151c] border border-[#5f8fb3]/50">
-          <span className="w-1.5 h-1.5 rounded-canon bg-[#5f8fb3]" />
-          <span className="text-[#5f8fb3] font-semibold tracking-wider uppercase">{substrateStatus}</span>
-        </span>
-        <span className="text-[#8b98a8] truncate">{subtitle}</span>
-        <span className="text-[#2a3340]">/</span>
-        <span className="text-[#d9a62e] font-bold uppercase tracking-wider">{territory}</span>
-      </div>
 
       {/* Screen Content Slot */}
       <div className="relative z-10">{children}</div>

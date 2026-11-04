@@ -171,7 +171,7 @@ export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ className = 
 </div>
 <div className="flex items-center justify-between relative z-10">
 <div className="flex items-center gap-space-xs">
-<span className="mi-glyph text-[18px] text-sky-400 drop-shadow-[0_0_6px_rgba(56,189,248,0.5)]">verified_user</span>
+<span className="mi-glyph text-[18px] text-sky-400 drop-shadow-[0_0_6px_rgba(56,189,248,0.5)]">⛨</span>
 <span className="font-mono text-[11px] font-bold uppercase text-white tracking-wider">EVIDENCE ATTESTATION</span>
 </div>
 <span className="font-mono text-[10px] px-2 py-0.5 rounded-canon bg-[#151a22] text-sky-300 font-mono border border-sky-500/30">VAULT999-DOC-9821</span>
@@ -187,7 +187,7 @@ export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ className = 
 </div>
 <div className="flex items-center justify-between pt-space-xs relative z-10">
 <button className="flex items-center gap-1.5 text-human-400 font-mono text-[11px] font-bold hover:text-human-300 transition-colors py-1" id="open-legend-btn">
-<span className="mi-glyph text-[16px]">help_center</span>
+<span className="mi-glyph text-[16px]">?</span>
 <span>EPISTEMIC TAXONOMY LEGEND</span>
 </button>
 <button className="px-3.5 py-1.5 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-canon font-mono text-[11px] font-bold hover:brightness-110 transition-all shadow-[0_0_12px_rgba(56,189,248,0.3)] border border-sky-300/30">
@@ -199,11 +199,11 @@ export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ className = 
 <div className="hidden fixed inset-x-4 bottom-24 z-50 bg-[#11151c]/95 backdrop-blur-2xl text-white rounded-canon p-space-md shadow-[0_16px_40px_rgba(0,0,0,0.8)] border border-sky-500/40 flex-col gap-space-sm" id="epistemic-legend-modal">
 <div className="flex items-center justify-between border-b border-forge-iron pb-2">
 <div className="flex items-center gap-space-xs">
-<span className="mi-glyph text-[20px] text-human-400">info</span>
+<span className="mi-glyph text-[20px] text-human-400">ℹ</span>
 <span className="font-display text-headline-sm text-white font-serif">Epistemic Badging Key</span>
 </div>
 <button className="text-forge-dim hover:text-white transition-colors p-1" id="close-legend-btn">
-<span className="mi-glyph text-[20px]">close</span>
+<span className="mi-glyph text-[20px]">✕</span>
 </button>
 </div>
 <p className="font-body text-body-sm text-forge-white">
@@ -234,7 +234,7 @@ export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ className = 
 <div className="flex items-center justify-between px-1">
 <div className="flex items-center gap-space-xs min-w-0">
 <button className="w-9 h-9 rounded-canon bg-gradient-to-tr from-human-500 to-human-300 text-forge-black flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(245,158,11,0.5)] active:scale-95 transition-transform" id="audio-toggle-btn">
-<span className="mi-glyph text-[22px] font-bold" id="audio-icon">play_arrow</span>
+<span className="mi-glyph text-[22px] font-bold" id="audio-icon">▶</span>
 </button>
 <div className="flex flex-col min-w-0">
 <span className="font-mono text-[12px] font-bold truncate text-human-200">
@@ -250,7 +250,7 @@ export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ className = 
           1.0x
         </button>
 <button className="w-8 h-8 flex items-center justify-center text-forge-white hover:text-human-300 transition-colors">
-<span className="mi-glyph text-[19px]">volume_up</span>
+<span className="mi-glyph text-[19px]">◆</span>
 </button>
 </div>
 </div>

@@ -308,6 +308,24 @@ try {
   makcikPieces = [];
 }
 
+// Featured dossier band (stitch MakcikGPTArchive structure — 2026-11-04)
+const newestPiece = [...makcikPieces].sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0] || null;
+const featuredClaim = newestPiece && newestPiece.claim_register && newestPiece.claim_register[0];
+const featuredBand = newestPiece ? `
+    <section aria-label="Dossier terkini" style="margin:1.25rem 0; padding:1rem 1.1rem; background:#111827; border:1px solid rgba(232,184,75,0.35); border-radius:12px;">
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; justify-content:space-between; margin-bottom:0.6rem;">
+        <span style="font-family:monospace; font-size:0.68rem; font-weight:bold; letter-spacing:0.12em; text-transform:uppercase; color:#60A5FA;">● ARCHIVE // DOSSIER TERKINI</span>
+        <span style="font-family:monospace; font-size:0.68rem; color:#9CA3AF;">${newestPiece.date}</span>
+      </div>
+      <h2 style="font-size:1.35rem; font-weight:800; margin:0 0 0.4rem 0; line-height:1.25; color:#FFFFFF;">${newestPiece.title}</h2>
+      ${featuredClaim ? `<p style="font-size:0.88rem; color:#9CA3AF; margin:0 0 0.75rem 0; line-height:1.6;"><strong style="color:#E8B84B;">${featuredClaim.tag} —</strong> ${featuredClaim.text}</p>` : ''}
+      <div style="display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center;">
+        <a href="${newestPiece.dest && newestPiece.dest.path ? newestPiece.dest.path : '/world/makcikgpt/'}" style="display:inline-flex; padding:0.5rem 1rem; background:#2563EB; color:#fff; font-family:monospace; font-size:0.72rem; font-weight:bold; letter-spacing:0.08em; text-decoration:none; border-radius:8px;">BACA DOSSIER PENUH ↗</a>
+        <span style="font-family:monospace; font-size:0.68rem; color:#9CA3AF;">${(newestPiece.source_ledger || []).length} SUMBER BERGARIS</span>
+      </div>
+    </section>` : '';
+
+
 const leadPiece = makcikPieces[0];
 const remainingPieces = makcikPieces.slice(1);
 
@@ -461,6 +479,7 @@ writeRoute(
     .ladder-name{font-size:0.85rem;font-weight:bold;color:#F3F4F6;margin:2px 0}
     .ladder-sub{font-size:0.7rem;color:#9CA3AF}`,
     body: `
+    ${featuredBand}
     <!-- Visual Hero: Attention Preservation & Information Architecture -->
     <div class="hero-container">
       <div class="hero-grid">

@@ -1,266 +1,99 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { LayoutGrid } from './LayoutGrid';
 
+export interface ArchiveArticle {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  date: string;
+  domain?: string;
+  excerpt?: string;
+  sourceCount?: number;
+}
+
 export interface MakcikGPTArchiveProps {
+  article: ArchiveArticle;
   className?: string;
 }
 
 /**
- * Screen 02 — MakcikGPT Civic Archive & Epistemic Evidence Drawer
- * Source Wireframe: makcikgpt-civic-archive-dark-mode.html
- * Design System Asset: assets/53930e338fa249e8bec7808f181df468
+ * Screen 02 — MakcikGPT Civic Archive (reader band)
+ * Structure from Stitch wireframe `makcikgpt-civic-archive-dark-mode.html`;
+ * content is 100% props-bound to real article data (F2 TRUTH: the original
+ * mock dossier — fabricated tonnage, dates and telemetry — was stripped in
+ * the 2026-11-04 PRIMER-1 re-skin; no mock claims ship).
  */
-export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ className = '' }) => {
+export const MakcikGPTArchive: React.FC<MakcikGPTArchiveProps> = ({ article, className = '' }) => {
   return (
     <LayoutGrid territory="ARCHIVE">
       <div className={`rounded-canon ${className}`.trim()}>
-        <main className="flex flex-col relative w-full pt-20 pb-24 bg-[#0a0c10] min-h-screen"><div className="flex flex-col w-full px-margin-mobile pb-space-xl">
+        <div className="flex flex-col w-full px-margin-mobile pb-space-xl">
 
-<header className="flex flex-col gap-space-xs mt-space-sm p-space-sm rounded-canon bg-[#11151c]/80 border border-forge-iron/80 bg-grid-orthogonal relative overflow-hidden">
-<div className="flex items-center justify-between text-forge-dim">
-<span className="font-mono text-[10px] tracking-widest uppercase text-forge-dim font-semibold flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-canon bg-sky-400 animate-ping"></span>ARCHIVE // CIVIC INTELLIGENCE // DOSSIER #402</span>
-<span className="font-mono text-[10px] text-sky-400 font-bold tracking-wider">64% READ // 8 MIN REMAINING</span>
-</div>
-<div className="w-full bg-[#151a22] h-1.5 rounded-canon overflow-hidden border border-sky-950">
-<div className="bg-gradient-to-r from-blue-600 via-sky-400 to-sky-300 h-full rounded-canon transition-all duration-300 shadow-[0_0_8px_rgba(56,189,248,0.7)]" style={{ width: '64%' }}></div>
-</div>
-</header>
+          <header className="flex flex-col gap-space-xs mt-space-sm p-space-sm rounded-canon bg-[#11151c]/80 border border-forge-iron/80 relative overflow-hidden">
+            <div className="flex items-center justify-between text-forge-dim">
+              <span className="font-mono text-[10px] tracking-widest uppercase text-forge-dim font-semibold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-canon bg-sky-400 animate-ping"></span>
+                ARCHIVE // CIVIC INTELLIGENCE // {article.slug.toUpperCase().slice(0, 28)}
+              </span>
+              <span className="font-mono text-[10px] text-sky-400 font-bold tracking-wider">
+                {article.date}
+              </span>
+            </div>
+          </header>
 
-<section className="flex flex-col gap-space-sm mt-space-lg">
-<div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-canon bg-sky-950/70 border border-sky-400/40 text-sky-300 w-max shadow-[0_0_10px_rgba(56,189,248,0.15)]">
-<span className="w-1.5 h-1.5 rounded-canon bg-sky-400 shadow-[0_0_6px_#5f8fb3]"></span>
-<span className="font-mono text-label-sm font-semibold tracking-wider">EPISTEMIC SCORE 98.4% CERTIFIED</span>
-</div>
-<h1 className="font-display-mobile text-headline-lg-mobile text-white tracking-tight leading-tight font-serif drop-shadow-sm">
-      The Dissection of Subsidized Grain Procurement in Selangor (2021–2024)
-    </h1>
-<p className="font-body text-body-md text-forge-white italic">
-      A federated computational audit reveals supply chain friction and bureaucratic arbitrage.
-    </p>
-<div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-space-xs font-mono text-forge-dim">
-<span className="text-human-300 font-semibold px-2 py-0.5 rounded bg-human-500/10 border border-human-500/30">Arif Fazil with MakcikGPT Node 07</span>
-<span className="text-forge-dim">•</span>
-<span className="text-forge-white font-mono">14 Oct 2024</span>
-<span className="text-forge-dim">•</span>
-<span className="text-sky-300 font-medium tracking-wide">Hulu Langat Focus</span>
-</div>
-</section>
+          <section className="flex flex-col gap-space-sm mt-space-lg">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-canon bg-sky-950/70 border border-sky-400/40 text-sky-300 w-max shadow-[0_0_10px_rgba(46,95,138,0.15)]">
+              <span className="w-1.5 h-1.5 rounded-canon bg-sky-400 shadow-[0_0_6px_#5f8fb3]"></span>
+              <span className="font-mono text-label-sm font-semibold tracking-wider">DOSSIER TERKINI // LATEST</span>
+            </div>
+            <h1 className="font-display text-headline-lg text-white tracking-tight leading-tight font-serif drop-shadow-sm">
+              {article.title}
+            </h1>
+            {article.subtitle && (
+              <p className="font-body text-body-md text-forge-white italic">{article.subtitle}</p>
+            )}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-space-xs font-mono text-forge-dim">
+              <span className="text-human-300 font-semibold px-2 py-0.5 rounded bg-human-500/10 border border-human-500/30">
+                Arif Fazil with MakcikGPT
+              </span>
+              <span className="text-forge-dim">•</span>
+              <span className="text-forge-white font-mono">{article.date}</span>
+              {article.domain && (
+                <>
+                  <span className="text-forge-dim">•</span>
+                  <span className="text-sky-300 font-medium tracking-wide">{article.domain}</span>
+                </>
+              )}
+            </div>
+          </section>
 
-<nav aria-label="Sections" className="flex gap-2 overflow-x-auto no-scrollbar py-space-sm mt-space-md -mx-margin-mobile px-margin-mobile">
-<button className="shrink-0 px-3.5 py-1.5 rounded-canon bg-gradient-to-r from-sky-500 to-blue-600 text-white font-mono text-label-sm font-bold whitespace-nowrap shadow-[0_0_12px_rgba(56,189,248,0.35)] border border-sky-300/40">
-      I. Executive Audit
-    </button>
-<button className="shrink-0 px-3.5 py-1.5 rounded-canon bg-[#151a22] text-forge-white hover:text-white hover:bg-surface-container border border-forge-iron font-mono text-label-sm whitespace-nowrap transition-colors">
-      II. Discrepancy Matrix
-    </button>
-<button className="shrink-0 px-3.5 py-1.5 rounded-canon bg-[#151a22] text-forge-white hover:text-white hover:bg-surface-container border border-forge-iron font-mono text-label-sm whitespace-nowrap transition-colors">
-      III. Epistemic Verification
-    </button>
-<button className="shrink-0 px-3.5 py-1.5 rounded-canon bg-[#151a22] text-forge-white hover:text-white hover:bg-surface-container border border-forge-iron font-mono text-label-sm whitespace-nowrap transition-colors">
-      IV. Civic Remedy
-    </button>
-</nav>
+          {article.excerpt && (
+            <div className="flex flex-col gap-space-xs bg-[#11151c]/90 backdrop-blur p-space-md mt-space-lg rounded-canon border border-human-500/25 shadow-[0_4px_16px_rgba(0,0,0,0.4)] relative overflow-hidden">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-canon bg-human-600/20 border border-human-400/40 text-human-200 font-mono text-[11px] font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-canon bg-human-400 shadow-[0_0_6px_#d9a62e]"></span>
+                  RINGKASAN — EXCERPT
+                </span>
+                {typeof article.sourceCount === 'number' && (
+                  <span className="font-mono text-[10px] text-forge-dim tracking-wider">
+                    {article.sourceCount} SUMBER BERGARIS
+                  </span>
+                )}
+              </div>
+              <p className="font-body text-body-md text-forge-white leading-relaxed pt-1">
+                {article.excerpt}
+              </p>
+              <Link
+                to={`/world/makcikgpt/${article.slug}`}
+                className="mt-space-xs w-max px-4 py-2 rounded-canon bg-gradient-to-r from-sky-500 to-sky-700 text-white font-mono text-label-sm font-bold tracking-wider shadow-[0_0_12px_rgba(46,95,138,0.35)] border border-sky-300/40 transition-transform hover:translate-x-0.5"
+              >
+                BACA DOSSIER PENUH ↗
+              </Link>
+            </div>
+          )}
 
-<figure className="relative rounded-canon overflow-hidden mt-space-md shadow-[0_8px_24px_rgba(0,0,0,0.6)] bg-[#11151c] border border-forge-iron">
-<img className="w-full h-44 object-cover filter contrast-110 brightness-90" data-alt="Monochrome archival photography of grain silos and logistic depots at dusk in Selangor Malaysia. High contrast moody cinematic lighting, subtle misty atmospheric depth, grain transport trucks waiting at a terminal scale, austere documentary investigative journalism aesthetics, muted tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMAqZZN_O2HPrHFHgmU_dAvWOj-Cdv34yjQz_HRnHPQ9V8xRtWqIVx3nQ9WPU5N2eQ-zMEyzVrCjGa2DU9B6FXiyPXfRLxQM8yqTQHG0itsQYPln5_3XceBDH8MNukFxo3zYWVEClkVKFkAwVDxgZ1TY1FzI-AgX8ODp4rAwG5-6c3rREoROtS_AQ5xYgugjppaqlBhNE5VNI29l72nYD3WVROysHRGVlfzSNqWS0I" />
-<div className="absolute bottom-0 inset-x-0 p-space-sm bg-gradient-to-t from-[#0a0c10] via-[#0a0c10]/85 to-transparent backdrop-blur-[2px]">
-<p className="font-mono text-[11px] text-forge-white flex items-center justify-between">
-<span className="text-sky-300 font-semibold tracking-wider">FIG 4.2 — SILO DEPOT FEED 11B (AMPANG JAYA)</span>
-<span className="text-emerald-400 font-mono flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-canon bg-emerald-400 animate-pulse"></span>TELEMETRY SYNCED</span>
-</p>
-</div>
-</figure>
-
-<article className="flex flex-col gap-space-lg mt-space-lg">
-
-<div className="flex flex-col gap-space-xs bg-[#11151c]/90 backdrop-blur p-space-md rounded-canon border border-emerald-500/25 shadow-[0_4px_16px_rgba(0,0,0,0.4)] relative overflow-hidden">
-<div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-canon blur-xl pointer-events-none"></div>
-<div className="flex items-center justify-between">
-<span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-canon bg-emerald-950/80 border border-emerald-400/40 text-emerald-300 font-mono text-[11px] font-semibold">
-<span className="w-1.5 h-1.5 rounded-canon bg-emerald-400 shadow-[0_0_6px_#31c48d]"></span>
-          OBS — Observed Fact
-        </span>
-<span className="font-mono text-[10px] text-forge-dim font-mono tracking-wider">SEC. 1.01</span>
-</div>
-<p className="font-body text-body-md text-forge-white leading-relaxed pt-1">
-        The official gazette reported 42,000 metric tonnes disbursed across Hulu Langat hubs between Q2 2022 and Q1 2023. Registry slips confirm receipt at primary intake portals prior to regional distribution staging.
-      </p>
-</div>
-
-<div className="flex flex-col gap-space-xs bg-[#11151c]/90 backdrop-blur p-space-md rounded-canon border border-sky-500/35 shadow-[0_4px_20px_rgba(56,189,248,0.1)] relative overflow-hidden">
-<div className="absolute top-0 right-0 w-28 h-28 bg-sky-500/10 rounded-canon blur-2xl pointer-events-none"></div>
-<div className="flex items-center justify-between">
-<span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-canon bg-sky-950/80 border border-sky-400/50 text-sky-200 font-mono text-[11px] font-semibold shadow-[0_0_8px_rgba(56,189,248,0.25)]">
-<span className="w-1.5 h-1.5 rounded-canon bg-sky-400 shadow-[0_0_6px_#5f8fb3]"></span>
-          DER — Derived Calculation
-        </span>
-<span className="font-mono text-[10px] text-sky-400 font-mono tracking-wider font-semibold">MATH.DELTA-14</span>
-</div>
-<p className="font-body text-body-md text-forge-white leading-relaxed pt-1">
-        Computational reconciliation against customs manifestos indicates a 14.8% delta in physical depot offloading. Cross-referencing volumetric weigh-station sensor telemetry with merchant manifests yields an unexplained variance of roughly 6,216 metric tonnes.
-      </p>
-
-<div className="mt-space-xs p-space-sm bg-[#0a0c10] border border-red-500/30 rounded-canon flex items-center justify-between bg-grid-orthogonal relative shadow-inner">
-<div className="flex flex-col">
-<span className="font-mono text-[10px] tracking-wider text-red-300 uppercase font-semibold flex items-center gap-1.5">
-<span className="w-1.5 h-1.5 rounded-canon bg-red-500 animate-pulse"></span>ESTIMATED LOGISTIC GAP
-          </span>
-<span className="font-mono text-headline-sm text-red-400 font-bold font-mono tracking-tight drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]">-6,216 MT</span>
-</div>
-<div className="relative">
-<svg className="w-28 h-10 text-red-500" fill="none" viewBox="0 0 100 30">
-<defs>
-<linearGradient id="sparkline-grad" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stopColor="#5f8fb3"></stop>
-<stop offset="60%" stopColor="#d9a62e"></stop>
-<stop offset="100%" stopColor="#c24a3d"></stop>
-</linearGradient>
-<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
-<feGaussianBlur result="blur" stdDeviation="2"></feGaussianBlur>
-<feMerge>
-<feMergeNode in="blur"></feMergeNode>
-<feMergeNode in="SourceGraphic"></feMergeNode>
-</feMerge>
-</filter>
-</defs>
-<path d="M0 25 L20 22 L40 24 L60 12 L80 18 L100 5" filter="url(#glow)" stroke="url(#sparkline-grad)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5"></path>
-<circle className="animate-ping" cx="100" cy="5" fill="#c24a3d" opacity="0.6" r="3.5"></circle>
-<circle cx="100" cy="5" fill="#c24a3d" r="3"></circle>
-</svg>
-</div>
-</div>
-</div>
-
-<div className="flex flex-col gap-space-xs bg-[#11151c]/90 backdrop-blur p-space-md rounded-canon border border-human-500/30 shadow-[0_4px_16px_rgba(0,0,0,0.4)] relative overflow-hidden">
-<div className="absolute top-0 right-0 w-24 h-24 bg-human-500/5 rounded-canon blur-xl pointer-events-none"></div>
-<div className="flex items-center justify-between">
-<span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-canon bg-human-600/80 border border-human-400/50 text-human-200 font-mono text-[11px] font-semibold shadow-[0_0_8px_rgba(217,166,46,0.25)]">
-<span className="w-1.5 h-1.5 rounded-canon bg-human-400 shadow-[0_0_6px_#e8c468]"></span>
-          INT — Interpretation
-        </span>
-<span className="font-mono text-[10px] text-human-400/90 font-mono tracking-wider">NODE-07 AUDIT</span>
-</div>
-<p className="font-body text-body-md text-forge-white leading-relaxed pt-1">
-        This disparity points to intermediary consolidation rather than logistical spoilage. Ambient storage sensor telemetry over identical rainfall periods reveals zero moisture breach thresholds that would otherwise justify systemic writedowns.
-      </p>
-</div>
-
-<div className="flex flex-col gap-space-xs bg-[#11151c]/90 backdrop-blur p-space-md rounded-canon border border-forge-iron/60 shadow-[0_4px_16px_rgba(0,0,0,0.4)] relative">
-<div className="flex items-center justify-between">
-<span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-canon bg-surface-container/80 border border-forge-iron text-forge-white font-mono text-[11px] font-semibold">
-<span className="w-1.5 h-1.5 rounded-canon bg-forge-dim"></span>
-          SPEC — Speculative Hypothesis
-        </span>
-<span className="font-mono text-[10px] text-forge-dim font-mono tracking-wider">FORECAST</span>
-</div>
-<p className="font-body text-body-md text-forge-white leading-relaxed pt-1">
-        Future procurement cycles without cryptographic attestations will likely replicate the leakage pattern, escalating margin bleed to an estimated 22.4% as wholesale grain benchmark prices rise across regional import corridors.
-      </p>
-</div>
-</article>
-
-<section className="mt-space-lg bg-[#11151c] rounded-canon p-space-md flex flex-col gap-space-sm shadow-[0_8px_28px_rgba(0,0,0,0.5)] border border-sky-500/25 relative overflow-hidden bg-grid-orthogonal">
-
-<div className="absolute -right-6 -bottom-6 w-36 h-36 opacity-10 pointer-events-none text-sky-400">
-<svg fill="none" stroke="currentColor" strokeWidth="1" viewBox="0 0 100 100">
-<polygon points="50,5 95,27 95,73 50,95 5,73 5,27"></polygon>
-<polygon points="50,15 85,32 85,68 50,85 15,68 15,32"></polygon>
-<polygon points="50,25 75,37 75,63 50,75 25,63 25,37"></polygon>
-<circle cx="50" cy="50" r="10"></circle>
-</svg>
-</div>
-<div className="flex items-center justify-between relative z-10">
-<div className="flex items-center gap-space-xs">
-<span className="mi-glyph text-[18px] text-sky-400 drop-shadow-[0_0_6px_rgba(56,189,248,0.5)]">⛨</span>
-<span className="font-mono text-[11px] font-bold uppercase text-white tracking-wider">EVIDENCE ATTESTATION</span>
-</div>
-<span className="font-mono text-[10px] px-2 py-0.5 rounded-canon bg-[#151a22] text-sky-300 font-mono border border-sky-500/30">VAULT999-DOC-9821</span>
-</div>
-<div className="flex flex-col gap-1 p-space-sm bg-[#0a0c10]/90 border border-forge-iron rounded-canon relative z-10">
-<span className="font-mono text-[10px] text-forge-dim font-mono tracking-wider flex items-center justify-between">
-<span>CRYPTOGRAPHIC RECORD DIGEST (SHA-256)</span>
-<span className="text-emerald-400 font-semibold">IMMUTABLE</span>
-</span>
-<span className="font-mono text-[11px] text-sky-300 break-all select-all font-mono tracking-wide selection:bg-sky-500 selection:text-black">
-        e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-      </span>
-</div>
-<div className="flex items-center justify-between pt-space-xs relative z-10">
-<button className="flex items-center gap-1.5 text-human-400 font-mono text-[11px] font-bold hover:text-human-300 transition-colors py-1" id="open-legend-btn">
-<span className="mi-glyph text-[16px]">?</span>
-<span>EPISTEMIC TAXONOMY LEGEND</span>
-</button>
-<button className="px-3.5 py-1.5 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-canon font-mono text-[11px] font-bold hover:brightness-110 transition-all shadow-[0_0_12px_rgba(56,189,248,0.3)] border border-sky-300/30">
-        VERIFY RECORD
-      </button>
-</div>
-</section>
-
-<div className="hidden fixed inset-x-4 bottom-24 z-50 bg-[#11151c]/95 backdrop-blur-2xl text-white rounded-canon p-space-md shadow-[0_16px_40px_rgba(0,0,0,0.8)] border border-sky-500/40 flex-col gap-space-sm" id="epistemic-legend-modal">
-<div className="flex items-center justify-between border-b border-forge-iron pb-2">
-<div className="flex items-center gap-space-xs">
-<span className="mi-glyph text-[20px] text-human-400">ℹ</span>
-<span className="font-display text-headline-sm text-white font-serif">Epistemic Badging Key</span>
-</div>
-<button className="text-forge-dim hover:text-white transition-colors p-1" id="close-legend-btn">
-<span className="mi-glyph text-[20px]">✕</span>
-</button>
-</div>
-<p className="font-body text-body-sm text-forge-white">
-      Every investigative sentence within MakcikGPT civic readers carries a machine-attested evidentiary grade:
-    </p>
-<div className="grid grid-cols-2 gap-2 pt-1 font-mono text-[11px]">
-<div className="p-2.5 rounded-canon bg-[#0a0c10] border border-emerald-500/30 flex flex-col gap-0.5">
-<span className="text-emerald-400 font-bold flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-canon bg-emerald-400"></span>[OBS] OBSERVED</span>
-<span className="text-forge-dim text-[10px]">Primary sensor logs or notarized state registries.</span>
-</div>
-<div className="p-2.5 rounded-canon bg-[#0a0c10] border border-sky-500/30 flex flex-col gap-0.5">
-<span className="text-sky-400 font-bold flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-canon bg-sky-400"></span>[DER] DERIVED</span>
-<span className="text-forge-dim text-[10px]">Formulaic calculation cross-verified via SQL audit.</span>
-</div>
-<div className="p-2.5 rounded-canon bg-[#0a0c10] border border-human-500/30 flex flex-col gap-0.5">
-<span className="text-human-400 font-bold flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-canon bg-human-400"></span>[INT] INTERPRETATION</span>
-<span className="text-forge-dim text-[10px]">Analytical synthesis by model &amp; investigative desk.</span>
-</div>
-<div className="p-2.5 rounded-canon bg-[#0a0c10] border border-forge-iron flex flex-col gap-0.5">
-<span className="text-forge-white font-bold flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-canon bg-forge-dim"></span>[SPEC] SPECULATION</span>
-<span className="text-forge-dim text-[10px]">Probabilistic projection; unproven hypothesis.</span>
-</div>
-</div>
-</div>
-
-<div className="sticky bottom-4 z-40 mt-space-lg w-full bg-[#11151c]/95 backdrop-blur-xl border border-human-500/30 text-white rounded-canon p-space-sm shadow-[0_12px_32px_rgba(0,0,0,0.8)] flex flex-col gap-2">
-
-<div className="flex items-center justify-between px-1">
-<div className="flex items-center gap-space-xs min-w-0">
-<button className="w-9 h-9 rounded-canon bg-gradient-to-tr from-human-500 to-human-300 text-forge-black flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(245,158,11,0.5)] active:scale-95 transition-transform" id="audio-toggle-btn">
-<span className="mi-glyph text-[22px] font-bold" id="audio-icon">▶</span>
-</button>
-<div className="flex flex-col min-w-0">
-<span className="font-mono text-[12px] font-bold truncate text-human-200">
-            MiniMax Voice: Audio Treatise
-          </span>
-<span className="font-mono text-[10px] text-forge-dim font-mono" id="player-time">
-            04:12 / 11:30
-          </span>
-</div>
-</div>
-<div className="flex items-center gap-space-xs shrink-0">
-<button className="px-2 py-0.5 rounded bg-[#151a22] border border-forge-iron text-human-300 font-mono text-[11px] font-bold">
-          1.0x
-        </button>
-<button className="w-8 h-8 flex items-center justify-center text-forge-white hover:text-human-300 transition-colors">
-<span className="mi-glyph text-[19px]">◆</span>
-</button>
-</div>
-</div>
-
-<div className="w-full bg-[#151a22] h-1.5 rounded-canon overflow-hidden relative cursor-pointer border border-forge-iron">
-<div className="bg-gradient-to-r from-blue-600 via-sky-400 to-sky-300 h-full rounded-canon transition-all duration-150 shadow-[0_0_8px_rgba(56,189,248,0.7)]" style={{ width: '36%' }}></div>
-</div>
-</div>
-</div>
-</main>
+        </div>
       </div>
     </LayoutGrid>
   );

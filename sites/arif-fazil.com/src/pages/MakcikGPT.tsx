@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { makcikArticlesMeta, getMakcikArticle } from '@/data/makcikgpt/index'
+import { MakcikGPTArchive } from '@/components/stitch'
 
 function estimateReadingTime(slug: string): number {
   const article = getMakcikArticle(slug)
@@ -58,6 +59,10 @@ export function MakcikGPT() {
   return (
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-12 md:py-20">
       <div className="mx-auto max-w-[1280px] px-6">
+      <MakcikGPTArchive article={{
+        ...([...makcikArticlesMeta].sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0]),
+        sourceCount: ([...makcikArticlesMeta].sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0] as unknown as { source_ledger?: unknown[] }).source_ledger?.length,
+      }} />
         
         {/* ── BREADCRUMB: HIERARCHICAL COHERENCE ───────────── */}
         <nav className="flex items-center gap-2 font-mono text-xs text-[#9AA0A8] uppercase tracking-wider mb-6" aria-label="Breadcrumb">

@@ -48,7 +48,9 @@ body::before {
   position:sticky;top:0;z-index:10;background:var(--bg);
   border-bottom:2px solid var(--red);padding:12px 0;
 }
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem}
+.topbar nav{display:flex;flex-wrap:wrap;gap:.35rem 1rem}
+.topbar nav a{margin-left:0}
 .topbar h1{font-size:18px;font-weight:700}
 .topbar h1 span{color:var(--yellow)}
 .topbar nav a{font-size:13px;margin-left:20px;color:var(--fg-muted)}

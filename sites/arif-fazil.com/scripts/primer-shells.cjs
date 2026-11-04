@@ -125,12 +125,32 @@ ${body}
 </html>`;
 }
 
+// ── Preservation guard (T11, 2026-11-04) ────────────────────────────────
+// PRESERVED_ROUTES are hand-curated surfaces (the /world/ hub lives curated
+// in the webroot); generators must never clobber them. Mirror of
+// generate-agent-shells.cjs PRESERVED_ROUTES.
+const PRESERVED_ROUTES = new Set(['world']);
+let PUBLIC_ROOT = PUBLIC; // mutable override for tests
+
+function setPublicRoot(p) { PUBLIC_ROOT = p; }
+
 function writeRoute(route, html) {
-  const dir = path.join(PUBLIC, route);
+  // require() of this module must never mutate the real public/ tree.
+  if (require.main !== module && PUBLIC_ROOT === PUBLIC) {
+    return { skipped: true, reason: 'module-mode: no side effects on require' };
+  }
+  if (PRESERVED_ROUTES.has(route)) {
+    console.log('preserved (hand-authored, not regenerated): /' + route);
+    return { skipped: true, reason: 'preserved' };
+  }
+  const dir = path.join(PUBLIC_ROOT, route);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   console.log('wrote', path.join(route, 'index.html'), html.length, 'bytes');
+  return { skipped: false };
 }
+
+module.exports = { writeRoute, PRESERVED_ROUTES, setPublicRoot, __mainGuarded: true };
 
 /* ══ WORDS — essay index, primer family ══════════════════ */
 const essaysRaw = readJson(path.join(ROOT, 'src/data/essays.json'), []);

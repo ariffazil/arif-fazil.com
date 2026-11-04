@@ -1,0 +1,62 @@
+# RELEASE EVIDENCE — Site Completion 2026-11-04 (FI-008, Kimi Code)
+# Spec:    docs/superpowers/specs/2026-11-04-site-completion-design.md (sovereign approved)
+# Plan:    docs/superpowers/plans/2026-11-04-site-completion.md (21 tasks)
+# Ledger:  .superpowers/sdd/2026-11-04-site-completion/progress.md
+# Receipt, not a kernel SEAL. PRODUCED ≠ SENT ≠ DELIVERED ≠ OBSERVED — all four states below.
+
+meta:
+  date: 2026-11-04
+  executor: FI-008 (Kimi Code, native inline execution)
+  branch: site-completion-2026-11-04
+  base: 8d3bce9 (main)
+  commits: a660f22 20aec18 bb47948 04002e4 274a1d8 aa997d3 f7feb69 3742b16 2348e5d 828dac1 93a1b5d 0540523 03fa9fe 1015b13 693df1b c3d9f87 a73a4c9
+  sovereign_decisions:
+    - "PRIMER-1 canon wins (design fork) — session 2026-11-04"
+    - "D1 granted: Caddy exception, 4 redir /federation lines + 1 reload (executed, evidence below)"
+    - "D2 granted: approval = file-authority lease for generated public/** shells"
+
+observed_state:  # live probes, this session
+  verify_pages: "279 PASS (9 intentional exclusions) — make verify-pages, live base"
+  mobile_sweep_before: "103 URLs → 11 BAD (list: /tmp/mobile_sweep_bad.json, 2026-11-04)"
+  mobile_sweep_after: "105 URLs → 2 flagged: /geox/ 41px (DEFERRED — geox.arif-fazil.com organ app, outside repo; ruling T4) + /economics 36px (CF edge cache of pre-fix HTML; verified overflow=0 cache-busted; CDN max-age 3600 self-expires)"
+  browser_dom_live:
+    - "/ → Portal Kedaulatan hero + ARIF FAZIL + DITEMPA ✓ overflow 0"
+    - "/world/makcikgpt/ → DOSSIER TERKINI + Ketuk Pintu ✓ overflow 0"
+    - "/federation → Federation Observatory + AMANAH + F13 SOVEREIGN + honest note ✓ overflow 0 (static canon floors from /floors.json)"
+    - "/world/makcikgpt/siapa-akan-ketuk-pintu/ → 8842 content chars pre-JS ✓ overflow 0"
+    - "/world/petronas/ → Dossier Realiti ✓ overflow 0 (phantom-200 closed)"
+  caddy_exception_d1:
+    backup: /etc/caddy/vhosts/arif-fazil.com.conf.bak-20261104-federation-d1
+    diff: "exactly 4 deletions (lines 494,496,1926,1928 redir /federation→/doctrine), 0 insertions"
+    validate: "caddy validate → Valid configuration"
+    reload: "1× systemctl reload caddy (the only reload this effort)"
+    probes: "/federation 200 ✓ /federation/ 200 ✓ /constellation 308→/words/doctrine/ (unchanged) ✓ /doctrine 308 (unchanged) ✓ /ejt 404 (catchall healthy) ✓ / 200 ✓"
+
+f2_truth_measures:  # mock content removed, real data bound
+  portal_kedaulatan: "portrait localized to /images/portal-portrait.jpg (was googleusercontent hotlink); 34 material-icon names → unicode glyphs (no icon-font dep)"
+  makcikgpt_archive: "Stitch mock dossier (fake 42,000 MT / −6,216 MT / fake date) STRIPPED — rewritten props-bound to real articles; static band pulls claim_register[0] (OBS/DER tag) + source_ledger count from makcikPieces"
+  federation_observatory: "fake telemetry (99.2%, 4.8 GB/s, 41°C, invented TX log, fictional floor names) STRIPPED — floors fetched live from canonical /floors.json (RATIFIED_F13); unreachable-canon fallback asserts nothing"
+  content_shells: "renderContentFirstShell refuses empty bodies; 47 article shells carry real TS-source bodies"
+
+gates:
+  build: "npm run build exit 0 (prebuild incl. verify-design-canon + design-lint + 10 generators)"
+  tests: "node --test: content-shell 4/4, primer-shells 3/3, stitch-canon 6/6, makcik-source 10/10; suite 43/47 (4 pre-existing at base, named in ledger)"
+  deploy: "cp-only additive per docs/agentic-web/route-root-map.md; no rsync, no --delete, no sync-serving-roots, no Caddy reload in deploy"
+
+upgrade_plan_closure:
+  P0_zombie_world_petronas: "real content-first shell (693df1b) — closed"
+  P1_content_first_shells: "site-wide audit: 0 empty SPA shells remain in audited families; 47 article shells + 2 fills + terminals verified content-first — closed"
+  P2_shared_tokens: "canon tokens.css already single-source; vitals 'inline tokens' ruled Tailwind preflight internals (not drift); webroot .bak: 10,326 files / 756MB archived to /root/_archive/webroot-baks-20261104/ — closed"
+  P3_cron: "weekly-site-check.sh (verify-pages + mobile sweep → 1 line to /root/work/tasks.json), crontab 17 4 * * 1 — installed; first honest run FAIL pre-deploy, will PASS post-cache-expiry — closed"
+
+deferred:
+  - "/geox/ 41px mobile overflow — geox.arif-fazil.com organ app (separate vhost/repo); GEOX lane"
+  - "CF cache purge — env token lacks purge scope (auth error, evidenced); HTML self-expires ≤1h; purge request recorded for sovereign"
+  - "4 pre-existing test failures (caddy-source stale snapshot, observatory, vitals-parity, wealth latest.json) — predate branch, named in ledger"
+
+rollback:
+  repo: "git revert range a660f22..a73a4c9 on main"
+  caddy: "cp /etc/caddy/vhosts/arif-fazil.com.conf.bak-20261104-federation-d1 → conf + reload"
+  webroot: "prior state recoverable from /root/_archive/webroot-baks-20261104/ + git dist history"
+
+witness: "DITEMPA BUKAN DIBERI — evidence only, no self-SEAL (F13: author ≠ judge)"

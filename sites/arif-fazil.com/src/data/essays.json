@@ -5953,8 +5953,47 @@
     },
     "seal": "999",
     "provenance_status": "sealed",
-    "claim_register": [],
-    "source_ledger": [],
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Kira-kira 1 dalam 3 perempuan di seluruh dunia mengalami keganasan fizikal dan/atau seksual dalam hayat mereka.",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "WHO, Violence Against Women (fact sheet + laporan 2021). Disemak dengan sumber primer WHO pada 5 Nov 2026.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Maruah diekstrak sedikit-sedikit melalui penipuan (kepercayaan), seksaan senyap (menunggu, penghinaan kecil tanpa saksi), dan pencabulan badan/kepercayaan/nama — corak arketaip, bukan tuntutan tentang individu tertentu.",
+        "tag": "INT",
+        "confidence_basis": "Pemerhatian arketaip MakcikGPT; tiada individu, syarikat, atau lokasi dinamakan.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C003",
+        "text": "Jaga yang hanya muncul dalam kecemasan berfungsi sebagai kawalan, bukan teman — kerana pertolongan memberi kuasa kepada penyelamat manakala kehadiran tanpa krisis menghilangkannya.",
+        "tag": "INT",
+        "confidence_basis": "Interpretasi struktur hubungan; tiada nombor dituntut.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C004",
+        "text": "Semua watak dalam artikel (kakak dua syif, budak sembilan tahun, jiran, orang yang berjalan dalam hujan) ialah arketaip yang didasarkan pada situasi hidup biasa — bukan laporan tentang orang sebenar.",
+        "tag": "OBS",
+        "confidence_basis": "Deklarasi provenance artikel sendiri.",
+        "maruah_review": "not_applicable"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-001",
+        "type": "document",
+        "title": "WHO — Violence Against Women (fact sheet; anggaran 2021)",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/violence-against-women",
+        "retrieved_at": "2026-11-05T00:00:00Z",
+        "content_hash": "sha256:not-retrieved"
+      }
+    ],
     "counter_evidence": [],
     "version_lineage": {
       "version": "1.0",

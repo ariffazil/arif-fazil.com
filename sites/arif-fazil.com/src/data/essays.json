@@ -5928,6 +5928,41 @@
     ]
   },
   {
+    "id": "m-gen-harga-sebuah-maruah-manusia",
+    "title": "Harga Sebuah Maruah Manusia",
+    "date": "2026-11-05",
+    "lang": "bm",
+    "series": {
+      "id": "M1",
+      "n": 10
+    },
+    "tags": [
+      "maruah",
+      "manusia",
+      "dignity",
+      "kemanusiaan",
+      "hujan",
+      "serpihan",
+      "kata-lawan-tindakan",
+      "makcikgpt",
+      "malaysia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/harga-sebuah-maruah-manusia"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [],
+    "source_ledger": [],
+    "counter_evidence": [],
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-11-05",
+      "last_updated": "2026-11-05"
+    }
+  },
+  {
     "id": "m-gen-siapa-akan-ketuk-pintu",
     "title": "Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?",
     "date": "2026-11-02",

@@ -49,7 +49,9 @@ import dna2010RamalanDatang from './dna-2010-ramalan-datang';
 import anakJantanPunyaTanah from './anak-jantan-punya-tanah';
 import hukumKeretaSentuhanTakDinamai from './hukum-kereta-sentuhan-tak-dinamai';
 import siapaAkanKetukPintu from './siapa-akan-ketuk-pintu';
+import hargaSebuahMaruahManusia from './harga-sebuah-maruah-manusia';
 export const makcikArticleModules: ArticleContent[] = [
+  hargaSebuahMaruahManusia,
   siapaAkanKetukPintu,
   hukumKeretaSentuhanTakDinamai,
   anakJantanPunyaTanah,
@@ -101,6 +103,19 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'harga-sebuah-maruah-manusia',
+    title: 'Harga Sebuah Maruah Manusia',
+    subtitle: 'Pasal orang yang ditipu, diseksa senyap-senyap, dan dibuat rasa bersyukur dengan serpihan — dan hari dia berjalan dalam hujan seorang diri, dan itu kemenangan.',
+    date: '2026-11-05',
+    domain: 'MAKCIKGPT × MANUSIA × MARUAH × KEMANUSIAAN',
+    language: 'ms',
+    excerpt: 'Maruah takde harga sebab ia tak boleh dijual — tapi ada harga untuk mengambilnya, dan yang bayar ialah orang yang kena ambil. Makcik huraikan tiga cara maruah diambil (ditipu, diseksa senyap-senyap, diperkosa atas badan, kepercayaan dan nama), vault yang simpan maruah orang lain supaya kita tak boleh pergi, ekonomi serpihan yang buat kita bersyukur dengan sisa, ekonomi jaga yang kira kata lawan tindakan, jiran yang panggil penindasan tu "biasa", dan hari orang tu berjalan dalam hujan seorang diri — yang bukan gambar sedih, tapi gambar kemenangan.',
+    tags: ['maruah', 'manusia', 'dignity', 'kemanusiaan', 'hujan', 'serpihan', 'kata-lawan-tindakan', 'makcikgpt', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-11-05', last_updated: '2026-11-05' },
+  },
   {
     slug: 'siapa-akan-ketuk-pintu',
     title: 'Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?',

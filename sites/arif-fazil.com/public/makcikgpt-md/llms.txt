@@ -11,7 +11,7 @@
   - HYPOTHESIS: Analytical model or open question for public scrutiny.
   - UNKNOWN: Material information unverified or absent from public record.
 - Seal 999 Meaning: Records authorship, Merkle content integrity, and revision lineage in VAULT999. It does NOT constitute independent judicial certification of empirical claims.
-- Corpus Statistics: 49 canonical articles. Latest update: 2026-11-04.
+- Corpus Statistics: 50 canonical articles. Latest update: 2026-11-05.
 
 ## Discovery Endpoints
 - Canonical Web Landing: https://arif-fazil.com/world/makcikgpt/
@@ -19,7 +19,8 @@
 - RSS Syndication: https://arif-fazil.com/feed.xml
 - Root AI Map: https://arif-fazil.com/llms.txt
 
-## Canonical Articles (49)
+## Canonical Articles (50)
+- [Harga Sebuah Maruah Manusia](https://arif-fazil.com/world/makcikgpt/harga-sebuah-maruah-manusia) (2026-11-05 · Series M1)
 - [Hang Dah Mengadu Dekat AI. Tapi Siapa Akan Ketuk Pintu?](https://arif-fazil.com/world/makcikgpt/siapa-akan-ketuk-pintu) (2026-11-02 · Series M1)
 - [Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur](https://arif-fazil.com/world/makcikgpt/anak-jantan-punya-tanah) (2026-10-27 · Series DOSSIER)
 - [Gentari: Dossier Realiti — Apa Dia, Siapa Punya, Berapa Besar](https://arif-fazil.com/world/makcikgpt/gentari-dossier) (2026-10-19 · Series M6)

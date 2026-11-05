@@ -90,6 +90,16 @@
           "owner": "makcikgpt-bot-mirror",
           "strategy": "preserve-live",
           "note": "Bot-lane md/html mirror (vhost @mk_article_bot root). NOT in dist layout — created by 2026-10-27/28 split-root migration. Wiped by rsync --delete 2026-11-02 deploy (restored same day). Must survive deploys."
+        },
+        {
+          "path": "aaa/claims.json",
+          "owner": "compile_truth_contract (AAA truth compiler)",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "aaa/truth-contract.json",
+          "owner": "compile_truth_contract (AAA truth compiler)",
+          "strategy": "preserve-live"
         }
       ],
       "aliases": [

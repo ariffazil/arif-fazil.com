@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { PageMeta } from '@/components/PageMeta'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
 import { discoveries } from '@/data/discoveries'
@@ -9,6 +10,10 @@ import { agenticMirrors } from '@/components/ArrowNavbar'
  * Layer 1 (Human Truth): one hero sentence + four plain doors — no telemetry.
  * Layer 3 (Agent Truth): quiet mirror row at the bottom only.
  * FQ / floors / vault hashes live on /arifos/ — not on the human front page.
+ * Design lineage compiled 2026-11-08: chrono-bio clock era (bio estimate — dropped,
+ * F2-risky) → GitHub-offer era (single action — kept as one-CTA law) → human-language
+ * era (plain copy — kept) → Portal Kedaulatan (machine telemetry — rejected) →
+ * current (sentence hero + doors + honest local-time clock, the only "live" element).
  */
 
 const doors = [
@@ -38,6 +43,29 @@ const doors = [
   },
 ]
 
+function LiveClock() {
+  const [now, setNow] = useState(() => new Date())
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000)
+    return () => clearInterval(id)
+  }, [])
+  const time = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Kuala_Lumpur',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).format(now)
+  return (
+    <span
+      className="font-mono text-xs tracking-widest text-ink-soft tabular-nums whitespace-nowrap"
+      title="Local time — Kuala Lumpur (MYT, UTC+8)"
+    >
+      KUALA LUMPUR&thinsp;·&thinsp;{time}&thinsp;MYT
+    </span>
+  )
+}
+
 export function Home() {
   return (
     <div className="min-h-screen bg-paper text-ink">
@@ -51,7 +79,7 @@ export function Home() {
       <section className="border-b border-strata-700">
         <div className="mx-auto max-w-[1360px] px-6 pt-20 pb-16 md:pt-28 md:pb-24">
           <RevealOnScroll>
-            <div className="flex items-center gap-5 mb-10">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-10">
               <svg
                 viewBox="0 0 64 64"
                 className="w-14 h-14 md:w-16 md:h-16 shrink-0 text-ink"
@@ -70,7 +98,10 @@ export function Home() {
                 <circle cx="32" cy="44" r="2.5" className="fill-gold" />
               </svg>
               <div className="font-mono text-xs uppercase tracking-widest text-ink-soft leading-relaxed">
-                Muhammad Arif bin Fazil · Exploration Geoscientist · Kuala Lumpur
+                Arif Fazil · Exploration Geoscientist · Kuala Lumpur
+              </div>
+              <div className="ml-auto">
+                <LiveClock />
               </div>
             </div>
           </RevealOnScroll>

@@ -123,7 +123,7 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
     },
     claim_register: [
       { claim_id: 'C001', text: 'Kasih ibu bapa yang bersyarat (conditional regard) berkait dengan harga diri bersyarat dan tekanan psikologi pada anak.', tag: 'OBS', source_id: 'SRC-001', confidence_basis: 'Meta-analysis Haines & Schutte 2022 (Journal of Adolescence); Assor, Roth & Deci 2004 (Journal of Personality). Dirujuk kualitatif.' },
-      { claim_id: 'C002', text: 'Tiga generasi (perigi → prestasi → invoice) ialah gambaran sosial-sastera, bukan dapatan bancian.', tag: 'HYPOTHESIS', source_id: 'SRC-002', confidence_basis: 'Rangka retorik sastera; dinyatakan jelas dalam nota semakan artikel.' },
+      { claim_id: 'C002', text: 'Tiga generasi (perigi → prestasi → invoice) ialah gambaran sosial-sastera, bukan dapatan bancian.', tag: 'SPEC', source_id: 'SRC-002', confidence_basis: 'Rangka retorik sastera; dinyatakan jelas dalam nota semakan artikel.' },
     ],
     source_ledger: [
       { source_id: 'SRC-001', type: 'document', title: 'Assor, Roth & Deci (2004) — The emotional costs of parents’ conditional regard. Journal of Personality 72(1):47-88', url: 'https://doi.org/10.1111/j.0022-3506.2004.00256.x', retrieved_at: '2026-11-08T00:00:00Z', content_hash: 'sha256:primary-verified-2026-11-08' },

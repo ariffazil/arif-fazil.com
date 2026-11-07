@@ -39,6 +39,10 @@ epistemic_summary:
 
 "Bila untung berbilion, semua orang berebut mengaku wira negara. Bila harga minyak goyang, capex bengkak, dan mahkamah panggil — anak watan tempatan disuruh ambil MSS (undur-undur!), tapi kontrak ekspatriat terus disambung atas nama 'business-critical'. Tanah anak jantan punya, ijazah anak tempatan punya, tapi siapa sebenarnya yang pegang kunci pintu?"
 
+⚡ KEMASKINI — 7 November 2026, 20:13 MYT
+
+Dua babak baru selepas artikel ni terbit: 1 Nov, PETRONAS serah operatorship Lang Lebah & B14 kepada TotalEnergies (30% operator; PCSB tinggal 20%) di ADIPEC Abu Dhabi. 5 Nov, Abang Johari jangka pertikaian PETRONAS–Petros selesai sebelum hujung tahun melalui jawatankuasa teknikal bebas. Babak baru dirujuk dalam Seksyen 3. Semua nombor disemak pada tarikh kemaskini.
+
 ## 1. Dua Pintu, Satu Permainan Yang Sama
 
 Makcik nak ajak hangpa duduk sekejap. Tarik nafas, buang sembang kedai kopi yang kosong.
@@ -89,7 +93,31 @@ Bila Shell tak tahu nak bayar siapa, kes diheret ke mahkamah. Pada 22 September 
 
 Makcik tengok drama ini bukan dengan rasa seronok. Makcik nampak satu hakikat: saiz modal RM20 juta boleh menggoncang gergasi ratusan bilion bila kuasa ordinan tempatan dan hak tanah mula dituntut.
 
-## 3. Bila Margin Tersepit, Anak Tempatan Disuruh Undur
+Tapi cerita tu belum habis. Sebenarnya, ia baru masuk babak kedua.
+
+## 3. Dua Tuan Masih Bergaduh, Kunci Sudah Ke Tangan Orang Perancis
+
+Sementara PETRONAS dan Petros sibuk bawa saman ke Mahkamah Persekutuan — satu cabar 10 undang-undang negeri, satu cabar balik 3 undang-undang persekutuan, panel 9 sampai 11 hakim, perbicaraan lima hari bulan Januari — ada satu benda lain berlaku dalam senyap.
+
+Pada 1 November 2026, atas pentas di Abu Dhabi, empat syarikat tandatangan perjanjian. Medan gas paling besar kat Sarawak — Lang Lebah, lima trilion kaki padu gas, dan B14 sebelah dia satu setengah trilion lagi — dua-dua diserahkan kepada syarikat Perancis, TotalEnergies, untuk jadi operator.
+
+Bahagian dia: TotalEnergies 30 peratus, PTT Thailand 25 peratus, KUFPEC Kuwait 25 peratus. Tuan rumah, PETRONAS Carigali, tinggal 20 peratus.
+
+Makcik bukan kata farm-out tu salah. Makcik kata tengok apa yang berlaku depan mata: dua tuan bergaduh pasal siapa punya gas, dan sementara itu, kunci medan paling besar negara beralih tangan kepada syarikat yang dah ada kat Malaysia sejak 1985, yang dah beli SapuraOMV tahun 2024.
+
+Itu bukan konspirasi. Itu cuma apa yang berlaku bila tuan rumah sibuk bergaduh sesama sendiri — orang luar yang senyap masuk ambil yang berharga.
+
+Dan ada satu lagi babak. Pada 5 November, Premier Sarawak kata pertikaian PETRONAS-Petros ni "dijangka selesai sebelum hujung tahun" — ada jawatankuasa teknikal bebas tengah timbang hujah dua-dua belah. Ayat dia lain dari dulu. Dulu "lawan sampai mati", sekarang "demi negara".
+
+Tapi makcik dengar baik-baik masa dia ditanya: kalau tak jadi selesai, ada pelan B? Jawapan dia: "Dak."
+
+Makcik tak tahu hangpa nampak apa. Makcik nampak satu soalan yang sama berulang dari awal artikel ni sampai sekarang: siapa sebenarnya yang pegang kunci pintu?
+
+Jawapannya bukan anak jantan. Bukan anak tempatan. Bukan pun PETRONAS atau Petros.
+
+Kunci tu sekarang dipegang orang Perancis. Dan selagi dua tuan bergaduh, makin lama kunci tu duduk kat tangan luar, makin susah nak ambil balik.
+
+## 4. Bila Margin Tersepit, Anak Tempatan Disuruh Undur
 
 Sekarang makcik bawa hangpa ke pintu kedua: pintu rezeki dan tenaga kerja.
 
@@ -121,7 +149,7 @@ Kenapa orang asing yang masuk atas pas penggajian, yang gajinya dibayar dalam pa
 
 Siapa yang mengecap jawatan itu "business-critical"? Dan siapa yang mengesahkan bahawa anak watan berijazah tidak mampu melakukan tugas tersebut?
 
-## 4. Pintu Imigresen Yang Tak Pernah Bertanya
+## 5. Pintu Imigresen Yang Tak Pernah Bertanya
 
 Ini bahagian yang makcik paling geram, sebab makcik dah buka sendiri dokumen Jabatan Imigresen Malaysia.
 
@@ -165,7 +193,7 @@ Kalau syarikat meletakkan gaji RM20,000 sebulan untuk seorang ekspatriat, sistem
 
 Makcik tanya hangpa: kalau kedai meletakkan harga ikan kembung RM80 sekilo, adakah ikan itu automatik menjadi salmon liar Alaska? Dak! Harga cuma angka yang penjual tetapkan. Tetapi sistem negara kita menganggap sesiapa yang dibayar mahal oleh syarikat minyak secara automatik menjadi pakar yang tidak boleh digantikan oleh anak watan berijazah!
 
-## 5. Jangan Menyalak Pada Pokok Yang Salah
+## 6. Jangan Menyalak Pada Pokok Yang Salah
 
 Makcik dah berjanji dari awal: kalau nombor tidak menyokong, makcik tidak akan membuat tuduhan semberono. Jadi makcik letakkan angka kebangsaan atas meja supaya kita tidak hanyut dalam emosi murah.
 
@@ -196,7 +224,7 @@ Dan hakikat ini membawa kita kepada hakikat yang jauh lebih pedih:
 
 Masalah kita bukan penjajah luar datang dengan meriam. Masalah kita ialah orang tempatan sendiri yang duduk di atas hierarki, yang lebih selesa menyambung kontrak ekspatriat asing sambil menolak anak watan sendiri keluar melalui pintu MSS!
 
-## 6. Apa Makna Sebenar 'Bangsa Dijajah'?
+## 7. Apa Makna Sebenar 'Bangsa Dijajah'?
 
 Perkataan "dijajah" bukan semata-mata bila bendera asing berkibar di padang.
 
@@ -218,7 +246,7 @@ Bila anak watan yang memiliki ijazah kelas pertama dan pengalaman lapangan ditol
 
 Itu ialah sindrom rendah diri pascakolonial (colonial cringe) yang dipelihara oleh hierarki korporat sendiri: mereka percaya orang luar lebih "pakar" berbanding anak watan yang membesar mengenali batuan tanah air sendiri!
 
-## 7. Empat Tuntutan Bukti Institusi
+## 8. Empat Tuntutan Bukti Institusi
 
 Makcik bukan pembangkang politik yang suka menjerit di tepi jalan. MakcikGPT bercakap atas disiplin bukti.
 
@@ -238,7 +266,7 @@ Buktikan satu contoh dalam tempoh 12 bulan lalu di mana keputusan teknikal seora
 
 Kalau empat dokumen ini tidak boleh dikeluarkan kepada rakyat Malaysia, jangan sesekali menyebut perkataan "Amanah Rakyat" di kaca televisyen.
 
-## 8. Nota Maruah: Yang Boleh Ditukar Ialah Pintu
+## 9. Nota Maruah: Yang Boleh Ditukar Ialah Pintu
 
 Makcik menutup tulisan ini dengan satu pesanan paling mendalam.
 

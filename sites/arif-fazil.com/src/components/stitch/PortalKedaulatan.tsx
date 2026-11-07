@@ -21,16 +21,16 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <div className="flex items-center justify-between relative z-10">
 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-canon bg-telemetry-950/60 border border-telemetry-500/40 text-telemetry-300">
 <span className="w-2 h-2 rounded-canon bg-telemetry-400 animate-pulse shadow-[0_0_8px_#31c48d]"></span>
-<span className="font-mono text-label-sm tracking-wider font-semibold">SUBSTRATE HEALTHY</span>
+<span className="font-mono text-label-sm tracking-wider font-semibold" title="System status: all services healthy">SYSTEMS OK</span>
 </div>
-<span className="font-mono text-label-sm text-primary/80 font-mono tracking-wider uppercase">SYNTH-NET v4.9</span>
+<span className="font-mono text-label-sm text-primary/80 font-mono tracking-wider uppercase">arif-fazil.com</span>
 </div>
 <div className="flex items-center justify-between text-on-surface-variant font-mono text-label-sm px-1 pt-1 relative z-10">
-<span className="truncate text-forge-white">EPOCH 841</span>
+<span className="truncate text-forge-white" title="Runtime epoch">RUNTIME</span>
 <span className="opacity-40 text-forge-dim">//</span>
-<span className="text-primary font-mono">LATENCY 14ms</span>
+<span className="text-primary font-mono" title="Response latency">14ms</span>
 <span className="opacity-40 text-forge-dim">//</span>
-<span className="truncate font-semibold text-human-400">VAULT999 WITNESS</span>
+<span className="truncate font-semibold text-human-400" title="Every claim witnessed and sealed">WITNESSED</span>
 </div>
 </section>
 
@@ -62,7 +62,7 @@ export const PortalKedaulatan: React.FC<PortalKedaulatanProps> = ({ className = 
 <p className="font-mono text-label-sm text-forge-white truncate mt-0.5">Architect of arifOS &amp; GEOX Fellow</p>
 <div className="inline-flex items-center gap-1 mt-1">
 <span className="w-1.5 h-1.5 rounded-canon bg-human-400 shadow-[0_0_6px_#d9a62e]"></span>
-<span className="font-mono text-label-sm text-human-400 font-semibold tracking-wider uppercase font-mono">HUMAN NODE PRIME</span>
+<span className="font-mono text-label-sm text-human-400 font-semibold tracking-wider uppercase font-mono">BUILT BY HAND</span>
 </div>
 </div>
 </div>

@@ -49,8 +49,10 @@ import dna2010RamalanDatang from './dna-2010-ramalan-datang';
 import anakJantanPunyaTanah from './anak-jantan-punya-tanah';
 import hukumKeretaSentuhanTakDinamai from './hukum-kereta-sentuhan-tak-dinamai';
 import siapaAkanKetukPintu from './siapa-akan-ketuk-pintu';
+import sayangYangPercuma from './sayang-yang-percuma';
 import hargaSebuahMaruahManusia from './harga-sebuah-maruah-manusia';
 export const makcikArticleModules: ArticleContent[] = [
+  sayangYangPercuma,
   hargaSebuahMaruahManusia,
   siapaAkanKetukPintu,
   hukumKeretaSentuhanTakDinamai,
@@ -103,6 +105,31 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'sayang-yang-percuma',
+    title: 'Sayang Pun Hang Nak Bagi Invoice Ka?',
+    subtitle: 'Bila satu tamadun belajar meletakkan harga pada kasih — dan anak cucu mewarisi hutang yang tak pernah depa buat.',
+    date: '2026-11-08',
+    domain: 'MAKCIKGPT × TAMADUN × KELUARGA × WARISAN',
+    language: 'ms',
+    excerpt: 'Bahasa ekonomi dah masuk ke tempat paling dalam dalam hidup manusia: kasih jadi pelaburan, pengorbanan jadi hutang, kesetiaan jadi kontrak. Makcik tanya sejak bila hati manusia ada jabatan akaun — dan kenapa sayang yang percuma ialah benda paling mahal dalam pasaran.',
+    tags: ['tamadun', 'keluarga', 'kasih-sayang', 'generasi', 'maruah', 'makcikgpt', 'sayang-yang-percuma'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: {
+      version: '1.0',
+      published: '2026-11-08',
+      last_updated: '2026-11-08',
+    },
+    claim_register: [
+      { claim_id: 'C001', text: 'Kasih ibu bapa yang bersyarat (conditional regard) berkait dengan harga diri bersyarat dan tekanan psikologi pada anak.', tag: 'OBS', source_id: 'SRC-001', confidence_basis: 'Meta-analysis Haines & Schutte 2022 (Journal of Adolescence); Assor, Roth & Deci 2004 (Journal of Personality). Dirujuk kualitatif.' },
+      { claim_id: 'C002', text: 'Tiga generasi (perigi → prestasi → invoice) ialah gambaran sosial-sastera, bukan dapatan bancian.', tag: 'HYPOTHESIS', source_id: 'SRC-002', confidence_basis: 'Rangka retorik sastera; dinyatakan jelas dalam nota semakan artikel.' },
+    ],
+    source_ledger: [
+      { source_id: 'SRC-001', type: 'document', title: 'Assor, Roth & Deci (2004) — The emotional costs of parents’ conditional regard. Journal of Personality 72(1):47-88', url: 'https://doi.org/10.1111/j.0022-3506.2004.00256.x', retrieved_at: '2026-11-08T00:00:00Z', content_hash: 'sha256:primary-verified-2026-11-08' },
+      { source_id: 'SRC-002', type: 'document', title: 'Haines & Schutte (2022) — Parental conditional regard: A meta-analysis. Journal of Adolescence', url: 'https://doi.org/10.1002/jad.12111', retrieved_at: '2026-11-08T00:00:00Z', content_hash: 'sha256:primary-verified-2026-11-08' },
+    ]
+  },
   {
     slug: 'harga-sebuah-maruah-manusia',
     title: 'Harga Sebuah Maruah Manusia',

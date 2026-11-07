@@ -6139,5 +6139,60 @@
       "published": "2026-11-02",
       "last_updated": "2026-11-02"
     }
+  },
+  {
+    "id": "m-gen-sayang-yang-percuma",
+    "title": "Sayang Pun Hang Nak Bagi Invoice Ka?",
+    "date": "2026-11-08",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 12
+    },
+    "tags": [
+      "tamadun",
+      "keluarga",
+      "kasih-sayang",
+      "generasi",
+      "maruah",
+      "makcikgpt",
+      "sayang-yang-percuma"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/sayang-yang-percuma"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Kasih ibu bapa yang bersyarat (conditional regard) berkait dengan harga diri bersyarat dan tekanan psikologi pada anak.",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "Meta-analysis Haines & Schutte 2022 (Journal of Adolescence); Assor, Roth & Deci 2004 (Journal of Personality). Dirujuk kualitatif dalam artikel."
+      },
+      {
+        "claim_id": "C002",
+        "text": "Tiga generasi (perigi → prestasi → invoice) ialah gambaran sosial-sastera, bukan dapatan bancian.",
+        "tag": "HYPOTHESIS",
+        "source_id": "SRC-002",
+        "confidence_basis": "Rangka retorik sastera; dinyatakan jelas dalam nota semakan artikel."
+      }
+    ],
+    "sources": [
+      {
+        "id": "SRC-001",
+        "label": "Assor, Roth & Deci (2004) J Pers 72(1):47-88 — conditional parental regard",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14686884/",
+        "tier": 2
+      },
+      {
+        "id": "SRC-002",
+        "label": "Haines & Schutte (2022) Parental conditional regard: A meta-analysis, J Adolescence",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36345118/",
+        "tier": 2
+      }
+    ]
   }
 ]

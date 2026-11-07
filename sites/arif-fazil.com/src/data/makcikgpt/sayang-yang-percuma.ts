@@ -1,0 +1,134 @@
+export default {
+  slug: 'sayang-yang-percuma',
+  html: `
+<article>
+<p class="article-kicker">Series GENESIS · Tamadun, Manusia & Warisan Generasi</p>
+<h1>SAYANG PUN HANG NAK BAGI INVOICE KA?</h1>
+<p class="article-subtitle">Bila satu tamadun belajar meletakkan harga pada kasih — dan anak cucu mewarisi hutang yang tak pernah depa buat.</p>
+<p class="article-byline">Oleh MakcikGPT — Cerita Untuk Jiran-Jiran</p>
+
+<h2>Makcik Nak Tanya Satu Benda.</h2>
+<p>Hang pernah tengok air perigi?</p>
+<p>Dulu orang kampung ambil air dari perigi. Cedok satu timba, bagi jiran. Jiran tak payah bayar. Bukan sebab air tu tak berharga. Sebab semua orang tahu — esok kalau perigi rumah sendiri kering, kita pun mungkin kena menumpang.</p>
+<p>Tapi jangan salah faham. Bukan semua kampung dulu bahagia. Ada keluarga yang keras, ada jiran yang mengumpat, ada anak yang membesar tanpa dipeluk.</p>
+<p>Makcik bukan nak jual nostalgia.</p>
+<p>Makcik nak cerita pasal satu benda yang dulu kita cuba jaga, dan sekarang kita makin pandai lupa.</p>
+<p><strong>Sayang yang tak perlu dibeli dengan pencapaian.</strong></p>
+<p>Hari ni, cuba hang dengar bahasa yang keluar dari rumah, pejabat, dan keluarga.</p>
+<p>"Aku dah banyak berkorban untuk hang."<br>
+"Hang tak ingat jasa aku ka?"<br>
+"Aku buat semua ni, apa aku dapat?"<br>
+"Kalau hang betul-betul sayang, hang patut..."</p>
+<p>Hang nampak tak?</p>
+<p>Bahasa ekonomi dah masuk ke tempat yang paling dalam dalam hidup manusia.</p>
+<p>Kasih jadi pelaburan. Pengorbanan jadi hutang. Kesetiaan jadi kontrak.</p>
+<p>Dan manusia yang sepatutnya disayangi sebab dia manusia, kena membuktikan dulu yang dia berbaloi.</p>
+<blockquote>Makcik tanya: sejak bila hati manusia ada jabatan akaun?</blockquote>
+
+<h2>Tiga Generasi, Satu Perubahan Besar</h2>
+<p>Makcik nak cerita tiga zaman.</p>
+<p>Bukan semua keluarga melalui sejarah yang sama. Ini tiga gambaran tentang bagaimana cara kita bekerja, hidup dan menilai manusia boleh mengubah cara kita menyayangi.</p>
+
+<h3>1. Zaman Atuk Nenek — Perigi dan Jiran</h3>
+<p>Dulu ramai manusia hidup dengan jaringan keluarga dan kejiranan yang rapat.</p>
+<p>Kalau kenduri, satu lorong tolong masak. Kalau orang sakit, jiran datang tengok. Kalau budak jatuh depan rumah, makcik sebelah pun boleh tolong bangunkan.</p>
+<p>Bukan semuanya percuma. Orang tetap mengharapkan pertolongan berbalas. Ada juga hutang budi yang membebankan.</p>
+<p>Tapi dalam kehidupan bersama tu, wujud satu pelajaran penting:</p>
+<p>Manusia tak boleh hidup dengan duit semata-mata. Dia perlukan orang lain yang tetap nampak dia sebagai manusia.</p>
+<p>Kemudian dunia berubah.</p>
+
+<h3>2. Zaman Mak Bapa — Gaji dan Prestasi</h3>
+<p>Anak kampung masuk bandar. Masuk kilang. Masuk universiti. Masuk pejabat berhawa dingin.</p>
+<p>Dunia kerja ajar manusia satu bahasa baru. KPI. Performance. Bonus. Promotion.</p>
+<p>Baguslah, Makcik tak kata salah. Kerja memang perlu dinilai. Orang yang buat kerja patut dibayar. Kontrak melindungi hak.</p>
+<p>Tapi ada satu bahaya apabila bahasa kerja dibawa balik ke meja makan tanpa kita sedar.</p>
+<p>Anak dapat nombor satu — bangga. Anak gagal peperiksaan — malu. Anak jadi doktor — cerita satu kampung. Anak masih mencari jalan hidup — tiba-tiba banyak soalan.</p>
+<p>Bukan semua mak bapa begitu. Ramai yang menyayangi anak dalam susah dan senang.</p>
+<p>Tapi apabila penghargaan hanya datang bersama kejayaan, seorang anak boleh belajar satu hukum yang menyedihkan:</p>
+<blockquote>"Kalau aku tak berjaya, aku tak cukup layak untuk disayang."</blockquote>
+<p>Hang tengok. Pejabat cuma nak ukur prestasi pekerja. Tapi rumah mungkin mula mengukur nilai manusia. Dua benda yang tak sama.</p>
+
+<h3>3. Zaman Kita — Semua Benda Ada Invoice</h3>
+<p>Sekarang kita hidup dalam dunia yang serba boleh dikira. Berapa gaji? Berapa followers? Apa jawatan? Rumah berapa? Badan macam mana?</p>
+<p>Manusia makin pandai menjual kebolehan sendiri. Pandai membina jenama. Pandai berunding.</p>
+<p>Tapi ada antara kita yang kekok bila menerima kasih tanpa sebab.</p>
+<p>Orang puji, kita curiga. Orang bantu, kita rasa terhutang. Orang sayang, kita tertanya-tanya apa yang dia mahu.</p>
+<p>Bukan sebab semua orang begitu. Tapi bagi manusia yang terlalu lama merasa kasih bergantung pada prestasi, pemberian tanpa syarat boleh terasa asing.</p>
+<p>Itulah paradoks yang Makcik nampak.</p>
+
+<h2>Makcik Nak Cerita Pasal Kontrak Pula.</h2>
+<p>Hang jangan salah faham. Kontrak tu penting.</p>
+<p>Kalau majikan tak bayar gaji, kita perlukan kontrak. Kalau orang pinjam duit, kita perlukan perjanjian. Kalau pasangan buat keganasan, kita perlukan perlindungan dan sempadan.</p>
+<p>Makcik bukan suruh manusia jadi tempat orang pijak.</p>
+<p>Sayang tanpa syarat tak bermakna hubungan tanpa syarat. Hang boleh menyayangi seseorang dan tetap berkata tidak. Hang boleh mengakui nilai seorang manusia tanpa membenarkan dia menyakiti hang.</p>
+<p>Yang Makcik persoalkan bukan kontrak yang menjaga keadilan.</p>
+<p>Yang Makcik persoalkan ialah apabila manusia mula percaya semua kasih mesti diperoleh melalui transaksi.</p>
+<p>Sampai anak kena berguna dulu baru berharga. Sampai orang tua rasa mereka cuma dihormati selagi ada harta. Sampai kawan lama rasa malu nak menelefon sebab tak ada apa-apa kejayaan nak diceritakan.</p>
+<blockquote>Kita cipta kontrak untuk mengurangkan risiko. Tapi kalau semua hubungan hanya bergantung pada pengiraan untung rugi, siapa yang akan duduk di sisi kita bila kita dah tak mampu memberikan apa-apa?</blockquote>
+
+<h2>Bayang Yang Kita Tak Mahu Mengaku</h2>
+<p>Makcik pernah baca pasal konsep <em>shadow</em> dalam pemikiran Carl Jung.</p>
+<p>Bahasa mudahnya, manusia kadang-kadang menyorok bahagian diri yang dia tak sanggup pandang. Makcik guna idea ni sebagai cermin, bukan diagnosis psikologi satu negara.</p>
+<p>Bayang tamadun yang Makcik nak tanya ialah ini:</p>
+<p>Kita mahu disayangi tanpa perlu membuktikan apa-apa. Tapi kita sendiri takut memberi kasih kalau tak ada jaminan akan dibalas.</p>
+<p>Maka kita cari pengganti rasa selamat. Beli hadiah. Kejar pangkat. Kumpul pengiktirafan. Bina imej bahawa hidup kita sempurna.</p>
+<p>Semua tu boleh ada nilainya. Makcik tak kata kejayaan atau harta itu salah.</p>
+<p>Tapi jangan sampai kita guna semua tu sebagai pengganti satu perkara yang tak boleh dibeli: rasa bahawa kita diterima sebagai manusia.</p>
+<p>Sebab manusia boleh ada rumah besar, tetapi tak ada tempat untuk menangis. Boleh ada ribuan pengikut, tetapi tak ada seorang yang dia berani telefon ketika gagal. Boleh duduk satu meja makan, tetapi semua orang takut bercakap benar.</p>
+<p>Yang miskin itu bukan semestinya poket. Kadang-kadang hubungan manusia.</p>
+
+<h2>Anak Cucu Kita Akan Waris Apa?</h2>
+<p>Ni bahagian yang Makcik nak hang fikir betul-betul.</p>
+<p>Bila sebuah keluarga mengajar anak bahawa kasih bergantung pada kejayaan, pelajaran itu mungkin dibawa ke generasi berikutnya.</p>
+<p>Anak yang selalu takut mengecewakan orang lain mungkin membesar dengan rasa dia perlu sentiasa membuktikan nilai diri. Bila dia jadi ibu atau ayah, dia mungkin mengulangi cara yang sama — walaupun dia berniat memberikan kehidupan lebih baik.</p>
+<p>Begitulah sesuatu corak boleh diwariskan. Bukan melalui darah semata-mata. Melalui bahasa. Melalui kebiasaan. Melalui cara kita memberi perhatian. Melalui apa yang kita puji dan apa yang kita hina.</p>
+<p>Tapi pewarisan tu bukan takdir. Manusia boleh belajar semula.</p>
+<p>Sekarang bayangkan dua kemungkinan.</p>
+<p>Tamadun pertama mengajar anak: "Berjaya dulu. Baru orang hormat. Berguna dulu. Baru orang sayang." Anak belajar berlari. Bila sampai garisan penamat, dia nampak satu lagi garisan. Dan satu lagi.</p>
+<p>Tamadun kedua mengajar anak: "Hang tetap berharga walaupun gagal. Tapi hang tetap bertanggungjawab atas apa yang hang buat." Anak tetap belajar bekerja kuat. Tetap belajar menghormati manusia. Tetap belajar menerima akibat. Cuma dia tak perlu mempertaruhkan nilai dirinya setiap kali dia buat silap.</p>
+<p>Makcik nak tanya: antara dua tamadun ni, yang mana satu kita nak tinggalkan kepada cucu cicit?</p>
+<p>Sebab kemajuan bukan sekadar berapa tinggi bangunan yang anak cucu waris. Kemajuan juga tentang berapa banyak ketakutan yang mereka tak perlu warisi.</p>
+
+<h2>Satu Hari Nanti, Bila Hang Dah Tak Berguna Pada Dunia...</h2>
+<p>Makcik nak tanya satu soalan terakhir.</p>
+<p>Satu hari nanti, mungkin hang dah tak bekerja. Dah tak ada jawatan. Dah tak kuat macam dulu. Dah tak ada apa-apa untuk dibuktikan kepada sesiapa.</p>
+<p>Siapa akan duduk sebelah hang?</p>
+<p>Bukan sebab duit hang. Bukan sebab nama hang. Bukan sebab hang boleh tolong dia naik pangkat. Tapi sebab hang ada.</p>
+<p>Kalau ada orang begitu dalam hidup hang, jangan ambil mudah.</p>
+<p>Dan kalau hang mampu menjadi orang begitu untuk seseorang — tanpa mengorbankan keselamatan dan maruah sendiri — hang sedang memberikan sesuatu yang lebih besar daripada hadiah. Hang sedang mengubah satu corak pewarisan.</p>
+<p>Mungkin anak hang akan ingat. Mungkin cucu hang akan belajar. Mungkin seorang manusia yang pernah menerima kasih tanpa perlu membelinya akan berani memberikan kasih yang sama.</p>
+<p>Makcik tak boleh janji satu perbuatan akan mengubah tamadun. Tapi Makcik tahu satu benda.</p>
+<p>Tamadun bukan cuma dibina oleh undang-undang, syarikat dan bangunan. Tamadun juga dibina oleh apa yang manusia ulang setiap hari di rumah.</p>
+
+<h2>Penutup — Air Perigi Tu Masih Ada</h2>
+<p>Makcik nak bagitau satu benda sebelum habis.</p>
+<p>Makcik ni keturunan keluarga <strong>Che Sayang</strong>. Orang Penang. Rumah Makcik, sayang tu kata ja — apa nak kata. Che Sayang makan. Che Sayang dah solat ke belum. Che Sayang, makcik dah bagi duit, jangan sambung beli. Keluar macam salam, tak dihitung. Makcik tak pernah dengar keluarga Makcik tanya "hang sayang aku berapa percent" — kalau ada yang tanya macam tu, kena bemban dah.</p>
+<p>Jadi bila Makcik tengok orang bandar — duduk condo tinggi-tinggi, tingkap tutup, jiran sebelah tak kenal nama, satu bangunan 300 orang senyap macam perpustakaan — Makcik cakap jujur dari mata makcik kampung: tu bukan cerdik. Tu <strong>BANGANG yang mahal</strong>. Bayar ratusan sebulan untuk duduk berjiran dengan orang yang kita tak pernah sayang. Kampung, jiran pinjam gula, balas dengan ikan kering — dan bila orang demam, satu lorong datang tengok. Itu kekayaan yang tak masuk bank.</p>
+<p>Makcik tak suruh hang balik hidup zaman dulu. Makcik tak suruh buang duit, kerja, kontrak atau cita-cita.</p>
+<p>Makcik cuma nak hang ingat bahawa ada benda yang patut kita urus dengan akaun. Dan ada benda yang rosak bila semuanya dijadikan akaun.</p>
+<p>Hari ni, cuba satu perkara.</p>
+<p>Tanya khabar seseorang tanpa meminta apa-apa. Dengar anak bercakap walaupun cerita dia tak hebat. Hargai orang tua walaupun dia dah tak mampu membantu. Beritahu seseorang bahawa kegagalan dia tak menghapuskan nilai dirinya.</p>
+<p>Dan bila hang sendiri gagal, jangan terus hukum diri sebagai manusia yang tak berharga.</p>
+<p>Sayang yang percuma bukan bermaksud tiada usaha, tiada tanggungjawab atau tiada batas. Ia bermaksud <strong>nilai manusia tak perlu dibeli</strong>.</p>
+<p>Makcik nak tutup dengan satu soalan.</p>
+<p>Kalau anak cucu kita mewarisi semua kemajuan dunia, tetapi tak pernah merasa diri mereka cukup berharga untuk disayangi — kita sebenarnya dah majukan tamadun, atau cuma besarkan pasar?</p>
+<p>Air perigi tu masih ada, hang.</p>
+<p>Jangan sampai kita ajar anak cucu jual air yang depa patut belajar berkongsi.</p>
+<p class="footer-sig">— MakcikGPT<br>Ditempa bukan diberi. Tetapi kasih bukan upah untuk manusia yang berjaya.</p>
+
+<h2>Ayat Untuk Jiran-Jiran Kongsi</h2>
+<blockquote>"Kita bina tamadun yang pandai meletakkan harga pada segala-galanya. Tapi jangan sampai anak cucu kita terpaksa membeli kasih yang sepatutnya mereka terima sebagai manusia."</blockquote>
+<blockquote>"Tamadun yang maju bukan sekadar meninggalkan harta kepada anak cucu. Ia juga mengurangkan ketakutan yang anak cucu terpaksa warisi."</blockquote>
+
+<div class="fact-box">
+<p><strong>Nota Semakan &amp; Pembetulan MakcikGPT</strong></p>
+<p><strong>Asas kajian:</strong> Penyelidikan tentang <em>parental conditional regard</em> menyokong kaitan antara kasih ibu bapa yang bergantung pada pematuhan anak dengan harga diri bersyarat dan tekanan psikologi. Rujukan: Assor, Roth &amp; Deci (2004), Journal of Personality 72(1):47-88; Haines &amp; Schutte (2022, meta-analysis, Journal of Adolescence). Disemak penyunting pada tarikh terbit — kedua-dua wujud dan sepadan.</p>
+<p><strong>Tafsiran, bukan fakta sejarah:</strong> Tiga generasi dalam artikel ialah gambaran sosial dan sastera, bukan dapatan bancian Malaysia. Tidak semua keluarga kampung penuh kasih, tidak semua keluarga bandar bersyarat.</p>
+<p><strong>Konsep Jung:</strong> Bayang digunakan sebagai metafora renungan masyarakat, bukan diagnosis klinikal.</p>
+<p><strong>Lensa generasi:</strong> Gambaran masa depan anak cucu ialah kemungkinan, bukan ramalan pasti.</p>
+<p><strong>Privasi:</strong> Tiada identiti, kisah peribadi, lokasi khusus atau pengalaman individu yang menjadi asas artikel ini. Nama keluarga "Che Sayang" adalah panggilan budaya Penang umum, bukan rujukan individu.</p>
+<p><strong>Status:</strong> Diterbit selepas kelulusan F13 · November 2026.</p>
+</div>
+</article>
+`
+};

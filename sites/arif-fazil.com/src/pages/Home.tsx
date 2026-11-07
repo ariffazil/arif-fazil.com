@@ -51,12 +51,24 @@ export function Home() {
       <section className="border-b border-strata-700">
         <div className="mx-auto max-w-[1360px] px-6 pt-20 pb-16 md:pt-28 md:pb-24">
           <RevealOnScroll>
-            <div className="flex items-center gap-4 mb-10">
-              <img
-                src="/images/portal-portrait.jpg"
-                alt="Portrait of Arif Fazil"
-                className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover ring-1 ring-strata-700"
-              />
+            <div className="flex items-center gap-5 mb-10">
+              <svg
+                viewBox="0 0 64 64"
+                className="w-14 h-14 md:w-16 md:h-16 shrink-0 text-ink"
+                role="img"
+                aria-label="Emblem — forged triangle within a witness ring"
+              >
+                <circle
+                  cx="32" cy="32" r="29"
+                  fill="none" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1" strokeDasharray="2 4"
+                />
+                <path
+                  d="M32 14 L49 44 L15 44 Z"
+                  fill="none" className="stroke-gold" strokeWidth="1.5" strokeLinejoin="round"
+                />
+                <line x1="32" y1="22" x2="32" y2="44" stroke="currentColor" strokeOpacity="0.8" strokeWidth="1.25" />
+                <circle cx="32" cy="44" r="2.5" className="fill-gold" />
+              </svg>
               <div className="font-mono text-xs uppercase tracking-widest text-ink-soft leading-relaxed">
                 Muhammad Arif bin Fazil · Exploration Geoscientist · Kuala Lumpur
               </div>

@@ -3,22 +3,22 @@
   "version": "1.2.0",
   "organ": "WEALTH",
   "territory": "world",
-  "timestamp": "2026-11-04T19:17:01Z",
+  "timestamp": "2026-11-06T19:17:01Z",
   "status": "LIVE_ORGAN_SYNC_PENDING_SEAL",
   "authority": "555_COMPUTE_ONLY",
   "epistemic_grade": "F2_LAYERED",
   "section_grades": {
-    "macro_thermodynamics": "ORGAN_LIVE_RECEIPTED (WEALTH commodity engines + daily snapshot, 2026-11-04T19:17:01Z)",
+    "macro_thermodynamics": "ORGAN_LIVE_RECEIPTED (WEALTH commodity engines + daily snapshot, 2026-11-06T19:17:01Z)",
     "consequence_gaps": "STATIC_ANALYSIS_OBSERVED (no organ receipt; statutory basis cited in text)",
     "glic_patronage_nexus": "STATIC_ANALYSIS_UNVERIFIED (public filings; awaiting primary-source refresh)"
   },
   "macro_thermodynamics": {
-    "brent_crude_usd": 94.75,
-    "usd_myr": 4.075,
-    "dxy": 101.58,
-    "vix": 16.93,
-    "us10y_yield_pct": 4.888,
-    "silver_usd": 52.32,
+    "brent_crude_usd": 98.06,
+    "usd_myr": 4.044,
+    "dxy": 102.26,
+    "vix": 24.36,
+    "us10y_yield_pct": 4.851,
+    "silver_usd": 52.15,
     "klci_rsi_14d": 42.56,
     "gdp_growth_pct": 5.17,
     "inflation_pct": 1.38,
@@ -26,9 +26,9 @@
     "monetary_stance": "Neutral / Accommodative",
     "reserve_adequacy_months": 5.4,
     "external_debt_to_gdp_pct": 64.2,
-    "gold_xau_usd": 4056.44,
-    "henry_hub_gas_usd": 2.96,
-    "fbm_klci": 1619.51
+    "gold_xau_usd": 4061.96,
+    "henry_hub_gas_usd": 3.0,
+    "fbm_klci": 1616.56
   },
   "consequence_gaps": {
     "subsidy_rationalization": {
@@ -142,7 +142,7 @@
     "cross_witness": "SINGLE_SOURCE (wealth_core.commodity_engines, LIVE feed) — second independent source required before any seal",
     "seal_status": "PENDING — cryptographic seal requires Lane A key (888 sovereign). Integrity meanwhile: sha256 of this file published in /world/ footer; mismatch = tampered.",
     "actor": "WEALTH markets/build_markets_surface.py (session SEAL-8fa3c44343b14bde)",
-    "last_synced_at": "2026-11-04T19:17:01Z",
+    "last_synced_at": "2026-11-06T19:17:01Z",
     "producer_organ": "WEALTH",
     "producer_endpoint": "https://wealth.arif-fazil.com/api/markets/registry",
     "authority_ceiling": "555_COMPUTE_ONLY",
@@ -153,9 +153,9 @@
   "markets_registry_url": "https://wealth.arif-fazil.com/api/markets/registry",
   "observations": {
     "brent_crude_usd": {
-      "value": 94.75,
+      "value": 98.06,
       "unit": "USD/bbl",
-      "observed_at": "2026-11-04T19:17:03.462Z",
+      "observed_at": "2026-11-06T19:17:03.094Z",
       "source": "WEALTH Oil Commodity Engine (:3457, yfinance Brent)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -163,9 +163,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "gold_xau_usd": {
-      "value": 4056.44,
+      "value": 4061.96,
       "unit": "USD/oz",
-      "observed_at": "2026-11-04T19:08:24.530Z",
+      "observed_at": "2026-11-06T19:13:37.340Z",
       "source": "WEALTH Gold Commodity Engine (:3456, yfinance XAUUSD)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -173,9 +173,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "henry_hub_gas_usd": {
-      "value": 2.96,
+      "value": 3.0,
       "unit": "USD/MMBtu",
-      "observed_at": "2026-11-04T19:17:04.733Z",
+      "observed_at": "2026-11-06T19:17:04.353Z",
       "source": "WEALTH Natural Gas Commodity Engine (:3458, yfinance Henry Hub)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -183,9 +183,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "fbm_klci": {
-      "value": 1619.51,
+      "value": 1616.56,
       "unit": "index pts",
-      "observed_at": "2026-11-03T23:00:30.065516+00:00",
+      "observed_at": "2026-11-05T23:00:06.979799+00:00",
       "source": "arifOS WEALTH daily snapshot (yfinance ^KLSE)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -193,9 +193,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "usd_myr": {
-      "value": 4.075,
+      "value": 4.044,
       "unit": "MYR/USD",
-      "observed_at": "2026-11-03T23:00:30.065516+00:00",
+      "observed_at": "2026-11-05T23:00:06.979799+00:00",
       "source": "arifOS WEALTH daily snapshot (yfinance MYR=X)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -203,9 +203,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "dxy": {
-      "value": 101.58,
+      "value": 102.26,
       "unit": "index pts",
-      "observed_at": "2026-11-04T19:17:03.462Z",
+      "observed_at": "2026-11-06T19:17:03.094Z",
       "source": "WEALTH commodity engine macro feed (yfinance DX-Y.NYB)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -213,9 +213,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "vix": {
-      "value": 16.93,
+      "value": 24.36,
       "unit": "index pts",
-      "observed_at": "2026-11-04T19:17:03.462Z",
+      "observed_at": "2026-11-06T19:17:03.094Z",
       "source": "WEALTH commodity engine macro feed (yfinance ^VIX)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -223,9 +223,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "us10y_yield_pct": {
-      "value": 4.888,
+      "value": 4.851,
       "unit": "%",
-      "observed_at": "2026-11-04T19:17:03.462Z",
+      "observed_at": "2026-11-06T19:17:03.094Z",
       "source": "WEALTH commodity engine macro feed (yfinance ^TNX)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",
@@ -233,9 +233,9 @@
       "authority": "555_COMPUTE_ONLY"
     },
     "silver_usd": {
-      "value": 52.32,
+      "value": 52.15,
       "unit": "USD/oz",
-      "observed_at": "2026-11-04T19:17:03.462Z",
+      "observed_at": "2026-11-06T19:17:03.094Z",
       "source": "WEALTH commodity engine macro feed (yfinance SI=F)",
       "epistemic_class": "OBS",
       "freshness": "FRESH",

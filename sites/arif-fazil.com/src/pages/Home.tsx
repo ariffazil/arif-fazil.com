@@ -1,37 +1,130 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '@/components/PageMeta'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
-import { ZenPulse } from '@/components/ZenPulse'
-import { PortalKedaulatan } from '@/components/stitch'
 import { discoveries } from '@/data/discoveries'
 import { agenticMirrors } from '@/components/ArrowNavbar'
 
 /**
- * Home — Federated Agentic Web Environment Root.
- *
- * Layer 0 (Substrate): Live Chrono-Epigenetic Clock (DunedinPACE rate of aging).
- * Layer 1 (Cognitive Orchestrator): AAA 333-AGI · 555-ASI · 888-APEX.
- * Layer 2 (Organs): EARTH, WORDS, WORLD, 000, 999, HERMES.
+ * Home — human-clarity-first landing (constitution: RULE 1, F13 2026-11-07).
+ * Layer 1 (Human Truth): one hero sentence + four plain doors — no telemetry.
+ * Layer 3 (Agent Truth): quiet mirror row at the bottom only.
+ * FQ / floors / vault hashes live on /arifos/ — not on the human front page.
  */
+
+const doors = [
+  {
+    name: 'GEOX — The Earth',
+    href: 'https://geox.arif-fazil.com',
+    external: true,
+    line: 'Seismic lines, basins and wells — the subsurface, read honestly.',
+  },
+  {
+    name: 'MakcikGPT — The Voice',
+    href: '/world/makcikgpt/',
+    external: false,
+    line: 'Civic writing in plain Malay. She speaks for no institution.',
+  },
+  {
+    name: 'arifOS — The Machine',
+    href: '/arifos/',
+    external: false,
+    line: 'An AI that refuses to invent: evidence first, or it says UNKNOWN.',
+  },
+  {
+    name: 'Words — The Hand',
+    href: '/words',
+    external: false,
+    line: 'Essays and biography, written by hand.',
+  },
+]
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-[#07090E] text-[#EDEAE2]">
+    <div className="min-h-screen bg-paper text-ink">
       <PageMeta
         title="Arif Fazil — Exploration Geoscientist & Sovereign Systems"
         description="I turn uncertain Earth data into defensible decisions — and build AI systems that stay bounded by evidence and human authority."
         path="/"
       />
-      {/* ── ZEN PULSE — orientation in 3 seconds ──────────────────────── */}
-      <ZenPulse
-        whereAmI="Kuala Lumpur"
-        whyCare="Exploration geoscientist. I read incomplete ground and refuse fake certainty."
-        whatNext="Earth, research, writing, or a briefing."
-      />
 
-      {/* ── HERO — who, what, why + Dual Chrono-Epigenetic Clock ─────── */}
-      {/* Portal Kedaulatan hero — Stitch structure, PRIMER-1 skin (sovereign 2026-11-04) */}
-      <PortalKedaulatan />
+      {/* ── HERO — one loud element: the sentence ─────────────────────── */}
+      <section className="border-b border-strata-700">
+        <div className="mx-auto max-w-[1360px] px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+          <RevealOnScroll>
+            <div className="flex items-center gap-4 mb-10">
+              <img
+                src="/images/portal-portrait.jpg"
+                alt="Portrait of Arif Fazil"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover ring-1 ring-strata-700"
+              />
+              <div className="font-mono text-xs uppercase tracking-widest text-ink-soft leading-relaxed">
+                Muhammad Arif bin Fazil · Exploration Geoscientist · Kuala Lumpur
+              </div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={120}>
+            <h1 className="font-display normal-case font-normal tracking-[-0.01em] text-[clamp(2.5rem,5.6vw,4.6rem)] leading-[1.06] max-w-5xl">
+              I turn uncertain ground into <em>defensible</em> decisions.
+            </h1>
+            <p className="mt-7 max-w-2xl font-sans text-lg md:text-xl text-ink-soft leading-relaxed">
+              I read incomplete Earth data and refuse fake certainty — and I build AI systems that
+              stay bounded by evidence and human authority.
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll delay={240}>
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <Link
+                to="/work"
+                className="inline-flex items-center gap-2 bg-gold text-paper font-mono text-sm font-bold uppercase tracking-wider px-7 py-3.5 rounded-md hover:bg-human-300 transition-colors"
+              >
+                See the work <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                to="/doctrine"
+                className="font-mono text-sm text-ink-soft hover:text-ink uppercase tracking-wider transition-colors"
+              >
+                Read the doctrine →
+              </Link>
+            </div>
+            <p className="mt-14 font-display italic text-base text-ink-soft/70">
+              Ditempa bukan diberi — forged, not given.
+            </p>
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* ── FOUR DOORS — table of contents, hairlines, no chrome ──────── */}
+      <section className="border-b border-strata-700" id="doors">
+        <div className="mx-auto max-w-[1360px] px-6 py-14 md:py-16">
+          <RevealOnScroll>
+            <div className="font-mono text-xs uppercase tracking-widest text-ink-soft mb-4">
+              Four doors
+            </div>
+          </RevealOnScroll>
+          <nav aria-label="Site doors">
+            {doors.map((d, i) => (
+              <RevealOnScroll key={d.name} delay={i * 80}>
+                <a
+                  href={d.href}
+                  {...(d.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                  className="group grid grid-cols-1 md:grid-cols-[340px_1fr_auto] gap-x-8 gap-y-1 items-baseline py-6 md:py-7 border-t border-strata-700 last:border-b hover:bg-basalt-900/40 transition-colors px-2 -mx-2 rounded-sm"
+                >
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-ink group-hover:text-human-300 transition-colors">
+                    {d.name}
+                  </h3>
+                  <p className="font-sans text-base text-ink-soft leading-relaxed">{d.line}</p>
+                  <span
+                    aria-hidden="true"
+                    className="hidden md:inline text-ink-soft group-hover:text-ember group-hover:translate-x-0.5 transition-all"
+                  >
+                    ↗
+                  </span>
+                </a>
+              </RevealOnScroll>
+            ))}
+          </nav>
+        </div>
+      </section>
 
       <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0D14]" id="idea">
         <div className="mx-auto max-w-[1360px] px-6">
@@ -197,6 +290,16 @@ export function Home() {
               identified as published institutional material. No confidential subsurface or commercial information
               is presented. Ditempa bukan diberi — forged, not given.
             </p>
+          </div>
+
+          {/* Final button — same label, same destination as the hero (rulebook #12) */}
+          <div className="mt-10 flex justify-center">
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-wider text-gold hover:text-human-300 transition-colors"
+            >
+              See the work <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>

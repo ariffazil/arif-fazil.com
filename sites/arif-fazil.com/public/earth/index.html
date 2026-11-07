@@ -907,7 +907,7 @@
 <script type="module" src="/earth/_shared/timescale/glue.js"></script>
 
 <!-- ══ GLOBE ENGINE + ALL LIVE PIPES (unchanged — this is the living heart) ══ -->
-<script src="https://unpkg.com/globe.gl@2.46.1/dist/globe.gl.min.js"></script>
+<script src="/earth/_shared/globe.gl.min.js?v=20261108"></script>
 <script>
 (function(){
 "use strict";
@@ -1003,7 +1003,7 @@ let world=null;
 try{
   if(typeof Globe!=="function")throw new Error("globe.gl not loaded");
   world=Globe({rendererConfig:{antialias:true}})(el)
-    .globeImageUrl("https://unpkg.com/three-globe/example/img/earth-night.jpg")
+    .globeImageUrl("/earth/_shared/img/earth-night.jpg?v=20261108")
     .globeTileEngineUrl((x,y,z)=>TILE_GEO(x,y,z))
     .showAtmosphere(true).atmosphereColor("#00d4aa").atmosphereAltitude(0.16)
     .backgroundColor("#0a0a0f")
@@ -1275,17 +1275,17 @@ fetch("/earth/data/wells.json")
      if(w.lat!=null&&w.lng!=null)pos={lat:w.lat,lng:w.lng};
      else{
        const a=anchors[w.basin]||anchors["Malay Basin"]||{lat:4,lng:103.8};
-       pos=jittered(w.name,a,1.4);
+       pos=jittered(w.name,a,2.0);
      }
      pts.push(pos);
      wellLabels.push({lat:pos.lat,lng:pos.lng,
        text:w.name+(w.tier==="existence"?" ~":""),
        color:w.tier==="existence"?"rgba(0,212,170,0.95)":"#d4af37",
-       size:0.6,alt:0.01,dot:0.45,kind:"well",w});
+       size:0.5,alt:0.01,dot:0.45,kind:"well",w});
    });
    regions.forEach(rg=>{
-     wellLabels.push({lat:rg.lat,lng:rg.lng,text:"◇ "+rg.name,
-       color:"rgba(154,154,168,0.9)",size:0.55,alt:0.008,dot:0.3,kind:"region",rg});
+     wellLabels.push({lat:rg.lat,lng:rg.lng,text:"",
+       color:"rgba(154,154,168,0.9)",size:0.4,alt:0.008,dot:0.3,kind:"region",rg});
    });
    if(pts.length){
      wellCentroid={lat:pts.reduce((a,p)=>a+p.lat,0)/pts.length,lng:pts.reduce((a,p)=>a+p.lng,0)/pts.length};

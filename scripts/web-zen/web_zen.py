@@ -361,6 +361,14 @@ def cmd_verify(args: argparse.Namespace) -> Report:
                     haystack = body + "\n" + ab
                     spa_note = f" spa_bundle={m.group(1)} asset_bytes={len(ab)}"
         missing = [mk for mk in markers if mk.lower() not in haystack.lower()]
+        if missing:
+            # Marker may be split across markup (e.g. <h1>Work together,<br>inspect first.</h1>).
+            # Match against tag-stripped, whitespace-collapsed text before declaring it missing.
+            stripped = re.sub(r"<[^>]+>", " ", haystack)
+            plain = re.sub(r"\s+", " ", stripped).lower()
+            missing = [
+                mk for mk in missing if re.sub(r"\s+", " ", mk).lower() not in plain
+            ]
         # Soft-404 patterns
         soft = code == 200 and (
             "404 — Not Found" in body

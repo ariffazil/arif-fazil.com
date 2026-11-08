@@ -15,47 +15,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0a;color:#f0f0f0;font-family:'Inter',system-ui,sans-serif;line-height:1.55}
+body{background:#0a0b0d;color:#edeae2;font-family:'Inter',system-ui,sans-serif;line-height:1.55}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
 .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid #2a2a2a}
-.topbar .brand{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.14em;color:#9a9a9a}
-.topbar .brand b{color:#f0f0f0}
-.trio{display:inline-flex;gap:.3rem;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:#9a9a9a;text-transform:uppercase}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid #1f2733}
+.topbar .brand{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.14em;color:#9aa0a8}
+.topbar .brand b{color:#edeae2}
+.trio{display:inline-flex;gap:.3rem;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:#9aa0a8;text-transform:uppercase}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.d-r{background:#e0301e} .d-b{background:#1f3fd4} .d-y{background:#f2b705}
+
 .crumb{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:#666666;text-transform:uppercase;padding:1.1rem 0 .2rem}
-.crumb a{color:#9a9a9a} .crumb b{color:#f2b705}
+.crumb a{color:#9aa0a8} .crumb b{color:#C9A227}
 .hero{padding:3.5rem 0 2.5rem;max-width:820px}
 .hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:900;line-height:.98;letter-spacing:-.02em;text-transform:uppercase}
-.hero .sub{margin-top:1.1rem;font-size:.95rem;color:#9a9a9a;max-width:560px;line-height:1.6}
-.c-b{color:#1f3fd4} .c-r{color:#e0301e} .c-y{color:#f2b705}
+.hero .sub{margin-top:1.1rem;font-size:.95rem;color:#9aa0a8;max-width:560px;line-height:1.6}
+.c-g{color:#C9A227}
 .tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.3rem}
-.tags span{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid #2a2a2a;color:#9a9a9a;padding:.3rem .7rem;border-radius:999px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #2a2a2a;border-radius:10px;overflow:hidden;margin:1.5rem 0}
-.stats>div{padding:1rem 1.1rem;border-right:1px solid #2a2a2a;background:#111111}
+.tags span{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid #1f2733;color:#9aa0a8;padding:.3rem .7rem;border-radius:999px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #1f2733;border-radius:10px;overflow:hidden;margin:1.5rem 0}
+.stats>div{padding:1rem 1.1rem;border-right:1px solid #1f2733;background:#111111}
 .stats>div:last-child{border-right:0}
 .stats b{display:block;font-size:1.7rem;font-weight:900;line-height:1.1}
 .stats span{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#666666}
-.quote{border-left:3px solid #f2b705;background:#111111;padding:1.3rem 1.5rem;border-radius:0 10px 10px 0;margin:2rem 0;max-width:760px}
-.quote p{font-size:1.05rem;line-height:1.65;color:#f0f0f0}
+.quote{border-left:3px solid #C9A227;background:#111111;padding:1.3rem 1.5rem;border-radius:0 10px 10px 0;margin:2rem 0;max-width:760px}
+.quote p{font-size:1.05rem;line-height:1.65;color:#edeae2}
 .quote .who{margin-top:.6rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#666666}
-.section-h{display:flex;align-items:center;gap:.6rem;margin:2.6rem 0 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#9a9a9a}
-.section-h .dot{width:7px;height:7px}
+.section-h{display:flex;align-items:center;gap:.6rem;margin:2.6rem 0 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#9aa0a8}
+
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.card{border:1px solid #2a2a2a;background:#1a1a1a;border-radius:10px;padding:1.25rem 1.35rem;transition:border-color .15s}
+.card{border:1px solid #1f2733;background:#1a1a1a;border-radius:10px;padding:1.25rem 1.35rem;transition:border-color .15s}
 .card:hover{border-color:#666666}
 .card .k{display:flex;gap:.5rem;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#666666;margin-bottom:.5rem}
 .card h3{font-size:1.06rem;font-weight:800;line-height:1.3}
-.card p{margin-top:.45rem;font-size:.86rem;color:#9a9a9a}
-.card a.go{display:inline-block;margin-top:.7rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#f2b705}
+.card p{margin-top:.45rem;font-size:.86rem;color:#9aa0a8}
+.card a.go{display:inline-block;margin-top:.7rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#C9A227}
 .bignum{display:flex;gap:.9rem;align-items:flex-start}
 .bignum i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#666666;padding-top:.2rem}
-footer{margin-top:3.5rem;border-top:1px solid #2a2a2a;padding:1.4rem 0 2.5rem}
+footer{margin-top:3.5rem;border-top:1px solid #1f2733;padding:1.4rem 0 2.5rem}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#666666}
-.foot b{color:#9a9a9a}
-@media(max-width:720px){.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stats>div{border-bottom:1px solid #2a2a2a}}
+.foot b{color:#9aa0a8}
+@media(max-width:720px){.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stats>div{border-bottom:1px solid #1f2733}}
 </style>
 </head>
 <body>
@@ -63,97 +63,91 @@ footer{margin-top:3.5rem;border-top:1px solid #2a2a2a;padding:1.4rem 0 2.5rem}
   <link rel="stylesheet" href="/_shared/fed-nav.css">
   <div id="fed-nav-root"></div>
   <script src="/_shared/fed-nav.js" defer></script>
-  <div class="crumb"><a href="/">HOME</a> / <b>WORDS</b> · <b>WORDS</b></div>
+  <div class="crumb"><a href="/">HOME</a> / <b>WORDS</b></div>
 
   <section class="hero">
-    <h1>Tulis<br><span class="c-b">Jujur.</span><br><span class="c-r">Baca</span> <span class="c-y">Perlahan.</span></h1>
+    <h1>Tulis<br>Jujur.<br>Baca <span class="c-g">Perlahan.</span></h1>
     <p class="sub">Esei Bahasa Inggeris — geologi, risiko, kejujuran dalam AI, dan Loghat Utara.
       10 esei penuh, ditulis untuk dibaca, bukan untuk discan.</p>
     <div class="tags"><span>GEOLOGY</span><span>RISK</span><span>AI HONESTY</span><span>LOGHAT UTARA</span></div>
   </section>
   <div class="stats">
-    <div><b class="c-r">10</b><span>Esei</span></div>
-    <div><b class="c-b">49</b><span>Artikel BM</span></div>
-    <div><b class="c-y">∞</b><span>Baca Percuma</span></div>
-    <div><b class="c-r">EN</b><span>Bahasa</span></div>
+    <div><b>10</b><span>Esei</span></div>
+    <div><b>49</b><span>Artikel BM</span></div>
+    <div><b class="c-g">∞</b><span>Baca Percuma</span></div>
+    <div><b>EN</b><span>Bahasa</span></div>
   </div>
   <div class="quote">
     <p>"A well teaches you what a forecast cannot — that the ground does not negotiate."</p>
     <div class="who">— DARI ESEI · WHAT A WELL TEACHES YOU ABOUT RISK</div>
   </div>
-  <div class="section-h"><span class="dot" style="background:#e0301e"></span>TERBARU</div>
+  <div class="section-h">TERBARU<a href="/words/essays/" style="margin-left:auto;color:#C9A227">SEMUA ESEI →</a></div>
   <div class="cards">
     <div class="card">
-      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-07-04</div>
+      <div class="k">ESSAY · 2026-09-20</div>
+      <h3><a href="/writing/the-last-scarcity-witness-theory-of-human-want">The Last Scarcity: A Witness Theory of Human Want</a></h3>
+      
+      <a class="go" href="/writing/the-last-scarcity-witness-theory-of-human-want">Baca →</a>
+    </div>
+    <div class="card">
+      <div class="k">ESSAY · 2026-07-04</div>
       <h3><a href="/writing/agentic-intelligence-big-bang">Agentic Intelligence Big Bang: Why Naming Is the First Act of Creation</a></h3>
       
       <a class="go" href="/writing/agentic-intelligence-big-bang">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#e0301e"></span>ESSAY · 2026-07-03</div>
+      <div class="k">ESSAY · 2026-07-03</div>
       <h3><a href="/writing/tool-is-the-thought">The Tool Is the Thought</a></h3>
       
       <a class="go" href="/writing/tool-is-the-thought">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#f2b705"></span>ESSAY · 2026-07-03</div>
+      <div class="k">ESSAY · 2026-07-03</div>
       <h3><a href="/writing/survival-fittest-tools">Survival of the Fittest Tools</a></h3>
       
       <a class="go" href="/writing/survival-fittest-tools">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-07-03</div>
+      <div class="k">ESSAY · 2026-07-03</div>
       <h3><a href="/writing/three-timelines-one-boundary">Three Timelines, One Boundary</a></h3>
       
       <a class="go" href="/writing/three-timelines-one-boundary">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#e0301e"></span>ESSAY · 2026-07-04</div>
-      <h3><a href="/writing/agentic-intelligence-big-bang">Agentic Intelligence Big Bang</a></h3>
-      
-      <a class="go" href="/writing/agentic-intelligence-big-bang">Baca →</a>
-    </div>
-    <div class="card">
-      <div class="k"><span class="dot" style="background:#f2b705"></span>ESSAY · 2026-06-11</div>
+      <div class="k">ESSAY · 2026-06-11</div>
       <h3><a href="/writing/mind-is-not-model">The Mind Is Not The Model: A 6-Axis Constitutional Coordinate System</a></h3>
       
       <a class="go" href="/writing/mind-is-not-model">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-06-05</div>
+      <div class="k">ESSAY · 2026-06-05</div>
       <h3><a href="/writing/contrast-governed-anomaly-detection">Contrast-Governed Anomaly Detection (EUREKA I)</a></h3>
       
       <a class="go" href="/writing/contrast-governed-anomaly-detection">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#e0301e"></span>ESSAY · 2026-06-05</div>
+      <div class="k">ESSAY · 2026-06-05</div>
       <h3><a href="/writing/physics-constrained-attention">Physics-Constrained Attention: Zoeppritz as Constitutional Floor (EUREKA II)</a></h3>
       
       <a class="go" href="/writing/physics-constrained-attention">Baca →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot" style="background:#f2b705"></span>ESSAY · 2026-06-05</div>
+      <div class="k">ESSAY · 2026-06-05</div>
       <h3><a href="/writing/contrast-primitive-derivation">The Contrast Primitive Derivation — Completing the Trilogy (EUREKA III)</a></h3>
       
       <a class="go" href="/writing/contrast-primitive-derivation">Baca →</a>
     </div>
-    <div class="card">
-      <div class="k"><span class="dot" style="background:#1f3fd4"></span>ESSAY · 2026-09-20</div>
-      <h3><a href="/writing/the-last-scarcity-witness-theory-of-human-want">The Last Scarcity: A Witness Theory of Human Want</a></h3>
-      
-      <a class="go" href="/writing/the-last-scarcity-witness-theory-of-human-want">Baca →</a>
-    </div>
   </div>
-  <div class="section-h"><span class="dot" style="background:#1f3fd4"></span>JUGAK</div>
+  <div class="section-h">JUGAK</div>
   <div class="cards">
     <div class="card">
-      <div class="k"><span class="dot d-y"></span>MAKCIKGPT</div>
+      <div class="k">MAKCIKGPT</div>
       <h3><a href="/world/makcikgpt/">Makcik Tanya. Kuasa Jawab.</a></h3>
       <p>Kewartawanan sivik dalam Bahasa Makcik — 49 artikel.</p>
       <a class="go" href="/world/makcikgpt/">Lihat →</a>
     </div>
     <div class="card">
-      <div class="k"><span class="dot d-b"></span>RSS</div>
+      <div class="k">RSS</div>
       <h3><a href="/feed.xml">Feed penuh</a></h3>
       <p>Senarai mesin untuk semua tulisan.</p>
       <a class="go" href="/feed.xml">Feed →</a>
@@ -162,7 +156,7 @@ footer{margin-top:3.5rem;border-top:1px solid #2a2a2a;padding:1.4rem 0 2.5rem}
   <footer>
     <div class="foot">
       <span><b>WORDS</b> · ARIF-FAZIL.COM</span>
-      <span>● ● ● DITEMPA BUKAN DIBERI 🇲🇾</span>
+      <span>DITEMPA BUKAN DIBERI 🇲🇾</span>
     </div>
   </footer>
 </div>

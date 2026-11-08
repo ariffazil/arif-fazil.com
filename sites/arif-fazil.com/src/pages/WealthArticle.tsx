@@ -17,7 +17,7 @@ export function WealthArticle() {
   if (!article || !meta) {
     return (
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
         className="bg-forge-black min-h-screen"
       >
@@ -35,7 +35,7 @@ export function WealthArticle() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
       className="bg-forge-black min-h-screen"
     >

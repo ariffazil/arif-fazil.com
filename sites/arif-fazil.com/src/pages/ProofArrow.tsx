@@ -149,7 +149,7 @@ export function Proof() {
           Don't trust this site. Verify it.
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-6 max-w-[56ch] font-body text-[18px] leading-[1.65] text-[#9AA0A8]"

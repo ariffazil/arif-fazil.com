@@ -693,7 +693,7 @@ export function CommodityPage({ slug }: { slug: string }) {
     forecastLive?.forecast_status === 'LIVE' ? 'LIVE' : 'SHADOW';
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-[#0A0B0D] min-h-screen text-[#EDEAE2] font-sans selection:bg-[#E27D60] selection:text-[#0A0B0D] pb-20">
+    <motion.div initial={false} animate={{ opacity: 1 }} className="bg-[#0A0B0D] min-h-screen text-[#EDEAE2] font-sans selection:bg-[#E27D60] selection:text-[#0A0B0D] pb-20">
 
       {/* LOCAL MARKET NAV TICKER */}
       <div className="bg-[#0E1015] border-b border-[#222733] py-2.5 px-4 font-mono text-xs text-[#8E95A5] flex flex-wrap items-center justify-between gap-4">

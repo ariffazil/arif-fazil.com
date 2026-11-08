@@ -186,7 +186,7 @@ export function PoliticsHub() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
       className="bg-[#05070c] min-h-screen text-slate-100 font-sans"
     >

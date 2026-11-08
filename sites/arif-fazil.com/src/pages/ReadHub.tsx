@@ -211,7 +211,7 @@ export function ReadHub() {
   useWebMCP(readingTools);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+    <motion.div initial={false} animate={{ opacity: 1 }}
       className="bg-forge-black min-h-screen text-forge-white">
 
       {/* TOP BAR */}

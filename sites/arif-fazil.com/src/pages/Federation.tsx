@@ -56,7 +56,7 @@ export function Federation() {
   useEffect(() => { document.title = 'Federation — arifOS · AAA · MCP | Arif Fazil'; }, []);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
+    <motion.div initial={false} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
       <FederationObservatory />
       <section className="py-24 border-b-2 border-forge-iron bg-forge-steel">
         <div className="site-frame">

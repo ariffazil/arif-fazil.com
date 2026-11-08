@@ -179,7 +179,7 @@ export function ShadowBoard() {
   }, []);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
+    <motion.div initial={false} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
       {/* HERO */}
       <section className="py-20 border-b-2 border-forge-iron bg-forge-steel">
         <div className="site-frame">

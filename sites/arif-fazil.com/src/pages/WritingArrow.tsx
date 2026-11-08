@@ -149,7 +149,7 @@ export function Writing() {
         </h1>
         <motion.p
           className="mt-8 max-w-[62ch] font-body text-[19px] leading-[1.65] text-[#5C5546]"
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
@@ -158,7 +158,7 @@ export function Writing() {
         </motion.p>
         <motion.p
           className="eyebrow mt-8 text-[#5C5546]/70"
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
         >

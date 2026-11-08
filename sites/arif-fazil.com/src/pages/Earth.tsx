@@ -240,7 +240,7 @@ export function Earth() {
             placed — and what came back up.
           </motion.p>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
             className="mt-10 font-mono text-[13px] uppercase tracking-[0.04em] text-[#EDE6D6]/50"

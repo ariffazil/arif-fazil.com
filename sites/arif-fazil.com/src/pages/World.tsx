@@ -25,7 +25,7 @@ export function World() {
   useEffect(() => { document.title = 'World — MakcikGPT · Commodities | Arif Fazil'; }, []);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
+    <motion.div initial={false} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
       {/* ZEN PULSE — orientation in 3 seconds */}
       <ZenPulse
         whereAmI="arif-fazil.com · World"

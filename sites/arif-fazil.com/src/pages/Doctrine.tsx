@@ -94,7 +94,7 @@ export function Doctrine() {
           </h1>
           <motion.p
             className="mt-8 max-w-[58ch] font-body text-[20px] leading-[1.65] text-[#C8D8E8]"
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.6 }}
           >

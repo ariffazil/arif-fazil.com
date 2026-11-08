@@ -24,7 +24,7 @@ export function NSComparePage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
       className="bg-forge-black min-h-screen text-slate-100 font-sans selection:bg-amber-500 selection:text-black"
     >

@@ -167,7 +167,7 @@ export function DeritaMap() {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
+    <motion.div initial={false} animate={{ opacity: 1 }} className="bg-forge-black min-h-screen">
       {/* HERO — Framework Warning Banner */}
       <section className="bg-red-950/30 border-b-2 border-red-800/60">
         <div className="site-frame py-4">

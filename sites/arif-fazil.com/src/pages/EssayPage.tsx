@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+
 import { getEssay } from '@/data/essays/index';
 
 export function EssayPage() {
@@ -15,11 +15,7 @@ export function EssayPage() {
 
   if (!essay) {
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="bg-forge-black min-h-screen"
-      >
+      <div className="bg-forge-black min-h-screen">
         <section className="py-24">
           <div className="site-frame text-center">
             <h1 className="text-4xl font-black uppercase mb-4">Essay Not Found</h1>
@@ -28,16 +24,12 @@ export function EssayPage() {
             </Link>
           </div>
         </section>
-      </motion.div>
+      </div>
     );
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="bg-forge-black min-h-screen"
-    >
+    <div className="bg-forge-black min-h-screen">
       {/* Header */}
       <section className="py-16 border-b-2 border-forge-iron bg-forge-steel">
         <div className="site-frame">
@@ -115,7 +107,7 @@ export function EssayPage() {
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   );
 }
 

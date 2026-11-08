@@ -17,7 +17,7 @@ const RealityReceiptPage = lazy(() => import('@/pages/RealityReceiptPage').then(
 const MakcikGptArticle = lazy(() => import('@/pages/MakcikGptArticle').then(m => ({ default: m.MakcikGptArticle })));
 const World = lazy(() => import('@/pages/WorldArrow').then(m => ({ default: m.World })));
 const CommodityPage = lazy(() => import('@/pages/CommodityPage').then(m => ({ default: m.CommodityPage })));
-const Words = lazy(() => import('@/pages/Words').then(m => ({ default: m.Words })));
+
 const WordsEssays = lazy(() => import('@/pages/WordsEssays').then(m => ({ default: m.WordsEssays })));
 const WordsWiki = lazy(() => import('@/pages/WordsWiki').then(m => ({ default: m.WordsWiki })));
 const WordsMakcikgpt = lazy(() => import('@/pages/WordsMakcikgpt').then(m => ({ default: m.WordsMakcikgpt })));
@@ -165,8 +165,6 @@ export function App() {
             <Route path="/malaysia/" element={<Navigate to="/wealth/malaysia/" replace />} />
 
             {/* 4. /words — Hub + Essays + Wiki + MakcikGPT (column) */}
-            <Route path="/words" element={<Words />} />
-            <Route path="/words/" element={<Words />} />
             {/* Peer subpages (must come BEFORE the /:slug catch-all) */}
             <Route path="/words/essays" element={<WordsEssays />} />
             <Route path="/words/essays/" element={<WordsEssays />} />

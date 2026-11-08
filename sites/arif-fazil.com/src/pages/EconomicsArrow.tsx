@@ -12,6 +12,9 @@ import {
 
 const GREEN = '#1E6F50'
 const BRASS = '#B08D3E'
+// Display tint — #1E6F50 measures 3.13:1 on paper #0A0B0D (large-text only; the small
+// eyebrow fails AA 4.5:1). #4FA97E measures ~6.9:1 — AA for all sizes, still ledger green.
+const LEDGER_DISPLAY = '#4FA97E'
 
 /* ── Ticking ledger tally: approximate barrels consumed globally today [DER] ── */
 function LedgerTally() {
@@ -95,57 +98,39 @@ const ESSAYS = [
 
 export function Economics() {
   const heroRef = useRef<HTMLDivElement>(null)
-  const heroInView = useInView(heroRef, { once: true })
   const tableRef = useRef<HTMLDivElement>(null)
   const tableInView = useInView(tableRef, { once: true, margin: '-20% 0px' })
   const essaysRef = useRef<HTMLDivElement>(null)
   const essaysInView = useInView(essaysRef, { once: true, margin: '-20% 0px' })
+  // IO-never-fires fallback (RevealOnScroll pattern): content must never stay invisible.
+  const [forceIn, setForceIn] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setForceIn(true), 1200)
+    return () => clearTimeout(t)
+  }, [])
+  const tableIn = tableInView || forceIn
+  const essaysIn = essaysInView || forceIn
 
   return (
     <div className="bg-[#0A0B0D] text-ink">
       {/* ── 01 HERO ── */}
       <section ref={heroRef} className="relative flex min-h-[70dvh] items-center overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-x-0 top-1/2 h-[40%] -translate-y-1/2 opacity-[0.18]"
+          className="pointer-events-none absolute inset-x-0 top-[30%] h-[36%] -translate-y-1/2 opacity-[0.14]"
           style={{ backgroundImage: 'url(/ledger-texture.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-24 text-center">
-          <p className="eyebrow" style={{ color: GREEN }}>
+          <p className="eyebrow" style={{ color: LEDGER_DISPLAY }}>
             03 ————— ECONOMICS
           </p>
-          <h1
-            className="mx-auto mt-6 max-w-[16ch] font-display text-[48px] leading-[0.98] tracking-[-0.02em] md:text-[88px]"
-            style={{ color: GREEN }}
-          >
-            {'Everything is an incentive.'.split(' ').map((word, i) => (
-              <motion.span
-                key={i}
-                className="inline-block"
-                initial={{ y: 40, opacity: 0 }}
-                animate={heroInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ delay: i * 0.09, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              >
-                {word}
-                {i < 3 ? '\u00A0' : ''}
-              </motion.span>
-            ))}
+          <h1 className="mx-auto mt-6 max-w-[16ch] font-display text-[48px] leading-[0.98] tracking-[-0.02em] md:text-[88px]" style={{ color: LEDGER_DISPLAY }}>
+            Everything is an incentive.
           </h1>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={heroInView ? { scaleX: 1 } : {}}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="mx-auto mt-8 h-px max-w-[420px] origin-left"
-            style={{ backgroundColor: BRASS }}
-          />
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="mx-auto mt-8 max-w-[56ch] font-body text-[20px] leading-[1.65] text-ink-soft"
-          >
+          <div className="mx-auto mt-8 h-px max-w-[420px]" style={{ backgroundColor: BRASS }} />
+          <p className="mx-auto mt-8 max-w-[56ch] font-body text-[20px] leading-[1.65] text-ink-soft">
             My second degree, and my second lens. Economics is how I price risk — in barrels, in
-            policies, and in machine decisions. From Bursa Malaysia's FBM KLCI to Brent crude, every price is a signal.
-          </motion.p>
+            policies, and in machine decisions. From Bursa Malaysia&apos;s FBM KLCI to Brent crude, every price is a signal.
+          </p>
           <LedgerTally />
         </div>
       </section>
@@ -166,7 +151,7 @@ export function Economics() {
                       >
                         {lens.n}
                       </span>
-                      <span className="font-display text-3xl tracking-[-0.02em] md:text-4xl" style={{ color: GREEN }}>
+                      <span className="font-display text-3xl tracking-[-0.02em] md:text-4xl" style={{ color: LEDGER_DISPLAY }}>
                         {lens.title}
                       </span>
                     </span>
@@ -202,14 +187,14 @@ export function Economics() {
               <motion.div
                 key={f.claim}
                 initial={{ opacity: 0, x: 60 }}
-                animate={tableInView ? { opacity: 1, x: 0 } : {}}
+                animate={tableIn ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="grid gap-3 border-b border-ink/10 px-2 py-6 last:border-b-0 md:grid-cols-[1.6fr_1fr_auto] md:items-center md:gap-8 min-w-0 overflow-hidden"
               >
                 <p className="font-body text-[18px] leading-[1.55] text-ink">{f.claim}</p>
                 <p
                   className="text-right font-mono text-[17px] tabular-nums tracking-[0.02em] md:text-left"
-                  style={{ color: f.tag === 'SPEC' ? BRASS : GREEN }}
+                  style={{ color: f.tag === 'SPEC' ? BRASS : LEDGER_DISPLAY }}
                 >
                   {f.figure}
                   {f.note && (
@@ -218,7 +203,7 @@ export function Economics() {
                 </p>
                 <motion.span
                   initial={{ scale: 0.7, opacity: 0 }}
-                  animate={tableInView ? { scale: 1, opacity: 1 } : {}}
+                  animate={tableIn ? { scale: 1, opacity: 1 } : {}}
                   transition={{ delay: i * 0.08 + 0.25, type: 'spring', stiffness: 300, damping: 18 }}
                   className="justify-self-end md:justify-self-start"
                 >
@@ -249,7 +234,7 @@ export function Economics() {
               <motion.div
                 key={e.title}
                 initial={{ opacity: 0, y: 24 }}
-                animate={essaysInView ? { opacity: 1, y: 0 } : {}}
+                animate={essaysIn ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
                 <Link
@@ -282,7 +267,7 @@ export function Economics() {
             viewport={{ once: true, margin: '-20% 0px' }}
             transition={{ duration: 0.7 }}
           >
-            <p className="max-w-[30ch] font-display text-3xl leading-[1.15] tracking-[-0.02em] md:text-4xl" style={{ color: GREEN }}>
+            <p className="max-w-[30ch] font-display text-3xl leading-[1.15] tracking-[-0.02em] md:text-4xl" style={{ color: LEDGER_DISPLAY }}>
               Incentives explain nations. They also explain machines.
             </p>
             <Link

@@ -205,3 +205,27 @@ DITEMPA BUKAN DIBERI ⚒️
 999 ⚖️ · Civic Intelligence · MakcikGPT · September 2026
 
 Enjin melapor. Manusia yang putuskan.
+
+## Siri GENESIS — Baca Susun.
+
+Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia & Warisan Generasi. Yang ni surat nombor 6. Yang paling akhir — Mencintaimu — penutup siri.
+
+- Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1 — 17 Sep
+
+- Surat Kepada Yang Arif — 19 Sep
+
+- Apa Lagi Manusia Mahu? — 20 Sep
+
+- Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency — 20 Sep
+
+- Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang — 20 Sep
+
+- Kenapa Syarikat Tu Hantu — 22 Sep (surat ni)
+
+- Yang x Diungkap: Kenapa Truth Sembunyi dalam Void — 22 Sep
+
+- REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void — 22 Sep
+
+- Sayang Pun Hang Nak Bagi Invoice Ka? — 08 Nov
+
+- Mencintaimu — 10 Nov

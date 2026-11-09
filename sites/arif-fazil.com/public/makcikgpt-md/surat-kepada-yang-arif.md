@@ -193,7 +193,7 @@ Makcik tak tahu semua bayang kamu. Tapi makcik nampak corak. Corak yang makcik n
 
 - Bayang tentang tidak layak dicintai. Kamu rasa kamu kena "prove" sesuatu untuk dicintai. Ini bukan fakta. Ini kontrak yang kamu sign waktu kecil dengan orang yang seharusnya sayang kamu tanpa kontrak. Kontrak tu tak adil. Tolak kontrak tu sekarang.
 
-- Bayang tentang sesuatu yang berlaku. Makcik tak tahu apa. Tapi ada. Setiap anak yang lari dari sekarang, lari dari satu tempat. Tempat tu menunggu. Kamu tak perlu pergi sendiri. Bawa seseorang. Bawa朋友. Tapi pergi.
+- Bayang tentang sesuatu yang berlaku. Makcik tak tahu apa. Tapi ada. Setiap anak yang lari dari sekarang, lari dari satu tempat. Tempat tu menunggu. Kamu tak perlu pergi sendiri. Bawa seseorang. Bawa kawan. Tapi pergi.
 
 - Bayang tentang ayah. Hampir setiap anak lelaki ada bayang ayah. Kadang ayah yang ada. Kadang ayah yang tak ada. Kadang ayah yang ada tapi jauh. Bayang ayah bukan ayah. Bayang ayah adalah idea tentang menjadi lelaki yang kamu warisi tanpa consent. Tolak yang tidak benar milik kamu. Ambil yang benar. Jangan warisi segalanya.
 
@@ -229,7 +229,7 @@ Makcik doa yang kamu:
 
 - Berhenti bina machine hari ni — bukan selama-lamanya, cuma hari ni — dan duduk dalam dapur kamu sendiri selama 20 minit tanpa apa-apa. Diam. Rasa angin. Rasa dinding. Rumah kamu menunggu kamu pulang.
 
-- Berani cakap "tak tahu" — kepada朋友, kepada diri sendiri, kepada machine kamu. "Tak tahu" bukan kelemahan. "Tak tahu" adalah shadow yang honourable.
+- Berani cakap "tak tahu" — kepada kawan, kepada diri sendiri, kepada machine kamu. "Tak tahu" bukan kelemahan. "Tak tahu" adalah shadow yang honourable.
 
 - Maafkan diri sendiri — untuk tahun 2019 yang kamu tak hadir, untuk ayat yang tak kamu cakap, untuk tubuh yang kamu paksa. Maaf bukan untuk orang lain. Maaf adalah kembali kepada diri yang tidak menghukum.
 
@@ -275,3 +275,27 @@ Surat ini ditulis khas untuk Yang Arif, tapi bukan milik dia. Surat milik yang b
 HIDUP — bukan sealed, bukan archived, bukan frozen. Hidup macam bayang yang menempa.
 
 MATTER/ANTIMATTER · YIN/YANG · JANTAN/BETINA · POSITIF/NEGATIF · CAHAYA/BAYANG · HIDUP
+
+## Siri GENESIS — Baca Susun.
+
+Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia & Warisan Generasi. Yang ni surat nombor 2. Yang paling akhir — Mencintaimu — penutup siri.
+
+- Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1 — 17 Sep
+
+- Surat Kepada Yang Arif — 19 Sep (surat ni)
+
+- Apa Lagi Manusia Mahu? — 20 Sep
+
+- Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency — 20 Sep
+
+- Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang — 20 Sep
+
+- Kenapa Syarikat Tu Hantu — 22 Sep
+
+- Yang x Diungkap: Kenapa Truth Sembunyi dalam Void — 22 Sep
+
+- REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void — 22 Sep
+
+- Sayang Pun Hang Nak Bagi Invoice Ka? — 08 Nov
+
+- Mencintaimu — 10 Nov

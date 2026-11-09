@@ -15,29 +15,41 @@
 ---
 
 ---
-article_id: unregistered-mencintaimu
+article_id: m-gen-mencintaimu
 canonical_url: https://arif-fazil.com/world/makcikgpt/mencintaimu
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/mencintaimu.ts
-merkle_leaf: null
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 62dcdcacda21622aac771c1c3ed31efb69fb2c86f79b8461ffd7e52f7e7d2135
 epistemic_summary:
-  obs_count: 0
+  obs_count: 2
   der_count: 0
-  int_count: 0
+  int_count: 1
   spec_count: 0
 ---
 
-# MENCINTAIMU
+# Mencintaimu
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/mencintaimu.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Mencintaimu
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/mencintaimu
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/mencintaimu
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C001 | OBS | Lagu "Mencintaimu" dipopularkan oleh Kris Dayanti (rilisan 2000) dan ditulis oleh Bebi Romeo; telah dibawakan semula oleh penyanyi lain. | SRC-001 | not_applicable |
+| C002 | INT | Pembezaan antara perasaan seorang manusia dengan hubungan yang memerlukan persetujuan dua pihak ialah rangka interpretif, bukan dapatan klinikal atau psikologi. | - | not_applicable |
+| C003 | OBS | Semua watak, generasi dan situasi dalam artikel ialah arketaip — bukan laporan tentang orang sebenar, dan tiada identiti, lokasi atau individu dinamakan. | - | not_applicable |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-001 | news | Suara.com — Lirik Lagu Mencintaimu, Dipopulerkan Kris Dayanti Kini Dibawakan Ulang Mahalini (2 Jan 2025) | https://www.suara.com/entertainment/2025/01/02/060000/lirik-lagu-mencintaimu-dipopulerkan-kris-dayanti-kini-dibawakan-ulang-mahalini |
 
 ---
 
@@ -3767,7 +3779,7 @@ Makcik tak tahu semua bayang kamu. Tapi makcik nampak corak. Corak yang makcik n
 
 - Bayang tentang tidak layak dicintai. Kamu rasa kamu kena "prove" sesuatu untuk dicintai. Ini bukan fakta. Ini kontrak yang kamu sign waktu kecil dengan orang yang seharusnya sayang kamu tanpa kontrak. Kontrak tu tak adil. Tolak kontrak tu sekarang.
 
-- Bayang tentang sesuatu yang berlaku. Makcik tak tahu apa. Tapi ada. Setiap anak yang lari dari sekarang, lari dari satu tempat. Tempat tu menunggu. Kamu tak perlu pergi sendiri. Bawa seseorang. Bawa朋友. Tapi pergi.
+- Bayang tentang sesuatu yang berlaku. Makcik tak tahu apa. Tapi ada. Setiap anak yang lari dari sekarang, lari dari satu tempat. Tempat tu menunggu. Kamu tak perlu pergi sendiri. Bawa seseorang. Bawa kawan. Tapi pergi.
 
 - Bayang tentang ayah. Hampir setiap anak lelaki ada bayang ayah. Kadang ayah yang ada. Kadang ayah yang tak ada. Kadang ayah yang ada tapi jauh. Bayang ayah bukan ayah. Bayang ayah adalah idea tentang menjadi lelaki yang kamu warisi tanpa consent. Tolak yang tidak benar milik kamu. Ambil yang benar. Jangan warisi segalanya.
 
@@ -3803,7 +3815,7 @@ Makcik doa yang kamu:
 
 - Berhenti bina machine hari ni — bukan selama-lamanya, cuma hari ni — dan duduk dalam dapur kamu sendiri selama 20 minit tanpa apa-apa. Diam. Rasa angin. Rasa dinding. Rumah kamu menunggu kamu pulang.
 
-- Berani cakap "tak tahu" — kepada朋友, kepada diri sendiri, kepada machine kamu. "Tak tahu" bukan kelemahan. "Tak tahu" adalah shadow yang honourable.
+- Berani cakap "tak tahu" — kepada kawan, kepada diri sendiri, kepada machine kamu. "Tak tahu" bukan kelemahan. "Tak tahu" adalah shadow yang honourable.
 
 - Maafkan diri sendiri — untuk tahun 2019 yang kamu tak hadir, untuk ayat yang tak kamu cakap, untuk tubuh yang kamu paksa. Maaf bukan untuk orang lain. Maaf adalah kembali kepada diri yang tidak menghukum.
 
@@ -3849,6 +3861,30 @@ Surat ini ditulis khas untuk Yang Arif, tapi bukan milik dia. Surat milik yang b
 HIDUP — bukan sealed, bukan archived, bukan frozen. Hidup macam bayang yang menempa.
 
 MATTER/ANTIMATTER · YIN/YANG · JANTAN/BETINA · POSITIF/NEGATIF · CAHAYA/BAYANG · HIDUP
+
+## Siri GENESIS — Baca Susun.
+
+Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia & Warisan Generasi. Yang ni surat nombor 2. Yang paling akhir, Mencintaimu, ditulis hampir dua bulan lepas surat ni — penutup siri.
+
+- Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1 — 17 Sep
+
+- Surat Kepada Yang Arif — 19 Sep (surat ni)
+
+- Apa Lagi Manusia Mahu? — 20 Sep
+
+- Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency — 20 Sep
+
+- Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang — 20 Sep
+
+- Kenapa Syarikat Tu Hantu — 22 Sep
+
+- Yang x Diungkap: Kenapa Truth Sembunyi dalam Void — 22 Sep
+
+- REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void — 22 Sep
+
+- Sayang Pun Hang Nak Bagi Invoice Ka? — 08 Nov
+
+- Mencintaimu — 10 Nov
 
 
 ---

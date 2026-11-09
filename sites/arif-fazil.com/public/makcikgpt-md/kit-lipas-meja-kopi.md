@@ -221,3 +221,27 @@ Nota editorial — apa yang Makcik verify dan apa yang belum
 - Belum diimplementasi (Akan Datang): butang "Cetak / Print PDF" — ada dalam roadmap tetapi belum deploy di semua artikel; untuk Slot 5 dan seterusnya, akan ada butang di footer.
 
 - Meta note: Slot 5 ialah kerja FORMAT (15% daripada editorial ratio). Slot 1-4 ialah kerja SIASATAN. Slot 6-7 akan balik ke SIASATAN.
+
+## Siri GENESIS — Baca Susun.
+
+Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia & Warisan Generasi. Yang ni surat nombor 1. Yang paling akhir — Mencintaimu — penutup siri.
+
+- Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1 — 17 Sep (surat ni)
+
+- Surat Kepada Yang Arif — 19 Sep
+
+- Apa Lagi Manusia Mahu? — 20 Sep
+
+- Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency — 20 Sep
+
+- Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang — 20 Sep
+
+- Kenapa Syarikat Tu Hantu — 22 Sep
+
+- Yang x Diungkap: Kenapa Truth Sembunyi dalam Void — 22 Sep
+
+- REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void — 22 Sep
+
+- Sayang Pun Hang Nak Bagi Invoice Ka? — 08 Nov
+
+- Mencintaimu — 10 Nov

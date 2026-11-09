@@ -51,7 +51,9 @@ import hukumKeretaSentuhanTakDinamai from './hukum-kereta-sentuhan-tak-dinamai';
 import siapaAkanKetukPintu from './siapa-akan-ketuk-pintu';
 import sayangYangPercuma from './sayang-yang-percuma';
 import hargaSebuahMaruahManusia from './harga-sebuah-maruah-manusia';
+import mencintaimu from './mencintaimu';
 export const makcikArticleModules: ArticleContent[] = [
+  mencintaimu,
   sayangYangPercuma,
   hargaSebuahMaruahManusia,
   siapaAkanKetukPintu,
@@ -105,6 +107,19 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'mencintaimu',
+    title: 'Mencintaimu',
+    subtitle: 'Setiap lagu cinta kata "mencintaimu" — tapi "mu" tu selalu orang lain. Surat penutup siri: bila "mu" dalam ayat tu akhirnya jadi hang sendiri.',
+    date: '2026-11-10',
+    domain: 'MAKCIKGPT × CINTA × SAYANG × DIRI SENDIRI × MARUAH',
+    language: 'ms',
+    excerpt: 'Lagu cinta selalu arahkan "mencintaimu" pada orang lain. Makcik tanya bila kali terakhir "mu" tu hang sendiri. Sayang diri dulu bukan sombong — ia berhenti buktikan hang layak disayang, sebab hang dah. Perasaan tak perlu izin untuk wujud, tapi hubungan perlu persetujuan untuk dinamakan. Bila hang berhenti jadi orang yang tunggu dan mula jadi orang yang ada, hang boleh bagi tanpa jadi bil — dan itulah pusaka sebenar yang generasi waris.',
+    tags: ['cinta', 'sayang', 'mencintaimu', 'diri-sendiri', 'maruah', 'makcikgpt', 'manusia', 'surat'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-11-10', last_updated: '2026-11-10' },
+  },
   {
     slug: 'sayang-yang-percuma',
     title: 'Sayang Pun Hang Nak Bagi Invoice Ka?',

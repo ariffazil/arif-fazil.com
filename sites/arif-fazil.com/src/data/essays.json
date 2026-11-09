@@ -1,5 +1,70 @@
 [
   {
+    "id": "m-gen-mencintaimu",
+    "title": "Mencintaimu",
+    "date": "2026-11-10",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 13
+    },
+    "tags": [
+      "cinta",
+      "sayang",
+      "mencintaimu",
+      "diri-sendiri",
+      "maruah",
+      "makcikgpt",
+      "manusia",
+      "surat"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/mencintaimu"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-11-10",
+      "last_updated": "2026-11-10"
+    },
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Lagu \"Mencintaimu\" dipopularkan oleh Kris Dayanti (rilisan 2000) dan ditulis oleh Bebi Romeo; telah dibawakan semula oleh penyanyi lain.",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "Disemak dengan laporan Suara.com (2 Jan 2025) yang menyatakan lagu pertama kali dinyanyikan Kris Dayanti tahun 2000 dan ditulis Bebi Romeo. Tiada lirik dipetik dalam artikel.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Pembezaan antara perasaan seorang manusia dengan hubungan yang memerlukan persetujuan dua pihak ialah rangka interpretif, bukan dapatan klinikal atau psikologi.",
+        "tag": "INT",
+        "confidence_basis": "Interpretasi editorial MakcikGPT; tiada nombor atau diagnosis dituntut.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C003",
+        "text": "Semua watak, generasi dan situasi dalam artikel ialah arketaip — bukan laporan tentang orang sebenar, dan tiada identiti, lokasi atau individu dinamakan.",
+        "tag": "OBS",
+        "confidence_basis": "Deklarasi provenance artikel sendiri; disahkan oleh teks nota semakan dalam artikel.",
+        "maruah_review": "not_applicable"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-001",
+        "type": "news",
+        "title": "Suara.com — Lirik Lagu Mencintaimu, Dipopulerkan Kris Dayanti Kini Dibawakan Ulang Mahalini (2 Jan 2025)",
+        "url": "https://www.suara.com/entertainment/2025/01/02/060000/lirik-lagu-mencintaimu-dipopulerkan-kris-dayanti-kini-dibawakan-ulang-mahalini",
+        "retrieved_at": "2026-11-10T00:00:00Z",
+        "content_hash": "sha256:primary-verified-2026-11-10"
+      }
+    ]
+  },
+  {
     "id": "m6-9",
     "title": "Anak Jantan Punya Tanah, Anak Orang Punya Ijazah: Pintu Tak Pernah Bertanya, Kita Yang Disuruh Undur",
     "date": "2026-10-27",

@@ -1,0 +1,31 @@
+{
+  "task": "MakcikGPT GENESIS #13 'Mencintaimu' — publish",
+  "actor": "333-AGI (opencode)",
+  "authorized_by": "F13 (Arif) direct directive 2026-11-10 ~00:55 MYT: 'now do the right execution to finish all remaining task'",
+  "content_author": "HERMES (MakcikGPT voice: src/data/makcikgpt/mencintaimu.ts + index.ts import+meta wired by HERMES)",
+  "deploy_role": "333-AGI: static shell generation, articles.json entry, sitemap, build, additive rsync, live verify",
+  "files_shipped": [
+    "public/world/makcikgpt/mencintaimu/index.html (new shell, page-specific title)",
+    "public/world/makcikgpt/articles.json (GENESIS #13 prepended, 52 entries; live backup articles.json.bak-20261110T-pre-mencintaimu)",
+    "public/sitemap.xml (+1 url, 95 total; live backup sitemap.xml.bak-20261110T-pre-mencintaimu)",
+    "dist/world/makcikgpt/* + dist/assets/* — rsync --update additive, NO --delete, no caddy reload"
+  ],
+  "gates": {
+    "site_preflight": "PASS — split-root / orphan-assets / phantom-200 (page-specific title 'Mencintaimu')",
+    "note_preflight_sequence": "pre-deploy FAIL was the expected hub-fallback state at an undeployed route; cleared after deploy",
+    "external_publishing_checklist": "payer=Arif (site owner; byline MakcikGPT, not Arif) · readers=jiran public + machines · third-parties named=none · reversible=backups above · provenance=reflective essay, zero figures"
+  },
+  "live_verify": {
+    "url": "https://arif-fazil.com/world/makcikgpt/mencintaimu",
+    "title_probe": "Mencintaimu (page-specific, non-hub)",
+    "datechip": "dateModified: 2026-11-10",
+    "footer_sig": "present",
+    "sitemap_live_hit": true
+  },
+  "unknowns": [
+    "SPA archive hub lists the article only after JS run (bundle shipped additively); curl sees shell only",
+    "llms.json / llms-full.txt / discovery registry NOT regenerated (pre-existing dirty files by other writers left untouched)",
+    "repo git tree left uncommitted (no T2-PUSH lease held tonight)"
+  ],
+  "provenance_label": "AGENT_PRODUCED (HERMES content) · F13_GO · deployed+verified 333-AGI · 2026-11-10 01:12 MYT"
+}

@@ -234,7 +234,7 @@ const content: ArticleContent = {
 <p><em>MATTER/ANTIMATTER · YIN/YANG · JANTAN/BETINA · POSITIF/NEGATIF · CAHAYA/BAYANG · HIDUP</em></p>
 
 <h2>Siri GENESIS — Baca Susun.</h2>
-<p>Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia &amp; Warisan Generasi. Yang ni surat nombor 2. Yang paling akhir, <a href="/world/makcikgpt/mencintaimu">Mencintaimu</a>, ditulis hampir dua bulan lepas surat ni — penutup siri.</p>
+<p>Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia &amp; Warisan Generasi. Yang ni surat nombor 2. Yang paling akhir — <a href="/world/makcikgpt/mencintaimu">Mencintaimu</a> — penutup siri.</p>
 <ul>
   <li><a href="/world/makcikgpt/kit-lipas-meja-kopi">Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1</a> — 17 Sep</li>
   <li><strong>Surat Kepada Yang Arif</strong> — 19 Sep <em>(surat ni)</em></li>

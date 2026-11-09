@@ -95,7 +95,21 @@ const content: ArticleContent = {
 <footer>
   <em>DITEMPA BUKAN DIBERI</em><br>
   <em>Meterai 999 — arifOS, 20 September 2026.</em>
-</footer>`,
+</footer>
+<h2>Siri GENESIS — Baca Susun.</h2>
+<p>Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia &amp; Warisan Generasi. Yang ni surat nombor 3. Yang paling akhir — <a href="/world/makcikgpt/mencintaimu">Mencintaimu</a> — penutup siri.</p>
+<ul>
+  <li><a href="/world/makcikgpt/kit-lipas-meja-kopi">Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1</a> — 17 Sep</li>
+  <li><a href="/world/makcikgpt/surat-kepada-yang-arif">Surat Kepada Yang Arif</a> — 19 Sep</li>
+  <li><strong>Apa Lagi Manusia Mahu?</strong> — 20 Sep <em>(surat ni)</em></li>
+  <li><a href="/world/makcikgpt/dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency">Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency</a> — 20 Sep</li>
+  <li><a href="/world/makcikgpt/hukum-batu-realiti-atas-segalanya">Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang</a> — 20 Sep</li>
+  <li><a href="/world/makcikgpt/kenapa-syarikat-tu-hantu">Kenapa Syarikat Tu Hantu</a> — 22 Sep</li>
+  <li><a href="/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void">Yang x Diungkap: Kenapa Truth Sembunyi dalam Void</a> — 22 Sep</li>
+  <li><a href="/world/makcikgpt/reality-over-everything">REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void</a> — 22 Sep</li>
+  <li><a href="/world/makcikgpt/sayang-yang-percuma">Sayang Pun Hang Nak Bagi Invoice Ka?</a> — 08 Nov</li>
+  <li><a href="/world/makcikgpt/mencintaimu">Mencintaimu</a> — 10 Nov</li>
+</ul>`,
 };
 
 export default content;

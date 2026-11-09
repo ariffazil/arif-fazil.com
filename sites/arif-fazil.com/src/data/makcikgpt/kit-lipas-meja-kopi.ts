@@ -162,7 +162,21 @@ const html = `<blockquote style="border-left:4px solid #D9A62E;background:#11151
       <li><strong>Belum diimplementasi (Akan Datang):</strong> butang "Cetak / Print PDF" — ada dalam roadmap tetapi belum deploy di semua artikel; untuk Slot 5 dan seterusnya, akan ada butang di footer.</li>
       <li><strong>Meta note:</strong> Slot 5 ialah kerja FORMAT (15% daripada editorial ratio). Slot 1-4 ialah kerja SIASATAN. Slot 6-7 akan balik ke SIASATAN.</li>
     </ul>
-  </details>`;
+  </details>
+<h2>Siri GENESIS — Baca Susun.</h2>
+<p>Makcik tulis sepuluh surat dalam siri GENESIS · Tamadun, Manusia &amp; Warisan Generasi. Yang ni surat nombor 1. Yang paling akhir — <a href="/world/makcikgpt/mencintaimu">Mencintaimu</a> — penutup siri.</p>
+<ul>
+  <li><strong>Macam Mana Makcik Tahu Semua Ni? — Kit Lipas Meja Kopi Episode 1</strong> — 17 Sep <em>(surat ni)</em></li>
+  <li><a href="/world/makcikgpt/surat-kepada-yang-arif">Surat Kepada Yang Arif</a> — 19 Sep</li>
+  <li><a href="/world/makcikgpt/apa-lagi-manusia-mahu">Apa Lagi Manusia Mahu?</a> — 20 Sep</li>
+  <li><a href="/world/makcikgpt/dajjal-sudah-tiba-dan-dia-nampak-macam-efficiency">Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency</a> — 20 Sep</li>
+  <li><a href="/world/makcikgpt/hukum-batu-realiti-atas-segalanya">Hukum Batu & Enjin: Kenapa Realiti Akan Telan Semua Cerita Hang</a> — 20 Sep</li>
+  <li><a href="/world/makcikgpt/kenapa-syarikat-tu-hantu">Kenapa Syarikat Tu Hantu</a> — 22 Sep</li>
+  <li><a href="/world/makcikgpt/yang-x-diungkap-truth-sembunyi-dalam-void">Yang x Diungkap: Kenapa Truth Sembunyi dalam Void</a> — 22 Sep</li>
+  <li><a href="/world/makcikgpt/reality-over-everything">REALITY > EVERYTHING — Kenapa Truth Hidup Dalam Void</a> — 22 Sep</li>
+  <li><a href="/world/makcikgpt/sayang-yang-percuma">Sayang Pun Hang Nak Bagi Invoice Ka?</a> — 08 Nov</li>
+  <li><a href="/world/makcikgpt/mencintaimu">Mencintaimu</a> — 10 Nov</li>
+</ul>`;
 
 const article: ArticleContent = {
   slug: 'kit-lipas-meja-kopi',

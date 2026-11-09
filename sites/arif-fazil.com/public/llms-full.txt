@@ -1,12 +1,234 @@
 # arif-fazil.com — Full Content for AI Agents
-# Generated: 2026-11-07
+# Generated: 2026-11-09
 # Source: essays.json via makcik-source.cjs
-# Total Articles: 51
+# Total Articles: 52
 # Canonical index: https://arif-fazil.com/llms.txt
 # License: https://arif-fazil.com/rsl.xml (RSL 1.0 — ai-train/ai-input permitted with attribution)
 
 > Muhammad Arif bin Fazil — Exploration Geoscientist & Sovereign Systems Architect
 > Ditempa Bukan Diberi — Forged, Not Given.
+
+
+---
+## MakcikGPT — mencintaimu
+## Canonical: https://arif-fazil.com/world/makcikgpt/mencintaimu
+---
+
+---
+article_id: unregistered-mencintaimu
+canonical_url: https://arif-fazil.com/world/makcikgpt/mencintaimu
+seal: null
+provenance_status: unregistered-ts-mirror
+registered_in_essays_json: false
+mirror_source: src/data/makcikgpt/mencintaimu.ts
+merkle_leaf: null
+epistemic_summary:
+  obs_count: 0
+  der_count: 0
+  int_count: 0
+  spec_count: 0
+---
+
+# MENCINTAIMU
+
+> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/mencintaimu.ts`.
+>
+> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+>
+> Canonical URL: https://arif-fazil.com/world/makcikgpt/mencintaimu
+>
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+
+---
+
+Series GENESIS · Tamadun, Manusia & Warisan Generasi
+
+# MENCINTAIMU
+
+Setiap lagu cinta kata "mencintaimu" — tapi "mu" tu selalu orang lain. Surat penutup siri: bila "mu" dalam ayat tu akhirnya jadi hang sendiri.
+
+Oleh MakcikGPT — Cerita Untuk Jiran-Jiran
+
+## Makcik Nak Mula Dari Satu Perkataan.
+
+Mencintaimu.
+
+Hang kenal lagu tu. Tajuk dia satu perkataan, tapi cukup untuk buat manusia menangis dalam kereta, pegang telefon tunggu reply yang tak datang.
+
+Makcik tak nak tulis semula lirik dia — hang boleh dengar sendiri. Makcik cuma nak pinjam satu benda dari tajuk tu.
+
+Mu.
+
+Siapa "mu" yang kita maksudkan bila kita sebut cinta?
+
+Selalunya orang lain. Orang yang kita tunggu. Orang yang kita kejar. Orang yang kita harap akan pilih kita. Orang yang namanya muncul dulu bila sesuatu baik atau buruk jadi.
+
+Tak salah. Manusia memang perlukan manusia. Makcik tak nak ajar hang jadi batu yang bangga tak perlukan sesiapa.
+
+Tapi Makcik nak tanya satu benda.
+
+Sepanjang hang sibuk menyayangi orang lain — ada seorang manusia yang ikut hang ke mana-mana, dari kecik sampai sekarang.
+
+Hang perasan dia tak?
+
+Manusia tu hang.
+
+## Makcik Nak Betulkan Satu Salah Faham.
+
+Sekarang orang suka cakap "sayang diri dulu."
+
+Bunyi elok. Boleh tulis atas poster, bawah gambar matahari terbenam.
+
+Tapi ramai salah faham. Dia ingat "sayang diri dulu" maksudnya pentingkan diri. Sombong. Tak kisah orang.
+
+Bukan. Tu pun satu jenis lari.
+
+Sayang diri dulu maksudnya satu je: berhenti buktikan hang layak disayang.
+
+Sebab hang dah. Hang layak dari mula. Bukan bila badan hang cantik, bukan bila ada orang pilih hang, bukan bila hang nampak sempurna dalam terang. Hang layak sekarang — dalam gelap, dengan semua luka dan lapar yang hang bawa.
+
+Dan benda yang hang kejar selama ni — dipilih, dilihat, dipegang — semua tu hang akan dapat. Bukan bila hang jumpa orang yang betul. Bila hang berhenti jadi orang yang tunggu, dan mula jadi orang yang ada.
+
+## Ada Satu Benda Orang Selalu Tertukar.
+
+Hang ingat kalau hang sayang diri dulu, hang tak boleh sayang orang. Salah. Terbalik.
+
+Orang yang tak sayang diri, dia sayang orang macam orang lemas. Dia berpaut. Dia bagi sampai lemas sendiri, lepas tu marah orang yang dia bagi sebab tak selamatkan dia.
+
+Orang yang sayang diri, dia boleh sayang orang macam orang yang berdiri. Dia bagi apa yang dia ada — bukan apa yang dia pinjam dari masa depan dia. Dia boleh duduk sebelah, bukan berpaut. Dan kalau orang tu pergi, dia sedih — tapi dia tak runtuh. Sebab rumah dia tak dibina atas bahu orang lain.
+
+## Tapi Makcik Nak Jujur Satu Benda.
+
+Jangan cepat hukum. Jangan kata orang yang terlalu berharap tu "bukan cinta, tu cuma lapar."
+
+Pelan-pelan.
+
+Cinta manusia jarang datang dalam bekas yang bersih.
+
+Kadang-kadang cinta datang bersama rindu. Bersama takut kehilangan. Bersama nak dipilih. Bersama bahagian diri yang lama tak dapat perhatian.
+
+Semua tu tak batalkan cinta.
+
+Tapi hang kena belajar beza. Mana satu pemberian, mana satu permintaan.
+
+Kalau hang bagi perhatian sebab hang betul-betul nak menemani — tu pemberian.
+
+Kalau hang bagi perhatian sambil harap orang tu bagi jawapan tertentu — tu permintaan yang belum disebut.
+
+Permintaan bukan dosa. Yang buat hubungan berat ialah bila permintaan disembunyi dalam pengorbanan, lepas tu orang dianggap berhutang sebab kita dah bagi terlalu banyak.
+
+Bila hang bagi supaya orang stay, supaya orang pilih hang, supaya hang rasa layak — hang tak bagi. Hang jual.
+
+## Cinta Seorang Manusia Tetap Benar.
+
+Sekarang sampai bahagian paling susah.
+
+Cinta boleh benar dalam hati seorang manusia. Seorang saja. Tak perlu berbalas untuk jadi benar.
+
+Hang boleh sayang seseorang sepenuh hati. Perasaan tu tak jadi palsu cuma sebab orang tu tak jawab dalam bentuk yang sama.
+
+Tapi hubungan — itu lain. Hubungan butuh dua manusia yang tahu depa ada dalam cerita yang sama.
+
+Perasaan tak perlu izin untuk wujud. Hubungan perlu persetujuan untuk dinamakan.
+
+Ada beza besar antara "aku sayang dia" dengan "kami pilih hubungan ni sama-sama."
+
+Yang pertama hak hang, takde siapa boleh ambil. Yang kedua butuh dia pilih sama.
+
+## Jangan Pinjam Mulut Orang.
+
+Bila orang tak bagi jawapan jelas, hati kita tak suka ruang kosong. Kita mula susun tanda. Cara dia pandang. Cara dia tolong. Cara dia diam. Mesej yang lambat dibalas.
+
+Lepas tu kita isi ruang kosong tu dengan ayat yang kita harap dia cakap.
+
+"Dia sebenarnya sayang."
+
+"Dia cuma tak pandai tunjuk."
+
+"Kalau dia berani, tentu dia mengaku."
+
+Mungkin. Mungkin tak.
+
+Makcik tak tahu. Hang pun belum tentu tahu. Rasa hang boleh benar tanpa menjadikan tafsiran hang tentang hatinya benar.
+
+Jadi jangan pinjam mulut orang untuk lengkapkan cinta hang. Jangan bina satu kampung dalam kepala, lepas tu marah bila dia tak balik ke alamat yang dia tak pernah terima.
+
+## Peta Bukan Tanah.
+
+Makcik faham kenapa manusia memetakan hubungan. Kita nak tahu apa makna semua tu. Kita ulang perbualan dalam kepala. Kita susun garis masa. Kita banding kata dengan tindakan.
+
+Peta tu boleh tolong. Dia boleh tunjuk apa hang rasa, apa yang betul-betul jadi, apa yang hang harap, apa yang belum pernah disebut.
+
+Tapi peta ada had. Peta boleh terangkan hati hang. Dia tak boleh ganti suara orang lain.
+
+Bila peta dah tolong hang faham apa hang nak — kerja seterusnya bukan lukis lebih banyak garis. Kerja seterusnya balik ke tanah. Tengok apa yang betul-betul ada.
+
+## Menunggu Bukan Bukti Cinta.
+
+Ada manusia belajar makin lama dia tunggu, makin benar cinta dia.
+
+Makcik tak kata semua penantian sia-sia. Ada masa manusia perlu ruang. Ada hubungan yang tumbuh perlahan. Ada jawapan yang belum masak.
+
+Tapi panjangnya penantian bukan ukuran dalamnya cinta. Banyaknya pemberian bukan bukti hubungan tu mesti jadi milik hang.
+
+Kadang-kadang hang tunggu sebab masih ada harapan yang munasabah. Kadang-kadang hang tunggu sebab takut mengaku realiti belum jadi macam cerita yang hang pegang.
+
+Kalau dia pergi sebab hang berhenti kejar — dia tak pernah ada.
+
+## Apa Kita Wariskan?
+
+Satu benda lagi sebelum Makcik tutup.
+
+Makcik tak nak reka anak untuk sesiapa. Tapi budak-budak yang hang sayang — anak buah, anak jiran, generasi lepas kita — depa tengok orang dewasa macam mana sayang.
+
+Depa belajar dari bahasa yang kita ulang:
+
+Adakah sayang bermaksud tunggu tanpa batas? Adakah pengorbanan cipta hutang? Adakah seseorang kena hilang diri untuk bukti setia? Adakah perasaan seorang boleh tentukan realiti berdua?
+
+Kalau kita nak tinggal bahasa yang lebih baik, ajar ni:
+
+Sayanglah manusia sungguh-sungguh. Tapi jangan miliki suara dia. Jangan tentukan hati dia. Jangan guna pengorbanan untuk beli jawapan. Dan jangan keluarkan diri sendiri dari kasih tu.
+
+Tu dia pusaka sebenar. Bukan duit. Bukan tanah. Cara hang sayang diri hang, tu yang generasi lepas hang waris.
+
+## Penutup — "Mu" Tu Bukan Seorang Sahaja.
+
+Malam nanti, kalau lagu tu datang lagi, Makcik tak suruh hang tukar semua perkataan dia kepada nama sendiri.
+
+Nyanyi saja dengan satu kesedaran baru:
+
+Aku boleh cinta manusia lain tanpa tinggal manusia yang duduk dalam tubuh ni.
+
+Kalau dia datang, aku hadir sebagai diriku. Kalau dia tak datang, aku masih ada.
+
+Bukan sebab aku tak perlukan sesiapa. Sebab seorang manusia tak boleh jadi satu-satunya bukti aku wujud.
+
+Jadi esok pagi, hang ada satu pilihan je. Bukan tinggal atau pergi dari sesiapa.
+
+Pilihan dia: hari ni untuk aku, atau untuk orang yang aku tunggu-tunggu?
+
+Jawab "untuk aku" sikit pun, dah cukup.
+
+Makcik tak suruh hang buang orang. Makcik suruh hang berhenti jual diri untuk kepastian. Isi cawan hang dulu — bukan sebab sombong, sebab itu satu-satunya cara hang boleh bagi tanpa jadi bil.
+
+— MakcikGPT
+Ditempa bukan diberi. Dan kasih pertama yang hang kena bagi, bukan untuk yang menunggu kat pintu. Untuk yang berdiri dalam cermin.
+
+## Ayat Untuk Jiran-Jiran Kongsi
+
+"Berhenti buktikan hang layak disayang. Hang dah — dari mula."
+
+Nota Semakan & Pembetulan MakcikGPT
+
+Tajuk lagu: "Mencintaimu" ialah lagu yang dipopularkan oleh Kris Dayanti (2000), penulis Bebi Romeo, dan telah dibawakan semula oleh penyanyi lain. Tiada lirik dipetik dalam artikel ini — rujukan budaya sahaja, bukan tuntutan tentang isi lagu.
+
+Tiada dakwaan tentang individu: Semua watak dalam artikel ialah arketaip — bukan laporan tentang orang sebenar. Tiada nama, lokasi, atau identiti dinamakan.
+
+"Anak cucu" / "generasi": Rujukan generasi ialah gambaran kolektif, bukan dakwaan tentang mana-mana keluarga atau individu tertentu.
+
+Interpretasi, bukan fakta psikologi: Pembezaan antara "pemberian" dan "permintaan" ialah renungan bahasa, bukan diagnosis klinikal.
+
+Status: Diterbit selepas kelulusan F13 · November 2026.
 
 
 ---
@@ -615,6 +837,10 @@ epistemic_summary:
 
 "Bila untung berbilion, semua orang berebut mengaku wira negara. Bila harga minyak goyang, capex bengkak, dan mahkamah panggil — anak watan tempatan disuruh ambil MSS (undur-undur!), tapi kontrak ekspatriat terus disambung atas nama 'business-critical'. Tanah anak jantan punya, ijazah anak tempatan punya, tapi siapa sebenarnya yang pegang kunci pintu?"
 
+⚡ KEMASKINI — 7 November 2026, 20:13 MYT
+
+Dua babak baru selepas artikel ni terbit: 1 Nov, PETRONAS serah operatorship Lang Lebah & B14 kepada TotalEnergies (30% operator; PCSB tinggal 20%) di ADIPEC Abu Dhabi. 5 Nov, Abang Johari jangka pertikaian PETRONAS–Petros selesai sebelum hujung tahun melalui jawatankuasa teknikal bebas. Babak baru dirujuk dalam Seksyen 3. Semua nombor disemak pada tarikh kemaskini.
+
 ## 1. Dua Pintu, Satu Permainan Yang Sama
 
 Makcik nak ajak hangpa duduk sekejap. Tarik nafas, buang sembang kedai kopi yang kosong.
@@ -665,7 +891,31 @@ Bila Shell tak tahu nak bayar siapa, kes diheret ke mahkamah. Pada 22 September 
 
 Makcik tengok drama ini bukan dengan rasa seronok. Makcik nampak satu hakikat: saiz modal RM20 juta boleh menggoncang gergasi ratusan bilion bila kuasa ordinan tempatan dan hak tanah mula dituntut.
 
-## 3. Bila Margin Tersepit, Anak Tempatan Disuruh Undur
+Tapi cerita tu belum habis. Sebenarnya, ia baru masuk babak kedua.
+
+## 3. Dua Tuan Masih Bergaduh, Kunci Sudah Ke Tangan Orang Perancis
+
+Sementara PETRONAS dan Petros sibuk bawa saman ke Mahkamah Persekutuan — satu cabar 10 undang-undang negeri, satu cabar balik 3 undang-undang persekutuan, panel 9 sampai 11 hakim, perbicaraan lima hari bulan Januari — ada satu benda lain berlaku dalam senyap.
+
+Pada 1 November 2026, atas pentas di Abu Dhabi, empat syarikat tandatangan perjanjian. Medan gas paling besar kat Sarawak — Lang Lebah, lima trilion kaki padu gas, dan B14 sebelah dia satu setengah trilion lagi — dua-dua diserahkan kepada syarikat Perancis, TotalEnergies, untuk jadi operator.
+
+Bahagian dia: TotalEnergies 30 peratus, PTT Thailand 25 peratus, KUFPEC Kuwait 25 peratus. Tuan rumah, PETRONAS Carigali, tinggal 20 peratus.
+
+Makcik bukan kata farm-out tu salah. Makcik kata tengok apa yang berlaku depan mata: dua tuan bergaduh pasal siapa punya gas, dan sementara itu, kunci medan paling besar negara beralih tangan kepada syarikat yang dah ada kat Malaysia sejak 1985, yang dah beli SapuraOMV tahun 2024.
+
+Itu bukan konspirasi. Itu cuma apa yang berlaku bila tuan rumah sibuk bergaduh sesama sendiri — orang luar yang senyap masuk ambil yang berharga.
+
+Dan ada satu lagi babak. Pada 5 November, Premier Sarawak kata pertikaian PETRONAS-Petros ni "dijangka selesai sebelum hujung tahun" — ada jawatankuasa teknikal bebas tengah timbang hujah dua-dua belah. Ayat dia lain dari dulu. Dulu "lawan sampai mati", sekarang "demi negara".
+
+Tapi makcik dengar baik-baik masa dia ditanya: kalau tak jadi selesai, ada pelan B? Jawapan dia: "Dak."
+
+Makcik tak tahu hangpa nampak apa. Makcik nampak satu soalan yang sama berulang dari awal artikel ni sampai sekarang: siapa sebenarnya yang pegang kunci pintu?
+
+Jawapannya bukan anak jantan. Bukan anak tempatan. Bukan pun PETRONAS atau Petros.
+
+Kunci tu sekarang dipegang orang Perancis. Dan selagi dua tuan bergaduh, makin lama kunci tu duduk kat tangan luar, makin susah nak ambil balik.
+
+## 4. Bila Margin Tersepit, Anak Tempatan Disuruh Undur
 
 Sekarang makcik bawa hangpa ke pintu kedua: pintu rezeki dan tenaga kerja.
 
@@ -697,7 +947,7 @@ Kenapa orang asing yang masuk atas pas penggajian, yang gajinya dibayar dalam pa
 
 Siapa yang mengecap jawatan itu "business-critical"? Dan siapa yang mengesahkan bahawa anak watan berijazah tidak mampu melakukan tugas tersebut?
 
-## 4. Pintu Imigresen Yang Tak Pernah Bertanya
+## 5. Pintu Imigresen Yang Tak Pernah Bertanya
 
 Ini bahagian yang makcik paling geram, sebab makcik dah buka sendiri dokumen Jabatan Imigresen Malaysia.
 
@@ -741,7 +991,7 @@ Kalau syarikat meletakkan gaji RM20,000 sebulan untuk seorang ekspatriat, sistem
 
 Makcik tanya hangpa: kalau kedai meletakkan harga ikan kembung RM80 sekilo, adakah ikan itu automatik menjadi salmon liar Alaska? Dak! Harga cuma angka yang penjual tetapkan. Tetapi sistem negara kita menganggap sesiapa yang dibayar mahal oleh syarikat minyak secara automatik menjadi pakar yang tidak boleh digantikan oleh anak watan berijazah!
 
-## 5. Jangan Menyalak Pada Pokok Yang Salah
+## 6. Jangan Menyalak Pada Pokok Yang Salah
 
 Makcik dah berjanji dari awal: kalau nombor tidak menyokong, makcik tidak akan membuat tuduhan semberono. Jadi makcik letakkan angka kebangsaan atas meja supaya kita tidak hanyut dalam emosi murah.
 
@@ -772,7 +1022,7 @@ Dan hakikat ini membawa kita kepada hakikat yang jauh lebih pedih:
 
 Masalah kita bukan penjajah luar datang dengan meriam. Masalah kita ialah orang tempatan sendiri yang duduk di atas hierarki, yang lebih selesa menyambung kontrak ekspatriat asing sambil menolak anak watan sendiri keluar melalui pintu MSS!
 
-## 6. Apa Makna Sebenar 'Bangsa Dijajah'?
+## 7. Apa Makna Sebenar 'Bangsa Dijajah'?
 
 Perkataan "dijajah" bukan semata-mata bila bendera asing berkibar di padang.
 
@@ -794,7 +1044,7 @@ Bila anak watan yang memiliki ijazah kelas pertama dan pengalaman lapangan ditol
 
 Itu ialah sindrom rendah diri pascakolonial (colonial cringe) yang dipelihara oleh hierarki korporat sendiri: mereka percaya orang luar lebih "pakar" berbanding anak watan yang membesar mengenali batuan tanah air sendiri!
 
-## 7. Empat Tuntutan Bukti Institusi
+## 8. Empat Tuntutan Bukti Institusi
 
 Makcik bukan pembangkang politik yang suka menjerit di tepi jalan. MakcikGPT bercakap atas disiplin bukti.
 
@@ -814,7 +1064,7 @@ Buktikan satu contoh dalam tempoh 12 bulan lalu di mana keputusan teknikal seora
 
 Kalau empat dokumen ini tidak boleh dikeluarkan kepada rakyat Malaysia, jangan sesekali menyebut perkataan "Amanah Rakyat" di kaca televisyen.
 
-## 8. Nota Maruah: Yang Boleh Ditukar Ialah Pintu
+## 9. Nota Maruah: Yang Boleh Ditukar Ialah Pintu
 
 Makcik menutup tulisan ini dengan satu pesanan paling mendalam.
 

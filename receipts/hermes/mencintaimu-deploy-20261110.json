@@ -1,0 +1,27 @@
+{
+  "surface": "arif-fazil.com/world/makcikgpt/mencintaimu",
+  "deploy_ts": "2026-11-10T01:32:08.454491+08:00",
+  "agent": "HERMES (i-arif)",
+  "authorized_by": "F13 Arif — 'pk fix audit validate all and deploy love all'",
+  "mode": "additive rsync --inplace --update (no --delete, no caddy reload)",
+  "preflight": "PASS",
+  "sha256": {
+    "source_ts": "e49510bac0a700171fa0de9468ab501f949ffcec7254841d07411d87ba23ab9e",
+    "human_shell": "ea4131e4de8fc000f4e336e61970a3abc7175d92f8425b1e467118267ea24c38",
+    "bot_mirror_md": "5aabc35d28d936651455c305228c666f02f0e14a80d05e1981113919849552f5",
+    "bot_mirror_html": "1724c7383952c8cb1616b191d96f23baa939be97c32e5019f2857ecdd1f36056",
+    "articles_json": "6f46a51d2025760b1dcea60f826ee28e3c62995550c90d753341030281894622",
+    "feed_xml": "6563bd7a055bed32205436da3c398005bc0ec0c38490efcaaa03a5441cfe851c",
+    "sitemap_xml": "17a4b8052138aabda5dd1a5df419eaa2d68022daac6e6a488678b9dbc06b4f31"
+  },
+  "live_probe": {
+    "human_title": "Mencintaimu",
+    "human_status": "200",
+    "bot_lane": "article_id: m-gen-mencintaimu",
+    "articles_json_entries": 52,
+    "feed_xml_has_mencintaimu": true,
+    "sitemap_has_mencintaimu": true
+  },
+  "backup": "/root/forge_work/deployments/mencintaimu-20261110",
+  "split_root_note": "makcikgpt-md/articles.json + makcikgpt-md/* are hardlinked (inode shared). feed.xml/sitemap.xml/llms.txt serve from /var/www/html/ (NOT /var/www/html/arif/) per caddy '2026-08-10 fix' handler."
+}

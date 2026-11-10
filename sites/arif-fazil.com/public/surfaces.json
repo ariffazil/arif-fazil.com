@@ -502,11 +502,13 @@
     },
     {
       "path": "/federation/",
-      "redirects_to": "/doctrine",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy federation path — merged into doctrine"
+      "title": "Federation Observatory — arifOS F1–F13",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "daily",
+      "description": "Constitutional floors, organs, and evidence chains — observed, not adjudicated."
     },
     {
       "path": "/discoveries/",
@@ -662,13 +664,10 @@
     },
     {
       "path": "/pulse/",
-      "title": "Federation Pulse — arifOS",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Live federation health surface: organ status, pulse telemetry, recent activity. Written by the FI-003 consolidation cron every 6h."
+      "title": "Federation Pulse (retired)",
+      "status": "gone",
+      "type": "gone",
+      "description": "Retired pulse surface. Measured: HTTP 410 Gone."
     },
     {
       "path": "/forge/",

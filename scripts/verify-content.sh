@@ -176,12 +176,12 @@ print("PASS" if ok else "FAIL", json.dumps({
 
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — /vitals/${NC}"
 
-# ── Current Vitals Reality (Belanjawan 2027 / 19 Oct 2026 sync) ──
+# ── Current Vitals Reality (Belanjawan 2027 / 3 Nov 2026 sync) ──
 assert_present "/vitals/"  "A: PETRONAS dompet/tangki"    "dompet hari ini, tangki masa depan"
-assert_present "/vitals/"  "A: 19 Oktober 2026 dateline"  "19 OKTOBER 2026"
+assert_present "/vitals/"  "A: 19 Oktober dateline"       "19 Oktober"
 assert_present "/vitals/"  "A: Belanjawan 2027"           "Belanjawan 2027"
 assert_present "/vitals/"  "A: RM32 bilion unjuran"       "RM32 bilion"
-assert_present "/vitals/"  "A: Jalan D hidup"             "Jalan D hidup"
+assert_present "/vitals/"  "A: Jalan D disokong"          "Jalan D disokong"
 assert_present "/vitals/"  "A: Kementerian Kewangan"      "Kementerian Kewangan"
 assert_present "/vitals/"  "A: 7.92 bilion tong"          "7.92 bilion tong"
 
@@ -189,7 +189,7 @@ assert_present "/vitals/"  "A: 7.92 bilion tong"          "7.92 bilion tong"
 echo ""
 echo -e "${CYAN}═══ CONTENT ASSERTIONS — JSON-LD${NC}"
 assert_present "/vitals/"  "JSON-LD: PETRONAS WebPage"    "PETRONAS — dompet hari ini, tangki masa depan"
-assert_present "/vitals/"  "JSON-LD: dateModified 2026-10-19" '"dateModified":"2026-10-19"'
+assert_present "/vitals/"  "JSON-LD: dateModified 2026-11-03" '"dateModified":"2026-11-03"'
 
 # ── Commodity & market intelligence routes ──
 echo ""

@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-09T18:24:53.605Z",
+  "generated_at": "2026-11-10T04:42:24.589Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -162,7 +162,7 @@
     },
     "wealth": {
       "verified": true,
-      "count": 15,
+      "count": 16,
       "tools": [
         {
           "name": "capital_primitive",
@@ -223,6 +223,10 @@
         {
           "name": "capital_civx",
           "desc": "Civilizational scenario intelligence — long-horizon resilience, sovereignty, intergenerati"
+        },
+        {
+          "name": "capital_abangguard_verdict",
+          "desc": "AbangGuard federated risk verdict for MT5 XAUUSD entries. Aggregates LAW_ECHO (5 locked tr"
         }
       ]
     },
@@ -273,5 +277,5 @@
       ]
     }
   },
-  "total_verified": 61
+  "total_verified": 62
 }

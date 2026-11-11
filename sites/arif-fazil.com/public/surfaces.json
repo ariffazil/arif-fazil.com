@@ -134,23 +134,24 @@
     },
     {
       "path": "/economics/",
-      "title": "Economics — WEALTH Capital Briefing",
+      "title": "Research — Arif Fazil",
       "mission": "interpret",
       "status": "live",
       "type": "page",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing"
+      "description": "Measured 2026-11-11T17:33:55Z on the origin: HTTP 200, 8470 bytes, document title \"Research — Arif Fazil\". Headless Chrome at the same minute rendered H1 \"Everything is an incentive.\" Essay page. It does not print the Bursa, ringgit, or Brent snapshot. That snapshot is /data/wealth/latest.json, generated_at 2026-11-11T07:00:01+08. Same probe: /economics/oil/ /economics/gas/ /economics/gold/ /economics/klci/ /economics/usdmyr/ and /economics/article/x returned HTTP 404."
     },
     {
       "path": "/economics/article/:slug",
-      "title": "WEALTH Article",
+      "title": "WEALTH article path",
       "mission": "interpret",
-      "status": "live",
-      "type": "dynamic_page",
+      "status": "gone",
+      "type": "gone",
       "priority": 0.7,
       "changefreq": "monthly",
-      "description": "Individual WEALTH capital intelligence article"
+      "description": "Measured 2026-11-11T17:33:55Z on the origin: literal /economics/article/x returned HTTP 404. No article index is served under this prefix.",
+      "code": 404
     },
     {
       "path": "/work/",

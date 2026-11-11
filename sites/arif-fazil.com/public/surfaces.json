@@ -140,7 +140,7 @@
       "type": "page",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Measured 2026-11-11T17:33:55Z on the origin: HTTP 200, 8470 bytes, document title \"Research — Arif Fazil\". Headless Chrome at the same minute rendered H1 \"Everything is an incentive.\" Essay page. It does not print the Bursa, ringgit, or Brent snapshot. That snapshot is /data/wealth/latest.json, generated_at 2026-11-11T07:00:01+08. Same probe: /economics/oil/ /economics/gas/ /economics/gold/ /economics/klci/ /economics/usdmyr/ and /economics/article/x returned HTTP 404."
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 200, 10017 bytes, document title \"Research — Arif Fazil\". Headless Chrome the same minute rendered H1 \"Everything is an incentive.\" and a board list after that heading: Brent, gas, gold, FBM KLCI, USD/MYR, PETRONAS. Same probe: /economics/oil/ /economics/gas/ /economics/gold/ returned HTTP 308 to /oil/ /gas/ /gold/. /economics/klci/ and /economics/usdmyr/ returned HTTP 308 to /world/economics/klci/ and /world/economics/usdmyr/. Public first hop matched those codes."
     },
     {
       "path": "/economics/article/:slug",
@@ -670,7 +670,8 @@
       "title": "Federation Pulse (retired)",
       "status": "gone",
       "type": "gone",
-      "description": "Retired pulse surface. Measured: HTTP 410 Gone."
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: /pulse and /pulse/ both HTTP 410, title \"410 Gone — /pulse/\", 554 bytes. Earlier the same day /pulse/ was HTTP 200 because a file_server handle outranked the 410 matcher. That handle was removed. The HTML file remains on disk and is not the response.",
+      "code": 410
     },
     {
       "path": "/forge/",
@@ -1231,6 +1232,76 @@
       "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /gold/. /gold/ answered HTTP 200, 57236 bytes, title \"Gold — Cognitive Clarity Dashboard · WEALTH\".",
       "code": 308,
       "redirects_to": "/gold/"
+    },
+    {
+      "path": "/economics/oil/",
+      "title": "Economics oil alias — 308 to /oil/",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: HTTP 308 Location /oil/. Public first hop the same minute was HTTP 308 to the same target.",
+      "code": 308,
+      "redirects_to": "/oil/"
+    },
+    {
+      "path": "/economics/gas/",
+      "title": "Economics gas alias — 308 to /gas/",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: HTTP 308 Location /gas/. Public first hop the same minute was HTTP 308 to the same target.",
+      "code": 308,
+      "redirects_to": "/gas/"
+    },
+    {
+      "path": "/economics/gold/",
+      "title": "Economics gold alias — 308 to /gold/",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: HTTP 308 Location /gold/. Public first hop the same minute was HTTP 308 to the same target.",
+      "code": 308,
+      "redirects_to": "/gold/"
+    },
+    {
+      "path": "/economics/klci/",
+      "title": "Economics KLCI alias — 308 to the KLCI terminal",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: HTTP 308 Location /world/economics/klci/. Public first hop the same minute was HTTP 308 to the same target.",
+      "code": 308,
+      "redirects_to": "/world/economics/klci/"
+    },
+    {
+      "path": "/economics/usdmyr/",
+      "title": "Economics ringgit alias — 308 to the USD/MYR terminal",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: HTTP 308 Location /world/economics/usdmyr/. Public first hop the same minute was HTTP 308 to the same target.",
+      "code": 308,
+      "redirects_to": "/world/economics/usdmyr/"
+    },
+    {
+      "path": "/world/economics/",
+      "title": "Economics boards — Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Measured 2026-11-12T01:47:47+08 on the origin: HTTP 200, 1744 bytes, document title \"Economics boards — Arif Fazil\". Index of the live boards. No prices. Before this file, the same URL returned the homepage (8243 bytes, title \"Arif Fazil — Exploration Geoscientist & Sovereign Systems\"). Public hop the same minute was HTTP 200 with this title."
     }
   ],
   "federation_subdomains": [

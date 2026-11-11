@@ -1,20 +1,18 @@
---- a/etc/caddy/vhosts/arif-fazil.com.conf
-+++ b/proposed/arif-fazil.com.conf
-@@ -988,6 +988,21 @@
+--- /root/_to_delete/deploy-rollback-20261112T0112/arif-fazil.com.conf	2026-11-10 06:42:08.545411978 +0800
++++ /etc/caddy/vhosts/arif-fazil.com.conf	2026-11-12 01:19:25.369610227 +0800
+@@ -988,6 +988,19 @@
  
  
  
-+	# proposal 2026-11-12 — do not apply until ARIF GO. Live HTTP stays as probed.
-+	# 2026-11-11T16:45Z: /world/economics/oil|gas|gold/ and /world/petronas/gentari/
-+	# were HTTP 200, 157671 bytes, title the World hub. Not dossiers and not boards.
++	# 2026-11-12 ARIF GO. These URLs served the World hub on 2026-11-11T16:45Z.
 +	redir /world/economics/oil /oil/ 308
 +	redir /world/economics/oil/ /oil/ 308
 +	redir /world/economics/gas /gas/ 308
 +	redir /world/economics/gas/ /gas/ 308
 +	redir /world/economics/gold /gold/ 308
 +	redir /world/economics/gold/ /gold/ 308
-+
-+	handle /world/petronas/gentari /world/petronas/gentari/ /world/petronas/gentari/* {
++	@world_gentari_gone path /world/petronas/gentari /world/petronas/gentari/ /world/petronas/gentari/*
++	handle @world_gentari_gone {
 +		header Content-Type "text/plain; charset=utf-8"
 +		respond "410 Gone. This URL is not a Gentari dossier. On 2026-11-11T16:45Z it served the World hub. The PETRONAS page is /petronas/." 410
 +	}
@@ -22,7 +20,7 @@
  	handle /world/* {
  		root * /var/www/html/arif
  		try_files {path} {path}/index.html /world/index.html /index.html =404
-@@ -2113,23 +2128,23 @@
+@@ -2113,23 +2126,23 @@
  
  	# Unknown paths get a real 404 for agent/curl access
  

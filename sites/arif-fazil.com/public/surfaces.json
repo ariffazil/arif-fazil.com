@@ -224,39 +224,39 @@
     },
     {
       "path": "/world/oil/",
-      "title": "Oil alias — 308 to /world/economics/oil/ (World hub)",
+      "title": "Oil alias — 308 to /oil/",
       "mission": "monitor",
       "status": "redirect",
       "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /world/economics/oil/. That URL returned HTTP 200 with the World hub title (\"World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil\"), same byte length as /world/ (157671). It is not the Brent board. The board is /oil/ (HTTP 200, \"Brent Crude — Cognitive Clarity · WEALTH\"). Proposed caddy patch retargets this hop and the economics path to /oil/. Not applied.",
+      "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /oil/. /oil/ answered HTTP 200, 31966 bytes, title \"Brent Crude — Cognitive Clarity · WEALTH\".",
       "code": 308,
-      "redirects_to": "/world/economics/oil/"
+      "redirects_to": "/oil/"
     },
     {
       "path": "/world/gas/",
-      "title": "Gas alias — 308 to /world/economics/gas/ (World hub)",
+      "title": "Gas alias — 308 to /gas/",
       "mission": "monitor",
       "status": "redirect",
       "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /world/economics/gas/. Target HTTP 200 is the World hub, not the gas board. The board is /gas/ (HTTP 200, \"Natural Gas — Cognitive Clarity · WEALTH\"). Proposed caddy patch retargets both hops to /gas/. Not applied.",
+      "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /gas/. /gas/ answered HTTP 200, 32071 bytes, title \"Natural Gas — Cognitive Clarity · WEALTH\".",
       "code": 308,
-      "redirects_to": "/world/economics/gas/"
+      "redirects_to": "/gas/"
     },
     {
       "path": "/world/gold/",
-      "title": "Gold alias — 308 to /world/economics/gold/ (World hub)",
+      "title": "Gold alias — 308 to /gold/",
       "mission": "monitor",
       "status": "redirect",
       "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /world/economics/gold/. Target HTTP 200 is the World hub, not the XAU board. The board is /gold/ (HTTP 200, \"Gold — Cognitive Clarity Dashboard · WEALTH\"). Proposed caddy patch retargets both hops to /gold/. Not applied.",
+      "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /gold/. /gold/ answered HTTP 200, 57236 bytes, title \"Gold — Cognitive Clarity Dashboard · WEALTH\".",
       "code": 308,
-      "redirects_to": "/world/economics/gold/"
+      "redirects_to": "/gold/"
     },
     {
       "path": "/world/petronas/shadow/",
@@ -1126,13 +1126,14 @@
     },
     {
       "path": "/world/petronas/gentari/",
-      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "title": "410 Gone — not a Gentari dossier",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "gone",
+      "type": "gone",
       "priority": "0.6",
       "changefreq": "weekly",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, same title and length as /world/. The word Gentari is not this document. Catalog previously called it a Gentari dossier. It is the World hub. Proposed caddy response is 410. Not applied. The PETRONAS page is /petronas/."
+      "description": "Measured 2026-11-11T17:27:41Z on the origin: HTTP 410, 123 bytes. Body: \"410 Gone. This URL is not a Gentari dossier. On 2026-11-11T16:45Z it served the World hub. The PETRONAS page is /petronas/.\" The same body is served without the trailing slash.",
+      "code": 410
     },
     {
       "path": "/world/petronas/",
@@ -1142,7 +1143,7 @@
       "type": "hub",
       "priority": "0.7",
       "changefreq": "weekly",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 200, title as above, body about 4317 bytes (probe read). Short index, not the /petronas/ wallet page (37349 bytes). /world/petronas/gentari/ is the World hub, not a Gentari dossier."
+      "description": "Measured 2026-11-11T17:27:41Z on the origin: HTTP 200, 2836 bytes, title \"PETRONAS — Dossier Permukaan · Arif Fazil\". Short index. /world/petronas/gentari/ is HTTP 410. The wallet page is /petronas/."
     },
     {
       "path": "/petronas/",
@@ -1196,33 +1197,39 @@
     },
     {
       "path": "/world/economics/oil/",
-      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "title": "Economics oil alias — 308 to /oil/",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.6,
       "changefreq": "weekly",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, World hub title. Not a oil board. /world/oil/ 308s here. Proposed caddy patch sends this path to /oil/. Not applied."
+      "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /oil/. /oil/ answered HTTP 200, 31966 bytes, title \"Brent Crude — Cognitive Clarity · WEALTH\".",
+      "code": 308,
+      "redirects_to": "/oil/"
     },
     {
       "path": "/world/economics/gas/",
-      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "title": "Economics gas alias — 308 to /gas/",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.6,
       "changefreq": "weekly",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, World hub title. Not a gas board. /world/gas/ 308s here. Proposed caddy patch sends this path to /gas/. Not applied."
+      "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /gas/. /gas/ answered HTTP 200, 32071 bytes, title \"Natural Gas — Cognitive Clarity · WEALTH\".",
+      "code": 308,
+      "redirects_to": "/gas/"
     },
     {
       "path": "/world/economics/gold/",
-      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "title": "Economics gold alias — 308 to /gold/",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.6,
       "changefreq": "weekly",
-      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, World hub title. Not a gold board. /world/gold/ 308s here. Proposed caddy patch sends this path to /gold/. Not applied."
+      "description": "Measured 2026-11-11T17:27:41Z on the origin (curl --resolve arif-fazil.com:443:127.0.0.1): HTTP 308 Location /gold/. /gold/ answered HTTP 200, 57236 bytes, title \"Gold — Cognitive Clarity Dashboard · WEALTH\".",
+      "code": 308,
+      "redirects_to": "/gold/"
     }
   ],
   "federation_subdomains": [

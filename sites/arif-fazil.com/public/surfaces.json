@@ -224,39 +224,39 @@
     },
     {
       "path": "/world/oil/",
-      "title": "Oil Dashboard — Brent Crude Cognitive View",
+      "title": "Oil alias — 308 to /world/economics/oil/ (World hub)",
       "mission": "monitor",
       "status": "redirect",
       "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Brent crude oil cognitive dashboard with live data. Measured 2026-10-18: serves 308 → /oil/; catalog corrected from status=live.",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /world/economics/oil/. That URL returned HTTP 200 with the World hub title (\"World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil\"), same byte length as /world/ (157671). It is not the Brent board. The board is /oil/ (HTTP 200, \"Brent Crude — Cognitive Clarity · WEALTH\"). Proposed caddy patch retargets this hop and the economics path to /oil/. Not applied.",
       "code": 308,
-      "redirects_to": "/oil/"
+      "redirects_to": "/world/economics/oil/"
     },
     {
       "path": "/world/gas/",
-      "title": "Gas Dashboard — Natural Gas Intelligence",
+      "title": "Gas alias — 308 to /world/economics/gas/ (World hub)",
       "mission": "monitor",
       "status": "redirect",
       "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Natural gas dashboard with live data. Measured 2026-10-18: serves 308 → /gas/; catalog corrected from status=live.",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /world/economics/gas/. Target HTTP 200 is the World hub, not the gas board. The board is /gas/ (HTTP 200, \"Natural Gas — Cognitive Clarity · WEALTH\"). Proposed caddy patch retargets both hops to /gas/. Not applied.",
       "code": 308,
-      "redirects_to": "/gas/"
+      "redirects_to": "/world/economics/gas/"
     },
     {
       "path": "/world/gold/",
-      "title": "Gold Dashboard — XAUUSD Trading Synthesis",
+      "title": "Gold alias — 308 to /world/economics/gold/ (World hub)",
       "mission": "monitor",
       "status": "redirect",
       "type": "redirect",
       "priority": 0.7,
       "changefreq": "daily",
-      "description": "Gold trading synthesis and technical analysis dashboard. Measured 2026-10-18: serves 308 → /gold/; catalog corrected from status=live.",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /world/economics/gold/. Target HTTP 200 is the World hub, not the XAU board. The board is /gold/ (HTTP 200, \"Gold — Cognitive Clarity Dashboard · WEALTH\"). Proposed caddy patch retargets both hops to /gold/. Not applied.",
       "code": 308,
-      "redirects_to": "/gold/"
+      "redirects_to": "/world/economics/gold/"
     },
     {
       "path": "/world/petronas/shadow/",
@@ -520,31 +520,31 @@
     },
     {
       "path": "/wealth/",
-      "title": "Wealth Capital (redirect → /vitals/)",
+      "title": "Wealth alias — 308 to /petronas/",
       "mission": "interpret",
       "status": "redirect",
       "type": "redirect",
       "code": 308,
       "priority": 0.8,
       "changefreq": "daily",
-      "description": "Legacy alias. /wealth/ now redirects to /vitals/ — the canonical PETRONAS institutional vitals. Article paths /wealth/article/:slug already redirect to /economics/article/:slug. Added 2026-09-17 to close catalog/reality drift.",
-      "redirects_to": "/vitals/"
+      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /petronas/. Earlier catalog target /vitals/ is itself HTTP 308 to /petronas/. /petronas/ HTTP 200, title \"PETRONAS — dompet hari ini, tangki masa depan — Arif Fazil | arifOS\".",
+      "redirects_to": "/petronas/"
     },
     {
       "path": "/wealth/article/:slug",
-      "redirects_to": "/economics/article/:slug",
+      "redirects_to": "/wealth/",
       "status": "redirect",
       "code": 301,
       "type": "redirect",
-      "description": "Legacy wealth article — canonical is /economics/article/:slug"
+      "description": "Observed 2026-11-11T16:45Z: literal path HTTP 301 Location /wealth/. /wealth/ then HTTP 308 to /petronas/. Not observed going to /economics/article/:slug. The literal /economics/article/:slug path was HTTP 404."
     },
     {
       "path": "/essays/",
-      "redirects_to": "/writing",
+      "redirects_to": "/words/writing/",
       "status": "redirect",
-      "code": 301,
+      "code": 308,
       "type": "redirect",
-      "description": "Legacy essays path — canonical is /writing"
+      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /words/writing/. /words/writing/ HTTP 200, title \"Writing — Constitutional Essays · arif-fazil.com\". Earlier catalog target /writing also 308s there."
     },
     {
       "path": "/essays/:slug",
@@ -642,13 +642,15 @@
     },
     {
       "path": "/vitals/",
-      "title": "PETRONAS · VITALS — Financial capacity and resilience",
+      "title": "Vitals alias — 308 to /petronas/",
       "mission": "monitor",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Public PETRONAS VITALS on apex. Canonical soft path /vitals/."
+      "description": "Observed 2026-11-11T16:45Z: HTTP 308 Location /petronas/. Not a separate vitals document. /petronas/ is the page that answered.",
+      "code": 308,
+      "redirects_to": "/petronas/"
     },
     {
       "path": "/malaysia/",
@@ -677,9 +679,9 @@
       "type": "redirect",
       "priority": 0.6,
       "changefreq": "monthly",
-      "description": "A-FORGE subdomain redirects to arifOS MCP gateway (forge.arif-fazil.com itself 301s to mcp.arif-fazil.com). Added 2026-09-17: redirects_to updated to actual live target.",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 301 Location https://forge.arif-fazil.com/. This probe did not follow the subdomain. Earlier catalog target was https://mcp.arif-fazil.com/.",
       "code": 301,
-      "redirects_to": "https://mcp.arif-fazil.com/"
+      "redirects_to": "https://forge.arif-fazil.com/"
     },
     {
       "path": "/world/politics/shadow/",
@@ -1124,23 +1126,103 @@
     },
     {
       "path": "/world/petronas/gentari/",
-      "title": "Gentari — Dossier Realiti",
-      "mission": "Sovereign dossier on Gentari Sdn Bhd — PETRONAS clean energy arm: measured CAPEX, segment losses, capacity growth, hydrogen stall, KKR India deal. 12 sourced claims with falsifiers.",
+      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "mission": "monitor",
       "status": "live",
-      "type": "dossier",
+      "type": "page",
       "priority": "0.6",
       "changefreq": "weekly",
-      "description": "Keluarga Bayang surface. 12 claims (7 PROVEN / 4 PARTIAL / 1 UNKNOWN), machine data at claims.json + index.json."
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, same title and length as /world/. The word Gentari is not this document. Catalog previously called it a Gentari dossier. It is the World hub. Proposed caddy response is 410. Not applied. The PETRONAS page is /petronas/."
     },
     {
       "path": "/world/petronas/",
-      "title": "PETRONAS — Dompet hari ini, tangki masa depan (Hub)",
+      "title": "PETRONAS — Dossier Permukaan · Arif Fazil",
       "mission": "PETRONAS family hub: wallet-and-tank financial reality (ex-/vitals/), Kerusi Bayang leadership archive, Gentari clean-energy dossier. Bahasa Melayu.",
       "status": "live",
       "type": "hub",
       "priority": "0.7",
       "changefreq": "weekly",
-      "description": "Keluarga Bayang PETRONAS hub. Children: /world/petronas/shadow/ + /world/petronas/gentari/. Replaces /vitals/ (2026-10-23)."
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, title as above, body about 4317 bytes (probe read). Short index, not the /petronas/ wallet page (37349 bytes). /world/petronas/gentari/ is the World hub, not a Gentari dossier."
+    },
+    {
+      "path": "/petronas/",
+      "title": "PETRONAS — dompet hari ini, tangki masa depan — Arif Fazil | arifOS",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "daily",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 37349 bytes. Absent from the 114-row catalog at probe time. /vitals/ and /wealth/ 308 here."
+    },
+    {
+      "path": "/wealth/malaysia/",
+      "title": "MALAYSIA · φ VITALS — Federal sovereign distance-to-break",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 49413 bytes. /malaysia/ HTTP 308 Location /wealth/malaysia/. Absent from the catalog and not inferred from a count."
+    },
+    {
+      "path": "/work/missions/",
+      "title": "Missions — Six verbs · Arif Fazil",
+      "mission": "build",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 6238 bytes. Absent from the catalog. /missions/ was already catalogued as a redirect here."
+    },
+    {
+      "path": "/work/proof/",
+      "title": "/999 — Proof · Sealed Vault | Arif Fazil",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 37756 bytes. Absent from the catalog. /proof/ was already catalogued as a redirect here."
+    },
+    {
+      "path": "/words/constitution/",
+      "title": "/constitution — The Rules I Write for My AI | Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 22296 bytes. Absent from the catalog."
+    },
+    {
+      "path": "/world/economics/oil/",
+      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, World hub title. Not a oil board. /world/oil/ 308s here. Proposed caddy patch sends this path to /oil/. Not applied."
+    },
+    {
+      "path": "/world/economics/gas/",
+      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, World hub title. Not a gas board. /world/gas/ 308s here. Proposed caddy patch sends this path to /gas/. Not applied."
+    },
+    {
+      "path": "/world/economics/gold/",
+      "title": "World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "weekly",
+      "description": "Observed 2026-11-11T16:45Z: HTTP 200, 157671 bytes, World hub title. Not a gold board. /world/gold/ 308s here. Proposed caddy patch sends this path to /gold/. Not applied."
     }
   ],
   "federation_subdomains": [

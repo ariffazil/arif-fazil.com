@@ -1,0 +1,20 @@
+--- a/etc/caddy/vhosts/wealth.arif-fazil.com.conf
++++ b/proposed/wealth.arif-fazil.com.conf
+@@ -23,7 +23,7 @@
+   "version": "v2026.10.23-ALIGNMENT",
+   "protocol": "2025-11-25",
+   "capabilities": ["tools", "resources", "prompts"],
+-  "tools_count": 15,
++  "tools_count": 13,
+   "tools_url": "https://wealth.arif-fazil.com/tools",
+   "markets_registry_url": "https://wealth.arif-fazil.com/api/markets/registry",
+   "health_url": "https://wealth.arif-fazil.com/health",
+@@ -31,7 +31,7 @@
+   "llms_url": "https://wealth.arif-fazil.com/llms.txt",
+   "federation_identity": "https://arif-fazil.com/.well-known/arifos-federation.json",
+   "surface_class": "public_market_observation",
+-  "note": "POST /mcp for JSON-RPC. GET returns this card."
++  "note": "POST /mcp for JSON-RPC. GET returns this card. tools_count 13 is the 2026-11-11T16:37:36Z probe of /health and /tools (tool_count_source mcp.list_tools). Re-probe before the next edit. This card is not runtime introspection."
+ }` 200
+ 	}
+ 

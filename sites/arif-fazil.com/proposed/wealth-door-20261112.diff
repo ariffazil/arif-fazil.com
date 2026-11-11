@@ -1,0 +1,441 @@
+--- a/var/www/html/wealth/index.html
++++ b/sites/arif-fazil.com/proposed/wealth-door-20261112.html
+@@ -160,7 +160,7 @@
+     <div class="hero-container">
+       <div class="pill">
+         <span class="pulse-dot"></span>
+-        WEALTH ORGAN · PORT :18082
++        WEALTH ORGAN · loopback :18082 /health HTTP 200 · 2026-11-11T16:50:30Z
+       </div>
+       <h1 class="title">Sovereign Capital & Commodity Intelligence</h1>
+       <p class="subtitle">Evidence-gated market synthesis, fiscal breakevens, and portfolio risk telemetry under arifOS F1–F13 constitutional governance.</p>
+@@ -168,12 +168,22 @@
+   </div>
+ 
+   <div class="main">
++    <p id="advisory-line" style="margin:0 0 1.4rem;padding:0.9rem 1rem;border:1px solid rgba(232,184,75,0.45);border-radius:8px;color:var(--text);font-size:0.95rem;">Advisory only. Not investment advice. Ledger integrity under repair — outputs are not authorization evidence.</p>
++    <p style="margin:0 0 1.6rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--dim);line-height:1.5;">
++      Spot gold beside the implied figure:
++      <strong style="color:var(--text);">XAUUSD 3995.59</strong>
++      · observed_at 2026-11-11T16:33:12.313Z
++      · source yfinance + technical analysis (WEALTH commodity engine)
++      · GET https://wealth.arif-fazil.com/gold/api/snapshot .
++      Implied, not a quote: <strong style="color:var(--text);">$2,630 / oz</strong>
++      (the slider default previously printed on this door). It is not the spot.
++    </p>
+     <div class="grid">
+       <div class="card">
+         <div>
+-          <div class="card-tag">Real-Time Markets · 555_COMPUTE_ONLY</div>
++          <div class="card-tag">Boards · authority ceiling 555_COMPUTE_ONLY</div>
+           <h2 class="card-title">Commodity &amp; Market Signals</h2>
+-          <p class="card-desc">Live Brent Crude oil, Gold (XAUUSD), Natural Gas, FBM KLCI, and USD/MYR observation terminals with F2 epistemic truth bounds.</p>
++          <p class="card-desc">Brent, gold, natural gas, and USD/MYR links. A number is written on a link only after this page's fetch returns. No static price is printed on the links.</p>
+         </div>
+         <div class="card-links">
+           <a href="/markets/" class="card-link">📊 Markets Observation Hub</a>
+@@ -187,14 +197,14 @@
+ 
+       <div class="card">
+         <div>
+-          <div class="card-tag">Agentic Interfaces · 15 Canonical Tools</div>
++          <div class="card-tag">Agentic Interfaces · 13 tools</div>
+           <h2 class="card-title">MCP &amp; Discovery Gateway</h2>
+-          <p class="card-desc">Unified machine-readable endpoints generated from FastMCP runtime introspection (15 tools, authority ceiling 555_COMPUTE_ONLY).</p>
++          <p class="card-desc">Tool count 13. Source: https://wealth.arif-fazil.com/health fields tools_loaded, public_tools, canonical_tools, and https://wealth.arif-fazil.com/tools list length 13. tool_count_source mcp.list_tools. Date header Wed, 11 Nov 2026 16:37:36 GMT. The GET /mcp card is a separate hardcoded document; this door does not copy it. See the Caddy proposal. authority_ceiling 555_COMPUTE_ONLY is from the same /health body.</p>
+         </div>
+         <div class="card-links">
+           <a href="https://wealth.arif-fazil.com/mcp" class="card-link">🔌 /mcp Endpoint</a>
+-          <a href="https://wealth.arif-fazil.com/tools" class="card-link">🛠️ /tools (15 MCP Tools)</a>
+-          <a href="https://wealth.arif-fazil.com/health" class="card-link">🟢 /health Probe</a>
++          <a href="https://wealth.arif-fazil.com/tools" class="card-link">🛠️ /tools (13 tools · mcp.list_tools · 2026-11-11T16:37:36Z)</a>
++          <a href="https://wealth.arif-fazil.com/health" class="card-link">/health · tools_loaded 13 at 2026-11-11T16:37:36Z</a>
+           <a href="https://wealth.arif-fazil.com/.well-known/agent-card.json" class="card-link">🪪 agent-card.json</a>
+           <a href="https://wealth.arif-fazil.com/llms.txt" class="card-link">📄 /llms.txt</a>
+           <a href="https://wealth.arif-fazil.com/api/wealth/briefing" class="card-link">📡 /briefing JSON</a>
+@@ -218,370 +228,77 @@
+       </div>
+     </div>
+ 
+-    <!-- ══ WEALTH MACRO CAPITAL RADAR: GOLD VS M2 DEBT DEBASEMENT ══ -->
+-    <div id="macro-radar" style="margin-top: 3.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+-      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.4rem; margin-bottom: 1.6rem;">
+-        <div>
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; font-weight:600;">
+-            MACRO CAPITAL PRIMITIVE · RAY DALIO &amp; LYN ALDEN FRAMEWORK
+-          </div>
+-          <h2 style="font-family:'DM Serif Display',serif; font-size:1.85rem; margin:0.3rem 0 0.4rem; color:var(--text); font-weight:400;">
+-            Macro Capital Radar: Gold vs M2 Debt Debasement
+-          </h2>
+-          <p style="font-size:0.92rem; color:var(--dim); margin:0; max-width:70ch; line-height:1.6;">
+-            Fiat debt currencies expand exponentially through deficit monetization. Physical gold (atomic element 79) maintains thermodynamic scarcity. Manipulate global M2 money supply and backing ratios to compute the physical equilibrium valuation.
+-          </p>
+-        </div>
+-        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="radar-presets">
+-          <button type="button" class="card-link" onclick="setMacroPreset('cur2026')" style="cursor:pointer; color:var(--gold); border-color:var(--gold); background:rgba(232,184,75,0.12);">2026 FISCAL DOMINANCE</button>
+-          <button type="button" class="card-link" onclick="setMacroPreset('gfc2008')" style="cursor:pointer;">2008 GFC QE SPIKE</button>
+-          <button type="button" class="card-link" onclick="setMacroPreset('volcker1980')" style="cursor:pointer;">1980 VOLCKER PEAK</button>
+-          <button type="button" class="card-link" onclick="setMacroPreset('statutory40')" style="cursor:pointer;">40% STATUTORY STANDARD</button>
+-        </div>
+-      </div>
+-
+-      <!-- Controls & Live Chart Grid -->
+-      <div style="display:grid; grid-template-columns: minmax(280px, 340px) 1fr; gap:1.75rem; align-items:start;">
+-        <!-- Controls Panel -->
+-        <div style="background:rgba(0,0,0,0.3); border:1px solid var(--border); border-radius:10px; padding:1.4rem;">
+-          <!-- Slider 1: M2 -->
+-          <div style="margin-bottom:1.4rem;">
+-            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; margin-bottom:0.4rem;">
+-              <span style="color:var(--dim);">US M2 Money Supply:</span>
+-              <span id="val-m2-display" style="color:var(--gold); font-weight:600;">$21.5T</span>
+-            </div>
+-            <input type="range" id="slider-m2" min="10" max="45" step="0.5" value="21.5" oninput="updateMacroRadar()" style="width:100%; accent-color:var(--gold); cursor:pointer;">
+-            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--text-dim);">
+-              <span>$10T</span><span>$21.5T (Now)</span><span>$45T</span>
+-            </div>
+-          </div>
+-
+-          <!-- Slider 2: Gold Backing Ratio -->
+-          <div style="margin-bottom:1.4rem;">
+-            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; margin-bottom:0.4rem;">
+-              <span style="color:var(--dim);">Gold Backing Ratio:</span>
+-              <span id="val-backing-display" style="color:var(--gold); font-weight:600;">3.2%</span>
+-            </div>
+-            <input type="range" id="slider-backing" min="0.5" max="40" step="0.1" value="3.2" oninput="updateMacroRadar()" style="width:100%; accent-color:var(--gold); cursor:pointer;">
+-            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--text-dim);">
+-              <span>0.5% (Paper)</span><span>3.2% (Realized)</span><span>40% (Statutory)</span>
+-            </div>
+-          </div>
+-
+-          <!-- Key Metrics Readout -->
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; display:flex; flex-direction:column; gap:0.65rem; border-top:1px solid var(--border); padding-top:1rem;">
+-            <div style="display:flex; justify-content:space-between;">
+-              <span style="color:var(--dim);">Implied Gold Price:</span>
+-              <span id="val-implied-gold" style="color:var(--text); font-weight:700;">$2,630 / oz</span>
+-            </div>
+-            <div style="display:flex; justify-content:space-between;">
+-              <span style="color:var(--dim);">Malaysian Sovereignty:</span>
+-              <span id="val-implied-myr" style="color:var(--gold); font-weight:600;">RM 358 / gram</span>
+-            </div>
+-            <div style="display:flex; justify-content:space-between;">
+-              <span style="color:var(--dim);">US Gold Reserve:</span>
+-              <span style="color:var(--text-mid);">261.5M oz (8,133t)</span>
+-            </div>
+-            <div style="display:flex; justify-content:space-between;">
+-              <span style="color:var(--dim);">Fiat Dilution vs 1971:</span>
+-              <span id="val-dilution-pct" style="color:#ef4444; font-weight:600;">-98.2%</span>
+-            </div>
+-            <div style="display:flex; justify-content:space-between;">
+-              <span style="color:var(--dim);">Gold / Brent Purchasing:</span>
+-              <span id="val-oil-purchasing" style="color:var(--cyan); font-weight:600;">35.8 bbls / oz</span>
+-            </div>
+-          </div>
+-        </div>
+-
+-        <!-- Live SVG Trajectory Canvas -->
+-        <div style="background:#07070D; border:1px solid var(--border); border-radius:10px; padding:1.2rem; position:relative;">
+-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; font-family:'IBM Plex Mono',monospace; font-size:0.7rem;">
+-            <span style="color:var(--gold);">HISTORICAL TRAJECTORY &amp; DILUTION WEDGE (1971–2026)</span>
+-            <span id="radar-live-tag" style="color:var(--green);">● LIVE EQUILIBRIUM POINT</span>
+-          </div>
+-          <svg id="macroSvg" viewBox="0 0 560 260" style="width:100%; height:auto; display:block;"></svg>
+-          <div id="radar-narrative" style="margin-top:1rem; font-size:0.85rem; color:var(--text-mid); line-height:1.5; border-left:2px solid var(--gold); padding-left:0.85rem;">
+-            <strong>Macro Verdict:</strong> In 2026, global debt dominance forces sovereign central banks to accumulate gold at record volumes (>1,000t/year) to hedge ongoing fiat currency debasement.
+-          </div>
+-        </div>
+-      </div>
+-    </div>
+-
+-    <!-- ══ arifFLOW / WELL AGENTIC HEARTBEAT BAR ══ -->
+-    <div id="arifflow-heartbeat" style="margin-top: 3rem; background: rgba(17,18,24,0.7); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.8rem;">
+-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.2rem;">
+-        <div style="display:flex; align-items:center; gap:0.75rem;">
+-          <span class="pulse-dot" style="background:#3DDC97; box-shadow:0 0 10px #3DDC97;"></span>
+-          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:600; color:var(--text); letter-spacing:0.08em; text-transform:uppercase;">
+-            arifFLOW · WELL Heartbeat Telemetry
+-          </span>
+-          <span style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--dim); background:rgba(255,255,255,0.05); padding:0.15rem 0.5rem; border-radius:4px;">
+-            MESH LATENCY &lt; 14ms
+-          </span>
+-        </div>
+-        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--dim);" id="flow-clock">
+-          FETCHED · LIVE MYT
+-        </div>
+-      </div>
+-
+-      <!-- Reality Loop Chain Banner -->
+-      <div style="margin-bottom:1rem; padding:0.65rem 0.9rem; background:rgba(232,184,75,0.06); border:1px solid rgba(232,184,75,0.22); border-radius:8px; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-mid); text-align:center;">
+-        <strong style="color:var(--gold);">REALITY LOOP:</strong> WORLD (Observe) → WEALTH / GEOX / WELL (Compute &amp; Sense · 555) → AAA (Coordinate · A2A) → arifOS (Judge · 888) → ARIF (Decide · F13)
+-      </div>
+-
++    <p style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--dim);line-height:1.5;margin:1.2rem 0;">
++      No latency figure is printed. The equilibrium tag and the fetched-clock sentence from the previous door are omitted. Organ labels below cite loopback GET /health only. Tool counts other than the ones dated above are omitted.
++    </p>
+       <!-- 8 Federation Organs Grid -->
+       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:0.85rem;">
+         <!-- Organ 1: arifOS -->
+         <a href="https://arifos.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.3); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">● arifOS :8088</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">arifOS :8088 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Kernel</div>
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">JUDGE_ONLY · 9 Tools</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">JUDGE_ONLY · public_tools 9 · public-state 2026-11-11T16:34:26Z</div>
+         </a>
+ 
+         <!-- Organ 2: AAA -->
+         <a href="https://aaa.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● AAA :3001</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">AAA :3001 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Control Plane</div>
+           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">DISPLAY_ONLY · A2A Directory</div>
+         </a>
+ 
+         <!-- Organ 3: A-FORGE -->
+         <a href="https://mcp.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● A-FORGE :7072</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">A-FORGE :7072 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Actuator</div>
+           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">EXECUTE_AFTER_SEAL</div>
+         </a>
+ 
+         <!-- Organ 4: GEOX -->
+         <a href="https://geox.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(0,212,170,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--cyan); font-weight:700;">● GEOX :8081</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--cyan); font-weight:700;">GEOX :8081 · loopback /health 200 · 2026-11-11T16:50:30Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Subsurface</div>
+           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · Earth</div>
+         </a>
+ 
+         <!-- Organ 5: WEALTH -->
+         <a href="https://wealth.arif-fazil.com/tools" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.45); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">● WEALTH :18082</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">WEALTH :18082 · loopback /health 200 · 2026-11-11T16:50:30Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Capital</div>
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · 15 Tools</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · 13 tools · mcp.list_tools · 2026-11-11T16:37:36Z</div>
+         </a>
+ 
+         <!-- Organ 6: WELL -->
+         <a href="https://well.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● WELL :18083</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">WELL :18083 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Vitality</div>
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">REFLECT_ONLY · 10 Tools</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">REFLECT_ONLY · public_tools 10 · public-state 2026-11-11T16:34:26Z</div>
+         </a>
+ 
+         <!-- Organ 7: CHRON -->
+         <a href="https://chron.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">● CHRON :18102</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">CHRON :18102 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Temporal</div>
+           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · Calibration</div>
+         </a>
+ 
+         <!-- Organ 8: HERMES -->
+         <a href="https://hermes.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.3); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+-          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">● HERMES :18087</div>
++          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">HERMES :18087 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+           <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Cognitive</div>
+           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">RELAY_ONLY · A2A &amp; Voice</div>
+         </a>
+       </div>
+-    </div>
+   </div>
+ 
+   <div class="footer">
+     DITEMPA BUKAN DIBERI · arifOS Federation WEALTH Organ Surface
+   </div>
+   <div id="provenance-stamp" style="max-width:900px;margin:12px auto;color:#6b7280;font:11px monospace;text-align:center;">
+-    Sumber: Organ Live Telemetry (resit WEALTH / world-state.json)
++    Market links fill from /gold|oil|gas/api/snapshot when the fetch returns. This line is not a price.
+   </div>
+ 
+   <script>
+-  /* ── WEALTH MACRO CAPITAL RADAR CALCULATION ENGINE ── */
+-  (function(){
+-    const presets = {
+-      cur2026: {
+-        m2: 21.5,
+-        backing: 3.2,
+-        narrative: "<strong>2026 Fiscal Dominance:</strong> With US public debt exceeding $36T, sovereign central banks are purchasing >1,000 tonnes of physical gold annually. Current paper backing stands at 3.2%, pricing gold at ~$2,630/oz."
+-      },
+-      gfc2008: {
+-        m2: 12.0,
+-        backing: 2.0,
+-        narrative: "<strong>2008 GFC Quantitative Easing:</strong> Rapid Federal Reserve balance sheet expansion lowered effective gold backing to 2.0% before commodities initiated a multi-year secular bull market."
+-      },
+-      volcker1980: {
+-        m2: 1.6,
+-        backing: 13.9,
+-        narrative: "<strong>1980 Volcker Peak:</strong> Runaway 1970s inflation drove gold to $850/oz, temporarily representing near-total parity against the circulating monetary base before aggressive 20% interest rate hikes."
+-      },
+-      statutory40: {
+-        m2: 21.5,
+-        backing: 40.0,
+-        narrative: "<strong>40% Statutory Gold Standard (1913/1933 Federal Reserve Act):</strong> If the US monetary system returned to historical 40% statutory gold reserve backing against $21.5T M2, the equilibrium price of gold would be <strong>$32,887 / oz</strong> (RM 4,484 / gram)."
+-      }
+-    };
+-
+-    window.setMacroPreset = function(k){
+-      const p = presets[k];
+-      if(!p) return;
+-      document.getElementById('slider-m2').value = p.m2;
+-      document.getElementById('slider-backing').value = p.backing;
+-      
+-      const btns = document.querySelectorAll('#radar-presets button');
+-      btns.forEach(b => {
+-        const match = b.getAttribute('onclick') && b.getAttribute('onclick').includes(k);
+-        b.style.borderColor = match ? 'var(--gold)' : 'var(--border)';
+-        b.style.color = match ? 'var(--gold)' : 'var(--text)';
+-        b.style.background = match ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.04)';
+-      });
+-
+-      const nar = document.getElementById('radar-narrative');
+-      if(nar) nar.innerHTML = p.narrative;
+-      window.updateMacroRadar();
+-    };
+-
+-    window.updateMacroRadar = function(){
+-      const m2El = document.getElementById('slider-m2');
+-      const backEl = document.getElementById('slider-backing');
+-      if(!m2El || !backEl) return;
+-
+-      const m2 = parseFloat(m2El.value);
+-      const backing = parseFloat(backEl.value);
+-
+-      document.getElementById('val-m2-display').textContent = '$' + m2.toFixed(1) + 'T';
+-      document.getElementById('val-backing-display').textContent = backing.toFixed(1) + '%';
+-
+-      // US Treasury Gold Reserve: 261,498,900 troy ounces
+-      const US_GOLD_OZ = 261498900;
+-      const impliedGold = (m2 * 1e12 * (backing / 100)) / US_GOLD_OZ;
+-      const usdMyr = 4.24; // baseline 2026 rate
+-      const impliedMyrGram = (impliedGold * usdMyr) / 31.1034768;
+-
+-      const goldEl = document.getElementById('val-implied-gold');
+-      if(goldEl) goldEl.textContent = '$' + Math.round(impliedGold).toLocaleString('en-US') + ' / oz';
+-
+-      const myrEl = document.getElementById('val-implied-myr');
+-      if(myrEl) myrEl.textContent = 'RM ' + Math.round(impliedMyrGram).toLocaleString('en-US') + ' / g';
+-
+-      // Fiat dilution penalty relative to 1971 $35 gold
+-      const dilution = - (1 - (35 / Math.max(35, impliedGold))) * 100;
+-      const dilEl = document.getElementById('val-dilution-pct');
+-      if(dilEl) dilEl.textContent = dilution.toFixed(1) + '%';
+-
+-      // Barrels of Brent Oil per oz of gold ($74/bbl baseline)
+-      const brentPrice = 74.5;
+-      const bbls = (impliedGold / brentPrice).toFixed(1);
+-      const bblEl = document.getElementById('val-oil-purchasing');
+-      if(bblEl) bblEl.textContent = bbls + ' bbls / oz';
+-
+-      // Render SVG Graph
+-      const svg = document.getElementById('macroSvg');
+-      if(!svg) return;
+-
+-      // Historical Points: [Year, M2, GoldPrice]
+-      const history = [
+-        { yr: 1971, m2: 0.7, gold: 35 },
+-        { yr: 1980, m2: 1.6, gold: 850 },
+-        { yr: 1990, m2: 3.2, gold: 385 },
+-        { yr: 2000, m2: 4.9, gold: 279 },
+-        { yr: 2008, m2: 8.2, gold: 870 },
+-        { yr: 2011, m2: 9.6, gold: 1920 },
+-        { yr: 2016, m2: 13.2, gold: 1150 },
+-        { yr: 2020, m2: 19.3, gold: 2075 },
+-        { yr: 2024, m2: 21.0, gold: 2400 },
+-        { yr: 2026, m2: 21.5, gold: 2650 }
+-      ];
+-
+-      // Coordinate mapping: X = M2 ($0 to $45T), Y = Gold ($0 to $35,000/oz log-scaled)
+-      const mapX = m => 55 + (m / 45) * 475;
+-      const mapY = g => {
+-        const logMin = Math.log10(20);
+-        const logMax = Math.log10(40000);
+-        const logG = Math.log10(Math.max(20, g));
+-        return 235 - ((logG - logMin) / (logMax - logMin)) * 205;
+-      };
+-
+-      let pathHist = '';
+-      history.forEach((pt, i) => {
+-        const cx = mapX(pt.m2);
+-        const cy = mapY(pt.gold);
+-        pathHist += (i === 0 ? 'M ' : ' L ') + cx.toFixed(1) + ' ' + cy.toFixed(1);
+-      });
+-
+-      const curX = mapX(Math.min(45, m2));
+-      const curY = mapY(Math.min(40000, impliedGold));
+-
+-      svg.innerHTML = `
+-        <rect x="0" y="0" width="560" height="260" fill="#040508"/>
+-        <!-- Grid horizontal log lines -->
+-        <line x1="55" y1="30" x2="530" y2="30" stroke="#181B24" stroke-dasharray="2,3"/>
+-        <line x1="55" y1="80" x2="530" y2="80" stroke="#181B24" stroke-dasharray="2,3"/>
+-        <line x1="55" y1="130" x2="530" y2="130" stroke="#181B24" stroke-dasharray="2,3"/>
+-        <line x1="55" y1="180" x2="530" y2="180" stroke="#181B24" stroke-dasharray="2,3"/>
+-        <line x1="55" y1="235" x2="530" y2="235" stroke="#252A36" stroke-width="1.2"/>
+-
+-        <!-- Y Axis Labels -->
+-        <text x="48" y="34" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$30,000</text>
+-        <text x="48" y="84" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$5,000</text>
+-        <text x="48" y="134" fill="#E8B84B" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end" font-weight="bold">$2,000</text>
+-        <text x="48" y="184" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$500</text>
+-        <text x="48" y="238" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="end">$35</text>
+-
+-        <!-- X Axis Labels (M2) -->
+-        <text x="${mapX(0)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$0T</text>
+-        <text x="${mapX(10)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$10T</text>
+-        <text x="${mapX(21.5)}" y="250" fill="#E8B84B" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle" font-weight="bold">$21.5T (2026)</text>
+-        <text x="${mapX(35)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$35T</text>
+-        <text x="${mapX(45)}" y="250" fill="#6A7382" font-family="'IBM Plex Mono',monospace" font-size="8" text-anchor="middle">$45T</text>
+-
+-        <!-- Historical Path -->
+-        <path d="${pathHist}" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="3,2"/>
+-
+-        <!-- Historical Dots -->
+-        <circle cx="${mapX(0.7)}" cy="${mapY(35)}" r="3" fill="#64748B"/>
+-        <text x="${mapX(0.7)+5}" y="${mapY(35)-5}" fill="#64748B" font-family="'IBM Plex Mono',monospace" font-size="7">1971</text>
+-
+-        <circle cx="${mapX(1.6)}" cy="${mapY(850)}" r="3" fill="#64748B"/>
+-        <text x="${mapX(1.6)+5}" y="${mapY(850)-5}" fill="#64748B" font-family="'IBM Plex Mono',monospace" font-size="7">1980</text>
+-
+-        <circle cx="${mapX(8.2)}" cy="${mapY(870)}" r="3" fill="#64748B"/>
+-        <text x="${mapX(8.2)+5}" y="${mapY(870)+12}" fill="#64748B" font-family="'IBM Plex Mono',monospace" font-size="7">2008</text>
+-
+-        <circle cx="${mapX(21.5)}" cy="${mapY(2650)}" r="3.5" fill="#3DDC97"/>
+-        <text x="${mapX(21.5)-8}" y="${mapY(2650)-8}" fill="#3DDC97" font-family="'IBM Plex Mono',monospace" font-size="7.5" font-weight="bold">2026 ATH</text>
+-
+-        <!-- Interactive Crosshair -->
+-        <line x1="${curX}" y1="20" x2="${curX}" y2="235" stroke="#E8B84B" stroke-width="1.2" stroke-dasharray="3,3"/>
+-        <line x1="55" y1="${curY}" x2="530" y2="${curY}" stroke="#E8B84B" stroke-width="1.2" stroke-dasharray="3,3"/>
+-        <circle cx="${curX}" cy="${curY}" r="6" fill="#E8B84B" stroke="#040508" stroke-width="2"/>
+-        <text x="${curX + (curX > 420 ? -10 : 10)}" y="${curY - 10}" fill="#E8B84B" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="bold" text-anchor="${curX > 420 ? 'end' : 'start'}">
+-          Implied: $${Math.round(impliedGold).toLocaleString('en-US')} (${backing.toFixed(1)}% backing)
+-        </text>
+-      `;
+-    };
+-
+-    if(document.getElementById('macroSvg')){
+-      window.updateMacroRadar();
+-    }
+-  })();
+-
+-  /* ── arifFLOW / WELL HEARTBEAT CLOCK ── */
+-  (function(){
+-    function updateClock(){
+-      const clockEl = document.getElementById('flow-clock');
+-      if(!clockEl) return;
+-      const now = new Date();
+-      const myt = new Date(now.getTime() + 8*3600000);
+-      const pad = n => String(n).padStart(2,'0');
+-      const timeStr = pad(myt.getUTCHours()) + ':' + pad(myt.getUTCMinutes()) + ':' + pad(myt.getUTCSeconds()) + ' MYT';
+-      clockEl.textContent = 'TELEMETRY LIVE · ' + timeStr + ' · SOVEREIGN WITNESS';
+-    }
+-    updateClock();
+-    setInterval(updateClock, 1000);
+-  })();
+-
+   (function(){
+     function money(n, digits) {
+       var x = Number(n);

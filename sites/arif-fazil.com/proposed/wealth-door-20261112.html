@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://arif-fazil.com/_shared/design-system/site-tokens.css"/>
+  <title>WEALTH — Sovereign Capital & Market Synthesis</title>
+  <meta name="description" content="WEALTH Organ — Capital allocation, commodity market intelligence, and portfolio telemetry."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0B0B0F;
+      --card: #111218;
+      --card-hover: #181A24;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F5F5F7;
+      --dim: #A8A9B4;
+      --gold: #E8B84B;
+      --green: #3DDC97;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero {
+      padding: 4.5rem 2rem 3rem;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, rgba(232, 184, 75, 0.05), transparent 60%);
+    }
+    .hero-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      background: rgba(232, 184, 75, 0.1);
+      color: var(--gold);
+      border: 1px solid rgba(232, 184, 75, 0.25);
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--gold);
+    }
+    .title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--dim);
+      max-width: 620px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .main {
+      padding: 3rem 2rem;
+      flex: 1;
+    }
+    .grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(232, 184, 75, 0.3);
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      color: var(--text);
+    }
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--dim);
+      line-height: 1.6;
+      margin: 0 0 1.5rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .card-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.4rem 0.85rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .card-link:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(232, 184, 75, 0.08);
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--dim);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://arif-fazil.com/_shared/unified-header-loader.js"></script>
+
+  <div class="hero">
+    <div class="hero-container">
+      <div class="pill">
+        <span class="pulse-dot"></span>
+        WEALTH ORGAN · loopback :18082 /health HTTP 200 · 2026-11-11T16:50:30Z
+      </div>
+      <h1 class="title">Sovereign Capital & Commodity Intelligence</h1>
+      <p class="subtitle">Evidence-gated market synthesis, fiscal breakevens, and portfolio risk telemetry under arifOS F1–F13 constitutional governance.</p>
+    </div>
+  </div>
+
+  <div class="main">
+    <p id="advisory-line" style="margin:0 0 1.4rem;padding:0.9rem 1rem;border:1px solid rgba(232,184,75,0.45);border-radius:8px;color:var(--text);font-size:0.95rem;">Advisory only. Not investment advice. Ledger integrity under repair — outputs are not authorization evidence.</p>
+    <p style="margin:0 0 1.6rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--dim);line-height:1.5;">
+      Spot gold beside the implied figure:
+      <strong style="color:var(--text);">XAUUSD 3995.59</strong>
+      · observed_at 2026-11-11T16:33:12.313Z
+      · source yfinance + technical analysis (WEALTH commodity engine)
+      · GET https://wealth.arif-fazil.com/gold/api/snapshot .
+      Implied, not a quote: <strong style="color:var(--text);">$2,630 / oz</strong>
+      (the slider default previously printed on this door). It is not the spot.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <div class="card-tag">Boards · authority ceiling 555_COMPUTE_ONLY</div>
+          <h2 class="card-title">Commodity &amp; Market Signals</h2>
+          <p class="card-desc">Brent, gold, natural gas, and USD/MYR links. A number is written on a link only after this page's fetch returns. No static price is printed on the links.</p>
+        </div>
+        <div class="card-links">
+          <a href="/markets/" class="card-link">📊 Markets Observation Hub</a>
+          <a href="/oil/" class="card-link" id="val-brent">🛢️ Brent …</a>
+          <a href="/gold/" class="card-link" id="val-gold">🥇 Gold …</a>
+          <a href="/gas/" class="card-link" id="val-gas">🔥 Natural gas …</a>
+          <a href="/markets/usdmyr/" class="card-link" id="val-usdmyr">💵 USD/MYR …</a>
+          <a href="/api/markets/registry" class="card-link">📋 /api/markets/registry</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-tag">Agentic Interfaces · 13 tools</div>
+          <h2 class="card-title">MCP &amp; Discovery Gateway</h2>
+          <p class="card-desc">Tool count 13. Source: https://wealth.arif-fazil.com/health fields tools_loaded, public_tools, canonical_tools, and https://wealth.arif-fazil.com/tools list length 13. tool_count_source mcp.list_tools. Date header Wed, 11 Nov 2026 16:37:36 GMT. The GET /mcp card is a separate hardcoded document; this door does not copy it. See the Caddy proposal. authority_ceiling 555_COMPUTE_ONLY is from the same /health body.</p>
+        </div>
+        <div class="card-links">
+          <a href="https://wealth.arif-fazil.com/mcp" class="card-link">🔌 /mcp Endpoint</a>
+          <a href="https://wealth.arif-fazil.com/tools" class="card-link">🛠️ /tools (13 tools · mcp.list_tools · 2026-11-11T16:37:36Z)</a>
+          <a href="https://wealth.arif-fazil.com/health" class="card-link">/health · tools_loaded 13 at 2026-11-11T16:37:36Z</a>
+          <a href="https://wealth.arif-fazil.com/.well-known/agent-card.json" class="card-link">🪪 agent-card.json</a>
+          <a href="https://wealth.arif-fazil.com/llms.txt" class="card-link">📄 /llms.txt</a>
+          <a href="https://wealth.arif-fazil.com/api/wealth/briefing" class="card-link">📡 /briefing JSON</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-tag">Epistemic Governance · Reality Loop</div>
+          <h2 class="card-title">World &amp; Federation Links</h2>
+          <p class="card-desc">WORLD observes reality; WEALTH computes capital consequence; AAA coordinates agents; arifOS judges governance; ARIF decides.</p>
+        </div>
+        <div class="card-links">
+          <a href="https://arif-fazil.com/world-state.json" class="card-link">🌍 world-state.json</a>
+          <a href="https://arif-fazil.com/world/economics/" class="card-link">🧭 World Economics</a>
+          <a href="https://arif-fazil.com/.well-known/arifos-federation.json" class="card-link">🕸️ Federation Identity</a>
+          <a href="https://arif-fazil.com/.well-known/capabilities.json" class="card-link">⚡ Capabilities Registry</a>
+          <a href="https://arif-fazil.com/vitals/" class="card-link">🏛️ PETRONAS Vitals</a>
+          <a href="https://arif-fazil.com/words/doctrine/" class="card-link">📜 Governance Doctrine</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--dim);line-height:1.5;margin:1.2rem 0;">
+      No latency figure is printed. The equilibrium tag and the fetched-clock sentence from the previous door are omitted. Organ labels below cite loopback GET /health only. Tool counts other than the ones dated above are omitted.
+    </p>
+      <!-- 8 Federation Organs Grid -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:0.85rem;">
+        <!-- Organ 1: arifOS -->
+        <a href="https://arifos.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.3); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">arifOS :8088 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Kernel</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">JUDGE_ONLY · public_tools 9 · public-state 2026-11-11T16:34:26Z</div>
+        </a>
+
+        <!-- Organ 2: AAA -->
+        <a href="https://aaa.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">AAA :3001 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Control Plane</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">DISPLAY_ONLY · A2A Directory</div>
+        </a>
+
+        <!-- Organ 3: A-FORGE -->
+        <a href="https://mcp.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">A-FORGE :7072 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Actuator</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">EXECUTE_AFTER_SEAL</div>
+        </a>
+
+        <!-- Organ 4: GEOX -->
+        <a href="https://geox.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(0,212,170,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--cyan); font-weight:700;">GEOX :8081 · loopback /health 200 · 2026-11-11T16:50:30Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Subsurface</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · Earth</div>
+        </a>
+
+        <!-- Organ 5: WEALTH -->
+        <a href="https://wealth.arif-fazil.com/tools" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.45); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">WEALTH :18082 · loopback /health 200 · 2026-11-11T16:50:30Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Capital</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · 13 tools · mcp.list_tools · 2026-11-11T16:37:36Z</div>
+        </a>
+
+        <!-- Organ 6: WELL -->
+        <a href="https://well.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">WELL :18083 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Vitality</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">REFLECT_ONLY · public_tools 10 · public-state 2026-11-11T16:34:26Z</div>
+        </a>
+
+        <!-- Organ 7: CHRON -->
+        <a href="https://chron.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(61,220,151,0.25); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:#3DDC97; font-weight:700;">CHRON :18102 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Temporal</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">555_COMPUTE_ONLY · Calibration</div>
+        </a>
+
+        <!-- Organ 8: HERMES -->
+        <a href="https://hermes.arif-fazil.com" style="background:#0B0B0F; border:1px solid rgba(232,184,75,0.3); border-radius:8px; padding:0.85rem; text-align:center; display:block;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--gold); font-weight:700;">HERMES :18087 · loopback /health 200 · 2026-11-11T16:50:31Z</div>
+          <div style="font-family:'DM Serif Display',serif; font-size:1.05rem; color:var(--text); margin:0.2rem 0;">Cognitive</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.62rem; color:var(--dim);">RELAY_ONLY · A2A &amp; Voice</div>
+        </a>
+      </div>
+  </div>
+
+  <div class="footer">
+    DITEMPA BUKAN DIBERI · arifOS Federation WEALTH Organ Surface
+  </div>
+  <div id="provenance-stamp" style="max-width:900px;margin:12px auto;color:#6b7280;font:11px monospace;text-align:center;">
+    Market links fill from /gold|oil|gas/api/snapshot when the fetch returns. This line is not a price.
+  </div>
+
+  <script>
+  (function(){
+    function money(n, digits) {
+      var x = Number(n);
+      if (!isFinite(x)) return null;
+      return x.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    }
+    function clock(iso) {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kuala_Lumpur', hour: '2-digit', minute: '2-digit', hour12: false
+      }).format(d) + ' MYT';
+    }
+    function paint(id, label, value, iso) {
+      var el = document.getElementById(id);
+      if (!el || value == null) return false;
+      var t = clock(iso);
+      el.textContent = label + ' ' + value + (t ? ' · ' + t : '');
+      return true;
+    }
+    async function read(url) {
+      var res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error(String(res.status));
+      return res.json();
+    }
+    async function refreshMarketData() {
+      var stamp = document.getElementById('provenance-stamp');
+      var goldP = read('/gold/api/snapshot');
+      var oilP = read('/oil/api/snapshot');
+      var gasP = read('/gas/api/snapshot');
+      var briefP = read('/api/wealth/briefing');
+      var settled = await Promise.allSettled([goldP, oilP, gasP, briefP]);
+      var gold = settled[0].status === 'fulfilled' ? settled[0].value : null;
+      var oil = settled[1].status === 'fulfilled' ? settled[1].value : null;
+      var gas = settled[2].status === 'fulfilled' ? settled[2].value : null;
+      var brief = settled[3].status === 'fulfilled' ? settled[3].value : null;
+
+      var okGold = gold && paint('val-gold', '🥇 Gold', gold.ticker && money(gold.ticker.price, 2) ? '$' + money(gold.ticker.price, 2) : null, gold.observed_at);
+      var okOil = oil && paint('val-brent', '🛢️ Brent', oil.ticker && money(oil.ticker.price, 2) ? '$' + money(oil.ticker.price, 2) : null, oil.observed_at);
+      var okGas = gas && paint('val-gas', '🔥 Natural gas', gas.ticker && money(gas.ticker.price, 2) ? '$' + money(gas.ticker.price, 2) : null, gas.observed_at);
+      var myr = gold && gold.macro ? gold.macro.usmyr : null;
+      var myrIso = gold && gold.observed_at;
+      if (myr == null && brief && brief.ringgit) {
+        myr = brief.ringgit.usd_myr;
+        myrIso = brief.meta && (brief.meta.generated_at || brief.meta.observed_at);
+      }
+      var okMyr = paint('val-usdmyr', '💵 USD/MYR', money(myr, 2), myrIso);
+      if (!okOil) { var b = document.getElementById('val-brent'); if (b) b.textContent = '🛢️ Brent — unavailable'; }
+      if (!okGold) { var g = document.getElementById('val-gold'); if (g) g.textContent = '🥇 Gold — unavailable'; }
+      if (!okGas) { var a = document.getElementById('val-gas'); if (a) a.textContent = '🔥 Natural gas — unavailable'; }
+      if (!okMyr) { var u = document.getElementById('val-usdmyr'); if (u) u.textContent = '💵 USD/MYR — unavailable'; }
+      if (stamp) {
+        stamp.textContent = 'Read from the gold, oil, and gas engines. The ringgit is the rate inside the gold reading. Each number carries its own time.';
+      }
+    }
+    refreshMarketData();
+  })();
+  </script>
+  <script src="/_shared/heartbeat.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+--- a/var/www/html/_shared/observatory.js
++++ b/sites/arif-fazil.com/proposed/observatory-20261112.js
+@@ -591,13 +591,73 @@
+     });
+   }
+ 
++  function proofClassFor(governance, definition) {
++    const decompRaw = unwrap(governance && governance.verdict_decomposition) || {};
++    const decompKey = isRecord(decompRaw)
++      ? Object.keys(decompRaw).find((k) => k.toLowerCase().startsWith(String(definition.id).toLowerCase() + '_'))
++      : null;
++    const decompValue = decompKey ? unwrap(decompRaw[decompKey]) : null;
++    return isRecord(decompValue) ? decompValue.proof_class : null;
++  }
++  function honestFloorFace(definition, parts, proofClass, sourceBlob) {
++    const face = { measurement: parts.measurement, status: parts.status, state: parts.state };
++    // F5 already says "policy constant · not measured" in floorParts. Do not rewrite it.
++    if (definition.id === 'F5') return face;
++    const blob = String(sourceBlob || '');
++    const proof = String(proofClass || '');
++    const policy = blob.includes('POLICY_CONSTANT') || proof.includes('POLICY_CONSTANT');
++    const presence = proof === 'presence_only' || proof.includes('presence_only');
++    if (policy || presence) {
++      face.measurement = (presence && !policy) ? 'presence only · not measured' : 'policy constant · not measured';
++      face.status = (presence && !policy) ? 'presence only · verdict withheld' : 'constant · not measured';
++      face.state = 'unknown';
++    }
++    return face;
++  }
++  function frameBlocksHealthy(frameStatus, serviceState) {
++    if (/degrad/i.test(String(frameStatus || '')) && serviceState === 'healthy') return 'degraded';
++    return serviceState;
++  }
++  function frameWitnessStatus(data, key, organ) {
++    const organs = unwrap(data && data.organs) || {};
++    const frame = unwrap(firstPresent(
++      data && data.frame,
++      data && data.FRAME,
++      isRecord(organs) ? organs.frame : undefined,
++      isRecord(organs) ? organs.FRAME : undefined,
++    ));
++    if (isRecord(frame)) {
++      const table = unwrap(firstPresent(frame.organ_status, frame.organs));
++      if (isRecord(table)) {
++        const hitKey = Object.keys(table).find((candidate) => normalizeKey(candidate) === normalizeKey(key));
++        if (hitKey) {
++          const row = unwrap(table[hitKey]);
++          if (isRecord(row) && row.status != null) return String(row.status);
++          if (row != null && !isRecord(row)) return String(row);
++        }
++      }
++      const drift = unwrap(frame.drift_summary);
++      if (isRecord(drift) && drift.verdict != null) return String(drift.verdict);
++    }
++    // Public snapshot has no FRAME object. organ.health_status matched FRAME's
++    // daily organ_status (local GET http://127.0.0.1:18085/frame/report at
++    // 2026-11-11T16:43:43Z, drift_summary.verdict DEGRADING). Public
++    // https://frame.arif-fazil.com/frame/report was HTTP 200 and 0 bytes.
++    if (isRecord(organ) && organ.health_status != null) return String(organ.health_status);
++    return '';
++  }
++
+   /* ── F1-F13 Governance state ────────────────────────────── */
+   function renderGovernance(data) {
+     const governance = data.governance || {};
+     const effective = effectiveGovernance(governance);
+     const floors = normalizedFloors(governance);
+     const floorGrid = $('#floor-grid');
+-    const measured = floors.filter(({ definition, record }) => floorParts(definition, record).score != null).length;
++    const measured = floors.filter(({ definition, record }) => {
++      const parts = floorParts(definition, record);
++      const face = honestFloorFace(definition, parts, proofClassFor(governance, definition), JSON.stringify(record || {}));
++      return parts.score != null && !/not measured/.test(face.measurement);
++    }).length;
+     const blocked = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'blocked').length;
+     const stale = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'stale').length;
+     const loaded = floors.filter(({ record }) => record !== undefined).length;
+@@ -639,11 +699,13 @@
+           : (parts.score <= 0.34 ? 'rendah' : parts.score <= 0.66 ? 'sederhana' : 'tinggi');
+         const score = IS_RISK_FLOOR && riskWord ? riskWord
+           : (parts.score == null ? '—' : parts.score.toFixed(2));
+-        const status = parts.status === UNAVAILABLE
++        const proofClassEarly = proofClassFor(governance, definition);
++        const face = honestFloorFace(definition, parts, proofClassEarly, JSON.stringify(record || {}));
++        const status = face.status === UNAVAILABLE
+           ? 'status: unavailable'
+           : (IS_RISK_FLOOR
+-              ? `risiko suntikan · nilai ${parts.score == null ? '—' : parts.score.toFixed(2)} (rendah = baik) · ${parts.status}`
+-              : `status: ${parts.status}`);
++              ? `risiko suntikan · nilai ${parts.score == null ? '—' : parts.score.toFixed(2)} (rendah = baik) · ${face.status}`
++              : `status: ${face.status}`);
+         // KX-010 five-field contract for the one physics-labelled floor name that
+         // renders a number to a human. PEACE² (F5) declares itself a POLICY_CONSTANT
+         // in the /health contract: unit 1, no monotonic drivers, no falsifier by
+@@ -663,10 +725,10 @@
+         const decompValue = decompKey ? unwrap(decompRaw[decompKey]) : null;
+         const proofClass = isRecord(decompValue) ? decompValue.proof_class : null;
+         const proofNote = proofClass ? ` · proof: ${proofClass}` : '';
+-        return `<div class="floor-cell floor-cell--${paletteClass(parts.state)}" data-floor="${definition.id}" data-measurement="${esc(parts.measurement)}">
++        return `<div class="floor-cell floor-cell--${paletteClass(face.state)}" data-floor="${definition.id}" data-measurement="${esc(face.measurement)}">
+           <div class="floor-header"><span class="floor-num">${definition.id}</span><span class="floor-name">${definition.name}</span></div>
+           <div class="floor-score">${esc(score)}</div>
+-          <div class="floor-status">${esc(parts.measurement)} · ${esc(status)}${esc(proofNote)}</div>
++          <div class="floor-status">${esc(face.measurement)} · ${esc(status)}${esc(proofNote)}</div>
+           <div class="floor-meta">${esc(metadataLine(sourceRecord, fieldObservedAt))}${esc(physicsContract)}</div>
+         </div>`;
+       }).join('');
+@@ -1264,12 +1326,18 @@
+         .map((field) => (field === 'dependency' || field === 'readiness'
+           ? httpStateOf(organ[field])
+           : semanticState(recordState(organ[field]))));
+-      const { state, measured, total } = aggregateWithCoverage(svcSignals);
++      const coverage = aggregateWithCoverage(svcSignals);
++      const frameStatus = frameWitnessStatus(data, key, organ);
++      const state = frameBlocksHealthy(frameStatus, coverage.state);
++      const measured = coverage.measured;
++      const total = coverage.total;
+       const govAxis = governanceStateOf(organ);
+       const rcptAxis = receiptStateOf(organ);
+-      const label = !total ? 'UNKNOWN'
++      let label = !total ? 'UNKNOWN'
+         : (state === 'unknown' ? `${measured}/${total} MEASURED`
+           : (measured < total ? `${state.toUpperCase()} ${measured}/${total}` : state.toUpperCase()));
++      // Daily Reality Pulse must not say HEALTHY where FRAME says degraded.
++      if (/degrad/i.test(String(frameStatus)) && label.includes('HEALTHY')) label = label.replace(/HEALTHY/g, 'DEGRADED');
+       return `<div class="pulse-cell pulse-cell--${paletteClass(state)}"><div class="pulse-name">${name}</div><div class="pulse-signal">${signal}</div><div class="pulse-status">${label}</div><div class="pulse-axis">gov: ${esc(axisLabel(govAxis))} · rcpt: ${esc(axisLabel(rcptAxis))}</div></div>`;
+     }).join('');
+   }

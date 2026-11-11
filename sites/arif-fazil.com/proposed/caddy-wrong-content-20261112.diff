@@ -1,0 +1,57 @@
+--- a/etc/caddy/vhosts/arif-fazil.com.conf
++++ b/proposed/arif-fazil.com.conf
+@@ -988,6 +988,21 @@
+ 
+ 
+ 
++	# proposal 2026-11-12 — do not apply until ARIF GO. Live HTTP stays as probed.
++	# 2026-11-11T16:45Z: /world/economics/oil|gas|gold/ and /world/petronas/gentari/
++	# were HTTP 200, 157671 bytes, title the World hub. Not dossiers and not boards.
++	redir /world/economics/oil /oil/ 308
++	redir /world/economics/oil/ /oil/ 308
++	redir /world/economics/gas /gas/ 308
++	redir /world/economics/gas/ /gas/ 308
++	redir /world/economics/gold /gold/ 308
++	redir /world/economics/gold/ /gold/ 308
++
++	handle /world/petronas/gentari /world/petronas/gentari/ /world/petronas/gentari/* {
++		header Content-Type "text/plain; charset=utf-8"
++		respond "410 Gone. This URL is not a Gentari dossier. On 2026-11-11T16:45Z it served the World hub. The PETRONAS page is /petronas/." 410
++	}
++
+ 	handle /world/* {
+ 		root * /var/www/html/arif
+ 		try_files {path} {path}/index.html /world/index.html /index.html =404
+@@ -2113,23 +2128,23 @@
+ 
+ 	# Unknown paths get a real 404 for agent/curl access
+ 
+-	redir /world/oil /world/economics/oil/ 308
++	redir /world/oil /oil/ 308
+ 
+-	redir /world/oil/ /world/economics/oil/ 308
++	redir /world/oil/ /oil/ 308
+ 
+-	redir /world/oil/index.html /world/economics/oil/ 308
++	redir /world/oil/index.html /oil/ 308
+ 
+-	redir /world/gas /world/economics/gas/ 308
++	redir /world/gas /gas/ 308
+ 
+-	redir /world/gas/ /world/economics/gas/ 308
++	redir /world/gas/ /gas/ 308
+ 
+-	redir /world/gas/index.html /world/economics/gas/ 308
++	redir /world/gas/index.html /gas/ 308
+ 
+-	redir /world/gold /world/economics/gold/ 308
++	redir /world/gold /gold/ 308
+ 
+-	redir /world/gold/ /world/economics/gold/ 308
++	redir /world/gold/ /gold/ 308
+ 
+-	redir /world/gold/index.html /world/economics/gold/ 308
++	redir /world/gold/index.html /gold/ 308
+ 
+ 
+ 

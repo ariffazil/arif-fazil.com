@@ -1043,21 +1043,38 @@
   ];
   const edgeKey = (edge) => `${normalizeKey(canonicalNode(edge && edge.source))}>${normalizeKey(canonicalNode(edge && edge.target))}`;
   const mergedEdges = (data) => {
+    // The kernel publishes the per-edge probe under `federation_edges` and, in
+    // the sanitized public-state projection, the AGGREGATE under `federation`
+    // (declared / probed / reachable / semantic_proven). Read BOTH. The
+    // arifFLOW overlay rows are narrow overlays and must never stand in for
+    // the federation's edge count — on 2026-11-12 this panel claimed
+    // "3 directed" while the kernel declared and probed 11 with 11/11
+    // transport-reachable.
     const federation = unwrap(data.federation_edges);
+    const agg = unwrap(data.federation);
+    const aggregate = isRecord(agg) ? agg : {};
     const observed = asArray(isRecord(federation) ? federation.edges : federation).filter(isRecord).map((edge) => ({ ...edge, __source: 'snapshot' }));
     const keys = new Set(observed.map(edgeKey));
     const overlays = flowEdgeOverlays.filter((overlay) => !keys.has(edgeKey(overlay))).map((overlay) => ({
       ...overlay,
       __source: `declared overlay ${overlay.overlay_ref}`,
     }));
-    return { observed, all: [...observed, ...overlays] };
+    return { observed, all: [...observed, ...overlays], aggregate };
   };
 
   function renderEdges(data) {
-    const { observed, all } = mergedEdges(data);
+    const { observed, all, aggregate } = mergedEdges(data);
     const graph = $('#edge-graph-wrap');
     const table = $('#edge-table-wrap');
-    setText('#edge-count', `${all.length} directed · ${observed.length} observed · ${all.length - observed.length} declared overlays`);
+    const declared = Number(aggregate.declared);
+    const reachable = Number(aggregate.reachable ?? aggregate.transport_reachable);
+    const semantic = Number(aggregate.semantic_proven);
+    const aggState = aggregate.aggregate_state || aggregate.state || '';
+    const countText = Number.isFinite(declared) && declared > 0
+      ? `${declared} declared · ${Number.isFinite(reachable) ? reachable : '?'} transport-reachable · ${Number.isFinite(semantic) ? semantic : '?'} semantically proven${aggState ? ` · ${aggState}` : ''}`
+      : `${all.length} directed · ${observed.length} observed`;
+    const detailNote = Number.isFinite(declared) && declared > all.length ? ' · per-edge detail not published in public-state' : '';
+    setText('#edge-count', `${countText} · ${all.length - observed.length} declared overlays${detailNote}`);
     if (!graph) return;
 
     const seedNodes = ['arifOS', 'A-FORGE', 'AAA', 'GEOX', 'WEALTH', 'WELL', 'MCP', 'arifFLOW'];

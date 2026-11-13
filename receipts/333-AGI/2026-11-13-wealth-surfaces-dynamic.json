@@ -102,7 +102,7 @@
       "/gas/": "BM: Gas Asli pada 3.28 · +0.61%",
       "/world/economics/klci/": "pada 1582.59 · RSI 28.2 · badge LIVE 20:34 MYT",
       "/world/economics/usdmyr/": "pada 4.08 · RSI 63.8 · badge LIVE 20:34 MYT",
-      "/gold/": "pulse $3,877.07 · WEALTH live 20:42 MYT · chart canvases 7 · Trend BEARISH · Momentum RSI 32.2 · synthesis live read"
+      "/gold/": "pulse $3,877.07 · 'WEALTH live' 20:42 MYT · 7 chart canvases render · Trend BEARISH (EMA20 3,894.55 / EMA50 3,930.48 / EMA200 4,010.09) · Momentum NEUTRAL RSI 32.2 · Structure BEARISH (support 3,874.6/3,872.14, resistance 3,879.24/3,881.7) · Volume NO FEED · synthesis live read"
     },
     "preflight": {
       "/gold/": "PASS",
@@ -115,8 +115,8 @@
   "residual": [
     "The 'Structure' and 'Volume' cards and the confluence meter remain editorial/static — they have no live feed in the snapshot.",
     "KLCI/USD/MYR pages have NO chart and NO timeframe toggle in the DOM (lightweight-charts is included but createChart is never called). The earlier 'timeframe toggle' item does not exist as a feature; nothing to fix.",
-    "/wealth.css returns text/html (shadowed) so the gold page's secondary stylesheet is refused. Pre-existing; harmless.",
-    "Proper route fix is proposed at /root/forge_work/proposals/333-AGI/wealth-api-routes/2026-11-13-caddy-route-blocks.md — needs caddy reload (T3)."
+    "Proper route fix is proposed at /root/forge_work/proposals/333-AGI/wealth-api-routes/2026-11-13-caddy-route-blocks.md — needs caddy reload (T3).",
+    "Gold API snapshot cache TTL is 600s (server.js); the pulse is therefore <=10 min fresh, and the timestamp says so."
   ],
   "state": "DEPLOYED_AND_OBSERVED",
   "rollback": "restore .bak-333-* files; revert server.js PYTHON lines; disable /etc/cron.d/klci-api-mirror",

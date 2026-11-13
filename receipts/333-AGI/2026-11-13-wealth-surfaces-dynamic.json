@@ -1,0 +1,91 @@
+{
+  "agent": "333-AGI",
+  "date": "2026-11-13T20:48:00+08:00",
+  "action": "make-wealth-surfaces-dynamic",
+  "directive": "F13 SOVEREIGN in-session: 'can we make it dynamic on arif-fazil.com site? all related wealth'",
+  "scope": ["/gold/", "/oil/", "/gas/", "/world/economics/klci/", "/world/economics/usdmyr/"],
+
+  "root_causes_found": [
+    "klci-api + usdmyr-api systemd units pointed at /root/venv/bin/python3 which no longer exists → every request 500.",
+    "/oil/api/* and /gas/api/* are shadowed by the @static_dirs handler → phantom 200 SPA shell; the working path is /wealth/{oil,gas}/api/*.",
+    "/klci/api/* is shadowed the same way (Caddy sorts the klci api route after @static_dirs) → served SPA shell.",
+    "KLCI and USD/MYR pages are fully static (no hydration JS at all); values dated 2026-08-03.",
+    "SPLIT-ROOT x3: /gold/, /world/economics/klci/, /world/economics/usdmyr/ are all served from /var/www/html/arif/**, not the roots named in the config blocks."
+  ],
+
+  "changes": [
+    {
+      "file": "/var/www/html/arif/klci/api/server.js",
+      "change": "PYTHON = process.env.PYTHON_PATH || '/root/WEALTH/.venv/bin/python3'",
+      "why": "missing interpreter path"
+    },
+    {
+      "file": "/var/www/html/arif/usdmyr/api/server.js",
+      "change": "same PYTHON fix",
+      "why": "missing interpreter path"
+    },
+    {
+      "file": "/var/www/html/arif/oil/index.html",
+      "change": "/oil/api/ → /wealth/oil/api/, /gas/api/ → /wealth/gas/api/ (5 refs)",
+      "backup": "index.html.bak-333-dynamic-*"
+    },
+    {
+      "file": "/var/www/html/arif/gas/index.html",
+      "change": "same path rewrite",
+      "backup": "index.html.bak-333-dynamic-*"
+    },
+    {
+      "file": "/root/scripts/klci_api_mirror.sh + /etc/cron.d/klci-api-mirror",
+      "change": "mirror :3459 /api/{snapshot,history,apex} to static files at /var/www/html/arif/klci/api/ every 5 min",
+      "why": "/klci/api/* cannot be reached through Caddy without a config change; the static handler serves these paths"
+    },
+    {
+      "file": "/var/www/html/arif/world/economics/klci/index.html",
+      "change": "inline live hydrator (fetch /klci/api/snapshot, rewrite price/RSI/change/trend in text nodes, badge LIVE, re-stamp JSON-LD)",
+      "backup": "index.html.bak-333-live-20261113"
+    },
+    {
+      "file": "/var/www/html/arif/world/economics/usdmyr/index.html",
+      "change": "inline live hydrator (fetch /usdmyr/api/snapshot)",
+      "backup": "index.html.bak-333-live-20261113"
+    },
+    {
+      "file": "/var/www/html/arif/gold/index.html",
+      "change": "JSON-LD hydrate gated to fire only when the pulse price is still the hardcoded $4,063.40 (fallback), so it cannot overwrite a live API value"
+    }
+  ],
+
+  "verification": {
+    "apis": {
+      "/wealth/gold/api/snapshot": {"http": 200, "symbol": "XAUUSD", "price": 3883.05, "observed_at": "2026-11-13T12:27:46Z"},
+      "/wealth/oil/api/snapshot": {"http": 200, "symbol": "XBRENT", "price": 96.24, "observed_at": "2026-11-13T12:36:42Z"},
+      "/wealth/gas/api/snapshot": {"http": 200, "symbol": "XNATGAS", "price": 3.29, "observed_at": "2026-11-13T12:36:44Z"},
+      "/klci/api/snapshot": {"http": 200, "symbol": "FBMKLCI", "price": 1582.59, "observed_at": "2026-11-13T12:35:06Z"},
+      "/usdmyr/api/snapshot": {"http": 200, "symbol": "USDMYR", "price": 4.0845, "observed_at": "2026-11-13T12:34:20Z"}
+    },
+    "browser": {
+      "/oil/": "BM: Minyak Brent pada 96.17 · -0.02% (rendered, live snapshot)",
+      "/gas/": "BM: Gas Asli pada 3.28 · +0.61%",
+      "/world/economics/klci/": "pada 1582.59 · RSI 28.2 · badge LIVE 20:34 MYT",
+      "/world/economics/usdmyr/": "pada 4.08 · RSI 63.8 · badge LIVE 20:34 MYT",
+      "/gold/": "pulse $3,882.69, bias NEUTRAL, JSON-LD last observation (hourly)"
+    },
+    "preflight": {
+      "/gold/": "PASS",
+      "/oil/": "FAIL split-root (false positive: names /var/www/html/arif/oil, which is exactly where the patch lives)",
+      "/gas/": "FAIL split-root (same)",
+      "/world/economics/klci/": "PASS",
+      "/world/economics/usdmyr/": "PASS"
+    }
+  },
+
+  "residual": [
+    "Gold page's own fetchGoldSnapshot does not beat the fallback; the pulse shows JSON-LD (hourly cron from live :3456), labelled 'last observation'. Fixing the page's response mapping would make it minute-live.",
+    "KLCI /history and /apex mirror the default 1d/3mo timeframe; timeframe buttons will not change the chart.",
+    "Proper fix is 4 Caddy `route` blocks so /gold|oil|gas|klci/api/* hit their proxies before @static_dirs — needs `caddy reload` (T3)."
+  ],
+
+  "state": "DEPLOYED_AND_OBSERVED",
+  "rollback": "restore .bak-333-* files; revert server.js PYTHON lines; disable /etc/cron.d/klci-api-mirror",
+  "redaction": "no secrets in diff or receipt"
+}

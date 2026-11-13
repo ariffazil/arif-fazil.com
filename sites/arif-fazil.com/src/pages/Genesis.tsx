@@ -240,7 +240,7 @@ export function Genesis() {
                   <span className="font-technical text-[0.6rem] uppercase px-2 py-1 border border-forge-iron text-forge-dim">W3C DID Core</span>
                   <span className="font-technical text-[0.6rem] uppercase px-2 py-1 border border-forge-iron text-forge-dim">Human-Sovereign</span>
                   <span className="font-technical text-[0.6rem] uppercase px-2 py-1 border border-forge-iron text-forge-dim">Non-Delegable</span>
-                  <span className="font-technical text-[0.6rem] uppercase px-2 py-1 border border-forge-iron text-forge-dim">ZKPC-Ready</span>
+                  <span className="font-technical text-[0.6rem] uppercase px-2 py-1 border border-forge-iron text-forge-dim">Witness-Ready</span>
                 </div>
               </div>
             </div>

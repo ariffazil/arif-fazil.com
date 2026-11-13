@@ -113,7 +113,7 @@ export function DeepVault999Zkpc() {
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-forge-gold font-bold mb-1">
             <span className="h-2 w-2 rounded-full bg-forge-gold animate-ping" />
-            <span>VAULT 999 · ZERO-KNOWLEDGE PRIVATE COMPUTING (ZKPC)</span>
+            <span>VAULT 999 · STRUCTURAL WITNESS — PRIVATE BY DESIGN (ZKPC)</span>
           </div>
           <p className="font-sans text-xs sm:text-sm text-[#9AA0A8]">
             Interactive Merkle proof validator. Prove truth without disclosing proprietary subsurface or biological data.

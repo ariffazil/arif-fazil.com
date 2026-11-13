@@ -29,8 +29,8 @@
       "id": "000-CLAIM-003",
       "type": "ATTESTATION",
       "subject": "ZKPC",
-      "predicate": "proves",
-      "object": "human presence without extraction",
+      "predicate": "attests",
+      "object": "structural coherence consistent with a human root, without extraction — a hash-committed witness, not a cryptographic zero-knowledge proof",
       "dimensions": [
         "wound_architecture",
         "paradox_tolerance",

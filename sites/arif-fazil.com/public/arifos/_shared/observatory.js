@@ -221,9 +221,13 @@
   const DOWN_TOKENS = /\b(void|down|fail|failed|false|error|critical|blocked|denied|breach|retak|killed)\b/;
   const DEGRADED_TOKENS = /\b(hold|held|holding|warn|warning|degraded|partial|amber|sabar|limited|stale|pending|planned|next|queued|incomplete)\b/;
   const HEALTHY_TOKENS = /\b(true|up|healthy|pass|passed|seal|sealed|alive|live|fresh|ready|full|aligned|verified|kukuh|amanah|bijaksana|selamat|stable|optimal|active|measured|loaded)\b/;
+  // A gap, an unlinked row, or an unmeasured word outranks "verified"/"pass"/"true".
+  const GAP_TOKENS = /\b(gaps?|unlinked|not_attempted|unsigned|unverifiable|unmeasured)\b/;
   const classifyToken = (token) => {
     if (!token || UNKNOWN_TOKENS.test(token)) return null;
     if (DOWN_TOKENS.test(token)) return 'down';
+    if (GAP_TOKENS.test(token) || token.includes('not attempted')) return 'degraded';
+    if (/\bunknown\b/.test(token)) return 'unknown';
     if (DEGRADED_TOKENS.test(token)) return 'degraded';
     if (HEALTHY_TOKENS.test(token)) return 'healthy';
     return null;
@@ -1152,7 +1156,18 @@
       ['DIRECT', compactValue(direct), direct],
       ['INFERRED', compactValue(inferred), inferred],
       ['LAST RECEIPT', compactValue(receipts.last_receipt_tier), receipts.last_receipt_tier],
-      ['SEAL CHAIN', compactValue(firstPresent(receipts.seal_chain_seq, receipts.chain_status)), firstPresent(receipts.chain_status, receipts.seal_chain_seq)],
+      ['SEAL CHAIN', compactValue((() => {
+        const status = firstPresent(receipts.chain_status, receipts.seal_chain_seq);
+        const text = String(unwrap(status) || '');
+        if (/gap|unlinked/i.test(text)) return status;
+        return firstPresent(receipts.seal_chain_seq, receipts.chain_status);
+      })()), firstPresent(receipts.chain_status, receipts.seal_chain_seq)],
+      ...(function () {
+        const unlinked = unwrap(receipts.unlinked_seal_entries);
+        if (unlinked == null || unlinked === '') return [];
+        const unlinkedState = (typeof unlinked === 'number' && unlinked > 0) ? 'degraded' : 'measured';
+        return [['UNLINKED SEALS', String(unlinked), unlinkedState]];
+      })(),
       ['VAULT', compactValue(data.substrate && data.substrate.vault999), data.substrate && data.substrate.vault999],
     ];
     grid.innerHTML = fields.map(([name, value, state]) => `<div class="vocab-cell"><div class="name">${name}</div><div class="val val--${paletteClass(state)}">${esc(value)}</div></div>`).join('');

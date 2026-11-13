@@ -6,12 +6,12 @@
   "rasa_cap": 0.9,
   "hold": "888_HOLD",
   "ledger": "VAULT999",
-  "license": "BSL-1.1 → Apache-2.0 @2029-06-29",
+  "license": "BSL-1.1 \u2192 Apache-2.0 @2029-06-29",
   "port": 8081,
   "health": "https://geox.arif-fazil.com/health",
   "mcp": "https://geox.arif-fazil.com/mcp",
-  "version": "v2026.09.18",
-  "evidence": "OBS: live public_tools=31 from .well-known/mcp/server.json",
-  "count_basis": "generated from registry.py CANONICAL_PUBLIC_TOOLS (27) + apps.json (7 MCP apps; GUI surfaces listed at /apps) — see live /health",
-  "count_as_of": "2026-10-26"
+  "version": "v2026.10.03",
+  "evidence": "OBS: /health probed 2026-11-12T10:29Z status=degraded, kernel_verdict=UNKNOWN, version=v2026.10.03, tools_loaded=27, authority_ceiling=555_COMPUTE_ONLY. The previous public_tools=31 line was wrong.",
+  "count_basis": "generated from registry.py CANONICAL_PUBLIC_TOOLS (27) + apps.json (7 MCP apps; GUI surfaces listed at /apps) \u2014 see live /health",
+  "count_as_of": "2026-11-12"
 }

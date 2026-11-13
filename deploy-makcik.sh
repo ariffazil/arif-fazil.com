@@ -187,6 +187,19 @@ fi
 # Scar prevention: 71 live agentic-web files were 1 flag away from deletion.
 rsync -av --delete --filter='P aaa/**' "$SITE_DIR/dist/" "$WEBROOT/" && pass "dist synced to webroot (aaa/** delete-protected)" || { fail "dist sync failed"; exit 1; }
 
+# 5b2: Bot-lane Caddy-root mirror (2026-11-11 fix).
+# WHY: @mk_article_bot (Caddy vhosts/arif-fazil.com.conf 2026-10-31) serves the
+# bot/md lane from $WEBROOT/world/makcikgpt/makcikgpt-md — but the build emits
+# the md/html mirror at dist/makcikgpt-md → $WEBROOT/makcikgpt-md (Phase 5a).
+# 5b's rsync --delete then REMOVES any hand-placed dir at the Caddy path (not
+# in dist/world/makcikgpt/), so the bot lane 404'd for every article slug.
+# FIX: hardlink-mirror BOT_STATIC_DIR into the Caddy path AFTER 5b every deploy
+# (same inodes, zero disk). rsync --delete prunes stale slugs.
+BOT_CADDY_DIR="$WEBROOT/world/makcikgpt/makcikgpt-md"
+mkdir -p "$BOT_CADDY_DIR"
+cp -alf "$BOT_STATIC_DIR/." "$BOT_CADDY_DIR/" 2>/dev/null || true
+rsync -a --delete "$BOT_STATIC_DIR/" "$BOT_CADDY_DIR/" && pass "bot-lane Caddy-root mirror hardlinked ($(ls "$BOT_CADDY_DIR" | wc -l) entries)" || warn "bot-lane Caddy-root mirror failed"
+
 # 5c: Sync root-static serving roots (llms.txt, sitemap.xml, feed.xml, page.json…)
 # 2026-09-09: Caddy @root_static serves these from /var/www/html top-level, NOT
 # from arif/. Without this step deploys report success while discovery surfaces

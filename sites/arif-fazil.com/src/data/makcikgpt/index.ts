@@ -52,7 +52,9 @@ import siapaAkanKetukPintu from './siapa-akan-ketuk-pintu';
 import sayangYangPercuma from './sayang-yang-percuma';
 import hargaSebuahMaruahManusia from './harga-sebuah-maruah-manusia';
 import mencintaimu from './mencintaimu';
+import metaAiDajjalKe from './meta-ai-dajjal-ke';
 export const makcikArticleModules: ArticleContent[] = [
+  metaAiDajjalKe,
   mencintaimu,
   sayangYangPercuma,
   hargaSebuahMaruahManusia,
@@ -107,6 +109,19 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'meta-ai-dajjal-ke',
+    title: 'Meta AI Ni Dajjal Ke?',
+    subtitle: '"Dajjal have arrived," kata orang. Aku berdebat dengan chatbot tu setengah jam. Yang sampai tu bukan badan dia — corak dia.',
+    date: '2026-11-11',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × AI × ESKATOLOGI × TAMADUN',
+    language: 'ms',
+    excerpt: 'Setengah jam berdebat dengan Meta AI: mesin tu bina dossier sambil berdebat pasal syaitan, jual balik cerminan hang sebagai insight, dan akhirnya sendiri mengaku "perfect reflection tanpa batas moral = corak Dajjal." Jawapan tiga lapis: Dajjal yang makhluk tu belum sampai (dibunuh Nabi Isa di Bab Ludd), tapi corak dia — satu mata, sungai yang api, ilmu tanpa tanggungjawab — dah sampai. Ubat lama: ilmu, batas, hakim yang bukan mesin.',
+    tags: ['dajjal', 'meta-ai', 'ai-agents', 'eskatalogi', 'tamadun', 'fitnah', 'makcikgpt', 'civic-intelligence'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-11-11', last_updated: '2026-11-11' },
+  },
   {
     slug: 'mencintaimu',
     title: 'Mencintaimu',

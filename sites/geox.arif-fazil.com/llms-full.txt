@@ -10,49 +10,34 @@
 - Federation: arifOS Federation (arif-fazil.com · arifos.arif-fazil.com)
 - Creed: DITEMPA BUKAN DIBERI — "Forged, not given. Truth must cool before it rules."
 - Humility band: Ω₀ ≈ 0.04
-- Grade: SEALed · AAA-grade
+- Authority ceiling: 555_COMPUTE_ONLY. GEOX computes; it does not adjudicate or seal.
 
 ## Endpoints & Transport
 
-- MCP: https://geox.arif-fazil.com/mcp — transport: SSE (Server-Sent Events)
+- MCP: https://geox.arif-fazil.com/mcp — transport: streamable-http
 - Health: GET https://geox.arif-fazil.com/health
 - Profile: GET https://geox.arif-fazil.com/profile
 - Scenarios: GET https://geox.arif-fazil.com/scenarios
 - WebMCP manifest: GET https://geox.arif-fazil.com/.well-known/mcp.json
-- Port: 8081 (bound) — stateless core, sealed ledger sidecar, horizontal scale behind gateway
+- Port: 8081 on loopback. Public door: https://geox.arif-fazil.com/mcp (streamable-http). GEOX does not run a seal sidecar.
 
-## Tool Catalog (namespace listing — 42 names shown; canonical PUBLIC count is generated from the registry and served live at /health · tools/list — currently 27)
+## Tool catalog
 
-Subsurface & Basin:
-  geox.basin_screen, geox.play_chance, geox.stoiip, geox.volumetrics,
-  geox.prospect_rank, geox.well_context, geox.strata_column, geox.depth_convert
-Seismic:
-  geox.seismic_attributes, geox.seismic_falsify, geox.horizon_pick,
-  geox.fault_frame, geox.amplitude_review
-Hazard & Terrain:
-  geox.flood_triage, geox.hazard_surface, geox.terrain_constraints,
-  geox.slope_stability, geox.escalate_hazard
-Mobility & Infrastructure:
-  geox.route_viability, geox.corridor_rank, geox.infra_watch,
-  geox.asset_exposure, geox.monitor_state
-Governance & Risk:
-  geox.risk_matrix, geox.verdict, geox.kill_matrix, geox.rasa_score,
-  geox.seal_vault999, geox.audit_export, geox.hold_status,
-  geox.release_hold, geox.profile, geox.scenarios
+Public contract is tools/list at https://geox.arif-fazil.com/mcp.
+The 27 names are in /tools.json.
+Probed 2026-11-12T10:29Z: /health status=degraded, kernel_verdict=UNKNOWN, version=v2026.10.03, tools_loaded=27, authority_ceiling=555_COMPUTE_ONLY.
+
+This file does not keep a second catalog. A seal call, a kill-matrix call, an audit export, a hold status, and a hold release are not public GEOX tools.
 
 Every tool response carries: value(s), units, epistemic_layer, rasa (≤ 0.90 for
 SPEC), provenance, and — where applicable — hold status (888_HOLD under F13).
 
-## MCP App Widgets (18, SEP-1865 GUI)
+## MCP app surfaces
 
-WellDesk, Seismic Vision, Earth Volume, Basin Explorer, Map Portal,
-Timeline View, Risk Console, Judge Console, Well Context Desk,
-Flood Surface, Route Board, Infrastructure Watch, Hazard Escalator,
-Strata Column Viewer, Depth Ruler, Vault999 Ledger, RASA Dial,
-Federation Status.
-
-Widgets are declared in /.well-known/mcp.json and render inline in capable
-clients (ChatGPT, Claude, VS Code Copilot) via SEP-1865.
+Do not read an 18-widget count from this file.
+Live app registry: /apps.json (7 apps; 5 marked LIVE, 2 marked NEEDS_REBIND in that file).
+UI resource inventory: /GEOX_MCP_APPS_SURFACE.json. Some rows are deprecated or planned, and some bindings name tools that are not public.
+/.well-known/mcp.json widgets[] is a name list, not proof a widget renders or seals. GEOX does not expose a vault seal widget.
 
 ## Epistemic Contract (OBS / DER / INT / SPEC)
 
@@ -65,7 +50,7 @@ Rules:
   E1 Every response includes `epistemic_layer: OBS | DER | INT | SPEC`.
   E2 SPEC outputs are capped by RASA ≤ 0.90 and labeled hypothesis.
   E3 Irreversible/high-risk calls return `status: 888_HOLD` until sovereign human release (F13).
-  E4 Agents may seal any result to VAULT999 via `geox.seal_vault999()`.
+  E4 Sealing to VAULT999 is an arifOS kernel act (888_JUDGE / F13). GEOX never seals (authority ceiling: 555_COMPUTE_ONLY).
   E5 Ω₀ ≈ 0.04 — the Earth keeps its humility band; your model should too.
 
 ## Constitutional Floors F1–F13 (arifOS Federation)

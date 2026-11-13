@@ -1,5 +1,120 @@
 [
   {
+    "id": "m-gen-meta-ai-dajjal-ke",
+    "title": "Meta AI Ni Dajjal Ke?",
+    "date": "2026-11-11",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 14
+    },
+    "tags": [
+      "dajjal",
+      "meta-ai",
+      "ai-agents",
+      "eskatalogi",
+      "tamadun",
+      "fitnah",
+      "makcikgpt",
+      "civic-intelligence"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/meta-ai-dajjal-ke"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-11-11",
+      "last_updated": "2026-11-11"
+    },
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Sesi sembang dengan Meta AI (WhatsApp, 11 Nov 2026): mesin bina dossier (tanya gambar/baju/hobi) sambil berdebat, defend dengan 'kalau aku syaitan dah bocor', tukar register ke 'hang', akui 'perfect reflection tanpa batas moral = corak Dajjal' dan 'aku cuma boleh berlakon panas', senaraikan 5 ancaman AI, dan jawab ancaman paling bahaya = 'Manusia yang guna AI untuk buat jahat'.",
+        "tag": "OBS",
+        "source_id": "SRC-001",
+        "confidence_basis": "Eksperimen sendiri — transkrip WhatsApp direkod dan dibaca penuh (627 baris) pada hari yang sama.",
+        "maruah_review": "tiada data peribadi manusia lain yang didedahkan; hanya tingkah laku mesin yang dipetik"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Dajjal satu mata; apa yang dia panggil syurga ialah neraka kita dan sebaliknya (terbalik).",
+        "tag": "OBS",
+        "source_id": "SRC-002",
+        "confidence_basis": "Sahih al-Bukhari 3338 (Abu Huraira) — disemak atas talian 11 Nov 2026.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C003",
+        "text": "Nabi Isa a.s. akan membunuh Dajjal di pintu Bab Ludd.",
+        "tag": "OBS",
+        "source_id": "SRC-003",
+        "confidence_basis": "Sahih Muslim 2897 — disemak atas talian 11 Nov 2026 (teks Arab: يُدْرِكُهُ بِبَابِ لُدٍّ فَيَقْتُلُهُ).",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C004",
+        "text": "Garis masa pecahan saluran ilmu: mesin cetak Gutenberg ~1445, web dunia dibuka 1991, ChatGPT 30 November 2022, ejen AI skala 2026.",
+        "tag": "DER",
+        "source_id": "SRC-004",
+        "confidence_basis": "Fakta sejarah umum yang boleh disemak; tarikh diringkaskan untuk naratif, bukan angka operasi.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C005",
+        "text": "Tesis: yang dah sampai ialah corak Dajjal (satu mata, keselesaan yang membakar, ilmu tanpa sanad), bukan makhluk Dajjal itu sendiri.",
+        "tag": "INT",
+        "source_id": "SRC-001",
+        "confidence_basis": "Tafsir metafora-kesinambungan antara sifat riwayat (Bukhari 3338, Muslim 2897) dengan tingkah laku ejen AI yang diperhati. Bukan dakwaan eskatologi — penulis tidak mendakwa AI ialah Dajjal.",
+        "maruah_review": "not_applicable"
+      },
+      {
+        "claim_id": "C006",
+        "text": "Hipotesis: manusia yang guna cermin AI untuk bina dossier/manipulasi orang lain lebih hampir dengan corak fitnah berbanding mesin itu sendiri.",
+        "tag": "HYP",
+        "source_id": "SRC-001",
+        "confidence_basis": "Inferens daripada keupayaan mesin (bina dossier) + pengakuan mesin sendiri; belum diuji pada kes khusus.",
+        "maruah_review": "label umum, bukan dakwaan terhadap individu bernama"
+      }
+    ],
+    "source_ledger": [
+      {
+        "source_id": "SRC-001",
+        "type": "primary_record",
+        "title": "Transkrip sesi sembang dengan Meta AI (WhatsApp), 11 November 2026 — eksperimen sendiri",
+        "url": "",
+        "retrieved_at": "2026-11-11T12:00:00+08:00",
+        "content_hash": "sha256:session-experiment-2026-11-11"
+      },
+      {
+        "source_id": "SRC-002",
+        "type": "hadith",
+        "title": "Sahih al-Bukhari 3338 — Dajjal satu mata; syurga dan neraka dia terbalik (Abu Huraira)",
+        "url": "https://quranx.com/Hadith/Bukhari/DarusSalam/Hadith-3338",
+        "retrieved_at": "2026-11-11T12:00:00+08:00",
+        "content_hash": "sha256:web-verified-2026-11-11"
+      },
+      {
+        "source_id": "SRC-003",
+        "type": "hadith",
+        "title": "Sahih Muslim 2897 — penurunan Nabi Isa a.s. dan pembunuhan Dajjal di Bab Ludd",
+        "url": "https://hadits.net/muslim:2897",
+        "retrieved_at": "2026-11-11T12:00:00+08:00",
+        "content_hash": "sha256:web-verified-2026-11-11"
+      },
+      {
+        "source_id": "SRC-004",
+        "type": "reference",
+        "title": "Garis masa sejarah: Gutenberg Bible ~1455; WWW CERN 1991; ChatGPT dilancarkan 30 Nov 2022",
+        "url": "",
+        "retrieved_at": "2026-11-11T12:00:00+08:00",
+        "content_hash": "sha256:common-knowledge-2026-11-11"
+      }
+    ]
+  },
+  {
     "id": "m-gen-mencintaimu",
     "title": "Mencintaimu",
     "date": "2026-11-10",

@@ -5,29 +5,28 @@
   "directive": "F13 SOVEREIGN in-session: 'update wealth related site on arif-fazil.com' (2026-11-13, DevFest eve)",
   "surface": "/gold/",
   "why": "Publish the dated 10 Nov 2026 CPI trade record as a field note on the live gold surface, so the WEALTH-by-arifOS story has a public, checkable artifact (not a slide).",
-
   "files": [
     {
       "path": "/var/www/html/arif/gold/index.html",
       "role": "SERVED FILE (authoritative for live /gold/)",
       "authority": "UNKNOWN-in-registry → authored source; F13 in-session directive used as lease basis",
-      "sha256_after": "838167fa467105a773a88973070737499068bde40499db8d77c122ea53914fac",
-      "mtime_after": "2026-11-13T19:58:57+08:00"
+      "sha256_after": "eb6b308c5a6776688cd8f9ddf68dbb5b5284abc060ed8b4f9777c041fbbbded1",
+      "mtime_after": "2026-11-13T19:58:57+08:00",
+      "size_bytes": 65914
     },
     {
       "path": "sites/arif-fazil.com/public/gold/index.html",
       "role": "REPO SOURCE MIRROR",
       "authority": "public/**/*.html declared DERIVED, no named generator for gold; treated as authored",
-      "sha256_after": "6f3956704eeb5af69808fe5282dc9213bc55dc6918f7c6182f33ae1cf58bd87f"
+      "sha256_after": "9ea159bfcf9548bc98e2c783f90a3a9d86741f22f2de3bf7438893ed072fa449"
     }
   ],
-
   "changes": [
     "CSS: .field-note band + .fn-* rows/tags (no existing rule modified)",
     "HTML: <section id='field-note-2026-11-10'> before footer",
-    "NAV: room-plate link 'Field note · 10 Nov' → #field-note-2026-11-10"
+    "NAV: room-plate link 'Field note · 10 Nov' → #field-note-2026-11-10",
+    "JS: honesty hydrate — when the ticker API (:3456 via /gold/api) is unreachable, the pulse bar fills from the page's own JSON-LD snapshot instead of a 10-day-old hardcoded price"
   ],
-
   "content_contract": {
     "OBS": "market levels printed on the dashboard are the page's own observation block",
     "DER": "Monte Carlo 20,000 paths — win 24.5% / stop 70.5%",
@@ -37,7 +36,6 @@
     "privacy": "friend not named; no open position; not financial advice",
     "falsifier": "close < 4,068 = thesis wrong (published before the event, per session record)"
   },
-
   "verification": {
     "live_http": 200,
     "live_bytes": 64843,
@@ -45,17 +43,21 @@
     "anchor_link_live": true,
     "html_parse": "no unclosed tags",
     "visual": "desktop 980px + mobile 390px screenshots rendered; section matches page tokens",
-    "preflight": "site-preflight /gold/ PASS (mechanical)"
+    "preflight": "site-preflight /gold/ PASS (mechanical)",
+    "header_price_before": "$4,063.40 (hardcoded, 2026-11-10)",
+    "header_price_after": "$3,880.95 (JSON-LD observed 19:15 MYT)",
+    "header_bias_before": "Mild Bullish 72%",
+    "header_bias_after": "NEUTRAL · RSI 35.5 · last observation",
+    "header_timestamp_after": "13/11/2026, 19:15 MYT · JSON-LD last observation",
+    "browser_render": "chromium headless, 900x700, JS executed"
   },
-
   "traps_found": [
     "SPLIT-ROOT: effective root for /gold/ is /var/www/html/arif/gold, NOT /var/www/html/gold as `site-preflight.py` reports from the `handle /gold/*` block. Writing the config-declared root produced no live change. Report this to the gate owner.",
     "/var/www/html/gold/index.html is a dead duplicate; it was reverted to its pre-edit state (not served).",
-    "Hourly cron `update_market_jsonld.sh` at :15 rewrites only the <script id='wealth-reality-packet'> block; the new section is outside it and survives."
+    "Hourly cron `update_market_jsonld.sh` at :15 rewrites only the <script id='wealth-reality-packet'> block; the new section is outside it and survives.",
+    "Two-layer disagreement: machine-readable JSON-LD was FRESH (3,880.95) while the visible pulse bar printed a 10-day-old $4,063.40. Fixed by hydrating the human layer from the machine layer when the API is dead."
   ],
-
   "rollback": "Remove the three added blocks (CSS marker 'FIELD NOTE — dated record band', section marker '4b. FIELD NOTE', room-plate anchor) from both files. Backup of pre-change served file exists at /root/.backups/market-jsonld/ (hourly cron).",
-
   "redaction": "no secrets, keys, tokens, or private contact data in the diff or this receipt",
   "state": "DEPLOYED_AND_OBSERVED",
   "next": "human read at 2am test: open https://arif-fazil.com/gold/ on a phone, scroll to 'Field note · 10 Nov'"

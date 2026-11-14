@@ -230,7 +230,17 @@ safe_remove_temp() {
     "$BUILD_TMP_ROOT"/*|"$STAGING_ROOT"/*) ;;
     *) log "refusing cleanup outside temporary roots: $path"; return 1 ;;
   esac
-  find -P "$path" -depth -delete
+  # FIX 2026-11-15: never delete the live webroot even if a staging path
+  # somehow aliases it; and a failed delete RETAINS the tree (evidence +
+  # rollback material) instead of cascading.
+  if [[ "$(readlink -f -- "$path" 2>/dev/null)" == "$(readlink -f -- "$WEBROOT" 2>/dev/null)" ]]; then
+    log "refusing cleanup: $path aliases the live webroot"
+    return 0
+  fi
+  if ! find -P "$path" -depth -delete 2>/dev/null; then
+    log "cleanup retained (undeletable files, evidence kept): $path"
+    return 0
+  fi
 }
 
 emergency_rollback() {
@@ -243,6 +253,18 @@ emergency_rollback() {
   fi
   if [[ -n "$OLD_STAGE" && ( -e "$OLD_STAGE" || -L "$OLD_STAGE" ) ]]; then
     mv -- "$OLD_STAGE" "$WEBROOT"
+    # FIX 2026-11-15: a rollback that restores garbage must SAY so.
+    # (non-die check — validate_artifacts calls die, which would abort
+    #  the rollback sequence itself from inside this function)
+    local _ra _missing=0
+    for _ra in "${REQUIRED_ARTIFACTS[@]}"; do
+      [[ -e "$WEBROOT/$_ra" || -L "$WEBROOT/$_ra" ]] || { _missing=1; break; }
+    done
+    if (( _missing == 0 )); then
+      log "emergency rollback restored a verified tree to $WEBROOT"
+    else
+      log "EMERGENCY ROLLBACK RESTORED AN INCOMPLETE TREE — required artifacts missing in $WEBROOT; manual recovery required"
+    fi
   fi
   if [[ -n "$DEPLOY_DIR" && ( -e "$failed_stage" || -L "$failed_stage" ) ]]; then
     mv -- "$failed_stage" "$DEPLOY_DIR/failed-unexpected" 2>/dev/null || true
@@ -629,14 +651,27 @@ if [[ -e "$WEBROOT" || -L "$WEBROOT" ]]; then
 fi
 
 # Gate 1e₂: rsync --backup before final swap to ensure deletes are recoverable
+# (FIX 2026-11-15: this block was dead code — it tested -d "$WEBROOT" AFTER the
+#  webroot had already been moved to OLD_STAGE. Backup now runs against OLD_STAGE,
+#  which is what actually holds the pre-deploy tree at this point.)
 BACKUP_SNAPSHOT="/var/backups/arif-sites/deleted-${TS}"
-if [[ -d "$WEBROOT" ]]; then
+if [[ -d "$OLD_STAGE" ]]; then
   mkdir -p "$BACKUP_SNAPSHOT"
-  rsync -a --backup --backup-dir="$BACKUP_SNAPSHOT" "$NEW_STAGE/" "$WEBROOT/" 2>/dev/null || true
+  rsync -a --backup --backup-dir="$BACKUP_SNAPSHOT" "$OLD_STAGE/" "$BACKUP_SNAPSHOT/pre-deploy-tree/" 2>/dev/null || true
 fi
 
 mv -- "$NEW_STAGE" "$WEBROOT"
 SWAP_ACTIVE=1
+
+# Gate 1h (FIX 2026-11-15, incident p1-deploy-site-apply-loses-webroot):
+# POST-SWAP ARTIFACT VERIFICATION — the swap is only real if every
+# required artifact exists in the live webroot. A gutted/empty webroot
+# must fail CLOSED here, never ride a single-probe URL to "success".
+if ! validate_artifacts "$WEBROOT"; then
+  log "Gate 1h FAILED: required artifacts missing from webroot after swap — rolling back"
+  rollback_after_failure "Gate 1h: post-swap artifact verification failed (required artifacts absent)" "rolled_back" "$BUILD_HASH" "$SOURCE_COMMIT" false false || exit 1
+fi
+log "  ✅ Gate 1h passed (all required artifacts present post-swap)"
 
 if ! retry_command "Caddy reload" "$CADDY_ATTEMPTS" "$RETRY_DELAY" \
   "$CADDY_BIN" reload --config "$CADDYFILE"; then

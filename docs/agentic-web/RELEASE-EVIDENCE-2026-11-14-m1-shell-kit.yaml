@@ -79,3 +79,25 @@ m1_2:
     live_screenshots: ["screenshots/m12-words-hub-live.png", "screenshots/m12-doctrine-live.png", "screenshots/m12-words-essays-live.png"]
   deploy: "rsync, caddy_reloaded=false"
   seal_status: "amodei-flight-recorder UNSEALED per sovereign directive — awaiting 888 content review"
+
+# ── M1.3 amendment (same day, 2026-11-14 ~21:45 MYT) — MIND + BODY rings ──
+m1_3:
+  commits: "site M1.3 + canon mandate vM1.3"
+  changed_routes: ["/institution", "/proof", "/human"]
+  public_effect:
+    - "InstitutionPage -> RootShell ring-mind (Ψ MIND pill live)"
+    - "ProofArrow -> RootShell ring-mind (SPA surface; public canonical /work/proof/ stays STATIC crypto vault by design)"
+    - "Human -> RootShell ring-body (Δ BODY pill live); torus_count=0 (the pulse is the anchor)"
+  architecture_finding:
+    - "Caddy split-roots: /human/* + /institution/* serve from TOP-LEVEL /var/www/html/<path>/, NOT /var/www/html/arif/<path>/ — rsync-to-arif alone never reaches them. Top-level shells converted (".bak-m13 kept)."
+  incident_found_and_fixed:
+    - "verify-design-canon falsy-zero bug: spec.torus_count=0 coerced to 1 via '||' — gate flagged a correct instrument. Fixed with ??; /human torus=0 is now representable."
+  tests:
+    build: "DESIGN-CANON 112/112 · lint PASS · verify-pages PASS (236)"
+    live_screenshots: ["screenshots/m13-institution-mind-live.png", "screenshots/m13-human-body-live.png"]
+  followups:
+    - "cosmetic: stray '(' glyph top-left on shell pages (RootShell candidate tweak)"
+    - "CF purge permission missing on available tokens — cache self-expires; no HTML caching actually active (cf-cache-status DYNAMIC), risk low"
+    - "/vitals static pipeline (render-vitals) migration = next phase with subdomains"
+  deploy: "rsync /arif + top-level shells, caddy_reloaded=false"
+  seal_status: "amodei-flight-recorder UNSEALED — awaiting sovereign 888 review"

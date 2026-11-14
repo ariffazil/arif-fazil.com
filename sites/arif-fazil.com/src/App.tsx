@@ -8,7 +8,14 @@ import { ScrollToHashElement } from '@/components/ScrollToHashElement';
 // ALL their chrome — no global nav/footer beside the shell's HeaderCanon.
 // Source of record: /root/web-canon/canon/shell-mandate.json (verify-design-canon
 // enforces single-nav on these routes at prebuild).
-const ATLAS_CHROME_ROUTES: RegExp[] = [/^\/words\/amodei-flight-recorder\/?$/];
+const ATLAS_CHROME_ROUTES: RegExp[] = [
+  /^\/words\/amodei-flight-recorder\/?$/,
+  // essay renderer (EssayPage → ArticleShell) — dynamic slugs
+  /^\/words\/writing\/[^/]+\/?$/,
+  /^\/words\/(?!essays|wiki|makcikgpt|writing)[^/]+\/?$/,
+  /^\/essays\/[^/]+\/?$/,
+  /^\/writing\/[^/]+\/?$/,
+];
 
 // Route-level code splitting (audit N4, 2026-09-24): setiap halaman = chunk lazy.
 // Bundle monolitik 2.3MB dipecah — entry kini kecil, halaman dimuat atas permintaan.

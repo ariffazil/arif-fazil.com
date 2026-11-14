@@ -18,6 +18,7 @@
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",
     "/world/politics/shadow/anwar-ibrahim/": "33 Bayang Anwar Ibrahim — three-axis deep-dive (Sosiopolitik / Ekonomi / Peribadi), 322 public sources, editorial psychology analysis",
     "/world/ai/shadow/": "AI Labs Bayang — institutional shadow atlas of major AI model labs (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Microsoft, Mistral, Cohere, DeepSeek, Alibaba) — promises, ownership, compute, model reflection, and displaced consequences",
+    "/world/makcikgpt/tak-kenal-maka-tak-sayang": "MakcikGPT article — Tak Kenal Maka Tak Sayang",
     "/world/makcikgpt/meta-ai-dajjal-ke": "MakcikGPT article — Meta AI Ni Dajjal Ke?",
     "/world/makcikgpt/mencintaimu": "MakcikGPT article — Mencintaimu",
     "/world/makcikgpt/sayang-yang-percuma": "MakcikGPT article — Sayang Pun Hang Nak Bagi Invoice Ka?",
@@ -114,5 +115,5 @@
     "llms_txt": true,
     "sitemap": true
   },
-  "last_updated": "2026-11-11"
+  "last_updated": "2026-11-14"
 }

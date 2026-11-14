@@ -185,6 +185,8 @@
   line-height: 1.78;
 }
 .atlas-article p { margin: 0 0 1.1em; }
+/* legacy essay html carries its own leading <h1> — the shell hero already owns the title */
+.atlas-article > article > h1:first-child { display: none; }
 .atlas-article h2 {
   font-family: var(--font-display, Fraunces, Georgia, serif);
   font-style: normal;

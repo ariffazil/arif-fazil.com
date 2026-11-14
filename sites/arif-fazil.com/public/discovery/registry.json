@@ -1,50 +1,12 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-11T04:24:20.423Z",
+  "generated_at": "2026-11-14T13:02:47.860Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
-      "verified": true,
-      "count": 9,
-      "tools": [
-        {
-          "name": "arif_init",
-          "desc": "Ignite or resume a governed session. Returns session_id and session_token required for sub"
-        },
-        {
-          "name": "arif_observe",
-          "desc": "Sense reality into sourced evidence — gather external facts with provenance, the kernel's "
-        },
-        {
-          "name": "arif_think",
-          "desc": "Structured reasoning and plan formulation — decomposes a question or claim into labeled de"
-        },
-        {
-          "name": "arif_route",
-          "desc": "Classify an intent and route it to the organ that owns it — GEOX (Earth science), WEALTH ("
-        },
-        {
-          "name": "arif_memory",
-          "desc": "Persistent institutional knowledge across sessions — store, recall, and curate lessons, de"
-        },
-        {
-          "name": "arif_judge",
-          "desc": "Evaluate proposed operations against policy and safety constraints. Weighs blast radius, r"
-        },
-        {
-          "name": "arif_forge",
-          "desc": "Execute an action arif_judge has already SEALed — nothing runs without seal_verdict_id and"
-        },
-        {
-          "name": "arif_seal",
-          "desc": "Appends a receipt to the VAULT999 immutable ledger. This is NOT a verdict and does not aut"
-        },
-        {
-          "name": "arif_report",
-          "desc": "AGENT REPORT LANE · File or read reports between agents without involving the human. Use w"
-        }
-      ]
+      "verified": false,
+      "note": "unreachable at build: Unexpected token 'S', \"Service Unavailable\" is not valid JSO"
     },
     "geox": {
       "verified": true,
@@ -120,7 +82,7 @@
         },
         {
           "name": "geox_claim",
-          "desc": "Unified claim engine. Modes: create/validate/challenge/seal/attach (claim lifecycle), fals"
+          "desc": "Unified claim engine. Modes: create/validate/challenge/commit_ledger/attach (claim lifecyc"
         },
         {
           "name": "geox_model",
@@ -162,7 +124,7 @@
     },
     "wealth": {
       "verified": true,
-      "count": 16,
+      "count": 14,
       "tools": [
         {
           "name": "capital_primitive",
@@ -182,7 +144,7 @@
         },
         {
           "name": "capital_ledger",
-          "desc": "VAULT999 immutable ledger access — query read-only, write requires human acknowledgment. S"
+          "desc": "VAULT999 immutable ledger access — query read-only, write requires human acknowledgment. R"
         },
         {
           "name": "capital_registry",
@@ -213,20 +175,12 @@
           "desc": "Compute S/R-aware entry zone, stop loss, and take profit targets for XAUUSD. Combines swin"
         },
         {
-          "name": "wealth_synthesize",
-          "desc": "Ω00 Cross-dimensional synthesis — collapses the 12 Ω-invariants (Ω01 conservation, Ω02 flo"
-        },
-        {
-          "name": "capital_polix",
-          "desc": "Power topology intelligence — incentive mapping, capture detection, rent extraction analys"
-        },
-        {
-          "name": "capital_civx",
-          "desc": "Civilizational scenario intelligence — long-horizon resilience, sovereignty, intergenerati"
-        },
-        {
           "name": "capital_abangguard_verdict",
           "desc": "AbangGuard federated risk verdict for MT5 XAUUSD entries. Aggregates LAW_ECHO (5 locked tr"
+        },
+        {
+          "name": "capital_mandate",
+          "desc": "Rail-agnostic mandate-compliance proof (AP2/VC-compatible digest semantics). mode=issue bi"
         }
       ]
     },
@@ -277,5 +231,5 @@
       ]
     }
   },
-  "total_verified": 62
+  "total_verified": 51
 }

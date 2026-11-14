@@ -89,7 +89,7 @@ export function Human() {
             <span className="text-[#9AA0A8]">Then retrieve.</span>
           </h1>
           <p className="font-sans text-lg text-[#9AA0A8] max-w-2xl leading-relaxed">
-            This site is the public home of Muhammad Arif bin Fazil: exploration geoscience,
+            This site is the public home of ARIF FAZIL: exploration geoscience,
             evidence-linked Earth computation, and governed agent architecture.
             Reading these pages does not grant authority. Public surfaces are informational
             unless a capability file explicitly says otherwise.

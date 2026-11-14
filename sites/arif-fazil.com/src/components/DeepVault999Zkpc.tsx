@@ -18,7 +18,7 @@ const MERKLE_LEAVES: MerkleLeaf[] = [
     hash: '0x9b2a7d4ef1300999aa771c89be4510fa3e11892d',
     parent: 'branch-constitution',
     category: 'CONSTITUTION',
-    claimText: 'Human veto is absolute. Muhammad Arif bin Fazil holds non-delegable authority. Ditempa bukan diberi.',
+    claimText: 'Human veto is absolute. ARIF FAZIL holds non-delegable authority. Ditempa bukan diberi.',
     status: 'IMMUTABLE',
     timestamp: '2026-08-01T00:00:00Z',
   },

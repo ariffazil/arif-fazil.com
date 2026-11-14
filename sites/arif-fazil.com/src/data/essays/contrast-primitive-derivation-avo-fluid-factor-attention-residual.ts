@@ -17,7 +17,7 @@ const content: EssayContent = {
   <h3 class="text-lg text-forge-gold mt-2" style="font-weight: 600;">Completing the EUREKA Trilogy · Essay #13</h3>
 
   <div class="paper-authors mt-6">
-    <p><strong>Muhammad Arif bin Fazil</strong></p>
+    <p><strong>ARIF FAZIL</strong></p>
     <p class="text-forge-dim">Senior Exploration Geoscientist · Sovereign Architect, arifOS · GEOX Earth Intelligence</p>
     <p class="text-forge-dim">Penang, Malaysia</p>
   </div>

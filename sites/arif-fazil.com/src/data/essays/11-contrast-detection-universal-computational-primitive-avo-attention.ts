@@ -18,7 +18,7 @@ const content: EssayContent = {
   <h1 class="paper-title">Contrast-Governed Anomaly Detection: A Formal Bridge between Seismic AVO and Transformer Attention</h1>
 
   <div class="paper-authors mt-6">
-    <p><strong>Muhammad Arif bin Fazil</strong></p>
+    <p><strong>ARIF FAZIL</strong></p>
     <p class="text-forge-dim">Senior Exploration Geoscientist · Sovereign Architect, arifOS · GEOX Earth Intelligence</p>
     <p class="text-forge-dim">Penang, Malaysia</p>
   </div>

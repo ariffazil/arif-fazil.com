@@ -174,7 +174,7 @@ export function PoliticsHub() {
             ],
             'creator': {
               '@type': 'Person',
-              'name': 'Muhammad Arif bin Fazil',
+              'name': 'ARIF FAZIL',
               'url': 'https://arif-fazil.com/'
             }
           }

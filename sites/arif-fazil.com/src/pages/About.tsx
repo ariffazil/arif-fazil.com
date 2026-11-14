@@ -11,7 +11,7 @@ export function About() {
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="About"
-        description="Muhammad Arif bin Fazil — exploration geoscientist, builder of governed systems. Based in Kuala Lumpur, Malaysia."
+        description="ARIF FAZIL — exploration geoscientist, builder of governed systems. Based in Kuala Lumpur, Malaysia."
         path="/about"
       />
       {/* Hero */}
@@ -21,7 +21,7 @@ export function About() {
             About
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-black uppercase tracking-tight text-[#EDEAE2] mb-6">
-            Muhammad Arif<br />bin Fazil
+            ARIF FAZIL
           </h1>
           <p className="font-sans text-xl md:text-2xl text-[#9AA0A8] leading-relaxed max-w-2xl">
             Exploration geoscientist. Builder of governed systems.
@@ -149,7 +149,7 @@ export function About() {
 
           <div className="mt-12 pt-8 border-t border-[#1F2733]">
             <p className="font-mono text-[11px] text-[#9AA0A8]/60 max-w-2xl">
-              Personal site of Muhammad Arif bin Fazil. Views are personal unless
+              Personal site of ARIF FAZIL. Views are personal unless
               explicitly identified as published institutional material. No confidential
               subsurface or commercial information is presented.
             </p>

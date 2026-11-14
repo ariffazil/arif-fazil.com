@@ -78,7 +78,7 @@ export function InstitutionPage() {
             inspect first.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#C9C4B8]">
-            <strong className="text-[#EDEAE2] font-semibold">Muhammad Arif bin Fazil</strong> —
+            <strong className="text-[#EDEAE2] font-semibold">ARIF FAZIL</strong> —
             exploration geoscientist at PETRONAS Carigali, and builder of evidence-bounded agent
             systems. This page is the professional conversation path. It is not a sales funnel and
             not a doctrine dump.

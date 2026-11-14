@@ -329,7 +329,7 @@ export function Home() {
           {/* Disclaimer */}
           <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-5">
             <p className="font-mono text-[11px] leading-relaxed text-[#9AA0A8] max-w-3xl">
-              Personal site of Muhammad Arif bin Fazil. Views and interpretations are personal unless explicitly
+              Personal site of ARIF FAZIL. Views and interpretations are personal unless explicitly
               identified as published institutional material. No confidential subsurface or commercial information
               is presented. Ditempa bukan diberi — forged, not given.
             </p>

@@ -1,0 +1,40 @@
+# Release evidence — M1 ATLAS Shell Kit + Amodei Flight Recorder (2026-11-14)
+# Direct publication by kimi-code/FI-008 under sovereign directive (two-phase: shell kit → essay).
+# Not a kernel SEAL. Awaiting approver.
+
+release_candidate:
+  commit: "12062f3f9716910bd2e5a6c52f209bb1e6b05a44"
+  webcanon_commit: "c4da29b"
+  branch: feat/m1-canon-shell-kit
+  environment: production_public_html
+  changed_routes:
+    - /words/amodei-flight-recorder   # NEW — Amodei six-essay synthesis, ArticleShell, ring-soul
+  public_effect:
+    - "tokens.css v2.1: additive RGBY shell accents (--accent-red/blue/yellow/green, AA on carbon 4.5:1+)"
+    - "ATLAS shells available: ArticleShell + RootShell (single HeaderCanon, one-torus law)"
+    - "App.tsx FederationChrome gate: shell-mandated routes own all chrome; all legacy routes unchanged"
+    - "index.html: IBM Plex Sans added to canonical font load"
+  tests:
+    doctor_before: "not_run (site doctor not part of this lane)"
+    build: "npm run build PASS — DESIGN-CANON 78/78 · design-lint PASS · tsc+rolldown clean"
+    canon_gate: "verify-design-canon.cjs 78/78 incl. 8 new M1 checks (shell mandate, one-torus, RGBY AA, no bespoke chrome)"
+    verify_pages: "PASS — 236/236 pages reachable (9 intentional exclusions; 1 pre-existing .well-known 301 warning)"
+    screenshots:
+      - screenshots/m1-shell-hero-preview.png   # local preview — shell anatomy
+      - screenshots/m1-amodei-flight-recorder-live.png  # LIVE render post-deploy
+      - screenshots/m1-home-regression-check.png        # home unchanged (no regression)
+  security:
+    secrets_scan: "no secrets in new files (css/ts/json only)"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+    cdn_note: "CF cache purge auth failed (token scope) — stale /_shared tokens.css cached; rendering unaffected (shell fallbacks); self-expires or purge manually"
+  rollback:
+    git: "git revert 12062f3f9716910bd2e5a6c52f209bb1e6b05a44 && npm run build && rsync dist/ /var/www/html/arif/"
+    tokens: "git revert sites/shared/design-system/tokens.css + re-copy to /var/www/html/_shared/design-system/"
+  deploy_method: "rsync dist→/var/www/html/arif (NO --delete, NO caddy reload) + tokens.css→/_shared"
+  followups:
+    - "Purge CF cache for /_shared/design-system/tokens.css (token scope issue)"
+    - "Migrate remaining 45 pages onto shells (mandate registry grows per migration)"
+    - "syedos/geox subdomains adopt shared shell via /_shared (next phase)"
+  approver: ""

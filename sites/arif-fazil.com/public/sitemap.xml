@@ -28,6 +28,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://arif-fazil.com/contact/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
     <loc>https://arif-fazil.com/earth/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -210,6 +222,16 @@
     <loc>https://arif-fazil.com/world/makcikgpt/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/makcikgpt/meta-ai-dajjal-ke</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arif-fazil.com/world/makcikgpt/mencintaimu</loc>

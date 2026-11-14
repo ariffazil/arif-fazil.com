@@ -1,0 +1,90 @@
+{
+  "schema": "aaa.agentic_web.m2_browser_validation.v1",
+  "evidence_class": "LOCAL_BUILD_ARTIFACT_EVIDENCE",
+  "as_of": "2026-11-14T16:23:30.524Z",
+  "target": "http://127.0.0.1:4173 (vite preview of dist/ @ feat/m2-fed-switcher)",
+  "browser": "Google Chrome 155 headless, sandbox ON, user pwval (non-root), no --no-sandbox",
+  "passed": 15,
+  "total": 15,
+  "verdict": "BROWSER_VALIDATION_PASS",
+  "native_limitations": [
+    "Escape does not close native <details>; outside-click does not close — queued Batch B polish"
+  ],
+  "results": [
+    {
+      "id": "words.header-canonical",
+      "pass": true,
+      "detail": "atlas-header count=1"
+    },
+    {
+      "id": "words.fed-present",
+      "pass": true,
+      "detail": "details.atlas-fed present"
+    },
+    {
+      "id": "words.fed-aria",
+      "pass": true,
+      "detail": "aria-label exact"
+    },
+    {
+      "id": "keyboard.enter-opens",
+      "pass": true,
+      "detail": "open attribute after Enter=true"
+    },
+    {
+      "id": "keyboard.focus-on-summary",
+      "pass": true,
+      "detail": "activeElement=Federation domain switcher"
+    },
+    {
+      "id": "keyboard.tab-into-menu",
+      "pass": true,
+      "detail": "first tab stop=mcp|https://mcp.arif-fazil.com/mcp"
+    },
+    {
+      "id": "fed.links-canonical-8",
+      "pass": true,
+      "detail": "links=8 (7 organ surfaces + kernel MCP door) match=true"
+    },
+    {
+      "id": "fed.links-external-safety",
+      "pass": true,
+      "detail": "all target=_blank rel=noopener"
+    },
+    {
+      "id": "desktop.menu-not-clipped",
+      "pass": true,
+      "detail": "box={\"x\":1131.6875,\"y\":42.09375,\"width\":180,\"height\":256.5}"
+    },
+    {
+      "id": "keyboard.escape-native-behavior",
+      "pass": true,
+      "detail": "Escape closes=false (native <details> does not close on Escape — documented native limitation)"
+    },
+    {
+      "id": "equiv./proof",
+      "pass": true,
+      "detail": "atlas-header=1 legacyFooter=0 fed=1"
+    },
+    {
+      "id": "equiv./999",
+      "pass": true,
+      "detail": "atlas-header=1 legacyFooter=0 fed=1"
+    },
+    {
+      "id": "boundary.900px",
+      "pass": true,
+      "detail": "navHidden=true fedVisible=true menuBox={\"x\":129.796875,\"y\":40.875,\"width\":180,\"height\":256.5}"
+    },
+    {
+      "id": "mobile.390-menu-in-viewport",
+      "pass": true,
+      "detail": "menuBox={\"x\":113.796875,\"y\":40.875,\"width\":180,\"height\":256.5}"
+    },
+    {
+      "id": "backforward.words-restored",
+      "pass": true,
+      "detail": "url=http://127.0.0.1:4173/words"
+    }
+  ]
+}

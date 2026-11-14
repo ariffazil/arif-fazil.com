@@ -1,0 +1,11 @@
+--- /root/_to_delete/deploy-rollback-20261112T0112/wealth.arif-fazil.com.conf	2026-11-10 06:42:07.249414924 +0800
++++ /etc/caddy/vhosts/wealth.arif-fazil.com.conf	2026-11-12 01:19:25.370432547 +0800
+@@ -31,7 +31,7 @@
+   "llms_url": "https://wealth.arif-fazil.com/llms.txt",
+   "federation_identity": "https://arif-fazil.com/.well-known/arifos-federation.json",
+   "surface_class": "public_market_observation",
+-  "note": "POST /mcp for JSON-RPC. GET returns this card."
++  "note": "POST /mcp for JSON-RPC. GET returns this card. tools_count 15 is the 2026-11-11T17:18:22Z probe of /health tools_loaded and /tools (tool_count_source mcp.list_tools), process PID 3095479 started Thu Nov 12 01:15:39 2026 from commit 28720d9. Re-probe before the next edit. This card is not runtime introspection."
+ }` 200
+ 	}
+ 

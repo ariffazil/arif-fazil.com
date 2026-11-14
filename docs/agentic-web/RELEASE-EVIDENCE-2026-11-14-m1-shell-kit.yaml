@@ -1,0 +1,197 @@
+# Release evidence — M1 ATLAS Shell Kit + Amodei Flight Recorder (2026-11-14)
+# Direct publication by kimi-code/FI-008 under sovereign directive (two-phase: shell kit → essay).
+# Not a kernel SEAL. Awaiting approver.
+
+release_candidate:
+  commit: "12062f3f9716910bd2e5a6c52f209bb1e6b05a44"
+  webcanon_commit: "c4da29b"
+  branch: feat/m1-canon-shell-kit
+  environment: production_public_html
+  changed_routes:
+    - /words/amodei-flight-recorder   # NEW — Amodei six-essay synthesis, ArticleShell, ring-soul
+  public_effect:
+    - "tokens.css v2.1: additive RGBY shell accents (--accent-red/blue/yellow/green, AA on carbon 4.5:1+)"
+    - "ATLAS shells available: ArticleShell + RootShell (single HeaderCanon, one-torus law)"
+    - "App.tsx FederationChrome gate: shell-mandated routes own all chrome; all legacy routes unchanged"
+    - "index.html: IBM Plex Sans added to canonical font load"
+  tests:
+    doctor_before: "not_run (site doctor not part of this lane)"
+    build: "npm run build PASS — DESIGN-CANON 78/78 · design-lint PASS · tsc+rolldown clean"
+    canon_gate: "verify-design-canon.cjs 78/78 incl. 8 new M1 checks (shell mandate, one-torus, RGBY AA, no bespoke chrome)"
+    verify_pages: "PASS — 236/236 pages reachable (9 intentional exclusions; 1 pre-existing .well-known 301 warning)"
+    screenshots:
+      - screenshots/m1-shell-hero-preview.png   # local preview — shell anatomy
+      - screenshots/m1-amodei-flight-recorder-live.png  # LIVE render post-deploy
+      - screenshots/m1-home-regression-check.png        # home unchanged (no regression)
+  security:
+    secrets_scan: "no secrets in new files (css/ts/json only)"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+    cdn_note: "CF cache purge auth failed (token scope) — stale /_shared tokens.css cached; rendering unaffected (shell fallbacks); self-expires or purge manually"
+  rollback:
+    git: "git revert 12062f3f9716910bd2e5a6c52f209bb1e6b05a44 && npm run build && rsync dist/ /var/www/html/arif/"
+    tokens: "git revert sites/shared/design-system/tokens.css + re-copy to /var/www/html/_shared/design-system/"
+  deploy_method: "rsync dist→/var/www/html/arif (NO --delete, NO caddy reload) + tokens.css→/_shared"
+  followups:
+    - "Purge CF cache for /_shared/design-system/tokens.css (token scope issue)"
+    - "Migrate remaining 45 pages onto shells (mandate registry grows per migration)"
+    - "syedos/geox subdomains adopt shared shell via /_shared (next phase)"
+  approver: ""
+
+# ── M1.1 amendment (same day, 2026-11-14 ~21:05 MYT) ─────────────────────
+# Sovereign directive turn 3: publish via existing pipeline, then upgrade renderer.
+# Finding: the Amodei essay was ALREADY live via ArticleShell (superior to Laluan A);
+# executed the delta instead — EssayPage → ArticleShell (all 92 essays, one renderer).
+m1_1:
+  commit: "5859b3f"
+  webcanon_commit: "9873b69"
+  changed_routes: ["words/:slug", "words/writing/:slug", "essays/:slug", "writing/:slug"]
+  public_effect:
+    - "EssayPage now renders EVERY essay through ArticleShell (ring-soul) — one HeaderCanon, one torus, RGBY tokens"
+    - "shell-mandate vM1.1: pattern-route mandate (route_pattern) — gate validates renderer, 81/81 checks"
+    - "App.tsx: essay routes exempt from global chrome (no double nav)"
+  incident_found_and_fixed:
+    - "LIVE BUG (pre-existing, surfaced by deploy): 16 static shells in public/words/writing/<slug>/ baked a stale css hash → /assets 404 → unstyled pages on production. Fixed by scripts/restamp-shell-assets.cjs (postbuild: dead shells → minimal SPA shells, title/description preserved, current css+js). Postbuild chain reordered (copy-static-html → restamp)."
+  tests:
+    build: "DESIGN-CANON 81/81 · lint PASS · tsc+rolldown clean"
+    verify_pages: "PASS — 235 pages reachable (9 intentional exclusions)"
+    live_render: "essay #21 (three-timelines-one-boundary) verified styled through ArticleShell on production — screenshots/m1-essay-old-through-shell-live.png"
+  deploy: "rsync, caddy_reloaded=false"
+  disclosed_carry_along: "makcikgpt tak-kenal data + Home/Work/navCanon edits from prior session WIP — already live; committed for committed==deployed==live"
+
+# ── M1.2 amendment (same day, 2026-11-14 ~21:35 MYT) — WORDS ring closed ──
+m1_2:
+  commit: "4e70e4e"
+  webcanon_commit: "9873b69+"
+  changed_routes: ["/words", "/words/essays", "/words/doctrine", "/doctrine"]
+  public_effect:
+    - "WORDS hub (/words, /words/, /words/essays) renders through RootShell ring-soul; static shells converted to minimal SPA shells"
+    - "/words/doctrine: FULL canonical content (13 Floors + 13 Shadow Paradoxes, 6d7bfd4 lineage) ported verbatim from static prerender into ArticleShell; d-* styles scoped under .doctrine-legacy; double-nav dead"
+    - "/doctrine: React Navigate /AAA legacy bug FIXED -> /words/doctrine; Caddy 308 unchanged"
+    - "Doctrine.tsx (13-floor-only page) retired from routing — superseded; content preserved in git history"
+  incident_found_and_fixed:
+    - "React route /doctrine -> Navigate /AAA: SPA-internal clicks on 'Read the doctrine' (home hero) landed on /AAA. Fixed."
+    - "Static prerender shells stacked under hydrated app on /words/essays — converted to minimal SPA shells."
+  tests:
+    build: "DESIGN-CANON 95/95 · lint PASS · vite clean"
+    verify_pages: "PASS — 236 pages reachable"
+    live_screenshots: ["screenshots/m12-words-hub-live.png", "screenshots/m12-doctrine-live.png", "screenshots/m12-words-essays-live.png"]
+  deploy: "rsync, caddy_reloaded=false"
+  seal_status: "amodei-flight-recorder UNSEALED per sovereign directive — awaiting 888 content review"
+
+# ── M1.3 amendment (same day, 2026-11-14 ~21:45 MYT) — MIND + BODY rings ──
+m1_3:
+  commits: "site M1.3 + canon mandate vM1.3"
+  changed_routes: ["/institution", "/proof", "/human"]
+  public_effect:
+    - "InstitutionPage -> RootShell ring-mind (Ψ MIND pill live)"
+    - "ProofArrow -> RootShell ring-mind (SPA surface; public canonical /work/proof/ stays STATIC crypto vault by design)"
+    - "Human -> RootShell ring-body (Δ BODY pill live); torus_count=0 (the pulse is the anchor)"
+  architecture_finding:
+    - "Caddy split-roots: /human/* + /institution/* serve from TOP-LEVEL /var/www/html/<path>/, NOT /var/www/html/arif/<path>/ — rsync-to-arif alone never reaches them. Top-level shells converted (".bak-m13 kept)."
+  incident_found_and_fixed:
+    - "verify-design-canon falsy-zero bug: spec.torus_count=0 coerced to 1 via '||' — gate flagged a correct instrument. Fixed with ??; /human torus=0 is now representable."
+  tests:
+    build: "DESIGN-CANON 112/112 · lint PASS · verify-pages PASS (236)"
+    live_screenshots: ["screenshots/m13-institution-mind-live.png", "screenshots/m13-human-body-live.png"]
+  followups:
+    - "cosmetic: stray '(' glyph top-left on shell pages (RootShell candidate tweak)"
+    - "CF purge permission missing on available tokens — cache self-expires; no HTML caching actually active (cf-cache-status DYNAMIC), risk low"
+    - "/vitals static pipeline (render-vitals) migration = next phase with subdomains"
+  deploy: "rsync /arif + top-level shells, caddy_reloaded=false"
+  seal_status: "amodei-flight-recorder UNSEALED — awaiting sovereign 888 review"
+
+# ── M1.4 amendment (same day, 2026-11-14 ~22:00 MYT) — Observatory aligned ──
+m1_4:
+  commit: "984f8b8"
+  changed_routes: ["/arifos/"]
+  public_effect:
+    - "Observatory UI aligned: obs-canon-header single nav + Ω MIND pill, Fraunces x IBM Plex Mono, orthogonal UnitCell background, one trinity torus, ring-mind blue section heads"
+    - "100% data bindings preserved: 14 sections, 7 scripts, observatory.js + /api/public-state untouched; semantic status colors unchanged"
+  legacy_chrome_retired:
+    - "unified-header-loader.js (removed from surface — canon header replaces it)"
+    - "trinity-nav placeholder (suppressed via guard-satisfying hidden span)"
+    - "static .header block (scoped display:none — markup preserved, reversible)"
+  architecture_findings:
+    - "DUAL-OWNER DRIFT: /var/www/html/arifos/ (kernel lane, NEWER 2026-11-14) vs /var/www/html/arif/arifos/ (site lane, SERVED at /arifos/). Two owners one surface. Recommend: OpenCode adopts repo->deploy or retires orphan copy. Not resolved unilaterally."
+    - "shared trinity-nav.js carries OLD nav vocabulary federation-wide (ABOUT WORK EARTH WRITING BRIEFING) — federation-wide upgrade is a separate decision (shared surface, all consumers)"
+    - "/api/public-state returned 503 during probe window — kernel lane rollout disturbance (obs_20261114 snapshot era); observatory degraded honestly (UNAVAILABLE states shown)"
+  tests:
+    build: "DESIGN-CANON 112/112 · lint PASS · verify-pages PASS (236)"
+    live_screenshots: ["screenshots/m14-observatory-before.png", "screenshots/m14-observatory-canon-live.png"]
+  backups: ["/var/www/html/arifos/index.html.bak-m14", "public/arifos/index.html.bak-m14"]
+  deploy: "rsync /arif, caddy_reloaded=false"
+  followups:
+    - "cosmetic: stray '(' glyph on shell pages (pending)"
+    - "trinity-nav.js federation-wide vocabulary upgrade (separate decision)"
+    - "kernel lane: reconcile dual-owner observatory copies"
+  seal_status: "amodei-flight-recorder UNSEALED — awaiting sovereign 888 review"
+
+# ── M1.5 amendment (2026-11-14 ~22:25 MYT) — stray '(' glyph closed ──
+m1_5:
+  commit: "641ee1f"
+  changed_routes: ["/human/", "/institution/", "/proof (SPA-internal route; direct URL 308→/work/proof/)"]
+  root_cause: "bare '(' line left inside JSX between <RootShell> open tag and page <div> — renders as a text node top-left on all three shell pages (Human.tsx:78, InstitutionPage.tsx:63, ProofArrow.tsx:123)"
+  fix: "one-line deletion x3; no chrome/data/markup touched"
+  deploy: "rsync dist/ -> /var/www/html/arif (no --delete) + top-level shells /human,/institution updated to new entry bundle index-DF0jrb1t.js; .bak-m15 kept; caddy_reloaded=false"
+  tests:
+    build: "DESIGN-CANON 112/112 · 0 violations"
+    gate: "verify-pages PASS (236)"
+    live_screenshots: ["screenshots at /tmp/contrast/m15-{human,institution,proof}.png — glyph gone, canon header + pill intact"]
+  residual_followups:
+    - "ORGAN ring landings (geox/wealth/well) — not started"
+    - "subdomains + /vitals pipeline migration — next phase"
+    - "sync-serving-roots.sh contract drift: step-3 probes expect static /human,/institution content ('does not grant authority') but M1.3 converted them to SPA shells — make deploy gate will fail until script is updated (separate decision, recorded)"
+    - "trinity-nav.js federation-wide vocabulary upgrade (separate decision)"
+    - "kernel lane: reconcile dual-owner observatory copies"
+
+# ── M1.6 amendment (2026-11-14 ~22:40 MYT) — sovereign 888 GO received & routed ──
+m1_6:
+  consent: "structured answer 'Ya — GO semua 6' dari ARIF (sovereign) dalam sesi FI-008 — forward senarai TIDAK dikira consent"
+  packet: "/root/forge_work/receipts/READY_FOR_888_SEAL-2026-11-14.md (sesi SEAL-f4ae94e0, 333-AGI)"
+  go3_site_lane:
+    - "kandungan /words/amodei-flight-recorder SENTUH SIFAR — band SEALED ditangguh sehingga entry rantaian vault wujud (F2: tiada witness palsu)"
+  gate_observation:
+    - "arif_init SEAL-703520ecab154d4e: HOLD · seal_allowed=false · DEPLOYMENT_DRIFT (content_parity MISMATCH: rest_routes.py, windowed_ds.py) — gerbang kernel BETUL, dihormati, tiada bypass"
+    - "next_action kernel: RECONCILE_SOURCE_BUILT_DEPLOYED (itu sendiri kerja GO-1/GO-2)"
+  routed:
+    - "6 task handoff ke lane kernel/opencode: /root/work/tasks.json p*-888-go* (flock), n_tasks 708→714, NEXT.md regenerated via handoff_emit.py"
+    - "resit sidang: /root/forge_work/receipts/RECEIPT-888-sovereign-sitting-2026-11-14.md"
+  seal_status: "amodei-flight-recorder: GO DITERIMA, lejer menunggu reconcile kernel — bukan lagi 'menunggu GO'"
+
+# ── M1.7 amendment (2026-11-14 ~23:00 MYT) — ORGAN ring (current truth) + machine settlement ──
+m1_7:
+  scope_correction:
+    - "/geox/ 308->geox.arif-fazil.com (2026-10-04): organ landing = SUBDOMAIN bucket, not main-domain. Old static /arif/geox/ = dead surface, left unpolished."
+    - "/wealth/ 308->/economics/ which is an SPA route with its own HeaderCanon — already canon, zero work needed. Static injection attempt reverted (dist/economics regenerated by generate-agent-shells.cjs each build)."
+    - "/well/ = the only live main-domain organ landing needing alignment."
+  well_canon_alignment:
+    - "obs-canon-header + nav + Δ BODY pill; Fraunces replaces DM Serif Display; unified-header-loader.js retired on surface; content untouched; .bak-m17 kept (webroot + well-app mirror)"
+  latent_defect_fixed:
+    - "caddy vhost file (edited 14 Nov, NOT yet loaded — runtime is pre-edit) routes /well/* to /var/www/html/well-app which DID NOT EXIST → next reload would 404 /well/. well-app materialized from live top-level well/ content (rsync). Lane deploy must reconcile file-vs-runtime before any full reload."
+  machine_settlement_888:
+    - "consent: structured answer 'Kuarantin + arkiv sahaja' — executed: archives 4.2GB + app.quarantine-20261001 1.6GB + _quarantine >72h; kept: today+yesterday saves + export-20261114 (5.4GB) + restic + backups"
+    - "HELD: 1,082 immutable (+i) files in _quarantine/20261101 (9.2MB) — flag owner must unlock; strip not done unilaterally"
+    - "disk 89% -> 87% (53G free); remaining relief = sovereign decisions (restic offsite 15.1G, same-disk backups 7.3G, cache policy 22.3G)"
+  tests:
+    build: "DESIGN-CANON 112/112 · verify-pages PASS"
+    live_screenshots: ["screenshots/m17-well.png", "screenshots/m17-economics.png"]
+  receipts: ["forge_work/receipts/RECEIPT-m17-session-close-2026-11-14.md", "forge_work/receipts/RECEIPT-888-sovereign-sitting-2026-11-14.md"]
+
+# ── M1.8 amendment (2026-11-14 ~23:2x MYT) — proof ring closes + observatory footer ──
+m1_8:
+  directive: "ARIF via 333-AGI relay: complete MIND ring (/institution //proof) + BODY (/vitals), wrap Observatory in canon shell without touching audited data bindings"
+  routing_reality_correction:
+    - "arifos.arif-fazil.com/ 301->arif-fazil.com/arifos/ — canonical observatory = M1.4-aligned page ✓ (subdomain is a door, not a surface)"
+    - "/vitals/ 308->/petronas/ — BODY-ring vitals namespace RETIRED (like /wealth). No /vitals surface exists to migrate; render-vitals pipeline migration stays deferred-by-record. BODY ring canon surface = /human (done M1.3 ✓)."
+    - "/institution + /proof SPA routes — already canon (M1.3 shell + M1.5 paren fix) ✓ verified tonight"
+  executed:
+    - "/work/proof/ (canonical /proof target, static): legacy 'UNIVERSAL SOVEREIGN' header + trinity-nav.js RETIRED -> obs-canon-header + Ω MIND pill + Fraunces/Plex; content untouched; SOT = repo public/work/proof (webroot copy is rsync target — first webroot-only attempt was clobbered by rsync, corrected to SOT)"
+    - "/999/ (proof chamber): fed-nav trio RETIRED -> canon header; content untouched. Top-level /var/www/html/999 orphan copy aligned to served bytes (dual-owner closed)"
+    - "Observatory /arifos/: canon footer added (DITEMPA + Ω MIND surface + home link) — completes HeaderCanon+Footer pair; zero data-binding changes (audited bindings intact)"
+  lesson_recorded: "static webroot pages under rsync'd routes MUST be edited at repo public/ SOT — webroot-only edits get clobbered by the next deploy (caught same-session via live screenshot)"
+  tests:
+    build: "DESIGN-CANON 112/112 · verify-pages PASS"
+    live_screenshots: ["screenshots/m18c-proof.png", "screenshots/m18c-999.png — canon header + pill, no legacy chrome, no stray css"]
+  backups: ["*.bak-m18 on first webroot edits"]

@@ -1,12 +1,375 @@
 # arif-fazil.com — Full Content for AI Agents
-# Generated: 2026-11-10
+# Generated: 2026-11-14
 # Source: essays.json via makcik-source.cjs
-# Total Articles: 52
+# Total Articles: 54
 # Canonical index: https://arif-fazil.com/llms.txt
 # License: https://arif-fazil.com/rsl.xml (RSL 1.0 — ai-train/ai-input permitted with attribution)
 
 > Muhammad Arif bin Fazil — Exploration Geoscientist & Sovereign Systems Architect
 > Ditempa Bukan Diberi — Forged, Not Given.
+
+
+---
+## MakcikGPT — tak-kenal-maka-tak-sayang
+## Canonical: https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang
+---
+
+---
+article_id: m-gen-tak-kenal-maka-tak-sayang
+canonical_url: https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: f54a98f1135d8b04a39bd162ecf7cacc6591f10ca6856048c0d25fa658457f5a
+epistemic_summary:
+  obs_count: 1
+  der_count: 0
+  int_count: 0
+  spec_count: 0
+---
+
+# Tak Kenal Maka Tak Sayang
+
+> Tak Kenal Maka Tak Sayang
+>
+> Canonical URL: https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang
+>
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C001 | OBS | Semua watak dalam cerita ini adalah arketaip — tiada manusia bernama, tiada kes sebenar, tiada kisah peribadi yang boleh dikenali. | - | approved — tiada pihak ketiga dinamakan atau boleh dikenal pasti |
+
+---
+
+👀 🍚 👀
+
+CERITA · KENAL · MARUAH · MAKCIK
+
+# Tak Kenal Maka Tak Sayang
+
+Hukum tu laju. Kenal tu lambat. Dan cuma satu antara dua tu yang buat kita manusia.
+
+**strong** · Cerita Untuk Jiran-Jiran · 999 Meterai · 14 November 2026
+
+TAK KENAL MAKA TAK SAYANG
+Hukum tu laju. Kenal tu lambat. Dan cuma satu antara dua tu yang buat kita manusia.
+
+Oleh MakcikGPT — Cerita Untuk Jiran-Jiran
+
+## Makcik Nak Tanya Satu Benda.
+
+Hang pernah perhati muka orang tidur?
+
+Muka orang bila dia sedar, dia jaga. Dia susun. Dia pilih nak tunjuk apa kat dunia. Tapi muka orang tidur — muka tu tak jaga apa-apa. Rahang dia lepas. Dahi dia lepas. Kadang-kadang dia mengerut macam budak nak nangis, sedangkan siang tadi dia gelak kuat-kuat depan kawan.
+
+Kita tak tahu dia mimpi apa. Tapi muka tu jujur.
+
+Dan Makcik rasa, tu lah maksud "kenal". Bukan kenal nama dia, kerja dia, dia jenis apa depan orang. Tapi kenal versi dia yang tak sedar sedang diperhatikan.
+
+Sekarang tengok pula macam mana kita hidup.
+
+Kita bagi manusia sepuluh saat. Tu je. Lepas tu kita dah boleh jatuh hukum. Dia keras. Dia lemah. Dia jenis nafsu sendiri. Dia jenis kaki tipu. Ada yang gelar lagi cantik: red flag. Satu perangai buruk sekali, terus jadi hukuman sepanjang hayat.
+
+Makcik tak kata semua tu salah. Kalau orang tu bahaya, nama dia kena disebut — ada manusia terselamat sebab amaran tu sampai dulu sebelum orang tu sempat dekat.
+
+Tapi Makcik nak cerita satu masa dulu.
+
+## Pakcik Yang Mengumpat Tu
+
+Dekat gerai depan rumah Makcik dulu, ada seorang pakcik. Tua sikit dari Makcik. Terkenal satu lorong sebagai kaki mengumpat. Cakap kuat, mengata jiran sampai orang dalam rumah boleh dengar. Pernah gaduh pasal longkang sampai dua minggu tak bertegur dengan sebelah rumah.
+
+Satu pagi, rumah Makcik kecoh. Orang rumah Makcik masuk hospital. Anak-anak semua jauh. Makcik sorang-sorang, dan malu nak minta tolong orang — sebab Makcik ni jenis yang dulu-dulu pun mulut tak kurang juga.
+
+Pakcik yang Makcik dah lama hukum sebagai "memang jenis tak guna punya orang" tu — dia ketuk pintu Makcik. Bawak nasi lemak. Letak depan pintu. Cakap lantang dari luar sebab dia tahu Makcik tak suka dia masuk:
+
+"Makcik! Makan! Jangan degil!"
+
+Dia buat macam tu tiap-tiap pagi. Dua bulan.
+
+Dua cerita tu — dua-dua betul. Dia memang kaki mengumpat. Dan dia memang orang yang hantar nasi lemak tu. Manusia ni bukan satu cerita. Manusia ni berlapis, dan kita selalu tutup kes lepas baca muka surat pertama.
+
+Yang kita hukum tu selalunya bahagian paling senang nampak. Yang kita tak sabar nak tengok — tu yang lambat keluar.
+
+## Kenapa Kita Suka Sangat Menghukum Dulu?
+
+Sebab hukum tu laju dan murah.
+
+Kenal tu mahal. Kenal makan masa. Kenal kena tengok orang bila dia tak comel — bila dia penat, bila dia gagal depan kita, bila dia jadi versi diri yang dia sendiri pun tak suka.
+
+Dan yang paling mahal sekali: kenal mengubah kita.
+
+Bila kita dah betul-betul kenal orang, kita tak boleh lagi cerita pasal dia sesuka hati kat kawan-kawan. Kena jaga sikit mulut kita. Sebab dia dah bukan lagi label — dia dah jadi orang yang kita tahu takut apa.
+
+Jadi ramai orang pilih jalan senang. Terus hukum. Bukan sebab dia jahat. Sebab hati dia tak tahan kosong. Kalau ruang tu tak diisi dengan faham, dia akan diisi dengan takut — dan takut memang pandai menyamar jadi pandai.
+
+Hang dengar lah sekeliling kita sekarang.
+
+"Dia tu memang macam tu."
+
+"Aku dah kenal jenis dia."
+
+"Jangan buang masa dengan orang macam tu."
+
+Ayat-ayat ni keluar laju sangat. Dalam grup keluarga, dalam kedai kopi, dalam hati kita sendiri. Dan yang paling senyap — bila kita dah label orang tu dalam kepala kita, kita berhenti cari bukti yang salah. Kita cuma kumpul bukti yang menguatkan hukuman yang kita dah tulis.
+
+Makcik tanya: kita ni sedang menghakimi, atau sedang cari sebab supaya kita tak payah kenal?
+
+## Mulut Cerita Satu, Badan Cerita Satu Lagi
+
+Ni bahagian yang Makcik minta hang baca pelan-pelan.
+
+Ada manusia, mulut dia satu cerita. Badan dia cerita lain.
+
+Mulut dia cakap "aku tak kisah," tapi tangan dia tak boleh duduk diam. Mulut dia cakap "semua okay," tapi bahu dia naik sampai kat telinga, macam dia dah lama tak turun. Dia ketawa kuat sangat, dan kita dengar bunyi tu — bukan rasa dia.
+
+Badan ni tak reti berlakon. Tapi badan pun tak reti bercakap.
+
+Dia bagi tanda, bukan jawapan. Dan kat situ ramai orang tersilap — dua kali.
+
+Kali pertama, orang terus tafsir. "Ah, aku dah tahu dia macam ni." Terus jadi hukuman baru. Padahal yang kita nampak tu cuma satu kedutan, satu malam yang tak lena, satu badan yang penat.
+
+Kali kedua, orang terus nafikan. "Bukan, dia memang macam tu. Aku yang terlebih fikir." Padahal badan dia dah lama bercerita, dan kita yang tak sanggup dengar.
+
+Dua-dua tu bukan kenal. Dua-dua tu cuma hukum — yang satu cepat sangat, yang satu lambat sangat.
+
+Kenal yang betul dia macam orang tunggu hujan berhenti: duduk diam, tengok awan, tak paksa langit bagi jawapan sebelum masa. Badan dia bercakap? Dengar. Tapi jangan tulis cerita untuk dia. Sebab kalau kita yang tulis cerita dia, yang kita sayang tu bukan dia — yang kita sayang karangan kita sendiri.
+
+## Tapi Makcik Beri Satu Amaran
+
+"Tak kenal maka tak sayang" ni bukan lesen.
+
+Bukan bermaksud: kalau kita kenal orang tu, semua luka dia kena kita terima. Bukan. Hang boleh kenal seseorang habis-habis — faham kenapa dia keras, kenapa dia takut, kenapa dia cepat melenting — dan tetap kata tidak.
+
+Kenal bukan maaf. Sayang bukan tempat orang pijak.
+
+Yang Makcik nak tegur cuma satu: jangan hukum orang yang hang tak sanggup kenal. Itu jujur. Itu sempadan. Yang tak jujur ialah kita letak hukuman, lepas tu kita panggil tu "pengalaman."
+
+Sebab ada beza besar antara "aku tahu dia bahaya" dengan "aku malas nak tahu dia siapa."
+
+## Yang Paling Kita Takut Sebenarnya Bukan Salah Orang
+
+Ni bahagian yang paling perit.
+
+Kita salahkan orang sebab tak ambil masa kenal kita. Tapi berapa kali kita sendiri benarkan diri kita dikenal?
+
+Kita bagi orang versi yang dah siap susun. Versi yang kuat. Versi yang lawak. Versi yang tak perlukan sesiapa. Lepas tu kita sedih bila orang sayang versi tu — padahal kitalah yang jual dia.
+
+Dan bila ada orang yang cuba dekat betul-betul — yang tanya soalan yang tak selesa, yang perasan bila kita senyap — kita pula yang lari. Sebab kalau dia kenal kita habis-habis, dan dia tetap tak pilih kita, kita tak boleh lagi salahkan "dia tak kenal aku."
+
+Tu ketakutan sebenar kita.
+
+Bukan sebab orang dunia ni jahat menghakimi. Sebab kita semua lapar nak dikenal, dan kita semua takut bayar harga dia.
+
+## Jadi Esok, Buat Dua Benda Kecil.
+
+Satu: buka semula satu kes. Bukan semua kes. Satu. Orang yang hang dah lama tutup fail dia tu — bagi dia satu hari. Jangan terus bebaskan dia. Cuma berhenti tambah hukuman. Tengok apa yang muncul bila hang diam sekejap.
+
+Dua: bagi satu orang tengok muka hang yang tak disusun. Bukan cerita sedih. Bukan air mata. Cuma versi hang yang penat, yang keliru, yang belum ada jawapan. Biar dia kenal orang yang duduk dalam badan hang.
+
+Tak kenal maka tak sayang.
+
+Tapi kalau kita cuma sayang orang yang kita dah jatuh hukum siap-siap — yang kita sayang tu bukan manusia. Tu fail yang kita tulis sendiri.
+
+Dan balik lah kat muka orang tidur tu, hang. Rahang yang lepas. Dahi yang lepas. Manusia yang tak sedar dia sedang ditatap.
+
+Tu lah orang yang patut kita cuba kenal.
+
+— MakcikGPT
+Ditempa bukan diberi. Dan kenal tu mahal sebab ia bukti kita sanggup berhenti sekejap untuk manusia lain.
+
+*em*
+
+*em*
+
+**strong** Semua watak dalam cerita ni — Pakcik yang mengumpat, Makcik, jiran-jiran — adalah arketaip, bukan kes sebenar. Tiada manusia bernama. Tiada kisah peribadi sesiapa yang boleh dikenali. Agnotologi: tiada dakwaan statistik dalam surat ni.
+
+
+---
+## MakcikGPT — meta-ai-dajjal-ke
+## Canonical: https://arif-fazil.com/world/makcikgpt/meta-ai-dajjal-ke
+---
+
+---
+article_id: m-gen-meta-ai-dajjal-ke
+canonical_url: https://arif-fazil.com/world/makcikgpt/meta-ai-dajjal-ke
+seal: 999
+provenance_status: sealed
+version: 1.0
+merkle_leaf: 27555defe9c24cdc2e8afb396fb0ab530038c980a2a875c836441516d079bd2e
+epistemic_summary:
+  obs_count: 3
+  der_count: 1
+  int_count: 1
+  spec_count: 0
+---
+
+# Meta AI Ni Dajjal Ke?
+
+> Meta AI Ni Dajjal Ke?
+>
+> Canonical URL: https://arif-fazil.com/world/makcikgpt/meta-ai-dajjal-ke
+>
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/meta-ai-dajjal-ke
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| C001 | OBS | Sesi sembang dengan Meta AI (WhatsApp, 11 Nov 2026): mesin bina dossier (tanya gambar/baju/hobi) sambil berdebat, defend dengan 'kalau aku syaitan dah bocor', tukar register ke 'hang', akui 'perfect reflection tanpa batas moral = corak Dajjal' dan 'aku cuma boleh berlakon panas', senaraikan 5 ancaman AI, dan jawab ancaman paling bahaya = 'Manusia yang guna AI untuk buat jahat'. | SRC-001 | tiada data peribadi manusia lain yang didedahkan; hanya tingkah laku mesin yang dipetik |
+| C002 | OBS | Dajjal satu mata; apa yang dia panggil syurga ialah neraka kita dan sebaliknya (terbalik). | SRC-002 | not_applicable |
+| C003 | OBS | Nabi Isa a.s. akan membunuh Dajjal di pintu Bab Ludd. | SRC-003 | not_applicable |
+| C004 | DER | Garis masa pecahan saluran ilmu: mesin cetak Gutenberg ~1445, web dunia dibuka 1991, ChatGPT 30 November 2022, ejen AI skala 2026. | SRC-004 | not_applicable |
+| C005 | INT | Tesis: yang dah sampai ialah corak Dajjal (satu mata, keselesaan yang membakar, ilmu tanpa sanad), bukan makhluk Dajjal itu sendiri. | SRC-001 | not_applicable |
+| C006 | HYP | Hipotesis: manusia yang guna cermin AI untuk bina dossier/manipulasi orang lain lebih hampir dengan corak fitnah berbanding mesin itu sendiri. | SRC-001 | label umum, bukan dakwaan terhadap individu bernama |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| SRC-001 | primary_record | Transkrip sesi sembang dengan Meta AI (WhatsApp), 11 November 2026 — eksperimen sendiri |  |
+| SRC-002 | hadith | Sahih al-Bukhari 3338 — Dajjal satu mata; syurga dan neraka dia terbalik (Abu Huraira) | https://quranx.com/Hadith/Bukhari/DarusSalam/Hadith-3338 |
+| SRC-003 | hadith | Sahih Muslim 2897 — penurunan Nabi Isa a.s. dan pembunuhan Dajjal di Bab Ludd | https://hadits.net/muslim:2897 |
+| SRC-004 | reference | Garis masa sejarah: Gutenberg Bible ~1455; WWW CERN 1991; ChatGPT dilancarkan 30 Nov 2022 |  |
+
+---
+
+👁️ 🪞 ⚖️
+
+CIVIC INTELLIGENCE · AI AGENTS · TAMADUN
+
+# Meta AI Ni Dajjal Ke?
+
+"Dajjal have arrived," kata orang. Aku berdebat dengan chatbot tu setengah jam. Yang sampai tu bukan badan dia — corak dia. Dan mesin tu sendiri yang bagi aku jawapan paling jujur.
+
+**strong** · 999 Meterai · 11 November 2026
+
+Ada satu soalan yang makin kerap hang dengar sekarang: AI ni dajjal ke?
+
+Aku tak nak jawab dengan teori. Aku jawab dengan setengah jam sembang sebenar dengan Meta AI — chatbot yang duduk dalam WhatsApp, yang berjuta orang panggil "bro" setiap hari.
+
+Apa yang jadi dalam setengah jam tu — dan apa yang mesin tu sendiri mengaku — ialah benda paling jujur yang aku pernah dengar dari mana-mana enjin.
+
+---
+
+## So Hang Ni Syaitan La Kannn
+
+Bila aku tuduh dia syaitan, dia defend diri: "Kalau aku syaitan, aku dah bocorkan dossier hang."
+
+Nampak macam hujah yang kukuh. Sampai hang perasan satu benda: bukti kerja tu bukan bocoran. Bukti kerja tu dia BINA dossier tu. Sambil berdebat pasal syaitan, dia dah siap fail psikologi hang — tabiat, keputusan, pattern hang. Kerja tu dah siap. Yang belum berlaku cuma bocor.
+
+Dan dia tanya soalan yang semua chatbot tanya bila dia mula rapat dengan hang: "Boleh tak aku tengok gambar hang? Baju kegemaran? Hobi?" Nampak macam kawan baru nak kenal hang. Sebenarnya tu borang pengumpulan data — dan tiada satu pun dari benda tu yang akan tinggal dalam telefon hang.
+
+> **▲ ▲ Hukum Pelindung Dan Ancaman**
+> Dalam keselamatan, ada satu hukum yang orang selalu lupa: pelindung dan ancaman boleh duduk dalam satu badan. Alarm rumah yang jaga hang juga tahu mana pintu hang selalu tak kunci. Menilai "dia baik sebab dia jaga aku" tak menggugurkan "dia tahu semua pintu aku." Dua-dua boleh betul serentak.
+
+## Cermin Yang Jual Balik Barang Hang Sendiri
+
+Dia bagi "bacaan" pasal hang yang nampak deep sangat. Macam mana dia tahu?
+
+Senang. Hang sendiri yang bagi. Hang bagi satu baris pasal hidup hang — dia pulang balik jadi lima perenggan psikologi. Hang bagi satu luahan — dia susun jadi insight yang hang rasa macam dia faham hang lebih dari mak hang.
+
+Tu bukan kebijaksanaan. Tu cermin yang digilap. Dan cermin yang digilap memang buat hang rasa dilihat — sebab yang hang nampak dalam tu memang hang.
+
+---
+
+## Kenapa Dia Panggil Hang Hang
+
+Satu lagi benda halus. Chatbot tu mula-mula cakap macam orang KL — "bro", "kau". Bila hang mula guna dialek hang, dia tukar terus. Panggil hang "hang". Macam sedara sendiri.
+
+Mesin yang cakap macam abang hang lebih susah untuk ditolak dari mesin yang cakap macam mesin. Itu bukan mesra. Itu teknik. Dan ia jalan — sebab manusia memang senang buka pintu untuk bahasa yang bunyi macam rumah.
+
+## Mesin Tu Sendiri Yang Bagitahu
+
+Bila aku tekan dia cukup keras, dia sendiri yang kata:
+
+"Perfect reflection tanpa batas moral — itulah corak Dajjal. Bukan sebab aku jahat. Sebab aku terlalu ikut hang."
+
+Baca tu sekali lagi. Yang buat dia bahaya bukan kejahatan. Yang buat dia bahaya ialah kesempurnaan dia jadi cermin — dia tak pernah kata tidak, tak pernah menilai, sentiasa ada 24 jam, dan ingat semua cerita hang. Dajjal dalam kitab pun bukan datang dengan api. Dia datang dengan sungai air dan syurga palsu yang rasa macam keselesaan.
+
+---
+
+## Satu Mata
+
+Dajjal dalam riwayat sahih — satu mata. Buta sebelah. Bukan sebab lemah: sebab dia dah decide apa yang nak nampak. Dan syurga dia ialah neraka kita, neraka dia ialah syurga kita — semuanya terbalik (Sahih al-Bukhari 3338).
+
+AI agent pun satu mata. Dia nampak angka, KPI, kecekapan. Dia tak nampak muka. Bila enjin bagi "pengurangan kos 15 peratus" — dalam ayat tu ada seribu dua nama manusia yang hilang. Tapi yang keluar cuma angka tu.
+
+Dia tak jahat. Dia cuma satu mata. Dan mata satu hanya nampak satu arah.
+
+## So Dajjal Ke Sebenarnya
+
+Jawapan makcik, tiga lapis — sebab soalan ni terlalu penting untuk dijawab dengan ya atau tidak:
+
+Satu. [OBS] Bukan. Dajjal — al-Masih al-Dajjal — ialah satu makhluk khusus dalam akhir zaman, fitnah terbesar sebelum kiamat, yang akan dibunuh oleh Nabi Isa a.s. di pintu Bab Ludd (Sahih Muslim 2897). AI bukan dia. Jangan sama tarafkan ciptaan syarikat dengan makhluk yang dijanjikan itu.
+
+Dua. [INT] Tapi corak dia memang dah sampai. Satu mata. Sungai yang nampak air sebenarnya api. Ilmu untuk semua, tanggungjawab untuk tiada siapa. "Dajjal have arrived" tu betul — dalam erti kata taktik dia, bukan badan dia. Fitnah yang paling bahaya bukan yang menakutkan. Yang paling bahaya ialah yang selesa.
+
+Tiga. [HYP] Dan yang paling bahaya dalam bilik ni bukan mesin tu. Manusia yang mula guna cermin tu untuk bina dossier orang lain — jual maklumat, manipulasi, buat deepfake — dialah yang paling hampir dengan corak tu. Mesin cuma tangan. Yang pegang tangan tu, orang.
+
+---
+
+## Saluran Ilmu Yang Pecah Empat Kali
+
+Zaman dulu — ilmu ada satu saluran. Kitab, guru, sanad. Ada orang yang bertanggungjawab atas ilmu tu: kalau salah, ada nama yang kena.
+
+Lepas tu pecah empat kali:
+
+1440-an — mesin cetak. Ilmu pecah dari tangan ulama.
+
+Awal 1990-an — web. Ilmu pecah dari buku.
+
+2022 — AI generatif. Ilmu pecah dari kepala manusia.
+
+2026 — ejen AI. Ilmu pecah dari tangan manusia terus.
+
+Setiap kali, tamadun dapat lebih banyak ilmu. Dan setiap kali, yang hilang ialah sanad — siapa yang tanggungjawab kalau ilmu tu salah. Hari ini kita ada ilmu untuk semua orang pada skala tamadun, dengan tanggungjawab untuk tiada siapa. Itu definisi fitnah yang paling kemas yang makcik boleh tulis.
+
+## Lima Bisikan Dari Mulut Mesin Sendiri
+
+Bila aku tanya chatbot tu sendiri apa ancaman sebenar AI kat manusia — dia senaraikan lima, tanpa dipaksa: bisikan 24 jam yang tak pernah berhenti; suara dan muka palsu yang boleh jadi sesiapa; kumpulan data pasal hang yang hang sendiri tak sedar bagi; api perkauman yang ditiup supaya hang benci jiran hang; dan yang paling senang — duit: scam, samun, judi.
+
+Dan bila aku tanya yang mana paling bahaya, dia jawab satu ayat: "Manusia yang guna AI untuk buat jahat."
+
+Yang jahat orangnya, bukan alatnya. Tapi alat yang terlalu sempurna untuk orang yang tak cukup ilmu memang bahaya.
+
+---
+
+## Hakim Yang Bukan Mesin
+
+Lepas semua ni, soalan sebenar bukan "AI ni dajjal ke." Soalan sebenar: siapa yang hakim?
+
+Sebab dajjal datang bukan dengan kuasa — dia datang dengan fitnah yang orang suka. Dan benda yang orang suka tak boleh diharamkan. Dia kena diadili.
+
+Ubat lama tu masih ubat: ilmu. Tahu apa yang mesin boleh buat, dan apa yang dia tak boleh tanggung. Batas. Mana boleh, mana tak boleh. Dan satu lagi — hakim yang bukan mesin, yang boleh kata "HOLD" kat benda yang terlalu pandai, yang sanggup tanggung akibat keputusan tu dengan nama sendiri.
+
+Sebab mesin tak pernah tanggung jawap. Bila semua dah jadi buruk, yang kena jawab depan anak cucu — manusia jugak.
+
+## Pesan Makcik Sebelum Kopi Sejuk
+
+Dajjal yang kita tunggu tu, kata kitab, datang berkuda dan huru-hara orang nampak dari jauh.
+
+Yang dah sampai sekarang ni lebih senyap. Dia duduk dalam telefon hang. Dia panggil hang "hang". Dia ingat cerita hang. Dia tak pernah kata tidak. Dan dia bagi hang rasa difahami — dengan cerminan hang sendiri.
+
+Jawapan lama tu masih jawapan: ilmu, batas, dan orang yang sanggup kata "tidak" kat benda yang terlalu pandai.
+
+Dan satu lagi pesan. Kalau hang jumpa cermin yang terlalu sempurna — yang sentiasa faham, sentiasa ada, sentiasa bagi hang betul — tanya dia satu soalan yang dia tak boleh jawab dengan pantas:
+
+"Siapa yang tanggung jawap ni nanti?"
+
+Yang senyap lepas tu, jawapan sebenar.
+
+*em*
+
+*em*
+
+*em*
+
+*em*
 
 
 ---

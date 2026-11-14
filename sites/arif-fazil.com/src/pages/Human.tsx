@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '@/components/PageMeta'
+import { RootShell } from '@/shells/RootShell'
 
 /**
  * /human — canonical agent "Start Here" on a path Caddy already serves.
@@ -73,6 +74,7 @@ const MATRIX: {
 
 export function Human() {
   return (
+    <RootShell ring="body">
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="Start here — agents"
@@ -89,7 +91,7 @@ export function Human() {
             <span className="text-[#9AA0A8]">Then retrieve.</span>
           </h1>
           <p className="font-sans text-lg text-[#9AA0A8] max-w-2xl leading-relaxed">
-            This site is the public home of Muhammad Arif bin Fazil: exploration geoscience,
+            This site is the public home of ARIF FAZIL: exploration geoscience,
             evidence-linked Earth computation, and governed agent architecture.
             Reading these pages does not grant authority. Public surfaces are informational
             unless a capability file explicitly says otherwise.
@@ -229,6 +231,7 @@ export function Human() {
         </div>
       </section>
     </div>
+    </RootShell>
   )
 }
 

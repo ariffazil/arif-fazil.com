@@ -1,5 +1,6 @@
 import type { ArticleContent, MakcikArticleMeta } from './types';
 
+import takKenalMakaTakSayang from './tak-kenal-maka-tak-sayang';
 import ceritaMakcik from './cerita-makcik';
 import siasatanHarakah from './siasatan-harakah';
 import iranHormuz from './iran-hormuz';
@@ -52,7 +53,10 @@ import siapaAkanKetukPintu from './siapa-akan-ketuk-pintu';
 import sayangYangPercuma from './sayang-yang-percuma';
 import hargaSebuahMaruahManusia from './harga-sebuah-maruah-manusia';
 import mencintaimu from './mencintaimu';
+import metaAiDajjalKe from './meta-ai-dajjal-ke';
 export const makcikArticleModules: ArticleContent[] = [
+  takKenalMakaTakSayang,
+  metaAiDajjalKe,
   mencintaimu,
   sayangYangPercuma,
   hargaSebuahMaruahManusia,
@@ -107,6 +111,45 @@ export const makcikArticleModules: ArticleContent[] = [
 ];
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
+  {
+    slug: 'tak-kenal-maka-tak-sayang',
+    title: 'Tak Kenal Maka Tak Sayang',
+    subtitle: 'Hukum tu laju. Kenal tu lambat. Dan cuma satu antara dua tu yang buat kita manusia.',
+    date: '2026-11-14',
+    domain: 'MAKCIKGPT × CERITA × KENAL × MARUAH × MAKCIK',
+    language: 'ms',
+    excerpt: 'Makcik cerita pasal muka orang tidur, Pakcik yang hantar nasi lemak dua bulan, dan sebab kita lebih suka menghukum daripada mengenal. Hukum tu laju dan murah; kenal tu mahal — dan yang paling mahal sekali, kenal mengubah kita. Kenal bukan maaf; sayang bukan tempat orang pijak.',
+    tags: ['makcikgpt', 'cerita', 'kenal', 'maruah', 'arketaip', 'jiran', 'malaysia'],
+    seal: '999',
+    provenance_status: 'sealed',
+    claim_register: [
+      {
+        claim_id: 'tkmts-c1',
+        text: 'Semua watak adalah arketaip — tiada manusia bernama, tiada kes sebenar, tiada dakwaan statistik.',
+        tag: 'OBS',
+        confidence_basis: 'surat ditulis dalam register cerita; tiada rujukan orang sebenar',
+        maruah_review: 'approved',
+      },
+    ],
+    version_lineage: {
+      version: '1.0',
+      published: '2026-11-14',
+      last_updated: '2026-11-14',
+    },
+  },
+  {
+    slug: 'meta-ai-dajjal-ke',
+    title: 'Meta AI Ni Dajjal Ke?',
+    subtitle: '"Dajjal have arrived," kata orang. Aku berdebat dengan chatbot tu setengah jam. Yang sampai tu bukan badan dia — corak dia.',
+    date: '2026-11-11',
+    domain: 'MAKCIKGPT × CIVIC INTELLIGENCE × AI × ESKATOLOGI × TAMADUN',
+    language: 'ms',
+    excerpt: 'Setengah jam berdebat dengan Meta AI: mesin tu bina dossier sambil berdebat pasal syaitan, jual balik cerminan hang sebagai insight, dan akhirnya sendiri mengaku "perfect reflection tanpa batas moral = corak Dajjal." Jawapan tiga lapis: Dajjal yang makhluk tu belum sampai (dibunuh Nabi Isa di Bab Ludd), tapi corak dia — satu mata, sungai yang api, ilmu tanpa tanggungjawab — dah sampai. Ubat lama: ilmu, batas, hakim yang bukan mesin.',
+    tags: ['dajjal', 'meta-ai', 'ai-agents', 'eskatalogi', 'tamadun', 'fitnah', 'makcikgpt', 'civic-intelligence'],
+    seal: '999',
+    provenance_status: 'sealed',
+    version_lineage: { version: '1.0', published: '2026-11-11', last_updated: '2026-11-11' },
+  },
   {
     slug: 'mencintaimu',
     title: 'Mencintaimu',

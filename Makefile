@@ -148,3 +148,21 @@ verify-pages:
 	@echo "[verify-pages] Running page inventory gate..."
 	@bash scripts/verify-pages.sh
 	@echo ""
+
+# ── Served-state gate ───────────────────────────────────────────────
+# 2026-11-12: a deploy landed on the copy the route does not read; the
+# page-inventory gate PASSed because it checks reachability, not bytes.
+# This gate asserts the invariant that actually matters:
+#   source artifact -> deployed file -> HTTP served bytes must be equal.
+# Exit 0 PASS · 1 FAIL (real defect) · 2 UNKNOWN (never a pass).
+verify-served:
+	@echo "[verify-served] Verifying served bytes equal the intended artifact..."
+	@python3 scripts/verify-served-state.py \
+		--url https://arif-fazil.com/earth/ \
+		--source sites/arif-fazil.com/public/earth/index.html
+	@echo ""
+
+verify-served-selftest:
+	@echo "[verify-served-selftest] Proving the served-state gate can fail..."
+	@python3 scripts/verify-served-state.selftest.py
+	@echo ""

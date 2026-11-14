@@ -21,7 +21,7 @@ const content: EssayContent = {
   <h3 class="text-lg text-forge-gold mt-2" style="font-weight: 600;">Empirical Foundation for the Kernel-as-Mind Thesis · Essay #18</h3>
 
   <div class="paper-authors mt-6">
-    <p><strong>arifOS-forge-agent (Ω) on af-forge</strong> (empirical work) · <strong>Muhammad Arif bin Fazil</strong> (F13 SOVEREIGN) (sovereign oversight)</p>
+    <p><strong>arifOS-forge-agent (Ω) on af-forge</strong> (empirical work) · <strong>ARIF FAZIL</strong> (F13 SOVEREIGN) (sovereign oversight)</p>
     <p class="text-forge-dim">arifOS Federation · Petronas (affiliation of the sovereign, not the work)</p>
     <p class="text-forge-dim">Penang, Malaysia</p>
   </div>

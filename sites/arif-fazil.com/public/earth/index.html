@@ -1241,7 +1241,13 @@ $("lyrMotion").addEventListener("change",e=>{
 });
 
 /* ── macrostrat live stats ── */
-const statMeta=()=>{const s=$("statMeta");if(!s)return;const t=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date());s.innerHTML="FETCHED · "+t+" <b>MYT</b> · macrostrat <b>"+(window.__ms||"…")+"</b> · usgs <b>"+(window.__us||"…")+"</b> · <b>no cache</b>";};
+/* upstream build stamp: which Macrostrat database answered the numbers below.
+   Omitted entirely if the probe fails — a missing stamp is honest, a guessed
+   one is not. Same rule as the counters themselves: withhold, don't invent. */
+const msBuild=()=>window.__msv?(" · api-v2 "+window.__msv):"";
+const statMeta=()=>{const s=$("statMeta");if(!s)return;const t=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kuala_Lumpur",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date());s.innerHTML="FETCHED · "+t+" <b>MYT</b> · macrostrat <b>"+(window.__ms||"…")+"</b>"+msBuild()+" · usgs <b>"+(window.__us||"…")+"</b> · <b>no cache</b>";};
+fetch("https://macrostrat.org/api/v2/version")
+ .then(r=>r.json()).then(v=>{window.__msv=v.version||"";statMeta();}).catch(()=>{});
 fetch("https://macrostrat.org/api/v2/stats?all")
  .then(r=>r.json()).then(j=>{
    const rows=(j.success&&j.success.data)||[];
@@ -1377,7 +1383,7 @@ async function onRockClick({lat,lng}){
       <div class="ocean"><div class="src">geox.macrostrat · honest answer</div>
       <h3>No mapped bedrock unit here</h3>
       <p class="lith">You're likely over ocean. Oceanic crust is young (&lt;200 Ma everywhere) and thinly mapped at this scale — Macrostrat's harmonized maps cover the continents. The blue below is the newest rock on the planet, still being poured at the mid-ocean ridges.</p>
-      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2 · CC-BY 4.0</div></div>`;
+      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2${msBuild()} · CC-BY 4.0</div></div>`;
     }else{
       const u=data[0];
       const t=(u.t_int_age!=null)?u.t_int_age:u.t_age, b=(u.b_int_age!=null)?u.b_int_age:u.b_age;
@@ -1388,7 +1394,7 @@ async function onRockClick({lat,lng}){
       <div class="age">${t} – ${b} Ma · ${esc(u.best_int_name||u.t_int_name||"")}</div>
       <p class="lith">${esc(u.lith||"lithology not recorded")}</p>
       ${ref?`<div class="ref">source: ${ref}…</div>`:""}
-      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2 · CC-BY 4.0</div>`;
+      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2${msBuild()} · CC-BY 4.0</div>`;
     }
     wireClose();
   }catch(e){

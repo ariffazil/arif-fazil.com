@@ -18,7 +18,7 @@ const MERKLE_LEAVES: MerkleLeaf[] = [
     hash: '0x9b2a7d4ef1300999aa771c89be4510fa3e11892d',
     parent: 'branch-constitution',
     category: 'CONSTITUTION',
-    claimText: 'Human veto is absolute. Muhammad Arif bin Fazil holds non-delegable authority. Ditempa bukan diberi.',
+    claimText: 'Human veto is absolute. ARIF FAZIL holds non-delegable authority. Ditempa bukan diberi.',
     status: 'IMMUTABLE',
     timestamp: '2026-08-01T00:00:00Z',
   },
@@ -113,7 +113,7 @@ export function DeepVault999Zkpc() {
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-forge-gold font-bold mb-1">
             <span className="h-2 w-2 rounded-full bg-forge-gold animate-ping" />
-            <span>VAULT 999 · ZERO-KNOWLEDGE PRIVATE COMPUTING (ZKPC)</span>
+            <span>VAULT 999 · STRUCTURAL WITNESS — PRIVATE BY DESIGN (ZKPC)</span>
           </div>
           <p className="font-sans text-xs sm:text-sm text-[#9AA0A8]">
             Interactive Merkle proof validator. Prove truth without disclosing proprietary subsurface or biological data.

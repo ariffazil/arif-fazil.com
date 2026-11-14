@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '@/components/PageMeta'
+import { RootShell } from '@/shells/RootShell'
 
 /**
  * SPA twin of public/institution/index.html — keep the two in sync.
@@ -58,6 +59,7 @@ function SectionHead({ n, children }: { n: string; children: React.ReactNode }) 
 
 export function InstitutionPage() {
   return (
+    <RootShell ring="mind">
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="Briefing — Arif Fazil"
@@ -78,7 +80,7 @@ export function InstitutionPage() {
             inspect first.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#C9C4B8]">
-            <strong className="text-[#EDEAE2] font-semibold">Muhammad Arif bin Fazil</strong> —
+            <strong className="text-[#EDEAE2] font-semibold">ARIF FAZIL</strong> —
             exploration geoscientist at PETRONAS Carigali, and builder of evidence-bounded agent
             systems. This page is the professional conversation path. It is not a sales funnel and
             not a doctrine dump.
@@ -228,6 +230,7 @@ export function InstitutionPage() {
         </nav>
       </div>
     </div>
+    </RootShell>
   )
 }
 

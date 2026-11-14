@@ -1,0 +1,110 @@
+# Release evidence — M2.1 FEDERATION SWITCHER — RELEASE READINESS CLOSURE (2026-11-15)
+# Supersedes the earlier M2.2-dated record (retained in git history; no history rewrite).
+#
+# SCOPE LABEL (888 closure discipline):
+#   M2.1 FEDERATION SWITCHER SLICE COMPLETE
+#   OVERALL FEDERATED DESIGN MIGRATION INCOMPLETE
+#
+# Evidence-class ladder used throughout:
+#   assertable now:  SOURCE_CHANGED · BUILD_PASSED · ARTIFACT_CONTAINS
+#   NOT asserted:    CANDIDATE_DEPLOYED · LIVE_ROUTE_OBSERVED · HUMAN_ACCEPTED
+
+release_candidate:
+  branch: feat/m2-fed-switcher
+  parent: ccbacd1 (M1.8)
+  environment: local dist/ + vite preview ONLY. Production untouched: no merge to main, no rsync to serving roots, no Caddy reload, no CF purge.
+
+clock_provenance:
+  authoritative_clock: VPS forge · Asia/Kuala_Lumpur · NTP synchronized (timedatectl) · 2026-11-15T00:15+08:00 at closure
+  reconciliation: "Sovereign compose clock read 2026-11-14T23:44 MYT (minutes before midnight). Session crossed midnight between M1.8 (2026-11-14T23:19+08) and M2 commits (2026-11-15T00:08+08). Artifact dates 2026-11-15 are CONSISTENT with the authoritative runtime clock — no correction, no history rewrite."
+  commit_stamps: "c4487b8/8d39746/5e0d52a @ 2026-11-15T00:08:22+08:00 · 1989c53 @ 2026-11-15T00:08:58+08:00 (git show --format=fuller)"
+
+changes:
+  implementation:
+    - "sites/arif-fazil.com/src/App.tsx +3 — ATLAS_CHROME_ROUTES /999 alias (M2.1 chrome-equivalence fix)"
+    - "sites/arif-fazil.com/src/components/canon/HeaderCanon.tsx +24/-1 — FED switcher (navCanon.machineNav external, native <details>)"
+    - "sites/arif-fazil.com/src/shells/shell.css +61 — .atlas-fed styles (tokens v2.1, radii 2/12/full)"
+  artifacts:
+    - "docs/agentic-web/WEB_DOMAIN_REGISTRY.json · WEB_MIGRATION_MAP.json · WEB_CONTENT_RISK_REGISTER.json"
+    - "docs/agentic-web/M2-BROWSER-VALIDATION.json · scripts/m2-browser-validation.mjs"
+  gate: "scripts/sync-serving-roots.sh — step-3 probe block ONLY (M1.3 SPA-shell contract reconciliation)"
+  content_integrity:
+    machine_proof: "git diff ccbacd1..HEAD -- sites/arif-fazil.com/src/pages/ sites/arif-fazil.com/public/ = EMPTY"
+    totals: "290 insertions / 1 deletion across implementation+artifact files; zero page content, scientific value, provenance, metadata, canonical URL or domain identity modified"
+
+build_state:
+  build: "tsc -b && vite build PASS"
+  design_canon: "verify-design-canon.cjs 112/112 · 0 violations"
+  design_lint: "PASS — 809 file(s) scanned · leaks 0"
+  artifact_contains: "LOCAL_BUILD_ARTIFACT_EVIDENCE: 'atlas-fed' + 'Federation domain switcher' present in dist/assets/shell-BXe8Ovke.js + shell-6Q-f1zR8.css (entry index-DDhJuWwb.js unaffected — HeaderCanon is code-split)"
+  source_parity_tests:
+    result: "16/19 pass · 3 FAIL — ALL PRE-EXISTING, file-disjoint from this slice (zero overlap with changed files)"
+    failures:
+      - "caddy-source #1 legacy MakcikGPT bot route (bot lane contract)"
+      - "vitals-parity latest.json vs newest archived briefing (/vitals retirement, M1.7–M1.8 lane record)"
+      - "observatory-renderer #21 (site playwright expects chromium build 1234; machine cache has 1248 — harness/browser-lane gap)"
+
+browser_state:
+  verdict: "BROWSER_VALIDATION_PASS — 15/15"
+  harness: "scripts/m2-browser-validation.mjs · Playwright + system Google Chrome 155 headless · sandbox ON · dedicated non-root user pwval · NO --no-sandbox anywhere (root-sandbox harness limitation resolved without weakening browser security)"
+  target: "vite preview of local dist/ (candidate) — NOT production"
+  coverage:
+    - "desktop 1440: header canonical ×1, FED present, aria-label exact, Enter opens (native keyboard), focus lands on summary then first menu item, 8 links order+content canonical, target=_blank rel=noopener all, menu not clipped"
+    - "/proof ≡ /999: atlas-header=1, legacy ArrowFooter signature (footer.border-t.hairline)=0, FED=1 on both — double-chrome alias fix witnessed"
+    - "900px boundary: primary nav collapsed, FED visible, menu inside viewport"
+    - "mobile 390: menu inside viewport, no overlap"
+    - "back/forward: /words restored with switcher intact"
+  screenshots: "screenshots/m2-{words-desktop-1440,words-900,words-mobile-390,proof-1440,999-1440}.png (untracked evidence, M1 pattern)"
+  native_limitations: "Escape and outside-click do not close native <details> — documented, queued Batch B polish, non-blocking"
+  machine_record: "docs/agentic-web/M2-BROWSER-VALIDATION.json"
+
+link_state:
+  verified_at: "2026-11-15T00:16–00:22+08:00 — CURRENTLY_VERIFIED (not carry-forward)"
+  targets:
+    - "mcp.arif-fazil.com/mcp → GET 405 (POST-only JSON-RPC endpoint: alive + method-gating — expected) · host / → 200"
+    - "arifos.arif-fazil.com/ → 301 (1 hop) → arif-fazil.com/arifos/ → 200"
+    - "a-forge.arif-fazil.com/ → 301 ×2 → mcp.arif-fazil.com/ → 200"
+    - "aaa / geox / wealth / well / arifflow → direct 200"
+  membership: "all 8 belong to the authorized federation registry (WEB_DOMAIN_REGISTRY + canon machineNav); zero removed, zero added ad hoc"
+
+deploy_gate_state:
+  verify_pages: "PASS 236/236 pages reachable (9 intentional exclusions) — read-only run, no mutation"
+  sync_serving_roots:
+    finding: "step-3 markers ('does not grant authority', 'Work together', 'inspect first') FAIL against served files — M1.3 converted /human+/institution to minimal SPA shells (title/description preserved, body hydrates client-side)"
+    correction: "probe block updated to SPA-shell contract (canonical titles + meta description) — IN this repo, narrowly scoped to the probe block, NOT coupled to dual-owner /arifos"
+    proof: "new markers grep-PASS 3/3 against /var/www/html served files"
+    residual: "rsync portions of the script remain deploy-time-tested by design (they mutate serving roots; not executed this lane)"
+  full_chain: "make deploy chain runs only at deploy time — not executed"
+
+rollback:
+  implementation_rollback: "git revert 5e0d52a 8d39746 (reverse-chronological; no file overlap) — retains c4487b8, 1989c53, closure commits, all WEB_* audit artifacts and browser records"
+  full_candidate_rollback: "git revert <every commit after ccbacd1, newest first> = closure commits → 1989c53 → 5e0d52a → 8d39746 → c4487b8"
+  production_rollback: "N/A — nothing was deployed; no webroot/CDN state to restore"
+
+worktree_state:
+  pre_existing_untouched:
+    - "M ×4 discovery/llms.json (generated_at churn, build outputs tracked in git)"
+    - "M ×2 geox index.html+profile.json (live-identical, uncommitted)"
+    - "?? forge_work/deployments/ · screenshots/m15-*.png ×3 (M1 lane)"
+    - "?? sites/geox.arif-fazil.com/assets/index-1a4120d1.r20261114.js (other lane, 14 Nov stamp)"
+  mission_generated: "scripts/m2-browser-validation.mjs ✓ committed · docs/agentic-web/M2-BROWSER-VALIDATION.json ✓ committed · screenshots/m2-*.png ×5 untracked by M1 pattern (canonical evidence location)"
+  unsafe_to_commit: none
+
+not_executed:
+  - merge to main · rsync serving roots · Caddy reload · CF purge · deployment receipt
+  - Batch D/E/F (representative migrations, subdomain adoption, static-page shells, cleanup)
+  - dual-owner /arifos reconcile (kernel lane GO-1/GO-2 routed M1.6)
+  - Escape/outside-click close for <details> (Batch B polish)
+
+release_rule:
+  candidate_build_clean: true
+  browser_validation_measured_passed: true
+  federation_links_currently_verified: true
+  no_unexplained_date_inconsistency: true
+  rollback_exact: true
+  deploy_gate_proven_or_corrected_within_authority: true
+  no_reality_bearing_content_changed: true
+  production_untouched: true
+  verdict: "READY_FOR_HUMAN_DEPLOY_DECISION"
+
+approver: ""

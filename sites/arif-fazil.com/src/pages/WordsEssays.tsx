@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CompassLexigramCodex } from '@/components/CompassLexigramCodex'
 import essaysData from '@/data/essays.json'
+import { RootShell } from '@/shells/RootShell'
 
 const SERIES_LABELS: Record<string, string> = {
   ALL: 'All Series',
@@ -44,6 +45,7 @@ export function WordsEssays() {
   }, [selectedSeries, search])
 
   return (
+    <RootShell ring="soul">
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-16 md:py-24">
       <div className="mx-auto max-w-[1280px] px-6">
         {/* Breadcrumb */}
@@ -157,6 +159,7 @@ export function WordsEssays() {
         </div>
       </div>
     </div>
+    </RootShell>
   )
 }
 

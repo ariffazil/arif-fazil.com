@@ -1,0 +1,124 @@
+/	200	Arif Fazil — Exploration Geoscientist & Sovereign Systems	live | Home — Sovereign Identity & Portfolio	
+/earth/	200	EARTH — The Dynamic Planet | Arif Fazil	live | EARTH — The Dynamic Planet (Macrostrat globe)	
+/pilot/	200	Supervised AI Action Control — 4-Week Design Partner Pilot | Arif Fazil	live | Supervised AI Action Control — 4-Week Design Partner Pilot	
+/institution/	200	Briefing — Arif Fazil	live | Briefing — professional conversation path	
+/earth/kinabalu-basin/	200	Kinabalu Basin — Geological Dossier · Φ GEOX | Arif Fazil	live | Kinabalu Basin — Deepwater Stratigraphy & Play Synthesis	
+/earth/malay-basin/	200	Malay Basin — Geological Dossier & Interactive GIS Map · Φ GEOX | Arif Fazil	live | Malay Basin — Structural Evolution & Petroleum Systems	
+/earth/kinabalu-cross-section.html	200	Kinabalu Basin — Regional Cross-Section · Φ GEOX | Arif Fazil	live | Kinabalu Basin Regional Cross Section	
+/earth/kinabalu-basin.pdf	200		live | Kinabalu Regional Cross Section (PDF)	
+/earth/malay-basin-cross-section.html	200	Malay Basin — Regional Cross-Section · Φ GEOX | Arif Fazil	live | Malay Basin Regional Cross Section	
+/economics/	200	Research — Arif Fazil	live | Economics — WEALTH Capital Briefing	
+/economics/article/:slug	404		live | WEALTH Article	
+/work/	200	Selected Work — Arif Fazil	live | Selected Work — Arif Fazil	
+/work/exploration-2013-2026/	200	Exploration 2013–2026 — Arif Fazil	live | Exploration 2013–2026 — Career Artifact	
+/work/exploration-2013-2026/evidence/	200	Exploration Portfolio — Evidence Ledger	live | Exploration Portfolio — Evidence Ledger	
+/work/exploration-2013-2026/portfolio.pdf	200		live | Arif Fazil — Subsurface · Systems · Intelligence (PDF)	
+/world/	200	World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil	live | World — Civic Journalism & Commodities	
+/world/makcikgpt/	200	MakcikGPT — Civic Intelligence in Bahasa Makcik · Arif Fazil	live | MakcikGPT — Civic Intelligence in Bahasa Malaysia	
+/world/makcikgpt/:slug	200	MakcikGPT — Civic Intelligence in Bahasa Makcik · Arif Fazil	live | MakcikGPT Article	
+/world/oil/	308	/world/economics/oil/	redirect | → /oil/ | Oil Dashboard — Brent Crude Cognitive View	PROPOSED
+/world/gas/	308	/world/economics/gas/	redirect | → /gas/ | Gas Dashboard — Natural Gas Intelligence	PROPOSED
+/world/gold/	308	/world/economics/gold/	redirect | → /gold/ | Gold Dashboard — XAUUSD Trading Synthesis	PROPOSED
+/world/petronas/shadow/	200	Kerusi Bayang — Every PETRONAS Chairman &amp; CEO 1974–2026 | arif-fazil.com	live | Kerusi Bayang — Every PETRONAS Chairman & Chief Executive, 1974–2026	
+/world/economics/klci/	200	FBM KLCI — Bursa Malaysia Signal Terminal · WEALTH	live | FBM KLCI — Bursa Malaysia Signal Terminal	
+/world/economics/usdmyr/	200	USD/MYR — Ringgit FX Signal Terminal · WEALTH	live | USD/MYR — Ringgit FX Signal Terminal	
+/world/politics/	200	Politics — Power, Read Plainly — Arif Fazil	live | Politics — Power, Read Plainly	
+/world/ai/shadow/	200	AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner | arif-fazil.com	live | AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner	
+/world/politics/ns-election/	200	Negeri Sembilan PRN 2026 — Live Interactive GIS Map & 9 Invariants | arifOS	live | Negeri Sembilan State Election — Civic Intelligence & Spatial Analysis	
+/world/politics/ns-election/compare/	200	PRN16 N9 — Seat-to-Seat 2023→2026 | arifOS	live | Negeri Sembilan Election Constituency Compare	
+/writing/	308	/words/writing/	redirect | → /words/writing/ | Writing — Essays & Analysis	
+/words/writing/	200	Writing — Constitutional Essays · arif-fazil.com	live | Writing — Essays & Analysis	
+/words/	200	Words — Essays · Arif Fazil	live | Words — Hub (Essays · Wiki · MakcikGPT)	
+/words/essays/	200	Essays — Words | arif-fazil.com	live | Words — Essays	
+/words/wiki/	200	Wiki & Knowledge — Words | arif-fazil.com	live | Words — Wiki & Knowledge	
+/words/makcikgpt/	301	/world/makcikgpt/	redirect | → /world/makcikgpt/ | Words — MakcikGPT (column)	
+/writing/:slug	200	Arif Fazil — Exploration Geoscientist & Sovereign Systems	live | Essay	
+/doctrine/	308	/words/doctrine/	redirect | → /words/doctrine/ | Doctrine — Constitution, Federation Topology, Manifesto	
+/words/doctrine/	200	Doctrine — The 13 Floors + 13 Shadow Paradoxes | arif-fazil.com	live | Doctrine — Constitution, Federation Topology, Manifesto	
+/000/	200	/000 — Genesis · Sovereign Anchor | Arif Fazil	live | 000 — Genesis Archive & Wisdom Canon	
+/999/	200	Proof Chamber — arifOS	live | 999 — Proof & Verification Chamber	
+/999/verify	200		live | 999 Verify — Live Vault Proof Endpoint	
+/map/	200	Map — arif-fazil.com Route Tree	live | Map — Human-Readable Route Tree	
+/machine/	200	Machine — arif-fazil.com Agent Surfaces	live | Machine — Agent Surfaces Dashboard	
+/rss/	301	/feed.xml	redirect | → /feed.xml	
+/canon/	301	/doctrine	redirect | → /doctrine	
+/constellation/	301	/doctrine	redirect | → /doctrine	
+/federation/	200	Federation Observatory — arifOS F1–F13 · Arif Fazil	live | Federation Observatory — arifOS F1–F13	
+/discoveries/	301	/earth	redirect | → /earth	
+/wealth/	308	/petronas/	redirect | → /vitals/ | Wealth Capital (redirect → /vitals/)	PROPOSED
+/wealth/article/:slug	301	/wealth/	redirect | → /economics/article/:slug	PROPOSED
+/essays/	308	/words/writing/	redirect | → /writing	PROPOSED
+/essays/:slug	301	https://arif-fazil.com/writing/:slug	redirect | → /writing/:slug	
+/wealth/makcikgpt/	301	/world/makcikgpt/	redirect | → /world/makcikgpt/	
+/wealth/makcikgpt/:slug	301	https://arif-fazil.com/world/makcikgpt/:slug	redirect | → /world/makcikgpt/:slug	
+/economics/makcikgpt/	301	/world/makcikgpt/	redirect | → /world/makcikgpt/	
+/economics/makcikgpt/:slug	301	https://arif-fazil.com/world/makcikgpt/:slug	redirect | → /world/makcikgpt/:slug	
+/genesis/	301	/000/	redirect | → /000/	
+/oil/	200	Brent Crude — Cognitive Clarity · WEALTH	live | Oil Dashboard — Brent Crude Live	
+/gas/	200	Natural Gas — Cognitive Clarity · WEALTH	live | Gas Dashboard — Natural Gas Live	
+/gold/	200	Gold — Cognitive Clarity Dashboard · WEALTH	live | Gold Dashboard — XAUUSD Live	
+/makcikgpt/	301	/world/makcikgpt/	redirect | → /world/makcikgpt/	
+/makcikgpt/:slug	301	/world/makcikgpt/:slug	redirect | → /world/makcikgpt/:slug	
+/vitals/	308	/petronas/	live | PETRONAS · VITALS — Financial capacity and resilience	PROPOSED
+/malaysia/	308	/wealth/malaysia/	redirect | → /wealth/malaysia/ | Malaysia — Civic & Political Hub	
+/pulse/	410	410 Gone — /pulse/	gone | Federation Pulse (retired)	
+/forge/	301	https://forge.arif-fazil.com/	redirect | → https://mcp.arif-fazil.com/ | A-FORGE → subdomain	PROPOSED
+/world/politics/shadow/	200	PM Bayang — Shadow Prime Ministers of Malaysia	live | PM Bayang — Shadow Prime Ministers of Malaysia	
+/world/politics/shadow/anwar-ibrahim/	200	33 Bayang Anwar Ibrahim — Psikologi Bayang Perdana Menteri ke-10 · arif-fazil.com	live | 33 Bayang Anwar Ibrahim — Three-Axis Shadow Analysis	
+/surfaces.json	200		live | surfaces.json — Canonical Surface Catalog	
+/llms-full.txt	200		live | llms-full.txt — Full Content Dump for AI LLMs	
+/llms.txt	200		live | llms.txt — AI Site Overview	
+/llms.json	200		live | llms.json — Structured Site Overview	
+/page.json	200		live | page.json — Machine Site Overview	
+/missions.json	200		live | missions.json — Six-Mission Federation Catalog	
+/sitemap.xml	200		live | sitemap.xml — XML Sitemap	
+/feed.xml	200	MakcikGPT — Civic Intelligence | Arif Fazil	live | RSS Feed — MakcikGPT Articles	
+/robots.txt	200		live | robots.txt — Crawler Policy with AI Directives	
+/rsl.xml	200		live | rsl.xml — Really Simple Licensing 1.0	
+/soul.json	200		live | soul.json — Sovereign Identity Anchor	
+/.well-known/agent-card.json	301	https://arifos.arif-fazil.com/.well-known/agent-card.json	redirect | → https://arifos.arif-fazil.com/.well-known/agent-card.json | Agent Card — A2A Discovery	
+/read/	301	/writing/	redirect | → /writing/	
+/read	301	/writing/	redirect | → /writing/	
+/machines/	200	For Machines — arif-fazil.com	live | For Machines — Ops guide	
+/ledger	200	WITNESS LEDGER — arifOS Federation	live | WITNESS LEDGER — Public Accountability Record	
+/ledger/ledger.json	200		live | WITNESS LEDGER — Machine Record	
+/about	200	About — Arif Fazil	live | About — Arif Fazil	
+/arifos/	200	arifOS Observatory — Reality Witness	live | arifOS Observatory — Reality Witness	
+/charter/	200	/charter — Federation Charter | Arif Fazil	live | /charter — Federation Charter	
+/connect/	200	Connect — arifOS MCP Gateway	live | Connect — arifOS MCP Gateway	
+/discovery/	200	Discovery — Peta Federasi | arif-fazil.com	live | Discovery — Peta Federasi	
+/human/	200	Start here — agents	live | Start here — agents	
+/laws/	200	Core Laws — F1–F13 Constitutional Floors — arif-fazil.com	live | Laws	
+/mcp/	200	arifOS MCP — Constitutional AI Gateway	live | arifOS MCP — Constitutional AI Gateway	
+/receipts/	200	Receipts — Arif Fazil	live | Receipts — Arif Fazil	
+/sanctuary/	200	Sanctuary — arifOS	live | /000 — Genesis · Sovereign Anchor	
+/verify/	200	/verify — Kernel Identity Proof · arifOS	live | /verify — Kernel Identity Proof	
+/witness-theory/	200	Witness Theory of Human Want — arif-fazil.com	live | Witness Theory of Human Want	
+/world/2027/	200	AI Agents 2027: Five Engines of Chaos, One Missing Layer — Arif Fazil	live | AI Agents 2027: Five Engines of Chaos, One Missing Layer	
+/world/2027/malaysia/	200	Malaysia 2027: Tenant of the AI Economy, Where the On-Ramp Goes — Arif Fazil	live | Malaysia 2027: Tenant of the AI Economy	
+/world/2027/receipts/	200	Receipts · AI Agents 2027 — Arif Fazil	live | Receipts · AI Agents 2027	
+/world/2027/ai-agents-2027-dossier.pdf	200		live | AI Agents 2027 — Dossier (PDF)	
+/world/politics/ns-election/playbook/	200	Strategi PRN NS 2026 — Agentic Playbook | arifOS	live | Strategi PRN NS 2026 — Agentic Playbook	
+/aaa/	301	https://aaa.arif-fazil.com/	redirect | → https://aaa.arif-fazil.com/	
+/constitution/	308	/words/constitution/	redirect | → /words/constitution/	
+/geox/	308	https://geox.arif-fazil.com/	redirect | → https://geox.arif-fazil.com/	
+/klci/	308	/world/economics/klci/	redirect | → /world/economics/klci/	
+/makcikgpt-md/	301	/world/makcikgpt/	redirect | → /world/makcikgpt/	
+/missions/	308	/work/missions/	redirect | → /work/missions/	
+/politics/	308	/world/politics/	redirect | → /world/politics/	
+/proof/	308	/work/proof/	redirect | → /work/proof/	
+/usdmyr/	308	/world/economics/usdmyr/	redirect | → /world/economics/usdmyr/	
+/wiki/	301	https://wiki.arif-fazil.com/	redirect | → https://wiki.arif-fazil.com/	
+/audit/	410	410 Gone — /audit/	gone | Audit (retired)	
+/world/petronas/gentari/	200	World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil	live | Gentari — Dossier Realiti	PROPOSED
+/world/petronas/	200	PETRONAS — Dossier Permukaan · Arif Fazil	live | PETRONAS — Dompet hari ini, tangki masa depan (Hub)	PROPOSED
+/petronas/	200	PETRONAS — dompet hari ini, tangki masa depan — Arif Fazil | arifOS	(not in catalog)	PROPOSED
+/wealth/malaysia/	200	MALAYSIA · φ VITALS — Federal sovereign distance-to-break	(not in catalog)	PROPOSED
+/work/missions/	200	Missions — Six verbs · Arif Fazil	(not in catalog)	PROPOSED
+/work/proof/	200	/999 — Proof · Sealed Vault | Arif Fazil	(not in catalog)	PROPOSED
+/words/constitution/	200	/constitution — The Rules I Write for My AI | Arif Fazil	(not in catalog)	PROPOSED
+/world/economics/oil/	200	World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil	(not in catalog)	PROPOSED
+/world/economics/gas/	200	World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil	(not in catalog)	PROPOSED
+/world/economics/gold/	200	World — Frontier AI, Geopolitics & Civic Intelligence — Arif Fazil	(not in catalog)	PROPOSED
+/home/	200	Arif Fazil — Exploration Geoscientist & Sovereign Systems	(not in catalog)	
+/api/federation-probe	200		(not in catalog)	

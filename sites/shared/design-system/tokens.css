@@ -673,3 +673,18 @@ body::before {
 
 /* Override trinity-nav background to subtly reflect ring color */
 .trinity-nav { border-top: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   v2.1 · M1 RGBY SHELL ACCENTS (additive) · 2026-11-14 · feat/m1-canon-shell-kit
+   Directive (sovereign, 2026-11-14): dark mode; primaries red / blue /
+   yellow / green. Single source for ATLAS shells — legacy data-ring
+   palette above stays untouched. WCAG-AA on carbon (#0A0B0D):
+   red 5.38 · blue 9.18 · yellow 12.48 · green 9.64 · bone 15.77.
+   Canonical display/mono pair: Fraunces × IBM Plex Mono.
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --accent-red:    #E05A4E;  --accent-red-bg:    rgba(224, 90, 78, 0.10);   /* SOUL · sovereign */
+  --accent-blue:   #7FB3FF;  --accent-blue-bg:   rgba(127, 179, 255, 0.10); /* MIND · institution */
+  --accent-yellow: #F2C879;  --accent-yellow-bg: rgba(242, 200, 121, 0.10); /* BODY · human */
+  --accent-green:  #58C9A0;  --accent-green-bg:  rgba(88, 201, 160, 0.10);  /* EARTH · geox */
+}

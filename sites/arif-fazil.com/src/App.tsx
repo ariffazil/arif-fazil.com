@@ -1,8 +1,33 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import ArrowNavbar from '@/components/ArrowNavbar';
 import ArrowFooter from '@/components/ArrowFooter';
 import { ScrollToHashElement } from '@/components/ScrollToHashElement';
+
+// ATLAS M1 (2026-11-14): routes mandated to render through an ATLAS shell own
+// ALL their chrome — no global nav/footer beside the shell's HeaderCanon.
+// Source of record: /root/web-canon/canon/shell-mandate.json (verify-design-canon
+// enforces single-nav on these routes at prebuild).
+const ATLAS_CHROME_ROUTES: RegExp[] = [
+  /^\/words\/amodei-flight-recorder\/?$/,
+  // WORDS hub ring — RootShell pages (M1.2)
+  /^\/words\/?$/,
+  /^\/words\/essays\/?$/,
+  // MIND ring (blue) + BODY ring (yellow) — M1.3
+  /^\/institution\/?$/,
+  /^\/proof\/?$/,
+  // M2 alias-drift fix (2026-11-15): /999 renders the same Proof component —
+  // it must own its chrome like /proof, not stack legacy chrome on the shell.
+  /^\/999\/?$/,
+  /^\/human\/?$/,
+  /^\/words\/doctrine\/?$/,
+  /^\/doctrine\/?$/,
+  // essay renderer (EssayPage → ArticleShell) — dynamic slugs
+  /^\/words\/writing\/[^/]+\/?$/,
+  /^\/words\/(?!essays|wiki|makcikgpt|writing)[^/]+\/?$/,
+  /^\/essays\/[^/]+\/?$/,
+  /^\/writing\/[^/]+\/?$/,
+];
 
 // Route-level code splitting (audit N4, 2026-09-24): setiap halaman = chunk lazy.
 // Bundle monolitik 2.3MB dipecah — entry kini kecil, halaman dimuat atas permintaan.
@@ -22,6 +47,8 @@ const WordsEssays = lazy(() => import('@/pages/WordsEssays').then(m => ({ defaul
 const WordsWiki = lazy(() => import('@/pages/WordsWiki').then(m => ({ default: m.WordsWiki })));
 const WordsMakcikgpt = lazy(() => import('@/pages/WordsMakcikgpt').then(m => ({ default: m.WordsMakcikgpt })));
 const EssayPage = lazy(() => import('@/pages/EssayPage').then(m => ({ default: m.EssayPage })));
+const DoctrinePage = lazy(() => import('@/pages/DoctrinePage').then(m => ({ default: m.DoctrinePage })));
+const AmodeiFlightRecorder = lazy(() => import('@/pages/AmodeiFlightRecorder').then(m => ({ default: m.AmodeiFlightRecorder })));
 const Work = lazy(() => import('@/pages/Work').then(m => ({ default: m.Work })));
 const Missions = lazy(() => import('@/pages/Missions').then(m => ({ default: m.Missions })));
 const Proof = lazy(() => import('@/pages/ProofArrow').then(m => ({ default: m.Proof })));
@@ -51,9 +78,18 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToHashElement />
-      <div className="flex min-h-screen flex-col bg-[#0A0B0D] text-[#EDEAE2]">
-        <ArrowNavbar />
-        <main id="main-content" tabIndex={-1} className="flex-1">
+      <FederationChrome />
+    </BrowserRouter>
+  );
+}
+
+function FederationChrome() {
+  const { pathname } = useLocation();
+  const atlasOwned = ATLAS_CHROME_ROUTES.some((re) => re.test(pathname));
+  return (
+    <div className="flex min-h-screen flex-col bg-[#0A0B0D] text-[#EDEAE2]">
+      {!atlasOwned && <ArrowNavbar />}
+      <main id="main-content" tabIndex={-1} className="flex-1">
           <Suspense fallback={<RouteLoading />}>
           <Routes>
             {/* 0. /about — Human-readable bio & on-ramp */}
@@ -166,6 +202,10 @@ export function App() {
 
             {/* 4. /words — Hub + Essays + Wiki + MakcikGPT (column) */}
             {/* Peer subpages (must come BEFORE the /:slug catch-all) */}
+            <Route path="/words/doctrine" element={<DoctrinePage />} />
+            <Route path="/words/doctrine/" element={<DoctrinePage />} />
+            <Route path="/words" element={<WordsEssays />} />
+            <Route path="/words/" element={<WordsEssays />} />
             <Route path="/words/essays" element={<WordsEssays />} />
             <Route path="/words/essays/" element={<WordsEssays />} />
             <Route path="/words/wiki" element={<WordsWiki />} />
@@ -177,6 +217,7 @@ export function App() {
             <Route path="/words/writing/" element={<Navigate to="/words" replace />} />
             <Route path="/words/writing/:slug" element={<EssayPage />} />
             <Route path="/words/writing/:slug/" element={<EssayPage />} />
+            <Route path="/words/amodei-flight-recorder" element={<AmodeiFlightRecorder />} />
             <Route path="/words/:slug" element={<EssayPage />} />
             <Route path="/words/:slug/" element={<EssayPage />} />
             <Route path="/writing" element={<Navigate to="/words" replace />} />
@@ -222,8 +263,8 @@ export function App() {
             <Route path="/AAA/" element={<AAA />} />
             <Route path="/aaa" element={<Navigate to="/AAA" replace />} />
             <Route path="/aaa/" element={<Navigate to="/AAA" replace />} />
-            <Route path="/doctrine" element={<Navigate to="/AAA" replace />} />
-            <Route path="/doctrine/" element={<Navigate to="/AAA" replace />} />
+            <Route path="/doctrine" element={<Navigate to="/words/doctrine" replace />} />
+            <Route path="/doctrine/" element={<Navigate to="/words/doctrine" replace />} />
             <Route path="/canon" element={<Navigate to="/AAA" replace />} />
             <Route path="/canon/" element={<Navigate to="/AAA" replace />} />
             <Route path="/federation" element={<Federation />} />
@@ -291,9 +332,8 @@ export function App() {
           </Routes>
           </Suspense>
         </main>
-        <ArrowFooter />
+        {!atlasOwned && <ArrowFooter />}
       </div>
-    </BrowserRouter>
   );
 }
 

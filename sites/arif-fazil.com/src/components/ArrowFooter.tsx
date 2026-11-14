@@ -12,11 +12,13 @@ const territoryLinks = [
 ]
 
 const connectLinks = [
+  { label: 'Contact', href: '/contact/', icon: '✉' },
+  { label: 'Email', href: 'mailto:[REDACTED:EMAIL]', icon: '✉' },
+  { label: 'Telegram', href: 'https://t.me/ariffazil', icon: '✈' },
+  { label: 'GitHub', href: 'https://github.com/ariffazil', icon: '⌘' },
   { label: 'Briefing', href: '/institution/', icon: '→' },
   { label: 'Agents', href: '/human', icon: '→' },
-  { label: 'Email', href: 'mailto:arifbfazil@gmail.com', icon: '✉' },
-  { label: 'GitHub', href: 'https://github.com/ariffazil', icon: '⌘' },
-  { label: 'Telegram', href: 'https://t.me/ariffazil', icon: '✈' },
+  { label: 'Privacy', href: '/privacy/', icon: '§' },
 ]
 
 function FootLink({ item }: { item: NavItem }) {
@@ -147,7 +149,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-6 font-mono text-[11px] tracking-[0.04em] text-ink-soft/55 sm:text-[12px]">
-            © 2026 Muhammad Arif bin Fazil · Ditempa Bukan Diberi
+            © 2026 ARIF FAZIL · Ditempa Bukan Diberi
           </p>
         </div>
       </div>

@@ -1,0 +1,196 @@
+/* doctrine-legacy.css — d-* styles ported from the static prerender shell,
+   scoped under .doctrine-legacy to coexist with ATLAS shell chrome (M1.2). */
+
+.doctrine-legacy :root { --hard: #D4536B;
+      --soft: #D49D53;
+      --derived: #6BCF8B;
+      --gold: #D4A853;
+      --shadow: #9B7FD4;
+      --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-display: 'Cabinet Grotesk', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', monospace; }
+.doctrine-legacy /* --- Section headers --- */
+    .d-section { margin: 2.5rem 0 0.5rem; }
+.doctrine-legacy .d-section:first-of-type { margin-top: 2rem; }
+.doctrine-legacy .d-section-head { display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #1E232A; }
+.doctrine-legacy .d-section-head h2 { font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #7A7670;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0; }
+.doctrine-legacy .d-pill { font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2em 0.55em;
+      border-radius: 3px;
+      font-weight: 600; }
+.doctrine-legacy .d-pill.hard { background: rgba(212,83,107,0.12); color: var(--hard); }
+.doctrine-legacy .d-pill.soft { background: rgba(212,157,83,0.12); color: var(--soft); }
+.doctrine-legacy .d-pill.derived { background: rgba(107,207,139,0.12); color: var(--derived); }
+.doctrine-legacy /* --- Floor cards --- */
+    .d-card { background: #111318;
+      border: 1px solid #1E232A;
+      border-left: 4px solid var(--hard);
+      border-radius: 8px;
+      padding: 1.15rem 1.35rem;
+      margin: 0.65rem 0;
+      transition: border-color 0.2s ease, background 0.2s ease; }
+.doctrine-legacy .d-card:hover { background: #161820; border-color: #2A2E3A; }
+.doctrine-legacy .d-card.soft { border-left-color: var(--soft); }
+.doctrine-legacy .d-card.derived { border-left-color: var(--derived); }
+.doctrine-legacy .d-head { display: flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      flex-wrap: wrap; }
+.doctrine-legacy .d-num { font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 2.2rem; }
+.doctrine-legacy .d-name { font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #EDEAE2;
+      letter-spacing: -0.01em; }
+.doctrine-legacy .d-badge { font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.12em 0.45em;
+      border: 1px solid currentColor;
+      border-radius: 3px;
+      margin-left: 0.25rem; }
+.doctrine-legacy .d-badge.hard { color: var(--hard); }
+.doctrine-legacy .d-badge.soft { color: var(--soft); }
+.doctrine-legacy .d-badge.derived { color: var(--derived); }
+.doctrine-legacy /* --- Shadow Paradox cards --- */
+    .d-card.shadow { border-left-color: var(--shadow);
+      background: #0F0E15; }
+.doctrine-legacy .d-card.shadow:hover { background: #141320; border-color: #2E2A40; }
+.doctrine-legacy .d-card.shadow .d-num { color: var(--shadow); }
+.doctrine-legacy .d-card.shadow .d-badge.shadow { color: var(--shadow); border: 1px solid currentColor; border-radius: 3px; padding: 0.12em 0.45rem; font-size: 0.55rem; font-family: var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; margin-left: 0.25rem; }
+.doctrine-legacy .d-pill.shadow { background: rgba(155,127,212,0.12); color: var(--shadow); }
+.doctrine-legacy .d-card.shadow .d-formula { font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #8A7FB8;
+      margin: 0.45rem 0 0;
+      padding: 0.5rem 0.75rem;
+      background: rgba(155,127,212,0.04);
+      border-radius: 4px;
+      border: 1px solid rgba(155,127,212,0.08);
+      line-height: 1.6;
+      white-space: pre;
+      overflow-x: auto; }
+.doctrine-legacy .d-card.shadow.kill-shot { border-left-color: #C44;
+      border-left-width: 5px; }
+.doctrine-legacy .d-card.shadow.kill-shot .d-num { color: #C44; }
+.doctrine-legacy .d-card.shadow.kill-shot .d-formula { color: #D88; background: rgba(204,68,68,0.04); border-color: rgba(204,68,68,0.08); }
+.doctrine-legacy .d-meta-paradox { font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: #A09D96;
+      line-height: 1.65;
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid #C44;
+      background: rgba(204,68,68,0.03);
+      border-radius: 0 6px 6px 0;
+      max-width: 40rem; }
+.doctrine-legacy .d-meta-paradox strong { color: #EDEAE2; font-weight: 600; }
+.doctrine-legacy .d-behavioral-hook { font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #8A7FB8;
+      padding: 0.75rem 1rem;
+      background: rgba(155,127,212,0.04);
+      border: 1px solid rgba(155,127,212,0.10);
+      border-radius: 6px;
+      margin: 1rem 0;
+      line-height: 1.7;
+      max-width: 40rem; }
+.doctrine-legacy .d-section-divider { border: 0;
+      border-top: 1px solid #1E232A;
+      margin: 3rem 0 1.5rem; }
+.doctrine-legacy .d-essence { font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #D8D4CC;
+      margin: 0.55rem 0 0.15rem;
+      line-height: 1.4; }
+.doctrine-legacy .d-explain { font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: #7A7670;
+      line-height: 1.5;
+      margin: 0; }
+.doctrine-legacy /* --- Intro & quote --- */
+    .d-intro { font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: #A09D96;
+      line-height: 1.65;
+      margin: 0 0 1.5rem;
+      max-width: 40rem; }
+.doctrine-legacy .d-intro strong { color: #EDEAE2; font-weight: 600; }
+.doctrine-legacy .d-quote { border-left: 3px solid var(--gold);
+      padding: 0.65rem 1.15rem;
+      margin: 1.25rem 0;
+      font-style: italic;
+      color: #D8D4CC;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      background: rgba(212,168,83,0.03);
+      border-radius: 0 6px 6px 0;
+      max-width: 40rem; }
+.doctrine-legacy .d-quote cite { display: block;
+      margin-top: 0.4rem;
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: #6A665E;
+      letter-spacing: 0.06em;
+      text-transform: uppercase; }
+.doctrine-legacy /* --- Legend --- */
+    .d-legend { display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0.6rem 0.85rem;
+      background: #111318;
+      border: 1px solid #1E232A;
+      border-radius: 6px;
+      margin: 1.25rem 0 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem; }
+.doctrine-legacy .d-legend-item { display: flex; align-items: center; gap: 0.35rem; color: #8A8578; }
+.doctrine-legacy .d-legend-dot { width: 7px; height: 7px; border-radius: 2px; flex-shrink: 0; }
+.doctrine-legacy .d-legend-dot.hard { background: var(--hard); }
+.doctrine-legacy .d-legend-dot.soft { background: var(--soft); }
+.doctrine-legacy .d-legend-dot.derived { background: var(--derived); }
+.doctrine-legacy /* --- Footer --- */
+    .d-footer { margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #1E232A; }
+.doctrine-legacy .d-footer-links { display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem; }
+.doctrine-legacy .d-footer-links a { color: #6A665E;
+      text-decoration: none;
+      border-bottom: 1px dotted #2A2E3A;
+      transition: color 0.15s; }
+.doctrine-legacy .d-footer-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.doctrine-legacy .d-source { font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: #4A4840;
+      margin-top: 0.85rem;
+      letter-spacing: 0.03em;
+      line-height: 1.6; }
+.doctrine-legacy .d-num { font-size: 1.1rem; min-width: 1.8rem; }
+.doctrine-legacy .d-name { font-size: 1rem; }
+.doctrine-legacy .d-essence { font-size: 0.92rem; }
+.doctrine-legacy .d-section-head { gap: 0.5rem; }

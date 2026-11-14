@@ -1,0 +1,31 @@
+{
+ "task": "deploy makcikgpt article tak-kenal-maka-tak-sayang (F13 order: 'execute a and b', 2026-11-14)",
+ "author": "333-AGI (OpenCode)",
+ "timestamp": "2026-11-13T19:38:32.571745+00:00",
+ "route": "/world/makcikgpt/tak-kenal-maka-tak-sayang",
+ "surfaces": {
+  "human_lane": {
+   "url": "https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang",
+   "title": "Tak Kenal Maka Tak Sayang",
+   "verified": true
+  },
+  "bot_lane_md": {
+   "url": "https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang.md",
+   "article_id": "m-gen-tak-kenal-maka-tak-sayang",
+   "seal": "999",
+   "verified": true
+  },
+  "bot_lane_html": {
+   "path": "world/makcikgpt/makcikgpt-md/tak-kenal-maka-tak-sayang.html",
+   "verified": true
+  },
+  "hub": "/world/makcikgpt/",
+  "feed": "feed.xml — dual-root (split-root trap): /feed.xml serves from /var/www/html (NOT /arif/); both roots synced, live verified",
+  "sitemap": true,
+  "llms_txt": true
+ },
+ "deploy_mode": "additive rsync --update, no --delete, no caddy reload",
+ "preflight": "PASS (phantom-200 resolved after deploy)",
+ "vonis_check": "0 occurrences on both lanes (Arif's 12/11 rejection honored)",
+ "rollback": "rm -rf /var/www/html/arif/world/makcikgpt/tak-kenal-maka-tak-sayang* ; restore prior hub/feed/sitemap from git"
+}

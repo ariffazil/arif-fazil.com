@@ -1,0 +1,392 @@
+/**
+ * ATLAS M1 shell chrome — scoped to .atlas-* namespaces.
+ * Ring accents: --shell-accent / --shell-accent-bg are set inline by the shell
+ * component per ring (soul=red · mind=blue · body=yellow · earth=green),
+ * sourced from /_shared/design-system/tokens.css v2.1 --accent-* tokens.
+ * Every value below carries a hard fallback so the shell renders standalone.
+ * Canonical pair: Fraunces (display) × IBM Plex Mono (labels).
+ */
+
+/* ── shell root ─────────────────────────────────────────────────── */
+.atlas-shell {
+  min-height: 100vh;
+  background: var(--carbon, #0a0b0d);
+  color: var(--bone, #e8e6df);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── single HeaderCanon ─────────────────────────────────────────── */
+.atlas-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px clamp(16px, 4vw, 32px);
+  background: color-mix(in srgb, var(--carbon2, #101216) 84%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line, #1f2733);
+}
+.atlas-brand {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--ink, #e6edf3);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.atlas-brand .brand-dot { color: var(--shell-accent, #e05a4e); }
+.atlas-nav {
+  display: flex;
+  gap: clamp(10px, 2vw, 22px);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.atlas-nav a {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim, #8b98a8);
+  text-decoration: none;
+  padding: 4px 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.atlas-nav a:hover,
+.atlas-nav a[aria-current='page'] {
+  color: var(--shell-accent, #e05a4e);
+  border-bottom-color: var(--shell-accent, #e05a4e);
+}
+.atlas-ringpill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--shell-accent, #e05a4e);
+  border: 1px solid color-mix(in srgb, var(--shell-accent, #e05a4e) 40%, transparent);
+  background: var(--shell-accent-bg, transparent);
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.atlas-ringpill .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--shell-accent, #e05a4e);
+}
+.atlas-clock {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.68rem;
+  color: var(--dim, #8b98a8);
+  white-space: nowrap;
+}
+
+/* ── federation switcher (M2) — accents from tokens.css v2.1 ─────── */
+.atlas-fed {
+  position: relative;
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.atlas-fed summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--dim, #8b98a8);
+  border: 1px solid var(--line, #1f2333);
+  border-radius: 999px;
+  padding: 3px 10px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.atlas-fed summary::-webkit-details-marker { display: none; }
+.atlas-fed summary:hover,
+.atlas-fed[open] summary {
+  color: var(--accent-blue, #4ea1ff);
+  border-color: color-mix(in srgb, var(--accent-blue, #4ea1ff) 40%, transparent);
+}
+.atlas-fed .fed-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-blue, #4ea1ff);
+}
+.atlas-fed-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  background: var(--carbon2, #101216);
+  border: 1px solid var(--line, #1f2333);
+  border-radius: 12px;
+  padding: 6px;
+  z-index: 50;
+}
+.atlas-fed-menu a {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--dim, #8b98a8);
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 2px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.atlas-fed-menu a:hover,
+.atlas-fed-menu a:focus-visible {
+  color: var(--accent-blue, #4ea1ff);
+  background: color-mix(in srgb, var(--accent-blue, #4ea1ff) 8%, transparent);
+}
+@media (max-width: 900px) {
+  .atlas-nav { display: none; } /* header stays single; nav collapses to pill + brand */
+}
+
+/* ── hero ───────────────────────────────────────────────────────── */
+.atlas-hero {
+  position: relative;
+  padding: clamp(56px, 9vw, 110px) clamp(16px, 4vw, 32px) clamp(36px, 6vw, 64px);
+  border-bottom: 1px solid var(--line, #1f2733);
+  overflow: hidden;
+  color: var(--shell-accent, #e05a4e);
+}
+.atlas-hero .hero-cell,
+.atlas-hero .hero-chords {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.atlas-hero .hero-cell {
+  opacity: 0.025;
+  -webkit-mask-image: linear-gradient(to right, transparent 4%, black 55%, black 100%);
+  mask-image: linear-gradient(to right, transparent 4%, black 55%, black 100%);
+}
+.atlas-hero .hero-inner {
+  position: relative;
+  max-width: var(--maxw, 1120px);
+  margin: 0 auto;
+}
+.atlas-kicker {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--shell-accent, #e05a4e);
+}
+.atlas-title {
+  font-family: var(--font-display, Fraunces, Georgia, serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2rem, 5.2vw, 3.9rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--ink-dark, #f5f2ea);
+  margin: 16px 0 18px;
+  max-width: 26ch;
+}
+.atlas-title .title-accent {
+  color: var(--shell-accent, #e05a4e);
+  font-style: normal;
+}
+.atlas-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--dim, #8b98a8);
+  text-transform: uppercase;
+}
+.atlas-meta .meta-chip {
+  border: 1px solid var(--line2, #2a3342);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+.atlas-torus {
+  position: absolute;
+  right: clamp(12px, 6vw, 90px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--shell-accent, #e05a4e);
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .atlas-torus { display: none; }
+}
+@keyframes atlas-torus-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-torus svg { animation: none !important; }
+}
+
+/* ── content ────────────────────────────────────────────────────── */
+.atlas-main {
+  max-width: var(--maxw, 1120px);
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 72px) clamp(16px, 4vw, 32px) 96px;
+}
+.atlas-article {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  line-height: 1.78;
+}
+.atlas-article p { margin: 0 0 1.1em; }
+/* legacy essay html carries its own leading <h1> — the shell hero already owns the title */
+.atlas-article > article > h1:first-child { display: none; }
+.atlas-article h2 {
+  font-family: var(--font-display, Fraunces, Georgia, serif);
+  font-style: normal;
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  line-height: 1.2;
+  margin: 2.4em 0 0.9em;
+  padding-left: 14px;
+  border-left: 3px solid var(--shell-accent, #e05a4e);
+  color: var(--ink-dark, #f5f2ea);
+}
+.atlas-article h3 {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--shell-accent, #e05a4e);
+  margin: 1.8em 0 0.7em;
+}
+.atlas-article a {
+  color: var(--shell-accent, #e05a4e);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.atlas-article em { color: var(--ink, #e6edf3); }
+.atlas-article strong { color: var(--ink-dark, #f5f2ea); }
+.atlas-article hr { border: 0; border-top: 1px solid var(--line, #1f2733); margin: 2.6em 0; }
+.atlas-article blockquote {
+  border-left: 3px solid var(--shell-accent, #e05a4e);
+  background: var(--shell-accent-bg, transparent);
+  margin: 1.4em 0;
+  padding: 12px 16px;
+  font-style: italic;
+}
+.atlas-article code {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.88em;
+  background: var(--carbon2, #101216);
+  border: 1px solid var(--line, #1f2733);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.atlas-article ul,
+.atlas-article ol { margin: 0 0 1.1em 1.4em; }
+.atlas-article li { margin-bottom: 0.45em; }
+
+/* claim-label chips inside article body */
+.atlas-claim {
+  display: inline-block;
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--shell-accent, #e05a4e);
+  border: 1px solid color-mix(in srgb, var(--shell-accent, #e05a4e) 45%, transparent);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin: 0 2px;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+
+/* coda / provenance strip */
+.atlas-coda {
+  max-width: 720px;
+  margin: 48px auto 0;
+  border: 1px solid var(--line, #1f2733);
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--dim, #8b98a8);
+}
+.atlas-coda strong { color: var(--shell-accent, #e05a4e); }
+
+/* related routes */
+.atlas-related {
+  max-width: 720px;
+  margin: 32px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.atlas-related a {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim, #8b98a8);
+  text-decoration: none;
+  border: 1px solid var(--line, #1f2733);
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.atlas-related a:hover {
+  color: var(--shell-accent, #e05a4e);
+  border-color: var(--shell-accent, #e05a4e);
+}
+
+/* ── contrast table (phase transition) ──────────────────────────── */
+.atlas-tablewrap { overflow-x: auto; margin: 1.4em 0; }
+.atlas-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+.atlas-table th,
+.atlas-table td {
+  border: 1px solid var(--line, #1f2733);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.atlas-table th {
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--shell-accent, #e05a4e);
+  background: var(--shell-accent-bg, transparent);
+}
+
+/* ── footer ─────────────────────────────────────────────────────── */
+.atlas-footer {
+  border-top: 1px solid var(--line, #1f2733);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px clamp(16px, 4vw, 32px);
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim, #8b98a8);
+}
+.atlas-footer a { color: var(--dim, #8b98a8); text-decoration: none; }
+.atlas-footer a:hover { color: var(--shell-accent, #e05a4e); }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-ring="MIND" data-plane="proof">
+<html data-mcp-upgrade="2026-11-14" lang="en" data-ring="MIND" data-plane="proof">
 <head>
 <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
     <meta charset="UTF-8">
@@ -291,7 +291,7 @@
                             <div style="margin-bottom: 12px;">
                                 <span class="method method-get">GET</span>
                                 <code>/sse</code>
-                                <span style="color: var(--text-muted); font-size: 12px;">— A2A fallback transport</span>
+                                <span style="color: var(--text-muted); font-size: 12px;">— not served (404). A2A is POST https://aaa.arif-fazil.com/a2a</span>
                             </div>
                             <div style="margin-bottom: 12px;">
                                 <span class="method method-get">GET</span>
@@ -311,17 +311,14 @@
                             <button class="tab active" onclick="showTab(this, 'claude')">Claude Desktop</button>
                             <button class="tab" onclick="showTab(this, 'http')">Direct HTTP</button>
                         </div>
-                        <pre id="sdk-example"><code>npx @anthropic/mcp install arifos \\
-  --url https://mcp.arif-fazil.com/mcp
-
-# Or add to claude_desktop_config.json:
-{
+                        <pre id="sdk-example"><code>{
   "mcpServers": {
     "arifOS": {
       "url": "https://mcp.arif-fazil.com/mcp"
     }
   }
 }</code></pre>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Claude Desktop remote server. The door is POST /mcp. GET /mcp returns 405.</p>
                     </div>
                 </div>
             </div>
@@ -337,35 +334,38 @@
                     <div class="card">
                         <h3 style="color: var(--gold);">🔧 Tools</h3>
                         <p style="font-size: 14px;">Structured actions returning JSON. Tools are model-controlled and discovered by MCP clients.</p>
-                        <div style="margin-top: 16px;">
-                            <code class="tag">arifos_init</code>
-                            <code class="tag">arifos_sense</code>
-                            <code class="tag">arifos_mind</code>
-                            <code class="tag">arifos_judge</code>
-                            <code class="tag">arifos_vault</code>
-                            <code class="tag">arifos_forge</code>
+                        <div style="margin-top: 16px;" id="tool-tags">
+                            <code class="tag">arif_init</code>
+                            <code class="tag">arif_observe</code>
+                            <code class="tag">arif_think</code>
+                            <code class="tag">arif_route</code>
+                            <code class="tag">arif_memory</code>
+                            <code class="tag">arif_judge</code>
+                            <code class="tag">arif_forge</code>
+                            <code class="tag">arif_seal</code>
+                            <code class="tag">arif_report</code>
                         </div>
-                        <a href="#tools-list" style="display: inline-block; margin-top: 16px; font-size: 14px;">View all tools →</a>
+                        <a href="/.well-known/mcp/server.json" style="display: inline-block; margin-top: 16px; font-size: 14px;">View all tools →</a>
                     </div>
                     <div class="card">
                         <h3 style="color: var(--cyan);">📋 Prompts</h3>
                         <p style="font-size: 14px;">Reusable constitutional workflows. Pre-built reasoning chains under arifOS governance.</p>
-                        <div style="margin-top: 16px;">
-                            <code class="tag">run_111_think</code>
-                            <code class="tag">run_777_reason</code>
-                            <code class="tag">run_888_audit</code>
-                            <code class="tag">forge_verdict</code>
+                        <div style="margin-top: 16px;" id="prompt-tags">
+                            <code class="tag">000 🌱 IGNITE</code>
+                            <code class="tag">333 🧠 REASON</code>
+                            <code class="tag">888 🔒 JUDGE</code>
+                            <code class="tag">999 💎 SEAL</code>
                         </div>
-                        <a href="#prompts-list" style="display: inline-block; margin-top: 16px; font-size: 14px;">View all prompts →</a>
+                        <a href="/.well-known/mcp/server.json" style="display: inline-block; margin-top: 16px; font-size: 14px;">View all prompts →</a>
                     </div>
                     <div class="card">
                         <h3 style="color: var(--text);">📚 Resources</h3>
                         <p style="font-size: 14px;">Doctrine, rules, schemas, and references. Static data your agent can read at runtime.</p>
-                        <div style="margin-top: 16px;">
-                            <code class="tag">floors/F1-F13</code>
-                            <code class="tag">pipeline/000-999</code>
-                            <code class="tag">telemetry/schema</code>
-                            <code class="tag">governance/policies</code>
+                        <div style="margin-top: 16px;" id="resource-tags">
+                            <code class="tag">arifos://doctrine</code>
+                            <code class="tag">arifos://tools/registry</code>
+                            <code class="tag">arifos://vitals</code>
+                            <code class="tag">skill://index</code>
                         </div>
                         <a href="/.well-known/mcp/server.json" style="display: inline-block; margin-top: 16px; font-size: 14px;">View resources →</a>
                     </div>
@@ -411,7 +411,7 @@
                         <span class="arch-arrow">→</span>
                         <div class="arch-box" style="border-color: var(--cyan);">
                             <div style="font-size: 12px; color: var(--cyan); margin-bottom: 4px;">A2A</div>
-                            <div style="color: var(--text-muted);">Planned</div>
+                            <div>Live</div>
                         </div>
                     </div>
                 </div>
@@ -426,16 +426,16 @@
                     </div>
                     <div class="card">
                         <h3>WebMCP</h3>
-                        <p style="font-size: 14px;">Public HTML console is not exposed. Door is <span class="mono">/mcp</span>. Kernel serves <span class="mono">/webmcp</span> locally on :8088 only.</p>
+                        <p style="font-size: 14px;">Browser tool manifest is <span class="mono">/.well-known/webmcp.json</span>. GET <span class="mono">/webmcp</span> returns 404. JSON-RPC stays on POST <span class="mono">/mcp</span>.</p>
                         <div style="margin-top: 12px;">
-                            <span class="badge" style="background: var(--bg-tertiary); color: var(--text-muted);">Unavailable — advertised route is 404; use /mcp</span>
+                            <span class="badge" id="webmcp-badge" style="background: var(--bg-tertiary); color: var(--text-muted);">Manifest live · GET /webmcp is 404</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3>A2A</h3>
-                        <p style="font-size: 14px;">Agent-to-Agent protocol. Tri-witness consensus for multi-agent coordination.</p>
+                        <p style="font-size: 14px;">Live door: POST <span class="mono">https://aaa.arif-fazil.com/a2a</span> with header <span class="mono">A2A-Version: 1.0</span>. Card: <span class="mono">/.well-known/agent-card.json</span>. It queues. It does not judge.</p>
                         <div style="margin-top: 12px;">
-                            <span class="badge" style="background: var(--bg-tertiary); color: var(--text-muted);">Planned</span>
+                            <span class="badge badge-gold">Live</span>
                         </div>
                     </div>
                 </div>
@@ -450,7 +450,8 @@
 
                 <div class="grid-2" style="margin-top: 32px;">
                     <div>
-                        <h3>13 Constitutional Floors</h3>
+                        <h3>Constitutional floors</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">Five are listed. The set is F1–F13.</p>
                         <table style="margin-top: 16px;">
                             <thead>
                                 <tr>
@@ -472,8 +473,8 @@
                                 </tr>
                                 <tr>
                                     <td><code>F6</code></td>
-                                    <td>Harm/Dignity</td>
-                                    <td>VOID check on task and tools</td>
+                                    <td>Maruah</td>
+                                    <td>Dignity check before the action proceeds</td>
                                 </tr>
                                 <tr>
                                     <td><code>F9</code></td>
@@ -519,38 +520,30 @@
         <section class="section" id="example">
             <div class="container">
                 <h2>Example Request</h2>
-                <p>Every tool call returns a structured response with constitutional metadata.</p>
+                <p>This is the live method. Names load from the public manifest. This page does not print a sample verdict.</p>
 
                 <div class="grid-2" style="margin-top: 32px; gap: 32px;">
                     <div>
                         <h3>Request</h3>
                         <pre class="example-json"><code>{
   <span class="key">"jsonrpc"</span>: <span class="string">"2.0"</span>,
-  <span class="key">"method"</span>: <span class="string">"tools/call"</span>,
-  <span class="key">"params"</span>: {
-    <span class="key">"name"</span>: <span class="string">"constitutional_judge"</span>,
-    <span class="key">"arguments"</span>: {
-      <span class="key">"claim"</span>: <span class="string">"Deploy autonomous action"</span>,
-      <span class="key">"risk_class"</span>: <span class="string">"high"</span>,
-      <span class="key">"reversible"</span>: <span class="number">false</span>
-    }
-  },
+  <span class="key">"method"</span>: <span class="string">"tools/list"</span>,
+  <span class="key">"params"</span>: {},
   <span class="key">"id"</span>: <span class="number">1</span>
 }</code></pre>
                     </div>
                     <div>
-                        <h3>Response</h3>
-                        <pre class="example-json"><code>{
-  <span class="key">"jsonrpc"</span>: <span class="string">"2.0"</span>,
-  <span class="key">"result"</span>: {
-    <span class="key">"verdict"</span>: <span class="string">"888 HOLD"</span>,
-    <span class="key">"confidence"</span>: <span class="number">0.94</span>,
-    <span class="key">"requires_human_confirmation"</span>: <span class="number">true</span>,
-    <span class="key">"floors_passed"</span>: [<span class="string">"F2"</span>, <span class="string">"F6"</span>, <span class="string">"F9"</span>],
-    <span class="key">"telemetry_id"</span>: <span class="string">"vault_20260411_7x9k"</span>
-  },
-  <span class="key">"id"</span>: <span class="number">1</span>
-}</code></pre>
+                        <h3>Live tool names</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">Filled from /.well-known/mcp/server.json. A verdict is whatever POST /mcp returns.</p>
+                        <pre class="example-json" id="example-tool-names"><code>arif_init
+arif_observe
+arif_think
+arif_route
+arif_memory
+arif_judge
+arif_forge
+arif_seal
+arif_report</code></pre>
                     </div>
                 </div>
             </div>
@@ -813,7 +806,7 @@
                 <div style="margin-top: 24px;">
                     <a href="/health" class="btn btn-secondary">View Full Health JSON</a>
                     <a href="/metrics/json" class="btn btn-secondary">View Telemetry JSON</a>
-                    <a href="/tools" class="btn btn-secondary">View Tools List</a>
+                    <a href="/.well-known/mcp/server.json" class="btn btn-secondary">Public tool manifest</a>
                 </div>
             </div>
         </section>
@@ -834,8 +827,8 @@
                         <p style="font-size: 14px;">Evidence — is this grounded? No ungrounded claims (τ ≥ 0.99).</p>
                     </div>
                     <div class="card">
-                        <h3>F3 TRI-WITNESS</h3>
-                        <p style="font-size: 14px;">Three-way consistency check — theory, code, and intent must agree.</p>
+                        <h3>F3 WITNESS</h3>
+                        <p style="font-size: 14px;">Witness — the claim has to agree with what was observed.</p>
                     </div>
                     <div class="card">
                         <h3>F9 ANTI-HANTU</h3>
@@ -878,7 +871,7 @@
                             <div style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Endpoint:</div>
                             <code style="font-size: 11px; color: var(--cyan);">https://mcp.arif-fazil.com/mcp</code>
                             <div style="margin-top: 12px; font-size: 11px; color: var(--text-secondary); margin-bottom: 4px;">Tool namespace:</div>
-                            <code style="font-size: 11px;">arifos_*</code>
+                            <code style="font-size: 11px;">arif_*</code>
                             <div style="display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;">
                                 <span class="badge badge-gold" id="trinity-arifos-tools-badge" style="font-size: 9px;">-- tools</span>
                                 <span class="badge badge-cyan" id="trinity-arifos-prompts-badge" style="font-size: 9px;">-- prompts</span>
@@ -932,10 +925,11 @@
                     <div style="margin-top: 20px; padding: 12px; background: var(--bg-primary); border-radius: 8px; border: 1px solid var(--border);">
                         <div style="font-size: 12px; font-weight: 600; color: var(--gold); margin-bottom: 8px;">Orthogonal Composition Protocol (for agents)</div>
                         <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.8;">
-                            <code style="color: var(--cyan);">arifos_sense</code> (Φ GEOX domain) → 
-                            <code style="color: var(--cyan);">arifos_mind</code> (inductive synthesis) → 
-                            <code style="color: var(--gold);">arifos_judge</code> (SEAL/VOID verdict) → 
-                            <code style="color: var(--gold);">arifos_vault</code> (VAULT999 seal)
+                            <code style="color: var(--cyan);">arif_observe</code> →
+                            <code style="color: var(--cyan);">arif_think</code> →
+                            <code style="color: var(--gold);">arif_judge</code> →
+                            <code style="color: var(--gold);">arif_seal</code>
+                            <div style="margin-top: 6px;">Names from the live manifest. Not a required order.</div>
                         </div>
                     </div>
 
@@ -1023,27 +1017,35 @@
                 const isHealthy = data.status === 'healthy';
                 document.getElementById('status-dot').className = 'status-dot' + (isHealthy ? '' : ' degraded');
                 document.getElementById('status-main').textContent = isHealthy ? 'Operational' : 'Degraded';
+                const bits = [];
+                if (data.vault999) bits.push('vault ' + data.vault999);
+                if (data.execution_readiness) bits.push('execution ' + data.execution_readiness);
+                const floors = data.constitutional;
+                if (floors && floors.floors_measured != null && floors.floors_target != null) {
+                    bits.push(floors.floors_measured + '/' + floors.floors_target + ' floors measured');
+                }
+                if (data.service_health) bits.push('service ' + data.service_health);
                 document.getElementById('status-sub').textContent = isHealthy
-                    ? 'All constitutional floors active'
-                    : 'System experiencing issues';
+                    ? 'Public /health status is healthy'
+                    : (bits.join(' · ') || ('Public /health status is ' + (data.status || 'unknown')));
                 document.getElementById('header-status-text').textContent = isHealthy ? 'Live' : 'Degraded';
 
-                // Version (2026-10-02: footer version now follows the same live probe —
-                // a hardcoded footer claimed v2026.5.14-SELAMAT while live panel said otherwise. F2.)
-                document.getElementById('version').textContent = data.version || '--';
+                const release = data.release_tag || data.version || '';
+                document.getElementById('version').textContent = release || '--';
                 const fv = document.getElementById('footer-version');
-                if (fv) fv.textContent = data.version ? '· ' + data.version : '';
+                if (fv) fv.textContent = release ? '· ' + release : '';
                 document.getElementById('transport').textContent = (data.transport || 'HTTP').toUpperCase();
 
-                // Thermodynamic
-                if (data.thermodynamic) {
-                    document.getElementById('vitality').textContent = (data.thermodynamic.vitality_index || 0).toFixed(2);
-                    document.getElementById('peace').textContent = (data.thermodynamic.peace_squared || 0).toFixed(2);
-                    document.getElementById('confidence').textContent = (data.thermodynamic.confidence || 0).toFixed(2);
+                const thermo = data.thermodynamic;
+                if (thermo) {
+                    paintMetrics(thermo);
+                } else {
+                    fetchMetrics();
                 }
 
-                // Counts
-                document.getElementById('tools-count').textContent = data.tools_loaded || '--';
+                if (data.tools_loaded != null) {
+                    document.getElementById('tools-count').textContent = data.tools_loaded;
+                }
 
             } catch (e) {
                 document.getElementById('status-dot').className = 'status-dot down';
@@ -1053,21 +1055,73 @@
             }
         }
 
+        function esc(s) {
+            return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+        }
+
+        function fillTags(id, items, pick) {
+            const box = document.getElementById(id);
+            if (!box || !Array.isArray(items) || !items.length) return;
+            box.innerHTML = items.slice(0, 9).map(it => '<code class="tag">' + esc(pick(it)) + '</code>').join('');
+        }
+
+        function paintMetrics(m) {
+            if (m.vitality_index != null) document.getElementById('vitality').textContent = Number(m.vitality_index).toFixed(2);
+            if (m.peace_squared != null) document.getElementById('peace').textContent = Number(m.peace_squared).toFixed(2);
+            if (m.confidence != null) document.getElementById('confidence').textContent = Number(m.confidence).toFixed(2);
+        }
+
+        async function fetchMetrics() {
+            try {
+                const res = await fetch(`${API}/metrics/json`);
+                if (!res.ok) return;
+                paintMetrics(await res.json());
+            } catch (e) {}
+        }
+
         async function fetchCapabilities() {
             try {
                 const res = await fetch(`${API}/.well-known/mcp/server.json`);
                 const data = await res.json();
+                const nTools = data.tools?.length;
+                const nPrompts = data.prompts?.length;
+                const nResources = data.resources?.length;
 
-                document.getElementById('prompts-count').textContent = data.prompts?.length || '--';
-                document.getElementById('resources-count').textContent = data.resources?.length || '--';
+                if (nTools) {
+                    document.getElementById('tools-count').textContent = nTools;
+                    const organTools = document.getElementById('organ-arifos-tools');
+                    if (organTools && organTools.textContent === '--') organTools.textContent = nTools;
+                }
+                document.getElementById('prompts-count').textContent = nPrompts || '--';
+                document.getElementById('resources-count').textContent = nResources || '--';
+                const op = document.getElementById('organ-arifos-prompts');
+                const orr = document.getElementById('organ-arifos-resources');
+                if (op) op.textContent = nPrompts || '--';
+                if (orr) orr.textContent = nResources || '--';
 
-                // Trinity badges - arifOS (from manifest)
-                document.getElementById('trinity-arifos-tools-badge').textContent = (data.tools?.length || '--') + ' tools';
-                document.getElementById('trinity-arifos-prompts-badge').textContent = (data.prompts?.length || '--') + ' prompts';
-                document.getElementById('trinity-arifos-resources-badge').textContent = (data.resources?.length || '--') + ' resources';
-            } catch (e) {
-                // Silent fail
-            }
+                document.getElementById('trinity-arifos-tools-badge').textContent = (nTools || '--') + ' tools';
+                document.getElementById('trinity-arifos-prompts-badge').textContent = (nPrompts || '--') + ' prompts';
+                document.getElementById('trinity-arifos-resources-badge').textContent = (nResources || '--') + ' resources';
+
+                fillTags('tool-tags', data.tools, t => t.name);
+                fillTags('prompt-tags', data.prompts, t => t.name);
+                fillTags('resource-tags', data.resources, t => t.uri || t.name);
+                const ex = document.getElementById('example-tool-names');
+                if (ex && Array.isArray(data.tools)) {
+                    ex.textContent = data.tools.map(t => t.name).join('\n');
+                }
+            } catch (e) {}
+        }
+
+        async function fetchWebmcp() {
+            try {
+                const res = await fetch(`${API}/.well-known/webmcp.json`);
+                if (!res.ok) return;
+                const data = await res.json();
+                const el = document.getElementById('webmcp-badge');
+                const n = Array.isArray(data.tools) ? data.tools.length : null;
+                if (el && n != null) el.textContent = n + ' tools in manifest · GET /webmcp is 404';
+            } catch (e) {}
         }
 
         function showTab(btn, id) {
@@ -1075,28 +1129,22 @@
             btn.classList.add('active');
 
             const examples = {
-                claude: `<code>npx @anthropic/mcp install arifos \\
-  --url https://mcp.arif-fazil.com/mcp
-
-# Or add to claude_desktop_config.json:
-{
+                claude: `<code>{
   "mcpServers": {
     "arifOS": {
       "url": "https://mcp.arif-fazil.com/mcp"
     }
   }
-}`,
+}</code>`,
                 http: `<code>curl -X POST https://mcp.arif-fazil.com/mcp \\
   -H "Content-Type: application/json" \\
+  -H "Accept: application/json, text/event-stream" \\
   -d '{
     "jsonrpc": "2.0",
-    "method": "tools/call",
-    "params": {
-      "name": "mcp_health_check",
-      "arguments": {}
-    },
+    "method": "tools/list",
+    "params": {},
     "id": 1
-  }'`
+  }'</code>`
             };
 
             document.getElementById('sdk-example').innerHTML = examples[id];
@@ -1134,18 +1182,18 @@
 
                 // Trinity badges for GEOX / WEALTH / WELL
                 if (geox.status === 'fulfilled' && geox.value) {
-                    const tools = geox.value.tool_count || '--';
+                    const tools = geox.value.tool_count || geox.value.tools_loaded || geox.value.canonical_tools || '--';
                     document.getElementById('trinity-geox-tools-badge').textContent = tools + ' tools';
                 }
                 if (wealth.status === 'fulfilled' && wealth.value) {
-                    const pub = wealth.value.public_surface_count || '--';
-                    const alias = wealth.value.hidden_alias_count || '--';
+                    const pub = wealth.value.public_surface_count || wealth.value.public_tools || wealth.value.tools_loaded || '--';
+                    const alias = wealth.value.hidden_alias_count != null ? wealth.value.hidden_alias_count : 'n/a';
                     document.getElementById('trinity-wealth-tools-badge').textContent = pub + ' public';
                     document.getElementById('trinity-wealth-aliases-badge').textContent = alias + ' aliases';
                 }
                 if (well.status === 'fulfilled' && well.value) {
                     const score = well.value.well_score;
-                    document.getElementById('trinity-well-tools-badge').textContent = (well.value.tool_count || '--') + ' tools';
+                    document.getElementById('trinity-well-tools-badge').textContent = (well.value.tool_count || well.value.tools_loaded || '--') + ' tools';
                     document.getElementById('trinity-well-score-badge').textContent = score != null ? score + ' score' : '-- score';
                 }
 
@@ -1180,13 +1228,12 @@
                 status.textContent = isHealthy ? 'Operational' : (data.verdict || data.status || 'Unknown');
 
                 if (organ === 'arifos') {
-                    document.getElementById('organ-arifos-tools').textContent = data.tools_loaded || '--';
-                    document.getElementById('organ-arifos-prompts').textContent = '--'; // filled by fetchCapabilities
-                    document.getElementById('organ-arifos-resources').textContent = '--'; // filled by fetchCapabilities
-                    document.getElementById('organ-arifos-version').textContent = data.release_name || data.version || '--';
+                    if (data.tools_loaded != null) {
+                        document.getElementById('organ-arifos-tools').textContent = data.tools_loaded;
+                    }
+                    document.getElementById('organ-arifos-version').textContent = data.release_tag || data.release_name || data.version || '--';
                 } else if (organ === 'geox') {
-                    // GEOX /health doesn't expose tool_count — mark as unknown
-                    const toolCount = data.tool_count || '?';
+                    const toolCount = data.tool_count || data.tools_loaded || data.canonical_tools || '?';
                     document.getElementById('organ-geox-tools').textContent = toolCount;
                     document.getElementById('organ-geox-version').textContent = data.service || data.version || '--';
                     // Update probe badge
@@ -1199,8 +1246,8 @@
                         probeBadge.textContent = 'LIVE';
                     }
                 } else if (organ === 'wealth') {
-                    document.getElementById('organ-wealth-public').textContent = data.public_surface_count || '--';
-                    document.getElementById('organ-wealth-aliases').textContent = data.hidden_alias_count || '--';
+                    document.getElementById('organ-wealth-public').textContent = data.public_surface_count || data.public_tools || data.tools_loaded || '--';
+                    document.getElementById('organ-wealth-aliases').textContent = data.hidden_alias_count != null ? data.hidden_alias_count : 'n/a';
                     document.getElementById('organ-wealth-version').textContent = data.version || data.repo_head || '--';
                 } else if (organ === 'well') {
                     document.getElementById('organ-well-score').textContent = data.well_score != null ? data.well_score : '--';
@@ -1226,14 +1273,16 @@
                 }
 
                 // VAULT999
-                const v999 = data.vault999_health;
+                const v999 = data.vault999_health || data.vault999;
                 const v999Badge = document.getElementById('vault999-status-badge');
                 const v999Detail = document.getElementById('vault999-detail');
                 if (v999) {
                     const healthy = v999 === 'healthy';
-                    v999Badge.textContent = v999.toUpperCase();
+                    v999Badge.textContent = String(v999).toUpperCase();
                     v999Badge.className = 'badge ' + (healthy ? 'badge-green' : 'badge-gold');
-                    v999Detail.textContent = 'VAULT999 ledger operational';
+                    v999Detail.textContent = healthy
+                        ? 'Public /health vault999 is healthy'
+                        : 'Public /health vault999=' + v999;
                 } else {
                     v999Badge.textContent = 'N/A';
                     v999Detail.textContent = 'Health key not present';
@@ -1272,6 +1321,7 @@
         const federationSOT = new FederationSOT();
         fetchHealth();
         fetchCapabilities();
+        fetchWebmcp();
         federationSOT.start();
         setInterval(fetchHealth, 30000);
     </script>

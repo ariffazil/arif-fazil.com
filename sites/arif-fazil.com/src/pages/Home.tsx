@@ -3,45 +3,13 @@ import { useEffect, useState } from 'react'
 import { PageMeta } from '@/components/PageMeta'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
 import { discoveries } from '@/data/discoveries'
-import { agenticMirrors } from '@/components/ArrowNavbar'
 
 /**
- * Home — human-clarity-first landing (constitution: RULE 1, F13 2026-11-07).
- * Layer 1 (Human Truth): one hero sentence + four plain doors — no telemetry.
- * Layer 3 (Agent Truth): quiet mirror row at the bottom only.
- * FQ / floors / vault hashes live on /arifos/ — not on the human front page.
- * Design lineage compiled 2026-11-08: chrono-bio clock era (bio estimate — dropped,
- * F2-risky) → GitHub-offer era (single action — kept as one-CTA law) → human-language
- * era (plain copy — kept) → Portal Kedaulatan (machine telemetry — rejected) →
- * current (sentence hero + doors + honest local-time clock, the only "live" element).
+ * Home — human first screen.
+ * The header already carries the doors. This page keeps the sentence, the creed,
+ * the wells record (the full record stays on /work), and one briefing.
+ * Organ addresses and the machine map stay off this screen.
  */
-
-const doors = [
-  {
-    name: 'GEOX — The Earth',
-    href: 'https://geox.arif-fazil.com',
-    external: true,
-    line: 'Seismic lines, basins and wells — the subsurface, read honestly.',
-  },
-  {
-    name: 'MakcikGPT — The Voice',
-    href: '/world/makcikgpt/',
-    external: false,
-    line: 'Civic writing in plain Malay. She speaks for no institution.',
-  },
-  {
-    name: 'arifOS — The Machine',
-    href: '/arifos/',
-    external: false,
-    line: 'An AI that refuses to invent: evidence first, or it says UNKNOWN.',
-  },
-  {
-    name: 'Words — The Hand',
-    href: '/words',
-    external: false,
-    line: 'Essays and biography, written by hand.',
-  },
-]
 
 function LiveClock() {
   const [now, setNow] = useState(() => new Date())
@@ -136,39 +104,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── FOUR DOORS — table of contents, hairlines, no chrome ──────── */}
-      <section className="border-b border-strata-700" id="doors">
-        <div className="mx-auto max-w-[1360px] px-6 py-14 md:py-16">
-          <RevealOnScroll>
-            <div className="font-mono text-xs uppercase tracking-widest text-ink-soft mb-4">
-              Four doors
-            </div>
-          </RevealOnScroll>
-          <nav aria-label="Site doors">
-            {doors.map((d, i) => (
-              <RevealOnScroll key={d.name} delay={i * 80}>
-                <a
-                  href={d.href}
-                  {...(d.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-                  className="group grid grid-cols-1 md:grid-cols-[340px_1fr_auto] gap-x-8 gap-y-1 items-baseline py-6 md:py-7 border-t border-strata-700 last:border-b hover:bg-basalt-900/40 transition-colors px-2 -mx-2 rounded-sm"
-                >
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-ink group-hover:text-human-300 transition-colors">
-                    {d.name}
-                  </h3>
-                  <p className="font-sans text-base text-ink-soft leading-relaxed">{d.line}</p>
-                  <span
-                    aria-hidden="true"
-                    className="hidden md:inline text-ink-soft group-hover:text-ember group-hover:translate-x-0.5 transition-all"
-                  >
-                    ↗
-                  </span>
-                </a>
-              </RevealOnScroll>
-            ))}
-          </nav>
-        </div>
-      </section>
-
       <section className="py-16 md:py-20 border-b border-[#1F2733] bg-[#0A0D14]" id="idea">
         <div className="mx-auto max-w-[1360px] px-6">
           <RevealOnScroll>
@@ -243,18 +178,10 @@ export function Home() {
                     </div>
                   </details>
                 </div>
-                <div className="pt-4 mt-4 border-t border-[#1F2733] flex items-center justify-between">
+                <div className="pt-4 mt-4 border-t border-[#1F2733]">
                   <span className="font-mono text-[11px] text-[#9AA0A8]">
                     {d.evidence.length} evidence item{d.evidence.length === 1 ? '' : 's'}
                   </span>
-                  <a
-                    href={d.link ?? 'https://geox.arif-fazil.com'}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider"
-                  >
-                    {d.linkLabel ?? 'Explore GEOX'} ↗
-                  </a>
                 </div>
               </article>
             ))}
@@ -305,31 +232,10 @@ export function Home() {
             </div>
           </div>
 
-          {/* Agentic mirror (organs) */}
-          <div className="rounded-lg border border-[#1F2733] bg-[#080B10] p-5 mb-10">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-3">
-              Other doors — for agents
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {agenticMirrors.map((m) => (
-                <a
-                  key={m.label}
-                  href={m.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-2.5 py-1.5 rounded bg-[#10141D] border border-[#1F2733] text-[11px] font-mono uppercase text-[#9AA0A8] hover:text-[#EDEAE2] hover:border-[#E4572E]/50 transition-colors"
-                  title={m.desc}
-                >
-                  {m.label} ↗
-                </a>
-              ))}
-            </div>
-          </div>
-
           {/* Disclaimer */}
           <div className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-5">
             <p className="font-mono text-[11px] leading-relaxed text-[#9AA0A8] max-w-3xl">
-              Personal site of Muhammad Arif bin Fazil. Views and interpretations are personal unless explicitly
+              Personal site of ARIF FAZIL. Views and interpretations are personal unless explicitly
               identified as published institutional material. No confidential subsurface or commercial information
               is presented. Ditempa bukan diberi — forged, not given.
             </p>

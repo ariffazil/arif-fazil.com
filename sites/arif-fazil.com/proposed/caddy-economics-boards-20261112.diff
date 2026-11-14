@@ -1,0 +1,46 @@
+--- /root/_to_delete/deploy-rollback-20261112T0145/arif-fazil.com.conf	2026-11-12 01:19:25.369610227 +0800
++++ /etc/caddy/vhosts/arif-fazil.com.conf	2026-11-12 01:47:29.884702827 +0800
+@@ -695,6 +695,23 @@
+ 	# Economics: serve static HTML directly (SPA route removed in /world/ reorg)
+ 	# /economics/makcikgpt still redirects to /world/makcikgpt/
+ 
++	# 2026-11-12 clarity. These URLs returned HTTP 404 on the origin.
++	# Boards already live: /oil/ /gas/ /gold/ and the two terminals below.
++	redir /economics/oil /oil/ 308
++	redir /economics/oil/ /oil/ 308
++	redir /economics/oil/index.html /oil/ 308
++	redir /economics/gas /gas/ 308
++	redir /economics/gas/ /gas/ 308
++	redir /economics/gas/index.html /gas/ 308
++	redir /economics/gold /gold/ 308
++	redir /economics/gold/ /gold/ 308
++	redir /economics/gold/index.html /gold/ 308
++	redir /economics/klci /world/economics/klci/ 308
++	redir /economics/klci/ /world/economics/klci/ 308
++	redir /economics/usdmyr /world/economics/usdmyr/ 308
++	redir /economics/usdmyr/ /world/economics/usdmyr/ 308
++	redir /world/economics /world/economics/ 308
++
+ 	handle /economics/* {
+ 		root * /var/www/html/arif
+ 		try_files {path} {path}/index.html =404
+@@ -2338,17 +2355,8 @@
+ 
+ 	}
+ 
+-	# Pulse: served directly from static html dist
+-
+-	handle /pulse/* {
+-
+-		root * /var/www/html/arif
+-
+-		try_files {path} {path}/index.html /pulse/index.html
+-
+-		file_server
+-
+-	}
++	# 2026-11-12: this file_server was beating @pulse_gone, so /pulse/ was HTTP 200
++	# while /pulse was 410. The HTML file stays on disk. The 410 matcher is the response.
+ 
+ 	# /wealth/article/:slug → redirect to /wealth/ (2026-08-01)
+ 

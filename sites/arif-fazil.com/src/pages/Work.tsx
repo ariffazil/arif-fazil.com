@@ -108,6 +108,7 @@ export function Work() {
             >
               Proof & Verification →
             </Link>
+
           </div>
         </div>
 
@@ -134,6 +135,37 @@ export function Work() {
             </span>
           </div>
         </Link>
+
+        {/* Featured live application — Reality Checker (GDG KL 2026) */}
+        <a
+          href="https://arif-fazil.com/work/scam-check/"
+          className="group mb-14 block rounded-lg border border-[#38BDF8]/30 bg-gradient-to-br from-[#0F131D] to-[#0B1220] p-8 hover:border-[#38BDF8]/60 transition-colors"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#38BDF8] mb-2">
+                <span>LIVE</span>
+                <span>·</span>
+                <span>CLIENT-SIDE</span>
+                <span>·</span>
+                <span>GDG KL 2026</span>
+              </div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-[#EDEAE2] mb-1">
+                Reality Checker
+              </h2>
+              <div className="font-mono text-xs text-[#9AA0A8] mb-3">
+                5-second scam-message verification
+              </div>
+              <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed">
+                A message is a claim, not proof. Check links, manipulation tactics and the safest next action
+                without sending the message to an external service.
+              </p>
+            </div>
+            <span className="font-mono text-xs uppercase tracking-wider text-[#38BDF8] group-hover:translate-x-1 transition-transform">
+              Try Reality Checker →
+            </span>
+          </div>
+        </a>
 
         {/* Featured cases — the decision-first read (20–30 seconds) */}
         <section className="mb-14" aria-labelledby="featured-cases">
@@ -366,6 +398,7 @@ export function Work() {
             <Link to="/AAA" className="font-mono text-xs text-[#91B0F2] hover:underline uppercase">
               Read AAA Doctrine →
             </Link>
+
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

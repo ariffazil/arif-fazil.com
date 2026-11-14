@@ -101,3 +101,29 @@ m1_3:
     - "/vitals static pipeline (render-vitals) migration = next phase with subdomains"
   deploy: "rsync /arif + top-level shells, caddy_reloaded=false"
   seal_status: "amodei-flight-recorder UNSEALED — awaiting sovereign 888 review"
+
+# ── M1.4 amendment (same day, 2026-11-14 ~22:00 MYT) — Observatory aligned ──
+m1_4:
+  commit: "984f8b8"
+  changed_routes: ["/arifos/"]
+  public_effect:
+    - "Observatory UI aligned: obs-canon-header single nav + Ω MIND pill, Fraunces x IBM Plex Mono, orthogonal UnitCell background, one trinity torus, ring-mind blue section heads"
+    - "100% data bindings preserved: 14 sections, 7 scripts, observatory.js + /api/public-state untouched; semantic status colors unchanged"
+  legacy_chrome_retired:
+    - "unified-header-loader.js (removed from surface — canon header replaces it)"
+    - "trinity-nav placeholder (suppressed via guard-satisfying hidden span)"
+    - "static .header block (scoped display:none — markup preserved, reversible)"
+  architecture_findings:
+    - "DUAL-OWNER DRIFT: /var/www/html/arifos/ (kernel lane, NEWER 2026-11-14) vs /var/www/html/arif/arifos/ (site lane, SERVED at /arifos/). Two owners one surface. Recommend: OpenCode adopts repo->deploy or retires orphan copy. Not resolved unilaterally."
+    - "shared trinity-nav.js carries OLD nav vocabulary federation-wide (ABOUT WORK EARTH WRITING BRIEFING) — federation-wide upgrade is a separate decision (shared surface, all consumers)"
+    - "/api/public-state returned 503 during probe window — kernel lane rollout disturbance (obs_20261114 snapshot era); observatory degraded honestly (UNAVAILABLE states shown)"
+  tests:
+    build: "DESIGN-CANON 112/112 · lint PASS · verify-pages PASS (236)"
+    live_screenshots: ["screenshots/m14-observatory-before.png", "screenshots/m14-observatory-canon-live.png"]
+  backups: ["/var/www/html/arifos/index.html.bak-m14", "public/arifos/index.html.bak-m14"]
+  deploy: "rsync /arif, caddy_reloaded=false"
+  followups:
+    - "cosmetic: stray '(' glyph on shell pages (pending)"
+    - "trinity-nav.js federation-wide vocabulary upgrade (separate decision)"
+    - "kernel lane: reconcile dual-owner observatory copies"
+  seal_status: "amodei-flight-recorder UNSEALED — awaiting sovereign 888 review"

@@ -260,5 +260,138 @@ class WebZenDoctorTests(unittest.TestCase):
                 self.assertIn(sub, data["meta"], f"doctor meta missing {sub!r} subreport")
 
 
+class WebZenLazyChunkAndProseTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        import importlib.util
+
+        spec = importlib.util.spec_from_file_location("web_zen_mod", str(CLI))
+        assert spec and spec.loader
+        mod = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = mod
+        spec.loader.exec_module(mod)
+        cls.mod = mod
+
+    def test_resolve_route_lazy_chunks_traces_vite_lazy_routes(self) -> None:
+        index_js = (
+            'const h=u.lazy(()=>_(()=>import("./Human-B93OByxN.js"),__VITE_PRELOAD__));'
+            'const inst=(0,u.lazy)(()=>_(()=>import("./InstitutionPage-pCirUFYT.js"),[]));'
+            'const routes=[{path:"/human",element:(0,Z.jsx)(h,{})},'
+            '{path:"/institution",element:(0,Z.jsx)(inst,{})}];'
+        )
+        self.assertEqual(
+            self.mod._resolve_route_lazy_chunks("/human", index_js),
+            ["./Human-B93OByxN.js"],
+        )
+        self.assertEqual(
+            self.mod._resolve_route_lazy_chunks("/institution/", index_js),
+            ["./InstitutionPage-pCirUFYT.js"],
+        )
+
+    def test_extract_jsx_prose_ignores_classname_and_collapses_br(self) -> None:
+        js = (
+            '{className:"capitalize bg-slate-900",children:['
+            '"Work together,",(0,i.jsx)("br",{}),"inspect first."]}'
+        )
+        prose = self.mod._extract_jsx_prose(js)
+        self.assertIn("Work together, inspect first.", prose)
+        self.assertNotIn("capitalize", prose)
+
+    def test_marker_present_blocks_css_tailwind_prefix_spoof(self) -> None:
+        html_empty = "<html><body><div id='root'></div></body></html>"
+        prose_spoof = self.mod._extract_jsx_prose(
+            '{className:"capitalize",children:["capitalism", "noncapital"]}'
+        )
+        self.assertFalse(self.mod._marker_present("capital", html_empty, prose_spoof))
+        prose_real = self.mod._extract_jsx_prose('{children:["Sovereign capital flows"]}')
+        self.assertTrue(self.mod._marker_present("capital", html_empty, prose_real))
+
+    def test_verify_cli_fixture_server_honest_pass_and_css_spoof_fail(self) -> None:
+        import os
+        import tempfile
+        import threading
+        from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+        spa_html = (
+            b'<!doctype html><html><head>'
+            b'<script type="module" src="/assets/index-TEST1234.js"></script>'
+            b'</head><body><div id="root"></div></body></html>'
+        )
+        index_js = (
+            'const Hum=(0,u.lazy)(()=>_(()=>import("./Human-TEST.js"),[]));'
+            'const Inst=(0,u.lazy)(()=>_(()=>import("./Inst-TEST.js"),[]));'
+            'const Econ=(0,u.lazy)(()=>_(()=>import("./Econ-TEST.js"),[]));'
+            'const r=[{path:"/human",element:(0,Z.jsx)(Hum,{})},'
+            '{path:"/institution",element:(0,Z.jsx)(Inst,{})},'
+            '{path:"/economics",element:(0,Z.jsx)(Econ,{})}];'
+        ).encode()
+        routes = {
+            "/human": (200, "text/html", spa_html),
+            "/institution/": (200, "text/html", spa_html),
+            "/economics": (200, "text/html", spa_html),
+            "/assets/index-TEST1234.js": (200, "application/javascript", index_js),
+            "/assets/Human-TEST.js": (
+                200,
+                "application/javascript",
+                b'const x={children:["does not grant authority", "Public A2A surface"]};',
+            ),
+            "/assets/Inst-TEST.js": (
+                200,
+                "application/javascript",
+                b'const y={children:["No confidential PETRONAS","Work together,",(0,i.jsx)("br",{}),"inspect first."]};',
+            ),
+            "/assets/Econ-TEST.js": (
+                200,
+                "application/javascript",
+                # Only Tailwind utility 'capitalize'; WEALTH/KLCI/Ringgit present, standalone 'capital' missing
+                b'const z={className:"capitalize",children:["WEALTH","KLCI","Ringgit"]};',
+            ),
+        }
+
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self) -> None:
+                status, ctype, payload = routes.get(self.path, (404, "text/plain", b"not found"))
+                self.send_response(status)
+                self.send_header("Content-Type", ctype)
+                self.send_header("Content-Length", str(len(payload)))
+                self.end_headers()
+                self.wfile.write(payload)
+
+            def log_message(self, fmt: str, *args: object) -> None:
+                return
+
+        server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        port = server.server_address[1]
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as tf:
+                tf.write(
+                    "https://arif-fazil.com/human\n"
+                    "https://arif-fazil.com/institution/\n"
+                    "https://arif-fazil.com/economics\n"
+                )
+                urls_path = tf.name
+            env = dict(os.environ, ARIF_SITES_WEBZEN_BASE_URL=f"http://127.0.0.1:{port}")
+            proc = subprocess.run(
+                [PYTHON, str(CLI), "verify", "--urls", urls_path, "--json", "--no-receipt"],
+                capture_output=True,
+                text=True,
+                env=env,
+                timeout=30,
+            )
+            os.unlink(urls_path)
+            self.assertEqual(proc.returncode, 1, proc.stderr)
+            report = json.loads(proc.stdout)
+            checks = {c["name"]: c for c in report["checks"]}
+            self.assertTrue(checks["url.https://arif-fazil.com/human"]["ok"], checks)
+            self.assertTrue(checks["url.https://arif-fazil.com/institution/"]["ok"], checks)
+            self.assertFalse(checks["url.https://arif-fazil.com/economics"]["ok"], checks)
+            self.assertIn("capital", checks["url.https://arif-fazil.com/economics"]["detail"])
+        finally:
+            server.shutdown()
+            server.server_close()
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -16,7 +16,6 @@ TIMEOUT="${3:-10}"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
@@ -66,7 +65,7 @@ echo ""
 
 while IFS= read -r -d '' html_file; do
     # Derive URL path from dist path
-    rel_path="${html_file#$DIST_DIR}"
+    rel_path="${html_file#"$DIST_DIR"}"
     # Strip /index.html to get the directory path
     url_path="${rel_path%/index.html}"
     # If root, it's /
@@ -93,38 +92,57 @@ while IFS= read -r -d '' html_file; do
     fi
     
     # Probe the URL with local resolve to avoid WAN latency/rate limits
-    http_code=$(curl -s -k --resolve arif-fazil.com:443:127.0.0.1 --resolve forge.arif-fazil.com:443:127.0.0.1 --resolve wiki.arif-fazil.com:443:127.0.0.1 -o /dev/null -w '%{http_code}' \
+    local_resolves=(
+        --resolve "arif-fazil.com:443:127.0.0.1"
+        --resolve "mcp.arif-fazil.com:443:127.0.0.1"
+        --resolve "forge.arif-fazil.com:443:127.0.0.1"
+        --resolve "wiki.arif-fazil.com:443:127.0.0.1"
+    )
+    http_code=$(curl -s -k "${local_resolves[@]}" -o /dev/null -w '%{http_code}' \
         --max-time "$TIMEOUT" \
         --connect-timeout 5 \
         "$full_url" 2>/dev/null) || http_code="000"
     
     if [ "$http_code" = "200" ] || [ "$http_code" = "301" ] || [ "$http_code" = "308" ]; then
-        # 200 = direct serve, 301/308 = redirect (acceptable for clean URLs)
+        # 200 = direct serve, 301/308 = redirect (follow redirects to check final response)
         if [ "$http_code" = "200" ]; then
             echo -e "  ${GREEN}✓${NC} $http_code  $url_path"
+            PASS_COUNT=$((PASS_COUNT + 1))
         else
-            # Follow redirect to see final code
-            final_code=$(curl -s -k --resolve arif-fazil.com:443:127.0.0.1 --resolve forge.arif-fazil.com:443:127.0.0.1 --resolve wiki.arif-fazil.com:443:127.0.0.1 -o /dev/null -w '%{http_code}' \
+            final_code=$(curl -s -k "${local_resolves[@]}" -o /dev/null -w '%{http_code}' \
                 --max-time "$TIMEOUT" \
                 --connect-timeout 5 \
                 -L \
                 "$full_url" 2>/dev/null) || final_code="000"
-            if [ "$final_code" = "200" ]; then
+            if [[ "$url_path" == /world/makcikgpt/*/ ]]; then
+                browser_code=$(curl -s -k "${local_resolves[@]}" -A "Mozilla/5.0" -o /dev/null -w '%{http_code}' \
+                    --max-time "$TIMEOUT" \
+                    --connect-timeout 5 \
+                    -L \
+                    "$full_url" 2>/dev/null) || browser_code="000"
+                if [ "$final_code" = "200" ] && [ "$browser_code" = "200" ]; then
+                    echo -e "  ${GREEN}✓${NC} ${http_code}→200 (bot=200 browser=200)  $url_path"
+                    PASS_COUNT=$((PASS_COUNT + 1))
+                else
+                    echo -e "  ${RED}✗${NC} ${http_code}→bot:${final_code}/browser:${browser_code}  $url_path  (dual-lane mismatch)"
+                    FAIL_COUNT=$((FAIL_COUNT + 1))
+                    GAPS+=("$url_path (bot=${http_code}->${final_code}, browser=${browser_code}, dist: $rel_path)")
+                fi
+            elif [ "$final_code" = "200" ]; then
                 echo -e "  ${GREEN}✓${NC} $http_code→200  $url_path"
+                PASS_COUNT=$((PASS_COUNT + 1))
             else
-                echo -e "  ${YELLOW}⚠${NC} $http_code→$final_code  $url_path  $(tput dim)(redirect dead-ends)${NC}"
+                echo -e "  ${RED}✗${NC} $http_code→$final_code  $url_path  (redirect dead-ends)"
                 FAIL_COUNT=$((FAIL_COUNT + 1))
                 GAPS+=("$url_path (redirect→$final_code, dist: $rel_path)")
-                continue
             fi
         fi
-        PASS_COUNT=$((PASS_COUNT + 1))
     elif [ "$http_code" = "404" ]; then
-        echo -e "  ${RED}✗${NC} $http_code  $url_path  $(tput dim)(dist exists: $rel_path)${NC}"
+        echo -e "  ${RED}✗${NC} $http_code  $url_path  (dist exists: $rel_path)"
         FAIL_COUNT=$((FAIL_COUNT + 1))
         GAPS+=("$url_path (404, dist: $rel_path)")
     else
-        echo -e "  ${YELLOW}⚠${NC} $http_code  $url_path  $(tput dim)(dist: $rel_path)${NC}"
+        echo -e "  ${RED}✗${NC} $http_code  $url_path  (dist: $rel_path)"
         FAIL_COUNT=$((FAIL_COUNT + 1))
         GAPS+=("$url_path (HTTP $http_code, dist: $rel_path)")
     fi
@@ -141,17 +159,41 @@ echo ""
 echo "Checking critical paths (no dist/index.html expected)..."
 echo ""
 
+crit_body="$(mktemp "${TMPDIR:-/tmp}/verify-pages-crit.XXXXXX")"
+trap 'rm -f "$crit_body"' EXIT
+local_resolves=(
+    --resolve "arif-fazil.com:443:127.0.0.1"
+    --resolve "mcp.arif-fazil.com:443:127.0.0.1"
+    --resolve "forge.arif-fazil.com:443:127.0.0.1"
+    --resolve "wiki.arif-fazil.com:443:127.0.0.1"
+)
+
 for cpath in "${CRITICAL_PATHS[@]}"; do
-    http_code=$(curl -s -k --resolve arif-fazil.com:443:127.0.0.1 -o /dev/null -w '%{http_code}' \
+    meta_out=$(curl -s -k "${local_resolves[@]}" -L -o "$crit_body" -w '%{http_code}|%{url_effective}' \
         --max-time "$TIMEOUT" \
         --connect-timeout 5 \
-        "${BASE_URL}${cpath}" 2>/dev/null) || http_code="000"
-    
+        "${BASE_URL}${cpath}" 2>/dev/null) || meta_out="000|"
+    http_code="${meta_out%%|*}"
+    eff_url="${meta_out#*|}"
+
     if [ "$http_code" = "200" ]; then
-        echo -e "  ${GREEN}✓${NC} $http_code  $cpath"
-        PASS_COUNT=$((PASS_COUNT + 1))
+        if [[ "$cpath" == *.json || "$cpath" == /api/* ]]; then
+            if python3 -m json.tool "$crit_body" >/dev/null 2>&1; then
+                echo -e "  ${GREEN}✓${NC} $http_code JSON (${eff_url})  $cpath"
+                PASS_COUNT=$((PASS_COUNT + 1))
+            else
+                echo -e "  ${RED}✗${NC} $http_code INVALID_JSON (${eff_url})  $cpath"
+                FAIL_COUNT=$((FAIL_COUNT + 1))
+                GAPS+=("$cpath (HTTP 200 but invalid JSON at $eff_url)")
+            fi
+        else
+            echo -e "  ${GREEN}✓${NC} $http_code (${eff_url})  $cpath"
+            PASS_COUNT=$((PASS_COUNT + 1))
+        fi
     else
-        echo -e "  ${YELLOW}⚠${NC} $http_code  $cpath  $(tput dim)(may need attention)${NC}"
+        echo -e "  ${RED}✗${NC} $http_code (${eff_url})  $cpath"
+        FAIL_COUNT=$((FAIL_COUNT + 1))
+        GAPS+=("$cpath (HTTP $http_code at $eff_url)")
     fi
 done
 

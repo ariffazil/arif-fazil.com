@@ -4,7 +4,7 @@
  * routes). Nav data: navCanon.ts (generated from canon/navigation.json —
  * never hand-edit nav lists).
  */
-import { brand, primaryNav } from '@/data/navCanon';
+import { brand, machineNav, primaryNav } from '@/data/navCanon';
 import { RING_ACCENTS, type ShellRing } from '@/shells/ringTokens';
 
 export interface HeaderCanonProps {
@@ -38,6 +38,28 @@ export function HeaderCanon({ ring }: HeaderCanonProps) {
           <span className="pill-dot" /> {ra.label}
         </span>
       )}
+      {/* M2 federation switcher — human cross-domain movement. Data:
+          navCanon.machineNav (generated, external organ hosts only). Native
+          <details>: keyboard/screen-reader operable, zero JS, no hover-only. */}
+      <details className="atlas-fed">
+        <summary aria-label="Federation domain switcher">
+          <span className="fed-dot" /> FED
+        </summary>
+        <div className="atlas-fed-menu">
+          {machineNav
+            .filter((item) => item.external)
+            .map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.label}
+              </a>
+            ))}
+        </div>
+      </details>
       <span className="atlas-clock">{mytClock()}</span>
     </header>
   );

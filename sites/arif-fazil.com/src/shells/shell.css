@@ -88,6 +88,67 @@
   color: var(--dim, #8b98a8);
   white-space: nowrap;
 }
+
+/* ── federation switcher (M2) — accents from tokens.css v2.1 ─────── */
+.atlas-fed {
+  position: relative;
+  font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.atlas-fed summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--dim, #8b98a8);
+  border: 1px solid var(--line, #1f2333);
+  border-radius: 999px;
+  padding: 3px 10px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.atlas-fed summary::-webkit-details-marker { display: none; }
+.atlas-fed summary:hover,
+.atlas-fed[open] summary {
+  color: var(--accent-blue, #4ea1ff);
+  border-color: color-mix(in srgb, var(--accent-blue, #4ea1ff) 40%, transparent);
+}
+.atlas-fed .fed-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-blue, #4ea1ff);
+}
+.atlas-fed-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  background: var(--carbon2, #101216);
+  border: 1px solid var(--line, #1f2333);
+  border-radius: 12px;
+  padding: 6px;
+  z-index: 50;
+}
+.atlas-fed-menu a {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--dim, #8b98a8);
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 2px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.atlas-fed-menu a:hover,
+.atlas-fed-menu a:focus-visible {
+  color: var(--accent-blue, #4ea1ff);
+  background: color-mix(in srgb, var(--accent-blue, #4ea1ff) 8%, transparent);
+}
 @media (max-width: 900px) {
   .atlas-nav { display: none; } /* header stays single; nav collapses to pill + brand */
 }

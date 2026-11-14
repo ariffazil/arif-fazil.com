@@ -125,9 +125,14 @@ probe_local "$TOP/surfaces.json" "kinabalu" "surfaces.json carries earth dossier
 probe_local "$TOP/earth/index.html" "/map/#earth" "earth page links to canonical /map/#earth"
 probe_local "$TOP/llms.json" "arif-fazil.com" "llms.json serves"
 probe_local "$TOP/llms.txt" "Does not adjudicate" "llms.txt is the compact professional map"
-probe_local "$TOP/human/index.html" "does not grant authority" "human/ is agent start-here, not SPA shell"
-probe_local "$TOP/institution/index.html" "Work together" "institution/ is briefing (hero, part 1)"
-probe_local "$TOP/institution/index.html" "inspect first" "institution/ is briefing, not organ dump (hero, part 2)"
+# M2.1 gate reconciliation (2026-11-15, this repo): M1.3 converted /human +
+# /institution to minimal SPA shells — title/description preserved, body text
+# hydrates client-side, so the old static-text markers no longer exist in the
+# served files. New contract = shell present + canonical title + description.
+# (Change scoped to this probe block only; dual-owner /arifos untouched.)
+probe_local "$TOP/human/index.html" "<title>Start here — agents</title>" "human/ is agent start-here (M1.3 SPA shell, canonical title intact)"
+probe_local "$TOP/institution/index.html" "<title>Briefing — Arif Fazil</title>" "institution/ is briefing (M1.3 SPA shell, canonical title intact)"
+probe_local "$TOP/institution/index.html" "name=\"description\"" "institution/ shell carries meta description"
 
 if [ "$fail" -ne 0 ]; then
   echo "$LOG_PREFIX FAILED local verification — rollback: cp -a $BK/* $TOP/" >&2

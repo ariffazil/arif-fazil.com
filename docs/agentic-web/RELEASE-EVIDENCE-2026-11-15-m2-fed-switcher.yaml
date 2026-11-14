@@ -1,0 +1,37 @@
+# Release evidence — M2 federation switcher + mission baseline (2026-11-15)
+# LOCAL IMPLEMENTATION ONLY. NOT DEPLOYED. No production effect this lane.
+
+release_candidate:
+  branch: feat/m2-fed-switcher
+  parent: ccbacd1 (M1.8)
+  commits:
+    - "c4487b8 audit(M2.0): WEB_DOMAIN_REGISTRY + WEB_MIGRATION_MAP + WEB_CONTENT_RISK_REGISTER (extends WEB_* SOT family)"
+    - "8d39746 sites(M2.1): /999 alias-drift fix — Proof owns its chrome on both aliases"
+    - "5e0d52a sites(M2.2): federation switcher in HeaderCanon (navCanon-sourced, native details menu)"
+  environment: local dist/ only — production webroot, CDN and Caddy untouched (caddy_reloaded=false, no rsync)
+  changed_routes:
+    - "/999 (chrome ownership fix — was legacy chrome stacked on shell)"
+    - "all ATLAS shell routes (HeaderCanon gains FED switcher: 7 external organ links from navCanon.machineNav)"
+  public_effect_if_deployed:
+    - "FED pill in HeaderCanon on every shell surface; keyboard/screen-reader operable menu to arifOS / A-FORGE / AAA / GEOX / WEALTH / WELL / arifFlow"
+    - "/999 renders shell-only chrome, consistent with /proof"
+  tests:
+    design_canon: "verify-design-canon.cjs 112/112 · 0 violations"
+    design_lint: "PASS — 809 file(s) scanned · forbidden strings 5 · leaks 0"
+    build: "tsc -b && vite build PASS; postbuild restamp 16 dead + 4 empty shells (shell-BXe8Ovke.js / shell-6Q-f1zR8.css)"
+    dist_presence: "'atlas-fed' + 'Federation domain switcher' verified in dist shell chunk + css"
+    browser_validation: "UNMEASURED this lane (browser lane unavailable as root); queued Batch D with before/after screenshots"
+    verify_pages: "not run — deploy-time fail-closed gate per AGENTS.md; runs before any seal/deploy"
+  content_integrity: "chrome-only delta; zero reality-bearing content, URLs, provenance or data touched"
+  mission_boundary: "mission Phase 9 STOP before production deployment honored — awaiting ARIF"
+  security:
+    new_public_write_capability: false
+    secrets_scan: "no secrets in changed files (tsx/css/json docs only)"
+    external_links: "target=_blank rel=noopener noreferrer; 7 organ hosts, all HTTP 200 verified in 2026-11-14 audit"
+  rollback: "git revert 5e0d52a 8d39746 c4487b8 (or delete branch); no webroot/CDN state to restore"
+  followups:
+    - "Batch B remainder: breadcrumbs via shared primitive (7 bespoke pages)"
+    - "Batch D representative migrations (requires web-canon mandate entries — cross-repo lease: separate decision)"
+    - "browser visual regression once browser lane fixed"
+    - "pre-existing churn: 6 modified-uncommitted files (generated_at + geox live-identical) remain untouched by this lane"
+  approver: ""

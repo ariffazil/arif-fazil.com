@@ -75,7 +75,6 @@ const MATRIX: {
 export function Human() {
   return (
     <RootShell ring="body">
-(
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="Start here — agents"

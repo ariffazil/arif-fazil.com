@@ -120,7 +120,6 @@ export function Proof() {
 
   return (
     <RootShell ring="mind">
-(
     <div className="bg-[#030303] text-[#EDEAE2]">
       {/* 1 — HERO: THE SEAL */}
       <section className="relative mx-auto flex min-h-[100dvh] max-w-[1280px] flex-col items-center justify-center px-6 py-24 text-center">

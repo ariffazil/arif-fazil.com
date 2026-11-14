@@ -60,7 +60,6 @@ function SectionHead({ n, children }: { n: string; children: React.ReactNode }) 
 export function InstitutionPage() {
   return (
     <RootShell ring="mind">
-(
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="Briefing — Arif Fazil"

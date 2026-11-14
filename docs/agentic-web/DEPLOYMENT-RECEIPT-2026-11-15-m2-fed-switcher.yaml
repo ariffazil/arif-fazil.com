@@ -1,0 +1,88 @@
+# DEPLOYMENT RECEIPT — M2.1 FEDERATION SWITCHER (2026-11-15)
+# Reference: ARIFOS::ARIF_FAZIL_COM::M2_1_DEPLOYMENT::2026-11-15
+# Sovereign authorization: SEAL by ARIF (explicit deployment authorization, bound to 51cb49a)
+# Executor: kimi-code/FI-008 on af-forge VPS · governed deployment protocol (10 phases)
+
+authorization:
+  reference: "ARIFOS::ARIF_FAZIL_COM::M2_1_DEPLOYMENT::2026-11-15"
+  verdict: "SEAL — production deployment of M2.1 candidate ONLY"
+  authorized_candidate_head: "51cb49a1c3d0934c8d7713d501a73d5b95e4581f"
+  authorized_parent_baseline: "ccbacd1"
+  authorized_commit_set: [c4487b8, 8d39746, 5e0d52a, 1989c53, 1e1b722, 4579bbc, 51cb49a]
+  scope_label: "M2.1 FEDERATION SWITCHER SLICE: DEPLOYED · OVERALL FEDERATED DESIGN MIGRATION: INCOMPLETE"
+
+integration:
+  source_branch: feat/m2-fed-switcher
+  clean_deploy_worktree: /tmp/arif-fazil-m2-deploy (added on local main 86d6f9a; primary worktree dirty churn NEVER touched)
+  merge: "git merge --no-ff feat/m2-fed-switcher (no conflicts; abort-on-conflict rule unused)"
+  main_merge_commit: "5cb6eae92dcc3bee129e869c30c6cd4985250dbc"
+  ancestry_proof: "all 7 authorized commits are ancestors of DEPLOY_COMMIT (merge-base --is-ancestor ×7 PASS)"
+  no_unauthorized_entry: "git diff ccbacd1..HEAD = 10 files, candidate-only (App.tsx, HeaderCanon.tsx, shell.css, sync-serving-roots.sh, 6 artifact files)"
+
+build:
+  commands: "npm run build (prebuild: 10 generators + verify-design-canon + design-lint; build: tsc -b && vite build; postbuild: copy-static-html + restamp + render-vitals + inject-home-fallback)"
+  results: "DESIGN-CANON 112/112 · 0 violations · design-lint PASS (no agent chrome) · vite 9.24s · exit 0"
+  determinism: "bundle hashes identical to independent candidate build in primary worktree (index-DDhJuWwb.js / index-CegSXHXZ.css / shell-BXe8Ovke.js)"
+  artifact_hashes:
+    dist_index_html: "94e1b1fdf9e4a2048ab277f531dccca24b9ad60e7efe26e262861959432d10f8"
+    entry_js: "ae214de6b4ceef28a51a418f4df9e6abb4c6efe27ac133129e03766fc6b2da54 (index-DDhJuWwb.js)"
+    entry_css: "0c4799d5e0545886b98df491bea5c513bb871bd20630a086fec0fbec0b1dcb1d (index-CegSXHXZ.css)"
+    shell_chunk_js: "0c7d51a7e6ca2555a06bab5bf4a6c8f68ade13f774400a1a84f6f5e0d3d05bf6 (shell-BXe8Ovke.js)"
+  dist_size: 91M
+  candidate_browser_revalidation: "BROWSER_VALIDATION_PASS 15/15 against this exact dist (vite preview, sandboxed non-root)"
+  source_parity_delta_vs_closure: "NONE — same 3 pre-existing failures (caddy-source bot route, vitals latest.json, observatory-renderer chromium-1234 gap); 16/19 pass"
+
+baseline_and_rollback:
+  evidence_dir: "/root/forge_work/deployments/arif-fazil.com/M2.1-20261115-003609"
+  baseline_snapshot: "84 changed production files (bytes preserved, sha256 in baseline-manifest.txt) + 44 prod-absent paths listed for rollback removal (new-files.txt)"
+  manifests: [baseline-manifest.txt, candidate-manifest.txt (128), changed-arif.txt, changed-splits.txt, changed-rootstatic.txt, predeploy-probes.txt, postdeploy-probes.txt, deploy-commands.txt, live-links.txt]
+  rollback_command: "bash /root/forge_work/deployments/arif-fazil.com/M2.1-20261115-003609/rollback.sh  (syntax-checked + inputs validated; NOT test-run against production)"
+  predeploy_live_state: "bundle index-DF0jrb1t.js, raw-atlas-fed=0 on all 6 probed routes"
+
+deployment:
+  serving_root: "/var/www/html/arif (main SPA) + canonical split-roots trees at /var/www/html top-level (earth words world work pilot _shared human institution connect laws verify discovery research .well-known + 13 root-static files)"
+  exact_commands:
+    - "rsync -a --checksum /tmp/arif-fazil-m2-deploy/sites/arif-fazil.com/dist/ /var/www/html/arif/   # NO --delete"
+    - "bash /tmp/arif-fazil-m2-deploy/scripts/sync-serving-roots.sh <dist>   # canonical mechanism, corrected SPA-shell probes, automatic backup"
+  split_roots_backup: "/var/www/html/.split-roots-backup-20261115-003707"
+  verify_pages: "PASS — 233 pages reachable (9 intentional exclusions). Count basis vs closure's 236: the worktree dist contains 3 fewer pages because /oil /gas /gold index.html are UNTRACKED files existing only in the primary checkout (not part of the authorized candidate tree); they remain live in production, untouched (no --delete). No exclusions were changed to force PASS."
+  caddy: "NOT reloaded (pending well-vhost edit deliberately left inactive — outside authorization)"
+  arifos_boundary: "not entered (dual-owner /arifos untouched)"
+
+cache_invalidation:
+  assessment: "PURGE NOT REQUIRED — verified, not assumed"
+  evidence: "HTML surfaces cf-cache-status: DYNAMIC (never cached at edge); new assets are content-hashed fresh URLs (index-DDhJuWwb.js → cf-cache-status: MISS, immutable max-age) — no stale path can serve old bundle"
+  purge_capability: "no purge tooling/credentials found on box (M1.0 note: token scope absent) — none needed; no purge performed, none faked"
+
+live_witness:
+  public_routes: "6/6 probes recorded (predeploy vs postdeploy): / 200 · /words/ 200 · /proof/ 308→/work/proof/ 200 · /999/ 200 · /human/ 200 · /institution/ 200; all 5 shell routes flipped to bundle index-DDhJuWwb.js; titles/descriptions unchanged"
+  external_links: "8/8 currently verified from production window: mcp GET 405 (POST-only endpoint, expected gating) · arifos 301→/arifos/ · a-forge 301×2→mcp · aaa/geox/wealth/well/arifflow 200"
+  live_browser: "LIVE_VALIDATION_PASS 13/13 — production Chrome witness (sandboxed non-root): FED switcher hydrated on live /words, keyboard Enter toggle, 8 canonical links order+content, target/rel, desktop not clipped, /999 + /work/proof static canon headers with zero legacy chrome, SPA-route /999 pushState → shell-only (headers=1 fed=1 legacy=0), mobile 390 in-viewport"
+  console_errors: 0
+  screenshot_hashes:
+    words_1440: "7c6b462845f02512be0e81eb01082810c0969e7e1b27c8b1b95305e5a724a9c5"
+    proof_1440: "883a741139feae0931499cabe2a3387418ed8217883e18aca933771b476ce9a3"
+    999_1440: "a5c4d05dcca84bedc38e4a43a33d72e86a7d8a8c8999dd2a3621f4001732b2b2"
+    words_mobile_390: "511dba2eaf5a87efdbde85d1258c386b4a4621cee26a82db085993c561a49f3b"
+  content_integrity_live: "titles identical pre/post; reality-bearing content untouched (candidate diff pages/=empty); no missing assets (0 console errors across visited routes)"
+
+state_separation:
+  source_changed: true
+  build_passed: true
+  candidate_deployed: true
+  live_route_observed: true
+  human_accepted: false   # PENDING ARIF — only ARIF can set this
+
+unresolved_preexisting_risks:
+  - "3 source-parity test failures (bot-lane contract, vitals latest.json, observatory-renderer browser build) — pre-existing, unchanged by this deploy, owners recorded in WEB_CONTENT_RISK_REGISTER.json"
+  - "dual-owner /var/www/html/arifos (kernel lane GO-1/GO-2) — untouched, still open"
+  - "Caddy file-vs-runtime lag (well vhost edited 14 Nov, intentionally not activated here)"
+  - "Escape/outside-click close for native <details> — Batch B polish"
+  - "/oil /gas /gold pages exist in production from untracked files — commit-or-generate hygiene decision queued (Batch E)"
+
+rollback_conditions: "Phase 8 automatic-rollback triggers monitored during witness window; none fired. Rollback ready and dormant."
+
+deployment_timestamp: "2026-11-15T00:37-00:45+08:00 (Asia/Kuala_Lumpur, NTP-synced)"
+executor: "kimi-code/FI-008"
+outcome_status: "DEPLOYED"
+git_push_state: "NOT PUSHED — origin/main (3978cc7, Nov 8) is weeks behind local main; the observed canonical release workflow deploys locally via rsync and has not pushed main through M1.0–M1.8. Pushing would publish three weeks of local commits — recorded as a separate publishing decision, not required for the live deployment. No force-push anywhere."

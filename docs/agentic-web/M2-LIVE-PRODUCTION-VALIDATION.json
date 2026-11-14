@@ -1,0 +1,81 @@
+{
+  "schema": "aaa.agentic_web.m2_live_production_validation.v1",
+  "evidence_class": "CANDIDATE_DEPLOYED / LIVE_ROUTE_OBSERVED",
+  "as_of": "2026-11-14T16:40:36.091Z",
+  "target": "https://arif-fazil.com",
+  "browser": "Google Chrome 155 headless, sandbox ON, non-root pwval, no --no-sandbox",
+  "passed": 13,
+  "total": 13,
+  "verdict": "LIVE_VALIDATION_PASS",
+  "console_errors": [],
+  "native_limitations": [
+    "Escape/outside-click do not close native <details> — Batch B polish"
+  ],
+  "results": [
+    {
+      "id": "live.words.fed-present",
+      "pass": true,
+      "detail": "switcher rendered on live /words after hydration"
+    },
+    {
+      "id": "live.words.aria",
+      "pass": true,
+      "detail": "aria-label exact"
+    },
+    {
+      "id": "live.keyboard.enter-opens",
+      "pass": true,
+      "detail": "native Enter toggle"
+    },
+    {
+      "id": "live.fed.links-canonical-8",
+      "pass": true,
+      "detail": "links=8"
+    },
+    {
+      "id": "live.fed.links-safety",
+      "pass": true,
+      "detail": "target/rel intact"
+    },
+    {
+      "id": "live.desktop.menu-not-clipped",
+      "pass": true,
+      "detail": "box={\"x\":1131.421875,\"y\":42.09375,\"width\":180,\"height\":256.5}"
+    },
+    {
+      "id": "live.999.canon-header",
+      "pass": true,
+      "detail": "canon header present (static proof chamber)"
+    },
+    {
+      "id": "live.999.no-legacy-footer",
+      "pass": true,
+      "detail": "no legacy chrome"
+    },
+    {
+      "id": "live.proof.resolves",
+      "pass": true,
+      "detail": "308→https://arif-fazil.com/work/proof/ status=200"
+    },
+    {
+      "id": "live.proof.canon-header",
+      "pass": true,
+      "detail": "canon header present (static /work/proof)"
+    },
+    {
+      "id": "live.spa-999.shell-only",
+      "pass": true,
+      "detail": "pushState /999 → headers=1 fed=1 legacy=0"
+    },
+    {
+      "id": "live.mobile.390-in-viewport",
+      "pass": true,
+      "detail": "box={\"x\":114.265625,\"y\":40.875,\"width\":180,\"height\":256.5}"
+    },
+    {
+      "id": "live.console.no-errors",
+      "pass": true,
+      "detail": "console/pageerror count=0"
+    }
+  ]
+}

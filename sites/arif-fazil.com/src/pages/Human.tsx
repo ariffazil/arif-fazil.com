@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '@/components/PageMeta'
+import { RootShell } from '@/shells/RootShell'
 
 /**
  * /human — canonical agent "Start Here" on a path Caddy already serves.
@@ -73,6 +74,8 @@ const MATRIX: {
 
 export function Human() {
   return (
+    <RootShell ring="body">
+(
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="Start here — agents"
@@ -229,6 +232,7 @@ export function Human() {
         </div>
       </section>
     </div>
+    </RootShell>
   )
 }
 

@@ -13,6 +13,10 @@ const ATLAS_CHROME_ROUTES: RegExp[] = [
   // WORDS hub ring — RootShell pages (M1.2)
   /^\/words\/?$/,
   /^\/words\/essays\/?$/,
+  // MIND ring (blue) + BODY ring (yellow) — M1.3
+  /^\/institution\/?$/,
+  /^\/proof\/?$/,
+  /^\/human\/?$/,
   /^\/words\/doctrine\/?$/,
   /^\/doctrine\/?$/,
   // essay renderer (EssayPage → ArticleShell) — dynamic slugs

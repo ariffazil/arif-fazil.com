@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageMeta } from '@/components/PageMeta'
+import { RootShell } from '@/shells/RootShell'
 
 /**
  * SPA twin of public/institution/index.html — keep the two in sync.
@@ -58,6 +59,8 @@ function SectionHead({ n, children }: { n: string; children: React.ReactNode }) 
 
 export function InstitutionPage() {
   return (
+    <RootShell ring="mind">
+(
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2]">
       <PageMeta
         title="Briefing — Arif Fazil"
@@ -228,6 +231,7 @@ export function InstitutionPage() {
         </nav>
       </div>
     </div>
+    </RootShell>
   )
 }
 

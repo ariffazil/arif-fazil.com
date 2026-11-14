@@ -24,7 +24,6 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SITES_DIR="/root/arif-fazil.com/sites"
-LOG_PREFIX="[arif-sites-deploy]"
 
 # Colors
 RED='\033[0;31m'
@@ -86,7 +85,7 @@ deploy_site() {
 
     # Build if React site
     local build_dir="$source"
-    if [[ " ${REACT_SITES[*]} " =~ " $site " ]]; then
+    if [[ " ${REACT_SITES[*]} " == *" $site "* ]]; then
         if [[ -f "$source/package.json" ]]; then
             log_info "  Building $site..."
             cd "$source"

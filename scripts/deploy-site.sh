@@ -583,6 +583,14 @@ stage_tree() {
       copy_path "$source_root" "$target_root" "$rel" || true
     fi
   done
+  if [[ -d "$target_root/makcikgpt-md" && -d "$target_root/world/makcikgpt" ]]; then
+    mkdir -p "$target_root/world/makcikgpt/makcikgpt-md"
+    rsync -a --delete "$target_root/makcikgpt-md/" "$target_root/world/makcikgpt/makcikgpt-md/"
+    if [[ "$SKIP_CHOWN" != "1" ]]; then
+      chown -R "$WEB_OWNER" "$target_root/world/makcikgpt/makcikgpt-md"
+    fi
+    log "mirrored makcikgpt-md -> world/makcikgpt/makcikgpt-md inside stage"
+  fi
   validate_artifacts "$target_root"
 }
 

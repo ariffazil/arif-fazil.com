@@ -136,12 +136,18 @@ def materialize(
     if arch.returncode != 0:
         raise ValueError(f"git archive failed for {commit_sha}:{source_rel}: {arch.stderr.decode(errors='replace')}")
 
+    allowed_parent_dirs = {
+        p.as_posix() for p in Path(source_rel).parents if p.as_posix() != "."
+    }
     with tarfile.open(fileobj=io.BytesIO(arch.stdout), mode="r:") as tf:
         prefix = f"{source_rel}/"
         for member in tf.getmembers():
-            if not (member.name == source_rel or member.name.startswith(prefix)):
+            clean_name = member.name.rstrip("/")
+            if member.isdir() and clean_name in allowed_parent_dirs:
+                pass
+            elif not (clean_name == source_rel or clean_name.startswith(prefix)):
                 raise ValueError(f"archive member escapes {source_rel}: {member.name}")
-            if ".." in Path(member.name).parts:
+            if ".." in Path(clean_name).parts:
                 raise ValueError(f"illegal path traversal in archive member: {member.name}")
             if member.issym() or member.islnk():
                 link_target = member.linkname

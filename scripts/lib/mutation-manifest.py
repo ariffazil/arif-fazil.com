@@ -477,6 +477,32 @@ def plan_and_snapshot(
             shutil.copy2(tpath, snap_file, follow_symlinks=False)
             item["snapshot_rel"] = f"items/{idx:06d}.bin"
 
+    dir_snapshots: list[dict[str, Any]] = []
+    seen_dirs: set[str] = set()
+    for base_dir in approved_dirs:
+        if not base_dir.is_dir() or base_dir.is_symlink():
+            continue
+        for dp_str, dirnames, _ in os.walk(base_dir, followlinks=False):
+            dp_path = Path(dp_str)
+            if dp_path.is_symlink():
+                dirnames[:] = []
+                continue
+            key = os.path.abspath(dp_str)
+            if key not in seen_dirs:
+                seen_dirs.add(key)
+                st = os.lstat(dp_path)
+                dir_snapshots.append(
+                    {
+                        "path": str(dp_path),
+                        "uid": st.st_uid,
+                        "gid": st.st_gid,
+                        "owner": f"{st.st_uid}:{st.st_gid}",
+                        "mode": f"{stat.S_IMODE(st.st_mode):04o}",
+                    }
+                )
+            dirnames[:] = sorted(d for d in dirnames if not (dp_path / d).is_symlink())
+    dir_snapshots.sort(key=lambda d: len(d["path"]))
+
     manifest = {
         "schema": "arif-sites.mutation-manifest.v1",
         "html_root": str(html_root),
@@ -486,6 +512,7 @@ def plan_and_snapshot(
         "approved_dirs": [str(d) for d in approved_dirs],
         "approved_files": [str(f) for f in approved_files],
         "created_dirs": sorted(created_dirs, key=lambda s: -len(s)),
+        "dir_snapshots": dir_snapshots,
         "counts": {
             "total": len(items),
             "create": sum(1 for i in items if i["operation"] == "create"),
@@ -609,6 +636,37 @@ def execute_rollback(
             except OSError as exc:
                 failures += 1
                 per_target.append({"target": dstr, "action": "rmdir_created", "status": "failed", "error": str(exc)})
+
+    # Restore pre-existing directory hierarchy, ownership, and modes (shallowest create, deepest attrs)
+    dir_snaps = manifest.get("dir_snapshots", [])
+    for dmeta in sorted(dir_snaps, key=lambda d: len(d["path"])):
+        dp = Path(dmeta["path"])
+        try:
+            if dp.is_symlink():
+                dp.unlink()
+            elif dp.exists() and not dp.is_dir():
+                dp.unlink()
+            if not dp.exists():
+                dp.mkdir(parents=True, exist_ok=True)
+        except OSError as exc:
+            failures += 1
+            per_target.append({"target": str(dp), "action": "restore_dir", "status": "failed", "error": str(exc)})
+
+    for dmeta in sorted(dir_snaps, key=lambda d: -len(d["path"])):
+        dp = Path(dmeta["path"])
+        if not dp.is_dir() or dp.is_symlink():
+            continue
+        try:
+            st = os.lstat(dp)
+            cur_mode = f"{stat.S_IMODE(st.st_mode):04o}"
+            cur_owner = f"{st.st_uid}:{st.st_gid}"
+            if (not skip_chown and cur_owner != dmeta["owner"]) or cur_mode != dmeta["mode"]:
+                if not skip_chown:
+                    os.chown(dp, int(dmeta["uid"]), int(dmeta["gid"]), follow_symlinks=False)
+                os.chmod(dp, int(dmeta["mode"], 8))
+        except OSError as exc:
+            failures += 1
+            per_target.append({"target": str(dp), "action": "restore_dir_attrs", "status": "failed", "error": str(exc)})
 
     ok = failures == 0
     report = {

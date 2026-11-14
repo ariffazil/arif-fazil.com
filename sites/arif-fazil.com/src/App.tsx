@@ -16,6 +16,9 @@ const ATLAS_CHROME_ROUTES: RegExp[] = [
   // MIND ring (blue) + BODY ring (yellow) — M1.3
   /^\/institution\/?$/,
   /^\/proof\/?$/,
+  // M2 alias-drift fix (2026-11-15): /999 renders the same Proof component —
+  // it must own its chrome like /proof, not stack legacy chrome on the shell.
+  /^\/999\/?$/,
   /^\/human\/?$/,
   /^\/words\/doctrine\/?$/,
   /^\/doctrine\/?$/,

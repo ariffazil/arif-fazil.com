@@ -38,3 +38,24 @@ release_candidate:
     - "Migrate remaining 45 pages onto shells (mandate registry grows per migration)"
     - "syedos/geox subdomains adopt shared shell via /_shared (next phase)"
   approver: ""
+
+# ── M1.1 amendment (same day, 2026-11-14 ~21:05 MYT) ─────────────────────
+# Sovereign directive turn 3: publish via existing pipeline, then upgrade renderer.
+# Finding: the Amodei essay was ALREADY live via ArticleShell (superior to Laluan A);
+# executed the delta instead — EssayPage → ArticleShell (all 92 essays, one renderer).
+m1_1:
+  commit: "5859b3f"
+  webcanon_commit: "9873b69"
+  changed_routes: ["words/:slug", "words/writing/:slug", "essays/:slug", "writing/:slug"]
+  public_effect:
+    - "EssayPage now renders EVERY essay through ArticleShell (ring-soul) — one HeaderCanon, one torus, RGBY tokens"
+    - "shell-mandate vM1.1: pattern-route mandate (route_pattern) — gate validates renderer, 81/81 checks"
+    - "App.tsx: essay routes exempt from global chrome (no double nav)"
+  incident_found_and_fixed:
+    - "LIVE BUG (pre-existing, surfaced by deploy): 16 static shells in public/words/writing/<slug>/ baked a stale css hash → /assets 404 → unstyled pages on production. Fixed by scripts/restamp-shell-assets.cjs (postbuild: dead shells → minimal SPA shells, title/description preserved, current css+js). Postbuild chain reordered (copy-static-html → restamp)."
+  tests:
+    build: "DESIGN-CANON 81/81 · lint PASS · tsc+rolldown clean"
+    verify_pages: "PASS — 235 pages reachable (9 intentional exclusions)"
+    live_render: "essay #21 (three-timelines-one-boundary) verified styled through ArticleShell on production — screenshots/m1-essay-old-through-shell-live.png"
+  deploy: "rsync, caddy_reloaded=false"
+  disclosed_carry_along: "makcikgpt tak-kenal data + Home/Work/navCanon edits from prior session WIP — already live; committed for committed==deployed==live"

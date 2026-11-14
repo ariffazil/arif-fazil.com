@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-DELETE_MIRROR_DIRS = ("earth", "words", "work", "pilot")
+DELETE_MIRROR_DIRS = ("earth", "words", "world", "work", "pilot")
 SHARED_ASSET_DIRS = ("_shared",)
 MERGE_SPLIT_DIRS = (
     "human",
@@ -262,11 +262,15 @@ def _add_pair(
         rb_action = "restore_symlink" if live_info["kind"] == "symlink" else "restore_file"
     elif cand_info["exists"] and live_info["exists"]:
         if cand_info["kind"] != live_info["kind"] or cand_info["kind"] == "symlink" or live_info["kind"] == "symlink":
-            if cand_info["hash"] == live_info["hash"]:
+            if cand_info["hash"] == live_info["hash"] and cand_info.get("owner") == live_info["owner"]:
                 return
             op = "symlink_replace"
             rb_action = "restore_symlink" if live_info["kind"] == "symlink" else "restore_file"
-        elif cand_info["hash"] != live_info["hash"] or cand_info["mode"] != live_info["mode"]:
+        elif (
+            cand_info["hash"] != live_info["hash"]
+            or cand_info["mode"] != live_info["mode"]
+            or cand_info.get("owner") != live_info["owner"]
+        ):
             op = "overwrite"
             rb_action = "restore_file"
         else:
@@ -315,6 +319,11 @@ def plan_and_snapshot(
     if split_roots:
         for d in (*DELETE_MIRROR_DIRS, *SHARED_ASSET_DIRS, *MERGE_SPLIT_DIRS):
             approved_dirs.append(Path(os.path.abspath(str(html_root / d))))
+        if webroot != html_root / "arif":
+            for d in MERGE_SPLIT_DIRS:
+                approved_dirs.append(Path(os.path.abspath(str(html_root / "arif" / d))))
+            for f in ROOT_STATIC_FILES:
+                approved_files.append(Path(os.path.abspath(str(html_root / "arif" / f))))
         for f in ROOT_STATIC_FILES:
             approved_files.append(Path(os.path.abspath(str(html_root / f))))
 
@@ -381,6 +390,19 @@ def plan_and_snapshot(
                     approved_files,
                     candidate_only_create=True,
                 )
+                if d in MERGE_SPLIT_DIRS and webroot != html_root / "arif":
+                    _add_pair(
+                        items,
+                        seen_targets,
+                        cpath,
+                        html_root / "arif" / d / rel,
+                        f"split_root:arif_{d}",
+                        html_root,
+                        webroot,
+                        approved_dirs,
+                        approved_files,
+                        candidate_only_create=True,
+                    )
 
         for fname in ROOT_STATIC_FILES:
             cand_f = stage_dir / fname
@@ -518,7 +540,12 @@ def execute_rollback(
                     per_target.append({"target": str(target), "action": action, "status": "removed"})
             elif action == "restore_symlink":
                 link_dest = item["before_symlink_target"]
-                if cur["exists"] and cur["kind"] == "symlink" and cur["symlink_target"] == link_dest:
+                if (
+                    cur["exists"]
+                    and cur["kind"] == "symlink"
+                    and cur["symlink_target"] == link_dest
+                    and (skip_chown or cur["owner"] == item["owner"])
+                ):
                     already_clean += 1
                     per_target.append({"target": str(target), "action": action, "status": "already_restored"})
                 else:

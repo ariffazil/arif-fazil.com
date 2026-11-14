@@ -429,5 +429,7 @@ var s=(Date.now()-new Date(t.replace(' ','T')+(t.endsWith('Z')?'':'Z')).getTime(
 el.textContent = s<90? 'observed just now' : s<5400? 'observed '+Math.round(s/60)+'m ago' : 'observed '+Math.round(s/3600)+'h ago';}
 upd();setInterval(upd,30000);})();
 </script>
+
+<footer class="obs-canon-footer" style="border-top:1px solid #1f2733;margin-top:48px;padding:20px clamp(16px,4vw,32px);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#8a93a3;text-align:center">DITEMPA BUKAN DIBERI · arifOS Federation · Ω MIND surface · <a href="https://arif-fazil.com/" style="color:#7FB3FF;text-decoration:none">arif-fazil.com</a></footer>
 </body>
 </html>

@@ -178,3 +178,20 @@ m1_7:
     build: "DESIGN-CANON 112/112 · verify-pages PASS"
     live_screenshots: ["screenshots/m17-well.png", "screenshots/m17-economics.png"]
   receipts: ["forge_work/receipts/RECEIPT-m17-session-close-2026-11-14.md", "forge_work/receipts/RECEIPT-888-sovereign-sitting-2026-11-14.md"]
+
+# ── M1.8 amendment (2026-11-14 ~23:2x MYT) — proof ring closes + observatory footer ──
+m1_8:
+  directive: "ARIF via 333-AGI relay: complete MIND ring (/institution //proof) + BODY (/vitals), wrap Observatory in canon shell without touching audited data bindings"
+  routing_reality_correction:
+    - "arifos.arif-fazil.com/ 301->arif-fazil.com/arifos/ — canonical observatory = M1.4-aligned page ✓ (subdomain is a door, not a surface)"
+    - "/vitals/ 308->/petronas/ — BODY-ring vitals namespace RETIRED (like /wealth). No /vitals surface exists to migrate; render-vitals pipeline migration stays deferred-by-record. BODY ring canon surface = /human (done M1.3 ✓)."
+    - "/institution + /proof SPA routes — already canon (M1.3 shell + M1.5 paren fix) ✓ verified tonight"
+  executed:
+    - "/work/proof/ (canonical /proof target, static): legacy 'UNIVERSAL SOVEREIGN' header + trinity-nav.js RETIRED -> obs-canon-header + Ω MIND pill + Fraunces/Plex; content untouched; SOT = repo public/work/proof (webroot copy is rsync target — first webroot-only attempt was clobbered by rsync, corrected to SOT)"
+    - "/999/ (proof chamber): fed-nav trio RETIRED -> canon header; content untouched. Top-level /var/www/html/999 orphan copy aligned to served bytes (dual-owner closed)"
+    - "Observatory /arifos/: canon footer added (DITEMPA + Ω MIND surface + home link) — completes HeaderCanon+Footer pair; zero data-binding changes (audited bindings intact)"
+  lesson_recorded: "static webroot pages under rsync'd routes MUST be edited at repo public/ SOT — webroot-only edits get clobbered by the next deploy (caught same-session via live screenshot)"
+  tests:
+    build: "DESIGN-CANON 112/112 · verify-pages PASS"
+    live_screenshots: ["screenshots/m18c-proof.png", "screenshots/m18c-999.png — canon header + pill, no legacy chrome, no stray css"]
+  backups: ["*.bak-m18 on first webroot edits"]

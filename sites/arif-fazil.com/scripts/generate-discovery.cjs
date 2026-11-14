@@ -46,6 +46,9 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/human/`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
+    // 2026-11-14 — trust anchors (HERMES audit P1): real, indexable pages.
+    { loc: `${SITE_BASE}/contact/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-14" },
+    { loc: `${SITE_BASE}/privacy/`, priority: 0.6, changefreq: "yearly", lastmod: "2026-11-14" },
     { loc: `${SITE_BASE}/earth/`, priority: 0.8, changefreq: "monthly" },
     { loc: `${SITE_BASE}/vitals/`, priority: 0.9, changefreq: "weekly", lastmod: "2026-09-27" },
     { loc: `${SITE_BASE}/work/`, priority: 0.8, changefreq: "monthly" },

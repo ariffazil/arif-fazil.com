@@ -84,7 +84,7 @@ function main() {
   }
   const files = walk(DIST);
   let replaced = 0;
-  let refixed = 0;
+  let completed = 0;
   for (const f of files) {
     let html;
     try {
@@ -92,7 +92,20 @@ function main() {
     } catch {
       continue;
     }
-    if (!html.includes('/assets/index-')) continue;
+    if (!html.includes('/assets/index-')) {
+      // empty minimal shell (hand-authored SPA stub with no asset refs): complete it
+      if (/<script type="module"><\/script>/.test(html) && html.includes('<div id="root">')) {
+        const title = extract(html, /<title>([^<]+)<\/title>/) || 'Arif Fazil — arifOS';
+        const desc = extract(html, /<meta name="description" content="([^"]*)"/);
+        html = html.replace(
+          '<script type="module"></script>',
+          `<link rel="stylesheet" href="${css}" />\n    <script type="module" src="${js}"></script>`
+        );
+        fs.writeFileSync(f, html);
+        completed += 1;
+      }
+      continue;
+    }
     const cssRef = extract(html, /href="(\/assets\/index-[A-Za-z0-9_-]+\.css)"/);
     if (!cssRef) continue;
     if (fs.existsSync(path.join(ASSETS, path.basename(cssRef)))) continue; // healthy shell
@@ -104,7 +117,7 @@ function main() {
     replaced += 1;
   }
   if (replaced > 0) {
-    console.log(`restamp: ${replaced} dead shell(s) re-stamped to minimal SPA shell (css=${css}, js=${js})`);
+    console.log(`restamp: ${replaced} dead + ${completed} empty shell(s) stamped (css=${css}, js=${js})`);
   } else {
     console.log('restamp: all shell asset refs resolve — nothing to do');
   }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { RootShell } from '@/shells/RootShell'
 
 const FLOORS = [
   { code: 'F1', name: 'AMANAH', plain: "Reversibility — don't do what can't be undone.", tech: 'Irreversible actions require explicit human authorization before execution.' },
@@ -65,6 +66,7 @@ export function Doctrine() {
   }, [litFloors])
 
   return (
+    <RootShell ring="soul">
     <div className="bg-obsidian text-[#C8D8E8]">
       {/* 1 — HERO */}
       <section className="relative mx-auto flex min-h-[90vh] max-w-[1280px] flex-col items-center gap-12 px-6 py-20 lg:flex-row">
@@ -309,6 +311,7 @@ export function Doctrine() {
         </Link>
       </section>
     </div>
+    </RootShell>
   )
 }
 

@@ -1,0 +1,59 @@
+{
+  "$schema": "aaa.agentic_web.migration_map.v1",
+  "as_of": "2026-11-15",
+  "mission": "FEDERATED DESIGN SYSTEM AND HUMAN NAVIGATION UPGRADE — mapped onto the live M1 lane (continuation, not a second system)",
+  "baseline_refs": [
+    "docs/agentic-web/RELEASE-EVIDENCE-2026-11-14-m1-shell-kit.yaml (M1.0–M1.8, verify-pages PASS 236, DESIGN-CANON 112/112)",
+    "/root/audit/website-baseline-2026-11-14/CURRENT_STATE.md + runtime-probe.json (Phase 0 audit, read-only)",
+    "sweep 2026-11-15 (explore agent: mandate registry, chrome regexes, subdomain states, css counts)"
+  ],
+  "artifact_sot_mapping": {
+    "routes.manifest.json": "sites/arif-fazil.com/surfaces.json (CANONICAL route catalog; dual-copy law WEB_ROUTING.yaml) — DO NOT duplicate",
+    "navigation.current.json": "/root/web-canon/canon/navigation.json -> generated src/data/navCanon.ts (canon v7.4.0) — DO NOT duplicate",
+    "domains.registry.json": "docs/agentic-web/WEB_DOMAIN_REGISTRY.json (NEW this mission)",
+    "page-content-inventory.json": "generate-discovery.cjs outputs (surfaces.json/llms.json/page.json) — generator-owned",
+    "component-inventory.json": "recorded in this file .component_facts (explore sweep) — promote to canon only if a gate needs it",
+    "design-system.current.json": "tokens.css v2.1 + /root/web-canon/canon/{design-tokens,design-rules,typography,geometry,page-instruments,shell-mandate}.json — DO NOT duplicate",
+    "migration-map.json": "THIS FILE",
+    "content-risk-register.json": "docs/agentic-web/WEB_CONTENT_RISK_REGISTER.json (NEW this mission)",
+    "runtime-baseline.json": "/root/audit/website-baseline-2026-11-14/runtime-probe.json"
+  },
+  "component_facts": {
+    "page_modules_tsx": 49,
+    "page_modules_wired": 40,
+    "shell_mandated_modules": 7,
+    "route_declarations": 193,
+    "route_redirects": 86,
+    "static_html_pages_public": 406,
+    "static_html_inline_styled": 309,
+    "css_files_public": 84,
+    "css_files_src": 4,
+    "breadcrumbs": "src/components/ui/breadcrumb.tsx (shared primitive, UNUSED by pages); 7 pages hand-roll inline nav aria-label=Breadcrumb",
+    "page_identity_components": ["HeaderCanon", "PageMeta", "FactTag (OBS/DER/INT/SPEC)", "RealityReceiptPanel"],
+    "domain_switcher_before_m2": "none (machineNav machine-only; ArrowFooter only consumer)"
+  },
+  "page_pattern_map": {
+    "article": "ArticleShell — /words/writing/:slug (92 essays), /words/doctrine, amodei-flight-recorder",
+    "ring_hub": "RootShell — /words, /institution, /proof, /human",
+    "landing": "/ (home), /about, /sanctuary",
+    "domain_portal": "/world, /economics, /geox (308 subdomain)",
+    "data_dashboard": "/oil /gas /gold /klci /usdmyr, /arifos/ observatory",
+    "dossier": "/world/makcikgpt/:slug (UA-split bot lane)",
+    "archive_history": "/000, /999, /work/exploration-2013-2026",
+    "error": "NotFound",
+    "rule": "Do not silently transform an article into a landing page; specialized workspaces keep their layout but inherit shell + page identity."
+  },
+  "batches": {
+    "A_shared_tokens_shell": { "state": "done (M1: tokens.css v2.1 RGBY AA, RootShell/ArticleShell, one-torus law, DESIGN-CANON 112 checks)" },
+    "B_navigation": { "state": "partial", "delta_this_lane": "federation switcher in HeaderCanon (native details, keyboard/SR operable, zero JS); /999 alias-drift fix", "remaining": "breadcrumbs via shared primitive (7 bespoke pages); mobile nav audit; ArrowFooter retirement path" },
+    "C_page_identity_registry": { "state": "partial", "delta_this_lane": "WEB_DOMAIN_REGISTRY.json + WEB_CONTENT_RISK_REGISTER.json", "remaining": "page-identity block for non-shell patterns (status/version/date where data exists)" },
+    "D_representative_migration": { "state": "pending", "plan": "1 low-risk page per pattern (candidates: /missions hub-ish, /privacy terminal, /graph dashboard) — requires mandate entries in web-canon (cross-repo lease: separate decision)" },
+    "E_mass_migration": { "state": "pending", "plan": "~33 legacy modules pattern-by-pattern; then geox bundle reskin on ORGAN tokens; syedos adoption; 309 inline-style static pages via generator shells (generate-agent-shells.cjs extension)" },
+    "F_cleanup": { "state": "pending", "plan": "remove ArrowNavbar/ArrowFooter duplication + 84 public css only after E proves unreferenced (usage scan + runtime validation)" }
+  },
+  "verification_commands": {
+    "prebuild_gates": "cd sites/arif-fazil.com && npm run build (prebuild: 10 generators + verify-design-canon.cjs + design-lint.sh; build: tsc -b && vite build; postbuild: copy-static-html + restamp + vitals + home-fallback)",
+    "parity_tests": "npm run test:source-parity",
+    "live_gate_pre_deploy": "cd /root/arif-fazil.com && make verify-pages (FAIL-CLOSED before any seal)"
+  }
+}

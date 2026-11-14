@@ -1,0 +1,88 @@
+{
+  "$schema": "aaa.agentic_web.domain_registry.v1",
+  "as_of": "2026-11-15",
+  "mission": "ARIF-FAZIL.COM FEDERATED DESIGN SYSTEM AND HUMAN NAVIGATION UPGRADE (Phase 2 artifact)",
+  "principle": "Shared shell grammar, bounded domain identity. Identity tokens may differ; navigation placement, breadcrumbs, page-status placement, interaction semantics, accessibility, provenance and federation escape route may not.",
+  "identity_token_source": "sites/shared/design-system/tokens.css v2.1 (trinity rings SOUL/MIND/BODY + ORGAN per-organ accents via data-ring=ORGAN + data-organ=geox|wealth|well)",
+  "maturity_ladder": "PRESENT > LOADABLE > BUILDABLE > REACHABLE > USABLE > ACCESSIBLE > PROVEN (reused from WEB_CAPABILITY_STATE.json)",
+  "domains": [
+    {
+      "id": "main",
+      "host": "arif-fazil.com",
+      "role": "Ψ Human Surface — portfolio, identity, essays, canon, federation overview",
+      "identity": {
+        "rings": ["SOUL red", "MIND blue", "BODY yellow", "EARTH green"],
+        "fonts": "Fraunces (display) × IBM Plex Mono/Sans",
+        "shells": ["RootShell", "ArticleShell", "HeaderCanon"]
+      },
+      "status": "shell-adopted-partial",
+      "status_evidence": "7/40 page modules mandated (web-canon/canon/shell-mandate.json); ~33 legacy modules remain; sweep 2026-11-15",
+      "evidence_refs": ["src/App.tsx ATLAS_CHROME_ROUTES", "docs/agentic-web/RELEASE-EVIDENCE-2026-11-14-m1-shell-kit.yaml"]
+    },
+    {
+      "id": "geox",
+      "host": "geox.arif-fazil.com",
+      "role": "Earth Intelligence organ (COMPUTE_ONLY 555)",
+      "identity": {
+        "fonts": "Sora (700/800) × JetBrains Mono × Inter (self-contained bundle)",
+        "mark": "logo-strata.svg",
+        "theme": "carbon #0A0B0D",
+        "organ_token_candidate": "tokens.css --organ-* via data-organ=geox (exists, unwired)"
+      },
+      "status": "standalone (zero canon tokens) — migration Batch E",
+      "evidence_refs": ["sites/geox.arif-fazil.com/index.html:8-12", "audit 2026-11-14 live render"]
+    },
+    {
+      "id": "aaa",
+      "host": "aaa.arif-fazil.com",
+      "role": "Control plane / cockpit + A2A gateway + /apps/geox host",
+      "identity": { "fonts": "UNMEASURED", "mark": "UNMEASURED" },
+      "status": "separate-surface (cockpit static; identity unmeasured this lane)",
+      "evidence_refs": ["/etc/caddy/vhosts/aaa.arif-fazil.com.conf"]
+    },
+    {
+      "id": "arifos",
+      "host": "arif-fazil.com/arifos/ (canonical; subdomain is a door 301)",
+      "role": "Observatory — kernel public state",
+      "identity": { "header": "obs-canon-header + Ω MIND pill", "fonts": "Fraunces × IBM Plex Mono" },
+      "status": "canon-adopted (M1.4/M1.8: HeaderCanon + footer pair, data bindings untouched)",
+      "evidence_refs": ["RELEASE-EVIDENCE-2026-11-14-m1-shell-kit.yaml m1_4, m1_8"]
+    },
+    {
+      "id": "well",
+      "host": "well.arif-fazil.com",
+      "role": "Vitality organ landing",
+      "identity": { "header": "obs-canon-header + Δ BODY pill", "fonts": "Fraunces (replaced DM Serif Display, M1.7)" },
+      "status": "canon-adopted (M1.7); caddy vhost file-vs-runtime lag recorded",
+      "evidence_refs": ["RELEASE-EVIDENCE m1_7", "audit runtime-probe.json caddy block"]
+    },
+    {
+      "id": "wealth",
+      "host": "wealth.arif-fazil.com → /economics (SPA route)",
+      "role": "Capital organ landing",
+      "identity": { "header": "SPA HeaderCanon (already canon)" },
+      "status": "canon (M1.7 correction: zero work needed)",
+      "evidence_refs": ["RELEASE-EVIDENCE m1_7 scope_correction"]
+    },
+    {
+      "id": "syedos",
+      "host": "syedos.arif-fazil.com",
+      "role": "SyedOS personal app (separate Vite React app)",
+      "identity": { "fonts": "own index.css, .hero-shell", "tokens": "none shared" },
+      "status": "standalone — migration Batch E",
+      "evidence_refs": ["sites/syedos.arif-fazil.com/src/index.css"]
+    },
+    {
+      "id": "gateway-surfaces",
+      "host": "forge|fed|frame|chron|arifflow|mcp.arif-fazil.com",
+      "role": "Machine/API + MCP gateways (no human shell mandate)",
+      "identity": { "note": "MCP GET cards + /tools only; out of human design-system scope" },
+      "status": "machine-surface (out of Batch scope)"
+    }
+  ],
+  "rules": [
+    "Do not assign colors to domains arbitrarily — extract existing identity first (geox strata/green-earth lineage, WELL amber-BODY, arifOS cyan-MIND).",
+    "Domain identity must not alter navigation/breadcrumb/status placement, interaction semantics, accessibility, provenance, federation escape, mobile behavior.",
+    "New domains enter this registry before any shell migration touches them."
+  ]
+}

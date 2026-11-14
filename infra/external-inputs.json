@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": 1,
+  "description": "Typed manifest of runtime-generated or external inputs excluded from Git source identity.",
+  "rules": {
+    "fail_on_undeclared_external_input": true,
+    "exclude_from_source_identity": true
+  },
+  "inputs": [
+    {
+      "id": "oil-runtime-dashboard",
+      "site": "arif-fazil.com",
+      "kind": "runtime_generated",
+      "dest_rel": "public/oil/index.html",
+      "required": false,
+      "exclude_from_source_identity": true,
+      "owner": "oil-cron"
+    },
+    {
+      "id": "gas-runtime-dashboard",
+      "site": "arif-fazil.com",
+      "kind": "runtime_generated",
+      "dest_rel": "public/gas/index.html",
+      "required": false,
+      "exclude_from_source_identity": true,
+      "owner": "gas-cron"
+    },
+    {
+      "id": "gold-runtime-dashboard",
+      "site": "arif-fazil.com",
+      "kind": "runtime_generated",
+      "dest_rel": "public/gold/index.html",
+      "required": false,
+      "exclude_from_source_identity": true,
+      "owner": "gold-cron"
+    },
+    {
+      "id": "wealth-latest-json",
+      "site": "arif-fazil.com",
+      "kind": "runtime_generated",
+      "dest_rel": "public/data/wealth/latest.json",
+      "required": false,
+      "exclude_from_source_identity": true,
+      "owner": "wealth-briefing-cron"
+    },
+    {
+      "id": "pulse-runtime-json",
+      "site": "arif-fazil.com",
+      "kind": "runtime_generated",
+      "dest_rel": "public/pulse/data.json",
+      "required": false,
+      "exclude_from_source_identity": true,
+      "owner": "fi-003-pulse-cron"
+    },
+    {
+      "id": "makcikgpt-md-mirror",
+      "site": "arif-fazil.com",
+      "kind": "generated_mirror",
+      "dest_rel": "public/makcikgpt-md/index.html",
+      "required": false,
+      "exclude_from_source_identity": true,
+      "owner": "makcikgpt-bot-mirror"
+    }
+  ]
+}

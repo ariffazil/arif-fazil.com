@@ -508,4 +508,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
+  <!-- Event microsites (audit 2026-11-14: map gap closed) -->
+  <url>
+    <loc>https://arif-fazil.com/vibing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-11-14</lastmod>
+  </url>
 </urlset>

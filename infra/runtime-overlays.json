@@ -100,6 +100,18 @@
           "path": "aaa/truth-contract.json",
           "owner": "compile_truth_contract (AAA truth compiler)",
           "strategy": "preserve-live"
+        },
+        {
+          "path": "vibing",
+          "owner": "event-deriv-gdg-kl",
+          "strategy": "preserve-live",
+          "note": "2026-11-14 audit: LIVE-ONLY event page (Deriv x GDG KL Vibing Lounge Reality Checker), hand-deployed, untracked in repo; deploy must never clobber until event retires"
+        },
+        {
+          "path": "work/vibing-lounge",
+          "owner": "event-deriv-gdg-kl",
+          "strategy": "preserve-live",
+          "note": "2026-11-14 audit: duplicate live route of /vibing/ (same build); preserve pending canonical-redirect decision"
         }
       ],
       "aliases": [

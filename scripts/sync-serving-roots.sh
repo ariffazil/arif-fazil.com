@@ -102,7 +102,7 @@ if ((VERIFY_ONLY == 0)); then
   if [ -d "$DIST/earth" ]; then
     snapshot_existing_dir "earth"
     mkdir -p "$TOP/earth"
-    rsync -a --delete "$DIST/earth/" "$TOP/earth/"
+    rsync -ac --delete "$DIST/earth/" "$TOP/earth/"
     echo "$LOG_PREFIX synced earth/ ($(find "$TOP/earth" -type f | wc -l) files)"
     fail_if_injected "earth" || exit 1
   elif ((ALLOW_EMPTY_SPLIT == 0)); then
@@ -114,7 +114,7 @@ if ((VERIFY_ONLY == 0)); then
     if [ -d "$DIST/$d" ]; then
       snapshot_existing_dir "$d"
       mkdir -p "$TOP/$d"
-      rsync -a --delete "$DIST/$d/" "$TOP/$d/"
+      rsync -ac --delete "$DIST/$d/" "$TOP/$d/"
       echo "$LOG_PREFIX synced $d/ ($(find "$TOP/$d" -type f | wc -l) files)"
       fail_if_injected "$d" || exit 1
     elif ((ALLOW_EMPTY_SPLIT == 0)); then
@@ -126,7 +126,7 @@ if ((VERIFY_ONLY == 0)); then
   if [ -d "$DIST/_shared" ]; then
     snapshot_existing_dir "_shared"
     mkdir -p "$TOP/_shared"
-    rsync -a "$DIST/_shared/" "$TOP/_shared/"
+    rsync -ac "$DIST/_shared/" "$TOP/_shared/"
     echo "$LOG_PREFIX synced _shared/ ($(find "$TOP/_shared" -type f | wc -l) files)"
     fail_if_injected "_shared" || exit 1
   fi
@@ -136,10 +136,10 @@ if ((VERIFY_ONLY == 0)); then
     if [ -d "$DIST/$d" ]; then
       snapshot_existing_dir "$d"
       mkdir -p "$TOP/$d"
-      rsync -a "$DIST/$d/" "$TOP/$d/"
+      rsync -ac "$DIST/$d/" "$TOP/$d/"
       if [ "$DIST" != "$TOP/arif" ]; then
         mkdir -p "$TOP/arif/$d"
-        rsync -a "$DIST/$d/" "$TOP/arif/$d/"
+        rsync -ac "$DIST/$d/" "$TOP/arif/$d/"
       fi
       echo "$LOG_PREFIX synced $d/ ($(find "$TOP/$d" -type f | wc -l) files)"
       fail_if_injected "$d" || exit 1

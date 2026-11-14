@@ -392,7 +392,7 @@ copy_path() {
   mkdir -p "$(dirname "$target_path")"
   if [[ -d "$source_path" && ! -L "$source_path" ]]; then
     mkdir -p "$target_path"
-    rsync -a "$source_path/" "$target_path/"
+    rsync -ac "$source_path/" "$target_path/"
   else
     cp -a -- "$source_path" "$target_path"
   fi
@@ -560,7 +560,7 @@ stage_tree() {
   local current_root="$2"
   local target_root="$3"
   local restore_overlays="$4"
-  local -a rsync_args=(-a --delete)
+  local -a rsync_args=(-ac --delete)
   local rel strategy owner
 
   for rel in "${OVERLAY_PATHS[@]}"; do
@@ -585,7 +585,7 @@ stage_tree() {
   done
   if [[ -d "$target_root/makcikgpt-md" && -d "$target_root/world/makcikgpt" ]]; then
     mkdir -p "$target_root/world/makcikgpt/makcikgpt-md"
-    rsync -a --delete "$target_root/makcikgpt-md/" "$target_root/world/makcikgpt/makcikgpt-md/"
+    rsync -ac --delete "$target_root/makcikgpt-md/" "$target_root/world/makcikgpt/makcikgpt-md/"
     if [[ "$SKIP_CHOWN" != "1" ]]; then
       chown -R "$WEB_OWNER" "$target_root/world/makcikgpt/makcikgpt-md"
     fi

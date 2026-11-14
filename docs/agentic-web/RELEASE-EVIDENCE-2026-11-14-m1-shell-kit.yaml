@@ -59,3 +59,23 @@ m1_1:
     live_render: "essay #21 (three-timelines-one-boundary) verified styled through ArticleShell on production — screenshots/m1-essay-old-through-shell-live.png"
   deploy: "rsync, caddy_reloaded=false"
   disclosed_carry_along: "makcikgpt tak-kenal data + Home/Work/navCanon edits from prior session WIP — already live; committed for committed==deployed==live"
+
+# ── M1.2 amendment (same day, 2026-11-14 ~21:35 MYT) — WORDS ring closed ──
+m1_2:
+  commit: "4e70e4e"
+  webcanon_commit: "9873b69+"
+  changed_routes: ["/words", "/words/essays", "/words/doctrine", "/doctrine"]
+  public_effect:
+    - "WORDS hub (/words, /words/, /words/essays) renders through RootShell ring-soul; static shells converted to minimal SPA shells"
+    - "/words/doctrine: FULL canonical content (13 Floors + 13 Shadow Paradoxes, 6d7bfd4 lineage) ported verbatim from static prerender into ArticleShell; d-* styles scoped under .doctrine-legacy; double-nav dead"
+    - "/doctrine: React Navigate /AAA legacy bug FIXED -> /words/doctrine; Caddy 308 unchanged"
+    - "Doctrine.tsx (13-floor-only page) retired from routing — superseded; content preserved in git history"
+  incident_found_and_fixed:
+    - "React route /doctrine -> Navigate /AAA: SPA-internal clicks on 'Read the doctrine' (home hero) landed on /AAA. Fixed."
+    - "Static prerender shells stacked under hydrated app on /words/essays — converted to minimal SPA shells."
+  tests:
+    build: "DESIGN-CANON 95/95 · lint PASS · vite clean"
+    verify_pages: "PASS — 236 pages reachable"
+    live_screenshots: ["screenshots/m12-words-hub-live.png", "screenshots/m12-doctrine-live.png", "screenshots/m12-words-essays-live.png"]
+  deploy: "rsync, caddy_reloaded=false"
+  seal_status: "amodei-flight-recorder UNSEALED per sovereign directive — awaiting 888 content review"

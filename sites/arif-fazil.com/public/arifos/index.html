@@ -19,11 +19,46 @@
 <link rel="alternate" type="application/json" href="/.well-known/public-state.json" title="Live arifOS public-state.v1 mirror">
 <link rel="canonical-machine" type="application/json+schema-version" href="/api/public-state" title="arifos.public-state.v1 (preferred) and observatory.v1 (compat)">
 <link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/_shared/design-system/components.css">
 <script src="/_shared/trinity-nav.js" defer></script>
 <script src="/_shared/observatory.js?v=20261031-reconcile" defer></script>
 <style id="observatory-local-upgrade">
 /* Observatory-only additions: keep federation-wide design tokens unchanged. */
+/* ── M1.4 canon alignment (2026-11-14): Fraunces × Plex Mono · ring-mind · orthogonal cell · single canon nav ── */
+html[data-organ="arifos"]{
+  --obs-accent:var(--accent-blue,#7FB3FF);
+  --obs-accent-bg:var(--accent-blue-bg,rgba(127,179,255,.10));
+}
+html[data-organ="arifos"] body{
+  background-color:var(--carbon,#0A0B0D);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M0 0H8V8 M24 0V8H32 M16 16V32 M0 24H8V16' stroke='%237FB3FF' stroke-opacity='.06' fill='none'/%3E%3Ccircle cx='8' cy='24' r='1.2' fill='%237FB3FF' fill-opacity='.06'/%3E%3C/svg%3E");
+}
+.obs-canon-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;padding:12px clamp(16px,4vw,32px);background:color-mix(in srgb,#101216 84%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid #1f2733}
+.obs-brand{font-family:var(--font-mono,'IBM Plex Mono',monospace);font-weight:600;letter-spacing:.12em;font-size:.8rem;color:#E6EDF3;text-decoration:none;white-space:nowrap}
+.obs-brand .obs-brand-dot{color:var(--obs-accent)}
+.obs-nav{display:flex;gap:clamp(10px,2vw,22px);margin:0 auto;flex-wrap:wrap}
+.obs-nav a{font-family:var(--font-mono,'IBM Plex Mono',monospace);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#8B98A8;text-decoration:none;padding:4px 2px;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+.obs-nav a:hover,.obs-nav a[aria-current]{color:var(--obs-accent);border-bottom-color:var(--obs-accent)}
+.obs-ringpill{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono,'IBM Plex Mono',monospace);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--obs-accent);border:1px solid color-mix(in srgb,var(--obs-accent) 40%,transparent);background:var(--obs-accent-bg);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.obs-ringpill .obs-pill-dot{width:6px;height:6px;border-radius:999px;background:var(--obs-accent)}
+@media (max-width:900px){.obs-nav{display:none}}
+html[data-organ="arifos"] h1,html[data-organ="arifos"] h2{
+  font-family:var(--font-display,'Fraunces',Georgia,serif);font-weight:600;letter-spacing:-.01em;
+}
+html[data-organ="arifos"] h1{font-size:clamp(1.7rem,3.4vw,2.6rem)}
+html[data-organ="arifos"] h1 em,html[data-organ="arifos"] .obs-accent{color:var(--obs-accent)}
+html[data-organ="arifos"] main > section > h2,html[data-organ="arifos"] .obs-sec-head{
+  border-left:3px solid var(--obs-accent);padding-left:12px;color:#F5F2EA;
+}
+html[data-organ="arifos"] .obs-torus{position:absolute;top:14px;right:clamp(12px,4vw,60px);color:var(--obs-accent);opacity:.5;pointer-events:none;animation:obs-torus-spin 180s linear infinite}
+@keyframes obs-torus-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.obs-torus{animation:none}}
+/* M1.4b: legacy static fed-header retired — canon obs-canon-header is the single nav */
+html[data-organ="arifos"] .header{display:none}
+/* semantic status colors unchanged: green=ok · amber=drift · red=hold (evidence semantics) */
+
 html[data-organ="arifos"] .observatory-upgrade-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.75rem}
 html[data-organ="arifos"] .observatory-field{min-width:0;padding:.8rem;background:var(--surface-2,rgba(255,255,255,.02));border:1px solid var(--border,var(--color-line-hairline));border-radius:.5rem}
 html[data-organ="arifos"] .observatory-field .k,html[data-organ="arifos"] .observatory-label{display:block;color:var(--text-muted,var(--color-ink-muted));font:600 .66rem/1.4 var(--font-mono);letter-spacing:.05em;text-transform:uppercase}
@@ -59,7 +94,7 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
  {"@type":"WebAPI","@id":"https://arifos.arif-fazil.com/#api-snapshot","name":"observatory-snapshot","url":"https://arifos.arif-fazil.com/api/observatory/v1/snapshot","description":"Single signed snapshot of runtime identity, substrate, governance, capabilities, organs, metabolism, evidence, receipts, incidents."}
 ]}
 </script>
-  <script src="/_shared/unified-header-loader.js" defer></script>
+  <!-- M1.4: unified-header retired on this surface — obs-canon-header is the single nav -->
 </head>
 <body data-state="loading" data-source="GET /api/observatory/v1/snapshot" data-observed-at="" data-age-seconds="0" data-evidence-class="reported" data-confidence="0.85" data-namespace="arifos" data-freshness-state="loading">
 <noscript>
@@ -130,7 +165,16 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
  </div>
 </header>
 
-<trinity-nav></trinity-nav>
+<span class="trinity-nav" hidden aria-hidden="true"></span>
+<header class="obs-canon-header" aria-label="Canon header">
+  <a class="obs-brand" href="/"><span class="obs-brand-dot">▞</span> ARIF FAZIL</a>
+  <nav class="obs-nav" aria-label="Primary">
+    <a href="/">Home</a><a href="/about/">About</a><a href="/earth/">Earth</a>
+    <a href="/words/">Words</a><a href="/world/makcikgpt/">MakcikGPT</a>
+    <a href="/world/">World</a><a href="/work/">Work</a>
+  </nav>
+  <span class="obs-ringpill"><span class="obs-pill-dot"></span> Ω MIND</span>
+</header>
 
 <nav class="now-strip" id="now-strip" aria-label="Machine reality NOW bar">
  <div class="now-pill" id="now-substrate"><span class="lbl">substrate</span><span class="val">…</span></div>
@@ -149,6 +193,13 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
  <span>last tool test: <span id="meta-test">…</span></span>
 </div>
 
+<svg class="obs-torus" aria-hidden="true" width="180" height="180" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width=".6" opacity=".35"/>
+  <circle cx="84" cy="50" r="34" fill="none" stroke="currentColor" stroke-width=".9" stroke-dasharray="46 12" opacity=".8"/>
+  <circle cx="33" cy="79.4" r="34" fill="none" stroke="currentColor" stroke-width=".9" stroke-dasharray="46 12" opacity=".8"/>
+  <circle cx="33" cy="20.6" r="34" fill="none" stroke="currentColor" stroke-width=".9" stroke-dasharray="46 12" opacity=".8"/>
+  <circle cx="50" cy="50" r="2.4" fill="currentColor"/>
+</svg>
 <main id="main">
 
  <section id="sec-flow-plane" class="observatory-upgrade" aria-labelledby="flow-plane-title">

@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": 1,
+  "default_blocking": true,
+  "description": "Declarative gate policy registry for arif-fazil.com deploy and verify pipelines. Unknown gates default to blocking=true.",
+  "gates": [
+    {
+      "gate_id": "candidate.source_clean",
+      "command": ["python3", "scripts/lib/materialize-source.py", "verify-clean"],
+      "blocking": true,
+      "justification": "Ensures materialized candidate matches exact authorized commit tree with zero dirty or untracked files.",
+      "expected_exit": [0],
+      "receipt_field": "gates.candidate_source_clean",
+      "owner": "deploy-site",
+      "phase": "pre_mutation_candidate"
+    },
+    {
+      "gate_id": "candidate.artifacts",
+      "command": ["test", "-f"],
+      "blocking": true,
+      "justification": "Every required_artifacts entry declared in runtime-overlays.json must exist in built candidate output before staging.",
+      "expected_exit": [0],
+      "receipt_field": "gates.candidate_artifacts",
+      "owner": "deploy-site",
+      "phase": "pre_mutation_candidate"
+    },
+    {
+      "gate_id": "candidate.stale_dev_entries",
+      "command": ["grep", "-rE", "src=\"/src/[^\"]*\"|src=\"/@vite/|src=\"/@id/"],
+      "blocking": true,
+      "justification": "M3 guard: staged HTML must not reference unbundled Vite dev entry points.",
+      "expected_exit": [1],
+      "receipt_field": "gates.candidate_stale_dev_entries",
+      "owner": "arif-sites",
+      "phase": "pre_mutation_candidate"
+    },
+    {
+      "gate_id": "candidate.asset_references",
+      "command": ["python3", "scripts/lib/verify-dist-assets.py"],
+      "blocking": true,
+      "justification": "Every local /assets/* CSS/JS reference in candidate HTML must resolve to a real non-empty emitted file.",
+      "expected_exit": [0],
+      "receipt_field": "gates.candidate_asset_references",
+      "owner": "deploy-site",
+      "phase": "pre_mutation_candidate"
+    },
+    {
+      "gate_id": "ownership.gate",
+      "command": ["python3", "scripts/deploy-ownership-gate.py"],
+      "blocking": true,
+      "justification": "Refuses deploy if source would delete live artifacts or break live symlinks without an explicit ownership rule.",
+      "expected_exit": [0],
+      "receipt_field": "gates.ownership_gate",
+      "owner": "arif-sites",
+      "phase": "pre_mutation_candidate"
+    },
+    {
+      "gate_id": "web_zen.preflight",
+      "command": ["python3", "scripts/web-zen/web_zen.py", "preflight", "--json", "--no-receipt"],
+      "blocking": true,
+      "justification": "Blocks mutation if candidate discovery files (llms.txt, robots.txt, missions.json, rsl.xml, world-state binding) are missing or mismatched.",
+      "expected_exit": [0],
+      "receipt_field": "gates.web_zen_preflight",
+      "owner": "web-zen",
+      "phase": "pre_mutation_candidate",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "web_zen.sense",
+      "command": ["python3", "scripts/web-zen/web_zen.py", "sense", "--json", "--no-receipt"],
+      "blocking": true,
+      "justification": "Checks Caddy @spa_routes/@root_static wiring and live commodity API runtime health before touching serving roots.",
+      "expected_exit": [0],
+      "receipt_field": "gates.web_zen_sense",
+      "owner": "web-zen",
+      "phase": "pre_mutation_environment",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "web_zen.doctor",
+      "command": ["python3", "scripts/web-zen/web_zen.py", "doctor", "--json", "--no-receipt"],
+      "blocking": true,
+      "justification": "Combined host health check (sense + live verify + ephemeral sandbox). Unconditional || true bypass is prohibited; failures block deploy unless repaired.",
+      "expected_exit": [0],
+      "receipt_field": "gates.web_zen_doctor",
+      "owner": "web-zen",
+      "phase": "pre_mutation_environment",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "caddy.validate",
+      "command": ["caddy", "validate", "--config"],
+      "blocking": true,
+      "justification": "Caddy configuration must validate cleanly before any serving root is modified.",
+      "expected_exit": [0],
+      "receipt_field": "gates.caddy_validate",
+      "owner": "infra-caddy",
+      "phase": "pre_mutation_barrier"
+    },
+    {
+      "gate_id": "manifest.containment",
+      "command": ["python3", "scripts/lib/mutation-manifest.py", "plan"],
+      "blocking": true,
+      "justification": "Pre-computes complete primary and split-root mutation manifest and rejects unapproved or symlink-escaped targets before mutation.",
+      "expected_exit": [0],
+      "receipt_field": "gates.manifest_containment",
+      "owner": "deploy-site",
+      "phase": "pre_mutation_barrier"
+    },
+    {
+      "gate_id": "live.http_probe",
+      "command": ["curl"],
+      "blocking": true,
+      "justification": "Primary HTTP endpoint must return accepted status code after promotion; failure triggers full manifest rollback.",
+      "expected_exit": [0],
+      "receipt_field": "gates.live_http_probe",
+      "owner": "deploy-site",
+      "phase": "post_live"
+    },
+    {
+      "gate_id": "live.soft200_guard",
+      "command": ["curl"],
+      "blocking": true,
+      "justification": "Non-existent probe path must never return HTTP 200 (Soft-200 blindfold regression guard); triggers rollback on failure.",
+      "expected_exit": [0],
+      "receipt_field": "gates.live_soft200_guard",
+      "owner": "deploy-site",
+      "phase": "post_live"
+    },
+    {
+      "gate_id": "live.split_roots_local",
+      "command": ["bash", "scripts/sync-serving-roots.sh", "--verify-only"],
+      "blocking": true,
+      "justification": "All split-root serving bytes on disk must match promoted markers; failure triggers full rollback across all roots.",
+      "expected_exit": [0],
+      "receipt_field": "gates.live_split_roots_local",
+      "owner": "sync-serving-roots",
+      "phase": "post_live",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "web_zen.verify",
+      "command": ["python3", "scripts/web-zen/web_zen.py", "verify", "--json", "--no-receipt"],
+      "blocking": true,
+      "justification": "Post-promotion HTTP content-truth crawl verifying non-soft404 content and TRUTH_MARKERS; failure triggers rollback.",
+      "expected_exit": [0],
+      "receipt_field": "gates.web_zen_verify",
+      "owner": "web-zen",
+      "phase": "post_live",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "verify.pages",
+      "command": ["bash", "scripts/verify-pages.sh"],
+      "blocking": true,
+      "justification": "Page inventory reachability gate across built HTML pages and critical discovery endpoints.",
+      "expected_exit": [0],
+      "receipt_field": "gates.verify_pages",
+      "owner": "arif-sites",
+      "phase": "post_live",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "verify.content",
+      "command": ["bash", "scripts/verify-content.sh"],
+      "blocking": true,
+      "justification": "Live content assertion gate checking served HTML strings and JSON-LD integrity.",
+      "expected_exit": [0],
+      "receipt_field": "gates.verify_content",
+      "owner": "arif-sites",
+      "phase": "post_live",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "verify.surfaces",
+      "command": ["node", "scripts/verify-surfaces.cjs"],
+      "blocking": true,
+      "justification": "Live surface catalog parity verifier checking advertised surfaces resolve honestly.",
+      "expected_exit": [0],
+      "receipt_field": "gates.verify_surfaces",
+      "owner": "arif-sites",
+      "phase": "post_live",
+      "applies_to_sites": ["arif-fazil.com"]
+    },
+    {
+      "gate_id": "post_deploy.wealth_render",
+      "command": ["python3", "/root/scripts/wealth-static-render.py"],
+      "blocking": false,
+      "advisory_reason": "Daily 06:00 UTC cron repairs /var/www/html/arif/static/wealth.html; failure is explicitly logged in receipt as advisory_fail without rolling back primary site.",
+      "justification": "Re-renders live WEALTH briefing HTML from runtime latest.json if available on host.",
+      "expected_exit": [0],
+      "receipt_field": "gates.wealth_render",
+      "owner": "wealth-briefing-cron",
+      "phase": "post_live_advisory",
+      "applies_to_sites": ["arif-fazil.com"]
+    }
+  ]
+}

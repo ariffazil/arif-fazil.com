@@ -147,17 +147,33 @@ if [[ -f /etc/caddy/Caddyfile ]]; then
     cp -p /etc/caddy/Caddyfile "/etc/caddy/Caddyfile.bak.${_caddy_reload_ts}-reload" 2>/dev/null || \
         log_warn "  ⚠️  could not snapshot /etc/caddy/Caddyfile (continuing reload)"
 fi
-caddy reload --config /etc/caddy/Caddyfile 2>/dev/null || systemctl reload caddy 2>/dev/null || true
+if command -v caddy >/dev/null 2>&1; then
+    caddy validate --config /etc/caddy/Caddyfile
+    if ! caddy reload --config /etc/caddy/Caddyfile; then
+        systemctl reload caddy
+    fi
+else
+    systemctl reload caddy
+fi
 
 # ── 5. Verify key sites ──────────────────────────────────────────────────────
 log_info "Verifying key sites..."
+verify_failures=0
 for site in arif-fazil.com arifos.arif-fazil.com aaa.arif-fazil.com; do
-    if curl -s -o /dev/null -w "%{http_code}" "https://${site}/" 2>/dev/null | grep -q "200"; then
-        log_info "  ✅ https://${site}/ is live"
+    status=""
+    curl_rc=0
+    status="$(curl -sS -o /dev/null -w "%{http_code}" "https://${site}/")" || curl_rc=$?
+    if [[ "$curl_rc" -eq 0 && "$status" == "200" ]]; then
+        log_info "  ✅ https://${site}/ is live (HTTP $status)"
     else
-        log_warn "  ⚠️  https://${site}/ returned non-200"
+        log_error "  ❌ https://${site}/ returned HTTP ${status:-000} (curl exit=$curl_rc)"
+        verify_failures=$((verify_failures + 1))
     fi
 done
+if (( verify_failures > 0 )); then
+    log_error "Key site verification failed (${verify_failures} site(s))"
+    exit 1
+fi
 
 log_info "═══════════════════════════════════════════════════════════════════════════════"
 log_info "arif-sites deploy complete: $SHORT_SHA"

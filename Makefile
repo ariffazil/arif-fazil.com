@@ -34,21 +34,16 @@ dry-run: verify
 # ── Pre-deploy verification gate ──────────────────────────────────────
 verify: sync-aaa
 	@echo "[verify] Checking surface catalog truth..."
-	node scripts/verify-surfaces.cjs --base=https://arif-fazil.com
+	bash scripts/run-gate.sh --gate-id verify.surfaces -- node scripts/verify-surfaces.cjs --base=https://arif-fazil.com
 	@echo "[verify] Running Page Inventory Gate..."
-	bash scripts/verify-pages.sh https://arif-fazil.com /root/arif-fazil.com/sites/arif-fazil.com/dist
+	bash scripts/run-gate.sh --gate-id verify.pages -- bash scripts/verify-pages.sh https://arif-fazil.com "$(CURDIR)/sites/arif-fazil.com/dist"
 	@echo "[verify] Running Content Assertion Gate..."
-	bash scripts/verify-content.sh https://arif-fazil.com
+	bash scripts/run-gate.sh --gate-id verify.content -- bash scripts/verify-content.sh https://arif-fazil.com
 	@echo "[verify] Checking Caddy config..."
-	caddy validate --config /etc/caddy/Caddyfile > /dev/null 2>&1 && echo "[verify] Caddy config: VALID"
-	@echo "[verify] M3 fix 2026-08-01: scanning source HTML for dev-only entry points..."
-	@if grep -rE 'src="/src/[^"]*"|src="/@vite/|src="/@id/' public/ 2>/dev/null; then \
-		echo "✗ [verify] DEV-ONLY ENTRY FOUND — refuse to deploy."; \
-		echo "  These paths only exist in Vite dev mode. Run 'make build' first to bundle."; \
-		exit 1; \
-	else \
-		echo "[verify] No dev-only entry points — safe to deploy."; \
-	fi
+	bash scripts/run-gate.sh --gate-id caddy.validate -- caddy validate --config /etc/caddy/Caddyfile && echo "[verify] Caddy config: VALID"
+	@echo "[verify] M3 fix 2026-08-01: scanning built/source HTML for dev-only entry points..."
+	bash scripts/run-gate.sh --gate-id candidate.stale_dev_entries -- grep -rE 'src="/src/[^"]*"|src="/@vite/|src="/@id/' sites/arif-fazil.com/public/ sites/arif-fazil.com/dist/
+	@echo "[verify] No dev-only entry points — safe to deploy."
 	@echo "✓ All gates passed."
 
 # ── Sync AAA dist into arif-fazil.com dist ────────────────────────────
@@ -117,8 +112,8 @@ commit:
 
 # ── Full deploy via deploy-vps.sh (for rsync-based deploys) ───────────
 deploy-full:
-	@echo "[deploy-full] Running deploy-vps.sh..."
-	bash deploy-vps.sh
+	@echo "[deploy-full] Running scripts/deploy-vps.sh..."
+	bash scripts/deploy-vps.sh
 
 # ── Help ──────────────────────────────────────────────────────────────
 help:
@@ -146,7 +141,7 @@ help:
 # DITEMPA BUKAN DIBERI — entropy must not accumulate at integration boundaries.
 verify-pages:
 	@echo "[verify-pages] Running page inventory gate..."
-	@bash scripts/verify-pages.sh
+	@bash scripts/run-gate.sh --gate-id verify.pages -- bash scripts/verify-pages.sh
 	@echo ""
 
 # ── Served-state gate ───────────────────────────────────────────────
@@ -157,7 +152,7 @@ verify-pages:
 # Exit 0 PASS · 1 FAIL (real defect) · 2 UNKNOWN (never a pass).
 verify-served:
 	@echo "[verify-served] Verifying served bytes equal the intended artifact..."
-	@python3 scripts/verify-served-state.py \
+	@bash scripts/run-gate.sh --gate-id verify.served_state -- python3 scripts/verify-served-state.py \
 		--url https://arif-fazil.com/earth/ \
 		--source sites/arif-fazil.com/public/earth/index.html
 	@echo ""

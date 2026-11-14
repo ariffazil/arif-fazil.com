@@ -67,8 +67,17 @@ fi
 
 emit "OP_BEGIN" "orphan_dry_run" "preview only; no delete authority"
 if [ -f "$WEBZEN" ]; then
-  python3 "$WEBZEN" orphan --src "$LIVE" --dest "$DIST" --allow-deletes 2>>"$LOG" \
-    | tee -a "${RECEIPT_DIR}/heal-${TS}-orphan.txt" | head -20 || true
+  _HEAL_REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd -P)"
+  ORPHAN_LOG="${RECEIPT_DIR}/heal-${TS}-orphan.txt"
+  ORPHAN_RC=0
+  bash "${_HEAL_REPO_ROOT}/scripts/run-gate.sh" --gate-id "audit.orphan_dry_run" --tail 20 -- \
+    python3 "$WEBZEN" orphan --src "$LIVE" --dest "$DIST" --allow-deletes \
+    >"$ORPHAN_LOG" 2>>"$LOG" || ORPHAN_RC=$?
+  head -n 20 "$ORPHAN_LOG" 2>/dev/null || true
+  if [ "$ORPHAN_RC" -ne 0 ]; then
+    emit "OP_ERR" "orphan_dry_run" "exit=${ORPHAN_RC} log=${ORPHAN_LOG}"
+    exit "$ORPHAN_RC"
+  fi
 else
   emit "OP_SKIP" "orphan_dry_run" "web_zen_missing"
 fi

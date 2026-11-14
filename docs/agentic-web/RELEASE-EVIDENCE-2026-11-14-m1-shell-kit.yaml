@@ -145,3 +145,17 @@ m1_5:
     - "sync-serving-roots.sh contract drift: step-3 probes expect static /human,/institution content ('does not grant authority') but M1.3 converted them to SPA shells — make deploy gate will fail until script is updated (separate decision, recorded)"
     - "trinity-nav.js federation-wide vocabulary upgrade (separate decision)"
     - "kernel lane: reconcile dual-owner observatory copies"
+
+# ── M1.6 amendment (2026-11-14 ~22:40 MYT) — sovereign 888 GO received & routed ──
+m1_6:
+  consent: "structured answer 'Ya — GO semua 6' dari ARIF (sovereign) dalam sesi FI-008 — forward senarai TIDAK dikira consent"
+  packet: "/root/forge_work/receipts/READY_FOR_888_SEAL-2026-11-14.md (sesi SEAL-f4ae94e0, 333-AGI)"
+  go3_site_lane:
+    - "kandungan /words/amodei-flight-recorder SENTUH SIFAR — band SEALED ditangguh sehingga entry rantaian vault wujud (F2: tiada witness palsu)"
+  gate_observation:
+    - "arif_init SEAL-703520ecab154d4e: HOLD · seal_allowed=false · DEPLOYMENT_DRIFT (content_parity MISMATCH: rest_routes.py, windowed_ds.py) — gerbang kernel BETUL, dihormati, tiada bypass"
+    - "next_action kernel: RECONCILE_SOURCE_BUILT_DEPLOYED (itu sendiri kerja GO-1/GO-2)"
+  routed:
+    - "6 task handoff ke lane kernel/opencode: /root/work/tasks.json p*-888-go* (flock), n_tasks 708→714, NEXT.md regenerated via handoff_emit.py"
+    - "resit sidang: /root/forge_work/receipts/RECEIPT-888-sovereign-sitting-2026-11-14.md"
+  seal_status: "amodei-flight-recorder: GO DITERIMA, lejer menunggu reconcile kernel — bukan lagi 'menunggu GO'"

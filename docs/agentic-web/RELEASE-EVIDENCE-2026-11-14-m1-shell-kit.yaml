@@ -127,3 +127,21 @@ m1_4:
     - "trinity-nav.js federation-wide vocabulary upgrade (separate decision)"
     - "kernel lane: reconcile dual-owner observatory copies"
   seal_status: "amodei-flight-recorder UNSEALED — awaiting sovereign 888 review"
+
+# ── M1.5 amendment (2026-11-14 ~22:25 MYT) — stray '(' glyph closed ──
+m1_5:
+  commit: "641ee1f"
+  changed_routes: ["/human/", "/institution/", "/proof (SPA-internal route; direct URL 308→/work/proof/)"]
+  root_cause: "bare '(' line left inside JSX between <RootShell> open tag and page <div> — renders as a text node top-left on all three shell pages (Human.tsx:78, InstitutionPage.tsx:63, ProofArrow.tsx:123)"
+  fix: "one-line deletion x3; no chrome/data/markup touched"
+  deploy: "rsync dist/ -> /var/www/html/arif (no --delete) + top-level shells /human,/institution updated to new entry bundle index-DF0jrb1t.js; .bak-m15 kept; caddy_reloaded=false"
+  tests:
+    build: "DESIGN-CANON 112/112 · 0 violations"
+    gate: "verify-pages PASS (236)"
+    live_screenshots: ["screenshots at /tmp/contrast/m15-{human,institution,proof}.png — glyph gone, canon header + pill intact"]
+  residual_followups:
+    - "ORGAN ring landings (geox/wealth/well) — not started"
+    - "subdomains + /vitals pipeline migration — next phase"
+    - "sync-serving-roots.sh contract drift: step-3 probes expect static /human,/institution content ('does not grant authority') but M1.3 converted them to SPA shells — make deploy gate will fail until script is updated (separate decision, recorded)"
+    - "trinity-nav.js federation-wide vocabulary upgrade (separate decision)"
+    - "kernel lane: reconcile dual-owner observatory copies"

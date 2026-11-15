@@ -472,9 +472,9 @@
                                     <td>No ungrounded claims (τ ≥ 0.99)</td>
                                 </tr>
                                 <tr>
-                                    <td><code>F6</code></td>
-                                    <td>Maruah</td>
-                                    <td>Dignity check before the action proceeds</td>
+                                    <td><code>F3</code></td>
+                                    <td>Witness</td>
+                                    <td>The claim must agree with what was observed</td>
                                 </tr>
                                 <tr>
                                     <td><code>F9</code></td>
@@ -852,6 +852,7 @@ arif_report</code></pre>
                         <div><span style="color: var(--cyan);">Ω A-ENGINEER</span> — Execute</div>
                         <div><span style="color: var(--text-secondary);">Ψ A-WITNESS</span> — Verify</div>
                     </div>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 10px; margin-bottom: 0;">Roles axis — distinct from the site triad Ψ SOUL · Ω MIND · Δ BODY (footer).</p>
                 </div>
 
                 <!-- Trinity Architecture — Full SOT for Agents -->
@@ -1019,7 +1020,8 @@ arif_report</code></pre>
                 document.getElementById('status-main').textContent = isHealthy ? 'Operational' : 'Degraded';
                 const bits = [];
                 if (data.vault999) bits.push('vault ' + data.vault999);
-                if (data.execution_readiness) bits.push('execution ' + data.execution_readiness);
+                if (data.execution_readiness) bits.push(data.execution_readiness === 'held' ? 'governed mutations HOLD · reads green' : 'execution ' + data.execution_readiness);
+                if (data.deployment_drift_status && data.deployment_drift_status !== 'ok' && data.deployment_drift_status !== 'none') bits.push('runtime ≠ source: ' + data.deployment_drift_status);
                 const floors = data.constitutional;
                 if (floors && floors.floors_measured != null && floors.floors_target != null) {
                     bits.push(floors.floors_measured + '/' + floors.floors_target + ' floors measured');
@@ -1193,8 +1195,8 @@ arif_report</code></pre>
                 }
                 if (well.status === 'fulfilled' && well.value) {
                     const score = well.value.well_score;
-                    document.getElementById('trinity-well-tools-badge').textContent = (well.value.tool_count || well.value.tools_loaded || '--') + ' tools';
-                    document.getElementById('trinity-well-score-badge').textContent = score != null ? score + ' score' : '-- score';
+                    document.getElementById('trinity-well-tools-badge').textContent = (well.value.tool_count || well.value.tools_loaded || 'n/a') + ' tools';
+                    document.getElementById('trinity-well-score-badge').textContent = score != null ? score + ' score' : 'no public metric';
                 }
 
                 const now = new Date();
@@ -1250,7 +1252,7 @@ arif_report</code></pre>
                     document.getElementById('organ-wealth-aliases').textContent = data.hidden_alias_count != null ? data.hidden_alias_count : 'n/a';
                     document.getElementById('organ-wealth-version').textContent = data.version || data.repo_head || '--';
                 } else if (organ === 'well') {
-                    document.getElementById('organ-well-score').textContent = data.well_score != null ? data.well_score : '--';
+                    document.getElementById('organ-well-score').textContent = data.well_score != null ? data.well_score : 'n/a';
                     document.getElementById('organ-well-verdict').textContent = data.verdict || '--';
                     document.getElementById('organ-well-version').textContent = data.version || '--';
                 }
@@ -1280,9 +1282,13 @@ arif_report</code></pre>
                     const healthy = v999 === 'healthy';
                     v999Badge.textContent = String(v999).toUpperCase();
                     v999Badge.className = 'badge ' + (healthy ? 'badge-green' : 'badge-gold');
+                    const sealAge = data.vault999_seal_age || null;
+                    const appendRhythm = data.vault999_appends || null;
                     v999Detail.textContent = healthy
                         ? 'Public /health vault999 is healthy'
-                        : 'Public /health vault999=' + v999;
+                        : ((sealAge || appendRhythm)
+                            ? 'appends: ' + (appendRhythm || '—') + ' · sovereign seal: ' + (sealAge || '—')
+                            : 'Public /health vault999=' + v999 + ' — one label mixes two rhythms (appends live · seals episodic); split view pending wiring');
                 } else {
                     v999Badge.textContent = 'N/A';
                     v999Detail.textContent = 'Health key not present';
@@ -1331,5 +1337,37 @@ arif_report</code></pre>
   <div><strong>arifOS · Federation Intelligence</strong> — governed by <a href="/canon/atlas.yaml" style="color:#60a5fa">WEB_ATLAS</a> · <a href="/canon/file-authority.yaml" style="color:#60a5fa">file authority</a></div>
   <div style="margin-top:0.3rem;font-style:italic;">DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan diberi.</div>
 </footer>
+<script>
+// Tracked Gaps — data-driven from gaps.json (single source). Static rows above remain as fallback if fetch fails.
+(function () {
+  fetch('gaps.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || !Array.isArray(d.gaps)) return;
+    var tbody = document.getElementById('gap-table-body'); if (!tbody) return;
+    var sevColor = { HIGH: ['rgba(239,68,68,0.1)', 'var(--red)'], MEDIUM: ['rgba(251,191,36,0.1)', '#fbbf24'], LOW: ['rgba(107,114,128,0.1)', '#9ca3af'] };
+    function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+    tbody.innerHTML = d.gaps.map(function (g) {
+      var c = sevColor[g.severity] || sevColor.LOW;
+      var st = g.status === 'OPEN' ? 'var(--gold)' : 'var(--green)';
+      return '<tr id="gap-' + g.id.toLowerCase() + '">' +
+        '<td><code style="color: var(--gold);">' + esc(g.id) + '</code></td>' +
+        '<td>' + esc(g.gap) + '</td>' +
+        '<td><span class="badge" style="background:' + c[0] + ';color:' + c[1] + ';font-size:9px;">' + esc(g.severity) + '</span></td>' +
+        '<td><span style="font-size:11px;color:var(--cyan);">' + esc(g.class) + '</span></td>' +
+        '<td><span style="font-size:11px;color:' + st + ';">' + esc(g.status) + '</span></td>' +
+        '<td style="color:var(--text-muted);font-size:11px;">' + esc(g.action) + '</td></tr>';
+    }).join('');
+    var open = d.gaps.filter(function (g) { return g.status === 'OPEN'; }).length;
+    var resolved = d.gaps.length - open;
+    var gc = document.getElementById('gap-count'); if (gc) gc.textContent = '(' + open + ' open · ' + resolved + ' resolved)';
+    var gs = document.getElementById('gap-severity-summary');
+    if (gs) {
+      var bySev = {};
+      d.gaps.filter(function (g) { return g.status === 'OPEN'; }).forEach(function (g) { bySev[g.severity] = (bySev[g.severity] || 0) + 1; });
+      var keys = Object.keys(bySev);
+      gs.textContent = keys.length ? keys.map(function (k) { return bySev[k] + ' ' + k; }).join(' · ') : 'none open';
+    }
+  }).catch(function () { /* fallback: static rows stay */ });
+})();
+</script>
 </body>
 </html>

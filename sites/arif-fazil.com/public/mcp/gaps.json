@@ -1,0 +1,12 @@
+{
+  "updated": "2026-11-15",
+  "note": "Single source for the Tracked Gaps table on this page. Page renders from this file; if fetch fails, static rows remain as fallback. Update statuses here, not in HTML.",
+  "gaps": [
+    { "id": "G01", "gap": "GEOX tool count unverified — live probe returns no tool count", "severity": "MEDIUM", "class": "GOVERNANCE", "status": "OPEN", "action": "Add tool_count to GEOX /health or create MCP probe" },
+    { "id": "G02", "gap": "well_assess_metabolism failing per federation_audit", "severity": "MEDIUM", "class": "GOVERNANCE", "status": "OPEN", "action": "Investigate WELL metabolism tool; add to gap table" },
+    { "id": "G03", "gap": "AAA/A-FORGE MCP discovery — internal bridges mislabeled as public gaps", "severity": "MEDIUM", "class": "LABELING", "status": "RESOLVED", "action": "Reclassified as internal-only; removed from public surface" },
+    { "id": "G04", "gap": "WEALTH tool count mislabeled — 15 public + 68 aliases ≠ \"50\"", "severity": "LOW", "class": "LABELING", "status": "RESOLVED", "action": "Observatory now shows public vs alias distinction" },
+    { "id": "G05", "gap": "Langfuse contradiction — page label vs actual status", "severity": "LOW", "class": "LABELING", "status": "RESOLVED", "action": "Langfuse status now driven by live probe" },
+    { "id": "G06", "gap": "Grafana 503 — transient infrastructure (was incorrectly labeled HIGH)", "severity": "LOW", "class": "INFRA", "status": "RESOLVED", "action": "Grafana healthy; no gap filing needed" }
+  ]
+}

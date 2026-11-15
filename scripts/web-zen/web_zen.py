@@ -32,6 +32,7 @@ import sys
 import tempfile
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
@@ -44,7 +45,8 @@ SITE_PUBLIC = REPO / "sites" / "arif-fazil.com" / "public"
 SITE_DIST = REPO / "sites" / "arif-fazil.com" / "dist"
 LIVE_ROOT = Path(os.environ.get("ARIF_SITES_HTML_ARIF", "/var/www/html/arif"))
 CADDYFILE = Path(os.environ.get("ARIF_SITES_CADDYFILE", "/etc/caddy/Caddyfile"))
-URLS_CORE = SCRIPT_DIR / "urls.core.txt"
+URLS_CORE = Path(os.environ.get("ARIF_SITES_URLS_FILE", str(SCRIPT_DIR / "urls.core.txt")))
+WEBZEN_BASE_URL = os.environ.get("ARIF_SITES_WEBZEN_BASE_URL", "").rstrip("/")
 FORGE_WORK = Path("/root/forge_work")
 EPHEMERAL_ROOT = FORGE_WORK / "ephemeral"
 DEFAULT_TIMEOUT = 12
@@ -106,9 +108,11 @@ TRUTH_MARKERS: dict[str, list[str]] = {
     "https://arif-fazil.com/000/": ["000", "genesis"],
     "https://arif-fazil.com/999/": ["999", "proof", "seal"],
     "https://arif-fazil.com/gold/api/proxies": ["brent", "timestamp"],
+    # 2026-11-15: EconomicsArrow.tsx renders 'incentive' ('Everything is an incentive.'),
+    # 'PETRONAS', 'Brent', 'KLCI', and 'WEALTH' (not standalone 'capital').
     "https://arif-fazil.com/economics": [
         "WEALTH",
-        "capital",
+        "incentive",
         "KLCI",
         "Ringgit",
     ],
@@ -168,9 +172,15 @@ def fetch(
     url: str, timeout: int = DEFAULT_TIMEOUT, max_bytes: int = 200_000
 ) -> tuple[int, str, str]:
     """Return (status, body, error). max_bytes caps body (SPA assets need larger)."""
-    # Prefer local asset when probing own site (faster + full file for F2)
-    if url.startswith("https://arif-fazil.com/assets/"):
-        local = LIVE_ROOT / url.split("https://arif-fazil.com/", 1)[1]
+    # Prefer local asset when probing own site or configured base URL (faster + full file for F2)
+    parsed = urllib.parse.urlsplit(url)
+    base_host = urllib.parse.urlsplit(WEBZEN_BASE_URL).netloc if WEBZEN_BASE_URL else ""
+    if parsed.path.startswith("/assets/") and parsed.netloc in {
+        "arif-fazil.com",
+        "www.arif-fazil.com",
+        base_host,
+    }:
+        local = LIVE_ROOT / parsed.path.lstrip("/")
         if local.is_file():
             try:
                 return 200, local.read_text(errors="replace"), ""
@@ -334,6 +344,80 @@ def cmd_sense(args: argparse.Namespace) -> Report:
     return r
 
 
+def _resolve_route_lazy_chunks(route_path: str, index_js: str) -> list[str]:
+    """Map an SPA route path to lazy-loaded Vite/Rollup chunk paths relative to /assets/."""
+    clean = route_path.rstrip("/") or "/"
+    candidates = [clean]
+    if clean != "/":
+        candidates.append(clean + "/")
+
+    lazy_bindings = dict(
+        re.findall(
+            r"([A-Za-z0-9_$]+)\s*=\s*(?:\([^)]+\.lazy\)|[A-Za-z0-9_$.]*lazy)"
+            r"\([^;]{0,220}?import\(\s*[\"'`]([^\"'`]+)[\"'`]",
+            index_js,
+        )
+    )
+    if not lazy_bindings:
+        return []
+
+    chunk_paths: list[str] = []
+    seen: set[str] = set()
+    for cand in candidates:
+        route_pat = re.compile(
+            r"path\s*:\s*[\"'`]"
+            + re.escape(cand)
+            + r"[\"'`]\s*,\s*element\s*:\s*([^}]{0,140})",
+        )
+        for m in route_pat.finditer(index_js):
+            for sym in re.findall(r"\(\s*([A-Za-z0-9_$]+)\s*,", m.group(1)):
+                target = lazy_bindings.get(sym)
+                if target and target not in seen:
+                    seen.add(target)
+                    chunk_paths.append(target)
+    return chunk_paths
+
+
+def _extract_jsx_prose(js_text: str) -> str:
+    """Extract rendered string literals from minified JSX while ignoring className props and void linebreaks."""
+    cleaned = re.sub(
+        r"\bclassName\s*:\s*(?:`[^`]*`|\"[^\"]*\"|'[^']*')",
+        " ",
+        js_text,
+    )
+    cleaned = re.sub(
+        r"\(\s*0\s*,\s*[A-Za-z0-9_$]+\.jsxs?\s*\)\(\s*[\"'`](?:br|hr|wbr)[\"'`]\s*,\s*\{\s*\}\s*\)",
+        " ",
+        cleaned,
+    )
+    parts = [m.group(2) for m in re.finditer(r"([\"'`])((?:\\.|(?!\1).)*)\1", cleaned)]
+    return re.sub(r"\s+", " ", " ".join(parts))
+
+
+def _marker_present(marker: str, html_body: str, js_prose: str) -> bool:
+    """Check whether marker appears in HTML text/DOM or extracted SPA JS prose without CSS class spoofing."""
+    mk_norm = re.sub(r"\s+", " ", marker).strip()
+    mk_lower = mk_norm.lower()
+    if mk_lower in html_body.lower():
+        return True
+    stripped_html = re.sub(r"<[^>]+>", " ", html_body)
+    plain_html = re.sub(r"\s+", " ", stripped_html).lower()
+    if mk_lower in plain_html:
+        return True
+    if not js_prose:
+        return False
+    # Guard pure-alpha single-word markers inside JS against Tailwind utility substrings (e.g. 'capitalize' != 'capital')
+    if re.fullmatch(r"[A-Za-z]+", mk_norm):
+        return bool(
+            re.search(
+                r"(?<![A-Za-z])" + re.escape(mk_norm) + r"(?![A-Za-z])",
+                js_prose,
+                re.IGNORECASE,
+            )
+        )
+    return mk_lower in js_prose.lower()
+
+
 def cmd_verify(args: argparse.Namespace) -> Report:
     r = Report(mode="verify", ts=utc_now(), ok=True)
     urls = load_urls(Path(args.urls) if args.urls else None)
@@ -344,31 +428,42 @@ def cmd_verify(args: argparse.Namespace) -> Report:
         return r
 
     results = []
-    for url in urls:
-        code, body, err = fetch(url, timeout=args.timeout)
-        markers = TRUTH_MARKERS.get(url, [])
-        haystack = body
+    for canonical_url in urls:
+        probe_url = canonical_url
+        if WEBZEN_BASE_URL and canonical_url.startswith("https://arif-fazil.com"):
+            probe_url = WEBZEN_BASE_URL + canonical_url[len("https://arif-fazil.com") :]
+
+        code, body, err = fetch(probe_url, timeout=args.timeout)
+        markers = TRUTH_MARKERS.get(canonical_url, []) or TRUTH_MARKERS.get(probe_url, [])
+        js_chunks_text: list[str] = []
         spa_note = ""
-        # SPA shell: pull linked index-*.js and search markers there (F2 honesty)
-        if url.rstrip("/") in {u.rstrip("/") for u in SPA_SHELL_URLS} or (
+
+        # SPA shell: pull linked index-*.js + route-bound lazy chunks and search markers cleanly (F2 honesty)
+        if canonical_url.rstrip("/") in {u.rstrip("/") for u in SPA_SHELL_URLS} or (
             code == 200 and "assets/index-" in body and markers
         ):
             m = re.search(r"(/assets/index-[A-Za-z0-9_-]+\.js)", body)
             if m:
-                asset_url = "https://arif-fazil.com" + m.group(1)
+                parsed = urllib.parse.urlsplit(probe_url)
+                origin = f"{parsed.scheme}://{parsed.netloc}"
+                asset_url = origin + m.group(1)
                 ac, ab, _ = fetch(asset_url, timeout=args.timeout, max_bytes=3_000_000)
                 if ac == 200 and ab:
-                    haystack = body + "\n" + ab
+                    js_chunks_text.append(ab)
                     spa_note = f" spa_bundle={m.group(1)} asset_bytes={len(ab)}"
-        missing = [mk for mk in markers if mk.lower() not in haystack.lower()]
-        if missing:
-            # Marker may be split across markup (e.g. <h1>Work together,<br>inspect first.</h1>).
-            # Match against tag-stripped, whitespace-collapsed text before declaring it missing.
-            stripped = re.sub(r"<[^>]+>", " ", haystack)
-            plain = re.sub(r"\s+", " ", stripped).lower()
-            missing = [
-                mk for mk in missing if re.sub(r"\s+", " ", mk).lower() not in plain
-            ]
+                    chunk_rels = _resolve_route_lazy_chunks(parsed.path, ab)
+                    fetched_chunks: list[str] = []
+                    for rel in chunk_rels:
+                        resolved_asset = urllib.parse.urljoin("/assets/", rel)
+                        cc, cb, _ = fetch(origin + resolved_asset, timeout=args.timeout, max_bytes=3_000_000)
+                        if cc == 200 and cb:
+                            js_chunks_text.append(cb)
+                            fetched_chunks.append(Path(resolved_asset).name)
+                    if fetched_chunks:
+                        spa_note += f" lazy_chunks={','.join(fetched_chunks)}"
+
+        js_prose = _extract_jsx_prose("\n".join(js_chunks_text)) if js_chunks_text else ""
+        missing = [mk for mk in markers if not _marker_present(mk, body, js_prose)]
         # Soft-404 patterns
         soft = code == 200 and (
             "404 — Not Found" in body
@@ -383,8 +478,8 @@ def cmd_verify(args: argparse.Namespace) -> Report:
             detail += " SOFT404"
         if missing:
             detail += f" missing_markers={missing}"
-        r.add(f"url.{url}", ok, detail, "GREEN" if ok else "YELLOW")
-        results.append({"url": url, "code": code, "ok": ok, "missing": missing})
+        r.add(f"url.{canonical_url}", ok, detail, "GREEN" if ok else "YELLOW")
+        results.append({"url": canonical_url, "code": code, "ok": ok, "missing": missing})
     r.meta["results"] = results
     r.meta["pass"] = sum(1 for x in results if x["ok"])
     r.meta["fail"] = sum(1 for x in results if not x["ok"])

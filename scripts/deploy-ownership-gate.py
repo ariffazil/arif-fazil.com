@@ -82,6 +82,7 @@ def main() -> int:
     ap.add_argument("--registry", required=True)
     ap.add_argument("--site", required=True)
     ap.add_argument("--repo-root", default=None)
+    ap.add_argument("--source-dir", default=None)
     ap.add_argument("--html-root", default="/var/www/html")
     ap.add_argument("--json", action="store_true", help="emit machine-readable JSON only")
     args = ap.parse_args()
@@ -99,7 +100,7 @@ def main() -> int:
 
     repo_root = args.repo_root or reg.get("canonical_repo_root") or os.getcwd()
     repo_root = os.path.abspath(repo_root)
-    source_dir = os.path.join(repo_root, entry["source"])
+    source_dir = os.path.abspath(args.source_dir) if args.source_dir else os.path.join(repo_root, entry["source"])
     webroot = os.path.join(args.html_root, entry["webroot"])
 
     overlays = [o["path"] for o in entry.get("overlays", [])]

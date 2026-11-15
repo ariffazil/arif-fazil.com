@@ -151,7 +151,12 @@ fi
 # ── Phase 3: Generate static HTML/MD for bot/crawler ───────────────
 header "PHASE 3: Static HTML/MD Generation"
 if [ -f "scripts/generate-makcik-index.cjs" ]; then
-  node scripts/generate-makcik-index.cjs && pass "makcikgpt index regenerated" || warn "Index regeneration had issues"
+  if node scripts/generate-makcik-index.cjs; then
+    pass "makcikgpt index regenerated"
+  else
+    fail "makcikgpt index regeneration failed"
+    exit 1
+  fi
 fi
 
 # Generate full markdown mirrors (frontmatter + claim register + body) from essays.json.
@@ -159,7 +164,12 @@ fi
 # redirects owned by lib/makcik-legacy-map.cjs; sealed .md content (e.g. taufik v2)
 # is regenerated from essays.json so it can no longer be clobbered by this pipeline.
 if [ -f "scripts/generate-md-mirrors.cjs" ]; then
-  node scripts/generate-md-mirrors.cjs && pass "markdown mirrors regenerated (body lane)" || warn "Mirror regeneration had issues"
+  if node scripts/generate-md-mirrors.cjs; then
+    pass "markdown mirrors regenerated (body lane)"
+  else
+    fail "markdown mirror regeneration failed"
+    exit 1
+  fi
 fi
 
 # ── Phase 4: Build ─────────────────────────────────────────────────
@@ -177,7 +187,12 @@ header "PHASE 5: Deploy"
 
 # 5a: Sync static MD files
 if [ -d "$PUBLIC_MD_DIR" ]; then
-  rsync -av --delete "$PUBLIC_MD_DIR/" "$BOT_STATIC_DIR/" && pass "Static MD files synced" || warn "Static MD sync failed"
+  if rsync -av --delete "$PUBLIC_MD_DIR/" "$BOT_STATIC_DIR/"; then
+    pass "Static MD files synced"
+  else
+    fail "Static MD sync failed"
+    exit 1
+  fi
 fi
 
 # 5b: Sync dist to webroot
@@ -197,14 +212,27 @@ rsync -av --delete --filter='P aaa/**' "$SITE_DIR/dist/" "$WEBROOT/" && pass "di
 # (same inodes, zero disk). rsync --delete prunes stale slugs.
 BOT_CADDY_DIR="$WEBROOT/world/makcikgpt/makcikgpt-md"
 mkdir -p "$BOT_CADDY_DIR"
-cp -alf "$BOT_STATIC_DIR/." "$BOT_CADDY_DIR/" 2>/dev/null || true
-rsync -a --delete "$BOT_STATIC_DIR/" "$BOT_CADDY_DIR/" && pass "bot-lane Caddy-root mirror hardlinked ($(ls "$BOT_CADDY_DIR" | wc -l) entries)" || warn "bot-lane Caddy-root mirror failed"
+if ! cp -alf "$BOT_STATIC_DIR/." "$BOT_CADDY_DIR/" 2>/dev/null; then
+  warn "hardlink pass skipped or crossed device; falling back to rsync mirror"
+fi
+if rsync -a --delete "$BOT_STATIC_DIR/" "$BOT_CADDY_DIR/"; then
+  pass "bot-lane Caddy-root mirror synced ($(find "$BOT_CADDY_DIR" -mindepth 1 -maxdepth 1 | wc -l) entries)"
+else
+  fail "bot-lane Caddy-root mirror failed"
+  exit 1
+fi
 
 # 5c: Sync root-static serving roots (llms.txt, sitemap.xml, feed.xml, page.json…)
 # 2026-09-09: Caddy @root_static serves these from /var/www/html top-level, NOT
 # from arif/. Without this step deploys report success while discovery surfaces
 # serve stale bytes (proven 2026-08-25, recurred 2026-09-09 until this fix).
-bash /root/arif-fazil.com/scripts/sync-serving-roots.sh "$SITE_DIR/dist" && pass "serving roots aligned" || warn "split-roots had issues — check llms.txt/sitemap live"
+SYNC_ROOTS_SCRIPT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/scripts/sync-serving-roots.sh"
+if bash "$SYNC_ROOTS_SCRIPT" "$SITE_DIR/dist"; then
+  pass "serving roots aligned"
+else
+  fail "split-roots sync failed"
+  exit 1
+fi
 
 # 5d: Caddy reload
 if sudo caddy reload --config "$CADDYFILE" 2>&1; then

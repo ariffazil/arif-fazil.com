@@ -343,8 +343,8 @@ class WebZenLazyChunkAndProseTests(unittest.TestCase):
             "/assets/Econ-TEST.js": (
                 200,
                 "application/javascript",
-                # Only Tailwind utility 'capitalize'; WEALTH/KLCI/Ringgit present, standalone 'capital' missing
-                b'const z={className:"capitalize",children:["WEALTH","KLCI","Ringgit"]};',
+                # className 'incentive' & compound 'disincentive' must NOT satisfy standalone 'incentive'
+                b'const z={className:"capitalize incentive",children:["WEALTH","KLCI","Ringgit","disincentive"]};',
             ),
         }
 
@@ -387,7 +387,7 @@ class WebZenLazyChunkAndProseTests(unittest.TestCase):
             self.assertTrue(checks["url.https://arif-fazil.com/human"]["ok"], checks)
             self.assertTrue(checks["url.https://arif-fazil.com/institution/"]["ok"], checks)
             self.assertFalse(checks["url.https://arif-fazil.com/economics"]["ok"], checks)
-            self.assertIn("capital", checks["url.https://arif-fazil.com/economics"]["detail"])
+            self.assertIn("incentive", checks["url.https://arif-fazil.com/economics"]["detail"])
         finally:
             server.shutdown()
             server.server_close()

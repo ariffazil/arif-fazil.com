@@ -108,9 +108,11 @@ TRUTH_MARKERS: dict[str, list[str]] = {
     "https://arif-fazil.com/000/": ["000", "genesis"],
     "https://arif-fazil.com/999/": ["999", "proof", "seal"],
     "https://arif-fazil.com/gold/api/proxies": ["brent", "timestamp"],
+    # 2026-11-15: EconomicsArrow.tsx renders 'incentive' ('Everything is an incentive.'),
+    # 'PETRONAS', 'Brent', 'KLCI', and 'WEALTH' (not standalone 'capital').
     "https://arif-fazil.com/economics": [
         "WEALTH",
-        "capital",
+        "incentive",
         "KLCI",
         "Ringgit",
     ],

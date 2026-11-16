@@ -211,7 +211,7 @@ export const machineNav: NavItem[] = [
   },
   {
     "label": "arifFlow",
-    "href": "https://arifflow.arif-fazil.com/",
+    "href": "https://arifflow.arif-fazil.com/health",
     "mode": "external",
     "external": true
   },

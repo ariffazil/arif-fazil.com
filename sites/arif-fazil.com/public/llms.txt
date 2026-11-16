@@ -19,6 +19,7 @@ Primary hubs:
 - [Systems / Governance](https://arif-fazil.com/arifos/): Governance kernel — judge before execute. Not a model.
 - [Writing / Words](https://arif-fazil.com/words/): Essays, derivations, and doctrine.
 - [Core Laws](https://arif-fazil.com/laws/): Ratified F1–F13 constitutional floors and evidence mappings.
+- [Sovereign anchor](https://arif-fazil.com/arif/): The human seat — F13 veto, the contract, and the boundary every agent reads before acting.
 - [About](https://arif-fazil.com/about): Who Arif is.
 - [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
@@ -46,7 +47,7 @@ Primary hubs:
 - Public surfaces are informational unless a capability file explicitly states otherwise.
 - State-changing operations require authenticated authorization and explicit human approval (Floor F1–F13).
 - Do not infer private, confidential, or employer information.
-- Public POST /a2a is not offered.
+- Public A2A is at https://aaa.arif-fazil.com/a2a (POST, A2A-Version: 1.0). It routes; it does not judge.
 
 ## Contact
 - [Email](mailto:arifbfazil@gmail.com)

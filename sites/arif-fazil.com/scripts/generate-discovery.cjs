@@ -44,10 +44,12 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/`, priority: 1.0, changefreq: "monthly", lastmod: "2026-09-13" },
     { loc: `${SITE_BASE}/pilot/`, priority: 0.9, changefreq: "weekly" },
     { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/arif/`, priority: 0.9, changefreq: "monthly", lastmod: "2026-11-17" },
     { loc: `${SITE_BASE}/human/`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
     // 2026-11-14 — trust anchors (HERMES audit P1): real, indexable pages.
     { loc: `${SITE_BASE}/contact/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-14" },
+    { loc: `${SITE_BASE}/vibing/`, priority: 0.6, changefreq: "monthly", lastmod: "2026-11-14" },
     { loc: `${SITE_BASE}/privacy/`, priority: 0.6, changefreq: "yearly", lastmod: "2026-11-14" },
     { loc: `${SITE_BASE}/earth/`, priority: 0.8, changefreq: "monthly" },
     { loc: `${SITE_BASE}/vitals/`, priority: 0.9, changefreq: "weekly", lastmod: "2026-09-27" },
@@ -143,6 +145,7 @@ Primary hubs:
 - [Systems / Governance](https://arif-fazil.com/arifos/): Governance kernel — judge before execute. Not a model.
 - [Writing / Words](https://arif-fazil.com/words/): Essays, derivations, and doctrine.
 - [Core Laws](https://arif-fazil.com/laws/): Ratified F1–F13 constitutional floors and evidence mappings.
+- [Sovereign anchor](https://arif-fazil.com/arif/): The human seat — F13 veto, the contract, and the boundary every agent reads before acting.
 - [About](https://arif-fazil.com/about): Who Arif is.
 - [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
@@ -170,7 +173,7 @@ Primary hubs:
 - Public surfaces are informational unless a capability file explicitly states otherwise.
 - State-changing operations require authenticated authorization and explicit human approval (Floor F1–F13).
 - Do not infer private, confidential, or employer information.
-- Public POST /a2a is not offered.
+- Public A2A is at https://aaa.arif-fazil.com/a2a (POST, A2A-Version: 1.0). It routes; it does not judge.
 
 ## Contact
 - [Email](mailto:arifbfazil@gmail.com)

@@ -264,6 +264,22 @@
     return fallback == null ? record : fallback;
   };
   const normalizeKey = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  // Canonical vault summary: the verified chain head is chain_integrity.head_seq_canonical.
+  // receipts.seal_chain_seq is a sealer-panel alias that can report the canonical ENTRY count
+  // (78) as a sequence; never use it as the head. F3: show the hash-bound head, and scope
+  // historical gaps separately from canonical gaps.
+  const vaultSummary = (data) => {
+    const ci = (data && data.chain_integrity) || {};
+    const rc = (data && data.receipt) || {};
+    const head = firstPresent(ci.head_seq_canonical, ci.head_seq, rc.head_sequence);
+    const entries = firstPresent(ci.canonical_entries, rc.canonical_entry_count);
+    const canonicalGaps = firstPresent(ci.gap_count_canonical, 0);
+    const historicalGaps = firstPresent(ci.gap_count_historical, ci.gap_count);
+    const hash = firstPresent(ci.head_hash, rc.head_hash);
+    const verified = firstPresent(ci.verified_canonical, rc.chain_verified, canonicalGaps === 0);
+    const text = `head_seq ${compactValue(head)} · canonical ${verified ? 'verified' : 'FAILED'} (${compactValue(canonicalGaps)} gaps) · entries ${compactValue(entries)} · historical gaps ${compactValue(historicalGaps)}`;
+    return { head, entries, canonicalGaps, historicalGaps, hash, verified, text };
+  };
 
   /* ── governance normalization ────────────────────────────── */
   const floorDefinitions = [
@@ -563,11 +579,12 @@
       const reasonRecord = firstPresent(governance.reason, governance.verdict_reason, governance.verdict_decomposition);
       const driftRecord = firstPresent(governance.drift, data.runtime_identity && data.runtime_identity.drift);
       const vaultRecord = firstPresent(governance.vault999, data.substrate && data.substrate.vault999, data.receipts && data.receipts.chain_status);
+      const vault = vaultSummary(data);
       summary.innerHTML = [
         ['GOVERNANCE', effective.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : effective.verdict, effective.verdict, governanceRecord],
         ['REASON', effective.reason, effective.verdict, reasonRecord],
         ['DRIFT', compactValue(driftRecord), driftRecord, driftRecord],
-        ['VAULT999', compactValue(vaultRecord), vaultRecord, vaultRecord],
+        ['VAULT999', vault.text, vault.verified ? 'measured' : 'degraded', vaultRecord],
         ['FLOORS', `${loaded}/13 loaded · ${measured} measured · ${blocked} blocked · ${stale} stale`, loaded === 13 ? 'loaded' : 'unknown', governance.floors],
       ].map(([name, value, state, record]) => `
         <div class="vocab-cell governance-cell">
@@ -723,7 +740,7 @@
       flowField(record, 'receipt_count', 'receipts_count', 'receiptCount', 'total_receipts', 'count'),
       isRecord(receiptContainer) ? firstPresent(receiptContainer.count, receiptContainer.total, receiptContainer.value) : receiptContainer,
     );
-    const chain = firstPresent(flowField(record, 'chain', 'chain_status', 'receipt_chain', 'chainStatus'), record && record.ledger && record.ledger.chain);
+    const chain = vaultSummary(data).text;
     // arifos.public-state.v1 exposes ariflow.fq_quotient (numeric) and
     // ariflow.fq_verdict (label). The signed observatory snapshot uses fq
     // directly. Merge both into a single display value so the field is never
@@ -1149,6 +1166,7 @@
     const contradictions = asArray(evidence.contradictions);
     const direct = evidence.direct_vs_inferred && evidence.direct_vs_inferred.direct;
     const inferred = evidence.direct_vs_inferred && evidence.direct_vs_inferred.inferred;
+    const vault = vaultSummary(data);
     const fields = [
       ['SOURCES', String(sources.length), sources.length ? 'measured' : 'unknown'],
       ['DIVERSITY', compactValue(evidence.source_diversity), evidence.source_diversity],
@@ -1156,19 +1174,16 @@
       ['DIRECT', compactValue(direct), direct],
       ['INFERRED', compactValue(inferred), inferred],
       ['LAST RECEIPT', compactValue(receipts.last_receipt_tier), receipts.last_receipt_tier],
-      ['SEAL CHAIN', compactValue((() => {
-        const status = firstPresent(receipts.chain_status, receipts.seal_chain_seq);
-        const text = String(unwrap(status) || '');
-        if (/gap|unlinked/i.test(text)) return status;
-        return firstPresent(receipts.seal_chain_seq, receipts.chain_status);
-      })()), firstPresent(receipts.chain_status, receipts.seal_chain_seq)],
+      ['SEAL CHAIN', vault.text, vault.verified ? 'measured' : 'degraded'],
+      ['HEAD HASH', vault.hash ? String(vault.hash).replace(/^sha256:/, '').slice(0, 16) + '…' : UNAVAILABLE, vault.hash ? 'measured' : 'unknown'],
+      ['CANONICAL', vault.verified ? 'verified · 0 gaps' : 'not verified', vault.verified ? 'measured' : 'degraded'],
       ...(function () {
         const unlinked = unwrap(receipts.unlinked_seal_entries);
         if (unlinked == null || unlinked === '') return [];
         const unlinkedState = (typeof unlinked === 'number' && unlinked > 0) ? 'degraded' : 'measured';
-        return [['UNLINKED SEALS', String(unlinked), unlinkedState]];
+        return [['UNLINKED LEGACY', String(unlinked) + ' rows', unlinkedState]];
       })(),
-      ['VAULT', compactValue(data.substrate && data.substrate.vault999), data.substrate && data.substrate.vault999],
+      ['VAULT (LEGACY)', compactValue(data.substrate && data.substrate.vault999), data.substrate && data.substrate.vault999],
     ];
     grid.innerHTML = fields.map(([name, value, state]) => `<div class="vocab-cell"><div class="name">${name}</div><div class="val val--${paletteClass(state)}">${esc(value)}</div></div>`).join('');
 

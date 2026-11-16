@@ -33,6 +33,7 @@ const ATLAS_CHROME_ROUTES: RegExp[] = [
 // Bundle monolitik 2.3MB dipecah — entry kini kecil, halaman dimuat atas permintaan.
 // Semua pages guna named export → dipetakan ke default utk React.lazy.
 const About = lazy(() => import('@/pages/About').then(m => ({ default: m.About })));
+const Sovereign = lazy(() => import('@/pages/Sovereign').then(m => ({ default: m.Sovereign })));
 const Sanctuary = lazy(() => import('@/pages/Sanctuary').then(m => ({ default: m.Sanctuary })));
 const Human = lazy(() => import('@/pages/Human').then(m => ({ default: m.Human })));
 const Home = lazy(() => import('@/pages/Home').then(m => ({ default: m.Home })));
@@ -93,6 +94,8 @@ function FederationChrome() {
           <Suspense fallback={<RouteLoading />}>
           <Routes>
             {/* 0. /about — Human-readable bio & on-ramp */}
+            <Route path="/arif" element={<Sovereign />} />
+            <Route path="/arif/" element={<Sovereign />} />
             <Route path="/about" element={<About />} />
             <Route path="/about/" element={<About />} />
             <Route path="/bio" element={<Navigate to="/about" replace />} />

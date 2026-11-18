@@ -1,11 +1,11 @@
 <!-- SOT-MANIFEST
-federation_release: v2026.09.13
-last_verified: 2026-09-13T06:32:00Z
-live_commit: b091f33
+federation_release: v2026.11.18
+last_verified: 2026-11-18T07:35:00Z
+live_commit: b14a17a8
 scope: /root/arif-fazil.com → ariffazil/arif-fazil.com
 epistemic_status: OBS
 apex_zen: A2A delegates ⊥ MCP equips ⊥ ACT mutates ⊥ arifOS governs ⊥ F13 decides
-truth_rule: live git push + Cloudflare deploy beat any static count in prose
+truth_rule: live git push + VPS Caddy origin deploy beat any static count in prose
 doctrine: Satu domain. Satu web surface. Banyak organ, tetap bersempadan.
 -->
 
@@ -20,7 +20,7 @@ doctrine: Satu domain. Satu web surface. Banyak organ, tetap bersempadan.
 
 **arif-fazil.com** is the unified public **human world model** for the arifOS Federation — one entry point for humans, agents, and scrapers.
 
-**Organ domains** (`geox` · `wealth` · `well` · `mcp` · `arifos` …) are **agent doors and MCP edges**, not rival human home pages. Link them from machine footer / Federation / Connect; do not put them on the primary nav. Full map: [`docs/AGENTIC_WEB_WORLD_MODEL.md`](./docs/AGENTIC_WEB_WORLD_MODEL.md). Narrative organ paths stay under the apex (`/arifos/`, `/geox/`, …). Legacy subdomains redirect or serve protocol doors — never delete, never break.
+**Organ domains** (`geox` · `wealth` · `well` · `frame` · `chron` · `arifflow` · `mcp` · `arifos` …) are **agent doors and MCP edges**, not rival human home pages. Link them from machine footer / Federation / Connect; do not put them on the primary nav. Full map: [`docs/AGENTIC_WEB_WORLD_MODEL.md`](./docs/AGENTIC_WEB_WORLD_MODEL.md). Narrative organ paths stay under the apex (`/arifos/`, `/geox/`, …). Legacy subdomains redirect or serve protocol doors — never delete, never break.
 
 ---
 
@@ -35,19 +35,21 @@ One domain. One web surface. All federation organs exposed as paths.
 ```mermaid
 graph TB
     subgraph EDGE [☁️ Cloudflare Edge]
-        CF[Cloudflare Pages<br/>Auto-deploy on git push]
+        CF[Cloudflare DNS / Proxy<br/>TLS + Edge Cache]
     end
-    CF -->|routes| CADDY[🔄 Caddy :443<br/>Reverse Proxy]
-    subgraph VPS [🖥️ VPS af-forge]
+    CF -->|routes| CADDY[🔄 Caddy :443<br/>VPS Reverse Proxy]
+    subgraph VPS [🖥️ VPS Origin]
         CADDY --> ROOT[arif-fazil.com/<br/>React 19 Cockpit]
-        CADDY --> ARIFOS[/arifos/ — Observatory]
-        CADDY --> AAA[/aaa/ — Control Plane]
-        CADDY --> GEOX[/geox/ — Earth Lab]
-        CADDY --> WEALTH[/wealth/ — Capital]
-        CADDY --> WELL[/well/ — Readiness]
-        CADDY --> FORGE[/forge/ — Execution]
-        CADDY --> MCP[/mcp/ — Gateway]
-        CADDY --> WIKI[/wiki/ — Knowledge]
+        CADDY --> ARIFOS[arifos.arif-fazil.com<br/>Observatory / :8088]
+        CADDY --> AAA[aaa.arif-fazil.com<br/>Control Plane / :3001]
+        CADDY --> GEOX[geox.arif-fazil.com<br/>Earth Lab / :8081]
+        CADDY --> WEALTH[wealth.arif-fazil.com<br/>Capital / :18082]
+        CADDY --> WELL[well.arif-fazil.com<br/>Readiness / :18083]
+        CADDY --> FRAME[frame.arif-fazil.com<br/>Observer / :18085]
+        CADDY --> CHRON[chron.arif-fazil.com<br/>Temporal / :18102]
+        CADDY --> FLOW[arifflow.arif-fazil.com<br/>Metabolism / :7073]
+        CADDY --> FORGE[forge.arif-fazil.com<br/>Execution / :7071]
+        CADDY --> MCP[mcp.arif-fazil.com<br/>MCP Gateway]
     end
 ```
 
@@ -109,22 +111,17 @@ Subdomain → apex legacy aliases that still resolve (200): `arifos`, `wealth` (
 
 ```
 arif-fazil.com/
-├── sites/                    # Static frontends
-│   ├── arif-fazil.com/       # React 19 + Vite 8 Cockpit
-│   ├── aaa.arif-fazil.com/   # Control Plane surface
-│   ├── arifos.arif-fazil.com/ # Observatory docs
-│   ├── geox.arif-fazil.com/  # Earth Lab GUI
-│   ├── wealth.arif-fazil.com/ # Capital surface
-│   ├── wiki.arif-fazil.com/  # Constitutional wiki
-│   └── shared/               # Design system assets
-├── apps/                     # Dynamic product UIs
-├── infra/                    # Constitutional manifests, domain routing
-├── scripts/                  # Deployment & audit scripts
-├── surfaces.json             # ⭐ CANONICAL surface registry (repo root, 2026-10-22) —
-│                             #    112 entries (74 live / 37 redirect / 1 gone); sitemap,
-│                             #    discovery views and DTI gates generate from this
-├── deploy-vps.sh             # VPS deployment script
-└── verify-pages.sh           # ⛔ Deploy gate — must pass before seal
+├── sites/                       # Static frontends
+│   ├── arif-fazil.com/          # React 19 + Vite 8 Cockpit
+│   ├── geox.arif-fazil.com/     # Earth Lab surface
+│   └── shared/                  # Shared design assets
+├── infra/                       # Constitutional manifests, domain routing
+├── deploy/                      # Caddyfile, systemd snippets, Docker patches
+├── scripts/                     # Deployment & audit scripts (deploy-vps.sh, verify-pages.sh)
+├── surfaces.json                # ⭐ CANONICAL surface registry (repo root, 2026-10-22) —
+│                                #    114 entries (76 live / 36 redirect / 2 gone); sitemap,
+│                                #    discovery views and DTI gates generate from this
+└── deploy-makcik.sh             # Editorial surface deploy script
 ```
 
 **Registry rule (2026-10-22):** if a surface is not in `surfaces.json`, it is not
@@ -137,13 +134,16 @@ views regenerate from this one source.
 
 | Organ | Role | Port | Repo | MCP | Health | LLMs |
 |:---|:---|:---:|:---|:---|:---|:---|
-| **⚖️ arifOS** | Constitutional Kernel — judges, seals | 8088 | [repo](https://github.com/ariffazil/arifos) | [mcp](https://mcp.arif-fazil.com/mcp) | [health](https://arifos.arif-fazil.com/health) | [llms.txt](https://arifos.arif-fazil.com/llms.txt) |
+| **⚖️ arifOS** | Constitutional Kernel — judges, seals | 8088 | [repo](https://github.com/ariffazil/arifOS) | [mcp](https://mcp.arif-fazil.com/mcp) | [health](https://arifos.arif-fazil.com/health) | [llms.txt](https://arifos.arif-fazil.com/llms.txt) |
 | **⚒️ A-FORGE** | Execution Engine — builds, deploys | 7071/72 | [repo](https://github.com/ariffazil/A-FORGE) | [mcp](https://forge.arif-fazil.com/mcp) | [health](https://forge.arif-fazil.com/health) | [llms.txt](https://forge.arif-fazil.com/llms.txt) |
 | **🏛️ AAA** | Control Plane — A2A gateway, cockpit | 3001 | [repo](https://github.com/ariffazil/AAA) | — | [health](https://aaa.arif-fazil.com/health) | [llms.txt](https://aaa.arif-fazil.com/llms.txt) |
 | **🌍 GEOX** | Earth Intelligence — seismic, wells | 8081 | [repo](https://github.com/ariffazil/GEOX) | [mcp](https://geox.arif-fazil.com/mcp) | [health](https://geox.arif-fazil.com/health) | [llms.txt](https://geox.arif-fazil.com/llms.txt) |
 | **💰 WEALTH** | Capital Intelligence — NPV, risk | 18082 | [repo](https://github.com/ariffazil/WEALTH) | [mcp](https://wealth.arif-fazil.com/mcp) | [health](https://wealth.arif-fazil.com/health) | [llms.txt](https://wealth.arif-fazil.com/llms.txt) |
-| **🫀 WELL** | Vitality Guard — human readiness | 18083 | [repo](https://github.com/ariffazil/WELL) | [mcp](https://well.arif-fazil.com/mcp) | [health](https://well.arif-fazil.com/health) | [llms.txt](https://well.arif-fazil.com/llms.txt) |
-| **🔮 HERMES** | Multi-Modal Bridge — Telegram relay | 8644 | [repo](https://github.com/ariffazil/HERMES) | — | — | — |
+| **🫀 WELL** | Vitality Guard — human & machine readiness | 18083 | [repo](https://github.com/ariffazil/WELL) | [mcp](https://well.arif-fazil.com/mcp) | [health](https://well.arif-fazil.com/health) | [llms.txt](https://well.arif-fazil.com/llms.txt) |
+| **🖼️ FRAME** | Frame Observer — live fleet probe & drift | 18085/86 | [repo](https://github.com/ariffazil/FRAME) | [mcp](https://frame.arif-fazil.com/mcp) | [health](https://frame.arif-fazil.com/health) | [llms.txt](https://frame.arif-fazil.com/llms.txt) |
+| **⏳ CHRON** | Temporal Epistemology — predictions & witness | 18102 | [repo](https://github.com/ariffazil/CHRON) | [mcp](https://chron.arif-fazil.com/mcp) | [health](https://chron.arif-fazil.com/health) | [llms.txt](https://chron.arif-fazil.com/llms.txt) |
+| **🌊 arifFlow** | Metabolism Pulse — FQ check & receipt stream | 7073 | [repo](https://github.com/ariffazil/arifFLOW) | — | [health](https://arifflow.arif-fazil.com/health) | — |
+| **🔮 HERMES** | Multi-Modal Bridge — meaning relay & webhook | 18087/8644 | [repo](https://github.com/ariffazil/HERMES) | — | — | — |
 | **🌐 arif-fazil.com** | Public Web Surface — one domain | 443 | [repo](https://github.com/ariffazil/arif-fazil.com) | — | [verify](https://arif-fazil.com/999/verify) | — |
 
 ---
@@ -161,8 +161,6 @@ views regenerate from this one source.
 | **VAULT999** | Ledger | Record immutable seals | Edit or delete history |
 
 > AAA routes and displays. arifOS judges. Domain organs witness. A-FORGE executes. arif-fazil.com hosts the surface. VAULT999 records. ARIF decides.
-
----
 
 ---
 
@@ -187,7 +185,7 @@ This repo follows the federation's CI governance pattern (replicated from `ariff
 | TypeScript | `zod`, `@modelcontextprotocol/sdk`, `fastmcp`, `mcp-sdk`, `tsx`, `vitest`, `@types/node`, `typescript`, `ts-node` |
 | Static site | `vite`, `react`, `react-dom`, `react-router`, `@tanstack/react-query`, `tailwindcss` |
 
-**Reference:** [`/root/AGENTS.md`](/root/AGENTS.md) — canonical federation doctrine. `AAA/docs/ORGAN.md` — topology.
+**Reference:** `/root/AGENTS.md` (host operational doctrine) · `AAA/docs/ORGAN.md` — topology.
 
 DITEMPA BUKAN DIBERI — governance is forged, not given.
 

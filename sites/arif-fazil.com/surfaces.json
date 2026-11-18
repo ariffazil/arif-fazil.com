@@ -1124,13 +1124,10 @@
     },
     {
       "path": "/world/petronas/gentari/",
-      "title": "Gentari — Dossier Realiti",
-      "mission": "Sovereign dossier on Gentari Sdn Bhd — PETRONAS clean energy arm: measured CAPEX, segment losses, capacity growth, hydrogen stall, KKR India deal. 12 sourced claims with falsifiers.",
-      "status": "live",
-      "type": "dossier",
-      "priority": "0.6",
-      "changefreq": "weekly",
-      "description": "Keluarga Bayang surface. 12 claims (7 PROVEN / 4 PARTIAL / 1 UNKNOWN), machine data at claims.json + index.json."
+      "title": "Gentari — Dossier Realiti (retired)",
+      "status": "gone",
+      "type": "gone",
+      "description": "Retired dossier surface. Measured 2026-11-18: HTTP 410 Gone (intentional — the Caddy vhost has served an honest 410 for this path since 2026-11-11T16:45Z; it briefly served the World hub and the PETRONAS page is /petronas/)."
     },
     {
       "path": "/world/petronas/",

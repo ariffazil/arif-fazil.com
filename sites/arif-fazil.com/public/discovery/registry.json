@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-18T14:01:48.506Z",
+  "generated_at": "2026-11-18T23:22:54.712Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {

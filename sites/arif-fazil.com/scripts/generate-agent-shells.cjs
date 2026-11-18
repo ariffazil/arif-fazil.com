@@ -118,6 +118,7 @@ ${body}
 // (diagnosed 2026-09-18, commit 68aafb5 authored the hub, next build erased it).
 const PRESERVED_ROUTES = new Set([
   'world',
+  'federation',
 ]);
 
 function writeRoute(route, html) {

@@ -36,6 +36,7 @@ b9fd03b0e7f6811cb50f6f894c511720fbd848783fcc925bbb0d7a422aae3a0e  /root/VAULT999
 0d4538c9463959d4f26bdba1ea9d2ccb0b3a2571b1ffa1f32e22bed5a3b0c4aa  /root/VAULT999/RECEIPTS/2026-10-06-seq46-chain-break-forensics.json
 05d23b6c1781534533c5c82e1fe334b4028754f1593a03d2ad03adabf65d8637  /root/VAULT999/RECEIPTS/2026-10-24-fixall-session-FI-008.md
 9adc5b691c24315da73b54451b3d5bc90c5abdf8ef50536470c3e9f22e8e9f25  /root/VAULT999/RECEIPTS/2026-10-24-site-orphan-quarantine.md
+6e33dcfda82a300265ab81c14b40b94627a9b06c12149155ad08fa71427e8e21  /root/VAULT999/RECEIPTS/2026-10-30-reality-scan-nov2026-events.json
 5a1741312f9eed74c6f74e9635a9ac15939583c64dd181592e7da41ed1d6c11c  /root/VAULT999/RECEIPTS/20261001-hermes-a2a-federation-seal-20261001T092734Z.json
 d821fff0074e8dae863279b26d0af571b86d8a12f3cb4eb799b5ae7928415561  /root/VAULT999/RECEIPTS/20261001-hermes-gateway-outage-fix-20261001T080616Z.json
 647a4fd346d2729ea0a5c968d4db3a561060e94da5e2806bf417084e5484ddac  /root/VAULT999/RECEIPTS/20261001-hermes-hardening-seal-20261001T084943Z.json
@@ -84,10 +85,10 @@ f665fd7170cb0b28c3c9a5f91f94d77b9626c7d4a46d055c55e3bef5e4f2eb24  /root/VAULT999
 d73ca402d14414168fca6be8dcb29fb8ef798c2f47eeed357fe2c0074d625841  /root/VAULT999/RECEIPTS/session-seal-flame-witness-20260815.json
 81697cd94c45d9e5ebead36ff6abb3b7fc00e28d36804ad15dfcdc1936e04914  /root/VAULT999/RECEIPTS/session_receipts.jsonl
 d25336b2a91806ac39c4adea2e22f3676faae5fc8e18e90cee3d57e48bc42003  /root/.hermes/logs/reality_claim_refusals.jsonl
-4c49b72d23cc01d128a3b2f8a3f122b75bfdd37855c032bb5060c19c4737a001  /root/VAULT999/SEALED_EVENTS.jsonl
-1dd5bd14563f543afa6acc978382925258c3ee759dfb44257ecfb6bf4c73b3d6  /root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py
+66bc4ffa5ce9782e35aaf58196228ab624009ead533b71f05c7bc0a0bbac3334  /root/VAULT999/SEALED_EVENTS.jsonl
+24f28c4d075b7318305e32bdb3e401c509589a0e41e2759458d31d5e912c6334  /root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py
 
 # SECTION 2 — ADVANCING: live logs that append by design.
 # Format: <sha256>  <lines_at_build>  <path>
 # These are expected to grow. verify.sh reports ADVANCED, not failure.
-7432101133d88da3f3c6ebabbb29f9100bcbd125be2123e3f5ccc5e1b40cf63f  3100  /root/.hermes/logs/reality_claim_gate.log
+847a3852c13fc5141e83a5962de11972d7c6be88804b887b1875254974ae3edb  3443  /root/.hermes/logs/reality_claim_gate.log

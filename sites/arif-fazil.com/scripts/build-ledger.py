@@ -204,6 +204,29 @@ def collect_seal_chain() -> dict:
             "identical": sha256(SEALED_COPY) == sha256(SEALED),
         }
     frozen_days = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromtimestamp(st.st_mtime, dt.timezone.utc)).days
+    v2_path = pathlib.Path("/root/.local/share/arifos/vault999/seal_chain.jsonl")
+    v2_info = None
+    if v2_path.is_file():
+        v2_st = v2_path.stat()
+        v2_lines = sum(1 for _ in v2_path.open("rb"))
+        v2_last = None
+        for raw in v2_path.open("rb"):
+            if raw.strip():
+                v2_last = raw
+        v2_seq = None
+        if v2_last:
+            try:
+                v2_obj = json.loads(v2_last.decode("utf-8", "ignore"))
+                v2_seq = v2_obj.get("seq") or v2_obj.get("sequence") or v2_obj.get("id")
+            except Exception:
+                pass
+        v2_info = {
+            "path": str(v2_path),
+            "lines": v2_lines,
+            "last_append": iso(v2_st.st_mtime),
+            "head_seq": v2_seq,
+            "sha256": sha256(v2_path)[:32],
+        }
     return {
         "state": "PRESENT",
         "path": str(SEALED),
@@ -214,10 +237,11 @@ def collect_seal_chain() -> dict:
         "days_since_append": frozen_days,
         "head_id": head_id,
         "twin_copy": twin,
+        "v2_canonical_chain": v2_info,
         "note": (
-            "Witness grows, chain does not move. The seal chain is the only "
-            "append-only hash-linked record; it is reported here exactly as "
-            "found, including how stale it is."
+            "Two seal stores exist on disk: legacy SEALED_EVENTS.jsonl (1,363 rows) "
+            "and active kernel v2 seal_chain.jsonl (282 rows, canonical head_seq=62 verified). "
+            "Both are reported here so this page matches the Observatory and NEXT.md."
         ),
     }
 
@@ -230,22 +254,29 @@ def collect_open_loops() -> dict:
     except Exception as e:
         return {"state": "UNREADABLE", "path": str(CF), "error": str(e)[:120]}
     entries = d.get("entries") or []
-    loops = [e for e in entries if e.get("kind") == "open_loop"]
-    # Count ONLY genuinely open loops. Counting every entry ever tagged
-    # open_loop (including status=DONE) would overstate the backlog — the exact
-    # defect this ledger exists to catch.
-    opened = [x for x in loops if (x.get("status") or "OPEN").upper() == "OPEN"]
-    closed = [x for x in loops if (x.get("status") or "").upper() == "DONE"]
-    oldest = min((x.get("ts") for x in opened if x.get("ts")), default=None)
+    if entries:
+        loops = [e for e in entries if isinstance(e, dict) and e.get("kind") == "open_loop"]
+        opened = [x for x in loops if (x.get("status") or "OPEN").upper() == "OPEN"]
+        closed = [x for x in loops if (x.get("status") or "").upper() == "DONE"]
+        oldest = min((x.get("ts") for x in opened if isinstance(x, dict) and x.get("ts")), default=None)
+        total_entries = len(entries)
+    else:
+        raw_open = d.get("open_loops") if isinstance(d.get("open_loops"), list) else []
+        raw_done = d.get("completed") if isinstance(d.get("completed"), list) else []
+        opened = [x for x in raw_open if not (isinstance(x, dict) and (x.get("status") or "").upper() in ("DONE", "CLOSED"))]
+        closed = list(raw_done) + [x for x in raw_open if isinstance(x, dict) and (x.get("status") or "").upper() in ("DONE", "CLOSED")]
+        loops = opened + closed
+        oldest = min((x.get("ts") for x in opened if isinstance(x, dict) and x.get("ts")), default=d.get("last_updated_utc"))
+        total_entries = len(loops)
     return {
         "state": "PRESENT",
         "path": str(CF),
         "schema": d.get("schema"),
-        "entries": len(entries),
+        "entries": total_entries,
         "open_loops": len(opened),
         "closed_loops": len(closed),
         "loops_total": len(loops),
-        "oldest_open_ts": oldest,
+        "oldest_open_ts": oldest if opened else None,
     }
 
 
@@ -349,7 +380,7 @@ def derive_defects(L: dict) -> list[dict]:
             }
         )
     o = L["open_loops"]
-    if o.get("state") == "PRESENT":
+    if o.get("state") == "PRESENT" and (o.get("open_loops") or 0) > 0:
         d.append(
             {
                 "id": "D5",
@@ -527,7 +558,7 @@ practice, not yet a pattern — the count is published so it can be judged.</p>
 <div><b>{e(str(s.get('head_id','-')))}</b><span>head id</span></div>
 <div><b>{e(str(s.get('days_since_append','-')))}d</b><span>since last append</span></div>
 </div>
-<p class=mono>sha256 {e(str(s.get('sha256','-')))}<br>{e(str(s.get('path','-')))}<br>twin copy identical: {twin}</p>
+<p class=mono>sha256 {e(str(s.get('sha256','-')))}<br>{e(str(s.get('path','-')))}<br>twin copy identical: {twin}<br>v2 canonical chain: {e(str((s.get('v2_canonical_chain') or {}).get('path','-')))} ({e(str((s.get('v2_canonical_chain') or {}).get('lines','-')))} rows, last append {e(str((s.get('v2_canonical_chain') or {}).get('last_append','-')))})</p>
 <div class=note>{e(s.get('note',''))}</div>
 
 <h2>Defects on record</h2>

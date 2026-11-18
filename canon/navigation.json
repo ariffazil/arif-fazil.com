@@ -1,8 +1,8 @@
 {
   "$schema": "./public-state.schema.json",
-  "version": "7.2.0",
-  "as_of": "2026-09-21",
-  "description": "Organ-mirror nav v7.1: HOME(AAA) EARTH(GEOX) WORDS(arifOS) MAKCIKGPT(HERMES civic voice) WORLD(WEALTH) WORK(WELL). Organs belong to agents — machine_links. Pages are for humans; contexts are for agents. F13 ratified 2026-08-06; v7.1 expands to 6 slots (MakcikGPT promoted) on 2026-09-19.",
+  "version": "7.4.0",
+  "as_of": "2026-11-14",
+  "description": "Organ-mirror nav v7.1: HOME(AAA) EARTH(GEOX) WORDS(arifOS) MAKCIKGPT(HERMES civic voice) WORLD(WEALTH) WORK(WELL). Organs belong to agents — machine_links. Pages are for humans; contexts are for agents. F13 ratified 2026-08-06; v7.1 expands to 6 slots (MakcikGPT promoted) on 2026-09-19. v7.3: Institution/Vitals/Proof added to secondary, /human added to machine doors (static arrow_hybrid_frame rollout 2026-10-03, sovereign-directed).",
   "rule": "Edit primary_links / secondary_links / machine_links here. Site generates navCanon.ts and MUST render them. No hardcoded navbar lists.",
   "doctrine": {
     "human_first": true,
@@ -34,6 +34,82 @@
     "clock": "Asia/Kuala_Lumpur",
     "creed": "Forged, not given."
   },
+  "primary_links_journey": {
+    "description": "Human-journey primary nav (5 slots, F13 audit 2026-10-05).",
+    "rule": "Renders above primary_links. Maximum 5 items. Each href is one human purpose, not one organ.",
+    "as_of": "2026-10-05",
+    "ratified_by": "F13 (binary A, 2026-10-05)",
+    "items": [
+      {
+        "label": "Explore",
+        "href": "/earth/",
+        "question": "What does physical reality show?"
+      },
+      {
+        "label": "Read",
+        "href": "/words/",
+        "question": "What does this mean for people?"
+      },
+      {
+        "label": "Build",
+        "href": "/work/",
+        "question": "What can I do here?"
+      },
+      {
+        "label": "Evidence",
+        "href": "/999/",
+        "question": "What evidence is this built on? — F13 binary D"
+      },
+      {
+        "label": "About",
+        "href": "/institution/",
+        "question": "Who is Arif and why does this exist?"
+      }
+    ]
+  },
+  "secondary_links_organs": {
+    "description": "7-organ 'Powered by' strip, replacing v7.3's 6 organ-mirror. Demoted to secondary (was v7.3 primary).",
+    "rule": "Always visible. The 7 organs are canonical per arifOS §2.1 (2026-09-14) and AAA P2 (2026-09-21). HERMES and CHRON are Tier-3 boundary services, not organs, and are NOT in this strip — they appear in the machine-doors footer.",
+    "as_of": "2026-10-05",
+    "items": [
+      {
+        "label": "arifOS",
+        "href": "https://arifos.arif-fazil.com/",
+        "role": "authority"
+      },
+      {
+        "label": "A-FORGE",
+        "href": "https://a-forge.arif-fazil.com/",
+        "role": "execution"
+      },
+      {
+        "label": "AAA",
+        "href": "https://aaa.arif-fazil.com/",
+        "role": "attention"
+      },
+      {
+        "label": "GEOX",
+        "href": "https://geox.arif-fazil.com",
+        "role": "domain:earth"
+      },
+      {
+        "label": "WEALTH",
+        "href": "https://wealth.arif-fazil.com",
+        "role": "domain:capital"
+      },
+      {
+        "label": "WELL",
+        "href": "https://well.arif-fazil.com",
+        "role": "domain:vitality"
+      },
+      {
+        "label": "arifFlow",
+        "href": "https://arif-fazil.com/arifos/",
+        "role": "metabolism",
+        "note": "arifFlow aggregate is rendered in the observatory (/arifos/); per-actor telemetry is internal. /pulse/ is intentionally 410 (F13 audit 2026-10-05). System status: see Evidence → /999/."
+      }
+    ]
+  },
   "primary_links": {
     "description": "6-slot human nav. Each nav item = an organ's output portal: HOME=sovereign, EARTH=GEOX, WORDS=arifOS, MAKCIKGPT=HERMES civic voice, WORLD=WEALTH, WORK=WELL. Organs themselves are agent-owned and live in machine_links.",
     "rule": "Max 6. Labels = organ domains. Every page must render the same 6 slots — no per-page divergence.",
@@ -46,6 +122,11 @@
         "domain": "sovereign",
         "organ": "AAA",
         "question": "Where do I land? (cockpit — principal ↔ agents)"
+      },
+      {
+        "label": "About",
+        "href": "/about",
+        "mode": "spa"
       },
       {
         "label": "Earth",
@@ -142,6 +223,12 @@
         "mode": "static"
       },
       {
+        "label": "World",
+        "href": "/world/",
+        "mode": "spa",
+        "note": "Frontier AI, geopolitics & civic intelligence (parent of /world/makcikgpt, /world/politics). F13 binary 2026-10-06: surface World parent in footer nav, not in primary 5-slot journey (preserves Explore·Read·Build·Evidence·About)."
+      },
+      {
         "label": "PETRONAS",
         "href": "/propa/",
         "mode": "static",
@@ -169,6 +256,24 @@
         "mode": "static",
         "organ": "federation",
         "question": "Where are the organs? (one system)"
+      },
+      {
+        "label": "Institution",
+        "href": "/institution/",
+        "mode": "static",
+        "note": "Briefing — live human engagement door"
+      },
+      {
+        "label": "Vitals",
+        "href": "/vitals/",
+        "mode": "static",
+        "note": "PETRONAS in public numbers"
+      },
+      {
+        "label": "Proof",
+        "href": "/999/",
+        "mode": "static",
+        "note": "Evidence snapshots — /999 proof"
       }
     ]
   },
@@ -201,7 +306,17 @@
       },
       {
         "label": "arifOS",
-        "href": "/canon/",
+        "href": "https://arifos.arif-fazil.com/",
+        "agent_organ": true
+      },
+      {
+        "label": "A-FORGE",
+        "href": "https://a-forge.arif-fazil.com/",
+        "agent_organ": true
+      },
+      {
+        "label": "AAA",
+        "href": "https://aaa.arif-fazil.com/",
         "agent_organ": true
       },
       {
@@ -218,6 +333,18 @@
         "label": "WELL",
         "href": "https://well.arif-fazil.com",
         "agent_organ": true
+      },
+      {
+        "label": "arifFlow",
+        "href": "https://arifflow.arif-fazil.com/health",
+        "agent_organ": true,
+        "note": "Serves aggregate JSON (diagnosis/fq/vector); per_actor and risk_class are redacted on the public host. Full per-actor stays internal :7073. Added 2026-10-07."
+      },
+      {
+        "label": "Agent contract",
+        "href": "/human",
+        "mode": "static",
+        "note": "Start here for agents"
       }
     ]
   },

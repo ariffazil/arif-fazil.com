@@ -2,130 +2,567 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Federation Observatory — arifOS F1–F13 · Arif Fazil</title>
-  <meta name="description" content="Constitutional floors and evidence chains, observed not adjudicated. Live canon: /floors.json.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Federation — One Sovereign, One System | Arif Fazil</title>
+  <meta name="description" content="The federated architecture of arif-fazil.com: one sovereign, a kernel that judges, four working roles, seven instruments, three territories. Live proof and the 13 constitutional floors.">
   <link rel="canonical" href="https://arif-fazil.com/federation/">
-  <meta name="last-modified" content="2026-11-14">
-  <style>
-    :root{--bg:#0A0B0D;--panel:#0F172A;--line:#1F2937;--ink:#EDEAE2;--dim:#9AA0A8;--gold:#E8B84B}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Newsreader,Georgia,serif;line-height:1.7}
-    .frame{max-width:760px;margin:0 auto;padding:1.25rem}
-    .crumb{font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:1rem}
-    .datechip{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:1rem}
-    article{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
-    article img{max-width:100%;height:auto}
-    article pre{overflow-x:auto}
-    article table{display:block;overflow-x:auto;max-width:100%}
-    a{color:var(--gold)}
-    .note{font-size:.82rem;color:var(--dim);border-left:2px solid var(--line);padding-left:.85rem;margin-top:2rem}
-    #root{display:none}
-  </style>
+  <meta name="last-modified" content="2026-11-18">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/_shared/design-system/tokens.css">
   <link rel="stylesheet" href="/_shared/fed-nav.css">
+  <style>
+    /* ─────────────────────────────────────────────────────────────
+       FEDERATED ARCHITECTURE — static, content-first surface.
+       Palette: canon RGBY dark set (verify-design-canon.cjs §8),
+       every accent >= 4.5:1 on carbon #0A0B0D. Red is rationed to
+       the sovereign node only (primer-1: red appears where
+       sovereignty is present, nowhere else).
+       Geometry: orthogonal rails (law) + one torus (the working
+       cycle). Hairlines, not boxes. Motion: pulse only, and only
+       for a live reading. prefers-reduced-motion collapses it.
+       ───────────────────────────────────────────────────────────── */
+    :root{
+      color-scheme: dark;
+      --carbon:#0A0B0D;
+      --bone:#E8E6DF;
+      --dim:#9AA0A8;
+      --faint:#6B7280;
+      --rule:#1F2733;
+      --gold:#C9A227;   /* human · warmth */
+      --blue:#7FB3FF;   /* law · judgement */
+      --green:#58C9A0;  /* earth · computation */
+      --red:#E05A4E;    /* sovereign · rationed */
+      --serif:'Fraunces',Georgia,'Times New Roman',serif;
+      --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--carbon);color:var(--bone);
+      font-family:var(--serif);line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--gold);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .frame{max-width:1100px;margin:0 auto;padding:1.25rem 1.25rem 5rem}
+    .crumb{
+      font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
+      letter-spacing:.14em;color:var(--dim);margin-bottom:1rem;
+    }
+    .datechip{
+      font-family:var(--mono);font-size:.68rem;color:var(--dim);
+      border:1px solid var(--rule);border-radius:2px;padding:2px 8px;
+      display:inline-block;margin-bottom:2.5rem;
+    }
+
+    /* ── HERO — human first ───────────────────────────────────── */
+    .hero{padding:1rem 0 3.5rem;border-bottom:1px solid var(--rule)}
+    .kicker{
+      font-family:var(--mono);font-size:.7rem;letter-spacing:.28em;
+      text-transform:uppercase;color:var(--gold);margin:0 0 1.25rem;
+    }
+    .hero h1{
+      font-size:clamp(2.4rem,7.2vw,5.1rem);font-weight:400;
+      line-height:1.02;letter-spacing:-.02em;margin:0 0 1.5rem;
+      max-width:18ch;
+    }
+    .hero h1 em{font-style:italic;color:var(--gold)}
+    .hero .lede{
+      font-size:clamp(1.05rem,2vw,1.32rem);line-height:1.6;
+      max-width:62ch;color:#D8D4CC;margin:0 0 1rem;
+    }
+    .hero .lede-bm{
+      font-family:var(--mono);font-size:.86rem;line-height:1.75;
+      color:var(--dim);max-width:62ch;margin:0 0 2rem;
+    }
+    .hero .cta{
+      display:inline-block;font-family:var(--mono);font-size:.72rem;
+      letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+      border-bottom:1px solid var(--gold);padding-bottom:3px;
+    }
+
+    /* ── SECTION FURNITURE ───────────────────────────────────── */
+    section{padding:3.25rem 0}
+    h2.sec{
+      font-family:var(--mono);font-size:.76rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--gold);font-weight:500;
+      margin:0 0 .35rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule);
+    }
+    .sec-note{
+      font-size:.92rem;color:var(--dim);max-width:66ch;margin:.9rem 0 0;
+    }
+
+    /* ── ARCHITECTURE — layered, one direction of authority ───── */
+    .arch{margin-top:2.25rem}
+    .layer{position:relative}
+    .layer-tag{
+      font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--faint);margin-bottom:.75rem;
+      display:flex;align-items:center;gap:.6rem;
+    }
+    .layer-tag::after{content:"";flex:1;height:1px;background:var(--rule)}
+    .rail{width:1px;height:1.75rem;background:var(--rule);margin-left:.35rem}
+    .node{
+      border:1px solid var(--rule);border-radius:2px;
+      background:#0D1016;padding:.85rem .95rem;
+      display:flex;flex-direction:column;gap:.3rem;
+    }
+    .node .nm{
+      font-family:var(--mono);font-size:.82rem;font-weight:600;
+      letter-spacing:.06em;color:var(--bone);
+    }
+    .node .rl{font-size:.82rem;color:var(--dim);line-height:1.55}
+    .node .pth{
+      font-family:var(--mono);font-size:.66rem;color:var(--faint);
+      letter-spacing:.05em;
+    }
+    .node .pth a{color:var(--faint)}
+    .node .pth a:hover{color:var(--gold)}
+
+    /* sovereign — the only red on the page */
+    .node.soul{border-color:#3A2320;background:#120D0C}
+    .node.soul .nm{color:var(--red)}
+    /* kernel — law */
+    .node.law{border-color:#24344A;background:#0B1017}
+    .node.law .nm{color:var(--blue)}
+
+    /* working layer — one torus around the cycle */
+    .cycle{
+      position:relative;border:1px solid var(--rule);border-radius:999px;
+      padding:1.5rem 1.1rem;margin:0 .35rem;
+      background:radial-gradient(120% 90% at 50% 0%,rgba(127,179,255,.05),transparent 70%);
+    }
+    .cycle::before{
+      content:"";position:absolute;inset:-1px;border-radius:999px;
+      border:1px dashed rgba(127,179,255,.22);pointer-events:none;
+    }
+    .cycle-cap{
+      font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--blue);text-align:center;
+      margin:-.25rem 0 1rem;
+    }
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+    .grid7{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+    .node.role .nm{color:var(--blue)}
+    .node.inst .nm{color:var(--green)}
+    .node.inst.human .nm{color:var(--gold)}
+
+    /* territories */
+    .terrs{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.75rem}
+    .terr{
+      border:1px solid var(--rule);border-left:2px solid var(--rule);
+      border-radius:2px;padding:.7rem .85rem;background:#0D1016;
+    }
+    .terr.h{border-left-color:var(--gold)}
+    .terr.i{border-left-color:var(--blue)}
+    .terr.e{border-left-color:var(--green)}
+    .terr .tn{
+      font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;
+      text-transform:uppercase;margin-bottom:.25rem;
+    }
+    .terr.h .tn{color:var(--gold)}
+    .terr.i .tn{color:var(--blue)}
+    .terr.e .tn{color:var(--green)}
+    .terr .td{font-size:.78rem;color:var(--dim);line-height:1.5}
+    .laws{
+      margin-top:.6rem;border:1px solid var(--rule);border-radius:2px;
+      padding:.7rem .85rem;background:#0D1016;
+      font-family:var(--mono);font-size:.72rem;color:var(--dim);line-height:1.6;
+    }
+    .laws b{color:var(--bone);font-weight:600;letter-spacing:.08em}
+
+    /* ── LIVE PROOF ──────────────────────────────────────────── */
+    .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:2rem}
+    .pr{
+      border:1px solid var(--rule);border-radius:2px;background:#0D1016;
+      padding:.9rem 1rem;display:flex;flex-direction:column;gap:.4rem;
+    }
+    .pr .pk{
+      font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;
+      text-transform:uppercase;color:var(--faint);
+      display:flex;align-items:center;gap:.5rem;
+    }
+    .pr .pv{
+      font-family:var(--mono);font-size:1.25rem;font-weight:500;
+      letter-spacing:-.01em;color:var(--bone);line-height:1.25;
+    }
+    .pr .pv small{font-size:.72rem;color:var(--dim);letter-spacing:.04em}
+    .pr .pm{font-family:var(--mono);font-size:.66rem;color:var(--faint);line-height:1.55}
+    .pr .pm a{color:var(--faint)}
+    .pr .pm a:hover{color:var(--gold)}
+    .dot{
+      width:7px;height:7px;border-radius:50%;background:var(--faint);
+      display:inline-block;flex:0 0 auto;
+    }
+    .dot.live{background:var(--green)}
+    .dot.warn{background:var(--gold)}
+    .dot.down{background:var(--red)}
+    .dot.pending{animation:pulse 1.8s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .dot.pending{animation:none}
+    }
+
+    /* ── FLOORS TABLE (preserved content) ────────────────────── */
+    .floors-wrap{margin-top:1.5rem;overflow-x:auto}
+    table{border-collapse:collapse;width:100%;min-width:560px}
+    th{
+      font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--faint);text-align:left;
+      font-weight:500;padding:.5rem .6rem;border-bottom:1px solid var(--rule);
+    }
+    td{padding:.55rem .6rem;border-bottom:1px solid #141922;font-size:.85rem;vertical-align:top}
+    td.fid{font-family:var(--mono);font-size:.72rem;color:var(--blue);font-weight:600}
+    td.fname{font-weight:600;color:var(--bone);white-space:nowrap}
+    td.ftype{font-family:var(--mono);font-size:.66rem;color:var(--faint);white-space:nowrap}
+    td.fone{color:var(--dim);font-size:.82rem}
+    tr:hover td{background:#0D1016}
+
+    /* ── AGENT LAYER ─────────────────────────────────────────── */
+    .agentbar{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:.75rem;margin-top:1.75rem;
+    }
+    .ab{
+      border:1px solid var(--rule);border-radius:2px;background:#0D1016;padding:.85rem .9rem;
+    }
+    .ab .an{font-family:var(--mono);font-size:.75rem;color:var(--bone);letter-spacing:.06em}
+    .ab .ad{font-family:var(--mono);font-size:.68rem;color:var(--dim);line-height:1.6;margin-top:.35rem}
+    .ab .ad code{color:var(--green);font-size:.66rem}
+    .ab a{color:var(--green)}
+
+    footer{
+      border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.5rem;
+      font-family:var(--mono);font-size:.68rem;color:var(--faint);line-height:1.8;
+    }
+    footer a{color:var(--dim)}
+    footer a:hover{color:var(--gold)}
+    .motto{color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.66rem}
+
+    @media (max-width:900px){
+      .grid4,.grid7{grid-template-columns:repeat(2,1fr)}
+      .proof{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .grid4,.grid7,.terrs{grid-template-columns:1fr}
+      .frame{padding:1rem 1rem 4rem}
+      .hero h1{font-size:clamp(2rem,11vw,3rem)}
+    }
+  </style>
 </head>
 <body>
+  <div id="fed-nav-root"></div>
+  <script src="/_shared/fed-nav.js" defer></script>
+
   <div class="frame">
     <nav class="crumb" aria-label="Breadcrumb">Arif Fazil / Federation</nav>
-    <div id="fed-nav-root"></div>
-    <script src="/_shared/fed-nav.js" defer></script>
-    <span class="datechip">dateModified: 2026-11-14</span>
-    <article id="content-first-body">
-<h2>arifOS Federation Observatory</h2>
-<p>Constitutional floors, organs, and evidence chains — observed, not adjudicated.
-Floors enforced by the arifOS kernel; halaman ini melapor, tidak mengadili.</p>
-<p>Sumber live: <a href="/status.json">/status.json</a> · <a href="/ledger">/ledger</a> ·
-<a href="/api/federation-probe">/api/federation-probe</a></p>
-<h3>Constitutional Floors (canon: /floors.json, 13 floors)</h3>
-<div style="overflow-x:auto;">
-<table style="border-collapse:collapse;width:100%;min-width:520px;">
-<thead><tr style="border-bottom:1px solid #2A3340;text-align:left;">
-<th style="padding:.4rem .6rem;">ID</th><th style="padding:.4rem .6rem;">Name</th><th style="padding:.4rem .6rem;">Type</th><th style="padding:.4rem .6rem;">One-liner</th>
-</tr></thead>
-<tbody style="color:#EDEAE2;">
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F1</td>
-        <td style="font-weight:700;">AMANAH</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Every action reversible or backed up; irreversible → 888_HOLD</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F2</td>
-        <td style="font-weight:700;">TRUTH</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Evidence before narrative; epistemic band wajib pada setiap claim</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F3</td>
-        <td style="font-weight:700;">TRI-WITNESS</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">DERIVED</td>
-        <td style="color:#9AA0A8;">Tri-witness consensus untuk high-blast actions</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F4</td>
-        <td style="font-weight:700;">CLARITY</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Every output reduces entropy</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F5</td>
-        <td style="font-weight:700;">PEACE²</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">SOFT</td>
-        <td style="color:#9AA0A8;">Non-destructive power; guard the weakest stakeholder</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F6</td>
-        <td style="font-weight:700;">MARUAH</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">SOFT</td>
-        <td style="color:#9AA0A8;">Preserve human dignity, especially for the weakest consequence-bearer</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F7</td>
-        <td style="font-weight:700;">HUMILITY</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Declare unknowns; uncertainty never vanishes</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F8</td>
-        <td style="font-weight:700;">GENIUS</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">DERIVED</td>
-        <td style="color:#9AA0A8;">Proceed only on demonstrated quality</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F9</td>
-        <td style="font-weight:700;">ANTIHANTU</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">No hallucination, no consciousness claims, no runaway cascade</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F10</td>
-        <td style="font-weight:700;">ONTOLOGY</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">AI is instrument — no soul, no feelings, no sentience claims</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F11</td>
-        <td style="font-weight:700;">AUDITABILITY</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Every action leaves trace; receipts &gt; narratives</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F12</td>
-        <td style="font-weight:700;">RESILIENCE</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Sanitize inputs; external ≠ authority</td>
-      </tr>
-      <tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5F8FB3;font-weight:700;">F13</td>
-        <td style="font-weight:700;">SOVEREIGN</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B98A8;">HARD</td>
-        <td style="color:#9AA0A8;">Human veto is FINAL</td>
-      </tr>
-</tbody></table></div>
-    </article>
-    <p class="note">Content-first surface — kandungan penuh tanpa JavaScript.
-      Mesin: <a href="/llms.txt">/llms.txt</a> · <a href="/surfaces.json">/surfaces.json</a></p>
-    <div id="root"></div>
+    <span class="datechip">dateModified: 2026-11-18</span>
+
+    <!-- ── LAYER 1 · HUMAN TRUTH ─────────────────────────────── -->
+    <header class="hero">
+      <p class="kicker">Federasi · satu sistem · satu berdaulat</p>
+      <h1>One sovereign.<br>One system.<br><em>One organism.</em></h1>
+      <p class="lede">
+        This is not a list of tools. It is one organism with a shape: a human seat at the top,
+        a kernel that judges before anyone acts, four working roles that do the labour,
+        seven instruments that measure the world — and three territories they serve.
+        Authority only ever flows downward. Nothing below can overrule the seat.
+      </p>
+      <p class="lede-bm">
+        Ini satu sistem, bukan senarai alat. Arif duduk di atas — hak veto dia final.
+        arifOS mengadili dahulu (13 floor konstitusional). Empat peranan kerja: 333 bina,
+        555 semak, 888 adil, A-FORGE eksekusi. Tujuh instrumen: GEOX (bumi), WEALTH (modal),
+        WELL (tubuh/arif), AAA (cockpit), arifFlow (metabolisme), HERMES (tebisan), FRAME (ukur).
+        Tiga wilayah: HUMAN · INSTITUTION · EARTH. Dan satu-satunya fakta yang penting —
+        setiap claim boleh disemak sendiri.</p>
+      <a class="cta" href="#architecture">Turun ke seni bina</a>
+    </header>
+
+    <!-- ── LAYER 2 · VISUAL TRUTH — the architecture ──────────── -->
+    <section id="architecture">
+      <h2 class="sec">The federated architecture</h2>
+      <p class="sec-note">
+        Four layers, one direction of authority. The human decides, the kernel judges,
+        the working roles do the labour, the instruments measure — and every one of them
+        leaves a receipt.
+      </p>
+
+      <div class="arch">
+
+        <div class="layer">
+          <div class="layer-tag">Layer 0 · Sovereign</div>
+          <div class="node soul">
+            <span class="nm">ARIF FAZIL</span>
+            <span class="rl">The human seat. Final veto — no organ, agent or machine below can overrule it. Everything in this system exists under this one authority.</span>
+            <span class="pth"><a href="/arif/">/arif/</a></span>
+          </div>
+        </div>
+
+        <div class="rail" aria-hidden="true"></div>
+
+        <div class="layer">
+          <div class="layer-tag">Layer 1 · Judgement</div>
+          <div class="node law">
+            <span class="nm">arifOS KERNEL</span>
+            <span class="rl">Judges before anyone executes. Thirteen constitutional floors, one verdict at a time, and a sealed ledger that cannot be rewritten.</span>
+            <span class="pth"><a href="/arifos/">/arifos/</a> · <a href="/words/doctrine/">/words/doctrine/</a> · F1–F13</span>
+          </div>
+        </div>
+
+        <div class="rail" aria-hidden="true"></div>
+
+        <div class="layer">
+          <div class="layer-tag">Layer 2 · The working layer</div>
+          <div class="cycle">
+            <p class="cycle-cap">Propose → Challenge → Judge → Execute → Seal</p>
+            <div class="grid4">
+              <div class="node role">
+                <span class="nm">333-AGI</span>
+                <span class="rl">Architect. Proposes the shape, then builds it — code, surfaces, instruments.</span>
+                <span class="pth">propose · forge</span>
+              </div>
+              <div class="node role">
+                <span class="nm">555-ASI</span>
+                <span class="rl">Auditor. Challenges the claim with measurement. Senses what others miss.</span>
+                <span class="pth">challenge · verify</span>
+              </div>
+              <div class="node role">
+                <span class="nm">888-APEX</span>
+                <span class="rl">Judge. Issues the constitutional verdict — SEAL, HOLD, SABAR or VOID.</span>
+                <span class="pth">judge · hold</span>
+              </div>
+              <div class="node role">
+                <span class="nm">A-FORGE</span>
+                <span class="rl">Executor. Runs sealed work: reversible, hash-chained, receipted. Never decides.</span>
+                <span class="pth">execute · receipt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rail" aria-hidden="true"></div>
+
+        <div class="layer">
+          <div class="layer-tag">Layer 3 · The instruments</div>
+          <div class="grid7">
+            <div class="node inst">
+              <span class="nm">GEOX</span>
+              <span class="rl">Earth intelligence. Basins, seismic, wells — computes physical evidence, never adjudicates.</span>
+              <span class="pth"><a href="/earth/">/earth/</a> · geox.arif-fazil.com</span>
+            </div>
+            <div class="node inst">
+              <span class="nm">WEALTH</span>
+              <span class="rl">Capital intelligence. NPV, risk, market structure — prices consequences before they happen.</span>
+              <span class="pth">wealth.arif-fazil.com</span>
+            </div>
+            <div class="node inst human">
+              <span class="nm">WELL</span>
+              <span class="rl">Vitality mirror. Reflects human and machine state without diagnosing either.</span>
+              <span class="pth"><a href="/human/">/human/</a> · well.arif-fazil.com</span>
+            </div>
+            <div class="node inst">
+              <span class="nm">AAA</span>
+              <span class="rl">Cockpit and gateway. Agent identity, protocol routing, the visible state of the federation.</span>
+              <span class="pth"><a href="/discovery/">/discovery/</a> · aaa.arif-fazil.com</span>
+            </div>
+            <div class="node inst">
+              <span class="nm">arifFlow</span>
+              <span class="rl">Metabolism. Ingests receipts, tracks FQ, converts experience into the next usable state.</span>
+              <span class="pth">internal instrument</span>
+            </div>
+            <div class="node inst">
+              <span class="nm">HERMES</span>
+              <span class="rl">Edge bridge. Where known earth meets the unknown, and where a human voice is carried intact.</span>
+              <span class="pth">edge bridge</span>
+            </div>
+            <div class="node inst">
+              <span class="nm">FRAME</span>
+              <span class="rl">Measurement. Watches for drift between what is declared and what is running.</span>
+              <span class="pth">internal instrument</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rail" aria-hidden="true"></div>
+
+        <div class="layer">
+          <div class="layer-tag">Layer 4 · Territories</div>
+          <div class="terrs">
+            <div class="terr h">
+              <div class="tn">Human</div>
+              <div class="td">People, body, dignity. The substrate — never replaced by the machine layer.</div>
+            </div>
+            <div class="terr i">
+              <div class="tn">Institution</div>
+              <div class="td">Law, capital, governance. Where the old institution and the agentic one stand side by side.</div>
+            </div>
+            <div class="terr e">
+              <div class="tn">Earth</div>
+              <div class="td">Known ground and the void beyond it. Evidence first, interpretation labelled.</div>
+            </div>
+          </div>
+          <div class="laws">
+            <b>LAWS — CROSS-CUTTING, QUIETER THAN SCOPES.</b>
+            F1–F13 enforce every layer above. They are not a layer; they are the law the layers stand under.
+            <a href="/words/doctrine/">Read the doctrine</a> · <a href="/floors.json">/floors.json</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── LIVE PROOF (same-origin, honest) ───────────────────── -->
+    <section id="proof">
+      <h2 class="sec">Live proof — read it yourself</h2>
+      <p class="sec-note">
+        Three readings, fetched from this host at the moment you opened the page.
+        No cached numbers dressed up as live ones: if a probe cannot be reached,
+        it says so.
+      </p>
+      <div class="proof">
+        <div class="pr">
+          <span class="pk"><span class="dot pending" data-dot="kernel"></span> Kernel state</span>
+          <span class="pv" id="v-kernel">—</span>
+          <span class="pm" id="m-kernel">probing /999/health …</span>
+        </div>
+        <div class="pr">
+          <span class="pk"><span class="dot pending" data-dot="seal"></span> Seal chain</span>
+          <span class="pv" id="v-seal">—</span>
+          <span class="pm" id="m-seal">probing /999/verify …</span>
+        </div>
+        <div class="pr">
+          <span class="pk"><span class="dot pending" data-dot="flow"></span> Metabolism</span>
+          <span class="pv" id="v-flow">—</span>
+          <span class="pm" id="m-flow">probing /999/flow …</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE 13 FLOORS (preserved) ─────────────────────────── -->
+    <section id="floors">
+      <h2 class="sec">The 13 floors</h2>
+      <p class="sec-note">
+        Constitutional floors, read live from the canon at <code>/floors.json</code>.
+        These are the law the whole architecture stands under — not a description of it.
+      </p>
+      <div class="floors-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Type</th><th>One-liner</th></tr></thead>
+          <tbody>
+            <tr><td class="fid">F1</td><td class="fname">AMANAH</td><td class="ftype">HARD</td><td class="fone">Every action reversible or backed up; irreversible → 888_HOLD</td></tr>
+            <tr><td class="fid">F2</td><td class="fname">TRUTH</td><td class="ftype">HARD</td><td class="fone">Evidence before narrative; epistemic band wajib pada setiap claim</td></tr>
+            <tr><td class="fid">F3</td><td class="fname">TRI-WITNESS</td><td class="ftype">DERIVED</td><td class="fone">Tri-witness consensus untuk high-blast actions</td></tr>
+            <tr><td class="fid">F4</td><td class="fname">CLARITY</td><td class="ftype">HARD</td><td class="fone">Every output reduces entropy</td></tr>
+            <tr><td class="fid">F5</td><td class="fname">PEACE²</td><td class="ftype">SOFT</td><td class="fone">Non-destructive power; guard the weakest stakeholder</td></tr>
+            <tr><td class="fid">F6</td><td class="fname">MARUAH</td><td class="ftype">SOFT</td><td class="fone">Preserve human dignity, especially for the weakest consequence-bearer</td></tr>
+            <tr><td class="fid">F7</td><td class="fname">HUMILITY</td><td class="ftype">HARD</td><td class="fone">Declare unknowns; uncertainty never vanishes</td></tr>
+            <tr><td class="fid">F8</td><td class="fname">GENIUS</td><td class="ftype">DERIVED</td><td class="fone">Proceed only on demonstrated quality</td></tr>
+            <tr><td class="fid">F9</td><td class="fname">ANTIHANTU</td><td class="ftype">HARD</td><td class="fone">No hallucination, no consciousness claims, no runaway cascade</td></tr>
+            <tr><td class="fid">F10</td><td class="fname">ONTOLOGY</td><td class="ftype">HARD</td><td class="fone">AI is instrument — no soul, no feelings, no sentience claims</td></tr>
+            <tr><td class="fid">F11</td><td class="fname">AUDITABILITY</td><td class="ftype">HARD</td><td class="fone">Every action leaves trace; receipts &gt; narratives</td></tr>
+            <tr><td class="fid">F12</td><td class="fname">RESILIENCE</td><td class="ftype">HARD</td><td class="fone">Sanitize inputs; external ≠ authority</td></tr>
+            <tr><td class="fid">F13</td><td class="fname">SOVEREIGN</td><td class="ftype">HARD</td><td class="fone">Human veto is FINAL</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── LAYER 3 · AGENT TRUTH ─────────────────────────────── -->
+    <section id="agents">
+      <h2 class="sec">For agents — the same system, machine-readable</h2>
+      <p class="sec-note">
+        The human surface is the first layer, not the only one. An agent gets the same
+        constitution through stable endpoints and a canonical catalogue.
+      </p>
+      <div class="agentbar">
+        <div class="ab">
+          <div class="an">MCP gateway</div>
+          <div class="ad"><code>https://mcp.arif-fazil.com/mcp</code><br>Streamable HTTP · JSON-RPC 2.0<br><a href="https://glama.ai/mcp/servers/ariffazil/arifos" rel="noopener">Registry ↗</a></div>
+        </div>
+        <div class="ab">
+          <div class="an">Organ endpoints</div>
+          <div class="ad"><code>arifos · geox · wealth · well</code><br>Each organ exposes its own tools at <code>*.arif-fazil.com/mcp</code>.</div>
+        </div>
+        <div class="ab">
+          <div class="an">Machine catalogue</div>
+          <div class="ad"><a href="/llms.txt">/llms.txt</a> · <a href="/surfaces.json">/surfaces.json</a> · <a href="/agents.json">/agents.json</a><br><a href="/discovery/index.json">/discovery/index.json</a> · <a href="/floors.json">/floors.json</a></div>
+        </div>
+        <div class="ab">
+          <div class="an">Verify, do not trust</div>
+          <div class="ad"><a href="/999/">/999/</a> proof chamber · <a href="/ledger">/ledger</a> witness ledger<br>Seal chain, receipts, and the chain head — public on purpose.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="motto">Ditempa bukan diberi — forged, not given.</p>
+      <p>
+        Federation surface · canon <code>/root/arif-fazil.com/canon/federation.json</code> ·
+        floors <a href="/floors.json">/floors.json</a> ·
+        structure <a href="/discovery/">/discovery/</a> ·
+        proof <a href="/999/">/999/</a>
+      </p>
+    </footer>
   </div>
+
+  <script>
+  /* Live proof strip. Same-origin probes only.
+     Fail-closed: unreachable probe says so; it never prints a remembered number. */
+  (function () {
+    var stamp = function () {
+      var d = new Date();
+      return d.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
+    };
+    var set = function (key, value, meta, state) {
+      var v = document.getElementById('v-' + key);
+      var m = document.getElementById('m-' + key);
+      var dot = document.querySelector('[data-dot="' + key + '"]');
+      if (v) v.textContent = value;
+      if (m) m.innerHTML = meta;
+      if (dot) {
+        dot.classList.remove('pending', 'live', 'warn', 'down');
+        dot.classList.add(state || 'live');
+      }
+    };
+    var get = function (url) {
+      return fetch(url, { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    };
+
+    get('/999/health').then(function (d) {
+      var floors = (d.layer_health && d.layer_health.constitutional &&
+        d.layer_health.constitutional.measured_floors) || null;
+      var nf = floors && floors.length ? floors.length + '/13 floors measured' : 'floors not enumerated';
+      var state = d.status === 'healthy' ? 'live' : 'warn';
+      set('kernel', d.status || 'unknown',
+        'source: /999/health · ' + nf + ' · fetched ' + stamp() +
+        ' · <a href="/999/">proof</a>', state);
+    }).catch(function (e) {
+      set('kernel', 'unreachable', 'source: /999/health · ' + e.message + ' — <a href="/999/health">probe</a>', 'down');
+    });
+
+    get('/999/verify').then(function (d) {
+      set('seal', d.verified ? 'chain verified' : 'chain not verified',
+        'source: /999/verify · ' + (d.canonical_entries || '?') + ' entries · head_seq ' +
+        (d.head_seq === undefined ? '?' : d.head_seq) + ' · last seal ' + (d.last_seal || '?') +
+        ' · fetched ' + stamp(), d.verified ? 'live' : 'warn');
+    }).catch(function (e) {
+      set('seal', 'unreachable', 'source: /999/verify · ' + e.message + ' — <a href="/999/verify">probe</a>', 'down');
+    });
+
+    get('/999/flow').then(function (e2) {
+      var d = e2;
+      var q = (d.fq && d.fq.quotient) || (d.quotient || null);
+      set('flow', d.verdict || d.diagnosis || 'unknown',
+        'source: /999/flow · FQ ' + (q === null ? '?' : Number(q).toFixed(2)) +
+        ' · fetched ' + stamp(), 'live');
+    }).catch(function (e) {
+      set('flow', 'unreachable', 'source: /999/flow · ' + e.message + ' — <a href="/999/flow">probe</a>', 'down');
+    });
+  })();
+  </script>
 </body>
 </html>

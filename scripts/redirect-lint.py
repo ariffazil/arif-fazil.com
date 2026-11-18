@@ -63,6 +63,25 @@ def parse_map(path):
     return [r for r in rows if r.get("to")]
 
 
+def first_status(url):
+    """Status of the first response. Check C must not follow, or a correct
+    308 from /x to /x/ looks like both shapes returned 200."""
+
+    class NoRedir(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            return None
+
+    opener = urllib.request.build_opener(NoRedir)
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    try:
+        with opener.open(req, timeout=20) as r:
+            return r.status
+    except urllib.error.HTTPError as e:
+        return e.code
+    except Exception:
+        return 0
+
+
 def fetch(url):
     """Follow redirects manually; return (chain, final_url, status, content_type, body)."""
     chain, cur = [], url
@@ -195,15 +214,14 @@ def main():
             paths.add(f"{p.scheme}://{p.netloc}{p.path}")
     for slashed in sorted(paths):
         bare = slashed.rstrip("/")
-        _, _, s_bare, _, body_bare = fetch(bare)
-        _, _, s_slash, _, body_slash = fetch(slashed)
+        s_bare = first_status(bare)
+        s_slash = first_status(slashed)
         if s_bare == 200 and s_slash == 200:
-            same = strip_edge(body_bare) == strip_edge(body_slash)
             record(
                 "C",
                 bare,
                 False,
-                f"both 200 (identical={same}) — one must 301/308 to the other",
+                "both 200 — one must 301/308 to the other",
             )
         elif s_bare in (301, 302, 307, 308):
             record("C", bare, True, f"{s_bare} -> {slashed}")

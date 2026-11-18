@@ -396,6 +396,40 @@ const dossierM1 = makcikPieces.filter(p => p.series && (p.series.id === 'M1' || 
 const dossierM2 = makcikPieces.filter(p => p.series && p.series.id === 'M2');
 const dossierM3M4 = makcikPieces.filter(p => p.series && (p.series.id === 'M3' || p.series.id === 'M4'));
 
+// Spotlight: most-recently-UPDATED piece (version_lineage.last_updated), surfaced above the
+// fold. 2026-11-18: v1.1 rewrite of ALM was live but buried mid-archive — the hub's date-sort
+// makes revisions invisible (sovereign: "site nampak sama ja"). Generator-driven, no hardcode:
+// empty version_lineage across the fleet ⇒ section renders nothing.
+const updatedPiece = makcikPieces
+  .filter(p => p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date)
+  .sort((a, b) => (b.version_lineage.last_updated || '').localeCompare(a.version_lineage.last_updated || ''))[0] || null;
+
+const updatedSpotlightHtml = updatedPiece && (!leadPiece || updatedPiece.id !== leadPiece.id) ? `
+<section id="baru-dikemas-kini" style="margin: 0 0 2.5rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+    <h3 style="font-family:monospace; font-size:0.8rem; font-weight:bold; color:#E8B84B; text-transform:uppercase; letter-spacing:0.08em; margin:0;">
+      Baru Dikemas Kini
+    </h3>
+    <span style="font-family:monospace; font-size:0.7rem; background:rgba(232,184,75,0.15); border:1px solid rgba(232,184,75,0.4); color:#E8B84B; padding:2px 6px; border-radius:3px;">
+      DIKEMAS KINI ${esc(updatedPiece.version_lineage.last_updated)}
+    </span>
+  </div>
+  <article class="card" style="border: 2px dashed rgba(232,184,75,0.55); border-radius: 8px; background: #0E1626; padding: 1.75rem 2rem;">
+    <div style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B; margin-bottom:0.5rem;">
+      SERIES ${esc(updatedPiece.series?.id || 'MAKCIK')} · Diterbit ${esc(updatedPiece.date || '')} · Dikemas kini ${esc(updatedPiece.version_lineage.last_updated)}
+    </div>
+    <h2 style="font-size: 1.5rem; font-weight: 900; margin: 0 0 0.6rem 0; line-height: 1.25;">
+      <a href="${esc(updatedPiece.dest.path)}" style="color: #F8FAFC; text-decoration: none;">${esc(updatedPiece.title)}</a>
+    </h2>
+    <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.6; margin: 0 0 1.1rem 0;">
+      ${esc(updatedPiece.subtitle || updatedPiece.excerpt || '')}
+    </p>
+    <a href="${esc(updatedPiece.dest.path)}" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:monospace; font-size:0.8rem; font-weight:bold; background:transparent; color:#E8B84B; border:1px solid #E8B84B; padding:0.5rem 1.1rem; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+      <span>Baca Versi Terkini</span> <span>→</span>
+    </a>
+  </article>
+</section>` : '';
+
 const currentSignalHtml = leadPiece ? `
 <section id="current-signal" style="margin-bottom: 2.5rem;">
   <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom: 0.75rem;">
@@ -612,6 +646,9 @@ writeRoute(
 
     <!-- TIER 1: Current Signal -->
     ${currentSignalHtml}
+
+    <!-- TIER 1b: Updated Spotlight (most recent version_lineage.last_updated) -->
+    ${updatedSpotlightHtml}
 
     <!-- TIER 2: Live Dossiers -->
     ${dossiersHtml}

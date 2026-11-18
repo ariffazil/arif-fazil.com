@@ -455,7 +455,7 @@ function main() {
 - Root AI Map: https://arif-fazil.com/llms.txt
 
 ## Canonical Articles (${pieces.length})
-${pieces.map(p => `- [${p.title}](https://arif-fazil.com${p.dest.path}) (${p.date} · Series ${p.series?.id || 'M'})`).join("\n")}
+${pieces.map(p => `- [${p.title}](https://arif-fazil.com${p.dest.path}) (${p.date} · Series ${p.series?.id || 'M'}${p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date ? ` · dikemas kini ${p.version_lineage.last_updated}` : ''})`).join("\n")}
 `;
   writeIfChanged(path.join(makcikDir, "llms.txt"), makcikLlmsTxt);
 

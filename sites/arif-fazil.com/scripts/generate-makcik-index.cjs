@@ -60,7 +60,7 @@ function buildIndexHtml(pieces) {
   const listItems = pieces
     .map((p) => {
       const { y, m, d } = dateParts(p.date);
-      return `    <li><a href="${escapeHtml(p.dest.path)}">${escapeHtml(p.title)}</a> <span class="date">— Series ${escapeHtml(p.series.id)}#${escapeHtml(p.series.n)}, ${y}-${m}-${d}${p.seal ? ` · seal ${escapeHtml(p.seal)}` : ""}</span></li>`;
+      return `    <li><a href="${escapeHtml(p.dest.path)}">${escapeHtml(p.title)}</a> <span class="date">— Series ${escapeHtml(p.series.id)}#${escapeHtml(p.series.n)}, ${y}-${m}-${d}${p.seal ? ` · seal ${escapeHtml(p.seal)}` : ""}${p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date ? ` · <em class="upd">dikemas kini ${escapeHtml(p.version_lineage.last_updated)}</em>` : ""}</span></li>`;
     })
     .join("\n");
 
@@ -75,7 +75,7 @@ function buildIndexHtml(pieces) {
       const items = grouped[sid]
         .map((p) => {
           const { y, m, d } = dateParts(p.date);
-          return `      <li><a href="${escapeHtml(p.dest.path)}">${escapeHtml(p.title)}</a> <span class="date">${y}-${m}-${d}${p.seal ? ` · seal ${escapeHtml(p.seal)}` : ""}</span></li>`;
+          return `      <li><a href="${escapeHtml(p.dest.path)}">${escapeHtml(p.title)}</a> <span class="date">${y}-${m}-${d}${p.seal ? ` · seal ${escapeHtml(p.seal)}` : ""}${p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date ? ` · <em class="upd">dikemas kini ${escapeHtml(p.version_lineage.last_updated)}</em>` : ""}</span></li>`;
         })
         .join("\n");
       return `    <details class="zen-reveal" open id="series-${escapeHtml(sid)}">
@@ -133,6 +133,7 @@ ${items}
   a { color: #58a6ff; text-decoration: none; }
   a:hover { text-decoration: underline; }
   .date { color: #8b949e; font-size: 0.85rem; }
+  .upd { color: #E8B84B; font-style: normal; }
   .meta { color: #6e7681; font-size: 0.8rem; margin-top: 2rem; }
 
   /* Flat list (legacy / feed parity) — hidden by default; surfaced for RSS readers */

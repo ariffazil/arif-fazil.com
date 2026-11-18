@@ -342,7 +342,7 @@ for (const piece of makcikPieces) {
     description: (piece.claim_register && piece.claim_register[0] ? piece.claim_register[0].text : piece.title || '').slice(0, 160),
     canonical: `https://arif-fazil.com/world/makcikgpt/${slug}/`,
     breadcrumbTrail: 'Arif Fazil / World / MakcikGPT / ' + slug,
-    dateModified: piece.date || '',
+    dateModified: (piece.version_lineage && piece.version_lineage.last_updated) || piece.date || '',
     bodyHtml,
   });
   if (html) { writeRoute(`world/makcikgpt/${slug}`, html); contentFirstCount++; }
@@ -410,7 +410,7 @@ const currentSignalHtml = leadPiece ? `
   <article class="card" style="border: 2px solid #E8B84B; border-radius: 8px; background: #0E1626; padding: 2rem; box-shadow: 0 0 30px -5px rgba(232,184,75,0.25);">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
       <span style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B;">
-        ${esc(leadPiece.domain || 'CIVIC INTELLIGENCE')} · ${esc(leadPiece.date || '')}
+        ${esc(leadPiece.domain || 'CIVIC INTELLIGENCE')} · ${esc(leadPiece.date || '')}${leadPiece.version_lineage && leadPiece.version_lineage.last_updated && leadPiece.version_lineage.last_updated !== leadPiece.date ? ` · <span style="color:#E8B84B;">dikemas kini ${esc(leadPiece.version_lineage.last_updated)}</span>` : ''}
       </span>
       <span style="font-family:monospace; font-size:0.7rem; color:#94A3B8; background:#070B14; border:1px solid #1E293B; padding:2px 8px; border-radius:4px;">
         ${leadPiece.claim_register ? `${leadPiece.claim_register.length} Klaim Berdaftar` : 'Bukti Primer'} · SEAL 999
@@ -491,7 +491,7 @@ const dispatchesListHtml = `
           return `<article class="card" style="border: 1px solid #1E293B; background: #0B0F19; padding: 1.25rem 1.5rem; border-radius: 6px; display:flex; flex-direction:column; gap:0.5rem;">
             <div style="display: flex; gap: 0.5rem; align-items: center; justify-content: space-between; flex-wrap:wrap;">
               <span style="font-family: monospace; font-size: 0.7rem; font-weight: bold; color: #E8B84B; text-transform: uppercase;">
-                Series ${esc(p.series?.id || 'M')} · ${esc(p.date || '')}
+                Series ${esc(p.series?.id || 'M')} · ${esc(p.date || '')}${p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date ? ` · <span style="color:#E8B84B;">dikemas kini ${esc(p.version_lineage.last_updated)}</span>` : ''}
               </span>
               <span style="font-family: monospace; font-size: 0.65rem; color: #64748B; background:#070B14; padding:2px 6px; border-radius:3px;">
                 SEAL 999 · LINEAGE

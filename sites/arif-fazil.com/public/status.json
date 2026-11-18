@@ -1,21 +1,23 @@
 {
   "service": "arif-fazil.com",
   "purpose": "Live runtime state, organ endpoints & floor compliance (per AGENTS.md discovery contract)",
-  "generated_at_utc": "2026-09-24T07:10:00Z",
+  "generated_at_utc": "2026-11-18T16:48:00Z",
   "build": {
-    "commit": "ad21ad4",
+    "commit": "97ad7bb",
     "branch": "main",
-    "deployed_by": "333-AGI \u2014 Fasa 1 audit 2026-09-24",
-    "generator": "scripts/gen-status.sh (run at deploy; values below are probe-truth, not aspirations)"
+    "deployed_by": "333-AGI — SOT-alignment pass 2026-11-19 (re-probed all statuses live; prior probe 2026-09-24 ad21ad4)",
+    "generator": "hand-regenerated per gen-status.sh contract (values below are probe-truth, not aspirations)"
   },
   "federation": {
     "arifos": {
       "role": "constitutional kernel",
       "endpoint": "https://mcp.arif-fazil.com/mcp",
       "local_health": "http://127.0.0.1:8088/health",
-      "status": "healthy",
+      "status": "degraded",
+      "kernel_version": "kanon-2026.11.18+97ad7bb",
+      "floors": "13/13 measured pass (F6 MARUAH first measured 2026-11-18)",
       "kernel_thermodynamic_verdict": "HOLD",
-      "verdict_note": "Kernel HOLD = constitutional gates active (session G sub-threshold). HOLD is a truth state, not an outage. See /floors.json F7/F8."
+      "verdict_note": "Kernel HOLD = constitutional gates active (session G 0.52/0.80, W3 0.46/0.75 sub-threshold). Degraded/HOLD are truth states, not outages. See /floors.json F7/F8."
     },
     "aaa": {
       "role": "control plane",
@@ -25,19 +27,22 @@
     "aforge": {
       "role": "execution shell",
       "local_health": "http://127.0.0.1:7072/health",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "MCP door :7072 healthy (v2026.09.30-fix fd95e144, 9 tools listed); sense door :7071 reports degraded — sense lane, not the MCP surface"
     },
     "arifflow": {
       "role": "metabolic nerve",
       "local_health": "http://127.0.0.1:7073/health",
       "status": "flowing",
-      "fq": 1.35
+      "fq": 1.33,
+      "verdict_note": "legacy verdict OPTIMAL; vector verdict COHERENCE_FRACTURE (per-actor spread, 100-receipt window 2026-11-18) — reported, not adjudicated"
     },
     "geox": {
       "role": "earth intelligence",
       "url": "https://arif-fazil.com/geox/",
       "local_health": "http://127.0.0.1:8081/health",
-      "status": "healthy"
+      "status": "degraded",
+      "degradation_note": "kernel_verdict HOLD observed on /health 2026-11-19 — truth state, service live (27 tools)"
     },
     "wealth": {
       "role": "capital intelligence",
@@ -48,9 +53,9 @@
       "role": "vitality mirror",
       "local_health": "http://127.0.0.1:18083/health",
       "status": "degraded",
-      "degradation_class": "DEGRADED_BY_EPISTEMICS (not service failure)",
-      "rca_2026_09_24": "has_verified_telemetry=false, source_type=OPERATOR_REPORTED \u2014 WELL honestly refuses to claim sensor-verified vitality. Telemetry collector (oneshot+timer) ran successfully 14:00:58 MYT; cf703be drift=false. Services healthy.",
-      "known_quirk": "freshness.status='fresh' while age 22749s > stale_after 14400s \u2014 WELL-internal logic ticket S2.1"
+      "degradation_class": "DEGRADED (service live, 10 public tools; reason not attributed this pass)",
+      "rca_2026_09_24": "has_verified_telemetry=false, source_type=OPERATOR_REPORTED — WELL honestly refuses to claim sensor-verified vitality. Historical RCA retained for context.",
+      "known_quirk": "freshness.status='fresh' while age > stale_after 14400s — WELL-internal logic ticket S2.1"
     },
     "frame": {
       "role": "independent observer",
@@ -73,7 +78,7 @@
     },
     {
       "path": "/world/2027/receipts/",
-      "what": "AI Agents 2027 \u2014 19 graded receipts + musyawarah audit trail"
+      "what": "AI Agents 2027 — 19 graded receipts + musyawarah audit trail"
     },
     {
       "path": "/geox/",
@@ -85,5 +90,5 @@
     "canonical": "/floors.json",
     "compliance_note": "Floors enforced by arifOS kernel; this file reports, never adjudicates."
   },
-  "truth_class": "OBSERVED \u2014 all statuses probed live at generation time; TTL = deploy cycle"
+  "truth_class": "OBSERVED — all statuses probed live at generation time (2026-11-19 00:48 MYT); TTL = deploy cycle"
 }

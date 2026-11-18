@@ -106,6 +106,16 @@
       "final_authority": "ARIF",
       "protocol": "MCP",
       "status": "active"
+    },
+    "arifFLOW": {
+      "url": "https://arifflow.arif-fazil.com",
+      "health_url": "https://arifflow.arif-fazil.com/health",
+      "role": "Metabolic nerve — receipt anchoring, FQ monitoring, metabolism plane",
+      "authority_ceiling": "METABOLIZE_ONLY",
+      "final_authority": "ARIF",
+      "protocol": "HTTP (receipt/verify/query)",
+      "status": "active",
+      "added": "2026-11-19 SOT-alignment pass — organ live since P1 federation (vhost + health 200 observed)"
     }
   },
   "doctrine": {
@@ -121,7 +131,7 @@
     "did_document": "https://arif-fazil.com/.well-known/did.json",
     "did_configuration": "https://arif-fazil.com/.well-known/did-configuration.json"
   },
-  "as_of": "2026-10-23",
+  "as_of": "2026-11-19",
   "final_authority": "ARIF",
   "sovereign": "Muhammad Arif bin Fazil (F13 SOVEREIGN)",
   "reality_loop": {

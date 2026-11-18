@@ -460,11 +460,23 @@
       driftElement.className = 'badge badge--grey';
     }
 
-    const holds = findings.filter((finding) => /hold/i.test(compactValue(firstPresent(finding && finding.severity, finding && finding.verdict), '')));
+    // Severity vocabulary is HIGH/MEDIUM/LOW. Scanning those words for /hold/
+    // always printed "none measured" while findings.highest_hold was already HIGH.
+    const findingsObj = isRecord(data.findings) ? data.findings : {};
+    const highestHold = compactValue(unwrap(findingsObj.highest_hold), '').toUpperCase();
     const holdElement = $('#meta-hold');
     if (holdElement) {
-      holdElement.textContent = holds.length ? `${holds.length} holds` : 'none measured';
-      holdElement.className = `badge badge--${holds.length ? 'red' : 'grey'}`;
+      const openN = openFindings.length;
+      if (highestHold === 'HIGH' || highestHold === 'MEDIUM' || highestHold === 'LOW') {
+        holdElement.textContent = openN ? `${highestHold} (${openN} open)` : highestHold;
+        holdElement.className = `badge badge--${highestHold === 'HIGH' ? 'red' : 'amber'}`;
+      } else if (highestHold === 'NONE') {
+        holdElement.textContent = 'NONE';
+        holdElement.className = 'badge badge--grey';
+      } else {
+        holdElement.textContent = 'none measured';
+        holdElement.className = 'badge badge--grey';
+      }
     }
 
     const capabilities = data.capabilities || {};

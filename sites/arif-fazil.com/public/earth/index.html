@@ -478,7 +478,7 @@
         </div>
         <aside class="geox-ts-provenance" aria-label="timescale provenance">
           <p class="provenance-head"><strong>Provenance · F2 TRUTH</strong> — Intervals from the <a href="https://stratigraphy.org/ICSchart/ChronostratChart2023-09.jpg" target="_blank" rel="noopener">International Chronostratigraphic Chart (ICS 2023)</a>, condensed from the <a href="https://paleobiodb.org" target="_blank" rel="noopener">Paleobiology Database</a>.</p>
-          <p class="provenance-body">Per-interval provenance is <em>not</em> provided by upstream — treat each age as <strong>DEFERRABLE</strong>, not <strong>SEALED</strong>. Uncertainties ≥ ±1&nbsp;Ma for Phanerozoic ages, larger for Precambrian. To convert a queued draft into a sealed claim, an <code>arif_init(mode=&quot;init&quot;, requested_authority=&quot;OPERATOR&quot;)</code> session must drain the queue via the A-FORGE interpreter (Hermes lane).</p>
+          <p class="provenance-body">Per-interval provenance is <em>not</em> provided by upstream — treat each age as <strong>DEFERRABLE</strong>, not <strong>SEALED</strong>. Uncertainties ≥ ±1&nbsp;Ma for Phanerozoic ages, larger for Precambrian. Draft selections stay in read-only local browser storage until reviewed and sealed via the public governance pipeline.</p>
         </aside>
       </div>
       <div class="geox-ts-flash" id="geox-ts-flash" role="status" aria-live="polite"></div>
@@ -1044,7 +1044,7 @@ if(el){
   el.addEventListener("wheel",pauseSpin,{passive:true});
 }
 
-fetch(TILE_GEO(3,1,2),{method:"HEAD"})
+fetch(TILE_GEO(3,1,2),{method:"GET"})
   .then(r=>{
     pipe("pipeTiles",r.ok?"ok":"bad",r.ok?"TILES · MACROSTRAT OK":"TILES · FAIL");
     setVeilStep("tiles",r.ok?"ok":"bad",r.ok?"OK":"FAIL");

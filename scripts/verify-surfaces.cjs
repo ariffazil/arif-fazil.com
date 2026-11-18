@@ -28,7 +28,9 @@ const SITE_ROOT = path.resolve(__dirname, "..");
 const SURFACES_JSON = path.join(SITE_ROOT, "sites", "arif-fazil.com", "surfaces.json");
 const BASE = process.argv.find((a) => a.startsWith("--base="))?.split("=")[1]
   || process.env.VERIFY_BASE
-  || "http://localhost:5173";
+  || "https://arif-fazil.com"; // RSI 2026-11-18: was localhost:5173 (dev server, usually dead) —
+  // bare runs returned 100+ false "HTTP 0" failures. This is a deploy gate; it probes
+  // the live surface (same target scripts/verify-pages.sh uses). Override with --base.
 
 const TIMEOUT_MS = 15_000;
 const MAX_BODY_BYTES = 256 * 1024; // 256KB — enough for SSR pages, caps work

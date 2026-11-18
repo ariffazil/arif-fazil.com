@@ -256,24 +256,38 @@ if (fs.existsSync(spaEntryPath)) {
       const staticDistPath = path.join(distRoot, route, "index.html");
       if (fs.existsSync(staticDistPath)) {
         let staticHtml = fs.readFileSync(staticDistPath, "utf8");
+        const hasMountRoot = /\bid=["']root["']/i.test(staticHtml);
         const scriptMatches = [...spaHtml.matchAll(/<script type="module" crossorigin src="([^"]+)"><\/script>/g)];
         const cssMatches = [...spaHtml.matchAll(/<link rel="stylesheet" crossorigin href="([^"]+)">/g)];
         let changed = false;
-        for (const m of cssMatches) {
-          if (!staticHtml.includes(m[0])) {
-            staticHtml = staticHtml.replace("</head>", `  ${m[0]}\n</head>`);
-            changed = true;
+        if (hasMountRoot) {
+          for (const m of cssMatches) {
+            if (!staticHtml.includes(m[0])) {
+              staticHtml = staticHtml.replace("</head>", `  ${m[0]}\n</head>`);
+              changed = true;
+            }
           }
-        }
-        for (const m of scriptMatches) {
-          if (!staticHtml.includes(m[0])) {
-            staticHtml = staticHtml.replace("</body>", `  ${m[0]}\n</body>`);
-            changed = true;
+          for (const m of scriptMatches) {
+            if (!staticHtml.includes(m[0])) {
+              staticHtml = staticHtml.replace("</body>", `  ${m[0]}\n</body>`);
+              changed = true;
+            }
           }
-        }
-        if (changed) {
-          fs.writeFileSync(staticDistPath, staticHtml, "utf8");
-          console.log(`postbuild: enriched /${route}/index.html with Vite assets for hybrid SPA hydration`);
+          if (changed) {
+            fs.writeFileSync(staticDistPath, staticHtml, "utf8");
+            console.log(`postbuild: enriched /${route}/index.html with Vite assets for hybrid SPA hydration`);
+          }
+        } else {
+          // Pure static HTML page with no #root mount node: strip any stale Vite module entry
+          // so React createRoot(#root) cannot execute and crash with minified error #299.
+          const cleaned = staticHtml.replace(
+            /\s*<script type="module" crossorigin src="\/assets\/index-[^"]+"><\/script>/g,
+            ""
+          );
+          if (cleaned !== staticHtml) {
+            fs.writeFileSync(staticDistPath, cleaned, "utf8");
+            console.log(`postbuild: stripped unmountable Vite module script from static /${route}/index.html`);
+          }
         }
       }
       continue;

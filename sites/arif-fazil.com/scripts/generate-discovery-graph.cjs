@@ -245,7 +245,9 @@ const html = `<!DOCTYPE html>
 <link rel="canonical" href="${SITE}/discovery/"/>
 <meta name="robots" content="index,follow"/><meta name="theme-color" content="#0A0B0D"/>
 <meta property="og:type" content="website"/><meta property="og:title" content="Discovery — Peta Federasi | arif-fazil.com"/>
+<meta property="og:description" content="Satu traversal: identity, authority, governance, capabilities, boundaries federasi Arif."/>
 <meta property="og:url" content="${SITE}/discovery/"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Discovery — Peta Federasi | arif-fazil.com","description":"Satu traversal: identity, authority, governance, capabilities, boundaries federasi Arif.","url":"${SITE}/discovery/","author":{"@type":"Person","name":"Arif Fazil","url":"${SITE}/"}}</script>
 <link rel="icon" href="/favicon.ico"/>
 <style>
 :root{color-scheme:dark}

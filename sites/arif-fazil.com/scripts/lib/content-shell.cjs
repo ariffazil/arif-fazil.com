@@ -87,6 +87,15 @@ function renderContentFirstShell(route, meta) {
   const canonical = escapeHtml(meta.canonical || `https://arif-fazil.com/${route}/`);
   const dateModified = escapeHtml(meta.dateModified || "");
   const crumb = escapeHtml(meta.breadcrumbTrail || "Arif Fazil");
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: meta.title || route,
+    description: meta.description || meta.title || "",
+    url: meta.canonical || `https://arif-fazil.com/${route}/`,
+    ...(meta.dateModified ? { dateModified: meta.dateModified } : {}),
+    author: { "@type": "Person", name: "Arif Fazil", url: "https://arif-fazil.com/" },
+  }).replace(/</g, "\\u003c");
 
   return `<!DOCTYPE html>
 <html lang="ms">
@@ -96,7 +105,12 @@ function renderContentFirstShell(route, meta) {
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${canonical}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${desc}">
+  <meta property="og:url" content="${canonical}">
   ${dateModified ? `<meta name="last-modified" content="${dateModified}">` : ""}
+  <script type="application/ld+json">${jsonLd}</script>
   <style>
     :root{--bg:#0A0B0D;--panel:#0F172A;--line:#1F2937;--ink:#EDEAE2;--dim:#9AA0A8;--gold:#E8B84B}
     *{box-sizing:border-box}

@@ -67,7 +67,7 @@ done
 [[ -n "$POSITIONAL_DIST" ]] && DIST="$POSITIONAL_DIST"
 TOP="$(realpath -m "$TOP")"
 DIST="$(realpath -m "$DIST")"
-[[ -n "$BK" ]] || BK="$TOP/.split-roots-backup-$TS"
+[[ -n "$BK" ]] || BK="/root/backups/arif-sites/split-roots-backup-$TS"
 LOG_PREFIX="[split-roots]"
 
 # Root-static files served by @root_static (Caddy vhosts/arif-fazil.com.conf).

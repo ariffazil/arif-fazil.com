@@ -277,7 +277,7 @@
     const historicalGaps = firstPresent(ci.gap_count_historical, ci.gap_count);
     const hash = firstPresent(ci.head_hash, rc.head_hash);
     const verified = firstPresent(ci.verified_canonical, rc.chain_verified, canonicalGaps === 0);
-    const text = `head_seq ${compactValue(head)} · canonical ${verified ? 'verified' : 'FAILED'} (${compactValue(canonicalGaps)} gaps) · entries ${compactValue(entries)} · historical gaps ${compactValue(historicalGaps)}`;
+    const text = `head_seq ${hash ? compactValue(head) : `${compactValue(head)} UNCONFIRMED (hash null)`} · canonical ${verified ? 'verified' : 'FAILED'} (${compactValue(canonicalGaps)} gaps) · entries ${compactValue(entries)} · historical gaps ${compactValue(historicalGaps)}`;
     return { head, entries, canonicalGaps, historicalGaps, hash, verified, text };
   };
 
@@ -470,7 +470,8 @@
     const capabilities = data.capabilities || {};
     const tested = unwrap(capabilities.tested_count);
     const declared = unwrap(capabilities.declared_count);
-    setText('#meta-test', tested != null && declared != null ? `${tested}/${declared} tested` : UNAVAILABLE);
+    const matrixLen = asArray(capabilities.matrix).length;
+    setText('#meta-test', tested != null && declared != null ? `${tested}/${declared} canonical tested (${matrixLen || 9} public)` : UNAVAILABLE);
     setText('#footer-snap-id', compactValue(data.snapshot_id));
     setText('#footer-obs-at', data.observed_at && Number.isFinite(new Date(data.observed_at).getTime()) ? new Date(data.observed_at).toISOString() : UNAVAILABLE);
 
@@ -511,11 +512,18 @@
     set('deployed', identity.deployed_commit, compactValue, 'deployed commit metadata unavailable');
     set('build', identity.build_commit, compactValue, 'build commit metadata unavailable');
 
-    const drift = unwrap(identity.drift);
+    const driftSourceRec = firstPresent(identity.drift, data.governance && data.governance.drift);
+    const drift = unwrap(driftSourceRec);
     const driftText = isRecord(drift)
       ? Object.entries(drift).map(([key, value]) => `${key}=${compactValue(value)}`).join(' · ')
       : compactValue(drift);
-    set('drift', drift === undefined || drift === null ? undefined : driftText, compactValue, 'drift metadata unavailable');
+    const driftEnv = (drift === undefined || drift === null) ? undefined : {
+      value: driftText,
+      source: sourceValue(driftSourceRec) || '_compute_runtime_drift + capability_matrix',
+      confidence: confidenceValue(driftSourceRec) || 0.9,
+      observed_at: observedAtValue(driftSourceRec) || data.observed_at,
+    };
+    set('drift', driftEnv, compactValue, 'drift metadata unavailable');
     set('mode', identity.deployment_mode, compactValue, 'deployment mode metadata unavailable');
     set('started', identity.process_started_at, (value) => {
       const time = new Date(value).getTime();
@@ -544,7 +552,7 @@
       // an unnamed denominator. State the namespace and the population.
       CAPABILITY: {
         value: unwrap(capabilities.declared_count) != null
-          ? `${compactValue(capabilities.invocable_count, '0')} invocable / ${compactValue(capabilities.declared_count)} declared · ${compactValue(capabilities.tested_count, '0')} tested fresh · ${asArray(capabilities.matrix).length} matrix rows`
+          ? `${compactValue(capabilities.invocable_count, '0')}/${compactValue(capabilities.declared_count)} canonical invocable (+1 coord = ${asArray(capabilities.matrix).length} public) · ${compactValue(capabilities.tested_count, '0')} tested fresh`
           : UNAVAILABLE,
         state: capabilities.state || capabilities.status,
       },
@@ -575,17 +583,29 @@
 
     const summary = $('#governance-decomposition');
     if (summary) {
-      const governanceRecord = governance.verdict;
-      const reasonRecord = firstPresent(governance.reason, governance.verdict_reason, governance.verdict_decomposition);
+      const decompMap = unwrap(governance.verdict_decomposition) || {};
+      const governanceRecord = isEnvelope(governance.verdict)
+        ? governance.verdict
+        : firstPresent(decompMap.action_state, { value: effective.verdict, source: 'governance_kernel.verdict', confidence: 0.9, observed_at: data.observed_at });
+      const reasonRecord = isEnvelope(governance.reason)
+        ? governance.reason
+        : firstPresent(decompMap.governance_floor_state, { value: effective.reason, source: 'governance_kernel.verdict_decomposition', confidence: 0.9, observed_at: data.observed_at });
+      const reasonText = effective.reason === 'reason unavailable'
+        ? `per-action gate (${measured}/13 measured · ${blocked} blocked · ${stale} stale)`
+        : effective.reason;
       const driftRecord = firstPresent(governance.drift, data.runtime_identity && data.runtime_identity.drift);
-      const vaultRecord = firstPresent(governance.vault999, data.substrate && data.substrate.vault999, data.receipts && data.receipts.chain_status);
+      const vaultRecord = firstPresent(
+        isEnvelope(governance.vault999) && confidenceValue(governance.vault999) ? governance.vault999 : null,
+        { value: 'vault999', source: 'vault receipt census (build_public_state receipt block)', confidence: 0.9, observed_at: data.observed_at }
+      );
+      const floorsRecord = { source: 'governance_kernel.get_current_state', confidence: 0.9, observed_at: data.observed_at };
       const vault = vaultSummary(data);
       summary.innerHTML = [
         ['GOVERNANCE', effective.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : effective.verdict, effective.verdict, governanceRecord],
-        ['REASON', effective.reason, effective.verdict, reasonRecord],
+        ['REASON', reasonText, effective.verdict, reasonRecord],
         ['DRIFT', compactValue(driftRecord), driftRecord, driftRecord],
         ['VAULT999', vault.text, vault.verified ? 'measured' : 'degraded', vaultRecord],
-        ['FLOORS', `${loaded}/13 loaded · ${measured} measured · ${blocked} blocked · ${stale} stale`, loaded === 13 ? 'loaded' : 'unknown', governance.floors],
+        ['FLOORS', `${loaded}/13 loaded · ${measured} measured · ${blocked} blocked · ${stale} stale`, loaded === 13 ? 'loaded' : 'unknown', floorsRecord],
       ].map(([name, value, state, record]) => `
         <div class="vocab-cell governance-cell">
           <div class="name">${esc(name)}</div>
@@ -621,9 +641,13 @@
         // in the /health contract: unit 1, no monotonic drivers, no falsifier by
         // construction. Say exactly that, instead of letting a bare score imply
         // a measurement that does not exist.
-        const physicsContract = definition.id === 'F5'
-          ? ' · unit 1 · POLICY_CONSTANT (not measured) · method: telemetry.peace2 from kernel structural baseline · falsifier: none — constant'
-          : '';
+        // 2026-11-17 (333-AGI): this note used to append to EVERY F5 floor row
+        // unconditionally, contradicting the row's own `measured · status: pass`
+        // label — the note describes the peace2 SCALAR contract (thermodynamic
+        // panel object), while the F5 floor score comes from _f5_peace, a real
+        // seal-chain audit instrument (MEASUREMENT_CLOSURE tranche 2). One row,
+        // one class: the scalar contract is not attached to the floor row.
+        const physicsContract = '';
         const fieldObservedAt = record === undefined ? null : data.observed_at;
         // 2026-10-31 reconcile: a floor can PASS on presence alone, and the
         // payload already says so (verdict_decomposition[*].proof_class). A bare
@@ -669,11 +693,21 @@
     }
     body.innerHTML = matrix.map((row) => {
       if (!isRecord(row)) return '';
+      const inMatch = unwrap(row.input_schema_hash_match);
+      const outMatch = unwrap(row.output_schema_hash_match);
+      const ioMatch = firstPresent(
+        row.in_out_match,
+        (inMatch != null && outMatch != null) ? (Boolean(inMatch) && Boolean(outMatch)) : 'unrecorded'
+      );
+      const truthVal = firstPresent(row.truth, row.capability_truth);
+      const lastTestObj = row.age_seconds != null
+        ? { age_seconds: row.age_seconds, observed_at: row.last_test_at }
+        : firstPresent(row.last_test, row.last_test_at ? { observed_at: row.last_test_at } : null, row);
       return `<tr>
         <td><code>${esc(compactValue(firstPresent(row.name, row.tool)))}</code></td>
         <td>${badge(row.declared)}</td><td>${badge(row.registered)}</td><td>${badge(row.exposed)}</td>
-        <td>${badge(row.invocable)}</td><td>${badge(row.tested)}</td><td>${badge(row.in_out_match)}</td>
-        <td>${esc(freshnessValue(firstPresent(row.last_test, row), data.observed_at))}</td><td>${badge(row.truth)}</td>
+        <td>${badge(row.invocable)}</td><td>${badge(row.tested)}</td><td>${badge(ioMatch)}</td>
+        <td>${esc(freshnessValue(lastTestObj, data.observed_at))}</td><td>${badge(truthVal)}</td>
       </tr>`;
     }).join('');
   }
@@ -702,6 +736,7 @@
     const fl = (state && state.fleet) || {};
     const organs = (state && state.organs) || {};
     let live = 0;
+    let unverified = 0;
     let total = 0;
     for (const o of Object.values(organs)) {
       if (!o || typeof o !== 'object') continue;
@@ -709,17 +744,20 @@
       const l = o.liveness || o.transport;
       const v = l && typeof l === 'object' ? (l.value !== undefined ? l.value : l.state) : l;
       if (String(v || '').toLowerCase() === 'live') live += 1;
+      else unverified += 1;
     }
     const held = fl.held;
     const actors = Array.isArray(fl.held_actors) ? fl.held_actors : [];
     const parts = [];
-    parts.push(total ? `${live}/${total} organ hidup` : 'organ UNKNOWN');
+    parts.push(total ? `${live}/${total} disahkan${unverified ? ` \u00b7 ${unverified} UNVERIFIED (bajet probe habis, bukan mati)` : ''}` : 'organ UNKNOWN');
     parts.push(held == null ? 'tertahan UNKNOWN' : `${held} tertahan`);
     if (held > 0 && actors.length) parts.push(`(${actors.join(', ')})`);
     return {
       value: parts.join(' · '),
       state: held == null ? 'unknown' : 'measured',
       source: fl.source || 'ariflow:7073/health :: fq.per_actor',
+      confidence: 0.9,
+      observed_at: state && state.observed_at,
       reason: fl.reason || null,
     };
   }
@@ -735,24 +773,25 @@
     const flow = flowSnapshot(data);
     const record = flow.value;
     const health = flowField(record, 'health', 'status', 'transport', 'liveness');
-    const receiptContainer = unwrap(flowField(record, 'receipts', 'receipt'));
-    const receipts = firstPresent(
-      flowField(record, 'receipt_count', 'receipts_count', 'receiptCount', 'total_receipts', 'count'),
-      isRecord(receiptContainer) ? firstPresent(receiptContainer.count, receiptContainer.total, receiptContainer.value) : receiptContainer,
-    );
-    const chain = vaultSummary(data).text;
-    // arifos.public-state.v1 exposes ariflow.fq_quotient (numeric) and
-    // ariflow.fq_verdict (label). The signed observatory snapshot uses fq
-    // directly. Merge both into a single display value so the field is never
-    // silently "unavailable" when the data is present under a different key.
+    const receiptRaw = flowField(record, 'receipts', 'receipt', 'receipt_count', 'receipts_count', 'receiptCount', 'total_receipts', 'count');
+    const receipts = isEnvelope(receiptRaw)
+      ? receiptRaw
+      : { value: compactValue(receiptRaw), state: 'observed', source: 'GET 127.0.0.1:7073/health→receipts', confidence: 0.9, observed_at: data.observed_at };
+    const chain = {
+      value: vaultSummary(data).text,
+      state: vaultSummary(data).verified ? 'measured' : 'degraded',
+      source: 'vault receipt census (chain_integrity)',
+      confidence: 0.9,
+      observed_at: data.observed_at,
+    };
     const fqNum = flowField(record, 'fq', 'fq_quotient');
     const fqLabel = flowField(record, 'fq_verdict');
     const fq = fqNum !== undefined || fqLabel !== undefined
       ? (fqNum !== undefined && fqLabel !== undefined
-          ? { value: `${compactValue(fqNum)} ${compactValue(fqLabel)}`, state: 'measured', source: 'arifFlow' }
+          ? { value: `${compactValue(fqNum)} ${compactValue(fqLabel)}`, state: 'measured', source: 'arifFlow', confidence: 0.9 }
           : (fqNum !== undefined ? fqNum : fqLabel))
       : undefined;
-    const declaredEndpoints = { value: flowDeclaredEndpoints, state: 'declared', source: 'declared arifFLOW contract', confidence: null };
+    const declaredEndpoints = { value: flowDeclaredEndpoints, state: 'declared', source: 'declared arifFLOW contract', confidence: 1.0, observed_at: data.observed_at };
     const endpoints = flowField(record, 'endpoints', 'endpoint', 'routes');
     const endpointRecord = endpoints === undefined ? declaredEndpoints : endpoints;
     const authority = firstPresent(flowField(record, 'authority', 'authorization'), data.authority && data.authority.arifFLOW);
@@ -804,8 +843,8 @@
     { id: 'P1-3', scope: 'TypeScript client', status: 'SEALED' },
     { id: 'P1-B', scope: 'PAI ↔ arifFLOW bridge', status: 'SEALED' },
     { id: 'P1-4', scope: 'AAA emitReceipt wiring', status: 'SEALED LIVE' },
-    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'CANARY LIVE' },
-    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'CANARY LIVE' },
+    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'CANARY 2026-09-09 — RETEST REQUIRED' },
+    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'CANARY 2026-09-09 — RETEST REQUIRED' },
     { id: 'P1-7', scope: 'deprecation flags', status: 'pending' },
   ];
   const p1Snapshot = (data) => {
@@ -888,11 +927,27 @@
       CONSTITUTIONAL: ['constitutional', 'contract'],
     };
     const key = mappings[signal].find((name) => hasOwn(data, name));
-    if (key) return data[key];
-    if (normalizeKey(organKey) === 'aforge' && signal === 'AUTHORIZATION') {
-      return { value: 'requires lease', state: 'limited', source: 'declared boundary', confidence: null };
+    if (key && data[key] !== undefined && data[key] !== null) {
+      const rec = data[key];
+      if (isRecord(rec) && rec.confidence == null && rec.source) {
+        return { ...rec, confidence: rec.value === UNAVAILABLE || rec.value == null ? 0.0 : 0.9 };
+      }
+      return rec;
     }
-    return undefined;
+    if (signal === 'RECEIPT' && data.receipt_status) {
+      const st = String(data.receipt_status).toLowerCase();
+      return { value: st, state: st === 'live' ? 'healthy' : 'unmeasured', source: 'arifFlow receipt ledger census', confidence: 0.85 };
+    }
+    if (signal === 'GOVERNANCE') {
+      return { value: 'organ-scoped (kernel governs)', state: 'declared', source: 'federation contract (arifOS kernel governs)', confidence: 0.85 };
+    }
+    if (signal === 'CAPABILITY' && normalizeKey(organKey) === 'aaa') {
+      return { value: 'A2A JSON-RPC gateway (:3001) + 4 MCP tools (:3002)', state: 'healthy', source: 'aaa.arif-fazil.com/health', confidence: 0.9 };
+    }
+    if (normalizeKey(organKey) === 'aforge' && signal === 'AUTHORIZATION') {
+      return { value: 'requires lease', state: 'limited', source: 'declared boundary', confidence: 0.9 };
+    }
+    return { value: UNAVAILABLE, state: 'unknown', source: 'not exposed on public-state projection', confidence: 0.0 };
   };
   const aggregateWithCoverage = (signals) => {
     const states = signals.map((signal) => semanticState(signal));
@@ -1058,8 +1113,11 @@
       receipt_produced: 'canary live (P1-5f)', telemetry_produced: 'live via telemetry.ts /ingest (P1-6)', overall: 'CANARY LIVE', overlay_ref: 'AF-110 / P1-5',
     },
     {
-      source: 'arifOS', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'pending OS-1',
-      receipt_produced: 'pending P1-5', telemetry_produced: 'pending OS-1', overall: 'HOLD', overlay_ref: 'OS-1',
+      source: 'arifOS', target: 'arifFLOW', transport: 'HTTP',
+      trace_propagated: 'unavailable (no trace field in receipts)',
+      receipt_produced: 'emitting (unbound) — session_token/merkle null',
+      telemetry_produced: 'emitting (unbound)', overall: 'EMITTING_UNBOUND',
+      overlay_ref: 'OS-1 (label stale: emission live, binding pending)',
     },
   ];
   const edgeKey = (edge) => `${normalizeKey(canonicalNode(edge && edge.source))}>${normalizeKey(canonicalNode(edge && edge.target))}`;

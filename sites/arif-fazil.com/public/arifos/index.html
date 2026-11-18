@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/_shared/design-system/components.css">
 <script src="/_shared/trinity-nav.js" defer></script>
-<script src="/_shared/observatory.js?v=20261117-obs-vault2" defer></script>
+<script src="/_shared/observatory.js?v=20261118-sot-align" defer></script>
 <style id="observatory-local-upgrade">
 /* Observatory-only additions: keep federation-wide design tokens unchanged. */
 /* ── M1.4 canon alignment (2026-11-14): Fraunces × Plex Mono · ring-mind · orthogonal cell · single canon nav ── */
@@ -202,6 +202,11 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
 </svg>
 <main id="main">
 
+ <header style="margin:0 0 1.25rem">
+  <h1 style="font-size:clamp(1.35rem,3vw,1.9rem);margin:0 0 .35rem;letter-spacing:-.02em">arifOS Observatory — Live Governance &amp; Flow Reality</h1>
+  <p style="margin:0;color:var(--text-muted);font-size:.82rem">Observed organ health, constitutional floors F1–F13, capability drift, and VAULT999 witness chain. Reporting only — adjudication stays in arifOS.</p>
+ </header>
+
  <section id="sec-flow-plane" class="observatory-upgrade" aria-labelledby="flow-plane-title">
   <h2 id="flow-plane-title"><span class="marker">FLOW</span> FLOW PLANE — arifFLOW :7073</h2>
   <div class="card" id="flow-plane-card">
@@ -313,8 +318,8 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
      <tr data-phase="P1-3" data-source="declared-fallback"><td><code>P1-3</code></td><td>TypeScript client</td><td><span class="status status--healthy">SEALED</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
      <tr data-phase="P1-B" data-source="declared-fallback"><td><code>P1-B</code></td><td>PAI ↔ arifFLOW bridge</td><td><span class="status status--healthy">SEALED</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
      <tr data-phase="P1-4" data-source="declared-fallback"><td><code>P1-4</code></td><td>AAA emitReceipt wiring</td><td><span class="status status--healthy">SEALED LIVE</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
-     <tr data-phase="P1-5" data-source="declared-fallback"><td><code>P1-5</code></td><td>A-FORGE receipt wiring</td><td><span class="status status--live">CANARY LIVE</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
-     <tr data-phase="P1-6" data-source="declared-fallback"><td><code>P1-6</code></td><td>telemetry wiring · AF-1 canary</td><td><span class="status status--live">CANARY LIVE</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
+     <tr data-phase="P1-5" data-source="declared-fallback"><td><code>P1-5</code></td><td>A-FORGE receipt wiring</td><td><span class="status status--degraded">CANARY 2026-09-09 — RETEST REQUIRED</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
+     <tr data-phase="P1-6" data-source="declared-fallback"><td><code>P1-6</code></td><td>telemetry wiring · AF-1 canary</td><td><span class="status status--degraded">CANARY 2026-09-09 — RETEST REQUIRED</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
      <tr data-phase="P1-7" data-source="declared-fallback"><td><code>P1-7</code></td><td>deprecation flags</td><td><span class="status status--degraded">pending</span></td><td>source: declared migration fallback · confidence: unknown</td></tr>
     </tbody>
    </table></div>
@@ -346,13 +351,13 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
     <tbody id="authority-tbody">
      <tr><td><code>/api/observatory/v1/health-public</code></td><td>un-auth TCP</td><td>transport</td><td><span class="status status--healthy">reachable</span></td><td>no session, no interiority</td></tr>
      <tr><td><code>/api/observatory/v1/ready</code></td><td>internal-network</td><td>dependencies</td><td><span class="status status--healthy">ready</span></td><td>postgres · redis · qdrant · vault_writer</td></tr>
-     <tr><td><code>/api/observatory/v1/capabilities</code></td><td>un-auth</td><td>sanitized public</td><td><span class="status status--degraded">declared 8 / registered 0</span></td><td>drift: registered pending</td></tr>
+     <tr id="authority-row-capabilities"><td><code>/api/observatory/v1/capabilities</code></td><td>un-auth</td><td>sanitized public</td><td id="authority-cap-verdict"><span class="status status--healthy">declared 18 / registered 8 canonical (+1 coord = 9 public) / callable 8</span></td><td id="authority-cap-notes">8 canonical MCP verbs + 1 coordination tool (arif_report) = 9 public MCP tools, plus 10 declared-only internal capabilities; verified live 2026-11-18</td></tr>
      <tr><td><code>/api/observatory/v1/capabilities/full</code></td><td>X-Op-Token</td><td>operator-only</td><td><span class="status status--healthy">requires tier=operator</span></td><td>rejects with SESSION_REQUIRED without token</td></tr>
      <tr><td><code>/api/observatory/v1/seal/*</code></td><td>X-Op-Token</td><td>operator-only</td><td><span class="status status--healthy">token-validated</span></td><td>verify · replay · test</td></tr>
      <tr><td><code>/999/ (MEMORY public-proof)</code></td><td>un-auth</td><td>public verification</td><td><span class="status status--healthy">read-only proofs</span></td><td>VAULT999 head seq + sampled receipt hashes</td></tr>
      <tr><td><code>Capital Judge state machine</code></td><td>audit-4 PR5</td><td>workflow</td><td><span class="status status--healthy">RECEIVED→EXECUTED</span></td><td>WEALTH QUALIFY never auto-executes</td></tr>
      <tr><td><code>Conformance (PR7)</code></td><td>audit-4 PR7</td><td>3-level honest</td><td><span class="status status--degraded">FAST / LIVE / FULL</span></td><td>skip-state ⇒ AMBER</td></tr>
-     <tr><td><code>/.well-known/arifos-federation.json</code></td><td>un-auth</td><td>federation manifest</td><td><span class="status status--healthy">static, on disk</span></td><td>SOT — 8 nodes, 11 edges, schema v1</td></tr>
+     <tr><td><code>/.well-known/arifos-federation.json</code></td><td>un-auth</td><td>federation manifest</td><td><span class="status status--healthy">served by edge from _shared — 200 verified 2026-11-18</span></td><td>manifest v2.0.0 · A2A v1.0.0 · 8 nodes / 11 edges; SOT at /var/www/html/_shared/arifos-federation.json (resolved 2026-11-18)</td></tr>
      <tr><td><code>/.well-known/did.json</code></td><td>un-auth</td><td>root DID</td><td><span class="status status--healthy">did:web:arif-fazil.com</span></td><td>resolver at .well-known/did.json</td></tr>
      <tr><td><code>/.well-known/governance.jsonld</code></td><td>un-auth</td><td>constitutional JSON-LD</td><td><span class="status status--healthy">13 floors + 5 ontology</span></td><td>application/ld+json</td></tr>
     </tbody>
@@ -365,9 +370,9 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
   <div class="card" id="next-mutation-gate">
    <div class="mutation-grid">
     <div class="mutation-item"><span class="observatory-label">gate</span><span class="mutation-value" id="mutation-status"><span class="status status--down">HOLD</span></span></div>
-    <div class="mutation-item"><span class="observatory-label">authority</span><span class="mutation-value" id="mutation-authority">ARIF GO required (next: executor full hook + P1-7)</span></div>
-    <div class="mutation-item"><span class="observatory-label">canary</span><span class="mutation-value" id="mutation-canary">P1-5f + P1-6 canaries PASSED 2026-09-09</span></div>
-    <div class="mutation-item"><span class="observatory-label">follow-up</span><span class="mutation-value" id="mutation-follow-up">executor full receipt hook + P1-7 deprecation flags</span></div>
+    <div class="mutation-item"><span class="observatory-label">authority</span><span class="mutation-value" id="mutation-authority">ARIF GO required — executor full hook + P1-7 NOT authorized on 2026-09-09 canary alone</span></div>
+    <div class="mutation-item"><span class="observatory-label">canary</span><span class="mutation-value" id="mutation-canary">P1-5f + P1-6 canary 2026-09-09 passed; retest on target release (retry, duplicate delivery, restart, receipt-writer failure) before any GO</span></div>
+    <div class="mutation-item"><span class="observatory-label">follow-up</span><span class="mutation-value" id="mutation-follow-up">executor full receipt hook + P1-7 deprecation flags — after target-release retest</span></div>
     <div class="mutation-item"><span class="observatory-label">fallback</span><span class="mutation-value" id="mutation-fallback">local fallback preserved</span></div>
     <div class="mutation-item"><span class="observatory-label">risk</span><span class="mutation-value" id="mutation-risk">low, additive-only</span></div>
    </div>
@@ -392,7 +397,7 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
  <section id="sec-pulse">
   <h2><span class="marker">F13</span> Daily Reality Pulse</h2>
   <div class="card" id="pulse-card">
-   <p style="margin:0;font-size:.85rem">Pulses bound to existing 7 organs × 9 signals × 13 floors. The audit's EARTH/ENERGY/CAPITAL/INSTITUTION/HUMAN/SOCIAL/INFORMATION/MACHINE taxonomy was <strong>not adopted</strong> — those axes are not defined anywhere in the federation. We expose 7 organs + 1 cross-cutting machine axis (MACHINE · substrate(ALIGNED) | intelligence(RETAK)).</p>
+   <p style="margin:0;font-size:.85rem">Pulses bound to existing 6 canonical organs × multi-axis signals × 13 floors (+ arifFLOW :7073 flow plane &amp; AAA MCP :3002 declared surface). The audit's EARTH/ENERGY/CAPITAL/INSTITUTION/HUMAN/SOCIAL/INFORMATION/MACHINE taxonomy was <strong>not adopted</strong> — those axes are not defined anywhere in the federation. Live values render from snapshot telemetry above.</p>
    <div style="margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem" id="pulse-grid"></div>
   </div>
  </section>
@@ -402,7 +407,7 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
 
 <footer>
  snapshot id: <span class="hash" id="footer-snap-id" data-source="snapshot.snapshot_id">unavailable</span> · observed at: <span id="footer-obs-at">unavailable</span><br>
- schema: observatory.v1 · generated by arifOS · every status carries source/timestamp/freshness/evidence-class/confidence/namespace/trace/receipt<br>
+ schema: <span id="footer-schema">observatory.v1</span> · generated by arifOS · every status carries source/timestamp/freshness/evidence-class/confidence/namespace/trace/receipt<br>
  signature: <span id="footer-signature">unavailable · source: missing</span>
 </footer>
 <script src="/_shared/webmcp/arifos-webmcp-adapter.js"></script>
@@ -425,9 +430,10 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
 <script>
 (function(){var el=document.getElementById('obs-age');if(!el)return;
 function upd(){var t=document.body.getAttribute('data-observed-at');if(!t){el.textContent='observed —';return;}
-var s=(Date.now()-new Date(t.replace(' ','T')+(t.endsWith('Z')?'':'Z')).getTime())/1000;
-el.textContent = s<90? 'observed just now' : s<5400? 'observed '+Math.round(s/60)+'m ago' : 'observed '+Math.round(s/3600)+'h ago';}
-upd();setInterval(upd,30000);})();
+var s=Math.max(0,Math.round((Date.now()-new Date(t.replace(' ','T')+(t.endsWith('Z')?'':'Z')).getTime())/1000));
+var stale=s>120;
+el.textContent = (stale?'STALE (>120s) · ':'') + (s<=120? 'observed '+s+'s ago' : s<5400? 'observed '+Math.round(s/60)+'m ago ('+s+'s)' : 'observed '+Math.round(s/3600)+'h ago');}
+upd();setInterval(upd,5000);})();
 </script>
 
 <footer class="obs-canon-footer" style="border-top:1px solid #1f2733;margin-top:48px;padding:20px clamp(16px,4vw,32px);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#8a93a3;text-align:center">DITEMPA BUKAN DIBERI · arifOS Federation · Ω MIND surface · <a href="https://arif-fazil.com/" style="color:#7FB3FF;text-decoration:none">arif-fazil.com</a></footer>

@@ -88,6 +88,30 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/world/2027/malaysia/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-09-18" },
     { loc: `${SITE_BASE}/world/2027/receipts/`, priority: 0.75, changefreq: "monthly", lastmod: "2026-09-18" },
     { loc: `${SITE_BASE}/world/2027/ai-agents-2027-dossier.pdf`, priority: 0.7, changefreq: "monthly", lastmod: "2026-09-18" },
+    // 2026-11-18 (333-AGI) — discovery-drift reconciliation. These 18 surfaces are
+    // declared in surfaces.json, return HTTP 200 on their own canonical URL, and
+    // declare no `noindex` — but were never added to this hand-maintained list,
+    // so they were invisible to crawlers. Rule applied: a surface belongs in the
+    // sitemap iff it is 200, is not a redirect, and does not declare noindex.
+    // Machine-file surfaces (.json/.txt/feed.xml/robots.txt/rsl.xml) stay out.
+    { loc: `${SITE_BASE}/sanctuary/`, priority: 0.85, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/laws/`, priority: 0.85, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/federation/`, priority: 0.75, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/discovery/`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/charter/`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/connect/`, priority: 0.6, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/receipts/`, priority: 0.7, changefreq: "weekly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/verify/`, priority: 0.7, changefreq: "weekly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/999/verify/`, priority: 0.7, changefreq: "weekly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/witness-theory/`, priority: 0.8, changefreq: "weekly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/machine/`, priority: 0.6, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/machines/`, priority: 0.6, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/earth/kinabalu-basin/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/earth/malay-basin/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/earth/kinabalu-basin.pdf`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/earth/kinabalu-cross-section.html`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/earth/malay-basin-cross-section.html`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
+    { loc: `${SITE_BASE}/world/petronas/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-18" },
   ];
   // Canonical landing first, then every onsite BM piece (M-series)
   urls.push({ loc: CANONICAL_LANDING, priority: 0.85, changefreq: "daily" });

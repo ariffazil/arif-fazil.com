@@ -50,7 +50,20 @@ function walk(dir, out = []) {
   return out;
 }
 
-function spaShell(title, desc, css, js) {
+// Canonical must name the route the shell serves, not the site root.
+// 2026-11-18: spaShell() hardcoded "https://arif-fazil.com/" for every re-stamped
+// shell, so all 16 essay shells told crawlers "this page IS the homepage".
+// Failure class: wrong-canonical. Fix: derive the canonical from the shell's path
+// under dist/. A shell at dist/<route>/index.html canonicalises to /<route>/.
+function canonicalFor(file) {
+  let rel = path.relative(DIST, file).split(path.sep).join('/');
+  if (!rel || rel === 'index.html') return 'https://arif-fazil.com/';
+  rel = rel.replace(/(^|\/)index\.html$/, '$1');
+  if (!rel) return 'https://arif-fazil.com/';
+  return 'https://arif-fazil.com/' + rel;
+}
+
+function spaShell(title, desc, css, js, canonical) {
   return `<!doctype html>
 <html lang="en" data-ring="SOUL">
   <head>
@@ -59,7 +72,7 @@ function spaShell(title, desc, css, js) {
     <title>${title}</title>
     <meta name="theme-color" content="#0A0B0D" />
     ${desc ? `<meta name="description" content="${desc}" />` : ''}
-    <link rel="canonical" href="https://arif-fazil.com/" />
+    <link rel="canonical" href="${canonical}" />
     <link rel="stylesheet" href="${css}" />
     <script type="module" src="${js}"></script>
   </head>
@@ -110,10 +123,10 @@ function main() {
     if (!cssRef) continue;
     if (fs.existsSync(path.join(ASSETS, path.basename(cssRef)))) continue; // healthy shell
 
-    // dead shell: full SPA re-stamp (title/description preserved)
+    // dead shell: full SPA re-stamp (title/description preserved, canonical = own route)
     const title = extract(html, /<title>([^<]+)<\/title>/) || 'Arif Fazil — arifOS';
     const desc = extract(html, /<meta name="description" content="([^"]*)"/);
-    fs.writeFileSync(f, spaShell(title, desc, css, js));
+    fs.writeFileSync(f, spaShell(title, desc, css, js, canonicalFor(f)));
     replaced += 1;
   }
   if (replaced > 0) {

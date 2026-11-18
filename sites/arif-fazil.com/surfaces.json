@@ -502,13 +502,13 @@
     },
     {
       "path": "/federation/",
-      "title": "Federation Observatory — arifOS F1–F13",
+      "title": "Federation — One Sovereign, One System",
       "mission": "monitor",
       "status": "live",
       "type": "page",
       "priority": 0.8,
       "changefreq": "daily",
-      "description": "Constitutional floors, organs, and evidence chains — observed, not adjudicated."
+      "description": "The federated architecture: one sovereign, a kernel that judges, four working roles, seven instruments, three territories — plus the 13 constitutional floors and live proof."
     },
     {
       "path": "/discoveries/",

@@ -1,0 +1,40 @@
+{
+  "task": "makcikgpt article v1.1 rewrite + dual-lane deploy",
+  "article": "Apa Lagi Manusia Mahu? (/world/makcikgpt/apa-lagi-manusia-mahu)",
+  "agent": "333-AGI (opencode)",
+  "date": "2026-11-18T20:45:00+08:00",
+  "trigger": "F13 sovereign order: 'now please publish this site with new design as seal job deployment. rewrite the article bahasa manusia'",
+  "source": "Arif x HERMES conversation pasted by Arif 2026-11-18 (5 lapisan, kenapa mesin fail, panggilan mak) + original GENESIS letter v1.0 spine",
+  "changes": {
+    "body": "full rewrite v1.1 — spine preserved, 5 new sections (lapisan, kenapa mesin fail, panggilan yang tak ada gantinya, kalau teori ni salah), KEMASKINI banner 18 Nov, no named humans, no epistemic labels in reader text, ends with demand question",
+    "registries": {
+      "index.ts": "subtitle/excerpt/tags/domain updated to match body; version_lineage 1.0 -> 1.1 (last_updated 2026-11-18)",
+      "essays.json": "tags +3, claim_register 5 -> 8 (all INT, maruah approved), version_lineage 1.1"
+    }
+  },
+  "verification": {
+    "mirror_generator": "PASS — 54 mirrors, article among 52 canonical .ts bodies, merkle recomputed 1a65a0a60ca71b734a8ab139dc826e2222b64e1a3a461ba4651794aa369d531b (was 63d06887)",
+    "build": "npm run build green (prebuild 10 generators + design-lint + tsc + vite + postbuild)",
+    "gate": "make verify-pages: 236 pages verified, ALL REACHABLE, VERDICT PASS",
+    "live_html_lane": "HTTP 200, 14457b, browser-UA; 'tak ada gantinya' x2, KEMASKINI banner x1",
+    "live_md_lane": "HTTP 200, 10925b, agent-UA; 'tak ada gantinya' x2, version 1.1, new merkle, 8 ALM-C claims",
+    "split_root_note": "md lane roots at /var/www/html/arif/world/makcikgpt/makcikgpt-md/ (2026-10-31 trap fix) — first rsync to /arif/makcikgpt-md/ was a shadow tree, second rsync landed the serving lane"
+  },
+  "deploy": {
+    "method": "additive rsync --update, no --delete, no caddy reload",
+    "files_live": [
+      "/var/www/html/arif/world/makcikgpt/apa-lagi-manusia-mahu/index.html",
+      "/var/www/html/arif/world/makcikgpt/makcikgpt-md/apa-lagi-manusia-mahu.{md,html}",
+      "/var/www/html/arif/world/makcikgpt/makcikgpt-md/{index.html,articles.json,llms.json,llms.txt}",
+      "/var/www/html/arif/makcikgpt-md/apa-lagi-manusia-mahu.{md,html} (shadow tree, kept fresh)",
+      "/var/www/html/arif/index.html + assets/ (SPA shell + chunks)"
+    ],
+    "backups": "*.bak-20261118-alm-v11 / *.bak-20261118 next to every replaced file"
+  },
+  "commit": "dcfc6496 (10 files, article-scoped only; sibling dirty files untouched)",
+  "seal_status": "receipt only — kernel SEAL is 888/F13 lane, not self-issued",
+  "lesson": "makcikgpt-md has THREE trees on disk (nested serving lane, /arif/ shadow, /var/www/html/makcikgpt-md legacy). Always grep the vhost handler root before trusting an rsync destination.",
+  "pre_existing_untouched": [
+    "mirror warnings: petronas-leadership-1974-2026 + petronas-full-reality-rakyat-dossier (cached-html bodies), hukum-kereta-sentuhan-tak-dinamai (unregistered) — sibling-domain, not mutated"
+  ]
+}

@@ -1,0 +1,36 @@
+release: RELEASE-EVIDENCE-2026-11-18-alm-v11-rewrite
+agent: 333-AGI (opencode)
+date: 2026-11-18T20:48:00+08:00
+surface: /world/makcikgpt/apa-lagi-manusia-mahu
+change_class: article-rewrite-v1.1 (additive, no routing change, no caddy reload)
+authority: F13 sovereign order (publish + rewrite bahasa manusia)
+commit: dcfc6496
+
+checks:
+  content_truth:
+    html_lane: {status: 200, bytes: 14457, markers: ["tak ada gantinya x2", "KEMASKINI banner", "Lima lapisan yang mesin tak boleh hasilkan"]}
+    md_lane: {status: 200, bytes: 10925, version: 1.1, merkle: 1a65a0a60ca71b734a8ab139dc826e2222b64e1a3a461ba4651794aa369d531b, claims: 8}
+  provenance:
+    version_lineage: 1.0 -> 1.1
+    claim_register: 5 -> 8 (all INT, maruah_review approved)
+    kemaskini_transparency: banner at top (gold, 18 Nov 2026)
+  voice_audit_TAMPG_R:
+    truth: no external numbers; all quotes trace to Arif's pasted conversation
+    access: BM Penang makcik register, kampung-understandable
+    moral: mak-call section = human consequence bearer
+    power: who gains (mesin attention) / who loses (kewujudan witness) named
+    generational: "Anak hang tengah tengok... depa tengok hang telefon siapa"
+    correction: falsifier section in plain language (machine's own words)
+  rasa: specific grounded bearer (mak, 10-min call, bapak pergi tanpa warning) — from Arif's own words, unnamed
+  gates:
+    design_lint: PASS (prebuild)
+    makcik_source_validator: PASS (54 mirrors)
+    verify_pages: PASS 236/236 (9 intentional exclusions)
+  named_humans: none in body (abang sado referenced as "kawan makcik — acah-acah serigala", credit preserved without name)
+  rollback: *.bak-20261118-alm-v11 / *.bak-20261118 beside every replaced live file + git revert dcfc6496
+
+known_limits:
+  - mirror-index hub cards carry title+date+series only (by design, no excerpt) — verified consistent
+  - 3 pre-existing mirror warnings untouched (2 petronas cached-html bodies, 1 unregistered article) — sibling-domain
+  - root /var/www/html machines (llms.txt, sitemap.xml) unchanged — URL list did not change, excerpts not carried at root
+seal: NOT self-sealed. Kernel SEAL requires 888/F13. This record is a deployment receipt.

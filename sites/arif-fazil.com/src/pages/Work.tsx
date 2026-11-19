@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageMeta } from '@/components/PageMeta'
-import { discoveries } from '@/data/discoveries'
-import { SeismicAmplitudeCanvas } from '@/components/SeismicAmplitudeCanvas'
+import { discoveries, type Discovery } from '@/data/discoveries'
 
 /**
  * Featured cases — decision-first summaries for time-constrained evaluators.
@@ -48,6 +47,82 @@ export const agenticMirrors = [
   { label: 'forge', name: 'A-FORGE', href: 'https://forge.arif-fazil.com', desc: 'Execution & Mutation Shell' },
 ]
 
+function LedgerCard({ d }: { d: Discovery }) {
+  return (
+    <article
+      id={`case-${d.id}`}
+      className="scroll-mt-24 rounded-lg border border-[#1F2733] bg-[#0F131D] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
+    >
+      <div>
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <div>
+            <span className={`inline-block font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 rounded border mb-2 ${
+              d.category === 'wells'
+                ? 'border-[#31C48D]/30 text-[#31C48D] bg-[#31C48D]/10'
+                : d.category === 'regional'
+                ? 'border-[#E4572E]/30 text-[#E4572E] bg-[#E4572E]/10'
+                : 'border-[#91B0F2]/30 text-[#91B0F2] bg-[#91B0F2]/10'
+            }`}>
+              {d.categoryLabel}
+            </span>
+            <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#EDEAE2]">
+              {d.title}
+            </h3>
+          </div>
+          <span className="font-mono text-xs text-[#9AA0A8] whitespace-nowrap bg-[#161B26] px-2 py-1 rounded border border-[#1F2733]">
+            {d.year}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-1 font-mono text-xs text-[#9AA0A8] mb-3 pb-3 border-b border-[#1F2733]">
+          <div>Location: <span className="text-[#EDEAE2]">{d.location}</span></div>
+          <div>Role: <span className="text-[#EDEAE2]">{d.role}</span></div>
+        </div>
+
+        <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">
+          {d.summary}
+        </p>
+
+        {/* Interactive Evidence Drawer */}
+        <details className="mt-3 group">
+          <summary className="cursor-pointer select-none font-mono text-xs uppercase tracking-wider text-[#9AA0A8] hover:text-[#E4572E] transition-colors flex items-center justify-between py-1 border-t border-[#1F2733]">
+            <span>Evidence packet ({d.evidence.length} items)</span>
+            <span className="group-open:rotate-180 transition-transform">▾</span>
+          </summary>
+          <div className="mt-3 space-y-2 text-xs">
+            <ul className="space-y-1.5 border-l-2 border-[#1F2733] pl-3">
+              {d.evidence.map((e, idx) => (
+                <li key={idx} className="text-[#EDEAE2]/90 leading-relaxed">
+                  <span className="font-mono text-[#31C48D] mr-1.5">✓</span>
+                  {e}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-2 font-mono text-[11px] text-[#9AA0A8]/80 bg-[#141822] p-2.5 rounded border border-[#1F2733]">
+              <span className="text-[#E4572E] font-semibold">Boundary limits:</span>{' '}
+              {d.limits ?? 'Internal technical detail withheld.'}
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div className="pt-4 mt-4 border-t border-[#1F2733] flex items-center justify-between">
+        <span className="font-mono text-[11px] text-[#9AA0A8]">
+          Verified Public Record
+        </span>
+        <a
+          href={d.link ?? 'https://geox.arif-fazil.com'}
+          target="_blank"
+          rel="noreferrer"
+          className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider font-semibold"
+        >
+          {d.linkLabel ?? 'Explore Surface'} ↗
+        </a>
+      </div>
+    </article>
+  )
+}
+
 export function Work() {
   const [filter, setFilter] = useState<'all' | 'wells' | 'regional' | 'systems'>('all')
 
@@ -59,6 +134,9 @@ export function Work() {
     if (filter === 'all') return true
     return d.category === filter
   })
+
+  const explorationRecords = discoveries.filter((d) => d.category === 'wells' || d.category === 'regional')
+  const systemsRecords = discoveries.filter((d) => d.category === 'systems')
 
   const countFor = (cat: 'wells' | 'regional' | 'systems') =>
     discoveries.filter((d) => d.category === cat).length
@@ -167,7 +245,7 @@ export function Work() {
           </div>
         </a>
 
-        {/* Featured cases — the decision-first read (20–30 seconds) */}
+        {/* Executive readout — one line per case; the full record is the ledger below */}
         <section className="mb-14" aria-labelledby="featured-cases">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -183,66 +261,34 @@ export function Work() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cases.map((c) => (
-              <article
-                key={c.id}
-                className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
-              >
-                <div>
-                  <div className="flex items-baseline justify-between gap-3 mb-3">
-                    <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#EDEAE2]">
-                      {c.record.title}
-                    </h3>
-                    <span className="font-mono text-xs text-[#31C48D] px-2 py-0.5 rounded border border-[#31C48D]/30 bg-[#31C48D]/10">
-                      {c.record.year}
-                    </span>
-                  </div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-4">
-                    {c.record.location}
-                  </p>
-                  <dl className="space-y-3">
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E] mb-1">Decision</dt>
-                      <dd className="font-sans text-sm text-[#EDEAE2] leading-relaxed">{c.decision}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] mb-1">My role</dt>
-                      <dd className="font-sans text-sm text-[#9AA0A8] leading-relaxed">{c.record.role}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-widest text-[#31C48D] mb-1">Outcome</dt>
-                      <dd className="font-sans text-sm text-[#EDEAE2] font-medium leading-relaxed">{c.outcome}</dd>
-                    </div>
-                  </dl>
-                </div>
-                <div className="mt-5 pt-4 border-t border-[#1F2733] flex items-center justify-between font-mono text-[11px] text-[#9AA0A8]">
-                  <span>{c.record.evidence.length} evidence items</span>
-                  <a
-                    href={c.record.link ?? 'https://geox.arif-fazil.com'}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[#E4572E] hover:underline uppercase tracking-wider"
-                  >
-                    Inspect ↗
-                  </a>
-                </div>
-              </article>
-            ))}
+          <div className="overflow-x-auto rounded-lg border border-[#1F2733]">
+            <table className="w-full min-w-[640px] text-left">
+              <thead>
+                <tr className="border-b border-[#1F2733] bg-[#0A0D14]">
+                  <th scope="col" className="font-mono text-[10px] uppercase tracking-widest text-[#9AA0A8] px-5 py-3">Case</th>
+                  <th scope="col" className="font-mono text-[10px] uppercase tracking-widest text-[#E4572E] px-5 py-3">Decision</th>
+                  <th scope="col" className="font-mono text-[10px] uppercase tracking-widest text-[#31C48D] px-5 py-3">Outcome</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cases.map((c) => (
+                  <tr key={c.id} className="border-b border-[#1F2733] last:border-b-0 hover:bg-[#0F131D]/60 transition-colors">
+                    <td className="px-5 py-4 align-top">
+                      <a href={`#case-${c.id}`} className="font-display text-base font-bold uppercase tracking-tight text-[#EDEAE2] hover:text-[#E4572E] transition-colors">
+                        {c.record.title}
+                      </a>
+                      <span className="block font-mono text-[10px] text-[#9AA0A8] mt-1">{c.record.year}</span>
+                    </td>
+                    <td className="px-5 py-4 align-top font-sans text-sm text-[#9AA0A8] leading-relaxed">{c.decision}</td>
+                    <td className="px-5 py-4 align-top font-sans text-sm text-[#EDEAE2] leading-relaxed">{c.outcome}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </section>
-
-        {/* Hero Visual: Interactive Seismic Amplitude Canvas Map */}
-        <section className="mb-16">
-          <div className="mb-4 flex items-baseline justify-between">
-            <h2 className="font-display text-xl font-bold uppercase text-[#EDEAE2]">
-              Malay Basin Cross-Section (3D Kirchhoff Seismic Volume)
-            </h2>
-            <span className="font-mono text-xs text-[#9AA0A8]">
-              Interactive Synthetic Canvas
-            </span>
-          </div>
-          <SeismicAmplitudeCanvas />
+          <p className="mt-3 font-mono text-[11px] text-[#9AA0A8]/80">
+            The full record — role, uncertainty, evidence, withheld boundaries — is the Evidence Ledger below.
+          </p>
         </section>
 
         {/* Section 1: The Comprehensive Evidence Ledger with Category Filters */}
@@ -302,82 +348,40 @@ export function Work() {
             </div>
           </div>
 
-          {/* Ledger Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filteredDiscoveries.map((d) => (
-              <article
-                key={d.id}
-                className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <div>
-                      <span className={`inline-block font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 rounded border mb-2 ${
-                        d.category === 'wells'
-                          ? 'border-[#31C48D]/30 text-[#31C48D] bg-[#31C48D]/10'
-                          : d.category === 'regional'
-                          ? 'border-[#E4572E]/30 text-[#E4572E] bg-[#E4572E]/10'
-                          : 'border-[#91B0F2]/30 text-[#91B0F2] bg-[#91B0F2]/10'
-                      }`}>
-                        {d.categoryLabel}
-                      </span>
-                      <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#EDEAE2]">
-                        {d.title}
-                      </h3>
-                    </div>
-                    <span className="font-mono text-xs text-[#9AA0A8] whitespace-nowrap bg-[#161B26] px-2 py-1 rounded border border-[#1F2733]">
-                      {d.year}
-                    </span>
-                  </div>
+          {filter === 'all' ? (
+            <>
+              <div className="flex items-baseline justify-between gap-4 mt-2 mb-6">
+                <h3 className="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">
+                  Exploration &amp; Earth
+                </h3>
+                <span className="font-mono text-xs text-[#9AA0A8]">{explorationRecords.length} records</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+                {explorationRecords.map((d) => <LedgerCard key={d.id} d={d} />)}
+              </div>
 
-                  <div className="grid grid-cols-1 gap-1 font-mono text-xs text-[#9AA0A8] mb-3 pb-3 border-b border-[#1F2733]">
-                    <div>Location: <span className="text-[#EDEAE2]">{d.location}</span></div>
-                    <div>Role: <span className="text-[#EDEAE2]">{d.role}</span></div>
-                  </div>
+              <div className="mb-14 rounded-lg border border-[#D4A853]/30 bg-[#0F131D] p-5">
+                <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed max-w-3xl">
+                  The systems grew out of the same problem as the wells: making defensible decisions when
+                  evidence is incomplete. The instruments below are that discipline, built in code.
+                </p>
+              </div>
 
-                  <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed mb-4">
-                    {d.summary}
-                  </p>
-
-                  {/* Interactive Evidence Drawer */}
-                  <details className="mt-3 group">
-                    <summary className="cursor-pointer select-none font-mono text-xs uppercase tracking-wider text-[#9AA0A8] hover:text-[#E4572E] transition-colors flex items-center justify-between py-1 border-t border-[#1F2733]">
-                      <span>Evidence packet ({d.evidence.length} items)</span>
-                      <span className="group-open:rotate-180 transition-transform">▾</span>
-                    </summary>
-                    <div className="mt-3 space-y-2 text-xs">
-                      <ul className="space-y-1.5 border-l-2 border-[#1F2733] pl-3">
-                        {d.evidence.map((e, idx) => (
-                          <li key={idx} className="text-[#EDEAE2]/90 leading-relaxed">
-                            <span className="font-mono text-[#31C48D] mr-1.5">✓</span>
-                            {e}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-2 font-mono text-[11px] text-[#9AA0A8]/80 bg-[#141822] p-2.5 rounded border border-[#1F2733]">
-                        <span className="text-[#E4572E] font-semibold">Boundary limits:</span>{' '}
-                        {d.limits ?? 'Internal technical detail withheld.'}
-                      </div>
-                    </div>
-                  </details>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-[#1F2733] flex items-center justify-between">
-                  <span className="font-mono text-[11px] text-[#9AA0A8]">
-                    Verified Public Record
-                  </span>
-                  <a
-                    href={d.link ?? 'https://geox.arif-fazil.com'}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-mono text-xs text-[#E4572E] hover:underline uppercase tracking-wider font-semibold"
-                  >
-                    {d.linkLabel ?? 'Explore Surface'} ↗
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
+              <div className="flex items-baseline justify-between gap-4 mb-6">
+                <h3 className="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-[#EDEAE2]">
+                  Systems &amp; Instruments
+                </h3>
+                <span className="font-mono text-xs text-[#9AA0A8]">{systemsRecords.length} records</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {systemsRecords.map((d) => <LedgerCard key={d.id} d={d} />)}
+              </div>
+            </>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {filteredDiscoveries.map((d) => <LedgerCard key={d.id} d={d} />)}
+            </div>
+          )}
 
           <div className="mt-8 p-4 rounded border border-[#1F2733] bg-[#0A0D14] font-mono text-xs text-[#9AA0A8] leading-relaxed">
             <span className="text-[#EDEAE2] font-semibold">Institutional Notice:</span> Work reflects personal professional contributions and publicly reported outcomes — never institutional claims on behalf of PETRONAS. Internal technical packs, seismic coordinates, and commercial evaluations are withheld under arifOS F1 Amanah.

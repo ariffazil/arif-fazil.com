@@ -26,7 +26,7 @@
   "mcp_gateway": "https://mcp.arif-fazil.com/mcp",
   "federation_organs": [
     { "id": "arifOS",  "role": "constitutional governance kernel", "url": "https://arifos.arif-fazil.com", "port": 8088 },
-    { "id": "AAA",     "role": "control plane + A2A gateway",     "url": "https://aaa.arif-fazil.com",   "port": 3001 },
+    { "id": "AAA",     "role": "coordination plane + A2A handoff", "url": "https://aaa.arif-fazil.com",   "port": 3001 },
     { "id": "A-FORGE", "role": "governed execution shell",        "url": "https://forge.arif-fazil.com", "port": 7071 },
     { "id": "GEOX",    "role": "earth intelligence",              "url": "https://geox.arif-fazil.com",  "port": 8081 },
     { "id": "WEALTH",  "role": "capital intelligence",            "url": "https://wealth.arif-fazil.com","port": 18082 },

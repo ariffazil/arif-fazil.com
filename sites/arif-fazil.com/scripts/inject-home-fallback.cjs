@@ -13,8 +13,8 @@ const block = `<!-- SSR-FALLBACK -->
 <main>
 <h1>Arif Fazil — exploration geoscientist, Kuala Lumpur</h1>
 <p>I turn uncertain ground into defensible decisions. I read incomplete Earth data and refuse fake certainty — and I build AI systems that stay bounded by evidence and human authority. Ditempa bukan diberi — forged, not given.</p>
-<h2>The wells record</h2>
-<p>BEKANTAN-1 (2024, Central Malay Basin) — shallowest flowing oil discovery recorded in the Malay Basin. PUTERI BASEMENT-1 (2017) — basement charge-risk calibration, commercial K-5 sands. LEBAH EMAS-1 (2025) — 11 hydrocarbon-bearing intervals, new hinge play fairway. BUNGA TASBIH-1 (2020) — commercial oil in post-rift Group I and J sands. Full records: <a href="/work">/work</a>. Personal professional contribution, not on behalf of PETRONAS.</p>
+<h2>Selected proof — three flagship outcomes</h2>
+<p>BEKANTAN-1 (2024, Central Malay Basin) — shallowest flowing oil discovery recorded in the Malay Basin. LEBAH EMAS-1 (2025) — 11 hydrocarbon-bearing intervals, new hinge play fairway. BUNGA TASBIH-1 (2020) — commercial oil in post-rift sands, syn-rift risk recalibrated across the margin. Decision, role, uncertainty, evidence and withheld boundaries: <a href="/work">/work</a>. Personal professional contribution, not on behalf of PETRONAS. Last verified 2026-08-17.</p>
 <h2>Evidence over assertion</h2>
 <p>Material claims link to evidence, or are marked as interpretation. Where evidence is incomplete, the system returns UNKNOWN or HOLD — it does not invent an answer. Verification: <a href="/999/">/999/</a>.</p>
 <h2>Connect</h2>

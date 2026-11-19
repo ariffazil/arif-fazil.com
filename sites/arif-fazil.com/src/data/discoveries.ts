@@ -224,12 +224,12 @@ export const discoveries: Discovery[] = [
     categoryLabel: 'Computational Systems',
     role: 'Federation Architect',
     year: '2024–Present',
-    location: 'Agent Federation Gateway',
-    summary: 'Inter-agent operations surface and A2A gateway ensuring explicit, structural trust and HOLD/SEAL token issuance across all federation organs.',
+    location: 'Federation Coordination Surface',
+    summary: 'Coordination and attention surface for the agent federation — agent identity, skills mesh, and A2A handoff. AAA attends and coordinates; it never judges. Candidate selection belongs to 888-APEX, the constitutional verdict to arifOS, sovereign authorization to F13, and bounded execution to A-FORGE.',
     evidence: [
-      'A2A gateway with bearer credential validation and capability gating',
-      'Dynamic-state checks verifying live process port boundaries',
-      'Multi-agent protocol governance and audit trail witness'
+      'Agent cards and skills mesh with live port-bound state checks (aaa-a2a.service :3001)',
+      'A2A handoff envelopes (RequestTask JSON-RPC) queued across federation organs',
+      'Audit-trail witness; constitutional verdicts remain with arifOS F1–F13'
     ],
     limits: 'Internal technical detail withheld.',
     link: 'https://aaa.arif-fazil.com',

@@ -6,9 +6,9 @@ import { FederationObservatory } from '@/components/stitch/FederationObservatory
 const ORGANS = [
   {
     name: 'AAA',
-    role: 'Control Plane · A2A Gateway',
+    role: 'Coordination Plane · A2A Handoff',
     domain: 'aaa.arif-fazil.com',
-    description: 'The federation operations surface — agent identity, cockpit dashboard, A2A protocol routing. Where agents dock and the federation state is visible.',
+    description: 'The federation coordination surface — agent identity, cockpit dashboard, A2A handoff. Where agents dock and the federation state is visible. AAA attends; it never judges — the verdict is arifOS, the authority is F13.',
     color: 'text-[#D4A853]',
     href: 'https://aaa.arif-fazil.com',
     ring: 'BODY',

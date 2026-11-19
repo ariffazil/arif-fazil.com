@@ -34,6 +34,26 @@ function LiveClock() {
   )
 }
 
+/**
+ * Selected proof — three flagship outcomes only, projected from the canonical
+ * case data (@/data/discoveries). Evidence, role, uncertainty and withheld
+ * boundaries live once, on /work. No evidence drawers on this screen.
+ */
+const PROOF_CASES = [
+  {
+    id: 'bekantan-1',
+    outcome: 'Shallowest flowing oil discovery recorded in the Malay Basin.',
+  },
+  {
+    id: 'lebah-emas-1',
+    outcome: '11 hydrocarbon-bearing intervals; opened a new hinge play fairway.',
+  },
+  {
+    id: 'bunga-tasbih-1',
+    outcome: 'Commercial oil in post-rift sands; syn-rift risk recalibrated across the margin.',
+  },
+] as const
+
 export function Home() {
   return (
     <div className="min-h-screen bg-paper text-ink">
@@ -142,58 +162,45 @@ export function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {discoveries.filter((d) => d.category === 'wells').slice(0, 4).map((d) => (
-              <article
-                key={d.id}
-                className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
-              >
-                <div>
-                  <div className="flex items-baseline justify-between gap-3 mb-2">
-                    <h3 className="font-display text-lg font-bold uppercase tracking-tight text-[#EDEAE2]">
-                      {d.title}
-                    </h3>
-                    <span className="font-mono text-xs text-[#9AA0A8] whitespace-nowrap">{d.year}</span>
-                  </div>
-                  <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
-                    {d.location}
-                  </p>
-                  <p className="font-sans text-sm text-[#9AA0A8] leading-relaxed line-clamp-3">
-                    {d.summary}
-                  </p>
-                  <details className="mt-3">
-                    <summary className="cursor-pointer select-none font-mono text-[11px] uppercase tracking-wider text-[#9AA0A8] hover:text-[#E4572E] transition-colors">
-                      Evidence drawer ▾
-                    </summary>
-                    <ul className="mt-2 space-y-1.5 border-l-2 border-[#1F2733] pl-3">
-                      {d.evidence.map((e) => (
-                        <li key={e} className="text-xs text-[#9AA0A8]/80 leading-relaxed">
-                          — {e}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-2 font-mono text-[10px] uppercase tracking-wider text-[#9AA0A8]/80">
-                      source · {d.linkLabel ?? 'Explore GEOX'} · {d.year} · limitations ·{' '}
-                      {d.limits ?? 'Internal technical detail withheld.'}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PROOF_CASES.map((c) => {
+              const d = discoveries.find((x) => x.id === c.id)
+              if (!d) return null
+              return (
+                <article
+                  key={d.id}
+                  className="rounded-lg border border-[#1F2733] bg-[#0F131D] p-6 flex flex-col justify-between hover:border-[#9AA0A8]/40 transition-colors"
+                >
+                  <div>
+                    <div className="flex items-baseline justify-between gap-3 mb-2">
+                      <h3 className="font-display text-lg font-bold uppercase tracking-tight text-[#EDEAE2]">
+                        {d.title}
+                      </h3>
+                      <span className="font-mono text-xs text-[#9AA0A8] whitespace-nowrap">{d.year}</span>
                     </div>
-                  </details>
-                </div>
-                <div className="pt-4 mt-4 border-t border-[#1F2733]">
-                  <span className="font-mono text-[11px] text-[#9AA0A8]">
-                    {d.evidence.length} evidence item{d.evidence.length === 1 ? '' : 's'}
-                  </span>
-                </div>
-              </article>
-            ))}
+                    <p className="font-mono text-[11px] uppercase tracking-widest text-[#9AA0A8] mb-3">
+                      {d.location}
+                    </p>
+                    <p className="font-sans text-sm text-[#EDEAE2] leading-relaxed">
+                      {c.outcome}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-[#1F2733]">
+                    <Link to="/work" className="font-mono text-[11px] text-[#E4572E] hover:underline uppercase tracking-wider">
+                      Full case on /work →
+                    </Link>
+                  </div>
+                </article>
+              )
+            })}
           </div>
 
           <p className="mt-6 font-mono text-[11px] leading-relaxed text-[#9AA0A8]/80 max-w-3xl">
-            Four flagship wells. Personal professional contribution — not claims on behalf of PETRONAS.
-            Internal technical detail is withheld. Last verified 2026-08-17.{' '}
+            Three flagship outcomes. Decision, role, uncertainty, evidence and withheld boundaries live on{' '}
             <Link to="/work" className="text-[#E4572E] hover:underline">
-              Case studies and the full record live on /work
+              the full work record
             </Link>
-            .
+            . Personal professional contribution — not claims on behalf of PETRONAS. Last verified 2026-08-17.
           </p>
         </div>
       </section>

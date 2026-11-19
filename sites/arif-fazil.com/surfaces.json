@@ -1148,7 +1148,7 @@
     },
     {
       "domain": "aaa.arif-fazil.com",
-      "role": "Control plane, A2A gateway, agent identity",
+      "role": "Coordination plane, A2A handoff, agent identity",
       "organ": "AAA"
     },
     {
@@ -1160,6 +1160,11 @@
       "domain": "geox.arif-fazil.com",
       "role": "Earth intelligence, physics-gated geoscience",
       "organ": "GEOX"
+    },
+    {
+      "domain": "hermes.arif-fazil.com",
+      "role": "Meaning integrity organ, witness voice",
+      "organ": "HERMES"
     },
     {
       "domain": "wealth.arif-fazil.com",

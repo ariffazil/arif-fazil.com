@@ -165,10 +165,10 @@ export const systemProjects: SystemProject[] = [
   },
   {
     title: 'AAA',
-    role: 'Operations surface · Agent gateway',
+    role: 'Coordination surface · A2A handoff',
     status: 'LIVE',
     summary:
-      'Philosophy: Trust must be explicit and structural, not ambient. Engineering: A2A gateways require valid bearer credentials and issue HOLD/SEAL tokens. Verification: Dynamic-state checks verify process live port bounds.',
+      'Philosophy: Coordination attends — it does not judge. Engineering: Agent cards, skills mesh, and A2A handoff envelopes under bearer credentials. Verification: Dynamic-state checks verify process live port bounds.',
     artifactLabel: 'Endpoint metadata',
     artifactHref: 'https://aaa.arif-fazil.com/mcp/endpoint.json',
     surfaceLabel: 'AAA cockpit',

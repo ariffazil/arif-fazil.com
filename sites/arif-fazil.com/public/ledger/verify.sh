@@ -68,5 +68,9 @@ if [ "$fail" -gt 0 ]; then
   echo "VERDICT: LEDGER_STALE — $fail pinned source(s) changed since generation"
   exit 1
 fi
+if [ "$present" -gt 0 ]; then
+  echo "VERDICT: LEDGER_UNVERIFIABLE — $present pinned source(s) absent"
+  exit 2
+fi
 echo "VERDICT: LEDGER_MATCHES_DISK"
 exit 0

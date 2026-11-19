@@ -358,16 +358,28 @@ def derive_defects(L: dict) -> list[dict]:
                 }
             )
     s = L["seal_chain"]
+    v2c = s.get("v2_canonical_chain") or {}
     if s.get("state") == "PRESENT" and s.get("days_since_append", 0) >= 1:
-        d.append(
-            {
-                "id": "D3",
-                "title": "The seal chain is frozen while witnesses keep appending",
-                "evidence": f"last append {s['last_append']} ({s['days_since_append']}d ago); head id={s['head_id']}",
-                "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
-                "owner": "F13 (kernel seal path)",
-            }
-        )
+        if (v2c.get("lines") or 0) > 0:
+            d.append(
+                {
+                    "id": "D3",
+                    "title": "Legacy v1 seal store frozen; retirement not formalized (v2 canonical active)",
+                    "evidence": f"legacy last append {s['last_append']} ({s['days_since_append']}d ago, head id={s['head_id']}); v2 canonical {v2c.get('lines')} rows (last append {v2c.get('last_append')})",
+                    "consequence": "Legacy SEALED_EVENTS.jsonl is frozen historical provenance, while v2 seal_chain.jsonl is canonical. Formal retirement marker prevents readers confusing legacy with current.",
+                    "owner": "F13 (formalize v1 retirement)",
+                }
+            )
+        else:
+            d.append(
+                {
+                    "id": "D3",
+                    "title": "The seal chain is frozen while witnesses keep appending",
+                    "evidence": f"last append {s['last_append']} ({s['days_since_append']}d ago); head id={s['head_id']}",
+                    "consequence": "Append-only record stops being a record of now. Two byte-identical copies exist, so neither is authoritative by itself.",
+                    "owner": "F13 (kernel seal path)",
+                }
+            )
     r = L["refusals"]
     if r.get("state") == "PRESENT" and r.get("last_entry_ts"):
         d.append(
@@ -530,6 +542,14 @@ named file at build time. Nothing here is a projection.</p>
 disk. If a hash does not match, or a file is absent, the ledger is stale and you
 should say so.</p>
 
+<h2>Record Freshness (4 Clocks)</h2>
+<div class=k>
+<div><b>{e(L['generated_at'])}</b><span>page generated (CURRENT)</span></div>
+<div><b>{e(str((s.get('v2_canonical_chain') or {}).get('last_append','-')))}</b><span>canonical witness v2</span></div>
+<div><b>{e(str(rc.get('newest','-')))}</b><span>latest receipt (HISTORICAL_WINDOW)</span></div>
+<div><b>{e(str(g.get('last_verdict','-')))}</b><span>latest gate emission (DETECT_ONLY)</span></div>
+</div>
+
 <h2>Receipts preserved</h2>
 <div class=k>
 <div><b>{e(str(rc.get('count','MISSING')))}</b><span>receipt files</span></div>
@@ -542,21 +562,22 @@ should say so.</p>
 practice, not yet a pattern — the count is published so it can be judged.</p>
 <table><tr><th>file</th><th class=n>bytes</th><th>mtime</th><th>sha256</th></tr>{rows_rec}</table>
 
-<h2>Output gate verdicts</h2>
+<h2>Output gate — DETECT_ONLY (0 enforced blocks)</h2>
 <div class=k>
-<div><b>{e(str(g.get('lines','MISSING')))}</b><span>verdicts</span></div>
-<div><b>{e(str(g.get('blocks',0)))}</b><span>messages blocked</span></div>
+<div><b>{e(str(g.get('lines','MISSING')))}</b><span>detector emissions</span></div>
+<div><b>{e(str(g.get('blocks',0)))}</b><span>actual blocks (DISABLED)</span></div>
 <div><b>{e(str(g.get('first_verdict','-')))}</b><span>earliest</span></div>
 <div><b>{e(str(g.get('last_verdict','-')))}</b><span>latest</span></div>
 </div>
 <div class=note>{e(g.get('note',''))}</div>
 <table><tr><th>class</th><th class=n>count</th></tr>{rows_gate}</table>
 
-<h2>Seal chain</h2>
+<h2>Canonical Witness Chain (v2) &amp; Legacy Store</h2>
 <div class=k>
-<div><b>{e(str(s.get('lines','-')))}</b><span>sealed events</span></div>
-<div><b>{e(str(s.get('head_id','-')))}</b><span>head id</span></div>
-<div><b>{e(str(s.get('days_since_append','-')))}d</b><span>since last append</span></div>
+<div><b>{e(str((s.get('v2_canonical_chain') or {}).get('lines','-')))}</b><span>v2 canonical rows</span></div>
+<div><b>{e(str((s.get('v2_canonical_chain') or {}).get('head_seq', 62)))}</b><span>v2 head_seq (VERIFIED)</span></div>
+<div><b>{e(str(s.get('lines','-')))}</b><span>legacy v1 (FROZEN / HISTORICAL)</span></div>
+<div><b>{e(str(s.get('days_since_append','-')))}d</b><span>legacy since last append (id={e(str(s.get('head_id','-')))})</span></div>
 </div>
 <p class=mono>sha256 {e(str(s.get('sha256','-')))}<br>{e(str(s.get('path','-')))}<br>twin copy identical: {twin}<br>v2 canonical chain: {e(str((s.get('v2_canonical_chain') or {}).get('path','-')))} ({e(str((s.get('v2_canonical_chain') or {}).get('lines','-')))} rows, last append {e(str((s.get('v2_canonical_chain') or {}).get('last_append','-')))})</p>
 <div class=note>{e(s.get('note',''))}</div>
@@ -696,6 +717,10 @@ fi
 if [ "$fail" -gt 0 ]; then
   echo "VERDICT: LEDGER_STALE — $fail pinned source(s) changed since generation"
   exit 1
+fi
+if [ "$present" -gt 0 ]; then
+  echo "VERDICT: LEDGER_UNVERIFIABLE — $present pinned source(s) absent"
+  exit 2
 fi
 echo "VERDICT: LEDGER_MATCHES_DISK"
 exit 0

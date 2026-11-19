@@ -1,0 +1,35 @@
+{
+  "receipt": "deploy-ia-subtraction-20261119",
+  "agent": "qwen-fi003",
+  "actor": "FI-003 (333-AGI lane, warga-aaa)",
+  "authorized_by": "F13 sovereign GO 'go fasa 1, then fasa 2' (2026-11-19, chat)",
+  "publisher_burden": "Payer = Arif Fazil — his name and reputation ride every published claim; copy fixed to machine-contract truth before shipping.",
+  "date_utc": "2026-11-19T08:25Z",
+  "scope": "Fasa 1 IA subtraction + Fasa 2 content-contract CI, arif-fazil.com",
+  "changes": [
+    "Home: 4 well cards w/ evidence drawers -> 3 proof cards (BEKANTAN-1, LEBAH EMAS-1, BUNGA TASBIH-1), one-line outcomes, drawers removed, verified-stamp kept",
+    "Work: featured cards -> 3-row exec readout table anchored to ledger cases; synthetic Kirchhoff canvas section removed from core flow",
+    "Work ledger split: Exploration & Earth (7) / Systems & Instruments (5) + bridge sentence; per-case anchors #case-<id>",
+    "AAA semantics fixed at data layer: discoveries.ts, siteContent.ts, Federation.tsx, surfaces.json, charter page, arifos-governance.json -> coordination/attend, A2A handoff; verdict=arifOS, authority=F13, execution=A-FORGE (mirrors live aaa.arif-fazil.com/state.json authority_roles)",
+    "inject-home-fallback.cjs no-JS paragraph synced to 3-outcome story (PUTERI stays in /work record)",
+    "NEW tests/content-contract.test.cjs (6 tests) wired into prebuild: home/featured ids valid, organ cards in surfaces.json, evidence links same-family https, stale-semantics guard",
+    "surfaces.json: +hermes.arif-fazil.com federation_subdomains entry (live 200 verified origin-direct); AAA role reworded; version bumped"
+  ],
+  "gates": {
+    "tsc": "PASS",
+    "content_contract_tests": "6/6 PASS",
+    "design_lint_prebuild": "PASS (build chain)",
+    "site_preflight": "/work/ PASS, /charter/ PASS, / FAIL pre-existing (root SPA shape; handler vhost:~424; browser-verified)",
+    "verify_pages_full": "HOLD pre-existing — 2 dead redirects /aaa/scamper/, /aaa/nabilah/ -> aaa.arif-fazil.com 404 (AAA cockpit side, not this repo)",
+    "verify_served": "sample PASS; origin-direct md5 MATCH for /, /work/, /charter/, /.well-known/arifos-governance.json",
+    "browser_render": "home 3 cards no drawers; work table+split+new AAA copy; canvas absent; console errors 0"
+  },
+  "deploy_method": "additive rsync per-route, no --delete, no caddy reload; backups index.html.bak-20261119T082507Z + work/index.html.bak-20261119T082507Z + .well-known/arifos-governance.json.bak-20261119T083041Z",
+  "split_root_note": "/.well-known/* serves from /var/www/html/.well-known (vhost @well-known), NOT /var/www/html/arif/.well-known — both roots now consistent",
+  "open_items": [
+    "pre-existing: /aaa/scamper/ + /aaa/nabilah/ 301->404 (owned by AAA cockpit surface)",
+    "pre-existing: /work <title> doubles '— Arif Fazil' suffix (PageMeta prop already carries it); static prerender head title also stale ('Selected Work — Arif Fazil')",
+    "SeismicAmplitudeCanvas.tsx now unused (retained in src for future relabeled /earth home)",
+    "git commit local; push awaits F13 (T2-PUSH bare push HOLD)"
+  ]
+}

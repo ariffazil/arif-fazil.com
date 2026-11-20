@@ -54,10 +54,10 @@ function renderArchiveIndex(index) {
 
 function main() {
   if (!fs.existsSync(ARCHIVE_DIR)) {
-    // Archive briefings are cron-generated VPS data (gitignored). CI runners
-    // don't carry them — the built SPA fetches wealth data at runtime.
-    if (process.env.CI) {
-      console.log("ℹ generate-wealth-archive-index: archive not present in CI — skip");
+    // Archive briefings are cron-generated VPS data (gitignored). CI runners and
+    // isolated deploy-site builds don't carry them — the built SPA fetches wealth data at runtime.
+    if (process.env.CI || process.env.ARIF_SITES_ISOLATED_BUILD || SITE_ROOT.includes("arif-sites-build.")) {
+      console.log("ℹ generate-wealth-archive-index: archive not present in isolated/CI build — skip");
       return;
     }
     throw new Error(`archive directory missing on VPS: ${ARCHIVE_DIR}`);

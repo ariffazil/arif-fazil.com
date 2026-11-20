@@ -82,8 +82,8 @@
   --state-operational: #00C853;  /* SEAL verdict — green */
   --state-pending: #FFD600;      /* SABAR — amber, processing */
   --state-hold: #FF9500;         /* 888_HOLD — orange, awaiting human */
-  --state-void: #616161;         /* VOID — grey, fail-closed */
-  --state-danger: #D50000;       /* BREACH — red, critical */
+  --state-void: #9CA3AF;         /* VOID — grey, fail-closed */ /* AA fix 2026-11-21, was #616161 3.18:1 */
+  --state-danger: #FF1744;       /* BREACH — red, critical */ /* AA fix 2026-11-21, was #D50000 3.59:1 */
   --state-info: #58A6FF;         /* INFO — blue, neutral */
 
   /* ─── TYPOGRAPHY (F4 Clarity — ΔS ≤ 0) ─────────────────────────────── */
@@ -407,12 +407,13 @@ body {
 
 .badge-void {
   background: var(--state-void);
-  color: var(--text-primary);
+  color: #000; /* AA fix 2026-11-21 — dark text required on the brighter void grey */
+}
 }
 
 .badge-breach {
   background: var(--state-danger);
-  color: #fff;
+  color: #000; /* AA fix 2026-11-21 — #fff fails 4.5:1 on the brighter danger */
 }
 
 /* ─── Glass Card Effect ───────────────────────────────────────────── */
@@ -673,3 +674,18 @@ body::before {
 
 /* Override trinity-nav background to subtly reflect ring color */
 .trinity-nav { border-top: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   v2.1 · M1 RGBY SHELL ACCENTS (additive) · 2026-11-14 · feat/m1-canon-shell-kit
+   Directive (sovereign, 2026-11-14): dark mode; primaries red / blue /
+   yellow / green. Single source for ATLAS shells — legacy data-ring
+   palette above stays untouched. WCAG-AA on carbon (#0A0B0D):
+   red 5.38 · blue 9.18 · yellow 12.48 · green 9.64 · bone 15.77.
+   Canonical display/mono pair: Fraunces × IBM Plex Mono.
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --accent-red:    #E05A4E;  --accent-red-bg:    rgba(224, 90, 78, 0.10);   /* SOUL · sovereign */
+  --accent-blue:   #7FB3FF;  --accent-blue-bg:   rgba(127, 179, 255, 0.10); /* MIND · institution */
+  --accent-yellow: #F2C879;  --accent-yellow-bg: rgba(242, 200, 121, 0.10); /* BODY · human */
+  --accent-green:  #58C9A0;  --accent-green-bg:  rgba(88, 201, 160, 0.10);  /* EARTH · geox */
+}

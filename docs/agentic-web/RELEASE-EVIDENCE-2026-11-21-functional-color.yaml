@@ -1,0 +1,40 @@
+# Fill after tests. External name: release evidence / deploy receipt.
+# Do not call this a kernel SEAL.
+release_candidate:
+  commit: "<see git log origin/main..HEAD on kimi-code/functional-color-audit>"
+  branch: kimi-code/functional-color-audit (NOT main — merge pending)
+  environment: lane_worktree_only (nothing deployed)
+  changed_routes: []
+  public_effect:
+    - "sites/shared/design-system/tokens.css — state-danger #D50000→#FF1744, state-void #616161→#9CA3AF, badge-breach/badge-void text→#000 (no effect until deployed)"
+    - "sites/arif-fazil.com/public/_shared/design-system/tokens.css — same values (site copy)"
+    - "sites/arif-fazil.com/public/arifos/_shared/design-system/tokens.css — color-verdict-unknown #6B6C78→#8E959E"
+    - "sites/arif-fazil.com/public/arifos/index.html — .status--live green raw → --state-info blue (agent operational flow)"
+  tests:
+    doctor_before: not_run (web_zen doctor not required for token-only lane; doctor gates deploys)
+    doctor_after: not_run
+    doctor_fail_set_delta: ""
+    build: "npx vite build in lane → exit 0; dist/arifos/index.html carries state-info (1) / 38cc84 (0). Full prebuild blocked in lanes by git-ignored data dirs (see ledger ruling; deploy-time build on primary covers it)."
+    contrast_audit: "python3 scripts/color-contrast-audit.py → 44 rows examined, exit 0 (baseline RED: danger 3.40-3.59, void 3.01-3.18, verdict-unknown 3.59-3.79 all FAIL → GREEN after fixes)"
+    make_verify_pages: "HOLD — 10 gaps, ALL inherited live-routing (bot=301→404 ×8 makcikgpt, redirect→404 ×2 /aaa/scamper,/aaa/nabilah). Zero gaps attributable to branch: failing set ∩ changed files = ∅. ESCALATED to Arif — live Caddy bot-routing / _redirects needs a separate named fix (T3). Gate not green; do not deploy on this evidence."
+    playwright_home: not_run (no deployment to probe)
+    playwright_human: not_run
+    playwright_institution: not_run
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: "clean — diff contains hex values, CSS, markdown only"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: "not needed — nothing deployed; lane git revert per commit"
+    git: "git revert <commit range 9eff3c9..4837089>"
+  findings_escalated:
+    - "make verify-pages HOLD: 10 inherited live-routing gaps (makcikgpt bot-UA 301→404; /aaa/scamper,/aaa/nabilah redirect→404) — pre-existing, unrelated to branch, needs named routing fix"
+    - "VOID mapping conflict: shared grey #9CA3AF vs organ red #E5484D (docs/agentic-web/COLOR-AUDIT-2026-11-21.md §3.4)"
+    - "namespace divergence --state-* vs --color-verdict-* (audit §3.3); stale SOT canon/design-tokens.json (audit §3.5)"
+    - "soul-primary #8B1A1A at 2.01:1 — brand decorative below 3:1 (audit §1 REPORT)"
+    - "bypasses: vitals article.css gold ×7, wealth index.html verdict-green ×9 (audit §3.1-3.2); /aaa organ tokens still carry old values (out of scope)"
+  requested_action: "none — review + merge decision only; deploy and routing fix are separate named actions"
+  approver: "<empty until Arif>"

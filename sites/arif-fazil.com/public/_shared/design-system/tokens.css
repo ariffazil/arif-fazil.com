@@ -82,8 +82,8 @@
   --state-operational: #00C853;  /* SEAL verdict — green */
   --state-pending: #FFD600;      /* SABAR — amber, processing */
   --state-hold: #FF9500;         /* 888_HOLD — orange, awaiting human */
-  --state-void: #616161;         /* VOID — grey, fail-closed */
-  --state-danger: #D50000;       /* BREACH — red, critical */
+  --state-void: #9CA3AF;         /* VOID — grey, fail-closed */ /* AA fix 2026-11-21, was #616161 3.18:1 */
+  --state-danger: #FF1744;       /* BREACH — red, critical */ /* AA fix 2026-11-21, was #D50000 3.59:1 */
   --state-info: #58A6FF;         /* INFO — blue, neutral */
 
   /* ─── TYPOGRAPHY (F4 Clarity — ΔS ≤ 0) ─────────────────────────────── */
@@ -407,12 +407,13 @@ body {
 
 .badge-void {
   background: var(--state-void);
-  color: var(--text-primary);
+  color: #000; /* AA fix 2026-11-21 — dark text required on the brighter void grey */
+}
 }
 
 .badge-breach {
   background: var(--state-danger);
-  color: #fff;
+  color: #000; /* AA fix 2026-11-21 — #fff fails 4.5:1 on the brighter danger */
 }
 
 /* ─── Glass Card Effect ───────────────────────────────────────────── */

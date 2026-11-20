@@ -73,7 +73,7 @@
   --color-verdict-hold:    #F97D3D;
   --color-verdict-void:    #E5484D;
   --color-verdict-sabar:   #8892A6;
-  --color-verdict-unknown: #6B6C78;
+  --color-verdict-unknown: #8E959E; /* AA fix 2026-11-21, was #6B6C78 3.59:1 */
 
   /* Short-name accessors */
   --green:  var(--color-verdict-seal);

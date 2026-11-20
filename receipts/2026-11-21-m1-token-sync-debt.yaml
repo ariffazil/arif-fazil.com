@@ -1,0 +1,53 @@
+# Deploy receipt — M1 token sync debt closure (arif-fazil.com)
+# Companion to docs/agentic-web/RELEASE-EVIDENCE-2026-11-21-functional-color.yaml (kimi-code lane).
+# Do not call this a kernel SEAL.
+date: 2026-11-21
+actor: qwen-code/FI-003
+authority: Arif F13 direct order 2026-11-21 ("kimi session dah habis. ambil alih, fix the M1 sync debt sekarang")
+governance: docs/design-system-governance.md (proposal: /root/forge_work/proposals/qwen-code-FI-003/m1-token-sync-debt/proposal.json)
+
+landed:
+  merge: d9b17c96 (main) — kimi-code/functional-color-audit 32a67bc6..8d8dd97d (lane work, hermes/555-asi identity) + 3462ae83 (M1 sync, FI-003)
+  intent: |
+    v2.1 M1 RGBY shell accents (--accent-red #E05A4E / --accent-blue #7FB3FF /
+    --accent-yellow #F2C879 / --accent-green #58C9A0) had sat in SOT only since
+    12062f3f (2026-11-14); every served copy was stale at 4b5a2f2f (2026-09-03),
+    so live var(--accent-*) rendered via per-page hardcoded fallbacks only.
+    Task-1 AA fixes (#FF1744 danger, #9CA3AF void, badge text #000, organ
+    #8E959E) ride in the same file per the approved kimi plan.
+
+deployed:
+  method: additive rsync -av --update, single file, no --delete, no Caddy reload (house ship path)
+  targets:
+    - /var/www/html/arif/_shared/design-system/tokens.css   # apex + /arifos/* pages
+    - /var/www/html/_shared/design-system/tokens.css        # /words/*, /work/* handler root
+  post_hashes: 0449655c / 0449655c (intended 0449655c — MATCH)
+  backups: /root/backups/m1-token-sync-20261121/ (both pre-deploy copies)
+  origin_direct: curl --resolve :443:127.0.0.1 → sha 0449655c; 4 accent tokens + FF1744 + 9CA3AF present; last-modified 2026-11-20T21:49:00Z (deploy time)
+  arifos_subdomain: arifos.arif-fazil.com/_shared/design-system/tokens.css → 0449655c (serves the synced file; its 8fb03ff2 namespace file untouched on disk)
+
+gates:
+  contrast_audit: python3 scripts/color-contrast-audit.py → 44 rows, exit 0 (primary, post-merge)
+  verify_pages: "HOLD — 10 gaps, ALL inherited live-routing (makcikgpt bot-UA 301→404 ×8, /aaa/scamper + /aaa/nabilah redirect→404 ×2). Identical set to kimi-code RELEASE-EVIDENCE pre-merge; branch∩failures = ∅. Declared, not bypassed. Routing fix = separate named action (T3)."
+  rendered_browser_probe: not_run — static CSS, no JS hydration path; origin bytes + served bytes hash-verified instead
+  caddy_reloaded: false
+  secrets_scan: clean (hex values, CSS, markdown only)
+
+edge_cache:
+  status: Cloudflare serves stale bb83c422 at probe time (cf-cache-status HIT, age 1686s, max-age 14400)
+  resolution: self-heals ≤4h TTL (~09:55 MYT 2026-11-21); purge API documented 401 with zones-only token (arif-sites-ops web-surfaces scar); ?v= busting stripped by CF cache key
+  origin_truth: correct now — origin-direct hash 0449655c
+
+untouched_by_design:
+  - /var/www/html/arifos/_shared/design-system/tokens.css (8fb03ff2 organ family)
+  - /var/www/html/{aaa/_shared,arif/aaa/_shared}/design-system/tokens.css (6d6ecd41 aaa family, diverged 2026-11-17)
+  - legacy short-path copies (caf7b140)
+  - all /var/www/html/*.bak.* trees
+  - sites/arif-fazil.com/public/arifos/index.html blue wiring — merged to repo main, NOT deployed (separate named call)
+  - 13 regen-dirty files left in lane worktree (llms/discovery/makcikgpt date-bump churn from kimi build 05:41)
+
+followups_named:
+  - makcikgpt bot-UA routing + /aaa/scamper|nabilah redirects (verify-pages HOLD, T3 named fix)
+  - land blue /arifos/index.html live (separate call; repo main already carries it)
+  - aaa/organ/legacy token family reconciliation (musyawarah per governance)
+  - VOID grey-vs-red mapping conflict + soul-primary 2.01:1 brand call (kimi audit §1/§3.4, Arif's decision)

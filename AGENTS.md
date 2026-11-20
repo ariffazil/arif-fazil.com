@@ -3,6 +3,8 @@
 > **Canonical federation:** /root/AGENTS.md
 > **Site fabric:** /root/arif-fazil.com/docs/agentic-web/README.md
 > **Skills:** `AGI-agentic-web-delivery` + `FORGE-agentic-web-builder`
+> **Design tokens:** docs/design-system-governance.md — Claude↔Kimi musyawarah before any
+> tokens.css / agent-discovery mutation; repo copy stale vs live (2026-11-21 — reconcile first).
 > This file is a pointer plus deploy gates. Not a kernel SEAL.
 
 ## Agent rules (2026-09-13)

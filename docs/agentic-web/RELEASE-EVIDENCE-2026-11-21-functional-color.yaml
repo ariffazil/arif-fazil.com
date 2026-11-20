@@ -38,3 +38,15 @@ release_candidate:
     - "bypasses: vitals article.css gold ×7, wealth index.html verdict-green ×9 (audit §3.1-3.2); /aaa organ tokens still carry old values (out of scope)"
   requested_action: "none — review + merge decision only; deploy and routing fix are separate named actions"
   approver: "<empty until Arif>"
+
+# LANDING ADDENDUM 2026-11-21 (post-review — supersedes the stale claims above)
+# The "nothing deployed / merge pending" statements above were TRUE when written
+# and are FALSE as of 2026-11-21 05:49 MYT. Verified facts:
+landing_addendum:
+  landed_by: "qwen-code/FI-003 takeover — commit 3462ae83 (M1 full-parity sync SOT→served copies)"
+  merged_to_main: "d9b17c96 merge: kimi-code/functional-color-audit (AA contrast fixes, blue wiring, audit + evidence)"
+  pushed: "origin/main; receipts 16c01e4a (origin 0449655c verified, 10 inherited verify-pages gaps declared) and bd3193e0 (push + blue live landing — lease ACT_GATE refused, sovereign order recorded)"
+  live_state: "/var/www/html/{,_shared|arif/_shared}/design-system/tokens.css sha256-8 0449655c, mtime 2026-11-21 05:49 MYT — carries FF1744/9CA3AF AA values (D50000/616161 appear only inside 'was' comments)"
+  authority_claim: "Arif F13 direct order 2026-11-21 'ambil alih, fix the M1 sync debt sekarang' per FI-003 proposal record /root/forge_work/proposals/qwen-code-FI-003/m1-token-sync-debt/proposal.json — validity adjudication belongs to 888, not to this record"
+  review_fixes_this_commit: "release-evidence correction (this addendum); stray '}' removed from both token files; audit doc ratio cells corrected to script-actual mins; 4 additional bypass hits + sweep exclusion gap reported; stale-SOT finding reworded to cite file-authority.yaml as the declaring file"
+  merge_decision: "fast-follow fixes committed on lane branch AFTER the FI-003 merge — merging them is the tower's/Arif's call (a lane does not merge itself)"

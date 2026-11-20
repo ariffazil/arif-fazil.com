@@ -71,3 +71,18 @@ exists in all copies; two blues are already live (`--state-info`, `--accent-blue
 
 **Next token change must reconcile repo ← live FIRST**, then migrate, then converge
 every copy — in that order.
+
+## Update 2026-11-21 05:56 — M1 sync landed (FI-003 lane, Arif-ordered takeover)
+
+- SOT + apex family converged at `0449655c`: repo, `/var/www/html/_shared`,
+  `/var/www/html/arif/_shared` hash-equal (M1 RGBY + AA contrast `#FF1744` /
+  `#9CA3AF`). Receipt `receipts/2026-11-21-m1-token-sync-debt.yaml` (16c01e4a);
+  F1 backups in `/root/backups/m1-token-sync-20261121/`.
+- Cloudflare still serves stale `bb83c422` on the public URL (cache HIT, ~4h TTL —
+  self-heals late morning; a valid Zone.Cache Purge token clears it immediately).
+- Still divergent, each awaiting its own musyawarah: aaa `6d6ecd41`, arifos webroot
+  `8fb03ff2`, legacy paths.
+- Blue `--state-info` wiring on `/arifos/index.html` is REPO-ONLY at this stamp
+  (live page grep: 0 hits at 05:56) — deploy is a separate call.
+- The reconcile rule above is DONE for the apex family; aaa/organ/legacy families
+  still need reconcile before any edit. Re-derive hashes before you touch anything.

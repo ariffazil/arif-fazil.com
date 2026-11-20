@@ -219,7 +219,7 @@ if [ ${#GAPS[@]} -gt 0 ]; then
     echo "    c) Add path to _routes.json exclude list if SPA-handled"
     echo "  ─────────────────────────────────────────────"
     echo ""
-    echo -e "  ${RED}VERDICT: HOLD${NC} — do not deploy until all gaps closed."
+    echo -e "  ${RED}VERDICT: HOLD${NC} — ${#GAPS[@]} gaps. Do not deploy until all gaps closed."
     exit 1
 else
     echo ""

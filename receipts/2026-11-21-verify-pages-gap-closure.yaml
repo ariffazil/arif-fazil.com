@@ -1,0 +1,50 @@
+# Receipt — verify-pages gap closure + gate honesty fix (arif-fazil.com)
+# Companion: receipts/2026-11-21-m1-token-sync-debt.yaml · receipts/2026-11-21-push-and-blue-live.yaml
+date: 2026-11-21
+actor: qwen-code/FI-003
+authority: Arif F13 direct order 2026-11-21 ("betulkan verify-pages tu gak, 10 gap tu")
+
+truth_correction:
+  reported_gaps: "10 (8 makcikgpt bot-UA + 2 aaa) — what every reader saw, incl. kimi-code evidence and my own earlier runs"
+  real_gaps: "~57 — ALL 55 makcikgpt articles failed the bot lane (dual-lane mismatch, incl. old articles petronas-dna/iran-hormuz), + 2 aaa redirects"
+  lying_mechanism: |
+    Makefile verify-pages target piped run-gate.sh through its default 20-line
+    excerpt; the script prints the gap COUNT before the bullet list, so every
+    excerpt showed a truncated bullet tail with no count. Gate output now ends
+    with "VERDICT: HOLD — N gaps" and Makefile passes --tail 400.
+
+root_causes_and_fixes:
+  - gap_class: makcikgpt bot lane (all articles, curl/wget/bot UAs)
+    root_cause: |
+      Bot-lane handler root /var/www/html/arif/world/makcikgpt/makcikgpt-md/
+      (nested mirror, populated 2026-10-31 per Caddy comment) DID NOT EXIST —
+      lost in a later webroot cycle (present 2026-10-31, absent before the
+      2026-11-20 10:53 deploys; deploy-site.sh webroot-loss class). Human lane
+      was fine (dirs + index.html); browsers saw 200, bots saw 404.
+    fix: additive rsync dist/makcikgpt-md/ (224 files, 2.3MB) -> nested mirror, --chown www-data, no --delete, no Caddy reload
+  - gap_class: /aaa/scamper/ + /aaa/nabilah/ redirect->404
+    root_cause: |
+      Apex /aaa/* 301s to aaa.arif-fazil.com per ROUTE-SOFT-404 scar rules;
+      the subdomain webroot /var/www/html/aaa/ was stale — the two pages
+      (MERDEKA BELAJAR OS; Nabilah Fazil profile) and several family assets
+      were never synced.
+    fix: additive rsync public/aaa/ -> /var/www/html/aaa/ (--update, no --delete), closes both pages + family asset staleness in one sanctioned move
+  - gap_class: gate output honesty
+    fix: "scripts/verify-pages.sh VERDICT line now carries the gap count; Makefile verify-pages passes --tail 400 so the excerpt can no longer hide the gap list"
+
+verification:
+  bot_lane_probes: 10/10 -> 200 (8 named gaps + petronas-dna + iran-hormuz), origin-direct curl -L UA curl/8.5.0
+  aaa_full_chain: apex /aaa/scamper/ and /aaa/nabilah/ -> 301 -> subdomain -> 200
+  gate: make verify-pages -> outcome=pass exit_code=0 — "Total: 236 pages verified (9 intentionally excluded) · VERDICT: PASS"
+  cf_edge: makcikgpt handler sets no-cache/no-store; aaa HTML DYNAMIC — no edge staleness class
+  backups: none needed — additive adds only; nothing overwritten (rsync --update skipped newer dest files)
+
+committed:
+  - Makefile (--tail 400)
+  - scripts/verify-pages.sh (VERDICT gap count)
+  - receipts/2026-11-21-verify-pages-gap-closure.yaml
+
+open_items_for_ruling:
+  - "RECURRENCE GUARD: nothing prevents the next full webroot cycle from deleting the restored nested mirror again (the 2026-10-31 restore died the same way). Recommend an exclude-guard in the deploy path or moving the mirror under the repo's deploy-managed tree — needs a named deploy-pipeline decision."
+  - "Ghost tree: /var/www/html/world/makcikgpt/ (60 entries at the WRONG root, served by nothing on the apex vhost) — deploy debris from the same cycle; candidate for quarantine, not deleted (move-before-delete law)."
+  - "Flat legacy mirror /var/www/html/arif/makcikgpt-md/ (112 html, still current) vs nested mirror — two live copies of the same content; reconcile-or-retire under the token-family pattern."

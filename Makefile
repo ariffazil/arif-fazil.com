@@ -141,7 +141,7 @@ help:
 # DITEMPA BUKAN DIBERI — entropy must not accumulate at integration boundaries.
 verify-pages:
 	@echo "[verify-pages] Running page inventory gate..."
-	@bash scripts/run-gate.sh --gate-id verify.pages -- bash scripts/verify-pages.sh
+	@bash scripts/run-gate.sh --gate-id verify.pages --tail 400 -- bash scripts/verify-pages.sh
 	@echo ""
 
 # ── Served-state gate ───────────────────────────────────────────────

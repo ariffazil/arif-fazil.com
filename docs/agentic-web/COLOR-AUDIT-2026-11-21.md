@@ -38,8 +38,48 @@ Final run: `python3 scripts/color-contrast-audit.py` → 44 rows examined, exit 
 
 ## 2. Blue wiring — agent operational flow (see §3 of the spec; decision by Arif 2026-11-21)
 
-*(appended by Task 2)*
+- `html[data-organ="arifos"] .status--live` in `/arifos/index.html` was green raw hex
+  (`#38cc84`) — now `color: var(--state-info)` `#58A6FF` + blue-tinted background
+  `rgba(88,166,255,.12)`. Green `SEALED` badges (`.status--healthy`) untouched.
+- JS check outcome: no JS in the page assigns `status--live` — blue applies to the static
+  "CANARY LIVE" phase rows (P1-5, P1-6) only. The `#flow-health` observatory field keeps
+  its `status--unknown` state; if JS later sets `status--live`, it inherits blue.
+- `--state-info` consumption on the site: 0 → 1. Verified into `dist/arifos/index.html`
+  (vite build in lane; full `prebuild` requires git-ignored data absent from lanes —
+  see ledger ruling).
 
 ## 3. Consistency scan (see §4)
 
 *(appended by Task 3)*
+
+## 4. M1 sync debt — CLOSED 2026-11-21 (landed by qwen-code/FI-003 takeover)
+
+Discovery: SOT `sites/shared/design-system/tokens.css:676-690` carries
+`v2.1 · M1 RGBY SHELL ACCENTS` (`--accent-red #E05A4E · --accent-blue #7FB3FF ·
+--accent-yellow #F2C879 · --accent-green #58C9A0`, AA on carbon, commit `12062f3f`,
+2026-11-14) — but the served copy was last committed `4b5a2f2f` (2026-09-03) and every
+live copy lacked the block. Live pages referencing `var(--accent-*,…)` rendered only
+through per-page hardcoded fallbacks; the token layer was bypassed.
+
+Fix: full-parity sync SOT → `sites/arif-fazil.com/public/_shared/design-system/tokens.css`
+(M1 block + Task-1 AA fixes together), then additive rsync (`--update`, no `--delete`,
+no Caddy reload) to both served apex-family copies:
+`/var/www/html/arif/_shared/design-system/tokens.css` and `/var/www/html/_shared/design-system/tokens.css`.
+
+### Token copy map after landing
+
+| Family | sha256-8 (post-landing) | Paths | Status |
+|---|---|---|---|
+| apex design-system | `0449655c` | `/var/www/html/arif/_shared/design-system/`, `/var/www/html/_shared/design-system/` | SYNCED (M1 + AA) |
+| organ namespace | `8fb03ff2` | arifos subdomain + `…/arif/arifos/_shared/design-system/` | DIVERGENT — separate reconciliation; repo copy now carries the AA unknown fix for its next deploy |
+| aaa | `6d6ecd41` | aaa subdomain + `…/arif/aaa/_shared/design-system/` | DIVERGENT (2026-11-17) — own musyawarah before touch |
+| legacy short path | `caf7b140` | `…/_shared/tokens.css` ×2 | legacy; reconcile-or-retire later |
+
+`.bak.*` trees under `/var/www/html/` are backups — never edited, never deployed.
+
+### Evidence
+
+- Proposal (governance consensus record): `/root/forge_work/proposals/qwen-code-FI-003/m1-token-sync-debt/proposal.json`
+- Authority: Arif F13 direct order 2026-11-21 "ambil alih, fix the M1 sync debt sekarang";
+  peer-review seat collapsed (kimi lane ended, FI-002 session not live), sovereign order recorded.
+- Origin-direct verification + `make verify-pages`: see receipts entry for this date.

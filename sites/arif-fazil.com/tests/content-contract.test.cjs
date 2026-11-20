@@ -20,7 +20,12 @@ const read = (p) => fs.readFileSync(p, 'utf8')
 const discoveriesSrc = read(path.join(ROOT, 'src/data/discoveries.ts'))
 const homeSrc = read(path.join(ROOT, 'src/pages/Home.tsx'))
 const workSrc = read(path.join(ROOT, 'src/pages/Work.tsx'))
-const surfaces = JSON.parse(read(path.join(ROOT, '..', '..', 'surfaces.json')))
+const surfacesPath = [
+  path.join(ROOT, '..', '..', 'surfaces.json'),
+  path.join(ROOT, 'surfaces.json'),
+  path.join(ROOT, 'public', 'surfaces.json'),
+].find((p) => fs.existsSync(p))
+const surfaces = JSON.parse(read(surfacesPath))
 
 function extractIds(src, marker) {
   const block = src.slice(src.indexOf(marker))

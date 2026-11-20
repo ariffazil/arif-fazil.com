@@ -1,0 +1,22 @@
+# Receipt — push main + blue /arifos live landing (arif-fazil.com)
+# Companion: receipts/2026-11-21-m1-token-sync-debt.yaml · governance: docs/design-system-governance.md
+date: 2026-11-21
+actor: qwen-code/FI-003
+authority: Arif F13 direct order 2026-11-21 ("push dulu, lepas tu gi live kan blue tu")
+
+push:
+  range: e3c61265..16c01e4a origin/main -> main (9 commits: kimi lane 32a67bc6..8d8dd97d + 3462ae83 M1 sync + d9b17c96 merge + eac61e13 FI-002 governance + 16c01e4a receipt)
+  privacy_gate: PASS — repo PUBLIC confirmed via gh; no pre-push hook; 41 files scanned: 0 sensitive path classes, 0 secret patterns, 0 key-shaped lines (github-public-push-privacy skill, step 2)
+  lease: ATTEMPTED via forge_lease -> ACT_GATE refused (ERR_ACT_MALFORMED — session carries no minted act_v1.<payload>.<sig> credential). Proceeded under direct sovereign order; recorded here, not self-authorized.
+  remote_verified: git ls-remote origin refs/heads/main -> 16c01e4a (origin's own answer)
+
+blue_live:
+  commit_source: 9d2eafa0 (kimi lane) — html[data-organ="arifos"] .status--live raw #38cc84 -> var(--state-info) #58A6FF + rgba(88,166,255,.12) bg
+  scope: static rows P1-5/P1-6 "CANARY LIVE" only; no JS assigns status--live (kimi Task-2 finding); .status--healthy green SEAL badges untouched
+  deploy: additive rsync -av --update single file -> /var/www/html/arif/arifos/index.html (handle /arifos/* root /var/www/html/arif)
+  backup: /root/backups/m1-token-sync-20261121/arifos-index.html.bak
+  origin_direct: HTTP 200; state-info present (1), raw #38cc84 absent (0); webroot cmp parity OK
+  edge: cf-cache-status DYNAMIC — HTML not edge-cached, blue visible through CF immediately
+  dependency: --state-info definition already live via tokens.css 0449655c (previous receipt)
+
+followups_standing: verify-pages 10 inherited routing gaps (T3 named fix) · aaa/organ/legacy token family reconciliation · VOID mapping conflict + soul-primary brand call

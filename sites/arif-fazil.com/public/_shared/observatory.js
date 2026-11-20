@@ -328,6 +328,10 @@
     let measurement = 'not measured';
     if (/stale/.test(normalizedStatus)) measurement = 'stale';
     else if (/blocked|hold|void|fail|critical/.test(normalizedStatus)) measurement = 'blocked';
+    // A predicate floor can still carry a number (F7 0.04, F12 0.00). That
+    // number is not a measurement. Counting it painted 6/13 while
+    // governance.floors_measured stayed 4.
+    else if (/\bpredicate\b/.test(normalizedStatus)) measurement = 'loaded / not measured';
     else if (score != null) measurement = 'measured';
     else if (record !== undefined) measurement = 'loaded / not measured';
     if (definition.id === 'F13' && score == null) {
@@ -551,15 +555,23 @@
     const memoryPercent = isRecord(memory) ? memory.percent : null;
     const capabilities = data.capabilities || {};
     const governance = effectiveGovernance(data.governance || {});
-    const authorization = data.authority && data.authority.effective_action_authority;
+    // 2026-11-21 F0 (FI-002): planes.authorization is the measured kernel probe
+    // ("PUBLIC / OBSERVE_ONLY_unless_bound") — wire it as the fallback.
+    const authorization = firstPresent(unwrap(data.authority && data.authority.effective_action_authority), data.planes && data.planes.authorization);
     const authorizedValue = unwrap(authorization);
     const authorized = isRecord(authorizedValue) ? authorizedValue.authorized : authorizedValue;
+    // 2026-11-21 F0 (FI-002): the producer's authorization record carries a tier
+    // band (e.g. OBSERVE_ONLY for the public snapshot tier) even when `authorized`
+    // itself is null — print the band instead of an empty unavailable.
+    const authorizedBand = isRecord(authorizedValue) ? firstPresent(authorizedValue.band, authorizedValue.tier) : null;
     const floors = normalizedFloors(data.governance || {});
     const loadedFloors = floors.filter(({ record }) => record !== undefined).length;
-    const measuredFloors = floors.filter(({ definition, record }) => floorParts(definition, record).score != null).length;
+    const measuredFloors = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'measured').length;
     const states = {
       LIVENESS: { value: memoryPercent != null ? `${(100 - Number(memoryPercent)).toFixed(0)}% memory free` : UNAVAILABLE, state: data.substrate && data.substrate.memory },
-      READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage) },
+      // 2026-11-21 F0 (FI-002): fall through to the measured planes row when the
+      // stage/conformance fields are absent from the projection.
+      READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness) },
       // 2026-10-31: "8/8" beside a 9-row matrix is not a data contradiction, it is
       // an unnamed denominator. State the namespace and the population.
       CAPABILITY: {
@@ -569,7 +581,7 @@
         state: capabilities.state || capabilities.status,
       },
       GOVERNANCE: { value: governance.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : governance.verdict, state: governance.verdict },
-      AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : UNAVAILABLE), state: authorized },
+      AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : (authorizedBand != null ? `TIER ${String(authorizedBand).toUpperCase()}` : (authorized && typeof authorized === 'string' ? String(authorized).toUpperCase() : UNAVAILABLE))), state: authorizedBand != null ? String(authorizedBand) : authorized },
       RECEIPT: { value: compactValue(data.receipts && data.receipts.last_receipt_tier), state: data.receipts && data.receipts.last_receipt_tier },
       CONSTITUTIONAL: { value: loadedFloors ? `${loadedFloors}/13 loaded · ${measuredFloors}/13 measured` : UNAVAILABLE, state: measuredFloors === 13 ? 'measured' : 'unknown' },
     };
@@ -588,7 +600,7 @@
     const effective = effectiveGovernance(governance);
     const floors = normalizedFloors(governance);
     const floorGrid = $('#floor-grid');
-    const measured = floors.filter(({ definition, record }) => floorParts(definition, record).score != null).length;
+    const measured = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'measured').length;
     const blocked = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'blocked').length;
     const stale = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'stale').length;
     const loaded = floors.filter(({ record }) => record !== undefined).length;
@@ -669,9 +681,17 @@
           ? Object.keys(decompRaw).find((k) => k.toLowerCase().startsWith(String(definition.id).toLowerCase() + '_'))
           : null;
         const decompValue = decompKey ? unwrap(decompRaw[decompKey]) : null;
-        const proofClass = isRecord(decompValue) ? decompValue.proof_class : null;
+        let proofClass = isRecord(decompValue) ? decompValue.proof_class : null;
+        let cellTone = paletteClass(parts.state);
+        if (definition.id === 'F13' && proofClass === 'presence_only') {
+          proofClass = 'presence_only (action consent unproven)';
+          cellTone = 'warn';
+        } else if (definition.id === 'F11' && isRecord(decompValue) && (decompValue.receipt_actor_bound === 'UNKNOWN' || decompValue.receipt_contains_governance_outcome === 'UNKNOWN')) {
+          proofClass = 'receipt_present (consequence/actor unproven)';
+          cellTone = 'warn';
+        }
         const proofNote = proofClass ? ` · proof: ${proofClass}` : '';
-        return `<div class="floor-cell floor-cell--${paletteClass(parts.state)}" data-floor="${definition.id}" data-measurement="${esc(parts.measurement)}">
+        return `<div class="floor-cell floor-cell--${cellTone}" data-floor="${definition.id}" data-measurement="${esc(parts.measurement)}">
           <div class="floor-header"><span class="floor-num">${definition.id}</span><span class="floor-name">${definition.name}</span></div>
           <div class="floor-score">${esc(score)}</div>
           <div class="floor-status">${esc(parts.measurement)} · ${esc(status)}${esc(proofNote)}</div>
@@ -741,9 +761,8 @@
     return name ? flow[name] : undefined;
   };
   const flowDeclaredEndpoints = [
-    '/receipt/emit', '/receipt/verify', '/receipt/query', '/telemetry/log',
-    '/cooling/emit', '/transition/emit', '/state/*',
-  ];
+    '/health (GET)', '/ingest (POST)',
+  ]; // live-probe 2026-11-19: 7 laluan diisytihar lama = 404; dua ini 200
   function buildFleet(state) {
     const fl = (state && state.fleet) || {};
     const organs = (state && state.organs) || {};
@@ -803,7 +822,7 @@
           ? { value: `${compactValue(fqNum)} ${compactValue(fqLabel)}`, state: 'measured', source: 'arifFlow', confidence: 0.9 }
           : (fqNum !== undefined ? fqNum : fqLabel))
       : undefined;
-    const declaredEndpoints = { value: flowDeclaredEndpoints, state: 'declared', source: 'declared arifFLOW contract', confidence: 1.0, observed_at: data.observed_at };
+    const declaredEndpoints = { value: flowDeclaredEndpoints, state: 'measured', source: 'live probe 2026-11-19', confidence: 0.9, observed_at: data.observed_at };
     const endpoints = flowField(record, 'endpoints', 'endpoint', 'routes');
     const endpointRecord = endpoints === undefined ? declaredEndpoints : endpoints;
     const authority = firstPresent(flowField(record, 'authority', 'authorization'), data.authority && data.authority.arifFLOW);
@@ -854,9 +873,9 @@
     { id: 'P1-2', scope: 'Python client', status: 'SEALED' },
     { id: 'P1-3', scope: 'TypeScript client', status: 'SEALED' },
     { id: 'P1-B', scope: 'PAI ↔ arifFLOW bridge', status: 'SEALED' },
-    { id: 'P1-4', scope: 'AAA emitReceipt wiring', status: 'SEALED LIVE' },
-    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'CANARY 2026-09-09 — RETEST REQUIRED' },
-    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'CANARY 2026-09-09 — RETEST REQUIRED' },
+    { id: 'P1-4', scope: 'AAA emitReceipt wiring', status: 'E6 RECEIPT_OBSERVED' },
+    { id: 'P1-5', scope: 'A-FORGE receipt wiring', status: 'observed 2026-11-18 — hook unproven', note: 'dated census 2026-11-18; September canary is not authorization' },
+    { id: 'P1-6', scope: 'telemetry wiring · AF-1 canary', status: 'observed 2026-11-18 — hook unproven', note: 'dated census 2026-11-18; September canary is not authorization' },
     { id: 'P1-7', scope: 'deprecation flags', status: 'pending' },
   ];
   const p1Snapshot = (data) => {
@@ -882,9 +901,10 @@
       const observed = p1Record(snapshot, fallback.id);
       const statusRecord = observed === undefined ? fallback.status : firstPresent(observed && observed.status, observed && observed.verdict, observed && observed.state, observed);
       const scope = observed === undefined ? fallback.scope : compactValue(firstPresent(observed && observed.scope, observed && observed.description), fallback.scope);
-      const source = observed === undefined ? 'declared migration fallback' : (sourceValue(observed) || 'snapshot');
+      const source = observed === undefined ? (fallback.note || 'declared migration fallback') : (sourceValue(observed) || 'snapshot');
       const confidence = observed === undefined ? 'unknown' : (confidenceValue(observed) || 'unknown');
-      return `<tr data-phase="${fallback.id}" data-source="${observed === undefined ? 'declared-fallback' : 'snapshot'}">
+      const rowSource = observed === undefined ? (fallback.note ? 'dated-census' : 'declared-fallback') : 'snapshot';
+      return `<tr data-phase="${fallback.id}" data-source="${rowSource}">
         <td><code>${fallback.id}</code></td><td>${esc(scope)}</td><td>${badge(statusRecord)}</td>
         <td>source: ${esc(source)} · confidence: ${esc(confidence)}</td>
       </tr>`;
@@ -895,8 +915,8 @@
     const flow = flowSnapshot(data).value;
     const gate = unwrap(firstPresent(data.next_mutation_gate, flow && flow.next_mutation_gate));
     const fallback = {
-      status: 'HOLD', authority: 'ARIF GO required (next: executor full hook + P1-7)', canary: 'P1-5f + P1-6 canaries PASSED 2026-09-09',
-      follow_up: 'executor full receipt hook + P1-7 deprecation flags', fallback: 'local fallback preserved', risk: 'low, additive-only',
+      status: 'HOLD', authority: 'ARIF GO required — executor full hook + P1-7 NOT authorized on 2026-09-09 canary alone', canary: 'P1-5f + P1-6 canary 2026-09-09 is not authorization; executor FULL receipt hook (forge_execute → receipt) still unproven',
+      follow_up: 'not this card — the September canary does not name today\'s queue', fallback: 'local fallback preserved', risk: 'low, additive-only',
     };
     const values = {};
     Object.entries(fallback).forEach(([key, value]) => {
@@ -945,6 +965,12 @@
         return { ...rec, confidence: rec.value === UNAVAILABLE || rec.value == null ? 0.0 : 0.9 };
       }
       return rec;
+    }
+    // 2026-11-21 F0 (FI-002): a field the producer emits but leaves null is a
+    // MEASUREMENT GAP, not a projection defect — label it unmeasured, not
+    // "not exposed". Observation ≠ interpretation (HERMES 1).
+    if (key) {
+      return { value: UNAVAILABLE, state: 'unmeasured', source: `${signal.toLowerCase()} field present in organ row, value not populated by public-state producer`, confidence: 0.0 };
     }
     if (signal === 'RECEIPT' && data.receipt_status) {
       const st = String(data.receipt_status).toLowerCase();
@@ -1068,10 +1094,10 @@
           <span>arifFLOW: ${esc(flowMeta === undefined ? (flow.value ? 'federation metadata available' : UNAVAILABLE) : compactValue(flowMeta))}</span>
         </div>
       </article>`;
-    }).join('') + renderDeclaredSurfaces(organs);
+    }).join('') + renderDeclaredSurfaces(organs, data);
   }
 
-  function renderDeclaredSurfaces(organs) {
+  function renderDeclaredSurfaces(organs, data) {
     if (!organMetadata.aaamcp) return '';
     const present = isRecord(organs) && Object.keys(organs).some((key) => {
       const row = unwrap(organs[key]);
@@ -1079,14 +1105,23 @@
     });
     if (present) return '';
     const meta = organMetadata.aaamcp;
+    // 2026-11-21 F0 (FI-002): the kernel-wide axes (governance / floors) are
+    // MEASURED at the kernel and shared by every organ — print them with their
+    // namespace instead of "not wired". AAA-scoped axes that the producer does
+    // not carry stay honestly unmeasured.
+    const planes = (data && data.planes) || {};
+    const gov = effectiveGovernance((data && data.governance) || {});
+    const fl = normalizedFloors((data && data.governance) || {});
+    const flLoaded = fl.filter(({ record }) => record !== undefined).length;
+    const flMeasured = fl.filter(({ definition, record }) => floorParts(definition, record).measurement === 'measured').length;
     const rows = [
       ['LIVENESS', { value: 'live', state: 'healthy', source: 'manual probe 2026-10-24 · systemd aaa-mcp.service pid 1991169', confidence: 0.9 }],
       ['CAPABILITY', { value: '4 tools · read-only', state: 'healthy', source: 'manual tools/list probe 2026-10-24T04:45Z · aaa_health, aaa_agent_card, aaa_federation_manifest, aaa_discovery', confidence: 0.9 }],
-      ['READINESS', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
-      ['GOVERNANCE', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['READINESS', { value: compactValue(planes.readiness), state: planes.readiness, source: 'public-state planes.readiness (kernel probe, federation-wide)', confidence: 0.85 }],
+      ['GOVERNANCE', { value: gov.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : gov.verdict, state: gov.verdict, source: 'arifOS kernel verdict (kernel-wide, quoted not summarised)', confidence: 0.9 }],
       ['AUTHORIZATION', { value: 'loopback-only · no public route', state: 'healthy', source: 'Caddyfile shared_assets + ss -ltn 2026-10-24', confidence: 0.9 }],
-      ['RECEIPT', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
-      ['CONSTITUTIONAL', { value: UNAVAILABLE, state: 'unknown', source: 'not wired into public-state producer', confidence: 0 }],
+      ['RECEIPT', { value: UNAVAILABLE, state: 'unmeasured', source: 'no AAA receipt ledger wired into public-state producer', confidence: 0 }],
+      ['CONSTITUTIONAL', { value: flLoaded ? `${flLoaded}/13 loaded · ${flMeasured}/13 measured (kernel-wide)` : UNAVAILABLE, state: flMeasured === 13 ? 'measured' : 'unknown', source: 'arifOS kernel floors (kernel-wide, not AAA-scoped)', confidence: 0.85 }],
     ];
     return `<article class="organ-card organ-card--unknown" data-ring="${meta.ring}" data-organ="aaamcp" data-overall="unknown">
       <div class="organ-head"><span class="organ-name">${esc(meta.label)}</span><span class="ring-badge ring-${meta.ring.toLowerCase()}">${meta.ring}</span></div>
@@ -1118,11 +1153,11 @@
   const flowEdgeOverlays = [
     {
       source: 'AAA', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'yes',
-      receipt_produced: 'yes', telemetry_produced: 'yes', overall: 'SEALED LIVE', overlay_ref: 'P1-4',
+      receipt_produced: 'yes', telemetry_produced: 'yes', overall: 'E6 RECEIPT_OBSERVED', overlay_ref: 'P1-4',
     },
     {
       source: 'A-FORGE', target: 'arifFLOW', transport: 'HTTP', trace_propagated: 'canary P1-5f 2026-09-09',
-      receipt_produced: 'canary live (P1-5f)', telemetry_produced: 'live via telemetry.ts /ingest (P1-6)', overall: 'CANARY LIVE', overlay_ref: 'AF-110 / P1-5',
+      receipt_produced: 'canary live (P1-5f)', telemetry_produced: 'live via telemetry.ts /ingest (P1-6)', overall: 'E5 CANARY_TRACE', overlay_ref: 'AF-110 / P1-5',
     },
     {
       source: 'arifOS', target: 'arifFLOW', transport: 'HTTP',
@@ -1161,8 +1196,20 @@
     const reachable = Number(aggregate.reachable ?? aggregate.transport_reachable);
     const semantic = Number(aggregate.semantic_proven);
     const aggState = aggregate.aggregate_state || aggregate.state || '';
+    // The headline count and the rows are two instruments. On 2026-11-20T15:31Z
+    // the aggregate still said 3 while arifOS→GEOX had dropped to TRANSPORT_ONLY
+    // and only two rows were GOVERNED. Show the rows. Name the aggregate when
+    // they disagree. Do not average them back into the higher number.
+    const rowSemantic = observed.filter((edge) => {
+      const overall = String(unwrap(edge.overall) || '').toUpperCase();
+      const state = String(unwrap(edge.state) || '').toUpperCase();
+      return overall === 'GOVERNED' || state === 'SEMANTIC_PROVEN';
+    }).length;
+    const semanticText = Number.isFinite(semantic) && semantic !== rowSemantic
+      ? `${rowSemantic} semantically proven on the rows (aggregate says ${semantic})`
+      : `${Number.isFinite(semantic) ? semantic : rowSemantic} semantically proven`;
     const countText = Number.isFinite(declared) && declared > 0
-      ? `${declared} declared · ${Number.isFinite(reachable) ? reachable : '?'} transport-reachable · ${Number.isFinite(semantic) ? semantic : '?'} semantically proven${aggState ? ` · ${aggState}` : ''}`
+      ? `${declared} declared · ${Number.isFinite(reachable) ? reachable : '?'} transport-reachable · ${semanticText}${aggState ? ` · ${aggState}` : ''}`
       : `${all.length} directed · ${observed.length} observed`;
     const detailNote = Number.isFinite(declared) && declared > all.length ? ' · per-edge detail not published in public-state' : '';
     setText('#edge-count', `${countText} · ${all.length - observed.length} declared overlays${detailNote}`);
@@ -1199,14 +1246,23 @@
     table.innerHTML = `<div class="table-scroll"><table class="drift edge-truth-table"><thead><tr>
       <th>source</th><th>target</th><th>transport</th><th>identity</th><th>contract</th><th>session</th><th>actor</th>
       <th>trace</th><th>receipt</th><th>telemetry_produced</th><th>overall</th><th>truth/source</th>
-    </tr></thead><tbody>${all.map((edge) => `<tr data-edge-source="${esc(edge.__source)}">
+    </tr></thead><tbody>${all.map((edge) => {
+      // 2026-11-21 F0 (FI-002): overlay rows are DECLARED, not probed — an empty
+      // probe column on a declared overlay is "n/a · declared overlay", not
+      // "unavailable". Both labels stay grey; neither is green.
+      const isOverlay = edge.__source !== 'snapshot';
+      const nb = (value) => firstPresent(value) != null
+        ? badge(value)
+        : badge({ value: isOverlay ? 'n/a · declared overlay' : 'not published by projection', state: 'declared', source: edge.__source });
+      return `<tr data-edge-source="${esc(edge.__source)}">
       <td>${esc(canonicalNode(edge.source))}</td><td>${esc(canonicalNode(edge.target))}</td>
-      <td>${badge(edge.transport)}</td><td>${badge(firstPresent(edge.identity_match, edge.identity))}</td>
-      <td>${badge(firstPresent(edge.schema_match, edge.contract))}</td><td>${badge(edge.session_propagated)}</td>
-      <td>${badge(edge.actor_propagated)}</td><td>${badge(firstPresent(edge.trace_propagated, edge.trace, edge.trace_id))}</td>
+      <td>${badge(edge.transport)}</td><td>${nb(firstPresent(edge.identity_match, edge.identity))}</td>
+      <td>${nb(firstPresent(edge.schema_match, edge.contract))}</td><td>${nb(edge.session_propagated)}</td>
+      <td>${nb(edge.actor_propagated)}</td><td>${badge(firstPresent(edge.trace_propagated, edge.trace, edge.trace_id))}</td>
       <td>${badge(firstPresent(edge.receipt_produced, edge.receipt, edge.receipt_id))}</td><td>${badge(firstPresent(edge.telemetry_produced, edge.telemetry, edge.telemetry_id))}</td>
       <td>${badge(firstPresent(edge.overall, edge.verdict, edge.status))}</td><td>${esc(edge.__source)}</td>
-    </tr>`).join('')}</tbody></table></div>`;
+    </tr>`;
+    }).join('')}</tbody></table></div>`;
   }
 
   /* ── Metabolism, vault, pulse ────────────────────────────── */
@@ -1310,7 +1366,8 @@
     if (!data || !data.observed_at) return 'unknown';
     const timestamp = new Date(data.observed_at).getTime();
     if (!Number.isFinite(timestamp)) return 'unknown';
-    return Date.now() - timestamp < 120000 ? 'fresh' : 'stale';
+    // Cron publishes every 5m (300s); 360s TTL = 5m cadence + 60s grace, still fails closed if cron misses.
+    return Date.now() - timestamp < 360000 ? 'fresh' : 'stale';
   };
   function renderSelfCheck(data) {
     const measured = Boolean(data);
@@ -1502,7 +1559,22 @@
       } else {
         document.body.dataset.confidence = unwrap(data.signature && data.signature.algorithm) ? '0.99' : '0.85';
       }
-      document.body.dataset.freshnessState = snapshotFreshness(data);
+      const fState = snapshotFreshness(data);
+      document.body.dataset.freshnessState = fState;
+      const staleBannerId = 'observatory-stale-banner';
+      let staleBanner = document.getElementById(staleBannerId);
+      if (fState === 'stale' || fState === 'unknown') {
+        if (!staleBanner) {
+          staleBanner = document.createElement('div');
+          staleBanner.id = staleBannerId;
+          staleBanner.style.cssText = 'margin:10px 0;padding:10px 14px;border:1px solid #f59e0b;background:rgba(245,158,11,0.12);color:#fde68a;font-family:var(--font-mono);font-size:12px;border-radius:6px';
+          const mainEl = document.querySelector('main') || document.body;
+          mainEl.prepend(staleBanner);
+        }
+        staleBanner.textContent = `DATA ${fState.toUpperCase()} — snapshot exceeds freshness TTL; treat status values as historical, not live authorization.`;
+      } else if (staleBanner) {
+        staleBanner.remove();
+      }
       renderAll(data);
       runtime.timer = setTimeout(loadSnapshot, REFRESH_MS);
     } catch (error) {

@@ -48,9 +48,42 @@ Final run: `python3 scripts/color-contrast-audit.py` → 44 rows examined, exit 
   (vite build in lane; full `prebuild` requires git-ignored data absent from lanes —
   see ledger ruling).
 
-## 3. Consistency scan (see §4)
+## 3. Consistency scan
 
-*(appended by Task 3)*
+Raw-hex sweep of `public/` (`*.html`, `*.css`, excl. `.bak*`, `dist/`): 50 rows →
+**2 bypass clusters + 2 structural findings**.
+
+### Bypass clusters (report-only — outside this plan's approved edit scope)
+
+1. `public/vitals/_shell/article.css` — `#D4AF37` hardcoded 7× (minified line 1).
+   Should reference `var(--soul-accent)`. Note: gold passes AA everywhere, so this is
+   consistency debt, not an accessibility failure.
+2. `public/wealth/index.html` — `#3DDC97` hardcoded 9×. This is the **arifos organ
+   verdict-seal green** leaking into the WEALTH page raw. Namespace bleed: WEALTH's
+   own accent system (BODY amber ring) is bypassed. Recommendation: swap to the
+   intended token (likely `--state-operational` or wealth's ring color — WEALTH
+   owner's call).
+
+### Structural findings (for Arif's decision — not resolved)
+
+3. **Namespace divergence:** the arifos organ token file
+   (`public/arifos/_shared/design-system/tokens.css:71-91`) re-declares a verdict
+   palette (`--color-verdict-*`) and aliases the shared `--state-*` names to it
+   (`--state-operational: var(--color-verdict-seal)` at :87). Two palettes claim the
+   same token names with different values; whichever file loads last wins per surface.
+4. **VOID mapping conflict:** shared `--state-void` = grey, fail-closed
+   (`#9CA3AF` after this audit; `sites/shared/design-system/tokens.css:85`) vs organ
+   `--color-verdict-void` = red (`#E5484D`, organ tokens :74). Same verdict word,
+   two colors. Pick one semantics — grey (shared law: fail-closed) or red (organ:
+   attention) — and align the other.
+
+### Stale SOT (governance finding)
+
+5. `canon/design-tokens.json` declares `public/_shared/design-system/tokens.css` as
+   its derived output, but contains **no** state/verdict token values and no
+   generator script exists in the repo. The declared derivation cannot reproduce the
+   deployed file. Either re-sync the JSON or re-declare the CSS as the SOT —
+   otherwise a future regeneration silently reverts the AA fixes from this audit.
 
 ## 4. M1 sync debt — CLOSED 2026-11-21 (landed by qwen-code/FI-003 takeover)
 

@@ -1,3 +1,25 @@
+// ⚠️ DORMANT — NOT ROUTED (2026-11-22 FI-008 · category alignment)
+//
+// The live, canonical Anwar dossier is the STATIC surface:
+//   /world/politics/shadow/anwar-ibrahim/
+//   (public/world/politics/shadow/anwar-ibrahim/index.html — "33 Bayang",
+//    Jungian framing, 322 cited sources, JSON-LD Article, actively maintained)
+//
+// This component renders a DIFFERENT editorial — "33 Tensions", a distinct set of
+// 33 tensions and a "KERNEL VERDICT" framing (src/data/anwarShadows33.ts, last
+// edited 2026-09-08). It was never live-served: the static page shadowed it at
+// every URL the SPA route could match.
+//
+// The legacy route /politics/shadow/anwar-ibrahim now redirects to the canonical
+// surface (see src/App.tsx → CanonicalRedirect), so this component can no longer
+// fork the article behind a second URL.
+//
+// KEPT AS SOURCE, NOT DELETED: it is editorial research (33 tensions + sources).
+// Retire or rewrite deliberately — do not re-wire it to a live route without
+// first reconciling it with the canonical static article.
+//
+// Before touching anything here, read the canonical page. One article, one URL.
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';

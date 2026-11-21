@@ -5,7 +5,7 @@ Method: coverage-completion on the existing evidence/claim vocabulary — no sch
 
 ## Result
 
-**221 / 230 apex pages (96%) carry valid inline JSON-LD. 0 invalid blocks.** (was 130/230)
+**225 / 230 apex pages (97.8%) carry valid inline JSON-LD. 0 invalid blocks.** (was 130/230)
 
 | Metric | Before | After |
 |---|---|---|
@@ -42,30 +42,36 @@ SovereignVitals 2 · WebSite/WebAPI/InstitutionalVitals/ItemList/Service/Report 
   `/.well-known/governance.jsonld` and peers) — covered at the graph level, no inline
   block. `human/` is the pattern example.
 
-## Live-serving taxonomy (added after deployment, 2026-11-21)
+## Live-serving taxonomy (added after deployment, 2026-11-21; corrected by full sweep)
 
-Source coverage is 96%, but a live census showed the apex is served by **four different
+Source coverage is 97.8%, but a live census showed the apex is served by **FIVE different
 trees**, each needing its own deploy target. Measured, not assumed:
 
 | Live path family | Actually served from | Deploy target | Status |
 |---|---|---|---|
 | `/words/**`, `/world/**` (article+hub) | `/var/www/html/arif/` | dist → `/var/www/html/arif/` | ✅ stamped, live |
+| `/earth/**` | `/var/www/html/earth/` | dist/earth → `/var/www/html/earth/` | ✅ stamped, live (3 pages closed) |
 | `/arifos/findings/*`, `/arifos/verify/*` | `/var/www/html/arifos/` (family tree) | dist/arifos → `/var/www/html/arifos/` | ✅ stamped, live |
 | `/organs/**` | `/var/www/html/organs/` | dist/organs → `/var/www/html/organs/` | ✅ deployed |
-| `/world/makcikgpt/<slug>/` | **served as Markdown + YAML frontmatter** (`article_id`, `canonical_url`) | mirror tree + `generate-md-mirrors.cjs` now stamps Article JSON-LD into the `.html` mirror | ✅ mirror stamped (53 blocks, 0 invalid) |
+| `/aaa/*` | `/var/www/html/aaa/` | dist/aaa → `/var/www/html/aaa/` | ✅ deployed |
+| `/world/makcikgpt/<slug>/` | `/var/www/html/arif/` (slash form) | mirror generator stamps Article JSON-LD | ✅ 53 mirror blocks |
 
-Live census (30-page random sample, curl -L, cache-busted):
-**JSON-LD valid 17–18 · served-as-Markdown+frontmatter 8 · retired (410, surfaces.json status gone) 2 ·
-no inline block 2 (`/organs` hub artifact not present in this repo's source; `/_shared/design-system/geometry`
-is an asset path, not a page) · invalid 0.**
+**Full live sweep — all 230 pages, canonical trailing-slash form, cache-busted:**
 
-Two measurement artifacts worth recording (they cost real time and will mislead anyone
-re-measuring):
-1. **Cloudflare edge serves stale copies for the non-slash URL form** — `/path` (no trailing
-   slash) can return the pre-deploy body while `/path/` returns the current one. Always
-   measure the canonical slash form with a cache-buster.
-2. **Regex too strict** — `<script type="application/ld+json">` must allow extra attributes;
-   use `<script[^>]*application/ld\+json[^>]*>` or you will count covered pages as missing.
+| Class | Count | Detail |
+|---|---|---|
+| jsonld-valid | **218** | every real served page |
+| no-block | 9 | 5 redirect stubs + 3 redirects (wiki, geox, aaa/apps/geox) + 1 asset path (`/_shared/design-system/geometry`) — **not pages** |
+| HTTP-410 | 2 | `pulse`, `audit` (surfaces.json status gone) |
+| HTTP-404 | 1 | `mcp/proof` (not served) |
+| jsonld-invalid | **0** | — |
+
+**Correction (2026-11-21, after an independent full sweep):** an earlier report of this
+campaign stated "8 pages served as Markdown+frontmatter". That was a **URL-form artifact,
+not a serving-mode fact**: the *non-slash* form `/world/makcikgpt/<slug>` serves the
+Markdown+frontmatter file, while the canonical *slash* form serves the HTML mirror — which
+now carries JSON-LD. The Markdown representation remains machine-readable (frontmatter),
+and the canonical HTML form carries the graph.
 
 ## Verification trail
 

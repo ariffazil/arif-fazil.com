@@ -8,17 +8,19 @@ program:
   P3_coverage_report: "docs/agentic-web/JSONLD-COVERAGE-2026-11-21.md"
   shell_preservation_fix: "restamp-shell-assets.cjs keeps JSON-LD across dead-shell replacement (16+4 shells rebuilt with blocks kept)"
   mirror_stamping: "5c77dfd9 — generate-md-mirrors.cjs emits Article+BreadcrumbList into the makcikgpt HTML mirror (53 blocks, 0 invalid)"
-coverage: "221/230 apex index.html (96%) carry valid inline JSON-LD; 0 invalid blocks (was 130/230 with 3 invalid)"
+coverage: "225/230 apex index.html (97.8%) carry valid inline JSON-LD; 0 invalid blocks (was 130/230 with 3 invalid). Live full sweep (230 pages, slash+cache-buster): 218 jsonld-valid, 9 no-block (5 stubs + 3 redirects + 1 asset path), 2 HTTP-410, 1 HTTP-404, 0 invalid."
 deploy:
   method: "additive rsync, no deletions, --chown www-data, NO Caddy reload (config unchanged)"
   targets:
     - "/var/www/html/arif/ (dist/)"
+    - "/var/www/html/earth/ (dist/earth/) — fifth serving tree, 3 pages closed"
     - "/var/www/html/arifos/ (dist/arifos/) — the tree that actually serves /arifos/findings/*, /arifos/verify/*"
     - "/var/www/html/organs/ (dist/organs/)"
     - "/var/www/html/aaa/ (dist/aaa/)"
     - "/var/www/html/world/makcikgpt/ (dist/world/makcikgpt/)"
     - "/var/www/html/arif/world/makcikgpt/makcikgpt-md/ (dist/makcikgpt-md/)"
 gates: "make verify-pages PASS pre-deploy (exit 0) and post-deploy (exit 0); npm run build exit 0; stamper auto-stamped 2 generator-new pages (durability proof); dist 231 valid / 0 invalid"
+live_census_correction: "earlier n=30 sample understated the sweep; full 230-page sweep supersedes it (see coverage). Prior claim of 8 markdown-served pages was a NON-SLASH URL-form artifact, not a serving mode — canonical slash form serves the JSON-LD mirror."
 live_census_n30: "jsonld-valid 17-18 | served-as-Markdown+frontmatter 8 (makcikgpt — machine-readable, JSON-LD n/a to that representation) | retired 410 x2 (surfaces.json status gone) | no-block x2 (/organs artifact not in repo source; /_shared/design-system/geometry is an asset path) | invalid 0"
 measurement_artifacts:
   - "Cloudflare serves stale bodies for the NON-SLASH url form (/path) while /path/ is current — always measure the canonical slash form with a cache-buster"
@@ -34,4 +36,5 @@ preserved_not_dropped:
   - "stash@{1} FI-003 build residue in kimi-code lane (13 generated files) — labelled, reversible"
   - "stashes@{2,3,4} pre-existing lanes' WIP — untouched"
 rollback: "git revert 5c77dfd9 71388ecf 8748ea16 + rebuild + additive rsync (deploy removed nothing)"
+separation_of_powers: "OPEN — independent verifier subagent dispatched 3x (agent-1/2/3) and failed each time; the 230-page sweep was run by the executor and is labelled SELF-VERIFICATION, not independent certification."
 related: "receipts/2026-11-21-verify-pages-gap-closure.yaml (FI-003), docs/agentic-web/COLOR-AUDIT-2026-11-21.md"

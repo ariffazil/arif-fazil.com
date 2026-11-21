@@ -53,7 +53,16 @@ const doc = {
 global.document = doc;
 global.window = { location: { hash: "" } };
 
-const snap = JSON.parse(fs.readFileSync(SNAPSHOT, "utf8"));
+// snapshot is served at runtime, not committed — fall back to the live artifact
+let snap;
+if (fs.existsSync(SNAPSHOT)) {
+  snap = JSON.parse(fs.readFileSync(SNAPSHOT, "utf8"));
+} else {
+  const res = await fetch("https://arif-fazil.com/.well-known/observatory-snapshot-latest.json");
+  if (!res.ok) { console.error(`FAIL — cannot obtain snapshot (${SNAPSHOT} missing, live ${res.status})`); process.exit(1); }
+  snap = await res.json();
+  console.log(`  (snapshot fetched live: ${SNAPSHOT} not present in repo)`);
+}
 // provide the anchor sections so phase badges can be asserted
 ["sec-identity", "sec-governance", "sec-p1-receipt-federation", "sec-drift",
  "sec-flow-plane", "sec-vault", "sec-next-mutation-gate", "sec-metabolism"]

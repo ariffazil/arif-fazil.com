@@ -327,6 +327,26 @@
           "path": "manifest/tools.json",
           "owner": "arif-sites",
           "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/public-state.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/observatory.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/observatory-chain-health.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "public-state.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
         }
       ],
       "aliases": [

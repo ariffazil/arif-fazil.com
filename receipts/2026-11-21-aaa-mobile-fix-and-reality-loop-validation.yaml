@@ -1,0 +1,33 @@
+receipt: aaa-mobile-fix-and-reality-loop-validation
+date: 2026-11-21
+actor: kimi-code/FI-008
+authority: Arif F13 in-session order 2026-11-21 (deploy + push); round-2 rulings
+commit: bab2a285 (origin/main)
+problem: "aaa.arif-fazil.com did not open on mobile (blank/broken), while desktop appeared superficially OK"
+root_cause_chain:
+  - "STEP 1 — build destroyed the cockpit: scripts/copy-static-html.js SPA_ROUTES contained 'aaa'/'AAA', so every build replaced public/aaa/index.html (the real cockpit) with the APEX SPA shell."
+  - "STEP 2 — the apex shell references the apex bundle (/assets/index-*.css|js) which does NOT exist on the aaa host (no /assets/ tree) → 404 → unstyled/blank page; the bundle JS also has a #root mount that would overwrite cockpit content."
+  - "STEP 3 — even the cockpit's own refs were stale (/assets/index-DL_C9EwE.css, index-ST3LWXla.js — hashes from an older build) → 404 on any host."
+  - "STEP 4 — edge cache: Cloudflare serves /_shared and /assets with TTL 14400s and IGNORES ?v= query keys; the CF token in /root/.secrets reads the zone but lacks cache-purge scope (code 10000) → a 404 that was cached before the fix stayed cached (age 252s, HIT)."
+fixes:
+  - "SPA_ROUTES: 'aaa'/'AAA' removed (the cockpit is a STATIC surface)."
+  - "new build step scripts/refresh-asset-refs.mjs (postbuild, between copy-static and restamp): strips the vestigial apex-bundle refs from the AAA subtree — verified unused (0 of 16 cockpit CSS classes exist in the bundle CSS; no cockpit code in the bundle JS)."
+  - "content-addressed renderer path for the observatory (observatory-<sha256-10>.js) so a query-less 4h edge cache cannot pin a stale bundle."
+verification:
+  - "aaa mobile UA: title 'AAA Cockpit — arifOS Federation Operations Surface', 0 /assets/ refs, all remaining refs 200 (tokens.css, trinity-nav.js, unified-header-loader.js), 16533B."
+  - "aaa subtree sweep (17 pages, mobile UA): 16 → 200; 1 → 301 (/apps/geox/ → geox.arif-fazil.com, by design)."
+  - "live JSON-LD on aaa: 1 valid block."
+reality_loop_validation:
+  - "gate 1 token parity + WCAG + decorative-as-text: PASS"
+  - "gate 2 SOT artifact freshness: PASS"
+  - "gate 3 JSON-LD contract (225 blocks): PASS"
+  - "gate 4 reality-loop spine (8 phases, live verdicts, SOT pointers, apex band): PASS"
+  - "gate 5 deploy envelope: VALID (approver + sha == HEAD + targets + rollback + negative tests)"
+  - "gate 6 route gate (make verify-pages): VERDICT PASS"
+  - "H4 cross-classifier: observatory snapshot arifflow.fq_verdict = FLOWING == arifFlow :7073/health constellation FLOWING (agree); floors 13 loaded / 3 passing / 1 failing / 8 predicate; witness legs coherence 0.5291 (3/3 measured); planes.receipt = sealed head seq=79"
+  - "H3: simulated values classed display-only in the spine (is-sim), never as a live flow indicator"
+open:
+  - "a stale CF 404 for the old bundle URL may persist until TTL expiry (4h) or a purge by a token with cache-purge scope; the cockpit no longer requests it."
+  - "two-actor independent verification still UNMET for this branch (5 verifier dispatch failures — subagent lane unavailable); certification above is builder-lane self-certification under explicit sovereign order."
+  - "arifos VOID/DANGER palette collision with canonical + floor-list/duplicate-panel dedupe remain sovereign rulings."
+rollback: "git revert bab2a285 6195f512 && npm run build && rsync -a --update dist/aaa/ /var/www/html/aaa/"

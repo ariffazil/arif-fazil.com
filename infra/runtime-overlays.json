@@ -3,7 +3,7 @@
   "schema_version": 2,
   "registry": "arif-fazil.com.runtime-overlays.v2",
   "canonical_repo_root": "/root/arif-sites",
-  "doctrine": "One domain. One web surface. Many organs, tetap bersempadan. Subdomain lama jangan dibuang — jadikan saksi dan redirect.",
+  "doctrine": "One domain. One web surface. Many organs, tetap bersempadan. Subdomain lama jangan dibuang \u2014 jadikan saksi dan redirect.",
   "defaults": {
     "probe_attempts": 3,
     "caddy_attempts": 3,
@@ -89,7 +89,7 @@
           "path": "world/makcikgpt/makcikgpt-md",
           "owner": "makcikgpt-bot-mirror",
           "strategy": "preserve-live",
-          "note": "Bot-lane md/html mirror (vhost @mk_article_bot root). NOT in dist layout — created by 2026-10-27/28 split-root migration. Wiped by rsync --delete 2026-11-02 deploy (restored same day). Must survive deploys."
+          "note": "Bot-lane md/html mirror (vhost @mk_article_bot root). NOT in dist layout \u2014 created by 2026-10-27/28 split-root migration. Wiped by rsync --delete 2026-11-02 deploy (restored same day). Must survive deploys."
         },
         {
           "path": "aaa/claims.json",
@@ -202,6 +202,9 @@
       "aliases": [
         "arifos",
         "arifos.arif-fazil.com"
+      ],
+      "shared_roots": [
+        ".well-known"
       ]
     },
     {

@@ -350,6 +350,7 @@ def plan_and_snapshot(
     manifest_path: Path,
     snapshot_dir: Path,
     extra_targets_file: Path | None = None,
+    approved_shared_roots: list[str] | None = None,
 ) -> dict[str, Any]:
     """Compute complete mutation manifest and snapshot every mutable existing target."""
     html_root = html_root.resolve() if html_root.exists() else Path(os.path.abspath(str(html_root)))
@@ -358,6 +359,20 @@ def plan_and_snapshot(
 
     approved_dirs: list[Path] = [webroot]
     approved_files: list[Path] = []
+
+    # 2026-11-21 (FI-003, F13 sah (a)): a site may DECLARE shared roots it is
+    # allowed to REFERENCE — e.g. the arifos site's .well-known/ entries are
+    # symlinks into /var/www/html/.well-known, which lives outside its own
+    # webroot. Declared roots are approved for RESOLUTION ONLY: the mutation
+    # set is still the stage/live diff scoped to this site's own webroot, so a
+    # declared shared root is never written by this deploy. This is deliberately
+    # narrower than --split-roots, which also admits DELETE_MIRROR_DIRS,
+    # MERGE_SPLIT_DIRS and ROOT_STATIC_FILES.
+    for _name in (approved_shared_roots or []):
+        _nm = str(_name).strip("/")
+        if not _nm or _nm.startswith("/") or ".." in Path(_nm).parts:
+            raise ValueError(f"invalid approved shared root: {_name!r}")
+        approved_dirs.append(Path(os.path.abspath(str(html_root / _nm))))
     if split_roots:
         for d in (*DELETE_MIRROR_DIRS, *SHARED_ASSET_DIRS, *MERGE_SPLIT_DIRS):
             approved_dirs.append(Path(os.path.abspath(str(html_root / d))))
@@ -738,6 +753,7 @@ def main() -> int:
     p_plan.add_argument("--manifest", required=True)
     p_plan.add_argument("--snapshot-dir", required=True)
     p_plan.add_argument("--extra-targets", default="")
+    p_plan.add_argument("--approved-shared-root", action="append", default=[])
 
     p_rb = sub.add_parser("rollback")
     p_rb.add_argument("--manifest", required=True)
@@ -756,6 +772,7 @@ def main() -> int:
                 Path(args.manifest),
                 Path(args.snapshot_dir),
                 extra_targets_file=extra,
+                approved_shared_roots=list(args.approved_shared_root),
             )
             print(json.dumps(manifest["counts"]))
             return 0

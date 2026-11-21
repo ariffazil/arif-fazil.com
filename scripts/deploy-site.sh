@@ -184,6 +184,7 @@ validate_registry() {
       (all(.required_artifacts[]; type == "string" and length > 0 and (startswith("/") | not) and (test("(^|/)\\.\\.(/|$)") | not))) and
       (.probe.url | type == "string" and startswith("https://")) and
       (.probe.accepted_codes | type == "array" and length > 0 and all(.[]; type == "number")) and
+      (((.shared_roots // []) | type == "array") and (all((.shared_roots // [])[]; (type == "string") and (length > 0) and (startswith("/") | not) and (test("(^|/)\\.\\.(/|$)") | not)))) and
       (.overlays | type == "array") and
       (all(.overlays[];
         (.path | type == "string" and length > 0 and (startswith("/") | not) and (test("(^|/)\\.\\.(/|$)") | not)) and
@@ -257,6 +258,11 @@ mapfile -t OVERLAY_PATHS < <(jq -r '.overlays[].path' <<<"$ENTRY")
 mapfile -t OVERLAY_OWNERS < <(jq -r '.overlays[].owner' <<<"$ENTRY")
 mapfile -t OVERLAY_STRATEGIES < <(jq -r '.overlays[].strategy' <<<"$ENTRY")
 mapfile -t REQUIRED_ARTIFACTS < <(jq -r '.required_artifacts[]' <<<"$ENTRY")
+
+# 2026-11-21 (FI-003, F13 sah (a)): per-site SHARED ROOTS the site may reference
+# (symlink targets) but never mutate. Read from the registry, passed to the
+# manifest tool; an empty list preserves the previous behaviour exactly.
+mapfile -t APPROVED_SHARED_ROOTS < <(jq -r '(.shared_roots // [])[]' <<<"$ENTRY")
 
 for ((i = 0; i < ${#OVERLAY_PATHS[@]}; i++)); do
   for ((j = i + 1; j < ${#OVERLAY_PATHS[@]}; j++)); do
@@ -935,6 +941,9 @@ manifest_args=(
 )
 ((SPLIT_ROOTS == 1)) && manifest_args+=(--split-roots)
 [[ -n "$EXTRA_MANIFEST_TARGETS" ]] && manifest_args+=(--extra-targets "$EXTRA_MANIFEST_TARGETS")
+for _shared_root in "${APPROVED_SHARED_ROOTS[@]}"; do
+  manifest_args+=(--approved-shared-root "$_shared_root")
+done
 
 if ! invoke_gate "manifest.containment" \
   "$PYTHON_BIN" "$REPO_ROOT/scripts/lib/mutation-manifest.py" plan "${manifest_args[@]}"; then

@@ -107,6 +107,43 @@ def _is_under(path: Path, parent: Path) -> bool:
     return path == parent or str(path).startswith(str(parent) + "/")
 
 
+def _drop_own_webroot(roots: list[Path], approved_dirs: list[Path]) -> list[Path]:
+    """Remove the DEPLOYING site's own webroot from a forbidden-root list.
+
+    2026-11-21 (FI-003): the forbidden roots were hardcoded from the 2026-08-25
+    split-root fix, when /var/www/html/arifos had to be protected from the MAIN
+    site's deploy. The registry later gave `arifos` its own site entry
+    (webroot=arifos, owner=arif-sites) — so the owner of that root could no
+    longer deploy through its own registry path: every target under its own
+    webroot was rejected as "explicitly forbidden root"
+    (deploy receipt 20261121T061842762738074Z, status=failed_pre_swap).
+
+    The deploying site's own webroot is approved_dirs[0] (plan_and_snapshot sets
+    approved_dirs = [webroot] first). Dropping ONLY that root restores the
+    owner's ability to deploy while every other owner's roots stay forbidden.
+    """
+    if not approved_dirs:
+        return roots
+    own = os.path.abspath(str(approved_dirs[0]))
+    own_resolved = own
+    try:
+        own_resolved = os.path.abspath(str(Path(approved_dirs[0]).resolve()))
+    except OSError:
+        pass
+    kept = []
+    for r in roots:
+        r_abs = os.path.abspath(str(r))
+        r_res = r_abs
+        try:
+            r_res = os.path.abspath(str(Path(r).resolve()))
+        except OSError:
+            pass
+        if r_abs == own or r_res == own or r_abs == own_resolved:
+            continue
+        kept.append(r)
+    return kept
+
+
 def check_target_allowed(
     target: Path,
     html_root: Path,
@@ -130,6 +167,8 @@ def check_target_allowed(
         Path(os.path.abspath(str(primary_root / "arifos"))),
         Path(os.path.abspath(str(html_root / "arif" / "arifos"))),
     ]
+
+    forbidden_roots = _drop_own_webroot(forbidden_roots, approved_dirs)
 
     for forb in forbidden_roots:
         if _is_under(norm_target, forb):
@@ -240,11 +279,14 @@ def _add_pair(
             if os.path.isabs(raw_link)
             else Path(os.path.normpath(str(target_path.parent / raw_link)))
         )
-        forbidden_live = (
-            Path("/var/www/html/arifos"),
-            Path("/var/www/html/arif/arifos"),
-            Path(os.path.abspath(str(html_root / "arifos"))),
-            Path(os.path.abspath(str(primary_root / "arifos"))),
+        forbidden_live = _drop_own_webroot(
+            [
+                Path("/var/www/html/arifos"),
+                Path("/var/www/html/arif/arifos"),
+                Path(os.path.abspath(str(html_root / "arifos"))),
+                Path(os.path.abspath(str(primary_root / "arifos"))),
+            ],
+            approved_dirs,
         )
         if any(_is_under(resolved_live, forb) for forb in forbidden_live) or (
             not any(_is_under(resolved_live, d) for d in approved_dirs)

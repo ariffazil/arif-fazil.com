@@ -63,7 +63,7 @@ function canonicalFor(file) {
   return 'https://arif-fazil.com/' + rel;
 }
 
-function spaShell(title, desc, css, js, canonical) {
+function spaShell(title, desc, css, js, canonical, jsonLd) {
   return `<!doctype html>
 <html lang="en" data-ring="SOUL">
   <head>
@@ -75,6 +75,7 @@ function spaShell(title, desc, css, js, canonical) {
     <link rel="canonical" href="${canonical}" />
     <link rel="stylesheet" href="${css}" />
     <script type="module" src="${js}"></script>
+    ${jsonLd || ''}
   </head>
   <body>
     <div id="root"></div>
@@ -126,7 +127,10 @@ function main() {
     // dead shell: full SPA re-stamp (title/description preserved, canonical = own route)
     const title = extract(html, /<title>([^<]+)<\/title>/) || 'Arif Fazil — arifOS';
     const desc = extract(html, /<meta name="description" content="([^"]*)"/);
-    fs.writeFileSync(f, spaShell(title, desc, css, js, canonicalFor(f)));
+    // JSON-LD blocks survive shell replacement (coverage campaign 2026-11-21) —
+    // a dead shell's machine metadata must not die with its stale css hash.
+    const jsonLd = (html.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g) || []).join('\n');
+    fs.writeFileSync(f, spaShell(title, desc, css, js, canonicalFor(f), jsonLd));
     replaced += 1;
   }
   if (replaced > 0) {

@@ -456,6 +456,33 @@ body {
   border-radius: 10px;
 }
 
+/* 2026-11-22 FI-008 · in-page jump navigation.
+   Anchor targets must clear the sticky filter bar (top: 48px) plus the bar
+   itself, otherwise the section heading lands underneath it. */
+.axis-group,
+.synthesis-card {
+  scroll-margin-top: 8rem;
+}
+
+.jump-link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jump-link:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+}
+
 .search-box {
   position: relative;
   min-width: 220px;
@@ -814,6 +841,7 @@ footer.editorial-footer {
         <button class="axis-btn" data-filter="ekonomi">II: Ekonomi <span class="count">11</span></button>
         <button class="axis-btn" data-filter="peribadi">III: Peribadi <span class="count">11</span></button>
       </div>
+      <a class="jump-link" href="#sintesis" id="jump-sintesis">Teras Jiwa · 33</a>
       <div class="search-box">
         <input type="text" id="shadow-search" placeholder="Cari bayang / kata kunci..." aria-label="Cari 33 bayang">
       </div>
@@ -829,7 +857,7 @@ footer.editorial-footer {
       <span class="axis-subtitle">Siapa Yang Rancang Diserlahkan (01 – 11)</span>
     </div>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-01">
       <div class="card-top-bar">
         <span class="shadow-num-tag">01 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -847,7 +875,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-02">
       <div class="card-top-bar">
         <span class="shadow-num-tag">02 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -865,7 +893,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-03">
       <div class="card-top-bar">
         <span class="shadow-num-tag">03 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -883,7 +911,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-04">
       <div class="card-top-bar">
         <span class="shadow-num-tag">04 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -901,7 +929,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-05">
       <div class="card-top-bar">
         <span class="shadow-num-tag">05 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -919,7 +947,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-06">
       <div class="card-top-bar">
         <span class="shadow-num-tag">06 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -937,7 +965,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-07">
       <div class="card-top-bar">
         <span class="shadow-num-tag">07 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -955,7 +983,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-08">
       <div class="card-top-bar">
         <span class="shadow-num-tag">08 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -973,7 +1001,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-09">
       <div class="card-top-bar">
         <span class="shadow-num-tag">09 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -991,7 +1019,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-10">
       <div class="card-top-bar">
         <span class="shadow-num-tag">10 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -1009,7 +1037,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="politik">
+    <article class="shadow-card" data-axis="politik" id="bayang-11">
       <div class="card-top-bar">
         <span class="shadow-num-tag">11 / 33</span>
         <span class="shadow-axis-tag">Sosio-Politik</span>
@@ -1035,7 +1063,7 @@ footer.editorial-footer {
       <span class="axis-subtitle">Duit Siapa Sebenarnya Dijaga (12 – 22)</span>
     </div>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-12">
       <div class="card-top-bar">
         <span class="shadow-num-tag">12 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1053,7 +1081,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-13">
       <div class="card-top-bar">
         <span class="shadow-num-tag">13 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1071,7 +1099,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-14">
       <div class="card-top-bar">
         <span class="shadow-num-tag">14 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1089,7 +1117,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-15">
       <div class="card-top-bar">
         <span class="shadow-num-tag">15 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1107,7 +1135,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-16">
       <div class="card-top-bar">
         <span class="shadow-num-tag">16 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1125,7 +1153,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-17">
       <div class="card-top-bar">
         <span class="shadow-num-tag">17 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1143,7 +1171,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-18">
       <div class="card-top-bar">
         <span class="shadow-num-tag">18 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1161,7 +1189,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-19">
       <div class="card-top-bar">
         <span class="shadow-num-tag">19 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1179,7 +1207,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-20">
       <div class="card-top-bar">
         <span class="shadow-num-tag">20 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1197,7 +1225,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-21">
       <div class="card-top-bar">
         <span class="shadow-num-tag">21 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1215,7 +1243,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="ekonomi">
+    <article class="shadow-card" data-axis="ekonomi" id="bayang-22">
       <div class="card-top-bar">
         <span class="shadow-num-tag">22 / 33</span>
         <span class="shadow-axis-tag">Ekonomi</span>
@@ -1241,7 +1269,7 @@ footer.editorial-footer {
       <span class="axis-subtitle">Zon Yang Tidak Pernah Dibentangkan (23 – 33)</span>
     </div>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-23">
       <div class="card-top-bar">
         <span class="shadow-num-tag">23 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1259,7 +1287,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-24">
       <div class="card-top-bar">
         <span class="shadow-num-tag">24 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1277,7 +1305,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-25">
       <div class="card-top-bar">
         <span class="shadow-num-tag">25 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1295,7 +1323,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-26">
       <div class="card-top-bar">
         <span class="shadow-num-tag">26 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1313,7 +1341,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-27">
       <div class="card-top-bar">
         <span class="shadow-num-tag">27 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1331,7 +1359,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-28">
       <div class="card-top-bar">
         <span class="shadow-num-tag">28 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1349,7 +1377,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-29">
       <div class="card-top-bar">
         <span class="shadow-num-tag">29 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1367,7 +1395,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-30">
       <div class="card-top-bar">
         <span class="shadow-num-tag">30 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1385,7 +1413,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-31">
       <div class="card-top-bar">
         <span class="shadow-num-tag">31 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1403,7 +1431,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card" data-axis="peribadi">
+    <article class="shadow-card" data-axis="peribadi" id="bayang-32">
       <div class="card-top-bar">
         <span class="shadow-num-tag">32 / 33</span>
         <span class="shadow-axis-tag">Peribadi</span>
@@ -1421,7 +1449,7 @@ footer.editorial-footer {
       </div>
     </article>
 
-    <article class="shadow-card highlight-core" data-axis="peribadi">
+    <article class="shadow-card highlight-core" data-axis="peribadi" id="bayang-33">
       <div class="card-top-bar">
         <span class="shadow-num-tag" style="color:var(--gold);">33 / 33 · Yang Paling Dalam</span>
         <span class="shadow-axis-tag" style="background:var(--gold-glow);color:var(--gold);">Teras Jiwa</span>
@@ -1441,7 +1469,7 @@ footer.editorial-footer {
   </section>
 
   <!-- Synthesis Callout -->
-  <section class="synthesis-card">
+  <section class="synthesis-card" id="sintesis">
     <h3>Rumusan Psikologi Jungian</h3>
     <p>33 bayang ini membuktikan satu pola tegar: Anwar Ibrahim tidak memiliki satu identiti teras yang tetap kerana identiti itu sendiri diperlakukan sebagai instrumen mudah suai. Setiap zaman, setiap khalayak, dan setiap dewan menerima versi yang berbeza. Apabila persona yang terlalu sempurna dipamerkan kepada dunia, bayang yang tersembunyi di belakangnya akan menjadi terlalu gelap. Jika amaran Carl Jung benar — bahawa bayang yang dinafikan akan memerintah tanpa disedari — maka 33 bayang ini adalah peta cermin bagi sebuah kepimpinan yang penuh dengan watak pentas, namun kehilangan teras keasliannya.</p>
   </section>
@@ -1456,7 +1484,7 @@ footer.editorial-footer {
       <span>Sumber Data: Wikipedia EN/MS · Britannica · Rekod Penghakiman Mahkamah · Amnesty International · Hansard Parlimen</span><br>
       <span>DITEMPA BUKAN DIBERI — Yang benar dikarang, bukan disuap. &Delta;S &le; 0</span><br>
       <div style="margin-top: 1rem;">
-        <a href="/world/politics/shadow/">← Kembali ke PM Bayang Hub</a> · <a href="/map/">Peta Sistem /map</a> · <a href="/writing/">Koleksi Esei /writing</a>
+        <a href="/world/politics/shadow/">← Kembali ke PM Bayang Hub</a> · <a href="/map/">Peta Sistem /map</a> · <a href="/words/writing/">Koleksi Esei /words/writing</a>
       </div>
     </div>
   </div>
@@ -1518,14 +1546,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // 2026-11-22 FI-008 · in-page jump navigation.
+  // The axis tabs now do two things: they filter the 33 bayang AND move the
+  // reader to that axis. Before, filtering hid 22 of 33 cards while the reader
+  // stayed where they were — the page looked broken. A tab is a navigation
+  // control, so it must land somewhere.
+  const AXIS_TARGET = { politik: 'axis-1', ekonomi: 'axis-2', peribadi: 'axis-3' };
+
+  function scrollToTarget(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   axisBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       axisBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentFilter = btn.dataset.filter || 'all';
       applyFilter();
+
+      if (currentFilter === 'all') {
+        scrollToTarget('axis-1');
+      } else {
+        // A live search query can hide the very axis the reader just asked for.
+        // Clear it so the jump always lands on visible content.
+        if (searchInput && searchInput.value.trim()) {
+          searchInput.value = '';
+          applyFilter();
+        }
+        scrollToTarget(AXIS_TARGET[currentFilter]);
+      }
     });
   });
+
+  const jumpSynthesis = document.getElementById('jump-sintesis');
+  if (jumpSynthesis) {
+    jumpSynthesis.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (searchInput && searchInput.value.trim()) {
+        searchInput.value = '';
+        applyFilter();
+      }
+      scrollToTarget('sintesis');
+    });
+  }
 
   if (searchInput) {
     searchInput.addEventListener('input', applyFilter);

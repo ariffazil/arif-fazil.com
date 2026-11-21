@@ -1,1404 +1,407 @@
-<!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<!doctype html>
+<html lang="ms" data-ring="BODY">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://arif-fazil.com/wealth/petronas/" />
-  <title>arifOS · WEALTH — PETRONAS / KLCC (Hydrocarbon Engine)</title><!-- arifOS Â· WEALTH â Putrajaya â KLCC Coupled Architecture</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PETRONAS — dompet hari ini, tangki masa depan — Arif Fazil | arifOS</title>
+<meta name="theme-color" content="#0A0B0D" />
+<meta name="description" content="PETRONAS masih ada tunai dan untung. Dalam laporan mereka sendiri, tong yang boleh dijual turun dua tahun berturut-turut. Kita belum tahu sama ada itu diganti." />
+<meta name="agent-identity" content="WEALTH · PETRONAS institution health" />
+<meta property="og:title" content="PETRONAS · dompet hari ini, tangki masa depan" />
+<meta property="og:description" content="Keadaan kewangan PETRONAS dalam angka yang dicetak: tunai, rizab, dividen, dan apa yang belum diterbitkan." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arif-fazil.com/petronas/" />
+<meta property="og:image" content="https://arif-fazil.com/canon/atlas.png" />
+<meta property="og:site_name" content="arifOS · Federation Intelligence" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://arif-fazil.com/petronas/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ψ</text></svg>" />
+<style>
+  /* Palette derived from this surface's own system (vitals/_shell + canon tokens.css):
+     paper #0a0c10 · hairline #1f2733 · ink #edeae2 · dim #9aa0a8 · accent #c9a227.
+     Contrast vs paper: ink ≈15.0:1 · dim ≈7.5:1 · accent ≈8.1:1 (AA pass, incl. small text). */
+  :root{ --paper:#0a0c10; --ink:#edeae2; --dim:#9aa0a8; --hair:#1f2733; --accent:#c9a227; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:var(--paper)}
+  body{ background:var(--paper); color:var(--ink);
+    font-family:'Newsreader',Georgia,serif; font-size:1.14rem; line-height:1.72;
+    -webkit-font-smoothing:antialiased; }
+  .display{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 144,"SOFT" 0,"WONK" 0;font-weight:300}
+  .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:var(--accent)}
+  .wrap{max-width:46rem;margin:0 auto;padding:0 1.4rem}
+  .wide{max-width:64rem;margin:0 auto;padding:0 1.4rem}
 
-  <!-- Machine-First Discovery Links (Agentic Parity Layer) -->
-  <link rel="alternate" type="application/json" href="https://arif-fazil.com/wealth/malaysia/state.json" title="Malaysia Sovereign State JSON" />
-  <link rel="alternate" type="text/markdown" href="https://arif-fazil.com/wealth/malaysia/brief.md" title="Malaysia Sovereign Brief Markdown" />
-  <link rel="alternate" type="application/json" href="https://arif-fazil.com/wealth/petronas/state.json" title="PETRONAS Corporate State JSON" />
-  <link rel="alternate" type="text/markdown" href="https://arif-fazil.com/wealth/petronas/brief.md" title="PETRONAS Corporate Brief Markdown" />
-  <link rel="alternate" type="text/plain" href="https://arif-fazil.com/llms.txt" title="arifOS Master Agentic Index" />
+  .mast{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.6rem;
+    padding:1.6rem 0 1.1rem;border-bottom:1px solid var(--hair)}
+  .mast .word{font-family:'Fraunces',serif;font-variation-settings:"opsz" 60;font-weight:400;font-size:1.05rem;letter-spacing:.02em}
+  .mast nav{font-size:.82rem;font-style:italic;color:var(--dim)}
+  .mast nav a{color:var(--dim);margin-left:1.1rem}
+  .mast nav a:hover{color:var(--ink)}
 
-  <!-- Fonts: Inter (UI/Narrative) + JetBrains Mono (Telemetry/Data) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  .kicker{font-style:italic;color:var(--dim);font-size:.95rem;margin:4.2rem 0 1.6rem}
+  h1.hero{font-size:clamp(3.2rem,8.4vw,7.6rem);line-height:.98;letter-spacing:-.015em;margin-bottom:2.2rem}
+  .lede{font-size:clamp(1.25rem,2.1vw,1.55rem);line-height:1.5;max-width:34rem;margin-bottom:1.2rem}
+  .lede em{font-style:italic;color:var(--accent)}
+  figure.tank-img{margin:0 0 1rem}
+  figure.tank-img img{width:100%;display:block;filter:grayscale(1) contrast(1.05)}
+  figure.tank-img figcaption{font-style:italic;font-size:.85rem;color:var(--dim);margin-top:.8rem}
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            obsidian: '#080A0F',
-            panel: '#10141D',
-            panelLight: '#161C28',
-            gold: '#D4AF37',
-            goldSoft: 'rgba(212, 175, 55, 0.14)',
-            emeraldSafe: '#10B981',
-            crimsonVoid: '#EF4444',
-          }
-        }
-      }
-    };
-  </script>
+  .tank{margin:clamp(4.5rem,9vw,7.5rem) 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    padding:clamp(2.5rem,6vw,4.5rem) 0}
+  .tank .seq{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .tank .yr{font-size:.95rem;font-style:italic;color:var(--dim);display:block;margin-bottom:.5rem}
+  .tank .n{font-variant-numeric:tabular-nums;line-height:.9}
+  .tank .n1{font-size:clamp(2.2rem,5vw,4.2rem);color:var(--dim)}
+  .tank .n2{font-size:clamp(3rem,7vw,6rem);color:var(--dim)}
+  .tank .n3{font-size:clamp(4.2rem,10.5vw,9rem);color:var(--accent)}
+  .tank .cap{margin-top:2.2rem;font-size:.92rem;color:var(--dim);font-style:italic}
+  .tank .unpub{margin-top:1.6rem;display:flex;align-items:baseline;gap:.9rem;font-size:.95rem;color:var(--dim)}
+  .tank .unpub .dash{flex:1;border-bottom:1px dashed var(--hair);transform:translateY(-.3em)}
 
-  <style>
-    /* Subtle architectural grid background & custom range slider styling */
-    .bg-grid-pattern {
-      background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
+  section{margin:clamp(4.5rem,9vw,7rem) 0}
+  h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:2rem}
+  h2 .no{color:var(--accent);font-style:italic;margin-right:.8rem;font-size:.7em;vertical-align:.15em}
+  p{margin-bottom:1.15rem}
+  .dim{color:var(--dim)}
 
-    input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      background: transparent;
-      cursor: pointer;
-    }
-    input[type="range"]::-webkit-slider-runnable-track {
-      height: 6px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #EF4444 0%, #D4AF37 50%, #10B981 100%);
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      margin-top: -7px;
-      background-color: #F8FAFC;
-      border: 2px solid #D4AF37;
-      height: 20px;
-      width: 20px;
-      border-radius: 999px;
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
-    }
+  .rows{border-top:1px solid var(--hair)}
+  .row{display:grid;grid-template-columns:1fr auto;gap:.4rem 2rem;align-items:baseline;
+    padding:1.5rem 0;border-bottom:1px solid var(--hair)}
+  .row .lbl{font-style:italic;color:var(--dim);font-size:.98rem}
+  .row .val{font-family:'Fraunces',serif;font-variation-settings:"opsz" 100;font-weight:300;
+    font-size:clamp(1.9rem,4vw,3rem);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .row .sub{grid-column:1/-1;font-size:.95rem;color:var(--dim);max-width:36rem}
 
-    /* Smooth tab fade */
-    .fade-in {
-      animation: fadeIn 0.28s ease-out forwards;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  .road{padding:1.8rem 0;border-bottom:1px solid var(--hair)}
+  .road h3{font-family:'Fraunces',serif;font-variation-settings:"opsz" 80;font-weight:400;font-size:1.35rem;margin-bottom:.45rem}
+  .road h3 .st{font-family:'Newsreader',serif;font-style:italic;font-size:.85rem;color:var(--accent);margin-left:.9rem}
+  .road h3 .st.dim2{color:var(--dim)}
+  .road p{font-size:1rem;color:var(--dim);max-width:38rem;margin:0}
 
-  <script src="/wealth/wealth-coupling.js"></script>
+  .toc{list-style:none;border-top:1px solid var(--hair)}
+  .toc li{display:flex;align-items:baseline;gap:.8rem;padding:1.05rem 0;border-bottom:1px solid var(--hair);flex-wrap:wrap}
+  .toc .d{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--accent);white-space:nowrap}
+  .toc .dash{flex:1;border-bottom:1px dotted var(--hair);transform:translateY(-.35em)}
+  .toc .t{font-size:.98rem;max-width:26rem}
+
+  .pull{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    padding:clamp(3rem,7vw,5rem) 0;text-align:center;margin:clamp(4rem,9vw,7rem) 0}
+  .pull p{font-family:'Fraunces',serif;font-variation-settings:"opsz" 120;font-style:italic;font-weight:300;
+    font-size:clamp(1.7rem,4.2vw,3.1rem);line-height:1.25;max-width:44rem;margin:0 auto}
+  .pull .who{margin-top:1.4rem;font-family:'Newsreader',serif;font-style:normal;font-size:.9rem;color:var(--dim)}
+
+  ul.plain{list-style:none}
+  ul.plain li{padding:.55rem 0 .55rem 1.4rem;position:relative;color:var(--dim);font-size:1rem}
+  ul.plain li:before{content:"—";position:absolute;left:0;color:var(--hair)}
+
+  .fineprint{font-size:.98rem;color:var(--dim);border-top:1px solid var(--hair);padding-top:2rem}
+  .fineprint p{margin-bottom:1rem}
+  .fineprint strong{color:var(--ink);font-weight:600}
+
+  .src{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);line-height:1.8;
+    border-top:1px solid var(--hair);padding-top:1.4rem;margin-top:3rem}
+  .src a{color:var(--dim);text-decoration:underline;text-decoration-color:var(--hair)}
+  .src a:hover{color:var(--accent)}
+  .colophon{border-top:1px solid var(--hair);margin-top:5rem;padding:2rem 0 4rem;
+    font-size:.85rem;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  .colophon .tag{font-style:italic}
+  .colophon nav a{color:var(--dim);margin-left:1.1rem;font-style:italic}
+  .colophon nav a:hover{color:var(--ink)}
+  .graf{border-top:1px solid var(--hair);padding:2rem 0;border-bottom:1px solid var(--hair)}
+  .graf+.graf{border-top:none}
+  .graf .gt{font-style:italic;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem}
+  .graf .gs{font-size:.9rem;color:var(--dim);margin-bottom:1.2rem}
+  .graf svg{width:100%;height:auto;display:block}
+  .graf figcaption{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);margin-top:1rem;line-height:1.7}
+  svg text{font-family:'IBM Plex Mono',monospace;fill:var(--dim)}
+  svg .gv{fill:var(--ink)} svg .ga{fill:var(--accent)}
+  @media (max-width:640px){
+    .row{grid-template-columns:1fr}
+    .row .val{white-space:normal}
+    .toc .t{max-width:none}
+    .mast nav a{margin-left:.8rem}
+  }
+</style>
 </head>
+<body>
 
-<body class="bg-obsidian text-slate-200 font-sans antialiased selection:bg-gold/30 selection:text-white overflow-x-hidden">
+<div class="wide">
+  <div class="mast">
+    <span class="word">Arif Fazil</span>
+    <nav><a href="/">Home</a><a href="/earth/">Earth</a><a href="/words/">Words</a><a href="/world/makcikgpt/">MakcikGPT</a><a href="/world/">World</a><a href="/work/">Work</a></nav>
+  </div>
+</div>
 
-  <!-- ===================================================================== -->
-  <!-- STICKY HEADER: BRAND + PUTRAJAYA <-> KLCC MIRROR SWITCHER + AGENTIC   -->
-  <!-- ===================================================================== -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-obsidian/85 border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
-      
-      <!-- Brand / Breadcrumb -->
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-mono text-xs font-bold text-gold">
-          AF
-        </div>
-        <div>
-          <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400">
-            <span class="text-slate-200 font-semibold">arifOS</span>
-            <span>/</span>
-            <span class="text-gold">WEALTH</span>
-            <span class="hidden sm:inline text-slate-600">Â·</span>
-            <span id="header-path" class="hidden sm:inline text-slate-300">/wealth/malaysia/</span>
-          </div>
-          <p class="text-[11px] text-slate-500 hidden md:block">Coupled SovereignâCorporate Architecture Â· Sealed 2026-11-22</p>
-        </div>
-      </div>
+<div class="wrap">
+  <p class="kicker">World · Petronas · Bahasa Melayu — dikemas kini 3 November 2026</p>
+  <h1 class="hero display">Dompet hari ini.<br>Tangki masa depan.</h1>
+  <p class="lede">PETRONAS masih ada duit. Tong yang boleh dijual sudah turun dua tahun. Minyak tinggal di bawah. Ruang di atas kosong. <em>Itu tangki masa depan. Bukan ramalan bankrap.</em></p>
+  <figure class="tank-img">
+    <img src="/vitals/tangki.jpg" alt="Dalam tangki besar, minyak tinggal di bawah. Ruang di atas kosong." />
+    <figcaption>Tangki. Isi di bawah, ruang di atas.</figcaption>
+  </figure>
+</div>
 
-      <!-- Central Mirrored Switcher Pill -->
-      <div class="flex items-center bg-panel border border-slate-700/80 rounded-full p-1 shadow-lg order-3 sm:order-2 w-full sm:w-auto justify-center" role="tablist" aria-label="Switch institutional mirror">
-        <button
-          id="btn-switch-malaysia"
-          onclick="window.location.href='/wealth/malaysia/'"
-          role="tab"
-          aria-selected="true"
-          class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 bg-slate-800 text-white border border-gold/50 shadow-sm"
-        >
-          <span class="w-2 h-2 rounded-full bg-gold"></span>
-          <span>PUTRAJAYA</span>
-          <span class="text-[10px] px-1.5 py-0.5 rounded bg-gold/15 text-gold hidden md:inline">45 HOLD</span>
-        </button>
-
-        <span class="px-1.5 text-slate-600 font-mono text-xs select-none" title="Coupled System">â</span>
-
-        <button
-          id="btn-switch-petronas"
-          onclick="switchEntity('petronas')"
-          role="tab"
-          aria-selected="false"
-          class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 text-slate-400 hover:text-slate-200 border border-transparent"
-        >
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>KLCC</span>
-          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hidden md:inline">7.92B boe</span>
-        </button>
-      </div>
-
-      <!-- Right Controls: Language Toggle + Agentic Feed -->
-      <div class="flex items-center gap-2 order-2 sm:order-3">
-        <button
-          id="btn-lang-toggle"
-          onclick="toggleLanguage()"
-          class="px-2.5 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-700/80 text-xs font-mono text-slate-300 transition"
-          title="Toggle English / Bahasa Melayu labels"
-        >
-          EN <span class="text-slate-600">|</span> <span class="text-slate-500">BM</span>
-        </button>
-
-        <button
-          onclick="openAgentModal('malaysia')"
-          class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-xs font-mono font-medium text-gold transition"
-        >
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-          </svg>
-          <span>JSON / llms.txt</span>
-        </button>
-      </div>
+<div class="wide">
+  <div class="tank">
+    <div class="seq display">
+      <div><span class="yr">2024 · 1 Jan</span><span class="n n1">9.35</span></div>
+      <div><span class="yr">2025 · 1 Jan</span><span class="n n2">8.64</span></div>
+      <div><span class="yr">2026 · 1 Jan</span><span class="n n3">7.92</span></div>
     </div>
-  </header>
+    <div class="unpub"><span>2027</span><span class="dash"></span><span>belum diterbitkan</span></div>
+    <p class="cap">Rizab 2P net entitlement, bilion tong setara minyak (boe), pada 1 Januari setiap tahun. Belum terbit bukan bermaksud kosong.</p>
+  </div>
+</div>
 
-  <!-- ===================================================================== -->
-  <!-- BAND 0: HERO MONUMENT (PUTRAJAYA OR KLCC) + 4-METRIC HUD + PROXIES    -->
-  <!-- ===================================================================== -->
-  <section id="hero-section" class="relative overflow-hidden border-b border-slate-800/80 bg-obsidian">
-    <!-- Atmospheric Grid Overlay -->
-    <div class="absolute inset-0 bg-grid-pattern pointer-events-none opacity-60"></div>
+<div class="wrap">
 
-    <!-- HERO SVG BACKDROP: PUTRAJAYA (Perdana Putra + Putra Bridge Reflection) -->
-    <div id="hero-bg-malaysia" class="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-100">
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-obsidian/65 to-obsidian"></div>
-      <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" class="w-full h-full object-cover opacity-55">
-        <defs>
-          <radialGradient id="putrajayaGlow" cx="50%" cy="38%" r="48%">
-            <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.22" />
-            <stop offset="55%" stop-color="#1E293B" stop-opacity="0.18" />
-            <stop offset="100%" stop-color="#080A0F" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient id="domeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.55" />
-            <stop offset="100%" stop-color="#334155" stop-opacity="0.25" />
-          </linearGradient>
-        </defs>
-        <rect width="1440" height="520" fill="url(#putrajayaGlow)" />
-        <!-- Horizon & Lake Line -->
-        <line x1="0" y1="360" x2="1440" y2="360" stroke="#334155" stroke-width="1" stroke-dasharray="4 6" />
-        <!-- Perdana Putra Main Structure -->
-        <g stroke="#94A3B8" stroke-width="1.2" fill="#0F172A" fill-opacity="0.85">
-          <!-- Symmetrical Wings -->
-          <rect x="420" y="255" width="600" height="105" rx="2" />
-          <rect x="490" y="215" width="460" height="40" />
-          <rect x="610" y="185" width="220" height="30" />
-          <!-- Left & Right Smaller Domes -->
-          <path d="M510 215 Q540 160 570 215 Z" fill="url(#domeGrad)" stroke="#D4AF37" stroke-opacity="0.6" />
-          <path d="M870 215 Q900 160 930 215 Z" fill="url(#domeGrad)" stroke="#D4AF37" stroke-opacity="0.6" />
-          <!-- Central Main Onion Dome -->
-          <path d="M645 185 C645 120 700 95 720 68 C740 95 795 120 795 185 Z" fill="url(#domeGrad)" stroke="#D4AF37" stroke-width="1.5" />
-          <line x1="720" y1="68" x2="720" y2="42" stroke="#D4AF37" stroke-width="1.8" />
-          <!-- Colonnade Arches -->
-          <g stroke="#475569" stroke-width="1">
-            <line x1="460" y1="255" x2="460" y2="360" /><line x1="500" y1="255" x2="500" y2="360" />
-            <line x1="540" y1="255" x2="540" y2="360" /><line x1="580" y1="255" x2="580" y2="360" />
-            <line x1="620" y1="255" x2="620" y2="360" /><line x1="660" y1="255" x2="660" y2="360" />
-            <line x1="780" y1="255" x2="780" y2="360" /><line x1="820" y1="255" x2="820" y2="360" />
-            <line x1="860" y1="255" x2="860" y2="360" /><line x1="900" y1="255" x2="900" y2="360" />
-            <line x1="940" y1="255" x2="940" y2="360" /><line x1="980" y1="255" x2="980" y2="360" />
-          </g>
-        </g>
-        <!-- Putra Bridge Arches -->
-        <g stroke="#475569" stroke-width="1.2" fill="none">
-          <path d="M0 360 Q140 315 280 360" />
-          <path d="M280 360 Q350 330 420 360" />
-          <path d="M1020 360 Q1090 330 1160 360" />
-          <path d="M1160 360 Q1300 315 1440 360" />
-        </g>
-        <!-- Subtle Water Reflection Lines -->
-        <g stroke="#D4AF37" stroke-opacity="0.16" stroke-width="1">
-          <line x1="640" y1="382" x2="800" y2="382" />
-          <line x1="665" y1="400" x2="775" y2="400" />
-          <line x1="690" y1="418" x2="750" y2="418" />
-          <line x1="510" y1="392" x2="570" y2="392" />
-          <line x1="870" y1="392" x2="930" y2="392" />
-        </g>
-      </svg>
-    </div>
+  <section>
+    <p>Duit turun sedikit. Tangki turun dua kali. Nombor rizab 2027 belum diterbitkan. Akaun penuh sekitar Februari 2027 akan menjawab soalan tunai — bukan soalan rizab, bukan soalan mahkamah. Jadual ketiga-tiganya berbeza.</p>
+    <p>9 Oktober lepas, kerajaan menaikkan jangkaan dividen PETRONAS: RM27 bilion untuk 2026 — lebih daripada RM20 bilion yang PETRONAS sendiri isytiharkan — dan RM32 bilion untuk 2027. Jalan D disokong. Tetapi itu unjuran Kementerian Kewangan, bukan keputusan lembaga PETRONAS.</p>
+  </section>
 
-    <!-- HERO SVG BACKDROP: KLCC (Petronas Twin Towers + Skybridge) -->
-    <div id="hero-bg-petronas" class="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-0">
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/35 via-obsidian/65 to-obsidian"></div>
-      <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" class="w-full h-full object-cover opacity-60">
-        <defs>
-          <radialGradient id="klccGlow" cx="50%" cy="30%" r="45%">
-            <stop offset="0%" stop-color="#10B981" stop-opacity="0.18" />
-            <stop offset="45%" stop-color="#D4AF37" stop-opacity="0.12" />
-            <stop offset="100%" stop-color="#080A0F" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient id="towerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.32" />
-            <stop offset="60%" stop-color="#334155" stop-opacity="0.22" />
-            <stop offset="100%" stop-color="#080A0F" stop-opacity="0.8" />
-          </linearGradient>
-        </defs>
-        <rect width="1440" height="520" fill="url(#klccGlow)" />
-        <!-- Twin Towers Geometric Blueprint -->
-        <g stroke="#94A3B8" stroke-width="1.2" fill="url(#towerGrad)">
-          <!-- Tower 1 (Left) -->
-          <rect x="575" y="190" width="84" height="330" />
-          <rect x="585" y="145" width="64" height="45" />
-          <rect x="595" y="108" width="44" height="37" />
-          <polygon points="602,108 617,74 632,108" stroke="#D4AF37" stroke-opacity="0.85" />
-          <line x1="617" y1="74" x2="617" y2="28" stroke="#D4AF37" stroke-width="1.8" />
-
-          <!-- Tower 2 (Right) -->
-          <rect x="781" y="190" width="84" height="330" />
-          <rect x="791" y="145" width="64" height="45" />
-          <rect x="801" y="108" width="44" height="37" />
-          <polygon points="808,108 823,74 838,108" stroke="#D4AF37" stroke-opacity="0.85" />
-          <line x1="823" y1="74" x2="823" y2="28" stroke="#D4AF37" stroke-width="1.8" />
-
-          <!-- Skybridge (Levels 41-42) -->
-          <rect x="659" y="278" width="122" height="14" fill="#0F172A" stroke="#D4AF37" stroke-width="1.4" />
-          <line x1="659" y1="340" x2="720" y2="292" stroke="#D4AF37" stroke-opacity="0.7" stroke-width="1.2" />
-          <line x1="781" y1="340" x2="720" y2="292" stroke="#D4AF37" stroke-opacity="0.7" stroke-width="1.2" />
-        </g>
-        <!-- Horizontal Tier Rings -->
-        <g stroke="#475569" stroke-width="0.9" stroke-dasharray="3 3">
-          <line x1="575" y1="230" x2="659" y2="230" /><line x1="781" y1="230" x2="865" y2="230" />
-          <line x1="575" y1="320" x2="659" y2="320" /><line x1="781" y1="320" x2="865" y2="320" />
-          <line x1="575" y1="380" x2="659" y2="380" /><line x1="781" y1="380" x2="865" y2="380" />
-        </g>
-        <!-- Surrounding KL Skyline Hints -->
-        <g stroke="#1E293B" stroke-width="1" fill="#0B0F17" fill-opacity="0.7">
-          <rect x="340" y="340" width="60" height="180" />
-          <rect x="420" y="380" width="85" height="140" />
-          <rect x="935" y="360" width="75" height="160" />
-          <rect x="1030" y="320" width="55" height="200" />
-        </g>
-      </svg>
-    </div>
-
-    <!-- Hero Foreground Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
-      <!-- Epistemic & Freshness Bar -->
-      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <div class="flex flex-wrap items-center gap-2">
-          <span id="hero-coords" class="px-2.5 py-1 rounded-md bg-panel/90 border border-slate-700/80 text-[11px] font-mono text-slate-300">
-            2.9384Â° N, 101.6915Â° E Â· PUTRAJAYA
-          </span>
-          <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-400">
-            SEALED: 2026-11-22 (POST-BUDGET 2027)
-          </span>
-          <span id="hero-epistemic-badge" class="px-2.5 py-1 rounded-md bg-gold/10 border border-gold/30 text-[11px] font-mono text-gold">
-            TAG: [OBS] / [DER] / [INT]
-          </span>
-        </div>
-
-        <!-- Separate Live Market Proxy Ticker (Never Confused With Sealed Data) -->
-        <div class="flex items-center gap-3 px-3 py-1 rounded-md bg-obsidian/90 border border-slate-800 text-[11px] font-mono">
-          <span class="flex items-center gap-1.5 text-emerald-400">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            LIVE PROXIES
-          </span>
-          <span class="text-slate-400">BRENT <strong class="text-white">$93.23</strong></span>
-          <span class="text-slate-600">|</span>
-          <span class="text-slate-400">USD/MYR <strong class="text-white">4.09</strong></span>
-          <span class="hidden md:inline text-slate-600">|</span>
-          <span class="hidden md:inline text-slate-400">KLCI <strong class="text-white">1,575</strong></span>
-        </div>
+  <section>
+    <h2 class="display"><span class="no">I.</span>Empat jalan, dan apa yang mengujinya</h2>
+    <p class="dim" style="margin-bottom:2rem">Bukan niat sesiapa. Hanya apa yang laporan boleh sokong, lemahkan, atau belum dapat bezakan.</p>
+    <div class="rows">
+      <div class="road">
+        <h3>A. Tong baru dijumpai <span class="st">evidens masuk · Megah-1 &amp; Lebah Emas-1ST1, 1H 2025</span></h3>
+        <p>Dua penemuan 2025 sudah wujud; angka rasmi belum terbit; appraisal Megah-2 dalam persiapan. Buku 7.92 belum berubah. Lihat Seksyen IV.</p>
       </div>
-
-      <!-- Hero Title & Core Tension -->
-      <div class="max-w-3xl mb-8">
-        <p id="hero-kicker" class="text-xs font-mono uppercase tracking-[0.2em] text-gold mb-2">
-          THE SOVEREIGN LEDGER Â· FEDERAL DISTANCE-TO-BREAK
-        </p>
-        <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">
-          Malaysia Â· Putrajaya
-        </h1>
-        <p id="hero-subtitle" class="text-sm sm:text-base text-slate-300 leading-relaxed">
-          One nation. Three pillars. Nine tripwires. Macro stability on the surfaceânarrowing fiscal headroom underneath. Coupled directly to KLCCâs dividend valve and Sarawakâs constitutional clock.
-        </p>
+      <div class="road">
+        <h3>B. Kurang milik, lebih kuasa jual <span class="st dim2">belum terbukti</span></h3>
+        <p>Disokong jika hak jual atau margin naik bersama aliran. Setakat ini gas mengalir lebih, hak jual tidak naik. Untung RM5 bilion ialah untung melepas milik, bukan sewa.</p>
       </div>
-
-      <!-- 4-METRIC HUD (Synced to Active Entity) -->
-      <div id="hero-hud" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" data-temporal="present" data-sealed="2026-11-22">
-        <!-- Populated dynamically by JS -->
+      <div class="road">
+        <h3>C. Lebih kecil, masih untung <span class="st">paling hampir dengan buku hari ini</span></h3>
+        <p>Tong turun, penggantian 0.3, belanja cari telaga hampir rata, kakitangan sedang dikecilkan. Jalan ini yang paling hampir dengan buku hari ini. Dilemahkan jika tong berhenti turun.</p>
+      </div>
+      <div class="road">
+        <h3>D. Tuai hari ini <span class="st">disokong · 9 Oktober</span></h3>
+        <p>Belanjawan 9 Oktober meletakkan jangkaan RM27 bilion untuk 2026 dan RM32 bilion untuk 2027, lebih daripada RM20 bilion yang sudah diisytihar — tetapi itu unjuran Kementerian Kewangan, bukan keputusan lembaga PETRONAS.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===================================================================== -->
-  <!-- MAIN CONTENT: MIRRORED 4-BAND TEMPORAL FLOW                           -->
-  <!-- ===================================================================== -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+  <section>
+    <h2 class="display"><span class="no">II.</span>Apa yang berubah 9 Oktober, dan apa yang tidak</h2>
+    <p>Belanjawan 2027 dibentang 9 Oktober. Kertas Kementerian Kewangan menaikkan dividen PETRONAS untuk 2026 daripada RM20 bilion kepada RM27 bilion, dan meletakkan RM32 bilion untuk 2027. The Edge menulis yang sama: RM32 bilion itu RM5 bilion, atau 18.5 peratus, lebih tinggi daripada RM27 bilion untuk 2026. Ia 8.4 peratus daripada hasil persekutuan yang diunjur RM380.8 bilion.</p>
+    <p>Kertas yang sama andaikan minyak mentah 2027 pada US$78 setong, turun daripada US$85 untuk 2026. Hasil berkaitan petroleum 2027: RM61.2 bilion, 16.1 peratus daripada jumlah, naik sedikit daripada 15.1 peratus.</p>
+    <p>Harga sekarang jauh di atas andaian itu. Brent pada 19 Oktober sekitar US$108 setong; penutup Jumaat 109.86, tertinggi sejak 19 Mei. Aliran minyak mentah Teluk yang dipantau Kpler sekitar 8.5 juta tong sehari minggu itu, turun daripada lebih 20 juta. Sebahagian tunai tambahan itu ialah harga perang, bukan hasil kerja baru.</p>
+    <p>RM32 bilion itu unjuran Kementerian Kewangan, bukan keputusan lembaga PETRONAS. Ia juga masih perlu dibayar daripada 7.92 bilion tong yang boleh dijual, dengan penggantian terbukti 0.3. Tangki tidak berubah. Tiada nombor rizab 2027 diterbitkan. Masih tiada bukti hak jual atau sewa naik untuk mengganti tong yang sudah dijual. Dompet naik, tangki turun.</p>
+    <p>Pada 7 Oktober, Mahkamah Tinggi Malaya meluluskan penyusunan semula dalaman PETRONAS Gas: pemprosesan gas, pengangkutan gas dan utiliti berpindah ke PG Gas Processing, PG TransCo dan PG Utilities East — aset dipisahkan, bukan ditambah (Bursa Malaysia GA1-07102026-00089).</p>
+    <p class="src">Sumber: <a href="https://belanjawan.mof.gov.my/pdf/belanjawan2027/revenue/fiscal_outlook_2027.pdf">Kementerian Kewangan — 2027 Fiscal Outlook</a> · <a href="https://theedgemalaysia.com/node/821106">The Edge, 9 Oktober 2026</a> · Bursa Malaysia GA1-07102026-00089</p>
+  </section>
 
-    <!-- Quick Section Jump Nav -->
-    <nav class="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-800/80 text-xs font-mono">
-      <a href="#band-past" class="px-3 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-800 text-slate-300 transition">01 Â· PAST (Trajectory)</a>
-      <a href="#band-present" class="px-3 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-800 text-slate-300 transition">02 Â· PRESENT (Surface vs Subsurface)</a>
-      <a href="#band-coupling" class="px-3 py-1.5 rounded-lg bg-gold/10 hover:bg-gold/20 border border-gold/40 text-gold transition">03 Â· COUPLING SIMULATOR (Putrajaya â KLCC)</a>
-      <a href="#band-future" class="px-3 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-800 text-slate-300 transition">04 Â· FUTURE (Gates & CHRON)</a>
-    </nav>
+  <section>
+    <h2 class="display"><span class="no">III.</span>Apa yang perlu ditonton seterusnya</h2>
+    <p class="dim">Jangan tonton niat orang. Jangan tonton skor sifar lama. Jangan tonton satu harga minyak sebagai kebenaran. Tonton benda ini, dan tulis apa yang laporan cetak, bukan apa yang terasa.</p>
+    <ul class="toc" style="margin-top:1.6rem">
+      <li><span class="d">9 Okt 2026</span><span class="t">Sudah berlaku. Belanjawan meletakkan jangkaan RM27 bilion untuk 2026 dan RM32 bilion untuk 2027. Jalan D disokong. <a href="https://belanjawan.mof.gov.my/pdf/belanjawan2027/revenue/fiscal_outlook_2027.pdf">Sumber: Kementerian Kewangan</a></span><span class="dash"></span></li>
+      <li><span class="d">31 Dis 2026</span><span class="t">Syarat terdahulu dilaporkan dipenuhi; penyempurnaan EnQuest dijangka, dengan ekonomi efektif 1 Januari 2027. Belum siap = jangan tulis “sudah dijual”.</span><span class="dash"></span></li>
+      <li><span class="d">Feb 2027</span><span class="t">Akaun penuh. Tunai. Dividen benar-benar dibayar. Adakah loji PRefChem sudah masuk kumpulan, dan berapa rugi lama yang masih tinggal.</span><span class="dash"></span></li>
+      <li><span class="d">1H 2027</span><span class="t">Jika gas yang mengalir naik, adakah gas yang boleh dijual naik sekali? Naik bersama = jalan B mula ada bukti. Tidak naik = jalan B gagal lagi.</span><span class="dash"></span></li>
+      <li><span class="d">Apr 2027</span><span class="t">Data seismik proses semula TGS ke atas Megah siap. Persediaan, bukan keputusan.</span><span class="dash"></span></li>
+      <li><span class="d">Megah-2</span><span class="t">Keputusan appraisal: kolam, saiz, komersial. Anggaran 200–300 juta tong masuk buku hanya selepas penilaian lengkap dan FID.</span><span class="dash"></span></li>
+      <li><span class="d">Semakan rizab</span><span class="t">Adakah 7.92 turun selepas pindah 31 Mei dikira? Adakah penggantian kekal di bawah 0.8 — paras 1 Januari 2025 — atau kembali melepasinya? Ini yang menyokong atau melemahkan jalan A dan C.</span><span class="dash"></span></li>
+      <li><span class="d">M. Persekutuan</span><span class="t">Jadualnya sendiri, bukan jadual akaun: konflik PDA 1974 dengan undang-undang gas Sarawak. Keputusan boleh mengubah halaman ini lebih daripada mana-mana angka.</span><span class="dash"></span></li>
+      <li><span class="d">30 Sep 2027</span><span class="t">Akaun pertama syarikat London rakan kongsi itu patut ada. Sebelum tarikh itu, kenyataan akhbar bukan kunci kira-kira.</span><span class="dash"></span></li>
+    </ul>
+    <p class="dim" style="margin-top:1.6rem">Satu tahun penggantian masih tidak diterbitkan. Purata tiga tahun 0.3 menyembunyikan tahun mana yang jatuh. Jangan reka tahun itu.</p>
+  </section>
 
-    <!-- =================================================================== -->
-    <!-- BAND 1: THE PAST â TRAJECTORY & SEDIMENT (SPARKLINES)               -->
-    <!-- =================================================================== -->
-    <section id="band-past" data-temporal="past" class="scroll-mt-24 fade-in">
-      <div class="flex flex-wrap items-end justify-between gap-2 mb-4">
-        <div>
-          <span class="text-[11px] font-mono uppercase tracking-widest text-slate-400">BAND 01 Â· TEMPORAL SEDIMENT</span>
-          <h2 id="past-heading" class="text-xl sm:text-2xl font-bold text-white mt-0.5">The Past: Direction of Travel (2022â2026)</h2>
-        </div>
-        <span class="text-xs font-mono text-slate-500">Rate of change matters more than single-year snapshots</span>
+  <section>
+    <h2 class="display"><span class="no">IV.</span>Laut dalam bicara — dan apa yang belum masuk buku</h2>
+    <p>Laporan PETRONAS sendiri (hasil 1H 2025) menamakan dua penemuan: Megah-1 di Blok 3K laut dalam Sabah, dan Lebah Emas-1ST1 di Blok PM6/12 Semenanjung — play baharu berhampiran Duyong yang matang. Angka Megah yang berlegar di industri ialah 200–300 juta tong. PETRONAS sendiri belum terbitkan angka rasmi. Yang cetak hari ini ialah anggaran pihak ketiga, bukan buku syarikat.</p>
+    <p>Gerakan selepas penemuan sudah jelas di takwim. Notis Jabatan Laut untuk telaga appraisal Megah-2 dikeluarkan penghujung September 2026. Kapal gerudi dilaporkan West Capella — walaupun satu sumber menamakan Noble Viking, jadi itu kekal status dilaporkan, bukan sah. TGS memproses semula 514 km² seismik 3D ke atas Megah sejak Julai 2026, siap April 2027. Fugro menyiapkan survei geohazard AUV untuk Megah dan Limbayong pada 28 September 2026. Semua itu persiapan. Tiada satu pun menaikkan tong 7.92.</p>
+    <p>Buku hanya bergerak pada hari FID. Limbayong menunjukkan jalannya: jumpaan Shell 2002, dilepaskan, diambil semula, dan FID dilaporkan ditandatangani 28 Ogos 2026 — barulah ia masuk kira. Sebelum FID, Megah kekal contingent; selepas FID, ia menjadi rizab. Anggaran 200–300 juta tong itu lebih kurang 2.5–3.8% daripada tangki 7.92 bilion — material untuk play baharu, kecil pada buku kumpulan.</p>
+    <p>Attribusi juga perlu jujur: kawasan ini pernah diterokai dan dilepaskan syarikat asing sebelum diambil semula — Limbayong itu sendiri contohnya. Dan alat AI dipasarkan lebih laju daripada apa yang boleh disemak dari luar. ERMAI "enam hari menjadi enam saat" ialah angka laporan syarikat sendiri dalam Integrated Report 2025; tiada pihak luar yang boleh mengujinya. TIRAI dilaporkan beroperasi tanpa metrik awam. myPROdata ditambah agentic AI bersama Iraya Energies pada 3 September 2026. Jurang antara pengumuman dan meja kerja sebenar diceritakan dalam <a href="/world/makcikgpt/petronas-ai-transformasi-tapi-awak-pakai-copilot/">esai Copilot</a>; batuan dan lembaganya disemak di <a href="/earth/kinabalu-basin/">dossier Kinabalu</a>.</p>
+    <p class="src">Sumber: <a href="https://www.petronas.com/bm/node/1726">PETRONAS — hasil 1H 2025 (Megah-1 Blok 3K, Lebah Emas-1ST1 PM6/12)</a> · <a href="https://oilprice.com/Company-News/Petronas-Moves-to-Appraise-Major-Oil-Discovery-Offshore-Malaysia.html">OilPrice, 7 Okt 2026 (200–300 juta tong = anggaran industri; tiada angka rasmi)</a> · <a href="https://aogdigital.com/news/543385-tgs-to-reprocesses-seismic-data-for-petronas-megah-discovery">AOG Digital, 1 Okt 2026 (TGS 514 km²)</a> · <a href="https://splash247.com/petronas-moves-to-appraise-major-oil-find-off-malaysia">Splash247 (West Capella dilaporkan; di bawah kontrak PTTEP)</a> · <a href="https://globalenergynetwork.net/news-item/petronas-lines-up-drillship-to-appraise-megah-malaysias-largest-oil-discovery-in-20-years">Global Energy Network (Noble Viking — konflik nama kapal dinyatakan)</a> · <a href="https://www.technipfmc.com/en/investors/financial-news-releases/press-release/technipfmc-awarded-iepci-contract-for-petronas-limbayong-project-offshore-malaysia?type=press-releases">TechnipFMC, 15 Sep 2026 (Limbayong iEPCI)</a> · <a href="https://www.petronas.com/integrated-report-2025/assets/pdf/by-section/5_PETRONAS_IR25_DeliveringOurStrategy.pdf">PETRONAS Integrated Report 2025 (ERMAI: ~6 hari → 6 saat, laporan syarikat sendiri)</a> · <a href="https://www.petronas.com/mpm/media/media-releases/petronas-advances-malaysias-upstream-data-platform-agentic-ai-accelerate-ep">PETRONAS MPM, 3 Sep 2026 (myPROdata + Iraya Energies)</a> · Limbayong FID 28 Ogos 2026: lapuran projek industri — nombor rasmi PETRONAS menunggu terbit.</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">V.</span>Apa yang kita tahu</h2>
+    <div class="rows">
+      <div class="row">
+        <span class="lbl">Tunai · 30 Jun 2026</span>
+        <span class="val">RM193.6B</span>
+        <span class="sub">31 Dis 2025: RM204.4B. Hutang kumpulan 30 Jun: RM126.8B. Gearing 21.2%, dan nota kaki mereka masukkan jaminan. Tunai bersih selepas hutang: RM66.8B — susut sekitar RM16B dalam enam bulan; tunai kasar susut RM10.8B. Dua ukuran, dua kadar.</span>
       </div>
-
-      <div id="past-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Populated dynamically by JS -->
+      <div class="row">
+        <span class="lbl">Untung · 6 bulan 2026</span>
+        <span class="val">RM27.2B</span>
+        <span class="sub">Huluan RM28.1B termasuk keuntungan pelupusan Searah RM5.0B. Gas dan maritim RM16.7B.</span>
       </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- BAND 2: THE PRESENT â SURFACE VS SUBSURFACE DIAGNOSTIC              -->
-    <!-- =================================================================== -->
-    <section id="band-present" data-temporal="present" class="scroll-mt-24 fade-in">
-      <div class="flex flex-wrap items-end justify-between gap-2 mb-4">
-        <div>
-          <span class="text-[11px] font-mono uppercase tracking-widest text-emerald-400">BAND 02 Â· SEALED AUDIT (2026-11-22)</span>
-          <h2 id="present-heading" class="text-xl sm:text-2xl font-bold text-white mt-0.5">The Present: Surface Liquidity vs. Subsurface Weight</h2>
-        </div>
-        <button id="present-mirror-btn" onclick="toggleEntity()" class="text-xs font-mono text-gold hover:underline flex items-center gap-1">
-          <span>Flip to KLCC Mirror</span> <span>â</span>
-        </button>
+      <div class="row">
+        <span class="lbl">Dividen keluar · 6 bulan</span>
+        <span class="val">RM8B</span>
+        <span class="sub">Daripada RM20B diisytihar PETRONAS untuk 2026. Anggaran Kementerian Kewangan: RM27B (2026) dan RM32B (2027) — unjuran kerajaan, bukan isytihar syarikat.</span>
       </div>
-
-      <div id="present-content-container">
-        <!-- Populated dynamically by JS -->
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- BAND 3: THE COUPLING BRIDGE â SHARED INTERACTIVE SIMULATOR          -->
-    <!-- =================================================================== -->
-    <section id="band-coupling" data-temporal="simulation" data-epistemic="INT" class="scroll-mt-24 rounded-2xl bg-gradient-to-b from-panel to-obsidian border border-gold/30 p-5 sm:p-7 shadow-2xl">
-      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="px-2 py-0.5 rounded bg-gold/15 border border-gold/30 text-[10px] font-mono text-gold font-semibold">SHARED COUPLING ENGINE</span>
-            <span class="text-[11px] font-mono text-slate-400">INTERPRET Â· SEALED ANCHORS UNCHANGED</span>
-          </div>
-          <h2 id="sim-heading" class="text-xl sm:text-2xl font-bold text-white">Putrajaya â KLCC Coupling Simulator (2027)</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-            Drag Brent crude or toggle the January 2027 Federal Court outcome. Watch how Malaysiaâs fuel subsidy seesaw (<span class="font-mono text-slate-200">Â±RM5.1B/$10</span>) and PETRONASâs dividend floor (<span class="font-mono text-gold">$67.34/bbl</span>) transmit directly into the 65% federal debt ceiling.
-          </p>
-        </div>
-
-        <!-- Quick Presets -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="setSimPreset(65, 'coexist', 'flat')" class="px-2.5 py-1.5 rounded-lg bg-crimsonVoid/15 hover:bg-crimsonVoid/25 border border-crimsonVoid/40 text-xs font-mono text-red-300 transition">$65 Floor Break</button>
-          <button onclick="setSimPreset(85, 'coexist', 'flat')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-mono text-slate-200 transition">$85 Budget Base</button>
-          <button onclick="setSimPreset(95, 'coexist', 'topup')" class="px-2.5 py-1.5 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-xs font-mono text-gold transition">$95 + RM38B Top-Up</button>
-        </div>
-      </div>
-
-      <!-- Simulator Controls -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6 bg-obsidian/70 border border-slate-800 rounded-xl p-4">
-        <!-- Control 1: Brent Slider -->
-        <div>
-          <div class="flex justify-between items-center mb-2">
-            <label for="slider-brent" class="text-xs font-mono text-slate-300">2027 AVG BRENT CRUDE</label>
-            <span id="sim-brent-val" class="text-sm font-mono font-bold text-gold">$85 /bbl</span>
-          </div>
-          <input id="slider-brent" type="range" min="55" max="110" step="1" value="85" oninput="updateSimulator()" class="w-full" />
-          <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5">
-            <span>$55</span>
-            <span class="text-red-400">Floor $67.34</span>
-            <span>Base $85</span>
-            <span>$110</span>
-          </div>
-        </div>
-
-        <!-- Control 2: Sarawak Federal Court Outcome -->
-        <div>
-          <label class="block text-xs font-mono text-slate-300 mb-2">JAN 2027 FEDERAL COURT (SARAWAK)</label>
-          <div class="grid grid-cols-3 gap-1.5">
-            <button id="court-coexist" onclick="setCourtMode('coexist')" class="px-2 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition">Coexistence</button>
-            <button id="court-federal" onclick="setCourtMode('federal')" class="px-2 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition">Federal Win</button>
-            <button id="court-sarawak" onclick="setCourtMode('sarawak')" class="px-2 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition">SWK Sweep</button>
-          </div>
-          <p id="sim-court-note" class="text-[11px] text-slate-500 mt-1.5">Base: Petros domestic aggregator; PETRONAS retains MLNG & upstream.</p>
-        </div>
-
-        <!-- Control 3: KLCC Dividend Extraction Mode -->
-        <div>
-          <label class="block text-xs font-mono text-slate-300 mb-2">KLCC DIVIDEND EXTRACTION VALVE</label>
-          <div class="grid grid-cols-2 gap-2">
-            <button id="div-flat" onclick="setDivMode('flat')" class="px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition">Rule-Based (Cap RM32B)</button>
-            <button id="div-topup" onclick="setDivMode('topup')" class="px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition">Jalan D (MoF Top-Up)</button>
-          </div>
-          <p class="text-[11px] text-slate-500 mt-1.5">At Brent &gt;$90, Jalan D pulls up to RM38B to offset subsidy bloat.</p>
-        </div>
-      </div>
-
-      <!-- Mirrored Side-by-Side Live Outputs -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- LEFT OUTPUT: PUTRAJAYA -->
-        <div id="sim-putrajaya-box" class="rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
-              <h3 class="font-mono text-sm font-bold text-white">PUTRAJAYA Â· FEDERAL LEDGER</h3>
-            </div>
-            <span id="sim-debt-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-gold/15 text-gold">HEADROOM +1.30pp</span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
-              <div class="text-[11px] font-mono text-slate-400">2027 FISCAL DEFICIT</div>
-              <div id="sim-deficit-pct" class="text-xl font-mono font-bold text-white mt-0.5">3.30%</div>
-              <div id="sim-deficit-rm" class="text-[11px] font-mono text-slate-500">RM 77.5B</div>
-            </div>
-            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
-              <div class="text-[11px] font-mono text-slate-400">END-2027 DEBT / GDP</div>
-              <div id="sim-debt-pct" class="text-xl font-mono font-bold text-gold mt-0.5">63.70%</div>
-              <div class="text-[11px] font-mono text-slate-500">Statutory Cap: 65.0%</div>
-            </div>
-          </div>
-
-          <div class="space-y-1.5 text-xs font-mono">
-            <div class="flex justify-between">
-              <span class="text-slate-400">BUDI95 + Diesel Subsidy Bill:</span>
-              <span id="sim-subsidy" class="text-slate-200">RM 40.0B</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-400">Non-Dividend Pet Tax / Royalty:</span>
-              <span id="sim-pet-tax" class="text-slate-200">RM 29.2B</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT OUTPUT: KLCC -->
-        <div id="sim-klcc-box" class="rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-              <h3 class="font-mono text-sm font-bold text-white">KLCC Â· PETRONAS ENGINE</h3>
-            </div>
-            <span id="sim-klcc-path" class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-800 text-slate-200">JALAN C + D</span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
-              <div class="text-[11px] font-mono text-slate-400">2027 DIVIDEND PAYOUT</div>
-              <div id="sim-div-rm" class="text-xl font-mono font-bold text-white mt-0.5">RM 32.0B</div>
-              <div id="sim-div-note" class="text-[11px] font-mono text-slate-500">Matches Budget 2027</div>
-            </div>
-            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
-              <div class="text-[11px] font-mono text-slate-400">PROJECTED GEARING</div>
-              <div id="sim-gearing" class="text-xl font-mono font-bold text-emerald-400 mt-0.5">25.5%</div>
-              <div class="text-[11px] font-mono text-slate-500">Post-PRefChem (Trip 40%)</div>
-            </div>
-          </div>
-
-          <div class="space-y-1.5 text-xs font-mono">
-            <div class="flex justify-between">
-              <span class="text-slate-400">Capex Replenishment Headroom:</span>
-              <span id="sim-capex-status" class="text-gold">Constrained (RRR 0.3)</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-400">2P Reserve Book Risk:</span>
-              <span id="sim-reserve-risk" class="text-slate-200">7.92B boe (EnQuest -138M)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- BAND 4: THE FUTURE â HARD CALENDAR GATES + CHRON LEDGER             -->
-    <!-- =================================================================== -->
-    <section id="band-future" data-temporal="future" class="scroll-mt-24 space-y-6">
-      <div>
-        <span class="text-[11px] font-mono uppercase tracking-widest text-gold">BAND 04 Â· SYNCHRONIZED CALENDAR GATES (2026â2028)</span>
-        <h2 id="future-heading" class="text-xl sm:text-2xl font-bold text-white mt-0.5">The Future: Falsifiable Dates, Not Speculation</h2>
-      </div>
-
-      <!-- 5-Gate Horizontal / Responsive Timeline -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
-          <div>
-            <span class="text-[11px] font-mono text-gold font-semibold">31 DEC 2026</span>
-            <h3 class="text-sm font-bold text-white mt-1">EnQuest Farm-Out</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Balingian/SK8/D35 transfer closes. Effective 1 Jan 2027: <span class="text-slate-200 font-mono">-138 MMboe 2P</span> & <span class="text-slate-200 font-mono">~55â60 kboe/d</span> off PETRONAS direct books.</p>
-          </div>
-          <span class="mt-3 text-[10px] font-mono text-emerald-400">IMPACTS: KLCC TANK</span>
-        </div>
-
-        <div class="rounded-xl bg-panel border border-gold/50 p-4 flex flex-col justify-between shadow-lg shadow-gold/5">
-          <div>
-            <span class="text-[11px] font-mono text-gold font-semibold">25â29 JAN 2027</span>
-            <h3 class="text-sm font-bold text-white mt-1">Federal Court Panel</h3>
-            <p class="text-xs text-slate-300 mt-1.5">9â11 judges hear PDA 1974 vs Sarawak DGO 2016. Single highest-impact constitutional gate for both KLCC & Putrajaya.</p>
-          </div>
-          <span class="mt-3 text-[10px] font-mono text-gold">IMPACTS: COUPLED SYSTEM</span>
-        </div>
-
-        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
-          <div>
-            <span class="text-[11px] font-mono text-gold font-semibold">FEB 2027</span>
-            <h3 class="text-sm font-bold text-white mt-1">FY2026 Audited Print</h3>
-            <p class="text-xs text-slate-400 mt-1.5">Tests actual 2026 dividend (RM20B vs RM27B), full PRefChem consolidation, and whether CAPEX + Div exceeded CFFO.</p>
-          </div>
-          <span class="mt-3 text-[10px] font-mono text-slate-400">RESOLVES: CHRON CFFO</span>
-        </div>
-
-        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
-          <div>
-            <span class="text-[11px] font-mono text-gold font-semibold">MARâMID 2027</span>
-            <h3 class="text-sm font-bold text-white mt-1">Reserves & Megah-2</h3>
-            <p class="text-xs text-slate-400 mt-1.5">1 Jan 2027 reserves print (tests 0.3 RRR), TGS Megah seismic (Apr 2027), and Suriname Block 52 Sloanea FID check.</p>
-          </div>
-          <span class="mt-3 text-[10px] font-mono text-slate-400">RESOLVES: CHRON RRR</span>
-        </div>
-
-        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
-          <div>
-            <span class="text-[11px] font-mono text-gold font-semibold">DEC 2027âFEB 2028</span>
-            <h3 class="text-sm font-bold text-white mt-1">GE16 Window</h3>
-            <p class="text-xs text-slate-400 mt-1.5">15th Parliament expires 19 Dec 2027. Election-year pressure raises incentive for high KLCC dividend extraction & fuel caps.</p>
-          </div>
-          <span class="mt-3 text-[10px] font-mono text-red-400">IMPACTS: SOVEREIGN CAP</span>
-        </div>
-      </div>
-
-      <!-- CHRON Falsification Ledger + Executive Layer Cross-Link -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <!-- CHRON Card 1 -->
-        <div class="rounded-xl bg-panel border border-slate-800 p-4">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">CHRON Â· pred-748f889ea86c</span>
-            <span class="text-sm font-mono font-bold text-gold">P = 0.63</span>
-          </div>
-          <p class="text-sm font-semibold text-white">3Y Avg 1P RRR on 1 Jan 2027 remains &lt; 0.8</p>
-          <p class="text-xs text-slate-400 mt-1.5">Falsification: Integrated Report 2026 prints 0.8 or higher (main wildcard: Suriname Sloanea FID + Searah JV equity booking). Resolves 31 Mar 2027.</p>
-        </div>
-
-        <!-- CHRON Card 2 -->
-        <div class="rounded-xl bg-panel border border-slate-800 p-4">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">CHRON Â· pred-0fd054b36ad4</span>
-            <span class="text-sm font-mono font-bold text-gold">P = 0.61</span>
-          </div>
-          <p class="text-sm font-semibold text-white">FY2026 CAPEX + Dividends Paid &gt; CFFO</p>
-          <p class="text-xs text-slate-400 mt-1.5">1H2026 ratio already at 104% (RM49.4B out vs RM47.5B in). Falsification: Audited FY2026 accounts show CFFO covers both. Resolves 31 Mar 2027.</p>
-        </div>
-
-        <!-- Executive Layer Cross-Link (Completing the 3-Node Graph) -->
-        <div class="rounded-xl bg-gradient-to-br from-panelLight to-obsidian border border-slate-700/80 p-4 flex flex-col justify-between">
-          <div>
-            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400">EXECUTIVE LAYER Â· /politics/shadow/</span>
-            <h3 class="text-sm font-bold text-white mt-1">Anwar Ibrahim Â· Dual PM &amp; Finance Minister</h3>
-            <p class="text-xs text-slate-400 mt-1.5">
-              Shadow #14 connects both roofs: the same office signs Malaysiaâs RM459.8B budget and holds sole shareholder authority over PETRONAS.
-            </p>
-          </div>
-          <a href="https://arif-fazil.com/politics/shadow/anwar-ibrahim" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-mono text-gold hover:underline">
-            <span>Inspect 33 Bayang Dossier</span>
-            <span>â</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===================================================================== -->
-  <!-- FOOTER: SITE GRAPH MAP & EPISTEMIC DECLARATION                        -->
-  <!-- ===================================================================== -->
-  <footer class="border-t border-slate-800/80 bg-panel/40 mt-12 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs font-mono text-slate-500">
-      <div>
-        <div class="text-slate-300 font-semibold">arifOS Â· WEALTH Â· Ditempa Bukan Diberi (ÎS â¤ 0)</div>
-        <div class="mt-1">Canonical Graph: <span class="text-slate-400">/wealth/malaysia/</span> â <span class="text-slate-400">/wealth/petronas/</span> â <span class="text-slate-400">/politics/shadow/anwar-ibrahim</span></div>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <button onclick="openAgentModal('malaysia')" class="hover:text-gold transition">malaysia/state.json</button>
-        <span>Â·</span>
-        <button onclick="openAgentModal('petronas')" class="hover:text-gold transition">petronas/state.json</button>
-        <span>Â·</span>
-        <button onclick="openAgentModal('llms')" class="hover:text-gold transition">/llms.txt</button>
+      <div class="row">
+        <span class="lbl">Rugi downstream</span>
+        <span class="val">RM15.2B</span>
+        <span class="sub">RM15.2B = rugi segmen hiliran. RM14.8B = pengiktirafan terkumpul bahagian rugi PRefChem yang sebelum ini direkod di peringkat usaha sama — item bukan tunai, timbul apabila suntikan modal membawa loji itu masuk kiraan kumpulan. Ia bukan rugi tunai baharu, dan bukan keseluruhan rugi PRefChem. Tanpa item itu, hiliran untung RM7.0B.</span>
       </div>
     </div>
-  </footer>
+    <p class="src" style="border-top:none;margin-top:2rem">Tarikh, bukan skor: 9 Okt 2026 ucapan Belanjawan 2027 (Kementerian Kewangan) → 31 Dis 2026 EnQuest dijangka siap → 1 Jan 2027 ekonomi EnQuest → sekitar Feb 2027 akaun diaudit → semakan rizab seterusnya ialah kali pertama stok Januari dan pindah 31 Mei terpaksa bertemu → keputusan Mahkamah Persekutuan (PDA lawan undang-undang gas Sarawak) berjalan pada jadualnya sendiri.</p>
+  </section>
 
-  <!-- ===================================================================== -->
-  <!-- AGENTIC INGESTION MODAL (JSON & llms.txt INSPECTOR + 1-CLICK COPY)    -->
-  <!-- ===================================================================== -->
-  <div id="agent-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="bg-panel border border-slate-700 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between px-5 py-4 border-b border-slate-800">
-        <div>
-          <h3 id="modal-title" class="text-sm font-mono font-bold text-white">Agentic Ingestion &amp; Machine Parity Feeds</h3>
-          <p class="text-xs text-slate-400 mt-0.5">Drop these exact canonical files into your repo for zero-hallucination LLM crawling.</p>
-        </div>
-        <button onclick="closeAgentModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" aria-label="Close modal">
-          â
-        </button>
-      </div>
+  <section>
+    <h2 class="display"><span class="no">VI.</span>Dalam bentuk graf</h2>
+    <p class="dim">Empat lukisan daripada nombor yang sama halaman ini. Tiada paksi disorok; yang dipotong diberitahu. Emas = perkara yang menekan.</p>
 
-      <!-- Modal Tabs -->
-      <div class="flex items-center justify-between px-5 py-2.5 bg-obsidian/60 border-b border-slate-800 gap-2 flex-wrap">
-        <div class="flex gap-1.5">
-          <button id="tab-json-my" onclick="showAgentTab('malaysia')" class="px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-gold border border-gold/40">malaysia/state.json</button>
-          <button id="tab-json-pet" onclick="showAgentTab('petronas')" class="px-3 py-1 rounded-md text-xs font-mono text-slate-400 hover:text-white border border-transparent">petronas/state.json</button>
-          <button id="tab-llms" onclick="showAgentTab('llms')" class="px-3 py-1 rounded-md text-xs font-mono text-slate-400 hover:text-white border border-transparent">/llms.txt</button>
-        </div>
-        <button onclick="copyAgentCode()" class="px-3 py-1 rounded-md bg-gold/20 hover:bg-gold/30 border border-gold/40 text-xs font-mono font-semibold text-gold transition">
-          Copy to Clipboard
-        </button>
-      </div>
+    <figure class="graf">
+      <div class="gt">Tangki menyusut — dan penggantiannya jatuh lebih cepat</div>
+      <div class="gs">Rizab 2P net entitlement (bar kelabu) dan nisbah penggantian RRR 1P purata tiga tahun (bar emas), 1 Januari setiap tahun.</div>
+      <svg viewBox="0 0 640 260" role="img" aria-label="Rizab turun 9.35 ke 7.92 bilion boe; RRR jatuh 1.6 ke 0.3">
+        <text x="580" y="16" font-size="11" text-anchor="end">Tong boleh jual (bilion boe)</text>
+        <rect x="100" y="28.1" width="90" height="116.9" fill="#9aa0a8"/>
+        <rect x="275" y="37" width="90" height="108" fill="#9aa0a8"/>
+        <rect x="450" y="46" width="90" height="99" fill="#9aa0a8"/>
+        <text x="138" y="20" font-size="13" class="gv">9.35</text>
+        <text x="313" y="29" font-size="13" class="gv">8.64</text>
+        <text x="488" y="38" font-size="13" class="ga">7.92</text>
+        <text x="138" y="163" font-size="11">2024</text>
+        <text x="313" y="163" font-size="11">2025</text>
+        <text x="488" y="163" font-size="11">2026</text>
+        <line x1="60" y1="145" x2="580" y2="145" stroke="#1f2733" stroke-width="1"/>
+        <text x="580" y="196" font-size="11" text-anchor="end">Penggantian (RRR 1P, purata 3 thn)</text>
+        <rect x="100" y="174.2" width="90" height="60.8" fill="#c9a227"/>
+        <rect x="275" y="204.6" width="90" height="30.4" fill="#c9a227"/>
+        <rect x="450" y="223.6" width="90" height="11.4" fill="#c9a227"/>
+        <text x="141" y="192" font-size="13" fill="#0a0c10">1.6</text>
+        <text x="316" y="222" font-size="13" fill="#0a0c10">0.8</text>
+        <text x="491" y="217" font-size="13" class="ga">0.3</text>
+        <line x1="60" y1="235" x2="580" y2="235" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>Tong turun 15% dalam dua tahun — tetapi kadar gantinya jatuh 81%. Yang runtuh dahulu ialah pengganti, bukan stok. Sumber: Integrated Report 2025 PETRONAS.</figcaption>
+    </figure>
 
-      <!-- Code Display -->
-      <div class="p-5 overflow-auto flex-1 bg-obsidian">
-        <pre id="agent-code-block" class="text-xs font-mono text-slate-300 leading-relaxed whitespace-pre"></pre>
-      </div>
+    <figure class="graf">
+      <div class="gt">Tuntutan ke atas dompet naik semula ke paras puncak</div>
+      <div class="gs">Dividen: yang dibayar (kelabu) berbanding yang diunjurkan kerajaan (emas), RM bilion.</div>
+      <svg viewBox="0 0 640 200" role="img" aria-label="Dividen dibayar 32B 2025; isytihar 20B 2026; unjuran 27B dan 32B">
+        <rect x="70" y="37" width="80" height="128" fill="#9aa0a8"/>
+        <rect x="210" y="85" width="80" height="80" fill="#9aa0a8"/>
+        <rect x="350" y="57" width="80" height="108" fill="#c9a227"/>
+        <rect x="490" y="37" width="80" height="128" fill="#c9a227"/>
+        <text x="92" y="29" font-size="13" class="gv">32</text>
+        <text x="237" y="77" font-size="13" class="gv">20</text>
+        <text x="377" y="49" font-size="13" class="ga">27</text>
+        <text x="517" y="29" font-size="13" class="ga">32</text>
+        <text x="70" y="184" font-size="11">2025 dibayar</text>
+        <text x="210" y="184" font-size="11">2026 isytihar</text>
+        <text x="350" y="184" font-size="11">2026 unjuran</text>
+        <text x="490" y="184" font-size="11">2027 unjuran</text>
+        <line x1="60" y1="165" x2="590" y2="165" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>2026 nampak lega pada RM20B — sehingga Belanjawan menaikkannya. Unjuran ialah angka Kementerian Kewangan, bukan keputusan lembaga PETRONAS. Sumber: 2027 Fiscal Outlook.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Enam bulan ini, wang keluar melebihi wang masuk</div>
+      <div class="gs">Aliran tunai operasi (CFFO) berbanding pelaburan modal + dividen dibayar, 1H 2026, RM bilion.</div>
+      <svg viewBox="0 0 640 200" role="img" aria-label="CFFO 47.5 berbanding keluar 49.4 — 104 peratus">
+        <rect x="160" y="55.7" width="110" height="109.3" fill="#9aa0a8"/>
+        <rect x="340" y="51.4" width="110" height="113.6" fill="#c9a227"/>
+        <text x="176" y="47" font-size="13" class="gv">CFFO 47.5</text>
+        <text x="330" y="43" font-size="13" class="ga">Keluar 49.4</text>
+        <text x="160" y="184" font-size="11">masuk dari operasi</text>
+        <text x="340" y="184" font-size="11">capex 41.4 + dividen 8.0</text>
+        <line x1="60" y1="165" x2="580" y2="165" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>104%. Lebihan dibiayai simpanan, pelupusan aset dan pinjaman — satu separuh tahun, bukan trend terbukti. Sumber: Laporan Interim 1H 2026.</figcaption>
+    </figure>
+
+    <figure class="graf">
+      <div class="gt">Pengeluaran turun tiga kali berturut</div>
+      <div class="gs">Purata pengeluaran harian, ribu boe/sehari. Paksi dipotong 2,200–2,500 supaya arah kelihatan — dinyatakan secara terbuka.</div>
+      <svg viewBox="0 0 640 170" role="img" aria-label="Pengeluaran 2451 ke 2423 ke 2341 ribu boe sehari">
+        <polyline points="120,29.6 320,40.8 520,73.6" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+        <circle cx="120" cy="29.6" r="4" fill="#c9a227"/>
+        <circle cx="320" cy="40.8" r="4" fill="#c9a227"/>
+        <circle cx="520" cy="73.6" r="4" fill="#c9a227"/>
+        <text x="100" y="20" font-size="13" class="gv">2,451</text>
+        <text x="300" y="31" font-size="13" class="gv">2,423</text>
+        <text x="500" y="66" font-size="13" class="ga">2,341</text>
+        <text x="104" y="150" font-size="11">2024</text>
+        <text x="304" y="150" font-size="11">2025</text>
+        <text x="496" y="150" font-size="11">1H 2026</text>
+        <line x1="60" y1="130" x2="580" y2="130" stroke="#1f2733" stroke-width="1"/>
+      </svg>
+      <figcaption>Penurunan 4.5% dalam tempoh sama dengan tangki menyusut. Sumber: kenyataan tahunan &amp; interim PETRONAS.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">VII.</span>Apa yang kita tidak tahu</h2>
+    <ul class="plain">
+      <li>Tahun tunggal berapa tong diganti tidak diterbitkan. Yang ada hanya purata tiga tahun, dan ia jatuh ke 0.3.</li>
+      <li>Apa yang PETRONAS dapat sebagai ganti tong yang tidak lagi dimiliki — belum ada bukti sewa atau hak jual yang naik.</li>
+      <li>Pindah ke rakan kongsi pada 31 Mei belum masuk dalam gambar tong 7.92. Gambar itu diambil 1 Januari.</li>
+      <li>Satu perjanjian ladang belum siap. Ia dijangka 31 Disember, bukan sudah berlaku.</li>
+      <li>Pulangan atas modal besar Gentari — 9.1 GW kapasiti, 4.2 GW beroperasi per 30 Jun 2026 — kerana akaun anak syarikat itu tidak diterbitkan.</li>
+      <li>Tarikh rasmi pelantikan pengarah eksekutif baharu dan mandatnya — belum berdokumen awam.</li>
+      <li>Tiada tarikh syarikat kehabisan duit. Tiada tarikh syarikat runtuh.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">VIII.</span>Siapa memegang keputusan</h2>
+    <p>Angka di atas tidak memutuskan apa-apa; lembaga yang memutuskan. Semakan 28 Oktober 2026 pada laman rasmi PETRONAS: Mohd Jukris Abdul Wahab disenaraikan sebagai Executive Director — serentak Chief Operating Officer dan EVP &amp; CEO Upstream. Tiga daripada lapan pengarah kini eksekutif: PGCEO, COO merangkap ketua Upstream, dan CFO. Orang yang memiliki masalah upstream kini mengundi di lembaga yang menilai masalah itu. Tarikh rasmi pelantikannya sebagai pengarah, dan mandat yang menyertainya, belum berdokumen awam.</p>
+    <p>Dua jadual lain berjalan di luar jadual akaun. Di Mahkamah Persekutuan: rujukan PETRONAS (10 Januari 2026) tentang konflik PDA 1974 dengan Distribution of Gas Ordinance 2016 Sarawak, dan petisyen Sarawak mencabar PDA 1974, Continental Shelf Act 1966 dan Petroleum Mining Act 1966. Di Sabah: mahkamah mengakui hak 40% hasil; bayaran interim RM1.5 bilion dibayar Jun 2026, jauh daripada tuntutan RM5–23 bilion setahun. Kedua-duanya menekan dompet yang sama yang diminta membayar dividen.</p>
+    <p class="src">Sumber: <a href="https://www.petronas.com/about-us/our-leaders">petronas.com — Our Leaders</a> (semakan 28 Okt 2026) · The Edge, 18 Jan 2026 · The Star, 3 Jun 2026 · Batas: komposisi lembaga bukan bukti keputusan; jawatan luar seseorang pengarah bukan bukti arahan mengundi.</p>
+  </section>
+
+  <div class="pull">
+    <p>“Tekanan tunai dan perubahan portfolio boleh diperhatikan. Sebab keputusan lembaga serta kesannya terhadap keupayaan masa depan masih belum dapat dipastikan.”</p>
+    <div class="who">— batas kesimpulan halaman ini</div>
+  </div>
+
+  <section>
+    <h2 class="display"><span class="no">IX.</span>Ramalan berdaftar — diuji masa, bukan dipercaya</h2>
+    <p class="dim">Dua ramalan berdaftar dalam lejar CHRON pada 28 Oktober 2026. Pendaftaran bukan pengesahan; hanya hasil yang disahkan mengubah skor.</p>
+    <ul class="toc" style="margin-top:1.6rem">
+      <li><span class="d">0.63</span><span class="t">RRR (1P) purata 3 tahun pada 1.1.2027 kekal &lt; 0.8 — falsifikasi: Integrated Report 2026 mencetak 0.8 atau lebih</span><span class="dash"></span><span class="d">31 Mac 2027</span></li>
+      <li><span class="d">0.61</span><span class="t">CAPEX + dividen dibayar &gt; CFFO untuk FY2026 — falsifikasi: Laporan Kewangan FY2026 menunjukkan sebaliknya</span><span class="dash"></span><span class="d">31 Mac 2027</span></li>
+    </ul>
+    <p class="dim" style="margin-top:1.4rem">Ramalan lain berkaitan PETRONAS turut berdaftar: keputusan Mahkamah Persekutuan, penyempurnaan EnQuest, dividen FY2027.</p>
+    <p class="src">Sumber: lejar ramalan CHRON, federasi arifOS (pred-748f889ea86c, pred-0fd054b36ad4) — semakan 28 Okt 2026.</p>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="no">X.</span>Nombor yang dicetak</h2>
+    <p class="dim" style="margin-bottom:1.6rem">Ini bukan ramalan. Ini apa yang laporan syarikat cetak.</p>
+    <div class="fineprint">
+      <p>Tunai 30 Jun 2026: RM193.6 bilion. Disember 2025: RM204.4 bilion. Hutang kumpulan 30 Jun: RM126.8 bilion. Gearing 21.2 peratus, termasuk jaminan. Nota dan bon ada dalam hutang itu. Tunai bersih selepas hutang: RM66.8 bilion.</p>
+      <p>Untung enam bulan: RM27.2 bilion. Daripada itu, RM5.0 bilion ialah untung melepas milik ke rakan kongsi pada 31 Mei. Gas dan maritim: RM16.7 bilion.</p>
+      <p>Dividen dibayar sepanjang 2025: RM32 bilion, atas untung RM45.4 bilion. Dividen diisytihar 26 Februari 2026: RM20 bilion. RM8 bilion sudah dibayar menjelang 30 Jun. Anggaran Kementerian Kewangan: RM27 bilion untuk 2026, RM32 bilion untuk 2027 — unjuran, bukan isytihar.</p>
+      <p>Tong yang boleh dijual (rizab 2P net entitlement, bilion boe): 9.35 pada 1 Januari 2024, 8.64 pada 1 Januari 2025, 7.92 pada 1 Januari 2026. Penggantian terbukti (RRR 1P, purata tiga tahun): 1.6, kemudian 0.8, kemudian 0.3. Tahun tunggal tidak diterbitkan. Angka 2027 belum diterbitkan.</p>
+      <p>Megah: 200–300 juta tong ialah anggaran industri, bukan angka rasmi PETRONAS. Ia belum masuk dalam 7.92. Lebah Emas-1ST1 (PM6/12): play baharu berhampiran Duyong, tiada angka awam.</p>
+      <p>Gas yang mengalir separuh tahun ini naik. Gas yang boleh dijual tidak naik.</p>
+      <p>Belanja cari telaga hampir rata. Belanja besar separuh tahun ini ialah cek loji, bukan telaga baru. Rugi bahagian loji RM15.2 bilion. Daripada itu, RM14.8 bilion ialah item bukan tunai — pengiktirafan terkumpul bahagian rugi PRefChem apabila loji itu dibawa masuk kiraan kumpulan. Tanpa item itu, bahagian itu untung RM7.0 bilion.</p>
+      <p>Harga minyak pada halaman lama tidak dipakai. Harga yang masuk akaun separuh tahun ialah purata Brent US$92.31.</p>
     </div>
+  </section>
+
+</div>
+
+<div class="wide">
+  <div class="colophon">
+    <span class="tag">“Ditempa bukan diberi — Forged, not given.”</span>
+    <span class="mono" style="font-size:.72rem">arifOS · WEALTH · MIXED — angka laporan diaudit; jalan A–D ialah bacaan, bukan ramalan · diterbitkan 19 Okt, dikemas kini 3 Nov 2026</span>
+    <nav><a href="/wealth/malaysia/">Malaysia</a><a href="/world/">World</a><a href="/world/petronas/shadow/">Kerusi Bayang</a><a href="/words/writing/petronas-23-years-in-brazil/">23 Years in Brazil</a><a href="/feed.xml">feed.xml</a></nav>
   </div>
+</div>
 
-  <!-- Custom Toast Notification (No alert() used) -->
-  <div id="toast" class="fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-panelLight border border-gold/50 text-xs font-mono text-white shadow-xl opacity-0 pointer-events-none transition-opacity duration-300">
-    Copied to clipboard
-  </div>
-
-  <!-- ===================================================================== -->
-  <!-- APPLICATION LOGIC & DATA LAYER                                        -->
-  <!-- ===================================================================== -->
-  <script>
-    // -----------------------------------------------------------------------
-    // 1. STATE & BILINGUAL CONTENT DICTIONARY
-    // -----------------------------------------------------------------------
-    let currentEntity = 'petronas'; // 'malaysia' | 'petronas'
-    let currentLang = 'en';         // 'en' | 'bm'
-    let simCourt = 'coexist';       // 'coexist' | 'federal' | 'sarawak'
-    let simDivMode = 'flat';        // 'flat' | 'topup'
-    let activeAgentTab = 'malaysia';
-
-    const ENTITY_DATA = {
-      malaysia: {
-        path: '/wealth/malaysia/',
-        coords: '2.9384Â° N, 101.6915Â° E Â· PUTRAJAYA',
-        epistemic: 'TAG: [OBS] / [DER] / [INT]',
-        kicker: {
-          en: 'THE SOVEREIGN LEDGER Â· FEDERAL DISTANCE-TO-BREAK',
-          bm: 'LEJAR BERDAULAT Â· JARAK KE GARIS PECAH PERSEKUTUAN'
-        },
-        title: {
-          en: 'Malaysia Â· Putrajaya',
-          bm: 'Malaysia Â· Putrajaya'
-        },
-        subtitle: {
-          en: 'One nation. Three pillars. Nine tripwires. Macro stability on the surfaceânarrowing fiscal headroom underneath. Coupled directly to KLCCâs dividend valve and Sarawakâs constitutional clock.',
-          bm: 'Satu negara. Tiga tiang. Sembilan dawai pencetus. Kestabilan makro di permukaanâruang fiskal menyempit di bawah. Terpaut terus pada injap dividen KLCC dan jam perlembagaan Sarawak.'
-        },
-        hud: [
-          { label: 'COMPOSITE PULSE', val: '45 HOLD', sub: 'Fiscal 34 Â· Engine 56 Â· Inst 48', tone: 'gold', tag: '[INT]' },
-          { label: 'FEDERAL DEBT / GDP', val: '63.1%', sub: '2027p: 63.7% (Cap 65.0%)', tone: 'crimson', tag: '[OBS]' },
-          { label: 'FISCAL DEFICIT', val: '3.30%p', sub: 'Budget 2027: RM77.5B (2026: 3.8%)', tone: 'gold', tag: '[OBS]' },
-          { label: 'PETROLEUM SHARE', val: '16.1%', sub: 'RM61.2B of RM380.8B Rev (2027p)', tone: 'emerald', tag: '[OBS]' }
-        ],
-        pastHeading: {
-          en: 'The Past: Sovereign Drift (2022â2027p)',
-          bm: 'Masa Lalu: Hanyutan Fiskal Berdaulat (2022â2027p)'
-        },
-        pastCards: [
-          {
-            title: 'Federal Debt / GDP (%)',
-            delta: '+2.7pp creep',
-            deltaTone: 'crimson',
-            points: [60.4, 61.9, 62.6, 63.1, 63.7],
-            labels: ['2022', '2024', '2025', '2026', '27p'],
-            note: 'Statutory cap at 65.0%. Headroom compressed to 1.3pp by end-2027p.',
-            stroke: '#EF4444'
-          },
-          {
-            title: 'Fiscal Deficit Glidepath (% GDP)',
-            delta: '-2.3pp consolidated',
-            deltaTone: 'emerald',
-            points: [5.6, 5.0, 4.3, 3.8, 3.3],
-            labels: ['2022', '2023', '2024', '2026', '27p'],
-            note: 'Improving, but Budget 2027 relies on RM32B KLCC dividend assumption.',
-            stroke: '#10B981'
-          },
-          {
-            title: 'Old-Age Dependency Ratio (%)',
-            delta: 'Aging structural drag',
-            deltaTone: 'gold',
-            points: [8.4, 9.2, 10.1, 10.8, 11.5],
-            labels: ['2018', '2020', '2022', '2024', '2026'],
-            note: 'UN WPP 2024: Population 65+ / 15â64. Tripwire threshold >15%.',
-            stroke: '#D4AF37'
-          }
-        ],
-        tripwires: [
-          { id: '#1', name: 'Federal Debt / GDP', pillar: 'Fiscal', now: '63.1%', trip: '>65%', score: 13, band: 'VOID', tag: '[OBS]', link: 'petronas' },
-          { id: '#2', name: 'Fiscal Deficit / GDP', pillar: 'Fiscal', now: '3.8% (3.3%p)', trip: '>5.0%', score: 40, band: 'HOLD', tag: '[OBS]', link: 'petronas' },
-          { id: '#3', name: 'FX Reserves (Months)', pillar: 'Fiscal', now: '5.0 mo', trip: '<3.0 mo', score: 50, band: 'HOLD', tag: '[OBS]' },
-          { id: '#4', name: 'Real GDP Growth', pillar: 'Engine', now: '4.2%', trip: '<2.0%', score: 63, band: 'SABAR', tag: '[DER]' },
-          { id: '#5', name: 'Current Account / GDP', pillar: 'Engine', now: '2.1%', trip: '<-1.0%', score: 62, band: 'SABAR', tag: '[DER]' },
-          { id: '#6', name: 'Net FDI / GDP', pillar: 'Engine', now: '2.3%', trip: '<1.0%', score: 43, band: 'HOLD', tag: '[DER]' },
-          { id: '#7', name: 'Old-Age Dependency', pillar: 'Institutions', now: '11.5%', trip: '>15.0%', score: 50, band: 'HOLD', tag: '[INT]' },
-          { id: '#8', name: 'Corruption Index (CPI)', pillar: 'Institutions', now: '50 / 100', trip: '<35', score: 43, band: 'HOLD', tag: '[INT]' },
-          { id: '#9', name: 'Rule of Law (WGI)', pillar: 'Institutions', now: '68%ile', trip: '<50%ile', score: 51, band: 'HOLD', tag: '[INT]' }
-        ]
-      },
-      petronas: {
-        path: '/wealth/petronas/',
-        coords: '3.1579Â° N, 101.7116Â° E Â· KLCC',
-        epistemic: 'TAG: [OBS] / [DER] / [INT]',
-        kicker: {
-          en: 'THE HYDROCARBON ENGINE Â· WALLET TODAY, TANK TOMORROW',
-          bm: 'ENJIN HIDROKARBON Â· DOMPET HARI INI, TANGKI MASA DEPAN'
-        },
-        title: {
-          en: 'PETRONAS Â· KLCC',
-          bm: 'PETRONAS Â· KLCC'
-        },
-        subtitle: {
-          en: 'PETRONAS still holds cash (RM193.6B gross). Sellable barrels have dropped two years straight (7.92B boe) while 3Y replacement collapsed to 0.3. Not a bankruptcy forecastâa shrinking tank meeting rising sovereign dividend demand.',
-          bm: 'PETRONAS masih ada duit (RM193.6B tunai kasar). Tong boleh dijual turun dua tahun berturut (7.92B boe) manakala penggantian 3 tahun jatuh ke 0.3. Bukan ramalan bankrapâtangki menyusut berdepan tuntutan dividen menaik.'
-        },
-        hud: [
-          { label: '2P NET ENTITLEMENT', val: '7.92B boe', sub: 'Down 15% from 9.35B (2024)', tone: 'gold', tag: '[OBS]' },
-          { label: '3Y AVG 1P RRR', val: '0.3', sub: 'Down 81% from 1.6 (2024)', tone: 'crimson', tag: '[OBS]' },
-          { label: 'NET CASH (1H 2026)', val: 'RM66.8B', sub: 'Cash 193.6B â Debt 126.8B', tone: 'emerald', tag: '[OBS]' },
-          { label: '2027p DIV DEMAND', val: 'RM32.0B', sub: 'MoF Budget 2027 (vs 20B decl.)', tone: 'gold', tag: '[DER]' }
-        ],
-        pastHeading: {
-          en: 'The Past: The Tank Shrank Faster Than the Wallet (2024â1H26)',
-          bm: 'Masa Lalu: Tangki Menyusut Lebih Pantas Dari Dompet (2024â1H26)'
-        },
-        pastCards: [
-          {
-            title: '2P Net Entitlement Reserves (B boe)',
-            delta: '-15.3% in 2 yrs',
-            deltaTone: 'gold',
-            points: [9.35, 8.64, 7.92],
-            labels: ['1 Jan 24', '1 Jan 25', '1 Jan 26'],
-            note: '1 Jan 2027 print pending. Excludes EnQuest (-138M) & 31 May Searah transfer.',
-            stroke: '#D4AF37'
-          },
-          {
-            title: '3-Year Avg 1P RRR (Replacement)',
-            delta: '-81.3% collapse',
-            deltaTone: 'crimson',
-            points: [1.6, 0.8, 0.3],
-            labels: ['2024', '2025', '2026'],
-            note: 'Annual burn is ~855 MMboe/yr. Replacement collapsed before stock.',
-            stroke: '#EF4444'
-          },
-          {
-            title: 'Daily Production (kboe/d)',
-            delta: '-4.5% (3 drops)',
-            deltaTone: 'gold',
-            points: [2451, 2423, 2341],
-            labels: ['2024', '2025', '1H 2026'],
-            note: 'Axis truncated (2,200â2,500) transparently to show directional slide.',
-            stroke: '#10B981'
-          }
-        ]
-      }
-    };
-
-    // -----------------------------------------------------------------------
-    // 2. CANONICAL AGENTIC FILES (FOR MODAL & COPY)
-    // -----------------------------------------------------------------------
-    const AGENT_FILES = {
-      malaysia: JSON.stringify({
-        schema_version: "arifos.vitals.v2",
-        entity: {
-          id: "malaysia-federal",
-          name: "Malaysia Federal Sovereign",
-          hero_motif: "Putrajaya",
-          mirror_entity: "petronas",
-          mirror_url: "https://arif-fazil.com/wealth/petronas/state.json"
-        },
-        epistemic_meta: {
-          sealed_at: "2026-11-22",
-          next_audit: "2027-02-28",
-          overall_tag: "INTERPRET",
-          composite_pulse: { score: 45, verdict: "HOLD" }
-        },
-        temporal: {
-          past: [
-            { metric: "federal_debt_gdp_pct", series: { "2022": 60.4, "2024": 61.9, "2026": 63.1 }, tag: "EVIDENCE" },
-            { metric: "fiscal_deficit_gdp_pct", series: { "2022": 5.6, "2024": 4.3, "2026": 3.8 }, tag: "EVIDENCE" }
-          ],
-          present: {
-            federal_debt_gdp_pct: { value: 63.1, projected_2027: 63.7, trip: 65.0, safe: 50.0, band: "VOID", tag: "EVIDENCE" },
-            fiscal_deficit_gdp_pct: { value: 3.8, budget_2027_target: 3.3, trip: 5.0, safe: 2.0, band: "HOLD", tag: "EVIDENCE" },
-            budget_2027_rm_b: { revenue: 380.8, expenditure: 459.8, fuel_subsidies: 40.0, petroleum_revenue: 61.2, petronas_div_mof: 32.0, brent_assumption_usd: 85.0, tag: "EVIDENCE" }
-          },
-          future_gates: [
-            { date: "2027-01-25", event: "Federal Court Panel: PDA 1974 vs Sarawak DGO 2016", impact: "Petroleum revenue & 65% debt ceiling" },
-            { date: "2027-12-19", event: "15th Parliament Auto-Dissolution / GE16 Window", impact: "Fiscal populist pressure" }
-          ]
-        },
-        couplings: [
-          {
-            source_entity: "petronas",
-            channel: "dividend_and_pita",
-            brent_floor_usd: 67.34,
-            sensitivity_per_10_usd_brent: { non_div_pet_tax_rm_b: 3.5, fuel_subsidy_rm_b: 5.1, net_deficit_before_div_rm_b: -1.6 }
-          }
-        ]
-      }, null, 2),
-
-      petronas: JSON.stringify({
-        schema_version: "arifos.vitals.v2",
-        entity: {
-          id: "petronas",
-          name: "PETRONAS",
-          hero_motif: "KLCC",
-          mirror_entity: "malaysia-federal",
-          mirror_url: "https://arif-fazil.com/wealth/malaysia/state.json"
-        },
-        epistemic_meta: {
-          sealed_at: "2026-11-22",
-          next_audit: "2027-02-28",
-          overall_tag: "MIXED",
-          active_paths: ["Jalan C (Smaller Tank)", "Jalan D (Harvest Today)"]
-        },
-        temporal: {
-          past: [
-            { metric: "reserves_2p_net_entitlement_boe_b", series: { "2024-01-01": 9.35, "2025-01-01": 8.64, "2026-01-01": 7.92 }, tag: "EVIDENCE" },
-            { metric: "rrr_1p_3yr_avg", series: { "2024-01-01": 1.6, "2025-01-01": 0.8, "2026-01-01": 0.3 }, tag: "EVIDENCE" },
-            { metric: "daily_production_kboed", series: { "2024": 2451, "2025": 2423, "1H2026": 2341 }, tag: "EVIDENCE" }
-          ],
-          present: {
-            gross_cash_rm_b: { value: 193.6, as_of: "2026-06-30", tag: "EVIDENCE" },
-            net_cash_rm_b: { value: 66.8, as_of: "2026-06-30", tag: "EVIDENCE" },
-            gearing_pct: { value: 21.2, projected_post_prefchem: "25-27", trip: 40.0, tag: "MIXED" },
-            cffo_vs_outflows_1h26_pct: { value: 104.0, cffo_rm_b: 47.5, capex_rm_b: 41.4, dividends_paid_rm_b: 8.0, tag: "EVIDENCE" },
-            prefchem_non_cash_jv_loss_rm_b: { value: 14.8, downstream_lat_rm_b: -15.2, tag: "EVIDENCE" }
-          },
-          future_gates: [
-            { date: "2026-12-31", event: "EnQuest Farm-Out Completion", impact: "-138 MMboe 2P; ~55-60 kboe/d" },
-            { date: "2027-01-25", event: "Federal Court: PDA 1974 vs Sarawak DGO 2016", impact: "Upstream & domestic gas mandate" },
-            { date: "2027-02-28", event: "FY2026 Audited Accounts", impact: "PRefChem consolidation & CFFO check" },
-            { date: "2027-04-30", event: "TGS Megah-2 3D Seismic Completion", impact: "Appraisal prep (200-300M boe est)" }
-          ]
-        },
-        chron_predictions: [
-          { id: "pred-748f889ea86c", prob: 0.63, claim: "3Y 1P RRR < 0.8 on 2027-01-01", resolves: "2027-03-31" },
-          { id: "pred-0fd054b36ad4", prob: 0.61, claim: "FY2026 CAPEX + Div > CFFO", resolves: "2027-03-31" }
-        ]
-      }, null, 2),
-
-      llms: `# arif-fazil.com â arifOS Sovereign & Energy Intelligence Index
-> Canonical machine-readable map for AI agents and research crawlers.
-> Last Sealed: 2026-11-22 (Post-Budget 2027 Reseal)
-
-## 1. Coupled Institutional Architecture (Putrajaya <-> KLCC)
-Do NOT treat Malaysia's federal fiscal state and PETRONAS's balance sheet as isolated entities.
-They share a single coupled oil-price seesaw, dividend extraction valve, and constitutional clock.
-
-- [Malaysia Sovereign Vitals (Putrajaya)](https://arif-fazil.com/wealth/malaysia/state.json): Federal debt/GDP, Budget 2027 deficit, 9 tripwires.
-- [PETRONAS Corporate Vitals (KLCC)](https://arif-fazil.com/wealth/petronas/state.json): 2P reserves, 1P RRR, 1H2026 CFFO vs CAPEX+Div, PRefChem, EnQuest, CHRON ledger.
-- [Executive Shadow Layer (Anwar Ibrahim)](https://arif-fazil.com/politics/shadow/anwar-ibrahim): Jungian audit of Dual PM + Finance Minister governance.
-
-## 2. Epistemic Tags (Mandatory Preservation)
-When citing metrics from arif-fazil.com, preserve the epistemic tag:
-- EVIDENCE: Audited corporate filings, Bank Negara, DOSM, MoF published figures.
-- MIXED: Reported data combined with analytical normalization or projections.
-- INTERPRET: Composite indices, governance scores, and sensitivity simulations.
-- PROXY: Live market prices (Brent, USD/MYR) â never conflate with sealed anchors.
-
-## 3. Critical Synchronization Dates
-- 2026-12-31: EnQuest farm-out completion (-138 MMboe 2P).
-- 2027-01-25 to 2027-01-29: Federal Court hearing (PDA 1974 vs Sarawak DGO 2016).
-- 2027-02-28: PETRONAS FY2026 audited accounts.
-- 2027-03-31: CHRON prediction resolution window.`
-    };
-
-    // -----------------------------------------------------------------------
-    // 3. RENDER FUNCTIONS (HERO, PAST SPARKLINES, PRESENT DIAGNOSTICS)
-    // -----------------------------------------------------------------------
-    function buildSparklineSVG(points, labels, strokeColor) {
-      const w = 280, h = 74, padX = 18, padY = 14;
-      const min = Math.min(...points);
-      const max = Math.max(...points);
-      const range = (max - min) || 1;
-
-      const coords = points.map((p, i) => {
-        const x = padX + (i * (w - padX * 2)) / (points.length - 1);
-        const y = h - padY - ((p - min) / range) * (h - padY * 2);
-        return { x, y, val: p, label: labels[i] };
-      });
-
-      const pathD = coords.map((c, i) => `${i === 0 ? 'M' : 'L'} ${c.x.toFixed(1)} ${c.y.toFixed(1)}`).join(' ');
-      const dots = coords.map((c, i) => `
-        <circle cx="${c.x.toFixed(1)}" cy="${c.y.toFixed(1)}" r="${i === coords.length - 1 ? 4 : 2.8}" fill="${i === coords.length - 1 ? strokeColor : '#0F172A'}" stroke="${strokeColor}" stroke-width="1.8" />
-        <text x="${c.x.toFixed(1)}" y="${(c.y - 7).toFixed(1)}" text-anchor="middle" fill="#CBD5E1" font-size="9" font-family="JetBrains Mono">${c.val}</text>
-      `).join('');
-
-      const xLabels = coords.map(c => `
-        <text x="${c.x.toFixed(1)}" y="${h - 1}" text-anchor="middle" fill="#64748B" font-size="8.5" font-family="JetBrains Mono">${c.label}</text>
-      `).join('');
-
-      return `
-        <svg viewBox="0 0 ${w} ${h + 6}" class="w-full h-24 overflow-visible">
-          <path d="${pathD}" fill="none" stroke="${strokeColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          ${dots}
-          ${xLabels}
-        </svg>
-      `;
-    }
-
-    function renderEntity() {
-      const data = ENTITY_DATA[currentEntity];
-      const lang = currentLang;
-
-      // Update header path & switcher buttons
-      document.getElementById('header-path').textContent = data.path;
-      const btnMy = document.getElementById('btn-switch-malaysia');
-      const btnPet = document.getElementById('btn-switch-petronas');
-
-      if (currentEntity === 'malaysia') {
-        btnMy.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 bg-slate-800 text-white border border-gold/50 shadow-sm';
-        btnPet.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 text-slate-400 hover:text-slate-200 border border-transparent';
-        document.getElementById('hero-bg-malaysia').classList.replace('opacity-0', 'opacity-100');
-        document.getElementById('hero-bg-petronas').classList.replace('opacity-100', 'opacity-0');
-        document.getElementById('present-mirror-btn').innerHTML = '<span>Flip to KLCC Mirror</span> <span>â</span>';
-      } else {
-        btnPet.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 bg-slate-800 text-white border border-emerald-400/50 shadow-sm';
-        btnMy.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 text-slate-400 hover:text-slate-200 border border-transparent';
-        document.getElementById('hero-bg-malaysia').classList.replace('opacity-100', 'opacity-0');
-        document.getElementById('hero-bg-petronas').classList.replace('opacity-0', 'opacity-100');
-        document.getElementById('present-mirror-btn').innerHTML = '<span>Flip to Putrajaya Mirror</span> <span>â</span>';
-      }
-
-      // Hero text
-      document.getElementById('hero-coords').textContent = data.coords;
-      document.getElementById('hero-epistemic-badge').textContent = data.epistemic;
-      document.getElementById('hero-kicker').textContent = data.kicker[lang];
-      document.getElementById('hero-title').textContent = data.title[lang];
-      document.getElementById('hero-subtitle').textContent = data.subtitle[lang];
-
-      // 4-Metric HUD
-      const toneMap = {
-        gold: 'text-gold border-gold/30',
-        crimson: 'text-red-400 border-red-500/35',
-        emerald: 'text-emerald-400 border-emerald-500/30'
-      };
-      document.getElementById('hero-hud').innerHTML = data.hud.map(item => `
-        <div class="rounded-xl bg-panel/90 backdrop-blur-md border ${toneMap[item.tone].split(' ')[1]} p-4 shadow-lg" data-epistemic="${item.tag}">
-          <div class="flex items-center justify-between gap-2 mb-1">
-            <span class="text-[10px] font-mono tracking-wider text-slate-400">${item.label}</span>
-            <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-obsidian text-slate-400 border border-slate-800">${item.tag}</span>
-          </div>
-          <div class="text-2xl font-mono font-bold ${toneMap[item.tone].split(' ')[0]}">${item.val}</div>
-          <div class="text-[11px] text-slate-400 mt-1">${item.sub}</div>
-        </div>
-      `).join('');
-
-      // Band 1: Past Sparklines
-      document.getElementById('past-heading').textContent = data.pastHeading[lang];
-      const deltaColors = {
-        crimson: 'bg-red-500/15 text-red-300 border-red-500/30',
-        gold: 'bg-gold/15 text-gold border-gold/30',
-        emerald: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30'
-      };
-      document.getElementById('past-cards-container').innerHTML = data.pastCards.map(card => `
-        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
-          <div class="flex items-start justify-between gap-2 mb-2">
-            <h3 class="text-sm font-semibold text-white">${card.title}</h3>
-            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border ${deltaColors[card.deltaTone]}">${card.delta}</span>
-          </div>
-          <div class="my-1">${buildSparklineSVG(card.points, card.labels, card.stroke)}</div>
-          <p class="text-[11px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">${card.note}</p>
-        </div>
-      `).join('');
-
-      // Band 2: Present (Surface vs Subsurface)
-      const presentContainer = document.getElementById('present-content-container');
-      if (currentEntity === 'malaysia') {
-        presentContainer.innerHTML = `
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            ${data.tripwires.map(tw => {
-              const barColor = tw.band === 'VOID' ? 'bg-red-500' : tw.band === 'HOLD' ? 'bg-gold' : 'bg-emerald-500';
-              const badgeColor = tw.band === 'VOID' ? 'text-red-400 bg-red-500/15 border-red-500/30' : tw.band === 'HOLD' ? 'text-gold bg-gold/15 border-gold/30' : 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30';
-              return `
-                <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between" data-metric-id="${tw.name}" data-epistemic="${tw.tag}">
-                  <div>
-                    <div class="flex items-center justify-between gap-2 mb-2">
-                      <span class="text-[11px] font-mono text-slate-400">${tw.id} Â· ${tw.pillar}</span>
-                      <span class="text-[10px] font-mono px-1.5 py-0.5 rounded border ${badgeColor}">${tw.band} Â· ${tw.score}/100</span>
-                    </div>
-                    <div class="flex items-baseline justify-between">
-                      <h3 class="text-sm font-semibold text-white">${tw.name}</h3>
-                      <span class="text-base font-mono font-bold text-white">${tw.now}</span>
-                    </div>
-                    <div class="w-full h-1.5 bg-obsidian rounded-full overflow-hidden mt-3">
-                      <div class="h-full ${barColor} rounded-full" style="width: ${tw.score}%"></div>
-                    </div>
-                  </div>
-                  <div class="flex items-center justify-between mt-3 pt-2 border-t border-slate-800/80 text-[10px] font-mono text-slate-500">
-                    <span>Trip: ${tw.trip} Â· ${tw.tag}</span>
-                    ${tw.link ? `<button onclick="switchEntity('petronas')" class="text-gold hover:underline">â KLCC Valve</button>` : ''}
-                  </div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-        `;
-      } else {
-        presentContainer.innerHTML = `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <!-- Left: Dompet Hari Ini (Cash Flow Pressure) -->
-            <div class="rounded-xl bg-panel border border-slate-800 p-5 space-y-4">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <div>
-                  <span class="text-[10px] font-mono text-emerald-400">DOMPET HARI INI Â· 1H 2026 AUDITED INTERIM</span>
-                  <h3 class="text-base font-bold text-white mt-0.5">Cash Flow &amp; Balance Sheet Reality</h3>
-                </div>
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-red-500/15 text-red-300 border border-red-500/30">OUTFLOW 104%</span>
-              </div>
-
-              <div class="space-y-3">
-                <div>
-                  <div class="flex justify-between text-xs font-mono mb-1">
-                    <span class="text-slate-300">1H 2026 CFFO (Operating Inflow)</span>
-                    <span class="text-emerald-400 font-bold">RM 47.5B</span>
-                  </div>
-                  <div class="w-full h-2.5 bg-obsidian rounded-full overflow-hidden">
-                    <div class="h-full bg-emerald-500 rounded-full" style="width: 96%"></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="flex justify-between text-xs font-mono mb-1">
-                    <span class="text-slate-300">CAPEX (RM41.4B) + Div Paid (RM8.0B)</span>
-                    <span class="text-gold font-bold">RM 49.4B (104%)</span>
-                  </div>
-                  <div class="w-full h-2.5 bg-obsidian rounded-full overflow-hidden">
-                    <div class="h-full bg-gold rounded-full" style="width: 100%"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-2 gap-3 pt-2">
-                <div class="p-3 rounded-lg bg-obsidian/80 border border-slate-800">
-                  <div class="text-[10px] font-mono text-slate-400">DOWNSTREAM LAT</div>
-                  <div class="text-lg font-mono font-bold text-red-400">-RM 15.2B</div>
-                  <div class="text-[11px] text-slate-500">Incl. RM14.8B non-cash PRefChem JV loss. Ex-item: +RM7.0B.</div>
-                </div>
-                <div class="p-3 rounded-lg bg-obsidian/80 border border-slate-800">
-                  <div class="text-[10px] font-mono text-slate-400">GEARING STEP</div>
-                  <div class="text-lg font-mono font-bold text-gold">21.2% â 27%</div>
-                  <div class="text-[11px] text-slate-500">Steps +4â6pp post-PRefChem &amp; LNG Canada Ph 2.</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: Tangki Masa Depan & Governance -->
-            <div class="rounded-xl bg-panel border border-slate-800 p-5 space-y-4">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <div>
-                  <span class="text-[10px] font-mono text-gold">TANGKI MASA DEPAN Â· PIPELINE &amp; GOVERNANCE</span>
-                  <h3 class="text-base font-bold text-white mt-0.5">2027â2029 Air Pocket &amp; Legal Overhang</h3>
-                </div>
-                <button onclick="window.location.href='/wealth/malaysia/'" class="text-xs font-mono text-gold hover:underline">â Putrajaya Ceiling</button>
-              </div>
-
-              <ul class="space-y-2.5 text-xs text-slate-300">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-gold font-mono mt-0.5">01</span>
-                  <span><strong class="text-white">855 MMboe Annual Burn:</strong> Limbayong FID (~270M gross) arrives 2029â30; EnQuest farm-out removes 138M 2P &amp; ~55â60 kboe/d immediately on 1 Jan 2027.</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-gold font-mono mt-0.5">02</span>
-                  <span><strong class="text-white">Two Real Wildcards:</strong> Suriname Block 52 (Sloanea FID target end-2026) and Searah (EniâPETRONAS JV, 300â500 kboe/d) determine if RRR lifts off 0.3.</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-gold font-mono mt-0.5">03</span>
-                  <span><strong class="text-white">Board &amp; Legal Concentration:</strong> 3 of 8 directors are executives (PGCEO, COO/Upstream, CFO). Constitutional PDA 1974 vs Sarawak DGO 2016 hits Federal Court Jan 2027.</span>
-                </li>
-              </ul>
-
-              <div class="p-3 rounded-lg bg-gold/10 border border-gold/25 text-xs font-mono text-gold">
-                Active Paths: <strong>Jalan C</strong> (Smaller tank, leaner capex) + <strong>Jalan D</strong> (MoF Budget 2027 RM32B harvest).
-              </div>
-            </div>
-          </div>
-        `;
-      }
-    }
-
-    // -----------------------------------------------------------------------
-    // 4. INTERACTIVE COUPLING SIMULATOR (VERIFIED 2027 BUDGET MATH)
-    // -----------------------------------------------------------------------
-    function setSimPreset(brent, court, divMode) {
-      document.getElementById('slider-brent').value = brent;
-      simCourt = court;
-      simDivMode = divMode;
-      updateControlButtons();
-      updateSimulator();
-    }
-
-    function setCourtMode(mode) {
-      simCourt = mode;
-      updateControlButtons();
-      updateSimulator();
-    }
-
-    function setDivMode(mode) {
-      simDivMode = mode;
-      updateControlButtons();
-      updateSimulator();
-    }
-
-    function updateControlButtons() {
-      ['coexist', 'federal', 'sarawak'].forEach(m => {
-        const el = document.getElementById(`court-${m}`);
-        el.className = m === simCourt
-          ? 'px-2 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition'
-          : 'px-2 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition';
-      });
-      ['flat', 'topup'].forEach(m => {
-        const el = document.getElementById(`div-${m}`);
-        el.className = m === simDivMode
-          ? 'px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition'
-          : 'px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition';
-      });
-
-      const notes = {
-        coexist: 'Base: Petros domestic aggregator; PETRONAS retains MLNG & upstream.',
-        federal: 'Federal supremacy upheld; zero immediate revenue loss, high GE16 GPS risk.',
-        sarawak: 'Shock: Shaves ~RM6.0B from 2027 federal inflows & compresses KLCC reserves.'
-      };
-      document.getElementById('sim-court-note').textContent = notes[simCourt];
-    }
-
-    function updateSimulator() {
-      if (window.ArifCouplingEngine) {
-        ArifCouplingEngine.setCourt(simCourt);
-        ArifCouplingEngine.setDivMode(simDivMode);
-        const res = ArifCouplingEngine.calculate(document.getElementById('slider-brent').value);
-        document.getElementById('sim-brent-val').textContent = `$${res.brent} /bbl`;
-        document.getElementById('sim-deficit-pct').textContent = `${res.newDefPct.toFixed(2)}%`;
-        document.getElementById('sim-deficit-rm').textContent = `RM ${res.newDeficit.toFixed(1)}B`;
-        document.getElementById('sim-debt-pct').textContent = `${res.newDebtPct.toFixed(2)}%`;
-        document.getElementById('sim-subsidy').textContent = `RM ${res.subsidy.toFixed(1)}B`;
-        document.getElementById('sim-pet-tax').textContent = `RM ${res.petTax.toFixed(1)}B`;
-        document.getElementById('sim-div-rm').textContent = `RM ${res.dividend.toFixed(1)}B`;
-        document.getElementById('sim-div-note').textContent = res.divNote;
-        document.getElementById('sim-gearing').textContent = `${res.gearing.toFixed(1)}%`;
-        
-        const debtBadge = document.getElementById('sim-debt-badge');
-        const debtValEl = document.getElementById('sim-debt-pct');
-        const putrajayaBox = document.getElementById('sim-putrajaya-box');
-        if (res.headroom <= 0) {
-          debtBadge.textContent = `VOID BREACH ${res.headroom.toFixed(2)}pp`;
-          debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-red-500/20 text-red-400 border border-red-500/40';
-          debtValEl.className = 'text-xl font-mono font-bold text-red-400 mt-0.5';
-          putrajayaBox.className = 'rounded-xl bg-panel border border-red-500/60 p-4 sm:p-5 transition-colors shadow-lg shadow-red-900/20';
-        } else if (res.headroom < 0.75) {
-          debtBadge.textContent = `CRITICAL +${res.headroom.toFixed(2)}pp`;
-          debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-red-500/15 text-red-300';
-          debtValEl.className = 'text-xl font-mono font-bold text-red-300 mt-0.5';
-          putrajayaBox.className = 'rounded-xl bg-panel border border-red-500/35 p-4 sm:p-5 transition-colors';
-        } else {
-          debtBadge.textContent = `HEADROOM +${res.headroom.toFixed(2)}pp`;
-          debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-gold/15 text-gold';
-          debtValEl.className = 'text-xl font-mono font-bold text-gold mt-0.5';
-          putrajayaBox.className = 'rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors';
-        }
-        return;
-      }
-      const brent = parseFloat(document.getElementById('slider-brent').value);
-      document.getElementById('sim-brent-val').textContent = `$${brent} /bbl`;
-
-      // Budget 2027 Baseline (MoF, Oct 9, 2026)
-      const gdpBase = 2348.5; // RM B (implied from RM77.5B / 3.30%)
-      const debtBase = gdpBase * 0.637; // RM 1496.0B (63.7% end-2027p)
-      const deficitBase = 77.5;
-      const dBrent10 = (brent - 85.0) / 10.0;
-
-      // Sensitivity rules: +/- RM3.5B non-div pet tax, +/- RM5.1B fuel subsidy per $10/bbl
-      const petTax = 29.2 + (dBrent10 * 3.5);
-      const subsidy = Math.max(15.0, 40.0 + (dBrent10 * 5.1));
-
-      // KLCC Dividend logic based on $67.34 floor & extraction mode
-      let dividend = 32.0;
-      let divNote = 'Matches Budget 2027';
-      if (brent < 67.34) {
-        dividend = Math.max(14.0, 20.0 - ((67.34 - brent) * 0.85));
-        divNote = 'Below $67.34 floor â compressed';
-      } else if (brent < 80) {
-        dividend = 20.0 + ((brent - 67.34) / (80 - 67.34)) * 12.0;
-        divNote = 'Stepping down toward RM20B floor';
-      } else if (brent >= 90 && simDivMode === 'topup') {
-        dividend = Math.min(42.0, 32.0 + ((brent - 85) * 0.6));
-        divNote = 'MoF top-up to offset fuel subsidies';
-      }
-
-      // Sarawak Federal Court impact
-      const sarawakHit = simCourt === 'sarawak' ? 6.0 : 0.0;
-      const gdpAdj = brent < 70 ? 0.99 : (brent > 92 ? 1.005 : 1.0);
-      const newGdp = gdpBase * gdpAdj;
-
-      const dDeficit = (subsidy - 40.0) - (petTax - 29.2) - (dividend - 32.0) + sarawakHit;
-      const newDeficit = deficitBase + dDeficit;
-      const newDefPct = (newDeficit / newGdp) * 100;
-
-      const newDebt = debtBase + dDeficit;
-      const newDebtPct = (newDebt / newGdp) * 100;
-      const headroom = 65.0 - newDebtPct;
-
-      // Gearing projection
-      let gearing = 25.5;
-      if (brent < 70) gearing += 2.2;
-      if (simDivMode === 'topup' && brent >= 90) gearing += 1.4;
-      if (simCourt === 'sarawak') gearing += 3.5;
-
-      // Update Putrajaya DOM
-      document.getElementById('sim-deficit-pct').textContent = `${newDefPct.toFixed(2)}%`;
-      document.getElementById('sim-deficit-rm').textContent = `RM ${newDeficit.toFixed(1)}B`;
-      document.getElementById('sim-debt-pct').textContent = `${newDebtPct.toFixed(2)}%`;
-      document.getElementById('sim-subsidy').textContent = `RM ${subsidy.toFixed(1)}B`;
-      document.getElementById('sim-pet-tax').textContent = `RM ${petTax.toFixed(1)}B`;
-
-      const debtBadge = document.getElementById('sim-debt-badge');
-      const debtValEl = document.getElementById('sim-debt-pct');
-      const putrajayaBox = document.getElementById('sim-putrajaya-box');
-
-      if (headroom <= 0) {
-        debtBadge.textContent = `VOID BREACH ${headroom.toFixed(2)}pp`;
-        debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-red-500/20 text-red-400 border border-red-500/40';
-        debtValEl.className = 'text-xl font-mono font-bold text-red-400 mt-0.5';
-        putrajayaBox.className = 'rounded-xl bg-panel border border-red-500/60 p-4 sm:p-5 transition-colors shadow-lg shadow-red-900/20';
-      } else if (headroom < 0.75) {
-        debtBadge.textContent = `CRITICAL +${headroom.toFixed(2)}pp`;
-        debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-red-500/15 text-red-300';
-        debtValEl.className = 'text-xl font-mono font-bold text-red-300 mt-0.5';
-        putrajayaBox.className = 'rounded-xl bg-panel border border-red-500/35 p-4 sm:p-5 transition-colors';
-      } else {
-        debtBadge.textContent = `HEADROOM +${headroom.toFixed(2)}pp`;
-        debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-gold/15 text-gold';
-        debtValEl.className = 'text-xl font-mono font-bold text-gold mt-0.5';
-        putrajayaBox.className = 'rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors';
-      }
-
-      // Update KLCC DOM
-      document.getElementById('sim-div-rm').textContent = `RM ${dividend.toFixed(1)}B`;
-      document.getElementById('sim-div-note').textContent = divNote;
-      document.getElementById('sim-gearing').textContent = `${gearing.toFixed(1)}%`;
-      document.getElementById('sim-klcc-path').textContent = (simDivMode === 'topup' && brent >= 90)
-        ? 'JALAN D (HARVEST)'
-        : (brent < 67.34 ? 'DEFENSIVE FLOOR' : 'JALAN C + D');
-      document.getElementById('sim-capex-status').textContent = (brent < 70 || simDivMode === 'topup')
-        ? 'Tight â RRR Replenishment Squeezed'
-        : 'Moderate â Supports Limbayong / Megah';
-      document.getElementById('sim-reserve-risk').textContent = simCourt === 'sarawak'
-        ? 'HIGH â Sarawak 2P & PSC Renegotiation'
-        : '7.92B boe (EnQuest -138M pending)';
-    }
-
-    // -----------------------------------------------------------------------
-    // 5. SWITCHING, LANGUAGE & MODAL HANDLERS
-    // -----------------------------------------------------------------------
-    function switchEntity(entity) {
-      currentEntity = entity;
-      renderEntity();
-    }
-
-    function toggleEntity() {
-      switchEntity(currentEntity === 'malaysia' ? 'petronas' : 'malaysia');
-    }
-
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'bm' : 'en';
-      const btn = document.getElementById('btn-lang-toggle');
-      btn.innerHTML = currentLang === 'en'
-        ? 'EN <span class="text-slate-600">|</span> <span class="text-slate-500">BM</span>'
-        : '<span class="text-slate-500">EN</span> <span class="text-slate-600">|</span> <span class="text-gold">BM</span>';
-      renderEntity();
-    }
-
-    function openAgentModal(tab) {
-      const modal = document.getElementById('agent-modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      showAgentTab(tab || currentEntity);
-    }
-
-    function closeAgentModal() {
-      const modal = document.getElementById('agent-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    function showAgentTab(tab) {
-      activeAgentTab = tab;
-      document.getElementById('agent-code-block').textContent = AGENT_FILES[tab];
-
-      const map = { malaysia: 'tab-json-my', petronas: 'tab-json-pet', llms: 'tab-llms' };
-      Object.entries(map).forEach(([k, id]) => {
-        const el = document.getElementById(id);
-        el.className = k === tab
-          ? 'px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-gold border border-gold/40'
-          : 'px-3 py-1 rounded-md text-xs font-mono text-slate-400 hover:text-white border border-transparent';
-      });
-    }
-
-    function copyAgentCode() {
-      try {
-        const text = AGENT_FILES[activeAgentTab];
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        showToast(`Copied ${activeAgentTab === 'llms' ? '/llms.txt' : activeAgentTab + '/state.json'}`);
-      } catch (err) {
-        showToast('Copy failed â please select text manually');
-      }
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.classList.remove('opacity-0');
-      toast.classList.add('opacity-100');
-      setTimeout(() => {
-        toast.classList.remove('opacity-100');
-        toast.classList.add('opacity-0');
-      }, 2400);
-    }
-
-    // Close modal on Escape key or backdrop click
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeAgentModal();
-    });
-    document.getElementById('agent-modal').addEventListener('click', (e) => {
-      if (e.target.id === 'agent-modal') closeAgentModal();
-    });
-
-    // Initialize on load
-    window.addEventListener('DOMContentLoaded', () => {
-      renderEntity();
-      updateControlButtons();
-      updateSimulator();
-    });
-  </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — dompet hari ini, tangki masa depan","dateModified":"2026-11-03","inLanguage":"ms","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2025 discoveries Megah-1 (Block 3K, 200-300 million barrels industry estimate) and Lebah Emas-1ST1 are not yet in the reserve book. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/petronas/"}
+</script>
 </body>
 </html>

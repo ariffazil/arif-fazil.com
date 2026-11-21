@@ -65,6 +65,13 @@ Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-ful
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
 - [Words / MakcikGPT (column)](https://arif-fazil.com/words/makcikgpt/): Civic commentary in Bahasa Makcik. A column inside the writing hub. Canonical article archive remains /world/makcikgpt/.
 
+## Economics — the capital & commodity door
+- [Economics](https://arif-fazil.com/economics/): The one door for the Economics domain — Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing, and the PETRONAS dossier.
+- [Daily briefing](https://arif-fazil.com/economics/briefing/): Live daily briefing — markets, policy, and the Malaysian economy in public numbers.
+- [Boards index](https://arif-fazil.com/world/economics/): Brent, gas, gold, FBM KLCI, USD/MYR — each board on its own URL.
+- [PETRONAS dossier](https://arif-fazil.com/petronas/): Dompet hari ini, tangki masa depan — the wallet and the tank, in audited public numbers.
+- [WEALTH cockpit](https://wealth.arif-fazil.com/): The live organ — sovereign capital & market synthesis.
+
 ## World — AI Agents 2027 dossier (forged 2026-09-18)
 - [Global dossier](https://arif-fazil.com/world/2027/): Five engines of chaos, ranked by likelihood × impact. What agentic AI actually does to trust, money, labour, and Malaysia.
 - [Malaysia slice](https://arif-fazil.com/world/2027/malaysia/): Tenant of the AI economy — energy, water, on-ramp.

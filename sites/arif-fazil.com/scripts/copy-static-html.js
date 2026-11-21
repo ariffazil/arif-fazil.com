@@ -34,6 +34,11 @@ const SPA_ROUTES = [
   "world/makcikgpt",
   "missions",
   "economics",
+  // 2026-11-22 FI-008 · the WEALTH daily briefing moved into the Economics
+  // domain tree at /economics/briefing/ (was the orphan /wealth-live/).
+  // Caddy serves /economics/* with try_files {path} {path}/index.html =404,
+  // so this route REQUIRES a built shell or it hard-404s.
+  "economics/briefing",
   "sanctuary",
   "graph",
   "evidence",
@@ -110,6 +115,12 @@ const ROUTE_META = {
     description: "Public-numbers research: PETRONAS vitals, Malaysian fiscal structure, commodities.",
     path: "/economics/",
     h1: "Research in Public Numbers",
+  },
+  "economics/briefing": {
+    title: "Daily Briefing — Malaysia Economics | Arif Fazil",
+    description: "Live daily economics briefing: markets, policy, and the Malaysian economy in public numbers.",
+    path: "/economics/briefing/",
+    h1: "Daily Briefing — Malaysia Economics",
   },
   missions: {
     title: "Missions — Arif Fazil",

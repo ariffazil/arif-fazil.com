@@ -140,7 +140,7 @@
       "type": "page",
       "priority": 0.9,
       "changefreq": "daily",
-      "description": "Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing"
+      "description": "The Economics door: Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing. One door for the domain — links the boards (/oil/ /gas/ /gold/ /world/economics/), the PETRONAS dossier (/petronas/), the daily briefing (/economics/briefing/) and the live WEALTH organ cockpit (wealth.arif-fazil.com)."
     },
     {
       "path": "/economics/article/:slug",
@@ -520,15 +520,15 @@
     },
     {
       "path": "/wealth/",
-      "title": "Wealth Capital (redirect → /vitals/)",
+      "title": "Wealth Capital (redirect → /economics/)",
       "mission": "interpret",
       "status": "redirect",
       "type": "redirect",
       "code": 308,
       "priority": 0.8,
       "changefreq": "daily",
-      "description": "Legacy alias. /wealth/ now redirects to /vitals/ — the canonical PETRONAS institutional vitals. Article paths /wealth/article/:slug already redirect to /economics/article/:slug. Added 2026-09-17 to close catalog/reality drift.",
-      "redirects_to": "/vitals/"
+      "description": "Legacy alias. /wealth/ redirects to /economics/ — the canonical Economics door (measured 2026-11-22: HTTP 308 → https://arif-fazil.com/economics/). Article paths /wealth/article/:slug already redirect to /economics/article/:slug.",
+      "redirects_to": "/economics/"
     },
     {
       "path": "/wealth/article/:slug",
@@ -1141,13 +1141,45 @@
     },
     {
       "path": "/world/petronas/",
-      "title": "PETRONAS — Dompet hari ini, tangki masa depan (Hub)",
-      "mission": "PETRONAS family hub: wallet-and-tank financial reality (ex-/vitals/), Kerusi Bayang leadership archive, Gentari clean-energy dossier. Bahasa Melayu.",
-      "status": "live",
-      "type": "hub",
+      "title": "PETRONAS (alias → /petronas/)",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 200,
       "priority": "0.7",
       "changefreq": "weekly",
-      "description": "Keluarga Bayang PETRONAS hub. Children: /world/petronas/shadow/ + /world/petronas/gentari/. Replaces /vitals/ (2026-10-23)."
+      "description": "Legacy alias of the PETRONAS dossier. From 2026-11-22 it serves a canonical redirect stub (HTTP 200 + meta refresh) instead of a second, thinner page. The edge 308 is prepared in the 888 Caddy proposal. Children reachable from the canonical page: /world/petronas/shadow/ (Kerusi Bayang).",
+      "redirects_to": "/petronas/"
+    },
+    {
+      "path": "/economics/briefing/",
+      "title": "Daily Briefing — Malaysia Economics | Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "daily",
+      "description": "Live daily economics briefing: markets, policy and the Malaysian economy in public numbers. Moved here 2026-11-22 from the orphan /wealth-live/ (which had no inbound links and canonicalised to /economics/)."
+    },
+    {
+      "path": "/world/economics/",
+      "title": "Economics boards — Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "hub",
+      "priority": 0.8,
+      "changefreq": "daily",
+      "description": "Boards index for the Economics domain: Brent (/oil/), gas (/gas/), gold (/gold/), FBM KLCI (/world/economics/klci/), USD/MYR (/world/economics/usdmyr/), the daily briefing (/economics/briefing/) and the PETRONAS dossier (/petronas/)."
+    },
+    {
+      "path": "/petronas/",
+      "title": "PETRONAS — Dompet hari ini, tangki masa depan",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "The PETRONAS dossier: wallet-and-tank financial reality in audited public numbers. Canonical for the subject — /world/petronas/ is an alias of this page."
     }
   ],
   "federation_subdomains": [
@@ -1202,5 +1234,5 @@
     "did": "did:web:arif-fazil.com"
   },
   "as_of": "2026-10-18T14:13:47Z",
-  "last_updated": "2026-10-22"
+  "last_updated": "2026-11-22"
 }

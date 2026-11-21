@@ -65,6 +65,9 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/words/makcikgpt/`, priority: 0.65, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/`, priority: 0.6, changefreq: "monthly" },
     { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
+    { loc: `${SITE_BASE}/economics/briefing/`, priority: 0.9, changefreq: "daily" },
+    { loc: `${SITE_BASE}/world/economics/`, priority: 0.8, changefreq: "daily" },
+    { loc: `${SITE_BASE}/petronas/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/economics/klci/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/world/economics/usdmyr/`, priority: 0.85, changefreq: "daily" },
     { loc: `${SITE_BASE}/gold/`, priority: 0.85, changefreq: "daily" },
@@ -111,7 +114,6 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/earth/kinabalu-basin.pdf`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
     { loc: `${SITE_BASE}/earth/kinabalu-cross-section.html`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
     { loc: `${SITE_BASE}/earth/malay-basin-cross-section.html`, priority: 0.7, changefreq: "monthly", lastmod: "2026-11-18" },
-    { loc: `${SITE_BASE}/world/petronas/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-18" },
   ];
   // Canonical landing first, then every onsite BM piece (M-series)
   urls.push({ loc: CANONICAL_LANDING, priority: 0.85, changefreq: "daily" });
@@ -215,6 +217,13 @@ Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-ful
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
 - [Words / MakcikGPT (column)](https://arif-fazil.com/words/makcikgpt/): Civic commentary in Bahasa Makcik. A column inside the writing hub. Canonical article archive remains /world/makcikgpt/.
 
+## Economics — the capital & commodity door
+- [Economics](https://arif-fazil.com/economics/): The one door for the Economics domain — Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing, and the PETRONAS dossier.
+- [Daily briefing](https://arif-fazil.com/economics/briefing/): Live daily briefing — markets, policy, and the Malaysian economy in public numbers.
+- [Boards index](https://arif-fazil.com/world/economics/): Brent, gas, gold, FBM KLCI, USD/MYR — each board on its own URL.
+- [PETRONAS dossier](https://arif-fazil.com/petronas/): Dompet hari ini, tangki masa depan — the wallet and the tank, in audited public numbers.
+- [WEALTH cockpit](https://wealth.arif-fazil.com/): The live organ — sovereign capital & market synthesis.
+
 ## World — AI Agents 2027 dossier (forged 2026-09-18)
 - [Global dossier](https://arif-fazil.com/world/2027/): Five engines of chaos, ranked by likelihood × impact. What agentic AI actually does to trust, money, labour, and Malaysia.
 - [Malaysia slice](https://arif-fazil.com/world/2027/malaysia/): Tenant of the AI economy — energy, water, on-ramp.
@@ -275,7 +284,10 @@ function buildLlmsJson(pieces) {
     "/000/": "genesis and wisdom archive — origin context for agents",
     "/999/": "trust and proof chamber — verification artifacts",
     "/laws/": "Core Laws — F1–F13 constitutional floors and evidence mappings",
-    "/wealth/": "WEALTH daily briefing — Bursa, Ringgit, oil, macro intelligence",
+    "/economics/": "The Economics door — Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing",
+    "/economics/briefing/": "WEALTH daily briefing — markets, policy, and the Malaysian economy in public numbers",
+    "/world/economics/": "Economics boards index — Brent, gas, gold, FBM KLCI, USD/MYR",
+    "/petronas/": "PETRONAS dossier — dompet hari ini, tangki masa depan; audited public numbers",
     "/world/makcikgpt/":
       "MakcikGPT civic intelligence — BM articles on sovereignty, governance, technology accountability (canonical landing)",
     "/world/politics/shadow/": "PM Bayang — Jungian shadow analysis of all 9 Malaysian Prime Ministers (Persona / Bayang / Tragedi / Legasi)",

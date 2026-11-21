@@ -61,7 +61,6 @@ const WealthArticle = lazy(() => import('@/pages/WealthArticle').then(m => ({ de
 const PoliticsHub = lazy(() => import('@/pages/PoliticsHub').then(m => ({ default: m.PoliticsHub })));
 const NSElectionPage = lazy(() => import('@/pages/NSElectionPage').then(m => ({ default: m.NSElectionPage })));
 const PlaybookPage = lazy(() => import('@/pages/PlaybookPage').then(m => ({ default: m.PlaybookPage })));
-const AnwarIbrahim33 = lazy(() => import('@/pages/AnwarIbrahim33').then(m => ({ default: m.AnwarIbrahim33 })));
 const ShadowPMs = lazy(() => import('@/pages/ShadowPMs').then(m => ({ default: m.ShadowPMs })));
 const ShadowBoard = lazy(() => import('@/pages/ShadowBoard').then(m => ({ default: m.ShadowBoard })));
 const DeritaMap = lazy(() => import('@/pages/DeritaMap').then(m => ({ default: m.DeritaMap })));
@@ -278,8 +277,18 @@ function FederationChrome() {
             <Route path="/economics/" element={<Economics />} />
             <Route path="/wealth" element={<Navigate to="/economics" replace />} />
             <Route path="/wealth/" element={<Navigate to="/economics" replace />} />
-            <Route path="/wealth-live" element={<Wealth />} />
-            <Route path="/wealth-live/" element={<Wealth />} />
+            {/* 2026-11-22 FI-008 · one door for the Economics domain.
+                The daily briefing was served at /wealth-live/ — an orphan (no inbound
+                links, absent from surfaces.json) whose own canonical pointed at
+                /economics/. It now lives inside the domain tree at
+                /economics/briefing/, and the legacy path converges on it.
+                /economics/* is served by Caddy with try_files {path} {path}/index.html
+                =404, so the route needs a built shell at dist/economics/briefing/ —
+                that is what the SPA_ROUTES entry in scripts/copy-static-html.js does. */}
+            <Route path="/economics/briefing" element={<Wealth />} />
+            <Route path="/economics/briefing/" element={<Wealth />} />
+            <Route path="/wealth-live" element={<Navigate to="/economics/briefing/" replace />} />
+            <Route path="/wealth-live/" element={<Navigate to="/economics/briefing/" replace />} />
             <Route path="/wealth/article/:slug" element={<WealthArticle />} />
             <Route path="/economics/article/:slug" element={<WealthArticle />} />
             <Route path="/wealth/makcikgpt" element={<Navigate to="/world/makcikgpt" replace />} />
@@ -296,7 +305,17 @@ function FederationChrome() {
             <Route path="/politics/ns-election/" element={<NSElectionPage />} />
             <Route path="/politics/ns-election/playbook" element={<PlaybookPage />} />
             <Route path="/politics/ns-election/playbook/" element={<PlaybookPage />} />
-            <Route path="/politics/shadow/anwar-ibrahim" element={<AnwarIbrahim33 />} />
+            {/* 2026-11-22 FI-008 · category alignment. The canonical home of the Anwar
+                dossier is /world/politics/shadow/anwar-ibrahim/ (static surface; see
+                public/world/politics/shadow/anwar-ibrahim/index.html + llms.txt +
+                sitemap.xml + surfaces.json). The legacy /politics/shadow/anwar-ibrahim
+                path is an ALIAS and must converge on the canonical surface — it must
+                never render a second, divergent article. The React "33 Tensions"
+                editorial (src/data/anwarShadows33.ts) was a stale fork that was
+                never live-served (the static page shadowed it); it is retired as a
+                route. See src/pages/AnwarIbrahim33.tsx header. */}
+            <Route path="/politics/shadow/anwar-ibrahim" element={<CanonicalRedirect to="/world/politics/shadow/anwar-ibrahim/" />} />
+            <Route path="/politics/shadow/anwar-ibrahim/" element={<CanonicalRedirect to="/world/politics/shadow/anwar-ibrahim/" />} />
             <Route path="/politics/shadow" element={<ShadowPMs />} />
             <Route path="/politics/shadow/" element={<ShadowPMs />} />
             <Route path="/politics/shadow/board" element={<ShadowBoard />} />
@@ -358,6 +377,24 @@ function EarthGlobeRedirect() {
   return (
     <div className="mx-auto max-w-[40rem] px-6 py-24 font-mono text-sm text-[#9AA0A8]">
       Loading EARTH globe… <a className="text-[#E4572E] underline" href="/earth/">Continue →</a>
+    </div>
+  );
+}
+
+// 2026-11-22 FI-008 · category alignment.
+// A legacy alias URL that must converge on its canonical surface. Uses a FULL page
+// load (window.location.replace) rather than a client-side <Navigate>, because the
+// canonical surface is a static HTML page: a client-side push would ask the SPA
+// router to render it, and the SPA has no route for it (Caddy serves /world/politics/*
+// statically with `=404`, so the SPA never sees that path). Guarded against the
+// self-redirect loop: if we are already at the target we render the link only.
+function CanonicalRedirect({ to }: { to: string }) {
+  if (typeof window !== 'undefined' && window.location.pathname !== to) {
+    window.location.replace(to);
+  }
+  return (
+    <div className="mx-auto max-w-[40rem] px-6 py-24 font-mono text-sm text-[#9AA0A8]">
+      Memindahkan ke <a className="text-[#E4572E] underline" href={to}>{to}</a>…
     </div>
   );
 }

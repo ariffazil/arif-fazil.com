@@ -394,12 +394,21 @@ def plan_and_snapshot(
     # 1. Primary webroot mutations (full diff between stage_dir and current webroot)
     stage_entries = _walk_tree(stage_dir)
     live_entries = _walk_tree(webroot)
+    forbidden_primary = [
+        Path("/var/www/html/arifos"),
+        Path("/var/www/html/arif/arifos"),
+        Path(os.path.abspath(str(html_root / "arifos"))),
+        Path(os.path.abspath(str(webroot / "arifos"))),
+    ]
     for rel in sorted(set(stage_entries) | set(live_entries)):
+        target_candidate = webroot / rel
+        if any(_is_under(target_candidate, fb) for fb in forbidden_primary):
+            continue
         _add_pair(
             items,
             seen_targets,
             stage_entries.get(rel),
-            webroot / rel,
+            target_candidate,
             "index_shell" if rel.endswith("index.html") else "primary",
             html_root,
             webroot,

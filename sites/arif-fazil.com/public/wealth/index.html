@@ -53,19 +53,25 @@
 </head>
 <body class="bg-obsidian text-slate-200 font-sans antialiased selection:bg-gold/30 selection:text-white min-h-screen flex flex-col justify-between">
 
-  <!-- Header -->
-  <header class="border-b border-slate-800 bg-obsidian/90 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
+  <!-- Global Sticky Nav -->
+  <header class="sticky top-0 z-50 border-b border-slate-800 bg-obsidian/95 backdrop-blur px-6 py-3">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded bg-slate-900 border border-slate-700 flex items-center justify-center font-mono text-xs font-bold text-gold">AF</div>
-        <div class="font-mono text-xs text-slate-400">
-          <span class="text-white font-semibold">arifOS</span> / <span class="text-gold">WEALTH HUB</span>
-        </div>
+        <a href="/" class="w-8 h-8 rounded bg-slate-900 border border-slate-700 flex items-center justify-center font-bold text-gold hover:border-gold transition">AF</a>
+        <nav class="flex items-center gap-2 text-slate-400">
+          <a href="/" class="hover:text-white transition">L0 Utama</a>
+          <span>›</span>
+          <span class="text-gold font-bold">L1 Wealth Hub</span>
+        </nav>
       </div>
-      <div class="flex items-center gap-3 text-xs font-mono text-slate-400">
-        <span class="text-emerald-400">● POST-BUDGET 2027</span>
-        <a href="/llms.txt" class="text-gold hover:underline">/llms.txt</a>
-      </div>
+      <nav class="flex items-center gap-4 text-slate-400">
+        <a href="/map/" class="text-sky-400 hover:underline flex items-center gap-1"><span>🗺</span> Peta /map/</a>
+        <a href="/wealth/malaysia/" class="text-gold hover:underline">Putrajaya</a>
+        <a href="/petronas/" class="text-emerald-400 hover:underline">KLCC</a>
+        <a href="/world/petronas/shadow/" class="hover:text-white transition">Kerusi Bayang</a>
+        <a href="/earth/" class="text-cyan-400 hover:underline">Earth</a>
+        <a href="/llms.txt" class="text-amber-400 hover:underline font-bold">🤖 /llms.txt</a>
+      </nav>
     </div>
   </header>
 
@@ -126,7 +132,7 @@
 
     <!-- Executive Conduit Link -->
     <div class="mt-12 text-center">
-      <a href="/politics/shadow/anwar-ibrahim" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-gold transition bg-panel/60 border border-slate-800 px-4 py-2 rounded-full">
+      <a href="/world/politics/shadow/anwar-ibrahim/" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-gold transition bg-panel/60 border border-slate-800 px-4 py-2 rounded-full">
         <span>Executive Conduit:</span>
         <strong class="text-white">Anwar Ibrahim (Dual PM &amp; Finance Minister)</strong>
         <span class="text-gold">↗</span>
@@ -134,9 +140,26 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800/80 bg-panel/30 py-6 text-center text-xs font-mono text-slate-500">
-    arifOS · WEALTH · Ditempa Bukan Diberi (ΔS ≤ 0)
+  <!-- Closed-Loop Footer -->
+  <footer class="border-t border-slate-800/80 bg-panel/40 py-8 px-6 text-center text-xs font-mono text-slate-400">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 mb-4 text-slate-300">
+        <a href="/" class="hover:text-white transition">← L0 Utama</a>
+        <span class="text-slate-600">·</span>
+        <a href="/wealth/malaysia/" class="text-gold hover:underline">Putrajaya Sovereign Ledger</a>
+        <span class="text-slate-600">·</span>
+        <a href="/petronas/" class="text-emerald-400 hover:underline">KLCC Hydrocarbon Engine</a>
+        <span class="text-slate-600">·</span>
+        <a href="/world/petronas/shadow/" class="text-teal-400 hover:underline">Kerusi Bayang</a>
+        <span class="text-slate-600">·</span>
+        <a href="/map/" class="text-sky-400 hover:underline">🗺 Peta Sistem /map/</a>
+        <span class="text-slate-600">·</span>
+        <a href="/llms.txt" class="text-amber-400 hover:underline font-bold">🤖 /llms.txt</a>
+      </div>
+      <div class="text-slate-500">
+        arifOS · WEALTH · Model Institusi Berganding (Putrajaya ⇋ KLCC) · Ditempa Bukan Diberi (ΔS ≤ 0)
+      </div>
+    </div>
   </footer>
 
 </body>

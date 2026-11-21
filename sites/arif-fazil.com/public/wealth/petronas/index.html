@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://arif-fazil.com/petronas/" />
+  <title>arifOS · WEALTH — PETRONAS / KLCC (Hydrocarbon Engine)</title><!-- arifOS Â· WEALTH â Putrajaya â KLCC Coupled Architecture</title>
+
+  <!-- Machine-First Discovery Links (Agentic Parity Layer) -->
+  <link rel="alternate" type="application/json" href="https://arif-fazil.com/wealth/malaysia/state.json" title="Malaysia Sovereign State JSON" />
+  <link rel="alternate" type="text/markdown" href="https://arif-fazil.com/wealth/malaysia/brief.md" title="Malaysia Sovereign Brief Markdown" />
+  <link rel="alternate" type="application/json" href="https://arif-fazil.com/wealth/petronas/state.json" title="PETRONAS Corporate State JSON" />
+  <link rel="alternate" type="text/markdown" href="https://arif-fazil.com/wealth/petronas/brief.md" title="PETRONAS Corporate Brief Markdown" />
+  <link rel="alternate" type="text/plain" href="https://arif-fazil.com/llms.txt" title="arifOS Master Agentic Index" />
+
+  <!-- Fonts: Inter (UI/Narrative) + JetBrains Mono (Telemetry/Data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#080A0F',
+            panel: '#10141D',
+            panelLight: '#161C28',
+            gold: '#D4AF37',
+            goldSoft: 'rgba(212, 175, 55, 0.14)',
+            emeraldSafe: '#10B981',
+            crimsonVoid: '#EF4444',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Subtle architectural grid background & custom range slider styling */
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #EF4444 0%, #D4AF37 50%, #10B981 100%);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -7px;
+      background-color: #F8FAFC;
+      border: 2px solid #D4AF37;
+      height: 20px;
+      width: 20px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Smooth tab fade */
+    .fade-in {
+      animation: fadeIn 0.28s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="bg-obsidian text-slate-200 font-sans antialiased selection:bg-gold/30 selection:text-white overflow-x-hidden">
+
+  <!-- ===================================================================== -->
+  <!-- STICKY HEADER: BRAND + PUTRAJAYA <-> KLCC MIRROR SWITCHER + AGENTIC   -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-obsidian/85 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Brand / Breadcrumb -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center font-mono text-xs font-bold text-gold">
+          AF
+        </div>
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-slate-400">
+            <span class="text-slate-200 font-semibold">arifOS</span>
+            <span>/</span>
+            <span class="text-gold">WEALTH</span>
+            <span class="hidden sm:inline text-slate-600">Â·</span>
+            <span id="header-path" class="hidden sm:inline text-slate-300">/wealth/malaysia/</span>
+          </div>
+          <p class="text-[11px] text-slate-500 hidden md:block">Coupled SovereignâCorporate Architecture Â· Sealed 2026-11-22</p>
+        </div>
+      </div>
+
+      <!-- Central Mirrored Switcher Pill -->
+      <div class="flex items-center bg-panel border border-slate-700/80 rounded-full p-1 shadow-lg order-3 sm:order-2 w-full sm:w-auto justify-center" role="tablist" aria-label="Switch institutional mirror">
+        <button
+          id="btn-switch-malaysia"
+          onclick="switchEntity('malaysia')"
+          role="tab"
+          aria-selected="true"
+          class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 bg-slate-800 text-white border border-gold/50 shadow-sm"
+        >
+          <span class="w-2 h-2 rounded-full bg-gold"></span>
+          <span>PUTRAJAYA</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-gold/15 text-gold hidden md:inline">45 HOLD</span>
+        </button>
+
+        <span class="px-1.5 text-slate-600 font-mono text-xs select-none" title="Coupled System">â</span>
+
+        <button
+          id="btn-switch-petronas"
+          onclick="switchEntity('petronas')"
+          role="tab"
+          aria-selected="false"
+          class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 text-slate-400 hover:text-slate-200 border border-transparent"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>KLCC</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hidden md:inline">7.92B boe</span>
+        </button>
+      </div>
+
+      <!-- Right Controls: Language Toggle + Agentic Feed -->
+      <div class="flex items-center gap-2 order-2 sm:order-3">
+        <button
+          id="btn-lang-toggle"
+          onclick="toggleLanguage()"
+          class="px-2.5 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-700/80 text-xs font-mono text-slate-300 transition"
+          title="Toggle English / Bahasa Melayu labels"
+        >
+          EN <span class="text-slate-600">|</span> <span class="text-slate-500">BM</span>
+        </button>
+
+        <button
+          onclick="openAgentModal('malaysia')"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-xs font-mono font-medium text-gold transition"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
+          <span>JSON / llms.txt</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- BAND 0: HERO MONUMENT (PUTRAJAYA OR KLCC) + 4-METRIC HUD + PROXIES    -->
+  <!-- ===================================================================== -->
+  <section id="hero-section" class="relative overflow-hidden border-b border-slate-800/80 bg-obsidian">
+    <!-- Atmospheric Grid Overlay -->
+    <div class="absolute inset-0 bg-grid-pattern pointer-events-none opacity-60"></div>
+
+    <!-- HERO SVG BACKDROP: PUTRAJAYA (Perdana Putra + Putra Bridge Reflection) -->
+    <div id="hero-bg-malaysia" class="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-obsidian/65 to-obsidian"></div>
+      <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" class="w-full h-full object-cover opacity-55">
+        <defs>
+          <radialGradient id="putrajayaGlow" cx="50%" cy="38%" r="48%">
+            <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.22" />
+            <stop offset="55%" stop-color="#1E293B" stop-opacity="0.18" />
+            <stop offset="100%" stop-color="#080A0F" stop-opacity="0" />
+          </radialGradient>
+          <linearGradient id="domeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#334155" stop-opacity="0.25" />
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="520" fill="url(#putrajayaGlow)" />
+        <!-- Horizon & Lake Line -->
+        <line x1="0" y1="360" x2="1440" y2="360" stroke="#334155" stroke-width="1" stroke-dasharray="4 6" />
+        <!-- Perdana Putra Main Structure -->
+        <g stroke="#94A3B8" stroke-width="1.2" fill="#0F172A" fill-opacity="0.85">
+          <!-- Symmetrical Wings -->
+          <rect x="420" y="255" width="600" height="105" rx="2" />
+          <rect x="490" y="215" width="460" height="40" />
+          <rect x="610" y="185" width="220" height="30" />
+          <!-- Left & Right Smaller Domes -->
+          <path d="M510 215 Q540 160 570 215 Z" fill="url(#domeGrad)" stroke="#D4AF37" stroke-opacity="0.6" />
+          <path d="M870 215 Q900 160 930 215 Z" fill="url(#domeGrad)" stroke="#D4AF37" stroke-opacity="0.6" />
+          <!-- Central Main Onion Dome -->
+          <path d="M645 185 C645 120 700 95 720 68 C740 95 795 120 795 185 Z" fill="url(#domeGrad)" stroke="#D4AF37" stroke-width="1.5" />
+          <line x1="720" y1="68" x2="720" y2="42" stroke="#D4AF37" stroke-width="1.8" />
+          <!-- Colonnade Arches -->
+          <g stroke="#475569" stroke-width="1">
+            <line x1="460" y1="255" x2="460" y2="360" /><line x1="500" y1="255" x2="500" y2="360" />
+            <line x1="540" y1="255" x2="540" y2="360" /><line x1="580" y1="255" x2="580" y2="360" />
+            <line x1="620" y1="255" x2="620" y2="360" /><line x1="660" y1="255" x2="660" y2="360" />
+            <line x1="780" y1="255" x2="780" y2="360" /><line x1="820" y1="255" x2="820" y2="360" />
+            <line x1="860" y1="255" x2="860" y2="360" /><line x1="900" y1="255" x2="900" y2="360" />
+            <line x1="940" y1="255" x2="940" y2="360" /><line x1="980" y1="255" x2="980" y2="360" />
+          </g>
+        </g>
+        <!-- Putra Bridge Arches -->
+        <g stroke="#475569" stroke-width="1.2" fill="none">
+          <path d="M0 360 Q140 315 280 360" />
+          <path d="M280 360 Q350 330 420 360" />
+          <path d="M1020 360 Q1090 330 1160 360" />
+          <path d="M1160 360 Q1300 315 1440 360" />
+        </g>
+        <!-- Subtle Water Reflection Lines -->
+        <g stroke="#D4AF37" stroke-opacity="0.16" stroke-width="1">
+          <line x1="640" y1="382" x2="800" y2="382" />
+          <line x1="665" y1="400" x2="775" y2="400" />
+          <line x1="690" y1="418" x2="750" y2="418" />
+          <line x1="510" y1="392" x2="570" y2="392" />
+          <line x1="870" y1="392" x2="930" y2="392" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- HERO SVG BACKDROP: KLCC (Petronas Twin Towers + Skybridge) -->
+    <div id="hero-bg-petronas" class="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/35 via-obsidian/65 to-obsidian"></div>
+      <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" class="w-full h-full object-cover opacity-60">
+        <defs>
+          <radialGradient id="klccGlow" cx="50%" cy="30%" r="45%">
+            <stop offset="0%" stop-color="#10B981" stop-opacity="0.18" />
+            <stop offset="45%" stop-color="#D4AF37" stop-opacity="0.12" />
+            <stop offset="100%" stop-color="#080A0F" stop-opacity="0" />
+          </radialGradient>
+          <linearGradient id="towerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#E2E8F0" stop-opacity="0.32" />
+            <stop offset="60%" stop-color="#334155" stop-opacity="0.22" />
+            <stop offset="100%" stop-color="#080A0F" stop-opacity="0.8" />
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="520" fill="url(#klccGlow)" />
+        <!-- Twin Towers Geometric Blueprint -->
+        <g stroke="#94A3B8" stroke-width="1.2" fill="url(#towerGrad)">
+          <!-- Tower 1 (Left) -->
+          <rect x="575" y="190" width="84" height="330" />
+          <rect x="585" y="145" width="64" height="45" />
+          <rect x="595" y="108" width="44" height="37" />
+          <polygon points="602,108 617,74 632,108" stroke="#D4AF37" stroke-opacity="0.85" />
+          <line x1="617" y1="74" x2="617" y2="28" stroke="#D4AF37" stroke-width="1.8" />
+
+          <!-- Tower 2 (Right) -->
+          <rect x="781" y="190" width="84" height="330" />
+          <rect x="791" y="145" width="64" height="45" />
+          <rect x="801" y="108" width="44" height="37" />
+          <polygon points="808,108 823,74 838,108" stroke="#D4AF37" stroke-opacity="0.85" />
+          <line x1="823" y1="74" x2="823" y2="28" stroke="#D4AF37" stroke-width="1.8" />
+
+          <!-- Skybridge (Levels 41-42) -->
+          <rect x="659" y="278" width="122" height="14" fill="#0F172A" stroke="#D4AF37" stroke-width="1.4" />
+          <line x1="659" y1="340" x2="720" y2="292" stroke="#D4AF37" stroke-opacity="0.7" stroke-width="1.2" />
+          <line x1="781" y1="340" x2="720" y2="292" stroke="#D4AF37" stroke-opacity="0.7" stroke-width="1.2" />
+        </g>
+        <!-- Horizontal Tier Rings -->
+        <g stroke="#475569" stroke-width="0.9" stroke-dasharray="3 3">
+          <line x1="575" y1="230" x2="659" y2="230" /><line x1="781" y1="230" x2="865" y2="230" />
+          <line x1="575" y1="320" x2="659" y2="320" /><line x1="781" y1="320" x2="865" y2="320" />
+          <line x1="575" y1="380" x2="659" y2="380" /><line x1="781" y1="380" x2="865" y2="380" />
+        </g>
+        <!-- Surrounding KL Skyline Hints -->
+        <g stroke="#1E293B" stroke-width="1" fill="#0B0F17" fill-opacity="0.7">
+          <rect x="340" y="340" width="60" height="180" />
+          <rect x="420" y="380" width="85" height="140" />
+          <rect x="935" y="360" width="75" height="160" />
+          <rect x="1030" y="320" width="55" height="200" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Hero Foreground Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <!-- Epistemic & Freshness Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="hero-coords" class="px-2.5 py-1 rounded-md bg-panel/90 border border-slate-700/80 text-[11px] font-mono text-slate-300">
+            2.9384Â° N, 101.6915Â° E Â· PUTRAJAYA
+          </span>
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-400">
+            SEALED: 2026-11-22 (POST-BUDGET 2027)
+          </span>
+          <span id="hero-epistemic-badge" class="px-2.5 py-1 rounded-md bg-gold/10 border border-gold/30 text-[11px] font-mono text-gold">
+            TAG: [OBS] / [DER] / [INT]
+          </span>
+        </div>
+
+        <!-- Separate Live Market Proxy Ticker (Never Confused With Sealed Data) -->
+        <div class="flex items-center gap-3 px-3 py-1 rounded-md bg-obsidian/90 border border-slate-800 text-[11px] font-mono">
+          <span class="flex items-center gap-1.5 text-emerald-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            LIVE PROXIES
+          </span>
+          <span class="text-slate-400">BRENT <strong class="text-white">$93.23</strong></span>
+          <span class="text-slate-600">|</span>
+          <span class="text-slate-400">USD/MYR <strong class="text-white">4.09</strong></span>
+          <span class="hidden md:inline text-slate-600">|</span>
+          <span class="hidden md:inline text-slate-400">KLCI <strong class="text-white">1,575</strong></span>
+        </div>
+      </div>
+
+      <!-- Hero Title & Core Tension -->
+      <div class="max-w-3xl mb-8">
+        <p id="hero-kicker" class="text-xs font-mono uppercase tracking-[0.2em] text-gold mb-2">
+          THE SOVEREIGN LEDGER Â· FEDERAL DISTANCE-TO-BREAK
+        </p>
+        <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">
+          Malaysia Â· Putrajaya
+        </h1>
+        <p id="hero-subtitle" class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          One nation. Three pillars. Nine tripwires. Macro stability on the surfaceânarrowing fiscal headroom underneath. Coupled directly to KLCCâs dividend valve and Sarawakâs constitutional clock.
+        </p>
+      </div>
+
+      <!-- 4-METRIC HUD (Synced to Active Entity) -->
+      <div id="hero-hud" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" data-temporal="present" data-sealed="2026-11-22">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN CONTENT: MIRRORED 4-BAND TEMPORAL FLOW                           -->
+  <!-- ===================================================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- Quick Section Jump Nav -->
+    <nav class="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-800/80 text-xs font-mono">
+      <a href="#band-past" class="px-3 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-800 text-slate-300 transition">01 Â· PAST (Trajectory)</a>
+      <a href="#band-present" class="px-3 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-800 text-slate-300 transition">02 Â· PRESENT (Surface vs Subsurface)</a>
+      <a href="#band-coupling" class="px-3 py-1.5 rounded-lg bg-gold/10 hover:bg-gold/20 border border-gold/40 text-gold transition">03 Â· COUPLING SIMULATOR (Putrajaya â KLCC)</a>
+      <a href="#band-future" class="px-3 py-1.5 rounded-lg bg-panel hover:bg-panelLight border border-slate-800 text-slate-300 transition">04 Â· FUTURE (Gates & CHRON)</a>
+    </nav>
+
+    <!-- =================================================================== -->
+    <!-- BAND 1: THE PAST â TRAJECTORY & SEDIMENT (SPARKLINES)               -->
+    <!-- =================================================================== -->
+    <section id="band-past" data-temporal="past" class="scroll-mt-24 fade-in">
+      <div class="flex flex-wrap items-end justify-between gap-2 mb-4">
+        <div>
+          <span class="text-[11px] font-mono uppercase tracking-widest text-slate-400">BAND 01 Â· TEMPORAL SEDIMENT</span>
+          <h2 id="past-heading" class="text-xl sm:text-2xl font-bold text-white mt-0.5">The Past: Direction of Travel (2022â2026)</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-500">Rate of change matters more than single-year snapshots</span>
+      </div>
+
+      <div id="past-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- BAND 2: THE PRESENT â SURFACE VS SUBSURFACE DIAGNOSTIC              -->
+    <!-- =================================================================== -->
+    <section id="band-present" data-temporal="present" class="scroll-mt-24 fade-in">
+      <div class="flex flex-wrap items-end justify-between gap-2 mb-4">
+        <div>
+          <span class="text-[11px] font-mono uppercase tracking-widest text-emerald-400">BAND 02 Â· SEALED AUDIT (2026-11-22)</span>
+          <h2 id="present-heading" class="text-xl sm:text-2xl font-bold text-white mt-0.5">The Present: Surface Liquidity vs. Subsurface Weight</h2>
+        </div>
+        <button id="present-mirror-btn" onclick="toggleEntity()" class="text-xs font-mono text-gold hover:underline flex items-center gap-1">
+          <span>Flip to KLCC Mirror</span> <span>â</span>
+        </button>
+      </div>
+
+      <div id="present-content-container">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- BAND 3: THE COUPLING BRIDGE â SHARED INTERACTIVE SIMULATOR          -->
+    <!-- =================================================================== -->
+    <section id="band-coupling" data-temporal="simulation" data-epistemic="[INT]" class="scroll-mt-24 rounded-2xl bg-gradient-to-b from-panel to-obsidian border border-gold/30 p-5 sm:p-7 shadow-2xl">
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded bg-gold/15 border border-gold/30 text-[10px] font-mono text-gold font-semibold">SHARED COUPLING ENGINE</span>
+            <span class="text-[11px] font-mono text-slate-400">INTERPRET Â· SEALED ANCHORS UNCHANGED</span>
+          </div>
+          <h2 id="sim-heading" class="text-xl sm:text-2xl font-bold text-white">Putrajaya â KLCC Coupling Simulator (2027)</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
+            Drag Brent crude or toggle the January 2027 Federal Court outcome. Watch how Malaysiaâs fuel subsidy seesaw (<span class="font-mono text-slate-200">Â±RM5.1B/$10</span>) and PETRONASâs dividend floor (<span class="font-mono text-gold">$67.34/bbl</span>) transmit directly into the 65% federal debt ceiling.
+          </p>
+        </div>
+
+        <!-- Quick Presets -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setSimPreset(65, 'coexist', 'flat')" class="px-2.5 py-1.5 rounded-lg bg-crimsonVoid/15 hover:bg-crimsonVoid/25 border border-crimsonVoid/40 text-xs font-mono text-red-300 transition">$65 Floor Break</button>
+          <button onclick="setSimPreset(85, 'coexist', 'flat')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-mono text-slate-200 transition">$85 Budget Base</button>
+          <button onclick="setSimPreset(95, 'coexist', 'topup')" class="px-2.5 py-1.5 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-xs font-mono text-gold transition">$95 + RM38B Top-Up</button>
+        </div>
+      </div>
+
+      <!-- Simulator Controls -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6 bg-obsidian/70 border border-slate-800 rounded-xl p-4">
+        <!-- Control 1: Brent Slider -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label for="slider-brent" class="text-xs font-mono text-slate-300">2027 AVG BRENT CRUDE</label>
+            <span id="sim-brent-val" class="text-sm font-mono font-bold text-gold">$85 /bbl</span>
+          </div>
+          <input id="slider-brent" type="range" min="55" max="110" step="1" value="85" oninput="updateSimulator()" class="w-full" />
+          <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5">
+            <span>$55</span>
+            <span class="text-red-400">Floor $67.34</span>
+            <span>Base $85</span>
+            <span>$110</span>
+          </div>
+        </div>
+
+        <!-- Control 2: Sarawak Federal Court Outcome -->
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-2">JAN 2027 FEDERAL COURT (SARAWAK)</label>
+          <div class="grid grid-cols-3 gap-1.5">
+            <button id="court-coexist" onclick="setCourtMode('coexist')" class="px-2 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition">Coexistence</button>
+            <button id="court-federal" onclick="setCourtMode('federal')" class="px-2 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition">Federal Win</button>
+            <button id="court-sarawak" onclick="setCourtMode('sarawak')" class="px-2 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition">SWK Sweep</button>
+          </div>
+          <p id="sim-court-note" class="text-[11px] text-slate-500 mt-1.5">Base: Petros domestic aggregator; PETRONAS retains MLNG & upstream.</p>
+        </div>
+
+        <!-- Control 3: KLCC Dividend Extraction Mode -->
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-2">KLCC DIVIDEND EXTRACTION VALVE</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button id="div-flat" onclick="setDivMode('flat')" class="px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition">Rule-Based (Cap RM32B)</button>
+            <button id="div-topup" onclick="setDivMode('topup')" class="px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition">Jalan D (MoF Top-Up)</button>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-1.5">At Brent &gt;$90, Jalan D pulls up to RM38B to offset subsidy bloat.</p>
+        </div>
+      </div>
+
+      <!-- Mirrored Side-by-Side Live Outputs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- LEFT OUTPUT: PUTRAJAYA -->
+        <div id="sim-putrajaya-box" class="rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
+              <h3 class="font-mono text-sm font-bold text-white">PUTRAJAYA Â· FEDERAL LEDGER</h3>
+            </div>
+            <span id="sim-debt-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-gold/15 text-gold">HEADROOM +1.30pp</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
+              <div class="text-[11px] font-mono text-slate-400">2027 FISCAL DEFICIT</div>
+              <div id="sim-deficit-pct" class="text-xl font-mono font-bold text-white mt-0.5">3.30%</div>
+              <div id="sim-deficit-rm" class="text-[11px] font-mono text-slate-500">RM 77.5B</div>
+            </div>
+            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
+              <div class="text-[11px] font-mono text-slate-400">END-2027 DEBT / GDP</div>
+              <div id="sim-debt-pct" class="text-xl font-mono font-bold text-gold mt-0.5">63.70%</div>
+              <div class="text-[11px] font-mono text-slate-500">Statutory Cap: 65.0%</div>
+            </div>
+          </div>
+
+          <div class="space-y-1.5 text-xs font-mono">
+            <div class="flex justify-between">
+              <span class="text-slate-400">BUDI95 + Diesel Subsidy Bill:</span>
+              <span id="sim-subsidy" class="text-slate-200">RM 40.0B</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Non-Dividend Pet Tax / Royalty:</span>
+              <span id="sim-pet-tax" class="text-slate-200">RM 29.2B</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT OUTPUT: KLCC -->
+        <div id="sim-klcc-box" class="rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+              <h3 class="font-mono text-sm font-bold text-white">KLCC Â· PETRONAS ENGINE</h3>
+            </div>
+            <span id="sim-klcc-path" class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-800 text-slate-200">JALAN C + D</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
+              <div class="text-[11px] font-mono text-slate-400">2027 DIVIDEND PAYOUT</div>
+              <div id="sim-div-rm" class="text-xl font-mono font-bold text-white mt-0.5">RM 32.0B</div>
+              <div id="sim-div-note" class="text-[11px] font-mono text-slate-500">Matches Budget 2027</div>
+            </div>
+            <div class="bg-obsidian/70 rounded-lg p-3 border border-slate-800/80">
+              <div class="text-[11px] font-mono text-slate-400">PROJECTED GEARING</div>
+              <div id="sim-gearing" class="text-xl font-mono font-bold text-emerald-400 mt-0.5">25.5%</div>
+              <div class="text-[11px] font-mono text-slate-500">Post-PRefChem (Trip 40%)</div>
+            </div>
+          </div>
+
+          <div class="space-y-1.5 text-xs font-mono">
+            <div class="flex justify-between">
+              <span class="text-slate-400">Capex Replenishment Headroom:</span>
+              <span id="sim-capex-status" class="text-gold">Constrained (RRR 0.3)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">2P Reserve Book Risk:</span>
+              <span id="sim-reserve-risk" class="text-slate-200">7.92B boe (EnQuest -138M)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- BAND 4: THE FUTURE â HARD CALENDAR GATES + CHRON LEDGER             -->
+    <!-- =================================================================== -->
+    <section id="band-future" data-temporal="future" class="scroll-mt-24 space-y-6">
+      <div>
+        <span class="text-[11px] font-mono uppercase tracking-widest text-gold">BAND 04 Â· SYNCHRONIZED CALENDAR GATES (2026â2028)</span>
+        <h2 id="future-heading" class="text-xl sm:text-2xl font-bold text-white mt-0.5">The Future: Falsifiable Dates, Not Speculation</h2>
+      </div>
+
+      <!-- 5-Gate Horizontal / Responsive Timeline -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-mono text-gold font-semibold">31 DEC 2026</span>
+            <h3 class="text-sm font-bold text-white mt-1">EnQuest Farm-Out</h3>
+            <p class="text-xs text-slate-400 mt-1.5">Balingian/SK8/D35 transfer closes. Effective 1 Jan 2027: <span class="text-slate-200 font-mono">-138 MMboe 2P</span> & <span class="text-slate-200 font-mono">~55â60 kboe/d</span> off PETRONAS direct books.</p>
+          </div>
+          <span class="mt-3 text-[10px] font-mono text-emerald-400">IMPACTS: KLCC TANK</span>
+        </div>
+
+        <div class="rounded-xl bg-panel border border-gold/50 p-4 flex flex-col justify-between shadow-lg shadow-gold/5">
+          <div>
+            <span class="text-[11px] font-mono text-gold font-semibold">25â29 JAN 2027</span>
+            <h3 class="text-sm font-bold text-white mt-1">Federal Court Panel</h3>
+            <p class="text-xs text-slate-300 mt-1.5">9â11 judges hear PDA 1974 vs Sarawak DGO 2016. Single highest-impact constitutional gate for both KLCC & Putrajaya.</p>
+          </div>
+          <span class="mt-3 text-[10px] font-mono text-gold">IMPACTS: COUPLED SYSTEM</span>
+        </div>
+
+        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-mono text-gold font-semibold">FEB 2027</span>
+            <h3 class="text-sm font-bold text-white mt-1">FY2026 Audited Print</h3>
+            <p class="text-xs text-slate-400 mt-1.5">Tests actual 2026 dividend (RM20B vs RM27B), full PRefChem consolidation, and whether CAPEX + Div exceeded CFFO.</p>
+          </div>
+          <span class="mt-3 text-[10px] font-mono text-slate-400">RESOLVES: CHRON CFFO</span>
+        </div>
+
+        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-mono text-gold font-semibold">MARâMID 2027</span>
+            <h3 class="text-sm font-bold text-white mt-1">Reserves & Megah-2</h3>
+            <p class="text-xs text-slate-400 mt-1.5">1 Jan 2027 reserves print (tests 0.3 RRR), TGS Megah seismic (Apr 2027), and Suriname Block 52 Sloanea FID check.</p>
+          </div>
+          <span class="mt-3 text-[10px] font-mono text-slate-400">RESOLVES: CHRON RRR</span>
+        </div>
+
+        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-mono text-gold font-semibold">DEC 2027âFEB 2028</span>
+            <h3 class="text-sm font-bold text-white mt-1">GE16 Window</h3>
+            <p class="text-xs text-slate-400 mt-1.5">15th Parliament expires 19 Dec 2027. Election-year pressure raises incentive for high KLCC dividend extraction & fuel caps.</p>
+          </div>
+          <span class="mt-3 text-[10px] font-mono text-red-400">IMPACTS: SOVEREIGN CAP</span>
+        </div>
+      </div>
+
+      <!-- CHRON Falsification Ledger + Executive Layer Cross-Link -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- CHRON Card 1 -->
+        <div class="rounded-xl bg-panel border border-slate-800 p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">CHRON Â· pred-748f889ea86c</span>
+            <span class="text-sm font-mono font-bold text-gold">P = 0.63</span>
+          </div>
+          <p class="text-sm font-semibold text-white">3Y Avg 1P RRR on 1 Jan 2027 remains &lt; 0.8</p>
+          <p class="text-xs text-slate-400 mt-1.5">Falsification: Integrated Report 2026 prints 0.8 or higher (main wildcard: Suriname Sloanea FID + Searah JV equity booking). Resolves 31 Mar 2027.</p>
+        </div>
+
+        <!-- CHRON Card 2 -->
+        <div class="rounded-xl bg-panel border border-slate-800 p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">CHRON Â· pred-0fd054b36ad4</span>
+            <span class="text-sm font-mono font-bold text-gold">P = 0.61</span>
+          </div>
+          <p class="text-sm font-semibold text-white">FY2026 CAPEX + Dividends Paid &gt; CFFO</p>
+          <p class="text-xs text-slate-400 mt-1.5">1H2026 ratio already at 104% (RM49.4B out vs RM47.5B in). Falsification: Audited FY2026 accounts show CFFO covers both. Resolves 31 Mar 2027.</p>
+        </div>
+
+        <!-- Executive Layer Cross-Link (Completing the 3-Node Graph) -->
+        <div class="rounded-xl bg-gradient-to-br from-panelLight to-obsidian border border-slate-700/80 p-4 flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400">EXECUTIVE LAYER Â· /politics/shadow/</span>
+            <h3 class="text-sm font-bold text-white mt-1">Anwar Ibrahim Â· Dual PM &amp; Finance Minister</h3>
+            <p class="text-xs text-slate-400 mt-1.5">
+              Shadow #14 connects both roofs: the same office signs Malaysiaâs RM459.8B budget and holds sole shareholder authority over PETRONAS.
+            </p>
+          </div>
+          <a href="https://arif-fazil.com/politics/shadow/anwar-ibrahim" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-mono text-gold hover:underline">
+            <span>Inspect 33 Bayang Dossier</span>
+            <span>â</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER: SITE GRAPH MAP & EPISTEMIC DECLARATION                        -->
+  <!-- ===================================================================== -->
+  <footer class="border-t border-slate-800/80 bg-panel/40 mt-12 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div>
+        <div class="text-slate-300 font-semibold">arifOS Â· WEALTH Â· Ditempa Bukan Diberi (ÎS â¤ 0)</div>
+        <div class="mt-1">Canonical Graph: <span class="text-slate-400">/wealth/malaysia/</span> â <span class="text-slate-400">/wealth/petronas/</span> â <span class="text-slate-400">/politics/shadow/anwar-ibrahim</span></div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openAgentModal('malaysia')" class="hover:text-gold transition">malaysia/state.json</button>
+        <span>Â·</span>
+        <button onclick="openAgentModal('petronas')" class="hover:text-gold transition">petronas/state.json</button>
+        <span>Â·</span>
+        <button onclick="openAgentModal('llms')" class="hover:text-gold transition">/llms.txt</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- AGENTIC INGESTION MODAL (JSON & llms.txt INSPECTOR + 1-CLICK COPY)    -->
+  <!-- ===================================================================== -->
+  <div id="agent-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="bg-panel border border-slate-700 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-4 border-b border-slate-800">
+        <div>
+          <h3 id="modal-title" class="text-sm font-mono font-bold text-white">Agentic Ingestion &amp; Machine Parity Feeds</h3>
+          <p class="text-xs text-slate-400 mt-0.5">Drop these exact canonical files into your repo for zero-hallucination LLM crawling.</p>
+        </div>
+        <button onclick="closeAgentModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" aria-label="Close modal">
+          â
+        </button>
+      </div>
+
+      <!-- Modal Tabs -->
+      <div class="flex items-center justify-between px-5 py-2.5 bg-obsidian/60 border-b border-slate-800 gap-2 flex-wrap">
+        <div class="flex gap-1.5">
+          <button id="tab-json-my" onclick="showAgentTab('malaysia')" class="px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-gold border border-gold/40">malaysia/state.json</button>
+          <button id="tab-json-pet" onclick="showAgentTab('petronas')" class="px-3 py-1 rounded-md text-xs font-mono text-slate-400 hover:text-white border border-transparent">petronas/state.json</button>
+          <button id="tab-llms" onclick="showAgentTab('llms')" class="px-3 py-1 rounded-md text-xs font-mono text-slate-400 hover:text-white border border-transparent">/llms.txt</button>
+        </div>
+        <button onclick="copyAgentCode()" class="px-3 py-1 rounded-md bg-gold/20 hover:bg-gold/30 border border-gold/40 text-xs font-mono font-semibold text-gold transition">
+          Copy to Clipboard
+        </button>
+      </div>
+
+      <!-- Code Display -->
+      <div class="p-5 overflow-auto flex-1 bg-obsidian">
+        <pre id="agent-code-block" class="text-xs font-mono text-slate-300 leading-relaxed whitespace-pre"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Toast Notification (No alert() used) -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-panelLight border border-gold/50 text-xs font-mono text-white shadow-xl opacity-0 pointer-events-none transition-opacity duration-300">
+    Copied to clipboard
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATION LOGIC & DATA LAYER                                        -->
+  <!-- ===================================================================== -->
+  <script>
+    // -----------------------------------------------------------------------
+    // 1. STATE & BILINGUAL CONTENT DICTIONARY
+    // -----------------------------------------------------------------------
+    let currentEntity = 'petronas'; // 'malaysia' | 'petronas'
+    let currentLang = 'en';         // 'en' | 'bm'
+    let simCourt = 'coexist';       // 'coexist' | 'federal' | 'sarawak'
+    let simDivMode = 'flat';        // 'flat' | 'topup'
+    let activeAgentTab = 'malaysia';
+
+    const ENTITY_DATA = {
+      malaysia: {
+        path: '/wealth/malaysia/',
+        coords: '2.9384Â° N, 101.6915Â° E Â· PUTRAJAYA',
+        epistemic: 'TAG: [OBS] / [DER] / [INT]',
+        kicker: {
+          en: 'THE SOVEREIGN LEDGER Â· FEDERAL DISTANCE-TO-BREAK',
+          bm: 'LEJAR BERDAULAT Â· JARAK KE GARIS PECAH PERSEKUTUAN'
+        },
+        title: {
+          en: 'Malaysia Â· Putrajaya',
+          bm: 'Malaysia Â· Putrajaya'
+        },
+        subtitle: {
+          en: 'One nation. Three pillars. Nine tripwires. Macro stability on the surfaceânarrowing fiscal headroom underneath. Coupled directly to KLCCâs dividend valve and Sarawakâs constitutional clock.',
+          bm: 'Satu negara. Tiga tiang. Sembilan dawai pencetus. Kestabilan makro di permukaanâruang fiskal menyempit di bawah. Terpaut terus pada injap dividen KLCC dan jam perlembagaan Sarawak.'
+        },
+        hud: [
+          { label: 'COMPOSITE PULSE', val: '45 HOLD', sub: 'Fiscal 34 Â· Engine 56 Â· Inst 48', tone: 'gold', tag: '[INT]' },
+          { label: 'FEDERAL DEBT / GDP', val: '63.1%', sub: '2027p: 63.7% (Cap 65.0%)', tone: 'crimson', tag: '[OBS]' },
+          { label: 'FISCAL DEFICIT', val: '3.30%p', sub: 'Budget 2027: RM77.5B (2026: 3.8%)', tone: 'gold', tag: '[OBS]' },
+          { label: 'PETROLEUM SHARE', val: '16.1%', sub: 'RM61.2B of RM380.8B Rev (2027p)', tone: 'emerald', tag: '[OBS]' }
+        ],
+        pastHeading: {
+          en: 'The Past: Sovereign Drift (2022â2027p)',
+          bm: 'Masa Lalu: Hanyutan Fiskal Berdaulat (2022â2027p)'
+        },
+        pastCards: [
+          {
+            title: 'Federal Debt / GDP (%)',
+            delta: '+2.7pp creep',
+            deltaTone: 'crimson',
+            points: [60.4, 61.9, 62.6, 63.1, 63.7],
+            labels: ['2022', '2024', '2025', '2026', '27p'],
+            note: 'Statutory cap at 65.0%. Headroom compressed to 1.3pp by end-2027p.',
+            stroke: '#EF4444'
+          },
+          {
+            title: 'Fiscal Deficit Glidepath (% GDP)',
+            delta: '-2.3pp consolidated',
+            deltaTone: 'emerald',
+            points: [5.6, 5.0, 4.3, 3.8, 3.3],
+            labels: ['2022', '2023', '2024', '2026', '27p'],
+            note: 'Improving, but Budget 2027 relies on RM32B KLCC dividend assumption.',
+            stroke: '#10B981'
+          },
+          {
+            title: 'Old-Age Dependency Ratio (%)',
+            delta: 'Aging structural drag',
+            deltaTone: 'gold',
+            points: [8.4, 9.2, 10.1, 10.8, 11.5],
+            labels: ['2018', '2020', '2022', '2024', '2026'],
+            note: 'UN WPP 2024: Population 65+ / 15â64. Tripwire threshold >15%.',
+            stroke: '#D4AF37'
+          }
+        ],
+        tripwires: [
+          { id: '#1', name: 'Federal Debt / GDP', pillar: 'Fiscal', now: '63.1%', trip: '>65%', score: 13, band: 'VOID', tag: '[OBS]', link: 'petronas' },
+          { id: '#2', name: 'Fiscal Deficit / GDP', pillar: 'Fiscal', now: '3.8% (3.3%p)', trip: '>5.0%', score: 40, band: 'HOLD', tag: '[OBS]', link: 'petronas' },
+          { id: '#3', name: 'FX Reserves (Months)', pillar: 'Fiscal', now: '5.0 mo', trip: '<3.0 mo', score: 50, band: 'HOLD', tag: '[OBS]' },
+          { id: '#4', name: 'Real GDP Growth', pillar: 'Engine', now: '4.2%', trip: '<2.0%', score: 63, band: 'SABAR', tag: '[DER]' },
+          { id: '#5', name: 'Current Account / GDP', pillar: 'Engine', now: '2.1%', trip: '<-1.0%', score: 62, band: 'SABAR', tag: '[DER]' },
+          { id: '#6', name: 'Net FDI / GDP', pillar: 'Engine', now: '2.3%', trip: '<1.0%', score: 43, band: 'HOLD', tag: '[DER]' },
+          { id: '#7', name: 'Old-Age Dependency', pillar: 'Institutions', now: '11.5%', trip: '>15.0%', score: 50, band: 'HOLD', tag: '[INT]' },
+          { id: '#8', name: 'Corruption Index (CPI)', pillar: 'Institutions', now: '50 / 100', trip: '<35', score: 43, band: 'HOLD', tag: '[INT]' },
+          { id: '#9', name: 'Rule of Law (WGI)', pillar: 'Institutions', now: '68%ile', trip: '<50%ile', score: 51, band: 'HOLD', tag: '[INT]' }
+        ]
+      },
+      petronas: {
+        path: '/wealth/petronas/',
+        coords: '3.1579Â° N, 101.7116Â° E Â· KLCC',
+        epistemic: 'TAG: [OBS] / [DER] / [INT]',
+        kicker: {
+          en: 'THE HYDROCARBON ENGINE Â· WALLET TODAY, TANK TOMORROW',
+          bm: 'ENJIN HIDROKARBON Â· DOMPET HARI INI, TANGKI MASA DEPAN'
+        },
+        title: {
+          en: 'PETRONAS Â· KLCC',
+          bm: 'PETRONAS Â· KLCC'
+        },
+        subtitle: {
+          en: 'PETRONAS still holds cash (RM193.6B gross). Sellable barrels have dropped two years straight (7.92B boe) while 3Y replacement collapsed to 0.3. Not a bankruptcy forecastâa shrinking tank meeting rising sovereign dividend demand.',
+          bm: 'PETRONAS masih ada duit (RM193.6B tunai kasar). Tong boleh dijual turun dua tahun berturut (7.92B boe) manakala penggantian 3 tahun jatuh ke 0.3. Bukan ramalan bankrapâtangki menyusut berdepan tuntutan dividen menaik.'
+        },
+        hud: [
+          { label: '2P NET ENTITLEMENT', val: '7.92B boe', sub: 'Down 15% from 9.35B (2024)', tone: 'gold', tag: '[OBS]' },
+          { label: '3Y AVG 1P RRR', val: '0.3', sub: 'Down 81% from 1.6 (2024)', tone: 'crimson', tag: '[OBS]' },
+          { label: 'NET CASH (1H 2026)', val: 'RM66.8B', sub: 'Cash 193.6B â Debt 126.8B', tone: 'emerald', tag: '[OBS]' },
+          { label: '2027p DIV DEMAND', val: 'RM32.0B', sub: 'MoF Budget 2027 (vs 20B decl.)', tone: 'gold', tag: '[DER]' }
+        ],
+        pastHeading: {
+          en: 'The Past: The Tank Shrank Faster Than the Wallet (2024â1H26)',
+          bm: 'Masa Lalu: Tangki Menyusut Lebih Pantas Dari Dompet (2024â1H26)'
+        },
+        pastCards: [
+          {
+            title: '2P Net Entitlement Reserves (B boe)',
+            delta: '-15.3% in 2 yrs',
+            deltaTone: 'gold',
+            points: [9.35, 8.64, 7.92],
+            labels: ['1 Jan 24', '1 Jan 25', '1 Jan 26'],
+            note: '1 Jan 2027 print pending. Excludes EnQuest (-138M) & 31 May Searah transfer.',
+            stroke: '#D4AF37'
+          },
+          {
+            title: '3-Year Avg 1P RRR (Replacement)',
+            delta: '-81.3% collapse',
+            deltaTone: 'crimson',
+            points: [1.6, 0.8, 0.3],
+            labels: ['2024', '2025', '2026'],
+            note: 'Annual burn is ~855 MMboe/yr. Replacement collapsed before stock.',
+            stroke: '#EF4444'
+          },
+          {
+            title: 'Daily Production (kboe/d)',
+            delta: '-4.5% (3 drops)',
+            deltaTone: 'gold',
+            points: [2451, 2423, 2341],
+            labels: ['2024', '2025', '1H 2026'],
+            note: 'Axis truncated (2,200â2,500) transparently to show directional slide.',
+            stroke: '#10B981'
+          }
+        ]
+      }
+    };
+
+    // -----------------------------------------------------------------------
+    // 2. CANONICAL AGENTIC FILES (FOR MODAL & COPY)
+    // -----------------------------------------------------------------------
+    const AGENT_FILES = {
+      malaysia: JSON.stringify({
+        schema_version: "arifos.vitals.v2",
+        entity: {
+          id: "malaysia-federal",
+          name: "Malaysia Federal Sovereign",
+          hero_motif: "Putrajaya",
+          mirror_entity: "petronas",
+          mirror_url: "https://arif-fazil.com/wealth/petronas/state.json"
+        },
+        epistemic_meta: {
+          sealed_at: "2026-11-22",
+          next_audit: "2027-02-28",
+          overall_tag: "INTERPRET",
+          composite_pulse: { score: 45, verdict: "HOLD" }
+        },
+        temporal: {
+          past: [
+            { metric: "federal_debt_gdp_pct", series: { "2022": 60.4, "2024": 61.9, "2026": 63.1 }, tag: "EVIDENCE" },
+            { metric: "fiscal_deficit_gdp_pct", series: { "2022": 5.6, "2024": 4.3, "2026": 3.8 }, tag: "EVIDENCE" }
+          ],
+          present: {
+            federal_debt_gdp_pct: { value: 63.1, projected_2027: 63.7, trip: 65.0, safe: 50.0, band: "VOID", tag: "EVIDENCE" },
+            fiscal_deficit_gdp_pct: { value: 3.8, budget_2027_target: 3.3, trip: 5.0, safe: 2.0, band: "HOLD", tag: "EVIDENCE" },
+            budget_2027_rm_b: { revenue: 380.8, expenditure: 459.8, fuel_subsidies: 40.0, petroleum_revenue: 61.2, petronas_div_mof: 32.0, brent_assumption_usd: 85.0, tag: "EVIDENCE" }
+          },
+          future_gates: [
+            { date: "2027-01-25", event: "Federal Court Panel: PDA 1974 vs Sarawak DGO 2016", impact: "Petroleum revenue & 65% debt ceiling" },
+            { date: "2027-12-19", event: "15th Parliament Auto-Dissolution / GE16 Window", impact: "Fiscal populist pressure" }
+          ]
+        },
+        couplings: [
+          {
+            source_entity: "petronas",
+            channel: "dividend_and_pita",
+            brent_floor_usd: 67.34,
+            sensitivity_per_10_usd_brent: { non_div_pet_tax_rm_b: 3.5, fuel_subsidy_rm_b: 5.1, net_deficit_before_div_rm_b: -1.6 }
+          }
+        ]
+      }, null, 2),
+
+      petronas: JSON.stringify({
+        schema_version: "arifos.vitals.v2",
+        entity: {
+          id: "petronas",
+          name: "PETRONAS",
+          hero_motif: "KLCC",
+          mirror_entity: "malaysia-federal",
+          mirror_url: "https://arif-fazil.com/wealth/malaysia/state.json"
+        },
+        epistemic_meta: {
+          sealed_at: "2026-11-22",
+          next_audit: "2027-02-28",
+          overall_tag: "MIXED",
+          active_paths: ["Jalan C (Smaller Tank)", "Jalan D (Harvest Today)"]
+        },
+        temporal: {
+          past: [
+            { metric: "reserves_2p_net_entitlement_boe_b", series: { "2024-01-01": 9.35, "2025-01-01": 8.64, "2026-01-01": 7.92 }, tag: "EVIDENCE" },
+            { metric: "rrr_1p_3yr_avg", series: { "2024-01-01": 1.6, "2025-01-01": 0.8, "2026-01-01": 0.3 }, tag: "EVIDENCE" },
+            { metric: "daily_production_kboed", series: { "2024": 2451, "2025": 2423, "1H2026": 2341 }, tag: "EVIDENCE" }
+          ],
+          present: {
+            gross_cash_rm_b: { value: 193.6, as_of: "2026-06-30", tag: "EVIDENCE" },
+            net_cash_rm_b: { value: 66.8, as_of: "2026-06-30", tag: "EVIDENCE" },
+            gearing_pct: { value: 21.2, projected_post_prefchem: "25-27", trip: 40.0, tag: "MIXED" },
+            cffo_vs_outflows_1h26_pct: { value: 104.0, cffo_rm_b: 47.5, capex_rm_b: 41.4, dividends_paid_rm_b: 8.0, tag: "EVIDENCE" },
+            prefchem_non_cash_jv_loss_rm_b: { value: 14.8, downstream_lat_rm_b: -15.2, tag: "EVIDENCE" }
+          },
+          future_gates: [
+            { date: "2026-12-31", event: "EnQuest Farm-Out Completion", impact: "-138 MMboe 2P; ~55-60 kboe/d" },
+            { date: "2027-01-25", event: "Federal Court: PDA 1974 vs Sarawak DGO 2016", impact: "Upstream & domestic gas mandate" },
+            { date: "2027-02-28", event: "FY2026 Audited Accounts", impact: "PRefChem consolidation & CFFO check" },
+            { date: "2027-04-30", event: "TGS Megah-2 3D Seismic Completion", impact: "Appraisal prep (200-300M boe est)" }
+          ]
+        },
+        chron_predictions: [
+          { id: "pred-748f889ea86c", prob: 0.63, claim: "3Y 1P RRR < 0.8 on 2027-01-01", resolves: "2027-03-31" },
+          { id: "pred-0fd054b36ad4", prob: 0.61, claim: "FY2026 CAPEX + Div > CFFO", resolves: "2027-03-31" }
+        ]
+      }, null, 2),
+
+      llms: `# arif-fazil.com â arifOS Sovereign & Energy Intelligence Index
+> Canonical machine-readable map for AI agents and research crawlers.
+> Last Sealed: 2026-11-22 (Post-Budget 2027 Reseal)
+
+## 1. Coupled Institutional Architecture (Putrajaya <-> KLCC)
+Do NOT treat Malaysia's federal fiscal state and PETRONAS's balance sheet as isolated entities.
+They share a single coupled oil-price seesaw, dividend extraction valve, and constitutional clock.
+
+- [Malaysia Sovereign Vitals (Putrajaya)](https://arif-fazil.com/wealth/malaysia/state.json): Federal debt/GDP, Budget 2027 deficit, 9 tripwires.
+- [PETRONAS Corporate Vitals (KLCC)](https://arif-fazil.com/wealth/petronas/state.json): 2P reserves, 1P RRR, 1H2026 CFFO vs CAPEX+Div, PRefChem, EnQuest, CHRON ledger.
+- [Executive Shadow Layer (Anwar Ibrahim)](https://arif-fazil.com/politics/shadow/anwar-ibrahim): Jungian audit of Dual PM + Finance Minister governance.
+
+## 2. Epistemic Tags (Mandatory Preservation)
+When citing metrics from arif-fazil.com, preserve the epistemic tag:
+- EVIDENCE: Audited corporate filings, Bank Negara, DOSM, MoF published figures.
+- MIXED: Reported data combined with analytical normalization or projections.
+- INTERPRET: Composite indices, governance scores, and sensitivity simulations.
+- PROXY: Live market prices (Brent, USD/MYR) â never conflate with sealed anchors.
+
+## 3. Critical Synchronization Dates
+- 2026-12-31: EnQuest farm-out completion (-138 MMboe 2P).
+- 2027-01-25 to 2027-01-29: Federal Court hearing (PDA 1974 vs Sarawak DGO 2016).
+- 2027-02-28: PETRONAS FY2026 audited accounts.
+- 2027-03-31: CHRON prediction resolution window.`
+    };
+
+    // -----------------------------------------------------------------------
+    // 3. RENDER FUNCTIONS (HERO, PAST SPARKLINES, PRESENT DIAGNOSTICS)
+    // -----------------------------------------------------------------------
+    function buildSparklineSVG(points, labels, strokeColor) {
+      const w = 280, h = 74, padX = 18, padY = 14;
+      const min = Math.min(...points);
+      const max = Math.max(...points);
+      const range = (max - min) || 1;
+
+      const coords = points.map((p, i) => {
+        const x = padX + (i * (w - padX * 2)) / (points.length - 1);
+        const y = h - padY - ((p - min) / range) * (h - padY * 2);
+        return { x, y, val: p, label: labels[i] };
+      });
+
+      const pathD = coords.map((c, i) => `${i === 0 ? 'M' : 'L'} ${c.x.toFixed(1)} ${c.y.toFixed(1)}`).join(' ');
+      const dots = coords.map((c, i) => `
+        <circle cx="${c.x.toFixed(1)}" cy="${c.y.toFixed(1)}" r="${i === coords.length - 1 ? 4 : 2.8}" fill="${i === coords.length - 1 ? strokeColor : '#0F172A'}" stroke="${strokeColor}" stroke-width="1.8" />
+        <text x="${c.x.toFixed(1)}" y="${(c.y - 7).toFixed(1)}" text-anchor="middle" fill="#CBD5E1" font-size="9" font-family="JetBrains Mono">${c.val}</text>
+      `).join('');
+
+      const xLabels = coords.map(c => `
+        <text x="${c.x.toFixed(1)}" y="${h - 1}" text-anchor="middle" fill="#64748B" font-size="8.5" font-family="JetBrains Mono">${c.label}</text>
+      `).join('');
+
+      return `
+        <svg viewBox="0 0 ${w} ${h + 6}" class="w-full h-24 overflow-visible">
+          <path d="${pathD}" fill="none" stroke="${strokeColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          ${dots}
+          ${xLabels}
+        </svg>
+      `;
+    }
+
+    function renderEntity() {
+      const data = ENTITY_DATA[currentEntity];
+      const lang = currentLang;
+
+      // Update header path & switcher buttons
+      document.getElementById('header-path').textContent = data.path;
+      const btnMy = document.getElementById('btn-switch-malaysia');
+      const btnPet = document.getElementById('btn-switch-petronas');
+
+      if (currentEntity === 'malaysia') {
+        btnMy.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 bg-slate-800 text-white border border-gold/50 shadow-sm';
+        btnPet.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 text-slate-400 hover:text-slate-200 border border-transparent';
+        document.getElementById('hero-bg-malaysia').classList.replace('opacity-0', 'opacity-100');
+        document.getElementById('hero-bg-petronas').classList.replace('opacity-100', 'opacity-0');
+        document.getElementById('present-mirror-btn').innerHTML = '<span>Flip to KLCC Mirror</span> <span>â</span>';
+      } else {
+        btnPet.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 bg-slate-800 text-white border border-emerald-400/50 shadow-sm';
+        btnMy.className = 'flex-1 sm:flex-none flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all duration-200 text-slate-400 hover:text-slate-200 border border-transparent';
+        document.getElementById('hero-bg-malaysia').classList.replace('opacity-100', 'opacity-0');
+        document.getElementById('hero-bg-petronas').classList.replace('opacity-0', 'opacity-100');
+        document.getElementById('present-mirror-btn').innerHTML = '<span>Flip to Putrajaya Mirror</span> <span>â</span>';
+      }
+
+      // Hero text
+      document.getElementById('hero-coords').textContent = data.coords;
+      document.getElementById('hero-epistemic-badge').textContent = data.epistemic;
+      document.getElementById('hero-kicker').textContent = data.kicker[lang];
+      document.getElementById('hero-title').textContent = data.title[lang];
+      document.getElementById('hero-subtitle').textContent = data.subtitle[lang];
+
+      // 4-Metric HUD
+      const toneMap = {
+        gold: 'text-gold border-gold/30',
+        crimson: 'text-red-400 border-red-500/35',
+        emerald: 'text-emerald-400 border-emerald-500/30'
+      };
+      document.getElementById('hero-hud').innerHTML = data.hud.map(item => `
+        <div class="rounded-xl bg-panel/90 backdrop-blur-md border ${toneMap[item.tone].split(' ')[1]} p-4 shadow-lg" data-epistemic="${item.tag}">
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <span class="text-[10px] font-mono tracking-wider text-slate-400">${item.label}</span>
+            <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-obsidian text-slate-400 border border-slate-800">${item.tag}</span>
+          </div>
+          <div class="text-2xl font-mono font-bold ${toneMap[item.tone].split(' ')[0]}">${item.val}</div>
+          <div class="text-[11px] text-slate-400 mt-1">${item.sub}</div>
+        </div>
+      `).join('');
+
+      // Band 1: Past Sparklines
+      document.getElementById('past-heading').textContent = data.pastHeading[lang];
+      const deltaColors = {
+        crimson: 'bg-red-500/15 text-red-300 border-red-500/30',
+        gold: 'bg-gold/15 text-gold border-gold/30',
+        emerald: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30'
+      };
+      document.getElementById('past-cards-container').innerHTML = data.pastCards.map(card => `
+        <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between">
+          <div class="flex items-start justify-between gap-2 mb-2">
+            <h3 class="text-sm font-semibold text-white">${card.title}</h3>
+            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border ${deltaColors[card.deltaTone]}">${card.delta}</span>
+          </div>
+          <div class="my-1">${buildSparklineSVG(card.points, card.labels, card.stroke)}</div>
+          <p class="text-[11px] text-slate-400 mt-2 border-t border-slate-800/80 pt-2">${card.note}</p>
+        </div>
+      `).join('');
+
+      // Band 2: Present (Surface vs Subsurface)
+      const presentContainer = document.getElementById('present-content-container');
+      if (currentEntity === 'malaysia') {
+        presentContainer.innerHTML = `
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            ${data.tripwires.map(tw => {
+              const barColor = tw.band === 'VOID' ? 'bg-red-500' : tw.band === 'HOLD' ? 'bg-gold' : 'bg-emerald-500';
+              const badgeColor = tw.band === 'VOID' ? 'text-red-400 bg-red-500/15 border-red-500/30' : tw.band === 'HOLD' ? 'text-gold bg-gold/15 border-gold/30' : 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30';
+              return `
+                <div class="rounded-xl bg-panel border border-slate-800 p-4 flex flex-col justify-between" data-metric-id="${tw.name}" data-epistemic="${tw.tag}">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="text-[11px] font-mono text-slate-400">${tw.id} Â· ${tw.pillar}</span>
+                      <span class="text-[10px] font-mono px-1.5 py-0.5 rounded border ${badgeColor}">${tw.band} Â· ${tw.score}/100</span>
+                    </div>
+                    <div class="flex items-baseline justify-between">
+                      <h3 class="text-sm font-semibold text-white">${tw.name}</h3>
+                      <span class="text-base font-mono font-bold text-white">${tw.now}</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-obsidian rounded-full overflow-hidden mt-3">
+                      <div class="h-full ${barColor} rounded-full" style="width: ${tw.score}%"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between mt-3 pt-2 border-t border-slate-800/80 text-[10px] font-mono text-slate-500">
+                    <span>Trip: ${tw.trip} Â· ${tw.tag}</span>
+                    ${tw.link ? `<button onclick="switchEntity('petronas')" class="text-gold hover:underline">â KLCC Valve</button>` : ''}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      } else {
+        presentContainer.innerHTML = `
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Left: Dompet Hari Ini (Cash Flow Pressure) -->
+            <div class="rounded-xl bg-panel border border-slate-800 p-5 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <span class="text-[10px] font-mono text-emerald-400">DOMPET HARI INI Â· 1H 2026 AUDITED INTERIM</span>
+                  <h3 class="text-base font-bold text-white mt-0.5">Cash Flow &amp; Balance Sheet Reality</h3>
+                </div>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-red-500/15 text-red-300 border border-red-500/30">OUTFLOW 104%</span>
+              </div>
+
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs font-mono mb-1">
+                    <span class="text-slate-300">1H 2026 CFFO (Operating Inflow)</span>
+                    <span class="text-emerald-400 font-bold">RM 47.5B</span>
+                  </div>
+                  <div class="w-full h-2.5 bg-obsidian rounded-full overflow-hidden">
+                    <div class="h-full bg-emerald-500 rounded-full" style="width: 96%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-xs font-mono mb-1">
+                    <span class="text-slate-300">CAPEX (RM41.4B) + Div Paid (RM8.0B)</span>
+                    <span class="text-gold font-bold">RM 49.4B (104%)</span>
+                  </div>
+                  <div class="w-full h-2.5 bg-obsidian rounded-full overflow-hidden">
+                    <div class="h-full bg-gold rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="p-3 rounded-lg bg-obsidian/80 border border-slate-800">
+                  <div class="text-[10px] font-mono text-slate-400">DOWNSTREAM LAT</div>
+                  <div class="text-lg font-mono font-bold text-red-400">-RM 15.2B</div>
+                  <div class="text-[11px] text-slate-500">Incl. RM14.8B non-cash PRefChem JV loss. Ex-item: +RM7.0B.</div>
+                </div>
+                <div class="p-3 rounded-lg bg-obsidian/80 border border-slate-800">
+                  <div class="text-[10px] font-mono text-slate-400">GEARING STEP</div>
+                  <div class="text-lg font-mono font-bold text-gold">21.2% â 27%</div>
+                  <div class="text-[11px] text-slate-500">Steps +4â6pp post-PRefChem &amp; LNG Canada Ph 2.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Tangki Masa Depan & Governance -->
+            <div class="rounded-xl bg-panel border border-slate-800 p-5 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <span class="text-[10px] font-mono text-gold">TANGKI MASA DEPAN Â· PIPELINE &amp; GOVERNANCE</span>
+                  <h3 class="text-base font-bold text-white mt-0.5">2027â2029 Air Pocket &amp; Legal Overhang</h3>
+                </div>
+                <button onclick="switchEntity('malaysia')" class="text-xs font-mono text-gold hover:underline">â Putrajaya Ceiling</button>
+              </div>
+
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-gold font-mono mt-0.5">01</span>
+                  <span><strong class="text-white">855 MMboe Annual Burn:</strong> Limbayong FID (~270M gross) arrives 2029â30; EnQuest farm-out removes 138M 2P &amp; ~55â60 kboe/d immediately on 1 Jan 2027.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-gold font-mono mt-0.5">02</span>
+                  <span><strong class="text-white">Two Real Wildcards:</strong> Suriname Block 52 (Sloanea FID target end-2026) and Searah (EniâPETRONAS JV, 300â500 kboe/d) determine if RRR lifts off 0.3.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-gold font-mono mt-0.5">03</span>
+                  <span><strong class="text-white">Board &amp; Legal Concentration:</strong> 3 of 8 directors are executives (PGCEO, COO/Upstream, CFO). Constitutional PDA 1974 vs Sarawak DGO 2016 hits Federal Court Jan 2027.</span>
+                </li>
+              </ul>
+
+              <div class="p-3 rounded-lg bg-gold/10 border border-gold/25 text-xs font-mono text-gold">
+                Active Paths: <strong>Jalan C</strong> (Smaller tank, leaner capex) + <strong>Jalan D</strong> (MoF Budget 2027 RM32B harvest).
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // -----------------------------------------------------------------------
+    // 4. INTERACTIVE COUPLING SIMULATOR (VERIFIED 2027 BUDGET MATH)
+    // -----------------------------------------------------------------------
+    function setSimPreset(brent, court, divMode) {
+      document.getElementById('slider-brent').value = brent;
+      simCourt = court;
+      simDivMode = divMode;
+      updateControlButtons();
+      updateSimulator();
+    }
+
+    function setCourtMode(mode) {
+      simCourt = mode;
+      updateControlButtons();
+      updateSimulator();
+    }
+
+    function setDivMode(mode) {
+      simDivMode = mode;
+      updateControlButtons();
+      updateSimulator();
+    }
+
+    function updateControlButtons() {
+      ['coexist', 'federal', 'sarawak'].forEach(m => {
+        const el = document.getElementById(`court-${m}`);
+        el.className = m === simCourt
+          ? 'px-2 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition'
+          : 'px-2 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition';
+      });
+      ['flat', 'topup'].forEach(m => {
+        const el = document.getElementById(`div-${m}`);
+        el.className = m === simDivMode
+          ? 'px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-slate-800 border-gold text-white transition'
+          : 'px-2.5 py-2 rounded-lg text-[11px] font-mono border bg-panel border-slate-700 text-slate-400 hover:text-white transition';
+      });
+
+      const notes = {
+        coexist: 'Base: Petros domestic aggregator; PETRONAS retains MLNG & upstream.',
+        federal: 'Federal supremacy upheld; zero immediate revenue loss, high GE16 GPS risk.',
+        sarawak: 'Shock: Shaves ~RM6.0B from 2027 federal inflows & compresses KLCC reserves.'
+      };
+      document.getElementById('sim-court-note').textContent = notes[simCourt];
+    }
+
+    function updateSimulator() {
+      const brent = parseFloat(document.getElementById('slider-brent').value);
+      document.getElementById('sim-brent-val').textContent = `$${brent} /bbl`;
+
+      // Budget 2027 Baseline (MoF, Oct 9, 2026)
+      const gdpBase = 2348.5; // RM B (implied from RM77.5B / 3.30%)
+      const debtBase = gdpBase * 0.637; // RM 1496.0B (63.7% end-2027p)
+      const deficitBase = 77.5;
+      const dBrent10 = (brent - 85.0) / 10.0;
+
+      // Sensitivity rules: +/- RM3.5B non-div pet tax, +/- RM5.1B fuel subsidy per $10/bbl
+      const petTax = 29.2 + (dBrent10 * 3.5);
+      const subsidy = Math.max(15.0, 40.0 + (dBrent10 * 5.1));
+
+      // KLCC Dividend logic based on $67.34 floor & extraction mode
+      let dividend = 32.0;
+      let divNote = 'Matches Budget 2027';
+      if (brent < 67.34) {
+        dividend = Math.max(14.0, 20.0 - ((67.34 - brent) * 0.85));
+        divNote = 'Below $67.34 floor â compressed';
+      } else if (brent < 80) {
+        dividend = 20.0 + ((brent - 67.34) / (80 - 67.34)) * 12.0;
+        divNote = 'Stepping down toward RM20B floor';
+      } else if (brent >= 90 && simDivMode === 'topup') {
+        dividend = Math.min(42.0, 32.0 + ((brent - 85) * 0.6));
+        divNote = 'MoF top-up to offset fuel subsidies';
+      }
+
+      // Sarawak Federal Court impact
+      const sarawakHit = simCourt === 'sarawak' ? 6.0 : 0.0;
+      const gdpAdj = brent < 70 ? 0.99 : (brent > 92 ? 1.005 : 1.0);
+      const newGdp = gdpBase * gdpAdj;
+
+      const dDeficit = (subsidy - 40.0) - (petTax - 29.2) - (dividend - 32.0) + sarawakHit;
+      const newDeficit = deficitBase + dDeficit;
+      const newDefPct = (newDeficit / newGdp) * 100;
+
+      const newDebt = debtBase + dDeficit;
+      const newDebtPct = (newDebt / newGdp) * 100;
+      const headroom = 65.0 - newDebtPct;
+
+      // Gearing projection
+      let gearing = 25.5;
+      if (brent < 70) gearing += 2.2;
+      if (simDivMode === 'topup' && brent >= 90) gearing += 1.4;
+      if (simCourt === 'sarawak') gearing += 3.5;
+
+      // Update Putrajaya DOM
+      document.getElementById('sim-deficit-pct').textContent = `${newDefPct.toFixed(2)}%`;
+      document.getElementById('sim-deficit-rm').textContent = `RM ${newDeficit.toFixed(1)}B`;
+      document.getElementById('sim-debt-pct').textContent = `${newDebtPct.toFixed(2)}%`;
+      document.getElementById('sim-subsidy').textContent = `RM ${subsidy.toFixed(1)}B`;
+      document.getElementById('sim-pet-tax').textContent = `RM ${petTax.toFixed(1)}B`;
+
+      const debtBadge = document.getElementById('sim-debt-badge');
+      const debtValEl = document.getElementById('sim-debt-pct');
+      const putrajayaBox = document.getElementById('sim-putrajaya-box');
+
+      if (headroom <= 0) {
+        debtBadge.textContent = `VOID BREACH ${headroom.toFixed(2)}pp`;
+        debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-red-500/20 text-red-400 border border-red-500/40';
+        debtValEl.className = 'text-xl font-mono font-bold text-red-400 mt-0.5';
+        putrajayaBox.className = 'rounded-xl bg-panel border border-red-500/60 p-4 sm:p-5 transition-colors shadow-lg shadow-red-900/20';
+      } else if (headroom < 0.75) {
+        debtBadge.textContent = `CRITICAL +${headroom.toFixed(2)}pp`;
+        debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-red-500/15 text-red-300';
+        debtValEl.className = 'text-xl font-mono font-bold text-red-300 mt-0.5';
+        putrajayaBox.className = 'rounded-xl bg-panel border border-red-500/35 p-4 sm:p-5 transition-colors';
+      } else {
+        debtBadge.textContent = `HEADROOM +${headroom.toFixed(2)}pp`;
+        debtBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-gold/15 text-gold';
+        debtValEl.className = 'text-xl font-mono font-bold text-gold mt-0.5';
+        putrajayaBox.className = 'rounded-xl bg-panel border border-slate-800 p-4 sm:p-5 transition-colors';
+      }
+
+      // Update KLCC DOM
+      document.getElementById('sim-div-rm').textContent = `RM ${dividend.toFixed(1)}B`;
+      document.getElementById('sim-div-note').textContent = divNote;
+      document.getElementById('sim-gearing').textContent = `${gearing.toFixed(1)}%`;
+      document.getElementById('sim-klcc-path').textContent = (simDivMode === 'topup' && brent >= 90)
+        ? 'JALAN D (HARVEST)'
+        : (brent < 67.34 ? 'DEFENSIVE FLOOR' : 'JALAN C + D');
+      document.getElementById('sim-capex-status').textContent = (brent < 70 || simDivMode === 'topup')
+        ? 'Tight â RRR Replenishment Squeezed'
+        : 'Moderate â Supports Limbayong / Megah';
+      document.getElementById('sim-reserve-risk').textContent = simCourt === 'sarawak'
+        ? 'HIGH â Sarawak 2P & PSC Renegotiation'
+        : '7.92B boe (EnQuest -138M pending)';
+    }
+
+    // -----------------------------------------------------------------------
+    // 5. SWITCHING, LANGUAGE & MODAL HANDLERS
+    // -----------------------------------------------------------------------
+    function switchEntity(entity) {
+      currentEntity = entity;
+      renderEntity();
+    }
+
+    function toggleEntity() {
+      switchEntity(currentEntity === 'malaysia' ? 'petronas' : 'malaysia');
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'bm' : 'en';
+      const btn = document.getElementById('btn-lang-toggle');
+      btn.innerHTML = currentLang === 'en'
+        ? 'EN <span class="text-slate-600">|</span> <span class="text-slate-500">BM</span>'
+        : '<span class="text-slate-500">EN</span> <span class="text-slate-600">|</span> <span class="text-gold">BM</span>';
+      renderEntity();
+    }
+
+    function openAgentModal(tab) {
+      const modal = document.getElementById('agent-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      showAgentTab(tab || currentEntity);
+    }
+
+    function closeAgentModal() {
+      const modal = document.getElementById('agent-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function showAgentTab(tab) {
+      activeAgentTab = tab;
+      document.getElementById('agent-code-block').textContent = AGENT_FILES[tab];
+
+      const map = { malaysia: 'tab-json-my', petronas: 'tab-json-pet', llms: 'tab-llms' };
+      Object.entries(map).forEach(([k, id]) => {
+        const el = document.getElementById(id);
+        el.className = k === tab
+          ? 'px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-gold border border-gold/40'
+          : 'px-3 py-1 rounded-md text-xs font-mono text-slate-400 hover:text-white border border-transparent';
+      });
+    }
+
+    function copyAgentCode() {
+      try {
+        const text = AGENT_FILES[activeAgentTab];
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast(`Copied ${activeAgentTab === 'llms' ? '/llms.txt' : activeAgentTab + '/state.json'}`);
+      } catch (err) {
+        showToast('Copy failed â please select text manually');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2400);
+    }
+
+    // Close modal on Escape key or backdrop click
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAgentModal();
+    });
+    document.getElementById('agent-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'agent-modal') closeAgentModal();
+    });
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderEntity();
+      updateControlButtons();
+      updateSimulator();
+    });
+  </script>
+</body>
+</html>

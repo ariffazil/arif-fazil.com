@@ -144,6 +144,32 @@ verify-pages:
 	@bash scripts/run-gate.sh --gate-id verify.pages --tail 400 -- bash scripts/verify-pages.sh
 	@echo ""
 
+# ── Design + metadata gates (2026-11-21, F13 ruling round-2) ─────────
+# Offline gates (run in prebuild): token SOT parity + WCAG + usage rules,
+# SOT artifact freshness, JSON-LD contract. Live probe is separate
+# (verify-live) because it needs the network and a canonical-form sweep.
+verify-design:
+	@echo "[verify-design] Token parity + WCAG + decorative-as-text gate..."
+	@python3 sites/arif-fazil.com/scripts/check-design-tokens.py
+	@echo "[verify-design] Token artifact freshness..."
+	@python3 sites/arif-fazil.com/scripts/compile-design-tokens.py --check
+	@echo "[verify-design] JSON-LD contract (DOM-shaped)..."
+	@node sites/arif-fazil.com/scripts/validate-jsonld.mjs
+	@echo ""
+
+verify-live:
+	@echo "[verify-live] Canonical-form live probe (slash + cache-bust)..."
+	@bash sites/arif-fazil.com/scripts/probe-canonical.sh
+	@echo ""
+
+# ── Deploy envelope gate (2026-11-21) ────────────────────────────────
+# REFUSES to proceed without a signed envelope (approver, sha=HEAD,
+# targets, rollback, negative tests). A good outcome never excuses a
+# bypassed gate.
+require-envelope:
+	@bash scripts/require-deploy-envelope.sh
+	@echo ""
+
 # ── Served-state gate ───────────────────────────────────────────────
 # 2026-11-12: a deploy landed on the copy the route does not read; the
 # page-inventory gate PASSed because it checks reachability, not bytes.

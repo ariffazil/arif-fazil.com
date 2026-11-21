@@ -1,7 +1,7 @@
 {
   "$schema": "arif-discovery-registry-v1",
   "note": "Snapshot MACHINE-VERIFIED melalui MCP tools/list semasa build. Bukan senarai tangan. Organ down = direkod jujur.",
-  "generated_at": "2026-11-20T03:02:24.857Z",
+  "generated_at": "2026-11-21T04:09:27.520Z",
   "source_protocol": "MCP JSON-RPC 2.0 (kernel stateless; domain organs via initialize handshake)",
   "organs": {
     "arifos": {
@@ -48,8 +48,16 @@
     },
     "geox": {
       "verified": true,
-      "count": 27,
+      "count": 29,
       "tools": [
+        {
+          "name": "geox_grid",
+          "desc": "Corner-point grid compute via xtgeo: inspect caller-supplied coordsv/zcornsv/actnumsv arra"
+        },
+        {
+          "name": "geox_resqml_io",
+          "desc": "RESQML grid export via resqpy: regular grids (extent_kji + increments) or ALIGNED corner-p"
+        },
         {
           "name": "geox_geomechanics",
           "desc": "Geomechanical analysis: bulk/shear/young modulus, poisson ratio, acoustic impedance, stres"
@@ -269,5 +277,5 @@
       ]
     }
   },
-  "total_verified": 60
+  "total_verified": 62
 }

@@ -84,3 +84,6 @@ backups/
 sites/syedos.arif-fazil.com/
 *.pre-holdfix-*
 forge_work/
+
+# Runtime deploy envelope — signed by the sovereign at deploy time, never committed
+deploy-envelope.json

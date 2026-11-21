@@ -1,0 +1,78 @@
+# ROUTE-OWNERSHIP.yaml — arif-fazil.com serving topology
+# Authority: Arif F13 ruling round-2 (2026-11-21). One owner per route family,
+# one deploy target per serving tree. Read before any design-sync or deploy.
+# Verified against the live origin 2026-11-21 (see docs/agentic-web/DEPLOY-LESSON-2026-11-21.md).
+
+serving_trees:
+  - tree: apex-spa
+    deploy_target: /var/www/html/arif/
+    source: sites/arif-fazil.com/dist/
+    owner: arif-fazil.com repo (site)
+    serves: ["/", "/words/**", "/world/**", "/earth/**", "/human/**", "/laws/**", "/work/**"]
+
+  - tree: earth-family
+    deploy_target: /var/www/html/earth/
+    source: sites/arif-fazil.com/dist/earth/
+    owner: arif-fazil.com repo (site)
+    serves: ["/earth/**"]
+    note: "separate family root — the apex SPA root copy is NOT what serves these"
+
+  - tree: arifos-family
+    deploy_target: /var/www/html/arifos/
+    source: sites/arif-fazil.com/dist/arifos/
+    owner: arif-fazil.com repo (site) — arifOS organ repo owns the kernel content
+    serves: ["/arifos/findings/**", "/arifos/verify/**"]
+
+  - tree: organs-family
+    deploy_target: /var/www/html/organs/
+    source: sites/arif-fazil.com/dist/organs/
+    owner: arif-fazil.com repo (site) owns the /organs/ hub shell
+    serves: ["/organs/**"]
+
+  - tree: aaa-family
+    deploy_target: /var/www/html/aaa/
+    source: sites/arif-fazil.com/dist/aaa/
+    owner: AAA repo (github.com/ariffazil/AAA)
+    serves: ["/aaa/**"]
+
+route_families:
+  - prefix: /
+    serving_source: apex-spa
+    representation: HTML + JSON-LD
+    owner: arif-fazil.com
+  - prefix: /arifos/
+    serving_source: arifos-family
+    representation: HTML + JSON-LD
+    owner: site repo (shell) + arifOS repo (findings content)
+  - prefix: /organs/
+    serving_source: organs-family
+    representation: HTML hub shell + proxied organ sub-routes
+    owner: site repo owns the hub shell; individual organ repos own their proxied sub-routes
+  - prefix: /organs/well/
+    serving_source: proxy -> 127.0.0.1:18083 (WELL)
+    representation: JSON API — NOT an HTML surface; no JSON-LD applies
+    owner: WELL repo
+    rule: "do not edit WELL metadata from this repo"
+  - prefix: /aaa/
+    serving_source: aaa-family (+ proxy -> 127.0.0.1:3001 for deeper paths)
+    representation: HTML + JSON-LD
+    owner: AAA repo
+  - prefix: /world/makcikgpt/
+    serving_source: apex-spa (slash form) | Markdown + frontmatter (non-slash form)
+    representation: HTML + JSON-LD (canonical) | Markdown+frontmatter (alternate)
+    owner: site repo (MakcikGPT column)
+    rule: "certify against the trailing-slash form only"
+
+proxied_organ_boundaries:
+  - "127.0.0.1:18083 WELL — JSON API; metadata owned by WELL repo"
+  - "127.0.0.1:18082 WEALTH — API; owned by WEALTH repo"
+  - "127.0.0.1:8081 GEOX — API; owned by GEOX repo"
+  - "127.0.0.1:8088 arifOS kernel — API; owned by arifOS repo"
+  - "127.0.0.1:3001 AAA gateway — A2A/API; owned by AAA repo"
+  rule: "the site repo never edits organ metadata; it edits shells and hubs only"
+
+workflow_rules:
+  one_writer: "one worktree per lane; never edit the main checkout; never merge your own lane"
+  attribution: "per-worktree identity via extensions.worktreeConfig + git config --worktree user.name"
+  two_actor: "a builder lane produces the branch; a SEPARATE read-only verifier lane runs the live sweep before 888 approves rsync"
+  deploy_gate: "scripts/require-deploy-envelope.sh must pass (signed envelope: approver + HEAD sha + targets + rollback + negative tests) before any rsync"

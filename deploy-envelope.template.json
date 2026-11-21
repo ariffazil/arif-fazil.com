@@ -1,0 +1,9 @@
+{
+  "_comment": "Template for deploy-envelope.json. scripts/require-deploy-envelope.sh REFUSES any rsync until a filled copy exists with a real approver. Copy to deploy-envelope.json, fill, commit or hand to the sovereign for sign-off.",
+  "approver": "",
+  "sha": "",
+  "targets": [],
+  "rollback": "",
+  "negative_tests": [],
+  "signed_at": ""
+}

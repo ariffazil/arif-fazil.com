@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-11-21",
+  "authority": "Arif F13 ruling round-2 (2026-11-21) — unified token source for all serving trees",
+  "note": "Single source of truth for FUNCTIONAL color tokens only. Compiled by scripts/compile-design-tokens.py; parity + WCAG enforced by scripts/check-design-tokens.py (prebuild gate). Non-functional palettes (SOUL/MIND/BODY/ORGAN rings, typography, spacing) stay hand-maintained per tree.",
+  "backgrounds": {
+    "site": "#0A0B0D",
+    "soul": "#1A0A0A",
+    "organ": "#12121A"
+  },
+  "tokens": {
+    "state-operational": { "value": "#00C853", "role": "SEAL verdict — green", "minContrast": 4.5, "usage": ["text", "badge-bg"] },
+    "state-pending":     { "value": "#FFD600", "role": "SABAR — amber, processing", "minContrast": 4.5, "usage": ["text", "badge-bg"] },
+    "state-hold":        { "value": "#FF9500", "role": "888 HOLD — orange, awaiting human", "minContrast": 4.5, "usage": ["text", "badge-bg"] },
+    "state-void":        { "value": "#9CA3AF", "role": "VOID — grey, fail-closed", "minContrast": 4.5, "usage": ["text", "badge-bg"] },
+    "state-danger":      { "value": "#FF1744", "role": "BREACH — red, critical", "minContrast": 4.5, "usage": ["text", "badge-bg"] },
+    "state-info":        { "value": "#58A6FF", "role": "INFO — blue, neutral; agent operational flow", "minContrast": 4.5, "usage": ["text", "badge-bg"] },
+    "verdict-unknown":   { "value": "#8E959E", "role": "UNKNOWN verdict", "minContrast": 4.5, "usage": ["text"] },
+    "soul-primary":      { "value": "#8B1A1A", "role": "SOUL blood red — DECORATIVE ONLY", "textUse": "forbidden", "usage": ["border", "accent", "background"] },
+    "soul-primary-text": { "value": "#D65656", "role": "SOUL red for TEXT (>=4.5:1)", "minContrast": 4.5, "usage": ["text"] },
+    "soul-primary-large":{ "value": "#C04040", "role": "SOUL red for large text / UI (>=3:1)", "minContrast": 3.0, "usage": ["large-text", "ui"] },
+    "soul-accent":       { "value": "#D4AF37", "role": "Gold — sovereignty, F13", "minContrast": 4.5, "usage": ["text", "accent"] }
+  },
+  "trees": {
+    "canonical": { "file": "sites/shared/design-system/tokens.css", "label": "canonical shared design-system" },
+    "site":      { "file": "sites/arif-fazil.com/public/_shared/design-system/tokens.css", "label": "apex SPA root (/var/www/html/arif/)" },
+    "aaa":       { "file": "sites/arif-fazil.com/public/aaa/_shared/design-system/tokens.css", "label": "aaa organ tree (/var/www/html/aaa/)" },
+    "arifos":    {
+      "file": "sites/arif-fazil.com/public/arifos/_shared/design-system/tokens.css",
+      "label": "arifos organ tree (/var/www/html/arifos/)",
+      "overrides": {
+        "state-operational": "#3DDC97",
+        "state-pending": "#F4B740",
+        "state-hold": "#F97D3D",
+        "state-void": "#8892A6",
+        "state-danger": "#E5484D",
+        "state-info": "#7C9CFF"
+      },
+      "overrideReason": "arifos organ keeps its own verdict palette (recorded musyawarah 2026-11-17). Declared here so the parity gate can distinguish INTENTIONAL divergence from silent drift.",
+      "flaggedFor888": [
+        "arifos VOID resolves to verdict-sabar (#8892A6) and DANGER to verdict-void (#E5484D) — semantic collision with canonical VOID=grey fail-closed. Kept as declared override; not silently flipped. Needs a sovereign ruling."
+      ]
+    }
+  },
+  "tokenUsageRules": {
+    "soul-primary": "Must not be used for text. Text usage -> var(--soul-primary-text) (body) or var(--soul-primary-large) (large/UI).",
+    "state-info": "Blue = agent operational flow (machine-facing surfaces: /arifos, MCP-adjacent pages)."
+  }
+}

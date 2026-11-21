@@ -29,6 +29,8 @@
 
   /* SOUL (Ψ) — Red Blood + Earth Tones: Human Life, Ground, F13 Sovereign ─── */
   --soul-primary: #8B1A1A;     /* Blood red — life, igneous, earth core */
+  --soul-primary-text: #D65656;   /* SOUL red for TEXT — >=4.5:1 (decorative #8B1A1A forbidden as text) */
+  --soul-primary-large: #C04040;  /* SOUL red for large text / UI — >=3:1 */
   --soul-secondary: #B33030;   /* Arterial red — vitality */
   --soul-accent: #D4AF37;     /* Gold — sovereignty, F13 */
   --soul-earth: #6B4423;      /* Earth brown — grounding, strata */
@@ -288,7 +290,7 @@ body {
 .text-muted { color: var(--text-muted); }
 
 /* Trinity ring colors */
-.text-soul { color: var(--soul-primary); }
+.text-soul { color: var(--soul-primary-text); }
 .text-mind { color: var(--mind-primary); }
 .text-body { color: var(--body-primary); }
 
@@ -328,7 +330,7 @@ body {
 }
 
 /* Earth tone utilities for SOUL */
-.text-blood { color: var(--soul-primary); }
+.text-blood { color: var(--soul-primary-text); }
 .text-arterial { color: var(--soul-secondary); }
 .text-earth { color: var(--soul-earth); }
 .text-terracotta { color: var(--soul-terracotta); }
@@ -473,10 +475,10 @@ body {
 .trinity-nav-item--active {
   background: rgba(212, 175, 55, 0.15);
   border-color: var(--soul-primary);
-  color: var(--soul-primary);
+  color: var(--soul-primary-text);
 }
 
-.trinity-nav-item--soul:hover { border-color: var(--soul-primary); color: var(--soul-primary); }
+.trinity-nav-item--soul:hover { border-color: var(--soul-primary); color: var(--soul-primary-text); }
 .trinity-nav-item--mind:hover { border-color: var(--mind-primary); color: var(--mind-primary); }
 .trinity-nav-item--body:hover { border-color: var(--body-primary); color: var(--body-primary); }
 

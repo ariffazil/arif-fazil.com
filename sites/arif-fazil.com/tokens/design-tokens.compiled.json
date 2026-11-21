@@ -1,0 +1,70 @@
+{
+  "canonical": {
+    "file": "sites/shared/design-system/tokens.css",
+    "label": "canonical shared design-system",
+    "values": {
+      "state-operational": "#00C853",
+      "state-pending": "#FFD600",
+      "state-hold": "#FF9500",
+      "state-void": "#9CA3AF",
+      "state-danger": "#FF1744",
+      "state-info": "#58A6FF",
+      "verdict-unknown": "#8E959E",
+      "soul-primary": "#8B1A1A",
+      "soul-primary-text": "#D65656",
+      "soul-primary-large": "#C04040",
+      "soul-accent": "#D4AF37"
+    }
+  },
+  "site": {
+    "file": "sites/arif-fazil.com/public/_shared/design-system/tokens.css",
+    "label": "apex SPA root (/var/www/html/arif/)",
+    "values": {
+      "state-operational": "#00C853",
+      "state-pending": "#FFD600",
+      "state-hold": "#FF9500",
+      "state-void": "#9CA3AF",
+      "state-danger": "#FF1744",
+      "state-info": "#58A6FF",
+      "verdict-unknown": "#8E959E",
+      "soul-primary": "#8B1A1A",
+      "soul-primary-text": "#D65656",
+      "soul-primary-large": "#C04040",
+      "soul-accent": "#D4AF37"
+    }
+  },
+  "aaa": {
+    "file": "sites/arif-fazil.com/public/aaa/_shared/design-system/tokens.css",
+    "label": "aaa organ tree (/var/www/html/aaa/)",
+    "values": {
+      "state-operational": "#00C853",
+      "state-pending": "#FFD600",
+      "state-hold": "#FF9500",
+      "state-void": "#9CA3AF",
+      "state-danger": "#FF1744",
+      "state-info": "#58A6FF",
+      "verdict-unknown": "#8E959E",
+      "soul-primary": "#8B1A1A",
+      "soul-primary-text": "#D65656",
+      "soul-primary-large": "#C04040",
+      "soul-accent": "#D4AF37"
+    }
+  },
+  "arifos": {
+    "file": "sites/arif-fazil.com/public/arifos/_shared/design-system/tokens.css",
+    "label": "arifos organ tree (/var/www/html/arifos/)",
+    "values": {
+      "state-operational": "#3DDC97",
+      "state-pending": "#F4B740",
+      "state-hold": "#F97D3D",
+      "state-void": "#8892A6",
+      "state-danger": "#E5484D",
+      "state-info": "#7C9CFF",
+      "verdict-unknown": "#8E959E",
+      "soul-primary": "#8B1A1A",
+      "soul-primary-text": "#D65656",
+      "soul-primary-large": "#C04040",
+      "soul-accent": "#D4AF37"
+    }
+  }
+}

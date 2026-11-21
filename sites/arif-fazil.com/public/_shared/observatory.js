@@ -1455,8 +1455,149 @@
   }
 
   /* ── coordinated render + fetch ──────────────────────────── */
+
+  /* ═══════════════════════════════════════════════════════════════════
+     REALITY LOOP SPINE — the observatory's single index (2026-11-21)
+     One row: 8 phases, each with a LIVE verdict, its state class, its
+     SOT pointer, and its anchor. Every section below declares the phase
+     it belongs to (data-loop-phase) so the page has ONE hierarchy:
+     OBSERVE → REASON → PLAN → EXECUTE → VERIFY → SEAL → DEPLOY → IMPROVE.
+     Entropy rule: one number, one owner, one place. Duplicated panels
+     point at their phase instead of repeating a second legend.
+     ═══════════════════════════════════════════════════════════════════ */
+  const LOOP_PHASES = [
+    { key: 'observe', label: 'OBSERVE', anchor: 'sec-identity',
+      sot: '/.well-known/observatory-snapshot-latest.json', sotLabel: 'snapshot' },
+    { key: 'reason',  label: 'REASON',  anchor: 'sec-governance',
+      sot: '/constitution/', sotLabel: 'constitution' },
+    { key: 'plan',    label: 'PLAN',    anchor: 'sec-p1-receipt-federation',
+      sot: '/arifos/findings/', sotLabel: 'findings ledger' },
+    { key: 'execute', label: 'EXECUTE', anchor: 'sec-drift',
+      sot: '/api/observatory/v1/capabilities', sotLabel: 'capability matrix' },
+    { key: 'verify',  label: 'VERIFY',  anchor: 'sec-flow-plane',
+      sot: 'arifFlow :7073/health', sotLabel: 'flow health' },
+    { key: 'seal',    label: 'SEAL',    anchor: 'sec-vault',
+      sot: '/999/', sotLabel: 'VAULT999 witness' },
+    { key: 'deploy',  label: 'DEPLOY',  anchor: 'sec-next-mutation-gate',
+      sot: 'public-state drift', sotLabel: 'deploy drift' },
+    { key: 'improve', label: 'IMPROVE', anchor: 'sec-metabolism',
+      sot: '/arifos/findings/', sotLabel: 'lessons' }
+  ];
+  const LOOP_APEX = [
+    { label: 'Constitution F1–F13', href: '/constitution/', note: 'ratified floors' },
+    { label: 'Doctrine',            href: '/laws/',         note: 'APEX-ZEN law' },
+    { label: 'Evidence ledger',     href: '/999/',          note: 'witness chain' },
+    { label: 'Sovereign authority', href: '/arifos/',       note: 'F13 human seat' }
+  ];
+  function loopScalar(v) {
+    if (v === undefined || v === null) return 'unavailable';
+    if (typeof v !== 'object') return String(v);
+    // composite values (verdict dicts, drift dicts, evidence dicts) → one readable scalar
+    for (const k of ['verdict', 'artifact', 'w3_legs', 'status', 'state', 'value']) {
+      if (v[k] !== undefined && v[k] !== null && typeof v[k] !== 'object') return String(v[k]);
+    }
+    try { return JSON.stringify(v).slice(0, 56); } catch (e) { return 'unavailable'; }
+  }
+  function loopField(obj) {
+    if (obj && typeof obj === 'object' && 'value' in obj) {
+      return { value: loopScalar(obj.value), state: obj.state || 'unknown', src: obj.source || '' };
+    }
+    if (obj === undefined || obj === null) return { value: 'unavailable', state: 'unknown', src: '' };
+    return { value: loopScalar(obj), state: 'observed', src: '' };
+  }
+  function loopClass(state) {
+    const s = String(state || '').toLowerCase();
+    if (s.includes('fail') || s.includes('breach') || s.includes('down')) return 'is-critical';
+    if (s.includes('hold') || s.includes('pending') || s.includes('sabar') || s.includes('unmeasured') || s.includes('unknown')) return 'is-human';
+    if (s.includes('pass') || s.includes('seal') || s.includes('ok') || s.includes('aligned') || s.includes('flowing')) return 'is-flow';
+    return 'is-flow';
+  }
+  function renderRealityLoop(data) {
+    const d = data || {};
+    const gov = d.governance || {};
+    const dec = (gov.verdict_decomposition || {});
+    const cap = d.capabilities || {};
+    const flow = d.arifflow || {};
+    const planes = d.planes || {};
+    const idn = d.runtime_identity || {};
+    const ev = d.evidence || {};
+    const intel = d.intelligence_decomposition || {};
+    const verdicts = {
+      observe: loopField(dec.substrate_state),
+      reason:  loopField(gov.verdict),
+      plan:    loopField(intel.intelligence_pipeline),
+      execute: { value: (cap.proven_live_count || 0) + '/' + (cap.declared_count || 0) + ' proven', state: 'observed', src: 'capabilities' },
+      verify:  loopField(flow.fq_verdict),
+      seal:    { value: planes.receipt || 'unavailable', state: 'observed', src: 'planes.receipt' },
+      deploy:  loopField(idn.drift),
+      improve: loopField(ev.source_diversity)
+    };
+    let nav = document.getElementById('reality-loop');
+    if (!nav) {
+      nav = document.createElement('nav');
+      nav.id = 'reality-loop';
+      nav.className = 'loop-spine';
+      nav.setAttribute('aria-label', 'Reality loop — observatory index');
+      const strip = document.getElementById('now-strip');
+      if (strip && strip.parentNode) strip.parentNode.insertBefore(nav, strip);
+      else document.body.insertBefore(nav, document.body.firstChild);
+      if (!document.getElementById('loop-spine-style')) {
+        const style = document.createElement('style');
+        style.id = 'loop-spine-style';
+        style.textContent = [
+          '.loop-spine{background:var(--surface, #121212);border:1px solid var(--border, #2a2a2a);border-radius:.6rem;padding:.85rem 1rem;margin:1rem 0;display:flex;flex-direction:column;gap:.6rem}',
+          '.loop-phases{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.35rem}',
+          '.loop-phase{display:flex;flex-direction:column;gap:.18rem;padding:.5rem .55rem;border:1px solid var(--border, #2a2a2a);border-radius:.4rem;text-decoration:none;color:inherit;background:rgba(255,255,255,.015)}',
+          '.loop-phase:hover{border-color:var(--primary,#58A6FF)}',
+          '.loop-phase .lp-label{font-family:ui-monospace,monospace;font-size:.6rem;letter-spacing:.1em;color:var(--text-faint,#8892A6)}',
+          '.loop-phase .lp-value{font-size:.8rem;font-weight:600;line-height:1.25;word-break:break-word}',
+          '.loop-phase .lp-sot{font-family:ui-monospace,monospace;font-size:.58rem;color:var(--text-faint,#8892A6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
+          '.loop-phase.is-flow{border-left:3px solid var(--state-info,#58A6FF)}',
+          '.loop-phase.is-critical{border-left:3px solid var(--state-danger,#FF1744)}',
+          '.loop-phase.is-human{border-left:3px solid var(--state-pending,#FFD600)}',
+          '.loop-apex{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.35rem}',
+          '.loop-apex a{display:flex;flex-direction:column;gap:.1rem;padding:.4rem .55rem;border:1px solid var(--border,#2a2a2a);border-radius:.4rem;text-decoration:none;color:inherit;border-left:3px solid var(--gold,#D4AF37)}',
+          '.loop-apex .la-label{font-size:.74rem;font-weight:600}',
+          '.loop-apex .la-note{font-size:.6rem;color:var(--text-faint,#8892A6);font-family:ui-monospace,monospace}',
+          '@media (max-width:900px){.loop-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.loop-apex{grid-template-columns:repeat(2,minmax(0,1fr))}}'
+        ].join('');
+        document.head.appendChild(style);
+      }
+    }
+    nav.innerHTML = '';
+    const row = document.createElement('div');
+    row.className = 'loop-phases';
+    LOOP_PHASES.forEach((ph) => {
+      const v = verdicts[ph.key] || { value: 'unavailable', state: 'unknown' };
+      const a = document.createElement('a');
+      a.className = 'loop-phase ' + loopClass(v.state);
+      a.href = '#' + ph.anchor;
+      a.title = ph.label + ' — source of truth: ' + ph.sotLabel;
+      a.innerHTML =
+        '<span class="lp-label">' + ph.label + '</span>' +
+        '<span class="lp-value">' + String(v.value).slice(0, 64) + '</span>' +
+        '<span class="lp-sot">SOT · ' + ph.sotLabel + '</span>';
+      row.appendChild(a);
+    });
+    nav.appendChild(row);
+    const apex = document.createElement('div');
+    apex.className = 'loop-apex';
+    LOOP_APEX.forEach((it) => {
+      const a = document.createElement('a');
+      a.href = it.href;
+      a.innerHTML = '<span class="la-label">' + it.label + '</span><span class="la-note">' + it.note + '</span>';
+      apex.appendChild(a);
+    });
+    nav.appendChild(apex);
+    // every panel declares the phase it belongs to — one hierarchy, no second legend
+    LOOP_PHASES.forEach((ph) => {
+      const sec = document.getElementById(ph.anchor);
+      if (sec) sec.setAttribute('data-loop-phase', ph.label);
+    });
+  }
+
   const renderers = [
-    ['now strip', renderNowStrip], ['metadata', renderMeta], ['identity', renderIdentity],
+    ['reality loop spine', renderRealityLoop], ['now strip', renderNowStrip], ['metadata', renderMeta], ['identity', renderIdentity],
     ['vocabulary', renderVocabulary], ['governance', renderGovernance], ['capabilities', renderDrift],
     ['flow plane', renderFlowPlane], ['P1 receipt federation', renderP1ReceiptFederation],
     ['mutation gate', renderMutationGate], ['organs', renderOrgans], ['edges', renderEdges],

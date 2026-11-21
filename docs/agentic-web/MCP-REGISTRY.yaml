@@ -1,71 +1,156 @@
 # Live MCP / adapter registry for agentic-web work on this VPS.
-# Pin what exists. Do not assume Playwright MCP is connected.
+# Pin what exists. Probed & verified live.
 schema: aaa.agentic_web.mcp_registry.v1
-as_of: 2026-09-13
-observed_harness: grok-build/FI-007
-mcp_spec_federation: "2025-11-25 streamable-http preferred; arifOS also dual-era 2026-07-28"
+as_of: 2026-11-22
+observed_harness: antigravity/FI-009 (333-AGI) with multi-harness Gotong Royong (FI-001..FI-009)
+mcp_spec_federation: "2025-11-25 streamable-http preferred; arifOS dual-era 2026-07-28"
 
 tier_A_read_only:
-  description: Generally safe for inspect missions
+  description: Generally safe for inspect, audit, and design verification missions
   servers:
+    playwright:
+      status: CONNECTED_LIVE
+      tools:
+        - browser_navigate
+        - browser_snapshot
+        - browser_take_screenshot
+        - browser_click
+        - browser_type
+        - browser_fill_form
+        - browser_hover
+        - browser_select_option
+        - browser_press_key
+        - browser_network_requests
+        - browser_network_request
+        - browser_console_messages
+        - browser_resize
+        - browser_tabs
+        - browser_wait_for
+        - browser_run_code_unsafe
+      note: "Live browser automation & visual QA harness for viewport checks (mobile 390px, tablet 768px, desktop 1440px), console errors, and ARIA snapshots."
+    serena:
+      status: CONNECTED_LIVE
+      tools:
+        - find_symbol
+        - find_referencing_symbols
+        - get_symbols_overview
+        - find_implementations
+        - find_declaration
+        - search_for_pattern
+        - get_diagnostics_for_file
+        - read_file
+        - list_dir
+        - find_file
+      note: "Semantic AST exploration and code navigation for React 19, TypeScript, and Vite source trees."
+    context7:
+      status: CONNECTED_LIVE
+      tools:
+        - resolve-library-id
+        - query-docs
+      note: "Live upstream documentation resolver for Vite 8, React 19, Tailwind CSS, Lucide, Radix UI."
+    deepwiki:
+      status: CONNECTED_LIVE
+      tools:
+        - ask_wiki_question
+        - read_wiki_contents
+        - read_wiki_structure
+      note: "Federation and domain wiki reference retrieval."
+    github:
+      status: CONNECTED_LIVE
+      tools:
+        - get_file_contents
+        - search_code
+        - list_pull_requests
+        - list_commits
+        - list_issues
+        - issue_read
+        - pull_request_read
+      note: "GitHub repository read door for ariffazil/arif-fazil.com. Write/PR is Tier C."
+    duckdb:
+      status: CONNECTED_LIVE
+      tools:
+        - duckdb_query
+        - duckdb_describe
+        - duckdb_list_approved_datasets
+      note: "Columnar analytical data querying for web logs, telemetry, and metrics."
     arifos:
-      tools: [arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge]
-      note: "arif_forge/arif_seal are not Tier A"
+      status: CONNECTED_LIVE (port :8088 / stdio)
+      tools:
+        - arif_init
+        - arif_observe
+        - arif_think
+        - arif_route
+        - arif_memory
+        - arif_judge
+        - arif_report
+      note: "arifOS kernel governance, floor checks (F1-F13), and constitutional boundary gates. arif_forge and arif_seal are Tier B/C."
     aforge:
-      tools: [forge_web_zen, forge_probe_site]
-      note: "forge_web_zen modes: sense, verify, orphan, ephemeral, doctor, caddy-reload-hint — no audit CLI"
-    geox: { use: "Earth claim witness only" }
-    wealth: { use: "Capital compute; does not authorize" }
-    well: { use: "H/M/G/C vitality mirror; HOLD if sensors stale" }
-    arifflow: { use: "Metabolic FQ; do not treat as deploy authority" }
-    fed: { use: "Federation probe" }
-    github: { use: "Read issues/PRs/files; write is Tier C" }
+      status: CONNECTED_LIVE (ports :7071/:7072)
+      tools:
+        - forge_web_zen
+        - forge_probe_site
+        - forge_search
+        - forge_fetch
+        - forge_shell_dryrun
+        - forge_registry_status
+      note: "A-FORGE actuator. forge_web_zen modes: doctor, sense, verify, orphan, ephemeral, caddy-reload-hint."
+    organ_witnesses:
+      geox: { port: 8081, use: "Earth / Subsurface claim witness" }
+      wealth: { port: 18082, use: "Capital & commodity compute witness" }
+      well: { port: 18083, use: "Human vitality & dignity audit" }
+      frame: { port: 18085, use: "Behavioral drift witness" }
+      chron: { port: 18102, use: "Temporal predictions and verification" }
+      arifflow: { port: 7073, use: "Metabolic FQ and state" }
+      fed: { port: 7074, use: "Federation mesh routing and telemetry" }
+      hermes: { port: 18087, use: "Human meaning & qualia boundary" }
   local_adapters:
     filesystem_read: harness
     git_status_diff_log: harness
     curl_https: harness
-    playwright_python: "local sync_playwright — NOT a connected MCP in this session"
+    playwright_local: "sync_playwright Python runner + @playwright/test in sites/arif-fazil.com"
     lighthouse_npx: "npx lighthouse 13.4.1"
     web_zen_cli: /root/arif-fazil.com/scripts/web-zen/web_zen.py
+    node_build_tools: "node 22+, vite 8.3.5, typescript 7.0.2, tailwindcss 3.4.19 / 4.3.3"
 
 tier_B_local_reversible:
-  description: Worktree/source mutation; no production infra
+  description: Worktree and source code mutation; zero direct production infrastructure risk
   adapters:
-    - filesystem write in /root/arif-fazil.com
-    - git branch + commit (not force-push)
-    - npm run build / tsc
-    - rsync WITHOUT --delete to /var/www/html/arif after orphan preview
-    - copy static top-level files (institution/, human/, earth/index.html, llms.txt)
+    - filesystem write in /root/arif-fazil.com (worktree preferred)
+    - git branch + commit (never bare push to main)
+    - npm run prebuild (scripts/generate-nav-canon.cjs, compile-design-tokens.py, check-design-tokens.py, etc.)
+    - npm run build (tsc -b && vite build)
+    - serena code mutations: replace_symbol_body, insert_after_symbol, replace_content
+    - python3 scripts/web-zen/web_zen.py orphan --src ... --dest /var/www/html/arif
+    - rsync WITHOUT --delete to /var/www/html/arif after orphan preview confirms safety
+    - static file copy (institution/, human/, earth/index.html, llms.txt, missions.json)
   forbidden:
-    - rsync --delete without orphan.ok
-    - hand-edit /var/www/html without source twin
-    - npm install new dep without announce
+    - rsync --delete without orphan.ok verification
+    - hand-edit /var/www/html without source twin in /root/arif-fazil.com
+    - npm install new dependencies without announcing
 
 tier_C_external_write_human_bound:
-  description: Needs explicit Arif/mission bind
+  description: Requires explicit Chairman/F13 mission mandate or bounded lease
   adapters:
-    - git push origin main
+    - git push origin <branch> (T2-PUSH with bound lease announcement)
     - github.create_pull_request
-    - make deploy  # BLOCKED: Makefile reload target is Caddy T3
-    - email/telegram send
-  condition: exact commit + exact command shown first
+    - make deploy (BLOCKED without explicit Caddy assent, as Makefile reload target triggers Caddy T3)
+    - email/telegram external dispatch
+  condition: exact commit SHA + exact diff + verification receipt shown first
 
 tier_D_privileged:
-  description: Unavailable to general agents
+  description: Sovereign Royal Assent required (T3 HOLD)
   adapters:
     - systemctl reload caddy / caddy reload
-    - DNS, firewall, secret rotate
-    - public /a2a matcher
-    - MCP registry modify
-    - production DB write
-  status: 888_HOLD unless Arif names the action
+    - DNS, Cloudflare edge, firewall, secret rotation
+    - public /a2a live mutations
+    - core constitution or arifOS F1-F13 rule changes
+    - production DB DROP or raw state delete
+  status: 888_HOLD unless Arif / F13 explicitly names and assents to the action
 
-failed_this_session:
-  - firecrawl  # handshake failed
-  - openrouter # auth required
-  - sentry     # auth required
-
-not_connected_do_not_pretend:
-  - playwright MCP (@playwright/mcp) — use local Playwright Python
-  - lighthouse MCP — use npx lighthouse
-  - public WebMCP write tools
+verified_connected_harnesses:
+  FI-009: "Antigravity CLI (agy) — Multimodal vision, full MCP ecosystem, Ed25519 session bound"
+  FI-002: "Claude Code — Lead Architect & complex SPA refactoring"
+  FI-008: "Kimi Code CLI — 2M context monorepo & content graph auditor"
+  FI-001: "OpenCode — Multi-agent orchestrator & batch runner"
+  FI-003: "Qwen Code — Rapid component scaffolding & bilingual localization"
+  FI-005: "Codex CLI — Logic contract & prebuild script verifier"

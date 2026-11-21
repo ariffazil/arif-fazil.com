@@ -3,7 +3,7 @@
   var ACTIVE = (document.currentScript && document.currentScript.getAttribute('data-active')) || '';
   if (!ACTIVE) {
     var p = location.pathname;
-    var slotPairs = [['/makcikgpt','makcikgpt'],['/earth','earth'],['/words','words'],['/world','world'],['/work','work']];
+    var slotPairs = [['/makcikgpt','makcikgpt'],['/earth','earth'],['/words','words'],['/world','world'],['/work','work'],['/about','about']];
     for (var i = 0; i < slotPairs.length; i++) {
       if (p.indexOf(slotPairs[i][0]) === 0) { ACTIVE = slotPairs[i][1]; break; }
     }
@@ -16,6 +16,7 @@
 
   <nav class="nav-links" aria-label="Primary">
     <a href="/" data-slot="home">Home</a>
+    <a href="/about" data-slot="about">About</a>
     <a href="/earth" data-slot="earth">Earth</a>
     <a href="/words" data-slot="words">Words</a>
     <a href="/makcikgpt" data-slot="makcikgpt">MakcikGPT</a>
@@ -38,6 +39,7 @@
 </header>
 <nav class="house-drawer" id="house-nav" hidden aria-label="Primary">
   <a href="/" data-slot="home">Home</a>
+  <a href="/about" data-slot="about">About</a>
   <a href="/earth" data-slot="earth">Earth</a>
   <a href="/words" data-slot="words">Words</a>
   <a href="/makcikgpt" data-slot="makcikgpt">MakcikGPT</a>

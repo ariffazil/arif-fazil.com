@@ -678,9 +678,139 @@
       },
       "overlays": [
         {
-          "path": ".well-known",
+          "path": ".well-known/webmcp",
           "owner": "mcp-gateway-discovery",
           "strategy": "merge-source-wins"
+        },
+        {
+          "path": ".git",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".gitignore",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/agent-card.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/ai-catalog.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/ard.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/did.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/federation.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/glama.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/mcp",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/mcp.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/security.txt",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/webmcp.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c.txt",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "docs/REVERSINGLABS-ATTESTATION.md",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "favicon.ico",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "favicon.svg",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "glama.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "index.html.bak-20261121-fi002-f6",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "index.html.pre-deploy-2026-10-11.aa8b6e0",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "llms-full.txt",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "llms.txt.bak-20261119T0045Z-regressed-june",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "logos",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "manifest",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "openrpc.json",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "robots.txt",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "shared",
+          "owner": "mcp-gateway-discovery",
+          "strategy": "preserve-live"
         }
       ],
       "aliases": [

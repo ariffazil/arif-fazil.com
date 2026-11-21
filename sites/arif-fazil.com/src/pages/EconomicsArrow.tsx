@@ -131,7 +131,7 @@ export function Economics() {
             My second degree, and my second lens. Economics is how I price risk — in barrels, in
             policies, and in machine decisions. From Bursa Malaysia&apos;s FBM KLCI to Brent crude, every price is a signal.
           </p>
-          <nav aria-label="Live boards" className="mx-auto mt-8 flex max-w-[40rem] flex-wrap justify-center gap-x-4 gap-y-2 font-mono text-[13px] tracking-[0.04em]">
+          <nav aria-label="Live boards" className="mx-auto mt-8 flex max-w-[44rem] flex-wrap justify-center gap-x-4 gap-y-2 font-mono text-[13px] tracking-[0.04em]">
             <a href="/oil/" style={{ color: BRASS }}>Brent</a>
             <a href="/gas/" style={{ color: BRASS }}>Gas</a>
             <a href="/gold/" style={{ color: BRASS }}>Gold</a>
@@ -139,6 +139,12 @@ export function Economics() {
             <a href="/world/economics/usdmyr/" style={{ color: BRASS }}>USD/MYR</a>
             <a href="/petronas/" style={{ color: BRASS }}>PETRONAS</a>
             <a href="/world/economics/" style={{ color: BRASS }}>Board index</a>
+            {/* 2026-11-22 FI-008 · one door for the Economics domain. The WEALTH organ
+                cockpit (36 KB of live capital/market synthesis) and the daily briefing
+                were both unreachable from the human surface — 0 inbound links from the
+                apex. The door now points at both. */}
+            <a href="/economics/briefing/" style={{ color: BRASS }}>Daily briefing</a>
+            <a href="https://wealth.arif-fazil.com/" style={{ color: BRASS }}>WEALTH live ↗</a>
           </nav>
           <LedgerTally />
         </div>

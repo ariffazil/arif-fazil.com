@@ -277,8 +277,18 @@ function FederationChrome() {
             <Route path="/economics/" element={<Economics />} />
             <Route path="/wealth" element={<Navigate to="/economics" replace />} />
             <Route path="/wealth/" element={<Navigate to="/economics" replace />} />
-            <Route path="/wealth-live" element={<Wealth />} />
-            <Route path="/wealth-live/" element={<Wealth />} />
+            {/* 2026-11-22 FI-008 · one door for the Economics domain.
+                The daily briefing was served at /wealth-live/ — an orphan (no inbound
+                links, absent from surfaces.json) whose own canonical pointed at
+                /economics/. It now lives inside the domain tree at
+                /economics/briefing/, and the legacy path converges on it.
+                /economics/* is served by Caddy with try_files {path} {path}/index.html
+                =404, so the route needs a built shell at dist/economics/briefing/ —
+                that is what the SPA_ROUTES entry in scripts/copy-static-html.js does. */}
+            <Route path="/economics/briefing" element={<Wealth />} />
+            <Route path="/economics/briefing/" element={<Wealth />} />
+            <Route path="/wealth-live" element={<Navigate to="/economics/briefing/" replace />} />
+            <Route path="/wealth-live/" element={<Navigate to="/economics/briefing/" replace />} />
             <Route path="/wealth/article/:slug" element={<WealthArticle />} />
             <Route path="/economics/article/:slug" element={<WealthArticle />} />
             <Route path="/wealth/makcikgpt" element={<Navigate to="/world/makcikgpt" replace />} />

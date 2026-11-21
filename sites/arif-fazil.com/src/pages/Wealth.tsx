@@ -185,7 +185,10 @@ export function Wealth() {
 
   useEffect(() => {
     document.title = 'Ξ WEALTH · Daily Briefing — Malaysia Economics | Arif Fazil';
-    document.querySelector('link[rel=canonical]')?.setAttribute('href','https://arif-fazil.com/economics');
+    // 2026-11-22 FI-008 · the briefing has its own address inside the Economics
+    // domain tree. It used to canonicalise to /economics/ while being served from
+    // /wealth-live/ — two paths, one canonical, neither reachable. One path now.
+    document.querySelector('link[rel=canonical]')?.setAttribute('href','https://arif-fazil.com/economics/briefing/');
     async function load() {
       try {
         const bRes = await fetch("https://mcp.arif-fazil.com/briefing");

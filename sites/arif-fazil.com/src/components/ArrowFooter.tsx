@@ -3,6 +3,9 @@ import { brand, machineNav, secondaryNav, type NavItem } from '@/data/navCanon'
 const territoryLinks = [
   { label: 'About', href: '/about', desc: 'Who he is' },
   { label: 'Earth', href: '/earth/', desc: 'The ground' },
+  // 2026-11-22 FI-008 · the Economics domain had no door in the human nav —
+  // /economics/ (one door for the domain) was reachable only from /world/economics/.
+  { label: 'Economics', href: '/economics/', desc: 'Capital, commodities & fiscal realities' },
   { label: 'Research', href: '/vitals/', desc: 'PETRONAS, in public numbers' },
   { label: 'Writing', href: '/words/', desc: 'Essays' },
   { label: 'Column', href: '/world/makcikgpt/', desc: 'MakcikGPT, editorial' },

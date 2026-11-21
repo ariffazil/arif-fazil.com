@@ -197,6 +197,136 @@
           "path": "zen",
           "owner": "arifos-zen-publisher",
           "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/agent-card.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/current-state.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/federation.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/glama.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/signature-ladder-latest.json",
+          "owner": "arifos-observatory-publisher",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "README.md",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "constitution.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "dashboard/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "demo/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "favicon.ico",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-001.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-001/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-002.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-002/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-003.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-003/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-005.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-005/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-007.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-007/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-009.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "findings/F-009/index.html",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "glama.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "manifest/REGISTRY_SUBMISSION.md",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "manifest/registry.server.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": "manifest/tools.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
         }
       ],
       "aliases": [

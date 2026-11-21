@@ -307,10 +307,38 @@ for (const p of pieces) {
   const slug = p.dest.path.replace("/world/makcikgpt/", "");
   const bodyHtml = readCanonicalHtml(slug);
   if (!bodyHtml) { htmlSkipped.push(slug); continue; }
+  // JSON-LD for the mirror surface (coverage campaign 2026-11-21) — the mirror
+  // is the file actually served for /world/makcikgpt/<slug>/, so it needs its own graph.
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://arif-fazil.com/world/makcikgpt/${slug}/#article`,
+        "headline": String(p.title || slug),
+        "description": String(p.excerpt || p.title || slug),
+        "url": `https://arif-fazil.com/world/makcikgpt/${slug}/`,
+        "author": {"@type": "Person", "name": "Muhammad Arif bin Fazil", "url": "https://arif-fazil.com/"},
+        "inLanguage": "ms",
+        "mainEntityOfPage": `https://arif-fazil.com/world/makcikgpt/${slug}/`
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "item": "https://arif-fazil.com/world/", "name": "World"},
+          {"@type": "ListItem", "position": 2, "item": "https://arif-fazil.com/world/makcikgpt/", "name": "MakcikGPT"},
+          {"@type": "ListItem", "position": 3, "name": String(p.title || slug)}
+        ]
+      }
+    ]
+  }, null, 1).replace(/<\//g, "<\\/");
   const shell = `<!DOCTYPE html>
 <html lang="ms">
 <head><meta charset="UTF-8"><title>MakcikGPT — ${escapeHtmlAttr(p.title || slug)}</title>
 <meta name="description" content="${escapeHtmlAttr(p.excerpt || p.title || slug)} — 999 Meterai seal">
+<script type="application/ld+json">
+${jsonLd}
+</script>
 </head>
 <body>
 ${bodyHtml}

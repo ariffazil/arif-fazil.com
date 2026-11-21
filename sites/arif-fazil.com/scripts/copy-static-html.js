@@ -9,7 +9,8 @@ const distRoot = path.join(root, "dist");
 const publicRoot = path.join(root, "public");
 
 const SKIP_DIRS = new Set([
-  "assets",          // Vite-managed bundler output (already in dist/assets/)
+  "assets",
+  "arifos",          // arifos is an independent organ deployed to /var/www/html/arifos
   "node_modules",
   ".git",
 ]);
@@ -202,7 +203,7 @@ const STATIC_INDEX_ALLOWLIST = new Set([
 
 function shouldSkip(relativePath, isDir) {
   const parts = relativePath.split(path.sep);
-  if (isDir && parts.some(p => SKIP_DIRS.has(p))) return true;
+  if (parts.some(p => SKIP_DIRS.has(p))) return true;
   // index.html: skip UNLESS on the static allowlist (those are non-React pages)
   if (!isDir && relativePath === "index.html") {
     return !STATIC_INDEX_ALLOWLIST.has(relativePath);

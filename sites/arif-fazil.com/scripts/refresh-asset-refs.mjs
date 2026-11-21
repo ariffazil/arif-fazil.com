@@ -48,15 +48,21 @@ const targets = [];
   }
 })(path.join(DIST, "aaa"));
 
+// VERIFIED 2026-11-21: the AAA cockpit is a STATIC surface — none of its 16 CSS
+// classes exist in the apex bundle CSS and the bundle JS carries no cockpit code.
+// The /assets/ refs were leftovers from an older shell: they 404 on the aaa host
+// (no /assets/ tree there) and the bundle JS could mount the apex app over the
+// cockpit content. Strip them; the cockpit styles itself with its inline <style>
+// plus /_shared/design-system/tokens.css.
 let rewritten = 0;
 for (const f of targets) {
   let html = fs.readFileSync(f, "utf8");
   const before = html;
-  html = html.replace(/\/assets\/index-[A-Za-z0-9_-]+\.css/g, `/assets/${currentCss}`);
-  html = html.replace(/\/assets\/index-[A-Za-z0-9_-]+\.js/g, `/assets/${currentJs}`);
+  html = html.replace(/[ \t]*<link[^>]+href="\/assets\/index-[A-Za-z0-9_-]+\.css"[^>]*>\n?/g, "");
+  html = html.replace(/[ \t]*<script[^>]+src="\/assets\/index-[A-Za-z0-9_-]+\.js"[^>]*><\/script>\n?/g, "");
   if (html !== before) {
     fs.writeFileSync(f, html);
     rewritten++;
   }
 }
-console.log(`refresh-asset-refs: ${rewritten}/${targets.length} AAA pages → ${currentCss} + ${currentJs}`);
+console.log(`refresh-asset-refs: ${rewritten}/${targets.length} AAA pages — vestigial apex-bundle refs stripped`);

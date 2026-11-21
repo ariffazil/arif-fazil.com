@@ -64,8 +64,15 @@ def main() -> int:
     for tree_name, tree in sot["trees"].items():
         path = repo / tree["file"]
         if not path.exists():
-            failures.append(f"[{tree_name}] token file missing: {tree['file']}")
-            continue
+            # In isolated deploy-site builds (git archive on sites/arif-fazil.com),
+            # files outside the site tree like sites/shared/ are not in the isolated extraction.
+            # Resolve against repo fallback if present:
+            fallback = Path("/root/arif-fazil.com") / tree["file"]
+            if fallback.exists():
+                path = fallback
+            else:
+                failures.append(f"[{tree_name}] token file missing: {tree['file']}")
+                continue
         eff = effective_values(path.read_text(errors="replace"))
         overrides = tree.get("overrides", {})
         for token, spec in tokens.items():
@@ -90,7 +97,11 @@ def main() -> int:
     for tree_name, tree in sot["trees"].items():
         path = repo / tree["file"]
         if not path.exists():
-            continue
+            fallback = Path("/root/arif-fazil.com") / tree["file"]
+            if fallback.exists():
+                path = fallback
+            else:
+                continue
         text = path.read_text(errors="replace")
         for m in re.finditer(r"(?<!background-)(?<!-)\bcolor\s*:\s*var\(--soul-primary\)", text):
             line = text[:m.start()].count("\n") + 1

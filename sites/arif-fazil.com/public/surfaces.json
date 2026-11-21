@@ -1185,11 +1185,13 @@
       "path": "/petronas/tengkutaufik/",
       "title": "33 Bayang Tengku Muhammad Taufik — Psikologi Bayang (2020–2026)",
       "mission": "interpret",
-      "status": "live",
-      "type": "page",
+      "status": "redirect",
+      "type": "redirect",
       "priority": 0.85,
       "changefreq": "weekly",
-      "description": "Psikologi Bayang: Siri Penjaga Menara (2020–2026). 32 bayang kepimpinan + 1 teras jiwa merentasi Paksi Mandat, Dompet, dan Budaya."
+      "description": "Psikologi Bayang: Siri Penjaga Menara (2020–2026). 32 bayang kepimpinan + 1 teras jiwa merentasi Paksi Mandat, Dompet, dan Budaya.",
+      "code": 200,
+      "redirects_to": "/world/petronas/shadow/tengku-muhammad-taufik/"
     },
     {
       "path": "/petronas/tengku-taufik/",
@@ -1201,7 +1203,17 @@
       "priority": "0.7",
       "changefreq": "weekly",
       "description": "Alias of the Tengku Taufik dossier canonical page.",
-      "redirects_to": "/petronas/tengkutaufik/"
+      "redirects_to": "/world/petronas/shadow/tengku-muhammad-taufik/"
+    },
+    {
+      "path": "/world/petronas/shadow/tengku-muhammad-taufik/",
+      "title": "33 Bayang Tengku Muhammad Taufik — Siri Penjaga Menara (2020–2026)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "33 Bayang kepimpinan Tan Sri Tengku Muhammad Taufik (CEO PETRONAS 2020–2026): Kepatuhan — Penjaga Lampu, Dompet dan Tangki Negara. Bersumberkan rekod awam diaudit dengan hujah balas dan pintu falsifikasi 2027."
     }
   ],
   "federation_subdomains": [

@@ -26,8 +26,9 @@ const SPA_ROUTES = [
   "work",
   "work/exploration-2013-2026",
   "work/exploration-2013-2026/evidence",
-  "AAA",
-  "aaa",
+  // "AAA"/"aaa" REMOVED 2026-11-21: SPA_ROUTES replaced the AAA cockpit with the apex
+  // shell on every build; the apex shell references /assets/* that do not exist on
+  // the aaa host → broken/blank page on mobile. The cockpit is a STATIC surface.
   "makcikgpt",
   "world/makcikgpt",
   "missions",

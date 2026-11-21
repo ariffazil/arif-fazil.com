@@ -1,0 +1,25 @@
+receipt: jsonld-coverage-deploy
+date: 2026-11-21
+actor: kimi-code/FI-008 (lane kimi-code/jsonld-coverage)
+authority: Arif F13 direct order 2026-11-21 "compile all remaining task and execute all until deployment" + advisory verdict (P1 merge, P2 JSON-LD campaign, P3 report)
+what_shipped:
+  - "merge 38cf8fde: fast-follow 9c040a6b (stray brace x2, audit ratios, evidence addendum)"
+  - "merge (P2/P3): 107 pages stamped (88 WebPage + 19 Article), 3 redaction-broken organ blocks repaired, 145 canonical URL fixes, durable stamper in prebuild, coverage report"
+  - "fix: restamp-shell-assets.cjs preserves JSON-LD across dead-shell replacement (16+4 shells rebuilt with blocks kept)"
+coverage: "221/230 apex index.html (96%) carry valid inline JSON-LD; 0 invalid blocks (was 130/230, 3 invalid)"
+deploy_method: "additive rsync --update --no-delete-equivalent, --chown www-data, NO Caddy reload (config unchanged); x2 passes (initial + post-restore)"
+gates:
+  pre_deploy_verify_pages: "PASS (exit 0)"
+  post_deploy_verify_pages: "PASS (exit 0)"
+  build: "exit 0; stamper ran in-chain, auto-stamped 2 generator-new pages (durability proof)"
+  global_json_validation: "dist: 231 valid / 0 invalid"
+live_evidence:
+  - "/words/writing/the-tool-is-the-thought/ → 1 block"
+  - "/words/writing/i-hate-ai-i-hate-dsg-and-i-built-both-anyway/ → 1 block"
+  - "/world/2027/ → 1 block; /world/petronas/ → 1; /work/missions/ → 1; / → 200"
+known_exceptions:
+  - "5 redirect stubs: stamped-with-JSON-LD would be a lie — skipped, documented"
+  - "4 pages use external governance.jsonld graphs (covered at graph level)"
+  - "SPA-handled routes (/writing/, /words/, /about, home) serve the client-rendered shell — static metadata out of this campaign's surface"
+rollback: "git revert 71388ecf 8748ea16 + rebuild + rsync; additive deploy removed nothing"
+related: "receipts/2026-11-21-verify-pages-gap-closure.yaml (FI-003, 57-gap closure), docs/agentic-web/JSONLD-COVERAGE-2026-11-21.md"

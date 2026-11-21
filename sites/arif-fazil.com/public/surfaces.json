@@ -1180,6 +1180,28 @@
       "priority": 0.9,
       "changefreq": "weekly",
       "description": "The PETRONAS dossier: wallet-and-tank financial reality in audited public numbers. Canonical for the subject — /world/petronas/ is an alias of this page."
+    },
+    {
+      "path": "/petronas/tengkutaufik/",
+      "title": "33 Bayang Tengku Muhammad Taufik — Psikologi Bayang (2020–2026)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "Psikologi Bayang: Siri Penjaga Menara (2020–2026). 32 bayang kepimpinan + 1 teras jiwa merentasi Paksi Mandat, Dompet, dan Budaya."
+    },
+    {
+      "path": "/petronas/tengku-taufik/",
+      "title": "33 Bayang Tengku Muhammad Taufik (alias → /petronas/tengkutaufik/)",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 200,
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "description": "Alias of the Tengku Taufik dossier canonical page.",
+      "redirects_to": "/petronas/tengkutaufik/"
     }
   ],
   "federation_subdomains": [

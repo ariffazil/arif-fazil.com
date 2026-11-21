@@ -138,6 +138,107 @@ export function Home() {
               >
                 See the systems →
               </a>
+              <Link
+                to="/map"
+                className="font-mono text-sm text-[#2DD4BF] hover:underline uppercase tracking-wider transition-colors flex items-center gap-1.5"
+              >
+                🗺 Living Ecosystem Map →
+              </Link>
+            </div>
+
+            {/* ── 4-AXIS SOVEREIGN REALITY CONSOLE (L0 INSTRUMENT HUD) ── */}
+            <div className="mt-14 pt-8 border-t border-[#1F2733]/80">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <div className="font-mono text-[11px] uppercase tracking-widest text-gold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  L0 Sovereign Reality Instrument · 4 Paksi Teras
+                </div>
+                <div className="font-mono text-[11px] text-[#9AA0A8]">
+                  CHRON · 2026-11-22 · UTC+8 · LIVE
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* 1. Earth (Biru) */}
+                <Link
+                  to="/earth"
+                  className="group relative rounded-lg border border-[#1F2733] bg-[#0A0E17]/80 p-5 hover:border-[#38BDF8] transition-all block"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#38BDF8] font-bold">01 · Earth (Biru)</span>
+                    <span className="font-mono text-[9px] bg-[#38BDF8]/10 text-[#38BDF8] px-1.5 py-0.5 rounded border border-[#38BDF8]/30">[OBS]</span>
+                  </div>
+                  <h3 className="font-display text-base font-bold text-white group-hover:text-[#38BDF8] transition-colors">
+                    Geosains &amp; Glob Terestrial
+                  </h3>
+                  <p className="font-mono text-xs text-[#9AA0A8] mt-1.5 leading-relaxed">
+                    Macrostrat WebGL 3D, telaga minyak Lembangan Melayu &amp; bukti fizikal.
+                  </p>
+                  <div className="mt-3 font-mono text-[11px] text-[#38BDF8] flex items-center gap-1">
+                    Buka /earth/ <span>→</span>
+                  </div>
+                </Link>
+
+                {/* 2. Wealth / Capital (Kuning) */}
+                <Link
+                  to="/wealth"
+                  className="group relative rounded-lg border border-[#1F2733] bg-[#0F1420]/80 p-5 hover:border-[#E8B84B] transition-all block"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#E8B84B] font-bold">02 · Wealth (Kuning)</span>
+                    <span className="font-mono text-[9px] bg-[#E8B84B]/10 text-[#E8B84B] px-1.5 py-0.5 rounded border border-[#E8B84B]/30">[DER]</span>
+                  </div>
+                  <h3 className="font-display text-base font-bold text-white group-hover:text-[#E8B84B] transition-colors">
+                    Putrajaya ⇄ KLCC Telemetri
+                  </h3>
+                  <p className="font-mono text-xs text-[#9AA0A8] mt-1.5 leading-relaxed">
+                    Kunci kira-kira negara: Subsidi RM40.0B ganding dividen RM32.0B.
+                  </p>
+                  <div className="mt-3 font-mono text-[11px] text-[#E8B84B] flex items-center gap-1">
+                    Buka /wealth/ <span>→</span>
+                  </div>
+                </Link>
+
+                {/* 3. Shadow / Governance (Merah) */}
+                <Link
+                  to="/world/petronas/shadow/"
+                  className="group relative rounded-lg border border-[#1F2733] bg-[#140C12]/80 p-5 hover:border-[#EF4444] transition-all block"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#EF4444] font-bold">03 · Shadow (Merah)</span>
+                    <span className="font-mono text-[9px] bg-[#EF4444]/10 text-[#EF4444] px-1.5 py-0.5 rounded border border-[#EF4444]/30">[INT]</span>
+                  </div>
+                  <h3 className="font-display text-base font-bold text-white group-hover:text-[#EF4444] transition-colors">
+                    Kerusi Bayang &amp; 33 Bayang
+                  </h3>
+                  <p className="font-mono text-xs text-[#9AA0A8] mt-1.5 leading-relaxed">
+                    Galeri 13 Pengerusi/CEO PETRONAS &amp; audit kuasa teknokratik TMT.
+                  </p>
+                  <div className="mt-3 font-mono text-[11px] text-[#EF4444] flex items-center gap-1">
+                    Buka /shadow/ <span>→</span>
+                  </div>
+                </Link>
+
+                {/* 4. Living Map (Cyan/Slate) */}
+                <Link
+                  to="/map"
+                  className="group relative rounded-lg border border-[#1F2733] bg-[#0C141C]/80 p-5 hover:border-[#2DD4BF] transition-all block"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#2DD4BF] font-bold">04 · Living Map</span>
+                    <span className="font-mono text-[9px] bg-[#2DD4BF]/10 text-[#2DD4BF] px-1.5 py-0.5 rounded border border-[#2DD4BF]/30">[SPEC]</span>
+                  </div>
+                  <h3 className="font-display text-base font-bold text-white group-hover:text-[#2DD4BF] transition-colors">
+                    Peta Seni Bina Ekosistem
+                  </h3>
+                  <p className="font-mono text-xs text-[#9AA0A8] mt-1.5 leading-relaxed">
+                    Graf nod hidup L0–L4, sambungan gandingan &amp; pariti mesin penuh.
+                  </p>
+                  <div className="mt-3 font-mono text-[11px] text-[#2DD4BF] flex items-center gap-1">
+                    Buka /map/ <span>→</span>
+                  </div>
+                </Link>
+              </div>
             </div>
           </RevealOnScroll>
         </div>
@@ -366,6 +467,22 @@ export function Home() {
             <p className="mt-3 font-display italic text-base text-gold">
               Ditempa bukan diberi — forged, not given.
             </p>
+          </div>
+
+          {/* ── CLOSED-LOOP FOOTER NAVIGATION ("LOOP IT ALL") ── */}
+          <div className="mt-8 pt-6 border-t border-[#1F2733] flex flex-wrap justify-between items-center gap-4">
+            <nav className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-[#9AA0A8]" aria-label="Closed-Loop Navigation">
+              <span className="text-white font-bold">L0 Home</span>
+              <Link to="/earth" className="hover:text-[#38BDF8]">⇄ Earth (/earth/)</Link>
+              <Link to="/wealth" className="hover:text-gold">⇄ Wealth (/wealth/)</Link>
+              <Link to="/petronas" className="hover:text-gold">⇄ KLCC (/petronas/)</Link>
+              <Link to="/world/petronas/shadow/" className="hover:text-[#EF4444]">⇄ Shadow (/shadow/)</Link>
+              <Link to="/map" className="hover:text-[#2DD4BF] text-[#2DD4BF]">🗺 Peta Sistem (/map/)</Link>
+              <a href="/llms.txt" className="hover:text-white">🤖 /llms.txt</a>
+            </nav>
+            <div className="font-mono text-[11px] text-[#9AA0A8]">
+              arifOS Sovereign Reality Instrument · seal 999
+            </div>
           </div>
         </div>
       </section>

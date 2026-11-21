@@ -1,0 +1,986 @@
+#!/usr/bin/env python3
+import json
+
+MAP_HTML_PATH = '/root/arif-fazil.com/sites/arif-fazil.com/public/map/index.html'
+
+html_content = '''<!DOCTYPE html>
+<html lang="en" data-surface="map" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map — arifOS Living Architecture &amp; Route Tree | arif-fazil.com</title>
+<meta name="description" content="Pusat Navigasi Hidup arifOS: Peta ekosistem mengikut strata kedalaman L0–L4, triad semantik teras (Earth, Wealth, Shadow), dan gandingan institusi dua hala.">
+<link rel="canonical" href="https://arif-fazil.com/map/">
+
+<!-- Machine-First Discovery Links -->
+<link rel="alternate" type="application/json" href="/surfaces.json" title="Surfaces JSON Catalog" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="arifOS Master Agentic Index" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Map — arifOS Living Architecture & Route Tree",
+  "description": "Pusat Navigasi Hidup arifOS: Peta ekosistem mengikut strata kedalaman L0–L4, triad semantik teras (Earth, Wealth, Shadow), dan gandingan institusi dua hala.",
+  "url": "https://arif-fazil.com/map/",
+  "inLanguage": "en",
+  "dateModified": "2026-11-22",
+  "author": {
+    "@type": "Person",
+    "name": "Muhammad Arif bin Fazil",
+    "url": "https://arif-fazil.com"
+  }
+}
+</script>
+
+<style>
+:root {
+  --bg: #07080B;
+  --bg-panel: #0D111A;
+  --bg-card: #121824;
+  --border: #1E2738;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --fg: #EDEAE2;
+  --fg-muted: #9AA0A8;
+  --fg-subtle: #64748B;
+  --blue: #38BDF8;
+  --blue-glow: rgba(56, 189, 248, 0.2);
+  --yellow: #E8B84B;
+  --yellow-glow: rgba(232, 184, 75, 0.2);
+  --red: #EF4444;
+  --red-glow: rgba(239, 68, 68, 0.2);
+  --green: #34D399;
+  --cyan: #2DD4BF;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --display: 'Cabinet Grotesk', Georgia, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+::selection { background: var(--yellow); color: var(--bg); }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle Orthogonal Architectural Grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+a { color: var(--blue); text-decoration: none; transition: color 0.15s; }
+a:hover { color: var(--yellow); }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+
+/* Sticky Global Instrument Navigation */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(7, 8, 11, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 0;
+}
+.topbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.brand-badge {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  background: rgba(232, 184, 75, 0.12);
+  border: 1px solid rgba(232, 184, 75, 0.3);
+  color: var(--yellow);
+  border-radius: 4px;
+}
+.brand-name {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.topbar nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+.topbar nav a {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+}
+.topbar nav a:hover { color: #fff; }
+.topbar nav a.active {
+  color: var(--yellow);
+  font-weight: 700;
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 2px;
+}
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+.live-clock {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--fg-muted);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+}
+
+/* L1 Hero Banner (220–280px Scale) */
+.hero {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(13, 17, 26, 0.8) 0%, rgba(7, 8, 11, 0) 100%);
+  position: relative;
+}
+.kicker {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+.hero p {
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+  max-width: 820px;
+  line-height: 1.6;
+}
+
+/* 4-Metric HUD Panel with Reticle Accents */
+.hud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+.hud-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+.hud-panel::before {
+  content: ''; position: absolute; top: -1px; left: -1px; width: 6px; height: 6px;
+  border-top: 2px solid var(--accent, var(--yellow));
+  border-left: 2px solid var(--accent, var(--yellow));
+}
+.hud-panel::after {
+  content: ''; position: absolute; bottom: -1px; right: -1px; width: 6px; height: 6px;
+  border-bottom: 2px solid var(--accent, var(--yellow));
+  border-right: 2px solid var(--accent, var(--yellow));
+}
+.hud-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-subtle);
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+.hud-val {
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+.hud-sub {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--fg-muted);
+  margin-top: 0.2rem;
+}
+
+/* Section Containers */
+.section {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-desc {
+  font-size: 0.88rem;
+  color: var(--fg-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Couplings Graph (Putrajaya ⇄ KLCC, Executive ⇄ Towers, Earth ⇄ Chron) */
+.coupling-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+}
+.coupling-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.coupling-card:hover {
+  border-color: var(--card-accent, var(--yellow));
+  box-shadow: 0 8px 30px -10px var(--card-glow, var(--yellow-glow));
+}
+.coupling-badge {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 0.85rem;
+}
+.coupling-title {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.coupling-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+.coupling-node {
+  display: flex;
+  flex-direction: column;
+}
+.coupling-node b { color: #fff; font-size: 0.8rem; }
+.coupling-node span { color: var(--fg-subtle); font-size: 0.68rem; }
+.coupling-arrow {
+  color: var(--card-accent, var(--yellow));
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+.coupling-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.machine-pill {
+  color: var(--fg-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.2rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+.machine-pill:hover { color: var(--yellow); border-color: var(--yellow); }
+
+/* Strata L0–L4 Depth Hierarchy Matrix */
+.strata-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.strata-col {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.strata-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.strata-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+.strata-role {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--fg-subtle);
+  text-transform: uppercase;
+}
+.strata-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+.strata-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  transition: all 0.15s;
+}
+.strata-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--item-accent, var(--blue));
+}
+.strata-item a { display: block; color: #fff; font-weight: 600; }
+.strata-item span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--fg-subtle);
+  margin-top: 0.2rem;
+}
+
+/* Canonical Surfaces List Filter & Grid */
+.surface-card {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  transition: border-color .15s;
+}
+.surface-card:hover { border-color: var(--blue); }
+.surface-card .path { font-family: var(--mono); font-size: 13px; color: var(--fg); }
+.surface-card .path a { color: var(--blue); }
+.surface-card .title { color: var(--fg-muted); font-size: 13px; }
+.surface-card .meta { font-size: 11px; color: var(--fg-subtle); text-align: right; }
+.depth-chip {
+  font-size: 10px; font-family: var(--mono); background: var(--bg);
+  padding: 2px 7px; border-radius: 3px; color: var(--fg-subtle); border: 1px solid var(--border);
+}
+
+.badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 3px; font-family: var(--mono); text-transform: uppercase; }
+.badge-live { background: rgba(52, 211, 153, 0.15); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.3); }
+.badge-redirect { background: rgba(56, 189, 248, 0.15); color: var(--blue); border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-subdomain { background: rgba(232, 184, 75, 0.15); color: var(--yellow); border: 1px solid rgba(232, 184, 75, 0.3); }
+.badge-machine { background: transparent; border: 1px solid var(--fg-subtle); color: var(--fg-muted); }
+.badge-gone { background: rgba(239, 68, 68, 0.15); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+/* Closed-Loop Footer Navigation */
+.closed-loop-footer {
+  margin-top: 3.5rem;
+  padding: 2rem 0;
+  border-top: 2px solid var(--border);
+  background: var(--bg-panel);
+}
+.closed-loop-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+.loop-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.loop-nav a {
+  color: var(--fg-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.loop-nav a:hover { color: var(--yellow); }
+.loop-meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--fg-subtle);
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap nav-container">
+    <div class="brand-group">
+      <span class="brand-badge">Ψ</span>
+      <span class="brand-name"><a href="/" style="color:#fff">ARIF FAZIL</a></span>
+    </div>
+    <nav aria-label="Global Unified Navigation">
+      <a href="/">Home</a>
+      <a href="/earth">Earth</a>
+      <a href="/wealth">Wealth</a>
+      <a href="/world/petronas/shadow/">Shadow</a>
+      <a href="/map" class="active" aria-current="page">Map</a>
+      <a href="/llms.txt">llms.txt</a>
+    </nav>
+    <div class="nav-tools">
+      <a href="https://geox.arif-fazil.com" target="_blank" rel="noreferrer" style="color:var(--blue)">🪞 GEOX ↗</a>
+      <div class="live-clock">
+        <span class="pulse-dot"></span>
+        <span id="map-clock">--:--:-- MYT</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">
+      <span>SOVEREIGN REALITY INSTRUMENT</span>
+      <span>·</span>
+      <span>LIVING ROUTE MAP</span>
+      <span>·</span>
+      <span>SEAL 999</span>
+    </div>
+    <h1>Pusat Navigasi Hidup &amp; Seni Bina Ekosistem</h1>
+    <p>Peta hierarki ekosistem mengikut strata kedalaman L0–L4, triad semantik teras (Earth, Wealth, Shadow), dan sistem gandingan institusi hidup. Menghubungkan telemetri manusia dan pariti mesin tanpa halaman yatim.</p>
+
+    <!-- 4-Metric HUD -->
+    <div class="hud-grid">
+      <div class="hud-panel" style="--accent: var(--blue)">
+        <div class="hud-label">
+          <span>Strata Kedalaman</span>
+          <span style="color:var(--blue)">[OBS]</span>
+        </div>
+        <div class="hud-val">L0 – L4</div>
+        <div class="hud-sub">121 Surfaces Berdaftar (Max ≤ 5)</div>
+      </div>
+
+      <div class="hud-panel" style="--accent: var(--yellow)">
+        <div class="hud-label">
+          <span>Triad Semantik</span>
+          <span style="color:var(--yellow)">[OBS]</span>
+        </div>
+        <div class="hud-val">Biru · Kuning · Merah</div>
+        <div class="hud-sub">Earth · Wealth · Shadow</div>
+      </div>
+
+      <div class="hud-panel" style="--accent: var(--red)">
+        <div class="hud-label">
+          <span>Gandingan Teras</span>
+          <span style="color:var(--red)">[DER]</span>
+        </div>
+        <div class="hud-val">Putrajaya ⇄ KLCC</div>
+        <div class="hud-sub">RM40.0B Subsidi ⇄ RM32.0B Dividen</div>
+      </div>
+
+      <div class="hud-panel" style="--accent: var(--green)">
+        <div class="hud-label">
+          <span>Denyut CHRON</span>
+          <span style="color:var(--green)">[INT]</span>
+        </div>
+        <div class="hud-val">UTC+8 · LIVE</div>
+        <div class="hud-sub">Pariti Mesin (state.json / llms.txt)</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================================================================= -->
+  <!-- 01: TERAS GANDINGAN INSTITUSI (EXPLICIT COUPLING GRAPH)           -->
+  <!-- ================================================================= -->
+  <section class="section">
+    <h2 class="section-title">01 · Teras Gandingan Institusi (Coupled Architecture)</h2>
+    <p class="section-desc">Tiga litar gandingan utama di mana data, kuasa perlembagaan, dan kedaulatan fizikal bersilang.</p>
+
+    <div class="coupling-grid">
+      <!-- Coupling 1: Putrajaya ⇄ KLCC (Wealth / Kuning) -->
+      <div class="coupling-card" style="--card-accent: var(--yellow); --card-glow: var(--yellow-glow)">
+        <span class="coupling-badge" style="background: rgba(232, 184, 75, 0.15); color: var(--yellow);">Paksi Fiskal &amp; Korporat</span>
+        <h3 class="coupling-title">Putrajaya ⇄ KLCC (Sovereign-Corporate)</h3>
+        <p style="font-size: 0.84rem; color: var(--fg-muted);">Gandingan kunci kira-kira kerajaan persekutuan dan penjana hidrokarbon kebangsaan.</p>
+
+        <div class="coupling-flow">
+          <div class="coupling-node">
+            <b>Putrajaya</b>
+            <a href="/wealth/malaysia/">/wealth/malaysia/</a>
+            <span>Subsidi RM40.0B (Asas 2027)</span>
+          </div>
+          <div class="coupling-arrow">⇄</div>
+          <div class="coupling-node" style="text-align: right;">
+            <b>KLCC</b>
+            <a href="/petronas/">/petronas/</a>
+            <span>Dividen RM32.0B (Aliran 2026)</span>
+          </div>
+        </div>
+
+        <div class="coupling-footer">
+          <span>Pariti Mesin:</span>
+          <div>
+            <a href="/wealth/malaysia/state.json" class="machine-pill">malaysia/state.json</a>
+            <a href="/wealth/petronas/state.json" class="machine-pill">petronas/state.json</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coupling 2: Executive ⇄ Tower Guardians (Shadow / Merah) -->
+      <div class="coupling-card" style="--card-accent: var(--red); --card-glow: var(--red-glow)">
+        <span class="coupling-badge" style="background: rgba(239, 68, 68, 0.15); color: var(--red);">Paksi Mandat &amp; Kuasa</span>
+        <h3 class="coupling-title">Eksekutif ⇄ Penjaga Menara (Shadow Axis)</h3>
+        <p style="font-size: 0.84rem; color: var(--fg-muted);">Psikologi bayang kuasa: ruang antara persona pemimpin politik dan penjaga tangki.</p>
+
+        <div class="coupling-flow">
+          <div class="coupling-node">
+            <b>PM Bayang</b>
+            <a href="/world/politics/shadow/anwar-ibrahim/">/shadow/anwar-ibrahim/</a>
+            <span>33 Bayang Pemegang Mandat</span>
+          </div>
+          <div class="coupling-arrow" style="color:var(--red)">⇄</div>
+          <div class="coupling-node" style="text-align: right;">
+            <b>Kerusi Bayang</b>
+            <a href="/world/petronas/shadow/tengku-muhammad-taufik/">/shadow/tengku-muhammad-taufik/</a>
+            <span>33 Bayang Penjaga Menara</span>
+          </div>
+        </div>
+
+        <div class="coupling-footer">
+          <span>Audit Status:</span>
+          <span style="color:var(--red); font-weight:600">Kes Terbuka · Hipotesis Terhakis</span>
+        </div>
+      </div>
+
+      <!-- Coupling 3: Earth ⇄ Chron (Blue / Biru) -->
+      <div class="coupling-card" style="--card-accent: var(--blue); --card-glow: var(--blue-glow)">
+        <span class="coupling-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--blue);">Paksi Fizikal &amp; Masa</span>
+        <h3 class="coupling-title">Bumi ⇄ Saksi Realiti (Terrestrial Witness)</h3>
+        <p style="font-size: 0.84rem; color: var(--fg-muted);">Geodinamik bumi sebenar digandingkan dengan bukti masa tanpa sebarang fabrikasi.</p>
+
+        <div class="coupling-flow">
+          <div class="coupling-node">
+            <b>Earth Globe</b>
+            <a href="/earth/">/earth/</a>
+            <span>Macrostrat WebGL · Lembangan</span>
+          </div>
+          <div class="coupling-arrow" style="color:var(--blue)">⇄</div>
+          <div class="coupling-node" style="text-align: right;">
+            <b>Saksi Masa</b>
+            <a href="/chron/">/chron/</a>
+            <span>Kalibrasi CHRON · Bukti Bebas</span>
+          </div>
+        </div>
+
+        <div class="coupling-footer">
+          <span>Integriti Realiti:</span>
+          <span style="color:var(--blue); font-weight:600">[OBS] Tiada Ramalan Tanpa Instrumen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 02: STRATA KEDALAMAN (L0–L4 HIERARCHY MATRIX)                     -->
+  <!-- ================================================================= -->
+  <section class="section">
+    <h2 class="section-title">02 · Strata Kedalaman Arkitektur (L0 – L4 Matrix)</h2>
+    <p class="section-desc">Struktur berperingkat dari muka hadapan (L0) hingga ke dokumen falsifikasi muktamad (L4). Had siling kedalaman ≤ 5.</p>
+
+    <div class="strata-matrix">
+      <!-- L0 -->
+      <div class="strata-col" style="--item-accent: #EDEAE2">
+        <div class="strata-header">
+          <span class="strata-tag">L0 · Root</span>
+          <span class="strata-role">Muka Hadapan</span>
+        </div>
+        <div class="strata-list">
+          <div class="strata-item">
+            <a href="/">/ (Root Home)</a>
+            <span>Hero Instrumen Utama &amp; 4 Paksi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- L1 -->
+      <div class="strata-col" style="--item-accent: var(--yellow)">
+        <div class="strata-header">
+          <span class="strata-tag">L1 · Hubs</span>
+          <span class="strata-role">Pusat Wilayah</span>
+        </div>
+        <div class="strata-list">
+          <div class="strata-item">
+            <a href="/earth/">/earth/</a>
+            <span>Geosains &amp; Glob Terestrial</span>
+          </div>
+          <div class="strata-item">
+            <a href="/wealth/">/wealth/</a>
+            <span>Sistem Gandingan Fiskal</span>
+          </div>
+          <div class="strata-item">
+            <a href="/world/">/world/</a>
+            <span>Hub Analisis Dunia &amp; MakcikGPT</span>
+          </div>
+          <div class="strata-item">
+            <a href="/map/">/map/</a>
+            <span>Pusat Navigasi Hidup Ekosistem</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- L2 -->
+      <div class="strata-col" style="--item-accent: var(--blue)">
+        <div class="strata-header">
+          <span class="strata-tag">L2 · Engines</span>
+          <span class="strata-role">Sub-Sistem &amp; Kunci</span>
+        </div>
+        <div class="strata-list">
+          <div class="strata-item">
+            <a href="/wealth/malaysia/">/wealth/malaysia/</a>
+            <span>Putrajaya Sovereign Ledger</span>
+          </div>
+          <div class="strata-item">
+            <a href="/petronas/">/petronas/</a>
+            <span>KLCC Hydrocarbon Engine</span>
+          </div>
+          <div class="strata-item">
+            <a href="/wealth/petronas/">/wealth/petronas/</a>
+            <span>PETRONAS Corporate Telemetry</span>
+          </div>
+          <div class="strata-item">
+            <a href="/world/petronas/shadow/">/world/petronas/shadow/</a>
+            <span>Galeri Kerusi Bayang (13 Pemimpin)</span>
+          </div>
+          <div class="strata-item">
+            <a href="/world/politics/shadow/">/world/politics/shadow/</a>
+            <span>Galeri PM Bayang (9 Perdana Menteri)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- L3 -->
+      <div class="strata-col" style="--item-accent: var(--red)">
+        <div class="strata-header">
+          <span class="strata-tag">L3 · Dossiers</span>
+          <span class="strata-role">Audit Mendalam</span>
+        </div>
+        <div class="strata-list">
+          <div class="strata-item">
+            <a href="/world/petronas/shadow/tengku-muhammad-taufik/">/shadow/tengku-muhammad-taufik/</a>
+            <span>33 Bayang Penjaga Menara (96KB)</span>
+          </div>
+          <div class="strata-item">
+            <a href="/world/politics/shadow/anwar-ibrahim/">/shadow/anwar-ibrahim/</a>
+            <span>33 Bayang Anwar Ibrahim</span>
+          </div>
+          <div class="strata-item">
+            <a href="/world/politics/shadow/mahathir-mohamad/">/shadow/mahathir-mohamad/</a>
+            <span>13 Bayang Mahathir Mohamad</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- L4 -->
+      <div class="strata-col" style="--item-accent: var(--cyan)">
+        <div class="strata-header">
+          <span class="strata-tag">L4 · Terminals</span>
+          <span class="strata-role">Pintu Falsifikasi</span>
+        </div>
+        <div class="strata-list">
+          <div class="strata-item">
+            <a href="/world/petronas/shadow/tengku-muhammad-taufik/#falsifikasi-2027">#falsifikasi-2027</a>
+            <span>3 Ujian Falsifikasi Pasca-2026</span>
+          </div>
+          <div class="strata-item">
+            <a href="/world/petronas/shadow/#what-the-seat-rewards">#what-the-seat-rewards</a>
+            <span>5 Pola Ganjaran Kerusi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 03: DAFTAR SURFACES.JSON KANONIKAL                                -->
+  <!-- ================================================================= -->
+  <section class="section">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+      <div>
+        <h2 class="section-title">03 · Daftar Laluan Kanonikal (surfaces.json)</h2>
+        <p class="section-desc" style="margin-bottom:0">Katalog penuh rasmi yang disegerakkan secara langsung daripada punca kebenaran.</p>
+      </div>
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+        <span class="badge badge-live">live</span>
+        <span class="badge badge-redirect">redirect</span>
+        <span class="badge badge-subdomain">subdomain</span>
+        <span class="badge badge-machine">machine</span>
+        <span class="badge badge-gone">gone</span>
+      </div>
+    </div>
+
+    <!-- LIVE PAGES -->
+    <div style="margin-top:1.5rem;">
+      <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--yellow); text-transform:uppercase; margin-bottom:0.75rem;">
+        ▸ Live Pages <span id="live-count" style="color:var(--fg-subtle)"></span>
+      </h3>
+      <div id="live-surfaces"></div>
+    </div>
+
+    <!-- REDIRECTS -->
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--blue); text-transform:uppercase; margin-bottom:0.75rem;">
+        ▸ Redirects <span id="redirect-count" style="color:var(--fg-subtle)"></span>
+      </h3>
+      <div id="redirect-surfaces"></div>
+    </div>
+
+    <!-- MACHINE SURFACES -->
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--green); text-transform:uppercase; margin-bottom:0.75rem;">
+        ▸ Machine Surfaces &amp; Parity Endpoints <span id="machine-count" style="color:var(--fg-subtle)"></span>
+      </h3>
+      <div id="machine-surfaces"></div>
+    </div>
+
+    <!-- FEDERATION SUBDOMAINS -->
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--yellow); text-transform:uppercase; margin-bottom:0.75rem;">
+        ▸ Subdomain Organ Persekutuan <span id="subdomain-count" style="color:var(--fg-subtle)"></span>
+      </h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:10px;" id="subdomain-grid"></div>
+    </div>
+
+    <!-- DEPRECATED ROUTES -->
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:var(--mono); font-size:0.85rem; color:var(--red); text-transform:uppercase; margin-bottom:0.75rem;">
+        ▸ Laluan Ditarik Balik (Historical Wounds) <span id="gone-count" style="color:var(--fg-subtle)"></span>
+      </h3>
+      <div id="gone-surfaces"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =================================================================== -->
+<!-- 04: CLOSED-LOOP FOOTER NAVIGATION ("LOOP IT ALL")                   -->
+<!-- =================================================================== -->
+<footer class="closed-loop-footer">
+  <div class="wrap closed-loop-container">
+    <nav class="loop-nav" aria-label="Footer Closed Loop">
+      <a href="/">← Kembali ke Home (L0)</a>
+      <a href="/earth">⇄ Hub Terestrial (/earth/)</a>
+      <a href="/wealth">⇄ Hub Fiskal (/wealth/)</a>
+      <a href="/world/petronas/shadow/">⇄ Hub Bayang (/petronas/shadow/)</a>
+      <a href="/map" style="color:var(--yellow)">🗺 Peta Sistem /map/</a>
+      <a href="/llms.txt">🤖 /llms.txt</a>
+    </nav>
+    <div class="loop-meta">
+      <span>DITEMPA BUKAN DIBERI</span> ·
+      <span>arifOS Federation</span> ·
+      <span id="gen-date"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FEDERATION_SUBDOMAINS = [
+  { domain: 'geox.arif-fazil.com', organ: 'GEOX', role: 'Subsurface Earth reasoning & basin modeling' },
+  { domain: 'wealth.arif-fazil.com', organ: 'WEALTH', role: 'Capital flow, sovereign balance sheet & claims' },
+  { domain: 'aaa.arif-fazil.com', organ: 'AAA', role: 'Agent registry, skills catalog & capability tokens' },
+  { domain: 'arifos.arif-fazil.com', organ: 'arifOS', role: 'Constitutional kernel, law & machine court' },
+  { domain: 'forge.arif-fazil.com', organ: 'A-FORGE', role: 'Execution actuator, tool server & filesystem mutations' },
+  { domain: 'hermes.arif-fazil.com', organ: 'HERMES', role: 'Human meaning, civic voice & persona governance' },
+  { domain: 'mcp.arif-fazil.com', organ: 'MCP', role: 'Model Context Protocol federation gateway' },
+  { domain: 'well.arif-fazil.com', organ: 'WELL', role: 'Vitality, homeostasis & human operator dignity' }
+];
+
+function depth(path){
+  const clean = path.replace(/^\\/+|\\/+$/g,'');
+  return clean ? clean.split('/').length : 0;
+}
+function anchorId(path){
+  return 's-' + path.replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-');
+}
+function badge(s){
+  if(s.status==='live') return s.type==='machine'||s.type==='api'||s.type==='machine_contract' ? 'badge-machine' : 'badge-live';
+  if(s.status==='redirect') return 'badge-redirect';
+  if(s.status==='gone') return 'badge-gone';
+  return 'badge-machine';
+}
+function badgeLabel(s){
+  if(s.status==='redirect') return 'redirect';
+  if(s.status==='gone') return 'gone';
+  if(s.type==='machine'||s.type==='api'||s.type==='machine_contract') return 'machine';
+  return 'live';
+}
+
+function renderCard(s){
+  const d = depth(s.path);
+  const aid = anchorId(s.path);
+  if(s.status==='gone'){
+    return `<div class="surface-card" id="${aid}" style="opacity:0.5; border-style:dashed;">
+      <div><span class="path" style="text-decoration:line-through; color:var(--red)">${s.path}</span> <span class="title">— ${s.description||s.title||'Deprecated'}</span></div>
+      <div><span class="depth-chip">depth ${d}</span></div>
+      <div class="meta"><span class="badge badge-gone">gone</span></div>
+    </div>`;
+  }
+  return `<div class="surface-card" id="${aid}">
+    <div><span class="path">${s.status==='redirect'?'↳ ':''}<a href="${s.path}"><code>${s.path}</code></a></span>${s.title?` <span class="title">— ${s.title}</span>`:''}</div>
+    <div><span class="depth-chip">depth ${d}</span></div>
+    <div class="meta"><span class="badge ${badge(s)}">${badgeLabel(s)}</span>${s.redirects_to?`<br><span style="font-size:10px; color:var(--fg-subtle)">→ ${s.redirects_to}</span>`:''}</div>
+  </div>`;
+}
+
+function renderSubdomain(sd){
+  return `<a href="https://${sd.domain}" target="_blank" rel="noreferrer" style="text-decoration:none">
+    <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:6px; padding:12px 14px; transition:border-color .15s;">
+      <div style="font-family:var(--mono); font-size:0.85rem; font-weight:700; color:var(--yellow);">${sd.domain} ↗</div>
+      <div style="font-size:0.75rem; color:var(--fg-muted); margin-top:4px;">${sd.role}</div>
+      <div style="font-family:var(--mono); font-size:0.65rem; color:var(--fg-subtle); margin-top:6px;">ORGAN: ${sd.organ}</div>
+    </div>
+  </a>`;
+}
+
+function setCount(id, n){
+  const el = document.getElementById(id);
+  if(el) el.textContent = `(${n})`;
+}
+
+async function boot(){
+  let surfaces=[], subdomains=FEDERATION_SUBDOMAINS, version='?';
+  try {
+    const res = await fetch('/surfaces.json', { cache: 'no-store' });
+    if(!res.ok) throw new Error('surfaces_http_'+res.status);
+    const data = await res.json();
+    surfaces = data.surfaces || [];
+    subdomains = data.federation_subdomains || FEDERATION_SUBDOMAINS;
+    version = data.version || data.as_of || '?';
+  } catch (e) {
+    document.getElementById('live-surfaces').innerHTML = '<p style="color:#f66">Peringatan: surfaces.json gagal dimuat. Menjana dari sandaran.</p>';
+    return;
+  }
+  const isMachine = s => s.type==='machine'||s.type==='machine_contract'||s.type==='api';
+  const live = surfaces.filter(s=>s.status==='live'&&!isMachine(s));
+  const redirects = surfaces.filter(s=>s.status==='redirect');
+  const machines = surfaces.filter(s=>isMachine(s)||(s.status==='live'&&String(s.path||'').includes('.well-known')));
+  const gone = surfaces.filter(s=>s.status==='gone');
+
+  document.getElementById('live-surfaces').innerHTML = live.map(renderCard).join('') || '<p>None</p>';
+  document.getElementById('redirect-surfaces').innerHTML = redirects.map(renderCard).join('') || '<p>None</p>';
+  document.getElementById('machine-surfaces').innerHTML = machines.map(renderCard).join('') || '<p>None</p>';
+  document.getElementById('gone-surfaces').innerHTML = gone.map(renderCard).join('') || '<p>None</p>';
+
+  setCount('live-count', live.length);
+  setCount('redirect-count', redirects.length);
+  setCount('machine-count', machines.length);
+  setCount('gone-count', gone.length);
+  setCount('subdomain-count', subdomains.length);
+
+  const grid = document.getElementById('subdomain-grid');
+  if(grid) grid.innerHTML = subdomains.map(renderSubdomain).join('');
+
+  const gd = document.getElementById('gen-date');
+  if(gd) gd.textContent = `Catalog v${version} · 2026-11-22`;
+}
+
+// Live Clock in MYT
+function updateClock(){
+  const clock = document.getElementById('map-clock');
+  if(!clock) return;
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const myt = new Date(utc + (3600000 * 8));
+  const h = String(myt.getHours()).padStart(2, '0');
+  const m = String(myt.getMinutes()).padStart(2, '0');
+  const s = String(myt.getSeconds()).padStart(2, '0');
+  clock.textContent = `${h}:${m}:${s} MYT`;
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+boot();
+</script>
+</body>
+</html>
+'''
+
+with open(MAP_HTML_PATH, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Successfully generated living map at {MAP_HTML_PATH}. Bytes: {len(html_content)}")

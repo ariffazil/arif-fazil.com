@@ -409,7 +409,6 @@ body {
   background: var(--state-void);
   color: #000; /* AA fix 2026-11-21 — dark text required on the brighter void grey */
 }
-}
 
 .badge-breach {
   background: var(--state-danger);

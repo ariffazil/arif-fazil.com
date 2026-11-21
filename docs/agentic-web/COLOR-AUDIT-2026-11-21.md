@@ -13,9 +13,9 @@ files; 44 rows: 6 state tokens × 3 backgrounds, 6 organ verdict tokens × 3 bac
 
 | Token | Was | Ratio (min) | Now | Ratio (min) | Also changed |
 |---|---|---|---|---|---|
-| `--state-danger` | `#D50000` | 3.40:1 | `#FF1744` | 4.76:1* | `.badge-breach` text `#fff` → `#000` (3.85 → 5.46) |
-| `--state-void` | `#616161` | 3.01:1 | `#9CA3AF` | 7.38:1* | `.badge-void` text `var(--text-primary)` → `#000` (2.33 → 8.27) |
-| `--color-verdict-unknown` (arifos organ) | `#6B6C78` | 3.59:1 | `#8E959E` | 5.95:1 | — |
+| `--state-danger` | `#D50000` | 3.40:1 | `#FF1744` | 4.84:1* | `.badge-breach` text `#fff` → `#000` (3.85 → 5.46) |
+| `--state-void` | `#616161` | 3.01:1 | `#9CA3AF` | 7.34:1* | `.badge-void` text `var(--text-primary)` → `#000` (old-text-on-new-bg 2.33 → 8.27; the old-old pairing 5.69 was already passing) |
+| `--color-verdict-unknown` (arifos organ) | `#6B6C78` | 3.59:1 | `#8E959E` | 6.16:1 | — |
 
 \* min ratio across site/homepage `#0A0B0D`, soul `#1A0A0A`, organ `#12121A` backgrounds.
 Ratios quoted are the worst case per token; all pass ≥4.5:1.
@@ -79,11 +79,23 @@ Raw-hex sweep of `public/` (`*.html`, `*.css`, excl. `.bak*`, `dist/`): 50 rows 
 
 ### Stale SOT (governance finding)
 
-5. `canon/design-tokens.json` declares `public/_shared/design-system/tokens.css` as
-   its derived output, but contains **no** state/verdict token values and no
-   generator script exists in the repo. The declared derivation cannot reproduce the
+5. `canon/file-authority.yaml:44` declares `public/_shared/design-system/tokens.css`
+   as a `derived_output` of `canon/design-tokens.json` — but that JSON is a 2026-08
+   PRIMER palette carrying **no** state/verdict token values, and no generator
+   script exists in the repo. The declared derivation cannot reproduce the
    deployed file. Either re-sync the JSON or re-declare the CSS as the SOT —
    otherwise a future regeneration silently reverts the AA fixes from this audit.
+
+### Additional bypass hits (review pass 2026-11-21, same day)
+
+6. `public/work/proof/index.html:228` — raw `#38cc84` (the retired live-green).
+7. `public/999/index.html:84` — raw `#38cc84`.
+8. `public/_shared/design-system/components.css:528` and organ
+   `public/arifos/_shared/design-system/components.css:512` — raw `#8B1A1A`
+   (soul-primary as hex inside component CSS, adjacent to token definitions).
+   Sweep exclusion gap noted: `public/.shell-wrap-backup-*/` directories leaked
+   2 noise rows — the exclusion covered `.bak` filenames but not backup-class
+   directories.
 
 ## 4. M1 sync debt — CLOSED 2026-11-21 (landed by qwen-code/FI-003 takeover)
 

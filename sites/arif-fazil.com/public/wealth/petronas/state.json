@@ -13,7 +13,7 @@
     "sealed_at": "2026-11-22",
     "baseline_event": "1H2026 Financial Accounts & 2026 Reserve Print",
     "next_audit": "2027-02-28",
-    "overall_tag": "EVIDENCE",
+    "overall_tag": "[OBS]",
     "language": "bilingual-en-ms"
   },
   "temporal": {
@@ -26,7 +26,7 @@
           "2026-01-01": 7.92
         },
         "delta_pct": -15.3,
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       },
       {
         "metric_id": "rrr_1p_3yr_avg",
@@ -36,7 +36,7 @@
           "2026-01-01": 0.3
         },
         "delta_pct": -81.25,
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       },
       {
         "metric_id": "daily_production_kboe_d",
@@ -45,37 +45,37 @@
           "2024": 2423,
           "2025": 2341
         },
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       }
     ],
     "present": {
       "gross_cash_rm_b": {
         "value": 193.6,
         "as_of": "2026-06-30",
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       },
       "net_cash_rm_b": {
         "value": 66.8,
         "as_of": "2026-06-30",
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       },
       "cffo_1h26_rm_b": {
         "value": 47.5,
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       },
       "outflows_1h26_capex_plus_div_rm_b": {
         "value": 49.4,
         "cffo_coverage_ratio_pct": 104.0,
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       },
       "gearing_ratio_pct": {
         "value": 21.2,
         "post_prefchem_projected_pct": 25.5,
-        "tag": "DERIVED"
+        "tag": "[DER]"
       },
       "prefchem_non_cash_adjustment_rm_b": {
         "value": 14.8,
-        "tag": "EVIDENCE"
+        "tag": "[OBS]"
       }
     },
     "future_gates": [

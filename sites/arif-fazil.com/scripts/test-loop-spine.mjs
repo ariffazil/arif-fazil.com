@@ -86,6 +86,8 @@ phaseChips.forEach((c, i) => {
   if (!c.innerHTML.includes("lp-value")) errors.push(`chip ${i} missing verdict value`);
   if (c.innerHTML.includes("[object Object]")) errors.push(`chip ${i} renders an object as [object Object]`);
   if (/lp-value"><\/span>/.test(c.innerHTML)) errors.push(`chip ${i} has an empty verdict`);
+  if (/SIMULATION|MOCK|ESTIMATED/i.test(c.innerHTML) && !c.className.includes("is-sim"))
+    errors.push(`chip ${i} shows a simulated value without the is-sim (display-only) class`);
 });
 if (apexChips.length !== 4) errors.push(`expected 4 apex anchors, got ${apexChips.length}`);
 const badged = Object.values(sections).filter((s) => s.getAttribute("data-loop-phase")).length;

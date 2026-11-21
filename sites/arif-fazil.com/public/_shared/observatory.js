@@ -1507,6 +1507,9 @@
   }
   function loopClass(state) {
     const s = String(state || '').toLowerCase();
+    // H3: simulated / estimated / mocked numbers are DISPLAY_ONLY — never styled
+    // as a live flow indicator, and never read as a verdict.
+    if (s.includes('simul') || s.includes('mock') || s.includes('estimated') || s.includes('unverified')) return 'is-sim';
     if (s.includes('fail') || s.includes('breach') || s.includes('down')) return 'is-critical';
     if (s.includes('hold') || s.includes('pending') || s.includes('sabar') || s.includes('unmeasured') || s.includes('unknown')) return 'is-human';
     if (s.includes('pass') || s.includes('seal') || s.includes('ok') || s.includes('aligned') || s.includes('flowing')) return 'is-flow';
@@ -1555,6 +1558,8 @@
           '.loop-phase.is-flow{border-left:3px solid var(--state-info,#58A6FF)}',
           '.loop-phase.is-critical{border-left:3px solid var(--state-danger,#FF1744)}',
           '.loop-phase.is-human{border-left:3px solid var(--state-pending,#FFD600)}',
+          '.loop-phase.is-sim{border-left:3px solid var(--state-pending,#FFD600);opacity:.85}',
+          '.loop-phase.is-sim .lp-value::after{content:" · simulated";font-size:.55rem;color:var(--state-pending,#FFD600)}',
           '.loop-apex{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.35rem}',
           '.loop-apex a{display:flex;flex-direction:column;gap:.1rem;padding:.4rem .55rem;border:1px solid var(--border,#2a2a2a);border-radius:.4rem;text-decoration:none;color:inherit;border-left:3px solid var(--gold,#D4AF37)}',
           '.loop-apex .la-label{font-size:.74rem;font-weight:600}',
@@ -1569,8 +1574,9 @@
     row.className = 'loop-phases';
     LOOP_PHASES.forEach((ph) => {
       const v = verdicts[ph.key] || { value: 'unavailable', state: 'unknown' };
+      const cls = loopClass(v.state) === 'is-flow' ? loopClass(String(v.value)) : loopClass(v.state);
       const a = document.createElement('a');
-      a.className = 'loop-phase ' + loopClass(v.state);
+      a.className = 'loop-phase ' + cls;
       a.href = '#' + ph.anchor;
       a.title = ph.label + ' — source of truth: ' + ph.sotLabel;
       a.innerHTML =

@@ -1,60 +1,40 @@
-# AAA — Control Plane / Agent Cockpit
-> React 19 cockpit + A2A mesh gateway. Operator surface for the 7-organ arifOS federation.
-> Port: 3001. License: AGPL-3.0. Status: OPERATIONAL. Version: 2026.07.01.
-> Transport: JSON-RPC unified · ΔS ≤ 0 · DISPLAY_ONLY
+# AAA — Attention Cockpit / A2A gateway
+> Server-rendered attention cockpit + A2A mesh gateway for the 9-organ arifOS federation.
+> Port: 3001. License: AGPL-3.0. Transport: JSON-RPC unified · ΔS ≤ 0 · DISPLAY_ONLY.
+> This file is GENERATED from live state by scripts/sync-aaa-surface.mjs. Do not hand-edit.
 
-## Quick Context
-- **What:** Operator dashboard + A2A message broker for the 7-organ arifOS federation
-- **Role:** SHOWS state — queues HOLDs, routes A2A. Never judges. Never executes.
+## Live posture (generated 2026-11-21T07:09:16.180543+00:00)
+kernel degraded · readiness held · verdict HOLD · holds 0 · attention 2 · metabolism FLOWING (FQ 1.206) · deploy drift YES
+
+## What this surface is
+- **What:** Server-rendered attention cockpit + A2A message broker. One path, two contracts:
+  a browser (Accept: text/html) gets the rendered cockpit; an agent (application/json) gets the A2A service descriptor.
+- **Role:** SHOWS state — queues HOLDs, routes A2A. Never judges. Never executes. Never seals.
 - **Federation:** AAA shows. arifOS judges. A-FORGE executes. Arif controls.
-- **Transport:** JSON-RPC unified · ΔS ≤ 0
 - **Ingress:** Direct A-record → aaa.arif-fazil.com (Caddy → localhost:3001)
-- **Stack:** React 19 + Vite 8 + Tailwind 4 + Radix UI + Express A2A gateway
+- **Render:** The cockpit HTML is produced server-side from the same snapshot the webroot serves as
+  /state.json (one inode, so the surface cannot drift from the published truth).
 
-## Federation Organs (live · 2026-08-25)
-| Organ | Port | Role | Public surface |
-|-------|------|------|-----------|
-| arifOS | 8088 | Constitutional kernel — F1-F13, 888 JUDGE, VAULT999 | 8 `arif_*` verbs · door `/mcp` |
-| A-FORGE | 7071/:7072 | Execution shell — build, deploy, forge, MCP gateway | 114 `forge_*` |
-| GEOX | 8081 | Earth intelligence — wells, seismic, petrophysics, basin | 19 |
-| WEALTH | 18082 | Capital intelligence — NPV, IRR, EMV, conservation, flow | 11 |
-| WELL | 18083 | Vitality mirror — readiness, homeostasis, dignity | 31 |
-| AAA | 3001 | DISPLAY_ONLY cockpit / A2A gateway (this surface) | A2A JSON-RPC — not MCP |
-| VAULT999 | — | Immutable audit ledger — sealed past, hash-chained | kernel-owned |
+## Federation Organs (live)
+| Organ | Port | Role | Status | Health | Public tools | Public surface |
+|-------|------|------|--------|--------|--------------|---------------|
+| arifos | 8088 | Constitutional kernel — F1-F13, 888 JUDGE, VAULT999 | UP | DEGRADED | 9 | 9 `arif_*` public tools · door `/mcp` |
+| a-forge | 7071/:7072 | Execution shell — build, deploy, forge, MCP gateway | UP | DEGRADED | 99 | public `forge_*` tools |
+| geox | 8081 | Earth intelligence — wells, seismic, petrophysics, basin | UP | DEGRADED | 29 | public GEOX tools |
+| wealth | 18082 | Capital intelligence — NPV, IRR, EMV, conservation, flow | UP | HEALTHY | 14 | public WEALTH tools |
+| well | 18083 | Vitality mirror — readiness, homeostasis, dignity | UP | HEALTHY | 10 | public WELL tools |
+| aaa | 3001 | DISPLAY_ONLY attention cockpit + A2A gateway (this surface) | UP | HEALTHY | UNKNOWN | A2A JSON-RPC — not MCP |
+| arifflow | 7073 | Metabolism plane — receipt authority, FQ quotient | UP | HEALTHY | UNKNOWN | internal |
+| fed | 8080 | Federation router — provider cascade, budgets | UP | HEALTHY | UNKNOWN | internal |
+| chron | — | Temporal ledger — events, predictions, calibration | UP | HEALTHY | UNKNOWN | internal |
+| VAULT999 | — | Immutable audit ledger — sealed past, hash-chained | — | — | — | kernel-owned |
 
-## Key Files
-- README.md — Full human-readable narrative (849 lines)
-- AGENTS.md — Agent rules, build/test commands
-- GENESIS/013_AAA_MANDATE.md — Constitutional mandate
-- CONTEXT.md — Live organ state
-
-## Frontend (React SPA)
-- src/Cockpit.tsx — Main dashboard (autonomy bands, organ health, vault)
-- src/App.tsx — App shell with routing
-- src/components/cockpit/ — Cockpit panels
-- src/components/ui/ — Radix UI primitives
-- src/gateway/ — A2A message gateway, agent discovery
-- src/hooks/ — React hooks for federation state
-- src/ai/ — AI integration layer
-- src/adapter/ — Federation data adapters
-- src/lib/ — Shared utilities
-- src/seed/ — Seed data
-
-## A2A Gateway (Express)
-- a2a-server/server.js — Production A2A server (standalone, no build step)
-- a2a-server/vault.js — VAULT999 read bridge
-- a2a-server/agent-cards/ — Federation agent identity cards (5 warga + 7 external)
-- registries/ — forge_instruments.yaml, agent registry
-
-## Build & Test
-- Install:  npm install
-- Dev:     npm run dev           (Vite dev server)
-- Build:   npm run build         (Vite production build, ~1.25s)
-- Lint:    npm run lint          (ESLint)
-- Start A2A: node a2a-server/server.js   (port 3001)
-- Dev A2A:  npm run a2a:server           (tsx watch)
-- Health:  curl http://127.0.0.1:3001/health
-- Deploy:  npm run build && systemctl restart aaa-a2a
+## Machine-readable truth
+- /state.json — live federation snapshot (no-store)
+- /claims.json — claim + evidence ledger
+- /truth-contract.json — doctrine, falsification invariant, planes
+- /health — gateway liveness
+- /a2a/discover/stats — A2A discovery counters
 
 ## A2A Server Endpoints
 GET  /health                           — Liveness probe
@@ -65,13 +45,10 @@ GET  /api/agents                       — Agent registry
 ## HEXAGON Warga (5 constitutional agents)
 333-AGI (Δ MIND) · 555-ASI (Ω HEART) · 888-APEX (ΦΙ JUDGE) · A-AUDIT (observer) · A-ARCHIVE (vault)
 
-## Agent Cards (a2a-server/agent-cards/)
-333-AGI · 555-ASI · 888-APEX · A-AUDIT · A-ARCHIVE · hermes-asi · 777-forge
-+ aaa-architect · aaa-auditor · aaa-engineer · antigravity · hermes-ops
-
 ## Boundaries (NEVER)
 - NEVER adjudicate (AAA displays, arifOS judges)
 - NEVER auto-approve a HOLD (AAA queues, Arif approves)
 - NEVER claim execution authority (AAA routes, A-FORGE executes)
 - NEVER fabricate organ health status — probe live or show UNKNOWN
 - NEVER hide a HOLD from the operator queue
+- NEVER render a predicate as a measurement, or UNKNOWN as healthy

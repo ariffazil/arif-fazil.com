@@ -86,6 +86,11 @@ jobs:
             exit 1
           fi
           echo "✅ no secret shapes in source"
+      - name: AAA surface drift guard (dead local refs + generated contract)
+        run: |
+          set -euo pipefail
+          node scripts/sync-aaa-surface.mjs --check
+          echo "✅ AAA surface drift guard clean"
       - name: Nav canon contract present
         run: |
           test -f sites/arif-fazil.com/scripts/generate-nav-canon.cjs

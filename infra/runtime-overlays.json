@@ -347,6 +347,11 @@
           "path": "public-state.json",
           "owner": "arifos-observatory-publisher",
           "strategy": "preserve-live"
+        },
+        {
+          "path": "claims.json",
+          "owner": "aaa-manifest-publisher",
+          "strategy": "preserve-live"
         }
       ],
       "aliases": [

@@ -1,25 +1,37 @@
 receipt: jsonld-coverage-deploy
 date: 2026-11-21
-actor: kimi-code/FI-008 (lane kimi-code/jsonld-coverage)
+actor: kimi-code/FI-008
 authority: Arif F13 direct order 2026-11-21 "compile all remaining task and execute all until deployment" + advisory verdict (P1 merge, P2 JSON-LD campaign, P3 report)
-what_shipped:
-  - "merge 38cf8fde: fast-follow 9c040a6b (stray brace x2, audit ratios, evidence addendum)"
-  - "merge (P2/P3): 107 pages stamped (88 WebPage + 19 Article), 3 redaction-broken organ blocks repaired, 145 canonical URL fixes, durable stamper in prebuild, coverage report"
-  - "fix: restamp-shell-assets.cjs preserves JSON-LD across dead-shell replacement (16+4 shells rebuilt with blocks kept)"
-coverage: "221/230 apex index.html (96%) carry valid inline JSON-LD; 0 invalid blocks (was 130/230, 3 invalid)"
-deploy_method: "additive rsync --update --no-delete-equivalent, --chown www-data, NO Caddy reload (config unchanged); x2 passes (initial + post-restore)"
-gates:
-  pre_deploy_verify_pages: "PASS (exit 0)"
-  post_deploy_verify_pages: "PASS (exit 0)"
-  build: "exit 0; stamper ran in-chain, auto-stamped 2 generator-new pages (durability proof)"
-  global_json_validation: "dist: 231 valid / 0 invalid"
-live_evidence:
-  - "/words/writing/the-tool-is-the-thought/ → 1 block"
-  - "/words/writing/i-hate-ai-i-hate-dsg-and-i-built-both-anyway/ → 1 block"
-  - "/world/2027/ → 1 block; /world/petronas/ → 1; /work/missions/ → 1; / → 200"
-known_exceptions:
-  - "5 redirect stubs: stamped-with-JSON-LD would be a lie — skipped, documented"
-  - "4 pages use external governance.jsonld graphs (covered at graph level)"
-  - "SPA-handled routes (/writing/, /words/, /about, home) serve the client-rendered shell — static metadata out of this campaign's surface"
-rollback: "git revert 71388ecf 8748ea16 + rebuild + rsync; additive deploy removed nothing"
-related: "receipts/2026-11-21-verify-pages-gap-closure.yaml (FI-003, 57-gap closure), docs/agentic-web/JSONLD-COVERAGE-2026-11-21.md"
+program:
+  P1_merge_fast_follow: "38cf8fde — stray brace x2 token files, audit-doc ratio cells, 4 missed bypass hits, release-evidence landing addendum"
+  P2_jsonld_campaign: "8748ea16 (107 pages stamped: 88 WebPage + 19 Article; 3 redaction-broken organ blocks repaired; 145 canonical URL fixes) + 71388ecf (stamper chained into prebuild)"
+  P3_coverage_report: "docs/agentic-web/JSONLD-COVERAGE-2026-11-21.md"
+  shell_preservation_fix: "restamp-shell-assets.cjs keeps JSON-LD across dead-shell replacement (16+4 shells rebuilt with blocks kept)"
+  mirror_stamping: "5c77dfd9 — generate-md-mirrors.cjs emits Article+BreadcrumbList into the makcikgpt HTML mirror (53 blocks, 0 invalid)"
+coverage: "221/230 apex index.html (96%) carry valid inline JSON-LD; 0 invalid blocks (was 130/230 with 3 invalid)"
+deploy:
+  method: "additive rsync, no deletions, --chown www-data, NO Caddy reload (config unchanged)"
+  targets:
+    - "/var/www/html/arif/ (dist/)"
+    - "/var/www/html/arifos/ (dist/arifos/) — the tree that actually serves /arifos/findings/*, /arifos/verify/*"
+    - "/var/www/html/organs/ (dist/organs/)"
+    - "/var/www/html/aaa/ (dist/aaa/)"
+    - "/var/www/html/world/makcikgpt/ (dist/world/makcikgpt/)"
+    - "/var/www/html/arif/world/makcikgpt/makcikgpt-md/ (dist/makcikgpt-md/)"
+gates: "make verify-pages PASS pre-deploy (exit 0) and post-deploy (exit 0); npm run build exit 0; stamper auto-stamped 2 generator-new pages (durability proof); dist 231 valid / 0 invalid"
+live_census_n30: "jsonld-valid 17-18 | served-as-Markdown+frontmatter 8 (makcikgpt — machine-readable, JSON-LD n/a to that representation) | retired 410 x2 (surfaces.json status gone) | no-block x2 (/organs artifact not in repo source; /_shared/design-system/geometry is an asset path) | invalid 0"
+measurement_artifacts:
+  - "Cloudflare serves stale bodies for the NON-SLASH url form (/path) while /path/ is current — always measure the canonical slash form with a cache-buster"
+  - "regex <script type=\"application/ld+json\"> over-strict — extra attributes break the match; use <script[^>]*application/ld\\+json[^>]*>"
+residual_for_arif:
+  - "/organs hub is served from an artifact absent from this repo's source — identify owner before stamping"
+  - "WELL/AAA/arifOS organ pages are proxied to services (:18083/:3001/:8088) — their metadata is the services' responsibility, not this repo's"
+  - "aaa organ tokens still carry pre-audit #D50000/#616161 (own musyawarah record — not touched)"
+  - "soul-primary #8B1A1A at 2.01:1 (brand decision)"
+  - "VOID grey-vs-red mapping conflict (canonical decisions)"
+preserved_not_dropped:
+  - "stash@{0} concurrent world-state diffs (2 files) — labelled, reversible, owner to decide"
+  - "stash@{1} FI-003 build residue in kimi-code lane (13 generated files) — labelled, reversible"
+  - "stashes@{2,3,4} pre-existing lanes' WIP — untouched"
+rollback: "git revert 5c77dfd9 71388ecf 8748ea16 + rebuild + additive rsync (deploy removed nothing)"
+related: "receipts/2026-11-21-verify-pages-gap-closure.yaml (FI-003), docs/agentic-web/COLOR-AUDIT-2026-11-21.md"

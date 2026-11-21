@@ -1,0 +1,118 @@
+{
+  "$schema": "https://arif-fazil.com/schemas/arifos-vitals-v2.json",
+  "schema_version": "arifos.vitals.v2",
+  "entity": {
+    "id": "malaysia-federal",
+    "name": "Federal Government of Malaysia (Putrajaya)",
+    "mirror_entity": "petronas",
+    "mirror_url": "https://arif-fazil.com/wealth/petronas/state.json",
+    "hero_motif": "PUTRAJAYA",
+    "canonical_url": "https://arif-fazil.com/wealth/malaysia/"
+  },
+  "epistemic_meta": {
+    "sealed_at": "2026-11-22",
+    "baseline_event": "Post-Budget 2027 (Oct 2026 Presentation)",
+    "next_audit": "2027-02-28",
+    "overall_tag": "EVIDENCE",
+    "language": "bilingual-en-ms"
+  },
+  "temporal": {
+    "past": [
+      {
+        "metric_id": "debt_to_gdp_pct",
+        "series": {
+          "2022-12-31": 60.4,
+          "2023-12-31": 64.3,
+          "2024-12-31": 64.0,
+          "2025-12-31": 63.1
+        },
+        "unit": "percent_gdp",
+        "tag": "EVIDENCE"
+      },
+      {
+        "metric_id": "fiscal_deficit_pct",
+        "series": {
+          "2022": 5.6,
+          "2023": 5.0,
+          "2024": 4.3,
+          "2025": 3.8
+        },
+        "unit": "percent_gdp",
+        "tag": "EVIDENCE"
+      }
+    ],
+    "present": {
+      "composite_pulse": {
+        "value": 45,
+        "band": "HOLD",
+        "as_of": "2026-11-22",
+        "tag": "DERIVED"
+      },
+      "debt_to_gdp_pct": {
+        "value": 63.1,
+        "projected_end_2027": 63.7,
+        "statutory_ceiling": 65.0,
+        "distance_to_ceiling_pct_p": 1.9,
+        "tag": "EVIDENCE",
+        "source": "MoF Fiscal Outlook Budget 2027"
+      },
+      "fiscal_deficit_target_2027_pct": {
+        "value": 3.3,
+        "unit": "percent_gdp",
+        "tag": "EVIDENCE",
+        "source": "Budget 2027"
+      },
+      "petroleum_revenue_share_pct": {
+        "value": 16.1,
+        "numerator_rm_b": 61.2,
+        "denominator_total_revenue_rm_b": 380.8,
+        "tag": "EVIDENCE"
+      },
+      "fuel_subsidy_bill_projected_rm_b": {
+        "value": 34.1,
+        "brent_base_usd": 73.0,
+        "sensitivity_per_10usd_rm_b": 5.1,
+        "tag": "DERIVED"
+      }
+    },
+    "future_gates": [
+      {
+        "date": "2026-12-31",
+        "event": "EnQuest Farm-Out completion",
+        "impact": "Reduces Peninsular production baseline"
+      },
+      {
+        "date": "2027-01-25",
+        "event": "Federal Court panel: PDA 1974 vs Sarawak DGO 2016",
+        "impact": "Tests petroleum tax and royalty distribution integrity"
+      },
+      {
+        "date": "2027-02-28",
+        "event": "PETRONAS FY2026 Audited Accounts publication",
+        "impact": "Confirms actual cash dividend available for MoF FY2027"
+      },
+      {
+        "date": "2027-12-31",
+        "event": "Budget 2028 & GE16 pre-election window",
+        "impact": "Heightened risk of populist subsidy reversal"
+      }
+    ]
+  },
+  "couplings": [
+    {
+      "target_entity": "petronas",
+      "target_metric": "dividend_payout_rm_b",
+      "channel": "fiscal_revenue_support",
+      "mof_budget_demand": 32.0,
+      "petronas_declared_base": 20.0,
+      "gap_rm_b": -12.0,
+      "brent_breakeven_usd": 67.34
+    },
+    {
+      "target_entity": "petronas",
+      "target_metric": "hydrocarbon_reserves_2p",
+      "channel": "sovereign_credit_rating_asset_base",
+      "impact": "Declining RRR threatens long-term sovereign wealth durability"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "schema": "arifos.witness_ledger.v1",
- "generated_at": "2026-11-19T08:00:41Z",
+ "generated_at": "2026-11-21T17:54:12Z",
  "generator": {
   "path": "/root/arif-fazil.com/sites/arif-fazil.com/scripts/build-ledger.py",
   "sha256": "5aa990ee4c5b46b72939dd21e823cdfa5e74a8694cf6eed5475c618ef6e86456",
@@ -579,7 +579,7 @@
   "lines": 1363,
   "bytes": 1907133,
   "last_append": "2026-10-28T17:19:19Z",
-  "days_since_append": 21,
+  "days_since_append": 24,
   "head_id": 984,
   "twin_copy": {
    "path": "/root/arifOS/VAULT999/SEALED_EVENTS.jsonl",
@@ -603,7 +603,7 @@
   "open_loops": 7,
   "closed_loops": 23,
   "loops_total": 30,
-  "oldest_open_ts": "2026-11-19T07:51:02Z"
+  "oldest_open_ts": "2026-11-21T17:51:01Z"
  },
  "public_surfaces": [
   {
@@ -653,7 +653,7 @@
   {
    "id": "D3",
    "title": "Legacy v1 seal store frozen; retirement not formalized (v2 canonical active)",
-   "evidence": "legacy last append 2026-10-28T17:19:19Z (21d ago, head id=984); v2 canonical 282 rows (last append 2026-11-17T18:13:01Z)",
+   "evidence": "legacy last append 2026-10-28T17:19:19Z (24d ago, head id=984); v2 canonical 282 rows (last append 2026-11-17T18:13:01Z)",
    "consequence": "Legacy SEALED_EVENTS.jsonl is frozen historical provenance, while v2 seal_chain.jsonl is canonical. Formal retirement marker prevents readers confusing legacy with current.",
    "owner": "F13 (formalize v1 retirement)"
   },
@@ -667,7 +667,7 @@
   {
    "id": "D5",
    "title": "Open loops accumulate faster than they close",
-   "evidence": "7 open loops of 30 entries; oldest 2026-11-19T07:51:02Z",
+   "evidence": "7 open loops of 30 entries; oldest 2026-11-21T17:51:01Z",
    "consequence": "A backlog stated as policy. The stated count is the audit.",
    "owner": "ongoing"
   },

@@ -702,6 +702,16 @@
       "description": "33 shadow cards across 3 axes (Sosiopolitik / Ekonomi / Peribadi) for PM-10 Anwar Ibrahim. Editorial psychology analysis grounded in 322 public sources. Static HTML at /var/www/html/world/politics/shadow/anwar-ibrahim/index.html. Three-pillar DNA: Persona, Bayang, Tragedi, Legasi."
     },
     {
+      "path": "/world/politics/shadow/mahathir-mohamad/",
+      "title": "13 Bayang Mahathir Mohamad — Three-Axis Shadow Analysis",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "13 shadow cards across 3 axes (Sosiopolitik 5 / Ekonomi 4 / Peribadi 4) for PM-4 & PM-7 Mahathir Mohamad. Editorial Jungian psychology analysis grounded in verified public sources (Wikipedia EN, The Star, The Sun Malaysia, Malaysian Journal of Economic Studies 2024, Millman 1995). Static HTML at /var/www/html/world/politics/shadow/mahathir-mohamad/index.html. Three-pillar DNA: Persona, Bayang, Tragedi, Legasi."
+    },
+    {
       "path": "/surfaces.json",
       "title": "surfaces.json — Canonical Surface Catalog",
       "status": "live",

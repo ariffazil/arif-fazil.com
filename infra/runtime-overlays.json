@@ -112,6 +112,12 @@
           "owner": "event-deriv-gdg-kl",
           "strategy": "preserve-live",
           "note": "2026-11-14 audit: duplicate live route of /vibing/ (same build); preserve pending canonical-redirect decision"
+        },
+        {
+          "path": "arifos",
+          "owner": "arifos-standalone-organ",
+          "strategy": "preserve-live",
+          "note": "2026-11-22: arifos deployed independently via deploy-site.sh arifos to /var/www/html/arifos; arif-fazil.com must never clobber arif/arifos"
         }
       ],
       "aliases": [

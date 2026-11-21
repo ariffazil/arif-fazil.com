@@ -1,0 +1,127 @@
+{
+  "$schema": "https://arif-fazil.com/schemas/arifos-vitals-v2.json",
+  "schema_version": "arifos.vitals.v2",
+  "entity": {
+    "id": "petronas",
+    "name": "Petroliam Nasional Berhad (PETRONAS)",
+    "mirror_entity": "malaysia-federal",
+    "mirror_url": "https://arif-fazil.com/wealth/malaysia/state.json",
+    "hero_motif": "KLCC",
+    "canonical_url": "https://arif-fazil.com/wealth/petronas/"
+  },
+  "epistemic_meta": {
+    "sealed_at": "2026-11-22",
+    "baseline_event": "1H2026 Financial Accounts & 2026 Reserve Print",
+    "next_audit": "2027-02-28",
+    "overall_tag": "EVIDENCE",
+    "language": "bilingual-en-ms"
+  },
+  "temporal": {
+    "past": [
+      {
+        "metric_id": "reserves_2p_boe_b",
+        "series": {
+          "2024-01-01": 9.35,
+          "2025-01-01": 8.64,
+          "2026-01-01": 7.92
+        },
+        "delta_pct": -15.3,
+        "tag": "EVIDENCE"
+      },
+      {
+        "metric_id": "rrr_1p_3yr_avg",
+        "series": {
+          "2024-01-01": 1.6,
+          "2025-01-01": 0.8,
+          "2026-01-01": 0.3
+        },
+        "delta_pct": -81.25,
+        "tag": "EVIDENCE"
+      },
+      {
+        "metric_id": "daily_production_kboe_d",
+        "series": {
+          "2023": 2451,
+          "2024": 2423,
+          "2025": 2341
+        },
+        "tag": "EVIDENCE"
+      }
+    ],
+    "present": {
+      "gross_cash_rm_b": {
+        "value": 193.6,
+        "as_of": "2026-06-30",
+        "tag": "EVIDENCE"
+      },
+      "net_cash_rm_b": {
+        "value": 66.8,
+        "as_of": "2026-06-30",
+        "tag": "EVIDENCE"
+      },
+      "cffo_1h26_rm_b": {
+        "value": 47.5,
+        "tag": "EVIDENCE"
+      },
+      "outflows_1h26_capex_plus_div_rm_b": {
+        "value": 49.4,
+        "cffo_coverage_ratio_pct": 104.0,
+        "tag": "EVIDENCE"
+      },
+      "gearing_ratio_pct": {
+        "value": 21.2,
+        "post_prefchem_projected_pct": 25.5,
+        "tag": "DERIVED"
+      },
+      "prefchem_non_cash_adjustment_rm_b": {
+        "value": 14.8,
+        "tag": "EVIDENCE"
+      }
+    },
+    "future_gates": [
+      {
+        "date": "2026-12-31",
+        "event": "EnQuest farm-out completion",
+        "impact": "-138 MMboe 2P; ~55-60 kboe/d"
+      },
+      {
+        "date": "2027-01-25",
+        "event": "Federal Court panel: PDA 1974 vs Sarawak DGO 2016",
+        "impact": "Constitutional mandate & gas aggregation"
+      },
+      {
+        "date": "2027-02-28",
+        "event": "FY2026 Audited Accounts publication",
+        "impact": "PRefChem non-cash adjustment finalization & CFFO test"
+      },
+      {
+        "date": "2027-03-31",
+        "event": "1 Jan 2027 Reserves Print + Megah-2 Seismic + Suriname Sloanea FID",
+        "impact": "Tests CHRON RRR prediction (pred-748f889ea86c)"
+      }
+    ]
+  },
+  "couplings": [
+    {
+      "target_entity": "malaysia-federal",
+      "target_metric": "fiscal_deficit_gdp",
+      "channel": "dividend_extraction",
+      "current_value": "RM20B declared vs RM32B MoF projection",
+      "brent_floor_usd": 67.34
+    }
+  ],
+  "chron_predictions": [
+    {
+      "id": "pred-748f889ea86c",
+      "prob": 0.63,
+      "claim": "3Y 1P RRR < 0.8 on 2027-01-01",
+      "resolves": "2027-03-31"
+    },
+    {
+      "id": "pred-0fd054b36ad4",
+      "prob": 0.61,
+      "claim": "FY2026 CAPEX + Div > CFFO",
+      "resolves": "2027-03-31"
+    }
+  ]
+}

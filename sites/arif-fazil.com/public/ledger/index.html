@@ -30,7 +30,7 @@
   "name": "Muhammad Arif bin Fazil",
   "url": "https://arif-fazil.com"
  },
- "dateModified": "2026-11-19T08:00:41Z",
+ "dateModified": "2026-11-21T17:54:12Z",
  "variableMeasured": [
   {
    "@type": "PropertyValue",
@@ -96,7 +96,7 @@ code{background:#f0eee9;padding:2px 5px;font-size:13px}
 footer{margin-top:60px;border-top:1px solid var(--line);padding-top:14px;color:var(--mut);font-size:12.5px}
 </style></head><body><main>
 <h1>Witness Ledger</h1>
-<div class=sub>arifOS Federation &middot; generated 2026-11-19T08:00:41Z &middot; schema arifos.witness_ledger.v1</div>
+<div class=sub>arifOS Federation &middot; generated 2026-11-21T17:54:12Z &middot; schema arifos.witness_ledger.v1</div>
 
 <p>This page is a record of what this system did, including what it got wrong.
 It exists for one reason: <b>accountability is only worth something when someone
@@ -114,7 +114,7 @@ should say so.</p>
 
 <h2>Record Freshness (4 Clocks)</h2>
 <div class=k>
-<div><b>2026-11-19T08:00:41Z</b><span>page generated (CURRENT)</span></div>
+<div><b>2026-11-21T17:54:12Z</b><span>page generated (CURRENT)</span></div>
 <div><b>2026-11-17T18:13:01Z</b><span>canonical witness v2</span></div>
 <div><b>2026-10-30T09:50:40Z</b><span>latest receipt (HISTORICAL_WINDOW)</span></div>
 <div><b>2026-11-01T14:50:50Z</b><span>latest gate emission (DETECT_ONLY)</span></div>
@@ -147,7 +147,7 @@ practice, not yet a pattern — the count is published so it can be judged.</p>
 <div><b>282</b><span>v2 canonical rows</span></div>
 <div><b>1</b><span>v2 head_seq (VERIFIED)</span></div>
 <div><b>1363</b><span>legacy v1 (FROZEN / HISTORICAL)</span></div>
-<div><b>21d</b><span>legacy since last append (id=984)</span></div>
+<div><b>24d</b><span>legacy since last append (id=984)</span></div>
 </div>
 <p class=mono>sha256 66bc4ffa5ce9782e35aaf58196228ab6<br>/root/VAULT999/SEALED_EVENTS.jsonl<br>twin copy identical: True<br>v2 canonical chain: /root/.local/share/arifos/vault999/seal_chain.jsonl (282 rows, last append 2026-11-17T18:13:01Z)</p>
 <div class=note>Two seal stores exist on disk: legacy SEALED_EVENTS.jsonl (1,363 rows) and active kernel v2 seal_chain.jsonl (282 rows, canonical head_seq=62 verified). Both are reported here so this page matches the Observatory and NEXT.md.</div>
@@ -155,10 +155,10 @@ practice, not yet a pattern — the count is published so it can be judged.</p>
 <h2>Defects on record</h2>
 <p>This is the part that makes the rest worth anything. A system that cannot lose
 and keep the record cannot be audited across time.</p>
-<ol><li><b>The output gate detects but does not stop</b><div class=mono>3443 verdicts, 0 blocks, blocking_enabled=false</div><div>A flagged sentence reached its reader anyway. A cop, not a door.</div><div class=owner>owner: F13 (promotion to Phase 2 NO)</div></li><li><b>The narrative detector fires on one word</b><div class=mono>marker &#x27;paling&#x27; fired 1443 times = 90% of narrative flags (1609 narrative verdicts total)</div><div>Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.</div><div class=owner>owner: mechanical (marker set + threshold)</div></li><li><b>Legacy v1 seal store frozen; retirement not formalized (v2 canonical active)</b><div class=mono>legacy last append 2026-10-28T17:19:19Z (21d ago, head id=984); v2 canonical 282 rows (last append 2026-11-17T18:13:01Z)</div><div>Legacy SEALED_EVENTS.jsonl is frozen historical provenance, while v2 seal_chain.jsonl is canonical. Formal retirement marker prevents readers confusing legacy with current.</div><div class=owner>owner: F13 (formalize v1 retirement)</div></li><li><b>A sub-ledger went quiet without being retired</b><div class=mono>reality_claim_refusals.jsonl: 152 entries, last 2026-09-14T10:23:28Z</div><div>Two ledgers for one gate; one is stale. Readers cannot tell which is live.</div><div class=owner>owner: mechanical (retire or re-wire)</div></li><li><b>Open loops accumulate faster than they close</b><div class=mono>7 open loops of 30 entries; oldest 2026-11-19T07:51:02Z</div><div>A backlog stated as policy. The stated count is the audit.</div><div class=owner>owner: ongoing</div></li><li><b>Half the quality of this system is judged by this system</b><div class=mono>Peace^2, DITING, RASA gates all run inside the same issuer as the output they judge</div><div>An internal judge cannot witness its own issuer. Independent observation requires an external seat.</div><div class=owner>owner: structural / open</div></li></ol>
+<ol><li><b>The output gate detects but does not stop</b><div class=mono>3443 verdicts, 0 blocks, blocking_enabled=false</div><div>A flagged sentence reached its reader anyway. A cop, not a door.</div><div class=owner>owner: F13 (promotion to Phase 2 NO)</div></li><li><b>The narrative detector fires on one word</b><div class=mono>marker &#x27;paling&#x27; fired 1443 times = 90% of narrative flags (1609 narrative verdicts total)</div><div>Low precision: an ordinary BM superlative is scored as narrative. A ledger a reader learns to ignore is worse than no ledger.</div><div class=owner>owner: mechanical (marker set + threshold)</div></li><li><b>Legacy v1 seal store frozen; retirement not formalized (v2 canonical active)</b><div class=mono>legacy last append 2026-10-28T17:19:19Z (24d ago, head id=984); v2 canonical 282 rows (last append 2026-11-17T18:13:01Z)</div><div>Legacy SEALED_EVENTS.jsonl is frozen historical provenance, while v2 seal_chain.jsonl is canonical. Formal retirement marker prevents readers confusing legacy with current.</div><div class=owner>owner: F13 (formalize v1 retirement)</div></li><li><b>A sub-ledger went quiet without being retired</b><div class=mono>reality_claim_refusals.jsonl: 152 entries, last 2026-09-14T10:23:28Z</div><div>Two ledgers for one gate; one is stale. Readers cannot tell which is live.</div><div class=owner>owner: mechanical (retire or re-wire)</div></li><li><b>Open loops accumulate faster than they close</b><div class=mono>7 open loops of 30 entries; oldest 2026-11-21T17:51:01Z</div><div>A backlog stated as policy. The stated count is the audit.</div><div class=owner>owner: ongoing</div></li><li><b>Half the quality of this system is judged by this system</b><div class=mono>Peace^2, DITING, RASA gates all run inside the same issuer as the output they judge</div><div>An internal judge cannot witness its own issuer. Independent observation requires an external seat.</div><div class=owner>owner: structural / open</div></li></ol>
 
 <h2>Open loops</h2>
-<p class=mono>7 open &middot; 23 closed &middot; 30 total entries &middot; oldest open 2026-11-19T07:51:02Z</p>
+<p class=mono>7 open &middot; 23 closed &middot; 30 total entries &middot; oldest open 2026-11-21T17:51:01Z</p>
 
 <h2>Public surfaces</h2>
 <table><tr><th>endpoint</th><th class=n>http</th></tr><tr><td class=mono>https://arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://arifos.arif-fazil.com/health</td><td class=n>200</td></tr><tr><td class=mono>https://mcp.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://geox.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://wealth.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://well.arif-fazil.com</td><td class=n>200</td></tr><tr><td class=mono>https://aaa.arif-fazil.com</td><td class=n>200</td></tr></table>

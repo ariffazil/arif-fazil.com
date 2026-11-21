@@ -686,6 +686,9 @@
       "aliases": [
         "mcp",
         "mcp.arif-fazil.com"
+      ],
+      "shared_roots": [
+        ".well-known"
       ]
     },
     {

@@ -86,6 +86,11 @@ jobs:
             exit 1
           fi
           echo "✅ no secret shapes in source"
+      - name: Observatory no-JS baseline guard
+        run: |
+          set -euo pipefail
+          node scripts/sync-observatory-baseline.mjs --check
+          echo "✅ Observatory no-JS baseline agrees with the published snapshot"
       - name: AAA surface drift guard (dead local refs + generated contract)
         run: |
           set -euo pipefail

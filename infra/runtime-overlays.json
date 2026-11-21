@@ -671,7 +671,7 @@
         "llms.json"
       ],
       "probe": {
-        "url": "https://arif-fazil.com/mcp",
+        "url": "https://mcp.arif-fazil.com/",
         "accepted_codes": [
           200
         ]

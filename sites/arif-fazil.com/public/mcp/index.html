@@ -771,6 +771,32 @@ arif_report</code></pre>
                 <h2>Operational Status</h2>
                 <p>Live system metrics from the arifOS MCP endpoint.</p>
 
+                <!-- F3 (2026-11-21): four states, four facts. Page liveness, MCP
+                     endpoint liveness, governance posture and execution readiness are
+                     separate measurements and must never share one label. -->
+                <div class="grid-4" id="four-state-strip" style="margin-top: 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+                    <div class="card">
+                        <h3>Page</h3>
+                        <div style="font-size: 14px;" id="fs-page"><span class="status status--unknown">unknown</span></div>
+                        <div style="font-size: 11px; color: var(--text-muted);" id="fs-page-meta">served surface</div>
+                    </div>
+                    <div class="card">
+                        <h3>MCP endpoint</h3>
+                        <div style="font-size: 14px;" id="fs-mcp"><span class="status status--unknown">unknown</span></div>
+                        <div style="font-size: 11px; color: var(--text-muted);" id="fs-mcp-meta">GET /health</div>
+                    </div>
+                    <div class="card">
+                        <h3>Governance</h3>
+                        <div style="font-size: 14px;" id="fs-governance"><span class="status status--unknown">unknown</span></div>
+                        <div style="font-size: 11px; color: var(--text-muted);" id="fs-governance-meta">constitutional posture</div>
+                    </div>
+                    <div class="card">
+                        <h3>Execution readiness</h3>
+                        <div style="font-size: 14px;" id="fs-exec"><span class="status status--unknown">unknown</span></div>
+                        <div style="font-size: 11px; color: var(--text-muted);" id="fs-exec-meta">mutation posture</div>
+                    </div>
+                </div>
+
                 <div class="grid-3" style="margin-top: 32px;">
                     <div class="card">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -1049,11 +1075,57 @@ arif_report</code></pre>
                     document.getElementById('tools-count').textContent = data.tools_loaded;
                 }
 
+                // F3 (2026-11-21): paint the four states from the health payload.
+                // Liveness (page, endpoint) and posture (governance, execution
+                // readiness) are different measurements and get different labels.
+                (function paintFourState(d) {
+                    const at = new Date().toISOString();
+                    const set = (id, val, meta, cls) => {
+                        const el = document.getElementById(id);
+                        if (el) el.innerHTML = '<span class="status status--' + (cls || 'unknown') + '">' + esc(val) + '</span>';
+                        const m = document.getElementById(id + '-meta');
+                        if (m) m.textContent = meta;
+                    };
+                    const gov = String(d.status || d.constitutional_status || 'unknown').toUpperCase();
+                    const exec = String(d.execution_readiness ||
+                        (d.constitutional && d.constitutional.execution_readiness) || 'unknown').toUpperCase();
+                    set('fs-page', 'LIVE', 'served surface', 'healthy');
+                    set('fs-mcp', 'LIVE', 'GET /health - verified ' + at.replace('T', ' ').replace('Z', 'Z'), 'healthy');
+                    set('fs-governance', gov,
+                        'constitutional posture - floors ' +
+                        ((d.constitutional && d.constitutional.floors_pass != null)
+                            ? d.constitutional.floors_pass + '/' + (d.constitutional.floors_total || '?') : 'n/a') +
+                        ((d.constitutional && d.constitutional.floors_unmeasured && d.constitutional.floors_unmeasured.length)
+                            ? ' - unmeasured: ' + d.constitutional.floors_unmeasured.join(', ') : ''),
+                        gov === 'DEGRADED' ? 'degraded' : gov === 'HEALTHY' ? 'healthy' : 'unknown');
+                    set('fs-exec', exec,
+                        'mutation posture - ' + (exec === 'HELD' ? 'mutations held' : exec === 'OK' ? 'permitted within lease' : 'unknown'),
+                        exec === 'HELD' ? 'degraded' : exec === 'OK' ? 'healthy' : 'unknown');
+                    const hdr = document.getElementById('header-status-text');
+                    if (hdr) hdr.textContent = gov === 'HEALTHY' ? 'HEALTHY' : gov;
+                })(data);
+
             } catch (e) {
-                document.getElementById('status-dot').className = 'status-dot down';
-                document.getElementById('status-main').textContent = 'Unreachable';
-                document.getElementById('status-sub').textContent = 'Cannot reach ' + API;
-                document.getElementById('header-status-text').textContent = 'Down';
+                // F3/D2 (2026-11-21): the old code answered "Unreachable / Cannot
+                // reach <API> / Down" for ANY exception — including a failed
+                // metrics fetch on a page that is being served. Now the four
+                // states are separated: the page IS live; only the MCP endpoint is
+                // unknown, and the reason is named.
+                const reason = (e && e.message) ? String(e.message) : 'unknown error';
+                document.getElementById('status-dot').className = 'status-dot degraded';
+                document.getElementById('status-main').textContent = 'MCP endpoint: unknown';
+                document.getElementById('status-sub').textContent = 'page served · endpoint probe failed — ' + reason;
+                document.getElementById('header-status-text').textContent = 'UNKNOWN';
+                const set = (id, val, meta) => {
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = '<span class="status status--unknown">' + esc(val) + '</span>';
+                    const m = document.getElementById(id + '-meta');
+                    if (m) m.textContent = meta;
+                };
+                set('fs-page', 'LIVE', 'served surface');
+                set('fs-mcp', 'UNKNOWN', 'probe failed — ' + reason);
+                set('fs-governance', 'UNKNOWN', 'no measurement in hand');
+                set('fs-exec', 'UNKNOWN', 'no measurement in hand');
             }
         }
 
@@ -1157,6 +1229,16 @@ arif_report</code></pre>
         // Probes all 4 organs in parallel, updates dashboard
         // ─────────────────────────────────────────────────────────
         class FederationSOT {
+            // F4 - no element may be left at "Probing..." without a reason.
+            settlePlaceholders() {
+                document.querySelectorAll('span[id$="-status"], div[id$="-detail"]').forEach(el => {
+                    if ((el.textContent || '').trim() === 'Probing...') {
+                        this.renderProbeState(el, 'WITHHELD',
+                            'not exposed on a public surface - no probe defined for this field', null);
+                    }
+                });
+            }
+
             constructor() {
                 this.probeSource = 'LIVE_PROBE';
                 this.lastUpdate = null;
@@ -1172,10 +1254,17 @@ arif_report</code></pre>
                     this.fetchOrgan(FEDERATION.well, 'well')
                 ]);
 
-                this.renderOrgan('arifos', arifos.status === 'fulfilled' ? arifos.value : null);
-                this.renderOrgan('geox', geox.status === 'fulfilled' ? geox.value : null);
-                this.renderOrgan('wealth', wealth.status === 'fulfilled' ? wealth.value : null);
-                this.renderOrgan('well', well.status === 'fulfilled' ? well.value : null);
+                const reasonOf = (r) => (r && r.reason ? String(r.reason) : 'probe did not settle');
+                const stateOf = (r) => (r && r.reason && r.reason.probeState ? r.reason.probeState : 'UNREACHABLE');
+                this.renderOrgan('arifos', arifos.status === 'fulfilled' ? arifos.value : null,
+                    stateOf(arifos), reasonOf(arifos));
+                this.renderOrgan('geox', geox.status === 'fulfilled' ? geox.value : null,
+                    stateOf(geox), reasonOf(geox));
+                this.renderOrgan('wealth', wealth.status === 'fulfilled' ? wealth.value : null,
+                    stateOf(wealth), reasonOf(wealth));
+                this.renderOrgan('well', well.status === 'fulfilled' ? well.value : null,
+                    stateOf(well), reasonOf(well));
+                this.settlePlaceholders();
 
                 // arifOS-specific telemetry
                 if (arifos.status === 'fulfilled' && arifos.value) {
@@ -1206,28 +1295,85 @@ arif_report</code></pre>
                 document.getElementById('federation-probe-source').textContent = this.probeSource;
             }
 
+            // F1 (2026-11-21): probe through the SAME-ORIGIN proxy. The direct
+            // cross-origin fetch to each organ's own host hangs behind Cloudflare
+            // anti-bot, so the promise never settled and the panel read "Probing..."
+            // forever. The proxy answers 200 for arifos/geox/wealth/well.
+            // F2/F3: an 8s AbortController so a hung probe reports PROBE_TIMEOUT
+            // instead of never reporting at all.
             async fetchOrgan(baseUrl, organ) {
-                const res = await fetch(`${baseUrl}/health`);
-                if (!res.ok) throw new Error(`${organ} returned ${res.status}`);
-                const data = await res.json();
-                data._organ = organ;
-                data._baseUrl = baseUrl;
-                return data;
+                const controller = new AbortController();
+                const timer = setTimeout(() => controller.abort(), 8000);
+                try {
+                    const res = await fetch(`/api/organs/${organ}/health`, {
+                        signal: controller.signal,
+                        cache: 'no-store'
+                    });
+                    if (res.status === 401 || res.status === 403) {
+                        const err = new Error(`${organ} probe requires identity (HTTP ${res.status})`);
+                        err.probeState = 'AUTH_REQUIRED';
+                        throw err;
+                    }
+                    if (!res.ok) {
+                        const err = new Error(`${organ} returned HTTP ${res.status}`);
+                        err.probeState = 'UNREACHABLE';
+                        throw err;
+                    }
+                    const data = await res.json();
+                    data._organ = organ;
+                    data._baseUrl = baseUrl;
+                    data._probeState = 'LIVE_PROBE';
+                    data._probeReason = 'same-origin proxy /api/organs/' + organ + '/health';
+                    data._probeAt = new Date().toISOString();
+                    return data;
+                } catch (e) {
+                    if (e.probeState) throw e;
+                    const aborted = e && (e.name === 'AbortError' || /abort/i.test(String(e.message)));
+                    const err = new Error(
+                        aborted
+                            ? `${organ} probe timed out after 8s`
+                            : `${organ} probe failed: ${e && e.message ? e.message : e}`
+                    );
+                    err.probeState = aborted ? 'PROBE_TIMEOUT' : 'UNREACHABLE';
+                    throw err;
+                } finally {
+                    clearTimeout(timer);
+                }
             }
 
-            renderOrgan(organ, data) {
+            // F2 — the taxonomy renderer. Liveness, posture and readiness are
+            // separate facts; a healthy host behind a held governance is not
+            // "Down", and an unmeasured floor is not "failing".
+            renderProbeState(el, state, reason, at) {
+                if (!el) return;
+                const label = state || 'UNKNOWN';
+                const when = at ? ' · verified ' + at.replace('T', ' ').replace('Z', 'Z') : '';
+                el.textContent = label + (reason ? ' — ' + reason : '') + when;
+                el.setAttribute('data-probe-state', label);
+                el.title = 'probe state: ' + label + (reason ? ' — ' + reason : '');
+            }
+
+            renderOrgan(organ, data, probeState, probeReason) {
                 const dot = document.getElementById(`organ-${organ}-dot`);
                 const status = document.getElementById(`organ-${organ}-status`);
 
                 if (!data) {
-                    dot.className = 'status-dot down';
-                    status.textContent = 'Unreachable';
+                    // F2 — a panel that could not be measured must say WHICH state it
+                    // is in and why. It is never left at "Probing..." and it is never
+                    // dressed as "Down" (which would read as a dead organ).
+                    dot.className = 'status-dot degraded';
+                    this.renderProbeState(status, probeState || 'UNREACHABLE', probeReason, null);
                     return;
                 }
 
                 const isHealthy = data.status === 'healthy' || data.verdict === 'WELL_PASS';
                 dot.className = 'status-dot' + (isHealthy ? '' : ' degraded');
-                status.textContent = isHealthy ? 'Operational' : (data.verdict || data.status || 'Unknown');
+                const posture = isHealthy ? 'Operational' : (data.verdict || data.status || 'Unknown');
+                status.textContent = posture;
+                status.setAttribute('data-probe-state', data._probeState || 'LIVE_PROBE');
+                status.title = 'probe state: ' + (data._probeState || 'LIVE_PROBE') +
+                    (data._probeReason ? ' — ' + data._probeReason : '') +
+                    (data._probeAt ? ' — verified ' + data._probeAt : '');
 
                 if (organ === 'arifos') {
                     if (data.tools_loaded != null) {

@@ -164,6 +164,26 @@
           "strategy": "preserve-live"
         },
         {
+          "path": ".well-known/ai-catalog.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/ard.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/webmcp.json",
+          "owner": "arif-sites",
+          "strategy": "preserve-live"
+        },
+        {
+          "path": ".well-known/claims.json",
+          "owner": "aaa-manifest-publisher",
+          "strategy": "preserve-live"
+        },
+        {
           "path": "manifest.txt",
           "owner": "aaa-manifest-publisher",
           "strategy": "preserve-live"

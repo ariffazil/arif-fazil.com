@@ -7,6 +7,7 @@ const TAG_COLORS: Record<EpistemicTag | 'UNK', { bg: string; text: string; borde
   DER:   { bg: 'bg-[#2196F3]/15', text: 'text-[#2196F3]', border: 'border-[#2196F3]/40', label: 'DERIVED' },
   INT:   { bg: 'bg-[#FF9800]/15', text: 'text-[#FF9800]', border: 'border-[#FF9800]/40', label: 'INTERPRETATION' },
   SPEC:  { bg: 'bg-[#9C27B0]/15', text: 'text-[#9C27B0]', border: 'border-[#9C27B0]/40', label: 'SPECULATION' },
+  HYP:   { bg: 'bg-[#00BCD4]/15', text: 'text-[#00BCD4]', border: 'border-[#00BCD4]/40', label: 'HYPOTHESIS' },
   UNK:   { bg: 'bg-[#757575]/15', text: 'text-[#757575]', border: 'border-[#757575]/40', label: 'UNKNOWN' },
 }
 
@@ -53,7 +54,7 @@ function computeStats(meta: MakcikArticleMeta) {
     byTag[c.tag] = (byTag[c.tag] || 0) + 1
   }
   // Check for UNK (claims without a valid tag)
-  const validTags: EpistemicTag[] = ['OBS', 'DER', 'INT', 'SPEC']
+  const validTags: EpistemicTag[] = ['OBS', 'DER', 'INT', 'SPEC', 'HYP']
   let unknowns = 0
   for (const c of claims) {
     if (!validTags.includes(c.tag)) unknowns++

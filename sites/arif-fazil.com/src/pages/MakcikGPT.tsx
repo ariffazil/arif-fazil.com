@@ -59,6 +59,34 @@ export function MakcikGPT() {
   return (
     <div className="min-h-screen bg-[#0A0B0D] text-[#EDEAE2] py-12 md:py-20">
       <div className="mx-auto max-w-[1280px] px-6">
+        {/* ── NEWSPRINT MASTHEAD (design-arif/world.md §1) ──────────────
+            makcik-masthead.svg + newsprint-texture.png. The masthead is drawn
+            in warm ink for newsprint, so it sits on a bone-paper band instead
+            of the dark UI; the rest of the page keeps its dark register. */}
+        <div
+          className="relative mb-10 overflow-hidden rounded-xl border border-[#1F2733] bg-[#FBF9F4] shadow-xl"
+          style={{ backgroundImage: "url('/newsprint-texture.png')", backgroundSize: '420px auto' }}
+        >
+          <div className="relative px-5 py-5 md:px-10 md:py-7">
+            <div className="mb-3 flex items-center justify-between gap-3 border-b border-[#14110C]/20 pb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#14110C]/70">
+              <span>Kuala Lumpur · Edisi Terkini</span>
+              <a href="/world/makcikgpt/feed.xml" className="hover:text-[#C8102E]">RSS · feed.xml</a>
+            </div>
+            <img
+              src="/makcik-masthead.svg"
+              alt="MakcikGPT — hand-lettered masthead with a red hibiscus accent"
+              width={1600}
+              height={400}
+              loading="eager"
+              decoding="async"
+              className="h-auto w-full"
+            />
+            <p className="mt-3 text-center font-serif text-sm italic text-[#C8102E] md:text-base">
+              “Berita tenaga untuk rakyat — jujur, jelas, dan berbudi.”
+            </p>
+          </div>
+        </div>
+
       <MakcikGPTArchive article={{
         ...([...makcikArticlesMeta].sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0]),
         sourceCount: ([...makcikArticlesMeta].sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0] as unknown as { source_ledger?: unknown[] }).source_ledger?.length,

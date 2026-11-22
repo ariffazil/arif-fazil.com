@@ -93,6 +93,7 @@ ${extraStyle}
   <div class="frame">
 ${breadcrumb ? `    ${breadcrumb}\n` : ''}    <link rel="stylesheet" href="/_shared/fed-nav.css">
     <div id="fed-nav-root"></div>
+    <noscript><header class="fed-navbar" aria-label="Federation primary navigation"><a class="nav-brand" href="/"><span class="psi-badge">Ψ</span><span>ARIF FAZIL</span></a><nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/about">About</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav></header></noscript>
     <script src="/_shared/fed-nav.js" defer></script>
 ${body}
     <p class="note">Content-first surface for humans and agents (no JavaScript required).

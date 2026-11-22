@@ -142,6 +142,33 @@ html[data-organ="arifos"] section.obs-collapsible > h2{cursor:pointer;display:fl
 html[data-organ="arifos"] section.obs-collapsible > h2::after{content:"▾";font-family:var(--font-mono);font-size:13px;color:var(--gold);margin-left:auto}
 html[data-organ="arifos"] section.obs-collapsible.obs-collapsed > h2::after{content:"▸ expand";font-size:11px;color:var(--text-secondary)}
 html[data-organ="arifos"] section.obs-collapsible.obs-collapsed > :not(h2){display:none !important}
+
+/* ── WITNESS SUMMARY + PLANE ALARMS (2026-11-22 · kimi-code/FI-008) ─────────────
+   Three display-layer upgrades, no data path touched:
+   1. obs-witness-summary — one labelled top line (open findings · blocked floors ·
+      drift · freshness) so a human reads state before any matrix.
+   2. #reality-loop.loop-compact — the 8 phase cards duplicate the nav and the
+      plane list below; compact by default, detail on demand.
+   3. obs-alarm-badge — a collapsed plane that holds a HOLD or a blocked floor
+      says so in its own header. A hold is never hidden behind a ▸.             */
+html[data-organ="arifos"] .obs-witness-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 16px}
+@media(max-width:760px){html[data-organ="arifos"] .obs-witness-summary{grid-template-columns:repeat(2,1fr)}}
+html[data-organ="arifos"] .obs-witness-cell{display:block;padding:10px 13px;border:1px solid var(--border);border-radius:8px;background:var(--bg-secondary)}
+html[data-organ="arifos"] .obs-witness-cell .k{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-secondary)}
+html[data-organ="arifos"] .obs-witness-cell .v{display:block;font-size:16px;font-weight:600;color:var(--text);margin-top:4px;line-height:1.2}
+html[data-organ="arifos"] .obs-witness-cell .n{display:block;font-family:var(--font-mono);font-size:10px;color:var(--text-secondary);margin-top:3px}
+html[data-organ="arifos"] .obs-witness-cell[data-level="alarm"]{border-color:var(--gold);background:rgba(212,168,83,.10)}
+html[data-organ="arifos"] .obs-witness-cell[data-level="alarm"] .v{color:var(--gold)}
+html[data-organ="arifos"] .obs-witness-cell[data-level="calm"]{border-color:rgba(125,211,252,.28)}
+html[data-organ="arifos"] .obs-witness-cell[data-level="calm"] .v{color:#7dd3fc}
+html[data-organ="arifos"] #reality-loop.loop-compact .lp-scope,
+html[data-organ="arifos"] #reality-loop.loop-compact .lp-sot{display:none}
+html[data-organ="arifos"] #reality-loop.loop-compact .loop-phase{padding:7px 10px}
+html[data-organ="arifos"] #reality-loop.loop-compact .loop-phases{gap:6px}
+html[data-organ="arifos"] #now-strip{flex-wrap:wrap;overflow-x:visible}
+html[data-organ="arifos"] #now-strip .now-pill{flex:0 1 auto;white-space:normal}
+html[data-organ="arifos"] section.obs-collapsible > h2 .obs-alarm-badge{display:inline-block;margin-left:10px;padding:2px 7px;border-radius:4px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;vertical-align:middle;border:1px solid var(--gold);color:var(--gold);background:rgba(212,168,83,.12)}
+html[data-organ="arifos"] section.obs-collapsible > h2 .obs-alarm-badge[data-level="degraded"]{border-color:var(--text-secondary);color:var(--text-secondary);background:transparent}
 </style>
 
 <script type="application/ld+json">
@@ -323,6 +350,24 @@ html[data-organ="arifos"] section.obs-collapsible.obs-collapsed > :not(h2){displ
   <h1 style="margin:0 0 .5rem;letter-spacing:-.02em">arifOS Observatory — <em>Deep Witness</em> &amp; Knowledge Factory</h1>
   <p style="margin:0 0 1rem;color:var(--text-secondary);font-size:.92rem">Read-only evidence bus: what is actually measured, proven, stale, degraded, or unknown right now. Does not ask for human attention or issue decisions.</p>
 
+  <!-- WITNESS SUMMARY 2026-11-22 (kimi-code/FI-008): one labelled top line, read before
+       any floor or matrix. Values are read from what the page already renders
+       (#meta-* + data-* attributes) — no new fetch, no new data path. -->
+  <section class="obs-witness-summary" id="witness-summary" aria-label="Witness summary — what is true right now">
+    <div class="obs-witness-cell" id="wsum-findings" data-level="calm">
+      <span class="k">Open findings</span><span class="v">—</span><span class="n">need triage</span>
+    </div>
+    <div class="obs-witness-cell" id="wsum-floor" data-level="calm">
+      <span class="k">Blocked floors</span><span class="v">—</span><span class="n">of 13 · F1–F13</span>
+    </div>
+    <div class="obs-witness-cell" id="wsum-drift" data-level="calm">
+      <span class="k">Drift</span><span class="v">—</span><span class="n">build vs deployed</span>
+    </div>
+    <div class="obs-witness-cell" id="wsum-fresh" data-level="calm">
+      <span class="k">Freshness</span><span class="v">—</span><span class="n">snapshot age</span>
+    </div>
+  </section>
+
   <nav class="obs-role-bar" id="witness-role-bar" aria-label="Federation surface roles">
     <div class="obs-role-card obs-role-card--active" aria-current="page">
       <span class="obs-role-k">Observatory · Here (Deep Witness)</span>
@@ -346,6 +391,7 @@ html[data-organ="arifos"] section.obs-collapsible.obs-collapsed > :not(h2){displ
     <span style="display:flex;gap:8px">
       <button type="button" class="obs-btn" id="obs-expand-all">Expand all planes</button>
       <button type="button" class="obs-btn" id="obs-collapse-all">Collapse deep planes</button>
+      <button type="button" class="obs-btn" id="obs-spine-detail">Show phase detail</button>
     </span>
   </div>
  </header>
@@ -642,5 +688,164 @@ upd();setInterval(upd,5000);})();
 })();
 </script>
 <footer class="obs-canon-footer" style="border-top:1px solid #1f2733;margin-top:48px;padding:20px clamp(16px,4vw,32px);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#8a93a3;text-align:center">DITEMPA BUKAN DIBERI · arifOS Federation · Ω MIND surface · <a href="https://arif-fazil.com/" style="color:#7FB3FF;text-decoration:none">arif-fazil.com</a></footer>
+<script>
+/* ── WITNESS SUMMARY + PLANE ALARMS (2026-11-22 · kimi-code/FI-008) ─────────────
+   Display layer only. Reads what the page already renders (#meta-*, data-* attributes);
+   adds no fetch, no data path, no judgement. Three jobs:
+     1. witness summary — one labelled line of state before any floor or matrix
+     2. reality-loop spine — 8 phase cards collapsed to one line by default
+     3. plane alarms — a collapsed plane that holds a HOLD or a blocked floor says so
+        in its own header, and HOLD planes open themselves. A hold is never hidden. */
+(function(){
+  var userTouched = {};
+  var planes = Array.prototype.slice.call(document.querySelectorAll('main > section[id]'));
+  planes.forEach(function(sec){
+    var h2 = sec.querySelector(':scope > h2');
+    if (!h2) return;
+    h2.addEventListener('click', function(){ userTouched[sec.id] = true; }, true);
+  });
+
+  function txt(el){ return el ? (el.textContent || '').replace(/\s+/g, ' ').trim() : ''; }
+
+  function firstToken(row, tokens){
+    var all = row.querySelectorAll('*');
+    for (var i = 0; i < all.length; i++){
+      var t = (all[i].textContent || '').trim();
+      if (tokens.indexOf(t) !== -1) return t;
+    }
+    return '';
+  }
+
+  function openFindings(){
+    var n = 0;
+    document.querySelectorAll('#sec-knowledge-factory [data-finding-id]').forEach(function(row){
+      if (firstToken(row, ['OPEN', 'RESOLVED']) === 'OPEN') n++;
+    });
+    return n;
+  }
+
+  function planeAlarms(sec){
+    var hold = 0, degraded = 0, blocked = 0;
+    sec.querySelectorAll('[data-governance="held"]').forEach(function(){ hold++; });
+    sec.querySelectorAll('[data-measurement="blocked"]').forEach(function(){ blocked++; });
+    sec.querySelectorAll('[data-state="degraded"]').forEach(function(el){
+      if (txt(el).toUpperCase() === 'HOLD') hold++; else degraded++;
+    });
+    sec.querySelectorAll('[data-overall="degraded"],[data-receipt="degraded"]').forEach(function(){ degraded++; });
+    return { hold: hold, degraded: degraded, blocked: blocked };
+  }
+
+  function alarmText(a){
+    var parts = [];
+    if (a.blocked) parts.push(a.blocked + (a.blocked === 1 ? ' BLOCKED' : ' BLOCKED'));
+    if (a.hold) parts.push(a.hold + (a.hold === 1 ? ' HOLD' : ' HOLDS'));
+    return parts.join(' · ');
+  }
+
+  function setCell(id, value, note, level){
+    var cell = document.getElementById(id);
+    if (!cell) return;
+    var v = cell.querySelector('.v'), n = cell.querySelector('.n');
+    if (v && v.textContent !== value) v.textContent = value;
+    if (n && note && n.textContent !== note) n.textContent = note;
+    if (cell.getAttribute('data-level') !== level) cell.setAttribute('data-level', level);
+  }
+
+  function setBadge(h2, text, level){
+    var old = h2.querySelector('.obs-alarm-badge');
+    if (!text){ if (old) old.remove(); return; }
+    if (old){
+      if (old.textContent === text) return;
+      old.textContent = text; old.setAttribute('data-level', level); return;
+    }
+    var b = document.createElement('span');
+    b.className = 'obs-alarm-badge';
+    b.setAttribute('data-level', level);
+    b.textContent = text;
+    h2.insertBefore(b, h2.firstChild && h2.firstChild.nextSibling);
+  }
+
+  function refresh(){
+    var body = document.body;
+    var loaded = !!(body.dataset && body.dataset.state === 'loaded');
+    if (!loaded){
+      setCell('wsum-fresh', 'pending', 'snapshot not loaded yet', 'calm');
+      return;
+    }
+
+    var findings = openFindings();
+    setCell('wsum-findings', String(findings), findings ? 'need triage' : 'none open', findings ? 'alarm' : 'calm');
+
+    var blocked = document.querySelectorAll('#sec-governance [data-measurement="blocked"]').length;
+    setCell('wsum-floor', blocked + ' of 13', blocked ? 'floor blocked' : 'all measured', blocked ? 'alarm' : 'calm');
+
+    var drift = txt(document.getElementById('meta-drift'));
+    var dm = drift.match(/(\d+)\s*\/\s*\d+/);
+    var dnum = dm ? parseInt(dm[1], 10) : 0;
+    setCell('wsum-drift', drift || '—', dnum ? 'axes drifted' : 'build = deployed', dnum ? 'alarm' : 'calm');
+
+    var age = txt(document.getElementById('meta-age'));
+    var fresh = body.dataset.freshnessState || 'unknown';
+    setCell('wsum-fresh', age || '—', 'snapshot · ' + fresh, fresh === 'fresh' ? 'calm' : 'alarm');
+
+    // The reality-loop spine is rendered by observatory.js, so it only exists here.
+    var spine = document.getElementById('reality-loop');
+    if (spine) spine.classList.add('loop-compact');
+    bindSpine();
+
+    planes.forEach(function(sec){
+      var h2 = sec.querySelector(':scope > h2');
+      if (!h2) return;
+      var a = planeAlarms(sec);
+      if (a.hold || a.blocked){
+        setBadge(h2, alarmText(a), 'hold');
+        if (!userTouched[sec.id] && sec.classList.contains('obs-collapsed')){
+          sec.classList.remove('obs-collapsed');
+          h2.setAttribute('aria-expanded', 'true');
+        }
+      } else if (a.degraded){
+        setBadge(h2, a.degraded + ' degraded', 'degraded');
+      } else {
+        setBadge(h2, '', '');
+      }
+    });
+  }
+
+  var spineBtn = document.getElementById('obs-spine-detail');
+  var spineBound = false;
+  function bindSpine(){
+    if (spineBound) return;
+    var spine = document.getElementById('reality-loop');
+    if (!spine || !spineBtn) return;
+    spineBound = true;
+    spine.classList.add('loop-compact');
+    spineBtn.addEventListener('click', function(){
+      var compact = spine.classList.toggle('loop-compact');
+      spineBtn.textContent = compact ? 'Show phase detail' : 'Hide phase detail';
+    });
+  }
+
+  var timer = null;
+  function schedule(){ if (timer) clearTimeout(timer); timer = setTimeout(refresh, 250); }
+  try {
+    var mo = new MutationObserver(schedule);
+    mo.observe(document.body, {
+      childList: true, subtree: true, characterData: true,
+      attributes: true, attributeFilter: ['data-state', 'data-freshness-state', 'data-age-seconds']
+    });
+  } catch (e) { /* no observer: the poll below still runs */ }
+  window.addEventListener('load', function(){ setTimeout(refresh, 400); });
+  document.addEventListener('DOMContentLoaded', function(){ setTimeout(refresh, 800); });
+  // Bounded poll: the snapshot arrives after load, and the render writes are not
+  // always observable from here. Cheap — four cell reads plus one scan per plane.
+  var tries = 0;
+  var poll = setInterval(function(){
+    tries++;
+    refresh();
+    if (document.body.dataset && document.body.dataset.state === 'loaded') clearInterval(poll);
+    if (tries > 60) clearInterval(poll);
+  }, 1000);
+})();
+</script>
 </body>
 </html>

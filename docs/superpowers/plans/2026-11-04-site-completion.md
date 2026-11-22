@@ -1,5 +1,13 @@
 # arif-fazil.com Site Completion — Implementation Plan
 
+> **EXECUTION STATUS (updated 2026-11-23, FI-003): ALL 21 TASKS COMPLETE.** The unchecked
+> boxes below are stale — the authoritative execution record is the SDD ledger
+> `sites/arif-fazil.com/docs/agentic-web/release-evidence/2026-11-04-site-completion-ledger.md`
+> (per-task commits a660f22…3c01803, rulings, gates; tag `site-completion-2026-11-04`).
+> Known leftover found 2026-11-23: Task 16 filled the `words/makcikgpt` shell, which is dead
+> under the 2026-10-04 Caddy 301 → /world/makcikgpt/. Cleanup + the words⇄makcik content-lane
+> zen are scoped in `docs/superpowers/plans/2026-11-23-words-makcik-zen.md` (PROPOSAL).
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Finish the site: mobile-clean every page, wire the 4 Stitch hero surfaces in PRIMER-1 canon skin, give every empty route a content-first static shell, close UPGRADE-PLAN items — gated, additive, evidence-backed.

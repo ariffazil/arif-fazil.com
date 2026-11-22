@@ -29,3 +29,25 @@ Sitemap after cleanup: 117 URLs, 117 × 200.
 
 Related repo commits: `765592df` (pair alignment), `fbd6f681` (sitemap + MakcikGPT registry).
 Receipt: `/root/forge_work/receipts/RECEIPT-site-entropy-pass-20261122.md`.
+
+## Provenance (counts must trace to instruments)
+
+- Census: 282 page candidates across 3 served roots (scope: `find ... -name '*.html'` with
+  explicit asset/mirror exclusions — see map §1) → 251 unique URLs → **153 served 200**,
+  97 redirect, 3 dead.
+- Sitemap after cleanup: **117 URLs, 117 × HTTP 200** (curl probe loop, all targets direct).
+- surfaces.json after 2026-11-22 pass: **126 surfaces** = 67 live page + 40 redirect +
+  15 machine + 4 gone (browser-counted on /map/: live 67 / redirect 40 / machine 15 / gone 4).
+
+## Classes added 2026-11-22 (deep-namespace soft-404 sweep)
+
+| Rule | Class | Evidence |
+|---|---|---|
+| `redir /read/* /words/writing/*` | deep legacy path served the HOME page (soft-404, canonical -> /) | measured 200-home before rule |
+| `redir /essays/* /words/writing/*` | flattened 2-hop (/essays/ → /writing/ → /words/writing/) | 301 single-hop after |
+| `redir /canon/* /words/doctrine/*` | deep path fell to home behind an index 308 | 301 single-hop after |
+| `redir /doctrine/* /words/doctrine/*` | same family | 301 after; `_agent-shell` explicit rule unaffected |
+| `redir /missions/* /work/missions/*` | same family | 301 after |
+| `redir /constitution/* /words/constitution/*` | deep path served a duplicate of the legacy index | 301 after |
+| `/proof/{human,runtime,authorship}/` | **HOLD — legacy-content-without-canonical-twin.** Real content pages (65–78w distinct) but /work/proof/<slug> is a fallback shell (every slug = "Selected Work", 651w). A redirect was added, content-loss caught in the same pass, reverted; legacy pages verified restored 200 with their own titles. Migrate content first, redirect after. | before/after titles probed |
+| `/writing/<slug>` → `/words/writing/<slug>` | split-namespace closed; catalog `/writing/:slug` flipped live→redirect | 301 after; residual: canonical SPA fallback still soft-404s unknown slugs (queued) |

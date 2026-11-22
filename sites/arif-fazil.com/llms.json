@@ -78,7 +78,7 @@
     "/canon/": "constitutional canon — written law of arifOS",
     "/discoveries/": "well portfolio — exploration record and subsurface dossier",
     "/essays/": "long-form writing and analysis",
-    "/words/essays/": "Words — Essays subpage. Long-form essays, formal derivations, philosophical treatises by Arif Fazil. The civic column (MakcikGPT) lives at /world/makcikgpt/.",
+    "/words/essays/": "Alias of /words/ (zen C 2026-11-23): static shell carries rel=canonical to /words/; SPA Navigates there. One URL per page.",
     "/words/wiki/": "Words — Wiki subpage. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order."
   },
   "related_sites": [

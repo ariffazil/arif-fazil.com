@@ -719,6 +719,16 @@ footer.editorial-footer {
   font-family: var(--font-mono);
   color: var(--text-dim);
 }
+
+/* PORTRAIT-FREE PLATE (2026-11-22 kimi-code/FI-008): no human photographs on the public site. */
+.dossier-portrait .plate-note{
+  width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:var(--text-dim);font-family:var(--font-mono);font-size:.6rem;text-transform:uppercase;
+  letter-spacing:.1em;text-align:center;padding:1rem;gap:.35rem;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.015) 0 8px,transparent 8px 16px);
+}
+.dossier-portrait .plate-note span{font-size:2.6rem;opacity:.5;letter-spacing:.06em;color:var(--text)}
+
 </style>
 
 <!-- JSON-LD Schema -->
@@ -799,7 +809,7 @@ footer.editorial-footer {
   <!-- PM10 Profile Card -->
   <section class="anwar-dossier-card">
     <div class="dossier-portrait">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Anwar_Ibrahim_in_June_2026.jpg" alt="Dato' Seri Anwar Ibrahim" loading="lazy">
+      <div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Dato' Seri Anwar Ibrahim. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>AI</span>Potret tidak dipaparkan</div>
       <div class="badge-order">10</div>
       <div class="badge-verdict">TENGGELAM</div>
     </div>

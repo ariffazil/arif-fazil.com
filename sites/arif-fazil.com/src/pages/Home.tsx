@@ -107,13 +107,19 @@ const EPISTEMIC_CONTRACT = [
   { label: 'HOLD', meaning: 'Pause until authority and proof exist' },
 ] as const
 
+// ALIGNMENT 2026-11-22 (kimi-code/FI-008): the system map now matches the site's own
+// canon (canon/navigation.json secondary_links_organs) — every organ appears once, every
+// destination is distinct, and every one resolves. The previous list pointed arifOS at
+// /arifos/ (a static surface with no client route → NotFound), pointed A-FORGE at /forge/
+// (no client route → NotFound) and GEOX at /earth, which duplicated the organ map with the
+// human surfaces below. Canonical organ hosts carry the map; human surfaces stay below.
 const SYSTEMS = [
   {
     name: 'arifOS',
     role: 'Judgment',
     desc: 'Decides whether a machine action is admissible before execution.',
-    href: '/arifos/',
-    external: false,
+    href: 'https://mcp.arif-fazil.com/',
+    external: true,
   },
   {
     name: 'AAA',
@@ -126,15 +132,29 @@ const SYSTEMS = [
     name: 'A-FORGE',
     role: 'Execution',
     desc: 'Changes external state only after authority and scope are established.',
-    href: '/forge/',
-    external: false,
+    href: 'https://a-forge.arif-fazil.com/',
+    external: true,
   },
   {
     name: 'GEOX',
     role: 'Earth',
     desc: 'Grounds reasoning against physical subsurface and geological evidence.',
-    href: '/earth',
-    external: false,
+    href: 'https://geox.arif-fazil.com',
+    external: true,
+  },
+  {
+    name: 'WEALTH',
+    role: 'Capital',
+    desc: 'Reads capital, market and risk into decisions that stay defensible.',
+    href: 'https://wealth.arif-fazil.com',
+    external: true,
+  },
+  {
+    name: 'WELL',
+    role: 'Human',
+    desc: 'Keeps human and machine vitality measurable, so readiness is never assumed.',
+    href: 'https://well.arif-fazil.com',
+    external: true,
   },
   {
     name: 'Observatory',
@@ -145,11 +165,14 @@ const SYSTEMS = [
   },
 ] as const
 
+// ALIGNMENT 2026-11-22: /world/petronas/shadow/ and /map have no client route (both
+// soft-200 at the server, NotFound in the router). Replaced with routes that exist:
+// /politics/shadow (ShadowPMs) and /graph (RealityGraphView).
 const EXPLORE_AXES = [
   { label: 'Earth', sub: 'Subsurface & Malay Basin', to: '/earth' },
   { label: 'Wealth', sub: 'Putrajaya ⇄ KLCC Telemetry', to: '/wealth' },
-  { label: 'Shadow', sub: 'Institutional Governance', to: '/world/petronas/shadow/' },
-  { label: 'Living Map', sub: 'Full Ecosystem Topology', to: '/map' },
+  { label: 'Shadow', sub: 'Institutional Governance', to: '/politics/shadow' },
+  { label: 'Living Map', sub: 'Full Ecosystem Topology', to: '/graph' },
 ] as const
 
 export function Home() {
@@ -339,7 +362,7 @@ export function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SYSTEMS.map((sys) => {
               const cardClass =
                 'group rounded border border-[#EDEAE2]/10 bg-[#0A0B0D] p-5 hover:border-[#D4A853]/45 transition-colors flex flex-col justify-between'
@@ -400,7 +423,7 @@ export function Home() {
       {/* ── 05 PATHS & SUBORDINATE MACHINE FOOTER ──────────────────────── */}
       <section className="py-16 md:py-20 bg-[#08090C]" id="routes">
         <div className="mx-auto max-w-[1200px] px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
             <Link
               to="/work"
               className="rounded border border-[#EDEAE2]/10 bg-[#0D0F13] p-5 hover:border-[#D4A853]/45 transition-colors block"
@@ -410,6 +433,20 @@ export function Home() {
               </div>
               <div className="font-mono text-xs text-[#EDEAE2] uppercase tracking-wider">
                 Wells &amp; evidence →
+              </div>
+            </Link>
+            {/* ALIGNMENT 2026-11-22: /words was the one canon journey door
+                (canon/navigation.json primary_links_journey → Read) the homepage
+                never offered. RULE 2 wants every core destination within 3 clicks. */}
+            <Link
+              to="/words"
+              className="rounded border border-[#EDEAE2]/10 bg-[#0D0F13] p-5 hover:border-[#D4A853]/45 transition-colors block"
+            >
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9AA0A8] mb-2">
+                Read the writing
+              </div>
+              <div className="font-mono text-xs text-[#EDEAE2] uppercase tracking-wider">
+                Essays &amp; doctrine →
               </div>
             </Link>
             <a

@@ -62,7 +62,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/arifos/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/words/`, priority: 0.8, changefreq: "weekly" },
     // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
-    { loc: `${SITE_BASE}/words/essays/`, priority: 0.7, changefreq: "weekly" },
+    // /words/essays/ merged into /words/ 2026-11-23 (zen C) — canonical-only sitemap.
     { loc: `${SITE_BASE}/words/wiki/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/world/politics/`, priority: 0.6, changefreq: "monthly" },
     { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
@@ -215,7 +215,7 @@ Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
 ## Words subpages
-- [Words / Essays](https://arif-fazil.com/words/essays/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises. The civic column (MakcikGPT) lives at /world/makcikgpt/.
+- [Words / Essays](https://arif-fazil.com/words/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises. The civic column (MakcikGPT) lives at /world/makcikgpt/. (/words/essays/ is an alias of /words/.)
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
 
 ## Economics — the capital & commodity door
@@ -303,7 +303,7 @@ function buildLlmsJson(pieces) {
   routeRoles["/discoveries/"] = "well portfolio — exploration record and subsurface dossier";
   routeRoles["/essays/"] = "long-form writing and analysis";
   // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
-  routeRoles["/words/essays/"] = "Words — Essays subpage. Long-form essays, formal derivations, philosophical treatises by Arif Fazil. The civic column (MakcikGPT) lives at /world/makcikgpt/.";
+  routeRoles["/words/essays/"] = "Alias of /words/ (zen C 2026-11-23): static shell carries rel=canonical to /words/; SPA Navigates there. One URL per page.";
   routeRoles["/words/wiki/"] = "Words — Wiki subpage. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.";
 
   return {

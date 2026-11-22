@@ -352,23 +352,23 @@
     },
     {
       "path": "/words/",
-      "title": "Words — Hub (Essays · Wiki · MakcikGPT)",
+      "title": "Words — Hub (Essays · Doctrine · Wiki)",
       "mission": "interpret",
       "status": "live",
       "type": "hub",
       "priority": 0.85,
       "changefreq": "weekly",
-      "description": "Words hub. Three peer subpages — Essays, Wiki & Knowledge, MakcikGPT civic column. Refactored 2026-10-01 from tabbed single-page into a true hub. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the personal / professional identity."
+      "description": "Words hub — authored essays only (zen 2026-11-23). Peer subpages: Doctrine, Wiki & Knowledge. The MakcikGPT civic column lives at its canonical home /world/makcikgpt/ (cross-linked, not duplicated). /words/essays/ merged into this URL."
     },
     {
       "path": "/words/essays/",
-      "title": "Words — Essays",
+      "title": "Words — Essays (alias of /words/)",
       "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "weekly",
-      "description": "Peer subpage of the /words/ hub. Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5. Refactored 2026-10-01."
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "Alias of /words/ (zen C 2026-11-23). Static shell carries rel=canonical to /words/; SPA Navigates there. No HTTP redirect — Caddy unchanged. One URL per page."
     },
     {
       "path": "/words/wiki/",

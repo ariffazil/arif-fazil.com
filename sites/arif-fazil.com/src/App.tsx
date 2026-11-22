@@ -207,8 +207,9 @@ function FederationChrome() {
             <Route path="/words/doctrine/" element={<DoctrinePage />} />
             <Route path="/words" element={<WordsEssays />} />
             <Route path="/words/" element={<WordsEssays />} />
-            <Route path="/words/essays" element={<WordsEssays />} />
-            <Route path="/words/essays/" element={<WordsEssays />} />
+            {/* zen C 2026-11-23: /words/essays/ merged into /words/ — one URL per page */}
+            <Route path="/words/essays" element={<Navigate to="/words/" replace />} />
+            <Route path="/words/essays/" element={<Navigate to="/words/" replace />} />
             <Route path="/words/wiki" element={<WordsWiki />} />
             <Route path="/words/wiki/" element={<WordsWiki />} />
             {/* /words/makcikgpt removed 2026-11-23 (zen B): Caddy 301s it to the

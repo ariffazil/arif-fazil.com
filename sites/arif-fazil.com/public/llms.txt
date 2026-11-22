@@ -61,7 +61,7 @@ Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
 ## Words subpages
-- [Words / Essays](https://arif-fazil.com/words/essays/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises. The civic column (MakcikGPT) lives at /world/makcikgpt/.
+- [Words / Essays](https://arif-fazil.com/words/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises. The civic column (MakcikGPT) lives at /world/makcikgpt/. (/words/essays/ is an alias of /words/.)
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
 
 ## Economics — the capital & commodity door

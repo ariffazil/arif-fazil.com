@@ -15,7 +15,7 @@ const territoryLinks = [
 ]
 
 const connectLinks = [
-  { label: 'Contact', href: '/contact/', icon: '✉' },
+  { label: 'Contact', href: '/institution/', icon: '✉' },
   { label: 'Email', href: 'mailto:[REDACTED:EMAIL]', icon: '✉' },
   { label: 'Telegram', href: 'https://t.me/ariffazil', icon: '✈' },
   { label: 'GitHub', href: 'https://github.com/ariffazil', icon: '⌘' },

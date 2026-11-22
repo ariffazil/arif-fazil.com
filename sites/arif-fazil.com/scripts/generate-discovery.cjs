@@ -47,9 +47,11 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/arif/`, priority: 0.9, changefreq: "monthly", lastmod: "2026-11-17" },
     { loc: `${SITE_BASE}/human/`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
-    // 2026-11-14 — trust anchors (HERMES audit P1): real, indexable pages.
-    { loc: `${SITE_BASE}/contact/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-11-14" },
-    { loc: `${SITE_BASE}/vibing/`, priority: 0.6, changefreq: "monthly", lastmod: "2026-11-14" },
+    // 2026-11-14 — trust anchors (HERMES audit P1). 2026-11-22 (333-AGI full audit):
+    // /contact/ and /vibing/ return 404 (no React route, no static page) — a sitemap
+    // entry that 404s is an F2 truth failure, so they are removed here. /contact/ now
+    // 301s to /institution/ (engagement path). Rule enforced: sitemap iff HTTP 200,
+    // not a redirect, no noindex.
     { loc: `${SITE_BASE}/privacy/`, priority: 0.6, changefreq: "yearly", lastmod: "2026-11-14" },
     { loc: `${SITE_BASE}/earth/`, priority: 0.8, changefreq: "monthly" },
     { loc: `${SITE_BASE}/vitals/`, priority: 0.9, changefreq: "weekly", lastmod: "2026-09-27" },
@@ -83,6 +85,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/world/petronas/shadow/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/words/writing/`, priority: 0.8, changefreq: "weekly" },
     { loc: `${SITE_BASE}/words/doctrine/`, priority: 0.9, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/words/constitution/`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
     // 2026-09-20 — public accountability surface: receipts, gate verdicts,
     // seal-chain state and the defect register. See /root/forge_work/witness-ledger/.

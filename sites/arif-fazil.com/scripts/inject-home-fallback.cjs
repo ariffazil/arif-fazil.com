@@ -18,7 +18,7 @@ const block = `<!-- SSR-FALLBACK -->
 <h2>Evidence over assertion</h2>
 <p>Material claims link to evidence, or are marked as interpretation. Where evidence is incomplete, the system returns UNKNOWN or HOLD — it does not invent an answer. Verification: <a href="/999/">/999/</a>.</p>
 <h2>Connect</h2>
-<p>Email: <a href="mailto:[REDACTED:EMAIL]">[REDACTED:EMAIL]</a> · Telegram: <a href="https://t.me/ariffazil">@ariffazil</a> · LinkedIn: <a href="https://linkedin.com/in/ariffazil">ariffazil</a> · GitHub: <a href="https://github.com/ariffazil">ariffazil</a> · Contact: <a href="/contact/">/contact/</a></p>
+<p>Email: <a href="mailto:[REDACTED:EMAIL]">[REDACTED:EMAIL]</a> · Telegram: <a href="https://t.me/ariffazil">@ariffazil</a> · LinkedIn: <a href="https://linkedin.com/in/ariffazil">ariffazil</a> · GitHub: <a href="https://github.com/ariffazil">ariffazil</a> · Contact: <a href="/institution/">/institution/</a></p>
 </main>
 </noscript>`
 html = html.replace('</body>', block + '\n</body>')

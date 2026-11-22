@@ -87,3 +87,21 @@ Backups (final stamp `20261122T083412Z`):
 5. **Concurrent writer:** `kimi-code/FI-008` merges to `main` every ~2 min. If their branch touches `public/wealth/malaysia/`, this deploy is reverted — re-probe the live sha `b9d53698…` before trusting it persists.
 
 *DITEMPA BUKAN DIBERI — Forged, not given.*
+
+---
+
+## ADDENDUM — zombie-link repoint (2026-11-22T08:39:05Z)
+
+`/wealth/petronas/` is a **phantom-200**: it answers 200 with the WEALTH hub (35,273 B), so "KLCC Telemetry" and the `/map/` graph node silently landed readers on the wrong organ. Eight links across five surfaces repointed to the live `/petronas/` (200, 47,316 B) and its machine twins (`/petronas/state.json` → 200 `application/json`; `/petronas/brief.md` → 200 `text/markdown`).
+
+`public/petronas/state.json` (canonical_url) · `public/petronas/brief.md` · `public/wealth/malaysia/state.json` (mirror_url) · `public/wealth/index.html` (2 `<link rel=alternate>`) · `public/map/index.html` (machine pill + graph node + visible label) · plus the undeployed twin's `canonical`.
+
+Commit `3462379a` → merge `27dfb35f`. Envelope sha == HEAD, additive `rsync -av --update`, no `--delete`, no Caddy reload; source sha == live sha on 4/4.
+
+**Not deployed, deliberately:** `public/wealth/index.html` is a *different artifact* from the live WEALTH hub (9,459 B vs 35,273 B, 808 diff lines) — shipping it would have regressed the hub. Caught by the size/diff pre-check before any write.
+
+**Left alone, flagged:** `public/world/petronas/shadow/**` still carries three links to `/wealth/petronas/` (last touched 14:39 by an active sibling lane on the Kerusi Bayang surface — one writer per surface).
+
+Live witness: `/map/` zombie refs **0**; links now `/petronas/` ×3 and `/petronas/state.json` ×1; `/petronas/state.json` canonical = `https://arif-fazil.com/petronas/`; `/wealth/malaysia/state.json` mirror = `https://arif-fazil.com/petronas/state.json`. All six routes 200 with correct content-types.
+
+Rollback: `/root/forge_work/deployments/arif-fazil.com/20261122T083905Z/previous/` + `*.bak-20261122T083905Z` beside each live file.

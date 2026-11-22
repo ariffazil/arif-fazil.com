@@ -3,7 +3,7 @@
   "specVersion": "0.91",
   "name": "arif-fazil.com Agentic Resource Discovery Catalog",
   "description": "Domain-anchored ARD manifest for Muhammad Arif bin Fazil: exploration geoscience, Earth computation, and governed agent architecture.",
-  "updatedAt": "2026-09-22T00:00:00Z",
+  "updatedAt": "2026-11-22T00:00:00Z",
   "publisher": {
     "name": "Muhammad Arif bin Fazil",
     "displayName": "Arif Fazil",
@@ -172,6 +172,63 @@
         "learn about the 4-week supervised AI action control pilot",
         "enterprise agent governance engagement criteria",
         "install receipt chains and human veto around agent tools"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:content:petronas-dossier",
+      "displayName": "PETRONAS \u2014 Dompet Hari Ini, Tangki Masa Depan",
+      "type": "text/html",
+      "url": "https://arif-fazil.com/petronas/",
+      "documentation": "https://arif-fazil.com/petronas/state.json",
+      "description": "PETRONAS institutional health in audited public numbers: cash, 2P reserves (9.35 \u2192 8.64 \u2192 7.92 billion boe), dividends, proven reserve replacement, and the federal dividend coupling. Coupled pair: /wealth/malaysia/. Machine files: state.json, brief.md.",
+      "tags": [
+        "petronas",
+        "institutional-health",
+        "energy",
+        "reserves",
+        "dividends",
+        "bahasa-melayu"
+      ],
+      "capabilities": [
+        "html-page",
+        "state-json",
+        "brief-markdown",
+        "coupled-pair"
+      ],
+      "representativeQueries": [
+        "how much cash and debt does PETRONAS hold",
+        "is PETRONAS replacing the oil it sells",
+        "how much dividend does PETRONAS pay the Malaysian government",
+        "what does PETRONAS 2P reserve decline mean for Putrajaya"
+      ]
+    },
+    {
+      "identifier": "urn:air:arif-fazil.com:content:putrajaya-federal-ledger",
+      "displayName": "Malaysia \u00b7 Putrajaya \u2014 The Sovereign Ledger",
+      "type": "text/html",
+      "url": "https://arif-fazil.com/wealth/malaysia/",
+      "documentation": "https://arif-fazil.com/wealth/malaysia/state.json",
+      "description": "Malaysia federal fiscal state in public numbers: budget deficit, debt-service ratio, subsidy distance-to-break, nine tripwires, and the oil-dividend coupling to PETRONAS. Coupled pair: /petronas/. Machine files: state.json, brief.md.",
+      "tags": [
+        "malaysia",
+        "fiscal-policy",
+        "sovereign-ledger",
+        "budget",
+        "subsidy",
+        "putrajaya"
+      ],
+      "capabilities": [
+        "html-page",
+        "state-json",
+        "brief-markdown",
+        "coupling-simulator",
+        "coupled-pair"
+      ],
+      "representativeQueries": [
+        "what is Malaysia's federal deficit and debt to GDP",
+        "how close is Malaysia's subsidy bill to breaking",
+        "how does the oil price couple Putrajaya and PETRONAS",
+        "read Malaysia federal budget 2027 tripwires"
       ]
     }
   ]

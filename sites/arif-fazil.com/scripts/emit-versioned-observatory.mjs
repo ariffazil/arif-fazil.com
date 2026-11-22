@@ -3,15 +3,7 @@
  * Emit a content-addressed copy of the observatory renderer and point the
  * page at it.
  *
- * WHY (2026-11-21): Cloudflare caches /_shared/* for 4h and IGNORES the ?v=
- * query string in the cache key — a query-string bump does NOT bust the edge.
- * A content-addressed PATH is a new cache key, so the new renderer is live
- * immediately and forever (no purge, no 4h wait).
- *
- * Deterministic: the filename embeds the sha256 prefix of the content, so the
- * same content yields the same filename (no dirty-tree churn).
- *
- * Usage: node scripts/emit-versioned-observatory.cjs
+ * Usage: node scripts/emit-versioned-observatory.mjs
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -36,7 +28,7 @@ if (!fs.existsSync(PAGE)) {
   process.exit(1);
 }
 let page = fs.readFileSync(PAGE, "utf8");
-// point the page at the content-addressed copy; drop the ineffective ?v= bump
-page = page.replace(/\/_shared\/observatory\.js(\?v=[a-z0-9-]+)?/g, `/_shared/${versionedName}`);
+// point the page at the content-addressed copy; replace either bare observatory.js or prior observatory-<hash>.js
+page = page.replace(/\/_shared\/observatory(?:-[a-f0-9]{10})?\.js(\?v=[a-z0-9-]+)?/g, `/_shared/${versionedName}`);
 fs.writeFileSync(PAGE, page);
 console.log(`emit-versioned-observatory: ${versionedName} (sha256-10 ${hash}) → /arifos/ reference updated`);

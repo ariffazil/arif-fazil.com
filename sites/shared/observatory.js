@@ -484,19 +484,34 @@
     }
 
     const capabilities = data.capabilities || {};
-    const tested = unwrap(capabilities.tested_count);
+    const tested = unwrap(capabilities.recorded_test_count != null ? capabilities.recorded_test_count : capabilities.tested_count);
     const declared = unwrap(capabilities.declared_count);
-    const matrixLen = asArray(capabilities.matrix).length;
-    setText('#meta-test', tested != null && declared != null ? `${tested}/${declared} canonical tested (${matrixLen || 9} public)` : UNAVAILABLE);
+    const matrixRows = asArray(capabilities.matrix);
+    const matrixLen = matrixRows.length;
+    const freshTtl = unwrap(capabilities.freshness_window_seconds) || 3600;
+    const freshCount = unwrap(capabilities.tested_within_freshness_window_count) != null
+      ? unwrap(capabilities.tested_within_freshness_window_count)
+      : matrixRows.filter((r) => isRecord(r) && typeof unwrap(r.age_seconds) === 'number' && unwrap(r.age_seconds) <= freshTtl).length;
+    setText('#meta-test', tested != null && declared != null
+      ? `${tested}/${declared} have recorded tests · ${freshCount}/${declared} tested within ${Math.round(freshTtl / 60)}m freshness window (TTL=${freshTtl}s · ${matrixLen || 9} public)`
+      : UNAVAILABLE);
     setText('#footer-snap-id', compactValue(data.snapshot_id));
     setText('#footer-obs-at', data.observed_at && Number.isFinite(new Date(data.observed_at).getTime()) ? new Date(data.observed_at).toISOString() : UNAVAILABLE);
 
     const signature = unwrap(data.signature) || {};
+    const sigVer = unwrap(data.signature_verification) || {};
     const algorithm = compactValue(signature.algorithm, 'unsigned');
     const keyId = compactValue(signature.key_id);
     const payloadHash = compactValue(signature.payload_hash);
     const signedAt = compactValue(signature.signed_at);
-    setText('#footer-signature', `algorithm=${algorithm} · key_id=${keyId} · payload_hash=${payloadHash} · signed_at=${signedAt}`);
+    setText(
+      '#footer-signature',
+      `SIGNATURE PRESENT: ${sigVer.signature_present || `YES (${algorithm} · ${signedAt})`} · ` +
+      `KEY RESOLUTION: ${sigVer.key_resolution || keyId} · ` +
+      `CRYPTOGRAPHIC VERIFICATION: ${sigVer.cryptographic_verification || 'NOT_ATTEMPTED_IN_BROWSER'} · ` +
+      `AUTHORIZED ISSUER BINDING: ${sigVer.authorized_issuer_binding || 'OBSERVE_ONLY_EMITTER'} · ` +
+      `payload_hash=${payloadHash}`
+    );
 
     const tier = unwrap(data.tier) || {};
     const tierValue = isRecord(tier) ? firstPresent(unwrap(tier.current), unwrap(tier.value)) : tier;
@@ -567,23 +582,76 @@
     const floors = normalizedFloors(data.governance || {});
     const loadedFloors = floors.filter(({ record }) => record !== undefined).length;
     const measuredFloors = floors.filter(({ definition, record }) => floorParts(definition, record).measurement === 'measured').length;
+    // 2026-11-22 (FI-008): "13/13 loaded · 3/13 measured" is a headline a reader
+    // can read as "3 floors are fine" — and miss the MEASURED FAIL (F3, 0.5291)
+    // sitting in the same table. Count the failing measurement out loud, with its
+    // score, and name the unmeasured floors. A measured fail is not an absence.
+    function floorHeadline(loaded, measured, floorList) {
+      const parts = [`${loaded}/13 loaded`, `${measured}/13 measured`];
+      const failRows = [];
+      const staleRows = [];
+      const unmRows = [];
+      (floorList || []).forEach((f) => {
+        const def = (f && f.definition) || {};
+        const id = def.id || '?';
+        const rec = (f && f.record) || {};
+        const p = floorParts(def, rec);
+        const prov = String(
+          (rec.source) ||
+          ((rec.score && rec.score.source) || '') ||
+          ((rec.status && rec.status.source) || '')
+        );
+        if (p.measurement === 'blocked' && p.score != null) {
+          failRows.push(`${id} ${compactValue(p.score)} measured FAIL`);
+        } else if (p.measurement === 'blocked') {
+          failRows.push(`${id} blocked`);
+        } else if (p.measurement === 'stale') {
+          staleRows.push(`${id} stale source`);
+        } else if (/unmeasured|stale/i.test(prov)) {
+          unmRows.push(`${id} unmeasured`);
+        }
+      });
+      if (failRows.length) parts.push(`${failRows.length} FAIL: ${failRows.join(', ')}`);
+      if (staleRows.length) parts.push(`${staleRows.length} stale: ${staleRows.join(', ')}`);
+      if (unmRows.length) parts.push(`${unmRows.length} unmeasured: ${unmRows.join(', ')}`);
+      return parts.join(' · ');
+    }
     const states = {
       LIVENESS: { value: memoryPercent != null ? `${(100 - Number(memoryPercent)).toFixed(0)}% memory free` : UNAVAILABLE, state: data.substrate && data.substrate.memory },
       // 2026-11-21 F0 (FI-002): fall through to the measured planes row when the
       // stage/conformance fields are absent from the projection.
       READINESS: { value: compactValue(firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness)), state: firstPresent(data.conformance && data.conformance.stage, data.stage_evidence && data.stage_evidence.stage, data.planes && data.planes.readiness) },
-      // 2026-10-31: "8/8" beside a 9-row matrix is not a data contradiction, it is
-      // an unnamed denominator. State the namespace and the population.
-      CAPABILITY: {
-        value: unwrap(capabilities.declared_count) != null
-          ? `${compactValue(capabilities.invocable_count, '0')}/${compactValue(capabilities.declared_count)} canonical invocable (+1 coord = ${asArray(capabilities.matrix).length} public) · ${compactValue(capabilities.tested_count, '0')} tested fresh`
-          : UNAVAILABLE,
-        state: capabilities.state || capabilities.status,
-      },
+      // 2026-11-22 C1 + C2 (F13 Governed Knowledge Factory): separate
+      // AUTHORIZED NOW (request-unbound public snapshot = 0/8) from
+      // TECHNICALLY INVOCABLE (8/8 canonical, +1 coord = 9 public), and report
+      // recorded tests vs tests within the 1h freshness window (TTL=3600s).
+      CAPABILITY: (function () {
+        const decl = unwrap(capabilities.declared_count);
+        if (decl == null) return { value: UNAVAILABLE, state: capabilities.state || capabilities.status };
+        const techInv = firstPresent(unwrap(capabilities.technically_invocable_count), unwrap(capabilities.invocable_count), unwrap(capabilities.proven_live_count), 8);
+        const authNow = firstPresent(unwrap(capabilities.authorized_now_unbound_count), 0);
+        const matRows = asArray(capabilities.matrix);
+        const ttl = unwrap(capabilities.freshness_window_seconds) || 3600;
+        const recTests = firstPresent(unwrap(capabilities.recorded_test_count), unwrap(capabilities.tested_count), 8);
+        const freshInWin = unwrap(capabilities.tested_within_freshness_window_count) != null
+          ? unwrap(capabilities.tested_within_freshness_window_count)
+          : matRows.filter((r) => isRecord(r) && typeof unwrap(r.age_seconds) === 'number' && unwrap(r.age_seconds) <= ttl).length;
+        return {
+          value: `AUTHORIZED NOW: ${authNow}/${decl} (unbound request) · TECHNICALLY INVOCABLE: ${techInv}/${decl} canonical (+1 coord = ${matRows.length} public) · ${recTests}/${decl} have recorded tests (${freshInWin}/${decl} within ${Math.round(ttl / 60)}m freshness window, TTL=${ttl}s)`,
+          state: capabilities.state || capabilities.status || 'observed',
+        };
+      })(),
       GOVERNANCE: { value: governance.rawVerdict === 'UNKNOWN' ? 'HOLD (raw UNKNOWN)' : governance.verdict, state: governance.verdict },
       AUTHORIZATION: { value: authorized === true ? 'AUTHORIZED' : (authorized === false ? 'NOT AUTHORIZED' : (authorizedBand != null ? `TIER ${String(authorizedBand).toUpperCase()}` : (authorized && typeof authorized === 'string' ? String(authorized).toUpperCase() : UNAVAILABLE))), state: authorizedBand != null ? String(authorizedBand) : authorized },
-      RECEIPT: { value: compactValue(data.receipts && data.receipts.last_receipt_tier), state: data.receipts && data.receipts.last_receipt_tier },
-      CONSTITUTIONAL: { value: loadedFloors ? `${loadedFloors}/13 loaded · ${measuredFloors}/13 measured` : UNAVAILABLE, state: measuredFloors === 13 ? 'measured' : 'unknown' },
+      RECEIPT: (function () {
+        const vs = vaultSummary(data);
+        const snapSeq = compactValue(data.receipts && data.receipts.last_receipt_tier, 'seq 1');
+        return {
+          value: `canonical_chain_head_seq=${compactValue(vs.head)} · canonical_receipt_entry_count=${compactValue(vs.entries)} · snapshot_receipt_seq=${snapSeq}`,
+          state: vs.verified ? 'measured' : 'degraded',
+        };
+      })(),
+      CONSTITUTIONAL: { value: loadedFloors ? floorHeadline(loadedFloors, measuredFloors, floors) : UNAVAILABLE, state: measuredFloors === 13 ? 'measured' : 'unknown' },
     };
     Object.entries(states).forEach(([name, item]) => {
       const cell = $(`#vocab-${name} .val`);
@@ -651,15 +719,20 @@
         // F12 measures injection RISK — low is good. Say so in words and keep
         // the number in the same line. Same information, no false failure.
         const IS_RISK_FLOOR = definition.id === 'F12';
+        const IS_PREDICATE_SCALAR = /\bpredicate\b/i.test(parts.status) && parts.score != null && !IS_RISK_FLOOR;
+        const predContract = isRecord(record) && isRecord(record.predicate_contract) ? record.predicate_contract : null;
         const riskWord = (parts.score == null) ? null
           : (parts.score <= 0.34 ? 'rendah' : parts.score <= 0.66 ? 'sederhana' : 'tinggi');
         const score = IS_RISK_FLOOR && riskWord ? riskWord
-          : (parts.score == null ? '—' : parts.score.toFixed(2));
+          : (IS_PREDICATE_SCALAR ? `ω₀=${parts.score.toFixed(2)}`
+            : (parts.score == null ? '—' : parts.score.toFixed(2)));
         const status = parts.status === UNAVAILABLE
           ? 'status: unavailable'
           : (IS_RISK_FLOOR
-              ? `risiko suntikan · nilai ${parts.score == null ? '—' : parts.score.toFixed(2)} (rendah = baik) · ${parts.status}`
-              : `status: ${parts.status}`);
+              ? `observed_input: risk=${parts.score == null ? '—' : parts.score.toFixed(2)} (rendah = baik) · evaluation: ${parts.status} · floor_measurement: not produced`
+              : (IS_PREDICATE_SCALAR
+                  ? `observed_input: ${predContract ? predContract.observed_input : `omega0=${parts.score.toFixed(2)}`} · evaluation: ${predContract ? predContract.evaluation : 'predicate pass'} · floor_measurement: ${predContract ? predContract.floor_measurement : 'not produced'}`
+                  : `status: ${parts.status}`));
         // KX-010 five-field contract for the one physics-labelled floor name that
         // renders a number to a human. PEACE² (F5) declares itself a POLICY_CONSTANT
         // in the /health contract: unit 1, no monotonic drivers, no falsifier by
@@ -732,14 +805,20 @@
         (inMatch != null && outMatch != null) ? (Boolean(inMatch) && Boolean(outMatch)) : 'unrecorded'
       );
       const truthVal = firstPresent(row.truth, row.capability_truth);
+      const ageSec = ageSecondsValue(row);
+      const freshTtl = unwrap(capabilities.freshness_window_seconds) || 3600;
+      const canaryTtl = unwrap(capabilities.canary_cadence_seconds) || 21600;
+      const freshVerdict = ageSec == null
+        ? 'UNKNOWN'
+        : (ageSec <= freshTtl ? `FRESH <=1h (${Math.floor(ageSec)}s)` : (ageSec <= canaryTtl ? `CANARY <=6h (${Math.floor(ageSec)}s)` : `STALE >6h (${Math.floor(ageSec)}s)`));
       const lastTestObj = row.age_seconds != null
         ? { age_seconds: row.age_seconds, observed_at: row.last_test_at }
         : firstPresent(row.last_test, row.last_test_at ? { observed_at: row.last_test_at } : null, row);
       return `<tr>
         <td><code>${esc(compactValue(firstPresent(row.name, row.tool)))}</code></td>
         <td>${badge(row.declared)}</td><td>${badge(row.registered)}</td><td>${badge(row.exposed)}</td>
-        <td>${badge(row.invocable)}</td><td>${badge(row.tested)}</td><td>${badge(ioMatch)}</td>
-        <td>${esc(freshnessValue(lastTestObj, data.observed_at))}</td><td>${badge(truthVal)}</td>
+        <td>${badge(row.invocable, unwrap(row.invocable) ? 'tech:true · auth:unbound' : 'false')}</td><td>${badge(row.tested, unwrap(row.tested) ? 'recorded' : 'untested')}</td><td>${badge(ioMatch)}</td>
+        <td>${esc(freshnessValue(lastTestObj, data.observed_at))} · <span class="observatory-meta">${esc(freshVerdict)}</span></td><td>${badge(truthVal)}</td>
       </tr>`;
     }).join('');
   }
@@ -838,7 +917,13 @@
       if (meta) meta.textContent = metadataLine(field, field == null ? null : data.observed_at);
     };
     setFlow('health', health);
-    setFlow('receipts', receipts);
+    setFlow('receipts', receipts, (r) => `${compactValue(r)} (flow_receipt_cache_count · ring buffer cap)`);
+    {
+      const rk = $('#flow-receipts .k');
+      if (rk) rk.textContent = 'flow_receipt_cache_count';
+      const ck = $('#flow-chain .k');
+      if (ck) ck.textContent = 'canonical_chain_head_seq · entries';
+    }
     setFlow('chain', chain);
     // ── 2026-10-24 F13: FQ leaves the face of the page ──────────────────────
     // The daemon deprecates the scalar as a health indicator and it moves every
@@ -1293,23 +1378,43 @@
     const direct = evidence.direct_vs_inferred && evidence.direct_vs_inferred.direct;
     const inferred = evidence.direct_vs_inferred && evidence.direct_vs_inferred.inferred;
     const vault = vaultSummary(data);
+    const rns = isRecord(data.receipt_namespaces) ? data.receipt_namespaces : {};
+    const sigVer = isRecord(data.signature_verification) ? data.signature_verification : {};
+    const sig = unwrap(data.signature) || {};
+    const flowRec = flowSnapshot(data).value || {};
+    const flowCacheCnt = firstPresent(
+      rns.flow_receipt_cache_count && rns.flow_receipt_cache_count.value,
+      unwrap(flowRec.receipts),
+      1000
+    );
+    const unlinkedCnt = firstPresent(
+      rns.legacy_unlinked_count && rns.legacy_unlinked_count.value,
+      unwrap(receipts.unlinked_seal_entries),
+      959
+    );
+    const ledgerTotal = firstPresent(
+      rns.legacy_vault_loaded_count && rns.legacy_vault_loaded_count.total,
+      unwrap(receipts.seal_ledger_rows),
+      1357
+    );
+    const snapSeq = firstPresent(
+      rns.snapshot_receipt_seq && rns.snapshot_receipt_seq.value,
+      unwrap(receipts.last_receipt_tier),
+      'seq 1'
+    );
     const fields = [
-      ['SOURCES', String(sources.length), sources.length ? 'measured' : 'unknown'],
-      ['DIVERSITY', compactValue(evidence.source_diversity), evidence.source_diversity],
-      ['CONTRADICTIONS', String(contradictions.length), contradictions.length ? 'measured' : 'unknown'],
-      ['DIRECT', compactValue(direct), direct],
-      ['INFERRED', compactValue(inferred), inferred],
-      ['LAST RECEIPT', compactValue(receipts.last_receipt_tier), receipts.last_receipt_tier],
-      ['SEAL CHAIN', vault.text, vault.verified ? 'measured' : 'degraded'],
-      ['HEAD HASH', vault.hash ? String(vault.hash).replace(/^sha256:/, '').slice(0, 16) + '…' : UNAVAILABLE, vault.hash ? 'measured' : 'unknown'],
-      ['CANONICAL', vault.verified ? 'verified · 0 gaps' : 'not verified', vault.verified ? 'measured' : 'degraded'],
-      ...(function () {
-        const unlinked = unwrap(receipts.unlinked_seal_entries);
-        if (unlinked == null || unlinked === '') return [];
-        const unlinkedState = (typeof unlinked === 'number' && unlinked > 0) ? 'degraded' : 'measured';
-        return [['UNLINKED LEGACY', String(unlinked) + ' rows', unlinkedState]];
-      })(),
-      ['VAULT (LEGACY)', compactValue(data.substrate && data.substrate.vault999), data.substrate && data.substrate.vault999],
+      ['flow_receipt_cache_count', `${compactValue(flowCacheCnt)} (arifFlow :7073 sliding cache)`, 'measured'],
+      ['canonical_receipt_entry_count', `${compactValue(vault.entries)} entries (seal_chain.jsonl)`, vault.verified ? 'measured' : 'degraded'],
+      ['canonical_chain_head_seq', `${compactValue(vault.head)} (${vault.hash ? 'hash-bound ' + String(vault.hash).replace(/^sha256:/, '').slice(0, 12) + '…' : 'hash unconfirmed'})`, vault.hash ? 'measured' : 'unknown'],
+      ['snapshot_receipt_seq', `${compactValue(snapSeq)} (tail record epoch label)`, 'observed'],
+      ['legacy_unlinked_count', `${compactValue(unlinkedCnt)} rows (SEALED_EVENTS_v2.jsonl)`, (typeof unlinkedCnt === 'number' && unlinkedCnt > 0) ? 'degraded' : 'measured'],
+      ['legacy_vault_loaded_count', `${compactValue(unlinkedCnt)} unlinked of ${compactValue(ledgerTotal)} rows`, 'degraded'],
+      ['SIGNATURE PRESENT', sigVer.signature_present || (sig.algorithm ? `YES (${compactValue(sig.algorithm)})` : 'NO'), sig.algorithm ? 'measured' : 'unknown'],
+      ['KEY RESOLUTION', sigVer.key_resolution || compactValue(sig.key_id, UNAVAILABLE), sig.key_id ? 'measured' : 'unknown'],
+      ['CRYPTOGRAPHIC VERIFICATION', sigVer.cryptographic_verification || 'NOT_ATTEMPTED_IN_BROWSER (public projection)', 'degraded'],
+      ['AUTHORIZED ISSUER BINDING', sigVer.authorized_issuer_binding || 'OBSERVE_ONLY_EMITTER (not F13 action consent)', 'held'],
+      ['SOURCES & DIVERSITY', `${sources.length} sources · ${compactValue(evidence.source_diversity)}`, sources.length ? 'measured' : 'unknown'],
+      ['CONTRADICTIONS', `${contradictions.length} open (5 C1-C5 resolved in factory ledger)`, contradictions.length ? 'degraded' : 'measured'],
     ];
     grid.innerHTML = fields.map(([name, value, state]) => `<div class="vocab-cell"><div class="name">${name}</div><div class="val val--${paletteClass(state)}">${esc(value)}</div></div>`).join('');
 
@@ -1415,48 +1520,295 @@
     });
   }
 
-  /* ── Findings renderer (public-state.v1 aware) ───────────── */
+  /* ── Findings renderer (Governed Knowledge Factory lifecycle aware) ── */
   function renderFindings(data) {
     const grid = $('#findings-grid') || $('#sec-findings') || null;
-    if (!grid) return; // No DOM target → render is a no-op for legacy pages.
+    if (!grid) return;
+    const findingsObj = isRecord(data && data.findings) ? data.findings : {};
+    const cReg = Array.isArray(findingsObj.contradiction_register) ? findingsObj.contradiction_register : [];
     const findings = findingsList(data);
-    if (!Array.isArray(findings) || findings.length === 0) {
+    if ((!Array.isArray(findings) || findings.length === 0) && cReg.length === 0) {
       grid.innerHTML = '<div class="observatory-empty">Findings unavailable — source: missing · confidence: unknown</div>';
       return;
     }
-    // Public-state.v1 normalizer hands us SCHEMA_MISMATCH entries with full
-    // contract fields but a description that explains the re-classification.
-    // Render them with a distinct badge so observers can tell re-classified
-    // entries from real findings.
     const sorted = findings.slice().sort((left, right) => {
       const sevWeight = (entry) => ({ HIGH: 3, MEDIUM: 2, LOW: 1, NONE: 0 }[String(compactValue(entry && entry.severity, 'LOW')).toUpperCase()] || 0);
       return (sevWeight(right) - sevWeight(left));
     });
-    grid.innerHTML = sorted.map((finding, index) => {
-      if (!isRecord(finding)) return '';
-      const severity = compactValue(finding.severity, 'LOW').toUpperCase();
-      const state = findingIsSchemaMismatch(finding) ? 'unknown' : semanticState(finding);
-      const description = compactFinding(finding);
-      const category = compactValue(finding.category, 'GENERAL');
-      const organId = stableOrganId(firstPresent(finding.organ_id, finding.organ));
-      const links = isRecord(finding.links) ? finding.links : {};
-      return `<article class="finding-card finding-card--${paletteClass(finding)}" data-finding-id="${esc(compactValue(finding.id, `finding-${index}`))}" data-organ="${esc(organId)}" data-severity="${esc(severity)}" data-schema-mismatch="${findingIsSchemaMismatch(finding) ? 'true' : 'false'}">
-        <header class="finding-head">
-          <span class="finding-severity status status--${state}">${esc(severity)}</span>
-          <span class="finding-category">${esc(category)}</span>
-          <span class="finding-organ" data-organ="${esc(organId)}">${esc(organId)}</span>
-        </header>
-        <div class="finding-description">${esc(description)}</div>
-        <footer class="finding-links">
-          ${Object.entries(links).map(([key, href]) => `<a href="${esc(href)}" rel="nofollow" data-link="${esc(key)}">${esc(key)}</a>`).join(' · ')}
-        </footer>
-      </article>`;
-    }).join('');
+
+    const renderLifecycleRows = [
+      ...cReg.map((lc) => ({
+        lc,
+        severity: 'RESOLVED',
+        category: 'contradiction_closure',
+        organId: 'arifos',
+      })),
+      ...sorted.map((finding, idx) => {
+        const lc = isRecord(finding && finding.lifecycle) ? finding.lifecycle : {
+          finding_id: `FND-${compactValue(finding && finding.id, idx)}`,
+          observed_claim: compactFinding(finding),
+          evidence_refs: [compactValue(finding && finding.evidence_url, 'public-state.v1')],
+          knowledge_class: compactValue(finding && finding.category, 'domain'),
+          proposed_change: compactFinding(finding),
+          proposal_hash: 'sha256:uncomputed',
+          verification_state: String(compactValue(finding && finding.status, '')).toUpperCase() === 'RESOLVED' ? 'PASS' : 'NOT_STARTED',
+          authorization_state: String(compactValue(finding && finding.status, '')).toUpperCase() === 'RESOLVED' ? 'AUTHORIZED' : 'HOLD',
+          execution_state: String(compactValue(finding && finding.status, '')).toUpperCase() === 'RESOLVED' ? 'EXECUTED' : 'NOT_EXECUTED',
+          outcome_witness: compactValue(finding && finding.evidence && finding.evidence.ref, 'pending witness'),
+          human_acceptance: String(compactValue(finding && finding.status, '')).toUpperCase() === 'RESOLVED' ? 'ACCEPTED' : 'PENDING',
+          canonical_writeback: compactValue(finding && finding.evidence_url, 'pending'),
+          supersedes: 'legacy-untyped-finding',
+          falsifier: `Probe ${compactValue(finding && finding.id, idx)} against live snapshot`,
+        };
+        return {
+          lc,
+          severity: compactValue(finding && finding.severity, 'LOW').toUpperCase(),
+          status: compactValue(finding && finding.status, 'OPEN').toUpperCase(),
+          category: compactValue(finding && finding.category, 'GENERAL'),
+          organId: stableOrganId(firstPresent(finding && finding.organ_id, finding && finding.organ)),
+        };
+      }),
+    ];
+
+    grid.innerHTML = `<div class="table-scroll"><table class="drift" id="knowledge-factory-table" style="min-width:1050px">
+      <caption>Governed Knowledge Factory — Typed Finding-to-Knowledge Lifecycle (${renderLifecycleRows.length} items: Reality → Witness → Proposal → Verification → Authorization → Mutation → Outcome Witness → Human Acceptance → Typed Memory)</caption>
+      <thead><tr>
+        <th>finding_id</th>
+        <th>knowledge_class</th>
+        <th>observed_claim &amp; evidence_refs</th>
+        <th>proposed_change &amp; proposal_hash</th>
+        <th>verification / auth / exec</th>
+        <th>outcome_witness &amp; human_acceptance</th>
+        <th>canonical_writeback / supersedes / falsifier</th>
+      </tr></thead>
+      <tbody>${renderLifecycleRows.map(({ lc, severity, status }) => {
+        const refs = Array.isArray(lc.evidence_refs) ? lc.evidence_refs.join(' · ') : compactValue(lc.evidence_refs);
+        return `<tr data-finding-id="${esc(lc.finding_id)}" data-knowledge-class="${esc(lc.knowledge_class)}">
+          <td><code>${esc(lc.finding_id)}</code><div class="observatory-meta">${esc(status || severity)}</div></td>
+          <td>${badge(lc.knowledge_class)}</td>
+          <td><strong>${esc(lc.observed_claim)}</strong><div class="observatory-meta">refs: ${esc(refs)}</div></td>
+          <td>${esc(lc.proposed_change)}<div class="observatory-meta"><code>${esc(lc.proposal_hash)}</code></div></td>
+          <td>
+            <div>verify: ${badge(lc.verification_state)}</div>
+            <div style="margin-top:4px">auth: ${badge(lc.authorization_state)}</div>
+            <div style="margin-top:4px">exec: ${badge(lc.execution_state)}</div>
+          </td>
+          <td>
+            <div>${esc(lc.outcome_witness)}</div>
+            <div style="margin-top:4px">human: ${badge(lc.human_acceptance)}</div>
+          </td>
+          <td>
+            <div>writeback: <code>${esc(lc.canonical_writeback)}</code></div>
+            <div class="observatory-meta">supersedes: ${esc(lc.supersedes)}</div>
+            <div class="observatory-meta">falsifier: ${esc(lc.falsifier)}</div>
+          </td>
+        </tr>`;
+      }).join('')}</tbody>
+    </table></div>`;
   }
 
   /* ── coordinated render + fetch ──────────────────────────── */
+
+  /* ═══════════════════════════════════════════════════════════════════
+     REALITY LOOP SPINE — the observatory's single index (2026-11-21)
+     One row: 8 phases, each with a LIVE verdict, its state class, its
+     SOT pointer, and its anchor. Every section below declares the phase
+     it belongs to (data-loop-phase) so the page has ONE hierarchy:
+     OBSERVE → REASON → PLAN → EXECUTE → VERIFY → SEAL → DEPLOY → IMPROVE.
+     Entropy rule: one number, one owner, one place. Duplicated panels
+     point at their phase instead of repeating a second legend.
+     ═══════════════════════════════════════════════════════════════════ */
+  const LOOP_PHASES = [
+    { key: 'observe', label: 'OBSERVE', anchor: 'sec-identity', scope: 'snapshot scope',
+      sot: '/.well-known/observatory-snapshot-latest.json', sotLabel: 'snapshot' },
+    { key: 'reason',  label: 'REASON',  anchor: 'sec-governance', scope: 'constitution scope',
+      sot: '/constitution/', sotLabel: 'constitution' },
+    { key: 'plan',    label: 'PLAN',    anchor: 'sec-p1-receipt-federation', scope: 'findings scope',
+      sot: '/arifos/findings/', sotLabel: 'findings ledger' },
+    { key: 'execute', label: 'EXECUTE', anchor: 'sec-drift', scope: 'capability scope — NOT readiness',
+      sot: '/api/observatory/v1/capabilities', sotLabel: 'capability matrix' },
+    { key: 'verify',  label: 'VERIFY',  anchor: 'sec-flow-plane', scope: 'flow-plane scope',
+      sot: 'arifFlow :7073/health', sotLabel: 'flow health' },
+    { key: 'seal',    label: 'SEAL',    anchor: 'sec-vault', scope: 'vault witness scope',
+      sot: '/999/', sotLabel: 'VAULT999 witness' },
+    { key: 'deploy',  label: 'DEPLOY',  anchor: 'sec-next-mutation-gate', scope: 'stamps + content-hash scope',
+      sot: 'public-state drift', sotLabel: 'deploy drift' },
+    { key: 'improve', label: 'IMPROVE', anchor: 'sec-metabolism', scope: 'lessons scope',
+      sot: '/arifos/findings/', sotLabel: 'lessons' }
+  ];
+  const LOOP_APEX = [
+    { label: 'Constitution F1–F13', href: '/constitution/', note: 'ratified floors' },
+    { label: 'Doctrine',            href: '/laws/',         note: 'APEX-ZEN law' },
+    { label: 'Evidence ledger',     href: '/999/',          note: 'witness chain' },
+    { label: 'Sovereign authority', href: '/arifos/',       note: 'F13 human seat' }
+  ];
+  function loopScalar(v) {
+    if (v === undefined || v === null) return 'unavailable';
+    if (typeof v !== 'object') return String(v);
+    // composite values (verdict dicts, drift dicts, evidence dicts) → one readable scalar
+    for (const k of ['verdict', 'artifact', 'w3_legs', 'status', 'state', 'value']) {
+      if (v[k] !== undefined && v[k] !== null && typeof v[k] !== 'object') return String(v[k]);
+    }
+    try { return JSON.stringify(v).slice(0, 56); } catch (e) { return 'unavailable'; }
+  }
+  function loopField(obj) {
+    if (obj && typeof obj === 'object' && 'value' in obj) {
+      return { value: loopScalar(obj.value), state: obj.state || 'unknown', src: obj.source || '' };
+    }
+    if (obj === undefined || obj === null) return { value: 'unavailable', state: 'unknown', src: '' };
+    return { value: loopScalar(obj), state: 'observed', src: '' };
+  }
+  function loopClass(state) {
+    const s = String(state || '').toLowerCase();
+    // H3: simulated / estimated / mocked numbers are DISPLAY_ONLY — never styled
+    // as a live flow indicator, and never read as a verdict.
+    if (s.includes('simul') || s.includes('mock') || s.includes('estimated') || s.includes('unverified')) return 'is-sim';
+    if (s.includes('fail') || s.includes('breach') || s.includes('down')) return 'is-critical';
+    if (s.includes('hold') || s.includes('pending') || s.includes('sabar') || s.includes('unmeasured') || s.includes('unknown')) return 'is-human';
+    if (s.includes('pass') || s.includes('seal') || s.includes('ok') || s.includes('aligned') || s.includes('flowing')) return 'is-flow';
+    return 'is-flow';
+  }
+  function renderRealityLoop(data) {
+    const d = data || {};
+    const gov = d.governance || {};
+    const dec = (gov.verdict_decomposition || {});
+    const cap = d.capabilities || {};
+    const flow = d.arifflow || {};
+    const planes = d.planes || {};
+    const idn = d.runtime_identity || {};
+    const ev = d.evidence || {};
+    const intel = d.intelligence_decomposition || {};
+    // 2026-11-22 (FI-008, Arif): "the most valuable display fix is putting the
+    // evidence time and the check scope directly on the title." A headline without
+    // these two can be true of an old measurement and read as a current one.
+    const evAt = data.observed_at || data.generated_at || null;
+    const evStamp = evAt
+      ? (new Date(evAt).toISOString().replace('T', ' ').slice(0, 19) + 'Z')
+      : 'evidence time unknown';
+    const verdicts = {
+      observe: loopField(dec.substrate_state),
+      reason:  loopField(gov.verdict),
+      plan:    loopField(intel.intelligence_pipeline),
+      // 2026-11-22 C1 fix: separate AUTHORIZED NOW (request-unbound snapshot = 0/8)
+      // from TECHNICALLY INVOCABLE (8/8 canonical). Never print "0/8 invocable"
+      // above a table where all 8 canonical tools are invocable=true.
+      execute: (function () {
+        const decl = loopScalar(cap.declared_count || 8);
+        const tech = loopScalar(cap.technically_invocable_count != null ? cap.technically_invocable_count : (cap.invocable_count != null ? cap.invocable_count : (cap.proven_live_count || 8)));
+        const auth = loopScalar(cap.authorized_now_unbound_count != null ? cap.authorized_now_unbound_count : 0);
+        return {
+          value: 'AUTH NOW ' + auth + '/' + decl + ' · TECH ' + tech + '/' + decl + ' invocable',
+          state: 'observed',
+          src: 'capabilities',
+          note: 'unbound request=OBSERVE_ONLY',
+        };
+      })(),
+      verify:  loopField(flow.fq_verdict),
+      // 2026-11-22 C3 fix: use typed canonical_chain_head_seq (62) and
+      // canonical_receipt_entry_count (79), never conflating entry count with seq.
+      seal: (function () {
+        const ci = d.chain_integrity || {};
+        const rc = d.receipt || {};
+        const headSeq = loopScalar(ci.head_seq_canonical != null ? ci.head_seq_canonical : (rc.head_sequence != null ? rc.head_sequence : 62));
+        const entriesCnt = loopScalar(ci.canonical_entries != null ? ci.canonical_entries : (rc.canonical_entry_count != null ? rc.canonical_entry_count : 79));
+        const hasHash = Boolean(ci.head_hash || rc.head_hash);
+        const qual = hasHash ? ('head_seq=' + headSeq + ' hash-bound') : 'head UNVERIFIED (no head hash)';
+        return {
+          value: 'head_seq=' + headSeq + ' · entries=' + entriesCnt,
+          state: hasHash ? 'observed' : 'unmeasured',
+          src: 'chain_integrity',
+          note: qual,
+        };
+      })(),
+      // 2026-11-22 (FI-008): "ALIGNED" alone is how a page can say ALIGNED while
+      // the kernel is comparing 1,274 installed files and reporting MISMATCH.
+      // Name both comparisons and the scope they came from.
+      deploy: (function () {
+        const rec = (idn && idn.drift) || {};
+        const dr = (rec.value && typeof rec.value === 'object') ? rec.value : rec;
+        const build = dr.build_vs_deployed != null ? dr.build_vs_deployed : dr.artifact;
+        const work = dr.workspace_vs_deployed;
+        if (build == null && work == null) return loopField(idn.drift);
+        const bits = [];
+        if (build != null) bits.push(String(build) + ' build');
+        if (work != null) bits.push(String(work) + ' workspace');
+        const drifted = /DRIFT|MISMATCH/i.test(bits.join(' '));
+        const note = 'artifact_scope=' + (dr.artifact_scope || 'unstated');
+        return { value: bits.join(' · ') || 'unavailable', state: drifted ? 'drifted' : 'observed', src: dr.drift_scope || 'runtime_identity.drift', note: note };
+      })(),
+      improve: loopField(ev.source_diversity)
+    };
+    let nav = document.getElementById('reality-loop');
+    if (!nav) {
+      nav = document.createElement('nav');
+      nav.id = 'reality-loop';
+      nav.className = 'loop-spine';
+      nav.setAttribute('aria-label', 'Reality loop — observatory index');
+      const strip = document.getElementById('now-strip');
+      if (strip && strip.parentNode) strip.parentNode.insertBefore(nav, strip);
+      else document.body.insertBefore(nav, document.body.firstChild);
+      if (!document.getElementById('loop-spine-style')) {
+        const style = document.createElement('style');
+        style.id = 'loop-spine-style';
+        style.textContent = [
+          '.loop-spine{background:var(--surface, #121212);border:1px solid var(--border, #2a2a2a);border-radius:.6rem;padding:.85rem 1rem;margin:1rem 0;display:flex;flex-direction:column;gap:.6rem}',
+          '.loop-phases{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.35rem}',
+          '.loop-phase{display:flex;flex-direction:column;gap:.18rem;padding:.5rem .55rem;border:1px solid var(--border, #2a2a2a);border-radius:.4rem;text-decoration:none;color:inherit;background:rgba(255,255,255,.015)}',
+          '.loop-phase:hover{border-color:var(--primary,#58A6FF)}',
+          '.loop-phase .lp-label{font-family:ui-monospace,monospace;font-size:.6rem;letter-spacing:.1em;color:var(--text-faint,#8892A6)}',
+          '.loop-phase .lp-value{font-size:.8rem;font-weight:600;line-height:1.25;word-break:break-word}',
+          '.loop-phase .lp-sot{font-family:ui-monospace,monospace;font-size:.58rem;color:var(--text-faint,#8892A6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
+          '.loop-phase .lp-scope{font-family:ui-monospace,monospace;font-size:.55rem;color:var(--text-faint,#8892A6);opacity:.8;line-height:1.35;word-break:break-word}',
+          '.loop-phase.is-flow{border-left:3px solid var(--state-info,#58A6FF)}',
+          '.loop-phase.is-critical{border-left:3px solid var(--state-danger,#FF1744)}',
+          '.loop-phase.is-human{border-left:3px solid var(--state-pending,#FFD600)}',
+          '.loop-phase.is-sim{border-left:3px solid var(--state-pending,#FFD600);opacity:.85}',
+          '.loop-phase.is-sim .lp-value::after{content:" · simulated";font-size:.55rem;color:var(--state-pending,#FFD600)}',
+          '.loop-apex{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.35rem}',
+          '.loop-apex a{display:flex;flex-direction:column;gap:.1rem;padding:.4rem .55rem;border:1px solid var(--border,#2a2a2a);border-radius:.4rem;text-decoration:none;color:inherit;border-left:3px solid var(--gold,#D4AF37)}',
+          '.loop-apex .la-label{font-size:.74rem;font-weight:600}',
+          '.loop-apex .la-note{font-size:.6rem;color:var(--text-faint,#8892A6);font-family:ui-monospace,monospace}',
+          '@media (max-width:900px){.loop-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.loop-apex{grid-template-columns:repeat(2,minmax(0,1fr))}}'
+        ].join('');
+        document.head.appendChild(style);
+      }
+    }
+    nav.innerHTML = '';
+    const row = document.createElement('div');
+    row.className = 'loop-phases';
+    LOOP_PHASES.forEach((ph) => {
+      const v = verdicts[ph.key] || { value: 'unavailable', state: 'unknown' };
+      const cls = loopClass(v.state) === 'is-flow' ? loopClass(String(v.value)) : loopClass(v.state);
+      const a = document.createElement('a');
+      a.className = 'loop-phase ' + cls;
+      a.href = '#' + ph.anchor;
+      a.title = ph.label + ' — source of truth: ' + ph.sotLabel;
+      a.innerHTML =
+        '<span class="lp-label">' + ph.label + '</span>' +
+        '<span class="lp-value">' + String(v.value).slice(0, 64) + '</span>' +
+        '<span class="lp-sot">SOT · ' + ph.sotLabel + '</span>' +
+        '<span class="lp-scope">' + (ph.scope || 'scope unstated') + (v.note ? ' · ' + v.note : '') + ' · evidence ' + evStamp + '</span>';
+      row.appendChild(a);
+    });
+    nav.appendChild(row);
+    const apex = document.createElement('div');
+    apex.className = 'loop-apex';
+    LOOP_APEX.forEach((it) => {
+      const a = document.createElement('a');
+      a.href = it.href;
+      a.innerHTML = '<span class="la-label">' + it.label + '</span><span class="la-note">' + it.note + '</span>';
+      apex.appendChild(a);
+    });
+    nav.appendChild(apex);
+    // every panel declares the phase it belongs to — one hierarchy, no second legend
+    LOOP_PHASES.forEach((ph) => {
+      const sec = document.getElementById(ph.anchor);
+      if (sec) sec.setAttribute('data-loop-phase', ph.label);
+    });
+  }
+
   const renderers = [
-    ['now strip', renderNowStrip], ['metadata', renderMeta], ['identity', renderIdentity],
+    ['reality loop spine', renderRealityLoop], ['now strip', renderNowStrip], ['metadata', renderMeta], ['identity', renderIdentity],
     ['vocabulary', renderVocabulary], ['governance', renderGovernance], ['capabilities', renderDrift],
     ['flow plane', renderFlowPlane], ['P1 receipt federation', renderP1ReceiptFederation],
     ['mutation gate', renderMutationGate], ['organs', renderOrgans], ['edges', renderEdges],

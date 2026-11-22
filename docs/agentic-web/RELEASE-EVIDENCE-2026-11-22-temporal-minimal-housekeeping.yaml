@@ -1,0 +1,62 @@
+# Fill after tests. External name: release evidence / deploy receipt.
+# Do not call this a kernel SEAL.
+release_candidate:
+  commit: "ed784b2c"   # merge commit on main (lane commits 333853a1 + d928caa5)
+  branch: main
+  environment: production_public_html
+  changed_routes:
+    - "/                      — footer machine line (duplicate /contact removed)"
+    - "/wealth/malaysia/      — two credited photographs + JSON-LD graph"
+    - "/petronas/             — Past/Present/Future band badges + top strip"
+    - "/oil/                  — institutional-context line under the price block"
+    - "/gas/                  — institutional-context line under the price block"
+    - "/world/politics/shadow/            — 9 portraits replaced by plates"
+    - "/world/politics/shadow/anwar-ibrahim/ — 1 portrait replaced by a plate"
+    - "/world/petronas/shadow/            — 13 portraits replaced by plates"
+    - "/world/petronas/shadow/tengku-muhammad-taufik/ — 1 portrait replaced by a plate"
+    - "/world/ai/shadow/                  — 8 portraits replaced by plates (2 brand emblems kept)"
+  public_effect:
+    - "hero hierarchy unchanged and verified: clock 208px > ARIF FAZIL 116px, one CTA"
+    - "footer is 3x3 (Presence/Work/Connect) + one machine line + copyright — no Territories/Explore/Systems"
+    - "two real photographs now live on /wealth/malaysia/ — Putrajaya (CC0 1.0) and KLCC Petronas Towers (CC BY 2.0), each credited, both labelled [PHOTO · ANCHOR]"
+    - "no human photograph remains on the public archive surfaces — 34 replaced by typographic plates, every name/seat/tenure/verdict/source untouched"
+    - "23 local portrait files removed from the repo and from both serving trees"
+    - "no number, epistemic tag, sealed date or verdict was changed anywhere"
+  tests:
+    doctor_before: not_run (web_zen doctor is a deploy-suite gate; the suite below ran instead)
+    doctor_after: not_run
+    doctor_fail_set_delta: ""
+    build: "npm run build in the lane worktree (prebuild: verify-design-canon + design-lint + content-contract + jsonld-coverage + compile/check-design-tokens + validate-jsonld + check-route-depth) → exit 0; vite build → built in 11.98s; postbuild exit 0"
+    make_verify_pages: "PASS — 228 pages verified reachable (9 intentionally excluded), VERDICT: PASS — safe to deploy"
+    live_dom_probe: "37 assertions, 37 PASS (hero hierarchy, single CTA, Who line, footer 3x3, well stamps, two photos + credits, pulse/tripwire intact, 10 band badges, top strip, oil/gas line + live price intact, zero human portraits, 0 broken internal links on 5 touched pages, AAA role statement present, Observatory 'Deep Witness' present)"
+    number_diff: "live /petronas/ RM-number sequence vs the pre-deploy backup: 59 vs 59, identical order; sealed-date tokens (9 Oktober ×7, 31 Dis 2026, Feb 2027, 1H 2027, Apr 2027, 30 Sep 2027) and key figures (7.92, 9.35, 8.64, 0.3, 193.6, 204.4, 126.8, 66.8, 32.0, 111.4) all at identical counts"
+    axe: not_run
+    lighthouse: not_run
+  security:
+    secrets_scan: "clean — diff carries two CC-licensed photographs, HTML plates and CSS only"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: "/root/forge_work/deployments/arif-fazil.com/20261122T062942Z-temporal-minimal-housekeeping/previous/ (62 files: both serving trees, touched HTML + the removed portrait assets)"
+    git: "git revert ed784b2c (or revert 333853a1 + d928caa5 on the lane branch)"
+  findings_escalated:
+    - "AAA cockpit role wording (RESIDUAL, NOT FIXED): the cockpit's first block still reads 'Server-rendered live witness of the 13-organ arifOS federation' (a2a-server/cockpit_render.js:174) — 'witness' is the Observatory's word. The required sentence IS present in the same hero block ('MUTATION: NOT AUTHORISED · AAA points; it does not judge, execute, or seal.', verified live) and the footer + meta description carry it too. A one-line wording fix was attempted and REFUSED by the federation one-writer gate (kernel verdict HOLD: direct mutation to /root/AAA primary tree blocked; lane worktree creation impossible — git dir is chattr +i, and the AAA primary tree carries 169 unrelated dirty files + 10 stashes). Not forced."
+    - "Cloudflare edge cache (RESIDUAL): the 23 removed portrait JPEGs are gone from the origin (the URLs now fall through to the site's pre-existing SPA soft-200 under /world/*), but the Cloudflare edge still serves its cached copies (cf-cache-status: HIT, cache-control max-age=14400). They expire on their own within ~4h; no sanctioned CF purge path exists in the site repo."
+    - "Soft-200 (PRE-EXISTING, NOT INTRODUCED): unknown paths under /world/* and /wealth/* return HTTP 200 with the SPA shell. Verified on prefixes this deploy never touched (/world/__probe_zzz123__/ → 200; /__probe_zzz123__/ → 404), so it is the site's existing routing behaviour, not a side effect of this release."
+    - "/oil/ and /gas/ are runtime-owned pages (gitignored, resealed hourly by the market-jsonld cron). The institutional-context line was applied to the live files and to the main checkout's public/ + dist/ copies; it is therefore NOT in the git commit. A tracked template for the commodity boards would make it durable — out of scope here."
+  requested_action: "rsync — executed under deploy-envelope.json 20261122T062942Z (sha == HEAD at sign-off, 12 negative tests, rollback artifact written before mutation)"
+  approver: "Muhammad Arif bin Fazil (F13 SOVEREIGN) — in-session order 2026-11-22 (temporal-minimal housekeeping)"
+
+# DEPLOY FACTS (measured, not narrated)
+deploy_facts:
+  envelope: "/root/worktrees/kimi-code-2/arif-fazil.com/deploy-envelope.json (sha d928caa5 == HEAD at sign-off)"
+  trees_written:
+    - "/var/www/html/arif   (apex-spa tree: index.html, assets/, images/wealth/, petronas/, wealth/malaysia/, world/{politics,petronas,ai}/shadow/)"
+    - "/var/www/html       (top-level serving tree: the same static files + images/wealth/)"
+  not_touched:
+    - "/var/www/html/aaa, /var/www/html/arifos, /var/www/html/earth — other organs' trees"
+    - "Caddy configuration — no reload (T3 action, not requested)"
+    - "the commodity price data and the market-jsonld cron"
+  file_integrity: "post-rsync sha of every target == sha of the built/committed blob; second pass reported mismatches: 0"
+  live_verification: "https://arif-fazil.com probed with headless Chrome at 1440x1000 — 37/37 assertions PASS; screenshots in ./20261122T062942Z-temporal-minimal-housekeeping/screenshots/"

@@ -46,7 +46,6 @@ const CommodityPage = lazy(() => import('@/pages/CommodityPage').then(m => ({ de
 
 const WordsEssays = lazy(() => import('@/pages/WordsEssays').then(m => ({ default: m.WordsEssays })));
 const WordsWiki = lazy(() => import('@/pages/WordsWiki').then(m => ({ default: m.WordsWiki })));
-const WordsMakcikgpt = lazy(() => import('@/pages/WordsMakcikgpt').then(m => ({ default: m.WordsMakcikgpt })));
 const EssayPage = lazy(() => import('@/pages/EssayPage').then(m => ({ default: m.EssayPage })));
 const DoctrinePage = lazy(() => import('@/pages/DoctrinePage').then(m => ({ default: m.DoctrinePage })));
 const AmodeiFlightRecorder = lazy(() => import('@/pages/AmodeiFlightRecorder').then(m => ({ default: m.AmodeiFlightRecorder })));
@@ -212,8 +211,8 @@ function FederationChrome() {
             <Route path="/words/essays/" element={<WordsEssays />} />
             <Route path="/words/wiki" element={<WordsWiki />} />
             <Route path="/words/wiki/" element={<WordsWiki />} />
-            <Route path="/words/makcikgpt" element={<WordsMakcikgpt />} />
-            <Route path="/words/makcikgpt/" element={<WordsMakcikgpt />} />
+            {/* /words/makcikgpt removed 2026-11-23 (zen B): Caddy 301s it to the
+                canonical /world/makcikgpt/ since 2026-10-04; the SPA page was a zombie. */}
             {/* Legacy aliases — keep on /words hub */}
             <Route path="/words/writing" element={<Navigate to="/words" replace />} />
             <Route path="/words/writing/" element={<Navigate to="/words" replace />} />

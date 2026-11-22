@@ -95,7 +95,7 @@ export function WordsWiki() {
         {/* Sister surfaces */}
         <div className="mt-16 pt-8 border-t border-[#1F2733] flex flex-wrap gap-4 font-mono text-xs uppercase tracking-widest">
           <Link to="/words/essays/" className="text-[#E4572E] hover:text-white transition-colors">📖 Essays →</Link>
-          <Link to="/words/makcikgpt/" className="text-[#D9A62E] hover:text-white transition-colors">🌍 MakcikGPT (Column) →</Link>
+          <Link to="/world/makcikgpt/" className="text-[#D9A62E] hover:text-white transition-colors">🌍 MakcikGPT (Civic Column) →</Link>
           <Link to="/words/" className="text-[#9AA0A8] hover:text-white transition-colors">← Back to Words hub</Link>
         </div>
       </div>

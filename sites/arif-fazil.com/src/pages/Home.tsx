@@ -61,7 +61,7 @@ function HeroDigitalClock() {
       <div className="flex items-baseline justify-center md:justify-start gap-2 md:gap-4 select-none">
         <div
           className="font-mono font-semibold tabular-nums tracking-[-0.045em] leading-[0.88] text-[#EDEAE2]"
-          style={{ fontSize: 'clamp(4.25rem, 15.5vw, 13rem)' }}
+          style={{ fontSize: 'clamp(3.6rem, 16vw, 13rem)' }}
         >
           <span>{hh}</span>
           <span className="text-[#D4A853] mx-[0.02em]">:</span>
@@ -69,7 +69,7 @@ function HeroDigitalClock() {
           <span className="text-[#D4A853] mx-[0.02em]">:</span>
           <span className="text-[#EDEAE2]/80">{ss}</span>
         </div>
-        <span className="font-mono text-xs md:text-base uppercase tracking-[0.25em] text-[#D4A853] font-medium self-end pb-2 md:pb-5">
+        <span className="font-mono text-xs md:text-base uppercase tracking-[0.25em] text-[#D4A853] font-medium self-end pb-1.5 md:pb-5">
           MYT
         </span>
       </div>
@@ -184,24 +184,24 @@ export function Home() {
               systems bounded by evidence and human authority.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
               <Link
                 to="/work"
-                className="inline-flex items-center gap-2.5 bg-[#D4A853] text-[#0A0B0D] font-mono text-xs md:text-sm font-bold uppercase tracking-[0.14em] px-7 py-3.5 rounded hover:bg-[#E2BC6B] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A0B0D] font-mono text-xs font-bold uppercase tracking-[0.14em] px-6 py-3 rounded hover:bg-[#E2BC6B] transition-colors"
               >
                 See the work <span aria-hidden="true">→</span>
               </Link>
               <Link
                 to="/about"
-                className="font-mono text-xs md:text-sm uppercase tracking-[0.14em] text-[#9AA0A8] hover:text-[#EDEAE2] transition-colors"
+                className="font-mono text-xs uppercase tracking-[0.14em] text-[#9AA0A8]/80 hover:text-[#EDEAE2] transition-colors"
               >
-                About me →
+                About
               </Link>
               <a
                 href="/institution/"
-                className="font-mono text-xs md:text-sm uppercase tracking-[0.14em] text-[#9AA0A8] hover:text-[#D4A853] transition-colors"
+                className="font-mono text-xs uppercase tracking-[0.14em] text-[#9AA0A8]/80 hover:text-[#D4A853] transition-colors"
               >
-                Request a briefing →
+                Request a briefing
               </a>
             </div>
           </div>
@@ -304,13 +304,16 @@ export function Home() {
                     </p>
                     <p className="mt-4 font-mono text-[11px] text-[#9AA0A8]">{c.trail}</p>
                   </div>
-                  <div className="pt-4 mt-5 border-t border-[#EDEAE2]/10">
+                  <div className="pt-4 mt-5 border-t border-[#EDEAE2]/10 flex items-center justify-between gap-2">
                     <Link
                       to="/work"
                       className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#D4A853] hover:underline"
                     >
                       Read case &amp; evidence →
                     </Link>
+                    <span className="font-mono text-[10px] text-[#9AA0A8]/60">
+                      Verified 2026-08-17
+                    </span>
                   </div>
                 </article>
               )
@@ -456,38 +459,11 @@ export function Home() {
             </a>
           </div>
 
-          <div className="pt-8 border-t border-[#EDEAE2]/10 flex flex-col md:flex-row justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="font-display italic text-base text-[#D4A853]">
-                Ditempa bukan diberi — forged, not given.
-              </p>
-              <p className="mt-2 font-mono text-[11px] leading-relaxed text-[#9AA0A8]">
-                Personal site of ARIF FAZIL. Views and interpretations are personal unless
-                explicitly identified as published institutional material. No confidential
-                subsurface or commercial information is presented.
-              </p>
-            </div>
-            <nav
-              className="flex flex-wrap items-start gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[#9AA0A8]"
-              aria-label="Machine and secondary doors"
-            >
-              <Link to="/human" className="hover:text-[#EDEAE2]">
-                /human
-              </Link>
-              <a href="/llms.txt" className="hover:text-[#EDEAE2]">
-                /llms.txt
-              </a>
-              <a href="https://wiki.arif-fazil.com/" className="hover:text-[#EDEAE2]">
-                wiki
-              </a>
-              <Link to="/map" className="hover:text-[#D4A853]">
-                /map
-              </Link>
-              <Link to="/contact" className="hover:text-[#EDEAE2]">
-                /contact
-              </Link>
-            </nav>
-          </div>
+          <p className="mt-8 font-mono text-[11px] leading-relaxed text-[#9AA0A8]/75 max-w-2xl">
+            Personal site of ARIF FAZIL. Views and interpretations are personal unless explicitly
+            identified as published institutional material. No confidential subsurface or
+            commercial information is presented.
+          </p>
         </div>
       </section>
     </div>

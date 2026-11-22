@@ -314,6 +314,42 @@
     ]
   },
   {
+    "id": "m-gen-hukum-kereta-sentuhan-tak-dinamai",
+    "title": "Hukum Kereta: Sentuhan yang Tak Dinamai",
+    "date": "2026-10-30",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 8
+    },
+    "tags": [
+      "sentuhan",
+      "lelaki",
+      "universe-25",
+      "calhoun",
+      "jung",
+      "bayang",
+      "kinsey",
+      "keintiman",
+      "makcikgpt",
+      "manusia"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai"
+    },
+    "seal": "999",
+    "provenance_status": "migrating",
+    "claim_register": [],
+    "source_ledger": [],
+    "counter_evidence": [],
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-10-30",
+      "last_updated": "2026-10-30"
+    }
+  },
+  {
     "id": "m-dajjal-nampak-macam-efficiency",
     "title": "Dajjal Sudah Tiba — Dan Dia Nampak Macam Efficiency",
     "date": "2026-09-20",
@@ -4055,138 +4091,6 @@
     }
   },
   {
-    "id": "m1-2-dossier",
-    "title": "PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia",
-    "date": "2026-08-26",
-    "lang": "bm",
-    "series": {
-      "id": "M1",
-      "n": 3,
-      "note": "Civic dossier — extends M1-2 (PETRONAS DNA)"
-    },
-    "tags": [
-      "petronas",
-      "civic",
-      "dossier",
-      "malaysia",
-      "rakyat",
-      "governance",
-      "tripwire",
-      "makcikgpt",
-      "bm",
-      "eng"
-    ],
-    "dest": {
-      "type": "onsite",
-      "path": "/world/makcikgpt/petronas-full-reality-rakyat-dossier"
-    },
-    "pdf_dest": {
-      "type": "onsite",
-      "path": "/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf"
-    },
-    "seal": "999",
-    "provenance_status": "sealed",
-    "session_ref": "SEAL-d7d3fde881a74721",
-    "claim_register_summary": "OBS 12, DER 3, INT 3, SPEC 1",
-    "word_count_target": 8500,
-    "pages": 31,
-    "version_lineage": [
-      {
-        "version": "0.1-unpublished",
-        "date": "2026-09-18",
-        "state": "ARTIFACT_EXISTS_NOT_SERVED",
-        "note": "31-page PDF + HTML built 2026-08-26 at /root/AAA/forge_work/2026-08-26-petronas-rakyat-dossier/. Not published. This entry previously claimed seal=999 / provenance_status=sealed with claim_register=0 and source_ledger=0 — a sealed state with no witness chain. Corrected to reflect reality (F2). Publish requires F13: the dossier makes claims about living named persons."
-      },
-      {
-        "version": "1.0-published",
-        "date": "2026-09-18",
-        "state": "SEALED_AND_SERVED",
-        "audit": "Adjudicated before publication. Zero evaluative claims against living persons. PLAUSIBLE=0. Labels in use: OBS/DER/INT/SPEC/UNK as declared in the claim_register_summary. One uncertainty recorded about a living office-holder (the length of the incumbent PGCEO's second contract extension) — held as uncertainty, not adopted as fact.",
-        "publish_path": "Both lanes. Bot/crawler lane via /makcikgpt-md/{slug}.html|.md; human lane via public/world/makcikgpt/{slug}/index.html (registered in STATIC_INDEX_ALLOWLIST in scripts/copy-static-html.js).",
-        "supersedes": "0.1-unpublished"
-      }
-    ],
-    "published_at": "2026-09-18",
-    "served_paths": [
-      "/world/makcikgpt/petronas-full-reality-rakyat-dossier",
-      "/world/makcikgpt/petronas-full-reality-rakyat-dossier.pdf"
-    ],
-    "claim_register": [
-      {
-        "claim_id": "RKY-C1",
-        "text": "Dossier 31 muka surat ini mendakwa membaca PETRONAS dari dokumen awam sahaja: laporan tahunan, penyata Bursa, dan laporan media yang dinamakan. Ia mengisytiharkan setiap dakwaan berlabel OBS/DER/INT/SPEC/UNK dengan resit di Appendix B.",
-        "tag": "OBS",
-        "source_id": "src1",
-        "maruah_review": "not_applicable"
-      },
-      {
-        "claim_id": "RKY-C2",
-        "text": "Bahagian kewangan dossier berpaut pada angka laporan tahunan (FY2022, FY2024, FY2025) dan penyata Bursa — bukan angka yang dikira sendiri oleh penulis.",
-        "tag": "OBS",
-        "source_id": "src1",
-        "maruah_review": "not_applicable"
-      },
-      {
-        "claim_id": "RKY-C3",
-        "text": "Bahagian lembaga pengarah menjejak siapa masuk dan siapa keluar 2023-2026 berdasarkan rekod awam; ia menyenaraikan jawatan, bukan motif peribadi.",
-        "tag": "OBS",
-        "source_id": "src3",
-        "maruah_review": "approved"
-      },
-      {
-        "claim_id": "RKY-C4",
-        "text": "Sembilan 'tripwire kewangan' dan dua belas 'risiko tersembunyi' ialah bacaan penulis — analisis bersandarkan angka awam, bukan angka yang diterbitkan oleh PETRONAS sebagai senarai risiko.",
-        "tag": "INT",
-        "source_id": "src1",
-        "maruah_review": "not_applicable"
-      },
-      {
-        "claim_id": "RKY-C5",
-        "text": "Bahagian 'bagaimana PETRONAS boleh runtuh' ialah senario bersyarat, bukan ramalan bertarikh. Ia tidak mendakwa keruntuhan sedang berlaku.",
-        "tag": "SPEC",
-        "source_id": "src1",
-        "maruah_review": "not_applicable"
-      },
-      {
-        "claim_id": "RKY-C6",
-        "text": "Dossier ini bukan nasihat pelaburan, bukan tuduhan terhadap mana-mana individu, dan bukan dakwaan bahawa PETRONAS sedang gagal. Had ini diisytiharkan di dalam dokumen sendiri.",
-        "tag": "OBS",
-        "source_id": "src1",
-        "maruah_review": "not_applicable"
-      }
-    ],
-    "source_ledger": [
-      {
-        "source_id": "src1",
-        "type": "filing",
-        "title": "PETRONAS Annual Report — FY2022 / FY2024 / FY2025 (audited financials)",
-        "url": "petronas.com/investor-relations",
-        "retrieved_at": "2026-08-26"
-      },
-      {
-        "source_id": "src2",
-        "type": "filing",
-        "title": "Bursa Malaysia / Suruhanjaya Syarikat Malaysia — corporate filings",
-        "url": "bursamalaysia.com",
-        "retrieved_at": "2026-08-26"
-      },
-      {
-        "source_id": "src3",
-        "type": "news",
-        "title": "The Edge Malaysia, The Star, FMT — leadership and financial reporting 2023-2026",
-        "url": "theedgemalaysia.com",
-        "retrieved_at": "2026-08-26"
-      },
-      {
-        "source_id": "src4",
-        "type": "news",
-        "title": "Bloomberg, Reuters — commodity and earnings coverage",
-        "url": "bloomberg.com",
-        "retrieved_at": "2026-08-26"
-      }
-    ]
-  },
-  {
     "id": "m1-4-leadership-archive",
     "title": "Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
     "date": "2026-09-17",
@@ -4208,7 +4112,7 @@
     ],
     "dest": {
       "type": "onsite",
-      "path": "/world/makcikgpt/petronas-leadership-1974-2026"
+      "path": "/world/petronas/shadow/"
     },
     "pdf_dest": {
       "type": "onsite",

@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22",
+  "version": "2026-11-19",
   "domain": "arif-fazil.com",
   "doctrine": {
     "title": "Single canonical surface catalog. All machine catalogs are generated views of this file.",
@@ -53,6 +53,378 @@
       "description": "Professional homepage for Arif Fazil — exploration geoscientist who builds governed AI systems"
     },
     {
+      "path": "/earth/",
+      "title": "EARTH — The Dynamic Planet (Macrostrat globe)",
+      "mission": "investigate",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "description": "Interactive Macrostrat globe, plates, quakes, wells. Static HTML primary — not SPA essay."
+    },
+    {
+      "path": "/pilot/",
+      "title": "Supervised AI Action Control — 4-Week Design Partner Pilot",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "Commercial offer: 4-week supervised pilot installing measurable action control around one AI-agent workflow. Eight exit criteria, receipt chain. Band RM20k-50k."
+    },
+    {
+      "path": "/institution/",
+      "title": "Briefing — professional conversation path",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "monthly",
+      "description": "Institutional briefing: what Arif Fazil can contribute, what can be inspected, boundaries, and how to start a professional conversation."
+    },
+    {
+      "path": "/earth/kinabalu-basin/",
+      "title": "Kinabalu Basin — Deepwater Stratigraphy & Play Synthesis",
+      "mission": "investigate",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "description": "Deepwater Sabah basin analysis, turbidite channels, fold-thrust belt kinematics"
+    },
+    {
+      "path": "/earth/malay-basin/",
+      "title": "Malay Basin — Structural Evolution & Petroleum Systems",
+      "mission": "investigate",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "description": "Tertiary rift basin profiling, structural inversion, source-reservoir-seal pairs"
+    },
+    {
+      "path": "/earth/kinabalu-cross-section.html",
+      "title": "Kinabalu Basin Regional Cross Section",
+      "mission": "investigate",
+      "status": "live",
+      "type": "document",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Regional geological cross section with seismic interpretation and well calibration"
+    },
+    {
+      "path": "/earth/kinabalu-basin.pdf",
+      "title": "Kinabalu Regional Cross Section (PDF)",
+      "mission": "investigate",
+      "status": "live",
+      "type": "document",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "High-resolution publication PDF of Kinabalu regional cross section"
+    },
+    {
+      "path": "/earth/malay-basin-cross-section.html",
+      "title": "Malay Basin Regional Cross Section",
+      "mission": "investigate",
+      "status": "live",
+      "type": "document",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Malay Basin structural cross section showing basin inversion and play types"
+    },
+    {
+      "path": "/economics/",
+      "title": "Economics — WEALTH Capital Briefing",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "daily",
+      "description": "The Economics door: Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing. One door for the domain — links the boards (/oil/ /gas/ /gold/ /world/economics/), the PETRONAS dossier (/petronas/), the daily briefing (/economics/briefing/) and the live WEALTH organ cockpit (wealth.arif-fazil.com)."
+    },
+    {
+      "path": "/economics/article/:slug",
+      "title": "WEALTH Article",
+      "mission": "interpret",
+      "status": "live",
+      "type": "dynamic_page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Individual WEALTH capital intelligence article"
+    },
+    {
+      "path": "/work/",
+      "title": "Selected Work — Arif Fazil",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "monthly",
+      "description": "Selected offshore exploration work, public evidence, roles, outcomes, and governed AI systems by Arif Fazil. Includes the full career artifact."
+    },
+    {
+      "path": "/work/exploration-2013-2026/",
+      "title": "Exploration 2013–2026 — Career Artifact",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "monthly",
+      "description": "Web-native career artifact: thirteen years of offshore exploration geoscience, evidence-tagged. Malay Basin and offshore Sabah — flagged work, uncertainty discipline, and what was proven."
+    },
+    {
+      "path": "/work/exploration-2013-2026/evidence/",
+      "title": "Exploration Portfolio — Evidence Ledger",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.75,
+      "changefreq": "monthly",
+      "description": "Every claim in the exploration portfolio, tagged by truth class and publication class. Includes what was deliberately withheld, and why."
+    },
+    {
+      "path": "/work/exploration-2013-2026/portfolio.pdf",
+      "title": "Arif Fazil — Subsurface · Systems · Intelligence (PDF)",
+      "mission": "remember",
+      "status": "live",
+      "type": "document",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Frozen PDF career artifact: 18 pages, evidence-grounded, claim-tagged. Compiled 2026-10-02. SHA-256 verified."
+    },
+    {
+      "path": "/world/",
+      "title": "World — Civic Journalism & Commodities",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Civic journalism (MakcikGPT) + commodity dashboards (oil/gas/gold)"
+    },
+    {
+      "path": "/world/makcikgpt/",
+      "title": "MakcikGPT — Civic Intelligence in Bahasa Malaysia",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "daily",
+      "description": "Canonical landing for MakcikGPT civic intelligence series. Articles investigate Malaysian sovereignty, resource governance, institutional integrity, and technology accountability."
+    },
+    {
+      "path": "/world/makcikgpt/:slug",
+      "title": "MakcikGPT Article",
+      "mission": "interpret",
+      "status": "live",
+      "type": "dynamic_page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Individual MakcikGPT article in Bahasa Malaysia. Generated from essays.json."
+    },
+    {
+      "path": "/world/oil/",
+      "title": "Oil Dashboard — Brent Crude Cognitive View",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Brent crude oil cognitive dashboard with live data. Measured 2026-10-18: serves 308 → /oil/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/oil/"
+    },
+    {
+      "path": "/world/gas/",
+      "title": "Gas Dashboard — Natural Gas Intelligence",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Natural gas dashboard with live data. Measured 2026-10-18: serves 308 → /gas/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/gas/"
+    },
+    {
+      "path": "/world/gold/",
+      "title": "Gold Dashboard — XAUUSD Trading Synthesis",
+      "mission": "monitor",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Gold trading synthesis and technical analysis dashboard. Measured 2026-10-18: serves 308 → /gold/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/gold/"
+    },
+    {
+      "path": "/world/petronas/shadow/",
+      "title": "Kerusi Bayang — Every PETRONAS Chairman & Chief Executive, 1974–2026",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "Every PETRONAS chairman and CEO 1974–2026: mandate, what they brought, what they got, scars, transition, verdict — claim register + source ledger. Keluarga Bayang. JSON-LD added 2026-10-22."
+    },
+    {
+      "path": "/world/economics/klci/",
+      "title": "FBM KLCI — Bursa Malaysia Signal Terminal",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "daily",
+      "description": "Live Bursa Malaysia composite index signal terminal with WEALTH cognitive briefing. Restored 2026-10-22; og tags + H1 added same day."
+    },
+    {
+      "path": "/world/economics/usdmyr/",
+      "title": "USD/MYR — Ringgit FX Signal Terminal",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "daily",
+      "description": "Live USD/MYR ringgit FX terminal with WEALTH cognitive briefing. Restored 2026-10-22; og tags added same day."
+    },
+    {
+      "path": "/world/politics/",
+      "title": "Politics — Power, Read Plainly",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Two-card hub: GIS PRN N9 constituency coverage and PM Bayang shadow dossier. Nav cleaned 2026-10-22; sole surface carrying PRN N9."
+    },
+    {
+      "path": "/world/ai/shadow/",
+      "title": "AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "Shadow analysis of AI labs, models and their owners. Keluarga Bayang counterpart to PM Bayang and Kerusi Bayang."
+    },
+    {
+      "path": "/world/politics/ns-election/",
+      "title": "Negeri Sembilan State Election — Civic Intelligence & Spatial Analysis",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.75,
+      "changefreq": "monthly",
+      "description": "Spatial electoral analytics and demographic dynamics of Negeri Sembilan state constituencies"
+    },
+    {
+      "path": "/world/politics/ns-election/compare/",
+      "title": "Negeri Sembilan Election Constituency Compare",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Comparative constituency analysis and swing metrics"
+    },
+    {
+      "path": "/writing/",
+      "title": "Writing — Essays & Analysis",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "Legacy alias. Canonical path is /words/writing/ — see catalog entry. Added 2026-09-17 to close catalog/reality drift.",
+      "redirects_to": "/words/writing/"
+    },
+    {
+      "path": "/words/writing/",
+      "title": "Writing — Essays & Analysis",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "Canonical essays home. Long-form writing by Arif on AI governance, thermodynamics, geological reasoning. Promoted from /writing/ 2026-09-17 to close catalog/reality drift."
+    },
+    {
+      "path": "/words/",
+      "title": "Words — Hub (Essays · Wiki · MakcikGPT)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "hub",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "Words hub. Three peer subpages — Essays, Wiki & Knowledge, MakcikGPT civic column. Refactored 2026-10-01 from tabbed single-page into a true hub. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the personal / professional identity."
+    },
+    {
+      "path": "/words/essays/",
+      "title": "Words — Essays",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Peer subpage of the /words/ hub. Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5. Refactored 2026-10-01."
+    },
+    {
+      "path": "/words/wiki/",
+      "title": "Words — Wiki & Knowledge",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Peer subpage of the /words/ hub. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order. Refactored 2026-10-01."
+    },
+    {
+      "path": "/words/makcikgpt/",
+      "title": "Words — MakcikGPT (column)",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.65,
+      "changefreq": "weekly",
+      "description": "Peer subpage of the /words/ hub. A civic column inside the writing hub, NOT a peer of the personal / professional identity. Canonical article archive and full reception remain at /world/makcikgpt/. Doctrine unchanged. Added 2026-10-01. Measured 2026-10-18: serves 301 → /world/makcikgpt/; catalog corrected from status=live.",
+      "code": 301,
+      "redirects_to": "/world/makcikgpt/"
+    },
+    {
+      "path": "/writing/:slug",
+      "title": "Essay",
+      "mission": "interpret",
+      "status": "live",
+      "type": "dynamic_page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Individual essay page"
+    },
+    {
+      "path": "/doctrine/",
+      "title": "Doctrine — Constitution, Federation Topology, Manifesto",
+      "mission": "decide",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
+      "priority": 0.9,
+      "changefreq": "monthly",
+      "description": "Legacy alias. Canonical path is /words/doctrine/ — see catalog entry. Added 2026-09-17 to close catalog/reality drift.",
+      "redirects_to": "/words/doctrine/"
+    },
+    {
+      "path": "/words/doctrine/",
+      "title": "Doctrine — Constitution, Federation Topology, Manifesto",
+      "mission": "decide",
+      "status": "live",
+      "type": "page",
+      "priority": 0.95,
+      "changefreq": "monthly",
+      "description": "Canonical doctrine home. Constitutional floors (F1-F13), authority chain, organ topology, federation manifesto. Promoted from /doctrine/ 2026-09-17 to close catalog/reality drift."
+    },
+    {
       "path": "/000/",
       "title": "000 — Genesis Archive & Wisdom Canon",
       "mission": "remember",
@@ -81,6 +453,426 @@
       "priority": 0.5,
       "changefreq": "monthly",
       "description": "Live vault proof endpoint proxied to arifOS kernel — cryptographic verification"
+    },
+    {
+      "path": "/map/",
+      "title": "Map — Human-Readable Route Tree",
+      "mission": "remember",
+      "status": "live",
+      "type": "machine",
+      "format": "text/html",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Route map generated from surfaces.json"
+    },
+    {
+      "path": "/machine/",
+      "title": "Machine — Agent Surfaces Dashboard",
+      "mission": "remember",
+      "status": "live",
+      "type": "machine",
+      "format": "text/html",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Agent-facing endpoint directory"
+    },
+    {
+      "path": "/rss/",
+      "redirects_to": "/feed.xml",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "RSS feed redirect"
+    },
+    {
+      "path": "/canon/",
+      "redirects_to": "/doctrine",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy canon path — merged into doctrine"
+    },
+    {
+      "path": "/constellation/",
+      "redirects_to": "/doctrine",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy constellation path — merged into doctrine"
+    },
+    {
+      "path": "/federation/",
+      "title": "Federation — One Sovereign, One System",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "daily",
+      "description": "The federated architecture: one sovereign, a kernel that judges, four working roles, seven instruments, three territories — plus the 13 constitutional floors and live proof."
+    },
+    {
+      "path": "/discoveries/",
+      "redirects_to": "/earth",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy discoveries path — canonical is /earth"
+    },
+    {
+      "path": "/wealth/",
+      "title": "Wealth Capital (redirect → /economics/)",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 308,
+      "priority": 0.8,
+      "changefreq": "daily",
+      "description": "Legacy alias. /wealth/ redirects to /economics/ — the canonical Economics door (measured 2026-11-22: HTTP 308 → https://arif-fazil.com/economics/). Article paths /wealth/article/:slug already redirect to /economics/article/:slug.",
+      "redirects_to": "/economics/"
+    },
+    {
+      "path": "/wealth/article/:slug",
+      "redirects_to": "/economics/article/:slug",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy wealth article — canonical is /economics/article/:slug"
+    },
+    {
+      "path": "/essays/",
+      "redirects_to": "/writing",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy essays path — canonical is /writing"
+    },
+    {
+      "path": "/essays/:slug",
+      "redirects_to": "/writing/:slug",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy essay — canonical is /writing/:slug"
+    },
+    {
+      "path": "/wealth/makcikgpt/",
+      "redirects_to": "/world/makcikgpt/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy MakcikGPT path — canonical is /world/makcikgpt/"
+    },
+    {
+      "path": "/wealth/makcikgpt/:slug",
+      "redirects_to": "/world/makcikgpt/:slug",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy MakcikGPT article — canonical is /world/makcikgpt/:slug"
+    },
+    {
+      "path": "/economics/makcikgpt/",
+      "redirects_to": "/world/makcikgpt/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy MakcikGPT path — canonical is /world/makcikgpt/"
+    },
+    {
+      "path": "/economics/makcikgpt/:slug",
+      "redirects_to": "/world/makcikgpt/:slug",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy MakcikGPT article — canonical is /world/makcikgpt/:slug"
+    },
+    {
+      "path": "/genesis/",
+      "redirects_to": "/000/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Legacy genesis path — canonical is /000/"
+    },
+    {
+      "path": "/oil/",
+      "title": "Oil Dashboard — Brent Crude Live",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Standalone Brent crude oil dashboard with live API data. Served from /var/www/html/oil/."
+    },
+    {
+      "path": "/gas/",
+      "title": "Gas Dashboard — Natural Gas Live",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Standalone natural gas dashboard with live API data. Served from /var/www/html/gas/."
+    },
+    {
+      "path": "/gold/",
+      "title": "Gold Dashboard — XAUUSD Live",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Standalone gold trading dashboard with live API data. Served from /var/www/html/gold/."
+    },
+    {
+      "path": "/makcikgpt/",
+      "redirects_to": "/world/makcikgpt/",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Bare MakcikGPT path — canonical is /world/makcikgpt/"
+    },
+    {
+      "path": "/makcikgpt/:slug",
+      "redirects_to": "/world/makcikgpt/:slug",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Bare MakcikGPT article — canonical is /world/makcikgpt/:slug"
+    },
+    {
+      "path": "/vitals/",
+      "title": "PETRONAS · VITALS — Financial capacity and resilience",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "daily",
+      "description": "Public PETRONAS VITALS on apex. Canonical soft path /vitals/."
+    },
+    {
+      "path": "/malaysia/",
+      "title": "Malaysia — Civic & Political Hub",
+      "mission": "interpret",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "description": "Civic and political intelligence hub for Malaysia. Measured 2026-10-18: serves 308 → /wealth/malaysia/; catalog corrected from status=live.",
+      "code": 308,
+      "redirects_to": "/wealth/malaysia/"
+    },
+    {
+      "path": "/pulse/",
+      "title": "Federation Pulse (retired)",
+      "status": "gone",
+      "type": "gone",
+      "description": "Retired pulse surface. Measured: HTTP 410 Gone."
+    },
+    {
+      "path": "/forge/",
+      "title": "A-FORGE → subdomain",
+      "mission": "build",
+      "status": "redirect",
+      "type": "redirect",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "A-FORGE subdomain redirects to arifOS MCP gateway (forge.arif-fazil.com itself 301s to mcp.arif-fazil.com). Added 2026-09-17: redirects_to updated to actual live target.",
+      "code": 301,
+      "redirects_to": "https://mcp.arif-fazil.com/"
+    },
+    {
+      "path": "/world/politics/shadow/",
+      "title": "PM Bayang — Shadow Prime Ministers of Malaysia",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "Jungian shadow analysis of all 9 Malaysian Prime Ministers. Persona, Bayang, Tragedi, Legasi. Source: public records, Hansard, National Archives. Framework analysis. Static HTML at /var/www/html/world/politics/shadow/index.html."
+    },
+    {
+      "path": "/world/politics/shadow/anwar-ibrahim/",
+      "title": "33 Bayang Anwar Ibrahim — Three-Axis Shadow Analysis",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "33 shadow cards across 3 axes (Sosiopolitik / Ekonomi / Peribadi) for PM-10 Anwar Ibrahim. Editorial psychology analysis grounded in 322 public sources. Static HTML at /var/www/html/world/politics/shadow/anwar-ibrahim/index.html. Three-pillar DNA: Persona, Bayang, Tragedi, Legasi."
+    },
+    {
+      "path": "/world/politics/shadow/mahathir-mohamad/",
+      "title": "13 Bayang Mahathir Mohamad — Three-Axis Shadow Analysis",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "description": "13 shadow cards across 3 axes (Sosiopolitik 5 / Ekonomi 4 / Peribadi 4) for PM-4 & PM-7 Mahathir Mohamad. Editorial Jungian psychology analysis grounded in verified public sources (Wikipedia EN, The Star, The Sun Malaysia, Malaysian Journal of Economic Studies 2024, Millman 1995). Static HTML at /var/www/html/world/politics/shadow/mahathir-mohamad/index.html. Three-pillar DNA: Persona, Bayang, Tragedi, Legasi."
+    },
+    {
+      "path": "/surfaces.json",
+      "title": "surfaces.json — Canonical Surface Catalog",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "Single canonical surface catalog for arif-fazil.com. Machine readable."
+    },
+    {
+      "path": "/llms-full.txt",
+      "title": "llms-full.txt — Full Content Dump for AI LLMs",
+      "status": "live",
+      "type": "machine",
+      "format": "text/markdown",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Full-text content dump for LLM ingestion. Generated from MD sources."
+    },
+    {
+      "path": "/llms.txt",
+      "title": "llms.txt — AI Site Overview",
+      "status": "live",
+      "type": "machine",
+      "format": "text/markdown",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "Curated link index for AI agents (Jeremy Howard convention, Sept 2024). Generated from surfaces.json."
+    },
+    {
+      "path": "/llms.json",
+      "title": "llms.json — Structured Site Overview",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.4,
+      "changefreq": "weekly",
+      "description": "Structured JSON site overview with route roles, related sites, and machine surfaces"
+    },
+    {
+      "path": "/page.json",
+      "title": "page.json — Machine Site Overview",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.4,
+      "changefreq": "weekly",
+      "description": "Machine-readable site overview — purpose, route model, content scope"
+    },
+    {
+      "path": "/missions.json",
+      "title": "missions.json — Six-Mission Federation Catalog",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.4,
+      "changefreq": "monthly",
+      "description": "Six-mission classification of federation intent. Does not authorize tool calls."
+    },
+    {
+      "path": "/sitemap.xml",
+      "title": "sitemap.xml — XML Sitemap",
+      "status": "live",
+      "type": "machine",
+      "format": "application/xml",
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "description": "XML sitemap for search engines and crawlers"
+    },
+    {
+      "path": "/feed.xml",
+      "title": "RSS Feed — MakcikGPT Articles",
+      "status": "live",
+      "type": "machine",
+      "format": "application/rss+xml",
+      "priority": 0.5,
+      "changefreq": "daily",
+      "description": "RSS feed of MakcikGPT civic intelligence articles"
+    },
+    {
+      "path": "/robots.txt",
+      "title": "robots.txt — Crawler Policy with AI Directives",
+      "status": "live",
+      "type": "machine",
+      "format": "text/plain",
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "description": "Crawler policy with explicit AI bot directives and RSL License line"
+    },
+    {
+      "path": "/rsl.xml",
+      "title": "rsl.xml — Really Simple Licensing 1.0",
+      "status": "live",
+      "type": "machine",
+      "format": "application/rsl+xml",
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "description": "RSL 1.0 license declaring permits/prohibits for ai-train, ai-input, search"
+    },
+    {
+      "path": "/soul.json",
+      "title": "soul.json — Sovereign Identity Anchor",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.4,
+      "changefreq": "monthly",
+      "description": "Sovereign identity and philosophy anchor"
+    },
+    {
+      "path": "/.well-known/agent-card.json",
+      "title": "Agent Card — A2A Discovery",
+      "redirects_to": "https://arifos.arif-fazil.com/.well-known/agent-card.json",
+      "status": "redirect",
+      "code": 301,
+      "type": "redirect",
+      "description": "Canonical agent card lives on arifos.arif-fazil.com subdomain. Caddy server-side redirect."
+    },
+    {
+      "path": "/read/",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 301,
+      "redirects_to": "/writing/",
+      "description": "Alias of Writing. Canonical human path is /writing/"
+    },
+    {
+      "path": "/read",
+      "status": "redirect",
+      "type": "redirect",
+      "code": 301,
+      "redirects_to": "/writing/",
+      "description": "Alias of Writing"
+    },
+    {
+      "path": "/machines/",
+      "status": "live",
+      "type": "page",
+      "title": "For Machines — Ops guide",
+      "description": "Human-readable agent contracts, AUP, disclaimer"
+    },
+    {
+      "path": "/ledger",
+      "title": "WITNESS LEDGER — Public Accountability Record",
+      "mission": "remember",
+      "status": "live",
+      "type": "page",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "description": "The federation's record of what it did and what it got wrong: receipts preserved, output-gate verdicts, seal-chain state, and a defect register. Every figure is recomputed from a named source and re-checkable."
+    },
+    {
+      "path": "/ledger/ledger.json",
+      "title": "WITNESS LEDGER — Machine Record",
+      "mission": "remember",
+      "status": "live",
+      "type": "machine",
+      "format": "application/json",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
     },
     {
       "path": "/about",
@@ -133,136 +925,6 @@
       "description": "Federation discovery map — organs, surfaces, and how they interlock."
     },
     {
-      "path": "/earth/",
-      "title": "EARTH — The Dynamic Planet (Macrostrat globe)",
-      "mission": "investigate",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Interactive Macrostrat globe, plates, quakes, wells. Static HTML primary — not SPA essay."
-    },
-    {
-      "path": "/earth/kinabalu-basin.pdf",
-      "title": "Kinabalu Regional Cross Section (PDF)",
-      "mission": "investigate",
-      "status": "live",
-      "type": "document",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "High-resolution publication PDF of Kinabalu regional cross section"
-    },
-    {
-      "path": "/earth/kinabalu-basin/",
-      "title": "Kinabalu Basin — Deepwater Stratigraphy & Play Synthesis",
-      "mission": "investigate",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Deepwater Sabah basin analysis, turbidite channels, fold-thrust belt kinematics"
-    },
-    {
-      "path": "/earth/kinabalu-cross-section.html",
-      "title": "Kinabalu Basin Regional Cross Section",
-      "mission": "investigate",
-      "status": "live",
-      "type": "document",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Regional geological cross section with seismic interpretation and well calibration"
-    },
-    {
-      "path": "/earth/malay-basin-cross-section.html",
-      "title": "Malay Basin Regional Cross Section",
-      "mission": "investigate",
-      "status": "live",
-      "type": "document",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Malay Basin structural cross section showing basin inversion and play types"
-    },
-    {
-      "path": "/earth/malay-basin/",
-      "title": "Malay Basin — Structural Evolution & Petroleum Systems",
-      "mission": "investigate",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Tertiary rift basin profiling, structural inversion, source-reservoir-seal pairs"
-    },
-    {
-      "path": "/economics/",
-      "title": "Economics — WEALTH Capital Briefing",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "daily",
-      "description": "The Economics door: Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing. One door for the domain — links the boards (/oil/ /gas/ /gold/ /world/economics/), the PETRONAS dossier (/petronas/), the daily briefing (/economics/briefing/) and the live WEALTH organ cockpit (wealth.arif-fazil.com)."
-    },
-    {
-      "path": "/economics/article/:slug",
-      "title": "WEALTH Article",
-      "mission": "interpret",
-      "status": "live",
-      "type": "dynamic_page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Individual WEALTH capital intelligence article"
-    },
-    {
-      "path": "/economics/briefing/",
-      "title": "Daily Briefing — Malaysia Economics | Arif Fazil",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "daily",
-      "description": "Live daily economics briefing: markets, policy and the Malaysian economy in public numbers. Moved here 2026-11-22 from the orphan /wealth-live/ (which had no inbound links and canonicalised to /economics/)."
-    },
-    {
-      "path": "/federation/",
-      "title": "Federation — One Sovereign, One System",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "daily",
-      "description": "The federated architecture: one sovereign, a kernel that judges, four working roles, seven instruments, three territories — plus the 13 constitutional floors and live proof."
-    },
-    {
-      "path": "/feed.xml",
-      "title": "RSS Feed — MakcikGPT Articles",
-      "status": "live",
-      "type": "machine",
-      "format": "application/rss+xml",
-      "priority": 0.5,
-      "changefreq": "daily",
-      "description": "RSS feed of MakcikGPT civic intelligence articles"
-    },
-    {
-      "path": "/gas/",
-      "title": "Gas Dashboard — Natural Gas Live",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Standalone natural gas dashboard with live API data. Served from /var/www/html/gas/."
-    },
-    {
-      "path": "/gold/",
-      "title": "Gold Dashboard — XAUUSD Live",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Standalone gold trading dashboard with live API data. Served from /var/www/html/gold/."
-    },
-    {
       "path": "/human/",
       "title": "Start here — agents",
       "mission": "interpret",
@@ -271,16 +933,6 @@
       "priority": 0.8,
       "changefreq": "monthly",
       "description": "Entry point for agents and humans meeting the federation for the first time."
-    },
-    {
-      "path": "/institution/",
-      "title": "Briefing — professional conversation path",
-      "mission": "decide",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "monthly",
-      "description": "Institutional briefing: what Arif Fazil can contribute, what can be inspected, boundaries, and how to start a professional conversation."
     },
     {
       "path": "/laws/",
@@ -293,86 +945,6 @@
       "description": "Laws index — the constitutional and operational rules governing the federation."
     },
     {
-      "path": "/ledger",
-      "title": "WITNESS LEDGER — Public Accountability Record",
-      "mission": "remember",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "weekly",
-      "description": "The federation's record of what it did and what it got wrong: receipts preserved, output-gate verdicts, seal-chain state, and a defect register. Every figure is recomputed from a named source and re-checkable."
-    },
-    {
-      "path": "/ledger/ledger.json",
-      "title": "WITNESS LEDGER — Machine Record",
-      "mission": "remember",
-      "status": "live",
-      "type": "machine",
-      "format": "application/json",
-      "priority": 0.7,
-      "changefreq": "weekly",
-      "description": "Machine-readable form of the witness ledger (schema arifos.witness_ledger.v1)"
-    },
-    {
-      "path": "/llms-full.txt",
-      "title": "llms-full.txt — Full Content Dump for AI LLMs",
-      "status": "live",
-      "type": "machine",
-      "format": "text/markdown",
-      "priority": 0.5,
-      "changefreq": "weekly",
-      "description": "Full-text content dump for LLM ingestion. Generated from MD sources."
-    },
-    {
-      "path": "/llms.json",
-      "title": "llms.json — Structured Site Overview",
-      "status": "live",
-      "type": "machine",
-      "format": "application/json",
-      "priority": 0.4,
-      "changefreq": "weekly",
-      "description": "Structured JSON site overview with route roles, related sites, and machine surfaces"
-    },
-    {
-      "path": "/llms.txt",
-      "title": "llms.txt — AI Site Overview",
-      "status": "live",
-      "type": "machine",
-      "format": "text/markdown",
-      "priority": 0.5,
-      "changefreq": "weekly",
-      "description": "Curated link index for AI agents (Jeremy Howard convention, Sept 2024). Generated from surfaces.json."
-    },
-    {
-      "path": "/machine/",
-      "title": "Machine — Agent Surfaces Dashboard",
-      "mission": "remember",
-      "status": "live",
-      "type": "machine",
-      "format": "text/html",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "Agent-facing endpoint directory"
-    },
-    {
-      "path": "/machines/",
-      "status": "live",
-      "type": "page",
-      "title": "For Machines — Ops guide",
-      "description": "Human-readable agent contracts, AUP, disclaimer"
-    },
-    {
-      "path": "/map/",
-      "title": "Map — Human-Readable Route Tree",
-      "mission": "remember",
-      "status": "live",
-      "type": "machine",
-      "format": "text/html",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "Route map generated from surfaces.json"
-    },
-    {
       "path": "/mcp/",
       "title": "arifOS MCP — Constitutional AI Gateway",
       "mission": "build",
@@ -381,56 +953,6 @@
       "priority": 0.6,
       "changefreq": "monthly",
       "description": "MCP gateway documentation surface on the main domain."
-    },
-    {
-      "path": "/missions.json",
-      "title": "missions.json — Six-Mission Federation Catalog",
-      "status": "live",
-      "type": "machine",
-      "format": "application/json",
-      "priority": 0.4,
-      "changefreq": "monthly",
-      "description": "Six-mission classification of federation intent. Does not authorize tool calls."
-    },
-    {
-      "path": "/oil/",
-      "title": "Oil Dashboard — Brent Crude Live",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Standalone Brent crude oil dashboard with live API data. Served from /var/www/html/oil/."
-    },
-    {
-      "path": "/page.json",
-      "title": "page.json — Machine Site Overview",
-      "status": "live",
-      "type": "machine",
-      "format": "application/json",
-      "priority": 0.4,
-      "changefreq": "weekly",
-      "description": "Machine-readable site overview — purpose, route model, content scope"
-    },
-    {
-      "path": "/petronas/",
-      "title": "PETRONAS — Dompet hari ini, tangki masa depan",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "weekly",
-      "description": "The PETRONAS dossier: wallet-and-tank financial reality in audited public numbers. Canonical for the subject — /world/petronas/ is an alias of this page."
-    },
-    {
-      "path": "/pilot/",
-      "title": "Supervised AI Action Control — 4-Week Design Partner Pilot",
-      "mission": "decide",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "weekly",
-      "description": "Commercial offer: 4-week supervised pilot installing measurable action control around one AI-agent workflow. Eight exit criteria, receipt chain. Band RM20k-50k."
     },
     {
       "path": "/receipts/",
@@ -443,26 +965,6 @@
       "description": "Receipts index — sealed records and their provenance."
     },
     {
-      "path": "/robots.txt",
-      "title": "robots.txt — Crawler Policy with AI Directives",
-      "status": "live",
-      "type": "machine",
-      "format": "text/plain",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "Crawler policy with explicit AI bot directives and RSL License line"
-    },
-    {
-      "path": "/rsl.xml",
-      "title": "rsl.xml — Really Simple Licensing 1.0",
-      "status": "live",
-      "type": "machine",
-      "format": "application/rsl+xml",
-      "priority": 0.5,
-      "changefreq": "monthly",
-      "description": "RSL 1.0 license declaring permits/prohibits for ai-train, ai-input, search"
-    },
-    {
       "path": "/sanctuary/",
       "title": "/000 — Genesis · Sovereign Anchor",
       "mission": "remember",
@@ -471,36 +973,6 @@
       "priority": 0.6,
       "changefreq": "monthly",
       "description": "Genesis surface — the sovereign anchor of the federation."
-    },
-    {
-      "path": "/sitemap.xml",
-      "title": "sitemap.xml — XML Sitemap",
-      "status": "live",
-      "type": "machine",
-      "format": "application/xml",
-      "priority": 0.5,
-      "changefreq": "weekly",
-      "description": "XML sitemap for search engines and crawlers"
-    },
-    {
-      "path": "/soul.json",
-      "title": "soul.json — Sovereign Identity Anchor",
-      "status": "live",
-      "type": "machine",
-      "format": "application/json",
-      "priority": 0.4,
-      "changefreq": "monthly",
-      "description": "Sovereign identity and philosophy anchor"
-    },
-    {
-      "path": "/surfaces.json",
-      "title": "surfaces.json — Canonical Surface Catalog",
-      "status": "live",
-      "type": "machine",
-      "format": "application/json",
-      "priority": 0.5,
-      "changefreq": "monthly",
-      "description": "Single canonical surface catalog for arif-fazil.com. Machine readable."
     },
     {
       "path": "/verify/",
@@ -513,26 +985,6 @@
       "description": "Kernel identity verification surface — proof-of-identity for the arifOS kernel."
     },
     {
-      "path": "/vitals/",
-      "title": "PETRONAS · VITALS — Financial capacity and resilience",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "daily",
-      "description": "Public PETRONAS VITALS on apex. Canonical soft path /vitals/."
-    },
-    {
-      "path": "/wealth/malaysia/",
-      "title": "Malaysia · Putrajaya — The Sovereign Ledger",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "weekly",
-      "description": "Coupled pair page: Putrajaya sovereign ledger (RM40.0B subsidy asas 2027) aligned with /petronas/. Machine files: state.json, brief.md. Measured 200 (2026-11-22)."
-    },
-    {
       "path": "/witness-theory/",
       "title": "Witness Theory of Human Want",
       "mission": "interpret",
@@ -543,136 +995,6 @@
       "description": "Witness theory essay — how human want is witnessed rather than modelled."
     },
     {
-      "path": "/words/",
-      "title": "Words — Hub (Essays · Wiki · MakcikGPT)",
-      "mission": "interpret",
-      "status": "live",
-      "type": "hub",
-      "priority": 0.85,
-      "changefreq": "weekly",
-      "description": "Words hub. Three peer subpages — Essays, Wiki & Knowledge, MakcikGPT civic column. Refactored 2026-10-01 from tabbed single-page into a true hub. Doctrine unchanged: MakcikGPT remains a column inside writing, not a peer of the personal / professional identity."
-    },
-    {
-      "path": "/words/constitution/",
-      "title": "/constitution — The Rules I Write for My AI",
-      "mission": "decide",
-      "status": "live",
-      "type": "page",
-      "priority": 0.9,
-      "changefreq": "monthly",
-      "description": "Canonical constitution door under /words/. Target of the /constitution/ 308. Measured 200 (2026-11-22)."
-    },
-    {
-      "path": "/words/doctrine/",
-      "title": "Doctrine — Constitution, Federation Topology, Manifesto",
-      "mission": "decide",
-      "status": "live",
-      "type": "page",
-      "priority": 0.95,
-      "changefreq": "monthly",
-      "description": "Canonical doctrine home. Constitutional floors (F1-F13), authority chain, organ topology, federation manifesto. Promoted from /doctrine/ 2026-09-17 to close catalog/reality drift."
-    },
-    {
-      "path": "/words/essays/",
-      "title": "Words — Essays",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "weekly",
-      "description": "Peer subpage of the /words/ hub. Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5. Refactored 2026-10-01."
-    },
-    {
-      "path": "/words/wiki/",
-      "title": "Words — Wiki & Knowledge",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Peer subpage of the /words/ hub. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order. Refactored 2026-10-01."
-    },
-    {
-      "path": "/words/writing/",
-      "title": "Writing — Essays & Analysis",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "weekly",
-      "description": "Canonical essays home. Long-form writing by Arif on AI governance, thermodynamics, geological reasoning. Promoted from /writing/ 2026-09-17 to close catalog/reality drift."
-    },
-    {
-      "path": "/work/",
-      "title": "Selected Work — Arif Fazil",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "monthly",
-      "description": "Selected offshore exploration work, public evidence, roles, outcomes, and governed AI systems by Arif Fazil. Includes the full career artifact."
-    },
-    {
-      "path": "/work/exploration-2013-2026/",
-      "title": "Exploration 2013–2026 — Career Artifact",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "monthly",
-      "description": "Web-native career artifact: thirteen years of offshore exploration geoscience, evidence-tagged. Malay Basin and offshore Sabah — flagged work, uncertainty discipline, and what was proven."
-    },
-    {
-      "path": "/work/exploration-2013-2026/evidence/",
-      "title": "Exploration Portfolio — Evidence Ledger",
-      "mission": "remember",
-      "status": "live",
-      "type": "page",
-      "priority": 0.75,
-      "changefreq": "monthly",
-      "description": "Every claim in the exploration portfolio, tagged by truth class and publication class. Includes what was deliberately withheld, and why."
-    },
-    {
-      "path": "/work/exploration-2013-2026/portfolio.pdf",
-      "title": "Arif Fazil — Subsurface · Systems · Intelligence (PDF)",
-      "mission": "remember",
-      "status": "live",
-      "type": "document",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Frozen PDF career artifact: 18 pages, evidence-grounded, claim-tagged. Compiled 2026-10-02. SHA-256 verified."
-    },
-    {
-      "path": "/work/missions/",
-      "title": "Missions — Six verbs",
-      "mission": "build",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Canonical missions hub under /work/. Target of the /missions/ 308. Measured 200 (2026-11-22)."
-    },
-    {
-      "path": "/work/proof/",
-      "title": "/999 — Proof · Sealed Vault",
-      "mission": "remember",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "monthly",
-      "description": "Canonical proof hub under /work/. Target of the /proof/ 308. NOTE: /work/proof/<slug> is a fallback shell (every slug serves 'Selected Work'); real legacy content pages remain at /proof/{human,runtime,authorship}/ — redirect BLOCKED until migrated (class: legacy-content-without-canonical-twin). Measured 200 (2026-11-22)."
-    },
-    {
-      "path": "/world/",
-      "title": "World — Civic Journalism & Commodities",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Civic journalism (MakcikGPT) + commodity dashboards (oil/gas/gold)"
-    },
-    {
       "path": "/world/2027/",
       "title": "AI Agents 2027: Five Engines of Chaos, One Missing Layer",
       "mission": "investigate",
@@ -681,17 +1003,6 @@
       "priority": 0.7,
       "changefreq": "monthly",
       "description": "Long-form 2027 forecast on AI agents."
-    },
-    {
-      "path": "/world/2027/ai-agents-2027-dossier.pdf",
-      "title": "AI Agents 2027 — Dossier (PDF)",
-      "mission": "investigate",
-      "status": "live",
-      "type": "document",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "Downloadable PDF dossier accompanying the AI Agents 2027 forecast.",
-      "format": "application/pdf"
     },
     {
       "path": "/world/2027/malaysia/",
@@ -714,114 +1025,15 @@
       "description": "Evidence and receipt surface backing the AI Agents 2027 forecast."
     },
     {
-      "path": "/world/ai/shadow/",
-      "title": "AI Labs Bayang — The Shadow of the Model, the Lab, and the Owner",
-      "mission": "interpret",
+      "path": "/world/2027/ai-agents-2027-dossier.pdf",
+      "title": "AI Agents 2027 — Dossier (PDF)",
+      "mission": "investigate",
       "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "weekly",
-      "description": "Shadow analysis of AI labs, models and their owners. Keluarga Bayang counterpart to PM Bayang and Kerusi Bayang."
-    },
-    {
-      "path": "/world/economics/",
-      "title": "Economics boards — Arif Fazil",
-      "mission": "monitor",
-      "status": "live",
-      "type": "hub",
-      "priority": 0.8,
-      "changefreq": "daily",
-      "description": "Boards index for the Economics domain: Brent (/oil/), gas (/gas/), gold (/gold/), FBM KLCI (/world/economics/klci/), USD/MYR (/world/economics/usdmyr/), the daily briefing (/economics/briefing/) and the PETRONAS dossier (/petronas/)."
-    },
-    {
-      "path": "/world/economics/klci/",
-      "title": "FBM KLCI — Bursa Malaysia Signal Terminal",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "daily",
-      "description": "Live Bursa Malaysia composite index signal terminal with WEALTH cognitive briefing. Restored 2026-10-22; og tags + H1 added same day."
-    },
-    {
-      "path": "/world/economics/usdmyr/",
-      "title": "USD/MYR — Ringgit FX Signal Terminal",
-      "mission": "monitor",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "daily",
-      "description": "Live USD/MYR ringgit FX terminal with WEALTH cognitive briefing. Restored 2026-10-22; og tags added same day."
-    },
-    {
-      "path": "/world/makcikgpt/",
-      "title": "MakcikGPT — Civic Intelligence in Bahasa Malaysia",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "daily",
-      "description": "Canonical landing for MakcikGPT civic intelligence series. Articles investigate Malaysian sovereignty, resource governance, institutional integrity, and technology accountability."
-    },
-    {
-      "path": "/world/makcikgpt/:slug",
-      "title": "MakcikGPT Article",
-      "mission": "interpret",
-      "status": "live",
-      "type": "dynamic_page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Individual MakcikGPT article in Bahasa Malaysia. Generated from essays.json."
-    },
-    {
-      "path": "/world/petronas/shadow/",
-      "title": "Kerusi Bayang — Every PETRONAS Chairman & Chief Executive, 1974–2026",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.8,
-      "changefreq": "weekly",
-      "description": "Every PETRONAS chairman and CEO 1974–2026: mandate, what they brought, what they got, scars, transition, verdict — claim register + source ledger. Keluarga Bayang. JSON-LD added 2026-10-22."
-    },
-    {
-      "path": "/world/petronas/shadow/tengku-muhammad-taufik/",
-      "title": "33 Bayang Tengku Muhammad Taufik — Siri Penjaga Menara (2020–2026)",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.85,
-      "changefreq": "weekly",
-      "description": "33 Bayang kepimpinan Tan Sri Tengku Muhammad Taufik (CEO PETRONAS 2020–2026): Kepatuhan — Penjaga Lampu, Dompet dan Tangki Negara. Bersumberkan rekod awam diaudit dengan hujah balas dan pintu falsifikasi 2027."
-    },
-    {
-      "path": "/world/politics/",
-      "title": "Politics — Power, Read Plainly",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
+      "type": "document",
       "priority": 0.6,
       "changefreq": "monthly",
-      "description": "Two-card hub: GIS PRN N9 constituency coverage and PM Bayang shadow dossier. Nav cleaned 2026-10-22; sole surface carrying PRN N9."
-    },
-    {
-      "path": "/world/politics/ns-election/",
-      "title": "Negeri Sembilan State Election — Civic Intelligence & Spatial Analysis",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.75,
-      "changefreq": "monthly",
-      "description": "Spatial electoral analytics and demographic dynamics of Negeri Sembilan state constituencies"
-    },
-    {
-      "path": "/world/politics/ns-election/compare/",
-      "title": "Negeri Sembilan Election Constituency Compare",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Comparative constituency analysis and swing metrics"
+      "description": "Downloadable PDF dossier accompanying the AI Agents 2027 forecast.",
+      "format": "application/pdf"
     },
     {
       "path": "/world/politics/ns-election/playbook/",
@@ -834,45 +1046,6 @@
       "description": "Agentic playbook for the Negeri Sembilan state election."
     },
     {
-      "path": "/world/politics/shadow/",
-      "title": "PM Bayang — Shadow Prime Ministers of Malaysia",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "Jungian shadow analysis of all 9 Malaysian Prime Ministers. Persona, Bayang, Tragedi, Legasi. Source: public records, Hansard, National Archives. Framework analysis. Static HTML at /var/www/html/world/politics/shadow/index.html."
-    },
-    {
-      "path": "/world/politics/shadow/anwar-ibrahim/",
-      "title": "33 Bayang Anwar Ibrahim — Three-Axis Shadow Analysis",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "33 shadow cards across 3 axes (Sosiopolitik / Ekonomi / Peribadi) for PM-10 Anwar Ibrahim. Editorial psychology analysis grounded in 322 public sources. Static HTML at /var/www/html/world/politics/shadow/anwar-ibrahim/index.html. Three-pillar DNA: Persona, Bayang, Tragedi, Legasi."
-    },
-    {
-      "path": "/world/politics/shadow/mahathir-mohamad/",
-      "title": "13 Bayang Mahathir Mohamad — Three-Axis Shadow Analysis",
-      "mission": "interpret",
-      "status": "live",
-      "type": "page",
-      "priority": 0.7,
-      "changefreq": "monthly",
-      "description": "13 shadow cards across 3 axes (Sosiopolitik 5 / Ekonomi 4 / Peribadi 4) for PM-4 & PM-7 Mahathir Mohamad. Editorial Jungian psychology analysis grounded in verified public sources (Wikipedia EN, The Star, The Sun Malaysia, Malaysian Journal of Economic Studies 2024, Millman 1995). Static HTML at /var/www/html/world/politics/shadow/mahathir-mohamad/index.html. Three-pillar DNA: Persona, Bayang, Tragedi, Legasi."
-    },
-    {
-      "path": "/.well-known/agent-card.json",
-      "title": "Agent Card — A2A Discovery",
-      "redirects_to": "https://arifos.arif-fazil.com/.well-known/agent-card.json",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Canonical agent card lives on arifos.arif-fazil.com subdomain. Caddy server-side redirect."
-    },
-    {
       "path": "/aaa/",
       "redirects_to": "https://aaa.arif-fazil.com/",
       "status": "redirect",
@@ -881,100 +1054,12 @@
       "description": "Main-domain alias for the AAA control-plane subdomain. Added 2026-10-18 to close catalog/reality drift."
     },
     {
-      "path": "/canon/",
-      "redirects_to": "/words/doctrine/",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy canon path — single hop to /words/doctrine/ (measured 308, 2026-11-22)"
-    },
-    {
-      "path": "/constellation/",
-      "redirects_to": "/doctrine",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy constellation path — merged into doctrine"
-    },
-    {
       "path": "/constitution/",
       "redirects_to": "/words/constitution/",
       "status": "redirect",
       "code": 308,
       "type": "redirect",
       "description": "Legacy constitution path — canonical is /words/constitution/. Added 2026-10-18 to close catalog/reality drift."
-    },
-    {
-      "path": "/discoveries/",
-      "redirects_to": "/earth",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy discoveries path — canonical is /earth"
-    },
-    {
-      "path": "/doctrine/",
-      "title": "Doctrine — Constitution, Federation Topology, Manifesto",
-      "mission": "decide",
-      "status": "redirect",
-      "type": "redirect",
-      "code": 308,
-      "priority": 0.9,
-      "changefreq": "monthly",
-      "description": "Legacy alias. Canonical path is /words/doctrine/ — see catalog entry. Added 2026-09-17 to close catalog/reality drift.",
-      "redirects_to": "/words/doctrine/"
-    },
-    {
-      "path": "/economics/makcikgpt/",
-      "redirects_to": "/world/makcikgpt/",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy MakcikGPT path — canonical is /world/makcikgpt/"
-    },
-    {
-      "path": "/economics/makcikgpt/:slug",
-      "redirects_to": "/world/makcikgpt/:slug",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy MakcikGPT article — canonical is /world/makcikgpt/:slug"
-    },
-    {
-      "path": "/essays/",
-      "redirects_to": "/words/writing/",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy essays path — single hop to /words/writing/ (measured 308, 2026-11-22)"
-    },
-    {
-      "path": "/essays/:slug",
-      "redirects_to": "/writing/:slug",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy essay — canonical is /writing/:slug"
-    },
-    {
-      "path": "/forge/",
-      "title": "A-FORGE → subdomain",
-      "mission": "build",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.6,
-      "changefreq": "monthly",
-      "description": "A-FORGE subdomain redirects to arifOS MCP gateway (forge.arif-fazil.com itself 301s to mcp.arif-fazil.com). Added 2026-09-17: redirects_to updated to actual live target.",
-      "code": 301,
-      "redirects_to": "https://mcp.arif-fazil.com/"
-    },
-    {
-      "path": "/genesis/",
-      "redirects_to": "/000/",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy genesis path — canonical is /000/"
     },
     {
       "path": "/geox/",
@@ -1001,64 +1086,12 @@
       "description": "Markdown variant of the MakcikGPT path — canonical is /world/makcikgpt/. Added 2026-10-18 to close catalog/reality drift."
     },
     {
-      "path": "/makcikgpt/",
-      "redirects_to": "/world/makcikgpt/",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Bare MakcikGPT path — canonical is /world/makcikgpt/"
-    },
-    {
-      "path": "/makcikgpt/:slug",
-      "redirects_to": "/world/makcikgpt/:slug",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Bare MakcikGPT article — canonical is /world/makcikgpt/:slug"
-    },
-    {
-      "path": "/malaysia/",
-      "title": "Malaysia — Civic & Political Hub",
-      "mission": "interpret",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Civic and political intelligence hub for Malaysia. Measured 2026-10-18: serves 308 → /wealth/malaysia/; catalog corrected from status=live.",
-      "code": 308,
-      "redirects_to": "/wealth/malaysia/"
-    },
-    {
       "path": "/missions/",
       "redirects_to": "/work/missions/",
       "status": "redirect",
       "code": 308,
       "type": "redirect",
       "description": "Legacy missions path — canonical is /work/missions/. Added 2026-10-18 to close catalog/reality drift."
-    },
-    {
-      "path": "/petronas/tengku-taufik/",
-      "title": "33 Bayang Tengku Muhammad Taufik (alias → /petronas/tengkutaufik/)",
-      "mission": "interpret",
-      "status": "redirect",
-      "type": "redirect",
-      "code": 200,
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "description": "Alias of the Tengku Taufik dossier canonical page.",
-      "redirects_to": "/world/petronas/shadow/tengku-muhammad-taufik/"
-    },
-    {
-      "path": "/petronas/tengkutaufik/",
-      "title": "33 Bayang Tengku Muhammad Taufik — Psikologi Bayang (2020–2026)",
-      "mission": "interpret",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.85,
-      "changefreq": "weekly",
-      "description": "Psikologi Bayang: Siri Penjaga Menara (2020–2026). 32 bayang kepimpinan + 1 teras jiwa merentasi Paksi Mandat, Dompet, dan Budaya.",
-      "code": 200,
-      "redirects_to": "/world/petronas/shadow/tengku-muhammad-taufik/"
     },
     {
       "path": "/politics/",
@@ -1077,72 +1110,12 @@
       "description": "Legacy proof path — canonical is /work/proof/. Added 2026-10-18 to close catalog/reality drift."
     },
     {
-      "path": "/read",
-      "status": "redirect",
-      "type": "redirect",
-      "code": 301,
-      "redirects_to": "/words/writing/",
-      "description": "Alias of Writing — flattened to single hop /words/writing/ (2026-11-22; was 2-hop via /writing/). Deep /read/<slug> also 301s to /words/writing/<slug>."
-    },
-    {
-      "path": "/read/",
-      "status": "redirect",
-      "type": "redirect",
-      "code": 301,
-      "redirects_to": "/words/writing/",
-      "description": "Alias of Writing — flattened to single hop /words/writing/ (2026-11-22; was 2-hop via /writing/). Deep /read/<slug> also 301s to /words/writing/<slug>."
-    },
-    {
-      "path": "/rss/",
-      "redirects_to": "/feed.xml",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "RSS feed redirect"
-    },
-    {
       "path": "/usdmyr/",
       "redirects_to": "/world/economics/usdmyr/",
       "status": "redirect",
       "code": 308,
       "type": "redirect",
       "description": "Legacy USD/MYR path — canonical is /world/economics/usdmyr/. Added 2026-10-18 to close catalog/reality drift."
-    },
-    {
-      "path": "/wealth/",
-      "title": "Wealth Capital (redirect → /economics/)",
-      "mission": "interpret",
-      "status": "redirect",
-      "type": "redirect",
-      "code": 308,
-      "priority": 0.8,
-      "changefreq": "daily",
-      "description": "Legacy alias. /wealth/ redirects to /economics/ — the canonical Economics door (measured 2026-11-22: HTTP 308 → https://arif-fazil.com/economics/). Article paths /wealth/article/:slug already redirect to /economics/article/:slug.",
-      "redirects_to": "/economics/"
-    },
-    {
-      "path": "/wealth/article/:slug",
-      "redirects_to": "/economics/article/:slug",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy wealth article — canonical is /economics/article/:slug"
-    },
-    {
-      "path": "/wealth/makcikgpt/",
-      "redirects_to": "/world/makcikgpt/",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy MakcikGPT path — canonical is /world/makcikgpt/"
-    },
-    {
-      "path": "/wealth/makcikgpt/:slug",
-      "redirects_to": "/world/makcikgpt/:slug",
-      "status": "redirect",
-      "code": 301,
-      "type": "redirect",
-      "description": "Legacy MakcikGPT article — canonical is /world/makcikgpt/:slug"
     },
     {
       "path": "/wiki/",
@@ -1153,52 +1126,18 @@
       "description": "Main-domain alias for the wiki subdomain. Added 2026-10-18 to close catalog/reality drift."
     },
     {
-      "path": "/words/makcikgpt/",
-      "title": "Words — MakcikGPT (column)",
-      "mission": "interpret",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.65,
-      "changefreq": "weekly",
-      "description": "Peer subpage of the /words/ hub. A civic column inside the writing hub, NOT a peer of the personal / professional identity. Canonical article archive and full reception remain at /world/makcikgpt/. Doctrine unchanged. Added 2026-10-01. Measured 2026-10-18: serves 301 → /world/makcikgpt/; catalog corrected from status=live.",
-      "code": 301,
-      "redirects_to": "/world/makcikgpt/"
+      "path": "/audit/",
+      "title": "Audit (retired)",
+      "status": "gone",
+      "type": "gone",
+      "description": "Retired audit surface. Measured 2026-10-18: HTTP 410 Gone. Vault proof lives at /999/."
     },
     {
-      "path": "/world/gas/",
-      "title": "Gas Dashboard — Natural Gas Intelligence",
-      "mission": "monitor",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Natural gas dashboard with live data. Measured 2026-10-18: serves 308 → /gas/; catalog corrected from status=live.",
-      "code": 308,
-      "redirects_to": "/gas/"
-    },
-    {
-      "path": "/world/gold/",
-      "title": "Gold Dashboard — XAUUSD Trading Synthesis",
-      "mission": "monitor",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Gold trading synthesis and technical analysis dashboard. Measured 2026-10-18: serves 308 → /gold/; catalog corrected from status=live.",
-      "code": 308,
-      "redirects_to": "/gold/"
-    },
-    {
-      "path": "/world/oil/",
-      "title": "Oil Dashboard — Brent Crude Cognitive View",
-      "mission": "monitor",
-      "status": "redirect",
-      "type": "redirect",
-      "priority": 0.7,
-      "changefreq": "daily",
-      "description": "Brent crude oil cognitive dashboard with live data. Measured 2026-10-18: serves 308 → /oil/; catalog corrected from status=live.",
-      "code": 308,
-      "redirects_to": "/oil/"
+      "path": "/world/petronas/gentari/",
+      "title": "Gentari — Dossier Realiti (retired)",
+      "status": "gone",
+      "type": "gone",
+      "description": "Retired dossier surface. Measured 2026-11-18: HTTP 410 Gone (intentional — the Caddy vhost has served an honest 410 for this path since 2026-11-11T16:45Z; it briefly served the World hub and the PETRONAS page is /petronas/)."
     },
     {
       "path": "/world/petronas/",
@@ -1213,52 +1152,68 @@
       "redirects_to": "/petronas/"
     },
     {
-      "path": "/writing/",
-      "title": "Writing — Essays & Analysis",
+      "path": "/economics/briefing/",
+      "title": "Daily Briefing — Malaysia Economics | Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "daily",
+      "description": "Live daily economics briefing: markets, policy and the Malaysian economy in public numbers. Moved here 2026-11-22 from the orphan /wealth-live/ (which had no inbound links and canonicalised to /economics/)."
+    },
+    {
+      "path": "/world/economics/",
+      "title": "Economics boards — Arif Fazil",
+      "mission": "monitor",
+      "status": "live",
+      "type": "hub",
+      "priority": 0.8,
+      "changefreq": "daily",
+      "description": "Boards index for the Economics domain: Brent (/oil/), gas (/gas/), gold (/gold/), FBM KLCI (/world/economics/klci/), USD/MYR (/world/economics/usdmyr/), the daily briefing (/economics/briefing/) and the PETRONAS dossier (/petronas/)."
+    },
+    {
+      "path": "/petronas/",
+      "title": "PETRONAS — Dompet hari ini, tangki masa depan",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "The PETRONAS dossier: wallet-and-tank financial reality in audited public numbers. Canonical for the subject — /world/petronas/ is an alias of this page."
+    },
+    {
+      "path": "/petronas/tengkutaufik/",
+      "title": "33 Bayang Tengku Muhammad Taufik — Psikologi Bayang (2020–2026)",
       "mission": "interpret",
       "status": "redirect",
       "type": "redirect",
-      "code": 308,
-      "priority": 0.8,
+      "priority": 0.85,
       "changefreq": "weekly",
-      "description": "Legacy alias. Canonical path is /words/writing/ — see catalog entry. Added 2026-09-17 to close catalog/reality drift.",
-      "redirects_to": "/words/writing/"
+      "description": "Psikologi Bayang: Siri Penjaga Menara (2020–2026). 32 bayang kepimpinan + 1 teras jiwa merentasi Paksi Mandat, Dompet, dan Budaya.",
+      "code": 200,
+      "redirects_to": "/world/petronas/shadow/tengku-muhammad-taufik/"
     },
     {
-      "path": "/writing/:slug",
+      "path": "/petronas/tengku-taufik/",
+      "title": "33 Bayang Tengku Muhammad Taufik (alias → /petronas/tengkutaufik/)",
+      "mission": "interpret",
       "status": "redirect",
       "type": "redirect",
-      "description": "Legacy essay namespace. Apex /writing/<slug> served the HOME page (soft-404, canonical -> /) — closed 2026-11-22: single-hop 301 to /words/writing/<slug>.",
-      "code": 301,
-      "redirects_to": "/words/writing/:slug"
+      "code": 200,
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "description": "Alias of the Tengku Taufik dossier canonical page.",
+      "redirects_to": "/world/petronas/shadow/tengku-muhammad-taufik/"
     },
     {
-      "path": "/audit/",
-      "title": "Audit (retired)",
-      "status": "gone",
-      "type": "gone",
-      "description": "Retired audit surface. Measured 2026-10-18: HTTP 410 Gone. Vault proof lives at /999/."
-    },
-    {
-      "path": "/chron/",
-      "title": "CHRON apex (retired)",
-      "status": "gone",
-      "type": "gone",
-      "description": "Apex /chron/ never existed as a page: measured HTTP 404 (2026-11-22). The CHRON organ surface is the JSON API at chron.arif-fazil.com (measured 200, application/json). Map coupling points there."
-    },
-    {
-      "path": "/pulse/",
-      "title": "Federation Pulse (retired)",
-      "status": "gone",
-      "type": "gone",
-      "description": "Retired pulse surface. Measured: HTTP 410 Gone."
-    },
-    {
-      "path": "/world/petronas/gentari/",
-      "title": "Gentari — Dossier Realiti (retired)",
-      "status": "gone",
-      "type": "gone",
-      "description": "Retired dossier surface. Measured 2026-11-18: HTTP 410 Gone (intentional — the Caddy vhost has served an honest 410 for this path since 2026-11-11T16:45Z; it briefly served the World hub and the PETRONAS page is /petronas/)."
+      "path": "/world/petronas/shadow/tengku-muhammad-taufik/",
+      "title": "33 Bayang Tengku Muhammad Taufik — Siri Penjaga Menara (2020–2026)",
+      "mission": "interpret",
+      "status": "live",
+      "type": "page",
+      "priority": 0.85,
+      "changefreq": "weekly",
+      "description": "33 Bayang kepimpinan Tan Sri Tengku Muhammad Taufik (CEO PETRONAS 2020–2026): Kepatuhan — Penjaga Lampu, Dompet dan Tangki Negara. Bersumberkan rekod awam diaudit dengan hujah balas dan pintu falsifikasi 2027."
     }
   ],
   "federation_subdomains": [
@@ -1312,6 +1267,6 @@
     "mcp_endpoint": "https://mcp.arif-fazil.com/mcp",
     "did": "did:web:arif-fazil.com"
   },
-  "as_of": "2026-11-22T09:52:00Z",
+  "as_of": "2026-10-18T14:13:47Z",
   "last_updated": "2026-11-22"
 }

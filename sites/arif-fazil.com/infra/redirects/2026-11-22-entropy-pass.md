@@ -17,6 +17,12 @@ Versioned record of the 301s added in `/etc/caddy/vhosts/arif-fazil.com.conf`
 | 9 | `/world/makcikgpt/petronas-leadership-1974-2026[/]` | `/world/petronas/shadow/` | 99.3% 8-word shingle containment; 11-line non-substantive delta |
 | 10 | `/receipts/ai-agents-2027[/]` | `/world/2027/receipts/` | duplicate 1,235-word page, canonical already world-side |
 | 11 | `/doctrine/_agent-shell[/]` | `/words/doctrine/` | agent-shell copy; canonical `/doctrine/` 308s to `/words/doctrine/` |
+| 12 | `/home/index.html` | `/` | 555-ASI residual: file path bypassed the directory 301 |
+| 13 | `/world/makcikgpt/petronas-leadership-1974-2026/index.html` | `/world/petronas/shadow/` | 555-ASI residual: legacy file remained reachable 200 |
+| 14 | `/petronas/tengku-taufik/index.html`, `/petronas/tengkutaufik/index.html` | shadow detail | file-path bypass |
+| 15 | `/receipts/ai-agents-2027/index.html` | `/world/2027/receipts/` | file-path bypass |
+| 16 | `/doctrine/_agent-shell/index.html` | `/words/doctrine/` | file-path bypass |
+| 17 | `*/index.html` (regexp, all remaining) | directory URL | class-level rule: no page is canonical at an explicit index.html |
 
 Verification: each target probed 200; each source probed 301 with exact Location.
 Sitemap after cleanup: 117 URLs, 117 × 200.

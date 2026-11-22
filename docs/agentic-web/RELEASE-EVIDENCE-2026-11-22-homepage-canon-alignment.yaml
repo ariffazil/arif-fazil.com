@@ -1,0 +1,41 @@
+# Release evidence — homepage canon alignment (2026-11-22)
+# Not a kernel SEAL. External name: release evidence / deploy receipt.
+release_candidate:
+  commit: "3c71bb2e35bc74d083cd2f208c87a8457ca1d2e1"
+  branch: main
+  environment: production_public_html
+  changed_routes:
+    - "/"
+  public_effect:
+    - "Homepage system map now equals canon/navigation.json secondary_links_organs: arifOS, AAA, A-FORGE, GEOX, WEALTH, WELL, Observatory - one card per system, one distinct destination each."
+    - "WEALTH and WELL added to the system map (both canonical organs, SITE_IDENTITY #8); both were absent."
+    - "arifOS and Observatory no longer point at the same surface."
+    - "Four dead client-side links repointed to routes that exist: /forge/, /world/petronas/shadow/, /map, /arifos/ (as a server-side <a>)."
+    - "/words added as the missing canon journey door (Read); it was the one core destination the homepage never offered."
+    - "No token, canon, or shared-component change. Home.tsx only, plus regenerated discovery mirrors."
+  tests:
+    doctor_before: "web_zen.doctor gate exit=0 (pre_mutation_environment phase)"
+    doctor_after: "web_zen.verify gate exit=0 (post_live) - no new failures"
+    doctor_fail_set_delta: "none - no failures before or after"
+    build: "npm run build - tsc -b && vite build, built in 6.17s; postbuild ok; deploy build_hash 4070c35b6ccc74c0"
+    playwright_home: "NOT RUN - playwright MCP cannot launch as root on this host (Chromium sandbox). Equivalent check with chrome --headless --no-sandbox --dump-dom against the LIVE url: ARIF FAZIL, WEALTH, WELL, Capital, Human, 'Read the writing', Essays, 'Institutional Governance', 'Full Ecosystem Topology' all present; 0 occurrences of Not Found / Page not found."
+    playwright_human: "not run"
+    playwright_institution: "not run"
+    axe: not_run
+    lighthouse: not_run
+    link_audit: "Every client-side <Link to=...> on Home.tsx matched against path=... in App.tsx: 3/3 resolve (/999, /words, /work). Before this change 4 resolved to no route. The 4 dead strings (/world/petronas/shadow/, to:'/map', '/forge/') are absent from every deployed bundle."
+    destination_probe: "All 12 homepage destinations probed live over HTTP: all reach 200 (via their canonical redirect where the site uses one)."
+    rendered_destination_probe: "chrome headless render of /politics/shadow (h1 'PM Bayang'), /graph (41KB, no NotFound), /words (h1 'Words - Essays'): all render real content."
+    deploy_gates: "14/14 pass - candidate.source_clean, candidate.asset_references, candidate.stale_dev_entries (expected exit 1), web_zen.preflight, web_zen.sense, web_zen.doctor, caddy.validate, manifest.containment, live.http_probe, live.soft200_guard, live.split_roots_local, web_zen.verify, verify.pages (229 pages verified, 9 intentional exclusions), post_deploy.wealth_render (advisory)."
+  security:
+    secrets_scan: "clean - grep for password|secret|api_key|PRIVATE KEY over the deployed diff: 0 hits"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: "/root/forge_work/deployments/arif-fazil.com/20261122T045934416658262Z/previous"
+    git: "git revert 3c71bb2e"
+    command: "bash /root/arif-fazil.com/scripts/deploy-site.sh arif-fazil.com --restore <TAG>  # TAG in the deploy receipt"
+  requested_action: "deploy executed (no Caddy reload; no make deploy)"
+  approver: "Muhammad Arif bin Fazil (F13 SOVEREIGN) - in-session order 2026-11-22: 'make sure the homepage is upgraded accordingly and aligned with the entire site' + 'upgrade the repo for ariffazil accordingly if needed as well'"
+  receipt: "/root/forge_work/deployments/arif-fazil.com/20261122T045934416658262Z/receipt.json (status=live)"

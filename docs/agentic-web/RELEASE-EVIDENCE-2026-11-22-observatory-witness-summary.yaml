@@ -1,0 +1,40 @@
+# Release evidence — Observatory witness summary + alarm-aware planes (2026-11-22)
+# Not a kernel SEAL. External name: release evidence / deploy receipt.
+release_candidate:
+  commit: "7959b7280a326f0d5be3de58ed6180eda728431f"
+  branch: main
+  environment: production_public_html
+  changed_routes:
+    - "/arifos/"
+  public_effect:
+    - "WITNESS SUMMARY — one labelled line of state now sits between the title and the role bar: OPEN FINDINGS (5) · BLOCKED FLOORS (1 of 13) · DRIFT (1/9 drifted) · FRESHNESS (3m ago · fresh). Values are read from what the page already renders; no second fetch, no new data path."
+    - "The 8-card reality-loop spine is compacted to one line by default (it duplicated the nav and the plane list, and consumed the entire first screen above the title). 'Show phase detail' toggles it."
+    - "The charter strip no longer overflows horizontally and clips mid-word ('OBSERVE_ONLY_unless_bo')."
+    - "ALARM-AWARE PLANES — a collapsed plane holding a HOLD or a blocked floor now carries that fact in its own header ('1 BLOCKED', '2 HOLDS', '1 HOLD') and HOLD planes open themselves. A hold is never hidden behind a collapsed marker."
+    - "Display layer only: no data path, no judgement, no authority, no constitutional change."
+  tests:
+    doctor_before: "web_zen.doctor gate exit=0 (pre_mutation_environment)"
+    doctor_after: "web_zen.verify gate exit=0 (post_live)"
+    doctor_fail_set_delta: "none"
+    build: "arifos site has no build step (static source: sites/arif-fazil.com/public/arifos). Deploy build_hash recorded in the deploy receipt."
+    playwright_home: "NOT RUN — playwright MCP cannot launch as root on this host (Chromium sandbox). Equivalent: chrome --headless --no-sandbox --dump-dom against the LIVE https://arif-fazil.com/arifos/ → witness summary populated (5 / 1 of 13 / 1/9 drifted / 3m ago fresh), 5 planes badged, spine carries loop-compact, 21 planes collapsed."
+    playwright_human: "not run"
+    playwright_institution: "not run"
+    axe: not_run
+    lighthouse: not_run
+    pre_deploy_local_harness: "Edited file served locally on 127.0.0.1 with /api/public-state proxied to the live kernel endpoint; rendered headless before any production write. Summary populated, badges correct, spine compacted — identical to the post-deploy live reading."
+    role_purity_aaa: "AAA Cockpit (https://aaa.arif-fazil.com/) renders 'What needs my decision now?' + 'Authority holds' x5, with 0 occurrences of FND- and 0 of the capability matrix. Its contract — attention only, no floor scores — holds."
+    role_purity_mcp: "MCP Gateway (https://mcp.arif-fazil.com/) carries no findings ledger and no 'what needs' language; it describes the 13-floor governance layer it enforces (a trust claim for agents), which is its auth boundary, not a floor-score dashboard."
+    deploy_gates: "pass — manifest.containment (create 0 / overwrite 0 / delete 0 / symlink_replace 0), live.http_probe, live.soft200_guard (soft200_probe_http=404). All preserve-live overlays held (public-state.json, .well-known/*, findings/*, aaa manifests)."
+  security:
+    secrets_scan: "clean — no credential material introduced; the change is a static display file"
+    new_public_write_capability: false
+    a2a_still_404: true
+    caddy_reloaded: false
+  rollback:
+    backup: "/root/forge_work/deployments/arifos/20261122T051344838503114Z/previous"
+    git: "git revert 7959b728"
+    command: "bash /root/arif-fazil.com/scripts/deploy-site.sh arifos --restore <TAG>"
+  requested_action: "deploy executed (no Caddy reload; no make deploy)"
+  approver: "Muhammad Arif bin Fazil (F13 SOVEREIGN) - in-session order 2026-11-22: 'now please upgrade amd improve this site so that future humans and agents will have lower chaos' + the critique pasted (Observatory vs AAA Cockpit vs MCP Gateway)"
+  receipt: "/root/forge_work/deployments/arifos/20261122T051344838503114Z/receipt.json (status=live)"

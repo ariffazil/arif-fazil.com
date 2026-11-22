@@ -16,4 +16,4 @@
 3. **Sarawak Gas Aggregation:** Transition of gas buying rights to PETROS risks annual cash flow erosion of up to RM6.0B.
 
 ## Verified Machine State
-- Full JSON Schema: https://arif-fazil.com/wealth/petronas/state.json
+- Full JSON Schema: https://arif-fazil.com/petronas/state.json

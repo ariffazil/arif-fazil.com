@@ -1,20 +1,203 @@
-<!doctype html>
-<html lang="en" data-ring="SOUL">
+<!DOCTYPE html>
+<html lang="en" data-ring="SOUL" data-agent-surface="content-first">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Briefing — Arif Fazil</title>
-    <meta name="theme-color" content="#0A0B0D" />
-    <meta name="description" content="The proof engine: 13 floor-lamps F1-F13, live verdict ticker, kernel telemetry." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Briefing — Two ways to start · Arif Fazil</title>
+    <meta name="description" content="Two ways to start: a 4-week supervised AI-agent pilot (band RM20,000–50,000, eight exit criteria reported weekly), or a fixed-scope decision with an evidence trail (RM15,000–50,000 setup, RM3,000–10,000 per month). Thirteen years of offshore decisions, inspectable." />
     <link rel="canonical" href="https://arif-fazil.com/institution/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Briefing — Arif Fazil" />
-    <meta property="og:description" content="The proof engine: 13 floor-lamps F1-F13, live verdict ticker, kernel telemetry." />
+    <meta property="og:title" content="Briefing — Two ways to start · Arif Fazil" />
+    <meta property="og:description" content="A 4-week supervised AI-agent pilot (band RM20,000–50,000) or a fixed-scope decision with an evidence trail (RM15,000–50,000 setup, RM3,000–10,000/month). Evidence you can inspect before you decide." />
     <meta property="og:url" content="https://arif-fazil.com/institution/" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Briefing — Arif Fazil","description":"The proof engine: 13 floor-lamps F1-F13, live verdict ticker, kernel telemetry.","url":"https://arif-fazil.com/institution/","author":{"@type":"Person","name":"Arif Fazil","url":"https://arif-fazil.com/"}}</script>
-    <script type="module"></script>
+    <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://arif-fazil.com/og-identity.png" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+    <meta name="agent-access" content="allow-read allow-train allow-cite" />
+    <link rel="ard" type="application/json" href="/.well-known/ard.json" />
+    <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Briefing — Two ways to start · Arif Fazil",
+      "description": "Two ways to start working with Arif Fazil: a 4-week supervised AI-agent pilot, or a fixed-scope decision with an evidence trail.",
+      "url": "https://arif-fazil.com/institution/",
+      "author": { "@type": "Person", "name": "Muhammad Arif bin Fazil", "url": "https://arif-fazil.com/about" }
+    },
+    {
+      "@type": "Service",
+      "name": "Supervised AI Action Control — 4-Week Design Partner Pilot",
+      "description": "Four weeks, one live AI-agent workflow, eight exit criteria measured weekly and reported honestly.",
+      "url": "https://arif-fazil.com/pilot/",
+      "provider": { "@type": "Person", "name": "Muhammad Arif bin Fazil", "url": "https://arif-fazil.com/about" },
+      "areaServed": "MY",
+      "offers": { "@type": "Offer", "priceCurrency": "MYR", "priceRange": "RM20,000–RM50,000", "availability": "https://schema.org/LimitedAvailability" }
+    },
+    {
+      "@type": "Service",
+      "name": "Fixed-scope decision with an evidence trail",
+      "description": "One decision, one evidence trail, one reusable kit — basin screening, prospect evaluation, seismic interpretation, or an evidence-and-governance system.",
+      "provider": { "@type": "Person", "name": "Muhammad Arif bin Fazil", "url": "https://arif-fazil.com/about" },
+      "areaServed": "MY",
+      "offers": { "@type": "Offer", "priceCurrency": "MYR", "priceRange": "RM15,000–RM50,000", "availability": "https://schema.org/LimitedAvailability" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arif-fazil.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Briefing", "item": "https://arif-fazil.com/institution/" }
+      ]
+    }
+  ]
+}
+    </script>
+    <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
+    <!-- content-first shell: no SPA module placeholder, by design. Matches the
+         /privacy/ and /pilot/ shells — public/, dist/ and the live webroot stay
+         byte-identical, so a deploy is a straight copy with no build transform. -->
+    <style>
+      body{margin:0;background:var(--bg-narrative,#0B0B0F);color:var(--text-primary,#F5F5F7);
+        font-family:var(--font-sans,system-ui,sans-serif);line-height:1.55}
+      .frame{max-width:54rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+      a{color:var(--gold-sovereign,#E8B84B)} a:hover{color:#fff}
+      h1{font-family:var(--font-display,serif);font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.1;margin:0 0 1rem}
+      h2{font-size:1.15rem;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.06em}
+      h3{font-size:1rem;margin:0 0 .4rem}
+      .meta{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+      .card{border:1px solid #2a2a3a;border-radius:8px;padding:1rem 1.15rem;margin:.75rem 0;background:rgba(255,255,255,.02)}
+      .offer{border:1px solid rgba(232,184,75,.42);border-radius:10px;padding:1.15rem 1.3rem;margin:1rem 0;background:rgba(232,184,75,.05)}
+      .offer h3{font-size:1.05rem}
+      .price{font-family:var(--font-mono,monospace);font-size:.82rem;color:var(--gold-sovereign,#E8B84B);margin:.5rem 0 0}
+      .cta{display:inline-block;margin:.6rem .5rem 0 0;padding:.55rem 1rem;border-radius:6px;
+        font-family:var(--font-mono,monospace);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
+        border:1px solid rgba(232,184,75,.55);color:var(--gold-sovereign,#E8B84B);text-decoration:none}
+      .cta.solid{background:var(--gold-sovereign,#E8B84B);color:#0B0B0F;border-color:var(--gold-sovereign,#E8B84B);font-weight:700}
+      .cta:hover{opacity:.9}
+      .nav{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1rem 0 1.5rem;font-family:var(--font-mono,monospace);font-size:.75rem;letter-spacing:0.08em;text-transform:uppercase}
+      .nav-brand{font-family:var(--font-display,serif);font-size:.95rem;font-weight:bold;color:var(--text-primary,#F5F5F7);text-decoration:none;margin-right:auto;text-transform:none}
+      .nav a:not(.nav-brand){color:#9CA3AF;text-decoration:none;transition:color 0.2s}
+      .nav a:not(.nav-brand):hover{color:var(--gold-sovereign,#E8B84B)}
+      ul{padding-left:1.2rem} li{margin:.35rem 0}
+      code{font-family:var(--font-mono,monospace);font-size:.85em;background:rgba(232,184,75,.1);padding:1px 5px;border-radius:4px}
+      .note{font-size:.85rem;color:#9a958c;border-left:2px solid #2a2a3a;padding-left:.85rem;margin-top:2rem}
+      .small{font-size:.85rem;color:#9a958c}
+      table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.5rem 0}
+      td,th{border-bottom:1px solid #2a2a3a;padding:.4rem .3rem;text-align:left;vertical-align:top}
+      th{font-family:var(--font-mono,monospace);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#8a8378}
+    </style>
   </head>
   <body>
-    <div id="root"><main style="padding:2rem;max-width:48rem;margin:0 auto;font-family:sans-serif;"><h1>Work together, inspect first.</h1><p>ARIF FAZIL — exploration geoscientist at PETRONAS Carigali, and builder of evidence-bounded agent systems. This page is the professional conversation path. It is not a sales funnel and not a doctrine dump.</p><h2>Boundaries</h2><ul><li>No confidential PETRONAS material. Public work is personal unless marked as published institutional material.</li><li>No investment advice. No autonomous authority is delegated by reading this site.</li><li>Civic commentary (MakcikGPT) is editorial. It is not the professional identity contract.</li></ul><p><a href="/" style="color:#E4572E;">Home</a> · <a href="/arifos/" style="color:#E4572E;">arifOS</a> · <a href="/laws/" style="color:#E4572E;">Laws</a></p></main></div>
+    <div class="frame">
+      <link rel="stylesheet" href="/_shared/fed-nav.css">
+      <div id="fed-nav-root"></div>
+      <noscript><header class="fed-navbar" aria-label="Federation primary navigation"><a class="nav-brand" href="/"><span class="psi-badge">Ψ</span><span>ARIF FAZIL</span></a><nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/about">About</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav></header></noscript>
+      <script src="/_shared/fed-nav.js" defer></script>
+
+      <p class="meta">Briefing · content-first shell (parity with /institution React route)</p>
+      <h1>Work together, inspect first.</h1>
+      <p><strong>Arif Fazil</strong> — exploration geoscientist at PETRONAS Carigali, and builder of
+        evidence-bounded agent systems. Thirteen years of offshore decisions under incomplete data.
+        This is the professional conversation path: what you can start, what it costs, and what you
+        can inspect before you decide. Nothing here is a sales funnel and nothing is a doctrine dump.</p>
+
+      <h2>Two ways to start</h2>
+
+      <div class="offer">
+        <h3>1 · Design partner pilot — AI action control</h3>
+        <p>Four weeks around one live AI-agent workflow: evidence on every action, a named human on
+          every consequential one, and a tamper-evident receipt chain proving it afterwards. Eight
+          exit criteria are measured weekly and reported honestly — if a number misses, the weekly
+          report says so. You keep the receipts either way.</p>
+        <p class="price">Band RM 20,000–50,000 · one design-partner slot at a time</p>
+        <p><a class="cta solid" href="/pilot/">See the pilot and the eight criteria</a>
+           <a class="cta" href="mailto:arif@arif-fazil.com?subject=PILOT">Apply — subject PILOT</a></p>
+      </div>
+
+      <div class="offer">
+        <h3>2 · Fixed-scope decision with an evidence trail</h3>
+        <p>One decision, one evidence trail, one reusable kit. Basin screening, prospect evaluation,
+          seismic interpretation, or an evidence-and-governance system for a team already running
+          agents. Scope is agreed and fixed before work starts; the trail is the deliverable, not a
+          status update.</p>
+        <p class="price">Setup RM 15,000–50,000 · retainer RM 3,000–10,000 per month</p>
+        <p><a class="cta" href="mailto:arif@arif-fazil.com?subject=Briefing%20request%20%E2%80%94%20arif-fazil.com">Request a briefing</a></p>
+      </div>
+
+      <h2>What I can contribute to</h2>
+      <table>
+        <tr><th>Area</th><th>What it means</th></tr>
+        <tr><td>Basin synthesis</td><td>Seismic and stratigraphic reasoning, prospect-risk framing
+          under incomplete data. Six flagship decisions, each with its evidence class attached.</td></tr>
+        <tr><td>Evidence systems</td><td>Claim → evidence → uncertainty → decision consequence. Every
+          public claim carries its truth class; the withheld list is published with the published list.</td></tr>
+        <tr><td>Governed agent architecture</td><td>Policy before execute, human veto, audit trail —
+          governance measured against a running system, not against a slide.</td></tr>
+      </table>
+
+      <h2>Evidence you can inspect first</h2>
+      <ul>
+        <li><a href="/work/exploration-2013-2026/">Exploration 2013–2026</a> — thirteen years in one
+          evidence-tagged artifact: career arc, six flagship cases, what was proven, what is withheld,
+          plus a frozen PDF with a published SHA-256.</li>
+        <li><a href="/earth">/earth</a> — live, source-linked Earth model (Macrostrat, PB2002, USGS).
+          Computes; does not adjudicate.</li>
+        <li><a href="/work">/work</a> — selected wells and systems, with withheld-material notes.</li>
+        <li><a href="/vitals/">/vitals</a> — PETRONAS in public numbers: cash against sellable barrels.</li>
+        <li><a href="/arifos/">/arifos</a> — the rules the machines follow. Judge before they act.</li>
+        <li><a href="/999/">/999</a> — verification and provenance records: evidence snapshots, not
+          self-issued certificates.</li>
+        <li><a href="https://github.com/ariffazil">github.com/ariffazil</a> — GEOX, arifOS and this
+          site, in the open.</li>
+      </ul>
+
+      <h2>Questions this answers</h2>
+      <ul>
+        <li>How many AI actions bypass the policy controls?</li>
+        <li>How long does it take to revoke an autonomous agent?</li>
+        <li>Can every consequential decision be reconstructed after the fact?</li>
+        <li>Can an auditor verify the chain of authority?</li>
+      </ul>
+      <p class="small">Asked against a running system, not against a slide. Two of the four already
+        have dated, uncomfortable answers in a public failure record — published with the raw probes,
+        including the numbers that do not flatter the system that produced them.</p>
+
+      <h2>Boundaries</h2>
+      <ul>
+        <li>No confidential PETRONAS material. Public work is personal unless marked as published
+          institutional material.</li>
+        <li>No investment advice. No autonomous authority is delegated by reading this site.</li>
+        <li>Civic commentary (MakcikGPT) is editorial. It is not the professional identity contract.</li>
+      </ul>
+
+      <h2>How to start</h2>
+      <p>Email <a href="mailto:arif@arif-fazil.com">arif@arif-fazil.com</a> with subject
+        <code>PILOT</code> or <code>Briefing request</code>, or message
+        <a href="https://t.me/ASI_arifos_bot" rel="noopener">t.me/ASI_arifos_bot</a> with the same
+        word. Include three things:</p>
+      <ul>
+        <li>the workflow your agents actually run,</li>
+        <li>who owns its risk,</li>
+        <li>what "contained" would mean for you, in one sentence.</li>
+      </ul>
+      <p class="small">No "production-ready". No "zero-risk". The numbers above are criteria — the
+        engagement exists to measure them.</p>
+
+      <h2>Agents and machines</h2>
+      <p class="small">Agents may read and cite this page; reading grants no authority. The
+        agent contract is <a href="/human">/human</a>. Machine-readable surfaces:
+        <a href="/llms.txt">/llms.txt</a> ·
+        <a href="/missions.json">/missions.json</a> ·
+        MCP at <a href="https://mcp.arif-fazil.com/mcp">mcp.arif-fazil.com/mcp</a>.
+        Training and citation permitted with attribution (see <a href="/rsl.xml">/rsl.xml</a>).</p>
+
+      <p class="note">Content-first surface for humans and agents (no JavaScript required).
+        Full interactive version: <a href="/institution/">/institution/</a> (SPA route) ·
+        <a href="/">Home</a> · <a href="/arifos/">arifOS</a> · <a href="/laws/">Laws</a></p>
+    </div>
   </body>
 </html>

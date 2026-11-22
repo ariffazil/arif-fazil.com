@@ -7,7 +7,6 @@
 const presenceLinks = [
   { label: 'About', href: '/about' },
   { label: 'Writing', href: '/words/' },
-  { label: 'MakcikGPT', href: '/world/makcikgpt/' },
   { label: 'Briefing', href: '/institution/' },
 ] as const
 
@@ -15,14 +14,12 @@ const workLinks = [
   { label: 'Wells & Evidence', href: '/work/' },
   { label: 'Earth', href: '/earth/' },
   { label: 'Observatory', href: '/arifos/' },
-  { label: 'Economics', href: '/economics/' },
 ] as const
 
 const connectLinks = [
   { label: 'Contact', href: '/contact/', external: false },
   { label: 'Telegram', href: 'https://t.me/ariffazil', external: true },
   { label: 'GitHub', href: 'https://github.com/ariffazil', external: true },
-  { label: 'Privacy', href: '/privacy/', external: false },
 ] as const
 
 export default function Footer() {
@@ -118,7 +115,10 @@ export default function Footer() {
               Ditempa bukan diberi — forged, not given.
             </p>
             <p className="font-mono text-[11px] tracking-[0.06em] text-[#9AA0A8]/60">
-              © 2026 ARIF FAZIL
+              © 2026 ARIF FAZIL ·{' '}
+              <a href="/privacy/" className="hover:text-[#EDEAE2] transition-colors">
+                Privacy
+              </a>
             </p>
           </div>
         </div>

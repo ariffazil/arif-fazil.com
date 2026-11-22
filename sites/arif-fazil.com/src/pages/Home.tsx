@@ -184,25 +184,13 @@ export function Home() {
               systems bounded by evidence and human authority.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
+            <div className="mt-9 flex items-center">
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A0B0D] font-mono text-xs font-bold uppercase tracking-[0.14em] px-6 py-3 rounded hover:bg-[#E2BC6B] transition-colors"
               >
                 See the work <span aria-hidden="true">→</span>
               </Link>
-              <Link
-                to="/about"
-                className="font-mono text-xs uppercase tracking-[0.14em] text-[#9AA0A8]/80 hover:text-[#EDEAE2] transition-colors"
-              >
-                About
-              </Link>
-              <a
-                href="/institution/"
-                className="font-mono text-xs uppercase tracking-[0.14em] text-[#9AA0A8]/80 hover:text-[#D4A853] transition-colors"
-              >
-                Request a briefing
-              </a>
             </div>
           </div>
         </div>
@@ -216,7 +204,7 @@ export function Home() {
               01 · Who
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-normal tracking-tight text-[#EDEAE2] max-w-3xl leading-[1.15]">
-              Geology taught me that reality never arrives as a clean dataset.
+              Geology taught me reality never arrives clean.
             </h2>
           </RevealOnScroll>
 

@@ -338,6 +338,19 @@ footer {
 }
 .pm-portrait .plate-note span{font-size:2.6rem;opacity:.28;letter-spacing:.06em;color:var(--ink)}
 
+/* === hermes refine: stretched-link card, overflow guards, a11y === */
+.pm-card{position:relative}
+.card-stretch{text-decoration:none;color:inherit}
+.card-stretch::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.pm-card-actions{position:relative;z-index:2}
+.pm-portrait .order-badge,.pm-portrait .verdict-badge{z-index:2}
+@media(max-width:639px){
+  .wrap,.person,.person ul,.person li{max-width:100%;overflow-wrap:break-word}
+  .person pre,.person table,.person .wide{overflow-x:auto}
+}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:99;padding:.6rem 1rem;background:#00A19C;color:#04121a;font-family:var(--font-mono,monospace);font-size:.8rem;border-radius:0 0 6px 0}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #00A19C;outline-offset:2px;border-radius:3px}
 </style>
 <script type="application/ld+json">
 {
@@ -412,6 +425,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 </div>
 </section>
 <!-- Gallery Grid (13 Cards) -->
+<a class="skip-link" href="#pm-card-grid">Langkau ke galeri kerusi</a>
 <main class="pm-grid" id="pm-card-grid">
 <!-- Card L01: Tengku Razaleigh Hamzah -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tengku razaleigh hamzah pengasas · pengerusi &amp; ketua eksekutif 1974–1976 putera aristokrat kelantan &amp; arkitek kedaulatan petroleum negara. menggubal akta pembangunan petroleum 1974 (pda 1974) tanpa mengambil sesen pun gaji korporat. menghubungkan entiti korporat petroleum terus ke dalam orbit kekuasaan politik; merintis model pelaburan konglomerat politik bumiputera (fleet holdings, bbmb) yang kemudiannya menjadi liabiliti fiskal.">
@@ -798,7 +812,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 </div>
 </article>
 <!-- Card L13: YM Tan Sri Tengku Muhammad Taufik -->
-<a aria-label="YM Tan Sri Tengku Muhammad Taufik — 33 Bayang Penuh, dossier lengkap" class="pm-card" data-category="ceo incumbent" data-search="ym tan sri tengku muhammad taufik presiden &amp; ketua pegawai eksekutif kumpulan 2020–kini teknokrat perakaunan global &amp; jururunding davos. mengemudi pemulihan pasca-pandemik mencatatkan keuntungan bersejarah sambil menubuhkan entiti tenaga bersih gentari. kepatuhan teknokratik menyalurkan dividen gergasi persekutuan (rm50b 2022, rm40b 2023, rm32b 2024); hakisan monopoli statutori pda 1974 di sarawak kepada petros." href="/world/petronas/shadow/tengku-muhammad-taufik/" style="cursor:pointer;display:block;text-decoration:none;color:inherit">
+<article class="pm-card" data-category="ceo incumbent" data-search="ym tan sri tengku muhammad taufik presiden &amp; ketua pegawai eksekutif kumpulan 2020–kini teknokrat perakaunan global &amp; jururunding davos. mengemudi pemulihan pasca-pandemik mencatatkan keuntungan bersejarah sambil menubuhkan entiti tenaga bersih gentari. kepatuhan teknokratik menyalurkan dividen gergasi persekutuan (rm50b 2022, rm40b 2023, rm32b 2024); hakisan monopoli statutori pda 1974 di sarawak kepada petros.">
 <div class="pm-portrait">
 <div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk YM Tan Sri Tengku Muhammad Taufik. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>TMT</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L13</div>
@@ -806,7 +820,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 </div>
 <div class="pm-body">
 <div class="pm-title">Presiden &amp; Ketua Pegawai Eksekutif Kumpulan</div>
-<h2 class="pm-name">YM Tan Sri Tengku Muhammad Taufik</h2>
+<h2 class="pm-name"><a class="card-stretch" href="/world/petronas/shadow/tengku-muhammad-taufik/" aria-label="YM Tan Sri Tengku Muhammad Taufik — 33 Bayang Penuh, dossier lengkap">YM Tan Sri Tengku Muhammad Taufik</a></h2>
 <div class="pm-tenure">2020–kini</div>
 <div class="pm-section">
 <div class="pm-section-label persona">Persona &amp; Mandat</div>
@@ -832,7 +846,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <a class="dossier-btn" href="#ym-tan-sri-tengku-muhammad-taufik">Dossier Arkib Mendalam ↓</a>
 </div>
 </div>
-</a>
+</article>
 </main>
 <div class="dossier-break" id="dossier-arkib">
 <h2>Dossier Arkib Mendalam</h2>

@@ -45,12 +45,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/vitals/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-09-27</lastmod>
-  </url>
-  <url>
     <loc>https://arif-fazil.com/work/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -92,11 +86,6 @@
     <loc>https://arif-fazil.com/words/wiki/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arif-fazil.com/words/makcikgpt/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://arif-fazil.com/world/politics/</loc>
@@ -292,12 +281,6 @@
     <lastmod>2026-11-18</lastmod>
   </url>
   <url>
-    <loc>https://arif-fazil.com/999/verify/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
     <loc>https://arif-fazil.com/witness-theory/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -447,11 +430,6 @@
   </url>
   <url>
     <loc>https://arif-fazil.com/world/makcikgpt/ai-johor-makcik-tanya</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-leadership-1974-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

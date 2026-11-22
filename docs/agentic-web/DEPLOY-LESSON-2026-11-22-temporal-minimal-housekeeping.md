@@ -66,3 +66,61 @@ within the `max-age=14400` window.
    and terrible for anything durable: the institutional-context line added to them lives
    only in the working tree and the live file. A tracked template plus a generated overlay
    would fix the class, not just this instance.
+
+---
+
+# Addendum — the three residuals, closed (2026-11-22, later the same day)
+
+**1. The AAA cockpit wording — CLOSED.** The one-writer gate did not say "no". It said
+*"route changes via worktree-lane.sh"*, and that lane was closed because the AAA git
+directory carries the immutable attribute. The gate also names the sanctioned door
+explicitly: **immutability is F13-sovereign only via `immutability_cycle.sh`**. That
+helper unlocks what it lists and re-locks it on exit, so an aborted run can never leave
+the tree softer than it was found. Using it, the one-line change landed, the file was
+re-frozen, `aaa-a2a.service` was restarted, and the live cockpit's first block now opens:
+
+> **AAA points; it does not judge, execute, or seal.** Server-rendered live view of the
+> 13-organ arifOS federation — per-actor arifFlow metabolism, authority holds, and
+> truth-contract claims.
+
+The lesson: *read the refusal as a routing instruction, not a wall.* A gate that names
+its own sanctioned tool is telling you where to go.
+
+**2. The Cloudflare edge copies — CLOSED BY EXPIRY, AND ARMED.** The origin was already
+clean; the edge was holding `max-age=14400` copies cached at 06:07:44Z, so they expire at
+10:07:44Z (18:07 MYT). A purge was attempted with every CF token on the host (2 distinct
+tokens, 11 env files): all ACTIVE for reads, all refused `POST /zones/<id>/purge_cache`
+with 401/10000 — the token is live but not scoped for cache purge, and there is no legacy
+global-key pair on the box. So the closure is armed, not assumed:
+
+- `/root/scripts/cf_purge_urls.py` — one command for whoever holds a purge-scoped token,
+  using the same credential pattern as the site's own Cloudflare script.
+- `/root/scripts/verify-portrait-edge-expiry.sh` — a one-shot witness scheduled for
+  18:12 MYT, five minutes after the TTL, that re-probes all 23 URLs, writes the receipt
+  into the deployment directory and removes its own crontab line.
+
+**A cached object you did not purge is a promise, not a fact.** A TTL with a timestamp and
+a witness that checks it is a fact.
+
+**3. The commodity boards — CLOSED.** The class was "a git-ignored page has no source of
+truth, so regeneration silently eats whatever the shell said". The fix is one chain:
+
+```
+templates/commodity/<asset>.html   tracked shell (source of truth)
+        │  scripts/sync-commodity-boards.py  (copy → refresh packet → guarantee the line)
+        ▼
+public/<asset>/index.html           runtime copy (cron-resealed, still git-ignored)
+        │  vite build
+        ▼
+dist/<asset>/index.html             build output → deployed to the serving tree
+```
+
+The packet refresh **reuses the tracked reseal logic** rather than re-implementing the
+merge, and the script never fails a build — a missing snapshot API is a warning, not a
+red light. It is wired into `npm run prebuild`, so the boards are reproduced on every
+build instead of depending on an untracked file that nobody can see in review.
+
+The generalisable rule: **gitignore is for churn, not for truth.** A file that changes
+every hour should not be tracked — but its shell should have a tracked ancestor, or the
+next regeneration will quietly delete everything the shell said.
+

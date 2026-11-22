@@ -126,6 +126,22 @@ html[data-organ="arifos"] .mutation-grid,html[data-organ="arifos"] .selfcheck-gr
 html[data-organ="arifos"] .mutation-item,html[data-organ="arifos"] .selfcheck-item{padding:.7rem;background:var(--surface-2,rgba(255,255,255,.02));border:1px solid var(--color-line-hairline);border-radius:.45rem}
 html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-value{display:block;margin-top:.25rem;color:var(--color-ink-primary);font:700 .78rem/1.45 var(--font-mono);overflow-wrap:anywhere}
 @media(max-width:640px){html[data-organ="arifos"] .organ-signal{grid-template-columns:1fr}html[data-organ="arifos"] .organ-signal-value{justify-self:start}}
+/* Role Separation + Collapsible Deep Witness (Option A · 2026-11-22) */
+html[data-organ="arifos"] .obs-role-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
+@media(max-width:760px){html[data-organ="arifos"] .obs-role-bar{grid-template-columns:1fr}}
+html[data-organ="arifos"] .obs-role-card{display:block;padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);text-decoration:none;color:var(--text);transition:border-color .18s}
+html[data-organ="arifos"] .obs-role-card:hover{border-color:var(--gold)}
+html[data-organ="arifos"] .obs-role-card--active{border-color:var(--gold);background:rgba(212,168,83,.08)}
+html[data-organ="arifos"] .obs-role-k{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+html[data-organ="arifos"] .obs-role-q{display:block;font-size:13px;font-weight:600;color:var(--text)}
+html[data-organ="arifos"] .obs-role-d{display:block;font-size:11px;color:var(--text-secondary);margin-top:2px}
+html[data-organ="arifos"] .obs-witness-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:0 0 18px;padding:10px 14px;border-radius:8px;background:var(--bg-tertiary);border:1px solid var(--border);font-family:var(--font-mono);font-size:11px;color:var(--text-secondary)}
+html[data-organ="arifos"] .obs-btn{background:var(--bg-secondary);color:var(--text);border:1px solid var(--border);border-radius:5px;padding:5px 10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;transition:border-color .15s,color .15s}
+html[data-organ="arifos"] .obs-btn:hover{border-color:var(--gold);color:var(--gold)}
+html[data-organ="arifos"] section.obs-collapsible > h2{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none}
+html[data-organ="arifos"] section.obs-collapsible > h2::after{content:"▾";font-family:var(--font-mono);font-size:13px;color:var(--gold);margin-left:auto}
+html[data-organ="arifos"] section.obs-collapsible.obs-collapsed > h2::after{content:"▸ expand";font-size:11px;color:var(--text-secondary)}
+html[data-organ="arifos"] section.obs-collapsible.obs-collapsed > :not(h2){display:none !important}
 </style>
 
 <script type="application/ld+json">
@@ -304,8 +320,34 @@ html[data-organ="arifos"] .mutation-value,html[data-organ="arifos"] .selfcheck-v
   </div>
   <style>body[data-state="loaded"] [data-prerender-banner]{display:none}</style>
 
-  <h1 style="margin:0 0 .5rem;letter-spacing:-.02em">arifOS Observatory — <em>Governed Knowledge Factory</em> &amp; Live Witness</h1>
-  <p style="margin:0 0 .85rem;color:var(--text-secondary);font-size:.95rem">Reality → Gap → Witness → Proposal → Verification → Authorization → Mutation → Consequence → Human Acceptance → Typed Memory. Reporting and contradiction metabolism only — sovereign adjudication stays in arifOS (F13).</p>
+  <h1 style="margin:0 0 .5rem;letter-spacing:-.02em">arifOS Observatory — <em>Deep Witness</em> &amp; Knowledge Factory</h1>
+  <p style="margin:0 0 1rem;color:var(--text-secondary);font-size:.92rem">Read-only evidence bus: what is actually measured, proven, stale, degraded, or unknown right now. Does not ask for human attention or issue decisions.</p>
+
+  <nav class="obs-role-bar" id="witness-role-bar" aria-label="Federation surface roles">
+    <div class="obs-role-card obs-role-card--active" aria-current="page">
+      <span class="obs-role-k">Observatory · Here (Deep Witness)</span>
+      <span class="obs-role-q">What is actually true right now?</span>
+      <span class="obs-role-d">Floors, drift, findings &amp; VAULT proofs · OBSERVE_ONLY</span>
+    </div>
+    <a class="obs-role-card" href="https://aaa.arif-fazil.com/">
+      <span class="obs-role-k">AAA Cockpit ↗ (Attention Membrane)</span>
+      <span class="obs-role-q">What needs my decision now?</span>
+      <span class="obs-role-d">Human decision queue &amp; authority holds</span>
+    </a>
+    <a class="obs-role-card" href="https://mcp.arif-fazil.com/">
+      <span class="obs-role-k">MCP Gateway ↗ (Protocol Door)</span>
+      <span class="obs-role-q">How do machines enter?</span>
+      <span class="obs-role-d">Machine endpoints, tools/list &amp; auth boundary</span>
+    </a>
+  </nav>
+
+  <div class="obs-witness-controls" id="witness-controls">
+    <span>Deep telemetry planes start collapsed by default (Open Findings &amp; Governance Floors expanded).</span>
+    <span style="display:flex;gap:8px">
+      <button type="button" class="obs-btn" id="obs-expand-all">Expand all planes</button>
+      <button type="button" class="obs-btn" id="obs-collapse-all">Collapse deep planes</button>
+    </span>
+  </div>
  </header>
 
  <section id="sec-flow-plane" class="observatory-upgrade" aria-labelledby="flow-plane-title">
@@ -558,6 +600,47 @@ el.textContent = (stale?'STALE (>120s) · ':'') + (s<=120? 'observed '+s+'s ago'
 upd();setInterval(upd,5000);})();
 </script>
 
+<script>
+(function(){
+  var defaultOpen = {'sec-knowledge-factory': true, 'sec-governance': true};
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main > section[id]'));
+  sections.forEach(function(sec){
+    var h2 = sec.querySelector(':scope > h2');
+    if(!h2) return;
+    sec.classList.add('obs-collapsible');
+    if(!defaultOpen[sec.id]) sec.classList.add('obs-collapsed');
+    h2.setAttribute('tabindex', '0');
+    h2.setAttribute('role', 'button');
+    h2.setAttribute('aria-expanded', defaultOpen[sec.id] ? 'true' : 'false');
+    function toggle(){
+      var collapsed = sec.classList.toggle('obs-collapsed');
+      h2.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    }
+    h2.addEventListener('click', toggle);
+    h2.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+  });
+  var expBtn = document.getElementById('obs-expand-all');
+  var colBtn = document.getElementById('obs-collapse-all');
+  if(expBtn) expBtn.addEventListener('click', function(){
+    sections.forEach(function(s){ s.classList.remove('obs-collapsed'); var h=s.querySelector(':scope > h2'); if(h) h.setAttribute('aria-expanded','true'); });
+  });
+  if(colBtn) colBtn.addEventListener('click', function(){
+    sections.forEach(function(s){ var keep = !!defaultOpen[s.id]; s.classList.toggle('obs-collapsed', !keep); var h=s.querySelector(':scope > h2'); if(h) h.setAttribute('aria-expanded', keep?'true':'false'); });
+  });
+  function openHash(){
+    var id = (location.hash||'').replace(/^#/,'');
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(el && el.classList.contains('obs-collapsed')){
+      el.classList.remove('obs-collapsed');
+      var h = el.querySelector(':scope > h2');
+      if(h) h.setAttribute('aria-expanded','true');
+    }
+  }
+  window.addEventListener('hashchange', openHash);
+  openHash();
+})();
+</script>
 <footer class="obs-canon-footer" style="border-top:1px solid #1f2733;margin-top:48px;padding:20px clamp(16px,4vw,32px);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#8a93a3;text-align:center">DITEMPA BUKAN DIBERI · arifOS Federation · Ω MIND surface · <a href="https://arif-fazil.com/" style="color:#7FB3FF;text-decoration:none">arif-fazil.com</a></footer>
 </body>
 </html>

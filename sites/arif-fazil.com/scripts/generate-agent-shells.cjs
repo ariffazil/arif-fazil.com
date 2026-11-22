@@ -720,8 +720,9 @@ writeRoute(
        Cloudflare sets one security cookie (<code>cf_clearance</code>) to tell humans apart
        from bots — not used for advertising. No other cookies; nothing written to browser storage.</p>
     <h2>Third parties</h2>
-    <p>Typefaces load from Google Fonts and Fontshare. Aggregate, cookieless visitor counts
-       come from Cloudflare Web Analytics. No personal profile is built from either.</p>
+    <p>Typefaces load from Google Fonts and Fontshare. No analytics script and no visitor
+       counter run on this site today — if a cookieless counter is ever enabled, this page
+       changes before it does. No personal profile is built from any of it.</p>
     <h2>If you email</h2>
     <p>A message arrives in an ordinary mailbox and stays there. Your address is not added to a
        list, sold, or shared. Ask and it is deleted.</p>

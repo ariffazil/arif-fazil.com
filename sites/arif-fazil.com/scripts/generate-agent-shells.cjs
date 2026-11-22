@@ -703,4 +703,36 @@ ${essayLinks}
   }),
 );
 
+writeRoute(
+  'privacy',
+  shell({
+    title: 'Privacy — What is collected · Arif Fazil',
+    description:
+      'This is a personal site. It has no accounts, no advertising, and no tracking of what you read. Here is exactly what is collected.',
+    canonical: 'https://arif-fazil.com/privacy/',
+    ring: 'SOUL',
+    body: `
+    <p class="meta">Privacy · content-first shell (parity with /privacy React route)</p>
+    <h1>Privacy</h1>
+    <p>This is a personal site. It has no accounts, no advertising, and no tracking of what you read.</p>
+    <h2>What is collected</h2>
+    <p>Nothing you read is tracked. No login, no newsletter form, no cross-site analytics.
+       Cloudflare sets one security cookie (<code>cf_clearance</code>) to tell humans apart
+       from bots — not used for advertising. No other cookies; nothing written to browser storage.</p>
+    <h2>Third parties</h2>
+    <p>Typefaces load from Google Fonts and Fontshare. Aggregate, cookieless visitor counts
+       come from Cloudflare Web Analytics. No personal profile is built from either.</p>
+    <h2>If you email</h2>
+    <p>A message arrives in an ordinary mailbox and stays there. Your address is not added to a
+       list, sold, or shared. Ask and it is deleted.</p>
+    <h2>Agent and machine surfaces</h2>
+    <p>Public files such as <code>surfaces.json</code>, <code>llms.txt</code> and the
+       <code>/.well-known</code> directory exist so software can discover what this site
+       publishes. They contain no visitor data.</p>
+    <p class="meta">Full interactive version: <a href="/privacy/">/privacy/</a> (SPA route) ·
+       <a href="/institution/">Contact</a></p>
+`,
+  }),
+);
+
 console.log('generate-agent-shells: done');

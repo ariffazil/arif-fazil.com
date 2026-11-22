@@ -32,7 +32,7 @@ import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = HERE.parent
-ASSETS = ("oil", "gas")
+ASSETS = ("oil", "gas", "gold")
 
 CONTEXT_LINE = (
     '      <!-- Institutional context — one quiet line under the price block. Navigation only; no data touched. -->\n'

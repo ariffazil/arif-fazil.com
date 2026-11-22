@@ -105,36 +105,36 @@ ${items}
 <meta name="description" content="Civic journalism in Bahasa Makcik. ${pieces.length} canonical articles on Malaysian sovereignty, resource governance, institutional integrity, and technology accountability.">
 <link rel="canonical" href="${SITE_BASE}/world/makcikgpt/">
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; background: #0d1117; color: #c9d1d9; }
-  h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+  body { font-family: Inter, system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; background: #0A0B0D; color: #C9D1D9; }
+  h1 { color: #58A6FF; border-bottom: 1px solid #232730; padding-bottom: 0.5rem; }
 
   /* Zen Pulse — 3-second pattern (AGENTS.md §14.3) */
-  .zen-pulse { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0.75rem; margin: 1rem 0; background: #161b22; border: 1px solid #30363d; border-radius: 8px; font-size: 0.85rem; }
+  .zen-pulse { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 0.75rem; margin: 1rem 0; background: #121318; border: 1px solid #232730; border-radius: 8px; font-size: 0.85rem; }
   .zen-pulse .zp-item { display: flex; flex-direction: column; gap: 0.15rem; min-width: 180px; flex: 1 1 180px; }
-  .zen-pulse .zp-ask { color: #6e7681; text-transform: uppercase; letter-spacing: 1px; font-size: 0.65rem; }
-  .zen-pulse .zp-val { color: #c9d1d9; }
-  .zen-pulse .zp-val.gold { color: #ffd700; }
+  .zen-pulse .zp-ask { font-family: "JetBrains Mono", ui-monospace, monospace; color: #8E959E; text-transform: uppercase; letter-spacing: 1px; font-size: 0.65rem; }
+  .zen-pulse .zp-val { color: #C9D1D9; }
+  .zen-pulse .zp-val.gold { color: #D4AF37; }
 
   /* Series filter chips */
   .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 0.5rem; }
-  .chip { display: inline-block; padding: 0.35rem 0.75rem; border: 1px solid #30363d; border-radius: 999px; background: #161b22; color: #58a6ff; font-size: 0.8rem; text-decoration: none; }
-  .chip:hover { border-color: #58a6ff; text-decoration: none; }
+  .chip { display: inline-block; padding: 0.35rem 0.75rem; border: 1px solid #232730; border-radius: 999px; background: #121318; color: #58A6FF; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.8rem; text-decoration: none; }
+  .chip:hover { border-color: #58A6FF; text-decoration: none; }
 
   /* Series sections — collapsible <details> */
-  .zen-reveal { margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: #0d1117; border-left: 2px solid #30363d; border-radius: 4px; }
-  .zen-reveal summary { cursor: pointer; color: #c9d1d9; padding: 0.25rem 0; }
-  .zen-reveal summary:hover { color: #58a6ff; }
+  .zen-reveal { margin: 0.75rem 0; padding: 0.5rem 0.75rem; background: #0A0B0D; border-left: 2px solid #232730; border-radius: 4px; }
+  .zen-reveal summary { cursor: pointer; color: #F5F5F7; padding: 0.25rem 0; }
+  .zen-reveal summary:hover { color: #58A6FF; }
   .series-emoji { font-size: 1.05rem; margin-right: 0.25rem; }
-  .series-count { color: #6e7681; font-size: 0.8rem; font-weight: normal; }
-  .series-topic { color: #8b949e; font-size: 0.85rem; font-style: italic; margin: 0.5rem 0 0.25rem; }
+  .series-count { font-family: "JetBrains Mono", ui-monospace, monospace; color: #8E959E; font-size: 0.8rem; font-weight: normal; }
+  .series-topic { color: #8E959E; font-size: 0.85rem; font-style: italic; margin: 0.5rem 0 0.25rem; }
   .series-list { list-style: none; padding: 0; margin: 0.25rem 0 0; }
-  .series-list li { margin: 0.4rem 0; padding: 0.25rem 0; border-bottom: 1px solid #21262d; font-size: 0.92rem; }
+  .series-list li { margin: 0.4rem 0; padding: 0.25rem 0; border-bottom: 1px solid #1B1E26; font-size: 0.92rem; }
 
-  a { color: #58a6ff; text-decoration: none; }
+  a { color: #58A6FF; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .date { color: #8b949e; font-size: 0.85rem; }
-  .upd { color: #E8B84B; font-style: normal; }
-  .meta { color: #6e7681; font-size: 0.8rem; margin-top: 2rem; }
+  .date { font-family: "JetBrains Mono", ui-monospace, monospace; color: #8E959E; font-size: 0.82rem; }
+  .upd { color: #D4AF37; font-style: normal; }
+  .meta { color: #8E959E; font-size: 0.8rem; margin-top: 2rem; }
 
   /* Flat list (legacy / feed parity) — hidden by default; surfaced for RSS readers */
   .flat-list { display: none; }

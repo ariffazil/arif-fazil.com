@@ -26,9 +26,9 @@
     "metric": "How often did Arif need to know which tool was used? Target: zero.",
     "survival_rule": "Used in a tested workflow \u2192 KEEP \u00b7 Overlapping \u2192 MERGE AS MODE \u00b7 Internal compute \u2192 HIDE \u00b7 Alias \u2192 SDK ONLY \u00b7 No workflow \u2192 REMOVE"
   },
-  "public_url": "https://arif-fazil.com/missions",
+  "public_url": "https://arif-fazil.com/missions/",
   "canonical_kernel_public": {
-    "note": "Public arifOS surface is the Canonical 8 \u2014 not the full federation inventory",
+    "note": "Public arifOS surface is the Canonical 9 — not the full federation inventory",
     "tools": [
       "arif_init",
       "arif_observe",
@@ -37,7 +37,8 @@
       "arif_memory",
       "arif_judge",
       "arif_forge",
-      "arif_seal"
+      "arif_seal",
+      "arif_report"
     ]
   },
   "missions": [

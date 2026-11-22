@@ -43,7 +43,7 @@ function buildSitemap(pieces) {
   const urls = [
     { loc: `${SITE_BASE}/`, priority: 1.0, changefreq: "monthly", lastmod: "2026-09-13" },
     { loc: `${SITE_BASE}/pilot/`, priority: 0.9, changefreq: "weekly" },
-    { loc: `${SITE_BASE}/about`, priority: 0.9, changefreq: "monthly" },
+    { loc: `${SITE_BASE}/about/`, priority: 0.9, changefreq: "monthly" },
     { loc: `${SITE_BASE}/arif/`, priority: 0.9, changefreq: "monthly", lastmod: "2026-11-17" },
     { loc: `${SITE_BASE}/human/`, priority: 0.85, changefreq: "monthly" },
     { loc: `${SITE_BASE}/institution/`, priority: 0.9, changefreq: "monthly" },
@@ -66,7 +66,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/words/wiki/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/words/makcikgpt/`, priority: 0.65, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/`, priority: 0.6, changefreq: "monthly" },
-    { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
+    { loc: `${SITE_BASE}/economics/`, priority: 0.9, changefreq: "daily" },
     { loc: `${SITE_BASE}/economics/briefing/`, priority: 0.9, changefreq: "daily" },
     { loc: `${SITE_BASE}/world/economics/`, priority: 0.8, changefreq: "daily" },
     { loc: `${SITE_BASE}/petronas/`, priority: 0.8, changefreq: "weekly" },
@@ -89,7 +89,7 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/map/`, priority: 0.8, changefreq: "weekly" },
     // 2026-09-20 — public accountability surface: receipts, gate verdicts,
     // seal-chain state and the defect register. See /root/forge_work/witness-ledger/.
-    { loc: `${SITE_BASE}/ledger`, priority: 0.8, changefreq: "weekly", lastmod: "2026-09-20" },
+    { loc: `${SITE_BASE}/ledger/`, priority: 0.8, changefreq: "weekly", lastmod: "2026-09-20" },
     { loc: `${SITE_BASE}/world/2027/`, priority: 0.85, changefreq: "monthly", lastmod: "2026-09-18" },
     { loc: `${SITE_BASE}/world/2027/malaysia/`, priority: 0.8, changefreq: "monthly", lastmod: "2026-09-18" },
     { loc: `${SITE_BASE}/world/2027/receipts/`, priority: 0.75, changefreq: "monthly", lastmod: "2026-09-18" },
@@ -121,8 +121,9 @@ function buildSitemap(pieces) {
   // Canonical landing first, then every onsite BM piece (M-series)
   urls.push({ loc: CANONICAL_LANDING, priority: 0.85, changefreq: "daily" });
   for (const p of pieces) {
+    const pPath = p.dest.path.endsWith("/") ? p.dest.path : `${p.dest.path}/`;
     urls.push({
-      loc: `${SITE_BASE}${p.dest.path}`,
+      loc: `${SITE_BASE}${pPath}`,
       priority: 0.7,
       changefreq: "monthly",
     });
@@ -163,11 +164,11 @@ Ditempa Bukan Diberi — forged, not given.
 ## Human Navigation
 Brand: ARIF FAZIL
 Primary hubs:
-- Earth: https://arif-fazil.com/earth
-- Words: https://arif-fazil.com/words
+- Earth: https://arif-fazil.com/earth/
+- Words: https://arif-fazil.com/words/
 - MakcikGPT: https://arif-fazil.com/world/makcikgpt/
-- World: https://arif-fazil.com/world
-- Work: https://arif-fazil.com/work
+- World: https://arif-fazil.com/world/
+- Work: https://arif-fazil.com/work/
 
 ## Start Here (Three Human Doors)
 - [Ground / Earth](https://arif-fazil.com/earth/): Source-linked Earth model (GEOX). Computes. Does not adjudicate.
@@ -175,8 +176,8 @@ Primary hubs:
 - [Writing / Words](https://arif-fazil.com/words/): Essays, derivations, and doctrine.
 - [Core Laws](https://arif-fazil.com/laws/): Ratified F1–F13 constitutional floors and evidence mappings.
 - [Sovereign anchor](https://arif-fazil.com/arif/): The human seat — F13 veto, the contract, and the boundary every agent reads before acting.
-- [About](https://arif-fazil.com/about): Who Arif is.
-- [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
+- [About](https://arif-fazil.com/about/): Who Arif is.
+- [Agent contract](https://arif-fazil.com/human/): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
 - [Design Partner Pilot](https://arif-fazil.com/pilot/): 4-week supervised AI action control around your agent workflow — eight measurable criteria, receipt chain.
 - [Policy](https://arif-fazil.com/policy.json): Public limits and human veto.

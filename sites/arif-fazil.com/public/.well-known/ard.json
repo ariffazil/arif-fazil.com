@@ -25,7 +25,7 @@
       "type": "application/mcp-server+json",
       "url": "https://mcp.arif-fazil.com/mcp",
       "documentation": "https://arif-fazil.com/arifos/",
-      "description": "Canonical 8-verb authority and reasoning gateway for the arifOS federation (arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal). Transport: streamable-http.",
+      "description": "Canonical 9-verb authority and reasoning gateway for the arifOS federation (arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal, arif_report). Transport: streamable-http.",
       "tags": [
         "mcp",
         "governance",

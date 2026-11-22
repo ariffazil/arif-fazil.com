@@ -71,7 +71,7 @@ const ROUTE_META = {
   about: {
     title: "About — Arif Fazil",
     description: "Muhammad Arif bin Fazil — exploration geoscientist, builder of governed systems. Based in Kuala Lumpur, Malaysia.",
-    path: "/about",
+    path: "/about/",
     h1: "About Arif Fazil",
   },
   work: {

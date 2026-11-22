@@ -87,6 +87,7 @@ function renderContentFirstShell(route, meta) {
   const canonical = escapeHtml(meta.canonical || `https://arif-fazil.com/${route}/`);
   const dateModified = escapeHtml(meta.dateModified || "");
   const crumb = escapeHtml(meta.breadcrumbTrail || "Arif Fazil");
+  const alternateMd = meta.alternateMd ? escapeHtml(meta.alternateMd) : "";
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -105,6 +106,7 @@ function renderContentFirstShell(route, meta) {
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${canonical}">
+  ${alternateMd ? `<link rel="alternate" type="text/markdown" href="${alternateMd}" title="Markdown twin">` : ""}
   <meta property="og:type" content="website">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${desc}">
@@ -112,12 +114,12 @@ function renderContentFirstShell(route, meta) {
   ${dateModified ? `<meta name="last-modified" content="${dateModified}">` : ""}
   <script type="application/ld+json">${jsonLd}</script>
   <style>
-    :root{--bg:#0A0B0D;--panel:#0F172A;--line:#1F2937;--ink:#EDEAE2;--dim:#9AA0A8;--gold:#E8B84B}
+    :root{--bg:#0A0B0D;--panel:#121318;--line:#232730;--ink:#EDEAE2;--dim:#9AA0A8;--gold:#D4AF37}
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Newsreader,Georgia,serif;line-height:1.7}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.7}
     .frame{max-width:760px;margin:0 auto;padding:1.25rem}
-    .crumb{font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:1rem}
-    .datechip{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:1rem}
+    .crumb{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:1rem}
+    .datechip{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.7rem;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:1rem}
     article{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
     article img{max-width:100%;height:auto}
     article pre{overflow-x:auto}

@@ -1,20 +1,21 @@
 /* MakcikGPT — canonical article stylesheet
    Design 101: one type scale, one palette, one reading measure.
-   Palette = the site's existing MakcikGPT language (GitHub-dark). All text
-   pairs verified ≥ WCAG AA (4.5:1) against their background. */
+   Aligned with design-tokens.json SOT (#0A0B0D bg, #121318 card, #232730 line,
+   #D4AF37 gold, #58A6FF info link, #D65656 soul-primary-text). All text pairs
+   verified >= WCAG AA (4.5:1) against their background. */
 
 :root{
-  --bg:#0d1117;
-  --card:#161b22;
-  --line:#30363d;
-  --line-soft:#21262d;
-  --text:#c9d1d9;      /* on --bg: 11.6:1 */
-  --text-strong:#e6edf3;/* on --bg: 14.9:1 */
-  --muted:#8b949e;     /* on --bg:  5.9:1 */
-  --link:#58a6ff;      /* on --bg:  6.5:1 */
-  --gold:#ffd700;      /* on --bg: 12.9:1 */
-  --red:#ff7b72;       /* on --bg:  7.2:1 */
-  --green:#3fb950;     /* on --bg:  6.9:1 */
+  --bg:#0A0B0D;
+  --card:#121318;
+  --line:#232730;
+  --line-soft:#1B1E26;
+  --text:#C9D1D9;      /* on --bg: 12.6:1 */
+  --text-strong:#F5F5F7;/* on --bg: 18.1:1 */
+  --muted:#8E959E;     /* on --bg:  6.4:1 */
+  --link:#58A6FF;      /* on --bg:  7.4:1 */
+  --gold:#D4AF37;      /* on --bg:  9.8:1 */
+  --red:#D65656;       /* on --bg:  4.9:1 */
+  --green:#00C853;     /* on --bg:  9.2:1 */
   --measure:68ch;
 }
 
@@ -27,7 +28,7 @@ body{
   padding:0 1.15rem 4.5rem;
   background:var(--bg);
   color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   font-size:18px;
   line-height:1.75;
   -webkit-font-smoothing:antialiased;
@@ -40,7 +41,7 @@ body{
   max-width:var(--measure);margin:0 auto;padding:.9rem 0;
   display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;
   border-bottom:1px solid var(--line-soft);margin-bottom:1.75rem;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
 }
 .topnav a{color:var(--muted);text-decoration:none}
@@ -105,7 +106,7 @@ tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
 .cover-byline strong{color:var(--gold)}
 
 .update-banner{
-  background:rgba(255,215,0,.07);border:1px solid rgba(255,215,0,.3);
+  background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.32);
   border-left:3px solid var(--gold);border-radius:6px;padding:.95rem 1.1rem;
   margin:1.5rem 0;font-size:.92rem;color:var(--text) !important;
 }
@@ -117,16 +118,16 @@ tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
   border-left:3px solid var(--link);border-radius:6px;padding:.95rem 1.1rem;margin:1.5rem 0;
 }
 .callout-title{
-  font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.1em;
+  font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.1em;
   text-transform:uppercase;color:var(--link);margin:0 0 .45rem;font-weight:700;
 }
 
 .fact-box{
-  background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.3);
+  background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.3);
   border-radius:8px;padding:1rem 1.15rem;margin:1.5rem 0;
 }
 .fact-box-title{
-  font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.1em;
+  font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.1em;
   text-transform:uppercase;color:var(--gold);margin:0 0 .5rem;font-weight:700;
 }
 .fact-box-content{font-size:.95rem}

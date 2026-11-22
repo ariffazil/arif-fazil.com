@@ -1,28 +1,33 @@
 # MakcikGPT Agent Publishing Guide
 
-> **Purpose**: Any future FI agent (Qwen, Claude, Codex, Kimi, Grok, OpenCode) must be able to publish a MakcikGPT article autonomously after reading this document.
-> **Last updated**: 2026-09-14
+> **Purpose**: Any future FI agent (Qwen, Claude, Codex, Kimi, Grok, OpenCode, AGY) must be able to publish or revise a MakcikGPT article autonomously without causing drift or chaos.
+> **Last updated**: 2026-11-22
 > **Maintainer**: F13 Sovereign
+> **ANTI-CHAOS LAW:** Work strictly in an isolated worktree (`/root/worktrees/<lane>/arif-fazil.com`). NEVER hand-edit `public/world/makcikgpt/**/*.html` or `public/makcikgpt-md/**/*`. NEVER run `./deploy-makcik.sh` (it runs `rsync --delete` and reloads Caddy = T3 HOLD).
 
 ---
 
-## Architecture Overview
+## Canonical Single-Source Pipeline (ONE Workflow)
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    MAKCIKGPT ARTICLE PIPELINE                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐ │
-│  │ RESEARCH │───→│  WRITE   │───→│ REGISTER │───→│  DEPLOY  │ │
-│  │ (web)    │    │ (.ts)    │    │ (index)  │    │ (live)   │ │
-│  └──────────┘    └──────────┘    └──────────┘    └──────────┘ │
-│                                                                 │
-│  Source:         Content:        Registry:        Serving:      │
-│  forge_search    HTML string     index.ts         Caddy SPA     │
-│  forge_fetch     in .ts file     essays.json      /var/www/html │
-│  web sources     + metadata      generate script  Cloudflare    │
-└─────────────────────────────────────────────────────────────────┘
+src/data/makcikgpt/<slug>.ts  +  src/data/essays.json
+                    │
+                    ▼
+       scripts/lib/makcik-source.cjs
+                    │
+                    ▼   (npm run build)
+  ┌─────────────────┴──────────────────────────────────────┐
+  │ Auto-generated surfaces (NEVER hand-edited):           │
+  │ • public/world/makcikgpt/index.html         (hub)      │
+  │ • public/world/makcikgpt/<slug>/index.html  (shells)   │
+  │ • public/world/makcikgpt/<slug>.md          (rsl twin) │
+  │ • public/world/makcikgpt/makcikgpt-md/*.md  (bot lane) │
+  │ • public/makcikgpt-md/*.md + index.html     (mirrors)  │
+  │ • public/{rsl.xml,sitemap.xml,llms.json,feed.xml}      │
+  └────────────────────────────────────────────────────────┘
+                    │
+                    ▼   (additive deploy, zero Caddy reload)
+       rsync -a --update --chown www-data:www-data
 ```
 
 ---
@@ -153,24 +158,28 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
 ];
 ```
 
-### 3. BUILD and DEPLOY
+### 3. REGISTER in essays.json, BUILD, and DEPLOY ADDITIVELY
+
+1. Add or update the article metadata entry in `sites/arif-fazil.com/src/data/essays.json` (ensure `dest.path` uses trailing slash `/world/makcikgpt/<slug>/`, and bump `version_lineage.last_updated` on revisions).
+2. Run the canonical build & offline gates inside your isolated worktree (`/root/worktrees/<lane>/arif-fazil.com`):
 
 ```bash
-cd /root/arif-fazil.com/sites/arif-fazil.com
-./deploy-makcik.sh
+cd /root/worktrees/<lane>/arif-fazil.com/sites/arif-fazil.com
+npm run build
+cd /root/worktrees/<lane>/arif-fazil.com
+python3 sites/arif-fazil.com/scripts/check-design-tokens.py
+python3 sites/arif-fazil.com/scripts/compile-design-tokens.py --check
+node sites/arif-fazil.com/scripts/validate-jsonld.mjs
 ```
 
-This runs the full pipeline:
-1. **Article Scavenger** — detects unregistered .ts files
-2. **npm install** — ensures deps are fresh
-3. **Static generation** — makcik index + markdown mirrors
-4. **Build** — `tsc -b && vite build`
-5. **Deploy** — rsync to `/var/www/html/arif/` + Caddy reload
-6. **Verify** — checks every slug returns 200, listing page works, feed/sitemap/llms.txt alive
+3. **NEVER run `./deploy-makcik.sh`** (deprecated: uses `rsync --delete` and reloads Caddy, which is a T3 HOLD).
+4. **Deploy additively** after signing a `deploy-envelope.json` (`bash scripts/require-deploy-envelope.sh`):
 
-**Flags:**
-- `--dry-run` — check registration only, no build
-- `--verify-only` — just verify live state
+```bash
+rsync -a --update --chown www-data:www-data dist/ /var/www/html/arif/
+```
+
+No Caddy reload is required. Verify live HTTP 200 on `/world/makcikgpt/`, `/world/makcikgpt/<slug>/`, and `/world/makcikgpt/<slug>.md`.
 
 ---
 

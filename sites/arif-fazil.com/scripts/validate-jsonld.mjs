@@ -16,10 +16,7 @@ import path from "node:path";
 const PUBLIC = process.argv[2]
   ? path.resolve(process.argv[2])
   : path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "public");
-const DECLARED_EXCEPTIONS = new Set([
-  "for-machines/index.html", "geox/basins/index.html", "organs/index.html",
-  "work/resume/index.html", "work/wells/index.html",
-]);
+const DECLARED_EXCEPTIONS = new Set([]);
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {

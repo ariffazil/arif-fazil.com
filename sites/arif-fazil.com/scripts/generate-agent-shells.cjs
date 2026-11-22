@@ -68,31 +68,31 @@ function shell({ title, description, canonical, body, ring = 'SOUL', ogImage = '
 ${jsonLd}
   </script>
   <link rel="stylesheet" href="/_shared/design-system/tokens.css" />
+  <link rel="stylesheet" href="/_shared/fed-nav.css" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Machine overview" />
   <link rel="alternate" type="application/json" href="/missions.json" title="Missions catalog" />
   <style>
-    body{margin:0;background:var(--bg-narrative,#0B0B0F);color:var(--text-primary,#F5F5F7);
-      font-family:var(--font-sans,system-ui,sans-serif);line-height:1.55}
+    body{margin:0;background:var(--bg-site,#0A0B0D);color:var(--text-primary,#F5F5F7);
+      font-family:var(--font-sans,Inter,system-ui,sans-serif);line-height:1.55}
     .frame{max-width:54rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-    a{color:var(--gold-sovereign,#E8B84B)} a:hover{color:#fff}
-    h1{font-family:var(--font-display,serif);font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.1;margin:0 0 1rem}
+    a{color:var(--soul-accent,#D4AF37)} a:hover{color:#fff}
+    h1{font-family:var(--font-sans,Inter,system-ui,sans-serif);font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.1;margin:0 0 1rem}
     h2{font-size:1.15rem;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.06em}
-    .meta{font-family:var(--font-mono,monospace);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
-    .card{border:1px solid #2a2a3a;border-radius:8px;padding:1rem 1.15rem;margin:.75rem 0;background:rgba(255,255,255,.02)}
-    .nav{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1rem 0 1.5rem;font-family:var(--font-mono,monospace);font-size:.75rem;letter-spacing:0.08em;text-transform:uppercase}
-    .nav-brand{font-family:var(--font-display,serif);font-size:0.95rem;font-weight:bold;color:var(--text-primary,#F5F5F7);text-decoration:none;margin-right:auto;text-transform:none}
+    .meta{font-family:var(--font-mono,"JetBrains Mono",ui-monospace,monospace);font-size:.7rem;color:#8a8378;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+    .card{border:1px solid #232730;border-radius:8px;padding:1rem 1.15rem;margin:.75rem 0;background:#121318}
+    .nav{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1rem 0 1.5rem;font-family:var(--font-mono,"JetBrains Mono",ui-monospace,monospace);font-size:.75rem;letter-spacing:0.08em;text-transform:uppercase}
+    .nav-brand{font-family:var(--font-sans,Inter,system-ui,sans-serif);font-size:0.95rem;font-weight:bold;color:var(--text-primary,#F5F5F7);text-decoration:none;margin-right:auto;text-transform:none}
     .nav a:not(.nav-brand){color:#9CA3AF;text-decoration:none;transition:color 0.2s}
-    .nav a:not(.nav-brand):hover{color:var(--gold-sovereign,#E8B84B)}
-    .nav a.here{color:var(--gold-sovereign,#E8B84B);font-weight:600}
+    .nav a:not(.nav-brand):hover{color:var(--soul-accent,#D4AF37)}
+    .nav a.here{color:var(--soul-accent,#D4AF37);font-weight:600}
     ul{padding-left:1.2rem} li{margin:.35rem 0}
-    .note{font-size:.85rem;color:#9a958c;border-left:2px solid #2a2a3a;padding-left:.85rem;margin-top:2rem}
+    .note{font-size:.85rem;color:#9a958c;border-left:2px solid #232730;padding-left:.85rem;margin-top:2rem}
 ${extraStyle}
   </style>
 </head>
 <body>
   <div class="frame">
-${breadcrumb ? `    ${breadcrumb}\n` : ''}    <link rel="stylesheet" href="/_shared/fed-nav.css">
-    <div id="fed-nav-root"></div>
+${breadcrumb ? `    ${breadcrumb}\n` : ''}    <div id="fed-nav-root"></div>
     <noscript><header class="fed-navbar" aria-label="Federation primary navigation"><a class="nav-brand" href="/"><span class="psi-badge">Ψ</span><span>ARIF FAZIL</span></a><nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/about">About</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav></header></noscript>
     <script src="/_shared/fed-nav.js" defer></script>
 ${body}
@@ -311,23 +311,21 @@ try {
   makcikPieces = [];
 }
 
-// Featured dossier band (stitch MakcikGPTArchive structure — 2026-11-04)
-const newestPiece = [...makcikPieces].sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0] || null;
-const featuredClaim = newestPiece && newestPiece.claim_register && newestPiece.claim_register[0];
-const featuredBand = newestPiece ? `
-    <section aria-label="Dossier terkini" style="margin:1.25rem 0; padding:1rem 1.1rem; background:#111827; border:1px solid rgba(232,184,75,0.35); border-radius:12px;">
-      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; justify-content:space-between; margin-bottom:0.6rem;">
-        <span style="font-family:monospace; font-size:0.68rem; font-weight:bold; letter-spacing:0.12em; text-transform:uppercase; color:#60A5FA;">● ARCHIVE // DOSSIER TERKINI</span>
-        <span style="font-family:monospace; font-size:0.68rem; color:#9CA3AF;">${newestPiece.date}</span>
-      </div>
-      <h2 style="font-size:1.35rem; font-weight:800; margin:0 0 0.4rem 0; line-height:1.25; color:#FFFFFF;">${newestPiece.title}</h2>
-      ${featuredClaim ? `<p style="font-size:0.88rem; color:#9CA3AF; margin:0 0 0.75rem 0; line-height:1.6;"><strong style="color:#E8B84B;">${featuredClaim.tag} —</strong> ${featuredClaim.text}</p>` : ''}
-      <div style="display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center;">
-        <a href="${newestPiece.dest && newestPiece.dest.path ? newestPiece.dest.path : '/world/makcikgpt/'}" style="display:inline-flex; padding:0.5rem 1rem; background:#2563EB; color:#fff; font-family:monospace; font-size:0.72rem; font-weight:bold; letter-spacing:0.08em; text-decoration:none; border-radius:8px;">BACA DOSSIER PENUH ↗</a>
-        <span style="font-family:monospace; font-size:0.68rem; color:#9CA3AF;">${(newestPiece.source_ledger || []).length} SUMBER BERGARIS</span>
-      </div>
-    </section>` : '';
+// Helper: ensure trailing slash on MakcikGPT paths
+function mkHref(p) {
+  const raw = (p && p.dest && p.dest.path) || '/world/makcikgpt/';
+  return raw.endsWith('/') ? raw : raw + '/';
+}
 
+// Helper: non-empty summary fallback (zero empty <p></p>)
+function mkSummary(p) {
+  return (
+    (p && p.subtitle) ||
+    (p && p.excerpt) ||
+    (p && p.claim_register && p.claim_register[0] && p.claim_register[0].text) ||
+    ''
+  ).trim();
+}
 
 // Per-slug content-first article shells (T12/T13, 2026-11-04):
 // real article body in static HTML, fed-nav, dateModified, hydration slot.
@@ -343,6 +341,7 @@ for (const piece of makcikPieces) {
     title: piece.title,
     description: (piece.claim_register && piece.claim_register[0] ? piece.claim_register[0].text : piece.title || '').slice(0, 160),
     canonical: `https://arif-fazil.com/world/makcikgpt/${slug}/`,
+    alternateMd: `/world/makcikgpt/${slug}.md`,
     breadcrumbTrail: 'Arif Fazil / World / MakcikGPT / ' + slug,
     dateModified: (piece.version_lineage && piece.version_lineage.last_updated) || piece.date || '',
     bodyHtml,
@@ -406,59 +405,57 @@ const updatedPiece = makcikPieces
   .filter(p => p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date)
   .sort((a, b) => (b.version_lineage.last_updated || '').localeCompare(a.version_lineage.last_updated || ''))[0] || null;
 
+const updatedSummary = updatedPiece ? mkSummary(updatedPiece) : '';
 const updatedSpotlightHtml = updatedPiece && (!leadPiece || updatedPiece.id !== leadPiece.id) ? `
 <section id="baru-dikemas-kini" style="margin: 0 0 2.5rem 0;">
   <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
-    <h3 style="font-family:monospace; font-size:0.8rem; font-weight:bold; color:#E8B84B; text-transform:uppercase; letter-spacing:0.08em; margin:0;">
+    <h3 style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.8rem; font-weight:bold; color:#D4AF37; text-transform:uppercase; letter-spacing:0.08em; margin:0;">
       Baru Dikemas Kini
     </h3>
-    <span style="font-family:monospace; font-size:0.7rem; background:rgba(232,184,75,0.15); border:1px solid rgba(232,184,75,0.4); color:#E8B84B; padding:2px 6px; border-radius:3px;">
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; background:rgba(212,175,55,0.14); border:1px solid rgba(212,175,55,0.4); color:#D4AF37; padding:2px 6px; border-radius:3px;">
       DIKEMAS KINI ${esc(updatedPiece.version_lineage.last_updated)}
     </span>
   </div>
-  <article class="card" style="border: 2px dashed rgba(232,184,75,0.55); border-radius: 8px; background: #0E1626; padding: 1.75rem 2rem;">
-    <div style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B; margin-bottom:0.5rem;">
+  <article class="card" style="border: 1px dashed rgba(212,175,55,0.55); border-radius: 8px; background: #121318; padding: 1.75rem 2rem;">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.75rem; font-weight:bold; color:#D4AF37; margin-bottom:0.5rem;">
       SERIES ${esc(updatedPiece.series?.id || 'MAKCIK')} · Diterbit ${esc(updatedPiece.date || '')} · Dikemas kini ${esc(updatedPiece.version_lineage.last_updated)}
     </div>
-    <h2 style="font-size: 1.5rem; font-weight: 900; margin: 0 0 0.6rem 0; line-height: 1.25;">
-      <a href="${esc(updatedPiece.dest.path)}" style="color: #F8FAFC; text-decoration: none;">${esc(updatedPiece.title)}</a>
+    <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0 0 0.6rem 0; line-height: 1.25; text-transform: none; letter-spacing: normal;">
+      <a href="${esc(mkHref(updatedPiece))}" style="color: #F5F5F7; text-decoration: none;">${esc(updatedPiece.title)}</a>
     </h2>
-    <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.6; margin: 0 0 1.1rem 0;">
-      ${esc(updatedPiece.subtitle || updatedPiece.excerpt || '')}
-    </p>
-    <a href="${esc(updatedPiece.dest.path)}" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:monospace; font-size:0.8rem; font-weight:bold; background:transparent; color:#E8B84B; border:1px solid #E8B84B; padding:0.5rem 1.1rem; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+    ${updatedSummary ? `<p style="font-size: 0.95rem; color: #C9D1D9; line-height: 1.6; margin: 0 0 1.1rem 0;">${esc(updatedSummary)}</p>` : ''}
+    <a href="${esc(mkHref(updatedPiece))}" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.8rem; font-weight:bold; background:transparent; color:#D4AF37; border:1px solid #D4AF37; padding:0.5rem 1.1rem; border-radius:4px; text-decoration:none; text-transform:uppercase;">
       <span>Baca Versi Terkini</span> <span>→</span>
     </a>
   </article>
 </section>` : '';
 
+const leadSummary = leadPiece ? mkSummary(leadPiece) : '';
 const currentSignalHtml = leadPiece ? `
 <section id="current-signal" style="margin-bottom: 2.5rem;">
   <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom: 0.75rem;">
-    <span style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center; gap:0.4rem;">
-      <span style="width:8px; height:8px; border-radius:50%; background:#E8B84B; display:inline-block;"></span>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.75rem; font-weight:bold; color:#D4AF37; text-transform:uppercase; letter-spacing:0.08em; display:flex; align-items:center; gap:0.4rem;">
+      <span style="width:8px; height:8px; border-radius:50%; background:#D4AF37; display:inline-block;"></span>
       Tier 1 · Isu Semasa / Current Signal
     </span>
-    <span style="font-family:monospace; font-size:0.7rem; background:rgba(232,184,75,0.15); border:1px solid rgba(232,184,75,0.4); color:#E8B84B; padding:2px 6px; border-radius:3px;">
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; background:rgba(212,175,55,0.14); border:1px solid rgba(212,175,55,0.4); color:#D4AF37; padding:2px 6px; border-radius:3px;">
       STATUS: CURRENT
     </span>
   </div>
-  <article class="card" style="border: 2px solid #E8B84B; border-radius: 8px; background: #0E1626; padding: 2rem; box-shadow: 0 0 30px -5px rgba(232,184,75,0.25);">
+  <article class="card" style="border: 1px solid #D4AF37; border-radius: 8px; background: #121318; padding: 2rem; box-shadow: 0 0 24px -6px rgba(212,175,55,0.2);">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-      <span style="font-family:monospace; font-size:0.75rem; font-weight:bold; color:#E8B84B;">
-        ${esc(leadPiece.domain || 'CIVIC INTELLIGENCE')} · ${esc(leadPiece.date || '')}${leadPiece.version_lineage && leadPiece.version_lineage.last_updated && leadPiece.version_lineage.last_updated !== leadPiece.date ? ` · <span style="color:#E8B84B;">dikemas kini ${esc(leadPiece.version_lineage.last_updated)}</span>` : ''}
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.75rem; font-weight:bold; color:#D4AF37;">
+        ${esc(leadPiece.domain || 'CIVIC INTELLIGENCE')} · ${esc(leadPiece.date || '')}${leadPiece.version_lineage && leadPiece.version_lineage.last_updated && leadPiece.version_lineage.last_updated !== leadPiece.date ? ` · <span style="color:#D4AF37;">dikemas kini ${esc(leadPiece.version_lineage.last_updated)}</span>` : ''}
       </span>
-      <span style="font-family:monospace; font-size:0.7rem; color:#94A3B8; background:#070B14; border:1px solid #1E293B; padding:2px 8px; border-radius:4px;">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; color:#8E959E; background:#0A0B0D; border:1px solid #232730; padding:2px 8px; border-radius:4px;">
         ${leadPiece.claim_register ? `${leadPiece.claim_register.length} Klaim Berdaftar` : 'Bukti Primer'} · SEAL 999
       </span>
     </div>
-    <h2 style="font-size: 1.85rem; font-weight: 900; margin: 0 0 0.75rem 0; line-height: 1.2;">
-      <a href="${esc(leadPiece.dest.path)}" style="color: #FFFFFF; text-decoration: none;">${esc(leadPiece.title)}</a>
+    <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 0.75rem 0; line-height: 1.22; text-transform: none; letter-spacing: normal;">
+      <a href="${esc(mkHref(leadPiece))}" style="color: #F5F5F7; text-decoration: none;">${esc(leadPiece.title)}</a>
     </h2>
-    <p style="font-size: 1rem; color: #CBD5E1; line-height: 1.6; margin: 0 0 1.25rem 0;">
-      ${esc(leadPiece.subtitle || leadPiece.excerpt || '')}
-    </p>
-    <a href="${esc(leadPiece.dest.path)}" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:monospace; font-size:0.85rem; font-weight:bold; background:#E8B84B; color:#0A0E1A; padding:0.6rem 1.25rem; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+    ${leadSummary ? `<p style="font-size: 1rem; color: #C9D1D9; line-height: 1.6; margin: 0 0 1.25rem 0;">${esc(leadSummary)}</p>` : ''}
+    <a href="${esc(mkHref(leadPiece))}" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.82rem; font-weight:bold; background:#D4AF37; color:#0A0B0D; padding:0.6rem 1.25rem; border-radius:4px; text-decoration:none; text-transform:uppercase;">
       <span>Siasat Dokumen Penuh</span> <span>→</span>
     </a>
   </article>
@@ -467,45 +464,45 @@ const currentSignalHtml = leadPiece ? `
 const dossiersHtml = `
 <section id="live-dossiers" style="margin-bottom: 2.5rem;">
   <div style="margin-bottom: 1rem;">
-    <h3 style="font-family:monospace; font-size:0.8rem; font-weight:bold; color:#94A3B8; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.25rem 0;">
+    <h3 style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.8rem; font-weight:bold; color:#8E959E; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.25rem 0;">
       Tier 2 · Fail Siasatan Berkelompok / Live Dossiers
     </h3>
-    <p style="font-size:0.85rem; color:#64748B; margin:0;">
+    <p style="font-size:0.85rem; color:#8E959E; margin:0;">
       Tiga medan siasatan berterusan — kontrak tenaga, hak wilayah, dan prasarana data negara.
     </p>
   </div>
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
-    <div style="background:#0F172A; border:1px solid #1E293B; border-top:3px solid #38BDF8; border-radius:6px; padding:1.25rem;">
-      <div style="font-family:monospace; font-size:0.7rem; color:#38BDF8; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+    <div style="background:#121318; border:1px solid #232730; border-top:3px solid #58A6FF; border-radius:6px; padding:1.25rem;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; color:#58A6FF; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
         DOSSIER 01 · ${dossierM1.length} Kertas Siasatan
       </div>
-      <h4 style="font-size:1.1rem; font-weight:bold; color:#FFFFFF; margin:0 0 0.5rem 0;">PETRONAS & Kedaulatan Tenaga</h4>
-      <p style="font-size:0.85rem; color:#94A3B8; line-height:1.5; margin:0 0 1rem 0;">
+      <h4 style="font-size:1.08rem; font-weight:700; color:#F5F5F7; margin:0 0 0.5rem 0;">PETRONAS &amp; Kedaulatan Tenaga</h4>
+      <p style="font-size:0.85rem; color:#9CA3AF; line-height:1.5; margin:0 0 1rem 0;">
         Dari DNA korporat, pengurusan rizab minyak, dividen kerajaan, hingga cabutnya pemain global di Suriname.
       </p>
-      <a href="#series-archive" style="font-family:monospace; font-size:0.75rem; color:#38BDF8; text-decoration:none; font-weight:bold;">Lihat siri M1 & M6 →</a>
+      <a href="#series-archive" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.75rem; color:#58A6FF; text-decoration:none; font-weight:bold;">Lihat siri M1 &amp; M6 →</a>
     </div>
 
-    <div style="background:#0F172A; border:1px solid #1E293B; border-top:3px solid #EF4444; border-radius:6px; padding:1.25rem;">
-      <div style="font-family:monospace; font-size:0.7rem; color:#EF4444; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
+    <div style="background:#121318; border:1px solid #232730; border-top:3px solid #D65656; border-radius:6px; padding:1.25rem;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; color:#D65656; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
         DOSSIER 02 · ${dossierM2.length} Kertas Siasatan
       </div>
-      <h4 style="font-size:1.1rem; font-weight:bold; color:#FFFFFF; margin:0 0 0.5rem 0;">Gas Sarawak, SEARAH & PDA 1974</h4>
-      <p style="font-size:0.85rem; color:#94A3B8; line-height:1.5; margin:0 0 1rem 0;">
+      <h4 style="font-size:1.08rem; font-weight:700; color:#F5F5F7; margin:0 0 0.5rem 0;">Gas Sarawak, SEARAH &amp; PDA 1974</h4>
+      <p style="font-size:0.85rem; color:#9CA3AF; line-height:1.5; margin:0 0 1rem 0;">
         Penyiasatan hak gas perlembagaan, rundingan Eni Italy, RM70 bilion aliran hasil, dan batas undang-undang negara.
       </p>
-      <a href="#series-archive" style="font-family:monospace; font-size:0.75rem; color:#EF4444; text-decoration:none; font-weight:bold;">Lihat siri M2 →</a>
+      <a href="#series-archive" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.75rem; color:#D65656; text-decoration:none; font-weight:bold;">Lihat siri M2 →</a>
     </div>
 
-    <div style="background:#0F172A; border:1px solid #1E293B; border-top:3px solid #31C48D; border-radius:6px; padding:1.25rem;">
-      <div style="font-family:monospace; font-size:0.7rem; color:#31C48D; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
+    <div style="background:#121318; border:1px solid #232730; border-top:3px solid #00C853; border-radius:6px; padding:1.25rem;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; color:#00C853; font-weight:bold; text-transform:uppercase; margin-bottom:0.25rem;">
         DOSSIER 03 · ${dossierM3M4.length} Kertas Siasatan
       </div>
-      <h4 style="font-size:1.1rem; font-weight:bold; color:#FFFFFF; margin:0 0 0.5rem 0;">Sovereign AI, Data Johor & Rakyat</h4>
-      <p style="font-size:0.85rem; color:#94A3B8; line-height:1.5; margin:0 0 1rem 0;">
+      <h4 style="font-size:1.08rem; font-weight:700; color:#F5F5F7; margin:0 0 0.5rem 0;">Sovereign AI, Data Johor &amp; Rakyat</h4>
+      <p style="font-size:0.85rem; color:#9CA3AF; line-height:1.5; margin:0 0 1rem 0;">
         Beban air dan grid elektrik Johor, monopoli konsesi MyKad, serta naratif AI yang membebankan poket rakyat.
       </p>
-      <a href="#series-archive" style="font-family:monospace; font-size:0.75rem; color:#31C48D; text-decoration:none; font-weight:bold;">Lihat siri M3 & M4 →</a>
+      <a href="#series-archive" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.75rem; color:#00C853; text-decoration:none; font-weight:bold;">Lihat siri M3 &amp; M4 →</a>
     </div>
   </div>
 </section>`;
@@ -513,10 +510,10 @@ const dossiersHtml = `
 const dispatchesListHtml = `
 <section id="series-archive" style="margin-bottom: 3rem;">
   <div style="margin-bottom: 1.25rem;">
-    <h3 style="font-family:monospace; font-size:0.8rem; font-weight:bold; color:#94A3B8; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.25rem 0;">
-      Tier 3 · Kronologi Laporan Sivik / Dispatches & Archive (${remainingPieces.length})
+    <h3 style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.8rem; font-weight:bold; color:#8E959E; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.25rem 0;">
+      Tier 3 · Kronologi Laporan Sivik / Dispatches &amp; Archive (${remainingPieces.length})
     </h3>
-    <p style="font-size:0.85rem; color:#64748B; margin:0;">
+    <p style="font-size:0.85rem; color:#8E959E; margin:0;">
       Semua rekod siasatan mengikut tarikh penerbitan berserta status meterai.
     </p>
   </div>
@@ -524,24 +521,23 @@ const dispatchesListHtml = `
     ${remainingPieces
       .map(
         (p) => {
-          return `<article class="card" style="border: 1px solid #1E293B; background: #0B0F19; padding: 1.25rem 1.5rem; border-radius: 6px; display:flex; flex-direction:column; gap:0.5rem;">
+          const sum = mkSummary(p);
+          return `<article class="card" style="border: 1px solid #232730; background: #121318; padding: 1.25rem 1.5rem; border-radius: 6px; display:flex; flex-direction:column; gap:0.5rem;">
             <div style="display: flex; gap: 0.5rem; align-items: center; justify-content: space-between; flex-wrap:wrap;">
-              <span style="font-family: monospace; font-size: 0.7rem; font-weight: bold; color: #E8B84B; text-transform: uppercase;">
-                Series ${esc(p.series?.id || 'M')} · ${esc(p.date || '')}${p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date ? ` · <span style="color:#E8B84B;">dikemas kini ${esc(p.version_lineage.last_updated)}</span>` : ''}
+              <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.7rem; font-weight: bold; color: #D4AF37; text-transform: uppercase;">
+                Series ${esc(p.series?.id || 'M')} · ${esc(p.date || '')}${p.version_lineage && p.version_lineage.last_updated && p.version_lineage.last_updated !== p.date ? ` · <span style="color:#D4AF37;">dikemas kini ${esc(p.version_lineage.last_updated)}</span>` : ''}
               </span>
-              <span style="font-family: monospace; font-size: 0.65rem; color: #64748B; background:#070B14; padding:2px 6px; border-radius:3px;">
+              <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.65rem; color: #8E959E; background:#0A0B0D; border:1px solid #232730; padding:2px 6px; border-radius:3px;">
                 SEAL 999 · LINEAGE
               </span>
             </div>
             <h4 style="margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.3;">
-              <a href="${esc(p.dest.path)}" style="color: #F1F5F9; text-decoration: none;">${esc(p.title)}</a>
+              <a href="${esc(mkHref(p))}" style="color: #F5F5F7; text-decoration: none;">${esc(p.title)}</a>
             </h4>
-            <p style="color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin: 0;">
-              ${esc(p.subtitle || p.excerpt || '')}
-            </p>
+            ${sum ? `<p style="color: #9CA3AF; font-size: 0.85rem; line-height: 1.5; margin: 0;">${esc(sum)}</p>` : ''}
             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.25rem;">
-              <span style="font-family:monospace; font-size:0.7rem; color:#475569;">${esc((p.tags || []).slice(0, 3).map(t => `#${t}`).join(' '))}</span>
-              <a href="${esc(p.dest.path)}" style="font-family: monospace; font-size: 0.75rem; font-weight: bold; color: #E8B84B; text-decoration: none;">Baca laporan →</a>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; color:#8E959E;">${esc((p.tags || []).slice(0, 3).map(t => `#${t}`).join(' '))}</span>
+              <a href="${esc(mkHref(p))}" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: bold; color: #D4AF37; text-decoration: none;">Baca laporan →</a>
             </div>
           </article>`;
         }
@@ -559,43 +555,42 @@ writeRoute(
     canonical: 'https://arif-fazil.com/world/makcikgpt/',
     ring: 'BODY',
     ogImage: 'https://arif-fazil.com/images/makcikgpt/makcikgpt-hero.jpg',
-    breadcrumb: `<nav style="display:flex; align-items:center; gap:0.5rem; font-family:var(--font-mono, monospace); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 1rem 0;" aria-label="Breadcrumb">
+    breadcrumb: `<nav style="display:flex; align-items:center; gap:0.5rem; font-family:var(--font-mono, 'JetBrains Mono', ui-monospace, monospace); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 1rem 0;" aria-label="Breadcrumb">
       <a href="/" style="color:#9CA3AF; text-decoration:none;">Arif Fazil</a>
       <span style="color:#4B5563;">/</span>
-      <a href="/world" style="color:#9CA3AF; text-decoration:none;">World</a>
+      <a href="/world/" style="color:#9CA3AF; text-decoration:none;">World</a>
       <span style="color:#4B5563;">/</span>
-      <span style="color:#E8B84B; font-weight:600;">MakcikGPT</span>
+      <span style="color:#D4AF37; font-weight:600;">MakcikGPT</span>
     </nav>`,
-    extraStyle: `    .hero-container{margin-bottom:2.5rem;padding:2rem;background:linear-gradient(135deg, #0F172A 0%, #111827 100%);border:1px solid #1F2937;border-bottom:3px solid #E8B84B;border-radius:12px;overflow:hidden}
+    extraStyle: `    .hero-container{margin-bottom:2.5rem;padding:2rem;background:#121318;border:1px solid #232730;border-bottom:3px solid #D4AF37;border-radius:12px;overflow:hidden}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
     @media(min-width:768px){.hero-grid{grid-template-columns:1.2fr 1fr}}
-    .hero-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:1px solid rgba(232,184,75,0.3);box-shadow:0 10px 25px -5px rgba(0,0,0,0.5)}
-    .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.25rem 0;border-top:1px solid #1F2937;padding-top:1rem}
-    .ladder-card{background:rgba(255,255,255,0.03);border:1px solid #1F2937;border-radius:6px;padding:0.6rem 0.75rem;text-decoration:none;display:block}
-    .ladder-card.active{background:rgba(232,184,75,0.08);border-color:rgba(232,184,75,0.4)}
-    .ladder-lvl{font-family:monospace;font-size:0.65rem;color:#6B7280;text-transform:uppercase;letter-spacing:0.05em}
-    .ladder-name{font-size:0.85rem;font-weight:bold;color:#F3F4F6;margin:2px 0}
+    .hero-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:1px solid rgba(212,175,55,0.3);box-shadow:0 10px 25px -5px rgba(0,0,0,0.5)}
+    .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.25rem 0;border-top:1px solid #232730;padding-top:1rem}
+    .ladder-card{background:#0A0B0D;border:1px solid #232730;border-radius:6px;padding:0.6rem 0.75rem;text-decoration:none;display:block}
+    .ladder-card.active{background:rgba(212,175,55,0.08);border-color:rgba(212,175,55,0.45)}
+    .ladder-lvl{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.65rem;color:#8E959E;text-transform:uppercase;letter-spacing:0.05em}
+    .ladder-name{font-size:0.85rem;font-weight:bold;color:#F5F5F7;margin:2px 0}
     .ladder-sub{font-size:0.7rem;color:#9CA3AF}`,
     body: `
-    ${featuredBand}
     <!-- Visual Hero: Attention Preservation & Information Architecture -->
     <div class="hero-container">
       <div class="hero-grid">
         <div>
           <div style="display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin-bottom:0.75rem;">
-            <span style="font-family:monospace; font-size:0.7rem; font-weight:bold; padding:3px 8px; background:rgba(232,184,75,0.15); border:1px solid rgba(232,184,75,0.4); color:#E8B84B; border-radius:9999px;">
+            <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; font-weight:bold; padding:3px 8px; background:rgba(212,175,55,0.14); border:1px solid rgba(212,175,55,0.4); color:#D4AF37; border-radius:9999px;">
               MakcikGPT · Public Interface of World
             </span>
-            <span style="font-family:monospace; font-size:0.7rem; padding:3px 8px; background:#1F2937; color:#9CA3AF; border-radius:9999px;">
+            <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem; padding:3px 8px; background:#0A0B0D; border:1px solid #232730; color:#9CA3AF; border-radius:9999px;">
               Civic Intelligence Layer
             </span>
           </div>
 
-          <h1 style="font-size:2.5rem; font-weight:900; font-style:italic; text-transform:uppercase; margin:0 0 0.5rem 0; color:#FFFFFF; line-height:1.05;">
-            Makcik<span style="color:#E8B84B;">GPT</span>
+          <h1 style="font-size:2.5rem; font-weight:900; font-style:italic; text-transform:uppercase; margin:0 0 0.5rem 0; color:#F5F5F7; line-height:1.05;">
+            Makcik<span style="color:#D4AF37;">GPT</span>
           </h1>
 
-          <p style="font-style:italic; font-family:serif; color:#E8B84B; margin:0 0 0.75rem 0; font-size:1.05rem;">
+          <p style="font-style:italic; color:#D4AF37; margin:0 0 0.75rem 0; font-size:1.05rem;">
             "Kewartawanan penyiasatan sivik untuk jiran-jiran."
           </p>
 
@@ -605,10 +600,10 @@ writeRoute(
 
           <!-- Primary Actions (Two Only) -->
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin:1.25rem 0;">
-            <a href="#current-signal" style="display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1.25rem; background:#E8B84B; color:#0F172A; font-family:monospace; font-size:0.8rem; font-weight:bold; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+            <a href="#current-signal" style="display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1.25rem; background:#D4AF37; color:#0A0B0D; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.8rem; font-weight:bold; border-radius:4px; text-decoration:none; text-transform:uppercase;">
               Baca Isu Semasa ↓
             </a>
-            <a href="#live-dossiers" style="display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1.25rem; background:#1E293B; color:#E2E8F0; border:1px solid #334155; font-family:monospace; font-size:0.8rem; font-weight:bold; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+            <a href="#live-dossiers" style="display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1.25rem; background:#0A0B0D; color:#F5F5F7; border:1px solid #232730; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.8rem; font-weight:bold; border-radius:4px; text-decoration:none; text-transform:uppercase;">
               Cari Mengikut Topik →
             </a>
           </div>
@@ -620,23 +615,23 @@ writeRoute(
               <div class="ladder-name">Arif Fazil</div>
               <div class="ladder-sub">Sovereign Identity</div>
             </a>
-            <a href="/world" class="ladder-card">
+            <a href="/world/" class="ladder-card">
               <div class="ladder-lvl">Level 2 · WHY</div>
               <div class="ladder-name">World</div>
               <div class="ladder-sub">Civic Intelligence</div>
             </a>
             <div class="ladder-card active">
-              <div class="ladder-lvl" style="color:#E8B84B;">Level 3 · HOW</div>
-              <div class="ladder-name" style="color:#E8B84B;">MakcikGPT</div>
-              <div class="ladder-sub" style="color:#D1D5DB;">Citizen Interface</div>
+              <div class="ladder-lvl" style="color:#D4AF37;">Level 3 · HOW</div>
+              <div class="ladder-name" style="color:#D4AF37;">MakcikGPT</div>
+              <div class="ladder-sub" style="color:#C9D1D9;">Citizen Interface</div>
             </div>
           </div>
 
-          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; font-family:monospace; font-size:0.7rem;">
-            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">⚡ ${makcikPieces.length} Artikel</span>
-            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">🛡️ F1–F13 Berperlembagaan</span>
-            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">📊 Data Primer Sahih</span>
-            <span style="padding:3px 8px; background:#111827; border:1px solid #1F2937; color:#9CA3AF; border-radius:4px;">🔓 Sifar Paywall</span>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:0.7rem;">
+            <span style="padding:3px 8px; background:#0A0B0D; border:1px solid #232730; color:#9CA3AF; border-radius:4px;">⚡ ${makcikPieces.length} Artikel</span>
+            <span style="padding:3px 8px; background:#0A0B0D; border:1px solid #232730; color:#9CA3AF; border-radius:4px;">🛡️ F1–F13 Berperlembagaan</span>
+            <span style="padding:3px 8px; background:#0A0B0D; border:1px solid #232730; color:#9CA3AF; border-radius:4px;">📊 Data Primer Sahih</span>
+            <span style="padding:3px 8px; background:#0A0B0D; border:1px solid #232730; color:#9CA3AF; border-radius:4px;">🔓 Sifar Paywall</span>
           </div>
         </div>
 
@@ -659,12 +654,12 @@ writeRoute(
     ${dispatchesListHtml}
 
     <!-- Trust & Verification Footer -->
-    <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #1E293B; font-family: monospace; font-size: 0.75rem; color: #64748B;">
+    <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #232730; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; color: #8E959E;">
       <p style="margin: 0 0 0.5rem 0;">
         ⚖️ <strong>Meterai 999</strong>: Merekodkan silsilah penulisan dan integriti semakan dalam VAULT999. Bukan perakuan kehakiman mutlak terhadap setiap dakwaan empirikal.
       </p>
       <p style="margin: 0;">
-        Mesin & Ejen: <a href="/world/makcikgpt/llms.txt" style="color: #E8B84B;">llms.txt</a> · <a href="/world/makcikgpt/llms.json" style="color: #E8B84B;">llms.json</a> · <a href="/feed.xml" style="color: #E8B84B;">RSS Syndication</a> · <em>Ditempa bukan diberi.</em>
+        Mesin &amp; Ejen: <a href="/world/makcikgpt/llms.txt" style="color: #D4AF37;">llms.txt</a> · <a href="/world/makcikgpt/llms.json" style="color: #D4AF37;">llms.json</a> · <a href="/feed.xml" style="color: #D4AF37;">RSS Syndication</a> · <em>Ditempa bukan diberi.</em>
       </p>
     </footer>
 `,

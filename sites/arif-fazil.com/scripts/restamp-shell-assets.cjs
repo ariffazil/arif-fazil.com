@@ -133,7 +133,7 @@ function main() {
     fs.writeFileSync(f, spaShell(title, desc, css, js, canonicalFor(f), jsonLd));
     replaced += 1;
   }
-  if (replaced > 0) {
+  if (replaced > 0 || completed > 0) {
     console.log(`restamp: ${replaced} dead + ${completed} empty shell(s) stamped (css=${css}, js=${js})`);
   } else {
     console.log('restamp: all shell asset refs resolve — nothing to do');

@@ -27,9 +27,14 @@ SECTION_NAMES = {
 }
 
 
+def clean_rel(rel: str) -> str:
+    rel = re.sub(r"(?:^|/)index\.html$", "", rel)
+    return rel.strip("/")
+
+
 def page_url(rel: str) -> str:
-    rel = re.sub(r"index\.html$", "", rel)  # canonical: /section/slug/ not /…/index.html/
-    return f"{BASE}/{rel}/"
+    cleaned = clean_rel(rel)
+    return f"{BASE}/{cleaned}/" if cleaned else f"{BASE}/"
 
 
 def meta_content(head: str, name: str):
@@ -47,18 +52,18 @@ def is_redirect_stub(html: str) -> bool:
 
 
 def breadcrumb(rel: str, title: str) -> dict:
-    parts = [p for p in rel.split("/") if p]
+    parts = [p for p in clean_rel(rel).split("/") if p]
     items, url = [], BASE
     for i, p in enumerate(parts, 1):
         url += f"/{p}"
-        items.append({"@type": "ListItem", "position": i, "item": url,
+        items.append({"@type": "ListItem", "position": i, "item": url + "/",
                       "name": SECTION_NAMES.get(p, p.replace("-", " ").title())})
     items.append({"@type": "ListItem", "position": len(items) + 1, "name": title})
     return {"@type": "BreadcrumbList", "itemListElement": items}
 
 
 def build_graph(rel: str, title: str, desc, lang: str) -> dict:
-    parts = [p for p in rel.split("/") if p]
+    parts = [p for p in clean_rel(rel).split("/") if p]
     url = page_url(rel)
     is_article = (len(parts) >= 3 and parts[0] == "words" and parts[1] == "writing") or \
                  (len(parts) >= 3 and parts[0] == "world" and parts[1] == "makcikgpt")

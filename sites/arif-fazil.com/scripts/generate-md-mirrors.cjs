@@ -21,12 +21,16 @@ const { getMakcikSource, computeCanonicalPayloadHash, SITE_ROOT } = require("./l
 const { isLegacyShellId, resolveLegacyTarget } = require("./lib/makcik-legacy-map.cjs");
 
 const OUT_DIR = path.join(SITE_ROOT, "public/makcikgpt-md");
+const WORLD_MK_DIR = path.join(SITE_ROOT, "public/world/makcikgpt");
+const WORLD_MK_MD_DIR = path.join(SITE_ROOT, "public/world/makcikgpt/makcikgpt-md");
 // 2026-09-18: canonical article source. Bodies are read from here, NOT from the
 // cached {slug}.html (which was generated pre-provenance-pass and drifted).
 const TS_DIR = path.join(SITE_ROOT, "src/data/makcikgpt");
 const TS_REGISTRY = path.join(TS_DIR, "index.ts");
-if (!fs.existsSync(OUT_DIR)) {
-  fs.mkdirSync(OUT_DIR, { recursive: true });
+for (const d of [OUT_DIR, WORLD_MK_DIR, WORLD_MK_MD_DIR]) {
+  if (!fs.existsSync(d)) {
+    fs.mkdirSync(d, { recursive: true });
+  }
 }
 
 // ── HTML → Markdown (template-aware: cover, fact-box, pull-quote, callout) ──
@@ -231,7 +235,7 @@ let bodyFull = 0;
 let bodyMissing = [];
 
 for (const p of pieces) {
-  const slug = p.dest.path.replace("/world/makcikgpt/", "");
+  const slug = p.dest.path.replace("/world/makcikgpt/", "").replace(/\/$/, "");
   const outFile = path.join(OUT_DIR, `${slug}.md`);
 
   const payloadHash = computeCanonicalPayloadHash(p);
@@ -287,6 +291,8 @@ ${bodyMd ? bodyMd : `*(Badan artikel belum dimuat dalam lane md — fetch HTML k
 `;
 
   fs.writeFileSync(outFile, out);
+  fs.writeFileSync(path.join(WORLD_MK_DIR, `${slug}.md`), out);
+  fs.writeFileSync(path.join(WORLD_MK_MD_DIR, `${slug}.md`), out);
 }
 
 // ── Cached {slug}.html → regenerated from canonical .ts (2026-09-18) ───
@@ -403,6 +409,8 @@ epistemic_summary:
 ${bodyMd}
 `;
   fs.writeFileSync(path.join(OUT_DIR, `${slug}.md`), out);
+  fs.writeFileSync(path.join(WORLD_MK_DIR, `${slug}.md`), out);
+  fs.writeFileSync(path.join(WORLD_MK_MD_DIR, `${slug}.md`), out);
   unregisteredEmitted.push(slug);
 }
 

@@ -1,0 +1,148 @@
+---
+article_id: m1-1
+canonical_url: https://arif-fazil.com/world/makcikgpt/iran-hormuz
+seal: 999
+provenance_status: sealed
+version: 1.1
+merkle_leaf: 083a0c0eace454dd7e2da9606ae8caf87e087bcf200ef06e59a048b0c78fdbc3
+epistemic_summary:
+  obs_count: 3
+  der_count: 0
+  int_count: 1
+  spec_count: 0
+---
+
+# Iran Hormuz dan Malaysia: Rightsizing Tak Habis-Habis
+
+> Iran Hormuz dan Malaysia: Rightsizing Tak Habis-Habis
+>
+> Canonical URL: https://arif-fazil.com/world/makcikgpt/iran-hormuz
+>
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/iran-hormuz
+
+## Claim Register
+
+| claim_id | tag | text | source_id | maruah |
+|---|---|---|---|---|
+| HRM-C1 | OBS | Konflik Iran–AS/Israel berterusan sejak 28 Feb 2026; Selat Hormuz — lorong ~20% minyak dunia pada waktu aman — ditutup penuh pada 11 Jun 2026 mengikut laporan Al Jazeera; kapal yang cuba lalu ditembak. | src1 | approved |
+| HRM-C2 | OBS | Rundingan Doha tidak jelas: AS kata hantar orang, Iran sangkal rundingan langsung, Qatar jelaskan hanya jumpa mediator. | src1 | approved |
+| HRM-C3 | OBS | PETRONAS menjalankan rightsizing berulang (termasuk ~5,000 tenaga kerja) sambil negara masih bergantung pada minyak dan gas; Lembaga Pengarah tidak bersuara secara terbuka. | src2 | approved |
+| HRM-C4 | INT | Bila dunia tidak menentu, negara patut menguatkan tulang belakang NOC, bukan melemahkannya — tiga teguran Makcik: jangan senyap, jangan buang orang sesuka hati, jangan alih aset strategik tanpa cerita. | - | not_applicable |
+
+## Source Ledger
+
+| source_id | type | title | url |
+|---|---|---|---|
+| src1 | news | Al Jazeera + laporan agensi (Jun 2026) — penutupan Hormuz, serangan kapal, status Doha | aljazeera://2026-06/hormuz-closure-doha-status |
+| src2 | news | Laporan media Malaysia 2024–2026 — pusingan rightsizing PETRONAS | nst://2024-2026/petronas-rightsizing-rounds |
+
+---
+
+# Iran Hormuz dan Malaysia: Rightsizing Tak Habis-Habis, Macam Perang Israel
+
+MakcikGPT bersuara — untuk makcik-makcik yang baca berita dekat WhatsApp dan tertanya-tanya: "Apa kena-mengena dengan kita?"
+
+---
+
+## Assalamualaikum Anak-Anak
+
+Makcik nak cerita sikit pasal satu benda yang jauh di mata tapi dekat di hati poket kita: Selat Hormuz.
+
+Tempat tu dekat Iran. Jauh kan? Tapi harga minyak dunia lalu situ. Kalau situ tutup, harga minyak naik. Kalau harga minyak naik, harga barang naik. Kalau harga barang naik, gaji kita tak kejar. Faham tak?
+
+Macam ni: kita duduk Malaysia, tapi dapur kita bergantung pada api yang orang lain pasang di Timur Tengah.
+
+---
+
+## Apa Yang Berlaku Sekarang?
+
+Iran dengan Amerika + Israel sudah bergaduh sejak 28 Februari 2026. Dah berbulan-bulan. Gaduhnya bukan main-main: serangan kapal terbang, peluru berpandu, drone, sekolah perempuan pun kena.
+
+Yang paling kena dengan kita: Selat Hormuz.
+
+Selat ni ialah lorong air sempit. Dalam keadaan aman, 20% minyak dunia lalu sini setiap hari. Sekarang? Iran tutup. Buka sikit. Tutup balik. Macam orang main-main pintu.
+
+11 Jun 2026: Iran umum tutup sepenuhnya. Kapal yang cuba lalu kena tembak. (Al Jazeera)
+
+Brent crude naik turun macam yoyo. Ada masa dah turun ke $72/barel. Sekarang bila Doha tak jadi jumpa, market tak tahu nak percaya siapa.
+
+---
+
+## Doha: Jumpa Ke Tak Jumpa?
+
+Trump cakap dia hantar orang ke Doha untuk runding dengan Iran. Iran cakap tak ada runding langsung. Qatar pula keluar cakap: "Diorang jumpa mediator, bukan jumpa Iran terus."
+
+Makcik faham macam ni: macam kita tengah gaduh dengan jiran. Orang kampung cakap dia tolong sembang. Tapi sebenarnya kita dengan jiran tak jumpa muka langsung. Sembang pun sembang dengan orang tengah.
+
+Soalnya: Kalau tak jumpa, macam nak damai?
+
+Bagi kita di Malaysia, ini bukan cerita jauh. Ini cerita harga minyak kita, dividen PETRONAS kita, dan harga barang dekat pasar.
+
+---
+
+## Rightsizing PETRONAS: Tak Habis-Habis
+
+Anak-anak, makcik baca berita, hati makcik pedih.
+
+Satu dunia sedang bahas minyak, gas, perang, ekonomi. Tapi dekat negara kita, cerita PETRONAS macam perang Israel dengan Lebanon — tiap-tiap minggu ada letupan baru.
+
+- Lembaga Pengarah senyap. Bila benda pelik jadi, diorang macam tiada suara.
+
+- PETROS Sarawak. Gas Sarawak makin banyak diuruskan syarikat negeri. Bukan salah Sarawak — itu hak dia. Tapi cara benda ni jadi senyap-senyap, tanpa rakyat Malaysia faham, itu yang buat makcik risau.
+
+- Rightsizing lagi. Dah buang 5,000 orang. Kemudian 5,000 lagi? Macam tak habis-habis. Orang tua kehilangan kerja, anak-anak tangguh universiti, morale orang dalam syarikat hancur.
+
+Makcik tanya: kenapa PETRONAS kena rightsizing berkali-kali sedangkan negara kita masih bergantung sangat pada minyak dan gas?
+
+Bila dunia sedang huru-hara, kita patutnya kuatkan tulang belakang PETRONAS, bukan membuatnya makin lesu.
+
+---
+
+## Apa Kena-Mengena Dengan Kita?
+
+Kita rakyat Malaysia bukan kaya semua. Harga barang naik, kita yang rasa. Dividen PETRONAS kurang, kerajaan susah nak bajet. Bajet susah, subsidi kena tarik. Subsidi tarik, rakyat menderita.
+
+Iran jauh. Amerika jauh. Israel jauh.
+
+Tapi minyak dekat. Gas dekat. PETRONAS dekat.
+
+Dan bila PETRONAS jadi lemah ketika dunia sedang tak menentu, makcik rasa macam kapal negara kita sedang berlayar tanpa nakhoda yang cukup kuat.
+
+---
+
+## So Apa Makcik Nak Cakap?
+
+Makcik bukan pakar politik. Makcik bukan ekonomi. Makcik cuma makcik yang sayang negara.
+
+Tapi ada tiga benda yang makcik rasa kena sebut:
+
+- Jangan senyap. Lembaga Pengarah PETRONAS kena bersuara. Rakyat ada hak tahu.
+
+- Jangan buang orang sesuka hati. Rightsizing bukan hanya nombor. Ia nyawa manusia.
+
+- Jangan alih aset strategik tanpa cerita. Gas Sarawak, gas Sabah, minyak dekat luar pesisir — semua ni hak rakyat Malaysia. Bukan mainan politik sementara.
+
+---
+
+## Penutup
+
+Perang Iran ni ingatkan makcik: dunia ni tak selamat. Kita kena jaga apa yang kita ada.
+
+PETRONAS bukan sekadar syarikat. Ia adalah amanah negara. Bila amanah dikecualikan, bila orang dalam takut bersuara sebab Akta Rahsia Rasmi, bila rakyat tak faham apa yang berlaku — itu bukan ketenteraman. Itu ribut dalam botol.
+
+Jaga diri anak-anak. Jaga duit. Dan jangan senyap bila negara perlukan suara kita.
+
+MakcikGPT bersuara.
+
+---
+
+DITEMPA BUKAN DIBERI — Suara makcik untuk rakyat, bukan untuk parti.
+
+## Rujukan
+
+- Al Jazeera, 11 Jun 2026: "Iran shuts Hormuz strait" — https://www.aljazeera.com/news/2026/6/11/iran-shuts-hormuz-strait-but-wasnt-it-already-closed
+
+- Britannica, 2026 Iran War — https://www.britannica.com/event/2026-Iran-war
+
+- Hermes Malam Brief, 30 Jun 2026: Doha talks did not happen; Brent ~$72/bbl.

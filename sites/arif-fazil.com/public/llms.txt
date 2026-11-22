@@ -8,12 +8,11 @@ Ditempa Bukan Diberi — forged, not given.
 ## Human Navigation
 Brand: ARIF FAZIL
 Primary hubs:
-- Earth: https://arif-fazil.com/earth
-- Economics: https://arif-fazil.com/economics
-- Words: https://arif-fazil.com/words
+- Earth: https://arif-fazil.com/earth/
+- Words: https://arif-fazil.com/words/
 - MakcikGPT: https://arif-fazil.com/world/makcikgpt/
-- World: https://arif-fazil.com/world
-- Work: https://arif-fazil.com/work
+- World: https://arif-fazil.com/world/
+- Work: https://arif-fazil.com/work/
 
 ## Start Here (Three Human Doors)
 - [Ground / Earth](https://arif-fazil.com/earth/): Source-linked Earth model (GEOX). Computes. Does not adjudicate.
@@ -21,8 +20,8 @@ Primary hubs:
 - [Writing / Words](https://arif-fazil.com/words/): Essays, derivations, and doctrine.
 - [Core Laws](https://arif-fazil.com/laws/): Ratified F1–F13 constitutional floors and evidence mappings.
 - [Sovereign anchor](https://arif-fazil.com/arif/): The human seat — F13 veto, the contract, and the boundary every agent reads before acting.
-- [About](https://arif-fazil.com/about): Who Arif is.
-- [Agent contract](https://arif-fazil.com/human): What you may retrieve, what requires approval.
+- [About](https://arif-fazil.com/about/): Who Arif is.
+- [Agent contract](https://arif-fazil.com/human/): What you may retrieve, what requires approval.
 - [Briefing](https://arif-fazil.com/institution/): Human / institutional engagement path.
 - [Design Partner Pilot](https://arif-fazil.com/pilot/): 4-week supervised AI action control around your agent workflow — eight measurable criteria, receipt chain.
 - [Policy](https://arif-fazil.com/policy.json): Public limits and human veto.
@@ -70,8 +69,7 @@ Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-ful
 - [Economics](https://arif-fazil.com/economics/): The one door for the Economics domain — Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing, and the PETRONAS dossier.
 - [Daily briefing](https://arif-fazil.com/economics/briefing/): Live daily briefing — markets, policy, and the Malaysian economy in public numbers.
 - [Boards index](https://arif-fazil.com/world/economics/): Brent, gas, gold, FBM KLCI, USD/MYR — each board on its own URL.
-- [PETRONAS dossier](https://arif-fazil.com/petronas/): Dompet hari ini, tangki masa depan — the wallet and the tank, in audited public numbers. Coupled pair: /wealth/malaysia/. Machine files: state.json · brief.md.
-- [Putrajaya — federal ledger](https://arif-fazil.com/wealth/malaysia/): Malaysia's fiscal state in public numbers — budget deficit, debt-service ratio, subsidy distance-to-break, and the oil-dividend coupling to PETRONAS. Coupled pair: /petronas/. Machine files: state.json · brief.md.
+- [PETRONAS dossier](https://arif-fazil.com/petronas/): Dompet hari ini, tangki masa depan — the wallet and the tank, in audited public numbers.
 - [WEALTH cockpit](https://wealth.arif-fazil.com/): The live organ — sovereign capital & market synthesis.
 
 ## World — AI Agents 2027 dossier (forged 2026-09-18)
@@ -86,9 +84,6 @@ Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-ful
 
 ## World — AI Labs Shadow
 - [AI Labs Bayang](https://arif-fazil.com/world/ai/shadow/): Institutional shadow atlas of 10 major AI model labs — promises, ownership, compute, model reflection, and displaced consequences. Structure and causality ladder (Level 0–5). Fully machine-traversable (index.json, providers.json, claims.json, receipts.json, graph.json, manifest.json).
-
-## World — Corporate Shadow
-- [Kerusi Bayang — PETRONAS](https://arif-fazil.com/world/petronas/shadow/): Shadow analysis of every PETRONAS chairman and CEO, 1974–2026 — public records, structural read, no personal motive. Machine index: index.json · index.md. Pairs with /petronas/ and /wealth/malaysia/.
 
 ## Also
 - Sitemap: https://arif-fazil.com/sitemap.xml

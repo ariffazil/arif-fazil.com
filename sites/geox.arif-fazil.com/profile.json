@@ -1,23 +1,17 @@
 {
   "organ": "GEOX",
   "role": "Earth Intelligence",
-  "mcp_tools": 29,
-  "mcp_apps": 25,
+  "mcp_tools": 27,
+  "mcp_apps": 5,
   "rasa_cap": 0.9,
   "hold": "888_HOLD",
   "ledger": "VAULT999",
-  "license": "BSL-1.1 \u2192 Apache-2.0 @2029-06-29",
+  "license": "BSL-1.1 → Apache-2.0 @2029-06-29",
   "port": 8081,
   "health": "https://geox.arif-fazil.com/health",
   "mcp": "https://geox.arif-fazil.com/mcp",
   "version": "v2026.10.03",
-  "evidence": [
-    "probe 2026-11-22 GET http://127.0.0.1:8081/health -> tools_loaded=29 canonical_tools=29 registry_state=PASS surface_drift.ok=true; status=degraded cause=DEPENDENCY (arifOS kernel F6 unmeasured, verdict HOLD) \u2014 inherited, not GEOX defect",
-    "probe 2026-11-22 MCP tools/list session fi003-qwen-audit -> names=29 duplicates=[] not_in_manifest=[]",
-    "probe 2026-11-22 geox_surface_status -> REGISTRY_PASS public_count=29 target=29 smoke_test 16/16 modules",
-    "probe 2026-11-22 MCP resources/list -> 56 resources, 25 ui://",
-    "source geox_mcp.registry.get_registry_truth()['tools'] -> 29 public names; tools_sot.yaml public_count=29 version=2026.11.21"
-  ],
-  "count_basis": "mcp_tools: live tools/list + /health + geox_surface_status (fi003 qwen-code audit 2026-11-22). mcp_apps: ui:// resources in live resources/list (25 of 56 resources).",
-  "count_as_of": "2026-11-22"
+  "evidence": "OBS: /health probed 2026-11-14T11:59Z status=degraded, cause=DEPENDENCY, kernel_verdict=HOLD, version=v2026.10.03, tools_loaded=27, canonical_tools=27, surface_drift.ok=true. geox_seismic_compute appears once. registry.duplicates absent. Dependency arifOS degraded (F4, F6 unmeasured).",
+  "count_basis": "tools/list count=27 on 2026-11-14, same names as /health canonical_tools. apps.json status=active is 5 (well-desk, prospect-ui, geox-mcp-visual, judge-console, earth-volume); deprecated 3; planned 1.",
+  "count_as_of": "2026-11-14"
 }

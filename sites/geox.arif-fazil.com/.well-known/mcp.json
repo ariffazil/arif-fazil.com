@@ -1,9 +1,9 @@
 {
   "$schema": "https://modelcontextprotocol.io/schemas/webmcp-manifest.json",
   "name": "GEOX",
-  "title": "GEOX \u2014 Earth Intelligence Organ of the arifOS Federation",
+  "title": "GEOX — Earth Intelligence Organ of the arifOS Federation",
   "version": "v2026.10.03",
-  "description": "Governed Earth Intelligence MCP: 27 canonical tools, epistemic contract OBS/DER/INT/SPEC/UNKNOWN, RASA cap 0.90, constitutional floors F1-F13 with sovereign human veto (888_HOLD). GEOX computes; it never adjudicates and never seals.",
+  "description": "Governed Earth Intelligence MCP: 29 canonical tools, epistemic contract OBS/DER/INT/SPEC/UNKNOWN, RASA cap 0.90, constitutional floors F1-F13 with sovereign human veto (888_HOLD). GEOX computes; it never adjudicates and never seals.",
   "homepage": "https://geox.arif-fazil.com",
   "endpoint": "https://geox.arif-fazil.com/mcp",
   "transport": "streamable-http",
@@ -21,7 +21,7 @@
   ],
   "tools_url": "https://geox.arif-fazil.com/mcp#tools",
   "apps_url": "https://geox.arif-fazil.com/mcp-apps",
-  "tool_count": 27,
+  "tool_count": 29,
   "epistemic_contract": {
     "layers": [
       "OBS",
@@ -34,23 +34,31 @@
     "hold_status": "888_HOLD"
   },
   "widgets": [
-    "geox.app.welldesk",
-    "geox.app.seismic_vision",
-    "geox.app.earth_volume",
+    "geox.app.analog_digitizer",
+    "geox.app.attribute_audit",
     "geox.app.basin_explorer",
-    "geox.app.map_portal",
-    "geox.app.timeline_view",
-    "geox.app.risk_console",
+    "geox.app.catalog",
+    "geox.app.earth_map",
+    "geox.app.earth_volume",
+    "geox.app.evidence_v1",
+    "geox.app.geoprobe",
+    "geox.app.georeference_map",
+    "geox.app.geox_mcp_visual",
+    "geox.app.gravmag_studio",
+    "geox.app.gravmag_studio_html",
     "geox.app.judge_console",
-    "geox.app.well_context_desk",
-    "geox.app.flood_surface",
-    "geox.app.route_board",
-    "geox.app.infrastructure_watch",
-    "geox.app.hazard_escalator",
-    "geox.app.strata_column",
-    "geox.app.depth_ruler",
-    "geox.app.rasa_dial",
-    "geox.app.federation_status"
+    "geox.app.prospect_studio",
+    "geox.app.prospect_ui",
+    "geox.app.risk_console",
+    "geox.app.seismic_vision",
+    "geox.app.seismic_vision_review",
+    "geox.app.visual_hub",
+    "geox.app.well_desk",
+    "geox.app.well_witness",
+    "geox.app.workbench_v1",
+    "geox.app.workbench_v1_html",
+    "geox.app.workspace_v1",
+    "geox.app.workspace_v1_html"
   ],
   "widget_spec": "SEP-1865",
   "federation": {
@@ -94,5 +102,9 @@
     "converts_to": "Apache-2.0",
     "conversion_date": "2029-06-29"
   },
-  "widgets_note": "widgets[] is a historical name list, not a liveness proof and not a seal surface. geox.app.vault999_ledger was removed on 2026-11-12 because GEOX does not seal (555_COMPUTE_ONLY). Live apps: https://geox.arif-fazil.com/apps.json. Public tools: tools/list, count 27."
+  "widgets_note": "widgets[] is a historical name list, not a liveness proof and not a seal surface. geox.app.vault999_ledger was removed on 2026-11-12 because GEOX does not seal (555_COMPUTE_ONLY). Live apps: https://geox.arif-fazil.com/apps.json. Live ui:// resources (resources/list): 25 (22 distinct, 3 .html aliases). Public tools: tools/list, count 29.",
+  "ui_resources_measured_at": "2026-11-23",
+  "ui_resources_source": "live MCP resources/list (:8081) via publish_docroot live_probe",
+  "ui_resources_count": 25,
+  "ui_resources_distinct": 22
 }

@@ -54,7 +54,9 @@ import sayangYangPercuma from './sayang-yang-percuma';
 import hargaSebuahMaruahManusia from './harga-sebuah-maruah-manusia';
 import mencintaimu from './mencintaimu';
 import metaAiDajjalKe from './meta-ai-dajjal-ke';
+import amanahTawakkalTakdirLuck from './amanah-tawakkal-takdir-luck';
 export const makcikArticleModules: ArticleContent[] = [
+  amanahTawakkalTakdirLuck,
   takKenalMakaTakSayang,
   metaAiDajjalKe,
   mencintaimu,

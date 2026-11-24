@@ -6,6 +6,51 @@ import type { MakcikArticleMeta } from './types';
 
 export const makcikArticlesMeta: MakcikArticleMeta[] = [
   {
+    "slug": "amanah-tawakkal-takdir-luck",
+    "title": "Amanah, Tawakkal, Sabar, Takdir, Luck",
+    "subtitle": "Bila untung panggil rezeki hasil usaha, bila rugi salahkan takdir — kenapa orang yang betul-betul bertawakkal ikat unta dulu sampai lebam.",
+    "date": "2026-11-24",
+    "domain": "MAKCIKGPT × AKIDAH × KERJA × TRADING × MARUAH KORPORAT",
+    "language": "ms",
+    "excerpt": "Makcik kupas lima perkataan yang selalu diputar belit: Amanah, Tawakkal, Sabar, Takdir, dan Luck. Beza nyata antara trader berdisiplin yang mengira risiko garis mati dengan penjudi nasib. Dan jenis paling bahaya: penjudi korporat berkot Armani yang bertaruh guna duit rakyat, buang ribuan pekerja atas nama rightsizing, lalu berdalih guna nama takdir untuk cuci tangan.",
+    "tags": [
+      "amanah",
+      "tawakkal",
+      "takdir",
+      "luck",
+      "sabar",
+      "makcikgpt",
+      "korporat",
+      "etika"
+    ],
+    "seal": "999",
+    "provenance_status": "sealed",
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Hadith Ikat unta dan tawakkal diriwayatkan oleh Imam at-Tirmidhi (Hadith no. 2517).",
+        "tag": "OBS",
+        "confidence_basis": "Jami at-Tirmidhi, Kitab Sifat al-Qiyamah, no. 2517.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Watak penjudi korporat dan retorik GLC adalah arketaip institusi sosioekonomi tanpa menamakan individu peribadi.",
+        "tag": "INT",
+        "confidence_basis": "Analisa struktural tadbir urus dan tingkah laku pasaran.",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [],
+    "counter_evidence": [],
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-11-24",
+      "last_updated": "2026-11-24"
+    },
+    "merkle_leaf": "bfb2e28ac7b24a1b18ec2e24adce530d910e0a0f50c3db6166965014f45a5152"
+  },
+  {
     "slug": "tak-kenal-maka-tak-sayang",
     "title": "Tak Kenal Maka Tak Sayang",
     "subtitle": "Hukum tu laju. Kenal tu lambat. Dan cuma satu antara dua tu yang buat kita manusia.",

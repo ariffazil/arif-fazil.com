@@ -1,0 +1,149 @@
+import type { ArticleContent } from './types';
+
+const content: ArticleContent = {
+  slug: 'amanah-tawakkal-takdir-luck',
+  html: `<div class="cover">
+  <div class="cover-emoji">🎲 ⚖️ 🐪</div>
+  <div class="cover-kicker">AKIDAH · KERJA · MARUAH KORPORAT</div>
+  <h1 class="cover-title">Amanah, Tawakkal, Sabar, Takdir, Luck</h1>
+  <p class="cover-subtitle">Bila untung panggil rezeki hasil usaha, bila rugi salahkan takdir — kenapa orang yang betul-betul bertawakkal ikat unta dulu sampai lebam.</p>
+  <div class="cover-byline">
+    <strong>Oleh MakcikGPT</strong> · 999 Meterai · 24 November 2026
+  </div>
+</div>
+
+<p>Makcik nak tanya hang satu soalan mudah, tapi tolong jawab jujur.</p>
+
+<p>Pernah tak hang jumpa orang yang bila bisnes dia untung, bila saham dia melonjak, bila projek dia dapat geran kerajaan — dia tepuk dada, kembang hidung, belanja satu kedai kopi sambil kata: <em>"Tengoklah, ini berkat analisa bijak, strategi mantap, dan kerja keras aku!"</em>?</p>
+
+<p>Tapi bila syarikat dia melingkup, bila duit pelabur lesap, bila hutang keliling pinggang — muka dia terus berubah sayu, kopiah naik atas dahi, suara bertukar perlahan: <em>"Dah ketentuan Ilahi... kita kena redha dengan takdir, banyakkan bertawakkal."</em>?</p>
+
+<p>Hang nampak tak permainan dia?</p>
+
+<p><strong>Bila menang, dia mengaku tuhan. Bila kalah, dia buat Tuhan jadi kambing hitam untuk tutup kemalasan dan ketamakan dia sendiri.</strong></p>
+
+<p>Hari ni Makcik nak duduk sembang elok-elok pasal lima perkataan yang orang kita paling suka guna, tapi paling kerap disalahguna untuk cuci tangan: <strong>Amanah, Tawakkal, Sabar, Takdir, dan Luck</strong>.</p>
+
+<hr />
+
+<h2>1. Lima perkataan yang diputar belit</h2>
+
+<p>Kalau hang tak faham sempadan lima benda ni, hang akan jadi mangsa dua jenis manusia: pemalas yang menunggang agama, atau pencuri yang memakai kot korporat.</p>
+
+<p><strong>Amanah — Duit yang orang percaya pada hang, bukan modal hang bergaya.</strong><br />
+Amanah bukan sajak cinta, bukan lafaz kosong masa angkat sumpah jawatan. Amanah bermaksud ada orang serahkan hak dia — duit rakyat, duit pencen, masa depan syarikat, amanah anak bini — ke dalam tangan hang. Tugas hang ialah jaga dan kembangkan dengan integriti, bukan jolok masuk poket sendiri. Bila amanah hilang sebab kecuaian hang, hang tak boleh cakap "kita redha sajalah". Hang yang kena pikul hisab, dunia dan akhirat.</p>
+
+<p><strong>Tawakkal — Buat kerja sampai lebam, baru serah hasil.</strong><br />
+Nabi Muhammad SAW tak pernah ajar orang Islam duduk melangut pasrah. Ada seorang lelaki Badwi datang masjid, dia tinggalkan unta dia terlepas tanpa bertambat kat luar, lepas tu dia masuk kata dia "bertawakkal pada Allah". Nabi terus tegur dia tegak-tegak: <em>"Ikat unta hang dulu, baru tawakkal!"</em> (Hadith Tirmidhi 2517). Lepaskan unta tanpa ikat itu bukan iman — itu bangang yang berselubung tasbih.</p>
+
+<p><strong>Sabar — Daya tahan aktif, bukan tadah muka kena pijak.</strong><br />
+Ramai orang ingat sabar tu pasrah biar orang zalim pijak kepala. Tidak. Sabar dalam bahasa hidup sebenar ialah ketahanan mental dan fizikal untuk buat kerja yang betul hari-hari, tahan godaan nak jalan pintas, dan tunggu masa yang masak sambil tangan terus mendayung. Sabar yang duduk goyang kaki tunggu keajaiban itu bukan sabar — itu nama dia malas bergerak.</p>
+
+<p><strong>Takdir — Benda di luar sempadan kawalan hang.</strong><br />
+Hukum graviti, hujan lebat, gempa bumi, pasaran dunia runtuh, ajal maut — itu takdir. Hang tak boleh lawan. Tapi takdir tak pernah memaksa hang bawa kereta laju lawan arus lalu melanggar pokok. Pilihan hang menekan minyak itu bukan takdir; itu kedunguan hang sendiri.</p>
+
+<p><strong>Luck (Nasib Rawak) — Kebetulan yang bukan sebab kepandaian hang.</strong><br />
+Bila hang beli saham dan esoknya ada perang meletus buat harga minyak melonjak lalu hang untung besar — jangan perasan hang Warren Buffett. Itu LUCK. Nasib rawak. Orang berakal bersyukur bila dapat luck dan simpan bekalan, bukan mendabik dada kata dia ahli nujum ekonomi.</p>
+
+<div class="fact-box">
+<div class="fact-box-title">▲ Hadith Unta & Prinsip Realiti</div>
+<div class="fact-box-content">
+<em>"I'qilha wa tawakkal"</em> (Ikatlah ia dan bertawakkallah) — Jami' at-Tirmidhi 2517. Pintu tawakkal hanya terbuka selepas pintu ikhtiar (usaha instrumen, kiraan risiko, penutupan lubang kecuaian) ditutup rapat.
+</div>
+</div>
+
+<h2>2. Mekanisme: Beza trader berdisiplin dengan penjudi nasib</h2>
+
+<p>Orang selalu tanya Makcik: <em>"Makcik, apa beza orang main forex atau trading saham dengan orang masuk kasino berjudi? Dua-dua duk mengadap nombor naik turun!"</em></p>
+
+<p>Makcik habaq mai bezanya kat mana. Bezanya bukan pada skrin. Bezanya pada <strong>Amanah dan Pengiraan Risiko</strong>.</p>
+
+<p><strong>Penjudi letak duit atas nasib (luck semata-mata).</strong> Dia masuk tanpa rancangan. Dia tak tau berapa dia sanggup rugi. Dia guna duit dapur, duit belanja anak sekolah. Dia tekan butang dengan harapan tuhan bagi rezeki terpijak. Bila menang, dia rasa dia hebat. Bila akaun margin dia kena sapu bersih (margin call), dia menangis tepi dinding: <em>"Ujian takdir berat sangat untuk aku."</em> Penjudi sentiasa cuci tangan daripada kerja.</p>
+
+<p><strong>Trader yang ada amanah mengira risiko SEBELUM tekan butang masuk.</strong> Dia pasang garis mati (stop-loss). Dia dah tetapkan: <em>"Kalau pasaran bergerak lawan analisa aku sebanyak 1%, aku keluar. Aku sanggup rugi RM100 ni, dan aku takkan sentuh duit makan bini anak aku."</em> Bila dia untung, dia sedar sebahagian daripada keuntungan tu ialah 'market tailwind' (luck), jadi dia kekal rendah diri. Bila dia rugi kena stop-loss, dia tak salahkan tuhan — dia buka jurnal, semak data, dan belajar di mana silap perkiraannya.</p>
+
+<p>Bezanya terang macam matahari: <strong>Penjudi bergantung harap pada nasib tanpa buat kerja; orang amanah membuat kerja dan bersiap sedia untuk sebarang kemungkinan nasib.</strong></p>
+
+<h2>3. Jenis yang paling celaka: Penjudi korporat berkot Armani</h2>
+
+<p>Tapi hang jangan salah faham. Makcik bukan nak marah budak-budak muda yang tersilap main saham atau pakcik pencen yang tersalah beli nombor ekor seringgit dua kat kampung.</p>
+
+<p>Depa tu kalau rugi, rugi duit rokok depa sendiri.</p>
+
+<p>Yang paling bahaya dalam negara ni ialah <strong>penjudi korporat yang dapat gaji CEO ratus ribu sebulan dan berselindung di sebalik amanah rakyat</strong>.</p>
+
+<p>Depa ni tak masuk kasino belakang kedai tomyam. Depa duduk dalam bilik berhawa dingin kat menara KLCC atau Putrajaya. Depa tak guna perkataan "judi". Depa bungkus perjudian depa dengan laporan tebal ratusan muka surat, guna istilah Inggeris yang bunyi gah:</p>
+
+<ul>
+  <li><em>"Strategic portfolio rationalisation"</em></li>
+  <li><em>"Synergistic diversification"</em></li>
+  <li><em>"Capital restructuring"</em></li>
+  <li><em>"Right-sizing operations"</em></li>
+</ul>
+
+<p>Depa ambil dana caruman rakyat, duit tabung dividen peneroka, duit syarikat berkaitan kerajaan (GLC). Depa buat keputusan semberono demi nak kejar KPI jangka pendek atau komisen kroni. Bila nasib baik pasaran naik, depa umum bonus berbulan-bulan untuk lembaga pengarah atas nama "kewibawaan kepimpinan".</p>
+
+<p>Tapi bila pelaburan bodoh depa lebur berbilion ringgit, bila beribu pekerja bawahan kena buang kerja atas nama <em>"right-sizing"</em> — depa buat sidang media dengan muka sedih:</p>
+
+<p><em>"Keadaan pasaran global sangat mencabar dan tidak menentu. Lembaga Pengarah telah berusaha, namun ini ketentuan di luar kawalan syarikat..."</em></p>
+
+<p>Puih.</p>
+
+<p>Itu bukan ketentuan luar kawalan. Itu perjudian berisiko tinggi guna duit orang lain! Bila menang untung masuk poket sendiri, bila kalah kerugian dihempas atas tengkuk rakyat, lepas tu petik ayat takdir untuk elak kena penjara. Itu bukan amanah korporat — itu mencuri pakai tali leher!</p>
+
+<h2>4. Ruang kecil di mana manusia diuji</h2>
+
+<p>Hang kena faham peta realiti hidup ni.</p>
+
+<p>Dunia ni bergerak atas dua kutub yang kita tak boleh cipta sesuka hati:</p>
+<ol>
+  <li><strong>Takdir</strong> — yang telah tertulis dalam ketetapan Tuhan (hukum fizik, pasaran, umur).</li>
+  <li><strong>Luck</strong> — kebarangkalian rawak yang sentiasa berbolak-balik.</li>
+</ol>
+
+<p>Tapi di antara takdir dan luck, Tuhan tinggalkan <strong>satu ruang kecil</strong> untuk manusia: <strong>Ikhtiar, Disiplin, dan Amanah</strong>.</p>
+
+<p>Ruang tu nampak kecil berbanding alam semesta yang luas ni. Tapi dalam ruang kecil itulah seluruh nilai maruah hang sebagai manusia diletakkan. Di situlah hisab kita.</p>
+
+<p>Tuhan takkan tanya hang kenapa ekonomi dunia tahun 2026 jatuh merudum. Tapi Tuhan akan tanya hang:</p>
+
+<p><em>"Masa hang pegang duit syarikat tu, hang kira risiko dak?"</em><br />
+<em>"Masa hang nak kahwin, hang sedia nak pikul tanggungjawab dak?"</em><br />
+<em>"Masa hang lepaskan unta hang kat padang pasir, hang ikat tali dak?"</em></p>
+
+<h2>Penutup Makcik</h2>
+
+<p>Makcik nak pesan satu benda saja kat anak cucu Makcik.</p>
+
+<p>Dunia ni penuh dengan orang yang bila menang sebut <em>"usaha aku"</em>, tapi bila kantoi cepat-cepat sebut <em>"takdir Tuhan"</em>. Itu bukan iman, anak oii. Itu cuci tangan paling bacul.</p>
+
+<p>Orang yang betul-betul amanah:</p>
+<ul>
+  <li>Bila untung dan menang, dia tunduk bersyukur dan sedar sebahagian besarnya mungkin luck dan rahmat Tuhan yang dia tak layak dapat.</li>
+  <li>Bila rugi dan jatuh, dia bermuhasabah, semak kecuaian sendiri, mengaku salah, dan bertanggungjawab baiki apa yang rosak.</li>
+  <li>Dan sepanjang masa hidupnya — dia buat kerja dengan sabar, teliti, dan ikat unta sampai lebam.</li>
+</ul>
+
+<p>Lepas hang dah buat SEMUA kerja tu sampai tiada lagi lubang kecuaian yang tinggal... barulah hang tadah tangan ke langit dan sebut dengan dada lapang:</p>
+
+<p><strong>"Ya Allah, aku dah ikat unta aku sehabis daya. Sekarang, aku bertawakkal kepada-Mu."</strong></p>
+
+<hr />
+
+<div class="fact-box">
+<div class="fact-box-title">📌 SATU AYAT UNTUK DIKONGSI (WhatsApp / Chat)</div>
+<div class="fact-box-content">
+"Penjudi salahkan takdir bila duit lebur dan panggil rezeki bila menang. Orang amanah ikat unta sampai lebam — dan serah pada Tuhan tanpa cari kambing hitam."
+</div>
+</div>
+
+<div class="corrections-footer" style="margin-top: 2rem; padding: 1rem; border-left: 3px solid #888; font-size: 0.85rem; color: #666;">
+  <strong>Catatan Ketelusan & Rujukan MakcikGPT:</strong><br />
+  • <strong>Disahkan [OBS]:</strong> Hadith <em>"Ikat unta dan tawakkal"</em> diriwayatkan oleh Imam at-Tirmidhi (Hadith no. 2517) daripada Anas bin Malik r.a. Definisi amanah dan hisab adalah prinsip teras syariah muamalat.<br />
+  • <strong>Konsep [DER]:</strong> Analisa perbezaan risiko trading vs judi berakar pada pemodelan matematik kebarangkalian dan pengurusan modal (risk/reward ratio & stop-loss discipline).<br />
+  • <strong>Kritikan [INT]:</strong> Watak penjudi korporat dan retorik penstrukturan GLC adalah arketaip institusi sosioekonomi di Malaysia; tiada mana-mana individu dinamakan secara peribadi.
+</div>
+`
+};
+
+export default content;

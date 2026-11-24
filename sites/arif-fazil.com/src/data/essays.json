@@ -1,5 +1,54 @@
 [
   {
+    "id": "m-gen-amanah-tawakkal-takdir-luck",
+    "title": "Amanah, Tawakkal, Sabar, Takdir, Luck",
+    "date": "2026-11-24",
+    "lang": "bm",
+    "series": {
+      "id": "GENESIS",
+      "n": 16
+    },
+    "tags": [
+      "amanah",
+      "tawakkal",
+      "takdir",
+      "luck",
+      "sabar",
+      "makcikgpt",
+      "korporat",
+      "etika"
+    ],
+    "dest": {
+      "type": "onsite",
+      "path": "/world/makcikgpt/amanah-tawakkal-takdir-luck"
+    },
+    "seal": "999",
+    "provenance_status": "sealed",
+    "version_lineage": {
+      "version": "1.0",
+      "published": "2026-11-24",
+      "last_updated": "2026-11-24"
+    },
+    "claim_register": [
+      {
+        "claim_id": "C001",
+        "text": "Hadith Ikat unta dan tawakkal diriwayatkan oleh Imam at-Tirmidhi (Hadith no. 2517).",
+        "tag": "OBS",
+        "confidence_basis": "Jami at-Tirmidhi, Kitab Sifat al-Qiyamah, no. 2517.",
+        "maruah_review": "approved"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Watak penjudi korporat dan retorik GLC adalah arketaip institusi sosioekonomi tanpa menamakan individu peribadi.",
+        "tag": "INT",
+        "confidence_basis": "Analisa struktural tadbir urus dan tingkah laku pasaran.",
+        "maruah_review": "approved"
+      }
+    ],
+    "source_ledger": [],
+    "counter_evidence": []
+  },
+  {
     "id": "m-gen-tak-kenal-maka-tak-sayang",
     "title": "Tak Kenal Maka Tak Sayang",
     "date": "2026-11-14",

@@ -1,0 +1,236 @@
+/* earth-coat 20261125 — one rail, one type, one accent. Figures keep their own plates. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --earth-canvas: #07090E;
+  --earth-ink: #EDEAE2;
+  --earth-ink-soft: #9AA0A8;
+  --earth-hairline: #1F2733;
+  --earth-ember: #E4572E;
+  --earth-band: #0A0D14;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Liberation Sans", system-ui, sans-serif;
+}
+
+.earth-room-nav {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 2px;
+  margin: 0;
+  padding: 0 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  background: var(--earth-canvas);
+  border-bottom: 1px solid var(--earth-hairline);
+  scrollbar-width: thin;
+}
+
+body:has(.fed-navbar) .earth-room-nav,
+body:has(#fed-nav-root) .earth-room-nav {
+  top: 56px;
+}
+
+.earth-room-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  color: var(--earth-ink-soft);
+  font-family: "IBM Plex Sans", "Liberation Sans", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.earth-room-nav a:hover {
+  color: var(--earth-ink);
+}
+
+.earth-room-nav a[aria-current="page"] {
+  color: var(--earth-ink);
+  box-shadow: inset 0 -2px 0 var(--earth-ember);
+}
+
+.earth-room-nav a:focus-visible {
+  outline: 2px solid var(--earth-ember);
+  outline-offset: 2px;
+}
+
+[aria-label="3-second orientation"] {
+  display: none !important;
+}
+
+html.figure-only .earth-room-nav {
+  display: none !important;
+}
+
+.earth-zen-dock {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 2px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 8px;
+  overflow-x: auto;
+  background: var(--earth-band);
+  border: 0;
+  border-bottom: 1px solid var(--earth-hairline);
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+
+.earth-zen-dock a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 2px;
+  color: var(--earth-ink-soft);
+  font-family: "IBM Plex Sans", "Liberation Sans", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.earth-zen-dock a.active {
+  color: var(--earth-ink) !important;
+  background: transparent !important;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--earth-ember);
+}
+
+@media screen {
+  html:not(.figure-only) .hero-title h1,
+  html:not(.figure-only) .hero h1,
+  html:not(.figure-only) .hdr h1,
+  html:not(.figure-only) .hero-header h1,
+  html:not(.figure-only) .plate > header h1 {
+    font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif !important;
+    font-weight: 560;
+    letter-spacing: -0.015em;
+    text-transform: none !important;
+    background-image: none !important;
+    -webkit-text-fill-color: var(--earth-ink) !important;
+    color: var(--earth-ink) !important;
+  }
+
+  html:not(.figure-only) main h2 {
+    font-family: "IBM Plex Sans", "Liberation Sans", system-ui, sans-serif;
+    text-transform: none !important;
+    background-image: none !important;
+    -webkit-text-fill-color: var(--earth-ink) !important;
+    color: var(--earth-ink) !important;
+  }
+
+  html:not(.figure-only) main h2 .num {
+    -webkit-text-fill-color: var(--earth-ember) !important;
+    color: var(--earth-ember) !important;
+  }
+}
+
+main a:not(.btn):not(.back-btn):not(.intent-card):not(.map-btn):not(.gis-btn):not(.btn-link):not(.primary):not(.ghost) {
+  text-decoration-color: var(--earth-ember);
+  text-underline-offset: 3px;
+}
+
+footer .doctrine {
+  color: var(--earth-ink);
+  font-family: "IBM Plex Sans", "Liberation Sans", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+footer p {
+  color: var(--earth-ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1200px) {
+  .toc {
+    top: 4.75rem;
+  }
+}
+
+@media print {
+  .earth-room-nav,
+  .earth-zen-dock {
+    display: none !important;
+  }
+}
+
+/* Injected machine chrome. The room rail is the navigation. */
+.trinity-machine,
+.earth-room-nav > .zs-back-home,
+.psi-badge {
+  display: none !important;
+}
+
+/* Rail meets the viewport edge when a page pads the body. */
+body:has(> nav.earth-room-nav) {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body:has(> nav.earth-room-nav) > .container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    overflow-x: clip;
+  }
+
+  body:has(> nav.earth-room-nav) > .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  body > .plate,
+  body > div.container,
+  body > main.container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .fed-navbar {
+    gap: 0.75rem;
+  }
+
+  .fed-navbar .nav-brand {
+    white-space: nowrap;
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+    background: #07090e;
+    padding-right: 0.75rem;
+  }
+
+  .fed-navbar .nav-links {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-x: auto;
+  }
+}

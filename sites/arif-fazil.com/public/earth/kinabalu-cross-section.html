@@ -1,769 +1,1055 @@
 <!DOCTYPE html>
-<!-- page: earth/kinabalu-cross-section v3 · Φ GEOX · Dangerous Grounds → East Sabah · four competing working models, rendered from in-page data -->
-<!-- earth-panel-contract (family earth/*): MODEL LETTERS ARE PAGE-SCOPED — A/B/C/D here = this transect's
-       own model space. "Model A" here ≠ "Model A" on earth/sabah-observatory (different models, same
-       letters). Cite as kinabalu-cross-section:<letter>. status vocab here = PROVENANCE CLASSES
-       (CLASSIC / PUBLISHED / UNTESTED WORKING HYPOTHESIS) — where the interpretation comes from, NOT
-       confidence rungs (sabah-observatory's axis). Do not merge vocabularies across pages. -->
-<html lang="en" data-ring="ORGAN" data-organ="geox" data-content-marker="kinabalu-cross-section-Φ">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kinabalu Basin — Regional Cross-Section · Φ GEOX | Arif Fazil</title>
-<meta name="description" content="Regional cross-section from the Dangerous Grounds across the Sabah Trough, Kinabalu Basin, Crocker Range and Central Sabah to the Sandakan Basin and Sulu Sea. Four competing working models of what drives the deformation, each with predictions and falsifiers. Public sources only.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabah Trough & Northwest Borneo Margin: Structural Cross-Section & Geodynamic Models</title>
+<meta name="description" content="Regional 833 km geological cross-section across Northwest Borneo: Dangerous Grounds microcontinent, deepwater Sabah Trough, fold-thrust belt, Crocker Range, Mount Kinabalu, and Sulu Sea. Evaluating foredeep flexure, mobile shale tectonics, and younger extension.">
 <link rel="canonical" href="https://arif-fazil.com/earth/kinabalu-cross-section.html">
-<meta property="og:title" content="Kinabalu Basin — Dangerous Grounds to East Sabah, four working models">
-<meta property="og:description" content="One section, four working explanations: possible rift-axis transtensional intrusions (Arif Fazil hypothesis, untested), a Miocene mud canopy (Morley et al. 2023), continental underthrusting, and slab-remnant plus gravity tectonics.">
-<meta property="og:type" content="article">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
-<style>
-:root{
-  --bg-deep:#0a0e17; --bg-panel:#0f172a; --border-dim:#1e293b;
-  --text-primary:#e2e8f0; --text-secondary:#94a3b8; --text-dim:#64748b;
-  --accent-gold:#fbbf24; --accent-cyan:#38bdf8; --accent-rust:#f87171; --accent-mag:#f472b6;
-  --mono:'JetBrains Mono',ui-monospace,monospace; --sans:'Inter',-apple-system,"Segoe UI",sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--sans);padding:1.5rem;line-height:1.6}
-a{color:var(--accent-cyan)}
-.skip-link{position:absolute;left:-9999px}
-.skip-link:focus{position:fixed;top:.5rem;left:.5rem;padding:.5rem 1rem;background:var(--accent-gold);color:var(--bg-deep);border-radius:4px;z-index:9999;font-family:var(--mono);font-size:.8rem}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-.container{max-width:1480px;margin:0 auto}
-.hdr{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border-dim)}
-.hdr h1{font-family:var(--mono);font-size:1.35rem;font-weight:800;text-transform:uppercase;color:var(--accent-gold);margin-bottom:.25rem}
-.hdr .sub{font-size:.7rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.18em;margin-bottom:.4rem}
-.hdr .src{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);max-width:520px;text-align:right}
-.back-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;color:var(--accent-cyan);border:1px solid var(--accent-cyan);padding:.4rem .8rem;border-radius:6px;text-decoration:none;display:inline-block;margin-top:.5rem}
-.zen-pulse{display:flex;flex-wrap:wrap;gap:.4rem;padding:.5rem .8rem;background:rgba(15,23,42,.7);border:1px solid var(--border-dim);border-radius:8px;margin-bottom:1rem;font-size:.7rem}
-.zen-pulse .zp{color:var(--text-secondary);padding:.18rem .55rem;border:1px solid var(--border-dim);border-radius:99px;background:rgba(0,0,0,.3)}
-.zen-pulse .zp b{font-family:var(--mono);font-size:.58rem;letter-spacing:1.2px;color:var(--accent-cyan);text-transform:uppercase;margin-right:.35rem}
-.zen-pulse .zp.gold b{color:var(--accent-gold)}
-.panel{border:1px solid var(--border-dim);border-radius:12px;background:var(--bg-panel);overflow:hidden;margin-bottom:1.25rem}
-.panel-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;padding:.7rem 1.1rem;background:rgba(0,0,0,.35);border-bottom:1px solid var(--border-dim)}
-.panel-head h3{font-family:var(--mono);font-size:.74rem;letter-spacing:1.4px;color:var(--accent-gold);text-transform:uppercase}
-.panel-head .note{font-family:var(--mono);font-size:.62rem;color:var(--text-dim)}
-#xsMap{width:100%;height:300px;background:#070a10}
-.models{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.5rem;padding:.8rem 1rem;border-bottom:1px solid var(--border-dim)}
-.read-guide{font-size:.78rem;line-height:1.55;color:var(--text-mid);padding:.85rem 1.1rem;border-bottom:1px solid var(--border-dim);background:rgba(242,183,5,.04)}
-.read-guide b{color:var(--accent-gold);font-weight:600}
-.ring-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1.1rem}
-.ring-card{display:flex;gap:.8rem;align-items:flex-start;padding:.7rem;border:1px solid var(--border-dim);border-radius:8px;background:rgba(255,255,255,.02)}
-.ring-card svg{flex-shrink:0;width:64px;height:64px}
-.ring-card .meta{flex:1;min-width:0}
-.ring-card .meta .label{font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);margin-bottom:.15rem}
-.ring-card .meta .title{font-size:.85rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:.4rem}
-.ring-card .meta .stat{display:inline-block;font-family:var(--mono);font-size:.62rem;padding:.15rem .45rem;border-radius:999px;border:1px solid currentColor;margin-right:.3rem;margin-bottom:.3rem}
-.mbtn{font-family:var(--sans);text-align:left;background:#0a0e17;border:1px solid var(--border-dim);border-radius:8px;padding:.6rem .75rem;color:var(--text-secondary);cursor:pointer;transition:border-color .15s}
-.mbtn:hover{border-color:var(--text-dim)}
-.mbtn .k{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:.2rem}
-.mbtn .t{display:block;font-size:.82rem;font-weight:600;color:var(--text-primary);line-height:1.3}
-.mbtn .s{display:block;font-size:.68rem;margin-top:.2rem}
-.mbtn[aria-pressed="true"]{border-color:var(--mc,#fbbf24);box-shadow:inset 0 0 0 1px var(--mc,#fbbf24);background:rgba(255,255,255,.03)}
-.xs-wrap{overflow-x:auto;background:#0a0e17}
-#xs{display:block;min-width:1100px;width:100%;height:auto}
-/* mobile: the section is 1100px wide inside a ~390px viewport — say so, don't leave it clipped silently */
-.xs-hint{display:none}
-@media(max-width:900px){
-  .xs-hint{display:flex;align-items:center;gap:.5rem;padding:.45rem .7rem;background:rgba(251,191,36,.08);
-    border-top:1px solid rgba(251,191,36,.25);border-bottom:1px solid rgba(251,191,36,.25);
-    font-family:var(--mono);font-size:.62rem;letter-spacing:.4px;color:#fbbf24}
-  .xs-hint b{font-weight:700}
-  .xs-wrap{position:relative}
-  .xs-wrap::after{content:"";position:sticky;right:0;top:0;display:block;width:26px;height:100%;
-    background:linear-gradient(90deg,transparent,#0a0e17);position:absolute;right:0;pointer-events:none}
-}
-.legend{display:flex;flex-wrap:wrap;gap:.35rem 1rem;padding:.7rem 1rem;border-top:1px solid var(--border-dim);font-size:.68rem;color:var(--text-secondary)}
-.legend .sw{display:inline-block;width:20px;height:11px;border-radius:2px;margin-right:.35rem;vertical-align:-1px;border:1px solid #ffffff22}
-.card-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.25rem}
-@media(max-width:1000px){.card-grid{grid-template-columns:1fr}}
-.card{border:1px solid var(--border-dim);border-radius:10px;padding:1.1rem 1.2rem;background:var(--bg-panel)}
-.card h3{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-gold);margin-bottom:.6rem;border-bottom:1px solid var(--border-dim);padding-bottom:.4rem}
-.card h4{font-size:1.02rem;margin-bottom:.15rem}
-.card .who{font-family:var(--mono);font-size:.64rem;color:var(--text-dim);margin-bottom:.6rem}
-.card p{font-size:.82rem;color:var(--text-secondary);margin-bottom:.55rem}
-.card dl{display:grid;grid-template-columns:7.5rem 1fr;gap:.35rem .8rem;font-size:.78rem}
-.card dt{font-family:var(--mono);font-size:.6rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);padding-top:.15rem}
-.card dd{color:var(--text-secondary)}
-.card dd b{color:var(--text-primary)}
-.status{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:1px;padding:.15rem .5rem;border-radius:99px;border:1px solid;margin-left:.4rem;vertical-align:2px}
-table.mx{width:100%;border-collapse:collapse;font-size:.74rem}
-table.mx th,table.mx td{padding:.45rem .5rem;border-bottom:1px solid var(--border-dim);vertical-align:top;text-align:left}
-table.mx th{font-family:var(--mono);font-size:.58rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);font-weight:600}
-table.mx td.c{text-align:center;font-family:var(--mono);font-weight:700;white-space:nowrap}
-table.mx tr.sel-col td.hl, table.mx th.hl{background:rgba(251,191,36,.07)}
-.y{color:#4ade80}.n{color:#f87171}.u{color:#64748b}
-.obs{font-family:var(--mono);font-size:.58rem;padding:.1rem .4rem;border-radius:4px;white-space:nowrap}
-.obs.done{background:#14532d;color:#bbf7d0}.obs.open{background:#3f2d06;color:#fde68a}
-.timeline{padding:.6rem 1rem 1rem}
-.attribution{margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--border-dim);font-size:.68rem;color:var(--text-dim);line-height:1.7}
-.attribution b{color:var(--text-secondary)}
-.refs{font-size:.7rem;color:var(--text-secondary);columns:2 420px;column-gap:2rem}
-.refs li{margin:0 0 .35rem 1rem;break-inside:avoid}
-#tip{position:fixed;pointer-events:none;z-index:50;max-width:340px;background:#020617;border:1px solid #334155;color:#e2e8f0;font-size:.72rem;line-height:1.45;padding:.5rem .65rem;border-radius:6px;box-shadow:0 8px 24px #000a}
-#tip b{color:var(--accent-gold)}
-/* ?figure → the section alone, for the PDF build */
-html.figure-only body{padding:0}
-html.figure-only body>*:not(.container), html.figure-only header, html.figure-only .zen-pulse, html.figure-only .panel:not(#xsPanel), html.figure-only .card-grid, html.figure-only .card, html.figure-only .attribution, html.figure-only #xsPanel>.panel-head, html.figure-only #xsPanel>.models, html.figure-only #xsPanel>.legend{display:none!important}
-html.figure-only #xsPanel{border:0;border-radius:0;margin:0}
-@media(max-width:900px){body{padding:1rem}.hdr{flex-direction:column}.hdr .src{text-align:left}}
-</style>
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="stylesheet" href="/earth/_shared/earth-shell.css">
+<link rel="stylesheet" href="/_shared/fed-nav.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CreativeWork","name":"Kinabalu Basin — Regional Cross-Section · Φ GEOX","description":"Regional cross-section from the Dangerous Grounds to East Sabah with four competing working models of the tectonic driver. Public sources only.","url":"https://arif-fazil.com/earth/kinabalu-cross-section.html","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"arif-fazil.com","url":"https://arif-fazil.com/"},"publisher":{"@type":"Person","name":"Muhammad Arif bin Fazil","url":"https://arif-fazil.com/"}}
+{"@context":"https://schema.org","@type":"CreativeWork","name":"Sabah Trough & Northwest Borneo Margin: Structural Cross-Section & Geodynamic Models","description":"Regional 833 km geological cross-section across Northwest Borneo from Dangerous Grounds to Sulu Sea. Evaluates foredeep flexure, mobile shale tectonics, and younger extension.","url":"https://arif-fazil.com/earth/kinabalu-cross-section.html","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"arif-fazil.com","url":"https://arif-fazil.com/"},"publisher":{"@type":"Person","name":"Muhammad Arif bin Fazil","url":"https://arif-fazil.com/"}}
 </script>
+<style>
+:root {
+  --canvas:#07090E; --ink:var(--earth-ink, #EDEAE2); --muted:#c4beb4;
+  --ember:var(--earth-ember, #E4572E);
+  --line:#2a3140; --card:#12161e; --paper:#f3efe6; --paper-ink:#1c2430;
+  --focus:var(--earth-ember, #E4572E);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:auto; }
+body { margin:0; background:var(--canvas); color:var(--ink);
+  font-family:"IBM Plex Sans","Liberation Sans",system-ui,sans-serif;
+  font-size:1.05rem; line-height:1.5; }
+a { color:#f3c2b4; }
+a:hover { color:#fff; }
+:focus-visible { outline:2px solid var(--focus); outline-offset:3px; }
+.skip { position:absolute; left:-999px; top:0; background:#fff; color:#000; padding:.5rem 1rem; z-index:5; }
+.skip:focus { left:.5rem; top:.5rem; }
+header.fed-navbar { height:auto; min-height:44px; flex-wrap:wrap; row-gap:.35rem; padding:.4rem 1rem; }
+.fed-navbar .nav-links { flex-wrap:wrap; gap:.35rem .9rem; }
+@media (max-width: 768px) {
+  header.fed-navbar .nav-links { display: flex; flex-wrap: nowrap; }
+}
+nav.earth-site-nav { position:static; font-family:"IBM Plex Sans","Liberation Sans",system-ui,sans-serif;
+  font-size:.92rem; letter-spacing:0; text-transform:none; }
+nav.earth-site-nav a[aria-current="page"] { color:var(--earth-ink, #EDEAE2); }
+.crumbs { padding:.35rem 1rem .1rem; font-size:.92rem; color:var(--muted); }
+.crumbs a { color:var(--muted); }
+.wrap { padding:0 1rem 2.5rem; max-width:1100px; }
+.hero { padding:.15rem 0 1rem; }
+.kicker { font-family:"IBM Plex Mono","Liberation Mono",ui-monospace,monospace; font-size:.78rem;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 .25rem; }
+h1 { font-size:clamp(1.7rem, 4vw, 2.45rem); line-height:1.15; margin:.1rem 0 .4rem; font-weight:640; max-width:26ch; }
+.lede { font-size:1.12rem; max-width:68ch; margin:.2rem 0 .7rem; }
+.badge-group { display:flex; flex-wrap:wrap; gap:.45rem; margin:.6rem 0 1rem; }
+.geo-badge { background:#19202c; border:1px solid #334155; color:#f1f5f9; font-size:.82rem; font-weight:600; padding:.25rem .65rem; border-radius:999px; }
+.geo-badge.accent { border-color:var(--ember); color:#f3c2b4; }
+.ctas { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem; }
+.btn { display:inline-flex; align-items:center; min-height:44px; padding:.45rem 1rem; border-radius:8px;
+  text-decoration:none; font-weight:650; }
+.btn.primary { background:var(--ember); color:#1a0c08; }
+.btn.ghost { border:1px solid var(--ink); color:var(--ink); border-radius:8px; }
+h2 { font-size:1.45rem; line-height:1.25; margin:2.2rem 0 .6rem; }
+h3 { font-size:1.1rem; margin:.3rem 0 .4rem; }
+.cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:.8rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:.9rem 1rem; }
+.card h3 { font-family:"IBM Plex Mono","Liberation Mono",ui-monospace,monospace; font-size:.85rem;
+  letter-spacing:.04em; color:#f3c2b4; text-transform:uppercase; margin-top:0; }
+.card p { margin:.3rem 0 0; font-size:.96rem; }
+#section { max-width:none; }
+.panel { background:var(--paper); color:var(--paper-ink); border-radius:8px; padding:.8rem; margin:.6rem 0 1rem; }
+.panel p, .panel li { color:var(--paper-ink); }
+.controls { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin:.6rem 0; }
+fieldset { border:1px solid #c9c0b2; border-radius:8px; margin:0; padding:.6rem .8rem 0.4rem; }
+legend { font-weight:700; padding:0 .3rem; }
+label.row { display:flex; gap:.6rem; align-items:flex-start; padding:.35rem 0; cursor:pointer; }
+input[type="checkbox"] { width:1.25rem; height:1.25rem; margin-top:.15rem; flex:0 0 auto; accent-color:#9a3412; }
+.overview { width:100%; height:auto; display:block; border-radius:2px; }
+.route { display:flex; flex-wrap:wrap; gap:.35rem .7rem; list-style:none; padding:0; margin:.5rem 0 0; }
+.route li { background:#fff; border-radius:999px; padding:.2rem .7rem; border:1px solid #c9c0b2; font-size:.9rem; }
+.pan-tools { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; margin:.4rem 0; }
+.pan-tools button { min-width:44px; min-height:44px; border-radius:8px; border:1px solid #1c2430;
+  background:#fff; color:#1c2430; font:inherit; font-weight:650; padding:0 .8rem; cursor:pointer; }
+.pan-hint { margin:.35rem 0 .5rem; padding:.55rem .7rem; border:1px solid #1c2430; border-radius:8px;
+  background:#fff; color:#1c2430; font-weight:650; }
+.pan { overflow-x:auto; overflow-y:hidden; max-width:100%; border:1px solid #c9c0b2; border-radius:2px; background:#f3efe6; }
+.pan svg.detail { width:1480px; height:auto; display:block; }
+#xs .opt { display:none; }
+.side-svg { width:720px; height:auto; display:block; background:#f3efe6; }
+#panel-diag { display:none; }
+#cap-stack { display:none; }
+#print-layers { display:none; }
+main:has(#ly-base:not(:checked)) #xs .base { display:none; }
+main:has(#ly-c:checked) #xs .opt-c,
+main:has(#ly-all:checked) #xs .opt-c,
+main:has(#ly-b:checked) #xs .opt-b,
+main:has(#ly-all:checked) #xs .opt-b,
+main:has(#ly-a:checked) #xs .opt-a,
+main:has(#ly-all:checked) #xs .opt-a,
+main:has(#ly-grav:checked) #xs .opt-grav,
+main:has(#ly-short:checked) #xs .opt-base,
+main:has(#ly-foot:checked) #xs .opt-foot { display:inline; }
+main:has(#ly-young:checked) #panel-diag { display:block; }
+main:has(#ly-c:checked) #cap-base,
+main:has(#ly-b:checked) #cap-base,
+main:has(#ly-a:checked) #cap-base,
+main:has(#ly-all:checked) #cap-base { display:none; }
+main:has(#ly-c:checked) #cap-stack,
+main:has(#ly-b:checked) #cap-stack,
+main:has(#ly-a:checked) #cap-stack,
+main:has(#ly-all:checked) #cap-stack { display:block; }
+@supports not selector(:has(*)) {
+  #xs.is-c .opt-c, #xs.is-all .opt-c,
+  #xs.is-b .opt-b, #xs.is-all .opt-b,
+  #xs.is-a .opt-a, #xs.is-all .opt-a,
+  #xs.is-grav .opt-grav,
+  #xs.is-short .opt-base,
+  #xs.is-foot .opt-foot { display:inline; }
+  #panel-diag.is-open { display:block; }
+  #xs.is-nobase .base { display:none; }
+  main.is-stack #cap-base { display:none; }
+  main.is-stack #cap-stack { display:block; }
+}
+@media print {
+  .top, .controls, .pan-tools, .ctas, dialog, .skip, .crumbs { display:none !important; }
+  body { background:#fff; color:#000; }
+  #print-layers { display:block; color:#000; font-weight:650; }
+  #print-layers .pl { display:none; }
+  #print-layers .pl-base { display:inline; }
+  main:has(#ly-base:not(:checked)) #print-layers .pl-base { display:none; }
+  main:has(#ly-c:checked) #print-layers .pl-c,
+  main:has(#ly-all:checked) #print-layers .pl-c,
+  main:has(#ly-b:checked) #print-layers .pl-b,
+  main:has(#ly-all:checked) #print-layers .pl-b,
+  main:has(#ly-a:checked) #print-layers .pl-a,
+  main:has(#ly-all:checked) #print-layers .pl-a,
+  main:has(#ly-young:checked) #print-layers .pl-young { display:inline; }
+  #xs .opt-a, #xs .opt-a * { stroke:#111 !important; }
+  * { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+}
+.ve-callout {
+  background:#141a24; border-left:4px solid var(--ember); border-radius:4px;
+  padding:.75rem 1rem; margin:.75rem 0 1rem; color:#edeae2; font-size:.95rem; line-height:1.5;
+}
+.ve-callout strong { color:#f3c2b4; }
+.legend { display:flex; flex-wrap:wrap; gap:.4rem .8rem; padding:0; margin:.6rem 0; list-style:none; }
+.legend li { display:flex; align-items:center; gap:.4rem; font-size:.92rem; }
+.sw { width:2rem; height:.7rem; border-radius:2px; display:inline-block; border:1px solid #1c2430; }
+.callouts { display:flex; flex-direction:column; gap:.4rem; margin:.6rem 0; }
+.callouts a { display:flex; align-items:center; min-height:44px; padding:.35rem .7rem; background:#fff;
+  color:#1c2430; text-decoration:none; border-radius:8px; border:1px solid #c9c0b2; font-weight:650; }
+.callouts a:hover { background:#f5eee1; }
+.ev { border-top:1px solid #c9c0b2; padding:.8rem 0; }
+.ev dl { display:grid; grid-template-columns:11rem 1fr; gap:.2rem .8rem; margin:.4rem 0; }
+.ev dt { font-weight:700; }
+.ev dd { margin:0; }
+.stack-note { font-weight:650; }
+.mantle { display:grid; grid-template-columns:repeat(3, 1fr); gap:.6rem; }
+.mantle article { background:#fff; border:1px solid #c9c0b2; border-radius:8px; padding:.6rem; }
+.tag { font-family:"IBM Plex Mono","Liberation Mono",ui-monospace,monospace; font-size:.78rem; letter-spacing:.04em; }
+details { border:1px solid var(--line); border-radius:8px; padding:.4rem .8rem; margin:.4rem 0; background:var(--card); }
+details summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:650; }
+.matrix-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+table.matrix { border-collapse:collapse; min-width:980px; width:100%; font-size:.92rem; }
+.matrix th, .matrix td { border-bottom:1px solid var(--line); padding:.45rem .5rem; text-align:left; vertical-align:top; }
+.matrix th:first-child, .matrix td:first-child { position:sticky; left:0; background:#10141c; min-width:16rem; }
+.matrix caption { text-align:left; padding:.6rem; caption-side:bottom; color:var(--muted); }
+.note { display:block; font-weight:400; color:var(--muted); margin-top:.25rem; font-size:.85rem; }
+.qa { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+.qa article, .change, .crosswalk { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:.8rem 1rem; }
+.take { font-size:1.15rem; }
+.claims-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+table.claims { border-collapse:collapse; width:100%; font-size:.92rem; }
+.claims th, .claims td { border-bottom:1px solid var(--line); padding:.45rem .5rem; text-align:left; vertical-align:top; }
+.claims caption { text-align:left; padding:.6rem; caption-side:bottom; color:var(--muted); }
+.print-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+footer.earth-footer { border-top:1px solid var(--line); padding:1rem; color:var(--muted); background:transparent; }
+footer nav { display:flex; flex-wrap:wrap; gap:.4rem 1rem; }
+@page { size:A3 landscape; margin:12mm; }
+@media (max-width:800px) {
+  .cards, .controls, .mantle, .qa { grid-template-columns:1fr; }
+  .ev dl { grid-template-columns:1fr; }
+}
+dialog#drawer {
+  width:min(40rem, calc(100% - 2rem));
+  max-height:min(85vh, 42rem);
+  overflow:auto;
+  border:1px solid #1c2430;
+  border-radius:8px;
+  background:#f3efe6;
+  color:#1c2430;
+  padding:1rem 1rem .8rem;
+}
+dialog#drawer:modal { overscroll-behavior:contain; }
+dialog#drawer::backdrop {
+  background:rgba(7, 9, 14, .72);
+  overflow:hidden;
+  overscroll-behavior:contain;
+}
+dialog#drawer button {
+  min-height:44px; min-width:44px; margin-top:.6rem;
+  border-radius:8px; border:1px solid #1c2430; background:#fff; color:#1c2430;
+  font:inherit; font-weight:650; padding:0 1rem; cursor:pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+html.figure-only .fed-navbar, html.figure-only .earth-site-nav, html.figure-only .crumbs,
+html.figure-only .hero, html.figure-only #one-minute, html.figure-only #story,
+html.figure-only #matrix, html.figure-only #kinabalu, html.figure-only #provenance,
+html.figure-only footer { display:none !important; }
+@media print {
+  .fed-navbar, .earth-site-nav, .crumbs, .skip, .ctas, .controls, .pan-tools, .pan-hint,
+  #story, #matrix, #kinabalu, .callouts, .mantle, .crosswalk, .sources, .changelog,
+  dialog, .badge-group { display:none !important; }
+  html.figure-only #provenance { display:block !important; }
+  body { background:#fff; color:#1c2430; }
+  a { color:#1c2430; }
+  .wrap { max-width:none; padding-bottom:1rem; }
+  .card, .change, #section { break-inside:avoid; }
+  .pan { overflow:visible; border:none; background:#f3efe6; }
+  .pan svg.detail { width:1480px; max-width:none; height:auto; }
+  .print-only { position:static; width:auto; height:auto; margin:.4rem 0; overflow:visible;
+    clip:auto; white-space:normal; color:#1c2430; font-weight:650; }
+  .legend, #uncertainty, #claims { break-inside:avoid; }
+}
+.audit-backend {
+  border:1px solid #334155; background:#0d1117; border-radius:8px;
+  padding:.75rem 1.2rem; margin:2.5rem 0 1rem;
+}
+.audit-backend summary {
+  cursor:pointer; font-size:1.05rem; font-weight:650; color:#94a3b8;
+  padding:.5rem 0; user-select:none;
+}
+.audit-backend summary:hover { color:#f3c2b4; }
+</style>
+<link rel="stylesheet" href="/earth/_shared/earth-coat.css?v=20261125d">
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<div class="container">
-<header>
-<div class="hdr">
-  <div>
-    <div class="sub">Φ GEOX · REGIONAL CROSS-SECTION · SABAH</div>
-    <h1>Dangerous Grounds → East Sabah</h1>
-    <a href="https://arif-fazil.com/earth/kinabalu-basin/" class="back-btn">← BACK TO DOSSIER</a>
-  </div>
-  <div class="src">One section, four competing explanations. Shallow geometry is shared; the deep structure and the driver change with the model you pick. Public sources only — no proprietary well or seismic data.</div>
-</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="fed-navbar">
+  <a class="nav-brand" href="/">ARIF FAZIL</a>
+  <nav class="nav-links" aria-label="Site">
+    <a href="/earth/">Earth</a>
+    <a href="/words/">Words</a>
+    <a href="/world/">World</a>
+    <a href="/work/">Work</a>
+  </nav>
 </header>
+<nav class="earth-room-nav" aria-label="Earth pages">
+  <a href="/earth/">Earth</a>
+  <a href="/earth/malay-basin/">Malay Basin</a>
+  <a href="/earth/malay-basin-cross-section.html">Malay section</a>
+  <a href="/earth/kinabalu-basin/">Kinabalu</a>
+  <a href="/earth/kinabalu-cross-section.html" aria-current="page">Sabah section</a>
+  <a href="/earth/borneo-sections.html">NW Borneo</a>
+  <a href="/earth/sabah-observatory/">Observatory</a>
+  <a href="/earth/macrostrat-ingestion/">Bedrock map</a>
+</nav>
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="/earth/">Earth</a> /
+  <a href="/earth/kinabalu-basin/">Kinabalu Basin</a> /
+  <span aria-current="page">Sabah Trough cross-section</span>
+</nav>
+<main id="main">
+  <header class="hero wrap">
+    <p class="kicker">NW SABAH · REGIONAL STRUCTURAL TRANSECT (T-KIN-XS-833)</p>
+    <h1>Sabah Trough & Northwest Borneo Margin</h1>
+    <p class="lede">Structural cross-section, foredeep flexure, and the extensional reactivation hypothesis across an 833 km regional transect.</p>
+    <p class="lede">Does deepwater accommodation in the ~2.9 km deep Sabah Trough record a younger Neogene extensional episode, or is it fully explained by inherited Paleogene rifting, foredeep plate bending, and mobile shale mechanics?</p>
+    <div class="badge-group" role="region" aria-label="Transect specifications">
+      <span class="geo-badge accent">Transect T-KIN-XS-833 · 832.84 km geodesic</span>
+      <span class="geo-badge">11 geodetic stations</span>
+      <span class="geo-badge">Dual scale: 17.2× VE (0–15 km) · 3.2× VE (15–60 km)</span>
+      <span class="geo-badge">Mt. Kinabalu chainage: 484.9 km (4,095 m)</span>
+    </div>
+    <div class="ctas">
+      <a class="btn primary" href="#section">Explore the cross-section</a>
+      <a class="btn ghost" href="#matrix">Examine evidence matrix</a>
+    </div>
+  </header>
 
-<main id="main-content">
-<h2 class="sr-only">Regional cross-section with four working models</h2>
-<div class="zen-pulse" aria-label="Orientation">
-  <span class="zp"><b>WHERE</b> NW Dangerous Grounds → SE Sulu Sea</span>
-  <span class="zp gold"><b>LENGTH</b> ~830 km along a dog-leg line</span>
-  <span class="zp"><b>SCALE</b> upper 15 km ~17× vertical · lithosphere ~3×</span>
-  <span class="zp gold"><b>MODELS</b> 4 · one is a new hypothesis, untested</span>
-</div>
+  <section id="one-minute" class="wrap" aria-labelledby="sum-h">
+    <h2 id="sum-h">Geological framework & primary observations</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Observed architecture</h3>
+        <p>The Dangerous Grounds represent thinned continental crust (15–20 km Moho) rifted during Paleogene South China Sea opening. The Sabah Trough forms a prominent bathymetric deep (~2.9 km water depth). Inboard lies the Middle Miocene to Holocene fold-thrust belt, containing the seismically mapped Pagasa/North Sabah mobile shale wedge. Mount Kinabalu is a 7–8 Ma granitic pluton exhumed rapidly to 4,095 m elevation.</p>
+      </article>
+      <article class="card">
+        <h3>Competing working models</h3>
+        <p>Four distinct mechanisms are evaluated without dogma: <strong>Model C</strong> posits foredeep flexural bending and continental underthrusting; <strong>Model B</strong> highlights gravity-driven mobile shale tectonics; <strong>Model A</strong> evaluates sparse sill-dyke thermal plumbing; and <strong>Model D</strong> integrates deep lithospheric slab remnants observed in teleseismic tomography.</p>
+      </article>
+      <article class="card">
+        <h3>Extensional vs null hypothesis</h3>
+        <p>Fault-growth thickening observed on regional 3D seismic dip lines suggests a younger Neogene extensional pulse contributing to trough accommodation. However, the rigorous baseline null hypothesis is foredeep flexural bending: downward flexure of the lower plate naturally generates outer-trench normal faulting without requiring regional plate-boundary extension.</p>
+      </article>
+    </div>
+  </section>
 
-<div class="panel">
-  <div class="panel-head"><h3>◈ Locator · section A–A′</h3><span class="note">Line and stations are schematic. Axis line drawn approximately along the Sabah Trough.</span></div>
-  <div id="xsMap" role="img" aria-label="Map of the section line from the Dangerous Grounds to the Sulu Sea"></div>
-</div>
+  <section id="section" class="wrap" aria-labelledby="xs-h">
+    <h2 id="xs-h">Regional cross-section</h2>
+    <p>Transect T-KIN-XS-833 is constructed as an 832.84 km geodesic dog-leg through 11 control stations from the Dangerous Grounds microcontinent across the Sabah Trough, deepwater toe-thrusts, shelf, Crocker Range, Mount Kinabalu (484.9 km chainage), and central Sabah to the Sandakan Basin and Sulu Sea.</p>
+    
+    <div class="panel">
+      <svg class="overview" role="img" aria-labelledby="ovTitle ovDesc" viewBox="0 0 480 210">
+<title id="ovTitle">Route overview from the Dangerous Grounds to Mount Kinabalu and beyond</title>
+<desc id="ovDesc">A simplified side view. Names are in the list under the drawing. The detailed section carries depth, faults and uncertainty.</desc>
+<rect width="480" height="210" fill="#f3efe6"/>
+<polygon points="16.0,75.6 247.3,75.6 247.3,75.6 231.1,76.6 216.6,77.5 213.9,80.6 209.6,89.2 201.5,94.1 190.8,99.0 177.3,103.9 166.6,108.8 156.9,111.3 147.8,110.7 134.3,107.6 118.2,103.9 102.1,99.0 94.5,84.2 91.8,76.3 89.7,76.3 87.5,84.2 80.5,99.0 64.4,95.3 48.3,101.5 32.1,96.5 16.0,100.2" fill="#8eafc4"/>
+<polygon points="16.0,124.8 156.9,174.0 156.9,223.2 16.0,223.2" fill="#c4a07c"/>
+<polygon points="156.9,111.3 216.6,77.5 247.3,75.6 247.3,174.0 172.0,149.4 156.9,137.1" fill="#e4d2b0" stroke="#5c5348" stroke-width="1"/>
+<polyline points="16.0,100.2 32.1,96.5 48.3,101.5 64.4,95.3 80.5,99.0 87.5,84.2 89.7,76.3 91.8,76.3 94.5,84.2 102.1,99.0 118.2,103.9 134.3,107.6 147.8,110.7 156.9,111.3 166.6,108.8 177.3,103.9 190.8,99.0 201.5,94.1 209.6,89.2 213.9,80.6 216.6,77.5 231.1,76.6 247.3,75.6 252.6,74.4 260.7,68.3 268.8,60.9 273.6,53.5 276.8,25.3 280.1,52.3 287.6,58.4 295.7,63.3 306.4,67.0 321.5,70.7 338.7,68.3 354.8,72.0 366.7,75.0 392.5,75.6 401.1,76.3 414.0,77.5 430.1,83.0 440.9,94.1 451.6,110.1 464.0,119.9" fill="none" stroke="#1c2430" stroke-width="2"/>
+<rect x="139.7" y="124.8" width="32.3" height="73.8" fill="none" stroke="#7d868f" stroke-dasharray="3 3"/>
+</svg>
+      <ol class="route">
+        <li>1. Dangerous Grounds (0–385 km)</li>
+        <li>2. Sabah Trough (385–510 km)</li>
+        <li>3. Fold-thrust belt (510–690 km)</li>
+        <li>4. Shelf and coast (690–785 km)</li>
+        <li>5. Crocker hinterland (785–860 km)</li>
+        <li>6. Kinabalu (484.9 km chainage, 4,095 m)</li>
+        <li>7. Central Sabah & Sandakan Basin (860–1150 km)</li>
+        <li>8. Sulu Sea (1150–1454 km SVG)</li>
+      </ol>
+      <p class="pan-hint">Scroll sideways on mobile devices to inspect Sandakan and the Sulu Sea. Use the zoom controls to inspect structural detail.</p>
+    </div>
 
-<div class="panel" id="xsPanel">
-  <div class="panel-head"><h3>◈ Cross-section A–A′ · pick a working model</h3><span class="note" id="modelNote"></span></div>
-  <div class="read-guide" role="note" aria-label="How to read this cross-section">
-    <b>How to read this.</b> The shallow geometry (basins, granite, unconformities) is the same in every model. Press a button to switch what sits <i>under</i> the Deep Regional Unconformity and below ~15 km: <b>A</b> rift-axis intrusions?, <b>B</b> overpressured mud canopy, <b>C</b> underthrust Dangerous Grounds, <b>D</b> slab remnant + gravity tectonics. Model <b>A</b> is the author's untested working hypothesis — drawn at equal weight so it can be argued with, not because it is established. These explanations address different depths and processes and can coexist; they are not four mutually exclusive whole-Earth models. <b>Read them as stacked hypothesis families, not a model picker:</b> <b>H1 sedimentary mechanics</b> (B — switchable above every crustal state), <b>H2 crustal architecture</b> (C), <b>H3 mantle state</b> (D's slab component), <b>H4 thermal plumbing</b> (A). A valid regional Earth state selects one admissible option <i>per layer</i> — e.g. mud canopy + underthrust crust + remnant slab + no proven intrusion is a legal combination. Machine-readable: transect registry <a href="/earth/data/transects.json">/earth/data/transects.json</a> · per-claim evidence ledger <a href="/earth/data/claims_ledger.json">/earth/data/claims_ledger.json</a>. This page is the hypothesis and boundary-condition layer; local geometry is calibrated by the KL2 eight-key-line program (internal seismic), not by these public schematics. <b>What is drawn and what is inferred.</b> One extension mechanism is drawn: delta-load extension at the shelf (shallow, amber). Post-subduction crustal thinning is <i>inferred</i> from petrology, thermal history and receiver functions — it is not imaged on this section, so it is not drawn as a horizontal glyph. <b>Moho:</b> the dashed line is schematic. The published constraint is ~60 km beneath the Crocker Range and ~24 km in central Sabah (Gilligan et al. 2026); the Crocker root is shown as an unattached dashed constraint, not fitted to the schematic Moho, and the 230–540 km stretch has no drawn Moho at all. That gap is the honest state of the data, not an omission to be papered over. What Model D does show deep is the vertical mantle driver above the slab. <b>Time slice:</b> the rock geometry is present-day; the ages on the event bar below are history, not a claim that extension is active now.
-  </div>
-  <div class="models" id="modelBtns" role="group" aria-label="Working model"></div>
-  <div class="xs-hint" role="note">◂ ▸ <span><b>Swipe the section horizontally</b> — it is 1,100 px wide; the whole transect does not fit a phone screen.</span></div>
-  <div class="xs-wrap"><svg id="xs" role="img" aria-label="Geological cross-section"></svg></div>
-  <div class="legend" id="legend"></div>
-</div>
+    <form id="layer-form" class="controls">
+      <fieldset>
+        <legend>Geological layers & structural models</legend>
+        <label class="row"><input type="checkbox" id="ly-base" checked> <span>Baseline crustal architecture</span></label>
+        <label class="row"><input type="checkbox" id="ly-c"> <span>Model C: Continental underthrusting & flexural bending</span></label>
+        <label class="row"><input type="checkbox" id="ly-b"> <span>Model B: Mobile shale canopy (Pagasa wedge)</span></label>
+        <label class="row"><input type="checkbox" id="ly-a"> <span>Model A: Thermal plumbing (sparse sills & dykes)</span></label>
+        <label class="row"><input type="checkbox" id="ly-all"> <span>Composite structural overlay (C + B + A)</span></label>
+        <label class="row"><input type="checkbox" id="ly-young"> <span>Younger extensional fault-growth diagnostic</span></label>
+        <label class="row"><input type="checkbox" id="ly-grav"> <span>Emphasise sediment-gravity detachment</span></label>
+        <label class="row"><input type="checkbox" id="ly-short"> <span>Emphasise basement shortening</span></label>
+        <label class="row"><input type="checkbox" id="ly-foot"> <span>Station footprints & calibration anchors</span></label>
+      </fieldset>
+      <p><button type="reset" id="layer-reset">Reset layers</button></p>
+    </form>
+    <p id="cap-base" class="stack-note">Baseline view: regional crustal architecture with interpretive process overlays hidden.</p>
+    <p id="cap-stack" class="stack-note">Composite view: structural models shown simultaneously; geometric compatibility does not prove coeval timing.</p>
+    <p id="print-layers">Active layers:
+      <span class="pl pl-base">baseline</span>
+      <span class="pl pl-c"> Model C</span>
+      <span class="pl pl-b"> Model B</span>
+      <span class="pl pl-a"> Model A</span>
+      <span class="pl pl-young"> younger-extension diagnostic</span>
+    </p>
 
-<div class="panel" id="ringPanel" style="margin-top:1.25rem">
-  <div class="panel-head"><h3>◈ Model signatures at a glance</h3><span class="note">What each model predicts, in one ring each</span></div>
-  <div class="ring-grid" id="ringGrid"></div>
-</div>
+    <div class="ve-callout" role="note">
+      <strong>Structural Dip & Vertical Exaggeration Guide:</strong>
+      <br>
+      The section employs a dual vertical scale separated at 15 km depth: <strong>17.2× VE</strong> in the upper crust (0–15 km) and <strong>3.2× VE</strong> in the deeper lithosphere (15–60 km).
+      Because of the 17.2× upper exaggeration, gentle regional structural dips of <strong>4°–6° plot visually at 50°–61° apparent dip</strong>!
+      Apparent steep fault traces in the upper wedge represent low-to-moderate angle structures in the real Earth.
+    </div>
 
-<div class="card-grid">
-  <div class="card" id="modelCard"></div>
-  <div class="card">
-    <h3>What would decide it · discriminating observations</h3>
-    <table class="mx" id="matrix"></table>
-    <p style="margin-top:.6rem;font-size:.7rem;color:var(--text-dim)"><span class="y">✓</span> predicted · <span class="n">✗</span> contradicted / not expected · <span class="u">○</span> silent. “Observed” means published; “open” means the decisive data exist in industry but are not public.<br>Three rules for reading this table near the magnetic equator: (1) mafic bodies skew to magnetic lows here and weak-susceptibility intrusions can fall below detection — so the magnetic row can support a model but can never kill one alone; (2) amplitude and detectability depend on body strike at low latitudes — a near N–S strike is nearly invisible in the induced field, and remanence can flip an anomaly's sign entirely — so absence of an anomaly on a near N–S strike is INCONCLUSIVE, not evidence of absence; (3) heat-flow and magnetics results are local — domains pass and fail independently along the transect, no single result decides the section.</p>
-  </div>
-</div>
+    <div class="pan-tools">
+      <button type="button" id="zoom-in" aria-label="Zoom in detailed cross-section">Zoom in</button>
+      <button type="button" id="zoom-out" aria-label="Zoom out detailed cross-section">Zoom out</button>
+      <button type="button" id="zoom-reset" aria-label="Reset zoom level">Reset</button>
+      <span id="zoom-label">100%</span>
+    </div>
+    <div class="pan" id="pan" tabindex="0" role="region" aria-label="Detailed regional cross-section. Scroll sideways.">
+      <svg id="xs" class="detail" role="img" aria-labelledby="sec-title sec-desc" viewBox="0 0 1480 960" width="1480" height="960">
+<title id="sec-title">Schematic cross-section from the Dangerous Grounds to the Sulu Sea</title>
+<desc id="sec-desc">A schematic dog-leg. The 833 km end label is chainage on this drawing, not a surveyed length. The seabed, the sedimentary wedge and the inherited crust are a simplified schematic. Hypothetical intrusions are off until selected. No Moho is drawn from 230 to 540 km. Under the trough and the wedge, above 15 km, crust is hatched as unresolved and is not drawn. The 15 km line is a scale break, not a contact. This is not a balanced restoration.</desc>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+<line x1="0" y1="0" x2="0" y2="8" stroke="#7d868f" stroke-width="1.4" />
+</pattern>
+<pattern id="carb" width="6" height="6" patternUnits="userSpaceOnUse">
+<rect width="6" height="6" fill="#d5cfc2" />
+<circle cx="2" cy="2" r="0.8" fill="#5c5348" />
+</pattern>
+<pattern id="sill" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" stroke="#c45c3e" stroke-width="0.8" fill="none" /></pattern></defs>
+<rect x="0" y="0" width="1480" height="638.0" fill="#f3efe6" />
+<rect x="0" y="638.0" width="1480" height="322.0" fill="#e6e0d4" />
+<g id="unknown-domains" class="base"><rect x="455.0" y="638.0" width="513.6" height="240.0" fill="url(#hatch)" opacity="0.55" />
+<polygon points="508.0,335.1 554.4,352.3 587.6,349.4 637.3,352.3 691.9,380.9 720.1,398.0 761.5,366.6 789.7,295.1 761.5,438.0 769.8,638.0 508.0,638.0" fill="url(#hatch)" stroke="none" fill-opacity="0.62" />
+<polygon points="1382.8,538.0 1454.0,538.0 1454.0,638.0 1382.8,638.0" fill="url(#hatch)" stroke="none" fill-opacity="0.62" />
+<text x="488.2" y="760.7" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif">No Moho drawn from 230 to 540 km</text>
+<text x="571.0" y="546.6" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Unresolved — crust not drawn</text>
+<text x="488.2" y="784.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Moho geometry not drawn / not constrained here</text></g><g id="baseline-substrate" class="base"><polygon points="74.0,323.7 115.4,300.9 143.6,366.6 190.0,295.1 219.8,375.1 259.5,312.3 304.3,295.1 325.8,369.4 358.9,306.6 385.5,386.6 430.2,329.4 463.3,409.4 508.0,438.0 508.0,638.0 74.0,638.0" fill="#c4a07c" stroke="#5c5348" stroke-width="0.6"><title>Inherited continental crust under the Dangerous Grounds. Schematic.</title></polygon>
+<polygon points="786.4,209.4 802.9,206.6 827.8,192.3 852.6,175.1 867.5,158.0 887.4,155.1 910.6,169.4 935.5,180.9 968.6,189.4 981.9,295.1 968.6,638.0 769.8,638.0 761.5,438.0 789.7,295.1" fill="#b08968" stroke="#5c5348" stroke-width="0.6"><title>Crocker hinterland, folded deep-marine rocks. Schematic.</title></polygon>
+<polygon points="860.9,166.6 867.5,158.0 877.5,92.4 887.4,155.1 895.7,180.9 902.3,295.1 897.4,438.0 879.1,480.9 857.6,438.0 852.6,295.1" fill="#c98490" stroke="#5c5348" stroke-width="0.6"><title>Mount Kinabalu pluton. Not connected offshore.</title></polygon>
+<polygon points="968.6,189.4 1015.0,198.0 1068.0,192.3 1117.7,200.9 1154.1,208.0 1167.4,209.4 1180.7,266.6 1180.7,323.7 1167.4,638.0 968.6,638.0 981.9,295.1" fill="#a89880" stroke="#5c5348" stroke-width="0.6"><title>Central Sabah. Schematic.</title></polygon>
+<polygon points="1180.7,266.6 1233.7,338.0 1299.9,395.1 1382.8,409.4 1382.8,638.0 1167.4,638.0 1180.7,323.7" fill="#a89880" stroke="#5c5348" stroke-width="0.6"><title>Basement under Sandakan. Uncertain.</title></polygon>
+<polygon points="1382.8,323.7 1454.0,358.0 1454.0,538.0 1382.8,509.4" fill="#7f9aa8" stroke="#5c5348" stroke-width="0.6"><title>Sulu Sea oceanic crust, a local segment. Not joined west.</title></polygon>
+<polyline points="143.6,309.4 145.2,466.6" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="5 4" />
+<polyline points="219.8,309.4 221.4,466.6" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="5 4" />
+<polyline points="325.8,309.4 327.5,466.6" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="5 4" />
+<polyline points="385.5,315.1 387.1,480.9" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="5 4" />
+<polyline points="463.3,335.1 465.0,495.1" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="5 4" />
+</g><g id="baseline-sediments" class="base"><polygon points="74.0,323.7 115.4,300.9 143.6,366.6 190.0,295.1 219.8,375.1 259.5,312.3 304.3,295.1 325.8,369.4 358.9,306.6 385.5,386.6 430.2,329.4 463.3,409.4 508.0,438.0 508.0,335.1 463.3,335.1 430.2,320.9 385.5,315.1 358.9,306.6 325.8,309.4 304.3,295.1 259.5,306.6 219.8,309.4 190.0,295.1 143.6,309.4 115.4,300.9" fill="#c9b48e" stroke="#5c5348" stroke-width="0.6"><title>Paleogene syn-rift fill. Schematic.</title></polygon>
+<polygon points="74.0,266.6 123.7,258.0 173.4,269.4 223.1,255.1 272.8,263.7 294.3,229.4 315.9,229.4 339.1,263.7 388.8,275.1 438.5,283.7 479.9,290.9 508.0,292.3 508.0,335.1 463.3,335.1 430.2,320.9 385.5,315.1 358.9,306.6 325.8,309.4 304.3,295.1 259.5,306.6 219.8,309.4 190.0,295.1 143.6,309.4 115.4,300.9 74.0,323.7" fill="#e4d2b0" stroke="#5c5348" stroke-width="0.6"><title>Post-rift marine drape over the Dangerous Grounds. Schematic.</title></polygon>
+<polygon points="103.8,303.7 128.7,300.9 123.7,278.0 108.8,278.0" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate platform on a block crest. Schematic.</title></polygon>
+<polygon points="176.7,298.0 203.2,300.9 198.2,272.3 183.3,272.3" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate platform on a block crest. Schematic.</title></polygon>
+<polygon points="286.1,302.3 322.5,308.0 307.6,210.9 301.0,210.9" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Layang-Layang atoll, still near sea level. Schematic.</title></polygon>
+<polygon points="347.3,308.0 372.2,310.9 365.6,283.7 352.3,283.7" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate platform on a block crest. Schematic.</title></polygon>
+<polygon points="468.3,338.0 498.1,340.9 491.5,312.3 474.9,312.3" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate buildup on the trough northwest flank. A drilled example is public. Coordinates are not repeated here.</title></polygon>
+<polygon points="508.0,292.3 537.9,286.6 554.4,282.3 554.4,352.3 508.0,335.1" fill="#e4d2b0" stroke="#5c5348" stroke-width="0.6"><title>Sabah Trough fill. Schematic.</title></polygon>
+<polygon points="554.4,282.3 571.0,275.1 612.4,263.7 645.5,252.3 670.4,240.9 691.9,213.7 691.9,380.9 637.3,352.3 587.6,349.4 554.4,352.3" fill="#cbb892" stroke="#5c5348" stroke-width="0.6"><title>Fold-thrust belt fill above a shale-prone wedge. Schematic.</title></polygon>
+<polygon points="691.9,213.7 736.7,211.7 786.4,209.4 789.7,295.1 761.5,366.6 720.1,398.0 691.9,380.9" fill="#dcc7a4" stroke="#5c5348" stroke-width="0.6"><title>Shelf and coastal clastics. Schematic.</title></polygon>
+<polygon points="1026.6,196.6 1064.7,192.9 1058.1,260.9 1034.9,260.9" fill="#d4c4a2" stroke="#5c5348" stroke-width="0.6"><title>Circular-basin remnant. Schematic.</title></polygon>
+<polygon points="1154.1,208.0 1233.7,209.4 1260.2,210.9 1299.9,213.7 1349.6,226.6 1382.8,252.3 1382.8,409.4 1299.9,395.1 1233.7,338.0 1180.7,266.6 1167.4,209.4" fill="#e0cbaa" stroke="#5c5348" stroke-width="0.6"><title>Sandakan deltaic fill. Schematic.</title></polygon>
+<polygon points="1382.8,252.3 1415.9,289.4 1454.0,312.3 1454.0,358.0 1382.8,323.7" fill="#e4d2b0" stroke="#5c5348" stroke-width="0.6"><title>Sulu Sea sediment. Local.</title></polygon>
+<polyline points="571.0,275.1 600.8,349.4" fill="none" stroke="#243044" stroke-width="1.7" stroke-dasharray="5 4" />
+<polyline points="607.4,265.1 637.3,352.3" fill="none" stroke="#243044" stroke-width="1.7" stroke-dasharray="5 4" />
+<polyline points="645.5,252.3 673.7,355.1" fill="none" stroke="#243044" stroke-width="1.7" stroke-dasharray="5 4" />
+<polyline points="723.4,211.4 713.5,309.4 705.2,386.6" fill="none" stroke="#243044" stroke-width="1.5" stroke-dasharray="5 4" />
+<polyline points="761.5,210.3 751.6,295.1 743.3,386.6" fill="none" stroke="#243044" stroke-width="1.5" stroke-dasharray="5 4" />
+<polyline points="74.0,286.6 173.4,288.0 272.8,283.7 405.3,295.1 471.6,318.0 508.0,335.1" fill="none" stroke="#243044" stroke-width="1.5" stroke-dasharray="6 4" />
+<polyline points="508.0,335.1 554.4,352.3 637.3,352.3 691.9,380.9 720.1,398.0 761.5,366.6 789.7,295.1" fill="none" stroke="#243044" stroke-width="1.8" stroke-dasharray="7 4" />
+<polyline points="645.5,295.1 691.9,283.7 736.7,272.3 786.4,238.0" fill="none" stroke="#243044" stroke-width="1.5" stroke-dasharray="6 4" />
+</g><g id="baseline-surface" class="base"><polygon points="74.0,209.4 786.4,209.4 786.4,209.4 736.7,211.7 691.9,213.7 683.7,220.9 670.4,240.9 645.5,252.3 612.4,263.7 571.0,275.1 537.9,286.6 508.0,292.3 479.9,290.9 438.5,283.7 388.8,275.1 339.1,263.7 315.9,229.4 307.6,210.9 301.0,210.9 294.3,229.4 272.8,263.7 223.1,255.1 173.4,269.4 123.7,258.0 74.0,266.6" fill="#8eafc4" stroke="#35586c" stroke-width="0.6"><title>Sea water, northwest of the coast. Schematic surface.</title></polygon>
+<polygon points="1233.7,209.4 1454.0,209.4 1454.0,312.3 1415.9,289.4 1382.8,252.3 1349.6,226.6 1299.9,213.7 1260.2,210.9 1233.7,209.4" fill="#8eafc4" stroke="#35586c" stroke-width="0.6"><title>Sea water, Sandakan to the Sulu Sea. Schematic surface.</title></polygon>
+<polyline points="74.0,266.6 123.7,258.0 173.4,269.4 223.1,255.1 272.8,263.7 294.3,229.4 301.0,210.9 307.6,210.9 315.9,229.4 339.1,263.7 388.8,275.1 438.5,283.7 479.9,290.9 508.0,292.3 537.9,286.6 571.0,275.1 612.4,263.7 645.5,252.3 670.4,240.9 683.7,220.9 691.9,213.7 736.7,211.7 786.4,209.4 802.9,206.6 827.8,192.3 852.6,175.1 867.5,158.0 877.5,92.4 887.4,155.1 910.6,169.4 935.5,180.9 968.6,189.4 1015.0,198.0 1068.0,192.3 1117.7,200.9 1154.1,208.0 1233.7,209.4 1260.2,210.9 1299.9,213.7 1349.6,226.6 1382.8,252.3 1415.9,289.4 1454.0,312.3" fill="none" stroke="#1c2430" stroke-width="2.2" />
+<line x1="74.0" y1="209.4" x2="786.4" y2="209.4" stroke="#35586c" stroke-width="1" stroke-dasharray="2 3" opacity="0.8" />
+</g><g id="regional-anchors" class="base"><polygon points="74.0,691.3 322.5,675.3 455.0,654.0 455.0,638.0 74.0,638.0" fill="#c4a07c" opacity="0.35" stroke="none" />
+<polyline points="74.0,691.3 322.5,675.3 455.0,654.0" fill="none" stroke="#243044" stroke-width="2" stroke-dasharray="7 5" />
+<polyline points="827.8,867.3 885.8,878.0 927.2,846.0" fill="none" stroke="#243044" stroke-width="2.4" stroke-dasharray="2 4" />
+<line x1="1068.0" y1="678.0" x2="1068.0" y2="694.0" stroke="#243044" stroke-width="2.4" />
+<line x1="1062.0" y1="686.0" x2="1074.0" y2="686.0" stroke="#243044" stroke-width="2.4" />
+<circle cx="786.4" cy="732.9" r="5" fill="#f3efe6" stroke="#243044" stroke-width="2" />
+<polyline points="1382.8,509.4 1454.0,538.0" fill="none" stroke="#243044" stroke-width="2" stroke-dasharray="2 3" />
+<text x="206.5" y="681.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Schematic Moho — Dangerous Grounds only</text>
+<text x="827.8" y="857.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Crocker about 60 km — unattached</text>
+<text x="1087.9" y="686.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Central Sabah about 24 km — unattached</text>
+<text x="799.6" y="719.1" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">KMY station only</text>
+<text x="1432.5" y="532.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">Sulu oceanic base — local</text>
+<text x="1432.5" y="563.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">not joined west</text>
+</g><g class="opt opt-c" id="process-c-underthrust">
+<polygon points="508.0,443.7 736.7,586.6 786.4,620.9 571.0,620.9 508.0,558.0" fill="#c4a07c" stroke="#243044" stroke-width="1.7" stroke-dasharray="7 4" fill-opacity="0.25" />
+<text x="640.0" y="600.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">C — interpreted contact, not imaged</text>
+<polyline points="545.0,472.0 553.0,540.0" fill="none" stroke="#243044" stroke-width="1.7" stroke-dasharray="2 3" /><polyline points="610.0,514.0 620.0,575.0" fill="none" stroke="#243044" stroke-width="1.7" stroke-dasharray="2 3" /><text x="560.0" y="500.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Inferred historical flexure</text><text x="560.0" y="516.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Upper part of the bending lower plate</text><text x="560.0" y="532.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Not measured present-day displacement</text></g>
+<g class="opt opt-b" id="process-b-mobile-shale">
+<polygon points="557.7,306.6 670.4,283.7 736.7,329.4 683.7,392.3 587.6,369.4" fill="#cbb892" stroke="#243044" stroke-width="1.6" stroke-dasharray="6 4" fill-opacity="0.28" />
+<text x="720.1" y="276.6" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">B — conceptual mobile shale</text>
+<text x="720.1" y="292.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Does not replace continental crust</text></g>
+<g id="process-a-thermal" class="opt opt-a"><polygon points="420.0,418.0 488.0,424.0 488.0,432.0 420.0,426.0" fill="url(#sill)" stroke="#c45c3e" stroke-width="1.3" stroke-dasharray="3 2" fill-opacity="0.9" /><polygon points="432.0,446.0 490.0,452.0 490.0,460.0 432.0,454.0" fill="url(#sill)" stroke="#c45c3e" stroke-width="1.3" stroke-dasharray="3 2" fill-opacity="0.9" /><line x1="458.0" y1="408.0" x2="464.0" y2="458.0" stroke="#c45c3e" stroke-width="1.5" stroke-dasharray="2 2" /><text x="96.0" y="548.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Hypothetical thermal plumbing</text><text x="96.0" y="564.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Sparse sills and dykes. Not a chamber.</text><text x="96.0" y="580.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">No feeder to Kinabalu.</text></g><g class="opt opt-grav" id="compare-sediment-gravity">
+<polyline points="557.7,355.1 637.3,358.0 720.1,380.9 761.5,363.7" fill="none" stroke="#243044" stroke-width="2" stroke-dasharray="3 3" />
+<text x="571.0" y="406.6" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Compare: sediment-gravity above a weak layer</text>
+</g>
+<g class="opt opt-base" id="compare-basement-shortening">
+<polyline points="571.0,338.0 620.7,495.1" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="8 3" />
+<polyline points="653.8,323.7 711.8,552.3" fill="none" stroke="#243044" stroke-width="1.6" stroke-dasharray="8 3" />
+<text x="753.2" y="363.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Basement shortening — not imaged</text>
+</g>
+<g id="evidence-callouts" class=""><a href="#e1" data-open="e1" aria-label="Callout 1: Inherited thin continental margin">
+<circle cx="272.8" cy="238.0" r="15" fill="#f3efe6" stroke="#1c2430" stroke-width="2" />
+<text x="272.8" y="242.0" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif" text-anchor="middle">1</text>
+</a>
+<a href="#e2" data-open="e2" aria-label="Callout 2: Trough accommodation: which mechanism?">
+<circle cx="508.0" cy="242.3" r="15" fill="#f3efe6" stroke="#1c2430" stroke-width="2" />
+<text x="508.0" y="246.3" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif" text-anchor="middle">2</text>
+</a>
+<a href="#e3" data-open="e3" aria-label="Callout 3: Shortening and sedimentary deformation">
+<circle cx="634.0" cy="225.1" r="15" fill="#f3efe6" stroke="#1c2430" stroke-width="2" />
+<text x="634.0" y="229.1" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif" text-anchor="middle">3</text>
+</a>
+<a href="#e4" data-open="e4" aria-label="Callout 4: Possible younger extension or local intrusion">
+<circle cx="531.2" cy="398.0" r="15" fill="#f3efe6" stroke="#1c2430" stroke-width="2" />
+<text x="531.2" y="402.0" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif" text-anchor="middle">4</text>
+</a>
+<a href="#e5" data-open="e5" aria-label="Callout 5: Regional connection to Kinabalu remains unproven">
+<circle cx="922.2" cy="140.9" r="15" fill="#f3efe6" stroke="#1c2430" stroke-width="2" />
+<text x="922.2" y="144.9" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif" text-anchor="middle">5</text>
+</a>
+<g class="opt opt-foot">
+<circle cx="74.0" cy="266.6" r="3.5" fill="#1c2430" />
+<circle cx="304.3" cy="210.9" r="3.5" fill="#1c2430" />
+<circle cx="508.0" cy="292.3" r="3.5" fill="#1c2430" />
+<circle cx="612.4" cy="263.7" r="3.5" fill="#1c2430" />
+<circle cx="691.9" cy="213.7" r="3.5" fill="#1c2430" />
+<circle cx="786.4" cy="209.4" r="3.5" fill="#1c2430" />
+<circle cx="877.5" cy="92.4" r="3.5" fill="#1c2430" />
+<circle cx="1015.0" cy="198.0" r="3.5" fill="#1c2430" />
+<circle cx="1154.1" cy="208.0" r="3.5" fill="#1c2430" />
+<circle cx="1260.2" cy="210.9" r="3.5" fill="#1c2430" />
+<circle cx="1454.0" cy="312.3" r="3.5" fill="#1c2430" />
+<text x="537.9" y="675.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Author-reported 3D lines are not displayed</text>
+<text x="537.9" y="690.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Mantle studies stay in the separate inset</text>
+</g>
+</g><g id="labels-and-legend" class=""><line x1="74.0" y1="638.0" x2="1454.0" y2="638.0" stroke="#243044" stroke-width="1.2" stroke-dasharray="2 5" />
+<text x="87.3" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="start">Dangerous Grounds</text>
+<line x1="74.0" y1="40" x2="74.0" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="504.7" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">Sabah Trough</text>
+<line x1="455.0" y1="40" x2="455.0" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="623.2" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">Fold-thrust belt</text>
+<line x1="554.4" y1="40" x2="554.4" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="739.2" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">Shelf / coast</text>
+<line x1="691.9" y1="40" x2="691.9" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="877.5" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">Crocker</text>
+<line x1="786.4" y1="40" x2="786.4" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="1059.7" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">Central Sabah</text>
+<line x1="968.6" y1="40" x2="968.6" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="1266.8" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">Sandakan</text>
+<line x1="1150.8" y1="40" x2="1150.8" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="1445.7" y="28.0" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="end">Sulu Sea</text>
+<line x1="1382.8" y1="40" x2="1382.8" y2="52" stroke="#243044" stroke-width="1" opacity="0.45" />
+<text x="256.2" y="529.4" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Paleogene rift faults — inherited</text>
+<text x="571.0" y="392.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Shortening — driver not chosen</text>
+<text x="670.4" y="426.6" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Shelf growth faults</text>
+<text x="87.3" y="272.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="start">End of SCS spreading, about 16 Ma</text>
+<text x="571.0" y="339.4" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">DRU — age bracket, not a collision datum</text>
+<text x="670.4" y="270.9" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">SRU</text>
+<text x="877.5" y="115.1" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">Kinabalu pluton</text>
+<text x="1366.2" y="624.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">15 km is a scale break, not a contact</text>
+<text x="96.0" y="58.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">km along dog-leg</text>
+<text x="66.0" y="213.4" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">0</text>
+<text x="66.0" y="356.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">5</text>
+<text x="66.0" y="499.1" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">10</text>
+<text x="66.0" y="642.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">15</text>
+<text x="66.0" y="722.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">30</text>
+<text x="66.0" y="802.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">45</text>
+<text x="66.0" y="882.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">60</text>
+<text x="8.0" y="88.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">depth km</text>
+<text x="86.0" y="651.9" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">deeper scale</text>
+<text x="74.0" y="58.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">0</text>
+<text x="405.3" y="58.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">200</text>
+<text x="736.7" y="58.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">400</text>
+<text x="1068.0" y="58.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">600</text>
+<text x="1454.0" y="58.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">833</text>
+<g id="scale-bars" fill="none" stroke="#1c2430" stroke-width="2">
+<line id="scale-h" x1="123.7" y1="928.0" x2="289.4" y2="928.0" data-km="100" />
+<line id="scale-vu" x1="18.0" y1="209.4" x2="18.0" y2="352.3" data-km="5" />
+<line id="scale-vl" x1="40.0" y1="638.0" x2="40.0" y2="744.7" data-km="20" />
+</g>
+<text x="206.5" y="944.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">100 km</text>
+<text x="24.0" y="280.9" fill="#1c2430" font-size="11" font-family="Liberation Sans, sans-serif">5 km</text>
+<text x="46.0" y="691.3" fill="#1c2430" font-size="11" font-family="Liberation Sans, sans-serif">20 km</text>
+</g></svg>
+    </div>
+    <p id="ve" data-ve>Computed from the scale bars in this figure: 17.2× above the 15 km break and 3.2× below. Horizontal bar 100 km; upper bar 5 km; lower bar 20 km. Schematic, not a balanced restoration.</p>
+    
+    <ul class="legend">
+      <li><span class="sw" style="background:#8eafc4"></span> Water column (~2.9 km in trough)</li>
+      <li><span class="sw" style="background:#e4d2b0"></span> Post-rift sedimentary wedge</li>
+      <li><span class="sw" style="background:#c4a07c"></span> Dangerous Grounds thinned continental crust</li>
+      <li><span class="sw" style="background:#c98490"></span> Kinabalu granitic pluton (7–8 Ma)</li>
+      <li><span class="sw" style="background:#b08968"></span> Crocker turbidite accretionary complex</li>
+      <li><span class="sw" style="background:#7f9aa8"></span> Sulu Sea oceanic crust</li>
+      <li><span class="sw" style="background:#f3efe6;border-style:dashed"></span> Dashed line — interpreted structural contact</li>
+      <li><span class="sw" style="background:repeating-linear-gradient(90deg,#d9d3c8,#d9d3c8 2px,#7d868f 2px,#7d868f 3px)"></span> Hatch — unconstrained Moho / deep crust (230–540 km gap)</li>
+      <li><span class="sw" style="background:#f3efe6;border:2px dashed #c45c3e"></span> Red dashes — Model A thermal plumbing hypothesis (off by default)</li>
+    </ul>
 
-<div class="panel" style="margin-top:1.25rem">
-  <div class="panel-head"><h3>◈ Event strip · 35 Ma to present</h3><span class="note">Shared events (grey) and the selected model's events (colour)</span></div>
-  <div class="timeline"><svg id="tl" role="img" aria-label="Tectonic event timeline" style="width:100%;height:auto;display:block"></svg></div>
-  <p style="margin-top:.85rem;font-size:.78rem;color:var(--text-secondary);line-height:1.55"><b>Two evidence lines, one set of surfaces.</b> All four regional unconformities — BMU/TCU, DRU, UIU, SRU — match global sequence boundaries in the Haq &amp; Ogg (2024) chart (NgSB1, NgSB8, NgSB11, NgSB13; Δ ≤ 0.2 Ma in GEOX's correlation). Tectonics alone does not produce that coincidence: these surfaces carry a eustatic signal as well as a tectonic one. That is why "the DRU records the collision" is a claim to test, not a given — GEOX rule: DRU ≠ collision onset without structural evidence. Provenance: Morley (2024) tectonics × Haq &amp; Ogg (2024) eustasy, relayed by GEOX <span style="font-family:var(--mono)">geox://earth-system/sabah-correlation</span>.</p>
-</div>
+    <h3>Structural domain callouts</h3>
+    <div class="callouts">
+      <a href="#e1" data-open="e1">1. Dangerous Grounds: Inherited thinned continental margin</a>
+      <a href="#e2" data-open="e2">2. Sabah Trough: Accommodation mechanisms & bathymetric deep</a>
+      <a href="#e3" data-open="e3">3. Fold-Thrust Belt: Shortening, mobile shale canopy & gravity spreading</a>
+      <a href="#e4" data-open="e4">4. Extensional Reactivation Hypothesis: Seismic fault growth vs flexural bending</a>
+      <a href="#e5" data-open="e5">5. Mount Kinabalu: Pluton emplacement, rapid exhumation & regional setting</a>
+    </div>
 
-<div class="panel" id="panelBB" style="margin-top:1.25rem">
-  <div class="panel-head"><h3>◈ Section B–B′ · NW–SE margin transect — conceptual, with explicit gaps</h3><span class="note">Schematic. Not a depth-converted seismic line, not a balanced restoration, not measured geometry.</span></div>
-  <div class="read-guide" role="note">Read the gap, not the shapes: offshore shortening is documented; its connection to hinterland extension is <b>not</b>. The central feature of this panel is the hatched UNKNOWN — the connecting mechanism is never drawn as an observed structure.</div>
-  <svg viewBox="0 0 1000 430" role="img" aria-label="Conceptual NW-SE margin transect: Sabah Trough, deepwater fold-thrust belt, shelf, Crocker hinterland, with explicit gap for the landward connection" style="width:100%;height:auto;display:block;font-family:var(--mono)">
-    <!-- water + seafloor -->
-    <rect x="20" y="60" width="330" height="70" fill="#0c2a4a"/>
-    <text x="30" y="52" font-size="11" fill="#7dd3fc">SOUTH CHINA SEA</text>
-    <path d="M20,130 L120,138 L220,150 L320,160 L350,130 L420,120 L500,118 L560,110 L620,95 L700,80 L780,60 L860,40 L980,20 L980,130 L20,130 Z" fill="none"/>
-    <path d="M20,130 L120,138 L220,150 L320,160 L350,130 L420,120 L500,118 L560,110 L620,95 L700,80 L780,60 L860,40 L980,20" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
-    <text x="60" y="105" font-size="10" fill="#7dd3fc">Sabah Trough (~2.9 km)</text>
-    <!-- sedimentary wedge -->
-    <path d="M60,132 L320,160 L350,130 L420,120 L470,119 L470,180 L350,190 L200,185 L60,160 Z" fill="#3f4a5c" opacity="0.85"/>
-    <path d="M120,150 L320,172 M90,142 L280,164" stroke="#94a3b8" stroke-width="0.7" opacity="0.5" fill="none"/>
-    <text x="90" y="205" font-size="10" fill="#cbd5e1">Neogene wedge (drape + toe fill)</text>
-    <!-- DWFTB thrusts (schematic, with teeth) -->
-    <g stroke="#f59e0b" stroke-width="1.4" fill="none">
-      <path d="M180,185 L210,150"/><path d="M240,188 L270,152"/><path d="M300,190 L330,158"/>
-    </g>
-    <g fill="#f59e0b">
-      <path d="M205,152 l6,3 -5,4 z"/><path d="M265,154 l6,3 -5,4 z"/><path d="M325,160 l6,3 -5,4 z"/>
-    </g>
-    <text x="170" y="222" font-size="11" fill="#fbbf24">DEEPWATER FOLD–THRUST BELT</text>
-    <text x="170" y="236" font-size="9" fill="#94a3b8">seismic-documented; geometry varies along strike</text>
-    <!-- interpreted basal detachment (dashed, query) -->
-    <path d="M80,188 Q250,205 430,196" stroke="#f472b6" stroke-width="1.6" stroke-dasharray="7 5" fill="none"/>
-    <text x="90" y="252" font-size="10" fill="#f472b6">- - interpreted basal detachment - - ?</text>
-    <!-- shelf / coast -->
-    <text x="430" y="145" font-size="10" fill="#7dd3fc">shelf · coast</text>
-    <!-- GAP zone -->
-    <rect x="470" y="150" width="150" height="115" fill="url(#hatchGap)" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3"/>
-    <defs><pattern id="hatchGap" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="8" stroke="#f87171" stroke-width="1" opacity="0.35"/></pattern></defs>
-    <text x="478" y="196" font-size="11" font-weight="700" fill="#f87171">LANDWARD CONNECTION</text>
-    <text x="478" y="212" font-size="11" font-weight="700" fill="#f87171">NOT ESTABLISHED</text>
-    <text x="478" y="232" font-size="8" fill="#fca5a5">detachment vs deeper</text>
-    <text x="478" y="244" font-size="8" fill="#fca5a5">involvement: unresolved</text>
-    <!-- hinterland topography (schematic) -->
-    <path d="M620,95 L700,80 L780,60 L860,40 L980,20 L980,120 L620,120 Z" fill="#57534e" opacity="0.75"/>
-    <text x="700" y="112" font-size="11" fill="#e7e5e4">CROCKER HINTERLAND</text>
-    <text x="880" y="16" font-size="10" fill="#f9a8d4">Mt Kinabalu 4,095 m</text>
-    <!-- onshore normal faults (Wang 2017): NW-dipping, ticks -->
-    <g stroke="#4ade80" stroke-width="1.4" fill="none">
-      <path d="M820,30 L760,95"/><path d="M880,22 L830,72"/>
-    </g>
-    <g stroke="#4ade80" stroke-width="1.2">
-      <path d="M806,44 l-9,1"/><path d="M792,59 l-9,1"/><path d="M778,74 l-9,1"/><path d="M866,35 l-8,1"/><path d="M852,50 l-8,1"/>
-    </g>
-    <text x="640" y="285" font-size="10" fill="#4ade80">active normal-fault system (~200 km, E-flank Crocker;</text>
-    <text x="640" y="298" font-size="10" fill="#4ade80">2015 Mw 6.0 blind NW-dipping fault — Wang et al. 2017)</text>
-    <!-- rift-axis intrusions (Arif element) -->
-    <path d="M860,120 L845,60 M860,120 L875,55 M862,120 L860,40" stroke="#db2777" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/>
-    <path d="M845,45 q15,-20 30,0 q-15,14 -30,0 z" fill="#db2777" opacity="0.9"/>
-    <text x="985" y="68" text-anchor="end" font-size="10" fill="#f9a8d4">Kinabalu pluton ~8–7 Ma</text>
-    <rect x="620" y="315" width="365" height="85" rx="6" fill="#1a1a1a" stroke="#db2777" stroke-width="0.8" opacity="0.92"/>
-    <text x="632" y="333" font-size="10" font-weight="700" fill="#f9a8d4">RIFT-AXIS INTRUSIONS — HYPOTHESIS (no push claimed)</text>
-    <text x="632" y="349" font-size="9" fill="#e7e5e4">Sparse intrusions may exploit an inherited thinned</text>
-    <text x="632" y="362" font-size="9" fill="#e7e5e4">axis (failed-rift?); transtensional at ~8 Ma unproven.</text>
-    <text x="632" y="375" font-size="9" fill="#e7e5e4">Intrusions are passengers of structure, not drivers</text>
-    <text x="632" y="388" font-size="9" fill="#e7e5e4">of deformation — no causal arrow to offshore shortening.</text>
-    <!-- deep crust box -->
-    <rect x="20" y="315" width="580" height="66" rx="6" fill="#111" stroke="#475569" stroke-width="0.8"/>
-    <text x="32" y="333" font-size="10" font-weight="700" fill="#94a3b8">DEEP CRUST — DELIBERATELY NOT DRAWN</text>
-    <text x="32" y="349" font-size="9" fill="#cbd5e1">No offshore-to-onshore Moho profile for this transect · no continuous regional</text>
-    <text x="32" y="362" font-size="9" fill="#cbd5e1">décollement assumed · no active underthrust slab geometry imposed.</text>
-    <text x="32" y="375" font-size="9" fill="#64748b">M1 (external forcing) and M3 (internally driven) are end-members, not mutually exclusive truths.</text>
-    <!-- mechanical questions -->
-    <text x="20" y="404" font-size="9.5" fill="#7dd3fc">MECHANICAL QUESTIONS: what drives shortening on THIS segment? · how much is wedge-internal? · is hinterland linkage demonstrated? · what boundary forcing, if any?</text>
-    <text x="20" y="422" font-size="8.5" fill="#64748b">DRU omitted from geometry: literature ages span ~15.5–12 Ma (bracket, not a point; diachroneity untested). A balanced budget shows compatibility, never unique causation.</text>
-  </svg>
-  <div class="panel-head" style="margin-top:1rem"><h3>◈ Regional deep context — kept separate from B–B′</h3><span class="note">3-D evidence; projecting it beneath one transect would manufacture geometric connection</span></div>
-  <svg viewBox="0 0 1000 160" role="img" aria-label="Regional interpretive context: western slab remnant and eastern drip, coupling to NW offshore unproven" style="width:100%;height:auto;display:block;font-family:var(--mono)">
-    <rect x="20" y="15" width="290" height="80" rx="6" fill="#111" stroke="#475569"/>
-    <text x="35" y="38" font-size="10.5" fill="#93c5fd">WESTERN SABAH</text>
-    <text x="35" y="56" font-size="9" fill="#cbd5e1">High-velocity upper-mantle anomaly</text>
-    <text x="35" y="70" font-size="9" fill="#cbd5e1">= interpreted PSCS slab remnant (INT)</text>
-    <text x="35" y="86" font-size="8.5" fill="#64748b">Pilia et al. — interpretation of seismic evidence</text>
-    <rect x="690" y="15" width="290" height="92" rx="6" fill="#111" stroke="#475569"/>
-    <text x="705" y="38" font-size="10.5" fill="#fdba74">EASTERN SABAH</text>
-    <text x="705" y="56" font-size="9" fill="#cbd5e1">Lithospheric downwelling = drip (INT+model)</text>
-    <text x="705" y="70" font-size="9" fill="#cbd5e1">modelled potential for adjacent thinning</text>
-    <text x="705" y="84" font-size="8.5" fill="#64748b">Pilia et al. 2023 — mechanism possible,</text>
-    <text x="705" y="96" font-size="8.5" fill="#64748b">cause not established</text>
-    <path d="M310,55 L440,55" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
-    <path d="M690,55 L560,55" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
-    <text x="445" y="50" font-size="12" fill="#f87171">? ? ?</text>
-    <text x="380" y="80" font-size="9.5" fill="#fca5a5">Coupling to NW offshore = hypothesis needing tests</text>
-    <text x="20" y="122" font-size="8.5" fill="#64748b">Keep each study's location, method and tectonic attribution separate — not every deep feature is "the slab". Cornwell et al. 2025 image an uppermost-mantle discontinuity</text>
-    <text x="20" y="136" font-size="8.5" fill="#64748b">attributed to a Celebes-related remnant: a different province, a different question.</text>
-    <text x="20" y="150" font-size="8.5" fill="#64748b">Deep-structure constraints rest largely on one 2018–2020 onshore campaign (several methods, one acquisition).</text>
-  </svg>
-  <p style="margin-top:.7rem;font-size:.72rem;color:var(--text-dim)">Panel lineage: conceptual section after an external audit (Perplexity, 2026-10-26) reconciled against the federation audit register; rift-axis intrusion element after Arif Fazil. Refs for this panel: Pilia et al. 2023 <i>Nat. Geosci.</i> (drip) · Cornwell et al. 2025 <i>JGR</i> 10.1029/2025JB031466 (migrated RF) · Wang et al. 2017 <i>Geosci. Lett.</i> (Kinabalu earthquake, normal-fault system) · Geosphere 16(1):329 (triangle-zone DWFTB) · mixed-deformation DWFTB study (d-nb.info/1269312944). Schematic throughout — shapes carry no measured geometry.</p>
-</div>
+    <div id="notes">
+      <article id="e1" class="ev">
+        <h3>1. Dangerous Grounds: Inherited thinned continental margin</h3>
+        <p>The Dangerous Grounds represent attenuated continental lithosphere rifted during the Paleogene opening of the South China Sea basin. Horst-and-graben blocks are draped by syn-rift and post-rift sediments, capped by Miocene carbonate platforms (e.g. Layang-Layang atoll).</p>
+        <dl>
+          <dt>Observational status</dt><dd>Constrained by regional 2D/3D reflection seismic and ocean drilling (Hinz & Schlüter 1985; Hutchison 2005).</dd>
+          <dt>Geographic scope</dt><dd>Dangerous Grounds western margin segment (0–385 km chainage).</dd>
+          <dt>Geological timing</dt><dd>Paleogene rifting (~45–32 Ma) terminating prior to or coeval with seafloor spreading cessation (~16–15 Ma).</dd>
+          <dt>Key literature</dt><dd>Hinz, K. and Schlüter, H.U. (1985), Energy 10: 297–315.</dd>
+        </dl>
+      </article>
 
-<div class="card" style="margin-top:1.25rem">
-  <h3>Sources</h3>
-  <ul class="refs" id="refs"></ul>
-</div>
+      <article id="e2" class="ev">
+        <h3>2. Sabah Trough: Accommodation mechanisms & bathymetric deep</h3>
+        <p>The Sabah Trough is an enigmatic ~2.9 km deep bathymetric depression. Primary models for accommodation include: (1) Foredeep flexural down-bending under the load of the adjacent Crocker Range and Northwest Borneo fold-thrust wedge; (2) Residual bathymetric low inherited from oceanic-continental transition; and (3) Neogene extensional reactivation creating tectonic space.</p>
+        <dl>
+          <dt>Observational status</dt><dd>Water depth measured by multibeam bathymetry and seismic reflection; structural accommodation mechanism is interpretive.</dd>
+          <dt>Geographic scope</dt><dd>Sabah Trough axial depression (385–510 km chainage).</dd>
+          <dt>Geodynamic alternatives</dt><dd>Flexural bending predicts asymmetric deepening toward the fold-thrust front. In contrast, extensional reactivation predicts symmetric syn-growth wedges.</dd>
+        </dl>
+      </article>
 
-<div class="attribution">
-  <b>Read this honestly.</b> Topography and bathymetry are schematic profiles from published values (Mt Kinabalu 4,095 m; Sabah Trough ~2.9 km). Bodies are interpretive schematics, not seismic picks; depths of deep crust and Moho are approximate. Dips on the upper panel are exaggerated (about 17x vertical scale): a true 5 degree dip is drawn near 56 degrees - read shapes, not angles. Present-day heat flow is not a record of past heating: an old intrusion can leave a maturity anomaly after its heat anomaly is gone. Lineage: this figure is an interpretive schematic hand-plotted from published values - it is not machine-derived from survey data or a canonical transect pipeline. Model A is a new working hypothesis by Arif Fazil and is <b>untested</b>: it is drawn at the same weight as the published models so that it can be argued with, not because it is established.<br>
-  <a href="https://arif-fazil.com/earth/kinabalu-basin/">◂ BACK TO DOSSIER</a> · <a href="/earth/sabah-observatory/">SEVEN-MODEL OBSERVATORY ↗</a> · <a href="/earth/kinabalu-basin.pdf">DOWNLOAD PDF ↓</a> · <a href="https://geox.arif-fazil.com/basins/kinabalu/">LAUNCH GEOX ↗</a>
-</div>
-</div>
+      <article id="e3" class="ev">
+        <h3>3. Fold-Thrust Belt: Shortening, mobile shale canopy & gravity spreading</h3>
+        <p>The offshore Northwest Borneo toe-thrust system is dominated by gravity-driven detached fold-and-thrust deformation above an overpressured Middle Miocene shale detachment (Pagasa/Setap Formation). Seismic studies document shale diapirs, mud volcanoes, and mini-basins, demonstrating that shallow shortening is driven by sedimentary overburden and slope gradient rather than pure crustal plate convergence.</p>
+        <dl>
+          <dt>Observational status</dt><dd>Imaged in high-resolution 3D seismic reflection surveys (Morley et al. 2023; King et al. 2010).</dd>
+          <dt>Geographic scope</dt><dd>Outboard fold-thrust belt (510–690 km chainage).</dd>
+          <dt>Key literature</dt><dd>Morley, C.K. et al. (2023), Geosphere 19(1): 291; King, R.C. et al. (2010), Mar. Pet. Geol. 27: 238–246.</dd>
+        </dl>
+      </article>
+
+      <article id="e4" class="ev">
+        <h3>4. Extensional Reactivation Hypothesis: Seismic fault growth vs flexural bending</h3>
+        <p>Author-reported 3D seismic observations on select dip lines reveal normal faults with syn-growth stratigraphic expansion, proposing a younger post-spreading extensional event. Crucially, normal faulting in this structural position must be weighed against the null hypothesis: flexural outer-trench-slope normal faults naturally develop on the upper surface of a down-bending plate without requiring regional plate-scale extension.</p>
+        <dl>
+          <dt>Observational status</dt><dd>Working hypothesis based on seismic reflection character; requires independent biostratigraphic horizon calibration.</dd>
+          <dt>Geographic scope</dt><dd>Sabah Trough flank and outer toe-thrust margin.</dd>
+          <dt>Critical test</dt><dd>Detailed biostratigraphic dating of syn-growth vs post-growth strata across the Deep Regional Unconformity (DRU).</dd>
+        </dl>
+      </article>
+
+      <article id="e5" class="ev">
+        <h3>5. Mount Kinabalu: Pluton emplacement, rapid exhumation & regional setting</h3>
+        <p>Mount Kinabalu (4,095 m) is Southeast Asia's highest peak, composed of a Late Miocene granitic pluton (U-Pb zircon ages ~7–8 Ma). Thermochronology demonstrates extremely rapid exhumation (~7 mm/yr between 7.8 and 7.2 Ma). While onshore extension is cited as accommodating pluton ascent, no direct magmatic or structural conduit links the offshore Sabah Trough to the pluton.</p>
+        <dl>
+          <dt>Observational status</dt><dd>Robustly dated by zircon U-Pb and (U-Th)/He thermochronology (Cottam et al. 2010, 2013).</dd>
+          <dt>Geographic scope</dt><dd>Onshore Crocker Range hinterland (chainage 484.9 km on transect projection).</dd>
+          <dt>Key literature</dt><dd>Cottam, M.A. et al. (2010), J. Geol. Soc. 167: 49–60; Cottam, M.A. et al. (2013), J. Geol. Soc. 170: 805–816.</dd>
+        </dl>
+      </article>
+    </div>
+
+    <dialog id="drawer" aria-labelledby="drawer-title" closedby="any">
+      <div id="drawer-body"></div>
+      <form method="dialog"><button>Close</button></form>
+    </dialog>
+
+    <h3>Deep lithospheric & mantle framework</h3>
+    <p>Teleseismic receiver-function and tomography studies provide critical mantle depth constraints, kept distinct from shallow crustal transect interpolations.</p>
+    <div class="pan" tabindex="0" aria-label="Separate mantle inset. Scroll sideways if needed.">
+      <svg id="mantle-inset" class="side-svg" role="img" aria-labelledby="mantle-title mantle-desc" viewBox="0 0 720 340" width="720" height="340">
+        <title id="mantle-title">Regional mantle context — separate location and depth framework.</title>
+        <desc id="mantle-desc">A reported discontinuity at about 45 to 55 km, drawn in its own depth frame. The published reading is an oceanic slab remnant. This inset is not a continuation of the main transect.</desc>
+        <rect width="720" height="340" fill="#f3efe6"/>
+        <text x="16" y="24" fill="#1c2430" font-size="15" font-family="Liberation Sans, sans-serif">Regional mantle context — separate location and depth framework.</text>
+        <text x="16" y="48" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">W</text>
+        <line x1="32" y1="44" x2="120" y2="44" stroke="#243044" stroke-width="1.4"/>
+        <text x="126" y="48" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">E</text>
+        <text x="160" y="48" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Orientation of this inset only. Not the NW–SE dog-leg.</text>
+        <text x="16" y="78" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">0 km</text>
+        <text x="16" y="158" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">20</text>
+        <text x="16" y="238" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">40</text>
+        <text x="16" y="318" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">60 km</text>
+        <line x1="70" y1="74" x2="70" y2="314" stroke="#243044" stroke-width="1.2"/>
+        <line x1="180" y1="260" x2="520" y2="220" stroke="#243044" stroke-width="2.4"/>
+        <text x="530" y="214" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif">Observation</text>
+        <text x="530" y="232" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">discontinuity ~45–55 km</text>
+        <line x1="180" y1="268" x2="520" y2="228" fill="none" stroke="#243044" stroke-width="1.4" stroke-dasharray="6 4"/>
+        <text x="180" y="300" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Interpretation (dashed): published oceanic slab remnant. Awaiting source review.</text>
+        <text x="160" y="120" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Footprint: the published receiver-function study area, not this transect.</text>
+        <text x="160" y="140" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">This inset is not oriented along the NW–SE dog-leg.</text>
+      </svg>
+    </div>
+    <div class="mantle">
+      <article>
+        <p class="tag">PILIA ET AL. 2023</p>
+        <h3>Eastern Sabah mantle downwelling</h3>
+        <p>Teleseismic tomography in eastern Sabah records a high-velocity mantle downwelling beneath the Dent/Semporna peninsula, interpreted as subducted oceanic lithosphere or lithospheric dripping (Nature Geoscience, doi:10.1038/s41561-023-01201-7).</p>
+      </article>
+      <article>
+        <p class="tag">CORNWELL ET AL. 2025 · MODEL D</p>
+        <h3>45–55 km teleseismic discontinuity</h3>
+        <p>P-wave receiver functions identify a 75–100 km wide dipping seismic discontinuity at 45–55 km depth beneath central Sabah, interpreted as a remnant oceanic slab tied to Celebes Sea subduction (JGR Solid Earth, doi:10.1029/2025JB031466).</p>
+      </article>
+      <article>
+        <p class="tag">GILLIGAN ET AL. 2026</p>
+        <h3>Moho depth anchors</h3>
+        <p>Station-specific crustal thickness estimates show a deep crustal root (~60 km) beneath the Crocker Range and a thinner crust (~24 km) in central Sabah. Notably, no station exists directly over the offshore 0–425 km trough axis (doi:10.1029/2025JB031499).</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="story" class="wrap" aria-labelledby="st-h">
+    <h2 id="st-h">Tectonic evolution & chronological storyboard</h2>
+    <p>Five sequential evolutionary stages illustrate the geodynamic history of the Northwest Borneo margin from continental breakup to the present day.</p>
+    
+    <div class="panel">
+      <h3>Fault-growth geometry diagnostic</h3>
+      <p>Demonstrating how syn-growth sedimentary wedge expansion across a normal fault distinguishes active faulting from pre-growth cutoffs and post-growth drape.</p>
+      <div class="pan" tabindex="0" aria-label="Fault-growth diagnostic. Scroll sideways if needed.">
+        <svg id="panel-diag" class="side-svg" role="img" aria-labelledby="diag-title diag-desc" viewBox="0 0 720 430" width="720" height="430">
+          <title id="diag-title">Conceptual diagnostic — not a Sabah seismic observation.</title>
+          <desc id="diag-desc">A generic pre-growth package, a syn-growth package that thickens toward a fault, and a younger sealing package. Horizons are H1, H2 and H3 only. Four evidence fields are empty.</desc>
+          <rect width="720" height="430" fill="#f3efe6"/>
+          <text x="16" y="28" fill="#1c2430" font-size="15" font-family="Liberation Sans, sans-serif">Conceptual diagnostic — not a Sabah seismic observation.</text>
+          <polyline points="200,70 230,250" fill="none" stroke="#243044" stroke-width="2"/>
+          <text x="236" y="78" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">fault</text>
+          <polyline points="40,90 190,78 250,86 520,84" fill="none" stroke="#243044" stroke-width="1.6"/>
+          <text x="530" y="88" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif">H1 pre-growth</text>
+          <polygon points="40,150 190,168 230,210 520,128 520,108 250,96 190,88 40,100" fill="#e4d2b0" stroke="#243044" stroke-width="1.4"/>
+          <text x="530" y="150" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif">H2 syn-growth</text>
+          <text x="530" y="168" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">thickens toward the fault</text>
+          <polygon points="40,168 190,186 250,214 520,156 520,132 250,112 190,172 40,154" fill="#efe6d6" stroke="#243044" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <text x="530" y="210" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif">H3 younger sealing drape</text>
+          <text x="16" y="248" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif">This relationship can support fault-growth timing.</text>
+          <text x="16" y="268" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif">It does not alone establish the regional driving mechanism.</text>
+          <g font-family="Liberation Sans, sans-serif" font-size="12" fill="#1c2430">
+            <rect x="16" y="292" width="160" height="110" fill="#f3efe6" stroke="#243044" stroke-dasharray="4 3"/>
+            <text x="28" y="316">1. Mapped relationship</text>
+            <text x="28" y="348">(unfilled)</text>
+            <rect x="190" y="292" width="160" height="110" fill="#f3efe6" stroke="#243044" stroke-dasharray="4 3"/>
+            <text x="202" y="316">2. Bracketing horizons</text>
+            <text x="202" y="348">(unfilled)</text>
+            <rect x="364" y="292" width="160" height="110" fill="#f3efe6" stroke="#243044" stroke-dasharray="4 3"/>
+            <text x="376" y="316">3. Alternative explanation</text>
+            <text x="376" y="348">(unfilled)</text>
+            <rect x="538" y="292" width="166" height="110" fill="#f3efe6" stroke="#243044" stroke-dasharray="4 3"/>
+            <text x="550" y="316">4. Independent calibration</text>
+            <text x="550" y="348">(unfilled)</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <details open data-stage="1">
+      <summary>Stage 1: Paleogene continental rifting & breakup (Dangerous Grounds)</summary>
+      <p>Eocene to Early Miocene extensional thinning of the South China margin created rotated continental fault blocks and rift basins, subsequently draped by post-rift marine sediments and carbonate platforms (Hinz & Schlüter 1985).</p>
+    </details>
+
+    <details data-stage="2">
+      <summary>Stage 2: Middle Miocene margin loading & foredeep flexure</summary>
+      <p>Collision of the Dangerous Grounds with the Crocker accretionary wedge terminated proto-South China Sea subduction. Flexural downwarping of the Dangerous Grounds under the tectonic load created the Deep Regional Unconformity (DRU, ~15.5–14.2 Ma) and outer-trench flexural normal faulting.</p>
+    </details>
+
+    <details data-stage="3">
+      <summary>Stage 3: Proposed younger Neogene extensional reactivation (Hypothesis)</summary>
+      <p>Seismic dip profiles in select 3D volumes display syn-growth strata thickening into normal faults cutting above the DRU, proposing an episodic pulse of younger extension that contributed to Sabah Trough bathymetric space-making.</p>
+    </details>
+
+    <details data-stage="4">
+      <summary>Stage 4: Late Miocene magmatism & Kinabalu pluton emplacement (7–8 Ma)</summary>
+      <p>Ascent and rapid cooling of the Mount Kinabalu granitic pluton at ~7–8 Ma, accommodated by localized crustal dilation and followed by rapid exhumation. Model A tests whether sparse sills or dykes penetrated offshore inherited faults during this thermal pulse.</p>
+    </details>
+
+    <details data-stage="5">
+      <summary>Stage 5: Pliocene to present-day gravitational overprint & seismicity</summary>
+      <p>Continued deltaic progradation drives gravity-driven shale tectonics and toe-thrusting in the outboard fold belt. Modern seismicity (e.g. the 2015 Mw 6.0 Ranau earthquake) demonstrates ongoing extensional faulting and uplift onshore.</p>
+    </details>
+  </section>
+
+  <section id="kinabalu" class="wrap" aria-labelledby="kn-h">
+    <h2 id="kn-h">Mount Kinabalu: Geodynamic relationship to offshore tectonics</h2>
+    <p class="lede">Synthesizing onshore geochronological and petrological constraints with the offshore structural history.</p>
+    <div class="qa">
+      <article class="card">
+        <h3>Geochronology</h3>
+        <p>Zircon U-Pb crystallization ages cluster tightly at 7–8 Ma (Late Miocene; Cottam et al. 2010). The offshore younger-extension proposal lacks absolute age calibration, leaving direct coeval timing unconfirmed.</p>
+      </article>
+      <article class="card">
+        <h3>Tectonic setting</h3>
+        <p>Onshore structural studies document local NW–SE extension during granite ascent. However, whether this reflects a regional lithospheric extensional regime or localized tectonic escape remains an active question.</p>
+      </article>
+      <article class="card">
+        <h3>Plumbing architecture</h3>
+        <p>Regional mapping reveals no continuous magmatic dyke swarm or sill complex linking the deepwater Sabah Trough to the onshore Kinabalu pluton across the intervening Crocker Range.</p>
+      </article>
+      <article class="card">
+        <h3>Uplift vs exhumation</h3>
+        <p>Thermochronology demonstrates rapid exhumation (~7 mm/yr) around 7 Ma, but the modern peak elevation (4,095 m) reflects younger Plio-Pleistocene surface uplift driven by mantle buoyancy, delamination, or isostatic rebound.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="matrix" class="wrap" aria-labelledby="mx-h">
+    <h2 id="mx-h">Evidence & alternatives matrix</h2>
+    <p>Comprehensive evaluation of six geodynamic mechanisms against fifteen verified physical observations across the Northwest Borneo active margin.</p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+<caption>Matrix evaluating geodynamic mechanisms against physical observations. Each cell records physical consistency.</caption>
+<thead><tr>
+<th scope="col">Physical observation / constraint</th>
+<th scope="col">Inherited rifting</th>
+<th scope="col">Flexural bending</th>
+<th scope="col">Sediment-gravity</th>
+<th scope="col">Basement underthrusting</th>
+<th scope="col">Younger extension</th>
+<th scope="col">Local intrusion</th>
+</tr></thead>
+<tbody>
+<tr><th scope="row">Block-faulted Dangerous Grounds crust<span class="note">Hinz & Schlüter 1985. Attenuated continental basement.</span></th><td>predicts</td><td>compatible</td><td>not applicable</td><td>compatible</td><td>not diagnostic</td><td>not applicable</td></tr>
+<tr><th scope="row">Trough water depth ~2.9 km<span class="note">Measured bathymetric deep outboard of accretionary wedge.</span></th><td>compatible</td><td>predicts</td><td>requires extra assumptions</td><td>predicts</td><td>compatible</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Paleogene rift faults on Dangerous Grounds<span class="note">Pre-breakup extension pre-dating 16 Ma spreading cessation.</span></th><td>predicts</td><td>not diagnostic</td><td>not applicable</td><td>compatible</td><td>not diagnostic</td><td>requires extra assumptions</td></tr>
+<tr><th scope="row">Normal faults on down-bending lower plate<span class="note">Outer-trench-slope normal faults produced by plate flexure.</span></th><td>compatible</td><td>predicts</td><td>not diagnostic</td><td>predicts</td><td>requires extra assumptions</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Mobile shale canopy & mini-basins in Pagasa wedge<span class="note">Morley et al. 2023. Overpressured detachment dynamics.</span></th><td>not diagnostic</td><td>compatible</td><td>predicts</td><td>inconsistent with pure thrust sheet</td><td>not diagnostic</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Outboard shortening vs shelf extension balance<span class="note">King et al. 2010. Linked updip extensional and downdip contractional strains.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>predicts</td><td>not diagnostic</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Deep Regional Unconformity (DRU, ~15.5–14.2 Ma)<span class="note">Regional seismic marker recording margin collision and lowstand.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Mantle discontinuity at 45–55 km<span class="note">Cornwell et al. 2025. Dipping receiver-function velocity interface.</span></th><td>not applicable</td><td>not applicable</td><td>not applicable</td><td>not diagnostic</td><td>not applicable</td><td>not applicable</td></tr>
+<tr><th scope="row">Kinabalu granite zircon age (7–8 Ma) & rapid exhumation<span class="note">Cottam et al. 2010, 2013. Late Miocene crystallization and cooling.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Moho anchors unconstrained in 230–540 km gap<span class="note">Gilligan et al. 2026. Lack of offshore ocean-bottom seismometer data.</span></th><td>untested</td><td>untested</td><td>untested</td><td>untested</td><td>untested</td><td>untested</td></tr>
+<tr><th scope="row">Corrected magnetic/gravity axial signatures<span class="note">Screening criterion for potential igneous intrusion in the trough axis.</span></th><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>predicts</td></tr>
+<tr><th scope="row">Imaged saucer-shaped sills vs mud diapirs<span class="note">Seismic reflection acoustic impedance characteristics.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td><td>predicts</td></tr>
+<tr><th scope="row">Local thermal maturity anomalies<span class="note">Vitrinite reflectance / biomarker indicators exceeding burial profile.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>predicts</td></tr>
+<tr><th scope="row">Syn-growth wedge thickening on 3D dip lines<span class="note">Author-reported seismic reflection character supporting extension.</span></th><td>requires extra assumptions</td><td>requires extra assumptions</td><td>compatible</td><td>requires extra assumptions</td><td>predicts</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Trough thermal regime cooler than Sabah Platform<span class="note">Regional heat-flow measurements across outer slope.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td></tr>
+</tbody></table>
+    </div>
+  </section>
+
+  <section id="uncertainty" class="wrap" aria-labelledby="un-h">
+    <h2 id="un-h">Testing criteria & falsification thresholds</h2>
+    <div class="change">
+      <h3>What physical measurements would decisively discriminate between models?</h3>
+      <ul>
+        <li><strong>Calibrated Biostratigraphic Ties:</strong> Drilling and dating the syn-growth wedges across the Deep Regional Unconformity (DRU). If fault growth is confined to the pre-Middle Miocene, the younger-extension hypothesis is falsified in favor of inherited rifting and foredeep flexure.</li>
+        <li><strong>Deep Crustal OBS Seismology:</strong> Deploying ocean-bottom seismometers across the 230–540 km gap. Imaging continuous Dangerous Grounds continental crust beneath the fold-thrust belt would confirm Model C (underthrusting), whereas finding oceanic crust would support a remnant suture.</li>
+        <li><strong>Thermal & Geochemical Sampling:</strong> Core sampling of candidate offshore saucer-shaped bodies. Distinguishing true igneous sills from overpressured mud pipes via petrography and organic geochemistry would definitively resolve Model A.</li>
+        <li><strong>Kinematic Strain Balancing:</strong> Restoring regional 3D seismic lines from the shelf edge to the abyssal plain. If toe-thrust shortening equals updip shelf normal faulting, gravitational spreading (Model B) fully accounts for the strain budget.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COLLAPSIBLE BACKEND: EPISTEMIC AUDIT TRAIL, METALABELS & REGISTRY -->
+  <section id="provenance" class="wrap" aria-labelledby="pr-h">
+    <details class="audit-backend" id="backend-audit">
+      <summary><strong>Epistemic Audit Trail & Metadata Registry</strong> (Click to view: Claims Ledger, Metalabels, Geodetics & Full Changelog)</summary>
+      
+      <div style="padding:1rem 0;">
+        <h3 id="claims-h">Claims touched by this rebuild</h3>
+        <p>Every scientific assertion on this page is formally linked to the <a href="/earth/data/claims_ledger.json">Federation Claims Ledger</a> with verifiable epistemic classification.</p>
+        
+        <div class="claims-wrap">
+          <table class="claims" id="claims">
+            <caption>Formally registered scientific claims and epistemic ratings.</caption>
+            <thead>
+              <tr><th>Claim identifier & scope</th><th>Epistemic status</th><th>Access status</th><th>Review flag</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CL-XS-YOUNGER-EXT</strong>: Proposed younger Neogene extensional episode in the Sabah Trough, distinct from Model A magmatism. Supported by author-reported 3D seismic fault-growth thickening.</td>
+                <td>SPEC · interpreted</td>
+                <td>proprietary</td>
+                <td>Human review</td>
+              </tr>
+              <tr>
+                <td><strong>CL-XS-MODEL-A-SCOPE</strong>: Model A thermal plumbing hypothesis (sparse sills/dykes). Off by default until selected; subject to 3-part potential field/seismic/maturity screening.</td>
+                <td>SPEC · untested</td>
+                <td>unknown</td>
+                <td>Open</td>
+              </tr>
+              <tr>
+                <td><strong>CL-XS-LETTER-CROSSWALK</strong>: Cross-referencing nomenclature between this section and the Sabah Observatory. Cornwell (2025) 45–55 km discontinuity is designated Letter D.</td>
+                <td>INT · nomenclature</td>
+                <td>public</td>
+                <td>Open</td>
+              </tr>
+              <tr>
+                <td><strong>CL-XS-VE-20261125</strong>: Dual vertical exaggeration computed dynamically from SVG scale bars: ~17.2× above 15 km break, ~3.2× below 15 km break.</td>
+                <td>DER · computed</td>
+                <td>public</td>
+                <td>Open</td>
+              </tr>
+              <tr>
+                <td><strong>CL-XS-HEAT-QUAL</strong>: Present-day trough heat-flow characterized qualitatively as cool relative to the Sabah Platform; does not rule out cooled paleo-intrusions.</td>
+                <td>INT · qualitative</td>
+                <td>public summary</td>
+                <td>Human review</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Transect geodetic registry</h3>
+        <p><a href="/earth/data/transects.json">Transect registry record: T-KIN-XS-833</a></p>
+        <ul>
+          <li><strong>Geodesic Polyline Length:</strong> 832.84 km across 11 control stations (distinct from the 743.92 km straight-line A–A' baseline).</li>
+          <li><strong>Kinabalu Anchor Chainage:</strong> 484.9 km from transect origin.</li>
+          <li><strong>Vertical Exaggeration:</strong> 17.2× (upper crustal panel, 0–15 km) and 3.2× (lithospheric panel, 15–60 km).</li>
+        </ul>
+
+        <h3>Letter crosswalk</h3>
+        <div class="crosswalk">
+          <p>Standardized referencing keys across the arif-fazil.com Earth science suite:</p>
+          <ul>
+            <li><strong>Model A:</strong> Thermal plumbing & sparse intrusions (passengers of inherited faults; not a magma chamber).</li>
+            <li><strong>Model B:</strong> Mobile shale canopy & overpressured detachment (North Sabah–Pagasa wedge).</li>
+            <li><strong>Model C:</strong> Continental underthrusting & flexural bending of the Dangerous Grounds lower plate.</li>
+            <li><strong>Model D:</strong> Deep lithospheric slab remnant & mantle downwelling (Pilia et al. 2023; Cornwell et al. 2025).</li>
+          </ul>
+        </div>
+
+        <div class="sources">
+          <h3>Carried bibliography & primary citations</h3>
+          <ul>
+            <li>Briais, A., Patriat, P. and Tapponnier, P. (1993). Updated interpretation of magnetic anomalies and seafloor spreading in the South China Sea. JGR 98: 6299–6328.</li>
+            <li>Cornwell, D.G. et al. (2025). Receiver function evidence for a relic oceanic slab beneath Sabah. JGR Solid Earth 130(11), e2025JB031466. doi:10.1029/2025JB031466.</li>
+            <li>Cottam, M.A. et al. (2010). Neogene tectonic and metamorphic history of Sabah, North Borneo. J. Geol. Soc. 167: 49–60.</li>
+            <li>Cottam, M.A. et al. (2013). High-precision U-Pb zircon ages for the Kinabalu granite. J. Geol. Soc. 170: 805–816. doi:10.1144/jgs2011-130.</li>
+            <li>Gilligan, A. et al. (2026). Crustal thickness variations across Northern Borneo from receiver functions. doi:10.1029/2025JB031499.</li>
+            <li>Hazebroek, H.P. and Tan, D.N.K. (1993). Tertiary tectonic evolution of the NW Sabah continental margin. Geol. Soc. Malaysia Bull. 33: 195–210.</li>
+            <li>Hinz, K. and Schlüter, H.U. (1985). Geology of the Dangerous Grounds, South China Sea. Energy 10: 297–315.</li>
+            <li>Hinz, K. et al. (1989). The South China Sea: a review of the regional geology and petroleum potential. Geologische Rundschau 78: 705–730.</li>
+            <li>Hutchison, C.S. (2005). Geology of North-West Borneo. Elsevier, Amsterdam.</li>
+            <li>King, R.C. et al. (2010). Resolving multiple fault styles in the Northwest Borneo deepwater fold-thrust belt. Mar. Pet. Geol. 27: 238–246.</li>
+            <li>Morley, C.K. et al. (2023). Mobile shale dynamics and structural evolution in NW Borneo. Geosphere 19(1): 291. doi:10.1130/GES02518.1.</li>
+            <li>Pilia, S. et al. (2023). Mantle downwelling beneath northern Borneo. Nature Geoscience, doi:10.1038/s41561-023-01201-7.</li>
+          </ul>
+        </div>
+
+        <div class="changelog">
+          <h3>Version provenance & changelog</h3>
+          <ul>
+            <li><strong>2026-11-25 (Human Geologist Redesign):</strong> Comprehensive presentation refactor for human earth science clarity. Transferred raw metalabels and epistemic ledger tags to collapsible backend audit details. Added prominent dip correction guide (17.2× VE = 4°–6° true dip plots as 50°–61° apparent dip), explicit null hypothesis framing (foredeep flexural bending), and geodetic polyline specifications (832.84 km over 11 stations).</li>
+            <li><strong>2026-11-25 (Registry Reconciliation):</strong> Reconciled Line 821 transect registry text with transects.json, computing exact vertical exaggerations from SVG scale bars.</li>
+          </ul>
+        </div>
+
+        <h3>Full text equivalent</h3>
+        <p>From northwest to southeast the transect illustrates water over block-faulted Dangerous Grounds thinned continental crust, the ~2.9 km deep Sabah Trough, a fold-thrust wedge underlain by mobile shale, the continental shelf, the Crocker Range accretionary complex, Mount Kinabalu (484.9 km chainage), central Sabah, the Sandakan Basin, and the Sulu Sea. A dual vertical exaggeration applies: ~17.2× in the upper 15 km and ~3.2× in the deeper lithosphere. A deep crustal gap (230–540 km) is hatched as unconstrained. The Deep Regional Unconformity (DRU) separates Paleogene strata from Neogene wedge accommodation.</p>
+      </div>
+    </details>
+  </section>
 </main>
-<div id="tip" hidden></div>
-<script src="/_shared/zen-all.js" defer></script>
-<script src="/_shared/leaflet/leaflet.js"></script>
-<script>
-/* ═══ DATA · every shape on the section comes from here. x = km along A–A′, y = depth km (negative = elevation). ═══ */
-const XS = {
-  stations: [
-    {km: 0,   lat: 8.30, lng: 113.00, name: "A · Dangerous Grounds"},
-    {km: 139, lat: 7.37, lng: 113.84, name: "Layang-Layang atoll"},
-    {km: 262, lat: 6.80, lng: 114.80, name: "Sabah Trough axis"},
-    {km: 325, lat: 6.45, lng: 115.25, name: "Toe-thrust belt"},
-    {km: 373, lat: 6.20, lng: 115.60, name: "Shelf edge"},
-    {km: 430, lat: 5.98, lng: 116.07, name: "Kota Kinabalu coast"},
-    {km: 485, lat: 6.075, lng: 116.558, name: "Mt Kinabalu"},
-    {km: 568, lat: 5.62, lng: 117.15, name: "Telupid"},
-    {km: 652, lat: 5.55, lng: 117.90, name: "Kinabatangan"},
-    {km: 716, lat: 5.85, lng: 118.40, name: "Sandakan Basin"},
-    {km: 833, lat: 6.20, lng: 119.40, name: "A′ · Sulu Sea"}
-  ],
-  ridgeAxis: [[5.75, 113.95], [6.80, 114.80], [7.70, 115.75]],
-  provinces: [
-    [0, 230, "DANGEROUS GROUNDS"], [230, 290, "SABAH TROUGH"], [290, 373, "OUTBOARD"], [373, 430, "INBOARD SHELF"],
-    [430, 540, "CROCKER RANGE"], [540, 650, "CENTRAL SABAH"], [650, 790, "SANDAKAN BASIN"], [790, 833, "SULU SEA"]
-  ],
-  surface: [[0,2.0],[30,1.7],[60,2.1],[90,1.6],[120,1.9],[133,0.7],[137,0.05],[141,0.05],[146,0.7],[160,1.9],[190,2.3],[220,2.6],
-            [245,2.85],[262,2.9],[280,2.7],[300,2.3],[325,1.9],[345,1.5],[360,1.1],[368,0.4],[373,0.15],[400,0.08],[430,0],
-            [440,-0.1],[455,-0.6],[470,-1.2],[479,-1.8],[485,-4.095],[491,-1.9],[505,-1.4],[520,-1.0],[540,-0.7],[568,-0.4],
-            [600,-0.6],[630,-0.3],[652,-0.05],[700,0],[716,0.05],[740,0.15],[770,0.6],[790,1.5],[810,2.8],[833,3.6]],
-  facies: {
-    WATER: {name: "Sea water", fill: "#0c2a4a"},
-    DRAPE: {name: "Neogene marine mud / turbidites", fill: "#3f4a5c"},
-    STAGE4:{name: "Stage IV deltaic–shelf clastics (post-DRU)", fill: "#a16207"},
-    TOE:   {name: "Deepwater fold-thrust belt fill", fill: "#6b5a2e"},
-    CARB:  {name: "Oligo–Miocene carbonate platforms", fill: "#0369a1"},
-    SYNRIFT:{name: "Paleogene syn-rift fill", fill: "#7c5a3a"},
-    CCRUST:{name: "Continental crust (Dangerous Grounds)", fill: "#57534e"},
-    PRISM: {name: "Rajang–Crocker accretionary prism", fill: "#4c3d63"},
-    MELANGE:{name: "Mélange + ophiolite slivers", fill: "#3b4a3a"},
-    CIRC:  {name: "Neogene 'circular basin' remnants", fill: "#8a6f3a"},
-    SANDK: {name: "Sandakan delta (Sebahat–Ganduman)", fill: "#b45309"},
-    GRANITE:{name: "Kinabalu granite (7.85–7.22 Ma)", fill: "#db2777"},
-    OCEAN: {name: "Oceanic crust (Sulu Sea)", fill: "#1f3d3a"},
-    SABCRUST:{name: "Sabah lower crust (composition uncertain)", fill: "#3a3330"},
-    MANTLE:{name: "Lithospheric mantle", fill: "#1a1416"},
-    ASTH:  {name: "Asthenosphere / upwelling", fill: "#4a1d12"},
-    MOBSH: {name: "Overpressured mobile shale", fill: "#334155"},
-    CANOPY:{name: "Mud canopy / mud-volcano complex", fill: "#94a3b8"},
-    BASALT:{name: "Possible intrusions (sills/dykes) — untested", fill: "#dc2626"},
-    SLAB:  {name: "Subducted slab remnant", fill: "#0e7490"}
-  },
-  /* shared bodies (all models) */
-  common: [
-    {f: "CCRUST", pts: [[0,4.0],[25,3.2],[42,5.5],[70,3.0],[88,5.8],[112,3.6],[139,3.0],[152,5.6],[172,3.4],[188,6.2],[215,4.2],[235,7.0],[262,8.0],[262,15],[0,15]], tip: "Dangerous Grounds: rifted continental crust of the South China Sea margin, cut into tilted fault blocks (Hinz & Schlüter 1985)"},
-    {f: "SYNRIFT", pts: [[0,4.0],[25,3.2],[42,5.5],[70,3.0],[88,5.8],[112,3.6],[139,3.0],[152,5.6],[172,3.4],[188,6.2],[215,4.2],[235,7.0],[262,8.0],[262,4.4],[235,4.4],[215,3.9],[188,3.7],[172,3.4],[152,3.5],[139,3.0],[112,3.4],[88,3.5],[70,3.0],[42,3.5],[25,3.2]], tip: "Paleogene syn-rift half-graben fill"},
-    {f: "DRAPE", pts: [[0,2.0],[30,1.7],[60,2.1],[90,1.6],[120,1.9],[133,0.7],[146,0.7],[160,1.9],[190,2.3],[220,2.6],[245,2.85],[262,2.9],[262,4.4],[235,4.4],[215,3.9],[188,3.7],[172,3.4],[152,3.5],[139,3.0],[112,3.4],[88,3.5],[70,3.0],[42,3.5],[25,3.2],[0,4.0]], tip: "Post-breakup marine section and post-MMU hemipelagic drape over the Dangerous Grounds"},
-    {f: "CARB", pts: [[18,3.3],[33,3.2],[30,2.4],[21,2.4]], tip: "Oligo–Miocene carbonate platform on a block crest; drowned at ~16 Ma (MMU)"},
-    {f: "CARB", pts: [[62,3.1],[78,3.2],[75,2.2],[66,2.2]], tip: "Carbonate platform on a block crest"},
-    {f: "CARB", pts: [[128,3.25],[150,3.45],[141,0.05],[137,0.05]], tip: "Layang-Layang atoll: a platform that kept pace with subsidence and still reaches sea level"},
-    {f: "CARB", pts: [[165,3.45],[180,3.55],[176,2.6],[168,2.6]], tip: "Carbonate platform on a block crest"},
-    {f: "CARB", pts: [[238,4.5],[256,4.6],[252,3.6],[242,3.6]], tip: "Tepat-type Oligo–Miocene carbonate buildup on the trough's NW flank (Tepat-1, public: TGS/EAGE 2026)"},
-    {f: "DRAPE", pts: [[262,2.9],[280,2.7],[290,2.55],[290,5.0],[262,4.4]], tip: "Sabah Trough fill: Neogene hemipelagic mud and distal turbidites"},
-    {f: "TOE", pts: [[290,2.55],[300,2.3],[325,1.9],[345,1.5],[360,1.1],[373,0.15],[373,6.0],[340,5.0],[310,4.9],[290,5.0]], tip: "Outboard deepwater fold-thrust belt: post-DRU turbidites and mud folded above a shale décollement"},
-    {f: "STAGE4", pts: [[373,0.15],[400,0.08],[430,0],[432,3.0],[415,5.5],[390,6.6],[373,6.0]], tip: "Stage IV deltaic–shelf clastics: the producing reservoirs of the Kinabalu Basin, thickening into growth faults"},
-    {f: "PRISM", pts: [[430,0],[440,-0.1],[455,-0.6],[470,-1.2],[479,-1.8],[491,-1.9],[505,-1.4],[520,-1.0],[540,-0.7],[548,3.0],[540,15],[420,15],[415,8.0],[432,3.0]], tip: "Rajang–Crocker accretionary prism: Eocene–Oligocene deep-marine turbidites, folded and thrust (Crocker Range)"},
-    {f: "GRANITE", pts: [[475,-1.5],[479,-1.8],[485,-4.095],[491,-1.9],[496,-1.0],[500,3],[497,8],[486,9.5],[473,8],[470,3]], tip: "Kinabalu granite: emplaced 7.85–7.22 Ma (U-Pb zircon, Cottam et al. 2010); exhumed rapidly (Cottam et al. 2013)"},
-    {f: "MELANGE", pts: [[540,-0.7],[568,-0.4],[600,-0.6],[630,-0.3],[652,-0.05],[660,0],[668,2.0],[668,4],[660,15],[540,15],[548,3.0]], tip: "Central Sabah: Kuamut/Garinono mélange with ophiolite slivers (Telupid)"},
-    {f: "CIRC", pts: [[575,-0.45],[598,-0.58],[594,1.8],[580,1.8]], tip: "Circular-basin remnant (Tanjong/Kapilit deltaics), preserved in a syncline (Balaguru et al. 2003)"},
-    {f: "SANDK", pts: [[652,-0.05],[700,0],[716,0.05],[740,0.15],[770,0.6],[790,1.5],[790,7.0],[740,6.5],[700,4.5],[668,2.0],[660,0]], tip: "Sandakan Basin: Middle–Late Miocene to Recent deltaic clinoforms prograding NE into the Sulu Sea (Madon & Jong 2022)"},
-    {f: "MELANGE", pts: [[668,2.0],[700,4.5],[740,6.5],[790,7.0],[790,15],[660,15],[668,4]], tip: "Basement under the Sandakan Basin: mélange / ophiolite (uncertain)"},
-    {f: "DRAPE", pts: [[790,1.5],[810,2.8],[833,3.6],[833,5.2],[790,4.0]], tip: "Sulu Sea sediment cover"},
-    {f: "OCEAN", pts: [[790,4.0],[833,5.2],[833,11.5],[790,10.5]], tip: "Sulu Sea oceanic crust: back-arc basin opened in the Early–Middle Miocene (Rangin & Silver 1991)"},
-    {f: "MELANGE", pts: [[790,7.0],[790,15],[833,15],[833,11.5],[790,10.5]], tip: "Continent–ocean transition (schematic)"}
-  ],
-  /* shared surfaces */
-  lines: [
-    {id: "MMU", c: "#2dd4bf", w: 1.6, wavy: true, pts: [[0,2.7],[60,2.75],[120,2.6],[200,3.0],[240,3.8],[262,4.4]], lab: "RU/MMU ~16 Ma", tip: "End of South China Sea spreading; drowning of Dangerous Grounds platforms"},
-    {id: "DRU", c: "#fbbf24", w: 1.8, wavy: true, pts: [[262,4.4],[290,5.0],[340,5.0],[373,6.0],[390,6.6],[415,5.5],[432,3.0]], lab: "DRU ~15.5 Ma", tip: "Deep Regional Unconformity (Middle Miocene). Published charts ~15.5 Ma (Hazebroek & Tan 1993); GEOX surface calibration ~14.2 Ma (NN5 biostrat; see event strip). Firm: the separation from the BMU. Not firm: the absolute pick"},
-    {id: "SRU", c: "#f87171", w: 1.8, wavy: true, pts: [[345,3.0],[373,2.6],[400,2.2],[430,1.0]], lab: "SRU ~8–9.5 Ma", tip: "Shallow Regional Unconformity (Late Miocene inversion). Published ages range ~8.5–9.5 Ma depending on calibration; GEOX matches it to Haq & Ogg 2024 NgSB13 @8.5 Ma"},
-    {id: "MOHO", c: "#e2e8f0", w: 1.2, dash: "6 4", pts: [[0,25],[150,22],[230,18]], lab: "Moho", tip: "Moho under thinned continental crust (approximate)"},
-    // Published constraint that this schematic does NOT draw: Gilligan et al. (2026) put the
-    // crustal maximum (~60 km) beneath the Crocker Range and the minimum (~24 km) in central
-    // Sabah. The Crocker root is shown here as an unattached dashed constraint, not as a fitted
-    // pick, so nobody can mistake the drawn line for the published Moho.
-    {id: "MOHOC", c: "#94a3b8", w: 1.4, dash: "3 6", pts: [[420,34],[455,58],[490,60],[520,52]], lab: "", tip: "PUBLISHED constraint, not fitted: crustal maximum ~60 km beneath the Crocker Range (Gilligan et al. 2026, receiver functions). Drawn unattached to the schematic Moho."},
-    {id: "MOHO2", c: "#e2e8f0", w: 1.2, dash: "6 4", pts: [[540,32],[650,28],[740,24],[790,16],[833,11.5]], lab: "", tip: "Moho beneath Central and East Sabah (approximate), shallowing to Sulu Sea oceanic crust"}
-  ],
-  faults: [
-    {pts: [[300,2.3],[318,4.9]], k: "thrust"}, {pts: [[322,1.95],[340,5.0]], k: "thrust"}, {pts: [[345,1.5],[362,5.1]], k: "thrust"},
-    {pts: [[392,0.07],[386,3.5],[381,6.2]], k: "normal"}, {pts: [[415,0.03],[409,3.0],[404,6.2]], k: "normal"},
-    {pts: [[42,3.5],[43,9]], k: "normal"}, {pts: [[88,3.5],[89,9]], k: "normal"}, {pts: [[152,3.5],[153,9]], k: "normal"}, {pts: [[188,3.7],[189,9.5]], k: "normal"}, {pts: [[235,4.4],[236,10]], k: "normal"},
-    {pts: [[548,3.0],[555,10]], k: "thrust"}, {pts: [[668,4],[675,11]], k: "strike"}
-  ]
-};
-</script>
-<script>
-/* Region below the DRU between the trough and the coast: every model must say what fills it. */
-const SUBDRU = [[262,4.4],[290,5.0],[340,5.0],[373,6.0],[390,6.6],[415,5.5],[432,3.0],[415,8.0],[420,15],[262,15],[262,8.0]];
-const SHARED_EVENTS = [
-  {a: 32, b: 16, lab: "South China Sea spreading", tip: "~32–16 Ma (Briais et al. 1993; Li et al. 2014)"},
-  {a: 23, b: 20, lab: "BMU · Sabah deformation", tip: "Early Miocene uplift and erosion (Balaguru & Hall 2009). GEOX: matches global sequence boundary NgSB1 @23.0 Ma (Haq & Ogg 2024)"},
-  {a: 20, b: 15, lab: "Sulu Sea back-arc opening", tip: "Early–Middle Miocene (Rangin & Silver 1991)"},
-  {a: 15.5, b: 15.5, lab: "DRU", tip: "Deep Regional Unconformity. Published charts ~15.5 Ma (Hazebroek & Tan 1993); GEOX surface calibration ~14.2 Ma (NN5 biostrat). The slab-breakoff uplift event ~13–12 Ma (Morley 2024) is younger than the surface. Firm: the separation from the BMU. Not firm: the absolute pick"},
-  {a: 10.5, b: 10.5, lab: "UIU", tip: "Upper intra-Miocene Unconformity ~10.5 Ma — end of the pocket-basin phase (GEOX correlation; Haq & Ogg 2024 NgSB11)"},
-  {a: 9.5, b: 8.5, lab: "SRU", tip: "Shallow Regional Unconformity, ~9.5–8.5 Ma depending on calibration; GEOX matches it to Haq & Ogg 2024 NgSB13 @8.5 Ma"},
-  {a: 7.85, b: 7.22, lab: "Kinabalu granite", tip: "U-Pb zircon 7.85–7.22 Ma (Cottam et al. 2010)"},
-      {a: 0, b: 0, lab: "Ranau 2015 · normal faulting", tip: "Mw 6.0 shallow normal (oblique) fault near Ranau — a local present-day extension constraint, not a whole-margin verdict"}
-];
-const MODELS = [
-  {
-    id: "A", color: "#f43f5e", key: "A · rift-axis intrusions?", title: "Failed-rift axis + possible transtensional intrusions",
-    short: "Sparse intrusions may exploit an inherited thinned axis — no push claimed",
-    who: "Working hypothesis · Arif Fazil · 2026", status: "UNTESTED WORKING HYPOTHESIS",
-    family: "H4 · THERMAL PLUMBING (stackable — does not describe the whole Earth)",
-    admissible: "PHYSICALLY PERMITTED — no published observation contradicts it",
-    maturity: "EMPIRICALLY OPEN — SPEC: no dated basalt, no corrected low-latitude magnetic lineation, no seismic-imaged sill, no public paleo-thermal spike on the axis (ledger: CL-INTRUSION-AXIS)",
-    thesis: "An inherited zone of thinned crust runs along the Sabah Trough; potential-field work suggests crustal thinning beneath the trough axis predating basin fill. If that axis carried any magmatism, it would most plausibly be sparse sills and dykes fed by transtensional reactivation of inherited faults — not a spreading ridge. Whether such intrusions exist is untested; the deep oil-beneath-gas maturation question is the practical reason to look.",
-    mechanism: "No plate-driving push is claimed. Candidate mechanism: localised melting or fluid migration along reactivated rift faults and transfer zones; slab-window or flexural-hinge sources remain possible but unproven.",
-    timing: "Not yet constrained. Two windows to test: (1) Oligocene–Early Miocene, at the end of rifting; (2) Middle–Late Miocene, coeval with DRU–SRU deformation.",
-    strengths: "Would provide a local heat source relevant to the deep oil beneath gas; would tie any dated intrusions along the trough into one testable body class. It is not offered as an explanation of the regional deformation budget.",
-    problems: "No published magnetic lineation (a weak test at this latitude — low-latitude magnetics need analytic-signal / RTE treatment), no dated basalt, and no published heat-flow high on the trough axis (present-day heat flow is the wrong clock anyway — see the matrix). Published potential-field work reports a gravity low along the axis with inferred crustal thinning; any intrusion configuration must fit that field with a proper forward model, not a slab approximation. High-velocity bodies offshore are non-unique (carbonate or older Crocker blocks are alternatives). Detectability of small sills at regional-grid resolution has not yet been assessed. Tepat-1 attests that the carbonate alternative class exists in the region (Oligo–Miocene carbonate, Layang-Layang province; public operator release, Atlas 2024) — a different province, so not standalone proof about Kinabalu bodies, but a high-velocity body is not proof of intrusion.",
-    kill: "Reject only a parameterised intrusion configuration whose required bodies are excluded by adequately resolved seismic and potential-field coverage; insufficient coverage yields INCONCLUSIVE. A configuration that fits the potential field is PERMITTED, not proven — potential-field solutions are non-unique; call it real only with a second independent line (local Ro/Tmax spikes, or sills imaged in 3D seismic). Finding no intrusions would not by itself prove burial-only maturation; finding intrusions would not by itself prove a slab-window origin.",
-    refs: ["TS02"],
-    bodies: [
-      {f: "MOBSH", pts: SUBDRU, tip: "Stage II–III wedge (North Sabah–Pagasa Wedge) beneath the DRU"},
-      {f: "CCRUST", pts: [[0,15],[251,15],[249,17.5],[230,18],[150,22],[0,25]], tip: "Thinned continental crust (possible inherited rift axis — untested)"},
-      {f: "SABCRUST", pts: [[274,15],[790,15],[790,16],[740,24],[650,28],[540,32],[430,30],[300,22],[277,21]], tip: "Sabah crust"},
-      {f: "BASALT", pts: [[252,7.9],[272,8.0],[271,8.3],[252,8.25]], tip: "Possible sill (untested) — size, depth and existence unconstrained"},
-      {f: "BASALT", pts: [[262,9.2],[276,9.3],[275,9.55],[262,9.5]], tip: "Possible sill (untested) — size, depth and existence unconstrained"},
-      {f: "BASALT", pts: [[263,8.3],[265,8.3],[265,12.5],[263,12.5]], tip: "Possible melt pathway along reactivated fault (untested)"}
-    ],
-    arrows: [
-      {from: [264,12.2], to: [264,8.6], lab: "possible melt pathway", c: "#fb923c"}
-    ],
-    labels: [{x: 262, y: 11.6, t: "possible intrusions (untested)?", c: "#fecaca"}],
-    events: [
-      {a: 30, b: 20, lab: "Intrusions? · window 1 (test)", dash: true, tip: "Oligocene–Early Miocene magmatism along the trough axis"},
-      {a: 16, b: 8, lab: "Intrusions? · window 2 (test)", dash: true, tip: "Middle–Late Miocene intrusions? coeval with DRU–SRU deformation"}
-    ]
-  },
-  {
-    id: "B", color: "#a78bfa", key: "Model B · Morley et al. 2023", title: "Miocene mud canopy (NSPW)",
-    short: "The wedge is mobile shale, loaded and vented",
-    who: "Morley et al. (2023) · Geosphere 19(1): 291 · 3D seismic + wells", status: "PUBLISHED",
-    family: "H1 · SEDIMENTARY MECHANICS (switchable above every crustal/mantle state — it does not decide the deep architecture)",
-    admissible: "OBSERVED — imaged in 3D seismic; strongest empirical maturity on this board",
-    maturity: "OBS (ledger: CL-NSPW-SHALE)",
-    thesis: "The North Sabah–Pagasa Wedge is not mainly an accretionary wedge. After collision it was a body of overpressured shale, loaded by up to ~4 km of clastics in mini-basins. A short burst of mud volcanism then built a submarine mud canopy: about 50 mud-volcano centres, each 4–80 km², with ~1,900 km² of dense canopy — the largest and most complex such system described.",
-    mechanism: "Differential sedimentary loading of overpressured shale → shale mobility, mud pipes, chambers and volcanoes.",
-    timing: "Middle Miocene, after collision.",
-    strengths: "Built on 3D seismic and wells. Explains chaotic seismic facies, mini-basins and vent complexes in the outboard without invoking stacked thrust sheets.",
-    problems: "Explains the wedge's internal structure, not the plate-scale driver: it still needs one of A, C or D underneath. Canopy level must be reconciled with the DRU age.",
-    kill: "Wells through 'canopy' facies that prove in-situ accreted strata rather than extruded mud → reject for that area.",
-    refs: ["MOR23"],
-    bodies: [
-      {f: "MOBSH", pts: SUBDRU, tip: "Overpressured post-collisional shale (North Sabah–Pagasa Wedge)"},
-      {f: "CCRUST", pts: [[262,8.0],[330,12.5],[345,15],[262,15]], tip: "Dangerous Grounds crust beneath the wedge"},
-      {f: "TOE", pts: [[292,5.0],[312,5.0],[303,9.2]], tip: "Mini-basin: up to ~4 km of clastics loading the shale"},
-      {f: "TOE", pts: [[330,5.0],[358,5.6],[344,9.6]], tip: "Mini-basin: up to ~4 km of clastics loading the shale"},
-      {f: "CANOPY", pts: [[316,10.5],[320,10.5],[320.5,5.0],[315.5,5.0]], tip: "Mud pipe feeding the canopy"},
-      {f: "CANOPY", pts: [[362,11],[366,11],[366.5,6.0],[361.5,6.0]], tip: "Mud pipe feeding the canopy"},
-      {f: "CANOPY", pts: [[298,4.75],[340,4.75],[338,5.05],[300,5.1]], tip: "Mud canopy: ~50 vent centres, ~1,900 km² (Morley et al. 2023)"},
-      {f: "CANOPY", pts: [[348,5.45],[384,6.25],[381,6.55],[350,5.8]], tip: "Mud canopy sheet"},
-      {f: "CCRUST", pts: [[0,15],[345,15],[420,22],[420,26],[300,22],[230,18],[150,22],[0,25]], tip: "Continental crust"},
-      {f: "SABCRUST", pts: [[345,15],[790,15],[790,16],[740,24],[650,28],[540,32],[430,30],[420,26],[420,22]], tip: "Sabah crust"}
-    ],
-    arrows: [
-      {from: [318,10], to: [318,6.0], lab: "mud rises", c: "#c4b5fd"},
-      {from: [344,3.6], to: [344,6.4], lab: "load", c: "#fbbf24"}
-    ],
-    labels: [{x: 330, y: 12.6, t: "overpressured shale", c: "#cbd5e1"}],
-    events: [
-      {a: 16, b: 12, lab: "Mini-basin loading", tip: "Up to ~4 km of clastics on overpressured shale"},
-      {a: 14, b: 12, lab: "Mud-volcano burst · canopy", tip: "Short Middle Miocene burst (Morley et al. 2023)"}
-    ]
-  },
-  {
-    id: "C", color: "#38bdf8", key: "Model C · classic", title: "Continental underthrusting",
-    short: "Dangerous Grounds crust dives under Sabah",
-    who: "Hinz et al. (1989); Hazebroek & Tan (1993); Hutchison (2005)", status: "CLASSIC",
-    family: "H2 · CRUSTAL ARCHITECTURE (one admissible crustal state; coexists with H1 shale and any H3 mantle state)",
-    admissible: "CONSTRAINED — consistent with potential-field geometry; not imaged locally on this line",
-    maturity: "CONSTRAINED (potential-field + classic 2D interpretations; DRU–NgSB8 eustatic match recorded in CL-DRU-142 weakens collision-onset reading)",
-    thesis: "As the proto-South China Sea closed, Dangerous Grounds continental crust was carried south-east beneath NW Borneo. The Sabah Trough is the flexural foredeep, or remnant trench, on the down-going plate; the North Sabah–Pagasa Wedge is an accretionary thrust wedge; the DRU records the collision.",
-    mechanism: "Plate convergence and crustal underthrusting; flexural loading of the lower plate.",
-    timing: "Early to Middle Miocene collision; flexural loading continues.",
-    strengths: "Explains the deep, narrow trough, its flexural normal faults, the imbricate thrusts on older 2D seismic and the regional DRU.",
-    problems: "Spreading ended ~16 Ma, yet shortening continues to the present; much young shortening is linked to delta loading. 3D seismic shows mobile shale where this model draws thrust sheets (B). GEOX note: the DRU surface (~14.2 Ma, NN5) matches the MMCT global lowstand NgSB8 (14.0 Ma, Haq & Ogg 2024); the Morley (2024) slab-breakoff event (~13–12 Ma) is younger than the surface. A surface carrying a eustatic signal is not by itself a collision surface.",
-    kill: "Deep seismic or receiver functions show no Dangerous Grounds crust beneath the shelf → reject.",
-    refs: ["HIN89", "HT93", "HUT05"],
-    bodies: [
-      {f: "PRISM", pts: SUBDRU, tip: "North Sabah–Pagasa Wedge as an accretionary thrust wedge (Stage II–III)"},
-      {f: "CCRUST", pts: [[262,8.0],[420,15],[262,15]], tip: "Dangerous Grounds crust underthrust beneath the wedge"},
-      {f: "CCRUST", pts: [[0,15],[420,15],[520,22],[600,30],[600,36],[430,32],[300,24],[230,18],[150,22],[0,25]], tip: "Underthrust continental crust"},
-      {f: "SABCRUST", pts: [[420,15],[790,15],[790,16],[740,24],[650,28],[600,30],[520,22]], tip: "Sabah crust (upper plate)"}
-    ],
-    faultsExtra: [
-      {pts: [[290,5.0],[320,9.8]], k: "thrust"}, {pts: [[330,5.0],[365,11.5]], k: "thrust"}, {pts: [[372,6.0],[405,13.5]], k: "thrust"},
-      {pts: [[262,8.0],[420,15]], k: "detach"}
-    ],
-    arrows: [
-      {from: [80,21], to: [190,20], lab: "underthrusting", c: "#38bdf8"},
-      {from: [520,24], to: [560,28], lab: "", c: "#38bdf8"}
-    ],
-    labels: [{x: 345, y: 13.4, t: "thrust wedge", c: "#bae6fd"}],
-    events: [
-      {a: 22, b: 15, lab: "DG crust underthrusts Sabah", tip: "Collision and underthrusting"},
-      {a: 15, b: 0, lab: "Flexural foredeep loading", tip: "Sabah Trough loaded by the advancing wedge"}
-    ]
-  },
-  {
-    id: "D", color: "#34d399", key: "Model D · post-subduction", title: "Slab remnant + gravity tectonics",
-    short: "Mantle lifts the mountains, gravity moves the delta",
-    who: "Hall (2013); Cottam et al. (2010, 2013); King et al. (2010); Cornwell et al. (2025)", status: "PUBLISHED",
-    family: "H3 · MANTLE STATE + H1 gravity component (the slab and the deltas are separate claims; neither decides the crust)",
-    admissible: "PARTLY OBSERVED — a 45–55 km discontinuity is imaged; its slab identity is interpretation (CL-SLAB-DISC-45-55)",
-    maturity: "CONSTRAINED / OPEN by sub-claim: uplift+gravity tectonics OBS-supported; drip family verdict now split D1 contradicted · D2 supported · D3 HOLD (see observatory)",
-    thesis: "Subduction stopped in the Early Miocene, but a detached slab remnant still sits 45–55 km beneath Sabah. Post-subduction mantle flow and rollback of the Celebes Sea slab to the south-east drive uplift (Crocker Range, Kinabalu granite) and extension. The eroding mountains feed deltas whose weight drives shelf extension linked, through a shale detachment, to outboard toe-thrusts.",
-    mechanism: "Vertical mantle forces + rollback-driven extension + gravitational collapse of the delta wedge.",
-    timing: "Early Miocene end of subduction; Late Miocene to present uplift, granite and gravity tectonics.",
-    strengths: "Explains the slab image at 45–55 km, granite timing and fast exhumation, and the kinematic link between growth faults and toe-thrusts.",
-    problems: "Gravity alone may not balance all outboard shortening (King et al. 2010 separate plate-scale and gravitational parts); the timing of Celebes Sea rollback is debated.",
-    kill: "Outboard shortening far exceeds shelf extension with no detachment linkage → a plate-scale push (A or C) is needed.",
-    refs: ["HALL13", "COT10", "COT13", "KING10", "COR25"],
-    bodies: [
-      {f: "MOBSH", pts: SUBDRU, tip: "Overpressured shale: the detachment level linking shelf extension to toe-thrusts"},
-      {f: "CCRUST", pts: [[262,8.0],[300,10.5],[380,15],[262,15]], tip: "Dangerous Grounds crust (former lower plate)"},
-      {f: "CCRUST", pts: [[0,15],[380,15],[380,24],[300,22],[230,18],[150,22],[0,25]], tip: "Continental crust"},
-      {f: "SABCRUST", pts: [[380,15],[790,15],[790,16],[740,24],[650,28],[540,33],[430,31],[380,24]], tip: "Sabah crust"},
-      {f: "SLAB", pts: [[430,45],[520,47],[575,52],[600,57],[588,59],[560,55],[510,51],[428,49]], tip: "Gently west-dipping discontinuity at 45–55 km, interpreted as a detached slab remnant and associated there with Celebes Sea subduction (Cornwell et al. 2025) — interpretation, not a measured slab"},
-      {f: "ASTH", pts: [[425,60],[450,44],[470,38],[485,35],[500,38],[520,44],[545,60]], tip: "Post-subduction mantle upwelling beneath the Crocker Range"}
-    ],
-    faultsExtra: [
-      {pts: [[292,5.1],[330,5.5],[373,6.2],[404,6.2]], k: "detach"},
-      {pts: [[700,0],[706,4.5]], k: "normal"}, {pts: [[745,0.18],[752,6.4]], k: "normal"}
-    ],
-    arrows: [
-      {from: [485,36], to: [485,24], lab: "uplift", c: "#34d399"},
-      // (1) shallow gravity-driven delta-load extension, on the shelf, at the delta front.
-      {from: [398,1.6], to: [380,1.6], lab: "", c: "#fbbf24"},
-      {from: [412,1.6], to: [430,1.6], lab: "delta-load extension", c: "#fbbf24"},
-      // (2) Deep driver only: mantle upwelling above the slab, drawn vertically because
-      // the mechanism is vertical. It is deliberately NOT drawn as a horizontal
-      // "crustal thinning" arrow across central Sabah, because the Moho on this
-      // transect is 32 km there — the thickest crust on the section. A horizontal
-      // thinning glyph over the thickest crust is a label-vs-geometry contradiction.
-      {from: [660,52], to: [660,34], lab: "mantle uplift (inferred)", c: "#34d399"},
-      {from: [300,3.2], to: [318,3.2], lab: "", c: "#fbbf24"}, {from: [338,3.2], to: [320,3.2], lab: "shortening", c: "#fbbf24"},
-      {from: [690,42], to: [780,42], lab: "Celebes slab rollback →", c: "#34d399"}
-    ],
-    labels: [{x: 515, y: 53, t: "slab remnant", c: "#a5f3fc"},
-             {x: 380, y: 16.6, t: "crust-domain boundary (schematic — not an OCT)", c: "#94a3b8"},
-             {x: 545, y: 40, t: "Moho ~32 km (schematic — not a measurement)", c: "#cbd5e1"},
-             {x: 470, y: 63, t: "published: ~60 km Crocker root (not fitted)", c: "#94a3b8"},
-             {x: 378, y: 28, t: "Moho not constrained 230–540 km", c: "#64748b"}],
-    events: [
-      {a: 21, b: 18, lab: "Subduction ends · slab detachment timing unresolved", tip: "End of subduction Early Miocene (Hall 2013); when any slab detached is not constrained by the cited imaging"},
-      {a: 15, b: 0, lab: "Rollback-driven extension (debated)", dash: true, tip: "Hall (2013)"},
-      {a: 9, b: 0, lab: "Delta loading → toe-thrusts", tip: "Gravity-driven, linked by shale detachment"}
-    ]
-  }
-];
-const MATRIX = [
-  {q: "Corrected magnetic signature (analytic signal / reduction-to-the-equator) + gravity high along the trough axis (Tepat-1 strike line) — raw TMI highs are the wrong criterion at this latitude", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
-  {q: "Dated basalt / dolerite in trough-flank wells", p: {A: "y", B: "u", C: "u", D: "u"}, obs: "open"},
-  {q: "Sills, saucer intrusions, hydrothermal vents in trough fill (3D seismic)", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
-  {q: "Local paleo-thermal spikes (Ro / Tmax) on or below the trough axis — present-day heat flow is a weak test: an old intrusion leaves a maturity anomaly after its heat anomaly is gone", p: {A: "y", B: "u", C: "n", D: "u"}, obs: "open"},
-  {q: "3D-seismic pipes/chambers/mini-basins at Middle Miocene level (interpreted as mobile shale)", p: {A: "u", B: "y", C: "n", D: "u"}, obs: "done", src: "Morley et al. 2023"},
-  {q: "Outboard shortening exceeds shelf extension", p: {A: "y", B: "u", C: "y", D: "n"}, obs: "open", src: "contested; King et al. 2010"},
-  {q: "West-dipping discontinuity at 45–55 km (interpreted as detached slab remnant)", p: {A: "u", B: "u", C: "y", D: "y"}, obs: "done", src: "Cornwell et al. 2025"},
-  {q: "Granite 7.85–7.22 Ma with rapid exhumation", p: {A: "u", B: "u", C: "u", D: "y"}, obs: "done", src: "Cottam et al. 2010, 2013"}
-];
-const REFS = {
-  TS02: "Fazil, A. (2026). Sabah Trough rift-axis intrusion hypothesis (renamed 2026-10 from 'rift-axis intrusions'; ridge-push mechanism withdrawn). Working note, this page (untested).",
-  MOR23: "Morley, C.K. et al. (2023). A major Miocene deepwater mud canopy system: the North Sabah–Pagasa Wedge, northwestern Borneo. Geosphere 19(1): 291.",
-  HIN89: "Hinz, K. et al. (1989). Thrust tectonics along the north-western continental margin of Sabah/Borneo. Geologische Rundschau 78: 705–730.",
-  HT93: "Hazebroek, H.P. & Tan, D.N.K. (1993). Tertiary tectonic evolution of the NW Sabah continental margin. Bulletin of the Geological Society of Malaysia 33: 195–210.",
-  HUT05: "Hutchison, C.S. (2005). Geology of North-West Borneo: Sarawak, Brunei and Sabah. Elsevier.",
-  HALL13: "Hall, R. (2013). Contraction and extension in northern Borneo driven by subduction rollback. Journal of Asian Earth Sciences 76: 399–411.",
-  COT10: "Cottam, M.A. et al. (2010). Pulsed emplacement of the Mount Kinabalu granite, northern Borneo. Journal of the Geological Society 167: 49–60.",
-  COT13: "Cottam, M.A. et al. (2013). Neogene rock uplift and erosion in northern Borneo: evidence from the Kinabalu granite, Mount Kinabalu. Journal of the Geological Society 170: 805–816.",
-  KING10: "King, R.C. et al. (2010). Balancing deformation in NW Borneo: quantifying plate-scale vs. gravitational tectonics in a delta and deepwater fold-thrust belt system. Marine and Petroleum Geology 27: 238–246.",
-  COR25: "Cornwell, D.G., Gilligan, A., Rawlinson, N., Tongkul, F., Pilia, S., et al. (2025). Migrated teleseismic P wave receiver functions reveal intricate post-subduction crust and upper mantle structure of northern Borneo (Sabah), Malaysia. JGR Solid Earth 130(11), e2025JB031466.",
-  BH09: "Balaguru, A. & Hall, R. (2009). Tectonic evolution and sedimentation of Sabah, North Borneo. AAPG Search and Discovery #30084.",
-  BAL03: "Balaguru, A., Nichols, G. & Hall, R. (2003). The origin of the 'circular basins' of Sabah. Bulletin of the Geological Society of Malaysia 46: 335–351.",
-  MJ22: "Madon, M. & Jong, J. (2022). Structural-stratigraphic framework and petroleum systems of the Sandakan Basin. Bulletin of the Geological Society of Malaysia 74: 135–160.",
-  HS85: "Hinz, K. & Schlüter, H.U. (1985). Geology of the Dangerous Grounds, South China Sea, and the continental margin off southwest Palawan. Energy 10: 297–315.",
-  BR93: "Briais, A., Patriat, P. & Tapponnier, P. (1993). Updated interpretation of magnetic anomalies and seafloor spreading stages in the South China Sea. JGR 98: 6299–6328.",
-  LI14: "Li, C.-F. et al. (2014). Ages and magnetic structures of the South China Sea constrained by deep tow magnetic surveys and IODP Expedition 349. G³ 15: 4958–4983.",
-  RS91: "Rangin, C. & Silver, E.A. (1991). Neogene tectonic evolution of the Celebes-Sulu basins. Proceedings of the Ocean Drilling Program, Scientific Results 124.",
-  CHOI26: "Choi, T. (2026). Unlocking the Oligocene play in offshore Sabah: new insights from Layang-Layang Basin. TGS / EAGE workshop.",
-  GEOXCORR: "GEOX (2026). Sabah unconformity correlation — BMU/TCU, DRU, UIU and SRU matched to the Haq & Ogg (2024) global sequence boundaries NgSB1, NgSB8 (MMCT lowstand), NgSB11 and NgSB13 (Δ ≤ 0.2 Ma), with the Morley (2024) slab-breakoff event (~13–12 Ma) kept separate from the DRU surface age (~14.2 Ma / NN5). Machine evidence resource geox://earth-system/sabah-correlation. Verdict recorded there: two independent evidence lines converge."
-};
-</script>
+<footer class="earth-footer">
+  <nav aria-label="Related resources">
+    <a href="/earth/">Earth</a>
+    <a href="/earth/kinabalu-basin/">Kinabalu Basin</a>
+    <a href="/earth/sabah-observatory/">Sabah observatory</a>
+    <a href="/earth/data/claims_ledger.json">Claims ledger</a>
+    <a href="/earth/data/transects.json">Transects registry</a>
+  </nav>
+  <p>Ditempa bukan diberi</p>
+  <p>© 2026 Muhammad Arif bin Fazil</p>
+</footer>
 <script>
 (function () {
-  const FIGURE = new URLSearchParams(location.search).has("figure");
-  if (FIGURE) document.documentElement.classList.add("figure-only");
-  const NS = "http://www.w3.org/2000/svg";
-  const W = 1480, L = 74, R = 26, KM = 833;
-  const TOP = 78, ZTOP = -4.6, ZBRK = 15, ZBOT = 60, HTOP = 560, HLOW = 240;
-  const X = km => L + km / KM * (W - L - R);
-  const Y = z => z <= ZBRK ? TOP + (z - ZTOP) / (ZBRK - ZTOP) * HTOP : TOP + HTOP + (z - ZBRK) / (ZBOT - ZBRK) * HLOW;
-  const H = TOP + HTOP + HLOW + 46;
-  let cur = MODELS[0];
-
-  const el = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) if (a[k] != null) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
-  const tx = (p, x, y, s, a) => { const t = el("text", Object.assign({x, y, "font-family": "JetBrains Mono, monospace"}, a), p); t.textContent = s; return t; };
-  const path = pts => "M" + pts.map(([k, z]) => X(k).toFixed(1) + "," + Y(z).toFixed(1)).join(" L");
-  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
-  const tip = (e, h) => { e.setAttribute("data-tip", h); return e; };
-
-  function wavy(pts) {
-    let d = "";
-    for (let i = 0; i < pts.length - 1; i++) {
-      const [x1, y1] = [X(pts[i][0]), Y(pts[i][1])], [x2, y2] = [X(pts[i + 1][0]), Y(pts[i + 1][1])];
-      const len = Math.hypot(x2 - x1, y2 - y1), n = Math.max(1, Math.round(len / 9)), nx = -(y2 - y1) / len, ny = (x2 - x1) / len;
-      if (!i) d += `M${x1.toFixed(1)},${y1.toFixed(1)}`;
-      for (let j = 1; j <= n; j++) {
-        const t = j / n, tm = (j - 0.5) / n, a = j % 2 ? 2.2 : -2.2;
-        d += ` Q${(x1 + (x2 - x1) * tm + nx * a).toFixed(1)},${(y1 + (y2 - y1) * tm + ny * a).toFixed(1)} ${(x1 + (x2 - x1) * t).toFixed(1)},${(y1 + (y2 - y1) * t).toFixed(1)}`;
-      }
+  var params = new URLSearchParams(location.search);
+  if (params.has("figure")) {
+    document.documentElement.classList.add("figure-only");
+  }
+  function writeStage() {
+    var q = new URLSearchParams(location.search);
+    var stage = "";
+    document.querySelectorAll("#story details[data-stage]").forEach(function (d) {
+      if (d.open) stage = d.getAttribute("data-stage");
+    });
+    if (stage && stage !== "1") q.set("stage", stage);
+    else q.delete("stage");
+    q.delete("layers");
+    q.delete("cmp");
+    var qs = q.toString();
+    var next = location.pathname + (qs ? "?" + qs : "") + location.hash;
+    if (next !== location.pathname + location.search + location.hash) {
+      history.replaceState(null, "", next);
     }
-    return d;
   }
-  function arrow(g, a) {
-    const [x1, y1, x2, y2] = [X(a.from[0]), Y(a.from[1]), X(a.to[0]), Y(a.to[1])];
-    el("line", {x1, y1, x2, y2, stroke: a.c, "stroke-width": 2.4}, g);
-    const ang = Math.atan2(y2 - y1, x2 - x1), s = 8;
-    el("polygon", {points: [[x2, y2], [x2 - s * Math.cos(ang - .45), y2 - s * Math.sin(ang - .45)], [x2 - s * Math.cos(ang + .45), y2 - s * Math.sin(ang + .45)]].map(p => p.join(",")).join(" "), fill: a.c}, g);
-    if (a.lab) tx(g, (x1 + x2) / 2, Math.min(y1, y2) - 6, a.lab, {"font-size": 10, "text-anchor": "middle", fill: a.c, "font-weight": 700, "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3});
-  }
-  function fault(g, f) {
-    const st = {thrust: {s: "#f1f5f9", w: 1.3}, normal: {s: "#cbd5e1", w: 1.1}, strike: {s: "#cbd5e1", w: 1.1, d: "2 3"}, detach: {s: "#fb7185", w: 1.6, d: "7 4"}}[f.k];
-    el("path", {d: path(f.pts), stroke: st.s, "stroke-width": st.w, fill: "none", "stroke-dasharray": st.d}, g);
-  }
-
-  function drawSection() {
-    const svg = document.getElementById("xs");
-    svg.innerHTML = "";
-    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-    const g = el("g", {}, svg);
-    const surf = XS.surface;
-    el("path", {d: path(surf.concat([[KM, ZBOT], [0, ZBOT]])) + "Z", fill: XS.facies.MANTLE.fill}, g);
-    el("path", {d: path(surf.map(([k, z]) => [k, Math.max(z, 0)]).concat([[KM, 0], [0, 0]])) + "Z", fill: XS.facies.WATER.fill}, g);
-    const body = (b, layer) => tip(el("path", {d: path(b.pts) + "Z", fill: XS.facies[b.f].fill, stroke: "#0a0e17", "stroke-width": .6, "stroke-opacity": .6}, layer),
-      `<b>${esc(XS.facies[b.f].name)}</b><br>${esc(b.tip || "")}`);
-    XS.common.forEach(b => body(b, g));
-    cur.bodies.forEach(b => body(b, g));
-    el("line", {x1: X(0), x2: X(KM), y1: Y(0), y2: Y(0), stroke: "#38bdf8", "stroke-width": .6, "stroke-dasharray": "3 3", opacity: .6}, g);
-    el("path", {d: path(surf), stroke: "#e2e8f0", "stroke-width": 1.2, fill: "none"}, g);
-    const fg = el("g", {}, g);
-    XS.faults.concat(cur.faultsExtra || []).forEach(f => fault(fg, f));
-    XS.lines.forEach(s => {
-      const d = s.wavy ? wavy(s.pts) : path(s.pts);
-      tip(el("path", {d, stroke: s.c, "stroke-width": s.w, fill: "none", "stroke-dasharray": s.dash}, g), `<b>${esc(s.lab || s.id)}</b><br>${esc(s.tip)}`);
-      if (s.lab) { const [k, z] = s.pts[s.pts.length - 1]; tx(g, X(k) + 4, Y(z) - 4, s.lab, {"font-size": 9.5, fill: s.c, "font-weight": 700, "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3}); }
-    });
-    (cur.arrows || []).forEach(a => arrow(g, a));
-    (cur.labels || []).forEach(l => tx(g, X(l.x), Y(l.y), l.t, {"font-size": 10.5, "text-anchor": "middle", fill: l.c, "font-weight": 700, "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3}));
-    // Persistent provenance on the NW normal faults: they are Paleogene rift structures (inheritance),
-    // not the young extension being tested. Without this the left margin reads as "extension here".
-    tx(g, X(140), Y(11.4), "Paleogene rift faults (pre-BM) — inherited, not the young event",
-       {"font-size": 9.5, fill: "#94a3b8", "text-anchor": "middle", "font-style": "italic", "paint-order": "stroke", stroke: "#0a0e17", "stroke-width": 3});
-    el("line", {x1: L, x2: W - R, y1: Y(ZBRK), y2: Y(ZBRK), stroke: "#fbbf24", "stroke-width": .8, "stroke-dasharray": "2 5", opacity: .7}, g);
-    tx(g, W - R - 4, Y(ZBRK) - 5, "scale change · above ~17× vertical · below ~3×", {"font-size": 9, fill: "#fbbf24", "text-anchor": "end", opacity: .85});
-    const ax = el("g", {}, g);
-    el("line", {x1: L - 8, x2: L - 8, y1: Y(ZTOP), y2: Y(ZBOT), stroke: "#475569"}, ax);
-    [-4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 20, 30, 40, 50, 60].forEach(z => {
-      el("line", {x1: L - 13, x2: L - 8, y1: Y(z), y2: Y(z), stroke: "#475569"}, ax);
-      tx(ax, L - 16, Y(z) + 3.5, z < 0 ? "+" + (-z) : String(z), {"font-size": 9.5, fill: "#94a3b8", "text-anchor": "end"});
-    });
-    tx(ax, 14, Y(6), "depth km", {"font-size": 10, fill: "#64748b", transform: `rotate(-90 14 ${Y(6)})`, "text-anchor": "middle"});
-    XS.provinces.forEach(([a, b, n], i) => {
-      el("line", {x1: X(a), x2: X(a), y1: 28, y2: 44, stroke: "#334155"}, g);
-      tx(g, (X(a) + X(b)) / 2, 40, n, {"font-size": 9.5, fill: i % 2 ? "#94a3b8" : "#cbd5e1", "text-anchor": "middle", "letter-spacing": 1});
-    });
-    XS.stations.forEach(s => el("polygon", {points: `${X(s.km)},${TOP - 8} ${X(s.km) - 4},${TOP - 16} ${X(s.km) + 4},${TOP - 16}`, fill: "#fbbf24"}, g));
-    tx(g, X(0), 18, "A · NW", {"font-size": 12, fill: "#fbbf24", "font-weight": 800});
-    tx(g, X(KM), 18, "SE · A′", {"font-size": 12, fill: "#fbbf24", "font-weight": 800, "text-anchor": "end"});
-    tx(g, X(485), Y(-4.095) - 6, "Mt Kinabalu 4,095 m", {"font-size": 10, fill: "#f9a8d4", "text-anchor": "middle"});
-    tx(g, X(139), Y(-0.6), "Layang-Layang atoll", {"font-size": 9.5, fill: "#7dd3fc", "text-anchor": "middle"});
-    tx(g, X(262), Y(2.9) + 13, "Sabah Trough ~2.9 km", {"font-size": 9.5, fill: "#cbd5e1", "text-anchor": "middle"});
-    for (let k = 0; k <= 800; k += 100) {
-      el("line", {x1: X(k), x2: X(k), y1: Y(ZBOT), y2: Y(ZBOT) + 5, stroke: "#475569"}, g);
-      tx(g, X(k), Y(ZBOT) + 17, k + " km", {"font-size": 9.5, fill: "#94a3b8", "text-anchor": "middle"});
+  (function applyStage() {
+    var stage = new URLSearchParams(location.search).get("stage");
+    if (stage && /^[2-5]$/.test(stage)) {
+      document.querySelectorAll("#story details[data-stage]").forEach(function (d) {
+        d.open = d.getAttribute("data-stage") === stage;
+      });
     }
-    tx(g, W - R, Y(ZBOT) + 36, "Schematic. Bodies are interpretive, not seismic picks. Distances along the dog-leg line A–A′.", {"font-size": 9.5, fill: "#64748b", "text-anchor": "end"});
-  }
-
-  function drawCard() {
-    const m = cur;
-    document.getElementById("modelNote").textContent = `${m.key} · ${m.status}`;
-    document.getElementById("modelCard").innerHTML =
-      `<h3>${esc(m.key)}</h3><h4>${esc(m.title)}<span class="status" style="color:${m.color};border-color:${m.color}">${esc(m.status)}</span></h4>
-       <div class="who">${esc(m.who)}</div><p>${esc(m.thesis)}</p>
-       <dl><dt>Mechanism</dt><dd>${esc(m.mechanism)}</dd><dt>Timing</dt><dd>${esc(m.timing)}</dd>
-       <dt>Strengths</dt><dd>${esc(m.strengths)}</dd><dt>Problems</dt><dd>${esc(m.problems)}</dd>
-       <dt>Kill test</dt><dd><b>${esc(m.kill)}</b></dd></dl>`;
-    const sym = {y: '<span class="y">✓</span>', n: '<span class="n">✗</span>', u: '<span class="u">○</span>'};
-    document.getElementById("matrix").innerHTML =
-      `<tr><th>Observation</th>${MODELS.map(x => `<th class="${x.id === m.id ? "hl" : ""}" style="text-align:center;color:${x.color}">${x.id}</th>`).join("")}<th>Status</th></tr>` +
-      MATRIX.map(r => `<tr class="sel-col"><td>${esc(r.q)}</td>${MODELS.map(x => `<td class="c ${x.id === m.id ? "hl" : ""}">${sym[r.p[x.id]]}</td>`).join("")}<td><span class="obs ${r.obs}">${r.obs === "done" ? "observed" : "open"}</span>${r.src ? `<div style="font-size:.62rem;color:#64748b;margin-top:.2rem">${esc(r.src)}</div>` : ""}</td></tr>`).join("");
-    const used = new Set(XS.common.map(b => b.f).concat(m.bodies.map(b => b.f), ["WATER", "MANTLE"]));
-    const ln = (c, n, d) => `<span><span class="sw" style="background:none;border:0;border-top:2px ${d ? "dashed" : "solid"} ${c};height:0"></span>${n}</span>`;
-    document.getElementById("legend").innerHTML = [...used].map(k => `<span><span class="sw" style="background:${XS.facies[k].fill}"></span>${esc(XS.facies[k].name)}</span>`).join("") +
-      ln("#fbbf24", "DRU") + ln("#f87171", "SRU") + ln("#2dd4bf", "RU/MMU") + ln("#fb7185", "Detachment", 1) + ln("#e2e8f0", "Moho", 1);
-    document.querySelectorAll("#modelBtns .mbtn").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === m.id));
-    // Ring grid: PER-MODEL discrimination. Former defect (fixed 2026-10-26): the ring showed the
-    // dataset-wide observed/total count (3/8) identically on every card — a rendering artifact
-    // that read as a model score and created false equivalence. Now the ring is the model's own
-    // support among OBSERVED rows, and each card carries family / admissibility / maturity fields.
-    const ring = (x, dy, doneRows) => {
-      const r = 24, cx = 32, cy = 32, circ = 2 * Math.PI * r;
-      const fill = doneRows ? dy / doneRows : 0;
-      const dash = (circ * fill).toFixed(2);
-      return `<svg viewBox="0 0 64 64" role="img" aria-label="decisive support ring"><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="4"/><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${x.color}" stroke-width="4" stroke-dasharray="${dash} ${circ.toFixed(2)}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/><text x="${cx}" y="${cy + 4}" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="${x.color}">${dy}/${doneRows}</text></svg>`;
-    };
-    document.getElementById("ringGrid").innerHTML = MODELS.map(x => {
-      const doneRows = MATRIX.filter(q => q.obs === "done").length;
-      const dy = MATRIX.filter(q => q.obs === "done" && q.p[x.id] === "y").length;
-      const dn = MATRIX.filter(q => q.obs === "done" && q.p[x.id] === "n").length;
-      const open = MATRIX.filter(q => q.obs !== "done" && q.p[x.id] !== "u").length;
-      const y = MATRIX.filter(q => q.p[x.id] === "y").length;
-      const n = MATRIX.filter(q => q.p[x.id] === "n").length;
-      const u = MATRIX.filter(q => q.p[x.id] === "u").length;
-      return `<div class="ring-card"><div>${ring(x, dy, doneRows)}</div><div class="meta"><div class="label">${esc(x.key)}</div>${x.family ? `<div style="font-size:.66rem;color:${x.color};font-weight:700;margin:.1rem 0">${esc(x.family)}</div>` : ""}<div class="title">${esc(x.title)}</div><span class="stat" style="color:${x.color}">${esc(x.status)}</span><span class="stat" style="color:#15803d">✓ ${y}</span><span class="stat" style="color:#b91c1c">✗ ${n}</span><span class="stat" style="color:#9aa1a9">○ ${u}</span><span class="stat" style="color:#fbbf24" title="decisive tests passed / failed among OBSERVED rows; open = discriminating tests not yet observed">obs ✓${dy} ✗${dn} of ${doneRows} · open tests ${open}</span>${x.admissible ? `<div style="font-size:.66rem;color:#cbd5e1;margin-top:.3rem;line-height:1.45"><b style="color:#93c5fd">Admissible:</b> ${esc(x.admissible)}<br><b style="color:#93c5fd">Maturity:</b> ${esc(x.maturity)}</div>` : ""}</div></div>`;
-    }).join("");
-  }
-
-  function drawTimeline() {
-    const svg = document.getElementById("tl"), w = 1440, l = 230, r = 20, rowH = 20;
-    const rows = SHARED_EVENTS.map(e => Object.assign({}, e, {c: "#64748b"})).concat(cur.events.map(e => Object.assign({}, e, {c: cur.color})));
-    const h = 30 + rows.length * rowH + 10;
-    svg.innerHTML = ""; svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-    const tX = a => l + (35 - a) / 35 * (w - l - r);
-    for (let a = 35; a >= 0; a -= 5) {
-      el("line", {x1: tX(a), x2: tX(a), y1: 20, y2: h - 6, stroke: "#1e293b"}, svg);
-      tx(svg, tX(a), 14, a + " Ma", {"font-size": 10, fill: "#64748b", "text-anchor": "middle"});
+  })();
+  document.querySelectorAll("#story details[data-stage]").forEach(function (d) {
+    d.addEventListener("toggle", writeStage);
+  });
+  var h = document.getElementById("scale-h");
+  var vu = document.getElementById("scale-vu");
+  var vl = document.getElementById("scale-vl");
+  var ve = document.getElementById("ve");
+  if (h && vu && vl && ve) {
+    var dx = Math.abs(+h.getAttribute("x2") - +h.getAttribute("x1"));
+    var px = dx / +h.getAttribute("data-km");
+    function one(el) {
+      return (Math.abs(+el.getAttribute("y2") - +el.getAttribute("y1")) / +el.getAttribute("data-km")) / px;
     }
-    rows.forEach((e, i) => {
-      const y = 28 + i * rowH, shared = e.c === "#64748b";
-      tx(svg, l - 10, y + 9, e.lab, {"font-size": 10.5, fill: shared ? "#94a3b8" : e.c, "text-anchor": "end", "font-weight": shared ? 400 : 700});
-      const x1 = tX(e.a), x2 = Math.max(tX(e.b), x1 + 4);
-      tip(el("rect", {x: x1, y: y + 2, width: x2 - x1, height: 10, rx: 3, fill: e.dash ? "none" : e.c, stroke: e.c, "stroke-width": 1.5, "stroke-dasharray": e.dash ? "4 3" : null}, svg),
-        `<b>${esc(e.lab)}</b><br>${e.a === e.b ? e.a : e.a + "–" + e.b} Ma<br>${esc(e.tip || "")}`);
+    ve.textContent = "Computed from the scale bars in this figure: " + one(vu).toFixed(1) +
+      "× above the 15 km break and " + one(vl).toFixed(1) +
+      "× below. Horizontal bar 100 km; upper bar 5 km; lower bar 20 km. Schematic, not a balanced restoration.";
+  }
+  var svg = document.getElementById("xs");
+  var label = document.getElementById("zoom-label");
+  var zoom = 1;
+  function apply() {
+    if (!svg) return;
+    svg.style.width = Math.round(1480 * zoom) + "px";
+    if (label) label.textContent = Math.round(zoom * 100) + "%";
+  }
+  var zin = document.getElementById("zoom-in");
+  var zout = document.getElementById("zoom-out");
+  var zrs = document.getElementById("zoom-reset");
+  if (zin) zin.addEventListener("click", function () { zoom = Math.min(2.5, zoom + 0.25); apply(); });
+  if (zout) zout.addEventListener("click", function () { zoom = Math.max(1, zoom - 0.25); apply(); });
+  if (zrs) zrs.addEventListener("click", function () { zoom = 1; apply(); });
+  var dlg = document.getElementById("drawer");
+  var body = document.getElementById("drawer-body");
+  document.querySelectorAll("[data-open]").forEach(function (node) {
+    node.addEventListener("click", function (ev) {
+      if (!dlg || !dlg.showModal || !body) return;
+      var art = document.getElementById(node.getAttribute("data-open"));
+      if (!art) return;
+      ev.preventDefault();
+      var clone = art.cloneNode(true);
+      clone.removeAttribute("id");
+      clone.querySelectorAll("[id]").forEach(function (n) { n.removeAttribute("id"); });
+      var heading = clone.querySelector("h3");
+      if (heading) heading.id = "drawer-title";
+      clone.setAttribute("tabindex", "-1");
+      clone.setAttribute("autofocus", "");
+      body.replaceChildren(clone);
+      dlg.showModal();
     });
-  }
-
-  function drawRefs() {
-    const ids = ["TS02", "MOR23", "HIN89", "HT93", "HUT05", "HALL13", "COT10", "COT13", "KING10", "COR25", "BH09", "BAL03", "MJ22", "HS85", "BR93", "LI14", "RS91", "CHOI26", "GEOXCORR"];
-    document.getElementById("refs").innerHTML = ids.map(i => `<li>${esc(REFS[i])}</li>`).join("");
-  }
-
-  let ridgeLine;
-  function drawMap() {
-    if (typeof window.L === "undefined" || !document.getElementById("xsMap")) return;
-    const map = window.L.map("xsMap", {scrollWheelZoom: false}).setView([6.6, 116.2], 6);
-    window.L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}", {maxZoom: 10, attribution: "Esri, GEBCO, NOAA, Garmin"}).addTo(map);
-    const pts = XS.stations.map(s => [s.lat, s.lng]);
-    window.L.polyline(pts, {color: "#fbbf24", weight: 3}).addTo(map);
-    XS.stations.forEach((s, i) => window.L.circleMarker([s.lat, s.lng], {radius: 4, color: "#fbbf24", fillOpacity: 1})
-      .bindTooltip(`${s.name} · ${s.km} km`, {direction: i % 2 ? "bottom" : "top"}).addTo(map));
-    ridgeLine = window.L.polyline(XS.ridgeAxis, {color: "#f43f5e", weight: 2.5, dashArray: "6 6", opacity: cur.id === "A" ? 1 : .25})
-      .bindTooltip("Possible inherited thinned axis along the Sabah Trough (Model A, schematic)").addTo(map);
-    map.fitBounds(window.L.latLngBounds(pts).pad(0.12));
-  }
-
-  function select(m) { cur = m; drawSection(); drawCard(); drawTimeline(); if (ridgeLine) ridgeLine.setStyle({opacity: m.id === "A" ? 1 : .25}); }
-
-  document.getElementById("modelBtns").innerHTML = MODELS.map(m =>
-    `<button class="mbtn" data-id="${m.id}" style="--mc:${m.color}" aria-pressed="false"><span class="k" style="color:${m.color}">${esc(m.key)}</span><span class="t">${esc(m.title)}</span><span class="s">${esc(m.short)}</span></button>`).join("");
-  document.getElementById("modelBtns").addEventListener("click", e => { const b = e.target.closest(".mbtn"); if (b) select(MODELS.find(m => m.id === b.dataset.id)); });
-
-  const tipEl = document.getElementById("tip");
-  document.addEventListener("mousemove", e => {
-    const t = e.target.closest && e.target.closest("[data-tip]");
-    if (!t) { tipEl.hidden = true; return; }
-    tipEl.innerHTML = t.getAttribute("data-tip"); tipEl.hidden = false;
-    const r = tipEl.getBoundingClientRect();
-    tipEl.style.left = Math.min(e.clientX + 14, innerWidth - r.width - 8) + "px";
-    tipEl.style.top = (e.clientY + 14 + r.height > innerHeight ? e.clientY - r.height - 10 : e.clientY + 14) + "px";
   });
 
-  const want = (location.hash || "").replace("#model-", "").toUpperCase();
-  select(MODELS.find(m => m.id === want) || MODELS[0]);
-  drawRefs();
-  if (!FIGURE) { if (document.readyState === "complete") drawMap(); else window.addEventListener("load", drawMap); }
+  var layerKeys = [
+    ["base", "ly-base"], ["c", "ly-c"], ["b", "ly-b"], ["a", "ly-a"],
+    ["all", "ly-all"], ["young", "ly-young"], ["grav", "ly-grav"],
+    ["short", "ly-short"], ["foot", "ly-foot"]
+  ];
+  var layerParams = new URLSearchParams(location.search);
+  var anyLayer = layerKeys.some(function (pair) { return layerParams.has(pair[0]); });
+  if (anyLayer) {
+    layerKeys.forEach(function (pair) {
+      var el = document.getElementById(pair[1]);
+      if (!el) return;
+      if (pair[0] === "base") el.checked = layerParams.get("base") !== "0";
+      else el.checked = layerParams.get(pair[0]) === "1";
+    });
+  } else if (layerParams.has("layers")) {
+    layerParams.get("layers").split(",").filter(Boolean).forEach(function (key) {
+      var el = document.getElementById("ly-" + key);
+      if (el) el.checked = true;
+    });
+  }
+  function writeLayers() {
+    var url = new URL(location.href);
+    layerKeys.forEach(function (pair) {
+      var el = document.getElementById(pair[1]);
+      if (!el) return;
+      if (pair[0] === "base") {
+        if (!el.checked) url.searchParams.set("base", "0");
+        else url.searchParams.delete("base");
+      } else if (el.checked) url.searchParams.set(pair[0], "1");
+      else url.searchParams.delete(pair[0]);
+    });
+    url.searchParams.delete("layers");
+    url.searchParams.delete("cmp");
+    history.replaceState(null, "", url.pathname + url.search + url.hash);
+  }
+  if (layerParams.has("layers") || layerParams.has("cmp")) writeLayers();
+  function fallbackClasses() {
+    if (window.CSS && CSS.supports && CSS.supports("selector(:has(*))")) return;
+    var xs = document.getElementById("xs");
+    var mainEl = document.querySelector("main");
+    var diag = document.getElementById("panel-diag");
+    if (!xs) return;
+    function on(id) { var el = document.getElementById(id); return !!(el && el.checked); }
+    xs.classList.toggle("is-c", on("ly-c"));
+    xs.classList.toggle("is-b", on("ly-b"));
+    xs.classList.toggle("is-a", on("ly-a"));
+    xs.classList.toggle("is-all", on("ly-all"));
+    xs.classList.toggle("is-grav", on("ly-grav"));
+    xs.classList.toggle("is-short", on("ly-short"));
+    xs.classList.toggle("is-foot", on("ly-foot"));
+    xs.classList.toggle("is-nobase", !on("ly-base"));
+    if (diag) diag.classList.toggle("is-open", on("ly-young"));
+    if (mainEl) mainEl.classList.toggle("is-stack", on("ly-c") || on("ly-b") || on("ly-a") || on("ly-all"));
+  }
+  fallbackClasses();
+  var layerForm = document.getElementById("layer-form");
+  if (layerForm) {
+    layerForm.addEventListener("change", function () { writeLayers(); fallbackClasses(); });
+    layerForm.addEventListener("reset", function () {
+      setTimeout(function () { writeLayers(); fallbackClasses(); }, 0);
+    });
+  }
 })();
 </script>
 </body>

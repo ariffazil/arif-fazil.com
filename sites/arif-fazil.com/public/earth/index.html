@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- page: earth v3 · Φ GEOX · arif-fazil.com/earth · zen-clarity-audit 2026-07-30 · claim-discipline 2026-08-25
+<!-- page: earth v3 · arif-fazil.com/earth · zen-clarity-audit 2026-07-30 · claim-discipline 2026-08-25
      content-marker: dynamic-earth-Φ wells-Φ studies-Φ · unhidden deep-time · sticky-toc -->
 <html lang="en" data-ring="ORGAN" data-organ="geox">
 <head>
@@ -154,6 +154,7 @@
 <meta property="og:url" content="https://arif-fazil.com/earth/" />
 <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
 <link rel="canonical" href="https://arif-fazil.com/earth/" />
+<link rel="stylesheet" href="/earth/_shared/earth-coat.css?v=20261125d">
 </head>
 <body>
 
@@ -161,6 +162,17 @@
 <div id="fed-nav-root"></div>
 <noscript><header class="fed-navbar" aria-label="Federation primary navigation"><a class="nav-brand" href="/"><span class="psi-badge">Ψ</span><span>ARIF FAZIL</span></a><nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/about">About</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav></header></noscript>
 <script src="/_shared/fed-nav.js" data-active="earth" defer></script>
+
+<nav class="earth-room-nav" aria-label="Earth pages">
+  <a href="/earth/" aria-current="page">Earth</a>
+  <a href="/earth/malay-basin/">Malay Basin</a>
+  <a href="/earth/malay-basin-cross-section.html">Malay section</a>
+  <a href="/earth/kinabalu-basin/">Kinabalu</a>
+  <a href="/earth/kinabalu-cross-section.html">Sabah section</a>
+  <a href="/earth/borneo-sections.html">NW Borneo</a>
+  <a href="/earth/sabah-observatory/">Observatory</a>
+  <a href="/earth/macrostrat-ingestion/">Bedrock map</a>
+</nav>
 
 <!-- ══ ZEN FLOATING SUB-DOCK (PAGE JUMP) ══ -->
 <nav class="earth-zen-dock" aria-label="Earth sections" id="earthToc">
@@ -251,14 +263,6 @@
       JavaScript is required for the live globe. Basin dossiers still work: <a href="/earth/kinabalu-basin/" style="color:#D4A853">Kinabalu</a> · <a href="/earth/malay-basin/" style="color:#D4A853">Malay Basin</a>.
     </div>
   </noscript>
-</div>
-
-<!-- ══ ZEN PULSE · 3-second orientation ══ -->
-<div class="zen-pulse" aria-label="3-second orientation">
-  <span class="zp"><b>WHERE</b> arif-fazil.com / earth</span>
-  <span class="zp gold"><b>WHY CARE</b> live globe · evidence-gated rocks</span>
-  <span class="zp"><b>WHAT NEXT</b> click the planet · ask the rocks</span>
-  <span class="zp"><b>F2 TRUTH</b> every number carries its source tier: LIVE · SOURCED · INTERPRETED · SYNTHETIC · PRIVATE</span>
 </div>
 
 <!-- ══ WHAT CAN I DO HERE? · intent cards · ABOVE the fold for cognitive onboarding ══ -->
@@ -863,10 +867,10 @@
 
 
 <!-- ══ GEOX GATEWAY — the working environment behind this page (2026-10-01 audit: prominent second-level journey; also closes the broken #geox dock anchor) ══ -->
-<section id="geox" aria-label="Open GEOX MCP Apps" style="padding:4rem 2rem 3rem;border-top:1px solid var(--border-dim);text-align:center;">
+<section id="geox" aria-label="Open GEOX" style="padding:4rem 2rem 3rem;border-top:1px solid var(--border-dim);text-align:center;">
   <div style="max-width:52rem;margin:0 auto;">
     <div class="kicker">GO DEEPER · THE ENGINE ROOM</div>
-    <h2 style="margin:.6rem 0 1rem;">Open GEOX MCP Apps</h2>
+    <h2 style="margin:.6rem 0 1rem;">Open GEOX</h2>
     <p style="max-width:44rem;margin:0 auto 1rem;line-height:1.7;">
       This page reads the planet. <b>GEOX</b> is the working environment that answers questions about it —
       source-linked Earth context for subsurface questions, where every number comes from a named pipe
@@ -893,15 +897,6 @@
          onmouseover="this.style.borderColor='rgba(0,212,170,.5)'"
          onmouseout="this.style.borderColor='var(--border-dim)'">
         ▸ OPEN THE VIEWER <span style="opacity:.4;font-size:.6rem">↗</span>
-      </a>
-      <a href="https://geox.arif-fazil.com/mcp" target="_blank" rel="noreferrer"
-         style="display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.9rem;min-height:44px;
-         background:transparent;border:1px solid var(--border-dim);border-radius:6px;
-         font-family:var(--mono);font-size:.8rem;letter-spacing:.8px;
-         color:inherit;text-decoration:none;transition:all .25s;"
-         onmouseover="this.style.borderColor='rgba(0,212,170,.5)'"
-         onmouseout="this.style.borderColor='var(--border-dim)'">
-        ▸ MCP ENDPOINT · AGENTS <span style="opacity:.4;font-size:.6rem">↗</span>
       </a>
     </div>
   </div>
@@ -1200,7 +1195,7 @@ async function loadPlates(){
           const[col]=plateColor(d.tag);
           panel.className="show";
           panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-            <div class="src">Φ GEOX · plate boundary witness</div>
+            <div class="src">plate boundary witness</div>
             <h3><span class="swatch" style="background:${col}"></span>${esc(d.name)}</h3>
             <p class="lith">${plateLabelOf(d.tag)}</p>
             <div class="kv"><b>PLATE A</b><span>${esc(d.plateA)}</span></div>
@@ -1327,7 +1322,7 @@ function onMarkerClick(d){
     const rg=d.rg;
     panel.className="show";
     panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-    <div class="src">Φ GEOX · regional geology</div>
+    <div class="src">regional geology</div>
     <h3>◇ ${esc(rg.name)}</h3>
     <p class="lith">${esc(rg.note||"")}</p>
     ${rg.approximate?`<div class="withheld">REGION ANCHOR · APPROXIMATE</div>`:""}`;
@@ -1344,7 +1339,7 @@ function onMarkerClick(d){
   if(w.location_note)rows.push(["area",w.location_note]);
   panel.className="show";
   panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-  <div class="src">Φ GEOX · well witness · sovereign canon</div>
+  <div class="src">well witness · sovereign canon</div>
   <h3>${esc(w.name)}${w.tier==="existence"?" ~":""}</h3>
   ${rows.map(r=>`<div class="kv"><b>${r[0]}</b><span>${esc(r[1])}</span></div>`).join("")}
   ${w.tier==="existence"?`<div class="withheld">LOCATION APPROXIMATE · DETAILS WITHHELD</div>`:""}`;

@@ -626,25 +626,27 @@ html[data-organ="arifos"] section.obs-collapsible > h2 .obs-alarm-badge[data-lev
     <caption style="text-align:left;color:#888;padding:.15rem 0 .35rem;font-size:.76rem">Layer → component → endpoint</caption>
     <thead><tr><th>Layer</th><th>What actually runs</th><th>Endpoint</th></tr></thead>
     <tbody>
-     <tr><td>Model access</td><td>LiteLLM — 123 routes: DeepSeek · MiniMax · GLM · Qwen · MiMo · OpenRouter</td><td>:4000 → :4013</td></tr>
-     <tr><td>Routing</td><td>FED router · parity guard · lane economics</td><td>:7074</td></tr>
+     <tr><td>Model access</td><td>LiteLLM gateway — 123 routes: DeepSeek · MiniMax · GLM · Qwen · MiMo · OpenRouter</td><td>federated</td></tr>
+     <tr><td>Routing</td><td>FED router · parity guard · lane economics</td><td>internal</td></tr>
      <tr><td>Cognition</td><td>333-AGI proposes · 555-ASI verifies · 888-APEX judges — across the FI coding harnesses</td><td>—</td></tr>
      <tr><td>Constitutional gate</td><td>arifOS kernel — F1–F13 floors, init / judge / seal</td><td>:8088</td></tr>
-     <tr><td>Execution</td><td>A-FORGE — lease-gated actuators: no seal, no run</td><td>:7071 · :7072</td></tr>
+     <tr><td>Execution</td><td>A-FORGE — lease-gated actuators: no seal, no run</td><td>:7071</td></tr>
      <tr><td>Metabolism</td><td>arifFlow — receipts, FQ ratio, cooling</td><td>:7073</td></tr>
-     <tr><td>Memory</td><td>Qdrant · Postgres · Redis · FalkorDB · VAULT999</td><td>:6333 · :5432 · :6379</td></tr>
+     <tr><td>Memory</td><td>Qdrant · Postgres · Redis · FalkorDB · VAULT999</td><td>internal</td></tr>
      <tr><td>Observation</td><td>Phoenix · OpenTelemetry · Grafana · Netdata · Beszel · Healthchecks</td><td>this page</td></tr>
      <tr><td>Human surface</td><td>arif-fazil.com · AAA cockpit · MCP door</td><td>/ · aaa. · mcp.</td></tr>
     </tbody>
    </table>
 
    <p class="arc-p">
-    <strong>Coverage of the public AI-engineering landscape</strong> (1,036 tools, 56 categories,
-    classified against this host on 2026-11-27): <strong>22 categories run on a live component here</strong>,
-    22 partially, 4 absent, 8 out of scope by design. The four absent are a GPU training lane, a
-    fine-tune toolchain, experiment tracking, and interpretability tooling — deferred until a
-    training workstream is actually decided, not forgotten. Security-surface gaps are tracked in
-    the operator record, not on this page.
+    <strong>Coverage of the public AI-engineering landscape</strong>: of the 56 categories in the
+    public “AI engineering from scratch” landscape index (1,036 listed tools), <strong>22 are served
+    here by a live component</strong>, 22 in part, 4 absent, 8 out of scope by design. This is a
+    <em>category-level classification, not a per-tool census</em>: each category was graded once
+    against the host inventory above, not tool by tool. The four absent are a GPU training lane, a
+    fine-tune toolchain, experiment tracking and interpretability tooling — deferred until a training
+    workstream is actually decided, not forgotten. <strong>Security surfaces are out of scope by
+    design</strong>: what is missing there is recorded in the operator ledger, not published here.
    </p>
 
    <p class="arc-p">
@@ -655,7 +657,7 @@ html[data-organ="arifos"] section.obs-collapsible > h2 .obs-alarm-badge[data-lev
     every claim carrying its own source, timestamp and freshness.
    </p>
 
-   <p class="arc-asof">as-of 2026-11-27 · method: live probe of this host (ports, containers, packages, MCP registry) · classification of the 56-category map against that inventory · not a vendor claim</p>
+   <p class="arc-asof">as-of 2026-11-27 · corpus: public landscape index (56 categories / 1,036 tools) · method: single live probe of this host (ports, containers, packages, MCP registry) then one category-level grading pass · classification is INT over OBS inventory · not a vendor claim</p>
   </div>
  </section>
 

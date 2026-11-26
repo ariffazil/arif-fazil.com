@@ -777,7 +777,11 @@ upd();setInterval(upd,5000);})();
     setCell('wsum-findings', String(findings), findings ? 'need triage' : 'none open', findings ? 'alarm' : 'calm');
 
     var blocked = document.querySelectorAll('#sec-governance [data-measurement="blocked"]').length;
-    setCell('wsum-floor', blocked + ' of 13', blocked ? 'floor blocked' : 'all measured', blocked ? 'alarm' : 'calm');
+    var unmeasured = document.querySelectorAll('#sec-governance [data-measurement="unmeasured"], #sec-governance [data-measurement="unknown"]').length;
+    var stale = document.querySelectorAll('#sec-governance [data-measurement="stale"]').length;
+    var floorNote = blocked ? 'floor blocked' : (unmeasured ? (unmeasured + ' unmeasured') : (stale ? (stale + ' stale') : 'all measured'));
+    var floorLevel = (blocked || unmeasured || stale) ? 'alarm' : 'calm';
+    setCell('wsum-floor', blocked + ' of 13', floorNote, floorLevel);
 
     var drift = txt(document.getElementById('meta-drift'));
     var dm = drift.match(/(\d+)\s*\/\s*\d+/);

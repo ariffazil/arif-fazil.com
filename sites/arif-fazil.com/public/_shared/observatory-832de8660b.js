@@ -636,8 +636,9 @@
         const freshInWin = unwrap(capabilities.tested_within_freshness_window_count) != null
           ? unwrap(capabilities.tested_within_freshness_window_count)
           : matRows.filter((r) => isRecord(r) && typeof unwrap(r.age_seconds) === 'number' && unwrap(r.age_seconds) <= ttl).length;
+        const freshDenom = unwrap(capabilities.tested_within_freshness_window_count) != null ? decl : matRows.length;
         return {
-          value: `AUTHORIZED NOW: ${authNow}/${decl} (unbound request) · TECHNICALLY INVOCABLE: ${techInv}/${decl} canonical (+1 coord = ${matRows.length} public) · ${recTests}/${decl} have recorded tests (${freshInWin}/${decl} within ${Math.round(ttl / 60)}m freshness window, TTL=${ttl}s)`,
+          value: `AUTHORIZED NOW: ${authNow}/${decl} (unbound request) · TECHNICALLY INVOCABLE: ${techInv}/${decl} canonical (+1 coord = ${matRows.length} public) · ${recTests}/${decl} have recorded tests (${freshInWin}/${freshDenom} public within ${Math.round(ttl / 60)}m freshness window, TTL=${ttl}s)`,
           state: capabilities.state || capabilities.status || 'observed',
         };
       })(),

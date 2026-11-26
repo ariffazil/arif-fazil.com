@@ -75,7 +75,6 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:'Inter',-ap
 </style>
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 /* ─── GIS LOCATOR MAP & INTERACTIVE CONTROLS ─── */
 .gis-locator-card {
@@ -781,12 +780,8 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:'Inter',-ap
 </main>
 <!-- /#main-content -->
 <!-- Leaflet JS & Transect Script -->
+<!-- Leaflet served from the same origin (_shared); external CDN fallback removed 2026-11-27: CSP script-src forbids unpkg and the local copy is the sanctioned lane -->
 <script src="/_shared/leaflet/leaflet.js"></script>
-<script>
-if (typeof L === 'undefined') {
-  document.write('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script>');
-}
-</script>
 <script>
 let tMap, tBaseLayer, tWellGroup;
 const T_TILES = {

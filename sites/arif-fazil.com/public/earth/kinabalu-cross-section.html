@@ -77,6 +77,8 @@ h3 { font-size:1.1rem; margin:.3rem 0 .4rem; }
 .panel { background:var(--paper); color:var(--paper-ink); border-radius:8px; padding:.8rem; margin:.6rem 0 1rem; }
 .panel p, .panel li { color:var(--paper-ink); }
 .controls { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin:.6rem 0; }
+.controls .layer-note { grid-column:1/-1; margin:.1rem 0 .2rem; font-size:.82rem; line-height:1.4; color:#3d4655; }
+.controls .layer-note a { color:inherit; text-decoration:underline; }
 fieldset { border:1px solid #c9c0b2; border-radius:8px; margin:0; padding:.6rem .8rem 0.4rem; }
 legend { font-weight:700; padding:0 .3rem; }
 label.row { display:flex; gap:.6rem; align-items:flex-start; padding:.35rem 0; cursor:pointer; }
@@ -354,6 +356,7 @@ html.figure-only footer { display:none !important; }
         <label class="row"><input type="checkbox" id="ly-b"> <span>Model B: Mobile shale canopy (Pagasa wedge)</span></label>
         <label class="row"><input type="checkbox" id="ly-a"> <span>Model A: Thermal plumbing (sparse sills & dykes)</span></label>
         <label class="row"><input type="checkbox" id="ly-all"> <span>Composite structural overlay (C + B + A)</span></label>
+        <p class="layer-note">Model D (deep lithospheric slab remnant &amp; mantle downwelling) is presented as the page-wide mantle framework — <a href="#model-d">jump to Model D</a>. It has no toggle because it is a separate depth frame, not an overlay on the transect.</p>
         <label class="row"><input type="checkbox" id="ly-young"> <span>Younger extensional fault-growth diagnostic</span></label>
         <label class="row"><input type="checkbox" id="ly-grav"> <span>Emphasise sediment-gravity detachment</span></label>
         <label class="row"><input type="checkbox" id="ly-short"> <span>Emphasise basement shortening</span></label>
@@ -651,7 +654,7 @@ html.figure-only footer { display:none !important; }
       <form method="dialog"><button>Close</button></form>
     </dialog>
 
-    <h3>Deep lithospheric & mantle framework</h3>
+    <h3 id="model-d">Deep lithospheric &amp; mantle framework — Model D</h3>
     <p>Teleseismic receiver-function and tomography studies provide critical mantle depth constraints, kept distinct from shallow crustal transect interpolations.</p>
     <div class="pan" tabindex="0" aria-label="Separate mantle inset. Scroll sideways if needed.">
       <svg id="mantle-inset" class="side-svg" role="img" aria-labelledby="mantle-title mantle-desc" viewBox="0 0 720 340" width="720" height="340">
@@ -937,6 +940,7 @@ html.figure-only footer { display:none !important; }
         <div class="changelog">
           <h3>Version provenance &amp; changelog</h3>
           <ul>
+            <li><strong>2026-11-27 (Family reconciliation &amp; CSP hygiene):</strong> (1) Kinabalu Basin dossier aligned to this page's event spine — composite DRU (11.7–13.77 Ma, NN6–NN7) declared, MMU (~16 Ma) and BMU/TCU (~23–24 Ma) kept distinct, older ~15.5 Ma bracket labelled superseded, four unconformities carried; (2) CSP-blocked unpkg Leaflet duplicates removed from kinabalu-basin, malay-basin and malay-basin-cross-section (same-origin <code>_shared/leaflet</code> only); (3) Model D linked from the layer controls as a separate depth frame, not an overlay.</li>
             <li><strong>2026-11-26 (Geodetic, Chronostratigraphic &amp; RF Moho Reconciliation):</strong> (1) Replaced mislabeled SVG X-pixel coordinates in Route Overview and Callouts #1–#3 with exact WGS84 Karney geodesic chainage (0–832.84 km); (2) purged regressed DRU age / Paleogene–Neogene conflation and restored the reconciled event spine (BMU/TCU ~23–24 Ma, composite intra-Middle Miocene DRU ~12–13 Ma [11.7–13.77 Ma] ≠ Sarawak MMU ~16 Ma, UIU ~10.5 Ma, SRU ~8.5–9 Ma); (3) removed unlocated 60 km Crocker Moho (MTM footnoted as lacking FDSN coordinates), standardized unconstrained RF Moho gaps to 0–425 km and 600–832.8 km with no interpolated bridge, and plotted georeferenced KMY (32.8 ± 2.5 km), KINA (30–35 km), and CONTESTED SBC5/SBC6 (25/24 km vs Cornwell 34–38 km LVZ); (4) added Morley (2023) northern-vs-central Sabah NSPW scope law (~6.0°N limit vs 5.98°N coast); (5) broadened trough NW-flank buildup label for rock-physics non-uniqueness and distinguished inherited Miocene volcaniclastics from untested 7–8 Ma Kinabalu-linked sills in Model A; (6) strengthened the 4-discriminator <code>CL-XS-YOUNGER-EXT</code> diagnostic box against Model C null.</li>
             <li><strong>2026-11-25 (Human Geologist Redesign):</strong> Comprehensive presentation refactor for human earth science clarity. Transferred raw metalabels and epistemic ledger tags to collapsible backend audit details. Added prominent dip correction guide (17.2× VE = 4°–6° true dip plots as 50°–61° apparent dip), explicit null hypothesis framing (foredeep flexural bending), and geodetic polyline specifications (832.84 km over 11 stations).</li>
             <li><strong>2026-11-25 (Registry Reconciliation):</strong> Reconciled Line 821 transect registry text with transects.json, computing exact vertical exaggerations from SVG scale bars.</li>
@@ -959,7 +963,8 @@ html.figure-only footer { display:none !important; }
     <a href="/earth/data/transects.json">Transects registry</a>
     <a href="#backend-audit">Public errata &amp; changelog</a>
   </nav>
-  <p>Build SHA: <code>site/earth-clarity</code> · Build date: <code>2026-11-26</code> · Last audited: <code>2026-11-26</code></p>
+  <p>Build SHA: <code>site/earth-clarity</code> · Build date: <code>2026-11-27</code> · Last audited: <code>2026-11-27</code></p>
+  <p>Figure provenance: geometry from the T-KIN-XS-833 geodetic registry (<code>transects.json</code>) · claims cross-checked against <code>claims_ledger.json</code> · GEOX claim audit 2026-11-26.</p>
   <p>Ditempa bukan diberi · © 2026 Muhammad Arif bin Fazil</p>
 </footer>
 <script>

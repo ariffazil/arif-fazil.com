@@ -20,7 +20,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 :root{
   --bg-dark:#0a0a0f;
@@ -674,12 +673,8 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
 </footer>
 
 <!-- Leaflet JS -->
+<!-- Leaflet served from the same origin (_shared); external CDN fallback removed 2026-11-27: CSP script-src forbids unpkg and the local copy is the sanctioned lane -->
 <script src="/_shared/leaflet/leaflet.js"></script>
-<script>
-if (typeof L === 'undefined') {
-  document.write('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script>');
-}
-</script>
 
 <script>
 // ═══ MALAY BASIN REAL MAP GIS SCRIPT ═══
@@ -899,7 +894,7 @@ async function queryMacrostrat(lat, lng) {
   document.getElementById('inspUnitLith').textContent = 'Connecting to https://macrostrat.org/api/v2/geologic_units/map...';
 
   try {
-    const res = await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&buffer=3`);
+    const res = await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}`);
     if (!res.ok) throw new Error('API returned ' + res.status);
     const data = await res.json();
     
@@ -910,16 +905,16 @@ async function queryMacrostrat(lat, lng) {
       document.getElementById('inspUnitLith').textContent = `Lithology: ${u.lith || u.descrip || 'Sedimentary basin fill / Clastics'}`;
       document.getElementById('inspUnitRef').textContent = `Ref: ${u.source_id ? 'Map Source #' + u.source_id : 'Macrostrat v2 Global Model'}`;
     } else {
-      document.getElementById('inspUnitName').textContent = 'Offshore Malay Basin Fill';
-      document.getElementById('inspUnitAge').textContent = 'Late Eocene to Recent (Group A through M)';
-      document.getElementById('inspUnitLith').textContent = 'Marine to deltaic clastic succession (~6–12 km thick) overlying Pre-Tertiary basement.';
-      document.getElementById('inspUnitRef').textContent = 'Source: PETRONAS Carigali / Madon 2013 Regional Synthesis';
+      document.getElementById('inspUnitName').textContent = 'No mapped unit at this point';
+      document.getElementById('inspUnitAge').textContent = 'UNKNOWN (point)';
+      document.getElementById('inspUnitLith').textContent = 'Macrostrat has no mapped unit here. Regional context only: Late Eocene–Recent Group A–M clastic fill over Pre-Tertiary basement (Madon 2021).';
+      document.getElementById('inspUnitRef').textContent = 'Source: none at point · regional context: Madon 2021';
     }
   } catch (err) {
-    document.getElementById('inspUnitName').textContent = 'Offshore Continental Shelf';
-    document.getElementById('inspUnitAge').textContent = 'Cenozoic Inversion Basin';
-    document.getElementById('inspUnitLith').textContent = 'Group A→M clastic sequences (Fluvial, deltaic, and lacustrine facies).';
-    document.getElementById('inspUnitRef').textContent = 'Local SOT Canon (wells.json)';
+    document.getElementById('inspUnitName').textContent = 'UNKNOWN — pipe unavailable';
+    document.getElementById('inspUnitAge').textContent = 'no measurement at this point';
+    document.getElementById('inspUnitLith').textContent = 'Macrostrat did not answer (' + (err && err.message ? err.message : 'network error') + '). No unit is asserted for this point.';
+    document.getElementById('inspUnitRef').textContent = 'Retry, or read the basin profile above (regional context, not a point measurement).';
   }
 }
 

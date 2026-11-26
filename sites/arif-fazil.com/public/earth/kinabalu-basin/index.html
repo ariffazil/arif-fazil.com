@@ -222,7 +222,6 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
 </style>
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="/_shared/leaflet/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 /* ══ MAP SECTION & REAL GIS TOOLS ══ */
 .map-workspace{margin:1.8rem 0;background:var(--bg-panel);border:1px solid var(--border-dim);border-radius:14px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.4)}
@@ -348,7 +347,7 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
   <div class="container">
     <div class="kicker">REAL MAP TOOLS · MACROSTRAT GEOLOGIC TILES + USGS REAL-TIME SEISMIC FEED</div>
     <h2><span class="num">01</span>Interactive NW Sabah Basin Map & Spatial Tools</h2>
-    <p class="lede">Explore the active fold-thrust belt of the Kinabalu Basin. Stream real <b>Macrostrat geological bedrock tiles</b>, inspect the <b>Sabah Trough subduction zone</b> (~2,900 m deep), monitor <b>live USGS earthquake feeds</b> across Borneo, and click anywhere to run real-time Macrostrat API bedrock queries.</p>
+    <p class="lede">Explore the active fold-thrust belt of the Kinabalu Basin. Stream real <b>Macrostrat geological bedrock tiles</b>, inspect the <b>Sabah Trough</b> (~2,900 m deep — an inactive margin, not an active subduction zone), monitor <b>live USGS earthquake feeds</b> across Borneo, and click anywhere to run real-time Macrostrat API bedrock queries.</p>
 
     <div class="map-workspace">
       <div class="map-toolbar">
@@ -403,7 +402,7 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
     </div>
 
     <div class="callout">
-      <b>Tectonic Gradient:</b> From the ultra-deep <b>Sabah Trough</b> (-2,900 m) on the northwest, across the <b>4 Imbricated Thrust Sheets</b> (Kikeh, Gumusut-Kakap, Malikai), up to the <b>Crocker Range</b> turbidites and the summit of <b>Mt. Kinabalu</b> (+4,095 m). A 7,000-metre vertical relief across just 150 km!
+      <b>Tectonic Gradient:</b> From the ultra-deep <b>Sabah Trough</b> (-2,900 m) on the northwest, across the <b>deepwater fold–thrust belt</b> (Kikeh, Gumusut-Kakap and Malikai fields sit on toe-thrust structures), up to the <b>Crocker Range</b> turbidites and the summit of <b>Mt. Kinabalu</b> (+4,095 m geodetic). A 7,000-metre vertical relief across just 150 km!
     </div>
   </div>
 </section>
@@ -427,14 +426,14 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
         <p>The <b>Dangerous Grounds</b> continental block collides with Sabah. Mélanges form. The <b>Base Miocene Unconformity (BMU)</b> is cut. Deep marine gives way to shallow deltaic sedimentation. This is the moment the basin starts to look like a basin.</p>
       </div>
       <div class="event">
-        <div class="age">15.5 Ma · MID-MIOCENE</div>
-        <h3>Cagayan Arc collision — rifting ends</h3>
-        <p>Arc-continent collision cuts the <b>Mid-Miocene Unconformity (MMU) = Deep Regional Unconformity (DRU, ~15.5 Ma, Balaguru &amp; Hall 2009)</b>. Extension halts. Inversion begins. The fold-thrust belt starts growing westward into the present-day shelf.</p>
+        <div class="age">~12–13 Ma · MIDDLE MIOCENE</div>
+        <h3>Cagayan Arc convergence — rifting ends</h3>
+        <p>Arc-continent convergence culminates in the <b>composite Deep Regional Unconformity (DRU, 11.7–13.77 Ma; nannofossil NN6–NN7 bracket)</b> — an intra-Middle Miocene Stage III/IV surface of "conformable regions together with local unconformities" (Lunt 2022; Morley et al. 2023), <b>not</b> a single collision datum and <b>not</b> the Sarawak MMU (~16 Ma). The older Balaguru &amp; Hall (2009) estimate of ~15.5 Ma for this level is retained as a superseded bracket. Extension halts. Inversion begins. The fold-thrust belt starts growing westward into the present-day shelf.</p>
       </div>
       <div class="event gold">
-        <div class="age">10–8 Ma · LATE MIOCENE</div>
+        <div class="age">~8–7 Ma · LATE MIOCENE</div>
         <h3>Mount Kinabalu — the mountain arrives</h3>
-        <p>Granodiorite pluton intrudes the Crocker prism. Today it stands at <b>4,095 m</b> — the highest peak between the Himalayas and Papua. The <b>Shallow Regional Unconformity (SRU, ~8.5–9.5 Ma)</b> marks a sediment-supply surge: the Baram and Kinabatangan deltas prograde across the shelf.</p>
+        <p>Granodiorite pluton intrudes the Crocker prism (U-Pb crystallisation <b>7.85–7.22 Ma</b>, Cottam et al. 2010; older K-Ar ages contested). Today it stands at <b>4,095 m</b> (geodetic; DEM grid 3,969 m) — the highest peak between the Himalayas and Papua. The <b>Shallow Regional Unconformity (SRU, ~8.5–9.5 Ma)</b> marks a sediment-supply surge: the Baram and Kinabatangan deltas prograde across the shelf.</p>
       </div>
       <div class="event">
         <div class="age">L. PLIOCENE – RECENT</div>
@@ -608,7 +607,7 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
       <div class="body">
         <div class="prose">
           <p>The <b>top line</b> is the surface: land above sea level, the seafloor below it. Everything under it is interpretation. The upper 15 km is stretched about 17× vertically so the basins are visible; below 15 km the stretch drops to about 3× so the crust and mantle fit.</p>
-          <p>Switch models and watch what changes. The basins, the Kinabalu granite (pink, 7.85–7.22 Ma) and the three unconformities (MMU, DRU, SRU) stay put. What moves is the region under the DRU and everything below 15 km: a rift-axis intrusion hypothesis (A), mobile shale and mud volcanoes (B), a thrust wedge on underthrust crust (C), or a detached slab with mantle upwelling (D).</p>
+          <p>Switch models and watch what changes. The basins, the Kinabalu granite (pink, 7.85–7.22 Ma) and the four unconformities (BMU/TCU ~23–24 Ma, DRU 11.7–13.77 Ma, UIU ~10.5 Ma, SRU ~8.5–9 Ma) stay put. What moves is the region under the DRU and everything below 15 km: a rift-axis intrusion hypothesis (A), mobile shale and mud volcanoes (B), a thrust wedge on underthrust crust (C), or a detached slab with mantle upwelling (D).</p>
           <p>The table under the section lists the observations that would decide between them. Four of them are already published. The four that would test Model A — magnetics, dated basalt, sills and heat flow along the trough — exist in industry data but are not public.</p>
         </div>
       </div>
@@ -616,9 +615,9 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
 
     <div class="reviewed" role="note" aria-label="Document maintenance">
       <span class="lbl">Last reviewed</span>
-      <time datetime="2026-10-20">2026-10-20</time>
+      <time datetime="2026-11-27">2026-11-27</time>
       <span class="dot">·</span>
-      <span class="src">GEOX calibration layer: DRU age spread declared (PDF dossier v3 chronology ~15.5 Ma vs GEOX bracket ~13–14.2 Ma, Morley 2024) · all four unconformities (BMU/TCU, DRU, UIU, SRU) matched to Haq &amp; Ogg 2024 NgSB boundaries — see cross-section event strip · prior review 2026-10-08: four-model expansion, chronology aligned with PDF dossier v3.</span>
+      <span class="src">Reconciled to the cross-section event spine of 2026-11-26: composite DRU (11.7–13.77 Ma, NN6–NN7) declared, MMU (~16 Ma) and BMU/TCU (~23–24 Ma) kept distinct, older ~15.5 Ma bracket labelled superseded. Four unconformities (BMU/TCU, DRU, UIU, SRU) matched to Haq &amp; Ogg 2024 NgSB boundaries · prior review 2026-10-08: four-model expansion.</span>
     </div>
   </div>
 </section>
@@ -651,9 +650,9 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
       </div>
       <div class="disc">
         <span class="tag">CRUSTAL</span>
-        <h3>Slab remnant at 45–55 km</h3>
+        <h3>Uppermost-mantle discontinuity at ~45–55 km</h3>
         <div class="meta">CORNWELL ET AL. JGR 2025</div>
-        <p>Teleseismic receiver functions image a slab remnant under Sabah at 45–55 km depth. The subduction has stopped, but the slab is still there — and the post-subduction tectonics is still active.</p>
+        <p>Teleseismic receiver functions report a discontinuity under Sabah at ~45–55 km depth; the published interpretation is a slab remnant (Cornwell et al. 2025), contested by a 34–38 km low-velocity-zone reading. Subduction has stopped, but post-subduction tectonics remains active.</p>
       </div>
       <div class="disc">
         <span class="tag">PRODUCTION</span>
@@ -706,7 +705,7 @@ header{flex-wrap:wrap;gap:.5rem;padding:.6rem 1rem;left:0;right:0;width:auto;max
       <a class="intent-card" href="/earth/kinabalu-basin.pdf" aria-label="Download the PDF dossier">
         <span class="verb">DOWNLOAD PDF</span>
         <h3>Take the dossier offline.</h3>
-        <p>11 sections · v3 Oct 2026 · four working models with figures · single PDF. The reference copy for fieldwork, regulatory submissions, or a meeting where you need a piece of paper in your hand, not a browser tab.</p>
+        <p>11 sections · v3 Oct 2026 · four working models with figures · single PDF. The reference copy for fieldwork, a meeting where you need paper in your hand. Vintage note: v3 predates the 2026-11-27 chronology reconciliation — read its DRU/MMU ages together with this page's event strip.</p>
         <span class="arrow">DOWNLOAD PDF ↓</span>
       </a>
 
@@ -784,12 +783,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 </script>
 <script src="/_shared/zen-all.js" defer></script>
 <!-- Leaflet JS & Kinabalu Basin GIS Script -->
+<!-- Leaflet served from the same origin (_shared); external CDN fallback removed 2026-11-27: CSP script-src forbids unpkg and the local copy is the sanctioned lane -->
 <script src="/_shared/leaflet/leaflet.js"></script>
-<script>
-if (typeof L === 'undefined') {
-  document.write('<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script>');
-}
-</script>
 <script>
 let kMap, kBaseLayer, kInspectMode = false;
 let kWellsGroup, kTransectGroup, kStructGroup, kQuakesGroup;
@@ -1065,7 +1060,7 @@ async function queryKinMacrostrat(lat, lng) {
   document.getElementById('kInspUnitLith').textContent = 'Connecting to https://macrostrat.org/api/v2/geologic_units/map...';
 
   try {
-    const res = await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&buffer=3`);
+    const res = await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}`);
     if (!res.ok) throw new Error('API returned ' + res.status);
     const data = await res.json();
     
@@ -1076,16 +1071,16 @@ async function queryKinMacrostrat(lat, lng) {
       document.getElementById('kInspUnitLith').textContent = `Lithology: ${u.lith || u.descrip || 'Crocker Formation / Turbidites / Accretionary complex'}`;
       document.getElementById('kInspUnitRef').textContent = `Ref: ${u.source_id ? 'Map Source #' + u.source_id : 'Macrostrat v2 Global Model'}`;
     } else {
-      document.getElementById('kInspUnitName').textContent = 'NW Sabah Fold-Thrust Province';
-      document.getElementById('kInspUnitAge').textContent = 'Oligocene to Recent (Deepwater Turbidite Sequences)';
-      document.getElementById('kInspUnitLith').textContent = 'Turbiditic sandstones, hemipelagic shales, and carbonate build-ups over oceanic basement.';
-      document.getElementById('kInspUnitRef').textContent = 'Source: Balaguru & Hall 2009 / PETRONAS MPM';
+      document.getElementById('kInspUnitName').textContent = 'No mapped unit at this point';
+      document.getElementById('kInspUnitAge').textContent = 'UNKNOWN (point)';
+      document.getElementById('kInspUnitLith').textContent = 'Macrostrat has no mapped unit here. Regional context only: deepwater turbidites and accretionary complex (Balaguru & Hall 2009 / PETRONAS MPM).';
+      document.getElementById('kInspUnitRef').textContent = 'Source: none at point · regional context: Balaguru & Hall 2009';
     }
   } catch(err) {
-    document.getElementById('kInspUnitName').textContent = 'NW Sabah Continental Margin';
-    document.getElementById('kInspUnitAge').textContent = 'Tertiary Turbidite Complex';
-    document.getElementById('kInspUnitLith').textContent = 'Deepwater turbidite channels and lobes (West Crocker & Stage IV plays).';
-    document.getElementById('kInspUnitRef').textContent = 'Local SOT Canon (wells.json)';
+    document.getElementById('kInspUnitName').textContent = 'UNKNOWN — pipe unavailable';
+    document.getElementById('kInspUnitAge').textContent = 'no measurement at this point';
+    document.getElementById('kInspUnitLith').textContent = 'Macrostrat did not answer (' + (err && err.message ? err.message : 'network error') + '). No unit is asserted for this point.';
+    document.getElementById('kInspUnitRef').textContent = 'Retry, or read the dossier prose above (regional context, not a point measurement).';
   }
 }
 

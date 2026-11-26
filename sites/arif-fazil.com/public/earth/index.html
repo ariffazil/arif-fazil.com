@@ -1381,7 +1381,7 @@ async function onRockClick({lat,lng}){
     <h3 style="color:#9a9aa8;font-weight:400">Asking ${lat.toFixed(2)}°, ${lng.toFixed(2)}°…</h3>`;
   wireClose();
   try{
-    const r=await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&buffer=3`);
+    const r=await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}`);
     const j=await r.json();
     const data=(j.success&&j.success.data)||[];
     const refs=(j.success&&j.success.refs)||{};

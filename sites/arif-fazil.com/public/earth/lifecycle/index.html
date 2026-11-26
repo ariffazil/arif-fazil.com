@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEOX Lifecycle Observability — Exploration to Abandonment</title>
+<meta name="description" content="Honest lifecycle coverage and live build-time telemetry of GEOX subsurface tools from Exploration through Abandonment / CCS-MRV.">
+<link rel="canonical" href="https://arif-fazil.com/earth/lifecycle/">
+<link rel="stylesheet" href="/_shared/design-system/tokens.css">
+<link rel="stylesheet" href="/earth/_shared/earth-shell.css">
+<link rel="stylesheet" href="/_shared/fed-nav.css">
+<style>
+:root { --canvas:#07090E; --ink:#EDEAE2; --muted:#c4beb4; --line:#2a3140; --card:#12161e; --ember:#E4572E; }
+body { margin:0; background:var(--canvas); color:var(--ink); font-family:"IBM Plex Sans",system-ui,sans-serif; line-height:1.5; }
+.wrap { max-width:1120px; margin:0 auto; padding:1rem 1rem 2.5rem; }
+.chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.8rem 0 1.2rem; }
+.chip { background:#19202c; border:1px solid #334155; border-radius:999px; padding:.25rem .7rem; font-size:.85rem; }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+table { width:100%; border-collapse:collapse; font-size:.92rem; min-width:820px; }
+th, td { border-bottom:1px solid var(--line); padding:.6rem .65rem; text-align:left; vertical-align:top; }
+thead th { background:#10141c; }
+.badge { display:inline-block; padding:.15rem .55rem; border-radius:999px; font-weight:700; font-size:.78rem; }
+.badge.built { background:#0f2922; color:#a7f3d0; border:1px solid #34d399; }
+.badge.partial { background:#2a2112; color:#fde68a; border:1px solid #fbbf24; }
+.badge.gap { background:#2f1318; color:#fecdd3; border:1px solid #fb7185; }
+footer { border-top:1px solid var(--line); padding:1rem; color:var(--muted); max-width:1120px; margin:0 auto; font-size:.9rem; }
+a { color:#f3c2b4; }
+</style>
+</head>
+<body>
+<header class="fed-navbar">
+  <a class="nav-brand" href="/">ARIF FAZIL</a>
+  <nav class="nav-links" aria-label="Site">
+    <a href="/earth/">Earth</a><a href="/words/">Words</a><a href="/world/">World</a><a href="/work/">Work</a>
+  </nav>
+</header>
+<main class="wrap">
+  <p style="font-family:monospace;font-size:.8rem;color:var(--muted);">GEOX · SUBSURFACE LIFECYCLE OBSERVABILITY</p>
+  <h1>What GEOX covers — and where the real gaps are</h1>
+  <p>Build-time snapshot from GEOX live status JSON (public-safe; zero proprietary subsurface data). Every lifecycle stage reports honest maturity, worked public benchmark, and known failure mode.</p>
+  <div class="chips" role="region" aria-label="Live GEOX status snapshot">
+    <span class="chip">GEOX SHA: <strong>geox-3f5f4c8eb</strong></span>
+    <span class="chip">Surface: <strong>v2026.10.03</strong></span>
+    <span class="chip">Live Tools: <strong>29</strong></span>
+    <span class="chip">Registry: <strong>PASS</strong></span>
+    <span class="chip">Source Drift: <strong>True</strong></span>
+    <span class="chip">Audited: <strong>2026-11-26</strong></span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Stage</th>
+          <th scope="col">Maturity</th>
+          <th scope="col">Live GEOX Tools</th>
+          <th scope="col">Last Tested</th>
+          <th scope="col">Worked Public Example</th>
+          <th scope="col">Known Failure Mode / Gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope='row'>Exploration</th><td><span class='badge built'>BUILT</span></td><td><code>geox_basin, geox_deep_time, geox_map, geox_spatial, geox_seismic_ingest, geox_seismic_interpret, geox_seismic_compute, geox_contrast_metabolize, geox_source, geox_observe, geox_paleobiodb_query, geox_prospect (screen), geox_glof</code></td><td>2026-11-26</td><td>NW Sabah regional transect T-KIN-XS-833 (GEBCO_2019 + published RF) &amp; F3 Netherlands 3D SEG-Y (CC-BY-SA, planned E2E)</td><td>Acoustic lookalike trap: altered volcaniclastics mimicking carbonate reefs; missing public 3D SEG-Y E2E CI run.</td></tr><tr><th scope='row'>Appraisal</th><td><span class='badge built'>BUILT</span></td><td><code>geox_well_ingest, geox_well_qc, geox_petrophysics, geox_geomechanics</code></td><td>2026-11-26</td><td>Equinor Volve &amp; FORCE 2020 (118 public wells) petrophysical QC</td><td>Silent datum shifts (KB/TVDSS), ×3.28084 metric/imperial unit corruption, 1e37 sentinels, cuttings-vs-SWC age inversions.</td></tr><tr><th scope='row'>Development</th><td><span class='badge partial'>PARTIAL</span></td><td><code>geox_grid, geox_resqml_io, geox_model, geox_well</code></td><td>2026-11-26</td><td>Public Volve structural grid &amp; RESQML schema validation</td><td>Thin well-planning and drilling-hazard evidence chain; heavy optional geomodel deps.</td></tr><tr><th scope='row'>Production</th><td><span class='badge partial'>PARTIAL</span></td><td><code>geox_temporal</code></td><td>2026-11-26</td><td>Public Volve production decline curve &amp; RRR time-series screening</td><td>No live production-data ingest or history-match feedback loop yet.</td></tr><tr><th scope='row'>Abandonment</th><td><span class='badge gap'>GAP</span></td><td><code>None dedicated (planned: geox_integrity mode + CCS-MRV seal verification)</code></td><td>2026-11-26</td><td>Planned: CO2 storage (CCS) seal-integrity &amp; P&amp;A barrier verification ledger</td><td>No dedicated P&amp;A / well-integrity / CCS-MRV tool yet; planned as a mode, not a new standalone tool.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<footer>
+  <nav aria-label="Related Earth pages">
+    <a href="/earth/">Earth</a> · <a href="/earth/kinabalu-cross-section.html">Sabah cross-section</a> · <a href="/earth/data/transects.json">Transects registry</a>
+  </nav>
+  <p>Build SHA: <code>c81c505e</code> · GEOX SHA: <code>geox-3f5f4c8eb</code> · Build date: <code>2026-11-26</code> · Last audited: <code>2026-11-26</code></p>
+  <p>Ditempa bukan diberi · © 2026 Muhammad Arif bin Fazil</p>
+</footer>
+</body>
+</html>

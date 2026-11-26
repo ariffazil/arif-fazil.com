@@ -48,6 +48,19 @@ h1 { font-size:clamp(1.7rem, 4vw, 2.45rem); line-height:1.15; margin:.1rem 0 .4r
 .badge-group { display:flex; flex-wrap:wrap; gap:.45rem; margin:.6rem 0 1rem; }
 .geo-badge { background:#19202c; border:1px solid #334155; color:#f1f5f9; font-size:.82rem; font-weight:600; padding:.25rem .65rem; border-radius:999px; }
 .geo-badge.accent { border-color:var(--ember); color:#f3c2b4; }
+.verdict-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.6rem 0 .9rem; }
+.vchip { display:inline-flex; align-items:center; gap:.4rem; padding:.3rem .75rem; border-radius:999px; font-size:.84rem; font-weight:700; }
+.vchip.measured { background:#0f2922; border:2px solid #34d399; color:#d1fae5; }
+.vchip.interpreted { background:#2a2112; border:2px dashed #fbbf24; color:#fef3c7; }
+.vchip.untested { background:#1f1f2b; border:2px dotted #a5b4fc; color:#e0e7ff; }
+.scope-strip { background:#111827; border:1px solid #475569; border-left:4px solid #fbbf24; border-radius:6px; padding:.55rem .85rem; margin:.6rem 0 .8rem; font-size:.9rem; color:#e2e8f0; }
+.mind-panel { display:none; background:#151c28; border:1px solid var(--ember); border-radius:8px; padding:.85rem 1rem; margin:.7rem 0; color:#edeae2; }
+.mind-panel.is-open { display:block; }
+.clarity-bar { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin:.6rem 0; }
+.clarity-bar button { min-height:44px; padding:.35rem .85rem; border-radius:8px; border:1px solid #94a3b8; background:#19202c; color:#f8fafc; font:inherit; font-size:.88rem; font-weight:650; cursor:pointer; }
+.clarity-bar button[aria-pressed="true"] { background:var(--ember); color:#1a0c08; border-color:var(--ember); }
+.true-scale-note { display:none; background:#fff7ed; color:#1c2430; border:1px solid #9a3412; border-radius:6px; padding:.45rem .7rem; margin:.4rem 0; font-size:.88rem; font-weight:600; }
+.true-scale-note.is-open { display:block; }
 .ctas { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem; }
 .btn { display:inline-flex; align-items:center; min-height:44px; padding:.45rem 1rem; border-radius:8px;
   text-decoration:none; font-weight:650; }
@@ -258,19 +271,33 @@ html.figure-only footer { display:none !important; }
 </nav>
 <main id="main">
   <header class="hero wrap">
-    <p class="kicker">NW SABAH · REGIONAL STRUCTURAL TRANSECT (T-KIN-XS-833)</p>
-    <h1>Sabah Trough & Northwest Borneo Margin</h1>
-    <p class="lede">Structural cross-section, foredeep flexure, and the extensional reactivation hypothesis across an 833 km regional transect.</p>
-    <p class="lede">Does deepwater accommodation in the ~2.9 km deep Sabah Trough record a younger Neogene extensional episode, or is it fully explained by inherited Paleogene rifting, foredeep plate bending, and mobile shale mechanics?</p>
+    <p class="kicker" data-en="NW SABAH · REGIONAL STRUCTURAL TRANSECT (T-KIN-XS-833)" data-bm="SABAH BARAT LAUT · KERATAN STRUKTUR SERANTAU (T-KIN-XS-833)">NW SABAH · REGIONAL STRUCTURAL TRANSECT (T-KIN-XS-833)</p>
+    <h1 data-en="What is under Kinabalu: root, slab, or neither?" data-bm="Apa di bawah Kinabalu: akar kerak, papak lautan, atau bukan kedua-duanya?">What is under Kinabalu: root, slab, or neither?</h1>
+    <p class="lede" data-en="832.84 km WGS84 Karney geodesic transect across NW Borneo: solid = measured, dashed = interpreted, hatched = unconstrained." data-bm="Transek geodesik Karney WGS84 sepanjang 832.84 km merentasi Borneo Barat Laut: padu = diukur, putus-putus = ditafsir, berlorek = tiada kekangan.">832.84 km WGS84 Karney geodesic transect across NW Borneo: solid = measured, dashed = interpreted, hatched = unconstrained.</p>
+    <div class="verdict-chips" role="region" aria-label="Epistemic verdict summary">
+      <span class="vchip measured">MEASURED: KMY 32.8±2.5 km · KINA 30–35 km (no 60 km root)</span>
+      <span class="vchip interpreted">INTERPRETED: 45–55 km slab remnant · Model C flexure</span>
+      <span class="vchip untested">UNTESTED: Offshore Moho (0–425 km) · Younger extension · Model A sills</span>
+    </div>
+    <div class="clarity-bar" role="toolbar" aria-label="Clarity controls">
+      <button type="button" id="btn-change-mind" aria-pressed="false" data-en="Show what would change my mind" data-bm="Tunjuk apa yang boleh ubah kesimpulan">Show what would change my mind</button>
+      <button type="button" id="btn-lang" aria-pressed="false">BM / EN</button>
+      <a class="btn primary" href="#section" data-en="Explore the cross-section" data-bm="Lihat keratan rentas">Explore the cross-section</a>
+      <a class="btn ghost" href="#matrix" data-en="Evidence matrix" data-bm="Matriks bukti">Evidence matrix</a>
+    </div>
+    <div id="change-mind-panel" class="mind-panel" role="region" aria-label="Falsifiers that would change conclusions">
+      <strong>What would change our mind (decisive falsifiers):</strong>
+      <ul>
+        <li><strong>Crocker root (&gt;42 km):</strong> Georeferenced on-line RF stations directly on T-KIN-XS-833 measuring Moho &gt;42 km beneath the Crocker axis (currently falsified by KMY 32.8±2.5 km &amp; KINA 30–35 km).</li>
+        <li><strong>Younger extension (<code>CL-XS-YOUNGER-EXT</code>):</strong> Calibrated syn-growth expansion ratios across dated DRU horizons + SWC/core nannofossil ranges + balanced restoration showing extension beyond Model C flexure.</li>
+        <li><strong>Offshore sills (Model A):</strong> Core petrography or thermal maturity anomalies exceeding burial profile across trough-flank anomalies.</li>
+      </ul>
+    </div>
     <div class="badge-group" role="region" aria-label="Transect specifications">
       <span class="geo-badge accent">Transect T-KIN-XS-833 · 832.84 km geodesic</span>
       <span class="geo-badge">11 geodetic stations</span>
       <span class="geo-badge">Dual scale: 17.2× VE (0–15 km) · 3.2× VE (15–60 km)</span>
       <span class="geo-badge">Mt. Kinabalu chainage: 484.9 km (4,095 m)</span>
-    </div>
-    <div class="ctas">
-      <a class="btn primary" href="#section">Explore the cross-section</a>
-      <a class="btn ghost" href="#matrix">Examine evidence matrix</a>
     </div>
   </header>
 
@@ -344,8 +371,12 @@ html.figure-only footer { display:none !important; }
       <span class="pl pl-young"> younger-extension diagnostic</span>
     </p>
 
+    <div class="scope-strip" role="note">
+      <strong>Scope Bridge (INFERRED):</strong> T-KIN-XS-833 is a regional transect crossing the coast at Kota Kinabalu (5.98°N). Per Morley et al. (2023), the Northern Sabah–Pagasa mobile shale canopy (Model B) dies out southward near ~6.0°N — projecting Model B onto this transect is an <strong>inferred along-strike bridge</strong>, not local calibration.
+    </div>
+
     <div class="ve-callout" role="note">
-      <strong>Structural Dip & Vertical Exaggeration Guide:</strong>
+      <strong>Structural Dip &amp; Vertical Exaggeration Guide:</strong>
       <br>
       The section employs a dual vertical scale separated at 15 km depth: <strong>17.2× VE</strong> in the upper crust (0–15 km) and <strong>3.2× VE</strong> in the deeper lithosphere (15–60 km).
       Because of the 17.2× upper exaggeration, gentle regional structural dips of <strong>4°–6° plot visually at 50°–61° apparent dip</strong>!
@@ -356,8 +387,10 @@ html.figure-only footer { display:none !important; }
       <button type="button" id="zoom-in" aria-label="Zoom in detailed cross-section">Zoom in</button>
       <button type="button" id="zoom-out" aria-label="Zoom out detailed cross-section">Zoom out</button>
       <button type="button" id="zoom-reset" aria-label="Reset zoom level">Reset</button>
-      <span id="zoom-label">100%</span>
+      <button type="button" id="btn-true-scale" aria-pressed="false" aria-label="Toggle true-scale 1:1 preview">True scale 1:1</button>
+      <span id="zoom-label">100% · VE 17.2× / 3.2×</span>
     </div>
+    <div id="true-scale-note" class="true-scale-note" role="status">True-scale 1:1 mode active (compressed vertically by 17.2×): at true Earth aspect ratio (833 km wide × 60 km deep), the 2.9 km trough and 4°–6° regional dips are almost flat!</div>
     <div class="pan" id="pan" tabindex="0" role="region" aria-label="Detailed regional cross-section. Scroll sideways.">
       <svg id="xs" class="detail" role="img" aria-labelledby="sec-title sec-desc" viewBox="0 0 1480 960" width="1480" height="960">
 <title id="sec-title">Schematic cross-section from the Dangerous Grounds to the Sulu Sea</title>
@@ -562,7 +595,7 @@ html.figure-only footer { display:none !important; }
     <div id="notes">
       <article id="e1" class="ev">
         <h3>1. Dangerous Grounds: Inherited thinned continental margin</h3>
-        <p>The Dangerous Grounds represent attenuated continental lithosphere rifted during the Paleogene opening of the South China Sea basin. Horst-and-graben blocks are draped by syn-rift and post-rift sediments, capped by Miocene carbonate platforms (e.g. Layang-Layang atoll). High-velocity buildups along the trough northwest flank include both Oligo-Miocene carbonate platforms and altered volcaniclastic lookalikes whose velocity stiffness can mimic reefal limestone on reflection seismic.</p>
+        <p>Attenuated continental lithosphere rifted during Paleogene South China Sea opening, draped by syn-rift and post-rift strata. High-velocity buildups along the trough NW flank are non-unique on seismic — evaluate at least <strong>three rival hypotheses</strong>: (H1) <em>Oligo-Miocene carbonate platform</em> (falsifier: low PEF/high clay-OH or volcaniclastic cuttings); (H2) <em>altered volcaniclastic/tuffaceous lookalike</em> (falsifier: clean limestone wireline/core matrix); (H3) <em>local basement horst/igneous intrusion</em> (falsifier: stratified internal seismic reflectors and normal burial thermal maturity).</p>
         <dl>
           <dt>Observational status</dt><dd>Constrained by regional 2D/3D reflection seismic and ocean drilling (Hinz &amp; Schlüter 1985; Hutchison 2005).</dd>
           <dt>Geographic scope</dt><dd>Dangerous Grounds western margin segment (0–242 km geodesic chainage).</dd>
@@ -594,11 +627,11 @@ html.figure-only footer { display:none !important; }
 
       <article id="e4" class="ev">
         <h3>4. Extensional Reactivation Hypothesis: Seismic fault growth vs flexural bending</h3>
-        <p>Author-reported 3D seismic observations on select dip lines reveal normal faults with apparent syn-growth stratigraphic expansion, motivating an <strong>OPEN / WORKING HYPOTHESIS</strong> (<code>CL-XS-YOUNGER-EXT</code>) for a younger post-spreading extensional pulse. Crucially, normal faulting in this structural position must be weighed against the baseline null hypothesis — <strong>Model C (foredeep flexural bending)</strong> — because downward flexure of a lower plate naturally generates outer-trench-slope normal faults without requiring regional plate-scale extension. Fault-trace geometry or fault-type counts alone cannot prove regional extension.</p>
+        <p>Author-reported 3D seismic observations on select dip lines reveal normal faults with apparent syn-growth stratigraphic expansion, motivating an <strong>OPEN / WORKING HYPOTHESIS</strong> (<code>CL-XS-YOUNGER-EXT</code>) for a younger post-spreading extensional pulse. Crucially, normal faulting in this structural position must be weighed against the baseline null hypothesis — <strong>Model C (foredeep flexural bending)</strong> — because downward flexure of a lower plate naturally generates outer-trench-slope normal faults without requiring regional plate-scale extension. <strong>Guard:</strong> software-default NORMAL is not proof of extension; fault-trace geometry or attribute counts alone cannot settle regional kinematics.</p>
         <dl>
-          <dt>Observational status</dt><dd>OPEN / WORKING HYPOTHESIS; requires quantitative syn-growth expansion ratios, independent biostratigraphy (distinguishing cuttings LADs from SWC/core), calibrated time–depth conversion, and balanced strain restoration.</dd>
+          <dt>Observational status</dt><dd>OPEN / WORKING HYPOTHESIS; requires quantitative syn-growth expansion ratios, independent biostratigraphy (nannofossil NN-zone ranges, distinguishing cuttings LADs from SWC/core), calibrated time–depth conversion, and balanced strain restoration.</dd>
           <dt>Geographic scope</dt><dd>Sabah Trough flank and outer toe-thrust margin.</dd>
-          <dt>Critical test</dt><dd>Detailed biostratigraphic dating and horizon-thickness restoration of syn-growth vs post-growth strata across the composite Deep Regional Unconformity (DRU, ~12–13 Ma).</dd>
+          <dt>Critical test</dt><dd>Detailed biostratigraphic dating (NN-zone ranges, not single points) and horizon-thickness restoration of syn-growth vs post-growth strata across the diachronous, composite Deep Regional Unconformity (DRU, 11.7–13.77 Ma).</dd>
         </dl>
       </article>
 
@@ -720,7 +753,7 @@ html.figure-only footer { display:none !important; }
 
     <details data-stage="2">
       <summary>Stage 2: Early–Middle Miocene collision, margin loading &amp; foredeep flexure</summary>
-      <p>Collision of the Dangerous Grounds with the Crocker accretionary wedge (<strong>BMU / TCU, ~23–24 Ma</strong>; Lunt 2022 JAES v.230) separated Paleogene Crocker/syn-rift strata from Neogene wedge accommodation and terminated proto-South China Sea subduction. Subsequent Middle Miocene margin loading and flexural downwarping developed the composite <strong>Deep Regional Unconformity (DRU, ~12–13 Ma; bracket 11.7–13.77 Ma</strong>; Lunt 2022 BGSM 74; Morley et al. 2023 — <em>"mixtures of conformable regions together with local unconformities"</em>) at the intra-Middle Miocene Stage III/IV boundary, explicitly distinct (~3.5–4 Myr younger) from the Sarawak MMU (~16 Ma), alongside outer-trench flexural normal faulting. In northern Sabah, mobile-shale canopy coalescence peaked at <strong>UIU (~10.5 Ma</strong>, &lt;0.1 Myr burst) and was capped by <strong>SRU (~8.5–9 Ma)</strong> (Morley et al. 2023).</p>
+      <p>Collision of the Dangerous Grounds with the Crocker accretionary wedge (<strong>BMU / TCU, ~23–24 Ma</strong>; Lunt 2022 JAES v.230) separated Paleogene Crocker/syn-rift strata from Neogene wedge accommodation and terminated proto-South China Sea subduction. Subsequent Middle Miocene margin loading developed the <strong>diachronous, composite Deep Regional Unconformity (DRU, 11.7–13.77 Ma; nannofossil NN6–NN7 range, not a single collision datum</strong>; Lunt 2022 BGSM 74; Morley et al. 2023 — <em>"mixtures of conformable regions together with local unconformities"</em>) at the intra-Middle Miocene Stage III/IV boundary, ~3.5–4 Myr younger than Sarawak MMU (~16 Ma). In northern Sabah, mobile-shale canopy coalescence peaked at <strong>UIU (~10.5 Ma</strong>, &lt;0.1 Myr burst) and was capped by <strong>SRU (~8.5–9 Ma)</strong> (Morley et al. 2023).</p>
     </details>
 
     <details data-stage="3">
@@ -921,11 +954,13 @@ html.figure-only footer { display:none !important; }
     <a href="/earth/">Earth</a>
     <a href="/earth/kinabalu-basin/">Kinabalu Basin</a>
     <a href="/earth/sabah-observatory/">Sabah observatory</a>
+    <a href="/earth/lifecycle/">GEOX lifecycle</a>
     <a href="/earth/data/claims_ledger.json">Claims ledger</a>
     <a href="/earth/data/transects.json">Transects registry</a>
+    <a href="#backend-audit">Public errata &amp; changelog</a>
   </nav>
-  <p>Ditempa bukan diberi</p>
-  <p>© 2026 Muhammad Arif bin Fazil</p>
+  <p>Build SHA: <code>site/earth-clarity</code> · Build date: <code>2026-11-26</code> · Last audited: <code>2026-11-26</code></p>
+  <p>Ditempa bukan diberi · © 2026 Muhammad Arif bin Fazil</p>
 </footer>
 <script>
 (function () {
@@ -985,9 +1020,37 @@ html.figure-only footer { display:none !important; }
   var zin = document.getElementById("zoom-in");
   var zout = document.getElementById("zoom-out");
   var zrs = document.getElementById("zoom-reset");
+  var bts = document.getElementById("btn-true-scale");
+  var tsn = document.getElementById("true-scale-note");
+  var trueScale = false;
   if (zin) zin.addEventListener("click", function () { zoom = Math.min(2.5, zoom + 0.25); apply(); });
   if (zout) zout.addEventListener("click", function () { zoom = Math.max(1, zoom - 0.25); apply(); });
-  if (zrs) zrs.addEventListener("click", function () { zoom = 1; apply(); });
+  if (zrs) zrs.addEventListener("click", function () { zoom = 1; trueScale = false; if (svg) svg.style.transform = ""; if (bts) bts.setAttribute("aria-pressed", "false"); if (tsn) tsn.classList.remove("is-open"); apply(); });
+  if (bts) bts.addEventListener("click", function () {
+    trueScale = !trueScale;
+    bts.setAttribute("aria-pressed", String(trueScale));
+    if (tsn) tsn.classList.toggle("is-open", trueScale);
+    if (svg) {
+      svg.style.transformOrigin = "top left";
+      svg.style.transform = trueScale ? "scaleY(0.18)" : "";
+    }
+    if (label) label.textContent = Math.round(zoom * 100) + "% · " + (trueScale ? "True scale ~1:1 preview" : "VE 17.2× / 3.2×");
+  });
+  var bcm = document.getElementById("btn-change-mind");
+  var cmp = document.getElementById("change-mind-panel");
+  if (bcm && cmp) bcm.addEventListener("click", function () {
+    var open = cmp.classList.toggle("is-open");
+    bcm.setAttribute("aria-pressed", String(open));
+  });
+  var blang = document.getElementById("btn-lang");
+  var lang = "en";
+  if (blang) blang.addEventListener("click", function () {
+    lang = lang === "en" ? "bm" : "en";
+    blang.setAttribute("aria-pressed", String(lang === "bm"));
+    document.querySelectorAll("[data-en][data-bm]").forEach(function (el) {
+      el.textContent = el.getAttribute("data-" + lang);
+    });
+  });
   var dlg = document.getElementById("drawer");
   var body = document.getElementById("drawer-body");
   document.querySelectorAll("[data-open]").forEach(function (node) {

@@ -1,7 +1,7 @@
 {
   "$schema_note": "Canonical transect registry for the EARTH observatory pages. Every public cross-section MUST be registered here before it is cited by another page. One row per displayed line. Coordinates are endpoint/pick coordinates in WGS84; chainage is recomputed on the great circle unless stated otherwise.",
   "purpose": "Prevent silent cross-domain transfer: a transect may only calibrate interpretations inside its geographic_domain. Outside that domain it is REGIONAL CONTEXT or MECHANICAL ANALOGUE ONLY, never local calibration.",
-  "last_updated": "2026-11-25",
+  "last_updated": "2026-11-26",
   "domain_tags": {
     "LOCAL_CALIBRATION": "may set geometry, depth or timing for features inside geographic_domain",
     "REGIONAL_CONTEXT": "frames the tectonic setting; no numeric transfer",
@@ -21,7 +21,7 @@
       "azimuth_by_segment": "dog-leg — not a single azimuth; segment azimuths published on the page footer",
       "vertical_exaggeration": "Computed from SVG scale bars on kinabalu-cross-section.html: about 17.2× above the 15 km break and about 3.2× below (1380 px / 833 km; 560 px / 19.6 km above; 240 px / 45 km below). Schematic, not a balanced restoration.",
       "interpretation_scale": "regional (~10 km features)",
-      "geometry_lineage": "hand-plotted interpretive schematic from published values; NOT machine-derived from survey data; no Moho drawn between 230–540 km chainage (data gap stated on page). 2026-11-25 rebuild: candidate intrusions are off until selected; vertical exaggeration is computed from the scale bars rather than typed as a fixed claim.",
+      "geometry_lineage": "hand-plotted interpretive schematic from published values; NOT machine-derived from survey data; offshore (0–425 km) and eastern (600–833 km) Moho intervals unconstrained by on-line RF stations (KMY 32.8±2.5 km, KINA 30–35 km, SBC5/6 24–25 km vs 34–38 km LVZ plotted). 2026-11-26 audit patch: true WGS84 Karney geodesic km spans, DRU 12–13 Ma vs BMU/TCU 23–24 Ma restored, unlocated 60 km Crocker Moho removed, trough-flank buildup dual-labeled.",
       "data_sources": [
         "GEBCO 2026 (bathymetry context)",
         "published literature values (see page references)"

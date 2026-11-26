@@ -308,14 +308,14 @@ html.figure-only footer { display:none !important; }
 <rect x="139.7" y="124.8" width="32.3" height="73.8" fill="none" stroke="#7d868f" stroke-dasharray="3 3"/>
 </svg>
       <ol class="route">
-        <li>1. Dangerous Grounds (0–385 km)</li>
-        <li>2. Sabah Trough (385–510 km)</li>
-        <li>3. Fold-thrust belt (510–690 km)</li>
-        <li>4. Shelf and coast (690–785 km)</li>
-        <li>5. Crocker hinterland (785–860 km)</li>
-        <li>6. Kinabalu (484.9 km chainage, 4,095 m)</li>
-        <li>7. Central Sabah & Sandakan Basin (860–1150 km)</li>
-        <li>8. Sulu Sea (1150–1454 km SVG)</li>
+        <li>1. Dangerous Grounds (0–242 km)</li>
+        <li>2. Sabah Trough (242–290 km)</li>
+        <li>3. Fold-thrust belt (290–372 km)</li>
+        <li>4. Shelf and coast (372–430 km)</li>
+        <li>5. Crocker hinterland (430–540 km)</li>
+        <li>6. Mt. Kinabalu (484.9 km chainage, 4,095 m)</li>
+        <li>7. Central Sabah &amp; Sandakan Basin (540–716 km)</li>
+        <li>8. Sulu Sea (716–833 km)</li>
       </ol>
       <p class="pan-hint">Scroll sideways on mobile devices to inspect Sandakan and the Sulu Sea. Use the zoom controls to inspect structural detail.</p>
     </div>
@@ -362,7 +362,7 @@ html.figure-only footer { display:none !important; }
     <div class="pan" id="pan" tabindex="0" role="region" aria-label="Detailed regional cross-section. Scroll sideways.">
       <svg id="xs" class="detail" role="img" aria-labelledby="sec-title sec-desc" viewBox="0 0 1480 960" width="1480" height="960">
 <title id="sec-title">Schematic cross-section from the Dangerous Grounds to the Sulu Sea</title>
-<desc id="sec-desc">A schematic dog-leg. The 833 km end label is chainage on this drawing, not a surveyed length. The seabed, the sedimentary wedge and the inherited crust are a simplified schematic. Hypothetical intrusions are off until selected. No Moho is drawn from 230 to 540 km. Under the trough and the wedge, above 15 km, crust is hatched as unresolved and is not drawn. The 15 km line is a scale break, not a contact. This is not a balanced restoration.</desc>
+<desc id="sec-desc">A schematic dog-leg along WGS84 Karney geodesic chainage (0–832.84 km). The seabed, the sedimentary wedge and the inherited crust are a simplified schematic. Hypothetical intrusions are off until selected. Offshore Moho (0–425 km) and eastern Moho (600–833 km) are unconstrained by on-line receiver-function stations; on-line picks anchor KMY (32.8 ± 2.5 km, km 429.9), KINA (30–35 km, km 486.7), and Central Sabah (SBC5/SBC6 24–25 km vs Cornwell 34–38 km LVZ). Under the trough and the wedge, above 15 km, crust is hatched as unresolved and is not drawn. The 15 km line is a scale break, not a contact. This is not a balanced restoration.</desc>
 <defs>
 <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
 <line x1="0" y1="0" x2="0" y2="8" stroke="#7d868f" stroke-width="1.4" />
@@ -374,12 +374,13 @@ html.figure-only footer { display:none !important; }
 <pattern id="sill" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" stroke="#c45c3e" stroke-width="0.8" fill="none" /></pattern></defs>
 <rect x="0" y="0" width="1480" height="638.0" fill="#f3efe6" />
 <rect x="0" y="638.0" width="1480" height="322.0" fill="#e6e0d4" />
-<g id="unknown-domains" class="base"><rect x="455.0" y="638.0" width="513.6" height="240.0" fill="url(#hatch)" opacity="0.55" />
+<g id="unknown-domains" class="base"><rect x="74.0" y="638.0" width="704.2" height="240.0" fill="url(#hatch)" opacity="0.45" />
+<rect x="1068.0" y="638.0" width="386.0" height="240.0" fill="url(#hatch)" opacity="0.45" />
 <polygon points="508.0,335.1 554.4,352.3 587.6,349.4 637.3,352.3 691.9,380.9 720.1,398.0 761.5,366.6 789.7,295.1 761.5,438.0 769.8,638.0 508.0,638.0" fill="url(#hatch)" stroke="none" fill-opacity="0.62" />
 <polygon points="1382.8,538.0 1454.0,538.0 1454.0,638.0 1382.8,638.0" fill="url(#hatch)" stroke="none" fill-opacity="0.62" />
-<text x="488.2" y="760.7" fill="#1c2430" font-size="14" font-family="Liberation Sans, sans-serif">No Moho drawn from 230 to 540 km</text>
+<text x="426.0" y="760.7" fill="#1c2430" font-size="13" font-family="Liberation Sans, sans-serif" text-anchor="middle">No on-line RF Moho constraint (0–425 km offshore)</text>
 <text x="571.0" y="546.6" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Unresolved — crust not drawn</text>
-<text x="488.2" y="784.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Moho geometry not drawn / not constrained here</text></g><g id="baseline-substrate" class="base"><polygon points="74.0,323.7 115.4,300.9 143.6,366.6 190.0,295.1 219.8,375.1 259.5,312.3 304.3,295.1 325.8,369.4 358.9,306.6 385.5,386.6 430.2,329.4 463.3,409.4 508.0,438.0 508.0,638.0 74.0,638.0" fill="#c4a07c" stroke="#5c5348" stroke-width="0.6"><title>Inherited continental crust under the Dangerous Grounds. Schematic.</title></polygon>
+<text x="1261.0" y="760.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="middle">No on-line RF Moho (600–833 km)</text></g><g id="baseline-substrate" class="base"><polygon points="74.0,323.7 115.4,300.9 143.6,366.6 190.0,295.1 219.8,375.1 259.5,312.3 304.3,295.1 325.8,369.4 358.9,306.6 385.5,386.6 430.2,329.4 463.3,409.4 508.0,438.0 508.0,638.0 74.0,638.0" fill="#c4a07c" stroke="#5c5348" stroke-width="0.6"><title>Inherited continental crust under the Dangerous Grounds. Schematic.</title></polygon>
 <polygon points="786.4,209.4 802.9,206.6 827.8,192.3 852.6,175.1 867.5,158.0 887.4,155.1 910.6,169.4 935.5,180.9 968.6,189.4 981.9,295.1 968.6,638.0 769.8,638.0 761.5,438.0 789.7,295.1" fill="#b08968" stroke="#5c5348" stroke-width="0.6"><title>Crocker hinterland, folded deep-marine rocks. Schematic.</title></polygon>
 <polygon points="860.9,166.6 867.5,158.0 877.5,92.4 887.4,155.1 895.7,180.9 902.3,295.1 897.4,438.0 879.1,480.9 857.6,438.0 852.6,295.1" fill="#c98490" stroke="#5c5348" stroke-width="0.6"><title>Mount Kinabalu pluton. Not connected offshore.</title></polygon>
 <polygon points="968.6,189.4 1015.0,198.0 1068.0,192.3 1117.7,200.9 1154.1,208.0 1167.4,209.4 1180.7,266.6 1180.7,323.7 1167.4,638.0 968.6,638.0 981.9,295.1" fill="#a89880" stroke="#5c5348" stroke-width="0.6"><title>Central Sabah. Schematic.</title></polygon>
@@ -396,7 +397,7 @@ html.figure-only footer { display:none !important; }
 <polygon points="176.7,298.0 203.2,300.9 198.2,272.3 183.3,272.3" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate platform on a block crest. Schematic.</title></polygon>
 <polygon points="286.1,302.3 322.5,308.0 307.6,210.9 301.0,210.9" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Layang-Layang atoll, still near sea level. Schematic.</title></polygon>
 <polygon points="347.3,308.0 372.2,310.9 365.6,283.7 352.3,283.7" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate platform on a block crest. Schematic.</title></polygon>
-<polygon points="468.3,338.0 498.1,340.9 491.5,312.3 474.9,312.3" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>Carbonate buildup on the trough northwest flank. A drilled example is public. Coordinates are not repeated here.</title></polygon>
+<polygon points="468.3,338.0 498.1,340.9 491.5,312.3 474.9,312.3" fill="url(#carb)" stroke="#5c5348" stroke-width="0.6"><title>High-velocity buildup on the trough northwest flank: includes both Oligo-Miocene carbonate platforms and altered volcaniclastic lookalikes (velocity stiffness mimics reefal limestone on seismic).</title></polygon>
 <polygon points="508.0,292.3 537.9,286.6 554.4,282.3 554.4,352.3 508.0,335.1" fill="#e4d2b0" stroke="#5c5348" stroke-width="0.6"><title>Sabah Trough fill. Schematic.</title></polygon>
 <polygon points="554.4,282.3 571.0,275.1 612.4,263.7 645.5,252.3 670.4,240.9 691.9,213.7 691.9,380.9 637.3,352.3 587.6,349.4 554.4,352.3" fill="#cbb892" stroke="#5c5348" stroke-width="0.6"><title>Fold-thrust belt fill above a shale-prone wedge. Schematic.</title></polygon>
 <polygon points="691.9,213.7 736.7,211.7 786.4,209.4 789.7,295.1 761.5,366.6 720.1,398.0 691.9,380.9" fill="#dcc7a4" stroke="#5c5348" stroke-width="0.6"><title>Shelf and coastal clastics. Schematic.</title></polygon>
@@ -417,15 +418,21 @@ html.figure-only footer { display:none !important; }
 <line x1="74.0" y1="209.4" x2="786.4" y2="209.4" stroke="#35586c" stroke-width="1" stroke-dasharray="2 3" opacity="0.8" />
 </g><g id="regional-anchors" class="base"><polygon points="74.0,691.3 322.5,675.3 455.0,654.0 455.0,638.0 74.0,638.0" fill="#c4a07c" opacity="0.35" stroke="none" />
 <polyline points="74.0,691.3 322.5,675.3 455.0,654.0" fill="none" stroke="#243044" stroke-width="2" stroke-dasharray="7 5" />
-<polyline points="827.8,867.3 885.8,878.0 927.2,846.0" fill="none" stroke="#243044" stroke-width="2.4" stroke-dasharray="2 4" />
-<line x1="1068.0" y1="678.0" x2="1068.0" y2="694.0" stroke="#243044" stroke-width="2.4" />
-<line x1="1062.0" y1="686.0" x2="1074.0" y2="686.0" stroke="#243044" stroke-width="2.4" />
+<line x1="786.4" y1="719.6" x2="786.4" y2="746.3" stroke="#243044" stroke-width="2" />
 <circle cx="786.4" cy="732.9" r="5" fill="#f3efe6" stroke="#243044" stroke-width="2" />
+<line x1="880.4" y1="718.0" x2="880.4" y2="744.7" stroke="#243044" stroke-width="2.4" />
+<circle cx="880.4" cy="731.3" r="5" fill="#f3efe6" stroke="#243044" stroke-width="2" />
+<line x1="1012.8" y1="680.7" x2="1012.8" y2="702.0" stroke="#243044" stroke-width="2" />
+<circle cx="1012.8" cy="691.3" r="4" fill="#f3efe6" stroke="#243044" stroke-width="2" />
+<line x1="1042.2" y1="675.3" x2="1042.2" y2="696.7" stroke="#243044" stroke-width="2" />
+<circle cx="1042.2" cy="686.0" r="4" fill="#f3efe6" stroke="#243044" stroke-width="2" />
+<rect x="978.0" y="739.3" width="84.0" height="21.4" fill="none" stroke="#243044" stroke-width="1.4" stroke-dasharray="4 3" />
 <polyline points="1382.8,509.4 1454.0,538.0" fill="none" stroke="#243044" stroke-width="2" stroke-dasharray="2 3" />
-<text x="206.5" y="681.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Schematic Moho — Dangerous Grounds only</text>
-<text x="827.8" y="857.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Crocker about 60 km — unattached</text>
-<text x="1087.9" y="686.0" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Central Sabah about 24 km — unattached</text>
-<text x="799.6" y="719.1" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">KMY station only</text>
+<text x="206.5" y="681.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif">Schematic Moho — Dangerous Grounds only (no RF)</text>
+<text x="795.0" y="714.0" fill="#1c2430" font-size="11.5" font-family="Liberation Sans, sans-serif">KMY 32.8±2.5 km</text>
+<text x="890.0" y="736.0" fill="#1c2430" font-size="11.5" font-family="Liberation Sans, sans-serif">KINA 30–35 km</text>
+<text x="1028.0" y="669.0" fill="#1c2430" font-size="11.5" font-family="Liberation Sans, sans-serif" text-anchor="middle">SBC5/6 24–25 km</text>
+<text x="1020.0" y="775.0" fill="#1c2430" font-size="11" font-family="Liberation Sans, sans-serif" text-anchor="middle">vs LVZ 34–38 km</text>
 <text x="1432.5" y="532.3" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">Sulu oceanic base — local</text>
 <text x="1432.5" y="563.7" fill="#1c2430" font-size="12" font-family="Liberation Sans, sans-serif" text-anchor="end">not joined west</text>
 </g><g class="opt opt-c" id="process-c-underthrust">
@@ -540,7 +547,7 @@ html.figure-only footer { display:none !important; }
       <li><span class="sw" style="background:#b08968"></span> Crocker turbidite accretionary complex</li>
       <li><span class="sw" style="background:#7f9aa8"></span> Sulu Sea oceanic crust</li>
       <li><span class="sw" style="background:#f3efe6;border-style:dashed"></span> Dashed line — interpreted structural contact</li>
-      <li><span class="sw" style="background:repeating-linear-gradient(90deg,#d9d3c8,#d9d3c8 2px,#7d868f 2px,#7d868f 3px)"></span> Hatch — unconstrained Moho / deep crust (230–540 km gap)</li>
+      <li><span class="sw" style="background:repeating-linear-gradient(90deg,#d9d3c8,#d9d3c8 2px,#7d868f 2px,#7d868f 3px)"></span> Hatch — unconstrained Moho / deep crust (0–425 km &amp; 600–833 km RF gaps)</li>
       <li><span class="sw" style="background:#f3efe6;border:2px dashed #c45c3e"></span> Red dashes — Model A thermal plumbing hypothesis (off by default)</li>
     </ul>
 
@@ -556,31 +563,31 @@ html.figure-only footer { display:none !important; }
     <div id="notes">
       <article id="e1" class="ev">
         <h3>1. Dangerous Grounds: Inherited thinned continental margin</h3>
-        <p>The Dangerous Grounds represent attenuated continental lithosphere rifted during the Paleogene opening of the South China Sea basin. Horst-and-graben blocks are draped by syn-rift and post-rift sediments, capped by Miocene carbonate platforms (e.g. Layang-Layang atoll).</p>
+        <p>The Dangerous Grounds represent attenuated continental lithosphere rifted during the Paleogene opening of the South China Sea basin. Horst-and-graben blocks are draped by syn-rift and post-rift sediments, capped by Miocene carbonate platforms (e.g. Layang-Layang atoll). High-velocity buildups along the trough northwest flank include both Oligo-Miocene carbonate platforms and altered volcaniclastic lookalikes whose velocity stiffness can mimic reefal limestone on reflection seismic.</p>
         <dl>
-          <dt>Observational status</dt><dd>Constrained by regional 2D/3D reflection seismic and ocean drilling (Hinz & Schlüter 1985; Hutchison 2005).</dd>
-          <dt>Geographic scope</dt><dd>Dangerous Grounds western margin segment (0–385 km chainage).</dd>
+          <dt>Observational status</dt><dd>Constrained by regional 2D/3D reflection seismic and ocean drilling (Hinz &amp; Schlüter 1985; Hutchison 2005).</dd>
+          <dt>Geographic scope</dt><dd>Dangerous Grounds western margin segment (0–242 km geodesic chainage).</dd>
           <dt>Geological timing</dt><dd>Paleogene rifting (~45–32 Ma) terminating prior to or coeval with seafloor spreading cessation (~16–15 Ma).</dd>
           <dt>Key literature</dt><dd>Hinz, K. and Schlüter, H.U. (1985), Energy 10: 297–315.</dd>
         </dl>
       </article>
 
       <article id="e2" class="ev">
-        <h3>2. Sabah Trough: Accommodation mechanisms & bathymetric deep</h3>
-        <p>The Sabah Trough is an enigmatic ~2.9 km deep bathymetric depression. Primary models for accommodation include: (1) Foredeep flexural down-bending under the load of the adjacent Crocker Range and Northwest Borneo fold-thrust wedge; (2) Residual bathymetric low inherited from oceanic-continental transition; and (3) Neogene extensional reactivation creating tectonic space.</p>
+        <h3>2. Sabah Trough: Accommodation mechanisms &amp; bathymetric deep</h3>
+        <p>The Sabah Trough is an enigmatic ~2.9–3.0 km deep bathymetric depression (GEBCO_2019 trough floor −3,015.7 m at km 241.7). Primary models for accommodation include: (1) Foredeep flexural down-bending under the load of the adjacent Crocker Range and Northwest Borneo fold-thrust wedge; (2) Residual bathymetric low inherited from oceanic-continental transition; and (3) Neogene extensional reactivation creating tectonic space.</p>
         <dl>
           <dt>Observational status</dt><dd>Water depth measured by multibeam bathymetry and seismic reflection; structural accommodation mechanism is interpretive.</dd>
-          <dt>Geographic scope</dt><dd>Sabah Trough axial depression (385–510 km chainage).</dd>
+          <dt>Geographic scope</dt><dd>Sabah Trough axial depression (242–290 km geodesic chainage).</dd>
           <dt>Geodynamic alternatives</dt><dd>Flexural bending predicts asymmetric deepening toward the fold-thrust front. In contrast, extensional reactivation predicts symmetric syn-growth wedges.</dd>
         </dl>
       </article>
 
       <article id="e3" class="ev">
-        <h3>3. Fold-Thrust Belt: Shortening, mobile shale canopy & gravity spreading</h3>
-        <p>The offshore Northwest Borneo toe-thrust system is dominated by gravity-driven detached fold-and-thrust deformation above an overpressured Middle Miocene shale detachment (Pagasa/Setap Formation). Seismic studies document shale diapirs, mud volcanoes, and mini-basins, demonstrating that shallow shortening is driven by sedimentary overburden and slope gradient rather than pure crustal plate convergence.</p>
+        <h3>3. Fold-Thrust Belt: Shortening, mobile shale canopy &amp; gravity spreading</h3>
+        <p>The offshore Northwest Borneo toe-thrust system is dominated by gravity-driven detached fold-and-thrust deformation above an overpressured Middle Miocene shale detachment (Pagasa/Setap Formation, scoped primarily to Northern Sabah per Morley et al. 2023). Seismic studies document shale diapirs, mud volcanoes, and mini-basins, demonstrating that shallow shortening is driven by sedimentary overburden and slope gradient rather than pure crustal plate convergence.</p>
         <dl>
           <dt>Observational status</dt><dd>Imaged in high-resolution 3D seismic reflection surveys (Morley et al. 2023; King et al. 2010).</dd>
-          <dt>Geographic scope</dt><dd>Outboard fold-thrust belt (510–690 km chainage).</dd>
+          <dt>Geographic scope</dt><dd>Outboard fold-thrust belt (290–372 km geodesic chainage).</dd>
           <dt>Key literature</dt><dd>Morley, C.K. et al. (2023), Geosphere 19(1): 291; King, R.C. et al. (2010), Mar. Pet. Geol. 27: 238–246.</dd>
         </dl>
       </article>
@@ -649,9 +656,9 @@ html.figure-only footer { display:none !important; }
         <p>P-wave receiver functions identify a 75–100 km wide dipping seismic discontinuity at 45–55 km depth beneath central Sabah, interpreted as a remnant oceanic slab tied to Celebes Sea subduction (JGR Solid Earth, doi:10.1029/2025JB031466).</p>
       </article>
       <article>
-        <p class="tag">GILLIGAN ET AL. 2026</p>
+        <p class="tag">SIDEK ET AL. 2016 · GILLIGAN ET AL. 2026</p>
         <h3>Moho depth anchors</h3>
-        <p>Station-specific crustal thickness estimates show a deep crustal root (~60 km) beneath the Crocker Range and a thinner crust (~24 km) in central Sabah. Notably, no station exists directly over the offshore 0–425 km trough axis (doi:10.1029/2025JB031499).</p>
+        <p>On-line receiver-function anchors measure 32.8 ± 2.5 km crust at KMY (Kota Kinabalu coast, km 429.9; Sidek et al. 2016) and 30–35 km at KINA (Mt. Kinabalu, km 486.7; Gilligan et al. 2026), thinning to 24–25 km beneath central Sabah (SBC5/SBC6, contested against Cornwell et al. 2025's 34–38 km LVZ). The unlocated MTM (~60 km) pick lacks public FDSN coordinates and is excluded. No on-line stations exist offshore (0–425 km) or east of km 600 (doi:10.1029/2025JB031499).</p>
       </article>
     </div>
   </section>
@@ -704,8 +711,8 @@ html.figure-only footer { display:none !important; }
     </details>
 
     <details data-stage="2">
-      <summary>Stage 2: Middle Miocene margin loading & foredeep flexure</summary>
-      <p>Collision of the Dangerous Grounds with the Crocker accretionary wedge terminated proto-South China Sea subduction. Flexural downwarping of the Dangerous Grounds under the tectonic load created the Deep Regional Unconformity (DRU, ~15.5–14.2 Ma) and outer-trench flexural normal faulting.</p>
+      <summary>Stage 2: Early–Middle Miocene collision, margin loading &amp; foredeep flexure</summary>
+      <p>Collision of the Dangerous Grounds with the Crocker accretionary wedge (Base Miocene / Top Crocker Unconformity, BMU/TCU, ~23–24 Ma; Lunt 2022 JAES) marked the Paleogene–Neogene boundary and terminated proto-South China Sea subduction. Subsequent Middle Miocene margin loading and flexural downwarping developed the composite Deep Regional Unconformity (DRU, ~12–13 Ma, 11.7–13.77 Ma; Lunt 2022 BGSM 74; Morley et al. 2023) at the intra-Middle Miocene Stage III/IV boundary, alongside outer-trench flexural normal faulting.</p>
     </details>
 
     <details data-stage="3">
@@ -769,10 +776,10 @@ html.figure-only footer { display:none !important; }
 <tr><th scope="row">Normal faults on down-bending lower plate<span class="note">Outer-trench-slope normal faults produced by plate flexure.</span></th><td>compatible</td><td>predicts</td><td>not diagnostic</td><td>predicts</td><td>requires extra assumptions</td><td>not diagnostic</td></tr>
 <tr><th scope="row">Mobile shale canopy & mini-basins in Pagasa wedge<span class="note">Morley et al. 2023. Overpressured detachment dynamics.</span></th><td>not diagnostic</td><td>compatible</td><td>predicts</td><td>inconsistent with pure thrust sheet</td><td>not diagnostic</td><td>not diagnostic</td></tr>
 <tr><th scope="row">Outboard shortening vs shelf extension balance<span class="note">King et al. 2010. Linked updip extensional and downdip contractional strains.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>predicts</td><td>not diagnostic</td><td>not diagnostic</td></tr>
-<tr><th scope="row">Deep Regional Unconformity (DRU, ~15.5–14.2 Ma)<span class="note">Regional seismic marker recording margin collision and lowstand.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Deep Regional Unconformity (DRU, ~12–13 Ma; 11.7–13.77 Ma)<span class="note">Composite intra-Middle Miocene (Stage III/IV) wedge-top surface (Lunt 2022 BGSM 74; Morley et al. 2023); distinct from the Paleogene–Neogene BMU/TCU (~23–24 Ma).</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td></tr>
 <tr><th scope="row">Mantle discontinuity at 45–55 km<span class="note">Cornwell et al. 2025. Dipping receiver-function velocity interface.</span></th><td>not applicable</td><td>not applicable</td><td>not applicable</td><td>not diagnostic</td><td>not applicable</td><td>not applicable</td></tr>
-<tr><th scope="row">Kinabalu granite zircon age (7–8 Ma) & rapid exhumation<span class="note">Cottam et al. 2010, 2013. Late Miocene crystallization and cooling.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td></tr>
-<tr><th scope="row">Moho anchors unconstrained in 230–540 km gap<span class="note">Gilligan et al. 2026. Lack of offshore ocean-bottom seismometer data.</span></th><td>untested</td><td>untested</td><td>untested</td><td>untested</td><td>untested</td><td>untested</td></tr>
+<tr><th scope="row">Kinabalu granite zircon age (7–8 Ma) &amp; rapid exhumation<span class="note">Cottam et al. 2010, 2013. Late Miocene crystallization and cooling.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td></tr>
+<tr><th scope="row">Moho anchors unconstrained offshore (0–425 km) &amp; east (600–833 km)<span class="note">Sidek et al. 2016 (KMY 32.8±2.5 km) &amp; Gilligan et al. 2026 (KINA 30–35 km, SBC5/6 24–25 km); no offshore OBS/RF stations.</span></th><td>untested</td><td>untested</td><td>untested</td><td>untested</td><td>untested</td><td>untested</td></tr>
 <tr><th scope="row">Corrected magnetic/gravity axial signatures<span class="note">Screening criterion for potential igneous intrusion in the trough axis.</span></th><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>predicts</td></tr>
 <tr><th scope="row">Imaged saucer-shaped sills vs mud diapirs<span class="note">Seismic reflection acoustic impedance characteristics.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>requires extra assumptions</td><td>not diagnostic</td><td>not diagnostic</td><td>predicts</td></tr>
 <tr><th scope="row">Local thermal maturity anomalies<span class="note">Vitrinite reflectance / biomarker indicators exceeding burial profile.</span></th><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>not diagnostic</td><td>predicts</td></tr>
@@ -788,7 +795,7 @@ html.figure-only footer { display:none !important; }
       <h3>What physical measurements would decisively discriminate between models?</h3>
       <ul>
         <li><strong>Calibrated Biostratigraphic Ties:</strong> Drilling and dating the syn-growth wedges across the Deep Regional Unconformity (DRU). If fault growth is confined to the pre-Middle Miocene, the younger-extension hypothesis is falsified in favor of inherited rifting and foredeep flexure.</li>
-        <li><strong>Deep Crustal OBS Seismology:</strong> Deploying ocean-bottom seismometers across the 230–540 km gap. Imaging continuous Dangerous Grounds continental crust beneath the fold-thrust belt would confirm Model C (underthrusting), whereas finding oceanic crust would support a remnant suture.</li>
+        <li><strong>Deep Crustal OBS Seismology:</strong> Deploying ocean-bottom seismometers across the unconstrained 0–425 km offshore gap. Imaging continuous Dangerous Grounds continental crust beneath the fold-thrust belt would confirm Model C (underthrusting), whereas finding oceanic crust would support a remnant suture.</li>
         <li><strong>Thermal & Geochemical Sampling:</strong> Core sampling of candidate offshore saucer-shaped bodies. Distinguishing true igneous sills from overpressured mud pipes via petrography and organic geochemistry would definitively resolve Model A.</li>
         <li><strong>Kinematic Strain Balancing:</strong> Restoring regional 3D seismic lines from the shelf edge to the abyssal plain. If toe-thrust shortening equals updip shelf normal faulting, gravitational spreading (Model B) fully accounts for the strain budget.</li>
       </ul>
@@ -877,21 +884,25 @@ html.figure-only footer { display:none !important; }
             <li>Hinz, K. et al. (1989). The South China Sea: a review of the regional geology and petroleum potential. Geologische Rundschau 78: 705–730.</li>
             <li>Hutchison, C.S. (2005). Geology of North-West Borneo. Elsevier, Amsterdam.</li>
             <li>King, R.C. et al. (2010). Resolving multiple fault styles in the Northwest Borneo deepwater fold-thrust belt. Mar. Pet. Geol. 27: 238–246.</li>
+            <li>Lunt, P. (2022). Re-evaluating the Base Miocene Unconformity (BMU) in NW Borneo. J. Asian Earth Sci. 230.</li>
+            <li>Lunt, P. (2022). Age and correlation of the Deep Regional Unconformity (DRU, 11.7–13.77 Ma) in Sabah. Bull. Geol. Soc. Malaysia 74.</li>
             <li>Morley, C.K. et al. (2023). Mobile shale dynamics and structural evolution in NW Borneo. Geosphere 19(1): 291. doi:10.1130/GES02518.1.</li>
             <li>Pilia, S. et al. (2023). Mantle downwelling beneath northern Borneo. Nature Geoscience, doi:10.1038/s41561-023-01201-7.</li>
+            <li>Sidek, A. et al. (2016). Crustal thickness beneath North Borneo from receiver function analysis. Bull. Geol. Soc. Malaysia 62: 55–63. doi:10.7186/bgsm62201607.</li>
           </ul>
         </div>
 
         <div class="changelog">
-          <h3>Version provenance & changelog</h3>
+          <h3>Version provenance &amp; changelog</h3>
           <ul>
+            <li><strong>2026-11-26 (Forensic Physics Audit Patch):</strong> Replaced mislabeled SVG X-pixel coordinates in Route Overview and Callouts #1–#3 with true WGS84 Karney geodesic chainage (0–832.84 km); purged regressed early-Middle Miocene / Paleogene–Neogene DRU conflation in favor of BMU/TCU (~23–24 Ma) and composite intra-Middle Miocene DRU (~12–13 Ma, 11.7–13.77 Ma); removed unlocated 60 km Crocker Moho label and standardized unconstrained RF Moho gaps to 0–425 km and 600–833 km while plotting georeferenced KMY (32.8 ± 2.5 km), KINA (30–35 km), and SBC5/SBC6 (24–25 km vs 34–38 km LVZ); updated trough NW-flank buildup caption to note both carbonate platforms and altered volcaniclastic lookalikes.</li>
             <li><strong>2026-11-25 (Human Geologist Redesign):</strong> Comprehensive presentation refactor for human earth science clarity. Transferred raw metalabels and epistemic ledger tags to collapsible backend audit details. Added prominent dip correction guide (17.2× VE = 4°–6° true dip plots as 50°–61° apparent dip), explicit null hypothesis framing (foredeep flexural bending), and geodetic polyline specifications (832.84 km over 11 stations).</li>
             <li><strong>2026-11-25 (Registry Reconciliation):</strong> Reconciled Line 821 transect registry text with transects.json, computing exact vertical exaggerations from SVG scale bars.</li>
           </ul>
         </div>
 
         <h3>Full text equivalent</h3>
-        <p>From northwest to southeast the transect illustrates water over block-faulted Dangerous Grounds thinned continental crust, the ~2.9 km deep Sabah Trough, a fold-thrust wedge underlain by mobile shale, the continental shelf, the Crocker Range accretionary complex, Mount Kinabalu (484.9 km chainage), central Sabah, the Sandakan Basin, and the Sulu Sea. A dual vertical exaggeration applies: ~17.2× in the upper 15 km and ~3.2× in the deeper lithosphere. A deep crustal gap (230–540 km) is hatched as unconstrained. The Deep Regional Unconformity (DRU) separates Paleogene strata from Neogene wedge accommodation.</p>
+        <p>From northwest to southeast the transect illustrates water over block-faulted Dangerous Grounds thinned continental crust (0–242 km), the ~2.9–3.0 km deep Sabah Trough (242–290 km), a fold-thrust wedge underlain by mobile shale (290–372 km), the continental shelf (372–430 km), the Crocker Range accretionary complex (430–540 km), Mount Kinabalu (484.9 km chainage), central Sabah and the Sandakan Basin (540–716 km), and the Sulu Sea (716–833 km). A dual vertical exaggeration applies: ~17.2× in the upper 15 km and ~3.2× in the deeper lithosphere. Offshore (0–425 km) and eastern (600–833 km) Moho intervals are hatched as unconstrained by on-line receiver-function stations, while on-line picks anchor KMY (32.8 ± 2.5 km, km 429.9), KINA (30–35 km, km 486.7), and Central Sabah (SBC5/SBC6 24–25 km vs Cornwell 34–38 km LVZ). The Base Miocene / Top Crocker Unconformity (BMU/TCU, ~23–24 Ma) marks the Paleogene–Neogene boundary, while the composite Deep Regional Unconformity (DRU, ~12–13 Ma) marks the intra-Middle Miocene Stage III/IV boundary.</p>
       </div>
     </details>
   </section>

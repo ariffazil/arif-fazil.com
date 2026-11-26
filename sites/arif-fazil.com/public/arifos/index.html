@@ -305,6 +305,7 @@ html[data-organ="arifos"] section.obs-collapsible > h2 .obs-alarm-badge[data-lev
     <a href="#sec-knowledge-factory">Knowledge Factory</a>
     <a href="#sec-flow-plane">Flow Plane</a>
     <a href="#sec-vault">VAULT999</a>
+    <a href="#sec-architecture">Architecture</a>
     <a href="https://mcp.arif-fazil.com/">MCP Gateway</a>
     <a href="https://aaa.arif-fazil.com/">AAA Cockpit</a>
     <a href="/">arif-fazil.com</a>
@@ -601,6 +602,62 @@ html[data-organ="arifos"] section.obs-collapsible > h2 .obs-alarm-badge[data-lev
     <div class="selfcheck-item"><span class="observatory-label">last render</span><span class="selfcheck-value" id="selfcheck-render-value"><span class="status status--unknown">not measured</span></span><div class="observatory-meta" id="selfcheck-render-detail">not measured</div></div>
     <div class="selfcheck-item"><span class="observatory-label">freshness</span><span class="selfcheck-value" id="selfcheck-freshness-value"><span class="status status--unknown">unavailable</span></span><div class="observatory-meta" id="selfcheck-freshness-detail">source: missing</div></div>
    </div>
+  </div>
+ </section>
+
+ <section id="sec-architecture" data-asof="2026-11-27">
+  <h2><span class="marker">ARCH</span> Architecture — what this system is made of</h2>
+  <div class="card">
+   <style>
+    #sec-architecture table{border-collapse:collapse;width:100%;margin:.5rem 0 0}
+    #sec-architecture th,#sec-architecture td{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem;border-bottom:1px solid #2a2a30;padding:.36rem .5rem;text-align:left;vertical-align:top;line-height:1.45}
+    #sec-architecture th{color:#9a9aa6;font-weight:600;letter-spacing:.03em;text-transform:uppercase;font-size:.66rem;padding-bottom:.25rem}
+    #sec-architecture td:first-child{color:#e8dcc0;white-space:nowrap;font-weight:600}
+    #sec-architecture td:nth-child(3){white-space:nowrap;color:#9fd4a8}
+    #sec-architecture .arc-p{color:var(--text-secondary);font-size:.84rem;line-height:1.6;margin:.75rem 0 0}
+    #sec-architecture .arc-p strong{color:#e8dcc0}
+    #sec-architecture .arc-asof{color:#888;font-size:.72rem;margin:.9rem 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+   </style>
+   <p class="arc-p" style="margin-top:0">
+    Nine layers, each a component running on this host. The ports and tools below are what a
+    live probe found on 2026-11-27 — a description of the running system, not a diagram of intent.
+   </p>
+   <table>
+    <caption style="text-align:left;color:#888;padding:.15rem 0 .35rem;font-size:.76rem">Layer → component → endpoint</caption>
+    <thead><tr><th>Layer</th><th>What actually runs</th><th>Endpoint</th></tr></thead>
+    <tbody>
+     <tr><td>Model access</td><td>LiteLLM gateway — 123 routes: DeepSeek · MiniMax · GLM · Qwen · MiMo · OpenRouter</td><td>federated</td></tr>
+     <tr><td>Routing</td><td>FED router · parity guard · lane economics</td><td>internal</td></tr>
+     <tr><td>Cognition</td><td>333-AGI proposes · 555-ASI verifies · 888-APEX judges — across the FI coding harnesses</td><td>—</td></tr>
+     <tr><td>Constitutional gate</td><td>arifOS kernel — F1–F13 floors, init / judge / seal</td><td>:8088</td></tr>
+     <tr><td>Execution</td><td>A-FORGE — lease-gated actuators: no seal, no run</td><td>:7071</td></tr>
+     <tr><td>Metabolism</td><td>arifFlow — receipts, FQ ratio, cooling</td><td>:7073</td></tr>
+     <tr><td>Memory</td><td>Qdrant · Postgres · Redis · FalkorDB · VAULT999</td><td>internal</td></tr>
+     <tr><td>Observation</td><td>Phoenix · OpenTelemetry · Grafana · Netdata · Beszel · Healthchecks</td><td>this page</td></tr>
+     <tr><td>Human surface</td><td>arif-fazil.com · AAA cockpit · MCP door</td><td>/ · aaa. · mcp.</td></tr>
+    </tbody>
+   </table>
+
+   <p class="arc-p">
+    <strong>Coverage of the public AI-engineering landscape</strong>: of the 56 categories in the
+    public “AI engineering from scratch” landscape index (1,036 listed tools), <strong>22 are served
+    here by a live component</strong>, 22 in part, 4 absent, 8 out of scope by design. This is a
+    <em>category-level classification, not a per-tool census</em>: each category was graded once
+    against the host inventory above, not tool by tool. The four absent are a GPU training lane, a
+    fine-tune toolchain, experiment tracking and interpretability tooling — deferred until a training
+    workstream is actually decided, not forgotten. <strong>Security surfaces are out of scope by
+    design</strong>: what is missing there is recorded in the operator ledger, not published here.
+   </p>
+
+   <p class="arc-p">
+    <strong>What no category on that map sells:</strong> judge-before-execute · receipts as metabolism ·
+    authority envelopes an executor cannot issue for itself · a veto that outranks every agent.
+    Those are layers three to six above. The landscape optimises for capability; this stack
+    optimises for <em>governed</em> capability — the same tools, one gate in front of them, and
+    every claim carrying its own source, timestamp and freshness.
+   </p>
+
+   <p class="arc-asof">as-of 2026-11-27 · corpus: public landscape index (56 categories / 1,036 tools) · method: single live probe of this host (ports, containers, packages, MCP registry) then one category-level grading pass · classification is INT over OBS inventory · not a vendor claim</p>
   </div>
  </section>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- page: earth v3 · Φ GEOX · arif-fazil.com/earth · zen-clarity-audit 2026-07-30 · claim-discipline 2026-08-25
+<!-- page: earth v3 · arif-fazil.com/earth · zen-clarity-audit 2026-07-30 · claim-discipline 2026-08-25
      content-marker: dynamic-earth-Φ wells-Φ studies-Φ · unhidden deep-time · sticky-toc -->
 <html lang="en" data-ring="ORGAN" data-organ="geox">
 <head>
@@ -154,6 +154,7 @@
 <meta property="og:url" content="https://arif-fazil.com/earth/" />
 <meta property="og:image" content="https://arif-fazil.com/og-identity.png" />
 <link rel="canonical" href="https://arif-fazil.com/earth/" />
+<link rel="stylesheet" href="/earth/_shared/earth-coat.css?v=20261125d">
 </head>
 <body>
 
@@ -161,6 +162,17 @@
 <div id="fed-nav-root"></div>
 <noscript><header class="fed-navbar" aria-label="Federation primary navigation"><a class="nav-brand" href="/"><span class="psi-badge">Ψ</span><span>ARIF FAZIL</span></a><nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/about">About</a><a href="/earth">Earth</a><a href="/words">Words</a><a href="/makcikgpt">MakcikGPT</a><a href="/world">World</a><a href="/work">Work</a></nav></header></noscript>
 <script src="/_shared/fed-nav.js" data-active="earth" defer></script>
+
+<nav class="earth-room-nav" aria-label="Earth pages">
+  <a href="/earth/" aria-current="page">Earth</a>
+  <a href="/earth/malay-basin/">Malay Basin</a>
+  <a href="/earth/malay-basin-cross-section.html">Malay section</a>
+  <a href="/earth/kinabalu-basin/">Kinabalu</a>
+  <a href="/earth/kinabalu-cross-section.html">Sabah section</a>
+  <a href="/earth/borneo-sections.html">NW Borneo</a>
+  <a href="/earth/sabah-observatory/">Observatory</a>
+  <a href="/earth/macrostrat-ingestion/">Bedrock map</a>
+</nav>
 
 <!-- ══ ZEN FLOATING SUB-DOCK (PAGE JUMP) ══ -->
 <nav class="earth-zen-dock" aria-label="Earth sections" id="earthToc">
@@ -205,6 +217,13 @@
     <div class="seg">
       <button id="baseGeo" class="on">GEOLOGY</button>
       <button id="baseSat">SATELLITE</button>
+    </div>
+    <h4 style="margin-top:.75rem">Geology Source</h4>
+    <div class="seg" role="group" aria-label="Geology query source mode" id="geoSourceGroup">
+      <button type="button" data-geo-mode="AUTO" class="on" aria-pressed="true" title="Prefer JMG 1:500k within Malaysia (when authorized), Macrostrat fallback elsewhere">AUTO</button>
+      <button type="button" data-geo-mode="JMG" aria-pressed="false" title="Query JMG 1:500k only; no silent Macrostrat fallback">JMG</button>
+      <button type="button" data-geo-mode="MACROSTRAT" aria-pressed="false" title="Query Macrostrat API v2 only">MACRO</button>
+      <button type="button" data-geo-mode="CONTRAST" aria-pressed="false" title="Query both JMG and Macrostrat side-by-side">CONTRAST</button>
     </div>
     <div class="waypoints">
       <button id="wpWells" data-pov="">◈ My wells · Malay Basin</button>
@@ -251,14 +270,6 @@
       JavaScript is required for the live globe. Basin dossiers still work: <a href="/earth/kinabalu-basin/" style="color:#D4A853">Kinabalu</a> · <a href="/earth/malay-basin/" style="color:#D4A853">Malay Basin</a>.
     </div>
   </noscript>
-</div>
-
-<!-- ══ ZEN PULSE · 3-second orientation ══ -->
-<div class="zen-pulse" aria-label="3-second orientation">
-  <span class="zp"><b>WHERE</b> arif-fazil.com / earth</span>
-  <span class="zp gold"><b>WHY CARE</b> live globe · evidence-gated rocks</span>
-  <span class="zp"><b>WHAT NEXT</b> click the planet · ask the rocks</span>
-  <span class="zp"><b>F2 TRUTH</b> every number carries its source tier: LIVE · SOURCED · INTERPRETED · SYNTHETIC · PRIVATE</span>
 </div>
 
 <!-- ══ WHAT CAN I DO HERE? · intent cards · ABOVE the fold for cognitive onboarding ══ -->
@@ -317,7 +328,7 @@
       <div class="result">
         <span class="src">geox.macrostrat · SOURCED · Tate (1991) · GSM Memoir 19</span>
         <h3><span class="swatch"></span>Crocker Formation · deep-water turbidites</h3>
-        <div class="age">23.0 – 5.3 Ma · Miocene</div>
+        <div class="age">~35 Ma · Eocene–Oligocene</div>
         <p class="lith">Sandstone interbedded with mudstone — deep-water turbidite fan, deposited along the Oligocene–Miocene margin of the South China Sea.</p>
         <div class="ref">source: Tate (1991) · CC-BY · Geological Survey of Malaysia Memoir 19 · doi:10.13140/RG.2.2.11456.87040</div>
         <div class="coords">6.0814°, 116.7241° · macrostrat.org/api/v2 · CC-BY 4.0</div>
@@ -431,7 +442,7 @@
         <div class="chrono-label" style="background:#ffe619;">Cenozoic · 66–0 Ma</div>
         <div class="chrono-desc">
           <span>Sundaland rifting · Malay Basin Oligo-Miocene fill · Sabah Orogeny</span>
-          <b>Mt Kinabalu granodiorite (7 Ma) · Crocker Turbidites (35 Ma)</b>
+          <b>Mt Kinabalu granodiorite (~7–8 Ma U-Pb; older K-Ar ages contested) · Crocker Turbidites (35 Ma)</b>
         </div>
       </div>
 
@@ -496,24 +507,35 @@
 </section>
 
 <!-- ══ MALAY BASIN CASE STUDY · UNHIDDEN — the founder's expertise ══ -->
-<section id="malay">
+<!-- seismic-amber.png (design-arif/earth.md §1) — the live /earth hero is a
+     WebGL globe, so the seismic texture is carried on the Malay Basin band
+     instead of behind the globe canvas. Darkened for text legibility. -->
+<section id="malay" style="background-image:linear-gradient(rgba(13,12,10,.86),rgba(13,12,10,.94)),url('/seismic-amber.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);">
   <div class="container">
     <div class="kicker">CASE STUDY · THE FOUNDER'S HOME WATERS</div>
     <h2>◈ The Malay Basin — a tape recorder that became a gas province</h2>
     <p class="lede">The globe opens looking at the <b>Malay Basin</b> for a reason. This is where the founder spent 13+ years reading rocks offshore Peninsular Malaysia. What follows is the basin's story — from tectonic birth to petroleum system to the wells that bear witness to it. <b>Witness, not public evidence:</b> founder-well narratives on this page are PRIVATE WITNESS tier — attested from signed-off records, not publicly auditable, and not independently verifiable here.</p>
 
+    <!-- ══ BASIN MAP · design-arif/earth.md §2 (malay-basin-map.svg) ══ -->
+    <figure style="margin:1.6rem 0 2rem;border:1px solid var(--border-dim);border-radius:12px;overflow:hidden;background:#F4F0E6;">
+      <img src="/malay-basin-map.svg" alt="Minimal line map of the Malay Basin, offshore Peninsular Malaysia, with four well locations: Bekantan-1, Puteri Basement-1, Lebah Emas-1, and Bunga Tasbih-1" width="1400" height="900" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;">
+      <figcaption style="font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#14110C;background:rgba(244,240,230,.96);padding:.5rem .75rem;border-top:1px solid rgba(20,17,12,.15);">
+        Malay Basin · offshore Peninsular Malaysia · four founder wells (coordinates withheld)
+      </figcaption>
+    </figure>
+
     <div class="basin-callout">
       <div>
         <h3>How a sag becomes a province</h3>
-        <p>In the Oligo–Miocene, the Sundaland crust stretched in a back-arc setting, faults dropped the basement into half-grabens, and ~30 million years of sediment poured in — lacustrine source rocks at the base, fluvio-deltaic reservoirs above, all sealed by marine mudstones as the sea returned.</p>
+        <p>In the Late Eocene–Early Oligocene, the Sundaland crust stretched in a failed-rift setting, faults dropped the basement into half-grabens, and ~40 million years of sediment poured in — lacustrine source rocks at the base, fluvio-deltaic reservoirs above, all sealed by marine mudstones as the sea returned.</p>
         <p>Heat did the rest. The tape-recorder became a <b>petroleum system</b>: one of Southeast Asia's great gas provinces. Reading that record — seismic, well logs, geochemistry — is what an exploration geoscientist does, and it is the human craft the GEOX agentic engine: <b>evidence-gated, human-decided.</b></p>
         <p>In 2025, the LEBAH EMAS-1 wildcat was drilled on the Western Hinge Fault — one of four wells the founder personally signed off on. <span style="font-family:var(--mono);font-size:.58rem;letter-spacing:1px;color:#D4A853">PRIVATE WITNESS · NOT EXTERNALLY VERIFIED:</span> coordinates, depths and results of these wells are withheld from this page. Their names attest the province's maturity and the founder's history; <b>they are not public evidence and nothing published here may be cited as proof of a well outcome</b>.</p>
       </div>
       <div class="facts">
-        <div><span>setting</span> · back-arc extension, Sundaland</div>
+        <div><span>setting</span> · failed rift, Sundaland (Madon 2021)</div>
         <div><span>age</span> · Oligocene–Recent fill</div>
         <div><span>dimensions</span> · ~500 km × ~200 km, NW-SE trend</div>
-        <div><span>fill</span> · &gt;12 km in deep centres</div>
+        <div><span>fill</span> · &gt;14 km in deep centres (Madon 2021)</div>
         <div><span>stratigraphy</span> · Groups A→M (lacustrine → deltaic → marine)</div>
         <div><span>system</span> · lacustrine source → deltaic reservoir → marine seal</div>
         <div><span>trap</span> · Middle Miocene anticlines + Western Hinge Fault</div>
@@ -565,7 +587,7 @@
             <td><strong>SOURCE ROCK</strong></td>
             <td>Group L &amp; M Deep Lacustrine Shales</td>
             <td class="psec-bar-cell">
-              <div class="psec-bar" style="left:5%; width:35%; background:rgba(224,48,30,0.85); color:#ffffff;">SYN-RIFT (30–22 Ma)</div>
+              <div class="psec-bar" style="left:5%; width:35%; background:rgba(224,48,30,0.85); color:#ffffff;">SYN-RIFT (~40–28 Ma)</div>
             </td>
           </tr>
           <tr>
@@ -737,7 +759,7 @@
         <a href="/earth/kinabalu-basin/" style="text-decoration:none;color:inherit"><h3>◈ Kinabalu Basin</h3></a>
         <p class="dossier-subtitle">One of three producing basins in Malaysia. Offshore NW Sabah, fold-thrust belt, post-MMU clastic play. SRTM-draped cross-section with USGS-standard lithology patterns.</p>
         <div class="dossier-stats">
-          <div><b>4,095 m</b><span>Kinabalu peak</span></div>
+          <div><b>4,095 m</b><span style="font-size:0.62em;color:var(--text-dim)"> geodetic</span><span>Kinabalu peak</span></div>
           <div><b>~2,900 m</b><span>Sabah Trough</span></div>
           <div><b>5</b><span>tectonic events</span></div>
           <div><b>12</b><span>provinces</span></div>
@@ -785,14 +807,14 @@
         <p class="dossier-subtitle">The founder's home waters. 13+ years reading rocks offshore Malaysia. Cenozoic failed rift + Miocene inversion. Mature gas province. Four founder wells shown at ATTESTED tier — founder-signed narrative, not public evidence (results withheld from public citation; see footer policy).</p>
         <div class="dossier-stats">
           <div><b>~500 km</b><span>length</span></div>
-          <div><b>8</b><span>groups (A–M)</span></div>
+          <div><b>12</b><span>groups (A–M, no Group C)</span></div>
           <div><b>4</b><span>founder wells</span></div>
           <div><b>2025</b><span>new hinge play</span></div>
         </div>
         <ul class="dossier-points">
           <li>Group L/M lacustrine source + Group E/H/I deltaic reservoirs</li>
           <li>Middle Miocene anticline play (Dulang, Angsi) — proven</li>
-          <li>Western Hinge Fault — first tested by LEBAH EMAS-1 (2025 · founder-witness tier)</li>
+          <li>Western Hinge Fault — first tested by LEBAH EMAS-1 (2025 · operator-reported, not GEOX-witnessed)</li>
           <li>Founder wells: BEKANTAN-1 · PUTERI BASEMENT-1 · LEBAH EMAS-1 · BUNGA TASBIH-1</li>
         </ul>
         <div class="dossier-cta">
@@ -809,9 +831,9 @@
           <span class="dossier-status" style="color:#31C48D">● MYGEMS LIVE</span>
         </div>
         <h3>◈ JMG MyGEMS Geologic Layer</h3>
-        <p class="dossier-subtitle">Jabatan Mineral dan Geosains Malaysia official 1:500,000 national geological mapping. High-resolution bedrock lithology across all 14 states and major crustal shear zones.</p>
+        <p class="dossier-subtitle">Jabatan Mineral dan Geosains Malaysia official 1:500,000 national geological mapping. High-resolution bedrock lithology across 13 states and the federal territories and major crustal shear zones.</p>
         <div class="dossier-stats">
-          <div><b>14</b><span>states mapped</span></div>
+          <div><b>13</b><span>states + FT mapped</span></div>
           <div><b>1:500k</b><span>scale</span></div>
           <div><b>100%</b><span>bedrock cover</span></div>
           <div><b>GIS</b><span>MyGEMS REST</span></div>
@@ -852,10 +874,10 @@
 
 
 <!-- ══ GEOX GATEWAY — the working environment behind this page (2026-10-01 audit: prominent second-level journey; also closes the broken #geox dock anchor) ══ -->
-<section id="geox" aria-label="Open GEOX MCP Apps" style="padding:4rem 2rem 3rem;border-top:1px solid var(--border-dim);text-align:center;">
+<section id="geox" aria-label="Open GEOX" style="padding:4rem 2rem 3rem;border-top:1px solid var(--border-dim);text-align:center;">
   <div style="max-width:52rem;margin:0 auto;">
     <div class="kicker">GO DEEPER · THE ENGINE ROOM</div>
-    <h2 style="margin:.6rem 0 1rem;">Open GEOX MCP Apps</h2>
+    <h2 style="margin:.6rem 0 1rem;">Open GEOX</h2>
     <p style="max-width:44rem;margin:0 auto 1rem;line-height:1.7;">
       This page reads the planet. <b>GEOX</b> is the working environment that answers questions about it —
       source-linked Earth context for subsurface questions, where every number comes from a named pipe
@@ -883,15 +905,6 @@
          onmouseout="this.style.borderColor='var(--border-dim)'">
         ▸ OPEN THE VIEWER <span style="opacity:.4;font-size:.6rem">↗</span>
       </a>
-      <a href="https://geox.arif-fazil.com/mcp" target="_blank" rel="noreferrer"
-         style="display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.9rem;min-height:44px;
-         background:transparent;border:1px solid var(--border-dim);border-radius:6px;
-         font-family:var(--mono);font-size:.8rem;letter-spacing:.8px;
-         color:inherit;text-decoration:none;transition:all .25s;"
-         onmouseover="this.style.borderColor='rgba(0,212,170,.5)'"
-         onmouseout="this.style.borderColor='var(--border-dim)'">
-        ▸ MCP ENDPOINT · AGENTS <span style="opacity:.4;font-size:.6rem">↗</span>
-      </a>
     </div>
   </div>
 </section>
@@ -909,6 +922,7 @@
 
 <!-- ══ GLOBE ENGINE + ALL LIVE PIPES (unchanged — this is the living heart) ══ -->
 <script src="/earth/_shared/globe.gl.min.js?v=20261108"></script>
+<script src="/earth/_shared/earth-geology-resolver.js?v=20261127b"></script>
 <script>
 (function(){
 "use strict";
@@ -1189,7 +1203,7 @@ async function loadPlates(){
           const[col]=plateColor(d.tag);
           panel.className="show";
           panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-            <div class="src">Φ GEOX · plate boundary witness</div>
+            <div class="src">plate boundary witness</div>
             <h3><span class="swatch" style="background:${col}"></span>${esc(d.name)}</h3>
             <p class="lith">${plateLabelOf(d.tag)}</p>
             <div class="kv"><b>PLATE A</b><span>${esc(d.plateA)}</span></div>
@@ -1316,7 +1330,7 @@ function onMarkerClick(d){
     const rg=d.rg;
     panel.className="show";
     panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-    <div class="src">Φ GEOX · regional geology</div>
+    <div class="src">regional geology</div>
     <h3>◇ ${esc(rg.name)}</h3>
     <p class="lith">${esc(rg.note||"")}</p>
     ${rg.approximate?`<div class="withheld">REGION ANCHOR · APPROXIMATE</div>`:""}`;
@@ -1333,7 +1347,7 @@ function onMarkerClick(d){
   if(w.location_note)rows.push(["area",w.location_note]);
   panel.className="show";
   panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-  <div class="src">Φ GEOX · well witness · sovereign canon</div>
+  <div class="src">well witness · sovereign canon</div>
   <h3>${esc(w.name)}${w.tier==="existence"?" ~":""}</h3>
   ${rows.map(r=>`<div class="kv"><b>${r[0]}</b><span>${esc(r[1])}</span></div>`).join("")}
   ${w.tier==="existence"?`<div class="withheld">LOCATION APPROXIMATE · DETAILS WITHHELD</div>`:""}`;
@@ -1363,45 +1377,90 @@ fetch("/earth/data/studies.json")
    <p>studies.json unreachable — per F7, no register is shown rather than an invented one.</p></div>`;
  });
 
-/* ── click-to-query: ask the rocks ── */
+/* ── click-to-query: ask the rocks (Lane A Macrostrat v2 + Lane B JMG Hook) ── */
 const panel=$("unitPanel");
 let lock=false;
+let geoSourceMode="AUTO";
+const geoResolver=window.EarthGeologyResolver
+  ? window.EarthGeologyResolver.createResolver({ cacheTtlMs: 300000 })
+  : null;
+
+document.querySelectorAll("#geoSourceGroup button[data-geo-mode]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    geoSourceMode=btn.dataset.geoMode||"AUTO";
+    document.querySelectorAll("#geoSourceGroup button[data-geo-mode]").forEach(b=>{
+      const on=b===btn;
+      b.classList.toggle("on",on);
+      b.setAttribute("aria-pressed",on?"true":"false");
+    });
+  });
+});
+
+function renderSingleResult(r, lat, lng, fallbackNotice){
+  const fb=fallbackNotice?`<div class="withheld" style="margin-bottom:.45rem">${esc(fallbackNotice)}</div>`:"";
+  const metaFooter=`<div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · source: ${esc(r.source||"UNKNOWN")} · coverage: ${esc(r.coverage_class||"none")} · ${esc(r.data_version||"api-v2")} · ${esc(r.license||"UNKNOWN")} · retrieved ${esc(r.retrieved_utc||"")}</div>`
+    + `<div class="coords" style="opacity:.8">endpoint: ${esc(r.endpoint||"—")}</div>`;
+
+  if(r.status==="UNKNOWN"){
+    return `${fb}<div class="src" style="color:#e05a5a">UNKNOWN · pipe unreachable</div>
+      <h3 style="font-weight:400;color:#9a9aa8">${esc(r.message||"UNKNOWN — upstream unreachable; stale cache withheld.")}</h3>${metaFooter}`;
+  }
+  if(r.status==="NO_FEATURE"||r.status==="UNAVAILABLE"){
+    return `${fb}<div class="ocean"><div class="src">${esc(r.source||"geox.macrostrat")} · honest answer</div>
+      <h3>${r.status==="UNAVAILABLE"?"Source unavailable":"No mapped bedrock unit returned"}</h3>
+      <p class="lith">${esc(r.message||"No mapped bedrock unit returned (0 records does not prove absence of bedrock).")}</p>
+      ${metaFooter}</div>`;
+  }
+  if(r.coverage_class==="jmg_polygon"){
+    return `${fb}<div class="src" style="color:#31C48D">JMG MyGEMS 1:500,000 · LOCAL POC (RIGHTS HOLD)</div>
+      <h3>${esc(r.unit_name_display||r.formation_original||"Unnamed JMG unit")}</h3>
+      <div class="age">${esc(r.age_display||r.age_original||"UNKNOWN")}</div>
+      <p class="lith">${esc(r.description_original||r.lithology_display||"lithology not recorded")}</p>
+      <div class="kv"><b>JURISDICTION</b><span>${esc(r.jurisdiction||"Malaysia")} · layer [${esc(r.source_layer_id)}] OID ${esc(r.source_object_id)}</span></div>
+      <div class="kv"><b>ORIGINAL JMG</b><span>unit=${esc(r.unit_code_original||"—")} · gln=${esc(r.formation_original||"—")}</span></div>
+      <div class="kv"><b>REVIEW STATUS</b><span>${esc(r.geological_review_status||"HOLD_PENDING_ARIF")}</span></div>
+      ${metaFooter}`;
+  }
+  const ref=r.ref_citation?esc(r.ref_citation).slice(0,220):"";
+  const flagList=Array.isArray(r.flags)?r.flags:[];
+  const scaleBanner=flagList.includes("COARSE_GLOBAL_SCALE")
+    ? `<div class="withheld" style="margin-bottom:.4rem">COARSE_GLOBAL_SCALE · source_id=${esc(r.source_id)} (generalized global compilation, Chorlton GSC Open File 5529 — low resolution, not local formation-scale mapping)</div>`
+    : "";
+  const commentBanner=flagList.includes("COMMENT_REGION_MISMATCH")
+    ? `<div class="withheld" style="margin-bottom:.4rem;border-color:#e05a5a;color:#e05a5a">COMMENT_REGION_MISMATCH · polygon comment "${esc(r.comments_raw_flagged||"")}" does not match clicked jurisdiction and is withheld as a local basin label</div>`
+    : "";
+  return `${fb}${scaleBanner}${commentBanner}<div class="src">Macrostrat · live (${esc(r.coverage_class||"map_polygon")} · units=${esc(r.unit_count??"UNKNOWN")}, map=${esc(r.map_count??0)})</div>
+    <h3><span class="swatch" style="background:${esc(r.color||"#666")}"></span>${esc(r.unit_name||"Unnamed unit")}</h3>
+    <div class="age">${esc(r.age_text||"age not recorded")}</div>
+    <p class="lith">${esc(r.lith||"lithology not recorded")}</p>
+    ${ref?`<div class="ref">source: ${ref}…</div>`:""}
+    ${metaFooter}`;
+}
+
 async function onRockClick({lat,lng}){
   if(lock)return;lock=true;pauseSpin();
   if(Date.now()-lastPlateClickAt<800){lock=false;return;}
   panel.className="show";
   panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-    <div class="src">geox.macrostrat · querying pipe…</div>
-    <h3 style="color:#9a9aa8;font-weight:400">Asking ${lat.toFixed(2)}°, ${lng.toFixed(2)}°…</h3>`;
+    <div class="src">earth.resolver · mode=${esc(geoSourceMode)} · querying…</div>
+    <h3 style="color:#9a9aa8;font-weight:400">Asking ${lat.toFixed(4)}°, ${lng.toFixed(4)}°…</h3>`;
   wireClose();
   try{
-    const r=await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&buffer=3`);
-    const j=await r.json();
-    const data=(j.success&&j.success.data)||[];
-    const refs=(j.success&&j.success.refs)||{};
-    if(!data.length){
+    if(!geoResolver)throw new Error("EarthGeologyResolver not loaded");
+    const res=await geoResolver.resolvePoint(lat,lng,{mode:geoSourceMode,msBuildVersion:window.__msv||""});
+    if(res.mode==="CONTRAST"){
       panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-      <div class="ocean"><div class="src">geox.macrostrat · honest answer</div>
-      <h3>No mapped bedrock unit here</h3>
-      <p class="lith">You're likely over ocean. Oceanic crust is young (&lt;200 Ma everywhere) and thinly mapped at this scale — Macrostrat's harmonized maps cover the continents. The blue below is the newest rock on the planet, still being poured at the mid-ocean ridges.</p>
-      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2${msBuild()} · CC-BY 4.0</div></div>`;
+        <div class="src">CONTRAST MODE · ${esc(res.contrast_relation||"UNKNOWN")} (no automated adjudication)</div>
+        <div style="border-top:1px solid rgba(255,255,255,.12);padding-top:.5rem;margin-top:.4rem">${renderSingleResult(res.jmg,lat,lng,null)}</div>
+        <div style="border-top:1px solid rgba(255,255,255,.12);padding-top:.5rem;margin-top:.6rem">${renderSingleResult(res.macrostrat,lat,lng,null)}</div>`;
     }else{
-      const u=data[0];
-      const t=(u.t_int_age!=null)?u.t_int_age:u.t_age, b=(u.b_int_age!=null)?u.b_int_age:u.b_age;
-      const ref=refs[u.source_id]?esc(refs[u.source_id]).slice(0,220):"";
-      panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-      <div class="src">geox.macrostrat · live from pipe</div>
-      <h3><span class="swatch" style="background:${esc(u.color||"#666")}"></span>${esc(u.name||"Unnamed unit")}</h3>
-      <div class="age">${t} – ${b} Ma · ${esc(u.best_int_name||u.t_int_name||"")}</div>
-      <p class="lith">${esc(u.lith||"lithology not recorded")}</p>
-      ${ref?`<div class="ref">source: ${ref}…</div>`:""}
-      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2${msBuild()} · CC-BY 4.0</div>`;
+      panel.innerHTML=`<button class="close" aria-label="close">✕</button>${renderSingleResult(res.primary,lat,lng,res.fallback_notice)}`;
     }
     wireClose();
   }catch(e){
     panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-    <div class="src" style="color:#e05a5a">pipe unreachable</div>
-    <h3 style="font-weight:400;color:#9a9aa8">Query failed — per F7, no answer is better than an invented one.</h3>`;
+    <div class="src" style="color:#e05a5a">UNKNOWN · pipe unreachable</div>
+    <h3 style="font-weight:400;color:#9a9aa8">Query failed — UNKNOWN (no stale cache served).</h3>`;
     wireClose();
   }finally{lock=false;}
 }

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
 <title>Macrostrat Ingestion Packet — Geological Map of Malaysia (1:500k JMG) | Arif Fazil</title>
 <meta name="description" content="Upstream Macrostrat map ingestion submission packet for the National Geological Map of Malaysia (1:500,000 scale) by Jabatan Mineral dan Geosains Malaysia (JMG).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -351,26 +352,27 @@
 </nav>
 
 <main class="container">
+  <div style="background:rgba(201,162,39,0.10);border:1px solid rgba(201,162,39,0.4);border-radius:8px;padding:0.9rem 1.2rem;margin:1rem auto;max-width:1100px;font-size:0.9rem;color:#c9a227;"><strong>DRAFT — not for distribution.</strong> Content unverified; not PR-ready. <strong>Licensing: UNKNOWN — permission requested from JMG.</strong></div>
   <!-- ══ HERO HEADER ══ -->
   <div class="hero-header">
     <div class="kicker">UPSTREAM MACROSTRAT MAP INGESTION PACKET</div>
     <h1>Geological Map of Malaysia (1:500,000)</h1>
     <p class="hero-subtitle">
-      Authoritative national geoscientific dataset from the <strong>Department of Mineral and Geoscience Malaysia (Jabatan Mineral dan Geosains Malaysia - JMG)</strong> prepared for upstream integration into <strong>UW-Macrostrat (University of Wisconsin–Madison)</strong>.
+      Draft national geoscientific dataset (unverified) from the <strong>Department of Mineral and Geoscience Malaysia (Jabatan Mineral dan Geosains Malaysia - JMG)</strong> prepared for upstream integration into <strong>UW-Macrostrat (University of Wisconsin–Madison)</strong>.
     </p>
 
     <div class="status-badge-row">
-      <span class="badge cyan">● ARTIFACTS PR-READY</span>
+      <span class="badge cyan">● DRAFT — NOT PR-READY</span>
       <span class="badge">SCALE: 1:500,000</span>
-      <span class="badge">14 STATES COVERED</span>
+      <span class="badge">13 STATES + 3 FT</span>
       <span class="badge">EPSG:4326 / EPSG:3857</span>
-      <span class="badge cyan">MYGEMS OPEN DATA</span>
+      <span class="badge">JMG LICENCE: UNKNOWN</span>
     </div>
   </div>
 
   <!-- ══ SCIENTIFIC VALUE & CONTEXT ══ -->
   <div class="quote-box">
-    <p>“Macrostrat's global model of the Earth's upper crust is the cornerstone of open paleogeographic intelligence. Bridging the 1:500,000 national bedrock of Malaysia into Macrostrat upgrades Southeast Asia from generalized 1:25M global coverage to authoritative, survey-grade stratigraphy across Sundaland and Northwest Borneo.”</p>
+    <p>“Macrostrat's global model of the Earth's upper crust is the cornerstone of open paleogeographic intelligence. Bridging the 1:500,000 national bedrock of Malaysia into Macrostrat upgrades Southeast Asia from generalized 1:25M global coverage to a preliminary, draft stratigraphic view across Sundaland and Northwest Borneo.”</p>
     <cite>— Muhammad Arif bin Fazil · Exploration Geoscientist & arifOS Federation Architect</cite>
   </div>
 
@@ -409,8 +411,8 @@
     <!-- Card 3: State Extents Summary -->
     <div class="card">
       <div>
-        <h3>3. 14-States Geospatial Catalog</h3>
-        <p>Verified layer catalog containing bounding extents (WKID 3857) and live REST service endpoints for all 14 state-level geological mapping layers.</p>
+        <h3>3. State/FT Geospatial Catalog</h3>
+        <p>Verified layer catalog containing bounding extents (WKID 3857) and live REST service endpoints for all state/FT-level geological mapping layers.</p>
       </div>
       <div>
         <a class="btn-link" href="/earth/macrostrat-ingestion/jmg_malaysia_states_summary.json" target="_blank">
@@ -433,9 +435,9 @@
     </div>
   </div>
 
-  <!-- ══ 14 STATES INVENTORY TABLE ══ -->
+  <!-- ══ STATE/FT INVENTORY TABLE ══ -->
   <h2 style="font-family:'Cabinet Grotesk',sans-serif;font-size:1.8rem;text-transform:uppercase;margin-bottom:1.25rem;">
-    National Bedrock Coverage (14 States)
+    National Bedrock Coverage (13 States + 3 FT; Labuan pending)
   </h2>
 
   <div class="table-wrap">
@@ -462,8 +464,9 @@
         <tr><td>Negeri Sembilan</td><td>[20]</td><td>Lithology of Negeri Sembilan</td><td>Main Range Granites & Metamorphic</td><td style="color:var(--cyan)">● Verified</td></tr>
         <tr><td>Melaka</td><td>[22]</td><td>Lithology of Melaka</td><td>Coastal Metamorphic & Granites</td><td style="color:var(--cyan)">● Verified</td></tr>
         <tr><td>Johor</td><td>[24]</td><td>Lithology of Johor</td><td>Eastern Belt / Mersing Shear Zone</td><td style="color:var(--cyan)">● Verified</td></tr>
-        <tr><td>Sabah</td><td>[26]</td><td>Lithology of Sabah</td><td>Crocker Fold-Thrust & Kinabalu Pluton</td><td style="color:var(--cyan)">● Verified</td></tr>
+        <tr><td>Sabah</td><td>[26]</td><td>Lithology of Sabah</td><td>Crocker Fold-Thrust & Kinabalu Pluton (~7–8 Ma U-Pb; older K-Ar contested)</td><td style="color:var(--cyan)">● Verified</td></tr>
         <tr><td>Sarawak</td><td>[28]</td><td>Lithology of Sarawak</td><td>Rajang Accretionary Wedge (Belaga Fm)</td><td style="color:var(--cyan)">● Verified</td></tr>
+        <tr><td>Labuan</td><td>—</td><td>Not present in source layers</td><td>Federal Territory (offshore Sabah)</td><td style="color:#c9a227">● Pending coverage</td></tr>
       </tbody>
     </table>
   </div>

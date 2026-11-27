@@ -1,5 +1,8 @@
 # Upstream Map Ingestion Proposal: Geological Map of Malaysia (JMG 1:500,000)
 
+> **DRAFT — not for distribution. Content unverified. Do not cite.**
+> **Licensing:** UNKNOWN — permission requested from JMG.
+
 **To:** Prof. Shanan Peters, Dr. Daven Quinn & The Macrostrat Team (University of Wisconsin–Madison)  
 **From:** Muhammad Arif bin Fazil (Exploration Geoscientist & arifOS Federation Architect)  
 **Date:** 2026-08-26  
@@ -11,11 +14,11 @@
 
 ## 1. Executive Summary & Geoscientific Rationale
 
-Currently, Macrostrat's global coverage over Southeast Asia and Malaysia is largely derived from generalized global compilations (e.g., Chorlton 1998 1:25M global bedrock layer) and localized memoirs.
+Currently, Macrostrat's global coverage over Southeast Asia and Malaysia is largely derived from a generalized global compilation (Chorlton 1998 1:25M global bedrock layer) and localized memoirs.
 
-This submission provides the complete, authoritative, official national geoscientific dataset from the **Department of Mineral and Geoscience Malaysia (Jabatan Mineral dan Geosains Malaysia - JMG)** under the **MyGEMS** National Geospatial Framework:
+This submission provides the national geoscientific dataset (draft, unverified) from the **Department of Mineral and Geoscience Malaysia (Jabatan Mineral dan Geosains Malaysia - JMG)** under the **MyGEMS** National Geospatial Framework:
 * **Nominal Scale:** 1:500,000 (Medium/Regional Scale).
-* **Coverage:** All 14 States of Malaysia across Sundaland (Peninsular Malaysia) and Borneo (Sabah and Sarawak), covering the national terrestrial extent (~330,803 km²).
+* **Coverage:** 13 states (Perlis, Kedah, Pulau Pinang, Perak, Kelantan, Terengganu, Pahang, Selangor, Negeri Sembilan, Melaka, Johor, Sabah, Sarawak) and 3 Federal Territories (Kuala Lumpur, Putrajaya, Labuan*). *Labuan coverage pending — not present in the source layers.
 * **Structural Lineaments:** Suture zones, major shear systems, and thrust faults (Bentong-Raub Suture, Bukit Tinggi Fault, Bok Bak Fault, Lupar Line, Crocker Fold-Thrust Belt).
 * **Spatial Reference:** EPSG:4326 (WGS84) Geodetic / Web Mercator EPSG:3857.
 
@@ -28,7 +31,7 @@ This submission provides the complete, authoritative, official national geoscien
 * **Primary Web Portal:** `https://mygems.jmg.gov.my/portal/apps/webappviewer/index.html?id=90702a483ab6489bbaab210e038c2ed9`
 * **GIS Service Endpoint:** `https://mygems.jmg.gov.my/server/rest/services/Demarcation/Litology_by_Negeri/MapServer`
 * **Structural Fault Service:** `https://mygems.jmg.gov.my/server/rest/services/GeologiAsas/Major_Fault/MapServer/5`
-* **Licensing:** Open Government Data (Malaysia) / Public Domain Geoscience / CC-BY 4.0 Compatible.
+* **Licensing:** UNKNOWN — permission requested from JMG.
 * **Bounding Box:** `[99.5, 0.8, 119.5, 7.5]` (WGS84 Lat/Lng).
 
 ---
@@ -49,18 +52,18 @@ The dataset is subdivided into key geotectonic domains:
    - *Kuantan Basalts* (Quaternary intraplate volcanism)
 4. **Northwest Borneo & Sabah Orogeny:**
    - *Crocker & Trusmadi Formations* (Eocene-Oligocene deepwater turbidite prism)
-   - *Kinabalu Pluton* (10-7 Ma Late Miocene granite adamellite)
+   - *Kinabalu Pluton* (~7–8 Ma U-Pb; older K-Ar ages contested)
 5. **Sarawak & Rajang Flysch:**
    - *Belaga Formation* (Cretaceous-Eocene Rajang accretionary wedge)
-   - *Lupar Melange & Central Luconia Carbonates* (Miocene build-ups)
+   - *Lupar Melange* (Miocene)
 
 ---
 
 ## 4. Integration Artifacts & Manifest
 
 1. `macrostrat_ingestion_manifest.json`: Standardized Macrostrat Source & Layer mapping specification.
-2. `jmg_malaysia_states_summary.json`: Detailed 14-state layer catalog with verified ArcGIS Server endpoints and bounding extents.
-3. `export_jmg_macrostrat.py`: Automated GIS vector extractor script formatting all 14 state layers into Macrostrat GeoPackage/Shapefile schema with clean topological boundary resolution.
+2. `jmg_malaysia_states_summary.json`: Detailed 13-state + 3 FT layer catalog with verified ArcGIS Server endpoints and bounding extents.
+3. `export_jmg_macrostrat.py`: Automated GIS vector extractor script formatting all state/FT layers into Macrostrat GeoPackage/Shapefile schema with clean topological boundary resolution.
 
 ---
 

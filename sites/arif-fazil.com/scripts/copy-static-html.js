@@ -22,7 +22,6 @@ const SPA_ROUTES = [
   "words",
   "words/essays",
   "words/wiki",
-  "words/makcikgpt",
   "world",
   "work",
   "work/exploration-2013-2026",
@@ -196,13 +195,13 @@ const STATIC_INDEX_ALLOWLIST = new Set([
   // Words 16.5 KB / Work 10.1 KB / MakcikGPT 42.1 KB with correct per-route titles;
   // the webroot had 8.6 KB of the homepage on all three.
   "world/makcikgpt/index.html",
-  // /words/essays/, /words/wiki/, /words/makcikgpt/ — peer subpages of the
+  // /words/essays/, /words/wiki/ — peer subpages of the
   // Words hub (2026-10-01). Static shells with proper titles so agent/SEO
   // crawlers see correct metadata before React hydration. Hybrid enrichment
   // (same pattern as /words/index.html) injects Vite assets on build.
+  // words/makcikgpt removed 2026-11-23 (zen B): Caddy 301 → /world/makcikgpt/.
   "words/essays/index.html",
   "words/wiki/index.html",
-  "words/makcikgpt/index.html",
   // /000/ + /999/ — sovereign proof pages (2026-10-02). Hand-forged, NO SPA shell
   // injection, NO React hydration. The Caddy @genesis / @validation handlers route
   // the canonical trailing-slash URLs to these files; SPA bundle clobbering them

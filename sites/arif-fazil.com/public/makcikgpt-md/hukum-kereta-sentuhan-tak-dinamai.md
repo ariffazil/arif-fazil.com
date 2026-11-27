@@ -1,11 +1,10 @@
 ---
-article_id: unregistered-hukum-kereta-sentuhan-tak-dinamai
+article_id: m-gen-hukum-kereta-sentuhan-tak-dinamai
 canonical_url: https://arif-fazil.com/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai
-seal: null
-provenance_status: unregistered-ts-mirror
-registered_in_essays_json: false
-mirror_source: src/data/makcikgpt/hukum-kereta-sentuhan-tak-dinamai.ts
-merkle_leaf: null
+seal: 999
+provenance_status: migrating
+version: 1.0
+merkle_leaf: fbb434a0ed20a63f8315974c9352bf63a3a2670341dfdb0ce5b732c15cefbdd9
 epistemic_summary:
   obs_count: 0
   der_count: 0
@@ -15,13 +14,12 @@ epistemic_summary:
 
 # Hukum Kereta: Sentuhan yang Tak Dinamai
 
-> Badan artikel ini dijana terus dari sumber kanonikal `src/data/makcikgpt/hukum-kereta-sentuhan-tak-dinamai.ts`.
->
-> ⚠️ Artikel ini BELUM didaftarkan dalam `src/data/essays.json` — tiada seal, tiada Claim Register, tiada Source Ledger di dalam fail ini. Badan artikel adalah kanonikal; metadata provenance belum lengkap.
+> Hukum Kereta: Sentuhan yang Tak Dinamai
 >
 > Canonical URL: https://arif-fazil.com/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai
 >
-> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi.
+> Bahasa: BM (Bahasa Makcik) · Suara: makcik pasar, bukan institusi · Semua nombor bawa sumber.
+> Baca versi HTML: https://arif-fazil.com/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai
 
 ---
 

@@ -327,6 +327,30 @@ footer {
 @media (prefers-reduced-motion:reduce) {
   *, *::before, *::after { animation:none!important; transition:none!important; }
 }
+
+/* PORTRAIT-FREE PLATE (2026-11-22 kimi-code/FI-008): the public site carries no human
+   photographs. Seat, name, tenure, verdict and sources are unchanged. */
+.pm-portrait .plate-note{
+  width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:var(--dim);font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;
+  text-align:center;padding:1rem;gap:.4rem;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 8px,transparent 8px 16px);
+}
+.pm-portrait .plate-note span{font-size:2.6rem;opacity:.28;letter-spacing:.06em;color:var(--ink)}
+
+/* === hermes refine: stretched-link card, overflow guards, a11y === */
+.pm-card{position:relative}
+.card-stretch{text-decoration:none;color:inherit}
+.card-stretch::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit}
+.pm-card-actions{position:relative;z-index:2}
+.pm-portrait .order-badge,.pm-portrait .verdict-badge{z-index:2}
+@media(max-width:639px){
+  .wrap,.person,.person ul,.person li{max-width:100%;overflow-wrap:break-word}
+  .person pre,.person table,.person .wide{overflow-x:auto}
+}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:99;padding:.6rem 1rem;background:#00A19C;color:#04121a;font-family:var(--font-mono,monospace);font-size:.8rem;border-radius:0 0 6px 0}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #00A19C;outline-offset:2px;border-radius:3px}
 </style>
 <script type="application/ld+json">
 {
@@ -401,11 +425,12 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 </div>
 </section>
 <!-- Gallery Grid (13 Cards) -->
+<a class="skip-link" href="#pm-card-grid">Langkau ke galeri kerusi</a>
 <main class="pm-grid" id="pm-card-grid">
 <!-- Card L01: Tengku Razaleigh Hamzah -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tengku razaleigh hamzah pengasas · pengerusi &amp; ketua eksekutif 1974–1976 putera aristokrat kelantan &amp; arkitek kedaulatan petroleum negara. menggubal akta pembangunan petroleum 1974 (pda 1974) tanpa mengambil sesen pun gaji korporat. menghubungkan entiti korporat petroleum terus ke dalam orbit kekuasaan politik; merintis model pelaburan konglomerat politik bumiputera (fleet holdings, bbmb) yang kemudiannya menjadi liabiliti fiskal.">
 <div class="pm-portrait">
-<img alt="Tengku Razaleigh Hamzah" loading="lazy" src="/world/petronas/shadow/assets/razaleigh-hamzah.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tengku Razaleigh Hamzah. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>TRH</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L01</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -437,7 +462,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L02: Tan Sri Abdul Kadir Shamsuddin -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tan sri abdul kadir shamsuddin pengerusi &amp; ketua eksekutif 1976–1978 ketua setiausaha negara (ksn) pentadbir berdisiplin besi. diutus memecahkan kebuntuan rundingan 15 bulan menentang gergasi shell dan exxon untuk menandatangani kontrak perkongsian pengeluaran (psc) pertama. menyuntik budaya birokrasi perkhidmatan awam terus ke dalam urat korporat petronas; meletakkan preseden bahawa kerusi pengerusi adalah kepanjangan tangan ksn putrajaya.">
 <div class="pm-portrait">
-<img alt="Tan Sri Abdul Kadir Shamsuddin" loading="lazy" src="/world/petronas/shadow/assets/abdul-kadir-shamsuddin.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Abdul Kadir Shamsuddin. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>AKS</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L02</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -469,7 +494,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L03: Tun Abdullah Mohd Salleh -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tun abdullah mohd salleh pengerusi &amp; ketua eksekutif 1979–1988 peneraju pembinaan hulu dan hilir tempatan. mengasaskan petronas carigali, loji lng bintulu, dan penapisan kertih selama sembilan tahun tanpa sebarang skandal peribadi. beban penyelamatan (bail-out) politik pertama: petronas dipaksa membeli 86.7% bank bumiputra (bbmb) bernilai rm2.5b akibat skandal pinjaman spekulasi bmf hong kong.">
 <div class="pm-portrait">
-<img alt="Tun Abdullah Mohd Salleh" loading="lazy" src="/world/petronas/shadow/assets/abdullah-mohd-salleh.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tun Abdullah Mohd Salleh. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>AMS</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L03</div>
 <div class="verdict-badge samar">LAYAK (SCAR)</div>
 </div>
@@ -501,7 +526,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L04: Tun Raja Mohar Raja Badiozaman -->
 <article class="pm-card" data-category="chairman" data-search="tun raja mohar raja badiozaman pengerusi lembaga pengarah 1980-an (1984–1988) penasihat ekonomi khas perdana menteri merangkap diplomat birokrasi melayu elit. memelihara kestabilan lembaga tanpa mencetuskan sebarang geseran dengan kepimpinan politik. pengerusi bayangan yang rekod keputusan komersial spesifiknya kabur; memulakan corak pengerusi emeritus bukan-eksekutif yang menyerahkan kuasa sebenar kepada jabatan perdana menteri.">
 <div class="pm-portrait">
-<img alt="Tun Raja Mohar Raja Badiozaman" loading="lazy" src="/world/petronas/shadow/assets/raja-mohar.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tun Raja Mohar Raja Badiozaman. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>RMR</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L04</div>
 <div class="verdict-badge samar">HOLDS</div>
 </div>
@@ -533,7 +558,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L05: Tan Sri Basir Ismail -->
 <article class="pm-card" data-category="chairman" data-search="tan sri basir ismail pengerusi lembaga pengarah 1988–1995 pengerusi korporat pelbagai sektor era industrialisasi mahathir. memimpin bersama azizan zainul abidin ketika ledakan projek gas semenanjung (pgu). pertindihan kepentingan era penswastaan; memegang jawatan pengerusi merentas pelbagai agensi dan glc serentak (mahb, mpob) yang menimbulkan persoalan tadbir urus silang.">
 <div class="pm-portrait">
-<img alt="Tan Sri Basir Ismail" loading="lazy" src="/world/petronas/shadow/assets/basir-ismail.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Basir Ismail. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>BI</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L05</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -565,7 +590,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L06: Tun Azizan Zainul Abidin -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tun azizan zainul abidin presiden &amp; ceo (1988–95) · pengerusi (1995–04) 1988–2004 bapa integriti petronas moden. bekas setiausaha sulit kanan tiga perdana menteri yang meletakkan benteng tadbir urus profesional dan etika kerja kelas dunia. membina menara berkembar klcc dan bandar pentadbiran putrajaya; menguruskan kompromi rumit antara mempertahankan kantung syarikat dengan membiayai projek ikonik mahathir.">
 <div class="pm-portrait">
-<img alt="Tun Azizan Zainul Abidin" loading="lazy" src="/world/petronas/shadow/assets/azizan-zainul-abidin.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tun Azizan Zainul Abidin. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>AZA</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L06</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -597,7 +622,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L07: Tan Sri Mohd Hassan Marican -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tan sri mohd hassan marican presiden &amp; ceo (1995–10) · pemangku pengerusi (2004) 1995–2010 akauntan berjiwa waja yang mengubah petronas daripada syarikat domestik kepada gergasi global fortune 500 di lebih 30 buah negara. penjaga benteng rizab paling kental. pemusatan kuasa teknokratik mutlak; ketegangan berterusan dengan kepimpinan politik (terutamanya era abdullah badawi dan awal najib razak) berkenaan pengagihan dividen.">
 <div class="pm-portrait">
-<img alt="Tan Sri Mohd Hassan Marican" loading="lazy" src="/world/petronas/shadow/assets/hassan-marican.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Mohd Hassan Marican. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>MHM</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L07</div>
 <div class="verdict-badge tersedar">LAYAK KUAT</div>
 </div>
@@ -629,7 +654,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L08: Tan Sri Shamsul Azhar Abbas -->
 <article class="pm-card" data-category="chairman ceo dual" data-search="tan sri shamsul azhar abbas presiden &amp; ceo (2010–15) · pemangku pengerusi (2011–12) 2010–2015 kader dalaman tulen yang berani bersuara lantang. membeli progress energy di kanada (c$5.5b), melancarkan kompleks mega pengerang rapid, dan menolak campur tangan politik secara terbuka. pertaruhan gas syal (shale gas) modal tinggi di kanada pada puncak kitaran sebelum kejatuhan harga komoditi 2014; pergeseran terbuka dengan kerajaan negeri terengganu dan sabah.">
 <div class="pm-portrait">
-<img alt="Tan Sri Shamsul Azhar Abbas" loading="lazy" src="/world/petronas/shadow/assets/shamsul-azhar-abbas.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Shamsul Azhar Abbas. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>SAA</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L08</div>
 <div class="verdict-badge samar">HOLDS</div>
 </div>
@@ -661,7 +686,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L09: Tan Sri Wan Zulkiflee Wan Ariffin -->
 <article class="pm-card" data-category="ceo" data-search="tan sri wan zulkiflee wan ariffin presiden &amp; ketua pegawai eksekutif kumpulan 2015–2020 jurutera kimia dengan disiplin operasi ketat. mengemudi syarikat meredah kejatuhan harga minyak paling parah (brent &lt;$30), memotong perbelanjaan rm50 bilion tanpa membuang staf tetap. terpaksa meluluskan dividen khas rekod rm54 bilion pada 2019 kepada kerajaan pakatan harapan untuk menampung tunggakan bayaran balik gst.">
 <div class="pm-portrait">
-<img alt="Tan Sri Wan Zulkiflee Wan Ariffin" loading="lazy" src="/world/petronas/shadow/assets/wan-zulkiflee.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Wan Zulkiflee Wan Ariffin. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>WZW</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L09</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -693,7 +718,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L10: Tan Sri Mohd Sidek Hassan -->
 <article class="pm-card" data-category="chairman" data-search="tan sri mohd sidek hassan pengerusi lembaga pengarah 2012–2018 mantan ksn yang memulihkan dan memisahkan fungsi pengerusi sebagai institusi pengawasan bebas berasingan daripada jawatan presiden &amp; ceo. menghadapi kritikan sebagai lantikan politik pentadbiran najib razak; terpaksa mengekalkan ketenangan dewan lembaga ketika skandal 1mdb bergolak di luar menara.">
 <div class="pm-portrait">
-<img alt="Tan Sri Mohd Sidek Hassan" loading="lazy" src="/world/petronas/shadow/assets/sidek-hassan.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Mohd Sidek Hassan. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>MSH</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L10</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -725,7 +750,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L11: Tan Sri Ahmad Nizam Salleh -->
 <article class="pm-card" data-category="chairman" data-search="tan sri ahmad nizam salleh pengerusi lembaga pengarah 2018–2021 vektor industri minyak berpengalaman kelahiran terengganu. membimbing dewan lembaga melalui peralihan tiga kerajaan persekutuan dalam tempoh tiga tahun. menandatangani perjanjian penyelesaian komersial (csa) dengan kerajaan sarawak pada disember 2020 yang menamatkan hegemoni tunggal pengedaran gas semenanjung di bumi kenyalang.">
 <div class="pm-portrait">
-<img alt="Tan Sri Ahmad Nizam Salleh" loading="lazy" src="/world/petronas/shadow/assets/ahmad-nizam-salleh.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Ahmad Nizam Salleh. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>ANS</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L11</div>
 <div class="verdict-badge tersedar">LAYAK</div>
 </div>
@@ -757,7 +782,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <!-- Card L12: Tan Sri Dato' Seri Mohd Bakke Salleh -->
 <article class="pm-card" data-category="chairman incumbent" data-search="tan sri dato' seri mohd bakke salleh pengerusi lembaga pengarah 2021–kini ikon integriti korporat negara yang meletakkan jawatan daripada 1mdb pada 2009 sebagai protes salah laku. membawa kredibiliti tadbir urus tertinggi ke kerusi pengerusi. menghadapi tekanan pelantikan petroleum sarawak berhad (petros) sebagai pengagregat gas tunggal dan persoalan kebebasan lembaga di bawah tekanan fiskal putrajaya.">
 <div class="pm-portrait">
-<img alt="Tan Sri Dato' Seri Mohd Bakke Salleh" loading="lazy" src="/world/petronas/shadow/assets/bakke-salleh.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk Tan Sri Dato' Seri Mohd Bakke Salleh. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>MBS</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L12</div>
 <div class="verdict-badge incumbent">PENJAWAT KINI · TIADA VERDIK</div>
 </div>
@@ -787,15 +812,15 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 </div>
 </article>
 <!-- Card L13: YM Tan Sri Tengku Muhammad Taufik -->
-<a aria-label="YM Tan Sri Tengku Muhammad Taufik — 33 Bayang Penuh, dossier lengkap" class="pm-card" data-category="ceo incumbent" data-search="ym tan sri tengku muhammad taufik presiden &amp; ketua pegawai eksekutif kumpulan 2020–kini teknokrat perakaunan global &amp; jururunding davos. mengemudi pemulihan pasca-pandemik mencatatkan keuntungan bersejarah sambil menubuhkan entiti tenaga bersih gentari. kepatuhan teknokratik menyalurkan dividen gergasi persekutuan (rm50b 2022, rm40b 2023, rm32b 2024); hakisan monopoli statutori pda 1974 di sarawak kepada petros." href="/world/petronas/shadow/tengku-muhammad-taufik/" style="cursor:pointer;display:block;text-decoration:none;color:inherit">
+<article class="pm-card" data-category="ceo incumbent" data-search="ym tan sri tengku muhammad taufik presiden &amp; ketua pegawai eksekutif kumpulan 2020–kini teknokrat perakaunan global &amp; jururunding davos. mengemudi pemulihan pasca-pandemik mencatatkan keuntungan bersejarah sambil menubuhkan entiti tenaga bersih gentari. kepatuhan teknokratik menyalurkan dividen gergasi persekutuan (rm50b 2022, rm40b 2023, rm32b 2024); hakisan monopoli statutori pda 1974 di sarawak kepada petros.">
 <div class="pm-portrait">
-<img alt="YM Tan Sri Tengku Muhammad Taufik" loading="lazy" src="/world/petronas/shadow/assets/taufik-portrait.jpg"/>
+<div class="plate-note" role="img" aria-label="Potret tidak dipaparkan untuk YM Tan Sri Tengku Muhammad Taufik. Rekod: nama, kerusi, tempoh dan verdict sahaja."><span>TMT</span>Potret tidak dipaparkan</div>
 <div class="order-badge">L13</div>
 <div class="verdict-badge incumbent">PENJAWAT KINI · TIADA VERDIK</div>
 </div>
 <div class="pm-body">
 <div class="pm-title">Presiden &amp; Ketua Pegawai Eksekutif Kumpulan</div>
-<h2 class="pm-name">YM Tan Sri Tengku Muhammad Taufik</h2>
+<h2 class="pm-name"><a class="card-stretch" href="/world/petronas/shadow/tengku-muhammad-taufik/" aria-label="YM Tan Sri Tengku Muhammad Taufik — 33 Bayang Penuh, dossier lengkap">YM Tan Sri Tengku Muhammad Taufik</a></h2>
 <div class="pm-tenure">2020–kini</div>
 <div class="pm-section">
 <div class="pm-section-label persona">Persona &amp; Mandat</div>
@@ -821,7 +846,7 @@ Disiplin Bukti: Setiap dakwaan berlabel [OBS]/[DER]/[INT]. Tiada gambar rekaan a
 <a class="dossier-btn" href="#ym-tan-sri-tengku-muhammad-taufik">Dossier Arkib Mendalam ↓</a>
 </div>
 </div>
-</a>
+</article>
 </main>
 <div class="dossier-break" id="dossier-arkib">
 <h2>Dossier Arkib Mendalam</h2>

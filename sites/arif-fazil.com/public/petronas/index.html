@@ -15,6 +15,11 @@
 <meta property="og:site_name" content="arifOS · Federation Intelligence" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="canonical" href="https://arif-fazil.com/petronas/" />
+<link rel="alternate" type="application/json" href="https://arif-fazil.com/petronas/state.json" title="PETRONAS corporate state JSON" />
+<link rel="alternate" type="text/markdown" href="https://arif-fazil.com/petronas/brief.md" title="PETRONAS brief Markdown" />
+<link rel="alternate" type="application/json" href="https://arif-fazil.com/world/petronas/shadow/index.json" title="Kerusi Bayang index JSON" />
+<link rel="alternate" type="text/plain" href="https://arif-fazil.com/llms.txt" title="arifOS master agentic index" />
+<link rel="alternate" type="text/markdown" href="https://arif-fazil.com/wealth/malaysia/brief.md" title="Coupled pair — Putrajaya federal brief Markdown" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -66,6 +71,26 @@
   section{margin:clamp(4.5rem,9vw,7rem) 0}
   h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:2rem}
   h2 .no{color:var(--accent);font-style:italic;margin-right:.8rem;font-size:.7em;vertical-align:.15em}
+
+  /* ── TEMPORAL BANDS — Past · Present · Future (labels only; no number changed) ── */
+  .band{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;
+    text-transform:uppercase;padding:.16rem .5rem;border-radius:3px;margin-left:.75rem;vertical-align:.3em;
+    border:1px solid var(--hair);color:var(--dim);background:rgba(255,255,255,.03);white-space:nowrap}
+  .band-past{color:var(--dim);border-color:var(--hair)}
+  .band-present{color:var(--accent);border-color:rgba(201,162,39,.42);background:rgba(201,162,39,.08)}
+  .band-future{color:#8fd6b4;border-color:rgba(143,214,180,.35);background:rgba(143,214,180,.07)}
+  .band-legend{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:var(--dim);
+    padding:.55rem 0;margin-top:.9rem;border-top:1px solid var(--hair)}
+  .band-legend b{color:var(--ink);font-weight:400}
+  /* ── TOP STRIP — quiet cross-links to the live boards (no new claims) ── */
+  .top-strip{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.9rem;
+    padding:.5rem .7rem;border:1px solid var(--hair);border-radius:6px;background:rgba(255,255,255,.015)}
+  .top-strip .lbl{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--dim)}
+  .top-strip a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;color:var(--dim);
+    border-bottom:1px solid transparent;padding:.1rem .1rem}
+  .top-strip a:hover{color:var(--ink);border-bottom-color:var(--hair)}
+  .top-strip .sep{color:var(--hair)}
   p{margin-bottom:1.15rem}
   .dim{color:var(--dim)}
 
@@ -252,7 +277,7 @@
     <nav class="global-nav" aria-label="Global Primary">
       <a href="/">Home</a>
       <a href="/earth/">Earth</a>
-      <a href="/wealth/">Wealth</a>
+      <a href="/economics/">Economics</a>
       <a href="/petronas/" class="active" aria-current="page">PETRONAS (KLCC)</a>
       <a href="/world/petronas/shadow/">Shadow</a>
       <a href="/map/">Map</a>
@@ -270,7 +295,7 @@
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href="/">L0 Home</a>
       <span class="breadcrumb-sep">›</span>
-      <a href="/wealth/">L1 Wealth Hub</a>
+      <a href="/economics/">L1 Economics</a>
       <span class="breadcrumb-sep">›</span>
       <span style="color:#fff">L2 KLCC Hydrocarbon Engine</span>
     </nav>
@@ -280,6 +305,20 @@
       <span>Kunci Kira-Kira Korporat 1H2026 · Digandingkan ke Belanjawan Persekutuan Putrajaya</span>
     </div>
 
+    <!-- Top strip: live boards this page couples to. Navigation only. -->
+    <nav class="top-strip" aria-label="Related live surfaces">
+      <span class="lbl">Top strip</span>
+      <a href="/oil/">Oil price → /oil</a>
+      <span class="sep">·</span>
+      <a href="/gas/">Gas price → /gas</a>
+      <span class="sep">·</span>
+      <a href="/wealth/malaysia/">Federal coupling → /wealth/malaysia</a>
+    </nav>
+    <p class="band-legend">
+      Temporal bands · <b>Past</b> (sudah berlaku) · <b>Present</b> (apa yang benar hari ini) ·
+      <b>Future</b> (apa yang didaftar untuk diuji). Label sahaja — tiada nombor, tag atau tarikh berubah.
+    </p>
+
     <!-- 4-Metric HUD -->
     <div class="hud-container">
       <div class="hud-card">
@@ -287,8 +326,8 @@
           <span>Rizab Tunai 1H2026</span>
           <span style="color:var(--accent)">[OBS]</span>
         </div>
-        <div class="hud-val">RM111.4B</div>
-        <div class="hud-caption">Kecairan Tunai Kumpulan</div>
+        <div class="hud-val">RM193.6B</div>
+        <div class="hud-caption">Tunai 30 Jun 2026 (31 Dis 2025: RM204.4B)</div>
       </div>
 
       <div class="hud-card">
@@ -296,8 +335,8 @@
           <span>Dividen 2026</span>
           <span style="color:var(--accent)">[OBS]</span>
         </div>
-        <div class="hud-val">RM32.0B</div>
-        <div class="hud-caption">Aliran Tunai ke Putrajaya</div>
+        <div class="hud-val">RM20.0B</div>
+        <div class="hud-caption">Diumum 26 Feb 2026 · MoF unjuran RM27B</div>
       </div>
 
       <div class="hud-card">
@@ -349,7 +388,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">I.</span>Empat jalan, dan apa yang mengujinya</h2>
+    <h2 class="display"><span class="no">I.</span><span class="band band-past">Past</span>Empat jalan, dan apa yang mengujinya</h2>
     <p class="dim" style="margin-bottom:2rem">Bukan niat sesiapa. Hanya apa yang laporan boleh sokong, lemahkan, atau belum dapat bezakan.</p>
     <div class="rows">
       <div class="road">
@@ -372,7 +411,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">II.</span>Apa yang berubah 9 Oktober, dan apa yang tidak</h2>
+    <h2 class="display"><span class="no">II.</span><span class="band band-past">Past</span>Apa yang berubah 9 Oktober, dan apa yang tidak</h2>
     <p>Belanjawan 2027 dibentang 9 Oktober. Kertas Kementerian Kewangan menaikkan dividen PETRONAS untuk 2026 daripada RM20 bilion kepada RM27 bilion, dan meletakkan RM32 bilion untuk 2027. The Edge menulis yang sama: RM32 bilion itu RM5 bilion, atau 18.5 peratus, lebih tinggi daripada RM27 bilion untuk 2026. Ia 8.4 peratus daripada hasil persekutuan yang diunjur RM380.8 bilion.</p>
     <p>Kertas yang sama andaikan minyak mentah 2027 pada US$78 setong, turun daripada US$85 untuk 2026. Hasil berkaitan petroleum 2027: RM61.2 bilion, 16.1 peratus daripada jumlah, naik sedikit daripada 15.1 peratus.</p>
     <p>Harga sekarang jauh di atas andaian itu. Brent pada 19 Oktober sekitar US$108 setong; penutup Jumaat 109.86, tertinggi sejak 19 Mei. Aliran minyak mentah Teluk yang dipantau Kpler sekitar 8.5 juta tong sehari minggu itu, turun daripada lebih 20 juta. Sebahagian tunai tambahan itu ialah harga perang, bukan hasil kerja baru.</p>
@@ -382,7 +421,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">III.</span>Apa yang perlu ditonton seterusnya</h2>
+    <h2 class="display"><span class="no">III.</span><span class="band band-future">Future</span>Apa yang perlu ditonton seterusnya</h2>
     <p class="dim">Jangan tonton niat orang. Jangan tonton skor sifar lama. Jangan tonton satu harga minyak sebagai kebenaran. Tonton benda ini, dan tulis apa yang laporan cetak, bukan apa yang terasa.</p>
     <ul class="toc" style="margin-top:1.6rem">
       <li><span class="d">9 Okt 2026</span><span class="t">Sudah berlaku. Belanjawan meletakkan jangkaan RM27 bilion untuk 2026 dan RM32 bilion untuk 2027. Jalan D disokong. <a href="https://belanjawan.mof.gov.my/pdf/belanjawan2027/revenue/fiscal_outlook_2027.pdf">Sumber: Kementerian Kewangan</a></span><span class="dash"></span></li>
@@ -399,16 +438,16 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">IV.</span>Laut dalam bicara — dan apa yang belum masuk buku</h2>
+    <h2 class="display"><span class="no">IV.</span><span class="band band-present">Present</span>Laut dalam bicara — dan apa yang belum masuk buku</h2>
     <p>Laporan PETRONAS sendiri (hasil 1H 2025) menamakan dua penemuan: Megah-1 di Blok 3K laut dalam Sabah, dan Lebah Emas-1ST1 di Blok PM6/12 Semenanjung — play baharu berhampiran Duyong yang matang. Angka Megah yang berlegar di industri ialah 200–300 juta tong. PETRONAS sendiri belum terbitkan angka rasmi. Yang cetak hari ini ialah anggaran pihak ketiga, bukan buku syarikat.</p>
     <p>Gerakan selepas penemuan sudah jelas di takwim. Notis Jabatan Laut untuk telaga appraisal Megah-2 dikeluarkan penghujung September 2026. Kapal gerudi dilaporkan West Capella — walaupun satu sumber menamakan Noble Viking, jadi itu kekal status dilaporkan, bukan sah. TGS memproses semula 514 km² seismik 3D ke atas Megah sejak Julai 2026, siap April 2027. Fugro menyiapkan survei geohazard AUV untuk Megah dan Limbayong pada 28 September 2026. Semua itu persiapan. Tiada satu pun menaikkan tong 7.92.</p>
     <p>Buku hanya bergerak pada hari FID. Limbayong menunjukkan jalannya: jumpaan Shell 2002, dilepaskan, diambil semula, dan FID dilaporkan ditandatangani 28 Ogos 2026 — barulah ia masuk kira. Sebelum FID, Megah kekal contingent; selepas FID, ia menjadi rizab. Anggaran 200–300 juta tong itu lebih kurang 2.5–3.8% daripada tangki 7.92 bilion — material untuk play baharu, kecil pada buku kumpulan.</p>
-    <p>Attribusi juga perlu jujur: kawasan ini pernah diterokai dan dilepaskan syarikat asing sebelum diambil semula — Limbayong itu sendiri contohnya. Dan alat AI dipasarkan lebih laju daripada apa yang boleh disemak dari luar. ERMAI "enam hari menjadi enam saat" ialah angka laporan syarikat sendiri dalam Integrated Report 2025; tiada pihak luar yang boleh mengujinya. TIRAI dilaporkan beroperasi tanpa metrik awam. myPROdata ditambah agentic AI bersama Iraya Energies pada 3 September 2026. Jurang antara pengumuman dan meja kerja sebenar diceritakan dalam <a href="/world/makcikgpt/petronas-ai-transformasi-tapi-awak-pakai-copilot/">esai Copilot</a>; batuan dan lembaganya disemak di <a href="/earth/kinabalu-basin/">dossier Kinabalu</a>.</p>
+    <p>Attribusi juga perlu jujur: kawasan ini pernah diterokai dan dilepaskan syarikat asing sebelum diambil semula — Limbayong itu sendiri contohnya. Dan alat AI dipasarkan lebih laju daripada apa yang boleh disemak dari luar. ERMAI "enam hari menjadi enam saat" ialah angka laporan syarikat sendiri dalam Integrated Report 2025; tiada pihak luar yang boleh mengujinya. TIRAI dilaporkan beroperasi tanpa metrik awam. myPROdata ditambah agentic AI bersama Iraya Energies pada 3 September 2026. Jurang antara pengumuman dan meja kerja sebenar diceritakan dalam <a href="/world/makcikgpt/petronas-ai-transformasi-tapi-awak-pakai-copilot">esai Copilot</a>; batuan dan lembaganya disemak di <a href="/earth/kinabalu-basin/">dossier Kinabalu</a>.</p>
     <p class="src">Sumber: <a href="https://www.petronas.com/bm/node/1726">PETRONAS — hasil 1H 2025 (Megah-1 Blok 3K, Lebah Emas-1ST1 PM6/12)</a> · <a href="https://oilprice.com/Company-News/Petronas-Moves-to-Appraise-Major-Oil-Discovery-Offshore-Malaysia.html">OilPrice, 7 Okt 2026 (200–300 juta tong = anggaran industri; tiada angka rasmi)</a> · <a href="https://aogdigital.com/news/543385-tgs-to-reprocesses-seismic-data-for-petronas-megah-discovery">AOG Digital, 1 Okt 2026 (TGS 514 km²)</a> · <a href="https://splash247.com/petronas-moves-to-appraise-major-oil-find-off-malaysia">Splash247 (West Capella dilaporkan; di bawah kontrak PTTEP)</a> · <a href="https://globalenergynetwork.net/news-item/petronas-lines-up-drillship-to-appraise-megah-malaysias-largest-oil-discovery-in-20-years">Global Energy Network (Noble Viking — konflik nama kapal dinyatakan)</a> · <a href="https://www.technipfmc.com/en/investors/financial-news-releases/press-release/technipfmc-awarded-iepci-contract-for-petronas-limbayong-project-offshore-malaysia?type=press-releases">TechnipFMC, 15 Sep 2026 (Limbayong iEPCI)</a> · <a href="https://www.petronas.com/integrated-report-2025/assets/pdf/by-section/5_PETRONAS_IR25_DeliveringOurStrategy.pdf">PETRONAS Integrated Report 2025 (ERMAI: ~6 hari → 6 saat, laporan syarikat sendiri)</a> · <a href="https://www.petronas.com/mpm/media/media-releases/petronas-advances-malaysias-upstream-data-platform-agentic-ai-accelerate-ep">PETRONAS MPM, 3 Sep 2026 (myPROdata + Iraya Energies)</a> · Limbayong FID 28 Ogos 2026: lapuran projek industri — nombor rasmi PETRONAS menunggu terbit.</p>
   </section>
 
   <section>
-    <h2 class="display"><span class="no">V.</span>Apa yang kita tahu</h2>
+    <h2 class="display"><span class="no">V.</span><span class="band band-present">Present</span>Apa yang kita tahu</h2>
     <div class="rows">
       <div class="row">
         <span class="lbl">Tunai · 30 Jun 2026</span>
@@ -435,7 +474,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">VI.</span>Dalam bentuk graf</h2>
+    <h2 class="display"><span class="no">VI.</span><span class="band band-present">Present</span>Dalam bentuk graf</h2>
     <p class="dim">Empat lukisan daripada nombor yang sama halaman ini. Tiada paksi disorok; yang dipotong diberitahu. Emas = perkara yang menekan.</p>
 
     <figure class="graf">
@@ -522,7 +561,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">VII.</span>Apa yang kita tidak tahu</h2>
+    <h2 class="display"><span class="no">VII.</span><span class="band band-present">Present</span>Apa yang kita tidak tahu</h2>
     <ul class="plain">
       <li>Tahun tunggal berapa tong diganti tidak diterbitkan. Yang ada hanya purata tiga tahun, dan ia jatuh ke 0.3.</li>
       <li>Apa yang PETRONAS dapat sebagai ganti tong yang tidak lagi dimiliki — belum ada bukti sewa atau hak jual yang naik.</li>
@@ -535,7 +574,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">VIII.</span>Siapa memegang keputusan</h2>
+    <h2 class="display"><span class="no">VIII.</span><span class="band band-present">Present</span>Siapa memegang keputusan</h2>
     <p>Angka di atas tidak memutuskan apa-apa; lembaga yang memutuskan. Semakan 28 Oktober 2026 pada laman rasmi PETRONAS: Mohd Jukris Abdul Wahab disenaraikan sebagai Executive Director — serentak Chief Operating Officer dan EVP &amp; CEO Upstream. Tiga daripada lapan pengarah kini eksekutif: PGCEO, COO merangkap ketua Upstream, dan CFO. Orang yang memiliki masalah upstream kini mengundi di lembaga yang menilai masalah itu. Tarikh rasmi pelantikannya sebagai pengarah, dan mandat yang menyertainya, belum berdokumen awam.</p>
     <p>Dua jadual lain berjalan di luar jadual akaun. Di Mahkamah Persekutuan: rujukan PETRONAS (10 Januari 2026) tentang konflik PDA 1974 dengan Distribution of Gas Ordinance 2016 Sarawak, dan petisyen Sarawak mencabar PDA 1974, Continental Shelf Act 1966 dan Petroleum Mining Act 1966. Di Sabah: mahkamah mengakui hak 40% hasil; bayaran interim RM1.5 bilion dibayar Jun 2026, jauh daripada tuntutan RM5–23 bilion setahun. Kedua-duanya menekan dompet yang sama yang diminta membayar dividen.</p>
     <p class="src">Sumber: <a href="https://www.petronas.com/about-us/our-leaders">petronas.com — Our Leaders</a> (semakan 28 Okt 2026) · The Edge, 18 Jan 2026 · The Star, 3 Jun 2026 · Batas: komposisi lembaga bukan bukti keputusan; jawatan luar seseorang pengarah bukan bukti arahan mengundi.</p>
@@ -559,7 +598,7 @@
   </div>
 
   <section>
-    <h2 class="display"><span class="no">IX.</span>Ramalan berdaftar — diuji masa, bukan dipercaya</h2>
+    <h2 class="display"><span class="no">IX.</span><span class="band band-future">Future</span>Ramalan berdaftar — diuji masa, bukan dipercaya</h2>
     <p class="dim">Dua ramalan berdaftar dalam lejar CHRON pada 28 Oktober 2026. Pendaftaran bukan pengesahan; hanya hasil yang disahkan mengubah skor.</p>
     <ul class="toc" style="margin-top:1.6rem">
       <li><span class="d">0.63</span><span class="t">RRR (1P) purata 3 tahun pada 1.1.2027 kekal &lt; 0.8 — falsifikasi: Integrated Report 2026 mencetak 0.8 atau lebih</span><span class="dash"></span><span class="d">31 Mac 2027</span></li>
@@ -570,7 +609,7 @@
   </section>
 
   <section>
-    <h2 class="display"><span class="no">X.</span>Nombor yang dicetak</h2>
+    <h2 class="display"><span class="no">X.</span><span class="band band-present">Present</span>Nombor yang dicetak</h2>
     <p class="dim" style="margin-bottom:1.6rem">Ini bukan ramalan. Ini apa yang laporan syarikat cetak.</p>
     <div class="fineprint">
       <p>Tunai 30 Jun 2026: RM193.6 bilion. Disember 2025: RM204.4 bilion. Hutang kumpulan 30 Jun: RM126.8 bilion. Gearing 21.2 peratus, termasuk jaminan. Nota dan bon ada dalam hutang itu. Tunai bersih selepas hutang: RM66.8 bilion.</p>
@@ -589,14 +628,18 @@
 <footer class="closed-loop-bar">
   <div class="closed-loop-inner">
     <nav class="loop-links" aria-label="Closed-Loop Cross Links">
-      <a href="/wealth/">← Kembali ke Hub Wealth (L1)</a>
+      <a href="/economics/">← Hub Ekonomi (/economics/)</a>
       <a href="/wealth/malaysia/">⇄ Kembar Fiskal: Putrajaya (/wealth/malaysia/)</a>
+      <a href="/oil/">🛢 Brent (/oil/)</a>
+      <a href="/gas/">🔥 Gas (/gas/)</a>
       <a href="/map/" style="color:var(--accent)">🗺 Peta Sistem /map/</a>
       <a href="/world/petronas/shadow/tengku-muhammad-taufik/">⇄ 33 Bayang CEO (/shadow/tengku-muhammad-taufik/)</a>
       <a href="/llms.txt">🤖 /llms.txt</a>
     </nav>
-    <div class="mono" style="font-size:0.72rem; color:var(--dim)">
-      DITEMPA BUKAN DIBERI · arifOS Federation · seal 999
+    <div class="mono" style="font-size:0.72rem; color:var(--dim); display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; align-items:baseline">
+      <span>Muhammad Arif bin Fazil · dikemas kini 22 November 2026</span>
+      <span><a href="/petronas/state.json">state.json</a> · <a href="/petronas/brief.md">brief.md</a> · <a href="/llms.txt">llms.txt</a></span>
+      <span>DITEMPA BUKAN DIBERI · arifOS Federation · seal 999</span>
     </div>
   </div>
 </footer>
@@ -618,7 +661,7 @@ setInterval(updatePetronasClock, 1000);
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — dompet hari ini, tangki masa depan","dateModified":"2026-11-03","inLanguage":"ms","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2025 discoveries Megah-1 (Block 3K, 200-300 million barrels industry estimate) and Lebah Emas-1ST1 are not yet in the reserve book. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/petronas/"}
+{"@context":"https://schema.org","@type":"WebPage","name":"PETRONAS — dompet hari ini, tangki masa depan","dateModified":"2026-11-22","inLanguage":"ms","description":"Cash at 30 June 2026 was RM193.6 billion. Sellable stock fell from 9.35 to 8.64 to 7.92 billion barrels. The 2025 discoveries Megah-1 (Block 3K, 200-300 million barrels industry estimate) and Lebah Emas-1ST1 are not yet in the reserve book. Four roads stay open. No personal motive. No collapse date.","url":"https://arif-fazil.com/petronas/","author":{"@type":"Person","name":"Muhammad Arif bin Fazil","url":"https://arif-fazil.com/"},"isPartOf":{"@type":"WebSite","name":"arif-fazil.com","url":"https://arif-fazil.com/"},"relatedLink":["https://arif-fazil.com/wealth/malaysia/","https://arif-fazil.com/economics/","https://arif-fazil.com/world/petronas/shadow/","https://arif-fazil.com/oil/","https://arif-fazil.com/gas/"]}
 </script>
 </body>
 </html>

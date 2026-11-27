@@ -54,11 +54,14 @@ done
 # ── Phase 0: Verify-only mode ──────────────────────────────────────
 if $VERIFY_ONLY; then
   header "VERIFY ONLY — Checking live state"
-  exec "$SITE_DIR/scripts/verify-makcik-deploy.sh" 2>/dev/null || {
-    # Inline verification
-    TOTAL_FAIL=0
+  if [ -x "$SITE_DIR/scripts/verify-makcik-deploy.sh" ]; then
+    "$SITE_DIR/scripts/verify-makcik-deploy.sh"
+    exit $?
+  fi
+  # Inline verification
+  TOTAL_FAIL=0
     DIST_JS=$(ls -t "$SITE_DIR/dist/assets/"index-*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "")
-    LIVE_JS=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 "https://arif-fazil.com/" 2>/dev/null | grep -oP 'index-[A-Za-z0-9]+\.js' || echo "")
+    LIVE_JS=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 "https://arif-fazil.com/" 2>/dev/null | grep -oP 'index-[A-Za-z0-9_-]+\.js' | head -1 || echo "")
     if [ -n "$DIST_JS" ] && [ "$DIST_JS" = "$LIVE_JS" ]; then pass "JS bundle: $DIST_JS"; else fail "JS bundle mismatch"; TOTAL_FAIL=$((TOTAL_FAIL+1)); fi
 
     # Test each slug
@@ -86,7 +89,6 @@ if $VERIFY_ONLY; then
 
     [ "$TOTAL_FAIL" -eq 0 ] && pass "ALL VERIFICATIONS PASSED" || fail "$TOTAL_FAIL checks failed"
     exit "$TOTAL_FAIL"
-  }
 fi
 
 # ── Phase 1: Article Scavenger — Find unregistered .ts files ───────
@@ -94,8 +96,8 @@ header "PHASE 1: Article Scavenger"
 UNREGISTERED=()
 for f in "$MAKCIKGPT_DIR"/*.ts; do
   slug=$(basename "$f" .ts)
-  [ "$slug" = "index" ] || [ "$slug" = "types" ] || [ "$slug" = "fix" ] || [ "$slug" = "jsonld-blocks" ] && continue
-  if ! grep -q "'$slug'" "$INDEX_TS" 2>/dev/null; then
+  [ "$slug" = "index" ] || [ "$slug" = "types" ] || [ "$slug" = "fix" ] || [ "$slug" = "jsonld-blocks" ] || [ "$slug" = "meta.generated" ] && continue
+  if ! grep -q "'./$slug'" "$INDEX_TS" 2>/dev/null && ! grep -q "'$slug'" "$INDEX_TS" 2>/dev/null; then
     UNREGISTERED+=("$slug")
     warn "UNREGISTERED: $slug"
   fi
@@ -111,7 +113,7 @@ fi
 MISSING_ESSAYS=()
 for f in "$MAKCIKGPT_DIR"/*.ts; do
   slug=$(basename "$f" .ts)
-  [ "$slug" = "index" ] || [ "$slug" = "types" ] || [ "$slug" = "fix" ] || [ "$slug" = "jsonld-blocks" ] && continue
+  [ "$slug" = "index" ] || [ "$slug" = "types" ] || [ "$slug" = "fix" ] || [ "$slug" = "jsonld-blocks" ] || [ "$slug" = "meta.generated" ] && continue
   if ! grep -q "/world/makcikgpt/$slug" "$ESSAYS_JSON" 2>/dev/null; then
     MISSING_ESSAYS+=("$slug")
     warn "MISSING from essays.json: $slug"
@@ -248,7 +250,7 @@ header "PHASE 6: Verify"
 
 # 6a: JS bundle hash
 DIST_JS=$(ls -t "$SITE_DIR/dist/assets/"index-*.js 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "no-dist")
-LIVE_JS=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 "https://arif-fazil.com/" 2>/dev/null | grep -oP 'index-[A-Za-z0-9]+\.js' || echo "no-live")
+LIVE_JS=$(curl -sk --resolve arif-fazil.com:443:127.0.0.1 "https://arif-fazil.com/" 2>/dev/null | grep -oP 'index-[A-Za-z0-9_-]+\.js' | head -1 || echo "no-live")
 if [ -n "$DIST_JS" ] && [ -n "$LIVE_JS" ] && [ "$DIST_JS" = "$LIVE_JS" ]; then
   pass "JS bundle: $DIST_JS (live matches dist)"
 else

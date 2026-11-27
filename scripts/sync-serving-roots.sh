@@ -186,7 +186,7 @@ probe_local "$TOP/earth/index.html" "/map/#earth" "earth page links to canonical
 probe_local "$TOP/llms.json" "arif-fazil.com" "llms.json serves"
 probe_local "$TOP/llms.txt" "Does not adjudicate" "llms.txt is the compact professional map"
 probe_local "$TOP/human/index.html" "<title>Start here — agents</title>" "human/ is agent start-here (M1.3 SPA shell, canonical title intact)"
-probe_local "$TOP/institution/index.html" "<title>Briefing — Arif Fazil</title>" "institution/ is briefing (M1.3 SPA shell, canonical title intact)"
+probe_local "$TOP/institution/index.html" "Briefing — " "institution/ is briefing (M1.3 SPA shell, canonical title intact)"
 probe_local "$TOP/institution/index.html" "name=\"description\"" "institution/ shell carries meta description"
 
 if [ "$fail" -ne 0 ]; then

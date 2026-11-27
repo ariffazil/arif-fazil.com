@@ -61,9 +61,8 @@ Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
 ## Words subpages
-- [Words / Essays](https://arif-fazil.com/words/essays/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5.
+- [Words / Essays](https://arif-fazil.com/words/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises. The civic column (MakcikGPT) lives at /world/makcikgpt/. (/words/essays/ is an alias of /words/.)
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
-- [Words / MakcikGPT (column)](https://arif-fazil.com/words/makcikgpt/): Civic commentary in Bahasa Makcik. A column inside the writing hub. Canonical article archive remains /world/makcikgpt/.
 
 ## Economics — the capital & commodity door
 - [Economics](https://arif-fazil.com/economics/): The one door for the Economics domain — Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing, and the PETRONAS dossier.

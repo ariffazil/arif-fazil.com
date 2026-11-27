@@ -1,5 +1,26 @@
 [
   {
+    "id": "m-gen-amanah-tawakkal-takdir-luck",
+    "title": "Amanah, Tawakkal, Sabar, Takdir, Luck",
+    "date": "2026-11-24",
+    "series": "GENESIS",
+    "series_number": 16,
+    "path": "/world/makcikgpt/amanah-tawakkal-takdir-luck",
+    "canonical_url": "https://arif-fazil.com/world/makcikgpt/amanah-tawakkal-takdir-luck",
+    "seal": "999",
+    "claims_count": 2,
+    "tags": [
+      "amanah",
+      "tawakkal",
+      "takdir",
+      "luck",
+      "sabar",
+      "makcikgpt",
+      "korporat",
+      "etika"
+    ]
+  },
+  {
     "id": "m-gen-tak-kenal-maka-tak-sayang",
     "title": "Tak Kenal Maka Tak Sayang",
     "date": "2026-11-14",
@@ -121,6 +142,29 @@
       "jambatan",
       "makcikgpt",
       "ketuk-pintu"
+    ]
+  },
+  {
+    "id": "m-gen-hukum-kereta-sentuhan-tak-dinamai",
+    "title": "Hukum Kereta: Sentuhan yang Tak Dinamai",
+    "date": "2026-10-30",
+    "series": "GENESIS",
+    "series_number": 8,
+    "path": "/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai",
+    "canonical_url": "https://arif-fazil.com/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai",
+    "seal": "999",
+    "claims_count": 0,
+    "tags": [
+      "sentuhan",
+      "lelaki",
+      "universe-25",
+      "calhoun",
+      "jung",
+      "bayang",
+      "kinsey",
+      "keintiman",
+      "makcikgpt",
+      "manusia"
     ]
   },
   {
@@ -467,27 +511,6 @@
     ]
   },
   {
-    "id": "m1-4-leadership-archive",
-    "title": "Every PETRONAS Chairman & Chief Executive 1974–2026 — Sovereign Intelligence Dossier",
-    "date": "2026-09-17",
-    "series": "M1",
-    "series_number": 4,
-    "path": "/world/makcikgpt/petronas-leadership-1974-2026",
-    "canonical_url": "https://arif-fazil.com/world/makcikgpt/petronas-leadership-1974-2026",
-    "seal": "999",
-    "claims_count": 7,
-    "tags": [
-      "petronas",
-      "leadership",
-      "dossier",
-      "governance",
-      "malaysia",
-      "archive",
-      "en",
-      "bm"
-    ]
-  },
-  {
     "id": "m-gen-pda-1974-bukan-undang-undang",
     "title": "PDA 1974 Tu Bukan Undang-Undang. Tu Rampasan Tanah. Makcik Nak Baca Batang Tubuh, Barulah Kita Boleh Tanya — Ini Selesai Ke Macam Mana?",
     "date": "2026-09-17",
@@ -636,29 +659,6 @@
       "makcikgpt",
       "malaysia",
       "bangang"
-    ]
-  },
-  {
-    "id": "m1-2-dossier",
-    "title": "PETRONAS: The Full Reality — A Civic Intelligence Dossier for the Rakyat of Malaysia",
-    "date": "2026-08-26",
-    "series": "M1",
-    "series_number": 3,
-    "path": "/world/makcikgpt/petronas-full-reality-rakyat-dossier",
-    "canonical_url": "https://arif-fazil.com/world/makcikgpt/petronas-full-reality-rakyat-dossier",
-    "seal": "999",
-    "claims_count": 6,
-    "tags": [
-      "petronas",
-      "civic",
-      "dossier",
-      "malaysia",
-      "rakyat",
-      "governance",
-      "tripwire",
-      "makcikgpt",
-      "bm",
-      "eng"
     ]
   },
   {

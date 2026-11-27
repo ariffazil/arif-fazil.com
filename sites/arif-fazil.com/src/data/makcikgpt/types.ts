@@ -1,4 +1,4 @@
-export type EpistemicTag = 'OBS' | 'DER' | 'INT' | 'SPEC';
+export type EpistemicTag = 'OBS' | 'DER' | 'INT' | 'SPEC' | 'HYP';
 export type MaruahReviewStatus = 'approved' | 'pending' | 'not_applicable';
 export type ProvenanceStatus = 'legacy' | 'migrating' | 'sealed';
 
@@ -8,12 +8,18 @@ export interface ClaimItem {
   tag: EpistemicTag;
   source_id?: string;
   confidence_basis?: string;
-  maruah_review?: MaruahReviewStatus;
+  // Canonical values: MaruahReviewStatus. essays.json (the SOT) also carries
+  // annotated approvals ("approved — …"); the sealed gate checks exact 'pending'.
+  maruah_review?: MaruahReviewStatus | string;
 }
 
 export interface SourceItem {
   source_id: string;
-  type: 'filing' | 'document' | 'court_record' | 'news' | 'official_statement' | 'analysis';
+  // Union projects the values actually present in essays.json (the SOT).
+  // A new source type must be added here — the build fails closed on drift.
+  type: 'filing' | 'document' | 'court_record' | 'news' | 'official_statement' | 'analysis'
+    | 'primary_record' | 'hadith' | 'reference' | 'dataset' | 'company_registry'
+    | 'official_report' | 'exchange_filing' | 'market_data';
   title: string;
   url: string;
   archived_url?: string;

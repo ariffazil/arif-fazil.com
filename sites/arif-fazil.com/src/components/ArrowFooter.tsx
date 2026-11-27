@@ -105,10 +105,6 @@ export default function Footer() {
             >
               mcp
             </a>
-            {' · '}
-            <a href="/contact/" className="hover:text-[#EDEAE2] transition-colors">
-              /contact
-            </a>
           </p>
           <div className="flex flex-wrap items-baseline justify-between gap-4">
             <p className="font-display italic text-sm text-[#D4A853]">

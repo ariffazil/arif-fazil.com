@@ -84,19 +84,9 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/words/essays/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://arif-fazil.com/words/wiki/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arif-fazil.com/words/makcikgpt/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://arif-fazil.com/world/politics/</loc>
@@ -346,6 +336,11 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://arif-fazil.com/world/makcikgpt/amanah-tawakkal-takdir-luck</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://arif-fazil.com/world/makcikgpt/tak-kenal-maka-tak-sayang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -372,6 +367,11 @@
   </url>
   <url>
     <loc>https://arif-fazil.com/world/makcikgpt/siapa-akan-ketuk-pintu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arif-fazil.com/world/makcikgpt/hukum-kereta-sentuhan-tak-dinamai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -446,11 +446,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-leadership-1974-2026</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://arif-fazil.com/world/makcikgpt/pda-1974-bukan-undang-undang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -477,11 +472,6 @@
   </url>
   <url>
     <loc>https://arif-fazil.com/world/makcikgpt/taufik-pengecut-dengan-title</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arif-fazil.com/world/makcikgpt/petronas-full-reality-rakyat-dossier</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -60,7 +60,7 @@ export function EssayPage() {
           <Link to="/words">← /words</Link>
         </div>
       }
-      related={[{ label: '← all essays', href: '/words/essays' }]}
+      related={[{ label: '← all essays', href: '/words' }]}
     >
       <div dangerouslySetInnerHTML={{ __html: essay.html }} />
     </ArticleShell>

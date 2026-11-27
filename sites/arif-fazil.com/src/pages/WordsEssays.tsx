@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CompassLexigramCodex } from '@/components/CompassLexigramCodex'
-import essaysData from '@/data/essays.json'
+import essaysDataAll from '@/data/essays.json'
 import { RootShell } from '@/shells/RootShell'
 
 const SERIES_LABELS: Record<string, string> = {
@@ -15,22 +15,24 @@ const SERIES_LABELS: Record<string, string> = {
   S7: 'S7 · BAHASA & MALAYSIA',
   S8: 'S8 · FIELD NOTES',
   S9: 'S9 · REFLECTIONS',
-  M1: 'M1 · PETRONAS DNA',
-  M2: 'M2 · SEARAH & GAS',
-  M3: 'M3 · YTL & ILMU',
-  M4: 'M4 · RAKYAT',
-  M5: 'M5 · AKAL',
 }
+
+// Zen 2026-11-23 (F13 ratified): /words carries authored essays only.
+// The civic column's canonical home is /world/makcikgpt/ — one shelf per voice.
+const isMakcikDest = (e: { dest?: { type?: string; path?: string } }) =>
+  e.dest?.type === 'onsite' && typeof e.dest?.path === 'string' && e.dest.path.startsWith('/world/makcikgpt/')
 
 export function WordsEssays() {
   const [selectedSeries, setSelectedSeries] = useState<string>('ALL')
   const [search, setSearch] = useState('')
 
+  const essaysData = useMemo(() => essaysDataAll.filter((e) => !isMakcikDest(e)), [])
+
   useEffect(() => {
     document.title = 'Essays — Words | arif-fazil.com'
     const desc = document.querySelector('meta[name="description"]')
-    if (desc) desc.setAttribute('content', `Long-form essays by Arif Fazil — ${essaysData.length} published across 9 series + civic arc.`)
-  }, [])
+    if (desc) desc.setAttribute('content', `Long-form essays by Arif Fazil — ${essaysData.length} published directly.`)
+  }, [essaysData.length])
 
   const filteredEssays = useMemo(() => {
     return essaysData.filter((e) => {
@@ -67,9 +69,21 @@ export function WordsEssays() {
           </h1>
           <p className="font-sans text-lg text-[#9AA0A8] max-w-3xl leading-relaxed">
             Long-form essays, formal derivations, philosophical treatises.
-            Every word published directly. Series 1–9 plus PETRONAS / civic arc M1–M5.
+            Every word published directly.
           </p>
         </div>
+
+        {/* One shelf per voice — the civic column lives at its canonical home */}
+        <Link
+          to="/world/makcikgpt/"
+          className="mb-10 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[#D9A62E]/30 bg-[#11151C] p-5 hover:border-[#D9A62E]/60 transition-colors group"
+        >
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-widest text-[#D9A62E] mb-1">🌍 MakcikGPT · Civic Column</div>
+            <div className="font-sans text-sm text-[#9AA0A8]">Kewartawanan sivik dalam Bahasa Makcik — the full archive lives at its own home.</div>
+          </div>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#EDEAE2] group-hover:text-[#D9A62E] transition-colors">Open /world/makcikgpt/ →</span>
+        </Link>
 
         {/* Compact Astrolabe */}
         <div className="my-8 overflow-hidden rounded-2xl border border-[#C9A227]/30 bg-[#0B0D13] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
@@ -154,7 +168,7 @@ export function WordsEssays() {
         {/* Sister surfaces */}
         <div className="mt-16 pt-8 border-t border-[#1F2733] flex flex-wrap gap-4 font-mono text-xs uppercase tracking-widest">
           <Link to="/words/wiki/" className="text-[#C9A227] hover:text-white transition-colors">🏛️ Wiki & Knowledge →</Link>
-          <Link to="/words/makcikgpt/" className="text-[#D9A62E] hover:text-white transition-colors">🌍 MakcikGPT (Column) →</Link>
+          <Link to="/world/makcikgpt/" className="text-[#D9A62E] hover:text-white transition-colors">🌍 MakcikGPT (Civic Column) →</Link>
           <Link to="/words/" className="text-[#9AA0A8] hover:text-white transition-colors">← Back to Words hub</Link>
         </div>
       </div>

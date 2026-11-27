@@ -62,9 +62,8 @@ function buildSitemap(pieces) {
     { loc: `${SITE_BASE}/arifos/`, priority: 0.7, changefreq: "monthly" },
     { loc: `${SITE_BASE}/words/`, priority: 0.8, changefreq: "weekly" },
     // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
-    { loc: `${SITE_BASE}/words/essays/`, priority: 0.7, changefreq: "weekly" },
+    // /words/essays/ merged into /words/ 2026-11-23 (zen C) — canonical-only sitemap.
     { loc: `${SITE_BASE}/words/wiki/`, priority: 0.7, changefreq: "monthly" },
-    { loc: `${SITE_BASE}/words/makcikgpt/`, priority: 0.65, changefreq: "weekly" },
     { loc: `${SITE_BASE}/world/politics/`, priority: 0.6, changefreq: "monthly" },
     { loc: `${SITE_BASE}/economics`, priority: 0.9, changefreq: "daily" },
     { loc: `${SITE_BASE}/economics/briefing/`, priority: 0.9, changefreq: "daily" },
@@ -216,9 +215,8 @@ Voice card: https://arif-fazil.com/world/makcikgpt/soul.md
 Index: https://arif-fazil.com/feed.xml (RSS) and https://arif-fazil.com/llms-full.txt (full dump).
 
 ## Words subpages
-- [Words / Essays](https://arif-fazil.com/words/essays/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises, the PETRONAS / civic arc. Series 1–9 plus M1–M5.
+- [Words / Essays](https://arif-fazil.com/words/): Long-form essays by Arif Fazil — formal derivations, philosophical treatises. The civic column (MakcikGPT) lives at /world/makcikgpt/. (/words/essays/ is an alias of /words/.)
 - [Words / Wiki & Knowledge](https://arif-fazil.com/words/wiki/): Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.
-- [Words / MakcikGPT (column)](https://arif-fazil.com/words/makcikgpt/): Civic commentary in Bahasa Makcik. A column inside the writing hub. Canonical article archive remains /world/makcikgpt/.
 
 ## Economics — the capital & commodity door
 - [Economics](https://arif-fazil.com/economics/): The one door for the Economics domain — Bursa, Ringgit, oil macro intelligence, Malaysia economic briefing, and the PETRONAS dossier.
@@ -305,9 +303,8 @@ function buildLlmsJson(pieces) {
   routeRoles["/discoveries/"] = "well portfolio — exploration record and subsurface dossier";
   routeRoles["/essays/"] = "long-form writing and analysis";
   // 2026-10-01 — peer subpages of the /words/ hub. Discovery parity with the React IA.
-  routeRoles["/words/essays/"] = "Words — Essays subpage. Long-form essays, formal derivations, philosophical treatises by Arif Fazil. Series 1–9 plus PETRONAS / civic arc M1–M5.";
+  routeRoles["/words/essays/"] = "Alias of /words/ (zen C 2026-11-23): static shell carries rel=canonical to /words/; SPA Navigates there. One URL per page.";
   routeRoles["/words/wiki/"] = "Words — Wiki subpage. Canonical documentation for concepts, biographical evidence, geological derivations, and agent guides. Identity, subsurface methodology, agents & federation, civilizational order.";
-  routeRoles["/words/makcikgpt/"] = "Words — MakcikGPT civic column subpage. A column inside the writing hub, not a peer of the personal / professional identity. Canonical surface remains /world/makcikgpt/.";
 
   return {
     site_name: "arif-fazil.com",

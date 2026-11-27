@@ -84,8 +84,9 @@ export function Privacy() {
 
       <Block heading="Third parties">
         <p>
-          Typefaces load from Google Fonts and Fontshare. Aggregate, cookieless visitor counts
-          come from Cloudflare Web Analytics. No personal profile is built from either.
+          Typefaces load from Google Fonts and Fontshare. No analytics script and no visitor
+          counter run on this site today — if a cookieless counter is ever enabled, this page
+          changes before it does. No personal profile is built from any of it.
         </p>
       </Block>
 

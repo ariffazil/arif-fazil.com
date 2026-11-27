@@ -58,9 +58,24 @@ function HeroDigitalClock() {
         </div>
       </div>
 
-      <div className="flex items-baseline justify-center md:justify-start gap-2 md:gap-4 select-none">
+      <div className="relative flex items-baseline justify-center md:justify-start gap-2 md:gap-4 select-none">
+        {/* Analog dial — home.md §1: the clock is built from clock-face.svg.
+            The live surface uses a digital timepiece, so the hand-drawn dial is
+            carried as a ghost layer behind the ticking digits (inverted to read
+            on the dark page). Decorative only. */}
+        <img
+          src="/clock-face.svg"
+          alt=""
+          aria-hidden="true"
+          width={1200}
+          height={1200}
+          loading="eager"
+          decoding="async"
+          className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-auto w-[min(78vw,540px)] opacity-[0.13]"
+          style={{ filter: 'invert(1)' }}
+        />
         <div
-          className="font-mono font-semibold tabular-nums tracking-[-0.045em] leading-[0.88] text-[#EDEAE2]"
+          className="relative z-10 font-mono font-semibold tabular-nums tracking-[-0.045em] leading-[0.88] text-[#EDEAE2]"
           style={{ fontSize: 'clamp(3.6rem, 16vw, 13rem)' }}
         >
           <span>{hh}</span>

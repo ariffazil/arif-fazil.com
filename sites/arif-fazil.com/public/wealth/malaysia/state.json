@@ -5,7 +5,7 @@
     "id": "malaysia-federal",
     "name": "Federal Government of Malaysia (Putrajaya)",
     "mirror_entity": "petronas",
-    "mirror_url": "https://arif-fazil.com/wealth/petronas/state.json",
+    "mirror_url": "https://arif-fazil.com/petronas/state.json",
     "hero_motif": "PUTRAJAYA",
     "canonical_url": "https://arif-fazil.com/wealth/malaysia/"
   },
@@ -35,7 +35,9 @@
           "2022": 5.6,
           "2023": 5.0,
           "2024": 4.3,
-          "2025": 3.8
+          "2025": 3.7,
+          "2026": 3.6,
+          "2027": 3.3
         },
         "unit": "percent_gdp",
         "tag": "[OBS]"
@@ -43,8 +45,9 @@
     ],
     "present": {
       "composite_pulse": {
-        "value": 45,
+        "value": 49,
         "band": "HOLD",
+        "formula": "equal-weight mean of the three pillar means (34 / 62 / 50)",
         "as_of": "2026-11-22",
         "tag": "[DER]"
       },
@@ -55,6 +58,22 @@
         "distance_to_ceiling_pct_p": 1.3,
         "tag": "[OBS]",
         "source": "MoF Fiscal Outlook Budget 2027"
+      },
+      "fiscal_deficit_2026_pct": {
+        "value": 3.6,
+        "unit": "percent_gdp",
+        "tag": "[OBS]",
+        "source": "MoF Fiscal Outlook 2027 (revised from the original 3.5% target)"
+      },
+      "fx_reserves_months_of_import": {
+        "value": 4.7,
+        "tag": "[OBS]",
+        "source": "Bank Negara Malaysia"
+      },
+      "real_gdp_growth_2026_forecast_pct": {
+        "range": "4.8-5.3",
+        "tag": "[OBS]",
+        "source": "Budget 2027 / Economic Report 2027"
       },
       "fiscal_deficit_target_2027_pct": {
         "value": 3.3,
@@ -105,8 +124,10 @@
       "target_metric": "dividend_payout_rm_b",
       "channel": "fiscal_revenue_support",
       "mof_budget_demand": 32.0,
+      "mof_budget_demand_fy2026": 27.0,
       "petronas_declared_base": 20.0,
-      "gap_rm_b": -12.0,
+      "gap_rm_b": -7.0,
+      "gap_note": "FY2026: MoF RM27B vs PETRONAS declared RM20B = -RM7B. FY2027 MoF projection RM32B.",
       "brent_breakeven_usd": 67.34
     },
     {

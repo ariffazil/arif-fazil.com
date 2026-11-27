@@ -220,7 +220,7 @@
     </div>
     <h4 style="margin-top:.75rem">Geology Source</h4>
     <div class="seg" role="group" aria-label="Geology query source mode" id="geoSourceGroup">
-      <button type="button" data-geo-mode="AUTO" class="on" aria-pressed="true" title="Prefer JMG 1:500k within Malaysia (local POC), Macrostrat fallback elsewhere">AUTO</button>
+      <button type="button" data-geo-mode="AUTO" class="on" aria-pressed="true" title="Prefer JMG 1:500k within Malaysia (when authorized), Macrostrat fallback elsewhere">AUTO</button>
       <button type="button" data-geo-mode="JMG" aria-pressed="false" title="Query JMG 1:500k only; no silent Macrostrat fallback">JMG</button>
       <button type="button" data-geo-mode="MACROSTRAT" aria-pressed="false" title="Query Macrostrat API v2 only">MACRO</button>
       <button type="button" data-geo-mode="CONTRAST" aria-pressed="false" title="Query both JMG and Macrostrat side-by-side">CONTRAST</button>
@@ -328,7 +328,7 @@
       <div class="result">
         <span class="src">geox.macrostrat · SOURCED · Tate (1991) · GSM Memoir 19</span>
         <h3><span class="swatch"></span>Crocker Formation · deep-water turbidites</h3>
-        <div class="age">23.0 – 5.3 Ma · Miocene</div>
+        <div class="age">~35 Ma · Eocene–Oligocene</div>
         <p class="lith">Sandstone interbedded with mudstone — deep-water turbidite fan, deposited along the Oligocene–Miocene margin of the South China Sea.</p>
         <div class="ref">source: Tate (1991) · CC-BY · Geological Survey of Malaysia Memoir 19 · doi:10.13140/RG.2.2.11456.87040</div>
         <div class="coords">6.0814°, 116.7241° · macrostrat.org/api/v2 · CC-BY 4.0</div>
@@ -442,7 +442,7 @@
         <div class="chrono-label" style="background:#ffe619;">Cenozoic · 66–0 Ma</div>
         <div class="chrono-desc">
           <span>Sundaland rifting · Malay Basin Oligo-Miocene fill · Sabah Orogeny</span>
-          <b>Mt Kinabalu granodiorite (7 Ma) · Crocker Turbidites (35 Ma)</b>
+          <b>Mt Kinabalu granodiorite (~7–8 Ma U-Pb; older K-Ar ages contested) · Crocker Turbidites (35 Ma)</b>
         </div>
       </div>
 
@@ -527,15 +527,15 @@
     <div class="basin-callout">
       <div>
         <h3>How a sag becomes a province</h3>
-        <p>In the Oligo–Miocene, the Sundaland crust stretched in a back-arc setting, faults dropped the basement into half-grabens, and ~30 million years of sediment poured in — lacustrine source rocks at the base, fluvio-deltaic reservoirs above, all sealed by marine mudstones as the sea returned.</p>
+        <p>In the Late Eocene–Early Oligocene, the Sundaland crust stretched in a failed-rift setting, faults dropped the basement into half-grabens, and ~40 million years of sediment poured in — lacustrine source rocks at the base, fluvio-deltaic reservoirs above, all sealed by marine mudstones as the sea returned.</p>
         <p>Heat did the rest. The tape-recorder became a <b>petroleum system</b>: one of Southeast Asia's great gas provinces. Reading that record — seismic, well logs, geochemistry — is what an exploration geoscientist does, and it is the human craft the GEOX agentic engine: <b>evidence-gated, human-decided.</b></p>
         <p>In 2025, the LEBAH EMAS-1 wildcat was drilled on the Western Hinge Fault — one of four wells the founder personally signed off on. <span style="font-family:var(--mono);font-size:.58rem;letter-spacing:1px;color:#D4A853">PRIVATE WITNESS · NOT EXTERNALLY VERIFIED:</span> coordinates, depths and results of these wells are withheld from this page. Their names attest the province's maturity and the founder's history; <b>they are not public evidence and nothing published here may be cited as proof of a well outcome</b>.</p>
       </div>
       <div class="facts">
-        <div><span>setting</span> · back-arc extension, Sundaland</div>
+        <div><span>setting</span> · failed rift, Sundaland (Madon 2021)</div>
         <div><span>age</span> · Oligocene–Recent fill</div>
         <div><span>dimensions</span> · ~500 km × ~200 km, NW-SE trend</div>
-        <div><span>fill</span> · &gt;12 km in deep centres</div>
+        <div><span>fill</span> · &gt;14 km in deep centres (Madon 2021)</div>
         <div><span>stratigraphy</span> · Groups A→M (lacustrine → deltaic → marine)</div>
         <div><span>system</span> · lacustrine source → deltaic reservoir → marine seal</div>
         <div><span>trap</span> · Middle Miocene anticlines + Western Hinge Fault</div>
@@ -587,7 +587,7 @@
             <td><strong>SOURCE ROCK</strong></td>
             <td>Group L &amp; M Deep Lacustrine Shales</td>
             <td class="psec-bar-cell">
-              <div class="psec-bar" style="left:5%; width:35%; background:rgba(224,48,30,0.85); color:#ffffff;">SYN-RIFT (30–22 Ma)</div>
+              <div class="psec-bar" style="left:5%; width:35%; background:rgba(224,48,30,0.85); color:#ffffff;">SYN-RIFT (~40–28 Ma)</div>
             </td>
           </tr>
           <tr>
@@ -759,7 +759,7 @@
         <a href="/earth/kinabalu-basin/" style="text-decoration:none;color:inherit"><h3>◈ Kinabalu Basin</h3></a>
         <p class="dossier-subtitle">One of three producing basins in Malaysia. Offshore NW Sabah, fold-thrust belt, post-MMU clastic play. SRTM-draped cross-section with USGS-standard lithology patterns.</p>
         <div class="dossier-stats">
-          <div><b>4,095 m</b><span>Kinabalu peak</span></div>
+          <div><b>4,095 m</b><span style="font-size:0.62em;color:var(--text-dim)"> geodetic</span><span>Kinabalu peak</span></div>
           <div><b>~2,900 m</b><span>Sabah Trough</span></div>
           <div><b>5</b><span>tectonic events</span></div>
           <div><b>12</b><span>provinces</span></div>
@@ -807,14 +807,14 @@
         <p class="dossier-subtitle">The founder's home waters. 13+ years reading rocks offshore Malaysia. Cenozoic failed rift + Miocene inversion. Mature gas province. Four founder wells shown at ATTESTED tier — founder-signed narrative, not public evidence (results withheld from public citation; see footer policy).</p>
         <div class="dossier-stats">
           <div><b>~500 km</b><span>length</span></div>
-          <div><b>8</b><span>groups (A–M)</span></div>
+          <div><b>12</b><span>groups (A–M, no Group C)</span></div>
           <div><b>4</b><span>founder wells</span></div>
           <div><b>2025</b><span>new hinge play</span></div>
         </div>
         <ul class="dossier-points">
           <li>Group L/M lacustrine source + Group E/H/I deltaic reservoirs</li>
           <li>Middle Miocene anticline play (Dulang, Angsi) — proven</li>
-          <li>Western Hinge Fault — first tested by LEBAH EMAS-1 (2025 · founder-witness tier)</li>
+          <li>Western Hinge Fault — first tested by LEBAH EMAS-1 (2025 · operator-reported, not GEOX-witnessed)</li>
           <li>Founder wells: BEKANTAN-1 · PUTERI BASEMENT-1 · LEBAH EMAS-1 · BUNGA TASBIH-1</li>
         </ul>
         <div class="dossier-cta">
@@ -831,9 +831,9 @@
           <span class="dossier-status" style="color:#31C48D">● MYGEMS LIVE</span>
         </div>
         <h3>◈ JMG MyGEMS Geologic Layer</h3>
-        <p class="dossier-subtitle">Jabatan Mineral dan Geosains Malaysia official 1:500,000 national geological mapping. High-resolution bedrock lithology across all 14 states and major crustal shear zones.</p>
+        <p class="dossier-subtitle">Jabatan Mineral dan Geosains Malaysia official 1:500,000 national geological mapping. High-resolution bedrock lithology across 13 states and the federal territories and major crustal shear zones.</p>
         <div class="dossier-stats">
-          <div><b>14</b><span>states mapped</span></div>
+          <div><b>13</b><span>states + FT mapped</span></div>
           <div><b>1:500k</b><span>scale</span></div>
           <div><b>100%</b><span>bedrock cover</span></div>
           <div><b>GIS</b><span>MyGEMS REST</span></div>
@@ -922,7 +922,7 @@
 
 <!-- ══ GLOBE ENGINE + ALL LIVE PIPES (unchanged — this is the living heart) ══ -->
 <script src="/earth/_shared/globe.gl.min.js?v=20261108"></script>
-<script src="/earth/_shared/earth-geology-resolver.js?v=20261127a"></script>
+<script src="/earth/_shared/earth-geology-resolver.js?v=20261127b"></script>
 <script>
 (function(){
 "use strict";
@@ -1377,7 +1377,7 @@ fetch("/earth/data/studies.json")
    <p>studies.json unreachable — per F7, no register is shown rather than an invented one.</p></div>`;
  });
 
-/* ── click-to-query: ask the rocks (Lane A Macrostrat v2 + Lane B JMG Local POC) ── */
+/* ── click-to-query: ask the rocks (Lane A Macrostrat v2 + Lane B JMG Hook) ── */
 const panel=$("unitPanel");
 let lock=false;
 let geoSourceMode="AUTO";

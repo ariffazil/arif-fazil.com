@@ -218,6 +218,13 @@
       <button id="baseGeo" class="on">GEOLOGY</button>
       <button id="baseSat">SATELLITE</button>
     </div>
+    <h4 style="margin-top:.75rem">Geology Source</h4>
+    <div class="seg" role="group" aria-label="Geology query source mode" id="geoSourceGroup">
+      <button type="button" data-geo-mode="AUTO" class="on" aria-pressed="true" title="Prefer JMG 1:500k within Malaysia (local POC), Macrostrat fallback elsewhere">AUTO</button>
+      <button type="button" data-geo-mode="JMG" aria-pressed="false" title="Query JMG 1:500k only; no silent Macrostrat fallback">JMG</button>
+      <button type="button" data-geo-mode="MACROSTRAT" aria-pressed="false" title="Query Macrostrat API v2 only">MACRO</button>
+      <button type="button" data-geo-mode="CONTRAST" aria-pressed="false" title="Query both JMG and Macrostrat side-by-side">CONTRAST</button>
+    </div>
     <div class="waypoints">
       <button id="wpWells" data-pov="">◈ My wells · Malay Basin</button>
       <button data-pov="4.2,102.2,1.8">◈ Peninsular Malaysia (JMG 1:500k)</button>
@@ -915,6 +922,7 @@
 
 <!-- ══ GLOBE ENGINE + ALL LIVE PIPES (unchanged — this is the living heart) ══ -->
 <script src="/earth/_shared/globe.gl.min.js?v=20261108"></script>
+<script src="/earth/_shared/earth-geology-resolver.js?v=20261127a"></script>
 <script>
 (function(){
 "use strict";
@@ -1369,45 +1377,90 @@ fetch("/earth/data/studies.json")
    <p>studies.json unreachable — per F7, no register is shown rather than an invented one.</p></div>`;
  });
 
-/* ── click-to-query: ask the rocks ── */
+/* ── click-to-query: ask the rocks (Lane A Macrostrat v2 + Lane B JMG Local POC) ── */
 const panel=$("unitPanel");
 let lock=false;
+let geoSourceMode="AUTO";
+const geoResolver=window.EarthGeologyResolver
+  ? window.EarthGeologyResolver.createResolver({ cacheTtlMs: 300000 })
+  : null;
+
+document.querySelectorAll("#geoSourceGroup button[data-geo-mode]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    geoSourceMode=btn.dataset.geoMode||"AUTO";
+    document.querySelectorAll("#geoSourceGroup button[data-geo-mode]").forEach(b=>{
+      const on=b===btn;
+      b.classList.toggle("on",on);
+      b.setAttribute("aria-pressed",on?"true":"false");
+    });
+  });
+});
+
+function renderSingleResult(r, lat, lng, fallbackNotice){
+  const fb=fallbackNotice?`<div class="withheld" style="margin-bottom:.45rem">${esc(fallbackNotice)}</div>`:"";
+  const metaFooter=`<div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · source: ${esc(r.source||"UNKNOWN")} · coverage: ${esc(r.coverage_class||"none")} · ${esc(r.data_version||"api-v2")} · ${esc(r.license||"UNKNOWN")} · retrieved ${esc(r.retrieved_utc||"")}</div>`
+    + `<div class="coords" style="opacity:.8">endpoint: ${esc(r.endpoint||"—")}</div>`;
+
+  if(r.status==="UNKNOWN"){
+    return `${fb}<div class="src" style="color:#e05a5a">UNKNOWN · pipe unreachable</div>
+      <h3 style="font-weight:400;color:#9a9aa8">${esc(r.message||"UNKNOWN — upstream unreachable; stale cache withheld.")}</h3>${metaFooter}`;
+  }
+  if(r.status==="NO_FEATURE"||r.status==="UNAVAILABLE"){
+    return `${fb}<div class="ocean"><div class="src">${esc(r.source||"geox.macrostrat")} · honest answer</div>
+      <h3>${r.status==="UNAVAILABLE"?"Source unavailable":"No mapped bedrock unit returned"}</h3>
+      <p class="lith">${esc(r.message||"No mapped bedrock unit returned (0 records does not prove absence of bedrock).")}</p>
+      ${metaFooter}</div>`;
+  }
+  if(r.coverage_class==="jmg_polygon"){
+    return `${fb}<div class="src" style="color:#31C48D">JMG MyGEMS 1:500,000 · LOCAL POC (RIGHTS HOLD)</div>
+      <h3>${esc(r.unit_name_display||r.formation_original||"Unnamed JMG unit")}</h3>
+      <div class="age">${esc(r.age_display||r.age_original||"UNKNOWN")}</div>
+      <p class="lith">${esc(r.description_original||r.lithology_display||"lithology not recorded")}</p>
+      <div class="kv"><b>JURISDICTION</b><span>${esc(r.jurisdiction||"Malaysia")} · layer [${esc(r.source_layer_id)}] OID ${esc(r.source_object_id)}</span></div>
+      <div class="kv"><b>ORIGINAL JMG</b><span>unit=${esc(r.unit_code_original||"—")} · gln=${esc(r.formation_original||"—")}</span></div>
+      <div class="kv"><b>REVIEW STATUS</b><span>${esc(r.geological_review_status||"HOLD_PENDING_ARIF")}</span></div>
+      ${metaFooter}`;
+  }
+  const ref=r.ref_citation?esc(r.ref_citation).slice(0,220):"";
+  const flagList=Array.isArray(r.flags)?r.flags:[];
+  const scaleBanner=flagList.includes("COARSE_GLOBAL_SCALE")
+    ? `<div class="withheld" style="margin-bottom:.4rem">COARSE_GLOBAL_SCALE · source_id=${esc(r.source_id)} (generalized 1:25M global compilation — low resolution, not local formation-scale mapping)</div>`
+    : "";
+  const commentBanner=flagList.includes("COMMENT_REGION_MISMATCH")
+    ? `<div class="withheld" style="margin-bottom:.4rem;border-color:#e05a5a;color:#e05a5a">COMMENT_REGION_MISMATCH · polygon comment "${esc(r.comments_raw_flagged||"")}" does not match clicked jurisdiction and is withheld as a local basin label</div>`
+    : "";
+  return `${fb}${scaleBanner}${commentBanner}<div class="src">Macrostrat · live (${esc(r.coverage_class||"map_polygon")} · units=${r.unit_count||0}, map=${r.map_count||0})</div>
+    <h3><span class="swatch" style="background:${esc(r.color||"#666")}"></span>${esc(r.unit_name||"Unnamed unit")}</h3>
+    <div class="age">${esc(r.age_text||"age not recorded")}</div>
+    <p class="lith">${esc(r.lith||"lithology not recorded")}</p>
+    ${ref?`<div class="ref">source: ${ref}…</div>`:""}
+    ${metaFooter}`;
+}
+
 async function onRockClick({lat,lng}){
   if(lock)return;lock=true;pauseSpin();
   if(Date.now()-lastPlateClickAt<800){lock=false;return;}
   panel.className="show";
   panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-    <div class="src">geox.macrostrat · querying pipe…</div>
-    <h3 style="color:#9a9aa8;font-weight:400">Asking ${lat.toFixed(2)}°, ${lng.toFixed(2)}°…</h3>`;
+    <div class="src">earth.resolver · mode=${esc(geoSourceMode)} · querying…</div>
+    <h3 style="color:#9a9aa8;font-weight:400">Asking ${lat.toFixed(4)}°, ${lng.toFixed(4)}°…</h3>`;
   wireClose();
   try{
-    const r=await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&buffer=3`);
-    const j=await r.json();
-    const data=(j.success&&j.success.data)||[];
-    const refs=(j.success&&j.success.refs)||{};
-    if(!data.length){
+    if(!geoResolver)throw new Error("EarthGeologyResolver not loaded");
+    const res=await geoResolver.resolvePoint(lat,lng,{mode:geoSourceMode,msBuildVersion:window.__msv||""});
+    if(res.mode==="CONTRAST"){
       panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-      <div class="ocean"><div class="src">geox.macrostrat · honest answer</div>
-      <h3>No mapped bedrock unit here</h3>
-      <p class="lith">You're likely over ocean. Oceanic crust is young (&lt;200 Ma everywhere) and thinly mapped at this scale — Macrostrat's harmonized maps cover the continents. The blue below is the newest rock on the planet, still being poured at the mid-ocean ridges.</p>
-      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2${msBuild()} · CC-BY 4.0</div></div>`;
+        <div class="src">CONTRAST MODE · ${esc(res.contrast_relation||"UNKNOWN")} (no automated adjudication)</div>
+        <div style="border-top:1px solid rgba(255,255,255,.12);padding-top:.5rem;margin-top:.4rem">${renderSingleResult(res.jmg,lat,lng,null)}</div>
+        <div style="border-top:1px solid rgba(255,255,255,.12);padding-top:.5rem;margin-top:.6rem">${renderSingleResult(res.macrostrat,lat,lng,null)}</div>`;
     }else{
-      const u=data[0];
-      const t=(u.t_int_age!=null)?u.t_int_age:u.t_age, b=(u.b_int_age!=null)?u.b_int_age:u.b_age;
-      const ref=refs[u.source_id]?esc(refs[u.source_id]).slice(0,220):"";
-      panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-      <div class="src">geox.macrostrat · live from pipe</div>
-      <h3><span class="swatch" style="background:${esc(u.color||"#666")}"></span>${esc(u.name||"Unnamed unit")}</h3>
-      <div class="age">${t} – ${b} Ma · ${esc(u.best_int_name||u.t_int_name||"")}</div>
-      <p class="lith">${esc(u.lith||"lithology not recorded")}</p>
-      ${ref?`<div class="ref">source: ${ref}…</div>`:""}
-      <div class="coords">${lat.toFixed(4)}°, ${lng.toFixed(4)}° · macrostrat.org/api/v2${msBuild()} · CC-BY 4.0</div>`;
+      panel.innerHTML=`<button class="close" aria-label="close">✕</button>${renderSingleResult(res.primary,lat,lng,res.fallback_notice)}`;
     }
     wireClose();
   }catch(e){
     panel.innerHTML=`<button class="close" aria-label="close">✕</button>
-    <div class="src" style="color:#e05a5a">pipe unreachable</div>
-    <h3 style="font-weight:400;color:#9a9aa8">Query failed — per F7, no answer is better than an invented one.</h3>`;
+    <div class="src" style="color:#e05a5a">UNKNOWN · pipe unreachable</div>
+    <h3 style="font-weight:400;color:#9a9aa8">Query failed — UNKNOWN (no stale cache served).</h3>`;
     wireClose();
   }finally{lock=false;}
 }

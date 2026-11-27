@@ -5,7 +5,7 @@
  * Governance & Transparent Flag Rules:
  * - Pinned Macrostrat API: https://macrostrat.org/api/v2 (CC-BY 4.0, verified live 2026-11-27)
  * - Never serves stale cache when upstream is unreachable (returns UNKNOWN).
- * - Separates coarse global scale (COARSE_GLOBAL_SCALE, e.g. source_id 154 Chorlton 1:25M)
+ * - Separates coarse global scale (COARSE_GLOBAL_SCALE, e.g. source_id 154 Chorlton GSC Open File 5529)
  *   from mismatched basin comments (COMMENT_REGION_MISMATCH, e.g. "Barito Basin" in comments
  *   when clicked in Sabah/Sarawak). Displays the coarse unit honestly with scale caveat and
  *   withholds mismatched comment text from being presented as local basin geology.
@@ -27,14 +27,40 @@
   const DEFAULT_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
   const DEFAULT_JMG_POC_URL = "/earth/data/jmg-local-poc/malaysia_jmg_poc.json";
 
-  // Known coarse global compilation source IDs in Macrostrat (e.g., 154 = Chorlton 1:25M GSC Open File 5529)
+  // Known coarse global compilation source IDs in Macrostrat (e.g., 154 = Chorlton, GSC Open File 5529)
   const COARSE_GLOBAL_SOURCE_IDS = new Set([154]);
 
-  // Non-overlapping Malaysian onshore envelopes (Lawas/Limbang 4.75N,115.0E -> Sarawak, not Sabah)
-  const MALAYSIA_REGIONS = [
-    { name: "Sabah", minLng: 115.45, maxLng: 119.4, minLat: 4.05, maxLat: 7.45 },
-    { name: "Sarawak", minLng: 109.5, maxLng: 115.45, minLat: 0.85, maxLat: 5.05 },
-    { name: "Peninsular Malaysia", minLng: 99.6, maxLng: 104.6, minLat: 1.2, maxLat: 6.75 },
+  // Simplified boundary polygons [lng, lat] for Peninsular Malaysia, Sarawak, and Sabah.
+  // Explicitly excludes Thailand (Hat Yai), Singapore, Brunei, and Kalimantan (Pontianak, Tarakan).
+  const MALAYSIA_REGION_POLYGONS = [
+    {
+      name: "Peninsular Malaysia",
+      rings: [[
+        [99.62, 6.45], [100.12, 6.72], [100.45, 6.50], [101.05, 5.75], [101.85, 5.80],
+        [102.15, 6.22], [102.95, 5.65], [103.45, 4.90], [103.45, 3.85], [103.55, 2.80],
+        [104.30, 2.00], [104.30, 1.33], [104.05, 1.38], [103.92, 1.44], [103.75, 1.46],
+        [103.62, 1.43], [103.52, 1.26], [103.30, 1.55], [102.50, 2.05], [101.80, 2.55],
+        [101.20, 3.10], [100.60, 4.00], [100.15, 5.35], [99.62, 6.45]
+      ]],
+    },
+    {
+      name: "Sarawak",
+      rings: [[
+        [109.54, 1.95], [110.45, 1.75], [111.35, 1.85], [111.55, 2.75], [113.05, 3.25],
+        [114.05, 4.45], [114.20, 4.55], [114.32, 4.08], [114.82, 4.18], [114.90, 4.78],
+        [115.05, 4.86], [115.10, 4.35], [115.22, 4.35], [115.22, 4.92], [115.48, 4.96],
+        [115.68, 4.60], [115.55, 3.60], [114.80, 2.40], [113.95, 1.50], [112.40, 1.25],
+        [111.30, 1.00], [110.20, 0.88], [109.54, 1.95]
+      ]],
+    },
+    {
+      name: "Sabah",
+      rings: [[
+        [115.48, 5.05], [115.82, 5.85], [116.02, 6.08], [116.25, 6.25], [116.75, 7.05], [117.30, 7.38],
+        [117.70, 6.60], [118.25, 5.95], [119.30, 5.25], [118.95, 4.55], [118.20, 4.15],
+        [117.65, 4.12], [116.50, 4.35], [115.65, 4.35], [115.48, 5.05]
+      ]],
+    },
   ];
 
   // Basin/region labels known to appear in coarse polygon `comments` that do not match Sabah/Sarawak/Peninsular
@@ -58,8 +84,8 @@
   ];
 
   function detectMalaysiaJurisdiction(lat, lng) {
-    for (const r of MALAYSIA_REGIONS) {
-      if (lat >= r.minLat && lat <= r.maxLat && lng >= r.minLng && lng <= r.maxLng) {
+    for (const r of MALAYSIA_REGION_POLYGONS) {
+      if (pointInPolygonCoords(lng, lat, r.rings)) {
         return r.name;
       }
     }
@@ -68,7 +94,7 @@
 
   /**
    * Transparent flag calculation:
-   * 1) COARSE_GLOBAL_SCALE: triggered when source_id is in COARSE_GLOBAL_SOURCE_IDS (e.g. 154 = Chorlton 1:25M).
+   * 1) COARSE_GLOBAL_SCALE: triggered when source_id is in COARSE_GLOBAL_SOURCE_IDS (e.g. 154 = Chorlton, GSC Open File 5529).
    * 2) COMMENT_REGION_MISMATCH: triggered ONLY when clicked inside Malaysia AND unit.comments contains
    *    a non-local basin/region token. Does NOT fabricate external place names not present in the API.
    */
@@ -82,7 +108,7 @@
       details.scale = {
         rule: "source_id in COARSE_GLOBAL_SOURCE_IDS",
         source_id: Number(unit.source_id),
-        note: "Generalized global compilation (e.g., Chorlton 1:25M, GSC Open File 5529); low spatial resolution, not a location error.",
+        note: "Generalized global compilation (Chorlton, GSC Open File 5529; nominal scale not verified in API metadata); low spatial resolution, not a location error.",
       };
     }
 
@@ -306,19 +332,28 @@
         const refs = mapSuccess.refs || {};
         const license = mapSuccess.license || MACROSTRAT_LICENSE;
 
-        let unitsData = [];
+        let unitsData = null;
+        let unitsStatus = "UNKNOWN";
         if (unitsResp && unitsResp.ok) {
           try {
             const unitsJson = await unitsResp.json();
-            unitsData = (unitsJson && unitsJson.success && Array.isArray(unitsJson.success.data))
-              ? unitsJson.success.data
-              : [];
+            if (unitsJson && unitsJson.success && Array.isArray(unitsJson.success.data)) {
+              unitsData = unitsJson.success.data;
+              unitsStatus = "OK";
+            }
           } catch (_) {
-            unitsData = [];
+            unitsData = null;
+            unitsStatus = "UNKNOWN";
           }
         }
 
-        const coverageClass = unitsData.length > 0 ? "unit_polygon" : mapData.length > 0 ? "map_polygon" : "none";
+        const unitCount = unitsStatus === "OK" ? unitsData.length : "UNKNOWN";
+        const coverageClass =
+          unitsStatus === "OK" && unitsData.length > 0
+            ? "unit_polygon"
+            : mapData.length > 0
+              ? "map_polygon"
+              : "none";
 
         if (mapData.length === 0) {
           const emptyResult = {
@@ -330,7 +365,8 @@
             retrieved_utc: retrievedUtc,
             license,
             coverage_class: coverageClass,
-            unit_count: unitsData.length,
+            unit_count: unitCount,
+            units_status: unitsStatus,
             map_count: 0,
             flags: [],
             flag_details: {},
@@ -357,7 +393,8 @@
           retrieved_utc: retrievedUtc,
           license,
           coverage_class: coverageClass,
-          unit_count: unitsData.length,
+          unit_count: unitCount,
+          units_status: unitsStatus,
           map_count: mapData.length,
           source_id: u.source_id ?? null,
           color: u.color || "#666666",

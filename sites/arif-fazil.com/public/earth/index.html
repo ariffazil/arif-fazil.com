@@ -1424,12 +1424,12 @@ function renderSingleResult(r, lat, lng, fallbackNotice){
   const ref=r.ref_citation?esc(r.ref_citation).slice(0,220):"";
   const flagList=Array.isArray(r.flags)?r.flags:[];
   const scaleBanner=flagList.includes("COARSE_GLOBAL_SCALE")
-    ? `<div class="withheld" style="margin-bottom:.4rem">COARSE_GLOBAL_SCALE · source_id=${esc(r.source_id)} (generalized 1:25M global compilation — low resolution, not local formation-scale mapping)</div>`
+    ? `<div class="withheld" style="margin-bottom:.4rem">COARSE_GLOBAL_SCALE · source_id=${esc(r.source_id)} (generalized global compilation, Chorlton GSC Open File 5529 — low resolution, not local formation-scale mapping)</div>`
     : "";
   const commentBanner=flagList.includes("COMMENT_REGION_MISMATCH")
     ? `<div class="withheld" style="margin-bottom:.4rem;border-color:#e05a5a;color:#e05a5a">COMMENT_REGION_MISMATCH · polygon comment "${esc(r.comments_raw_flagged||"")}" does not match clicked jurisdiction and is withheld as a local basin label</div>`
     : "";
-  return `${fb}${scaleBanner}${commentBanner}<div class="src">Macrostrat · live (${esc(r.coverage_class||"map_polygon")} · units=${r.unit_count||0}, map=${r.map_count||0})</div>
+  return `${fb}${scaleBanner}${commentBanner}<div class="src">Macrostrat · live (${esc(r.coverage_class||"map_polygon")} · units=${esc(r.unit_count??"UNKNOWN")}, map=${esc(r.map_count??0)})</div>
     <h3><span class="swatch" style="background:${esc(r.color||"#666")}"></span>${esc(r.unit_name||"Unnamed unit")}</h3>
     <div class="age">${esc(r.age_text||"age not recorded")}</div>
     <p class="lith">${esc(r.lith||"lithology not recorded")}</p>

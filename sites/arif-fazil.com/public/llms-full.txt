@@ -6253,11 +6253,11 @@ epistemic_summary:
 | source_id | type | title | url |
 |---|---|---|---|
 | SRC-KLMK-001 | analysis | arifOS 6-step editorial pipeline — longlist → research → claim register → MARUAH → 4-Gate audit → publish+seal | https://arif-fazil.com/999/ |
-| SRC-KLMK-002 | document | Claim register schema — MakcikArticleMeta interface (types.ts) — OBS/DER/INT/SPEC epistemic tags + source_id linkage | /root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/types.ts |
+| SRC-KLMK-002 | document | Claim register schema — MakcikArticleMeta interface (types.ts) — OBS/DER/INT/SPEC epistemic tags + source_id linkage | <host>/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/types.ts |
 | SRC-KLMK-003 | analysis | MARUAH doctrine — 4 pagar editorial (defamation risk, unverified claims, speculation-as-fact, personal attacks) | https://arif-fazil.com/999/maruah-doctrine |
 | SRC-KLMK-004 | analysis | 4-Gate audit doctrine — Whitelist → A-THINK → Sentinel → Upstream | https://arif-fazil.com/999/4-gate-audit |
 | SRC-KLMK-005 | document | VAULT999 cryptographic seal — 999 Meterai hash chain untuk immutability | https://arif-fazil.com/999/vault |
-| SRC-KLMK-006 | analysis | Case study: bang-non-pergi-kuching — 16 claim IDs (C-BNK-001 sampai C-BNK-016) + 10 sources (SRC-BNK-001 sampai SRC-BNK-010) + 4 pembetulan editorial | /root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/bang-non-pergi-kuching.ts |
+| SRC-KLMK-006 | analysis | Case study: bang-non-pergi-kuching — 16 claim IDs (C-BNK-001 sampai C-BNK-016) + 10 sources (SRC-BNK-001 sampai SRC-BNK-010) + 4 pembetulan editorial | <host>/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/bang-non-pergi-kuching.ts |
 | SRC-KLMK-007 | analysis | Slot system — 7-Day Cycle (Slot 1-4 SIASATAN, Slot 5 FORMAT, Slot 6-7 SIASATAN) — 15% FORMAT editorial ratio | https://arif-fazil.com/world/makcikgpt/ |
 | SRC-KLMK-008 | analysis | Telegram channel @ariffazil — official broadcast + reader tips intake + future whistleblower infrastructure announcement | https://t.me/ariffazil |
 
@@ -6419,7 +6419,7 @@ Sampai jumpa kat Slot 6. Insya-Allah. Makcik habis.
 
 Nota editorial — apa yang Makcik verify dan apa yang belum
 
-- Verified: proses 6-langkah Makcik (longlist → research → claim register → MARUAH → 4-Gate → publish+seal) — boleh ditunjukkan dalam source code arifOS di /root/arifOS/ atas permintaan.
+- Verified: proses 6-langkah Makcik (longlist → research → claim register → MARUAH → 4-Gate → publish+seal) — boleh ditunjukkan dalam source code arifOS di <host>/arifOS/ atas permintaan.
 
 - Verified: claim register contoh untuk bang-non-pergi-kuching — semua 16 claim IDs (C-BNK-001 sampai C-BNK-016) wujud dalam index.ts makcikgpt, dengan source_ledger 10 entri (SRC-BNK-001 sampai SRC-BNK-010).
 

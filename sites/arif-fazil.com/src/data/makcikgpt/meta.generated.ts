@@ -2685,7 +2685,7 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
         "source_id": "SRC-KLMK-002",
         "type": "document",
         "title": "Claim register schema — MakcikArticleMeta interface (types.ts) — OBS/DER/INT/SPEC epistemic tags + source_id linkage",
-        "url": "/root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/types.ts",
+        "url": "<host>/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/types.ts",
         "retrieved_at": "2026-09-17T00:00:00Z"
       },
       {
@@ -2713,7 +2713,7 @@ export const makcikArticlesMeta: MakcikArticleMeta[] = [
         "source_id": "SRC-KLMK-006",
         "type": "analysis",
         "title": "Case study: bang-non-pergi-kuching — 16 claim IDs (C-BNK-001 sampai C-BNK-016) + 10 sources (SRC-BNK-001 sampai SRC-BNK-010) + 4 pembetulan editorial",
-        "url": "/root/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/bang-non-pergi-kuching.ts",
+        "url": "<host>/arif-fazil.com/sites/arif-fazil.com/src/data/makcikgpt/bang-non-pergi-kuching.ts",
         "retrieved_at": "2026-09-17T00:00:00Z"
       },
       {

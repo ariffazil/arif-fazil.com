@@ -2,7 +2,7 @@
 
 Versioned record of the 301s added in `/etc/caddy/vhosts/arif-fazil.com.conf`
 (section "2026-11-22 (333-AGI, F13 site entropy pass)"). Config backup:
-`/root/forge_work/backups/arif-fazil.com.conf.bak-20261122T091103Z`.
+`<host>/forge_work/backups/arif-fazil.com.conf.bak-20261122T091103Z`.
 
 | # | from | to | reason |
 |---|---|---|---|
@@ -28,7 +28,7 @@ Verification: each target probed 200; each source probed 301 with exact Location
 Sitemap after cleanup: 117 URLs, 117 × 200.
 
 Related repo commits: `765592df` (pair alignment), `fbd6f681` (sitemap + MakcikGPT registry).
-Receipt: `/root/forge_work/receipts/RECEIPT-site-entropy-pass-20261122.md`.
+Receipt: `<host>/forge_work/receipts/RECEIPT-site-entropy-pass-20261122.md`.
 
 ## Provenance (counts must trace to instruments)
 

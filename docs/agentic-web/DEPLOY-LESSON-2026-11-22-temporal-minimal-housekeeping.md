@@ -93,9 +93,9 @@ tokens, 11 env files): all ACTIVE for reads, all refused `POST /zones/<id>/purge
 with 401/10000 — the token is live but not scoped for cache purge, and there is no legacy
 global-key pair on the box. So the closure is armed, not assumed:
 
-- `/root/scripts/cf_purge_urls.py` — one command for whoever holds a purge-scoped token,
+- `<host>/scripts/cf_purge_urls.py` — one command for whoever holds a purge-scoped token,
   using the same credential pattern as the site's own Cloudflare script.
-- `/root/scripts/verify-portrait-edge-expiry.sh` — a one-shot witness scheduled for
+- `<host>/scripts/verify-portrait-edge-expiry.sh` — a one-shot witness scheduled for
   18:12 MYT, five minutes after the TTL, that re-probes all 23 URLs, writes the receipt
   into the deployment directory and removes its own crontab line.
 

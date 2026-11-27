@@ -4,7 +4,7 @@
 > Authority: F13 ratification 2026-11-23 — "sah A B D1 E D2 C, dossier retire".
 > Executor: FI-003 (qwen-code). Evidence only — NO self-SEAL.
 
-## Commits (repo /root/arif-fazil.com, main)
+## Commits (repo <host>/arif-fazil.com, main)
 
 | Task | Commit | Scope |
 |---|---|---|
@@ -27,8 +27,8 @@
 
 ## Deploy (cp-only additive, no rsync/--delete, no Caddy reload)
 
-- Script + log: `/root/_archive/webroot-zen-20261123/deploy.log` (2026-11-23T01:44+08:00).
-- Pre-overwrite backups: `/root/_archive/webroot-zen-20261123/pre/`.
+- Script + log: `<host>/_archive/webroot-zen-20261123/deploy.log` (2026-11-23T01:44+08:00).
+- Pre-overwrite backups: `<host>/_archive/webroot-zen-20261123/pre/`.
 - SPA index+assets, words family, world/makcikgpt, md mirrors, catalogs → BOTH roots
   (`/var/www/html/arif/` + `/var/www/html/`), per route-root-map + T20 precedent.
 - Retired dossier shells/md/html archived (mv, reversible) from both roots + all 3 md-mirror
@@ -81,7 +81,7 @@ or emit per-slug receipt shells.
 ## Rollback
 
 - Repo: `git revert b0a4868b..491b35f2` (7 commits, all on main, unpushed).
-- Webroot: pre-overwrite copies in `/root/_archive/webroot-zen-20261123/pre/`; archived
+- Webroot: pre-overwrite copies in `<host>/_archive/webroot-zen-20261123/pre/`; archived
   dossier artifacts restorable by mv back (paths logged in deploy.log). SPA assets additive —
   old hashed bundles still present; restoring previous index.html reverts the bundle ref.
 - Caddy: untouched — nothing to roll back.

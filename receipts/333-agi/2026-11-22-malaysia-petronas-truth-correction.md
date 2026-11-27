@@ -3,7 +3,7 @@
 - **Agent:** 333-AGI (OpenCode FI-001) · lane `lane/333-agi/malaysia-truth-correction`
 - **Date:** 2026-11-22 (MYT) · **State:** PRODUCED → DEPLOYED → OBSERVED (live browser witness)
 - **Authority:** sovereign in-session order 2026-11-22 ("upgrade amd improve this site…", two briefs, "i hate both of the site currently"); reversible static-surface change; no routing/CSP/DNS/secret/authority change.
-- **Deploy envelope:** `/root/arif-fazil.com/deploy-envelope.json`, sha == HEAD `edbac8c1…`, 12 negative tests declared, 7/7 executed PASS.
+- **Deploy envelope:** `<host>/arif-fazil.com/deploy-envelope.json`, sha == HEAD `edbac8c1…`, 12 negative tests declared, 7/7 executed PASS.
 
 ## Commits
 
@@ -75,7 +75,7 @@ b9d53698aaa85df0a58b58868a58b47dfa2cccd5ddb3ad42ed5f6658f026c621  /var/www/html/
 ## Rollback
 
 Backups (final stamp `20261122T083412Z`):
-`/root/forge_work/deployments/arif-fazil.com/20261122T083412Z/previous/` and `*.bak-20261122T083412Z` beside each live file.
+`<host>/forge_work/deployments/arif-fazil.com/20261122T083412Z/previous/` and `*.bak-20261122T083412Z` beside each live file.
 `rsync -av --update …/previous/wealth/malaysia/ /var/www/html/arif/wealth/malaysia/ ; …/previous/petronas/ /var/www/html/arif/petronas/ ; …/previous/wealth-coupling.js /var/www/html/wealth/wealth-coupling.js`
 
 ## Open boundaries (not fixed here)
@@ -104,4 +104,4 @@ Commit `3462379a` → merge `27dfb35f`. Envelope sha == HEAD, additive `rsync -a
 
 Live witness: `/map/` zombie refs **0**; links now `/petronas/` ×3 and `/petronas/state.json` ×1; `/petronas/state.json` canonical = `https://arif-fazil.com/petronas/`; `/wealth/malaysia/state.json` mirror = `https://arif-fazil.com/petronas/state.json`. All six routes 200 with correct content-types.
 
-Rollback: `/root/forge_work/deployments/arif-fazil.com/20261122T083905Z/previous/` + `*.bak-20261122T083905Z` beside each live file.
+Rollback: `<host>/forge_work/deployments/arif-fazil.com/20261122T083905Z/previous/` + `*.bak-20261122T083905Z` beside each live file.

@@ -221,10 +221,11 @@
     <h4 style="margin-top:.75rem">Geology Source</h4>
     <div class="seg" role="group" aria-label="Geology query source mode" id="geoSourceGroup">
       <button type="button" data-geo-mode="AUTO" class="on" aria-pressed="true" title="Prefer JMG 1:500k within Malaysia (when authorized), Macrostrat fallback elsewhere">AUTO</button>
-      <button type="button" data-geo-mode="JMG" aria-pressed="false" title="Query JMG 1:500k only; no silent Macrostrat fallback">JMG</button>
+      <button type="button" data-geo-mode="JMG" aria-pressed="false" title="JMG 1:500k query needs the local JMG dataset — awaiting permission" disabled style="opacity:.45;cursor:not-allowed">JMG</button>
       <button type="button" data-geo-mode="MACROSTRAT" aria-pressed="false" title="Query Macrostrat API v2 only">MACRO</button>
-      <button type="button" data-geo-mode="CONTRAST" aria-pressed="false" title="Query both JMG and Macrostrat side-by-side">CONTRAST</button>
+      <button type="button" data-geo-mode="CONTRAST" aria-pressed="false" title="Contrast needs the local JMG dataset — awaiting permission" disabled style="opacity:.45;cursor:not-allowed">CONTRAST</button>
     </div>
+    <p style="font-size:.72rem;color:#9aa4b2;margin:.35rem 0 0">JMG / CONTRAST query modes need the JMG 1:500k local dataset — awaiting permission. Bedrock tiles already render JMG 1:500k.</p>
     <div class="waypoints">
       <button id="wpWells" data-pov="">◈ My wells · Malay Basin</button>
       <button data-pov="4.2,102.2,1.8">◈ Peninsular Malaysia (JMG 1:500k)</button>

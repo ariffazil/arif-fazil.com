@@ -1008,7 +1008,7 @@ const skipBtn=$("veilSkip");
 if(skipBtn)skipBtn.addEventListener("click",()=>{boot.ready.engine=true;dismissVeil("skip");});
 
 /* ── tile engines ── */
-const TILE_GEO=(x,y,z)=>`/earth/tiles/macrostrat/carto/${z}/${x}/${y}.png`;
+const TILE_GEO=(x,y,z)=>`/earth/tiles/jmg/${z}/${x}/${y}.png?v=jmg1`;
 const TILE_SAT=(x,y,z)=>`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;
 let base="geo";
 

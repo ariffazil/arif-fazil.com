@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JMG MyGEMS 1:500,000 Bedrock — Malaysia (reference viewer)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  html,body{margin:0;height:100%;background:#0a0b0d;color:#e8eefc;font-family:system-ui,sans-serif}
+  #map{position:absolute;inset:0}
+  #hud{position:absolute;z-index:1000;top:12px;left:12px;max-width:360px;background:rgba(10,11,13,.88);
+       border:1px solid rgba(201,162,39,.35);border-radius:10px;padding:12px 14px;font-size:12.5px;line-height:1.45}
+  #hud b{color:#c9a227}
+  #hud a{color:#7aa7ff}
+  .tag{display:inline-block;margin-top:6px;padding:2px 7px;border-radius:999px;background:rgba(201,162,39,.15);
+       border:1px solid rgba(201,162,39,.35);color:#c9a227;font-size:11px}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="hud">
+  <b>JMG MyGEMS · 1:500,000 bedrock</b><br>
+  Live reference image served by <code>mygems.jmg.gov.my</code> (Jabatan Mineral dan Geosains Malaysia).
+  Nothing is copied or re-hosted here — the browser fetches the image from JMG.<br>
+  <span class="tag">SOURCE: JMG MyGEMS</span>
+  <span class="tag">BBOX 99.5,0.8,119.5,7.5</span><br>
+  <a href="https://mygems.jmg.gov.my/portal/apps/webappviewer/index.html?id=90702a483ab6489bbaab210e038c2ed9" target="_blank" rel="noreferrer">Open official JMG viewer ↗</a>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map', {zoomControl:true, preferCanvas:true}).setView([4.2,109.5],6);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:12
+}).addTo(map);
+
+const BBOX = [0.8, 99.5, 7.5, 119.5]; // south, west, north, east
+const SVC = 'https://mygems.jmg.gov.my/server/rest/services/Demarcation/Litology_by_Negeri/MapServer/export';
+const img = `${SVC}?bbox=99.5,0.8,119.5,7.5&bboxSR=4326&imageSR=4326&size=4096,2048&format=png32&transparent=true&f=image`;
+
+const jmg = L.imageOverlay(img, [[BBOX[0],BBOX[1]],[BBOX[2],BBOX[3]]], {
+  opacity: 0.9, attribution: 'JMG MyGEMS 1:500,000 (live reference)'
+}).addTo(map);
+
+map.fitBounds([[BBOX[0],BBOX[1]],[BBOX[2],BBOX[3]]]);
+jmg.on('error', ()=>document.getElementById('hud').insertAdjacentHTML('beforeend',
+  '<div style="color:#ff8a8a;margin-top:8px">JMG image failed to load (server may block this referer).</div>'));
+</script>
+</body>
+</html>

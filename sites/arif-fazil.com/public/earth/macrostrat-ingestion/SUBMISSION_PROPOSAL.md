@@ -1,7 +1,7 @@
 # Upstream Map Ingestion Proposal: Geological Map of Malaysia (JMG 1:500,000)
 
 **To:** Prof. Shanan Peters, Dr. Daven Quinn & The Macrostrat Team (University of Wisconsin–Madison)  
-**From:** Muhammad Arif bin Fazil (Exploration Geoscientist, PETRONAS Subsurface Alum & arifOS Federation Architect)  
+**From:** Muhammad Arif bin Fazil (Exploration Geoscientist & arifOS Federation Architect)  
 **Date:** 2026-08-26  
 **Last Updated:** 2026-08-26T09:08:00+08:00 (v1.2 — Section 6 maintainer questions added & source envelope verified)  
 **Target Repository:** `https://github.com/UW-Macrostrat/macrostrat` (Macrostrat Ingestion Track)  

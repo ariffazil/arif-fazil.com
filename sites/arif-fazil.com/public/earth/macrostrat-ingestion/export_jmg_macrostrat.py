@@ -14,7 +14,7 @@ import sys
 import urllib.request
 import urllib.parse
 
-OUTPUT_DIR = "/root/arif-fazil.com/sites/arif-fazil.com/public/earth/macrostrat-ingestion"
+OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))  # portable; no host path
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # 14 States of Malaysia MapServer layers

@@ -911,7 +911,7 @@
 
 <footer class="earth-footer">
   <div class="doctrine">DITEMPA BUKAN DIBERI</div>
-  <p>Data pipes: geologic tiles &amp; API — <a href="https://macrostrat.org">Macrostrat</a> (CC-BY 4.0) · earthquakes — <a href="https://earthquake.usgs.gov">USGS</a> real-time feed · plate boundaries — PB2002 (Bird, 2003) · Malaysia boundary — geoBoundaries/OSM (ODbL 1.0) · globe engine — globe.gl. Satellite base — Esri World Imagery (for reference).</p>
+  <p>Data pipes: geologic tiles &amp; API — <a href="https://macrostrat.org">Macrostrat</a> (CC-BY 4.0) · earthquakes — <a href="https://earthquake.usgs.gov">USGS</a> real-time feed · plate boundaries — PB2002 (Bird, 2003) · globe engine — globe.gl. Satellite base — Esri World Imagery (for reference).</p>
   <p>Wells &amp; studies — sovereign canon from <a href="/earth/data/wells.json">wells.json</a> · <b>disclosure tiers:</b> EXISTENCE-tier wells carry no coordinates, depths, or results; ATTESTED-tier wells (pending sovereign ratification of the two-tier policy) carry founder-signed narrative only — every outcome shown is <b>PRIVATE WITNESS · NOT PUBLICLY AUDITABLE</b> and must not be cited as public evidence. Markers are jittered basin-level positions, labeled approximate.</p>
   <p>Every number on this page carries its source tier: <b>LIVE</b> = read from public pipes at load time (withheld if a pipe fails, with fetch-time receipt) · <b>SOURCED</b> = published literature with citation · <b>INTERPRETED</b> = human geological reading · <b>SYNTHETIC</b> = teaching geometry, not data · <b>PRIVATE</b> = founder witness, not externally verifiable. The universal "nothing here is claimed unobserved" wording was withdrawn 2026-10-26 because it conflicted with the page's own mixed-tier content. Ω₀ ≈ 0.04 declares expected unverified surface.</p>
   <p>An organ of the arifOS federation · <a href="/map/#earth">site map</a> · <a href="https://arif-fazil.com">arif-fazil.com</a> · <a href="https://geox.arif-fazil.com/">GEOX ↗</a></p>
@@ -1131,7 +1131,6 @@ $("lyrQuakes").addEventListener("change",e=>{
 /* ── plate boundaries (PB2002) ── */
 const PLATE_BOUNDARIES_URL="/earth/data/plates/PB2002_boundaries.geojson";
 const PLATE_PLATES_URL="/earth/data/plates/PB2002_plates.geojson";
-const MALAYSIA_BOUNDARY_URL="/earth/data/boundaries/malaysia_adm0.geojson";
 
 function plateColor(kind=""){
   const k=String(kind||"").toLowerCase();
@@ -1144,19 +1143,9 @@ function plateLabelOf(kind=""){
   return "Unclassified boundary — PB2002 source has no Type tag (ridge/transform/inferred-class not represented in this dataset)";
 }
 
-let platePaths=[],platePolygons=[],malaysiaPolygons=[],motionArcs=[];
+let platePaths=[],platePolygons=[],motionArcs=[];
 let plateStats={subduction:0,unclass:0};
 let lastPlateClickAt=0;
-
-function refreshPolygons(){
-  if(!world) return;
-  world.polygonsData(platePolygons.concat(malaysiaPolygons))
-    .polygonGeoJsonGeometry(d=>d.geometry)
-    .polygonCapColor(d=>d.layer==="malaysia"?"rgba(201,162,39,0.06)":"rgba(255,255,255,0.04)")
-    .polygonSideColor(d=>d.layer==="malaysia"?"rgba(201,162,39,0.08)":"rgba(255,255,255,0.05)")
-    .polygonStrokeColor(d=>d.layer==="malaysia"?"rgba(201,162,39,0.70)":"rgba(212,175,55,0.18)")
-    .polygonAltitude(d=>d.layer==="malaysia"?0.0045:0.003);
-}
 
 async function loadPlates(){
   try{
@@ -1199,21 +1188,6 @@ async function loadPlates(){
       };
     });
 
-    try{
-      const rb=await fetch(MALAYSIA_BOUNDARY_URL);
-      if(rb.ok){
-        const jb=await rb.json();
-        (jb.features||[]).forEach(f=>{
-          const g=f.geometry||{}, p=f.properties||{};
-          if(!g||!g.coordinates) return;
-          malaysiaPolygons.push({name:p.shapeName||"Malaysia",layer:"malaysia",
-            source:p.source||"geoBoundaries (OSM)",license:p.license||"ODbL 1.0",
-            geometry:{type:"Polygon",coordinates:g.coordinates}});
-        });
-        console.info("Malaysia boundary loaded:",malaysiaPolygons.length,"polygons");
-      }
-    }catch(e){console.warn("Malaysia boundary skipped:",e&&e.message);}
-
     if(world){
       world.pathsData([])
         .pathPoints("coords").pathPointLat(p=>p[1]).pathPointLng(p=>p[0])
@@ -1240,7 +1214,14 @@ async function loadPlates(){
           wireClose();
         });
 
-      try{ refreshPolygons(); }catch(e){console.warn("polygon layer skipped:",e&&e.message);}
+      try{
+        world.polygonsData(platePolygons)
+          .polygonGeoJsonGeometry(d=>d.geometry)
+          .polygonCapColor(()=>"rgba(255,255,255,0.04)")
+          .polygonSideColor(()=>"rgba(255,255,255,0.05)")
+          .polygonStrokeColor(()=>"rgba(212,175,55,0.18)")
+          .polygonAltitude(0.003);
+      }catch(e){console.warn("plate polygons skipped:",e&&e.message);}
 
       world.arcsData([])
         .arcStartLat("startLat").arcStartLng("startLng")
